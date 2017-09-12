@@ -1,0 +1,31 @@
+<sample Video Stream>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+
+	app.ShowProgress( "Buffering..." );
+
+<b>	player = app.CreateVideoView( 0.9, 0.4 );
+	player.SetOnReady( player_OnReady );
+	player.SetOnError( player_OnError );
+	lay.AddChild( player );
+
+	player.SetFile( "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov" );
+</b>
+	app.AddLayout( lay );
+}
+
+function player_OnReady()
+{
+	app.HideProgress();
+	app.ShowPopup( "OnReady" );
+	player.Play();
+}
+
+function player_OnError()
+{
+	app.HideProgress();
+	app.ShowPopup( "OnError" );
+}
+</sample>
+

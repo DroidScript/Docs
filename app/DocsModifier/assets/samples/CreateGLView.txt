@@ -1,0 +1,90 @@
+<sample DrawImage>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY" );
+
+<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	lay.AddChild( glview );
+
+	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame );
+</b>
+	app.AddLayout( lay );
+}
+
+function DrawFrame()
+{
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 );
+
+	glview.Render();
+}
+</sample>
+
+<sample Render Loop>
+var angle = 0;
+
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY" );
+
+<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	lay.AddChild( glview );
+
+	img = glview.CreateImage( "/Sys/Img/Hello.png", StartRendering );
+</b>
+	app.AddLayout( lay );
+}
+
+function StartRendering()
+{
+	setInterval( DrawFrame, 1000/30 );
+}
+
+function DrawFrame()
+{
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle );
+
+	angle = angle + 10;
+	if( angle == 360 ) angle = 0;
+
+	glview.Render();
+}
+</sample>
+
+<sample DrawSprite>
+var spriteCount = 8;
+var srcWidth = 50;
+var srcHeight = 60;
+var frameCount = 0;
+
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY" );
+
+<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	lay.AddChild( glview );
+
+	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering );
+</b>
+	app.AddLayout( lay );
+}
+
+function StartRendering()
+{
+	setInterval(DrawFrame, 1000/30);
+}
+
+function DrawFrame()
+{
+	var spriteIndex = Math.floor(frameCount / 2) % spriteCount;
+
+	var sx = spriteIndex * srcWidth;
+	var sy = 0;
+
+	glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
+				0.3, 0.4, 0.3, -1 );
+
+	glview.Render();
+
+	frameCount++;
+}</sample>
+

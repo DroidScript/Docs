@@ -1,0 +1,104 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Lista de Diálogo</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Lista de Diálogo</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+		<p>Puedes crear un cuadro de diálogo para mostrar una lista en tu aplicación usando el método <b>CreateListDialog</b> del objeto de la <b>app</b>: </p>
+		
+		<div class="samp">&nbsp;dlg = app.CreateListDialog(título, listas, opciones);</div>
+		  
+		<p>Usa el método <b>SetOnTouch</b> del objeto de la Lista de Diálogo para establecer el nombre de la función que quieres que sea llamada cuando un artículo de la lista es seleccionado.</p>
+
+<p>El artículo seleccionado es pasado por la función callback OnTouch como parámetros cada vez que es seleccionado.</p>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					<b id="snip1"  style="font-size:100%">
+					&nbsp;&nbsp;dlg = app.CreateListDialog( "Opciones", "Añadir,Remover,Borrar" );<br>
+					&nbsp;&nbsp;dlg.SetOnTouch( dlg_OnTouch );<br>
+					&nbsp;&nbsp;dlg.Show();<br>
+					</b>
+					}<br>
+					<br>
+					function dlg_OnTouch( item )<br>
+					{<br>
+					&nbsp;&nbsp;app.ShowPopup( item );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+		<p>Puedes usar la opción <b>"Multi"</b> para crear una Lista de Diálogo con check boxes al lado de cada elemento.</p>
+
+<p>Esto permite múltiples elementos de lista para ser seleccionados. Un parámetro extra <b>isChecked</b> es pasado a la función callback OnTouch cuando un check box es marcado o desmarcado.</p>
+
+		<p>Cuando uses la opción "Multi", la Lista de Diálogos pueden ser despedidos/ocultados usando el botón ATRÁS en el teléfono o tableta.</p>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Multi</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					<b id="snip1"  style="font-size:100%">
+					&nbsp;&nbsp;dlg = app.CreateListDialog( "Días", "Lun,Mar,Mie,Jue,Vie,Sab,Dom", "Multi" );<br>
+					&nbsp;&nbsp;dlg.SetOnTouch( dlg_OnTouch );<br>
+					&nbsp;&nbsp;dlg.Show();<br>
+					</b>
+					}<br>
+					<br>
+					function dlg_OnTouch( item, isChecked )<br>
+					{<br>
+					&nbsp;&nbsp;app.ShowPopup( item + " isChecked = " + isChecked );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		 <p>Los siguientes métodos están disponibles para los objetos de las Listas de Diálogos:</p>
+			
+		<div class="samp">&nbsp;SetOnTouch( callback )</div>
+
+		<br>
+		
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

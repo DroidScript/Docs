@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	fldr = app.GetExternalFolder();
+</b>	app.ShowPopup( fldr );
+}
+</sample>
+

@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	version = app.GetOSVersion();
+</b>	app.ShowPopup( version );
+}
+</sample>
+

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Editar Texto</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Editar Texto</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+<p>Crear objetos de Editar Texto usado el método <b>CreateTextEdit</b> de los objetos <b>app</b>: </p>
+		
+		<div class="samp">&nbsp;edt = app.CreateTextEdit( text, width, height, options );</div>
+		
+<p>Puedes usar el método <b>SetOnChange</b> del TextEdit para establecer el nombre de la función que quieres que sea llamada cuando el texto sea cambiado.</p>
+		
+		<p>Usa las funciones <b>SetText</b> y <b>GetText</b> para establecer y obtener el texto en el TextEdit.</p>
+		
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Usando OnChange</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp;edt = app.CreateTextEdit( "Editame", 0.8, 0.3 );<br>				
+					 &nbsp;&nbsp;edt.SetOnChange( edt_OnChange );<br>
+					 &nbsp;&nbsp;lay.AddChild( edt );<br><br>
+					 </b>
+					 &nbsp;&nbsp;txt = app.CreateText( "", 0.8, 0.3 );<br>
+					 &nbsp;&nbsp;txt.SetMargins( 0, 0.02, 0, 0 );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br><br>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+					function edt_OnChange() &nbsp;<br>
+					{<br>
+					 &nbsp;&nbsp;txt.SetText( edt.GetText() );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+<p>Puedes cambiar el estilo del TextEdit usando las funciones <b>SetBackColor</b> y <b>SetTextColor</b> en el objeto TextEdit.</p> 
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Azul en Blanco</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip2"  style="font-size:100%">
+					 &nbsp;&nbsp;edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );<br>	
+					 &nbsp;&nbsp;edt.SetTextColor( "#ff6666ff" );<br>	
+					 &nbsp;&nbsp;edt.SetBackColor( "#ffffffff" );<br>
+					 &nbsp;&nbsp;lay.AddChild( edt );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+<p>También puedes establecer una imagen/patrón de fondo o un fondo gradiente para la lista usando las funciones <b>SetBackground</b> y <b>SetBackGradient</b>.
+Mira <a href="Layouts.htm">Diseños</a> para ejemplos de cómo usar estas funciones.</p>
+<br>
+<p>Los siguientes métodos están disponibles en el objeto TextEdit:</p>
+	
+		<div class="samp">&nbsp;SetVisibility( visibility )</div>   
+		<div class="samp">&nbsp;GetVisibility()</div>  
+		<div class="samp">&nbsp;SetPadding( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetMargins( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetBackground( imageFile, options )</div>
+		<div class="samp">&nbsp;SetBackColor( colorCode )</div>
+		<div class="samp">&nbsp;SetBackGradient( color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetBackGradientRadial( x, y, r, color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetPosition( left, top, width, height )</div>
+		<div class="samp">&nbsp;SetSize( width, height )</div>
+		<div class="samp">&nbsp;GetWidth()</div>
+		<div class="samp">&nbsp;GetHeight()</div> 
+		
+		<div class="samp">&nbsp;SetText( text )</div>
+		<div class="samp">&nbsp;GetText()</div> 
+		<div class="samp">&nbsp;SetHtml( html )</div>
+		<div class="samp">&nbsp;GetHtml()</div> 
+		<div class="samp">&nbsp;SetTextColor( colorCode )</div>   
+		<div class="samp">&nbsp;SetTextSize( size )</div>  
+		<div class="samp">&nbsp;GetTextSize( mode )</div>
+		<div class="samp">&nbsp;SetHint( text )</div>
+		<div class="samp">&nbsp;GetLineCount()</div>
+		<div class="samp">&nbsp;GetMaxLines()</div>
+		<div class="samp">&nbsp;GetLineTop( lineNum )</div>
+		<div class="samp">&nbsp;GetLineStart( lineNum )</div>    
+		<div class="samp">&nbsp;SetCursorPos( pos )</div> 
+		<div class="samp">&nbsp;GetCursorPos()</div>
+		<div class="samp">&nbsp;GetCursorLine()</div> 
+		<div class="samp">&nbsp;SetSelection( start, stop )</div>
+	    <div class="samp">&nbsp;GetSelectedText()</div> 
+	    <div class="samp">&nbsp;GetSelectionStart()</div> 
+	    <div class="samp">&nbsp;GetSelectionEnd()</div> 
+	    <div class="samp">&nbsp;InsertText( text, start, end )</div>
+	    <div class="samp">&nbsp;ReplaceText( text, start, end )</div>
+	    <div class="samp">&nbsp;SetOnChange( callback )</div>
+	    <div class="samp">&nbsp;SetOnTouch( callback )</div>
+		<div class="samp">&nbsp;Undo()</div>
+		<div class="samp">&nbsp;Redo()</div> 
+		<div class="samp">&nbsp;ClearHistory()</div>
+
+		<br>
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

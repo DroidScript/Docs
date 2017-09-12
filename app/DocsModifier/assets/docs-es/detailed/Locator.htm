@@ -1,0 +1,98 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+<title>Localizador</title> 
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+		
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a>
+ <h1>Localizador</h1>
+</div><!-- /header -->
+
+<div data-role="content">	
+			
+<p>El componente <b>Locator</b> (Localizador) puede ser usado para encontrar su paradero en el planeta utilizando tu dispositivo GPS o la información de su red.</p>
+
+<p>Crea un objeto 'Locator' usando el método <b>CreateLocator</b> (Crear Localizador) del objeto de la <b>app</b>:</p>
+	<div class="samp">&nbsp;loc = app.CreateLocator( Provider );</div>
+	<p><b>Provider</b> puede ser <b>"GPS"</b>, <b>"Network"</b> o <b>"GPS,Network"</b><br>
+	"Network" significa obtener la ubicación de la red celular y WiFi, "GPS" le dice al localizador que use el GPS del dispositivo.</p>
+
+	<p>El método <b>SetOnChange</b> (cambió) es usado para establecer una función que será llamada cuando tu posición calculada cambie.</p>
+	<div class="samp">&nbsp;loc.SetOnChange( callback );</div>
+		
+	<p>El método <b>Start</b> (Iniciar) inicia el objeto calculando tu posición.</p>
+	<div class="samp">&nbsp;loc.Start( );</div>
+
+	<p>Una vez que el método <b>Start</b> ha sido llamado, la función callback OnChange es el mejor lugar para verificar tu posición.</p>
+
+	<!-- Inicia un ejemplo de la App -->
+<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+<h3>Ejemplo</h3>
+<div id="examp1" style="font-size:70%">
+function OnStart() <br>
+{ <br>
+<b id="snip1"  style="font-size:100%">
+&nbsp;&nbsp;loc = app.CreateLocator("GPS,Network"); <br>
+&nbsp;&nbsp;loc.SetOnChange(loc_OnChange); <br>
+&nbsp;&nbsp;loc.Start(); <br>
+&nbsp;&nbsp;app.ShowPopup("Localizando");<br>
+</b>
+} <br>
+ <br>
+function loc_OnChange(pos) <br>
+{ <br>
+&nbsp;&nbsp;var msg = pos.latitude + ", " + pos.longitude; <br>
+&nbsp;&nbsp;app.ShowPopup( msg ); <br>
+}</div>
+<div name="divCopy" align="right">
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+</div>
+</div> <!-- end of example app -->
+
+<p>La función callback provee un argumento simple <b>pos</b> que tiene las siguientes propiedades</p>
+	<div class="samp">&nbsp; pos.latitude - degrees<br>
+	&nbsp; pos.longitude  - degrees<br>
+	&nbsp; pos.provider - "GPS" or "Network"  <br>
+	&nbsp; pos.speed - metros por segundo<br>
+	&nbsp; pos.altitude  - metros<br>
+	&nbsp; pos.bearing - grados<br>
+	&nbsp; pos.accuracy - (estimado) en metros</div>
+<br>
+<p>Los siguientes métodos están disponibles en el objeto Locator:</p>
+
+    	<div class="samp">&nbsp;GetBearingTo( lattitude, longitude ) </div>
+	    <div class="samp">&nbsp;GetDistanceTo( lattitude, longitude ) </div>
+		<div class="samp">&nbsp;SetOnChange(callback) </div>
+		<div class="samp">&nbsp;SetRate(seconds) </div>
+    	<div class="samp">&nbsp;Start( ) </div>
+    	<div class="samp">&nbsp;Stop( ) </div>
+
+	    </p>
+	
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

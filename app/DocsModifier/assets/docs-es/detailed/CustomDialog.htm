@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Diálogo Personalizado</title>
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a>
+ <h1>Diálogo Personalizado</h1>
+</div><!-- /header -->
+
+<div data-role="content">
+
+  <p>Las cajas emergentes de Diálogos Personalizados pueden ser usados para mostrar información temporera o para recolectar datos del usuario. Esto es conveniente para mostrar configuraciones o controles configurables.</p>
+
+  <p>Puedes añadir todos los tipos de controles a los objetos <b>CustomDialog</b>. Los diálogos son reajustables y puedes cambiar su apariencia de modo que encajen con el tema de su aplicación.</p>
+
+ <p>Crea un objeto de Diálogo Personalizado usando el método <b>CreateDialog</b> de los objetos de la <b>app</b>:<p>
+  <div class="samp">&nbsp;dlg = app.CreateDialog( title, options );</div>
+
+  <p>Las siguientes <em>opciones</em> son válidas para el método <b>CreateDialog</b>:
+    <ul>
+      <li>"NoCancel" - El botón 'ATRÁS' no cancela el diálogo</li>
+      <li>"AutoCancel" - Tocar fuera del diálogo cancela la importación</li>
+      <li>"NoTitle" - Elimina el título del diálogo</li>
+      <li>"NoFocus" - Evita el diálogo ganando foco</li>
+      <li>"NoDim" - Evita oscurecimiento fuera de la zona de diálogo.</li>
+    </ul>
+  </p>
+
+<p>Un Diálogo Personalizado necesita también un diseño para añadir controles. Usa el método <b>CreateLayout</b> de los objetos de la <b>app</b> para añadir un diseño.</p>
+
+  <div class="samp">&nbsp;layDlg = app.CreateLayout( type, options );</div>
+
+  <p>Usa el método <b>Show</b> para mostrar el diálogo.</p>
+
+   <div class="samp">&nbsp;dlg.Show();</div>
+
+   <p>Y el método <b>Dismiss</b> cuando quieres que se cierre.</p>
+
+  <div class="samp">&nbsp;dlg.Dismiss();</div>
+<p>El siguiente ejemplo muestra como crear un simple CustomDialog en el click de un botón. El diseño para el diálogo es creado y un botón para esconder el diálogo es añadido al diseño.</p>
+
+
+  <!-- Inicio del ejemplo de la App -->
+<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+<h3>Ejemplo</h3>
+<div id="examp1" style="font-size:70%">
+  <br>
+function OnStart()  <br>
+{ <br>
+&nbsp;&nbsp;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br>
+<br>
+&nbsp;&nbsp;btn = app.CreateButton( "Mostrar Diálogo", 0.6, 0.1 );<br>
+&nbsp;&nbsp;btn.SetOnTouch( btn_OnTouch );<br>
+&nbsp;&nbsp;lay.AddChild( btn );<br>
+<br>
+&nbsp;&nbsp;app.AddLayout( lay );<br>
+}<br>
+<br>
+function btn_OnTouch()<br>
+{<br>
+&nbsp;&nbsp;dlg = app.CreateDialog( "Diálogo Personalizado" );<br>
+<br>
+&nbsp;&nbsp;layDlg = app.CreateLayout( "linear", "VCenter,FillXY" );<br>
+&nbsp;&nbsp;layDlg.SetSize( 0.7, 0.3 );<br>
+&nbsp;&nbsp;dlg.AddLayout( layDlg );<br>
+<br>
+&nbsp;&nbsp;chk = app.CreateCheckBox( "Casilla de Marcar" );<br>
+&nbsp;&nbsp;chk.SetMargins( 0, 0.02, 0, 0.02 );<br>
+&nbsp;&nbsp;layDlg.AddChild( chk );<br>
+<br>
+&nbsp;&nbsp;btnDlg = app.CreateButton( "Cerrar Diálogo", 0.6, 0.1 );<br>
+&nbsp;&nbsp;btnDlg.SetOnTouch( btnDlg_OnTouch );<br>
+&nbsp;&nbsp;layDlg.AddChild( btnDlg );<br>
+<br>
+&nbsp;&nbsp;dlg.Show();<br>
+
+}<br>
+<br>
+function btnDlg_OnTouch()<br>
+{<br>
+&nbsp;&nbsp;dlg.Dismiss();<br>
+}
+</div>
+<div name="divCopy" align="right">
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+</div>
+</div> <!-- Fin del ejemplo de la App -->
+
+
+<p>Los siguientes métodos están disponibles en el objeto CustomDialog:</p>
+      <div class="samp">&nbsp;AddLayout( layout )</div>
+      <div class="samp">&nbsp;RemoveLayout( layout )</div>
+      <div class="samp">&nbsp;SetTitle( title )</div>
+      <div class="samp">&nbsp;AdjustColor( hue, sat, bright, const )</div>
+      <div class="samp">&nbsp;Show()</div>
+      <div class="samp">&nbsp;Hide()</div>
+      <div class="samp">&nbsp;Dismiss()</div>
+      <div class="samp">&nbsp;SetBackColor( clr )</div>
+      <div class="samp">&nbsp;SetBackground( file, options )</div>
+      <div class="samp">&nbsp;SetSize( width, height, options )</div>
+      <div class="samp">&nbsp;SetPosition( left, top, width, height, options )</div>
+      <div class="samp">&nbsp;SetOnTouch( callback )</div>
+      <div class="samp">&nbsp;SetOnCancel( callback )</div>
+      <div class="samp">&nbsp;SetOnTouch( callback )</div>
+    </p>
+
+  </div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	name = app.GetJoystickName( 0 );
+</b>	app.ShowPopup( name );
+}
+</sample>
+

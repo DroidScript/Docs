@@ -1,0 +1,7 @@
+<sample Example>
+function OnStart()
+{
+<b>	txt = app.ReadFile( "/Sys/Html/Page.htm" );
+</b>	app.ShowPopup( txt );
+}</sample>
+

@@ -1,0 +1,18 @@
+<sample>
+
+function OnStart()
+{
+	app.ShowPopup("Sending notification");
+<b>	notify = app.CreateNotification();
+	notify.SetMessage("Ticker","Title","Text");
+	notify.Notify("testID");
+</b>	setTimeout(cancel,5000);
+}
+
+function cancel()
+{
+	notify.Cancel("testID");
+	app.ShowPopup("Notification cancelled");
+}
+</sample>
+

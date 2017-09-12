@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	orient = app.GetDefaultOrientation();
+</b>	app.ShowPopup( orient );
+}
+</sample>
+

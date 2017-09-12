@@ -1,0 +1,14 @@
+<sample Basic>
+function OnStart()
+{
+<b>	list = app.ListFolder( "/sdcard" );
+</b>	app.ShowPopup( list );
+}</sample>
+
+<sample Filtered>
+function OnStart()
+{
+<b>	list = app.ListFolder( "/sdcard", ".mp3" );
+</b>	app.ShowPopup( list );
+}</sample>
+

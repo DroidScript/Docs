@@ -1,0 +1,22 @@
+<sample left>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+
+	txt1 = app.CreateText( "<-- swipe" );
+	txt1.SetTextSize( 30 );
+	lay.AddChild( txt1 );
+
+	app.AddLayout( lay );
+
+	layDrawer = app.CreateLayout( "Linear", "VCenter" );
+	layDrawer.SetBackground( "/Sys/Img/BlueBack.png" );
+
+	txt2 = app.CreateText( "Hello" );
+	txt2.SetTextSize( 40 );
+	layDrawer.AddChild( txt2 );
+
+<b>	app.AddDrawer( layDrawer, "left", 0.8 );
+</b>}
+</sample>
+

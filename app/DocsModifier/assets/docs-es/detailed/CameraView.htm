@@ -1,0 +1,150 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>CameraView</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>CameraView</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+		<p>Crear un control de cámara con vista previa con la función <b>CreateCameraView</b> con los objetos de la <b>app</b>: </p>
+		
+		  <div class="samp">&nbsp;cam = app.CreateCameraView( width, height, options );</div>
+		  
+		<p>Éste control permite mostrar una transmisión en vivo de lo que está siendo visto por la Cámara del teléfono/tableta.
+
+ Si su disposituvo solo tiene una cámara frontal y es una versión anterior de Android 2.3, puedes usar la opción <b>"Front"</b> para mostrar una vista previa de la cámara frontal.</p>
+
+		<p>Necesitas llamar la función <b>StartPreview</b> del control CameraView para iniciar la vista previa (<b>Nota: En algunos telefonos es necesario esperar un segundo antes de iniciar la función StartPreview</b>).</p>
+		
+		   <div class="samp">&nbsp;cam.StartPreview();</div>
+			 
+		<p>El siguiente ejemplo simplemente muestra la vista previa de la cámara frontal en el centro de la pantalla. </p>
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Mostrar Vista Previa</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp;cam = app.CreateCameraView( 0.8, 0.4 );<br>
+					 &nbsp;&nbsp;lay.AddChild( cam );<br>
+					 &nbsp;&nbsp;setTimeout( "cam.StartPreview()", 1000 );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		<p>Usa la función <b>TakePicture</b> para tomar una imagen y guardarla en una ubicación determinada.</p>
+		
+			 <div class="samp">&nbsp;cam.TakePicture( filename );</div>
+		
+		<p>Usa la función <b>SetPictureSize</b> para configurar las dimenciones en pixeles de las fotos tomadas (ej. <b>1024x768</b>).</p>
+		
+			 <div class="samp">&nbsp;cam.SetPictureSize( width, height );</div>
+		
+		<p>El siguiente ejemplo muestra cómo tomar fotos y guardarlas en la Tarjeta SD (<b>Memoria Externa</b>).</p>
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Tomar Fotos</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip2"  style="font-size:100%">
+					 &nbsp;&nbsp;cam = app.CreateCameraView( 0.8, 0.4 );<br>
+					 &nbsp;&nbsp;lay.AddChild( cam );<br>
+					 &nbsp;&nbsp;cam.SetPictureSize( 1024, 768 );<br>
+					 &nbsp;&nbsp;setTimeout( "cam.StartPreview()", 1000 );<br><br>
+					 </b>
+					 &nbsp;&nbsp;btn = app.CreateButton( "Snap", 0.3, -1 );<br>				
+					 &nbsp;&nbsp;btn.SetOnTouch( Snap );<br>
+					 &nbsp;&nbsp;lay.AddChild( btn );<br><br>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br><br>
+					function Snap() <br>
+					{<br>
+					  &nbsp;&nbsp;cam.TakePicture( "/sdcard/MyPic.jpg" );<br>
+					  &nbsp;&nbsp;app.ShowPopup("Foto Guardada");<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		<p>Para obtener más ejemplos sofisticados, incluyendo la detección de movimiento y el <i>streaming</i> de vídeo, echa un vistazo a la sessión <b>'Camera Stream'</b>.<p> 
+		 <b>Ejemplo de 'Camera Snap'</b> y <b>'Camera Motion'</b>.</p>
+		 
+		 <p>Los siguientes métodos están disponibles en los objetos CameraView:</p>
+		
+		<div class="samp">&nbsp;SetVisibility( visibility )</div>   
+		<div class="samp">&nbsp;GetVisibility()</div>  
+		<div class="samp">&nbsp;SetMargins( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetPosition( left, top, width, height )</div>
+		<div class="samp">&nbsp;SetSize( width, height )</div>
+		<div class="samp">&nbsp;GetWidth()</div>
+		<div class="samp">&nbsp;GetHeight()</div> 
+		
+		<div class="samp">&nbsp;StartPreview()</div> 
+		<div class="samp">&nbsp;StopPreview()</div> 
+		<div class="samp">&nbsp;Focus()</div> 
+		<div class="samp">&nbsp;SetFocusMode( mode )</div> 
+		<div class="samp">&nbsp;SetPictureSize( width, height )</div> 
+		<div class="samp">&nbsp;GetPictureSizes()</div>
+		<div class="samp">&nbsp;SetColorEffect( effect )</div>
+    	<div class="samp">&nbsp;GetColorEffects()</div>
+		<div class="samp">&nbsp;TakePicture( fileName )</div> 
+		<div class="samp">&nbsp;Stream( ip, port, quality, fps, mtu )</div> 
+		<div class="samp">&nbsp;SetFlash( onoff )</div> 
+		<div class="samp">&nbsp;SetSound( onoff )</div> 
+		<div class="samp">&nbsp;GetImageWidth()</div> 
+		<div class="samp">&nbsp;GetImageHeight()</div> 
+		<div class="samp">&nbsp;GetCameraCount()</div> 
+		<div class="samp">&nbsp;SetPreviewImage( imageObj )</div> 
+		<div class="samp">&nbsp;MotionMosaic(  xtiles, ytiles, sensitivity, minPeriod, imageObj )</div>
+		<div class="samp">&nbsp;ReportColors( list, callback, sampSize, maxRate )</div>
+		<div class="samp">&nbsp;AutoCapture( folder, fileName, maxCount )</div> 
+		<div class="samp">&nbsp;SetOnReady( callback )</div> 
+		<div class="samp">&nbsp;SetOnMotion( callback )</div> 
+		<div class="samp">&nbsp;SetOnPicture( callback )</div>
+		<div class="samp">&nbsp;SetOnFocus( callback )</div>
+    	<div class="samp">&nbsp;GetPixelData( format, left, top, width, height )</div>
+    	<div class="samp">&nbsp;FindFaces( maxFaces )</div>
+		<br>
+		
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

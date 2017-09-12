@@ -1,0 +1,18 @@
+<sample Example>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY" );
+
+<b>	scroll = app.CreateScroller( 1.0, 1.0 );
+	lay.AddChild( scroll );
+
+	layScroll = app.CreateLayout( "Linear", "Left" );
+	scroll.AddChild( layScroll );
+
+	img = app.CreateImage( "/Sys/Img/Hello.png", 2.0, 2.0 );
+	layScroll.AddChild( img );
+</b>
+	app.AddLayout( lay );
+}
+</sample>
+

@@ -1,0 +1,37 @@
+<sample Example>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Talk To Me", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+
+<b>	speech = app.CreateSpeechRec();
+	speech.SetOnReady( speech_OnReady );
+	speech.SetOnResult( speech_OnResult );
+	speech.SetOnError( speech_OnError );
+</b>}
+
+function btn_OnTouch()
+{
+	speech.Recognize();
+}
+
+function speech_OnReady()
+{
+	app.ShowPopup( "Listening...", "Short" );
+}
+
+function speech_OnResult( results )
+{
+	app.ShowPopup( results[0] );
+}
+
+function speech_OnError()
+{
+	app.ShowPopup( "Please speak more clearly!" );
+}
+</sample>

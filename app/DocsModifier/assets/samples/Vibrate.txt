@@ -1,0 +1,6 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.Vibrate( "0,100,30,100,50,300" );
+</b>}</sample>
+

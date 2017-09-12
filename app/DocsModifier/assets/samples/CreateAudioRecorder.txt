@@ -1,0 +1,18 @@
+<sample Example>
+
+function OnStart()  
+{ 
+<b>	rec = app.CreateAudioRecorder();  
+	rec.SetFile( "/sdcard/test.wav" );  
+	rec.Start();  
+</b>	app.ShowPopup("Please speak"); 
+	setTimeout(stopit,5000); 
+}  
+
+function stopit() 
+{  
+	app.ShowPopup("Finished recording"); 
+	rec.Stop();
+}
+</sample>
+

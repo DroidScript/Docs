@@ -1,0 +1,20 @@
+<sample Example>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	skb = app.CreateSeekBar( 0.8 );
+	skb.SetRange( 1.0 );
+	skb.SetValue( 0.5 );
+	skb.SetOnTouch( skb_OnTouch );
+	lay.AddChild( skb );
+
+</b>	app.AddLayout( lay );
+}
+
+function skb_OnTouch( <a href="#pop_num_flt" data-transition="pop" data-rel="popup">value</a> )
+{
+	app.ShowPopup( "Value = " + value );
+}
+</sample>
+

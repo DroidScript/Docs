@@ -1,0 +1,15 @@
+<sample funfact>
+var address = "http://www.randomfunfacts.com";
+
+<b>app.HttpRequest( "GET", address, null, null, handleReply );</b>
+
+function handleReply( error, reply )
+{
+	if( error ) alert( reply );
+	else
+	{
+		var funfact = reply.slice( reply.indexOf("<i>")+3, reply.indexOf("</i>") );
+		alert( funfact );
+	}
+}
+</sample>

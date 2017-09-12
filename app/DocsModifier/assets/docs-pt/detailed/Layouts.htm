@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Layouts</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="../js/energize-min.js"></script>
+		<script src="../js/jquery-1.8.1.min.js"></script>
+		<script src="../../app.js"></script>
+		<script src="../js/example.js"></script>
+		<link rel="stylesheet" href="../css/docs.css" />
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Layouts</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are
+		3 types of layout: <b>"Linear"</b>, <b>"Frame"</b> and <b>"Absolute"</b>. </p>
+
+		<p>Layouts are transparent by default but you can set a background image which
+		can be tiled or stretched to fill the layout.  You can also set a background color or background gradient</p>
+
+		<p>Create layouts using the <b>CreateLayout</b> function of the app object:</p>
+		<div class="samp">lay = app.CreateLayout( type, options );</div>
+
+		<p>Add child objects to a layout using the <b>AddChild</b> function of the layout object</p>
+		<div class="samp">lay.AddChild( object );</div>
+
+		<p>The alignment of chlld objects within a layout can be set by adding the options <b>"Left"</b>, <b>"Right"</b>, <b>"Bottom"</b> and <b>"VCenter"</b>,
+		by default objects will be aligned <b>"Top,Center"</b>.</p>
+
+		<p>Remove layouts using the <b>RemoveLayout</b> function of the app object:</p>
+		<div class="samp">app.RemoveLayout( lay );</div>
+
+		<h3>Linear Layouts</h3>
+		<p>Linear layouts are probably the most useful type and are used to organize controls in either the <b>"Vertical"</b> or <b>"Horizontal"</b>
+		direction on screen.</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Vertical</h3>
+			<div id="examp1" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				<b id="snip1"  style="font-size:105%">
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "Vertical" );<br><br>
+				</b>
+				&#160;&#160;&#160;&#160;btnA = app.CreateButton( "A", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnA );<br><br>
+				&#160;&#160;&#160;&#160;btnB = app.CreateButton( "B", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnB );<br><br>
+				&#160;&#160;&#160;&#160;btnC = app.CreateButton( "C", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnC );<br><br>
+
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;</a>
+			</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Horizontal</h3>
+			<div id="examp2" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				<b id="snip2"  style="font-size:105%">
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );<br><br>
+				</b>
+				&#160;&#160;&#160;&#160;btnA = app.CreateButton( "A", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnA );<br><br>
+				&#160;&#160;&#160;&#160;btnB = app.CreateButton( "B", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnB );<br><br>
+				&#160;&#160;&#160;&#160;btnC = app.CreateButton( "C", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnC );<br><br>
+
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;</a>
+			</div>
+		</div>
+
+		<p>By default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout
+		sizes within it's parent:- <b>"FillX"</b>, <b>"FillY"</b> and <b>"FillXY"</b>.</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Combined</h3>
+			<div id="examp3" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;layVert = app.CreateLayout( "Linear", "Vertical,FillXY" );<br><br>
+
+				&#160;&#160;&#160;&#160;btnA = app.CreateButton( "A", 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;layVert.AddChild( btnA );<br><br>
+				<b id="snip3"  style="font-size:105%">
+				&#160;&#160;&#160;&#160;layHoriz = app.CreateLayout( "Linear", "Horizontal" );<br>
+				</b>
+				&#160;&#160;&#160;&#160;layVert.AddChild( layHoriz );<br><br>
+				&#160;&#160;&#160;&#160;btnB1 = app.CreateButton( "B1", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;layHoriz.AddChild( btnB1 );<br>
+				&#160;&#160;&#160;&#160;btnB2 = app.CreateButton( "B2", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;layHoriz.AddChild( btnB2 );<br>
+				&#160;&#160;&#160;&#160;btnB3 = app.CreateButton( "B3", 0.2, 0.1 );<br>
+				&#160;&#160;&#160;&#160;layHoriz.AddChild( btnB3 );<br><br>
+
+				&#160;&#160;&#160;&#160;btnC = app.CreateButton( "C", 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;layVert.AddChild( btnC );<br><br>
+
+				&#160;&#160;&#160;&#160;app.AddLayout( layVert );<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip3)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp3)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp3)">&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;</a>
+			</div>
+		</div>
+
+		<h3>Frame Layouts</h3>
+		<p>Frame layouts are used to display objects in front or behind each other.  Every time the <b>AddChild</b> function is called on a Frame
+			layout, the child object is placed in a new layer <b>in front</b> of the previously added object at the top left of the frame. </p>
+		<p>Frame Layouts are useful if you wish to do <b>animated Flips</b> or <b>Slides</b> to reveal layers of objects or use <b>transparency</b>.</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example - Image Swap</h3>
+			<div id="examp4" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+				<br>
+				<b id="snip4"  style="font-size:100%">
+				&#160;&#160;&#160;&#160;layFrm = app.CreateLayout( "Frame" );<br>
+				</b>
+				&#160;&#160;&#160;&#160;img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 );<br>
+				&#160;&#160;&#160;&#160;layFrm.AddChild( img1 );<br>
+				<br>
+				&#160;&#160;&#160;&#160;img2 = app.CreateImage( "/Sys/Img/Hello.png", 0.5 );<br>
+				&#160;&#160;&#160;&#160;img2.SetVisibility( "Hide" );<br>
+				&#160;&#160;&#160;&#160;layFrm.AddChild( img2 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( layFrm );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( "Press Me" );<br>
+				&#160;&#160;&#160;&#160;btn.SetMargins( 0,0.1,0,0 );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( btn_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function btn_OnTouch()<br>
+				{<br>
+					&#160;&#160;&#160;&#160;if( img2.GetVisibility()=="Hide" )<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;img2.SetVisibility( "Show" );<br>
+					&#160;&#160;&#160;&#160;else <br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;img2.SetVisibility( "Hide" );<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip4)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp4)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp4)">&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;</a>
+			</div>
+		</div>
+
+		<h3>Absolute Layouts</h3>
+		<p>Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the <b>SetPosition</b> and <b>SetSize</b> functions of
+		each of the child objects.  This type of layout is rarely used and you are encouraged use Linear layouts for most of your programs.</p>
+
+		<h3>Padding and Margins</h3>
+		<p>In Linear and Frame Layouts, you can use the <b>SetPadding</b> function of a layout to keep a layout's child objects away from the edges of the layout:</p>
+		<div class="samp">lay.SetPadding( left, top, right, bottom );</div>
+
+		<p>Also every child object within a layout can have margins added by using the <b>SetMargins</b> function of the child object:</p>
+		<div class="samp">obj.SetMargins( left, top, right, bottom );</div>
+
+		<p>Using Linear layouts and setting margins on child objects is usually the best way to position your App's graphical objects.</p>
+
+		<h3>Backgrounds</h3>
+
+		<p>The background of a layout will be transparent by default, but you can set a color using the <b>SetBackColor</b> function.</p>
+		<div class="samp">lay.SetBackColor( colorCode );</div>
+
+		<p>Colors are given as hex <b>color codes</b> which can be copied from various graphics programs or simply exprimented with until you get the color you
+		want. The format is (#alpha:red:green:blue) where each value can range from 0 to 255 in base 16 which is 00 to ff.</p>
+		<p>For example "#ff00ff00" would be
+		full strength green and "#ff000088" would be around half strength blue and "#44ff00ff" would be semi-transparent full strength purple.</p>
+
+		<p>You can also use a gradient background for a layout using the <b>SetBackGradient</b> and <b>SetBackGradientRadial</b> functions.</p>
+		<div class="samp">lay.SetBackGradient( colorCode1, colorCode2 );</div><br>
+		<div class="samp">lay.SetBackGradientRadial( x, y, radius, colorCode1, colorCode2 );</div>
+		<br>
+
+		<h3>Visibility</h3>
+
+		<p>The visibility of both layouts and child objects can be controlled using the <b>SetVisibility</b> function. Use the
+		values <b>"Show"</b> or <b>"Hide"</b> to make objects invisible or visible and <b>"Gone"</b> to exclude the object from
+		the layout completely (surrounding objects will re-arrange).</p>
+		<div class="samp">obj.SetVisibility( mode );</div><br>
+
+		<p>See '<a href='../app/CreateLayout.htm'>CreateLayout</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

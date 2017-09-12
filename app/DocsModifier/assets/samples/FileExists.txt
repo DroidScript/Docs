@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	exists = app.FileExists( "/sdcard/wftest.txt" );
+</b>	app.ShowPopup( exists );
+}
+</sample>
+

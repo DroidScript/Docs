@@ -1,0 +1,19 @@
+<sample Example>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	spin = app.CreateSpinner( "Bilbo,Frodo,Gandalf", 0.4 );
+	spin.SetOnChange( ShowSelection );
+	spin.SelectItem( "Frodo" );
+	lay.AddChild( spin );
+
+</b>	app.AddLayout( lay );
+}
+
+function ShowSelection( item )
+{
+	app.ShowPopup( "Selected = " + item );
+}
+</sample>
+

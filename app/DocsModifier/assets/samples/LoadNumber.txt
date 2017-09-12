@@ -1,0 +1,9 @@
+<sample Example>
+function OnStart()
+{
+<b>	num = app.LoadNumber( "MyNumber", 42 );
+</b>	app.ShowPopup( num );
+
+	app.SaveNumber( "MyNumber", num+1 );
+}</sample>
+

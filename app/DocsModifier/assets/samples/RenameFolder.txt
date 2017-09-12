@@ -1,0 +1,6 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.RenameFolder( "/sdcard/MyFolder", "/sdcard/YourFolder" );
+</b>}</sample>
+

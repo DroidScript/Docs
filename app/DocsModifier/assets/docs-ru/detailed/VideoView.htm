@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>VideoView</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="../js/energize-min.js"></script>
+		<script src="../js/jquery-1.8.1.min.js"></script>
+		<script src="../../../app.js"></script>
+		<script src="../js/example.js"></script>
+		<link rel="stylesheet" href="../css/docs.css" />
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>VideoView</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p> Create a VideoView using the <b>CreateVideoView</b> function of the <b>app</b> object: </p>
+
+		  <div class="samp">&nbsp;player = app.CreateVideoView( width, height, options );</div>
+
+		<p>This control allows your program to play video files stored locally on the phone/tablet and also stream video from remote sources.</p>
+
+		<p>Use <b>SetFile</b> to set the video file or video stream address.</p>
+
+		  <div class="samp">&nbsp;player.SetFile( "http://www.nasa.gov/multimedia/nasatv/NTV-Public-IPS.m3u8" );</div>
+
+		<p>When the video is ready to play, the <b>OnReady</b> callback function will be called, you can then use <b>Play</b> to start playing the video.</p>
+
+		<p>If the video cannot be played, the <b>OnError</b> callback function will be called. Use <b>SetOnReady</b> and <b>SetOnError</b> to set the names of your OnReady and OnError callback functions.</p>
+
+		<p>See '<a href='../app/CreateVideoView.htm'>CreateVideoView</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

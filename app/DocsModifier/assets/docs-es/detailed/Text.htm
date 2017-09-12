@@ -1,0 +1,162 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Texto</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Texto</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+		<p>Crea objetos de Texto usando el método <b>CreateText</b> de los objetos de la <b>app</b>: </p>
+		
+		<div class="samp">&nbsp;txt = app.CreateText( text, width, height, options );</div>
+		
+<p>Puedes usar la opción <b>"Multiline"</b> para permitir texto en múltiples líneas y las opciones <b>"Left"</b> o <b>"Right"</b> para alinear el texto. El valor predeterminado, es una sola línea de texto centrado.<br>
+
+Las otras opciones que verás utilizados en los ejemplos incluyen <b>AutoScale, Bold, Html</b> y <b>FontAwesome</b></p>
+		
+<p>Usa las funciones <b>SetText</b> y <b>GetText</b> de los objetos de texto para establecer y obtener su texto.</p>
+		
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Línea Simple</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp;txt = app.CreateText( "Hello" );<br>				
+					 &nbsp;&nbsp;txt.SetTextSize( 22 );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+<p>Puedes cambiar el aspecto de un texto usando las funciones <b>SetBackColor</b> y <b>SetTextColor</b> en el objeto texto.</p> 
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Líneas Múltiples</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip2"  style="font-size:100%">
+					 &nbsp;&nbsp;txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  );<br>	
+					 &nbsp;&nbsp;txt.SetTextSize( 12 );<br>
+					 &nbsp;&nbsp;txt.SetTextColor( "#ff6666ff" );<br>	
+					 &nbsp;&nbsp;txt.SetBackColor( "#ffffffff" );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+<p>El texto se puede acortar usando puntos suspensivos (...) cuando el tamaño del control es muy pequeño para mostrar todo el texto. Usa <b>SetEllipsize</b> para controlar donde se van a colocar los puntos suspensivos. Los modos disponibles son <b>"start"</b>, <b>"middle"</b>, <b>"end"</b> y <b>"marq"</b>.</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Ellipses</h3>
+				<div id="examp3" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip3"  style="font-size:100%">
+					 &nbsp;&nbsp;txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 );<br>	
+					 &nbsp;&nbsp;txt.SetTextSize( 28 );<br>
+					 &nbsp;&nbsp;txt.SetEllipsize( "end" );<br>	
+					 &nbsp;&nbsp;lay.AddChild( txt );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip3)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp3)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp3)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+<p>You can also set a background image/pattern or background gradient for the Text using the <b>SetBackground</b> and <b>SetBackGradient</b> functions.
+		See <a href="Layouts.htm">Layouts</a> for examples of how to use these functions.</p>
+		
+		<br>
+		<p>The following methods are available on the Text object:</p>
+	
+		<div class="samp">&nbsp;SetVisibility( visibility )</div>   
+		<div class="samp">&nbsp;GetVisibility()</div>  
+		<div class="samp">&nbsp;SetPadding( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetMargins( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetBackground( imageFile, options )</div>
+		<div class="samp">&nbsp;SetBackColor( colorCode )</div>
+		<div class="samp">&nbsp;SetBackGradient( color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetBackGradientRadial( x, y, r, color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetPosition( left, top, width, height )</div>
+		<div class="samp">&nbsp;SetSize( width, height )</div>
+		<div class="samp">&nbsp;GetWidth()</div>
+		<div class="samp">&nbsp;GetHeight()</div> 
+		
+		<div class="samp">&nbsp;SetText( text )</div>  
+		<div class="samp">&nbsp;SetHtml( html )</div>
+		<div class="samp">&nbsp;GetText()</div> 
+		<div class="samp">&nbsp;SetTextColor( colorCode )</div>   
+		<div class="samp">&nbsp;SetTextSize( size )</div>
+		<div class="samp">&nbsp;GetTextSize( mode )</div>
+		<div class="samp">&nbsp;GetLineCount()</div>
+		<div class="samp">&nbsp;GetMaxLines()</div>
+		<div class="samp">&nbsp;GetLineTop( lineNum )</div>
+		<div class="samp">&nbsp;GetLineStart( lineNum )</div>
+		<div class="samp">&nbsp;SetFontFile( file )</div>
+        <div class="samp">&nbsp;SetEllipsize( mode )</div>
+    	<div class="samp">&nbsp;SetTextShadow( radius, dx, dy, color )</div>
+		<div class="samp">&nbsp;SetOnTouch( callback )</div>
+		<div class="samp">&nbsp;SetOnTouchUp( callback )</div> 
+		<div class="samp">&nbsp;SetOnTouchMove( callback )</div> 
+		<div class="samp">&nbsp;SetOnTouchDown( callback )</div> 
+		<div class="samp">&nbsp;SetOnLongTouch( callback )</div>   
+		<div class="samp">&nbsp;SetTouchable( touchable )</div>
+		
+		<div class="samp">&nbsp;Focus()</div> 
+		<div class="samp">&nbsp;GetAbsWidth()</div>
+		<div class="samp">&nbsp;GetAbsHeight()</div> 		
+		<div class="samp">&nbsp;GetPosition()</div>
+		<div class="samp">&nbsp;GetType()</div> 
+		<div class="samp">&nbsp;SetScale( width, height )</div>
+		<br>
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<sample Example>
+function OnStart()
+{
+<b>	fldr = app.GetPrivateFolder( "MyStuff" );
+</b>	app.ShowPopup( fldr );
+}</sample>
+

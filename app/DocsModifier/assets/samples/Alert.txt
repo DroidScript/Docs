@@ -1,0 +1,12 @@
+<sample No Title>
+function OnStart()
+{
+<b>	app.Alert( "Hello World!" );
+</b>}</sample>
+
+<sample Title>
+function OnStart()
+{
+<b>	app.Alert( "Hello World!", "Message" );
+</b>}
+</sample>

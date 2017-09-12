@@ -1,0 +1,12 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.SetOrientation( "Landscape" );
+
+</b>	lay = app.CreateLayout( "Linear", "Vertical" );
+	txt = app.CreateText( "Hello" );
+	txt.SetTextSize( 32 );
+	lay.AddChild( txt );
+	app.AddLayout( lay );
+}</sample>
+

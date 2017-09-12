@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sensors</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="js/energize-min.js"></script>
+	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+
+	<script src="../../app.js"></script>
+	<script src="js/example.js"></script>
+	<link rel="stylesheet" href="css/docs.css" />
+	<script src="../app.js"></script>
+	<script src="js/common.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Sensors</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p> Create Sensor objects using the <b>CreateSensor</b> function of the <b>app</b> object: </p>
+
+		<div class="samp">&nbsp;sns = app.CreateSensor( <a href="#pop_str" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_str_arr" data-transition="pop" data-rel="popup">options</a> );</div>
+
+		<p>Types available are: <b>"Accelerometer"</b>, <b>"MagneticField"</b>, <b>"Orientation"</b>, <b>"Light"</b> and <b>"Proximity"</b>.</p>
+
+		<p>You can use the <b>SetOnChange</b> function of the Sensor to set the name of a function you want to be called when
+		a the changes occur.</p>
+
+		<p>Change the rate that a sensor checks for changes by adding one the options <b>"Fastest"</b>, <b>"Fast"</b>,
+		<b>"Medium"</b> or <b>"Slow"</b>.  "Slow" is the default.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Accelerometer</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 &nbsp;&nbsp;txt = app.CreateText( "", 0.8, 0.3, "Multiline" );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp;sns = app.CreateSensor( "Accelerometer" );<br>
+					 &nbsp;&nbsp;sns.SetOnChange( sns_OnChange );<br>
+					 &nbsp;&nbsp;sns.Start();<br><br>
+					 </b>
+					}<br>
+					<br>
+					function sns_OnChange( <a href="#pop_num_ord" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_ord" data-transition="pop" data-rel="popup">y</a>, z, time )<br>
+					{<br>
+					 &nbsp;&nbsp;txt.SetText( "x="+x + "\n y="+y + "\n z="+z );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Orientation</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 &nbsp;&nbsp;txt = app.CreateText( "", 0.8, 0.3, "Multiline" );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br><br>
+					 <b id="snip2"  style="font-size:100%">
+					 &nbsp;&nbsp;sns = app.CreateSensor( "Orientation" );<br>
+					 &nbsp;&nbsp;sns.SetOnChange( sns_OnChange );<br>
+					 &nbsp;&nbsp;sns.Start();<br><br>
+					 </b>
+					}<br>
+					<br>
+					function sns_OnChange( azimuth, pitch, roll, time )<br>
+					{<br>
+					 &nbsp;&nbsp;var msg = " azimuth = " + azimuth.toFixed(1);<br>
+					 &nbsp;&nbsp;msg += "\n pitch = " + pitch.toFixed(1);<br>
+					 &nbsp;&nbsp;msg += "\n roll = " + roll.toFixed(1);<br>
+					 &nbsp;&nbsp;txt.SetText( msg );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Light</h3>
+				<div id="examp3" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 &nbsp;&nbsp;txt = app.CreateText( "", 0.8, 0.3 );<br>
+					 &nbsp;&nbsp;lay.AddChild( txt );<br>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br><br>
+					 <b id="snip3"  style="font-size:100%">
+					 &nbsp;&nbsp;sns = app.CreateSensor( "Light" );<br>
+					 &nbsp;&nbsp;sns.SetOnChange( sns_OnChange );<br>
+					 &nbsp;&nbsp;sns.Start();<br><br>
+					 </b>
+					}<br>
+					<br>
+					function sns_OnChange( lux )<br>
+					{<br>
+					 &nbsp;&nbsp;txt.SetText( "level = " + lux + " lux" );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip3)">&nbsp;&nbsp;Copy&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp3)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp3)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+
+
+	</div><!-- /content -->
+
+<div data-role="popup" id="pop_num" class="ui-content"><b>number</b></div>
+<div data-role="popup" id="pop_num_ord" class="ui-content"><b>number</b> - fraction of object size</div>
+<div data-role="popup" id="pop_str" class="ui-content"><b>string</b></div>
+<div data-role="popup" id="pop_str_arr" class="ui-content"><b>string</b> - comma separated</div>
+</div><!-- /page -->
+
+</body>
+</html>

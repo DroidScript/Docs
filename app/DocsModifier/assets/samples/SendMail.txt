@@ -1,0 +1,7 @@
+<sample Example>
+function OnStart()
+{
+<b>	 var file = "/sdcard/MyPic.jpg";
+	 app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", file );
+</b>}</sample>
+
