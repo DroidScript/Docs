@@ -1,0 +1,38 @@
+<sample Show camera preview>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	cam = app.CreateCameraView( 0.8, 0.4 );
+	lay.AddChild( cam );
+	setTimeout( "cam.StartPreview()", 1000 );
+
+</b>	app.AddLayout( lay );
+}
+
+</sample>
+
+<sample Take pictures>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	cam = app.CreateCameraView( 0.8, 0.4 );
+	lay.AddChild( cam );
+	cam.SetPictureSize( 1024, 768 );
+	setTimeout( "cam.StartPreview()", 1000 );
+
+</b>	btn = app.CreateButton( "Snap", 0.3, -1 );
+	btn.SetOnTouch( Snap );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function Snap()
+{
+	cam.TakePicture( "/sdcard/MyPic.jpg" );
+	app.ShowPopup("Picture saved");
+}
+</sample>
+

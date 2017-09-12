@@ -1,0 +1,43 @@
+<sample Example>
+function OnStart()
+{
+<b>	player = app.CreateMediaPlayer();
+	player.SetOnReady( player_OnReady );
+	player.SetFile( "/Sys/Snd/Trill.ogg" );
+</b>}
+
+function player_OnReady()
+{
+	app.ShowPopup( "OnReady" );
+	player.Play();
+}
+</sample>
+
+<sample OnComplete>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+
+	btn = app.CreateButton( "Play", 0.4, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+
+<b>	player = app.CreateMediaPlayer();
+	player.SetOnComplete( player_OnComplete );
+	player.SetFile( "/Sys/Snd/Poing.ogg" );
+</b>}
+
+function btn_OnTouch()
+{
+	player.SeekTo( 0 );
+	player.Play();
+}
+
+function player_OnComplete()
+{
+	app.ShowPopup( "OnComplete" );
+}
+</sample>
+

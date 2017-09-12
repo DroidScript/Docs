@@ -1,0 +1,57 @@
+<sample Remote>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+<b>	 web = app.CreateWebView( 0.8, 0.8 );
+	 web.SetOnProgress( web_OnProgess );
+	 lay.AddChild( web );
+</b>
+	 app.AddLayout( lay );
+
+	 app.ShowProgress("Loading...");
+	 web.LoadUrl( "http:///www.google.com" );
+}
+
+function web_OnProgess( progress )
+{
+	 app.Debug( "progress = " + progress );
+	 if( progress==100 ) app.HideProgress();
+}
+</sample>
+
+<sample Local>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+<b>	 web = app.CreateWebView( 0.8, 0.8 );
+	 web.SetBackColor( "#00000000" );
+	 lay.AddChild( web );
+</b>
+	 app.AddLayout( lay );
+
+	 web.LoadUrl( "file:///Sys/Html/Page.htm" );
+}
+</sample>
+
+<sample Direct>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+<b>	 web = app.CreateWebView( 0.8, 0.8 );
+	 web.SetBackColor( "#00000000" );
+	 lay.AddChild( web );
+</b>
+	 app.AddLayout( lay );
+
+	 var html = "<<!-- -->html><<!-- -->head>";
+	 html += "<<!-- -->meta name='viewport' content='width=device-width'>";
+	 html += "<<!-- -->/head><<!-- -->body>Hello World!<<!-- -->br>";
+	 html += "<<!-- -->img src='Img/Droid2.png'>";
+	 html += "<<!-- -->/body><<!-- -->/html>";
+	 web.LoadHtml( <a href="#pop_str_htm" data-transition="pop" data-rel="popup">html</a>, "file:///Sys/" );
+}
+</sample>
+

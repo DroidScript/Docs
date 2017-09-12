@@ -1,0 +1,11 @@
+<sample Example>
+function OnStart()
+{
+	name = app.LoadText( "MyName", "Bill" );
+	app.ShowPopup( name );
+
+	if( name=="Bill" ) name = "Fred";
+	else name = "Bill";
+<b>	app.SaveText( "MyName", name );
+</b>}</sample>
+

@@ -1,0 +1,9 @@
+<sample Example>
+function OnStart()
+{
+<b>	b = app.LoadBoolean( "MyBool", true );
+</b>	app.ShowPopup( b );
+
+	app.SaveBoolean( "MyBool", !b );
+}</sample>
+

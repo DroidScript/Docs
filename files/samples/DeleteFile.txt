@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+	app.WriteFile( "/sdcard/wftest.txt", "Hello" );
+<b>	app.DeleteFile( "/sdcard/wftest.txt" );
+</b>}
+</sample>
+

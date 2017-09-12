@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	path = app.GetAppPath();
+</b>	app.ShowPopup( path );
+}
+</sample>
+

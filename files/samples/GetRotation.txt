@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	rot = app.GetRotation();
+</b>	app.ShowPopup( rot );
+}
+</sample>
+

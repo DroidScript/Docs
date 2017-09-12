@@ -1,0 +1,9 @@
+<sample Example>
+function OnStart()
+{
+<b>	var text = app.GetClipboardText();
+</b>	app.ShowPopup( text );
+}
+
+</sample>
+

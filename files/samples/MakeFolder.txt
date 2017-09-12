@@ -1,0 +1,6 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.MakeFolder( "/sdcard/Temp/MyStuff" );
+</b>}</sample>
+

@@ -1,0 +1,16 @@
+<sample Example>
+function OnStart()
+{
+<b>	loc = app.CreateLocator("GPS,Network");
+	loc.SetOnChange(loc_OnChange);
+	loc.Start();
+	app.ShowPopup("Locating");
+</b>}
+
+function loc_OnChange(pos)
+{
+	var msg = pos.latitude + ", " + pos.longitude;
+	app.ShowPopup( msg );
+}
+</sample>
+

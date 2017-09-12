@@ -1,0 +1,142 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Reproductor de Música</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+		<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="../js/energize-min.js"></script>
+		<script src="../js/jquery-1.8.1.min.js"></script>
+		<script src="../../../app.js"></script>
+		<script src="../js/example.js"></script>
+		<link rel="stylesheet" href="../css/docs.css" />
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+		
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Reproductor de Música</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+<p>El objeto <b>MediaPlayer</b> (Reproductor de Música) puede ser usado para reproducir un archivo de sonido del celular o tableta.</p>
+
+<p>Crea un objeto MediaPlayer usando el método <b>CreateMediaPlayer</b> de los objetos de la <b>app</b>:
+
+		<div class="samp">&nbsp;player = app.CreateMediaPlayer();</div>
+
+<p>Usa el método <b>SetFile</b> (establecer archivo) del objeto de MediaPlayer para establecer el archivo de sonido a reproducir. Los tipos de sonidos soportados incluyen .ogg y .mp3.</p>
+
+		<div class="samp">&nbsp;player.SetFile( "/Sys/Snd/Poing.ogg" );</div>
+
+<p>Para reproducir un archivo de sonido a partir de su aplicación de sonido activos, el nombre del archivo pasa al método SetFile que debe empezar con <b>"Snd/"</b>. Por ejemplo:</p>
+
+		<div class="samp">&nbsp;player.SetFile( "Snd/MyAppSound.mp3" );</div>
+
+<p>Cuando el archivo de sonido está listo para reproducir, la función callback <b>OnReady</b> (Listo) será llamada. Usa el método <b>SetOnReady</b> para establecer el nombre de tu función callback OnReady.</p>
+	
+		<div data-role="collapsible" data-collapsed="false"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Ejemplo</h3>
+			<div id="examp1" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				<b id="snip1"  style="font-size:100%">
+				&nbsp;&nbsp;player = app.CreateMediaPlayer();<br>
+				&nbsp;&nbsp;player.SetOnReady( player_OnReady );<br>
+				&nbsp;&nbsp;player.SetFile( "/Sys/Snd/Trill.ogg" );<br>
+				</b>
+				}<br>
+				<br>
+				function player_OnReady()<br>
+				{<br>
+				&nbsp;&nbsp;app.ShowPopup( "OnReady" );<br>
+				&nbsp;&nbsp;player.Play();<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+			</div>
+		</div>
+
+<p>El método <b>SeekTo</b> puede ser usado para ajustar la posición del reproductor en el tiempo en segundos. Pasando en <b>0</b> estableceremos la posición del reproductor en el principio del archivo de sonido.</p>
+		
+		<div class="samp">&nbsp;player.SeekTo( 0 );</div>
+
+<p>Cuando el archivo de sonido ha terminado de reproducir, la función callback <b>OnComplete</b> (Completado) será llamado. Usa el método <b>SetOnComplete</b> para establecer el nombre de tu función callback OnComplete.</p>
+
+		<div data-role="collapsible" data-collapsed="false" data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Ejemplo - OnComplete</h3>
+			<div id="examp2" style="font-size:70%">
+				function OnStart()<br>
+				{<br>
+				&nbsp;&nbsp;lay = app.CreateLayout( "Linear", "FillXY,VCenter" );<br>
+				<br>	
+				&nbsp;&nbsp;btn = app.CreateButton( "Play", 0.4, 0.1 );<br>
+				&nbsp;&nbsp;btn.SetOnTouch( btn_OnTouch );<br>
+				&nbsp;&nbsp;lay.AddChild( btn );<br>
+				<br>
+				&nbsp;&nbsp;app.AddLayout( lay );<br>
+				<br>
+				<b id="snip1"  style="font-size:100%">
+				&nbsp;&nbsp;player = app.CreateMediaPlayer();<br>
+				&nbsp;&nbsp;player.SetOnComplete( player_OnComplete );<br>
+				&nbsp;&nbsp;player.SetFile( "/Sys/Snd/Poing.ogg" );<br>
+				</b>
+				}<br>
+				<br>
+				function btn_OnTouch()<br>
+				{<br>
+				&nbsp;&nbsp;player.SeekTo( 0 );<br>
+				&nbsp;&nbsp;player.Play();<br>
+				}<br>
+				<br>
+				function player_OnComplete()<br>
+				{<br>
+				&nbsp;&nbsp;app.ShowPopup( "OnComplete" );<br>
+				}<br>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+			</div>
+		</div>
+
+		<p>Los siguientes métodos están disponibles en el objeto MediaPlayer:</p>
+
+		<div class="samp">&nbsp;SetFile( fileName )</div>
+	    <div class="samp">&nbsp;SetLooping( loop )</div>
+	    <div class="samp">&nbsp;Close() </div>
+	    <div class="samp">&nbsp;Play() </div>
+	    <div class="samp">&nbsp;Pause() </div>
+	    <div class="samp">&nbsp;Stop() </div>
+	    <div class="samp">&nbsp;IsReady() </div>
+		<div class="samp">&nbsp;IsPlaying() </div>
+	    <div class="samp">&nbsp;IsLooping() </div>
+	    <div class="samp">&nbsp;SeekTo( seconds ) </div>
+	    <div class="samp">&nbsp;GetPosition() </div>
+	    <div class="samp">&nbsp;GetDuration() </div>
+	    <div class="samp">&nbsp;SetVolume( left, right ) </div>
+	    <div class="samp">&nbsp;SetOnReady( callback ) </div>
+	    <div class="samp">&nbsp;SetOnComplete( callback ) </div>
+	    <div class="samp">&nbsp;SetOnSeekDone( callback ) </div>
+
+	    </p>
+	
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

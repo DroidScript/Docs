@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	screenOn = app.IsScreenOn();
+</b>	app.ShowPopup( screenOn );
+}
+</sample>
+

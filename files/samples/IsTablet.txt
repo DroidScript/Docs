@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	tablet = app.IsTablet();
+</b>	app.ShowPopup( tablet );
+}
+</sample>
+

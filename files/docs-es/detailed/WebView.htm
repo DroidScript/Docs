@@ -1,0 +1,171 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Ver Páginas Web</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Ver Páginas Web</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+<p>Puedes crear un control para mostrar paginas webs locales o remotas en tu aplicación usando el método <b>CreateWebView</b> de los objetos de la <b>app</b>: </p>
+		
+		<div class="samp">&nbsp;web = app.CreateWebView( width, height );</div>
+		  
+		<p>Si estas cargando páginas webs remotas, tal vez desee utilizar el método <b>SetOnProgress</b> para configurar el nombre de la función callback que desea llamar reportando el progreso de la carga de la página. </p>
+			 
+		<p>Puedes usar el método <b>LoadUrl</b> para cargar una página web interna o externa, o el método <b>LoadHtml</b> para cargar texto directamente dentro de la aplicación.</p>
+		
+		<div class="samp">&nbsp;web.LoadUrl( url, options );</div>
+		<div class="samp">&nbsp;web.LoadHtml( html, baseFolder, options );</div>
+
+		<p>Las opciones soportadas para LoadUrl y LoadHtml son: <b>"allowzoom"</b> (soporte de gestos de zoom), <b>"autozoom"</b> (el zoom se aleja hacia afuera para ajustar el contenido de la webview al ancho de la pantalla), <b>"wide"</b> (soporte a la ventana gráfica metaetiqueta, una gran ventana gráfica se utiliza si la ventana gráfica metaetiqueta falta) y <b>"nolongtouch"</b> (el Webview no reacciona con mantener presionada la pantalla).</p>
+		
+<p>Nota: Usar el WebView puede ser una buena manera de mostrar areas con texto formateado o colorido en tu aplicación. Si estableces el BackColor a un color transparente, puedes mostrar textos formateados con imagenes de fondo.</p>
+		
+<p>Si también lo deseas, puedes usar el método <b>Execute</b> para ejecutar código JavaScript dentro de la WebView.</p>
+		
+		<div class="samp">&nbsp;web.Execute( text );</div><br>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Remoto</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br><br>
+					 
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp; web = app.CreateWebView( 0.8, 0.8 );<br>
+					 &nbsp;&nbsp; web.SetOnProgress( web_OnProgess );<br>
+					 &nbsp;&nbsp; lay.AddChild( web );<br>
+					 </b><br>
+					 &nbsp;&nbsp; app.AddLayout( lay );<br><br>
+					 
+					 &nbsp;&nbsp; app.ShowProgress("Cargando...");<br>
+					 &nbsp;&nbsp; web.LoadUrl( "http:///www.youtube.com/c/Theandroidhackpro" );<br>
+					}<br>
+					<br>
+					
+					function web_OnProgess( progress )<br>
+					{<br>
+					&nbsp;&nbsp; app.Debug( "progress = " + progress );<br>
+					&nbsp;&nbsp; if( progress==100 ) app.HideProgress();<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Local</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br><br>
+					 
+					 <b id="snip2"  style="font-size:100%">
+					 &nbsp;&nbsp; web = app.CreateWebView( 0.8, 0.8 );<br>
+					 &nbsp;&nbsp; web.SetBackColor( "#00000000" );<br>
+					 &nbsp;&nbsp; lay.AddChild( web );<br>
+					 </b><br>
+					 &nbsp;&nbsp; app.AddLayout( lay );<br><br>
+					 
+					 &nbsp;&nbsp; web.LoadUrl( "file:///Sys/Html/Page.htm" );<br>
+					}<br>
+					<br>
+				
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo - Directo</h3>
+				<div id="examp3" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br><br>
+					 
+					 <b id="snip3"  style="font-size:100%">
+					 &nbsp;&nbsp; web = app.CreateWebView( 0.8, 0.8 );<br>
+					 &nbsp;&nbsp; web.SetBackColor( "#00000000" );<br>
+					 &nbsp;&nbsp; lay.AddChild( web );<br>
+					 </b><br>
+					 &nbsp;&nbsp; app.AddLayout( lay );<br><br>
+					 
+					 &nbsp;&nbsp; var html = "<<!-- -->html><<!-- -->head>";<br>
+					 &nbsp;&nbsp; html += "<<!-- -->meta name='viewport' content='width=device-width'>";<br>
+					 &nbsp;&nbsp; html += "<<!-- -->/head><<!-- -->body>Hola Mundo!<<!-- -->br>";<br>
+					 &nbsp;&nbsp; html += "<<!-- -->img src='Img/Droid2.png'>";<br>
+					 &nbsp;&nbsp; html += "<<!-- -->/body><<!-- -->/html>";<br>
+					 &nbsp;&nbsp; web.LoadHtml( html, "file:///Sys/" );<br>
+					}<br>
+					<br>
+				
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip3)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp3)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp3)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		<br>
+		 
+		 <p>Los siguientes métodos están disponibles en los objetos del WebView:</p>
+		
+		<div class="samp">&nbsp;SetVisibility( visibility )</div>   
+		<div class="samp">&nbsp;GetVisibility()</div>  
+		<div class="samp">&nbsp;SetPadding( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetMargins( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetBackground( imageFile, options )</div>
+		<div class="samp">&nbsp;SetBackColor( colorCode )</div>
+		<div class="samp">&nbsp;SetBackGradient( color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetBackGradientRadial( x, y, r, color1, color2, color3 )</div>
+		<div class="samp">&nbsp;SetPosition( left, top, width, height )</div>
+		<div class="samp">&nbsp;SetSize( width, height )</div>
+		<div class="samp">&nbsp;GetWidth()</div>
+		<div class="samp">&nbsp;GetHeight()</div> 
+		
+		<div class="samp">&nbsp;SetOnProgress( callback )</div>
+		<div class="samp">&nbsp;LoadHtml( html, baseFolder, options )</div>
+		<div class="samp">&nbsp;LoadUrl( url, options )</div>
+		<div class="samp">&nbsp;Back()</div>
+		<div class="samp">&nbsp;Forward()</div>
+		<div class="samp">&nbsp;CanGoBack()</div>
+    	<div class="samp">&nbsp;CanGoForward()</div>
+		<div class="samp">&nbsp;Execute( text )</div>
+
+		<br>
+		
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

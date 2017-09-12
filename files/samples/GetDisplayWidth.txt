@@ -1,0 +1,8 @@
+<sample Example>
+function OnStart()
+{
+<b>	width = app.GetDisplayWidth();
+</b>	app.ShowPopup( width );
+}
+</sample>
+

@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Buttons</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="../js/energize-min.js"></script>
+		<script src="../js/jquery-1.8.1.min.js"></script>
+		<script src="../../../app.js"></script>
+		<script src="../js/example.js"></script>
+		<link rel="stylesheet" href="../css/docs.css" />
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+        <style type="text/css">
+        </style>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Buttons</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p> Create buttons using the <b>CreateButton</b> method of the <b>app</b> object: </p>
+
+		  <div class="samp">&nbsp;btn = app.CreateButton( text, width, height, options );</div>
+
+		<p> You can allow the button to auto-size by leaving out the dimensions or you can specify a <b>width</b> and <b>height</b> as decimal
+		fractions.  Setting the width and height to -1 whilst using the <b>'FillX'</b> option will allow it to fill the layout width. </p>
+
+		<p> Use the <b>SetOnTouch</b> method of your button object to set the name of a function you want to be called when the button is touched. </p>
+		<p> Various button <b>styles</b> can be set by including a style name in the options parameter</p>
+
+			<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Default Size</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					&#160;&#160;&#160;&#160;btn = app.CreateButton( "Press Me" );<br>
+					&#160;&#160;&#160;&#160;btn.SetOnTouch( SayHello );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( btn );<br><br>
+					 </b>
+					&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+					function SayHello()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.ShowPopup("Hello World!");<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+				</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Fixed size</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip2"  style="font-size:100%">
+					&#160;&#160;&#160;&#160;btn = app.CreateButton( "Press Me", 0.5, 0.2 );<br>
+					&#160;&#160;&#160;&#160;btn.SetOnTouch( SayHello );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( btn );<br><br>
+					 </b>
+					&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+					function SayHello()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.ShowPopup("Hello World!");<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip2)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp2)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+				</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Fill layout width</h3>
+				<div id="examp3" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br>
+					&#160;&#160;&#160;&#160;lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );<br><br>
+					 <b id="snip3"  style="font-size:100%">
+					&#160;&#160;&#160;&#160;btn = app.CreateButton( "Press Me", -1, -1, "FillX" );<br>
+					&#160;&#160;&#160;&#160;btn.SetOnTouch( SayHello );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( btn );<br><br>
+					 </b>
+					&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+					function SayHello()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.ShowPopup("Hello World!");<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip3)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp3)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp3)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+				</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example - Change style</h3>
+				<div id="examp4" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;lay = app.CreateLayout( "Linear", "Vertical,FillXY" );<br>
+					&#160;&#160;&#160;&#160;lay.SetPadding( 0.1, 0.1, 0.1, 0 );<br><br>
+					 <b id="snip4"  style="font-size:100%">
+					&#160;&#160;&#160;&#160;b1 = app.CreateButton( "Normal", -1, -1, "FillX" );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( b1 );<br><br>
+					&#160;&#160;&#160;&#160;b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( b2 );<br><br>
+					&#160;&#160;&#160;&#160;b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" );<br>
+					&#160;&#160;&#160;&#160;lay.AddChild( b3 );<br><br>
+					 </b>
+					&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip4)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp4)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp4)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+				</div>
+		</div>
+
+		<br>
+
+		<p>See '<a href='../app/CreateButton.htm'>CreateButton</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

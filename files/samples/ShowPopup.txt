@@ -1,0 +1,14 @@
+<sample Top>
+function OnStart()
+{
+<b>	app.ShowPopup( "Hello World!" );
+</b>}
+</sample>
+
+<sample Bottom>
+function OnStart()
+{
+<b>	app.ShowPopup( "Hello World!", "Bottom,Short" );
+</b>}
+</sample>
+

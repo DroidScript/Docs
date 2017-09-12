@@ -1,0 +1,7 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.DeleteFolder( "/sdcard/Temp" );
+</b>}
+</sample>
+

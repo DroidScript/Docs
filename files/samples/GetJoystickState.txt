@@ -1,0 +1,25 @@
+<sample Example>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+	txt = app.CreateText( "", 1.0, -1, "MultiLine" );
+	lay.AddChild( txt );
+
+	app.AddLayout( lay );
+
+	setInterval( ShowState, 200 );
+}
+
+function ShowState()
+{
+<b>	var abtn = app.GetJoystickState( 0, "A" );
+	var bbtn = app.GetJoystickState( 0, "B" );
+	var xaxis = app.GetJoystickState( 0, "axis-0" );
+	var yaxis = app.GetJoystickState( 0, "axis-1" );
+</b>
+	msg = "A:" + abtn + " B:" + bbtn + "\n";
+	msg += " X-Axis:" + xaxis.toFixed(2) + " Y-Axis:" + yaxis.toFixed(2);
+	txt.SetText( msg );
+}</sample>
+

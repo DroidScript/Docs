@@ -1,0 +1,94 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Botones Palanca</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="js/energize-min.js"></script>
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="../../app.js"></script>
+		<script src="js/example.js"></script>
+		<link rel="stylesheet" href="css/docs.css" />
+		<script src="js/common.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a> <h1>Botones Palanca</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+<p>Crea botones palanca usando el método <b>CreateToggle</b> en el objeto de la <b>app</b>: </p>
+		
+		  <div class="samp">&nbsp;btn = app.CreateToggle( text, width, height, options );</div>
+		  
+<p>Puedes permitir que los botones palanca se ajusten automáticamente dejando las dimensiones o puedes especificar el <b>ancho</b> y el <b>alto</b> como fracciones decimales del ancho y el alto de la pantalla.</p>
+		
+<p>Usa el método <b>SetOnTouch</b> del objeto de tu botón para establecer el nombre de la función que quieres que sea llamada cuando el botón sea tocado.</p>
+
+<p>Puedes obtener el estado del botón palanca en cualquier momento usando el método <b>GetChecked</b> del botón. El estado de tu botón puede ser pasado por la función callback OnTouch como un parámetro cada vez que el botón sea tocado.</p>
+		
+			<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Ejemplo</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					 &nbsp;&nbsp;lay = app.CreateLayout( "Linear", "VCenter,FillXY" );<br><br>
+					 <b id="snip1"  style="font-size:100%">
+					 &nbsp;&nbsp;btn = app.CreateToggle( "Altérname" );<br>				
+					 &nbsp;&nbsp;btn.SetOnTouch( ShowState );<br>
+					 &nbsp;&nbsp;lay.AddChild( btn );<br><br>
+					 </b>
+					 &nbsp;&nbsp;app.AddLayout( lay );<br>
+					}<br>
+					<br>
+					function ShowState( isChecked )<br>
+					{<br>
+					 &nbsp;&nbsp;app.ShowPopup( "Marcado = " + isChecked, "Short" );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+				</div>
+		</div>
+		
+		<br>
+<p>Los siguientes métodos están disponibles en los objetos de la palanca:</p>
+	
+		<div class="samp">&nbsp;SetVisibility( visibility )</div>   
+		<div class="samp">&nbsp;GetVisibility()</div>  
+		<div class="samp">&nbsp;SetPadding( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetMargins( left, top, right, bottom )</div>
+		<div class="samp">&nbsp;SetPosition( left, top, width, height )</div>
+		<div class="samp">&nbsp;SetSize( width, height )</div>
+		<div class="samp">&nbsp;GetWidth()</div>
+		<div class="samp">&nbsp;GetHeight()</div> 
+		
+		<div class="samp">&nbsp;SetOnTouch( callback )</div> 
+		<div class="samp">&nbsp;SetText( text )</div>   
+		<div class="samp">&nbsp;GetText()</div> 
+		<div class="samp">&nbsp;SetTextColor( colorCode )</div> 
+		<div class="samp">&nbsp;SetTextSize( size )</div>
+		<div class="samp">&nbsp;GetTextSize( mode )</div> 
+		<div class="samp">&nbsp;SetChecked( checked )</div> 
+		<div class="samp">&nbsp;GetChecked()</div>  
+		<br>
+		
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

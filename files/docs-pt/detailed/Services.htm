@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a>
+ <h1>Services</h1>
+</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p>Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.</p>
+
+		<p>DroidScript Services run in a separate process and can take advantage of multi-CPU devices, this allows CPU intensive calculations or slow procedures to
+			be done in the background without slowing down or interfering with the main application.</p>
+
+		<p>Any file in your project with the filename <em>Service.js</em> will run as a hidden background service.</p>
+
+		<p>A service can be created and started using the <b>CreateService</b> method of the <b>app</b> object in your main application file:</p>
+
+		<div class="samp">&nbsp;svc = app.CreateService( packageName, className, callback );</div>
+
+		<p>Use "this" for the <em>packageName</em> and <em>className</em> parameters.</p>
+
+		<p>Your service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least
+		one time by the user.</P>
+
+		<p>You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method on the main <b>app</b> object.</p>
+
+		<div class="samp">&nbsp;app.SetAutoBoot( "Service" );</div>
+
+		<p>Stop a service using the <b>Stop</b> method.</p>
+
+		<div class="samp">&nbsp;scv.Stop();</div>
+
+		<p>Messages can be sent from your app to the service using the <b>SendMessage</b> method on the service object:</p>
+
+		<div class="samp">&nbsp;scv.SendMessage( msg );</div>
+
+		<p>You will need to provide a message handler to receive and process the messages (see example below).</p>
+
+		<p>Send messages from the service to the main app by using the <em>SendMessage</em> method of the app object:</p>
+
+		<div class="samp">&nbsp;app.SendMessage( msg );</div>
+
+		<p>This will also need a message handler on the application (see example below).</p>
+
+		<p>Adding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also
+		see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.</p>
+
+		<!-- Start of example BackgroundService.js -->
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Background Service.js</h3>
+			<div id="examp1" style="font-size:70%">
+				<br>
+				&nbsp;&nbsp;function OnStart()<br>
+				&nbsp;&nbsp;{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Create a layout.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Create text control to display data from the service.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;txt = app.CreateText( "", 0.4 );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;txt.SetMargins( 0, 0.05, 0, 0 );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;txt.SetTextSize( 22 );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;lay.AddChild( txt );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Create an 'Send Message' button.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;btn = app.CreateButton( "Send Message to Service", 0.6, 0.1 );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;lay.AddChild( btn );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;btn.SetOnTouch( function(){svc.SendMessage("change")} );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Create a 'Stop Service' button.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;btn = app.CreateButton( "Stop Service", 0.6, 0.1 );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;lay.AddChild( btn );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;btn.SetOnTouch( function(){svc.Stop()} );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Add layout to app.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;app.AddLayout( lay );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;Start/connect to our service.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;svc = app.CreateService( "this","this", OnServiceReady );<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;svc.SetOnMessage( OnServiceMessage );<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;This will cause your service to start at boot.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;(Set it to "none" if you need to stop it starting)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&#47;&#47;app.SetAutoBoot( "Service" );<br>
+				&nbsp;&nbsp;}<br>
+				<br>
+				&nbsp;&nbsp;&#47;&#47;Called after our service has started.<br>
+				&nbsp;&nbsp;function OnServiceReady()<br>
+				&nbsp;&nbsp;{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;console.log( "Service Ready" );<br>
+				&nbsp;&nbsp;}<br>
+				<br>
+				&nbsp;&nbsp;&#47;&#47;Called when messages comes from our service.<br>
+				&nbsp;&nbsp;function OnServiceMessage( msg )<br>
+				&nbsp;&nbsp;{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;txt.SetText( "Count: " + msg );<br>
+				&nbsp;&nbsp;}<br>
+				<br>
+
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+			</div>
+		</div> <!-- end of example BackgroundService.js -->
+
+		<p>Create a new file called <em>Service.js</em> in your application folder and copy the following code into it:</p>
+
+		<!-- Start of example Service.js page -->
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Service.js</h3>
+			<div id="examp2" style="font-size:70%">
+				<br>
+				&#160;&#160;&#160;&#160;&#47;&#47;Init variables.<br>
+				&#160;&#160;&#160;&#160;var count = 0;<br>
+				&#160;&#160;&#160;&#160;var diff = 1;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#47;&#47;Called when service is started.<br>
+				&#160;&#160;&#160;&#160;function OnStart()<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( "Hello from Service!" );<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;Start a timer to do some regular work.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;setInterval( DoWork, 1000 );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#47;&#47;Called when we get a message from main app.<br>
+				&#160;&#160;&#160;&#160;function OnMessage( msg )<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;console.log( msg );<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;Handle commands from main App.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if( msg=="change" ) diff = (diff > 0 ? -1 : 1);<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#47;&#47;Do some work.<br>
+				&#160;&#160;&#160;&#160;function DoWork()<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;This is where we do some regular background task<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;(here we just modify a counter).<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;count +=  diff;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#47;&#47;Send data to the App (if it is running).<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.SendMessage( count );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp2)">Copy All</a>
+			</div>
+		</div> <!-- end of example Service.js page -->
+
+		<p>Run the application and see the count increment every second. Click the <em>Send Message to Service</em> button and see the cound direction change. </p>
+
+		<p>Inspect the debug console and see the log messages from the service in gray.</p>
+
+		<p>See '<a href='../app/CreateService.htm'>CreateService</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>
+		<meta charset="utf-8">
+		<meta

@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+<title>Notificación</title> 
+<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+		
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Atrás</a>
+ <h1>Notificación</h1>
+</div><!-- /header -->
+
+<div data-role="content">	
+			
+<p>El objeto <b>Notification</b> (Notificación) puede ser usado para poner mensajes en la caja de notificaciones.</p>
+
+<p>Crear un objeto de Notificación usando el método <b>CreateNotification</b> (Crear Notificación) del objeto de la <b>app</b>:<p>
+	<div class="samp">&nbsp;notify = app.CreateNotification( options );</div>
+<p>'Options' (opciones) pueden incluir <b>"AutoCancel"</b>, <b>"FullScreen"</b> y <b>"Ongoing"</b></p>
+
+<p>Usa el método <b>SetMessage</b> (Establecer mensaje) para decirle al objeto que mostrar</p>
+	<div class="samp">&nbsp;notify.SetMessage( ticker, title, text );</div>
+		
+<p>El método <b>Notify</b> (notificar) le dice que envíe la notificación</p>
+	<div class="samp">&nbsp;notify.Notify( id );</div>
+	
+<p>Cuando el usuario toca tu notificación, tu aplicación aparecerá aunque no esté corriendo.</p>
+
+	<p>Si usas más de una notificación,
+	<b>app.GetNotifyId()</b> puede ser usado para verificar que notificación fue presionada por el usuario.</p>
+		
+
+	<!-- Inicio del ejemplo de la App -->
+<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+<h3>Ejemplo</h3>
+<div id="examp1" style="font-size:70%">
+  <br>
+
+function OnStart() <br>
+{ <br>
+&nbsp;&nbsp;app.ShowPopup("Sending notification"); <br>
+<b id="snip1"  style="font-size:100%">
+&nbsp;&nbsp;notify = app.CreateNotification(); <br>
+&nbsp;&nbsp;notify.SetMessage("Ticker","Title","Text"); <br>
+&nbsp;&nbsp;notify.Notify("testID"); <br>
+</b>
+&nbsp;&nbsp;setTimeout(cancel,5000); <br>
+} <br>
+ <br>
+function cancel() <br>
+{ <br>
+&nbsp;&nbsp;notify.Cancel("testID"); <br>
+&nbsp;&nbsp;app.ShowPopup("Notification cancelled"); <br>
+} </div>
+<div name="divCopy" align="right">
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&nbsp;&nbsp;Copiar&nbsp;&nbsp;</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copiar Todo</a>
+<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Ver&nbsp;&nbsp;&nbsp;</a>
+</div>
+</div> <!-- end of example app -->
+
+
+<p>Los siguientes métodos están disponibles para el objeto Notification:</p>
+
+    	<div class="samp">&nbsp;Notify( id ) </div>
+	    <div class="samp">&nbsp;Cancel( id ) </div>
+		<div class="samp">&nbsp;SetMessage( ticker. title, text ) </div>
+		<div class="samp">&nbsp;SetLargeImage( file ) </div>
+    	<div class="samp">&nbsp;SetLights( color, onMs, offMs ) </div>
+
+	    </p>
+	
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+
+</body>
+</html>

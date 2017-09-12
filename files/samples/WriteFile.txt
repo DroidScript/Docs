@@ -1,0 +1,6 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.WriteFile( "/sdcard/wftest.txt", "Hello", "Append" );
+</b>}</sample>
+

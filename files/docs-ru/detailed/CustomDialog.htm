@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>CustomDialog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a>
+ <h1>CustomDialog</h1>
+</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p>Custom dialog boxes pop up and can be used to display temporary information or collect data from the user. They are useful for displaying configuration or settings controls.</p>
+		<p>You can add all types of control to a <b>CustomDialog</b> object. Dialogs are resizeable and you can also change the look of them so that they fit in with the theme of your application.</p>
+
+		<p>Create a custom dialog object using the <b>CreateDialog</b> method of the <b>app</b> object:<p>
+		<div class="samp">&nbsp;dlg = app.CreateDialog( title, options );</div>
+		<div data-role="popup" id="pop_str_opt1" class="ui-content"><b>string</b> - comma separated<br>
+			&#160;&#160;&#160;&#160;"NoCancel" - Back button will not dismiss dialog<br>
+			&#160;&#160;&#160;&#160;"AutoCancel" - Touching outside dialog will dismiss import<br>
+			&#160;&#160;&#160;&#160;"NoTitle" - Removes dialog title<br>
+			&#160;&#160;&#160;&#160;"NoFocus" - Prevents dialog gaining focus<br>
+			&#160;&#160;&#160;&#160;"NoDim" - Prevents area outside dialog from dimming.<br>
+		</div>
+
+		<p>A custom dialog needs a layout to add the controls to. Use the <b>CreateLayout</b> method of the <b>app</b> object to add a layout.</p>
+
+		<div class="samp">&nbsp;layDlg = app.CreateLayout( type, options );</div>
+
+		<p>Use the <b>Show</b> method to show the dialog.</p>
+
+		<div class="samp">&nbsp;dlg.Show();</div>
+
+		<p>And the <b>Dismiss</b> method when you want to close it.</p>
+
+		<div class="samp">&nbsp;dlg.Dismiss();</div>
+		  <!-- Start of example app -->
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+				<br>
+				function OnStart()  <br>
+				{ <br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( "linear", "VCenter,FillXY" );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( "Show Dialog", 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( btn_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function btn_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;dlg = app.CreateDialog( "Custom Dialog" );<br>
+				<br>
+				&#160;&#160;&#160;&#160;layDlg = app.CreateLayout( "linear", "VCenter,FillXY" );<br>
+				&#160;&#160;&#160;&#160;layDlg.SetSize( 0.7, 0.3 );<br>
+				&#160;&#160;&#160;&#160;dlg.AddLayout( layDlg );<br>
+				<br>
+				&#160;&#160;&#160;&#160;chk = app.CreateCheckBox( "Check Box" );<br>
+				&#160;&#160;&#160;&#160;chk.SetMargins( 0, 0.02, 0, 0.02 );<br>
+				&#160;&#160;&#160;&#160;layDlg.AddChild( chk );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btnDlg = app.CreateButton( "Close Dialog", 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;btnDlg.SetOnTouch( btnDlg_OnTouch );<br>
+				&#160;&#160;&#160;&#160;layDlg.AddChild( btnDlg );<br>
+				<br>
+				&#160;&#160;&#160;&#160;dlg.Show();<br>
+
+				}<br>
+				<br>
+				function btnDlg_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;dlg.Dismiss();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+			</div>
+		</div> <!-- end of example app -->
+
+		<p>See '<a href='../app/CreateDialog.htm'>CreateDialog</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

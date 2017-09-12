@@ -1,0 +1,36 @@
+<sample Using OnChange>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 );
+	edt.SetOnChange( edt_OnChange );
+	lay.AddChild( edt );
+
+</b>	txt = app.CreateText( "", 0.8, 0.3 );
+	txt.SetMargins( 0, 0.02, 0, 0 );
+	lay.AddChild( txt );
+
+	app.AddLayout( lay );
+}
+
+function edt_OnChange() &nbsp;
+{
+	txt.SetText( edt.GetText() );
+}
+</sample>
+
+<sample Blue on White>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );
+	edt.SetTextColor( "#ff6666ff" );
+	edt.SetBackColor( "#ffffffff" );
+	lay.AddChild( edt );
+
+</b>	app.AddLayout( lay );
+}
+</sample>
+

@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Downloader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="../css/themes/default/theme.min.css" />
+<link rel="stylesheet"  href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+<script src="../js/energize-min.js"></script>
+<script src="../js/jquery-1.8.1.min.js"></script>
+<script src="../../app.js"></script>
+<script src="../js/example.js"></script>
+<link rel="stylesheet" href="../css/docs.css" />
+<script src="../js/common.js"></script>
+<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+<div data-role="header" data-position="fixed">
+ <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a>
+ <h1>Downloader</h1>
+</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p>The <b>Downloader</b> component can be used to download a file straight from the internet to your phone or tablet's local storage.</p>
+
+		<p>Create a Downloader object using the <b>CreateDownloader</b> method of the <b>app</b> object: </p>
+		<div class="samp">&nbsp;dload = app.CreateDownloader( );</div>
+
+		<p>The <b>SetOnComplete</b> method is used to set a function to be called when the download has finished or failed</p>
+		<div class="samp">&nbsp;dload.SetOnComplete( callback );</div>
+
+		<p>The <b>Download</b> method sets the source and destination of the file and starts the download</p>
+		<div class="samp">&nbsp;dload.Download( srcFileUrl, targetDir );</div>
+
+		<p>Once the Download method has been called, it show a progress bar and begins the download</p>
+
+			<!-- Start of example app -->
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+
+				function OnStart() <br>
+				{ <br>
+				&#160;&#160;&#160;&#160;var srcFileUrl="http://sgarman.net/downloadable.txt"; <br>
+				&#160;&#160;&#160;&#160;var targetDir="/sdcard"; <br>
+				<br>
+				<b id="snip1"  style="font-size:100%">
+				&#160;&#160;&#160;&#160;dload = app.CreateDownloader(); <br>
+				&#160;&#160;&#160;&#160;dload.SetOnComplete( dload_OnComplete ); <br>
+				&#160;&#160;&#160;&#160;dload.Download( srcFileUrl, targetDir ); <br>
+				</b>
+				} <br>
+				<br>
+				function dload_OnComplete() <br>
+				{ <br>
+				&#160;&#160;&#160;&#160; app.ShowPopup("Download complete"); <br>
+				}
+				</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+			</div>
+		</div> <!-- end of example app -->
+
+		<p>See '<a href='../app/CreateDownloader.htm'>CreateDownloader</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

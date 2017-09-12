@@ -1,0 +1,25 @@
+<sample Example>
+function OnStart()
+{
+<b>	app.SetMenu( "Start,Stop,Pause" );
+</b>}
+
+function OnMenu( item )
+{
+	app.ShowPopup( item, "Short" );
+}
+</sample>
+
+<sample Menu Images>
+function OnStart()
+{
+<b>	menus = "Files:Files.png,Settings:Settings.png";
+	app.SetMenu( menus, "/Sys/Img" );
+</b>}
+
+function OnMenu( item )
+{
+	app.ShowPopup( item, "Short" );
+}
+</sample>
+

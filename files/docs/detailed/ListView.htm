@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ListView</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/themes/default/theme.min.css" />
+		<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+		<script src="../js/energize-min.js"></script>
+		<script src="../js/jquery-1.8.1.min.js"></script>
+		<script src="../../../app.js"></script>
+		<script src="../js/example.js"></script>
+		<link rel="stylesheet" href="../css/docs.css" />
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>ListView</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+		<p> You can create a full screen view to display a list in your App using the <b>CreateListView</b> method
+		 of the <b>app</b> object: </p>
+
+		<div class="samp">&nbsp;lvw = app.CreateListView( list, title, options );</div>
+
+		<p>Use the <b>SetOnTouch</b> method of the ListView object to set the name of a function you want to be called when a list item is selected. The selected item is passed into your OnTouch callback function as parameters every time an item is selected.</p>
+
+		<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="b">
+				<h3>Example</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+					{<br>
+					<b id="snip1"  style="font-size:100%">
+					&#160;&#160;&#160;&#160;lvw = app.CreateListView( "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Days" );<br>
+					&#160;&#160;&#160;&#160;lvw.SetOnTouch( lvw_OnTouch );<br>
+					&#160;&#160;&#160;&#160;lvw.Show();<br>
+					</b>
+					}<br>
+					<br>
+					function lvw_OnTouch( item )<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.ShowPopup( item );<br>
+					}<br>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(snip1)">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&#160;&#160;&#160;&#160;&nbsp;Run&#160;&#160;&#160;&#160;&nbsp;</a>
+				</div>
+		</div>
+
+		<p>See '<a href='../app/CreateListView.htm'>CreateListView</a> for more informations and a complete function list</p>
+
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

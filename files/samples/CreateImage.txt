@@ -1,0 +1,75 @@
+<sample Original Size>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	img = app.CreateImage( "/Sys/Img/Droid1.png" );
+	img.SetOnTouch( img_OnTouch );
+	lay.AddChild( img );
+
+</b>	app.AddLayout( lay );
+}
+
+function img_OnTouch( ev )
+{
+	if( ev.action=="Down" )
+		app.ShowPopup( "Ouch!" );
+}
+</sample>
+
+<sample Stretched>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 );
+	img.SetOnTouch( img_OnTouch );
+	lay.AddChild( img );
+
+</b>	app.AddLayout( lay );
+}
+
+function img_OnTouch( ev )
+{
+	if( ev.action=="Down" )
+		app.ShowPopup( "Aaaargh!" );
+}
+</sample>
+
+<sample Maintain Aspect>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 );
+	img.SetOnTouch( img_OnTouch );
+	lay.AddChild( img );
+
+</b>	app.AddLayout( lay );
+}
+
+function img_OnTouch( ev )
+{
+	if( ev.action=="Down" )
+		app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" );
+}
+</sample>
+
+Drawing On Images>
+<sample Draw Shapes>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	img = app.CreateImage( null, 0.8, 0.8 );
+	lay.AddChild( img );
+
+	img.SetColor( "#8888ff" );
+	img.SetPaintColor( "#ff0000" );
+	img.DrawCircle( 0.5, 0.5, 0.1 );
+	img.DrawRectangle( 0.7, 0.7, 0.05 );
+
+</b>	app.AddLayout( lay );
+}
+</sample>
+
