@@ -1,0 +1,8 @@
+<sample Replace Text in File>
+function OnStart()
+{
+    app.WriteFile( "file.txt", "Hello world, exciting world." );
+	<b>app.ReplaceInFile( "file.txt","wOrld","world!", "" );</b>
+    app.Alert( app.ReadFile( "file.txt" ), "Result" );
+}
+</sample>

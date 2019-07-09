@@ -1,8 +1,16 @@
 <sample Example>
 function OnStart()
 {
-<b>	app.SetMenu( "Start,Stop,Pause" );
-</b>}
+	<b>app.SetMenu( "Start,Stop,Pause" );</b>
+
+    lay = app.CreateLayout( "linear", "" );
+
+    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
+    btn.SetOnTouch( app.ShowMenu );
+    lay.AddChild( btn );
+
+    app.AddLayout( lay );
+}
 
 function OnMenu( item )
 {
@@ -13,13 +21,20 @@ function OnMenu( item )
 <sample Menu Images>
 function OnStart()
 {
-<b>	menus = "Files:Files.png,Settings:Settings.png";
-	app.SetMenu( menus, "/Sys/Img" );
-</b>}
+	<b>menus = "Files:Files.png,Settings:Settings.png";
+	app.SetMenu( menus, "/Sys/Img" );<b>
+
+    lay = app.CreateLayout( "linear", "" );
+
+    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
+    btn.SetOnTouch( app.ShowMenu );
+    lay.AddChild( btn );
+
+    app.AddLayout( lay );
+}
 
 function OnMenu( item )
 {
 	app.ShowPopup( item, "Short" );
 }
 </sample>
-

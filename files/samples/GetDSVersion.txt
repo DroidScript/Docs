@@ -1,0 +1,7 @@
+<sample Show DroidScript Version>
+function OnStart()
+{
+    <b>var ver = app.GetDSVersion();</b>
+    app.Alert( ver );
+}
+</sample>

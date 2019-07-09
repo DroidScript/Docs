@@ -1,0 +1,30 @@
+
+
+body {
+        font-size : 90%;
+}
+
+pre {
+    -moz-tab-size : 4;
+      -o-tab-size : 4;
+         tab-size : 4;
+}
+
+.bodyPC {
+        font-size : 100%;
+}
+
+.samp {
+    background-color : #F8F8F8;
+       border-radius : 5px;
+         line-height : 19px;
+           font-size : 13px;
+            overflow : auto;
+             padding : 6px 10px;
+              border : 1px solid #CCC;
+}
+
+.code {
+    font-family : sans-serif;
+      font-size : 90%;
+}

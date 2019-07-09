@@ -1,21 +1,6 @@
 <sample Example>
 function OnStart()
 {
-<b>	app.SetClipboardText( "Sample Text" );
-</b>}
-
-</sample>
-
-<sample Menu Images>
-function OnStart()
-{
-<b>	menus = "Files:Files.png,Settings:Settings.png";
-	app.SetClipboardText( menus, "/Sys/Img" );
-</b>}
-
-function OnMenu( item )
-{
-	app.ShowPopup( item, "Short" );
+	<b>app.SetClipboardText( "Sample Text" );</b>
 }
 </sample>
-

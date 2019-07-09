@@ -1,0 +1,7 @@
+<sample Show Charge Type>
+function OnStart()
+{
+    <b>var type = app.GetChargeType();</b>
+    app.Alert( type );
+}
+</sample>

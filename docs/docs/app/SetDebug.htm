@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SetDebug</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>SetDebug</h1>
+		</div>
+
+		<div data-role="content">
+			<p>SetDebug lets you control the debugging level.</p>
+
+			<div class="samp">
+			app.SetDebug( <a href="#pop_str_001" data-transition="pop" data-rel="popup">switches</a> )
+			</div>
+
+			<p>The availabe modes are:<br>
+			console: allows console.log messages<br>
+			ds: allows app.Debug messages<br>
+			adb: allows adb debug messages (ie at apk startup)<br>
+			true: enable all debug messages<br>
+			false or “”: disable able all debug messages<br>
+			<br>
+			Note that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Demonstration</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.CreateDebug();<br>
+				&#160;&#160;&#160;&#160;app.ShowDebug(true);<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;default 1&quot;);   // default on<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;default 2&quot;); // default on<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug(&quot;adb&quot;);<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;adb 3&quot;);&#160;&#160;&#160;&#160;   // off<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;adb 4&quot;);&#160;&#160;&#160;&#160; // off<br>
+				<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetDebug(&quot;console&quot;);</b><br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;console 5&quot;);   // off<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;console 6&quot;); // on<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug(&quot;ds&quot;);<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;ds 7&quot;);&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// on<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;ds 8&quot;);&#160;&#160;&#160;&#160;  // off<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug(&quot;&quot;);<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;null 9&quot;);&#160;&#160;&#160;&#160;  // off<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;null 10&quot;);   // off<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug(&quot;true&quot;);<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;true 11&quot;);&#160;&#160;&#160;&#160; // on<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;true 12&quot;);   // on<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug(&quot;false&quot;);<br>
+				&#160;&#160;&#160;&#160;app.Debug(&quot;hello 13&quot;);&#160;&#160;&#160;&#160;// off<br>
+				&#160;&#160;&#160;&#160;console.log(&quot;hello 14&quot;);  // off<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “console”, “ds”, “adb”</div>
+
+	</div>
+</body>
+
+</html>

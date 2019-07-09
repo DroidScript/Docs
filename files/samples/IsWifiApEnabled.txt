@@ -1,0 +1,7 @@
+<sample Check WifiAccessPoint Enabled>
+function OnStart()
+{
+    <b>var wapEnabled = app.IsWifiApEnabled();</b>
+    app.Alert( wapEnabled, "Wifi Access Point Enabled:" );
+}
+</sample>

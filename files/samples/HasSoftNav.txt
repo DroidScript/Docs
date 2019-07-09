@@ -1,0 +1,7 @@
+<sample Check Softkeys>
+function OnStart()
+{
+    <b>var hasSoftNav = app.HasSoftNav();</b>
+    app.Alert( hasSoftNav, "Has Soft Keys:" );
+}
+</sample>

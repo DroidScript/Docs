@@ -1,0 +1,8 @@
+<sample Show Shared Files>
+function OnStart()
+{
+	<b>var files = app.GetSharedFiles();</b>
+
+	if( files ) app.Alert( files.join( "\n" ) );
+	else app.ShowPopup( "No shared files received." );
+}</sample>

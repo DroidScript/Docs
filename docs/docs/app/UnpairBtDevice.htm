@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>UnpairBtDevice</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>UnpairBtDevice</h1>
+		</div>
+
+		<div data-role="content">
+			<p>UnpairBtDevice.</p>
+
+			<div class="samp">
+			app.UnpairBtDevice( <a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Pairing and Unpairing bluetooth devices</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;enabling Bluetooth&quot; );<br>
+				&#160;&#160;&#160;&#160;app.SetBluetoothEnabled( true );<br>
+				&#160;&#160;&#160;&#160;while( !app.IsBluetoothOn() ) app.Wait( 0.2 );<br>
+				&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.DiscoverBtDevices( &quot;&quot;, bt_OnFound, bt_OnComplete );<br>
+				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Discovering bt devices&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;lst = app.CreateList( &quot;&quot;, 1, 1, &quot;fontawesome&quot; );<br>
+				&#160;&#160;&#160;&#160;lst.SetOnTouch( pair );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function bt_OnFound( name, address )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var image = &quot;&quot;;<br>
+				&#160;&#160;&#160;&#160;if( app.IsBtDevicePaired( name )) image = &quot;[fa-bluetooth]&quot;;<br>
+				&#160;&#160;&#160;&#160;lst.AddItem( name, address, image );<br>
+				}<br>
+				<br>
+				function bt_OnComplete() {<br>
+				&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				}<br>
+				<br>
+				function pair( name, address )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if(!app.IsBtDevicePaired( name ))<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Pairing &quot; + name );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.PairBtDevice( address, OnPair );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst.SetItem( name, name, address, &quot;&quot;);<br>
+				&#160;&#160;&#160;&#160;}<br>
+				&#160;&#160;&#160;&#160;else<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Unpairing &quot; + name );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.UnpairBtDevice( address, OnUnpair );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst.SetItem( name, name, address, &quot;&quot;);<br>
+				&#160;&#160;&#160;&#160;}<br>
+				}<br>
+				<br>
+				function OnPair( name, address ) {<br>
+				&#160;&#160;&#160;&#160;app.Alert( name + &quot;  &quot; + address, &quot;Pairing successful!&quot; );<br>
+				}<br>
+				<br>
+				function OnUnpair() {<br>
+				&#160;&#160;&#160;&#160;app.Alert( name + &quot;  &quot; + address, &quot;Unpairing successful!&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+
+	</div>
+</body>
+
+</html>

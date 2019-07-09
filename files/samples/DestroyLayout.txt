@@ -1,0 +1,21 @@
+<sample Destroy layout and check if deleted>
+//Called when application is started.
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Don't Press Me", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+    <b>app.DestroyLayout(lay);</b>
+
+    var text = this.GetText() || "nothing in here!";
+	app.ShowPopup(text);
+}
+</sample>

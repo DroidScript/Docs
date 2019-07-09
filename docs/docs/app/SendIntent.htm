@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SendIntent</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>SendIntent</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Intens can be used to perform an operation between different applications or activities.</p>
+
+			<div class="samp">
+			app.SendIntent( <a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">action</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">category</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">uri</a>, <a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">extras</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+
+			<p><i>It is basically a passive data structure holding an abstract description of an action to be performed</i>.<br>
+			<br>
+			<b>package name</b> and <b>class name</b> can specify the intent target, but you can also leave them null and define a <b>category</b> instead to let the user choose an application of that categoy.<br>
+			<br>
+			If you expect a <b>callback</b> you have to pass the “result” <b>option</b>. The <b>result code</b> can be<br>
+			&#160;&#160;-1: <i>operation succeeded</i><br>
+			&#160;&#160;1: <i>user-defined activity results</i><br>
+			&#160;&#160;0: <i>operation canceled</i><br>
+			<br>
+			You can find some common used examples for that in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent');">DroidScript Wiki</a><br>
+			For more information visit the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html');">Android Developer Page</a>. There you can find informations about the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions');">activity</a>, <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-categories');">category</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-extra-data');">extra</a>.</p>
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “android.intent.action.*”</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “android.intent.category.*”</div>
+		<div data-role="popup" id="pop_str_mim" class="ui-content"><b>string:</b> <i>mimetype</i></div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [{<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">name</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">type</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">value</a>}]</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> “result”</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( number: integer: -1 or 0 or 1' )">resultCode</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( object: {action:string,&#160;&#160;type:string,&#160;&#160;data:string,&#160;&#160;flags:integer,&#160;&#160;extras:object}' )">data</a>)</div>
+
+	</div>
+</body>
+
+</html>

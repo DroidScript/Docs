@@ -1,0 +1,17 @@
+<sample Put Device to Sleep>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Sleep", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+	<b>app.GoToSleep();</b>
+}
+</sample>

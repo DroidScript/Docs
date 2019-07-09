@@ -1,0 +1,9 @@
+<sample Show App Options>
+cfg.NoDom, cfg.Portrait;
+
+function OnStart()
+{
+	var opt = app.GetOptions();
+	app.Alert( opt );
+}
+</sample>

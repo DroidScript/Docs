@@ -1,0 +1,17 @@
+<sample Basic>
+function OnStart()
+{
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+    btn = app.CreateToggle( "Toggle Me" );
+    btn.SetOnTouch( ShowState );
+    lay.AddChild( btn );
+
+    app.AddLayout( lay );
+}
+
+function ShowState( isChecked )
+{
+    app.ShowPopup( "Checked = " + isChecked, "Short" );
+}
+</sample>

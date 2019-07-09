@@ -1,14 +1,19 @@
-<sample Basic>
+<sample List home directory>
 function OnStart()
 {
-<b>	list = app.ListFolder( "/sdcard" );
-</b>	app.ShowPopup( list );
-}</sample>
+	<b>var list = app.ListFolder( "/sdcard/" );</b>
 
-<sample Filtered>
+	ldg = app.CreateListDialog( "/sdcard/*", list );
+	ldg.Show();
+}
+</sample>
+
+<sample List .jpg assets>
 function OnStart()
 {
-<b>	list = app.ListFolder( "/sdcard", ".mp3" );
-</b>	app.ShowPopup( list );
-}</sample>
+	<b>var list = app.ListFolder( "/Sys/Img", ".jpg" );</b>
 
+	ldg = app.CreateListDialog( "/Sys/Img/*.jpg", list );
+	ldg.Show();
+}
+</sample>

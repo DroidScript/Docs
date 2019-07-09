@@ -1,9 +1,7 @@
-<sample Example>
+<sample show latest clipboard text>
 function OnStart()
 {
-<b>	var text = app.GetClipboardText();
-</b>	app.ShowPopup( text );
+    <b>var text = app.GetClipboardText();</b>
+    app.Alert( text );
 }
-
 </sample>
-

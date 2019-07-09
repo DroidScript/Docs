@@ -1,86 +1,82 @@
-<sample Background Service.js>
+<sample Services>
+//our Service.js code.
+//In regular usage move this code to a separate Service.js file
+var servicejs = `
+//Init variables.
+var count = 0;
+var diff = 1;
 
-	function OnStart()
-	{
-		&#47;&#47;Create a layout.
-		lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+//Called when service is started.
+function OnStart()
+{
+    app.ShowPopup( "Hello from Service!" );
 
-		&#47;&#47;Create text control to display data from the service.
-		txt = app.CreateText( "", 0.4 );
-		txt.SetMargins( 0, 0.05, 0, 0 );
-		txt.SetTextSize( 22 );
-		lay.AddChild( txt );
+    //Start a timer to do some regular work.
+    setInterval( DoWork, 500 );
+}
 
-		&#47;&#47;Create an 'Send Message' button.
-		btn = app.CreateButton( "Send Message to Service", 0.6, 0.1 );
-		lay.AddChild( btn );
-		btn.SetOnTouch( function(){svc.SendMessage("change")} );
+//Called when we get a message from main app.
+function OnMessage( msg )
+{
+    app.Debug( msg );
 
-		&#47;&#47;Create a 'Stop Service' button.
-		btn = app.CreateButton( "Stop Service", 0.6, 0.1 );
-		lay.AddChild( btn );
-		btn.SetOnTouch( function(){svc.Stop()} );
+    //Handle commands from main App.
+    if( msg == "change" ) diff = (diff > 0 ? -1 : 1);
+}
 
-		&#47;&#47;Add layout to app.
-		app.AddLayout( lay );
+//This is where we do some regular background task
+//(here we just modify a counter and send it back to the app, if its running).
+function DoWork()
+{
+    count += diff;
+    app.SendMessage( count );
+}`
 
-		&#47;&#47;Start/connect to our service.
-		svc = app.CreateService( "this","this", OnServiceReady );
-		svc.SetOnMessage( OnServiceMessage );
+function OnStart()
+{
+    //Create the Service.js file
+    //(In regular usage create the file yourself)
+    app.WriteFile("Service.js", servicejs );
 
-		&#47;&#47;This will cause your service to start at boot.
-		&#47;&#47;(Set it to "none" if you need to stop it starting)
-		&#47;&#47;app.SetAutoBoot( "Service" );
-	}
+    //Create a layout.
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	&#47;&#47;Called after our service has started.
-	function OnServiceReady()
-	{
-		console.log( "Service Ready" );
-	}
+    //Create text control to display data from the service.
+    txt = app.CreateText( "", 0.4 );
+    txt.SetTextSize( 22 );
+    lay.AddChild( txt );
 
-	&#47;&#47;Called when messages comes from our service.
-	function OnServiceMessage( msg )
-	{
-		txt.SetText( "Count: " + msg );
-	}
+    //Create an 'Send Message' button.
+    btn = app.CreateButton( "Send Message to Service", 0.6, 0.1 );
+    lay.AddChild( btn );
+    btn.SetOnTouch( function(){ svc.SendMessage("change"); } );
 
+    //Create a 'Stop Service' button.
+    btn = app.CreateButton( "Stop Service", 0.6, 0.1 );
+    lay.AddChild( btn );
+    btn.SetOnTouch( function(){ svc.Stop(); } );
+
+    //Add layout to app.
+    app.AddLayout( lay );
+
+    //Start/connect to our service.
+    svc = app.CreateService( "this", "this", OnServiceReady );
+    svc.SetOnMessage( OnServiceMessage );
+
+    //This will cause your service to start at boot.
+    //(Set it to "none" if you need to stop it starting)
+    //app.SetAutoBoot( "Service" );
+}
+
+//Called after our service has started.
+function OnServiceReady()
+{
+    app.Debug( "Service Ready" );
+}
+
+//Called when messages comes from our service.
+function OnServiceMessage( msg )
+{
+    txt.SetText( "Count: " + msg );
+}
 </sample>
-
-<sample Service.js>
-
-	&#47;&#47;Init variables.
-	var count = 0;
-	var diff = 1;
-
-	&#47;&#47;Called when service is started.
-	function OnStart()
-	{
-		app.ShowPopup( "Hello from Service!" );
-
-		&#47;&#47;Start a timer to do some regular work.
-		setInterval( DoWork, 1000 );
-	}
-
-	&#47;&#47;Called when we get a message from main app.
-	function OnMessage( msg )
-	{
-		console.log( msg );
-
-		&#47;&#47;Handle commands from main App.
-		if( msg=="change" ) diff = (diff > 0 ? -1 : 1);
-	}
-
-	&#47;&#47;Do some work.
-	function DoWork()
-	{
-		&#47;&#47;This is where we do some regular background task
-		&#47;&#47;(here we just modify a counter).
-		count +=  diff;
-
-		&#47;&#47;Send data to the App (if it is running).
-		app.SendMessage( count );
-	}
-
-</sample>
-

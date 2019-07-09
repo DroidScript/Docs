@@ -1,0 +1,50 @@
+<sample Digital Clock>
+function OnStart()
+{
+    app.SetOrientation( "Portrait" );
+    app.SetDebugEnabled( false );
+
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+
+    txt = app.CreateText( "", -1, -1, "multiline" );
+    txt.SetTextSize( 30 );
+    lay.AddChild( txt );
+
+    app.AddLayout( lay );
+
+    <b>app.Animate( OnAnimate, 30 );</b>
+}
+
+function OnAnimate( time, dtime )
+{
+    txt.SetText( new Date().toLocaleString() + "\n" + time );
+}
+</sample>
+
+<sample SpeedTest>
+_AddOptions( "NoDom" );
+
+var ltime = Date.now(), c = 0;
+
+function OnStart()
+{
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+
+    txt = app.CreateText( "", .5, .1, "left" );
+    lay.AddChild( txt );
+
+    app.AddLayout( lay );
+
+    <b>app.Animate(OnAnimate, 1000);</b>
+}
+
+function OnAnimate( time, dtime )
+{
+    c++;
+    if( time - ltime >= 1000 ) {
+        txt.SetText( c + " cps" );
+        ltime = time;
+        c = 0;
+    }
+}
+</sample>

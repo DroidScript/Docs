@@ -1,0 +1,7 @@
+<sample Show Package Name>
+function OnStart()
+{
+    <b>var pkg = app.GetPackageName();</b>
+    app.Alert( pkg );
+}
+</sample>

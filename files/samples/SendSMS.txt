@@ -1,0 +1,6 @@
+<sample Send SMS>
+function OnStart()
+{
+    app.SendSMS( "Hello World!", 0123456789 );
+}
+</sample>

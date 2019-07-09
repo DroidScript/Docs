@@ -1,12 +1,17 @@
-<sample Example>
+<sample Change Orientation>
 function OnStart()
 {
-<b>	app.SetOrientation( "Landscape" );
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-</b>	lay = app.CreateLayout( "Linear", "Vertical" );
-	txt = app.CreateText( "Hello" );
-	txt.SetTextSize( 32 );
-	lay.AddChild( txt );
+	spn = app.CreateSpinner( "Default,Landscape,ReverseLandscape,Portrait,ReversePortrait", 0.3, 0.1 );
+	spn.SetOnChange( SetOrientation );
+	lay.AddChild( spn );
+
 	app.AddLayout( lay );
-}</sample>
+}
 
+function SetOrientation( orient )
+{
+    <b>app.SetOrientation( orient )</b>
+}
+</sample>

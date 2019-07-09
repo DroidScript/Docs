@@ -1,8 +1,28 @@
-<sample Example>
+<sample Repeatedly Show Rotation>
 function OnStart()
 {
-<b>	rot = app.GetRotation();
-</b>	app.ShowPopup( rot );
+    app.Animate( ShowRotation, 2 );
+}
+
+function ShowRotation()
+{
+    <b>var mode = app.GetRotation();</b>
+    app.ShowPopup( mode );
 }
 </sample>
 
+<sample Show Rotation and switch Orientation>
+cfg.Portrait;
+
+function OnStart()
+{
+    app.Animate( ShowRotation, 2 );
+    setTimeout( 'app.SetOrientation("landscape")', 5000 );
+}
+
+function ShowRotation()
+{
+    <b>var mode = app.GetRotation();</b>
+    app.ShowPopup( mode );
+}
+</sample>

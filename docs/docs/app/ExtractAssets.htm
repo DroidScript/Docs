@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ExtractAssets</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>ExtractAssets</h1>
+		</div>
+
+		<div data-role="content">
+			<p>ExtractAssets allows to extract folders and files from your compiled APK to the local storage.</p>
+
+			<div class="samp">
+			app.ExtractAssets( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">overwrite</a> )
+			</div>
+
+			<p>But it works for local DroidScript projects as well. When override is false, already existant files will be kept and not overridden.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Extract File</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( &quot;myData.txt&quot;, &quot;main: &quot; + app.GetAppName() );<br>
+				&#160;&#160;&#160;&#160;app.ExtractAssets( &quot;myData.txt&quot;, &quot;/sdcard/myData.txt&quot; );<br>
+				&#160;&#160;&#160;&#160;app.Alert(app.ReadFile(&quot;/sdcard/myData.txt&quot;));<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Extract Folder</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.MakeFolder( app.GetAppPath() + &quot;/myFolder&quot; );<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( app.GetAppPath() + &quot;/myFolder/myData.txt&quot;, &quot;main: &quot; + app.GetAppName() );<br>
+				&#160;&#160;&#160;&#160;app.ExtractAssets( &quot;myFolder&quot;, &quot;/sdcard/myFolder&quot; );<br>
+				&#160;&#160;&#160;&#160;app.Alert(app.ReadFile(&quot;/sdcard/myFolder/myData.txt&quot;));<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<sample Check Debug Enabled>
+function OnStart()
+{
+    <b>var IsDbgEnabled = app.IsDebugEnabled();</b>
+    app.Alert( IsDbgEnabled, "debug enabled:" );
+}
+</sample>

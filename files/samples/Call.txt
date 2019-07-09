@@ -1,0 +1,21 @@
+<sample Check Voice Messages>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    edtNumber = app.CreateTextEdit( "5500", .8, -1, "singleline,number,center" );
+    edtNumber.SetTextSize(20);
+    lay.AddChild(edtNumber);
+
+	btnPhone = app.CreateButton( "Call", 0.5, 0.1 );
+	btnPhone.SetOnTouch( btnCall_OnTouch );
+	lay.AddChild( btnPhone );
+
+	app.AddLayout( lay );
+}
+
+function btnCall_OnTouch()
+{
+	<b>app.Call( edtNumber.GetText() );</b>
+}
+</sample>

@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html> 
+<html>
+
+<head>
+    <title>JavaScript Basics</title> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page" data-theme="a" >
+
+	<script>
+	try {
+		if( navigator.userAgent.indexOf("Android")>-1 ) 
+			document.styleSheets[0].insertRule(".code {font-size:80%; fxont-family:sans-serif;}", 0 );
+	}
+	catch(e) {}
+	</script>
+		
+    <div data-role="header" data-position="fixed">
+        <a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> 
+        <h1>JavaScript Basics</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">    
+
+	<p>This is a basic introduction to the JavaScript computer language.</p>
+	
+	<p>JavaScript is now one of the most popular 
+	and useful computer languages on the planet.  It can be used to create web pages, web servers, mobile Apps and
+	even inside embedded micro-controllers!
+	</p>
+	
+<h3>Statements</h3>
+<p>
+ JavaScript 'Apps' are computer programs written as lines of text. Each line of text is made up of one or
+ more <b>statements</b>, which are separated by a ';' (semi-colon) character like this:-</p>
+
+<pre class="code">
+   <i>statement1;</i>
+   <i>statement2;</i>
+   <i>statement3;</i>
+</pre>
+ 
+<p>These statements contain instructions for the computer to perform (execute) and the ';' character at the end tells 
+the computer where each statement ends and the next one starts. </p>
+
+<p>
+ We usually place statements on separate lines as this can help when looking for bugs (problems).
+
+ Here's a simple JavaScript program made using two statements.  It displays the word "Hello" in a popup box:
+ 
+<pre class="code">
+   var s = "Hello";
+   alert( s );
+</pre>
+
+<h3>Comments</h3>
+
+<p>
+ You should also add comments to your programs, which are ignored by the computer but help you and 
+ others understand what the program is supposed to be doing. To do this you use the <b>'//'</b> 
+ (double forward slash) characters. </p>
+ 
+ <p> For example we can add a comment line to the program above: </p>
+<pre class="code">
+   <font style="color:green">//This shows a popup message.</font>
+   var s = "Hello";
+   alert( s );
+</pre>
+
+
+
+
+<h3>Variables</h3>
+
+<p> Variables are declared using the <b>'var'</b> keyword and allow us to store data such as text, numbers and 
+objects in the computer's memory using a name of our choosing. We can then read and change the stored data 
+later by using the name we have given to the variable.</p> 
+
+<p>We can store text and display it like this:</p>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'Hi'.</font>
+   var myText = "Hi";
+   alert( myText );
+</pre>
+<p> <i>Note: Text data should always be enclosed in quotes or the computer will think it's a variable name.</i></p>
+
+
+<p> We can store a number and then
+ display it like this:</p>
+
+<pre class="code">
+   <font style="color:green">//This shows the message '7'.</font>
+   var myNum = 7;
+   alert( myNum );
+</pre>
+
+
+<p> We can change the contents of our variables like this:</p>
+
+<pre class="code">
+   <font style="color:green">//This shows the message '6'.</font>
+   var myNum = 3;
+   myNum = myNum * 2;
+   alert( myNum );
+</pre>
+
+<p><i> Note: JavaScript is case sensitive, so myNum is not the same MyNum.</i></p>
+<br>
+<h3>Expressions</h3>
+
+A statement such as  myNum = myNum + 2 is an <b>expression</b> and we can 
+perform various maths and text operations on our variables using expressions.</p>
+
+ <p> For example:</p>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'Answer: 17'.</font>
+   var myNum = 7;
+   var myText = "";
+   myNum = myNum * 2 + 3;
+   myText = "Answer: " + myNum;
+   alert( myText );
+</pre>
+
+<p><i> Note: When you add a number to text, the number is automatically converted to text.</i></p>
+<br>
+<h3>Data Types</h3>
+
+<p>
+In JavaScript, we can store and use these data types:
+</p>
+&nbsp;&nbsp; <b>String</b> - Text data.<br>
+&nbsp;&nbsp; <b>Number</b> - Numbers.<br>
+&nbsp;&nbsp; <b>Boolean</b> - True or false values.<br>
+&nbsp;&nbsp; <b>Array</b> - Lists of data.<br>
+&nbsp;&nbsp; <b>Object</b> - Complex data types.<br>
+
+<p>
+We can store all of these types in variables and also use them in expressions, but the <b>Array</b> and
+ <b>Object</b> data types are special <b>'reference'</b> types, which means variables containing 
+ these types actually hold a reference (or pointer) to the original data rather than the actual data.</p> 
+
+<p>When you copy reference types from one variable to another, you will not get a separate copy of the 
+data in the computer's memory, but rather a copy of the reference.
+</p>
+
+<p>Here are a few examples of using various data types:</p>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'true'.</font>
+   var isGood = true;
+   alert( isGood );
+</pre>
+
+<pre class="code">
+   <font style="color:green">//This calculates a circle's circumference.</font>
+   var pi = 3.14;
+   var r = 5;
+   alert( 2 * pi * r );
+</pre>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'Hello World'.</font>
+   var s = "Hello";
+   alert( s + " World" );
+</pre>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'First item: 3'.</font>
+   var myArray = [3,4,5];
+   var firstItem = myArray[0];
+   alert( "First item: " + firstItem );
+</pre>
+
+<pre class="code">
+   <font style="color:green">//This shows the message 'First item: fred'.</font>
+   <font style="color:green">//(Arrays are reference types).</font>
+   var myArray1 = ["a","b","c"];
+   var myArray2 = myArray1;
+   myArray1[0] = "fred";
+   alert( "First item: " + myArray2[0] );
+</pre>
+
+
+
+<br>
+<h3>Conditional Statements</h3>
+
+We often want to take different actions in our program depending on certain conditions and
+the easiest way to do this is using an <b>'if'</b> statement like this:  
+
+<pre class="code">
+    if( x > 1000 ) splat = true;
+</pre>
+
+The line of code above would set the variable 'splat' to true if the variable 'x' contains
+a value greater than 1000.
+
+We can also use the <b>'else'</b> statement in combination with <b>'if'</b> statement to do
+one thing or the other: 
+
+<pre class="code">
+    if( splat ) image = "splat.jpg";
+    else image = "bird.jpg"; 
+</pre>
+
+If we want to check a whole lot of conditions, we can do something like this: 
+
+<pre class="code">
+  <font style="color:green">//Find the correct photo.</font>
+  if( name=="Sam" && male ) image = "Samuel.jpg";
+  else if( name=="Sam" ) image = "Samanther.jpg";
+  else if( name=="Bill" ) image = "William.jpg";
+  else image = "Anyone.jpg"; 
+</pre>
+
+<p><i> Note: We use the double equals sign when we comparing variables and the single equals
+sign when we are assigning (setting) variables.</i></p>
+
+In order to execute more than one statement after an <b>'if'</b> or <b>'else'</b> clause, we can 
+use the <b>'{}'</b> (brace) characters to group statements into a <b>'block'</b> of code:
+
+<p>For example, in a game we might have some statements like this to check if the character
+has crashed and the game is over:</p>
+
+<pre class="code">
+    if( splat ) 
+    {
+        imageName = "splat.jpg";
+        gameOver = true;
+    }
+    else 
+    {
+        imageName = "bird.jpg"; 
+        gameOver = false;
+        count++;
+    }
+</pre>
+
+<br>
+<h3>Operators</h3>
+
+<p>
+We can perform various mathematical, logical and text operations in JavaScript such as
+add, subtract, divide and multiply but you will often see a statement like this:
+</p>
+
+<pre class="code">
+    num += 2;
+</pre>
+
+This may look confusing at first, but this '+=' operation simply adds 2 to the contents of 
+variable 'num'.  This is a shorter and more efficient way of writing the following:
+
+<pre class="code">
+    num = num + 2;
+</pre>
+
+Here are some examples of the most common operations and their meanings:
+
+<pre class="code">
+ z = x * y;      <font style="color:green">//z = x multiplied by y</font>
+ z = x / y;        <font style="color:green">//z = x divided by y</font>
+ z = x % y;      <font style="color:green">//z = remainder of x divided by y</font>
+ num++;         <font style="color:green">//add 1 to the contents of num</font>
+ num--;          <font style="color:green">//subtract 1 from contents of num</font>
+ num += 3;     <font style="color:green">//add 3 to the contents of num</font>
+ num -= x;     <font style="color:green">//subtract x from contents of num</font>
+ num *= 9;     <font style="color:green">//multiply the contents of num by 9</font>
+ num /= 9;     <font style="color:green">//divide the contents of num by 9</font>
+ b = 7;           <font style="color:green">//set b to the value 7</font>
+ if( b == 4 )    <font style="color:green">//if b is equal to 4</font>
+ if( b != c )     <font style="color:green">//if b is not equal to c</font>
+ if( b > c )      <font style="color:green">//if b is greater than c</font>
+ if( b < c )      <font style="color:green">//if b is less than c</font>
+ if( b >= c )    <font style="color:green">//if b is greater or equal to c</font>
+ if( b <= c )    <font style="color:green">//if b is less than or equal to c</font>
+ if( b || c )     <font style="color:green">//if b or c is true</font>
+ if( b && c )   <font style="color:green">//if b and c are true</font>
+ if( b && !c )  <font style="color:green">//if b is true and c is false</font>
+</pre>
+
+<br>
+<p>
+Another very useful operation is the <b>?:</b> or <b>'Ternary'</b> operation.  This allows us to 
+conditionally get one of two possible values using a single line of code.  For example:
+</p>
+
+<pre class="code">
+    adult = (age > 18 ? true : false);
+</pre>
+
+<p>This is the same as writing:</p>
+
+<pre class="code">
+    if( age > 18 ) adult = true;
+    else adult = false;
+</pre>
+
+<p>You can use this in expressions too.  Here's another example:</p>
+
+<pre class="code">
+ meals = 7 * (name=="Sam" ? 6 : 3);
+</pre>
+
+
+
+<br>
+<h3>Loops</h3>
+
+<p>
+In JavaScript we often want to repeat a block of statements many times and the two most 
+common ways of doing this are with the <b>'while'</b> and <b>'for'</b> statements.  
+</p>
+
+<p>A <b>'while'</b> statement will keep repeating a block of statements while a given expression is 
+true.  For example, the following code will keep asking the user if they are ready until they answer "yes".</p>
+
+<pre class="code">
+    var answer;
+    while( answer != "yes" )
+    {
+        answer = prompt( "Are you ready?" );
+    }
+</pre>
+
+A <b>'for'</b> statement is usually used to repeat a block of statements until a counter has
+reached a certain value. The following code will add the letter 'O' to the letter
+"G" ten times, followed by the letters "GLE". 
+
+<pre class="code">
+    var txt = "G";
+    for( var i=0; i<10; i++ )
+    {
+        txt += "O";
+    }
+    txt += "GLE"
+    alert( txt );
+</pre>
+
+<p>
+In the above sample, the counter variable 'i' starts at zero and increases by 1 each time the block of 
+code is complete, but only while 'i' contains a value less than 10. So the variable 'i' will range
+from zero to nine.
+</p>
+
+<br>
+<h3>Functions</h3>
+
+If we find that we need to execute the same (or a similar) group of statements from various parts of
+our program, then instead of copying and pasting the same group of statements all over our program, 
+it is far more efficient and much neater to 'wrap' a block of code up using the <b>'function'</b> statement. 
+We can then use a single line of code to 'call' our function and execute the block of code.
+
+<p>For example, if we needed to show a random number to the user and we expect to do that more than once
+in our program, then we could define a function called 'ShowRandom' and call it like this:
+</p>
+
+<pre class="code">
+    <font style="color:green">//Show a random number.</font>
+    function ShowRandom()
+    {
+        var num = Math.random();
+        alert( num );
+    }
+    
+    ShowRandom();
+</pre>
+
+If we want the function to behave slightly differently each time we call it, then we can pass input values 
+to the function. These are known as input <b>'parameters'</b>.  
+
+<p>So for example we might want to change the 
+range of the random numbers produced by our 'ShowRandom' function by providing a 'range' parameter like this:
+</p>
+
+<pre class="code">
+    <font style="color:green">//Show a random number in a given range.</font>
+    function ShowRandom( range )
+    {
+        var num = Math.random() * range;
+        alert( num );
+    }
+    
+    ShowRandom( 10 );
+    ShowRandom( 100 );
+</pre>
+
+<p>
+As well as using input values, we can also get an output ('return') value from our function too, by using
+the <b>'return'</b> statement.  This allows our function to do calculations based on the input parameters and return 
+a result afterwards.  </p>
+
+<p>We could for example create our own function to calculate the area of a circle like this:</p>
+
+<pre class="code">
+    <font style="color:green">//Get the area of a circle.</font>
+    <font style="color:green">//(to two decimal places)</font>
+    function GetAreaOfCircle( radius )
+    {
+        var area = Math.PI * radius * radius;
+        return area.toFixed(2);
+    }
+    
+    <font style="color:green">//Show area of a circle with radius 4.8cm</font>
+    var area = GetAreaOfCircle( 4.8 );
+    alert( "Area = " + area + " cm" );
+</pre>
+
+In Javascript we don't have to place our function before the statement which uses it, so we can put it at the 
+bottom of our script if we prefer, like this:
+
+<pre class="code">
+
+    <font style="color:green">//Show volume of box 4cm x 4cm x 2cm</font>
+    var vol = GetVolumeOfBox( 4 ,4, 2 );
+    alert( "Volume = " + vol );
+    
+    <font style="color:green">//Get the volume of a box.</font>
+    function GetVolumeOfBox( width, height, depth )
+    {
+        var volume = width * height * depth;
+        return  volume;
+    }
+</pre>
+
+
+
+
+<br>
+<h3>String Handling</h3>
+
+<p>
+We often want to manipulate strings (text) in JavaScript and there are a number of 
+useful methods available to us for doing this. Note that the position of characters within a string 
+(known as their 'index') always starts at zero.  
+</p>
+<p>
+One of the most useful string methods is the <b>'split'</b> method. This allows us to split the string
+into parts and store each part in an array.  The split method takes a single parameter which tells the computer 
+which character to look for while splitting the string. 
+</p>
+
+<p>
+For example if we want to get the first and third names in a comma separated list of names, we do the following:
+</p>
+<pre class="code">
+    <font style="color:green">//Get the first and third list items.</font>
+    var names = "Fred,Bill,Amy,Sally";
+    var namesArray = names.split(",");
+    var firstName = namesArray[0];
+    var thirdName = namesArray[2];
+</pre>
+
+<p>
+Another very useful string method is the <b>'indexOf'</b> method.  This allows us to find the index 
+(position) of a string within another string.
+</p>
+<p>
+For example, we might want to check if a file is a text file by searching for the string '.txt' in
+its file name like this:
+</p>
+<pre class="code">
+    <font style="color:green">//Check for text files.</font>
+    var isTextFile = false;
+    if( fileName.indexOf(".txt" ) > -1 ) 
+        isTextFile = true;
+</pre>
+
+<p>Here are some more examples of the many string manipulation methods available
+to us in JavaScript:
+</p>
+<pre class="code">
+   <font style="color:green">//Set our test string</font>
+   var txt = "Big Friendly Giant";
+   
+   <font style="color:green">//Get the number of characters in the string.</font>
+   var numLetters = txt.length;
+   
+   <font style="color:green">//Get a copy the first character.</font>
+   var firstLetter = txt.slice( 0, 1 );
+   
+   <font style="color:green">//Get a copy the last character.</font>
+   var lastLetter = txt.slice( -1 );
+   
+   <font style="color:green">//Get a copy the first word.</font>
+   var firstWord = txt.substring( 0, 3 );
+   
+   <font style="color:green">//Get a copy of the second word.</font>
+   var secondWord = txt.substring( 4, 12 );
+   
+   <font style="color:green">//Get the start index of the word 'Giant'.</font>
+   var indexOfGiant = txt.indexOf( "Giant" );
+   
+   <font style="color:green">//Get the start index of the word 'Big'.</font>
+   var indexOfBig = txt.indexOf( "Big" );
+   
+   <font style="color:green">//Get the index of the last space.</font>
+   var indexOfLastSpace = txt.lastIndexOf( " " );
+   
+   <font style="color:green">//Get a copy of string with word replaced.</font>
+   var changed = txt.replace( "Big", "Little" );
+   
+   <font style="color:green">//Get a lower case copy of the string.</font>
+   var lowerCase = txt.toLowerCase();
+   
+   <font style="color:green">//Get an upper case copy of the string.</font>
+   var upperCase = txt.toUpperCase();
+   
+   <font style="color:green">//Split the string into an array of words.</font>
+   var arrayOfWords = txt.split(" ");
+   
+</pre>
+
+
+<br>
+<br>
+    </div><!-- /content -->
+    
+</div><!-- /page -->
+
+</body>
+</html>

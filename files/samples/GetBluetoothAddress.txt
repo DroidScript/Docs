@@ -1,0 +1,7 @@
+<sample Show Bluetooth Address>
+function OnStart()
+{
+    <b>var addr = app.GetBluetoothAddress();</b>
+    app.Alert( addr );
+}
+</sample>

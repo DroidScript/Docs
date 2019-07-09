@@ -1,0 +1,7 @@
+<sample Check if App is Service>
+function OnStart()
+{
+    <b>var isSvc = app.IsService();</b>
+    app.Alert( isSvc, "IsService" );
+}
+</sample>

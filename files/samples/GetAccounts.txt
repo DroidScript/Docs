@@ -1,0 +1,14 @@
+<sample Get Accounts>
+function OnStart()
+{
+    <b>var accounts = app.GetAccounts();</b>
+	dlg = app.CreateListDialog( "Select an account:", accounts );
+    dlg.SetOnTouch( dlg_OnTouch );
+	dlg.Show();
+}
+
+function dlg_OnTouch( account )
+{
+	app.ShowPopup( "Selected Account: " + account );
+}
+</sample>

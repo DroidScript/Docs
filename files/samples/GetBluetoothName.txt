@@ -1,0 +1,7 @@
+<sample Show Bluetooth Name>
+function OnStart()
+{
+    <b>var name = app.GetBluetoothName();</b>
+    app.Alert( name );
+}
+</sample>

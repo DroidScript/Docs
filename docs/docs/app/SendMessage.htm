@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SendMessage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>SendMessage</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Send a message from a Service to the main app.</p>
+
+			<div class="samp">
+			app.SendMessage( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Services</h3>
+				<div id="examp0" style="font-size:70%">
+					//our Service.js code.<br>
+				//In regular usage move this code to a separate Service.js file<br>
+				var servicejs = `<br>
+				//Init variables.<br>
+				var count = 0;<br>
+				var diff = 1;<br>
+				<br>
+				//Called when service is started.<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello from Service!&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Start a timer to do some regular work.<br>
+				&#160;&#160;&#160;&#160;setInterval( DoWork, 500 );<br>
+				}<br>
+				<br>
+				//Called when we get a message from main app.<br>
+				function OnMessage( msg )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.Debug( msg );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Handle commands from main App.<br>
+				&#160;&#160;&#160;&#160;if( msg == &quot;change&quot; ) diff = (diff &gt; 0 ? -1 : 1);<br>
+				}<br>
+				<br>
+				//This is where we do some regular background task<br>
+				//(here we just modify a counter and send it back to the app, if its running).<br>
+				function DoWork()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;count += diff;<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SendMessage( count );</b><br>
+				}`<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;//Create the Service.js file<br>
+				&#160;&#160;&#160;&#160;//(In regular usage create the file yourself)<br>
+				&#160;&#160;&#160;&#160;app.WriteFile(&quot;Service.js&quot;, servicejs );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Create a layout.<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Create text control to display data from the service.<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.4 );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Create an 'Send Message' button.<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Send Message to Service&quot;, 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.SendMessage(&quot;change&quot;); } );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Create a 'Stop Service' button.<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Stop Service&quot;, 0.6, 0.1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.Stop(); } );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Add layout to app.<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//Start/connect to our service.<br>
+				&#160;&#160;&#160;&#160;svc = app.CreateService( &quot;this&quot;, &quot;this&quot;, OnServiceReady );<br>
+				&#160;&#160;&#160;&#160;svc.SetOnMessage( OnServiceMessage );<br>
+				<br>
+				&#160;&#160;&#160;&#160;//This will cause your service to start at boot.<br>
+				&#160;&#160;&#160;&#160;//(Set it to &quot;none&quot; if you need to stop it starting)<br>
+				&#160;&#160;&#160;&#160;//app.SetAutoBoot( &quot;Service&quot; );<br>
+				}<br>
+				<br>
+				//Called after our service has started.<br>
+				function OnServiceReady()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.Debug( &quot;Service Ready&quot; );<br>
+				}<br>
+				<br>
+				//Called when messages comes from our service.<br>
+				function OnServiceMessage( msg )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;txt.SetText( &quot;Count: &quot; + msg );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+
+	</div>
+</body>
+
+</html>

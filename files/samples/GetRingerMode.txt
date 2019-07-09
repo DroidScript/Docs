@@ -1,0 +1,7 @@
+<sample Show Current Ringer Mode>
+function OnStart()
+{
+    <b>var mode = app.GetRingerMode();</b>
+    app.Alert( mode )
+}
+</sample>

@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateImage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>CreateImage</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Image controls can be used to display images such like png, jpg or gif.<br>
+			Just pass the file path and your're done.</p>
+
+			<div class="samp">
+			img = app.CreateImage( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxw</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxh</a> ) → <b>app object:</b> Image
+			</div>
+
+			<p>Without the <b>width</b> and <b>height</b> dimensions the image will be shown without any scaling.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Original Size</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;img = app.CreateImage( &quot;/Sys/Img/Droid1.png&quot; );<br>
+				&#160;&#160;&#160;&#160;img.SetOnTouch( img_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( img );<br>
+				<br>
+				</b>&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function img_OnTouch( ev )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( ev.action==&quot;Down&quot; )<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Ouch!&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p>If you specify one of them and leave the other <i>null</i>, <i>-1</i> or blank, it will be scaled so that the aspect ratio is kept.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Maintain Aspect</h3>
+				<div id="examp2" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				<b id = "snip2"  style = "font-size:100%">&#160;&#160;&#160;&#160;img = app.CreateImage( &quot;/Sys/Img/Droid1.png&quot;, 0.5, -1 );<br>
+				&#160;&#160;&#160;&#160;img.SetOnTouch( img_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( img );<br>
+				<br>
+				</b>&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function img_OnTouch( ev )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( ev.action==&quot;Down&quot; )<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( ev.x[0] + &quot;, &quot; + ev.y[0], &quot;Short&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p>And if you specify both parameters it will be scaled to your wishes.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Stretched</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;img = app.CreateImage( &quot;/Sys/Img/Droid1.png&quot;, 0.5, 0.7 );<br>
+				&#160;&#160;&#160;&#160;img.SetOnTouch( img_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( img );<br>
+				<br>
+				</b>&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function img_OnTouch( ev )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( ev.action==&quot;Down&quot; )<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Aaaargh!&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p>If you want images to depress like buttons if touched you can use the <i>“Button”</i> <b>option</b>.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Button</h3>
+				<div id="examp5" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateImage( &quot;/Sys/Img/Hello.png&quot;, 0.2, -1, &quot;button&quot; );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouchUp( btn_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function btn_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello World!&quot; );<br>
+				&#160;&#160;&#160;&#160;app.Vibrate( &quot;0,100,30,100,50,300&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip5 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<h3>Drawing on Images</h3>
+			<p>Images are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass <i>null</i> as file parameter.<br>
+			<br>
+			This way you can also specify a fixed pixel size to the image you can use the <i>“fix”</i> <b>option</b> and pass values for the <b>pxw</b> and <b>pxh</b> parameters.</p>
+
+			<div class="samp">
+			img = app.CreateImage( null, 0.8, 0.5, “fix”, 20, 20 );<br>
+			img.DrawLine( 0, 0, 1, 1 );
+			</div>
+
+			<p>If you dislike the anti-alias effect you can apply the <i>“alias”</i> <b>option</b> on a higher resolution image and draw a low-resolution image on it:</p>
+
+			<div class="samp">
+			img2 = app.CreateImage( null, .8, .5, “alias” );<br>
+			img2.DrawImage( img, 0, 0, 1, 1, 0 );
+			</div>
+
+			<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://open.gl/transformations');">transformation matrix</a>. Check out the <b>Draw*</b> methods in the method list below to get more details about all drawing functions.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Draw Shapes</h3>
+				<div id="examp3" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				<b id = "snip3"  style = "font-size:100%">&#160;&#160;&#160;&#160;img = app.CreateImage( null, 0.8, 0.8 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( img );<br>
+				<br>
+				&#160;&#160;&#160;&#160;img.SetColor( &quot;#8888ff&quot; );<br>
+				&#160;&#160;&#160;&#160;img.SetPaintColor( &quot;#ff0000&quot; );<br>
+				&#160;&#160;&#160;&#160;img.DrawCircle( 0.5, 0.5, 0.1 );<br>
+				&#160;&#160;&#160;&#160;img.DrawRectangle( 0.7, 0.7, 0.05 );<br>
+				<br>
+				</b>&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<h3>Drawing on Images <i>fast</i></h3>
+			<p>If you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the <b>SetAutoUpdate</b> method. To force the rendering now, you have to call <b>Update</b>.<br>
+			<br>
+			Another way to increase the animation speed is using the <i>NoDom</i> configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.<br>
+			For animations you can then use the <b>Animate</b> function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Advanced Clock Animating</h3>
+				<div id="examp4" style="font-size:70%">
+					cfg.NoDom, cfg.Portrait;<br>
+				<br>
+				var wh;<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// clock pointer<br>
+				&#160;&#160;&#160;&#160;ptr = app.CreateImage( null, 0.1, 0.1, &quot;fix,alias&quot;, 30, 30 );<br>
+				&#160;&#160;&#160;&#160;ptr.SetTextSize( 4.3 );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// image aspect ratio for drawing square images<br>
+				&#160;&#160;&#160;&#160;wh = ptr.GetAbsWidth() / ptr.GetAbsHeight();<br>
+				<br>
+				&#160;&#160;&#160;&#160;// main canvas<br>
+				&#160;&#160;&#160;&#160;img = app.CreateImage( null, 1, 1, &quot;alias&quot; );<br>
+				&#160;&#160;&#160;&#160;img.SetPaintStyle( &quot;line&quot; );<br>
+				&#160;&#160;&#160;&#160;img.SetAutoUpdate( false );<br>
+				&#160;&#160;&#160;&#160;img.SetLineWidth( 15 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( img );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetDebug( &quot;console&quot; );<br>
+				&#160;&#160;&#160;&#160;app.Animate( OnAnimate, 40 );<br>
+				}<br>
+				<br>
+				function OnAnimate( time, dtime )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;// calculate pointer position from current time<br>
+				&#160;&#160;&#160;&#160;var secs = time / 1000;<br>
+				&#160;&#160;&#160;&#160;var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));<br>
+				&#160;&#160;&#160;&#160;var px = 0.5 + 0.5 * Math.cos( angle );<br>
+				&#160;&#160;&#160;&#160;var py = 0.5 + 0.5 * Math.sin( angle );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// get current datetime<br>
+				&#160;&#160;&#160;&#160;var hrs = Math.floor( secs / 3600 ) % 60;<br>
+				&#160;&#160;&#160;&#160;var min = Math.floor( secs / 60 ) % 60;<br>
+				&#160;&#160;&#160;&#160;var sec = Math.floor( secs ) % 60;<br>
+				&#160;&#160;&#160;&#160;var time = min + &quot;:&quot; + sec;<br>
+				<br>
+				&#160;&#160;&#160;&#160;// measure text dimensions for centering<br>
+				&#160;&#160;&#160;&#160;var tsize = ptr.MeasureText( time );<br>
+				&#160;&#160;&#160;&#160;var tx = (1 - tsize.width ) / 2;<br>
+				&#160;&#160;&#160;&#160;var ty = (1 + tsize.height) / 2;<br>
+				<br>
+				&#160;&#160;&#160;&#160;// draw pointer and datetime text<br>
+				&#160;&#160;&#160;&#160;ptr.Clear();<br>
+				&#160;&#160;&#160;&#160;ptr.SetPaintColor( &quot;red&quot; );<br>
+				&#160;&#160;&#160;&#160;ptr.DrawLine( .5, .5, px, py );<br>
+				&#160;&#160;&#160;&#160;ptr.SetPaintColor( &quot;white&quot; );<br>
+				&#160;&#160;&#160;&#160;ptr.DrawText( time, tx, ty );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// render<br>
+				&#160;&#160;&#160;&#160;img.Clear();<br>
+				&#160;&#160;&#160;&#160;img.DrawCircle( .5, .5, .48 );<br>
+				&#160;&#160;&#160;&#160;img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh );<br>
+				&#160;&#160;&#160;&#160;img.Update();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip4 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p><br>The following methods are available on the <b>Image</b> object:</p>
+
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AdjustColor</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a>, <a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation</a>, <a href="#pop_num_003" data-transition="pop" data-rel="popup">brightness</a>, <a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Clear</a>()</div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">ClearFocus</a>()</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">DrawArc</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">x2</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y2</a>, <a href="#pop_num_deg" data-transition="pop" data-rel="popup">start</a>, <a href="#pop_num_deg" data-transition="pop" data-rel="popup">sweep</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">DrawCircle</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_num_deg" data-transition="pop" data-rel="popup">radius</a> )</div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">DrawFrame</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">ms</a> )</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">DrawImage</a>( <a href="#pop_dso_img" data-transition="pop" data-rel="popup">image</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">w</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">h</a>, <a href="#pop_num_deg" data-transition="pop" data-rel="popup">angle</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">DrawImageMtx</a>( <a href="#pop_dso_img" data-transition="pop" data-rel="popup">image</a>, <a href="#pop_std_lst" data-transition="pop" data-rel="popup">matrix</a> )</div>
+			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">DrawLine</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">x2</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y2</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">DrawPoint</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">DrawRectangle</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y1</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">x2</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y2</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">DrawSamples</a>( <a href="#pop_lst_001" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">range</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">DrawText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">Flatten</a>()</div>
+			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">Focus</a>()</div>
+			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">GetAbsHeight</a>() → <b>number:</b> <i>integer</i></div>
+			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">GetAbsWidth</a>() → <b>number:</b> <i>integer</i></div>
+			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">GetHeight</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> ) → <b>number</b></div>
+			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">GetLeft</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> ) → <b>number</b></div>
+			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">GetName</a>() → <b>string:</b> “name”</div>
+			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">GetParent</a>()</div>
+			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">GetPixelColor</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> ) → <b>list:</b> [<a href="#pop_num_int" data-transition="pop" data-rel="popup">red</a>,<a href="#pop_num_int" data-transition="pop" data-rel="popup">green</a>,<a href="#pop_num_int" data-transition="pop" data-rel="popup">blue</a>]</div>
+			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">GetPixelData</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">format</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">height</a> ) → <b>string:</b> “data”</div>
+			<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">GetPosition</a>( <a href="#pop_str_005" data-transition="pop" data-rel="popup">options</a> ) → <b>object:</b> { <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
+			<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">GetTop</a>( <a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> ) → <b>number</b></div>
+			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “Image”</div>
+			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">GetVisibility</a>() → <b>string:</b> “Show” or “Hide” or “Gone”</div>
+			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">GetWidth</a>( <a href="#pop_str_007" data-transition="pop" data-rel="popup">options</a> ) → <b>number</b></div>
+			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">Gone</a>()</div>
+			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">Hide</a>()</div>
+			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">IsOverlap</a>( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">depth</a> ) → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">IsVisible</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">MeasureText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a> ) → <b>object:</b> { <a href="#pop_std_orw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_orh" data-transition="pop" data-rel="popup">height</a> }</div>
+			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">Move</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">Reset</a>()</div>
+			<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">Rotate</a>( <a href="#pop_num_deg" data-transition="pop" data-rel="popup">angle</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">pivX</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">pivY</a> )</div>
+			<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">Save</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">fileName</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">quality</a> )</div>
+			<div class="samp"><a href="#pop_dsc_028" data-transition="pop" data-rel="popup">Scale</a>( <a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">SetAlpha</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">alpha</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">SetAutoUpdate</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">onoff</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">SetBackAlpha</a>( <a href="#pop_num_005" data-transition="pop" data-rel="popup">alpha</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">SetBackColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">SetBackGradient</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour1</a>, <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour2</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">colour3</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">SetBackGradientRadial</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">radius</a>, <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour1</a>, <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour2</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">colour3</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">SetBackground</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
+			<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">SetColorFilter</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">SetEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
+			<div class="samp"><a href="#pop_dsc_033" data-transition="pop" data-rel="popup">SetFontFile</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )</div>
+			<div class="samp"><a href="#pop_dsc_034" data-transition="pop" data-rel="popup">SetImage</a>( <a href="#pop_mul_001" data-transition="pop" data-rel="popup">image</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_035" data-transition="pop" data-rel="popup">SetLineWidth</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">width</a> )</div>
+			<div class="samp"><a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_037" data-transition="pop" data-rel="popup">SetMaxRate</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">milliseconds</a> )</div>
+			<div class="samp"><a href="#pop_dsc_038" data-transition="pop" data-rel="popup">SetName</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )</div>
+			<div class="samp"><a href="#pop_dsc_039" data-transition="pop" data-rel="popup">SetOnLoad</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03a" data-transition="pop" data-rel="popup">SetOnLongTouch</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03b" data-transition="pop" data-rel="popup">SetOnTouch</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03c" data-transition="pop" data-rel="popup">SetOnTouchDown</a>( <a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03d" data-transition="pop" data-rel="popup">SetOnTouchMove</a>( <a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03e" data-transition="pop" data-rel="popup">SetOnTouchUp</a>( <a href="#pop_fnc_006" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_03f" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_040" data-transition="pop" data-rel="popup">SetPaintColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour</a> )</div>
+			<div class="samp"><a href="#pop_dsc_041" data-transition="pop" data-rel="popup">SetPaintStyle</a>( <a href="#pop_str_00f" data-transition="pop" data-rel="popup">style</a> )</div>
+			<div class="samp"><a href="#pop_dsc_042" data-transition="pop" data-rel="popup">SetPixelData</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_043" data-transition="pop" data-rel="popup">SetPixelMode</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">onoff</a> )</div>
+			<div class="samp"><a href="#pop_dsc_044" data-transition="pop" data-rel="popup">SetPosition</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_010" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_045" data-transition="pop" data-rel="popup">SetScale</a>( <a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_046" data-transition="pop" data-rel="popup">SetSize</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_011" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_047" data-transition="pop" data-rel="popup">SetTextSize</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">size</a> )</div>
+			<div class="samp"><a href="#pop_dsc_048" data-transition="pop" data-rel="popup">SetTouchable</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">touchable</a> )</div>
+			<div class="samp"><a href="#pop_dsc_049" data-transition="pop" data-rel="popup">SetVisibility</a>( <a href="#pop_str_012" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_04a" data-transition="pop" data-rel="popup">Show</a>()</div>
+			<div class="samp"><a href="#pop_dsc_04b" data-transition="pop" data-rel="popup">Skew</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )</div>
+			<div class="samp"><a href="#pop_dsc_04c" data-transition="pop" data-rel="popup">Transform</a>( <a href="#pop_std_lst" data-transition="pop" data-rel="popup">matrix</a> )</div>
+			<div class="samp"><a href="#pop_dsc_04d" data-transition="pop" data-rel="popup">Tween</a>( <a href="#pop_obj_001" data-transition="pop" data-rel="popup">target</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>, <a href="#pop_str_013" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>, <a href="#pop_fnc_007" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_04e" data-transition="pop" data-rel="popup">Update</a>()</div>
+
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “fix”, “alias”, “<a href="" onclick="prompt( '#', 'App.ShowPopup( use pixel values for size' )">px</a>”, “<a href="" onclick="prompt( '#', 'App.ShowPopup( causes image to depress like a button when touched' )">Button</a>”, “ScaleCenter”, “async”, “FontAwesome”, “Resize”, “TouchThrough”, “<a href="" onclick="prompt( '#', 'App.ShowPopup( allows loading of app icons' )">Icon</a>”, “wallpaper”</div>
+		<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
+		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
+		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> 100..100</div>
+		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> 0..100</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content">Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content">clear wimage contrastent</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content">Removes the focus of the control so that the user no longer has immediate access to it.</div>
+		<div data-role="popup" id="pop_num_deg" class="ui-content"><b>number:</b> <i>angle in degrees ( 0 - 360 )</i></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content">DrawArc</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content">DrawCircle</div>
+		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content">DrawFrame</div>
+		<div data-role="popup" id="pop_dso_img" class="ui-content"><b>app object:</b> <i>app image</i></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content">DrawImage</div>
+		<div data-role="popup" id="pop_std_lst" class="ui-content"><b>list</b></div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content">draw image using format matrix (list[9])</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content">DrawLine</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content">draw single pixel</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content">DrawRectangle</div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [<a href="" onclick="prompt( '#', 'App.ShowPopup( number' )">data</a>]</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content">draws a graph in relation to the range</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content">DrawText</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content">Set the focus to the control so that the user can interact with it immediately.</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content">Get the absolute height of the control in pixels.</div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content">Get the absolute width of the control in pixels.</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “px”</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content">Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> “px”</div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content">Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content">return name set via SetName</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content">Returns the parent control object where the object was added to - commonly a layout.</div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content">[r,g,b] values between 0 and 255</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> “rawbase64” or “pngbase64” or “jpgbase64”</div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content"></div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> “screen”, “px”</div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content">Returns data about the position and size of the control.<br>If the <b>screen</b> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> “px”</div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content">Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
+		<div data-role="popup" id="pop_dsc_01a" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_01b" class="ui-content">Returns the current visibility state of the control. The Values are:<br><b>Show</b>: visible<br><b>Hide</b>: invisible but still consuming space<br><b>Gone</b>: invisible and not consuming space</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> “px”</div>
+		<div data-role="popup" id="pop_dsc_01c" class="ui-content">Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.</div>
+		<div data-role="popup" id="pop_dsc_01d" class="ui-content">Hides the control without consuming any more layout space as if it were never there.</div>
+		<div data-role="popup" id="pop_dsc_01e" class="ui-content">Hide the control but keep the layout space free.</div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content">Returns whether the control is currently useable by the user.</div>
+		<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
+		<div data-role="popup" id="pop_num_srw" class="ui-content"><b>number:</b> <i>fraction of screen width</i></div>
+		<div data-role="popup" id="pop_dsc_020" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+		<div data-role="popup" id="pop_std_orw" class="ui-content"><b>undefined</b></div>
+		<div data-role="popup" id="pop_std_orh" class="ui-content"><b>undefined</b></div>
+		<div data-role="popup" id="pop_dsc_022" class="ui-content">MeasureText</div>
+		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_024" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_026" class="ui-content">rotate image contrastent</div>
+		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
+		<div data-role="popup" id="pop_dsc_027" class="ui-content"></div>
+		<div data-role="popup" id="pop_num_fac" class="ui-content"><b>number:</b> <i>factor</i></div>
+		<div data-role="popup" id="pop_dsc_028" class="ui-content">scale image contrastent</div>
+		<div data-role="popup" id="pop_dsc_029" class="ui-content">alpha value between 0 and 255</div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+		<div data-role="popup" id="pop_dsc_02a" class="ui-content">en/disable updating image after drawing</div>
+		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
+		<div data-role="popup" id="pop_dsc_02b" class="ui-content">Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
+		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...</i></div>
+		<div data-role="popup" id="pop_dsc_02c" class="ui-content">Changes the background color of the control.</div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> “left-right” or “right-left” or “top-bottom” or “bottom-top” or “bl-tr” or “br-tl” or “tl-br” or “tr-bl”</div>
+		<div data-role="popup" id="pop_dsc_02d" class="ui-content">Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.</div>
+		<div data-role="popup" id="pop_num_srh" class="ui-content"><b>number:</b> <i>fraction of screen height</i></div>
+		<div data-role="popup" id="pop_dsc_02e" class="ui-content">Define a radial color gradient for the background of control.</div>
+		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> “repeat”</div>
+		<div data-role="popup" id="pop_dsc_02f" class="ui-content">Changes the background to an image which can be repeated using the <b>repeat</b> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
+		<div data-role="popup" id="pop_dsc_030" class="ui-content">Fill the image with a specific color.</div>
+		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> “Add” or “Multiply” or “clear” or “darken” or “lighten” or “overlay” or “screen” or “xor” or “src_in” or “src_out” or “src_atop” or “src_over” or “dst_in” or “dst_out” or “dst_atop” or “dst_over”</div>
+		<div data-role="popup" id="pop_dsc_031" class="ui-content">Adjust the visual color effect with a colour and a given BlendMode. More information about BlendMode can be found in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/graphics/BlendMode.html');">Android Developer page</a>.</div>
+		<div data-role="popup" id="pop_dsc_032" class="ui-content">En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
+		<div data-role="popup" id="pop_dsc_033" class="ui-content">Change the font style by defining a font file.</div>
+		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i><br><b>app object:</b> <i>app image</i></div>
+		<div data-role="popup" id="pop_str_00c" class="ui-content"><b>string:</b> “rescale”</div>
+		<div data-role="popup" id="pop_dsc_034" class="ui-content">set image from file or other image object</div>
+		<div data-role="popup" id="pop_dsc_035" class="ui-content">set stroke width in pixels</div>
+		<div data-role="popup" id="pop_str_00d" class="ui-content"><b>string:</b> “px” or “sp” or “dip” or “mm” or “pt”</div>
+		<div data-role="popup" id="pop_dsc_036" class="ui-content">Define a distance to other controls on each side of the control.</div>
+		<div data-role="popup" id="pop_dsc_037" class="ui-content">delay between two OnTouch events</div>
+		<div data-role="popup" id="pop_dsc_038" class="ui-content">change name</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_039" class="ui-content">?</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( app object' )">self</a>)</div>
+		<div data-role="popup" id="pop_dsc_03a" class="ui-content">callen when object long pressed</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_dsc_03b" class="ui-content">Define a callback function that is called when the user touches the control. In addition, an <b>event</b> object is passed to the callback function to obtain information about the touch <b>type</b>, the touch <b>position(s)</b>, the <b>amount</b> of touches and the <b>control</b> that was touched.</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_dsc_03c" class="ui-content">called when finger comes down</div>
+		<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_dsc_03d" class="ui-content">called when finger was moved over screen</div>
+		<div data-role="popup" id="pop_fnc_006" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_dsc_03e" class="ui-content">called when finger leaves screen</div>
+		<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> “px” or “sp” or “dip” or “mm” or “pt”</div>
+		<div data-role="popup" id="pop_dsc_03f" class="ui-content">Define distances that elements within the control are to maintain from the control borders.</div>
+		<div data-role="popup" id="pop_dsc_040" class="ui-content">SetPaintColor</div>
+		<div data-role="popup" id="pop_str_00f" class="ui-content"><b>string:</b> “Fill” or “Line”</div>
+		<div data-role="popup" id="pop_dsc_041" class="ui-content">SetPaintStyle</div>
+		<div data-role="popup" id="pop_dsc_042" class="ui-content">SetPixelData</div>
+		<div data-role="popup" id="pop_dsc_043" class="ui-content">SetPixelMode</div>
+		<div data-role="popup" id="pop_str_010" class="ui-content"><b>string:</b> “px”</div>
+		<div data-role="popup" id="pop_dsc_044" class="ui-content">Defines the position and size for the control if the parent is an absolute layout.</div>
+		<div data-role="popup" id="pop_dsc_045" class="ui-content">Scales the control along with its contents by the factors passed to the function.</div>
+		<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> “px” or “sp” or “dip” or “dp” or “mm” or “pt”</div>
+		<div data-role="popup" id="pop_dsc_046" class="ui-content">Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
+		<div data-role="popup" id="pop_dsc_047" class="ui-content">SetTextSize</div>
+		<div data-role="popup" id="pop_dsc_048" class="ui-content">En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.</div>
+		<div data-role="popup" id="pop_str_012" class="ui-content"><b>string:</b> “Show” or “Hide” or “Gone”</div>
+		<div data-role="popup" id="pop_dsc_049" class="ui-content">Change the visibility of the control to one of the available modes:<br><b>Show:</b> visible<br><b>Hide:</b> invisible but still consuming space<br><b>Gone:</b> invisible and not consuming space</div>
+		<div data-role="popup" id="pop_dsc_04a" class="ui-content">Set the visibility of the control to “Show”.</div>
+		<div data-role="popup" id="pop_dsc_04b" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_04c" class="ui-content">?</div>
+		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction of screen width' )">x</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction of screen height' )">y</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction of screen width' )">sw</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction of screen height' )">sh</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: angle in degrees ( 0 - 360 ) }' )">rot</a></div>
+		<div data-role="popup" id="pop_str_013" class="ui-content"><b>string:</b> “Linear.None” or “Quadratic.In/Out” or “Cubic.In/Out” or “Quartic.In/Out” or “Quintic.In/Out” or “Sinusoidal.In/Out” or “Exponential.In/Out” or “Circular.In/Out” or “Elastic.In/Out” or “Back.In/Out” or “Bounce.In/Out”</div>
+		<div data-role="popup" id="pop_fnc_007" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_04d" class="ui-content">Performs an animation on the control.<br>The <b>target</b> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <b>type</b> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <b>repeat</b>s you can control how many times you want to play the animation.<br><br>If you have <b>jojo</b> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <b>callback</b> function will be called after the animation has finished. Well, it's about time!</div>
+		<div data-role="popup" id="pop_dsc_04e" class="ui-content">neccessary when using SetAutoUpdate(false)</div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<sample Show /sdcard/ last modifies date>
+function OnStart()
+{
+    var date = app.GetFileDate("/sdcard/");
+    app.Alert( date.toLocaleString() );
+}
+</sample>

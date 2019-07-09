@@ -1,0 +1,18 @@
+<sample Example>
+function OnStart()
+{
+    <b>var id = app.GetNotifyId();</b>
+
+	if( id ) app.Alert( id, "Notification ID" );
+	else
+	{
+        not = app.CreateNotification();
+        not.SetMessage(
+            "You have an urgent notification",
+            "Press me!", "Do as the title says."
+        );
+        not.Notify( 1234 );
+        setTimeout( app.Exit,  2000 );
+	}
+}
+</sample>

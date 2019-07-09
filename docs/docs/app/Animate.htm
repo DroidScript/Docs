@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Animate</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>Animate</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.</p>
+
+			<div class="samp">
+			app.Animate( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">fps</a> )
+			</div>
+
+			<p>when using _AddOptions( “NoDom” ); to cause a high performance you cannot use SetInterval but Animate.<br>
+			<br>
+			comparison:<br>
+			<br>
+			normal:<br>
+			&#160;&#160;setInterval: about 242 calls per second<br>
+			&#160;&#160;app.animate: about 217 calls per second<br>
+			<br>
+			with “NoDom” option:<br>
+			&#160;&#160;setInterval: error<br>
+			&#160;&#160;app.Animate: up to 1000 calls per second</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Digital Clock</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.SetOrientation( &quot;Portrait&quot; );<br>
+				&#160;&#160;&#160;&#160;app.SetDebugEnabled( false );<br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;FillXY,VCenter&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, -1, -1, &quot;multiline&quot; );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 30 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.Animate( OnAnimate, 30 );</b><br>
+				}<br>
+				<br>
+				function OnAnimate( time, dtime )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;txt.SetText( new Date().toLocaleString() + &quot;\n&quot; + time );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - SpeedTest</h3>
+				<div id="examp1" style="font-size:70%">
+					_AddOptions( &quot;NoDom&quot; );<br>
+				<br>
+				var ltime = Date.now(), c = 0;<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;FillXY,VCenter&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, .5, .1, &quot;left&quot; );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app.Animate(OnAnimate, 1000);</b><br>
+				}<br>
+				<br>
+				function OnAnimate( time, dtime )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;c++;<br>
+				&#160;&#160;&#160;&#160;if( time - ltime &gt;= 1000 ) {<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt.SetText( c + &quot; cps&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ltime = time;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;c = 0;<br>
+				&#160;&#160;&#160;&#160;}<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( number: milliseconds' )">time</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: milliseconds' )">dtime</a>)</div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+
+	</div>
+</body>
+
+</html>

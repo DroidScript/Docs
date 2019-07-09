@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ClearData</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>ClearData</h1>
+		</div>
+
+		<div data-role="content">
+			<p>ClearData deletes variables saved via app.Save*().</p>
+
+			<div class="samp">
+			app.ClearData( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			</div>
+
+			<p>The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Save, Load and Clear Data</h3>
+				<div id="examp0" style="font-size:70%">
+					var file = &quot;demofile&quot;;<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var text = getValues();<br>
+				&#160;&#160;&#160;&#160;txtValues = app.CreateText( text, .5, -1, &quot;multiline,left&quot; );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txtValues );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btnClear = app.CreateButton( &quot;Clear Data&quot;, 0.5, 0.1 );<br>
+				&#160;&#160;&#160;&#160;btnClear.SetOnTouch( btnClear_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btnClear );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function btnClear_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.ClearData( file );</b><br>
+				&#160;&#160;&#160;&#160;txtValues.SetText( getValues() );<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Data Cleared.&quot; );<br>
+				}<br>
+				<br>
+				function getValues()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;return (<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;saved Text: &quot; + app.LoadText( &quot;value&quot;, &quot;No Value stored.&quot;, file ) + &quot;\n&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;click count: &quot; + app.LoadNumber( &quot;clicks&quot;, 0, file ) + &quot;\n&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;first start: &quot; + app.LoadBoolean( &quot;first&quot;, true, file ) + &quot;\n&quot;);<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+
+	</div>
+</body>
+
+</html>

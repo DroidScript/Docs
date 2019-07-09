@@ -1,4 +1,4 @@
-<sample Example>
+<sample Basic>
 function OnStart()
 {
 <b>	dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
@@ -25,4 +25,3 @@ function dlg_OnTouch( item, isChecked )
 	app.ShowPopup( item + " isChecked = " + isChecked );
 }
 </sample>
-
