@@ -1,0 +1,14 @@
+<sample OnDebug>
+function OnStart()
+{
+    <b>app.SetOnDebug( OnDebug );</b>
+    app.Debug( "app started" );
+}
+
+function OnDebug(msg)
+{
+    app.SetDebug();
+    app.Alert( msg, "Received debug message:" );
+    app.SetDebug( true );
+}
+</sample>

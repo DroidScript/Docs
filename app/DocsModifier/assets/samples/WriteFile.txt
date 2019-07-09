@@ -1,6 +1,10 @@
-<sample Example>
+<sample Append file and get line count>
 function OnStart()
 {
-<b>	app.WriteFile( "/sdcard/wftest.txt", "Hello", "Append" );
-</b>}</sample>
+    <b>app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" );</b>
 
+    var txt = app.ReadFile("myFile.txt");
+    var length = txt.split("\n").length;
+    app.ShowPopup("myFile contains " + length + " lines");
+}
+</sample>

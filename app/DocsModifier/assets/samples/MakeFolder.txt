@@ -1,6 +1,11 @@
-<sample Example>
+<sample Create folder>
 function OnStart()
 {
-<b>	app.MakeFolder( "/sdcard/Temp/MyStuff" );
-</b>}</sample>
+    <b>app.MakeFolder("myFolder");</b>
 
+	if(app.FolderExists("myFolder"))
+	    app.ShowPopup("myFolder exists!");
+    else
+	    app.ShowPopup("myFolder does not exist!");
+}
+</sample>

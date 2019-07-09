@@ -1,0 +1,7 @@
+<sample Set Auto Boot>
+function OnStart()
+{
+	app.SetAutoBoot( true );
+    app.ShowPopup( "You may reboot your phone now." );
+}
+</sample>

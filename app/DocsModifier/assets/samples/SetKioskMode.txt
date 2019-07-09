@@ -1,0 +1,6 @@
+<sample>
+function OnStart()
+{
+    app.SetKioskMode( "Status,Nav", true, "Black" );
+}
+</sample>

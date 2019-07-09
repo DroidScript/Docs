@@ -1,9 +1,15 @@
-<sample Example>
+<sample Detect First Start>
+var file = "demofile";
+
 function OnStart()
 {
-	b = app.LoadBoolean( "MyBool", true );
-	app.ShowPopup( b );
+	var first = app.LoadBoolean( "first", true, file );
 
-<b>	app.SaveBoolean( "MyBool", !b );
-</b>}</sample>
+	if(first)
+        app.ShowPopup( "You ran this demo for the first time!" );
+    else
+        app.ShowPopup( "This is not the first time you have run this demo." );
 
+	<b>app.SaveBoolean( "first", false, file );</b>
+}
+</sample>

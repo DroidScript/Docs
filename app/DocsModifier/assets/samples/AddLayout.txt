@@ -1,12 +1,12 @@
 <sample Vertical>
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "Vertical,VCenter" );
+	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
 
 	txt = app.CreateText( "Hello" );
+	txt.SetTextSize( 50 );
 	lay.AddChild( txt );
 
-<b>	app.AddLayout( lay );
-</b>}
+	<b>app.AddLayout( lay );</b>
+}
 </sample>
-

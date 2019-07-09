@@ -1,0 +1,6 @@
+<sample Show if Speaker is Enabled>
+function OnStart()
+{
+    var speaker = app.GetSpeakerPhone();
+    app.Alert( speaker );
+}</sample>

@@ -1,0 +1,7 @@
+<sample Check Locatoin Enabled>
+function OnStart()
+{
+    <b>var locEnabled = app.IsLocationEnabled();</b>
+    app.Alert( locEnabled, "Location Enabled:" );
+}
+</sample>

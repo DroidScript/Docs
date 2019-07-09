@@ -1,0 +1,7 @@
+<sample Get Media File>
+function OnStart()
+{
+    <b>var path = app.GetMediaFile("Hello World", ".png");</b>
+    app.Alert( path );
+}
+</sample>

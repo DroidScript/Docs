@@ -1,0 +1,15 @@
+<sample Create Thumbnail>
+function OnStart()
+{
+    lay = app.CreateLayout( "absolute" );
+
+    img = app.CreateImage( "/Sys/Img/Hello.png" );
+    lay.AddChild( img );
+
+    <b>app.GetThumbnail( "/Sys/Img/Hello.png", "/sdcard/Hello_thmb.png", 100, -1 );
+    thmb = app.CreateImage( "/sdcard/Hello_thmb.png" );
+    lay.AddChild( thmb );</b>
+
+    app.AddLayout( lay );
+}
+</sample>

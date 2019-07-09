@@ -1,4 +1,4 @@
-<sample Example>
+<sample Get Location Updates>
 function OnStart()
 {
 <b>	loc = app.CreateLocator("GPS,Network");
@@ -13,4 +13,3 @@ function loc_OnChange(pos)
 	app.ShowPopup( msg );
 }
 </sample>
-

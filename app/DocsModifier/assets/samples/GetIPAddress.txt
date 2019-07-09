@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show Device IP>
 function OnStart()
 {
-<b>	ip = app.GetIPAddress();
-</b>	app.ShowPopup( ip );
+    var ip = app.GetIPAddress();
+    app.Alert( ip );
 }
 </sample>
-

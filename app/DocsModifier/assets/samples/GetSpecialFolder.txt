@@ -1,0 +1,7 @@
+<sample Get Pictures folder>
+function OnStart()
+{
+    var fld = app.GetSpecialFolder( "Pictures" );
+    app.Alert( fld );
+}
+</sample>

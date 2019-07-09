@@ -1,0 +1,13 @@
+<sample Copy file>
+function OnStart()
+{
+    app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" );
+
+    <b>app.CopyFile("myFile.txt", "/sdcard/myFile.txt");</b>
+
+	if(app.FolderExists("/sdcard/myFile.txt"))
+	    app.ShowPopup("myFile exists in /sdcard/!");
+    else
+	    app.ShowPopup("myFile does not exist in /sdcard/!");
+}
+</sample>

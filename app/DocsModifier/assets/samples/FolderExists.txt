@@ -1,7 +1,9 @@
 <sample Example>
 function OnStart()
 {
-<b>	exists = app.FolderExists( "/sdcard/IOIOScript" );
-</b>	app.ShowPopup( exists );
-}</sample>
-
+	<b>if(app.FolderExists("myFolder"))
+	    app.ShowPopup("myFolder exists!");
+    else
+	    app.ShowPopup("myFolder does not exist!");</b>
+}
+</sample>

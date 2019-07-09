@@ -1,0 +1,34 @@
+<sample Demonstration>
+function OnStart()
+{
+    app.CreateDebug();
+    app.ShowDebug(true);
+
+	app.Debug("default 1");   // default on
+	console.log("default 2"); // default on
+
+	app.SetDebug("adb");
+	app.Debug("adb 3");       // off
+	console.log("adb 4");     // off
+
+	<b>app.SetDebug("console");</b>
+	app.Debug("console 5");   // off
+	console.log("console 6"); // on
+
+	app.SetDebug("ds");
+	app.Debug("ds 7");        // on
+	console.log("ds 8");      // off
+
+	app.SetDebug("");
+	app.Debug("null 9");      // off
+	console.log("null 10");   // off
+
+	app.SetDebug("true");
+	app.Debug("true 11");     // on
+	console.log("true 12");   // on
+
+	app.SetDebug("false");
+	app.Debug("hello 13");    // off
+	console.log("hello 14");  // off
+}
+</sample>

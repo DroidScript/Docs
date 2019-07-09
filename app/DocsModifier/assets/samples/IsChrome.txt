@@ -1,0 +1,7 @@
+<sample Check APK>
+function OnStart()
+{
+    <b>var isChrome = app.IsChrome();</b>
+    app.Alert( isChrome, "is Chrome:" );
+}
+</sample>

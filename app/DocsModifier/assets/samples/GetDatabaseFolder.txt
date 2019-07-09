@@ -1,0 +1,7 @@
+<sample Show >
+function OnStart()
+{
+    <b>var dir = app.GetDatabaseFolder();</b>
+    app.Alert( dir );
+}
+</sample>

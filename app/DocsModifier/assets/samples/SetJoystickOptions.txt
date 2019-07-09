@@ -1,0 +1,6 @@
+<sample ForwardKeys>
+function OnStart()
+{
+    app.SetJoystickOptions( "ForwardKeys" );
+}
+</sample>

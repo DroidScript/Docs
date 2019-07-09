@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show App Path>
 function OnStart()
 {
-<b>	user = app.GetUser();
-</b>	app.ShowPopup( user );
+    <b>var usr = app.GetPath();</b>
+    app.Alert( usr, "Active User:" );
 }
 </sample>
-

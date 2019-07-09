@@ -1,0 +1,12 @@
+<sample Show RSSI>
+function OnStart()
+{
+    app.Animate( ShowRSSI, 1);
+}
+
+function ShowRSSI()
+{
+    var rssi = app.GetRSSI();
+    app.ShowPopup( rssi );
+}
+</sample>

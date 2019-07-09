@@ -1,0 +1,28 @@
+<sample Discover Bluetooth Devices>
+
+function OnStart()
+{
+    app.SetBluetoothEnabled(true);
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    lst = app.CreateList( "", 0.8, 0.4 );
+    lst.SetBackColor("#11ffffff");
+    lay.AddChild( lst );
+
+    app.AddLayout( lay );
+
+    app.ShowProgress();
+    
+    <b>app.DiscoverBtDevices( "", OnFound, OnComplete );</b>
+}
+
+function OnFound( name, address)
+{
+    lst.AddItem( name, address );
+}
+
+function OnComplete()
+{
+    app.HideProgress();
+}
+</sample>

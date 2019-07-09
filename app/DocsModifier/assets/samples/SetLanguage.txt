@@ -1,0 +1,38 @@
+<sample Switch Language>
+var langJson = `
+{
+    "langs": [ "English", "Español" ],
+    "codes": { "english":"en", "español":"es" },
+    "trans" : {
+        "SelectLang" : {
+            "en":"Please select your prefered language from the 'Settings' menu",
+            "es":"Selecciona tu idioma preferido en el menú 'Configuración'"
+        }
+    }
+}`;
+
+function OnStart()
+{
+    app.WriteFile( "lang.json", langJson );
+    app.SetLanguage( "English" );
+
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    spinLang = app.CreateSpinner( "English,Español", 0.4 );
+    spinLang.SetOnChange( spinLang_OnChange );
+    lay.AddChild( spinLang );
+
+    app.AddLayout( lay );
+
+    app.ShowPopup(T( "SelectLang" ));
+}
+
+function spinLang_OnChange()
+{
+    language = spinLang.GetText();
+    app.SetLanguage( language );
+
+    app.DestroyLayout( lay );
+    OnStart();
+}
+</sample>

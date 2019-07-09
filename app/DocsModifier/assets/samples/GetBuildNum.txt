@@ -1,0 +1,7 @@
+<sample Show build number>
+function OnStart()
+{
+    <b>var num = app.GetBuildNum();</b>
+    app.Alert( num );
+}
+</sample>

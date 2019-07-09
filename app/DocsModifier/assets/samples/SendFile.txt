@@ -1,0 +1,7 @@
+<sample Send File>
+function OnStart()
+{
+    app.WriteFile( "file.txt", "Hello World" );
+	<b>app.SendFile( "file.txt", "Shared File", app.GetUser() + " shared file.txt with you" );</b>
+}
+</sample>

@@ -13,9 +13,9 @@ function OnStart()
 
 </b>}
 
-function sns_OnChange( <a href="#pop_num_orw" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_orh" data-transition="pop" data-rel="popup">y</a>, z, time )
+function sns_OnChange( x, y, z, time )
 {
-	txt.SetText( "x="+x + "\n y="+y + "\n z="+z );
+	txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
 }
 </sample>
 

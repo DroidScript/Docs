@@ -1,0 +1,16 @@
+<sample check and get permissions>
+function OnStart()
+{
+    <b>var check = app.CheckPermission( "Camera,ExtSDcard,Network,Storage" );</b>
+    if( check )
+    {
+        app.GetPermission( check, PermissionResult );
+    }
+    else alert( "everything ok!" );
+}
+
+function PermissionResult( ungranted )
+{
+    alert( "ungranted: " + ungranted );
+}
+</sample>

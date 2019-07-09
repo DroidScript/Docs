@@ -1,0 +1,28 @@
+<sample Show Running Apps>
+function OnStart()
+{
+    app.ShowProgress();
+
+    var lay = app.CreateLayout( "linear", "fillxy,vcenter" );
+
+    lst = app.CreateList( "", .9, .9 );
+    lst.SetTextSize1( 15 );
+    lay.AddChild( lst );
+
+    <b>var list = app.GetRunningApps();
+
+    for( var i in list )
+    {
+        var a = list[i];
+        var body =
+            "user: " + a.user +
+            "\npid: " + a.pid +
+            "\nforeground: " + a.foreground;
+        lst.AddItem( a.name, body );
+    }</b>
+
+    app.AddLayout( lay );
+
+    app.HideProgress();
+}
+</sample>

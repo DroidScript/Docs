@@ -1,0 +1,16 @@
+<sample Detect WiFi Changes>
+function OnStart()
+{
+    app.SetOnWifiChange( OnWifiChange );
+}
+
+<b>function OnWifiChange( state, ssid )
+{
+    if( state.EndsWith( "ED" ))
+    {
+        app.ShowPopup( state + "\n" + ssid );
+        app.HideProgress();
+    }
+    else app.ShowProgress( state )
+}</b>
+</sample>

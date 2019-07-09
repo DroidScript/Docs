@@ -1,0 +1,6 @@
+<sample Enabling Bluetooth>
+function OnStart()
+{
+    app.SetBackColor( "blue" );
+}
+</sample>

@@ -1,0 +1,31 @@
+<sample Play Local Sound File>
+function OnStart(){
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Press Me", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+    <b>app.PlaySound( "/Sys/Snd/Trill.ogg" );</b>
+}</sample>
+
+<sample Play Remote Sound File>
+function OnStart(){
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Press Me", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+    <b>app.PlaySound( "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3" );</b>
+}</sample>

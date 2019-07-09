@@ -1,0 +1,22 @@
+<sample Demonstration>
+
+function OnStart() {
+	var dens = app.GetScreenDensity();
+
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	<b>app.SetDensity(dens / 2);</b>
+	btn = app.CreateButton( "Press Me", -1, .1 );
+	lay.AddChild( btn );
+
+	app.SetDensity(dens);
+	btn = app.CreateButton( "Press Me", -1, .1 );
+	lay.AddChild( btn );
+
+	app.SetDensity(dens * 2);
+	btn = app.CreateButton( "Press Me", -1, .1 );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+</sample>

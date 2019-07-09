@@ -1,0 +1,17 @@
+<sample Downloading the DroidScript logo>
+function OnStart()
+{
+    var src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png";
+    var dst = "/sdcard/Downloads/logo.png";
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog");
+}
+</sample>
+
+<sample Download to external storage>
+function OnStart()
+{
+    var src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png";
+    var dst = app.GetExternalFolder() + "/Downloads/logo.png";
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog");
+}
+</sample>
