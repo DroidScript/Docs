@@ -1,0 +1,14 @@
+
+<sample Sample1>
+function OnStart()
+{
+    <b>test</b>
+}
+</sample>
+
+<sample Sample2>
+function test()
+{
+    <b>test</b>
+}
+</sample>

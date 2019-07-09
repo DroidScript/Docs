@@ -1,0 +1,88 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.setUTCMonth()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.setUTCMonth()</h2></div>
+
+<p>The <strong><code>setUTCMonth()</code></strong> method sets the month for a specified date according to universal time.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.setUTCMonth(<var>monthValue</var>[, <var>dayValue</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>monthValue</code></dt>
+ <dd>An integer between 0 and 11, representing the months January through December.</dd>
+ <dt><code>dayValue</code></dt>
+ <dd>Optional. An integer from 1 to 31, representing the day of the month.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>If you do not specify the <code>dayValue</code> parameter, the value returned from the <b>getUTCDate()</b> method is used.</p>
+
+<p>If a parameter you specify is outside of the expected range, <code>setUTCMonth()</code> attempts to update the date information in the <b>Date</b> object accordingly. For example, if you use 15 for <code>monthValue</code>, the year will be incremented by 1, and 3 will be used for month.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_setUTCMonth()">Using <code>setUTCMonth()</code></h3>
+
+<pre class="brush: js">var theBigDay = new Date();
+theBigDay.setUTCMonth(11);
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

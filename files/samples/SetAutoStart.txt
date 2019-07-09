@@ -1,0 +1,7 @@
+<sample Auto Start 'Hello World'>
+function OnStart()
+{
+	app.SetAutoBoot( "Hello World" );
+    app.ShowPopup( "You may now restart DroidScript." );
+}
+</sample>

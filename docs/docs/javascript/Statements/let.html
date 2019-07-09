@@ -1,0 +1,291 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>let</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>let</h2> <script>harmony</script></div>
+
+<p>The <strong><code>let</code></strong> statement declares a block scope local variable, optionally initializing it to a value.</p>
+
+<div class="note">
+<p>The <code>let</code> keyword in Mozilla Firefox is only available to code blocks in HTML&nbsp;wrapped in a <code>&lt;script type="application/javascript;version=1.7"&gt;</code> block (or higher version). XUL script tags have access to these features without needing this special block. Beware, however, that&nbsp;as this is a non-standard feature, this will most likely break support for other browsers.</p>
+</div>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">let var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]];</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>var1</code>, <code>var2</code>, …, <code>varN</code></dt>
+ <dd>Variable name. It can be any legal identifier.</dd>
+ <dt><code>value1</code>, <code>value2</code>, …, <code>valueN</code></dt>
+ <dd>Initial value of the variable. It can be any legal expression.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p><code>let</code> allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the <code>var</code> keyword, which defines a variable globally, or locally to an entire function regardless of block scope.</p>
+
+<h3 id="Block_scope_with_let">Block scope with <code>let</code></h3>
+
+<p>Use the <code>let</code> keyword to define variables inside a block.</p>
+
+<pre class="brush:js">if (x &gt; y) {
+  let gamma = 12.7 + y;
+  i = gamma * x;
+}
+</pre>
+
+<p><code>let</code> sometimes makes the code cleaner when inner functions are used.</p>
+
+<pre class="brush:js">var list = document.getElementById("list");
+
+for (var i = 1; i &lt;= 5; i++) {
+  var item = document.createElement("LI");
+  item.appendChild(document.createTextNode("Item " + i));
+
+&nbsp; let j = i;
+  item.onclick = function (ev) {
+    console.log("Item " + j + " is clicked.");
+  };
+  list.appendChild(item);
+}
+</pre>
+
+<p>The example above works as intended because the five instances of the (anonymous) inner function refer to five different instances of variable <code>j</code>. Note that it does not work as intended if you replace <code>let</code> by <code>var</code> or if you remove the variable <code>j</code> and simply use the variable <code>i</code> in the inner function.</p>
+
+<h4 id="Scoping_rules">Scoping rules</h4>
+
+<p>Variables declared by <code>let</code> have as their scope the block in which they are defined, as well as in any contained sub-blocks . In this way, <code>let</code> works very much like <code>var</code>. The main difference is that the scope of a <code>var</code> variable is the entire enclosing function:</p>
+
+<pre class="brush:js">function varTest() {
+  var x = 31;
+  if (true) {
+    var x = 71;  // same variable!
+    console.log(x);  // 71
+  }
+  console.log(x);  // 71
+}
+
+function letTest() {
+  let x = 31;
+  if (true) {
+    let x = 71;  // different variable
+    console.log(x);  // 71
+  }
+  console.log(x);  // 31
+}
+</pre>
+
+<p>At the top level of programs and functions, <code>let</code> behaves exactly like <code>var</code> does. For example:</p>
+
+<pre class="brush:js">var x = 'global';
+let y = 'global';
+console.log(this.x);
+console.log(this.y);
+</pre>
+
+<p>The output displayed by this code will display "global" twice.</p>
+
+<h3 id="Temporal_dead_zone_and_errors_with_let">Temporal dead zone and errors with <code>let</code></h3>
+
+<p>Redeclaration of the same variable in the same function or block scope raises a <code>TypeError</code>.</p>
+
+<pre class="brush: js">if (x) {
+  let foo;
+  let foo; // TypeError thrown.
+}</pre>
+
+<p>In ECMAScript 6, <code>let</code> <strong>does not hoist</strong> the variable to the top of the block. If you reference a variable in a block before the <code>let</code> declaration for that variable is encountered, this results in a <code>ReferenceError</code>, because the variable is in a "temporal dead zone" from the start of the block until the declaration is processed.</p>
+
+<pre class="brush: js">function do_something() {
+  console.log(foo); // ReferenceError
+  let foo = 2;
+}</pre>
+
+<p>You may encounter errors in <code>switch</code> statements because there is only one underlying block.</p>
+
+<pre class="brush: js">switch (x) {
+  case 0:
+    let foo;
+    break;
+    
+  case 1:
+    let foo; // TypeError for redeclaration.
+    break;
+}</pre>
+
+<h3 id="let-scoped_variables_in_for_loops"><code>let</code>-scoped variables in <code>for</code> loops</h3>
+
+<p>You can use the <code>let</code> keyword to bind variables locally in the scope of <code>for</code> loops. This is different from the var keyword in the head of a for loop, which makes the variables visible in the whole function containing the loop.</p>
+
+<pre class="brush:js">var i=0;
+for ( let i=i ; i &lt; 10 ; i++ ) {
+  console.log(i);
+}
+</pre>
+
+<h4 id="Scoping_rules">Scoping rules</h4>
+
+<pre class="eval">for (let <var>expr1</var>; <var>expr2</var>; <var>expr3</var>) <var>statement</var>
+</pre>
+
+<p>In this example, <var>expr2</var>, <var>expr3</var>, and <var>statement</var> are enclosed in an implicit block that contains the block local variables declared by <code>let <var>expr1</var></code>. This is demonstrated in the first loop above.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="let_vs_var"><code>let</code> vs <code>var</code></h3>
+
+<p>When used inside a block, <em>let</em> limits the variable's scope to that block. Note the difference between <em>var </em>whose scope is inside the function where it is declared</p>
+
+<pre class="brush: js">var a = 5;
+var b = 10;
+
+if (a === 5) {
+  let a = 4; // The scope is inside the if-block
+  var b = 1; // The scope is inside the function
+
+  console.log(a);  // 4
+  console.log(b);  // 1
+} 
+
+console.log(a); // 5
+console.log(b); // 1</pre>
+
+<h3 id="let_in_loops"><code>let</code> in loops</h3>
+
+<p>You can use the <em>let</em> keyword to bind variables locally in the scope of loops instead of using a global variable (defined using <em>var</em>) for that.</p>
+
+<pre class="brush: js">for (let i = 0; i&lt;10; i++) {
+  console.log(i); // 0, 1, 2, 3, 4 ... 9
+}
+
+console.log(i); // i is not defined</pre>
+
+<h2 id="Non-standard_let_extensions">Non-standard <code>let</code> extensions</h2>
+
+<div class="warning">
+<p>The <code>let</code> block and <code>let</code> expression syntax is non-standard and will be removed in the future. Do not use them! See  and  for more details.</p>
+</div>
+
+<h3 id="let_blocks"><code>let</code> blocks</h3>
+
+<p>The <strong><code>let</code> block</strong> provides a way to associate values with variables within the scope of a block, without affecting the values of like-named variables outside the block.</p>
+
+<h4 id="Syntax">Syntax</h4>
+
+<pre class="syntaxbox">let (var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]]) block;</pre>
+
+<h4 id="Description">Description</h4>
+
+<p>The <code>let</code> block provides local scoping for variables. It works by binding zero or more variables in the lexical scope of a single block of code; otherwise, it is exactly the same as a block statement. Note in particular that the scope of a variable declared inside a <code>let</code> block using <code>var</code> is still the same as if it had been declared outside the <code>let</code> block; such variables still have function scoping. When using the <code>let</code> block syntax, the parentheses following <code>let</code> are required. Failure to include them will result in a syntax error.</p>
+
+<h4 id="Example">Example</h4>
+
+<pre class="brush:js">var x = 5;
+var y = 0;
+
+let (x = x+10, y = 12) {
+  console.log(x+y); // 27
+}
+
+console.log(x + y); // 5
+</pre>
+
+<p>The rules for the code block are the same as for any other code block in JavaScript. It may have its own local variables established using the <code>let</code> declarations.</p>
+
+<h4 id="Scoping_rules_3">Scoping rules</h4>
+
+<p>The scope of variables defined using <code>let</code> is the <code>let</code> block itself, as well as any inner blocks contained inside it, unless those blocks define variables by the same names.</p>
+
+<h3 id="let_expressions"><code>let</code> expressions</h3>
+
+<div class="warning">
+<p><code>let</code> expression support has been dropped in Gecko 41 ().</p>
+</div>
+
+<p>The <strong><code>let</code> expression</strong> lets you establish variables scoped only to a single expression.</p>
+
+<h4 id="Syntax_3">Syntax</h4>
+
+<pre class="syntaxbox">let (var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]]) expression;</pre>
+
+<h4 id="Example">Example</h4>
+
+<p>You can use <code>let</code> to establish variables that are scoped only to a single expression:</p>
+
+<pre class="brush: js">var a = 5;
+let(a = 6) console.log(a); // 6
+console.log(a); // 5</pre>
+
+<h4 id="Scoping_rules_4">Scoping rules</h4>
+
+<p>Given a <code>let</code> expression:</p>
+
+<pre class="eval">let (<var>decls</var>) <var>expr</var>
+</pre>
+
+<p>There is an implicit block created around <var>expr</var>.</p>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<h2 id="Firefox-specific_notes">Firefox-specific notes</h2>
+
+<ul>
+ <li>Only available to code blocks in HTML&nbsp;wrapped in a <code>&lt;script type="application/javascript;version=1.7"&gt;</code> block (or higher version). Beware, however, that as this is a non-standard feature, this will most likely break support for other browsers. XUL script tags have access to these features without needing this special block. See  and .</li>
+ <li>Support in <script>domxref("Worker")</script> code is hidden behind the <code>dom.workers.latestJSVersion</code> flag. </li>
+ <li>ES6 compliance for <code>let</code> in SpIderMonkey is tracked in  and non-standard extensions are going to be removed in the future .</li>
+</ul>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

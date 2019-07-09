@@ -1,0 +1,141 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.localeCompare()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.localeCompare()</h2></div>
+
+<p>The <strong><code>localeCompare()</code></strong> method returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.</p>
+
+<p>The new <code>locales</code> and <code>options</code> arguments let applications specify the language whose sort order should be used and customize the behavior of the function. In older implementations, which ignore the <code>locales</code> and <code>options</code> arguments, the locale and sort order used are entirely implementation dependent.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>referenceStr</var>.localeCompare(<var>compareString</var>[, <var>locales</var>[, <var>options</var>]])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<p>Check the Browser compatibility section to see which browsers support the <code>locales</code> and <code>options</code> arguments, and the Checking for support for <code>locales</code> and <code>options</code> arguments for feature detection.</p>
+
+<dl>
+ <dt><code>compareString</code></dt>
+ <dd>The string against which the referring string is compared</dd>
+</dl>
+
+<div></div>
+
+<h2 id="Description">Description</h2>
+
+<p>Returns an integer indicating whether the <strong>referenceStr</strong> comes before, after or is equivalent to the <strong>compareStr</strong>.</p>
+
+<ul>
+ <li>Negative when the <strong>referenceStr</strong> occurs before <strong>compareStr</strong></li>
+ <li>Positive when the <strong>referenceStr</strong> occurs after <strong>compareStr</strong></li>
+ <li>Returns 0 if they are equivalent</li>
+</ul>
+
+<p><strong>DO NOT rely on exact return values of -1 or 1. </strong>Negative and positive integer results vary between browsers (as well as between browser versions) because the W3C specification only mandates negative and positive values. Some browsers may return -2 or 2 or even some other negative or positive value.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_localeCompare()">Using <code>localeCompare()</code></h3>
+
+<pre class="brush: js">// The letter "a" is before "c" yeilding a negative value
+'a'.localeCompare('c'); // -2 or -1 (or some other negative value)
+
+// Alphabetically the word "check" comes after "against" yeilding a positive value
+'check'.localeCompare('against'); // 2 or 1 (or some other positive value)
+
+// "a" and "a" are equivalent yeilding a neutral value of zero
+'a'.localeCompare('a'); // 0
+</pre>
+
+<h3 id="Check_browser_support_for_extended_arguments">Check browser support for extended arguments</h3>
+
+<p>The <code>locales</code> and <code>options</code> arguments are not supported in all browsers yet. To check whether an implementation supports them, use the "i" argument (a requirement that illegal language tags are rejected) and look for a <b>RangeError</b> exception:</p>
+
+<pre class="brush: js">function localeCompareSupportsLocales() {
+  try {
+    'foo'.localeCompare​('bar', 'i');
+  } catch (e) {
+    return e​.name === 'RangeError';
+  }
+  return false;
+}
+</pre>
+
+<h3 id="Using_locales">Using <code>locales</code></h3>
+
+<p>The results provided by <code>localeCompare()</code> vary between languages. In order to get the sort order of the language used in the user interface of your application, make sure to specify that language (and possibly some fallback languages) using the <code>locales</code> argument:</p>
+
+<pre class="brush: js">console.log('ä'.localeCompare('z', 'de')); // a negative value: in German, ä sorts with a
+console.log('ä'.localeCompare('z', 'sv')); // a positive value: in Swedish, ä sorts after z
+</pre>
+
+<h3 id="Using_options">Using <code>options</code></h3>
+
+<p>The results provided by <code>localeCompare()</code> can be customized using the <code>options</code> argument:</p>
+
+<pre class="brush: js">// in German, ä has a as the base letter
+console.log('ä'.localeCompare('a', 'de', { sensitivity: 'base' })); // 0
+
+// in Swedish, ä and a are separate base letters
+console.log('ä'.localeCompare('a', 'sv', { sensitivity: 'base' })); // a positive value
+</pre>
+
+<h2 id="Performance">Performance</h2>
+
+<p>When comparing large numbers of strings, such as in sorting large arrays, it is better to create an <b>Intl.Collator</b> object and use the function provided by its <b>compare</b> property.</p>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

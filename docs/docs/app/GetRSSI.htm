@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GetRSSI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>GetRSSI</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Returns the current <i><b>R</b>eceived <b>S</b>ignal <b>S</b>trength <b>I</b>ndication</i> which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).</p>
+
+			<div class="samp">
+			app.GetRSSI() → <b>number:</b> <i>integer</i> -127..-30
+			</div>
+
+			<h3>Understanding RSSI</h3>
+			<p><table><thead align='left'><tr><th width="15%">Signal Strength</th><th width="10%">TL;DR</th><th width="20%">Required for</th></tr></thead><tbody><tr><td>-30 dBm</td><td>Amazing</td><td>N/A</td></tr><tr><td>-67 dBm</td><td>Very Good</td><td>VoIP/VoWiFi, streaming video</td></tr><tr><td>-70 dBm</td><td>Okay</td><td>Email, web</td></tr><tr><td>-80 dBm</td><td>Not Good</td><td>N/A</td></tr><tr><td>-90 dBm</td><td>Unusable</td><td>N/A</td></tr><tr><td>-127 dBm</td><td>Disabled</td><td>N/A</td></tr></tbody></table><p>source: <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://www.metageek.com/training/resources/understanding-rssi.html');">metageek.com</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Show RSSI</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.Animate( ShowRSSI, 1);<br>
+				}<br>
+				<br>
+				function ShowRSSI()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var rssi = app.GetRSSI();<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( rssi );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+
+	</div>
+</body>
+
+</html>

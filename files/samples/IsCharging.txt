@@ -1,0 +1,7 @@
+<sample Check Charging State>
+function OnStart()
+{
+    <b>var charging = app.IsCharging();</b>
+    app.Alert( charging, "is charging:" );
+}
+</sample>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Execute</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>Execute</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Executes a piece of code asynchroneously to your program.</p>
+
+			<div class="samp">
+			app.Execute( <a href="#pop_str_jsc" data-transition="pop" data-rel="popup">js</a> )
+			</div>
+
+			<p>It is designed for interacting with your main app from within a <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('CreateWebView.htm');">WebView</a>.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Execute code from WebView</h3>
+				<div id="examp0" style="font-size:70%">
+					var html = `<br>
+				&lt;html&gt;<br>
+				&lt;head&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;script src='file:///android_asset/app.js'&gt;&lt;/script&gt;<br>
+				&lt;/head&gt;<br>
+				<br>
+				&lt;script&gt;<br>
+				&#160;&#160;&#160;&#160;var source = &quot;html&quot;;<br>
+				&#160;&#160;&#160;&#160;function btn_OnTouch()<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.Execute( &quot;app.Alert( 'source: &quot; + source + &quot;\\\\ntarget: ' + source );&quot; );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				&lt;/script&gt;<br>
+				<br>
+				&lt;body style=&quot;text-align: center;&quot;&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;input type=&quot;button&quot; onclick=&quot;btn_OnTouch()&quot; value=&quot;Click me!&quot;&gt;&lt;/button&gt;<br>
+				&lt;/body&gt;<br>
+				&lt;/html&gt;`;<br>
+				<br>
+				var source = &quot;app&quot;;<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;fillxy,vcenter&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;web = app.CreateWebView( .5, .2 );<br>
+				&#160;&#160;&#160;&#160;web.LoadHtml( html );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( web );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton(&quot;call myFunction&quot;, .4, .1);<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch(btn_OnTouch);<br>
+				&#160;&#160;&#160;&#160;lay.AddChild(btn);<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function btn_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.Execute( &quot;app.Alert( 'source: &quot; + source + &quot;\\ntarget: ' + source );&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_jsc" class="ui-content"><b>string</b></div>
+
+	</div>
+</body>
+
+</html>

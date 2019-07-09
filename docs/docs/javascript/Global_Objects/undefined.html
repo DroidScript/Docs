@@ -1,0 +1,138 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>undefined</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>undefined</h2></div>
+
+<p>The global <code><strong>undefined</strong></code> property represents the primitive value <code>undefined</code>. It is one of JavaScript's primitive types.</p>
+
+<p></p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>undefined</code></pre>
+
+<h2 id="Description">Description</h2>
+
+<p><code>undefined</code> is a property of the <em>global object</em>, i.e. it is a variable in global scope. The initial value of <code>undefined</code> is the primitive value <code>undefined</code>.</p>
+
+<p>In modern browsers (JavaScript 1.8.5 / Firefox 4+), <code>undefined</code> is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.</p>
+
+<p>A variable that has not been assigned a value is of type undefined. A method or statement also returns <code>undefined</code> if the variable that is being evaluated does not have an assigned value. A function returns <code>undefined</code> if a value was not <b>returned</b>.</p>
+
+<p>Since <code>undefined</code> is not a <b>reserved word</b>, it can be used as an identifier (variable name) in any scope other than the global scope.</p>
+
+<pre class="brush: js">// logs "foo string"
+(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();
+
+// logs "foo string"
+(function(undefined){ console.log(undefined, typeof undefined); })('foo');
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Strict_equality_and_undefined">Strict equality and <code>undefined</code></h3>
+
+<p>You can use <code>undefined</code> and the strict equality and inequality operators to determine whether a variable has a value. In the following code, the variable <code>x</code> is not defined, and the <code>if</code> statement evaluates to true.</p>
+
+<pre class="brush: js">var x;
+if (x === undefined) {
+   // these statements execute
+}
+else {
+   // these statements do not execute
+}
+</pre>
+
+<div class="note">
+<p>Note: The strict equality operator rather than the standard equality operator must be used here, because <code>x == undefined</code> also checks whether <code>x</code> is <code>null</code>, while strict equality doesn't. <code>null</code> is not equivalent to <code>undefined</code>. See <b>comparison operators</b> for details.</p>
+</div>
+
+<h3 id="Typeof_operator_and_undefined"><code>Typeof</code> operator and <code>undefined</code></h3>
+
+<p>Alternatively, <b>typeof</b> can be used:</p>
+
+<pre class="brush: js">var x;
+if (typeof x === 'undefined') {
+   // these statements execute
+}
+</pre>
+
+<p>One reason to use <b>typeof</b> is that it does not throw an error if the variable has not been declared.</p>
+
+<pre class="brush: js">// x has not been declared before
+if (typeof x === 'undefined') { // evaluates to true without errors
+   // these statements execute
+}
+
+if(x === undefined){ // throws a ReferenceError
+
+}
+</pre>
+
+<p>However, this kind of technique should be avoided. JavaScript is a statically scoped language, so knowing if a variable is declared can be read by seeing whether it is declared in an enclosing context. The only exception is the global scope, but the global scope is bound to the global object, so checking the existence of a variable in the global context can be done by checking the existence of a property on the <em>global object</em> (using the <b>in</b> operator, for instance).</p>
+
+<h3 id="Void_operator_and_undefined"><code>Void</code> operator and <code>undefined</code></h3>
+
+<p>The <b>void</b> operator is a third alternative.</p>
+
+<pre class="brush: js">var x;
+if (x === void 0) {
+   // these statements execute
+}
+
+// y has not been declared before
+if (y === void 0) {
+   // throws a ReferenceError (in contrast to `typeof`)
+}
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

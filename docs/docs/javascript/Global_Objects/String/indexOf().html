@@ -1,0 +1,150 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.indexOf()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.indexOf()</h2></div>
+
+<p>The <strong><code>indexOf()</code></strong> method returns the index within the calling <b>String</b> object of the first occurrence of the specified value, starting the search at <code>fromIndex</code>. Returns -1 if the value is not found.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.indexOf(<var>searchValue</var>[, <var>fromIndex</var>]</code>)</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>searchValue</code></dt>
+ <dd>A string representing the value to search for.</dd>
+ <dt><code>fromIndex</code> <script>optional_inline</script></dt>
+ <dd>The location within the calling string to start the search from. It can be any integer. The default value is 0. If <code>fromIndex&nbsp;&lt;&nbsp;0</code> the entire string is searched (same as passing 0). If&nbsp;<code>fromIndex&nbsp;&gt;= str.length</code>, the method will return -1 unless <code>searchValue</code> is an empty string in which case <code>str.length</code> is returned.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character of a string called <code>stringName</code> is <code>stringName.length - 1</code>.</p>
+
+<pre class="brush: js">'Blue Whale'.indexOf('Blue');     // returns  0
+'Blue Whale'.indexOf('Blute');    // returns -1
+'Blue Whale'.indexOf('Whale', 0); // returns  5
+'Blue Whale'.indexOf('Whale', 5); // returns  5
+'Blue Whale'.indexOf('', 9);      // returns  9
+'Blue Whale'.indexOf('', 10);     // returns 10
+'Blue Whale'.indexOf('', 11);     // returns 10
+</pre>
+
+<h3 id="Case-sensitivity">Case-sensitivity</h3>
+
+<p>The <code>indexOf()</code> method is case sensitive. For example, the following expression returns -1:</p>
+
+<pre class="brush: js">'Blue Whale'.indexOf('blue'); // returns -1
+</pre>
+
+<h3 id="Checking_occurrences">Checking occurrences</h3>
+
+<p>Note that '0' doesn't evaluate to <code>true</code> and '-1' doesn't evaluate to <code>false</code>. Therefore, when checking if a specific string exists within another string the correct way to check would be:</p>
+
+<pre class="brush: js">'Blue Whale'.indexOf('Blue') !== -1; // true
+'Blue Whale'.indexOf('Bloe') !== -1; // false
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_indexOf()_and_lastIndexOf()">Using <code>indexOf()</code> and <code>lastIndexOf()</code></h3>
+
+<p>The following example uses <code>indexOf()</code> and <b>lastIndexOf()</b> to locate values in the string <code>"Brave new world"</code>.</p>
+
+<pre class="brush: js">var anyString = 'Brave new world';
+
+console.log('The index of the first w from the beginning is ' + anyString.indexOf('w'));
+// logs 8
+console.log('The index of the first w from the end is ' + anyString.lastIndexOf('w'));
+// logs 10
+
+console.log('The index of "new" from the beginning is ' + anyString.indexOf('new'));
+// logs 6
+console.log('The index of "new" from the end is ' + anyString.lastIndexOf('new'));
+// logs 6
+</pre>
+
+<h3 id="indexOf()_and_case-sensitivity"><code>indexOf()</code> and case-sensitivity</h3>
+
+<p>The following example defines two string variables. The variables contain the same string except that the second string contains uppercase letters. The first <script>domxref("console.log()")</script> method displays 19. But because the <code>indexOf()</code> method is case sensitive, the string <code>"cheddar"</code> is not found in <code>myCapString</code>, so the second <code>console.log()</code> method displays -1.</p>
+
+<pre class="brush: js">var myString    = 'brie, pepper jack, cheddar';
+var myCapString = 'Brie, Pepper Jack, Cheddar';
+
+console.log('myString.indexOf("cheddar") is ' + myString.indexOf('cheddar'));
+// logs 19
+console.log('myCapString.indexOf("cheddar") is ' + myCapString.indexOf('cheddar'));
+// logs -1
+</pre>
+
+<h3 id="Using_indexOf()_to_count_occurrences_of_a_letter_in_a_string">Using <code>indexOf()</code> to count occurrences of a letter in a string</h3>
+
+<p>The following example sets <code>count</code> to the number of occurrences of the letter <code>e</code> in the string <code>str</code>:</p>
+
+<pre class="brush: js">var str = 'To be, or not to be, that is the question.';
+var count = 0;
+var pos = str.indexOf('e');
+
+while (pos !== -1) {
+  count++;
+  pos = str.indexOf('e', pos + 1);
+}
+
+console.log(count); // displays 4
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

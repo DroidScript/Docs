@@ -1,0 +1,102 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.search()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.search()</h2></div>
+
+<p>The <strong><code>search()</code></strong> method executes a search for a match between a regular expression and this <b>String</b> object.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><var>str</var>.search(<var>regexp</var>)</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>regexp</code></dt>
+ <dd>A regular expression object. If a non-RegExp object <code>obj</code> is passed, it is implicitly converted to a <b>RegExp</b> by using <code>new RegExp(obj)</code>.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>If successful, <code>search()</code> returns the index of the first match of the regular expression inside the string. Otherwise, it returns -1.</p>
+
+<p>When you want to know whether a pattern is found in a string use <code>search()</code> (similar to the regular expression <b>test()</b> method); for more information (but slower execution) use <b>match()</b> (similar to the regular expression <b>exec()</b> method).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_search()">Using <code>search()</code></h3>
+
+<p>The following example logs a message which depends on the success of the test.</p>
+
+<pre class="brush: js">function testinput(re, str) {
+  var midstring;
+  if (str.search(re) != -1) {
+    midstring = ' contains ';
+  } else {
+    midstring = ' does not contain ';
+  }
+  console.log(str + midstring + re);
+}
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+<h2 id="Gecko-specific_notes">Gecko-specific notes</h2>
+
+<ul>
+ <li>Prior to Gecko 8.0, <code>search()</code> was implemented incorrectly; when it was called with no parameters or with <b>undefined</b>, it would match against the string 'undefined', instead of matching against the empty string. This is fixed; now <code>'a'.search()</code> and <code>'a'.search(undefined)</code> correctly return 0.</li>
+ <li>Starting with Gecko 39 , the non-standard <code>flags</code> argument is deprecated and throws a console warning (). This property is Gecko-only and will be removed in the future.</li>
+</ul>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

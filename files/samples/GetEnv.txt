@@ -1,0 +1,7 @@
+<sample Show PATH environment variable>
+function OnStart()
+{
+    <b>var envPath = app.GetEnv("PATH");</b>
+    app.Alert( envPath );
+}
+</sample>

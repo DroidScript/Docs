@@ -1,0 +1,8 @@
+<sample Check App Installed>
+function OnStart()
+{
+    var pkg = app.GetPackageName();
+    <b>var isInstalled = app.IsAppInstalled( pkg );</b>
+    app.Alert( isInstalled, pkg + " installed:" );
+}
+</sample>

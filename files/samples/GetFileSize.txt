@@ -1,0 +1,7 @@
+<sample Show /sdcard/ folder size>
+function OnStart()
+{
+    var size = app.GetFileSize( "/sdcard/" );
+    app.Alert( size / 1024 + " kB" );
+}
+</sample>

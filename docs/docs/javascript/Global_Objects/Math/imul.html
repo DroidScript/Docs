@@ -1,0 +1,100 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.imul</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.imul</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.imul()</code></strong> function returns the result of the C-like 32-bit multiplication of the two parameters.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.imul(<var>a</var>, <var>b</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>a</code></dt>
+ <dd>First number.</dd>
+ <dt><code>b</code></dt>
+ <dd>Second number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p><code>Math.imul()</code> allows for fast 32-bit integer multiplication with C-like semantics. This feature is useful for projects like Emscripten. Because <code>imul()</code> is a static method of <code>Math</code>, you always use it as <code>Math.imul()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.imul()">Using <code>Math.imul()</code></h3>
+
+<pre class="brush: js">Math.imul(2, 4);          // 8
+Math.imul(-1, 8);         // -8
+Math.imul(-2, -2);        // 4
+Math.imul(0xffffffff, 5); // -5
+Math.imul(0xfffffffe, 5); // -10
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This can be emulated with the following function:</p>
+
+<pre class="brush: js">Math.imul = Math.imul || function(a, b) {
+  var ah = (a &gt;&gt;&gt; 16) &amp; 0xffff;
+  var al = a &amp; 0xffff;
+  var bh = (b &gt;&gt;&gt; 16) &amp; 0xffff;
+  var bl = b &amp; 0xffff;
+  // the shift by 0 fixes the sign on the high part
+  // the final |0 converts the unsigned value into a signed value
+  return ((al * bl) + (((ah * bl + al * bh) &lt;&lt; 16) &gt;&gt;&gt; 0)|0);
+};
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

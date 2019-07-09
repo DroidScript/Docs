@@ -1,0 +1,87 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.length</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.length</h2></div>
+
+<p>The <strong><code>length</code></strong> property represents the length of a string.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.length</code></pre>
+
+<h2 id="Description">Description</h2>
+
+<p>This property returns the number of code units in the string. <script>interwiki("wikipedia", "UTF-16")</script>, the string format used by JavaScript, uses a single 16-bit code unit to represent the most common characters, but needs to use two code units for less commonly-used characters, so it's possible for the value returned by <code>length</code> to not match the actual number of characters in the string.</p>
+
+<p>For an empty string, <code>length</code> is 0.</p>
+
+<p>The static property <code>String.length</code> returns the value 1.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Basic_usage">Basic usage</h3>
+
+<pre class="brush: js">var x = 'Mozilla';
+var empty = '';
+
+console.log('Mozilla is ' + x.length + ' code units long');
+/* "Mozilla is 7 code units long" */
+
+console.log('The empty string has a length of ' + empty.length);
+/* "The empty string has a length of 0" */
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

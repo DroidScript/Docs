@@ -1,0 +1,134 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>const</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>const</h2><script>harmony</script></div>
+
+<p>The<strong> const declaration</strong> creates a read-only reference to a value. It does <strong>not</strong>&nbsp;mean the value it holds is immutable, solely&nbsp;that the variable identifier can not be reassigned.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">const <em>name1 = <em>value1 [</em>, <em>name2</em> = <em>value2</em><em> [</em>, ... [</em>, <em>nameN</em> = <em>valueN]]]</em>;</pre>
+
+<dl>
+ <dt><code>nameN</code></dt>
+ <dd>Constant name. It can be any legal identifier.</dd>
+ <dt><code>valueN</code></dt>
+ <dd>Value of the constant. It can be any legal expression.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>This declaration creates a constant that can be global or local to the function in which it is declared. Constants are block-scoped. The value of a constant cannot change through re-assignment, and a constant cannot be re-declared. An initializer for a constant is required. A constant cannot share its name with a function or a variable in the same scope.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<p>The following example demonstrates how constants behave. Try this in your browser console.</p>
+
+<pre class="brush:js">// NOTE: Constants can be declared with uppercase or lowercase, but just by convention, we are using uppercase
+// define my_fav as a constant and give it the value 7
+const MY_FAV = 7;
+
+// this will fail silently in Firefox and Chrome (but does not fail in Safari)
+MY_FAV = 20;
+
+// will print 7
+console.log("my favorite number is: " + MY_FAV);
+
+// trying to redeclare a constant throws an error 
+const MY_FAV = 20;
+
+// the name MY_FAV is reserved for constant above, so this will also fail
+var MY_FAV = 20; 
+
+// MY_FAV is still 7
+console.log("my favorite number is " + MY_FAV);
+
+// Assigning to A const variable is a syntax error
+const A = 1; A = 2;
+
+// const requires an initializer
+const FOO; // SyntaxError: missing = in const declaration
+
+// const also works on objects
+const MY_OBJECT = {"key": "value"};
+
+// Overwriting the object fails as above (in Firefox and Chrome but not in Safari)
+MY_OBJECT = {"OTHER_KEY": "value"};
+
+// However, object attributes are not protected,
+// so the following statement is executed without problems
+MY_OBJECT.key = "otherValue";
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<h2 id="Compatibility_notes">Compatibility notes</h2>
+
+<p>In earlier versions of Firefox &amp; Chrome and as of Safari 5.1.7 and Opera 12.00, if you define a variable with <code>const</code>, you can still change its value later. It is not supported in Internet Explorer 6-10, but is included in Internet Explorer 11.</p>
+
+<h3 id="Firefox-specific_notes">Firefox-specific notes</h3>
+
+<p>The <code>const</code> declaration has been implemented in Firefox long before <code>const</code> appeared in the ECMAScript 6 specification. For <code>const</code> ES6 compliance see  and .</p>
+
+<ul>
+ <li>Starting with Gecko 36 :
+  <ul>
+   <li><code>{const a=1};a</code> now throws a <code>ReferenceError</code> and does not return <code>1</code> anymore due to block-scoping.</li>
+   <li><code>const a;</code> now throws a <code>SyntaxError</code> ("missing = in const declaration<code>"</code>): An initializer is required.</li>
+   <li><code>const a = 1; a = 2;</code> now also throws a <code>SyntaxError</code> ("invalid assignment to const a").</li>
+  </ul>
+ </li>
+</ul>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>QueryContent</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>QueryContent</h1>
+		</div>
+
+		<div data-role="content">
+			<p>?.</p>
+
+			<div class="samp">
+			app.QueryContent( <a href="#pop_str_url" data-transition="pop" data-rel="popup">uri</a>, <a href="#pop_str_com" data-transition="pop" data-rel="popup">columns</a>, <a href="#pop_str_sql" data-transition="pop" data-rel="popup">select</a>, <a href="#pop_std_lst" data-transition="pop" data-rel="popup">args</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">sort</a> )
+			</div>
+
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
+		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
+		<div data-role="popup" id="pop_str_sql" class="ui-content"><b>string:</b> <i>sql code</i></div>
+		<div data-role="popup" id="pop_std_lst" class="ui-content"><b>list</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “ASC” or “DESC”</div>
+
+	</div>
+</body>
+
+</html>

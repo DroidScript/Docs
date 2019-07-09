@@ -1,8 +1,7 @@
-<sample Example>
+>sample Show app path>
 function OnStart()
 {
-<b>	path = app.GetAppPath();
-</b>	app.ShowPopup( path );
+    <b>var path = app.GetAppPath();</b>
+    app.Alert( path );
 }
 </sample>
-

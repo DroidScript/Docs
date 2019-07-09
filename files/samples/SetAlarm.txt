@@ -1,0 +1,41 @@
+<sam ple Set Alarm>
+function OnStart()
+{
+    var now = Date.now();
+    app.SetAlarm( "Set", 1234, OnAlarm, now + 3000 );
+    // app.ToBack();
+    // app.Exit();
+}
+
+function OnAlarm( id )
+{
+    app.ShowPopup( "Got Alarm: id = " + id );
+}
+</sample>
+
+<sample Set Alarm>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Press Me", 0.3, 0.1 );
+	btn.SetOnTouch( SetAlarm );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function SetAlarm()
+{
+    <b>var now = Date.now();
+    app.SetAlarm( "Set", 1234, OnAlarm, now + 3000 );</b>
+    app.ShowPopup( "You may now pause or exit the app" );
+    // app.ToBack();
+    // app.Exit();
+}
+
+function OnAlarm( id )
+{
+    app.ShowPopup( "Got Alarm: id = " + id );
+}
+</sample>

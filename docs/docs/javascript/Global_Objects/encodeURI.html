@@ -1,0 +1,99 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>encodeURI</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>encodeURI</h2></div>
+
+<p>The <code><strong>encodeURI()</strong></code> method encodes a Uniform Resource Identifier (URI) by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character (will only be four escape sequences for characters composed of two "surrogate" characters).</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>encodeURI(<em>URI</em>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>URI</code></dt>
+ <dd>A complete Uniform Resource Identifier.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.</p>
+
+<p><code>encodeURI</code> replaces all characters <strong>except</strong> the following with the appropriate UTF-8 escape sequences:</p>
+
+
+
+<p>Note that <code>encodeURI</code> by itself <em>cannot</em> form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because "&amp;", "+", and "=" are not encoded, which are treated as special characters in GET and POST requests. <b>encodeURIComponent</b>, however, does encode these characters.</p>
+
+<p>Note that an <b>URIError</b> will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,</p>
+
+<pre class="brush: js">// high-low pair ok
+console.log(encodeURI('\uD800\uDFFF'));
+
+// lone high surrogate throws "URIError: malformed URI sequence"
+console.log(encodeURI('\uD800'));
+
+// lone low surrogate throws "URIError: malformed URI sequence"
+console.log(encodeURI('\uDFFF')); </pre>
+
+<p>Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:</p>
+
+<pre class="brush: js">function fixedEncodeURI (str) {
+    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');
+}</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

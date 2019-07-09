@@ -1,0 +1,99 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>class</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>class</h2> <script>Harmony</script></div>
+
+<p>The <strong>class declaration</strong> creates a new class with a given name using prototype-based inheritance.</p>
+
+<div class="noinclude">
+<p>You can also define a class using a <b>class expression</b>.</p>
+</div>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="brush: js">class <em>name</em> [extends] {
+  // class body
+}
+</pre>
+
+<h2 id="Description">Description</h2>
+
+<p>Just like with class expressions, the class body of a class declaration&nbsp;is executed in strict mode.</p>
+
+<p>Class declarations are not hoisted (unlike function declarations).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="A_simple_class_declaration">A simple class declaration</h3>
+
+<p>In the following example, we first define a class named Polygon, then extend it to create a class named Square. Note that super(), used in the constructor, can only be used in constructors and must be called before the this keyword can be used.</p>
+
+<pre class="brush: js">class Polygon {
+  constructor(height, width) {
+    this.name = 'Polygon';
+    this.height = height;
+    this.width = width;
+  }
+}
+
+class Square extends Polygon {
+  constructor(length) {
+    super(length, length);
+&nbsp;   this.name = 'Square';
+  }
+}</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

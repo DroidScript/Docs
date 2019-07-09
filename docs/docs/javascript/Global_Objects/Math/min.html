@@ -1,0 +1,108 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.min</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.min</h2></div>
+
+<p>The <strong><code>Math.min()</code></strong> function returns the smallest of zero or more numbers.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.min([<var>value1</var>[, <var>value2</var>[, ...]]])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>value1, value2, ...</code></dt>
+ <dd>Numbers.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Because <code>min()</code> is a static method of <code>Math</code>, you always use it as <code>Math.min()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<p>If no arguments are given, the result is <b>Infinity</b>.</p>
+
+<p>If at least one of arguments cannot be converted to a number, the result is <b>NaN</b>.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.min()">Using <code>Math.min()</code></h3>
+
+<p>This finds the min of <code>x</code> and <code>y</code> and assigns it to <code>z</code>:</p>
+
+<pre class="brush: js">var x = 10, y = -20;
+var z = Math.min(x, y);
+</pre>
+
+<h3 id="Clipping_a_value_with_Math.min()">Clipping a value with <code>Math.min()</code></h3>
+
+<p><code>Math.min()</code> is often used to clip a value so that it is always less than or equal to a boundary. For instance, this</p>
+
+<pre class="brush: js">var x = f(foo);
+
+if (x &gt; boundary) {
+  x = boundary;
+}
+</pre>
+
+<p>may be written as this</p>
+
+<pre class="brush: js">var x = Math.min(f(foo), boundary);
+</pre>
+
+<p><b>Math.max()</b> can be used in a similar way to clip a value at the other end.</p>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

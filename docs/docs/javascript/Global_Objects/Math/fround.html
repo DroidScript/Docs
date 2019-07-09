@@ -1,0 +1,96 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.fround</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.fround</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.fround()</code></strong> function returns the nearest single precision float representation of a number.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.fround(<var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>x</code></dt>
+ <dd>A number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Because <code>fround()</code> is a static method of <code>Math</code>, you always use it as <code>Math.fround()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.fround()">Using <code>Math.fround()</code></h3>
+
+<pre class="brush: js">Math.fround(0);     // 0
+Math.fround(1);     // 1
+Math.fround(1.337); // 1.3370000123977661
+Math.fround(1.5);   // 1.5
+Math.fround(NaN);   // NaN
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This can be emulated with the following function, if <b>Float32Array</b> are supported:</p>
+
+<pre class="brush: js">Math.fround = Math.fround || function(x) {
+  return new Float32Array([x])[0];
+};
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

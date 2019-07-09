@@ -1,0 +1,7 @@
+<sample Show Internal Storage Path>
+function OnStart()
+{
+    <b>var dir = app.GetInternalFolder();</b>
+    app.Alert( dir );
+}
+</sample>

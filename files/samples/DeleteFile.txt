@@ -1,8 +1,13 @@
-<sample Example>
+<sample Delete created file>
 function OnStart()
 {
-	app.WriteFile( "/sdcard/wftest.txt", "Hello" );
-<b>	app.DeleteFile( "/sdcard/wftest.txt" );
-</b>}
-</sample>
+    app.WriteFile( "myFile.txt", "Bye World!\n", "Append" );
 
+    <b>app.DeleteFile("myFile.txt");</b>
+
+	if(app.FileExists("myFile.txt"))
+	    app.ShowPopup("myFile was not deleted!");
+    else
+	    app.ShowPopup("myFile was deleted!");
+}
+</sample>

@@ -1,0 +1,107 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>for each...in</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>for each...in</h2></div>
+
+<div class="warning">
+<p>The <code>for each...in</code> statement is deprecated as the part of ECMA-357 (E4X) standard. E4X support has been removed, but for each...in will not be disabled and removed because of backward compatibility considerations. Consider using for...of instead. (Please refer to <script> bug("791343")</script>.)</p>
+</div>
+
+<p>The<code> <strong>for each...in</strong></code><strong> statement</strong> iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>for each (<em>variable</em> in <em>object</em>) {
+  <em>statement</em>
+}</code></pre>
+
+<dl>
+ <dt><code>variable</code></dt>
+ <dd>Variable to iterate over property values, optionally declared with the <code>var</code> keyword. This variable is local to the function, not to the loop.</dd>
+</dl>
+
+<dl>
+ <dt><code>object</code></dt>
+ <dd>Object for which the properties are iterated.</dd>
+</dl>
+
+<dl>
+ <dt><code>statement</code></dt>
+ <dd>A statement to execute for each property. To execute multiple statements within the loop, use a block statement (<code>{ ... }</code>) to group those statements.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Some built-in properties are not iterated over. These include all built-in methods of objects, e.g. <code>String</code>'s <code>indexOf</code> method. However, all user-defined properties are iterated over.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_for_each...in">Using <code>for each...in</code></h3>
+
+<p><strong>Warning:</strong> Never use a loop like this on arrays. Only use it on objects. See <code>for...in</code> for more details.</p>
+
+<p>The following snippet iterates over an object's properties, calculating their sum:</p>
+
+<pre class="brush:js">var sum = 0;
+var obj = {prop1: 5, prop2: 13, prop3: 8};
+
+for each (var item in obj) {
+  sum += item;
+}
+
+console.log(sum); // logs "26", which is 5+13+8</pre>
+
+
+
+<p>[Not part of a current ECMA-262 specification. Implemented in JavaScript 1.6 and deprecated.]</p>
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

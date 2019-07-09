@@ -1,0 +1,103 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.trunc</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.trunc</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.trunc()</code></strong> function returns the integral part of a number by removing any fractional digits.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.trunc(<var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>x</code></dt>
+ <dd>A number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Unlike other three <code>Math</code> methods: <b>Math.floor()</b>, <b>Math.ceil()</b> and <b>Math.round()</b>, the way <code>Math.trunc()</code> works is very simple and straightforward, just truncate the dot and the digits behind it, no matter whether the argument is a positive number or a negative number.</p>
+
+<p>So, if the argument is a positive number, <code>Math.trunc()</code> is equivalent to <code>Math.floor()</code>, otherwise <code>Math.trunc()</code> is equivalent to <code>Math.ceil()</code>.</p>
+
+<p>Note, the argument passed to this method will be converted to number type implicitly.</p>
+
+<p>Because <code>trunc()</code> is a static method of <code>Math</code>, you always use it as <code>Math.trunc()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.trunc()">Using <code>Math.trunc()</code></h3>
+
+<pre class="brush: js">Math.trunc(13.37);    // 13
+Math.trunc(42.84);    // 42
+Math.trunc(0.123);    //  0
+Math.trunc(-0.123);   // -0
+Math.trunc('-1.123'); // -1
+Math.trunc(NaN);      // NaN
+Math.trunc('foo');    // NaN
+Math.trunc();         // NaN
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<pre class="brush: js">Math.trunc = Math.trunc || function(x) {
+  return x &lt; 0 ? Math.ceil(x) : Math.floor(x);
+}
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

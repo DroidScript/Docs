@@ -1,0 +1,90 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>NaN</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>NaN</h2></div>
+
+<p>The global <code><strong>NaN</strong></code> property is a value representing Not-A-Number.</p>
+
+<p></p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>NaN</code></pre>
+
+<h2 id="Description">Description</h2>
+
+<p><code>NaN</code> is a property of the <em>global object</em>.</p>
+
+<p>The initial value of <code>NaN</code> is Not-A-Number — the same as the value of <b>Number.NaN</b>. In modern browsers, <code>NaN</code> is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.</p>
+
+<p>It is rather rare to use <code>NaN</code> in a program. It is the returned value when <b>Math</b> functions fail (<code>Math.sqrt(-1)</code>) or when a function trying to parse a number fails (<code>parseInt("blabla")</code>).</p>
+
+<h3 id="Testing_against_NaN">Testing against <code>NaN</code></h3>
+
+<p><code>NaN</code> compares unequal (via <code>==</code>, <code>!=</code>, <code>===</code>, and <code>!==</code>) to any other value -- including to another NaN value. &nbsp;Use <b>Number.isNaN()</b> or <b>isNaN()</b> to most clearly determine whether a value is NaN. &nbsp;Or perform a self-comparison: NaN, and only NaN, will compare unequal to itself.</p>
+
+<pre class="brush: js">NaN === NaN;        // false
+Number.NaN === NaN; // false
+isNaN(NaN);         // true
+isNaN(Number.NaN);  // true
+
+function valueIsNaN(v) { return v !== v; }
+valueIsNaN(1);          // false
+valueIsNaN(NaN);        // true
+valueIsNaN(Number.NaN); // true
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

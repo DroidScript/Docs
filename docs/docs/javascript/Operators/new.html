@@ -1,0 +1,176 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>new</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>new</h2></div>
+
+<p>The<strong> <code>new</code> operator</strong> creates an instance of a user-defined object type or of one of the built-in object types that has a constructor function.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">new <em>constructor</em>[([<em>arguments</em>])]</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>constructor</code></dt>
+ <dd>A function that specifies the type of the object instance.</dd>
+</dl>
+
+<dl>
+ <dt><code>arguments</code></dt>
+ <dd>A list of values that the <code>constructor</code> will be called with.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Creating a user-defined object requires two steps:</p>
+
+<ol>
+ <li>Define the object type by writing a function.</li>
+ <li>Create an instance of the object with <code>new</code>.</li>
+</ol>
+
+<p>To define an object type, create a function for the object type that specifies its name and properties. An object can have a property that is itself another object. See the examples below.</p>
+
+<p>When the code <code>new <em>Foo</em>(...)</code> is executed, the following things happen:</p>
+
+<ol>
+ <li>A new object is created, inheriting from <code><em>Foo</em>.prototype</code>.</li>
+ <li>The constructor function <em>F<code>oo</code></em> is called with the specified arguments and <code>this</code> bound to the newly created object. <code>new F<em>oo</em></code> is equivalent to <code>new </code><em>F<code>oo</code></em><code>()</code>, i.e. if no argument list is specified, <em>F<code>oo</code></em> is called without arguments.</li>
+ <li>The object returned by the constructor function becomes the result of the whole <code>new</code> expression. If the constructor function doesn't explicitly return an object, the object created in step 1 is used instead. (Normally constructors don't return a value, but they can choose to do so if they want to override the normal object creation process.)</li>
+</ol>
+
+<p>You can always add a property to a previously defined object. For example, the statement <code>car1.color = "black"</code> adds a property <code>color</code> to <code>car1</code>, and assigns it a value of "<code>black</code>". However, this does not affect any other objects. To add the new property to all objects of the same type, you must add the property to the definition of the <code>Car</code> object type.</p>
+
+<p>You can add a shared property to a previously defined object type by using the <code>Function.prototype</code> property. This defines a property that is shared by all objects created with that function, rather than by just one instance of the object type. The following code adds a color property with value <code>null</code> to all objects of type <code>car</code>, and then overwrites that value with the string "<code>black</code>" only in the instance object <code>car1</code>. For more information, see prototype.</p>
+
+<pre class="brush: js">function Car() {}
+car1 = new Car();
+ 
+console.log(car1.color);    // undefined
+ 
+Car.prototype.color = null;
+console.log(car1.color);    // null
+ 
+car1.color = "black";
+console.log(car1.color);   // black
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Object_type_and_object_instance">Object type and object instance</h3>
+
+<p>Suppose you want to create an object type for cars. You want this type of object to be called <code>car</code>, and you want it to have properties for make, model, and year. To do this, you would write the following function:</p>
+
+<pre class="brush: js">function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+</pre>
+
+<p>Now you can create an object called <code>mycar</code> as follows:</p>
+
+<pre class="brush: js">var mycar = new Car("Eagle", "Talon TSi", 1993);
+</pre>
+
+<p>This statement creates <code>mycar</code> and assigns it the specified values for its properties. Then the value of <code>mycar.make</code> is the string "Eagle", <code>mycar.year</code> is the integer 1993, and so on.</p>
+
+<p>You can create any number of <code>car</code> objects by calls to <code>new</code>. For example:</p>
+
+<pre class="brush: js">var kenscar = new Car("Nissan", "300ZX", 1992);
+</pre>
+
+<h3 id="Object_property_that_is_itself_another_object">Object property that is itself another object</h3>
+
+<p>Suppose you define an object called <code>person</code> as follows:</p>
+
+<pre class="brush: js">function Person(name, age, sex) {
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+</pre>
+
+<p>And then instantiate two new <code>person</code> objects as follows:</p>
+
+<pre class="brush: js">var rand = new Person("Rand McNally", 33, "M");
+var ken = new Person("Ken Jones", 39, "M");
+</pre>
+
+<p>Then you can rewrite the definition of <code>car</code> to include an <code>owner</code> property that takes a person object, as follows:</p>
+
+<pre class="brush: js">function Car(make, model, year, owner) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.owner = owner;
+}
+</pre>
+
+<p>To instantiate the new objects, you then use the following:</p>
+
+<pre class="brush: js">var car1 = new Car("Eagle", "Talon TSi", 1993, rand);
+var car2 = new Car("Nissan", "300ZX", 1992, ken);
+</pre>
+
+<p>Instead of passing a literal string or integer value when creating the new objects, the above statements pass the objects <code>rand</code> and <code>ken</code> as the parameters for the owners. To find out the name of the owner of <code>car2</code>, you can access the following property:</p>
+
+<pre class="brush: js">car2.owner.name
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

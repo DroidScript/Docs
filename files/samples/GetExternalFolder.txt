@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show External Folder>
 function OnStart()
 {
-<b>	fldr = app.GetExternalFolder();
-</b>	app.ShowPopup( fldr );
+    <b>var dir = app.GetExternalFolder();</b>
+    app.Alert( dir );
 }
 </sample>
-

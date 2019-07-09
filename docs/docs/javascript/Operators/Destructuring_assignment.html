@@ -1,0 +1,332 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Destructuring assignment</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Destructuring assignment</h2> <script>harmony</script></div>
+
+<p>The <strong>destructuring assignment</strong> syntax is a JavaScript expression that makes it possible to extract data from arrays or objects using a syntax that mirrors the construction of array and object literals.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="brush:js">[a, b] = [1, 2]
+[a, b, ...rest] = [1, 2, 3, 4, 5]
+{a, b} = {a:1, b:2}
+{a, b, ...rest} = {a:1, b:2, c:3, d:4}  //ES7
+</pre>
+
+<div class="note">
+<p><code>{a, b} = {a:1, b:2}</code> is not valid stand-alone&nbsp;syntax, as the <code>{a, b}</code> on the left-hand side is&nbsp;considered&nbsp;a block and not an object literal.</p>
+
+<p>However, the&nbsp;<code>({a, b} = {a:1, b:2})</code>&nbsp;form is valid, as is the <code>var {a, b} = {a:1, b:2}</code> form.</p>
+</div>
+
+<h2 id="Description">Description</h2>
+
+<p>The object and array literal expressions provide an easy way to create <em>ad&nbsp;hoc</em> packages of data. Once you've created these packages of data, you can use them any way you want to. You can even return them from functions.</p>
+
+<p>One particularly useful thing you can do with destructuring assignment is to read an entire structure in a single statement, although there are a number of interesting things you can do with them, as shown in the examples below.</p>
+
+<p>This capability is similar to features present in languages such as Perl and Python.</p>
+
+<h2 id="Array_destructuring">Array destructuring</h2>
+
+<h3 id="Simple_example">Simple example</h3>
+
+<pre class="brush: js">var foo = ["one", "two", "three"];
+
+// without destructuring
+var one   = foo[0];
+var two   = foo[1];
+var three = foo[2];
+
+// with destructuring
+var [one, two, three] = foo;</pre>
+
+<h3 id="Assignment_without_declaration">Assignment without declaration</h3>
+
+<p>Destructuring assignment can be made without a declaration in the assignment statement.</p>
+
+<pre class="brush:js">var a, b;
+
+[a, b] = [1, 2];</pre>
+
+<h3 id="Swapping_variables">Swapping variables</h3>
+
+<p>After executing this code, <var>b</var> is 1 and <var>a</var> is 3. Without destructuring assignment, swapping two values requires a temporary variable (or, in some low-level languages, the XOR-swap trick).</p>
+
+<pre class="brush:js">var a = 1;
+var b = 3;
+
+[a, b] = [b, a];</pre>
+
+<h3 id="Multiple-value_returns">Multiple-value returns</h3>
+
+<p>Thanks to destructuring assignment, functions can return multiple values. While it's always been possible to return an array from a function, this provides an added degree of flexibility.</p>
+
+<pre class="brush:js">function f() {
+  return [1, 2];
+}
+</pre>
+
+<p>As you can see, returning results is done using an array-like notation, with all the values to return enclosed in brackets. You can return any number of results in this way. In this example, <code>f()</code> returns the values <code>[1, 2]</code> as its output.</p>
+
+<pre class="brush:js">var a, b;
+[a, b] = f();
+console.log("A is " + a + " B is " + b);
+</pre>
+
+<p>The statement <code>[a, b] = f()</code> assigns the results of the function to the variables in brackets, in order: <var>a</var> is set to 1 and <var>b</var> is set to 2.</p>
+
+<p>You can also retrieve the return values as an array:</p>
+
+<pre class="brush:js">var a = f();
+console.log("A is " + a);
+</pre>
+
+<p>In this case, <var>a</var> is an array containing the values 1 and 2.</p>
+
+<h3 id="Ignoring_some_returned_values">Ignoring some returned values</h3>
+
+<p>You can also ignore return values that you're not interested in:</p>
+
+<pre class="brush:js">function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f();
+console.log("A is " + a + " B is " + b);
+</pre>
+
+<p>After running this code, a is 1 and b is 3. The value 2 is ignored. You can ignore any (or all) returned values this way. For example:</p>
+
+<pre class="brush:js">[,,] = f();
+</pre>
+
+<h3 id="Pulling_values_from_a_regular_expression_match">Pulling values from a regular expression match</h3>
+
+<p>When the regular expression <code> exec()</code> method finds a match, it returns an array containing first the entire matched portion of the string and then the portions of the string that matched each parenthesized group in the regular expression. Destructuring assignment allows you to pull the parts out of this array easily, ignoring the full match if it is not needed.</p>
+
+<pre class="brush:js">var url = "https://developer.mozilla.org/en-US/Web/JavaScript";
+
+var parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
+var [, protocol, fullhost, fullpath] = parsedURL;
+
+console.log(protocol); // logs "https:"
+</pre>
+
+<h2 id="Object_destructuring">Object destructuring</h2>
+
+<h3 id="Simple_example">Simple example</h3>
+
+<pre class="brush: js">var o = {p: 42, q: true};
+var {p, q} = o;
+
+console.log(p); // 42
+console.log(q); // true 
+
+// Assign new variable names
+var {p: foo, q: bar} = o;
+
+console.log(foo); // 42
+console.log(bar); // true &nbsp;</pre>
+
+<h3 id="Assignment_without_declaration">Assignment without declaration</h3>
+
+<p>Destructuring assignment can be made without a declaration in the assignment statement.</p>
+
+<pre class="brush:js">var a, b;
+
+({a, b} = {a:1, b:2});</pre>
+
+<div class="note">
+<p>The <code>( .. )</code> around the assignment statement is required syntax when using object literal destructuring assignment without a declaration.</p>
+</div>
+
+<h3 id="Function_argument_defaults">Function argument defaults</h3>
+
+<h4 id="ES5_version">ES5 version</h4>
+
+<pre class="brush: js">function drawES5Chart(options) {
+  options = options === undefined ? {} : options;
+  var size = options.size === undefined ? 'big' : options.size;
+  var cords = options.cords === undefined ? { x: 0, y: 0 } : options.cords;
+  var radius = options.radius === undefined ? 25 : options.radius;
+  console.log(size, cords, radius);
+  // now finally do some chart drawing
+}
+
+drawES5Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});</pre>
+
+<h4 id="ES6_version">ES6 version</h4>
+
+<pre class="brush: js">function drawES6Chart({size = 'big', cords = { x: 0, y: 0 }, radius = 25} = {}) 
+{
+  console.log(size, cords, radius);
+  // do some chart drawing
+}
+
+drawES6Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});</pre>
+
+<div class="note">
+<p>In Firefox, default values for destructuring assignments are not yet implemented: var { x = 3 } = {} and var [foo = "bar"] = []. See  for destructured default values in functions.</p>
+</div>
+
+<h3 id="Module_(non-ES6)_loading">Module (non-ES6) loading</h3>
+
+<p>Destructuring can help to load specific subsets of a non-ES6 module like here in the Add-on SDK:</p>
+
+<pre class="brush: js">const { Loader, main } = require('toolkit/loader');
+</pre>
+
+<h3 id="Nested_object_and_array_destructuring">Nested object and array destructuring</h3>
+
+<pre class="brush:js">var metadata = {
+&nbsp;&nbsp;&nbsp; title: "Scratchpad",
+&nbsp;&nbsp;&nbsp; translations: [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locale: "de",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; localization_tags: [ ],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; last_edit: "2014-04-14T08:43:37",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; url: "/de/docs/Tools/Scratchpad",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title: "JavaScript-Umgebung"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp; ],
+&nbsp;&nbsp;&nbsp; url: "/en-US/docs/Tools/Scratchpad"
+};
+
+var { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+console.log(englishTitle); // "Scratchpad"
+console.log(localeTitle);&nbsp; // "JavaScript-Umgebung"</pre>
+
+<h3 id="For_of_iteration_and_destructuring">For of iteration and destructuring</h3>
+
+<pre class="brush: js">var people = [
+&nbsp; {
+&nbsp;&nbsp;&nbsp; name: "Mike Smith",
+&nbsp;&nbsp;&nbsp; family: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mother: "Jane Smith",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; father: "Harry Smith",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sister: "Samantha Smith"
+&nbsp;&nbsp;&nbsp; },
+&nbsp;&nbsp;&nbsp; age: 35
+&nbsp; },
+&nbsp; {
+&nbsp;&nbsp;&nbsp; name: "Tom Jones",
+&nbsp;&nbsp;&nbsp; family: {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mother: "Norah Jones",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; father: "Richard Jones",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; brother: "Howard Jones"
+&nbsp;&nbsp;&nbsp; },
+&nbsp;&nbsp;&nbsp; age: 25
+&nbsp; }
+];
+
+for (var {name: n, family: { father: f } } of people) {
+  console.log("Name: " + n + ", Father: " + f);
+}
+
+// "Name: Mike Smith, Father: Harry Smith"
+// "Name: Tom Jones, Father: Richard Jones"</pre>
+
+<h3 id="Pulling_fields_from_objects_passed_as_function_parameter">Pulling fields from objects passed as function parameter</h3>
+
+<pre class="brush:js">function userId({id}) {
+  return id;
+}
+
+function whois({displayName: displayName, fullName: {firstName: name</script>){
+  console.log(displayName + " is " + name);
+}
+
+var user = { 
+  id: 42, 
+  displayName: "jdoe",
+  fullName: { 
+      firstName: "John",
+      lastName: "Doe"
+  }
+};
+
+console.log("userId: " + userId(user)); // "userId: 42"
+whois(user); // "jdoe is John"</pre>
+
+<p>This pulls the <code>id</code>, <code>displayName</code> and <code>firstName</code> from the user object and prints them.</p>
+
+<h3 id="Computed_object_property_names_and_destructuring">Computed object property names and destructuring</h3>
+
+<p>Computed property names, like on object literals, can be used with destructuring.</p>
+
+<pre class="brush: js">let key = "z";
+let { [key]: foo } = { z: "bar" };
+
+console.log(foo); // "bar"
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<h2 id="Firefox-specific_notes">Firefox-specific notes</h2>
+
+<ul>
+ <li>Firefox provided a non-standard language extension in JS1.7 for destructuring. This extension has been removed in Gecko 40 . See .</li>
+ <li>Starting with Gecko 41  and to comply with the ES6 specification, parenthesized destructuring patterns, like <code>([a, b]) = [1, 2]</code> or <code>({a, b}) = { a: 1, b: 2 }</code>, are now considered invalid and will throw a <b>SyntaxError</b>. See Jeff Walden's blog post and  for more details.</li>
+</ul>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

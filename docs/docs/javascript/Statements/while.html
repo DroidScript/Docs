@@ -1,0 +1,96 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>while</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>while</h2></div>
+
+<p>The <strong>while statement</strong> creates a loop that executes a specified statement as long as the test condition evaluates to true. The condition is evaluated before executing the statement.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">while (<em>condition</em>) {
+  <em>statement</em>
+}</pre>
+
+<dl>
+ <dt><code>condition</code></dt>
+ <dd>An expression evaluated before each pass through the loop. If this condition evaluates to true, <code>statement</code> is executed. When condition evaluates to false, execution continues with the statement after the <code>while</code> loop.</dd>
+ <dt><code>statement</code></dt>
+ <dd>A statement that is executed as long as the condition evaluates to true. To execute multiple statements within the loop, use a block statement (<code>{ ... }</code>) to group those statements.</dd>
+</dl>
+
+<h2 id="Examples">Examples</h2>
+
+<p>The following <code>while</code> loop iterates as long as <code>n</code> is less than three.</p>
+
+<pre class="brush:js">var n = 0;
+var x = 0;
+
+while (n &lt; 3) {
+  n++;
+  x += n;
+}</pre>
+
+<p>Each iteration, the loop increments <code>n</code> and adds it to <code>x</code>. Therefore, <code>x</code> and <code>n</code> take on the following values:</p>
+
+<ul>
+ <li>After the first pass: <code>n</code> = 1 and <code>x</code> = 1</li>
+ <li>After the second pass: <code>n</code> = 2 and <code>x</code> = 3</li>
+ <li>After the third pass: <code>n</code> = 3 and <code>x</code> = 6</li>
+</ul>
+
+<p>After completing the third pass, the condition <code>n</code> &lt; 3 is no longer true, so the loop terminates.</p>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

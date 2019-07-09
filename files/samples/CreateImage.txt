@@ -55,7 +55,6 @@ function img_OnTouch( ev )
 }
 </sample>
 
-Drawing On Images>
 <sample Draw Shapes>
 function OnStart()
 {
@@ -73,3 +72,84 @@ function OnStart()
 }
 </sample>
 
+<sample Advanced Clock Animating>
+cfg.NoDom, cfg.Portrait;
+
+var wh;
+
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    // clock pointer
+    ptr = app.CreateImage( null, 0.1, 0.1, "fix,alias", 30, 30 );
+    ptr.SetTextSize( 4.3 );
+
+    // image aspect ratio for drawing square images
+    wh = ptr.GetAbsWidth() / ptr.GetAbsHeight();
+
+    // main canvas
+	img = app.CreateImage( null, 1, 1, "alias" );
+    img.SetPaintStyle( "line" );
+	img.SetAutoUpdate( false );
+    img.SetLineWidth( 15 );
+	lay.AddChild( img );
+
+	app.AddLayout( lay );
+
+    app.SetDebug( "console" );
+    app.Animate( OnAnimate, 40 );
+}
+
+function OnAnimate( time, dtime )
+{
+    // calculate pointer position from current time
+    var secs = time / 1000;
+    var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));
+    var px = 0.5 + 0.5 * Math.cos( angle );
+    var py = 0.5 + 0.5 * Math.sin( angle );
+
+    // get current datetime
+    var hrs = Math.floor( secs / 3600 ) % 60;
+    var min = Math.floor( secs / 60 ) % 60;
+    var sec = Math.floor( secs ) % 60;
+    var time = min + ":" + sec;
+
+    // measure text dimensions for centering
+    var tsize = ptr.MeasureText( time );
+    var tx = (1 - tsize.width ) / 2;
+    var ty = (1 + tsize.height) / 2;
+
+    // draw pointer and datetime text
+    ptr.Clear();
+    ptr.SetPaintColor( "red" );
+    ptr.DrawLine( .5, .5, px, py );
+    ptr.SetPaintColor( "white" );
+    ptr.DrawText( time, tx, ty );
+
+    // render
+    img.Clear();
+    img.DrawCircle( .5, .5, .48 );
+    img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh );
+    img.Update();
+}
+</sample>
+
+<sample Button>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" );
+    btn.SetOnTouchUp( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+	app.ShowPopup( "Hello World!" );
+	app.Vibrate( "0,100,30,100,50,300" );
+}
+</sample>

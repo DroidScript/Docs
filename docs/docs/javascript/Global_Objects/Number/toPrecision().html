@@ -1,0 +1,100 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>numObj</i>.toPrecision()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>numObj</i>.toPrecision()</h2></div>
+
+<p>The <strong><code>toPrecision()</code></strong> method returns a string representing the <b>Number</b> object to the specified precision.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>numObj</var>.toPrecision([<var>precision</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>precision</code></dt>
+ <dd>Optional. An integer specifying the number of significant digits.</dd>
+</dl>
+
+<h3 id="Returns">Returns</h3>
+
+<p>A string representing a <b>Number</b> object in fixed-point or exponential notation rounded to <code>precision</code> significant digits. See the discussion of rounding in the description of the <b><i>numObj</i>.toFixed()</b> method, which also applies to <code>toPrecision()</code>.</p>
+
+<p>If the <code>precision</code> argument is omitted, behaves as <b><i>numObj</i>.toString()</b>. If the <code>precision</code> argument is a non-integer value, it is rounded to the nearest integer.</p>
+
+<h3 id="Throws">Throws</h3>
+
+<dl>
+ <dt><b>RangeError</b></dt>
+ <dd>If <code>precison</code> is not between 1 and 100 (inclusive), a <b>RangeError</b> is thrown. Implementations are allowed to support larger and smaller values as well. ECMA-262 only requires a precision of up to 21 significant digits.</dd>
+</dl>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toPrecision">Using <code>toPrecision</code></h3>
+
+<pre class="brush: js">var numObj = 5.123456;
+
+console.log(numObj.toPrecision());    // logs 5.123456
+console.log(numObj.toPrecision(5));   // logs 5.1235
+console.log(numObj.toPrecision(2));   // logs 5.1
+console.log(numObj.toPrecision(1));   // logs 5
+
+// note that exponential notation might be returned in some circumstances
+console.log((1234.5).toPrecision(2)); // logs 1.2e+3
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

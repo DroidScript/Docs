@@ -1,0 +1,127 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.getYear()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.getYear()</h2> <script>deprecated_header</script></div>
+
+<p>The <strong><code>getYear()</code></strong> method returns the year in the specified date according to local time. Because <code>getYear()</code> does not return full years ("year 2000 problem"), it is no longer used and has been replaced by the <b>getFullYear()</b> method.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.getYear()</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h3 id="Returns_value">Returns value</h3>
+
+<p>The <code>getYear()</code> method returns the year minus 1900; thus:</p>
+
+<ul>
+ <li>For years greater than or equal to 2000, the value returned by <code>getYear()</code> is 100 or greater. For example, if the year is 2026, <code>getYear()</code> returns 126.</li>
+ <li>For years between and including 1900 and 1999, the value returned by <code>getYear()</code> is between 0 and 99. For example, if the year is 1976, <code>getYear()</code> returns 76.</li>
+ <li>For years less than 1900, the value returned by <code>getYear()</code> is less than 0. For example, if the year is 1800, <code>getYear()</code> returns -100.</li>
+</ul>
+
+<p>To take into account years before and after 2000, you should use <b>getFullYear()</b> instead of <code>getYear()</code> so that the year is specified in full.</p>
+
+<h2 id="Backward_compatibility">Backward compatibility</h2>
+
+<h3 id="Behavior_in_JavaScript_1.2_and_earlier">Behavior in JavaScript 1.2 and earlier</h3>
+
+<p>The <code>getYear()</code> method returns either a 2-digit or 4-digit year:</p>
+
+<ul>
+ <li>For years between and including 1900 and 1999, the value returned by <code>getYear()</code> is the year minus 1900. For example, if the year is 1976, the value returned is 76.</li>
+ <li>For years less than 1900 or greater than 1999, the value returned by <code>getYear()</code> is the four-digit year. For example, if the year is 1856, the value returned is 1856. If the year is 2026, the value returned is 2026.</li>
+</ul>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Years_between_1900_and_1999">Years between 1900 and 1999</h3>
+
+<p>The second statement assigns the value 95 to the variable <code>year</code>.</p>
+
+<pre class="brush: js">var Xmas = new Date('December 25, 1995 23:15:00');
+var year = Xmas.getYear(); // returns 95
+</pre>
+
+<h3 id="Years_above_1999">Years above 1999</h3>
+
+<p>The second statement assigns the value 100 to the variable <code>year</code>.</p>
+
+<pre class="brush: js">var Xmas = new Date('December 25, 2000 23:15:00');
+var year = Xmas.getYear(); // returns 100
+</pre>
+
+<h3 id="Years_below_1900">Years below 1900</h3>
+
+<p>The second statement assigns the value -100 to the variable <code>year</code>.</p>
+
+<pre class="brush: js">var Xmas = new Date('December 25, 1800 23:15:00');
+var year = Xmas.getYear(); // returns -100
+</pre>
+
+<h3 id="Setting_and_getting_a_year_between_1900_and_1999">Setting and getting a year between 1900 and 1999</h3>
+
+<p>The third statement assigns the value 95 to the variable <code>year</code>, representing the year 1995.</p>
+
+<pre class="brush: js">var Xmas = new Date('December 25, 2015 23:15:00');
+Xmas.setYear(95);
+var year = Xmas.getYear(); // returns 95
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,232 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Comparison Operators</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Comparison Operators</h2></div>
+
+<p>JavaScript has both strict and type–converting comparisons. A strict comparison (e.g., <code>===</code>) is only true if the operands are of the same type. The more commonly used abstract comparison (e.g. <code>==</code>) converts the operands to the same Type before making the comparison. For relational abstract comparisons (e.g., <code>&lt;=</code>), the operands are first converted to primitives, then to the same type, before comparison.</p>
+
+<p>Strings are compared based on standard lexicographical ordering, using Unicode values.</p>
+
+<p>Features of comparisons:</p>
+
+<ul>
+ <li>Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.</li>
+ <li>Two numbers are strictly equal when they are numerically equal (have the same number value). NaN is not equal to anything, including NaN. Positive and negative zeros are equal to one another.</li>
+ <li>Two Boolean operands are strictly equal if both are <code>true</code> or both are <code>false</code>.</li>
+ <li>Two distinct objects are never equal for either strict or abstract comparisons.</li>
+ <li>An expression comparing Objects is only true if the operands reference the same Object.</li>
+ <li>Null and Undefined Types are strictly equal&nbsp;to themselves and abstractly equal&nbsp;to each other.</li>
+</ul>
+
+<h2 id="Equality_operators">Equality operators</h2>
+
+<h3 id="Equality">Equality (==)</h3>
+
+<p>The equality operator converts the operands if they are <strong>not of the same type</strong>, then applies strict comparison. If <strong>both operands are objects</strong>, then JavaScript compares internal references which are equal when operands refer to the same object in memory.</p>
+
+<h4 id="Syntax">Syntax</h4>
+
+<pre class="syntaxbox">x == y
+</pre>
+
+<h4 id="Examples">Examples</h4>
+
+<pre class="brush: js">  1   ==  1        // true
+ "1"  ==  1        // true
+  1   == '1'       // true
+  0   == false     // true
+  0   == null      // false
+
+  0   == undefined // false
+null  == undefined // true
+</pre>
+
+<h3 id="Inequality">Inequality (!=)</h3>
+
+<p>The inequality operator returns true if the operands are not equal. If the two operands are <strong>not of the same type</strong>, JavaScript attempts to convert the operands to an appropriate type for the comparison.&nbsp;If <strong>both operands are&nbsp;objects</strong>, then JavaScript compares internal references which are not equal when operands refer to different objects in memory.</p>
+
+<h4 id="Syntax">Syntax</h4>
+
+<pre class="syntaxbox">x != y</pre>
+
+<h4 id="Examples">Examples</h4>
+
+<pre class="brush: js">1 !=   2     // true
+1 !=  "1"    // false
+1 !=  '1'    // false
+1 !=  true   // false
+0 !=  false  // false
+</pre>
+
+<h3 id="Identity_strict_equality">Identity / strict equality (===)</h3>
+
+<p>The identity operator returns true if the operands are strictly equal (see above) <strong>with no type conversion</strong>.</p>
+
+<h4 id="Syntax_3">Syntax</h4>
+
+<pre class="syntaxbox">x === y</pre>
+
+<h4 id="Examples_3">Examples</h4>
+
+<pre class="brush: js ">3 === 3   // true
+3 === '3' // false</pre>
+
+<h3 id="Non-identity_strict_inequality">Non-identity / strict inequality (!==)</h3>
+
+<p>The non-identity operator returns true if the operands <strong>are not equal and/or not of the same type</strong>.</p>
+
+<h4 id="Syntax_4">Syntax</h4>
+
+<pre class="syntaxbox">x !== y</pre>
+
+<h4 id="Examples_4">Examples</h4>
+
+<pre class="brush: js">3 !== '3' // true
+4 !== 3   // true
+</pre>
+
+<h2 id="Relational_operators">Relational operators</h2>
+
+<h3 id="Greater_than_operator">Greater than operator (&gt;)</h3>
+
+<p>The greater than operator returns true if the left operand is greater than the right operand.</p>
+
+<h4 id="Syntax_5">Syntax</h4>
+
+<pre class="syntaxbox">x &gt; y</pre>
+
+<h4 id="Examples_5">Examples</h4>
+
+<pre class="brush: js">4 &gt; 3 // true
+</pre>
+
+<h3 id="Greater_than_or_equal_operator">Greater than or equal operator (&gt;=)</h3>
+
+<p>The greater than or equal operator returns true if the left operand is greater than or equal to the right operand.</p>
+
+<h4 id="Syntax_6">Syntax</h4>
+
+<pre class="syntaxbox"> x &gt;= y</pre>
+
+<h4 id="Examples_6">Examples</h4>
+
+<pre class="brush: js">4 &gt;= 3 // true
+3 &gt;= 3 // true
+</pre>
+
+<h3 id="Less_than_operator">Less than operator (&lt;)</h3>
+
+<p>The less than operator returns true if the left operand is less than the right operand.</p>
+
+<h4 id="Syntax_7">Syntax</h4>
+
+<pre class="syntaxbox"> x &lt; y</pre>
+
+<h4 id="Examples_7">Examples</h4>
+
+<pre class="brush: js">3 &lt; 4 // true
+</pre>
+
+<h3 id="Less_than_or_equal_operator">Less than or equal operator (&lt;=)</h3>
+
+<p>The less than or equal operator returns true if the left operand is less than or equal to the right operand.</p>
+
+<h4 id="Syntax_8">Syntax</h4>
+
+<pre class="syntaxbox"> x &lt;= y</pre>
+
+<h4 id="Examples_8">Examples</h4>
+
+<pre class="brush: js">3 &lt;= 4 // true
+</pre>
+
+<h2 id="Using_the_Equality_Operators">Using the Equality Operators</h2>
+
+<p>The standard equality operators (<code>==</code> and <code>!=</code>) use the Abstract Equality Comparison Algorithm to compare two operands. If the operands are of different Types, it will attempt to convert them to the same Type before making the comparison, e.g., in the expression <code>5 == '5'</code>, the string on the right is converted to Number before the comparison is made.</p>
+
+<p>The strict equality operators (<code>===</code> and <code>!==</code>) use the Strict Equality Comparison Algorithm and are intended for performing equality comparisons on operands of the same Type. If the operands are of different Types, the result is always <code>false</code> so <code>5 !== '5'</code>.</p>
+
+<p>Use strict equality operators if the operands must be of a specific Type as well as value or if the exact Type of the operands is important. Otherwise, use the standard equality operators, which allow you to compare the identity of two operands even if they are not of the same Type.</p>
+
+<p>When Type conversion is involved in the comparison (i.e., non–strict comparison), JavaScript converts Type String, Number, Boolean, or Object operands as follows:</p>
+
+<ul>
+ <li>When comparing a number and a string, the string is converted to a number value. JavaScript attempts to convert the string numeric literal to a <code>Number</code> type value. First, a mathematical value is derived from the string numeric literal. Next, this value is rounded to nearest <code>Number</code> type value.</li>
+ <li>If one of the operands is <code>Boolean</code>, the Boolean operand is converted to 1 if it is <code>true</code> and +0 if it is <code>false</code>.</li>
+ <li>If an object is compared with a number or string, JavaScript attempts to return the default value for the object. Operators attempt to convert the object to a primitive value, a <code>String</code> or <code>Number</code> value, using the <code>valueOf</code> and <code>toString</code> methods of the objects. If this attempt to convert the object fails, a runtime error is generated.</li>
+ <li>Note that an object is converted into a primitive if, and only if, its comparand is a primitive. If both operands are objects, they're compared as objects, and the equality test is true only if both refer the same object.</li>
+</ul>
+
+<div class="note"><strong>Note:</strong> String Objects are Type Object, not String! String objects are rarely used, so the following results might be surprising:</div>
+
+<pre class="brush:js">// true as both operands are Type String (i.e. string primitives):
+'foo' === 'foo'
+
+var a = new String('foo');
+var b = new String('foo');
+
+// false as a and b are Type Object and reference different objects
+a == b 
+
+// false as a and b are Type Object and reference different objects
+a === b 
+
+// true as a and 'foo' are of different type and, the Object (a) 
+// is converted to String 'foo' before comparison
+a == 'foo'</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DownloadFile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>DownloadFile</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Downloads a file using the Android's built-in download manager which creates a notification with the current download status and a custom title and description.</p>
+
+			<div class="samp">
+			app.DownloadFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">description</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			</div>
+
+			<p>In some cases there seems to appear a dialog - you can prevent that using the <i>NoDialog</i> option.<br>
+			<br>
+			With this methof you won't be able to get a OnComplete callback - if you need that check out <a href="CreateDownloader.htm">CreateDownloader</a>.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Downloading the DroidScript logo</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var src = &quot;http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png&quot;;<br>
+				&#160;&#160;&#160;&#160;var dst = &quot;/sdcard/Downloads/logo.png&quot;;<br>
+				&#160;&#160;&#160;&#160;app.DownloadFile(src, dst, &quot;MyTitle&quot;, &quot;My Description&quot;, &quot;NoDialog&quot;);<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Download to external storage</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var src = &quot;http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png&quot;;<br>
+				&#160;&#160;&#160;&#160;var dst = app.GetExternalFolder() + &quot;/Downloads/logo.png&quot;;<br>
+				&#160;&#160;&#160;&#160;app.DownloadFile(src, dst, &quot;MyTitle&quot;, &quot;My Description&quot;, &quot;NoDialog&quot;);<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “NoDialog”</div>
+
+	</div>
+</body>
+
+</html>

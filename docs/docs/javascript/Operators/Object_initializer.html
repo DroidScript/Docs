@@ -1,0 +1,285 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Object initializer</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Object initializer</h2></div>
+
+<p>Objects can be initialized using <code>new Object()</code>,<code> Object.create()</code>, or using the <em>literal</em> notation (<em>initializer</em> notation). An object initializer is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces (<code>{}</code>).</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="brush: js">var o = {};
+var o = { a: "foo", b: 42, c: {} };
+
+var a = "foo", b = 42, c = {};
+var o = { a: a, b: b, c: c };
+
+var o = {
+  <var>property: function </var>([<var>parameters</var>]) {},
+  get <var>property</var>() {},
+  set <var>property</var>(<var>value</var>) {},
+};
+</pre>
+
+<h3 id="New_notations_in_ECMAScript_6">New notations in ECMAScript 6</h3>
+
+<p>Please see the compatibility table for support for these notations. In non-supporting environments, these notations will lead to syntax errors.</p>
+
+<pre class="brush: js">// Shorthand property names (ES6)
+var a = "foo", b = 42, c = {};
+var o = { a, b, c };
+
+// Shorthand method names (ES6)
+var o = {
+  <var>property</var>([<var>parameters</var>]) {},
+  get <var>property</var>() {},
+  set <var>property</var>(<var>value</var>) {},
+  * <var>generator</var>() {}
+};
+
+// Computed property names (ES6)
+var prop = "foo";
+var o = {
+  [prop]: "hey",
+  ["b" + "ar"]: "there",
+};</pre>
+
+<h2 id="Description">Description</h2>
+
+<p>An object initializer is an expression that describes the initialization of an <b>Object</b>. Objects consist of <em>properties</em>, which are used to describe an object. Values of object properties can either contain primitive data types or other objects.</p>
+
+<h3 id="Creating_objects">Creating objects</h3>
+
+<p>An empty object with no properties can be created like this:</p>
+
+<pre class="brush: js">var object = {};</pre>
+
+<p>However, the advantage of the <em>literal</em> or <em>initializer</em> notation is, that you are able to quickly create objects with properties inside the curly braces. You simply notate a list of key: value pairs delimited by comma. The following code creates an object with three properties and the keys are "foo", "age" and "baz". The values of these keys are a string "bar", a number 42 and the third property has another object as its value.</p>
+
+<pre class="brush: js">var object = {
+  foo: "bar",
+  age: 42,
+  baz: { myProp: 12 },
+}</pre>
+
+<h3 id="Accessing_properties">Accessing properties</h3>
+
+<p>Once you have created an object, you might want to read or change them. Object properties can be accessed by using the dot notation or the bracket notation. See property accessors for detailed information.</p>
+
+<pre class="brush: js">object.foo; // "bar"
+object["age"]; // 42
+
+object.foo = "baz";
+</pre>
+
+<h3 id="Property_definitions">Property definitions</h3>
+
+<p>We have already learned how to notate properties using the initializer syntax. Oftentimes, there are variables in your code that you would like to put into an object. You will see code like this:</p>
+
+<pre class="brush: js">var a = "foo", 
+    b = 42,
+    c = {};
+
+var o = { 
+  a: a,
+  b: b,
+  c: c
+};</pre>
+
+<p>With ECMAScript 6, there is a shorter notation available to achieve the same:</p>
+
+<pre class="brush: js">var a = "foo", 
+    b = 42, 
+    c = {};
+
+// Shorthand property names (ES6)
+var o = { a, b, c };</pre>
+
+<h4 id="Duplicate_property_names">Duplicate property names</h4>
+
+<p>When using the same name for your properties, the second property will overwrite the first.</p>
+
+<pre class="brush: js">var a = {x: 1, x: 2};
+console.log(a); // { x: 2}
+</pre>
+
+<p>In ECMAScript 5 strict mode code, duplicate property names were considered a <b>SyntaxError</b>.&nbsp; With the introduction of computed property names making duplication possible at runtime, ECMAScript 6 has removed this restriction.</p>
+
+<pre class="brush: js">function haveES6DuplicatePropertySemantics(){
+  "use strict";
+  try {
+    ({ prop: 1, prop: 2 });
+
+    // No error thrown, duplicate property names allowed in strict mode
+    return true;
+  } catch (e) {
+    // Error thrown, duplicates prohibited in strict mode
+    return false;
+  }
+}</pre>
+
+<h3 id="Method_definitions">Method definitions</h3>
+
+<p>A property of an object can also refer to a function or a getter or setter method.</p>
+
+<pre class="brush: js">var o = {
+  <var>property: function </var>([<var>parameters</var>]) {},
+  get <var>property</var>() {},
+  set <var>property</var>(<var>value</var>) {},
+};</pre>
+
+<p>In ECMAScript 6, a shorthand notation is available, so that the keyword "function" is no longer necessary.</p>
+
+<pre class="brush: js">// Shorthand method names (ES6)
+var o = {
+  <var>property</var>([<var>parameters</var>]) {},
+  get <var>property</var>() {},
+  set <var>property</var>(<var>value</var>) {},
+  * <var>generator</var>() {}
+};</pre>
+
+<p>In ECMAScript 6 There is a way to concisely define properties whose values are generator functions:</p>
+
+<pre class="brush: js">var o = {
+  * <var>generator</var>() {
+    ...........
+  }
+};</pre>
+
+<p>In ECMAScript 5 you would write it like this (but note that ES5 has no generators):</p>
+
+<pre class="brush: js">var o = {
+  generator<var>Method: function *</var>() {
+    ...........
+  }
+};</pre>
+
+<p>For more information and examples about methods, see method definitions.</p>
+
+<h3 id="Computed_property_names">Computed property names</h3>
+
+<p>Starting with ECMAScript 6, the object initializer syntax also supports computed property names. That allows you to put an expression in brackets <code>[]</code>, that will be computed as the property name. This is symmetrically to the bracket notation of the property accessor syntax, which you might have used to read and set properties already. Now you can use the same syntax in object literals, too:</p>
+
+<pre class="brush: js">// Computed property names (ES6)
+var i = 0;
+var a = {
+  ["foo" + ++i]: i,
+  ["foo" + ++i]: i,
+  ["foo" + ++i]: i
+};
+
+console.log(a.foo1); // 1
+console.log(a.foo2); // 2
+console.log(a.foo3); // 3
+
+var param = 'size';
+var config = {
+  [param]: 12,
+  ["mobile" + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+
+console.log(config); // { size: 12, mobileSize: 4 }</pre>
+
+<h3 id="Prototype_mutation">Prototype mutation</h3>
+
+<p>A property definition of the form <code>__proto__: value</code> or <code>"__proto__": value</code> does not create a property with the name <code>__proto__</code>.&nbsp; Instead, if the provided value is an object or <code>null</code>, it changes the <code>[[Prototype]]</code> of the created object to that value.&nbsp; (If the value is not an object or null, the object is not changed.)</p>
+
+<pre class="brush: js">var obj1 = {};
+assert(Object.getPrototypeOf(obj1) === Object.prototype);
+
+var obj2 = { __proto__: null };
+assert(Object.getPrototypeOf(obj2) === null);
+
+var protoObj = {};
+var obj3 = { "__proto__": protoObj };
+assert(Object.getPrototypeOf(obj3) === protoObj);
+
+var obj4 = { __proto__: "not an object or null" };
+assert(Object.getPrototypeOf(obj4) === Object.prototype);
+assert(!obj4.hasOwnProperty("__proto__"));
+</pre>
+
+<p>Only a single prototype mutation is permitted in an object literal: multiple prototype mutations are a syntax error.</p>
+
+<p>Property definitions that do not use "colon" notation are not prototype mutations: they are property definitions that behave identically to similar definitions using any other name.</p>
+
+<pre class="brush: js">var __proto__ = "variable";
+
+var obj1 = { __proto__ };
+assert(Object.getPrototypeOf(obj1) === Object.prototype);
+assert(obj1.hasOwnProperty("__proto__"));
+assert(obj1.__proto__ === "variable");
+
+var obj2 = { __proto__() { return "hello"; } };
+assert(obj2.__proto__() === "hello");
+
+var obj3 = { ["__prot" + "o__"]: 17 };
+assert(obj3.__proto__ === 17);
+</pre>
+
+<h2 id="Object_literal_notation_vs_JSON">Object literal notation vs JSON</h2>
+
+<p>The object literal notation is not the same as the <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation (JSON). Although they look similar, there are differences between them:</p>
+
+<ul>
+ <li>JSON permits <em>only</em> property definition using <code>"property": value</code> syntax.&nbsp; The property name must be double-quoted, and the definition cannot be a shorthand.</li>
+ <li>In JSON the values can only be strings, numbers, arrays, <code>true</code>, <code>false</code>, <code>null</code>, or another (JSON) object.</li>
+ <li>A function value (see "Methods" above) can not be assigned to a value in JSON.</li>
+ <li>Objects like <b>Date</b> will be a string after <b>JSON.parse()</b>.</li>
+ <li><b>JSON.parse()</b> will reject computed property names and an error will be thrown.</li>
+</ul>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

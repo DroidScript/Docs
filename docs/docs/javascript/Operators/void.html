@@ -1,0 +1,105 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>void</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>void</h2></div>
+
+<p>The <strong><code>void</code> operator</strong> evaluates the given <code><em>expression</em></code> and then returns <b>undefined</b>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">void <em>expression</em></pre>
+
+<h2 id="Description">Description</h2>
+
+<p>This operator allows inserting expressions that produce side effects into places where an expression that evaluates to <b>undefined</b> is desired.</p>
+
+<p>The <code>void</code> operator is often used merely to obtain the <code>undefined</code> primitive value, usually using "<code>void(0)</code>" (which is equivalent to "<code>void 0</code>"). In these cases, the global variable <b>undefined</b> can be used instead (assuming it has not been assigned to a non-default value).</p>
+
+<h2 id="Immediately_Invoked_Function_Expressions">Immediately Invoked Function Expressions</h2>
+
+<p>When using an immediately-invoked function expression, <code>void</code> can be used to force the <code>function</code> keyword to be treated as an expression instead of a declaration.</p>
+
+<pre class="brush: js">void function iife() {
+    var bar = function () {};
+    var baz = function () {};
+    var foo = function () {
+        bar();
+        baz();
+     };
+    var biz = function () {};
+
+    foo();
+    biz();
+}();
+</pre>
+
+<h2 id="JavaScript_URIs">JavaScript URIs</h2>
+
+<p>When a browser follows a <code>javascript:</code> URI, it evaluates the code in the URI and then replaces the contents of the page with the returned value, unless the returned value is <b>undefined</b>. The <code>void</code> operator can be used to return <b>undefined</b>. For example:</p>
+
+<pre class="brush: html">&lt;a href="javascript:void(0);"&gt;
+  Click here to do nothing
+&lt;/a&gt;
+
+&lt;a href="javascript:void(document.body.style.backgroundColor='green');"&gt;
+  Click here for green background
+&lt;/a&gt;
+</pre>
+
+<p>Note, however, that the <code>javascript:</code> pseudo protocol is discouraged over other alternatives, such as unobtrusive event handlers.</p>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>EnableBackKey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>EnableBackKey</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Allows to en- or disable the devices back key.</p>
+
+			<div class="samp">
+			app.EnableBackKey( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			</div>
+
+			<p>When it is disabled the app event <i>OnBack()</i> will called when the user presses the back button - otherwise the app exits.<br>
+			<br>
+			You can use this method to create a custom <i>BACK</i> command that allows you to navigate between your layouts.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Example</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.EnableBackKey( false );<br>
+				</b>}<br>
+				<br>
+				function OnBack()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var yesNo = app.CreateYesNoDialog( &quot;Exit App?&quot; );<br>
+				&#160;&#160;&#160;&#160;yesNo.SetOnTouch( yesNo_OnTouch );<br>
+				&#160;&#160;&#160;&#160;yesNo.Show();<br>
+				}<br>
+				<br>
+				function yesNo_OnTouch( result )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( result==&quot;Yes&quot; ) app.Exit();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Menu Images</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;menus = &quot;Files:Files.png,Settings:Settings.png&quot;;<br>
+				&#160;&#160;&#160;&#160;app.EnableBackKey( menus, &quot;/Sys/Img&quot; );<br>
+				</b>}<br>
+				<br>
+				function OnMenu( item )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( item, &quot;Short&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+
+	</div>
+</body>
+
+</html>

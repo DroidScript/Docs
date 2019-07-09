@@ -1,0 +1,207 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>switch</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>switch</h2></div>
+
+<p>The <strong>switch statement</strong> evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">switch (expression) {
+  case value1:
+    //Statements executed when the result of expression matches value1
+    [break;]
+  case value2:
+    //Statements executed the result of expression matches value2
+    [break;]
+  ...
+  case valueN:
+    //Statements executed when the result of expression matches valueN
+    [break;]
+  default:
+    //Statements executed when none of the values match the value of the expression
+    [break;]
+}</pre>
+
+<dl>
+ <dt><code>expression</code></dt>
+ <dd>An expression matched against each case clause.</dd>
+ <dt><code>case valueN</code></dt>
+ <dd>A case clause used to match against <code>expression</code>.</dd>
+ <dt><code>statementsN</code></dt>
+ <dd>Statements that are executed if <code>expression</code> matches the associated case clause.</dd>
+ <dt><code>statements_def</code></dt>
+ <dd>Statements that are executed if <code>expression</code> does not match any case clause.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>If a match is found, the program executes the associated statements. If multiple cases match the provided value, the first case that matches is selected, even if the cases are not equal to each other.</p>
+
+<p>The program first looks for a <code>case</code> clause whose expression evaluates to the same value as the input expression (using strict comparison, <code>===)</code> and then transfers control to that clause, executing the associated statements. If no matching <code>case</code> clause is found, the program looks for the optional <code>default</code> clause, and if found, transfers control to that clause, executing the associated statements. If no <code>default</code> clause is found, the program continues execution at the statement following the end of <code>switch</code>. By convention, the <code>default</code> clause is the last clause, but it does not need to be so.</p>
+
+<p>The optional <code>break</code> statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If <code>break</code> is omitted, the program continues execution at the next statement in the <code>switch</code> statement.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_switch">Using <code>switch</code></h3>
+
+<p>In the following example, if <code>expr</code>&nbsp;evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When <code>break</code> is encountered, the program breaks out of <code>switch</code> and executes the statement following <code>switch</code>. If <code>break</code> were omitted, the statement for case "Cherries" would also be executed.</p>
+
+<pre class="brush: js">switch (expr) {
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
+    break;
+  case "Apples":
+    console.log("Apples are $0.32 a pound.");
+    break;
+  case "Bananas":
+    console.log("Bananas are $0.48 a pound.");
+    break;
+  case "Cherries":
+    console.log("Cherries are $3.00 a pound.");
+    break;
+  case "Mangoes":
+  case "Papayas":
+    console.log("Mangoes and papayas are $2.79 a pound.");
+    break;
+  default:
+    console.log("Sorry, we are out of " + expr + ".");
+}
+
+console.log("Is there anything else you'd like?");
+</pre>
+
+<h3 id="What_happens_if_I_forgot_a_break">What happens if I forgot a break?</h3>
+
+<p>If you forget a break then script will run from the case where criteria is met, and will run the case after that regardless if criteria was met. See example here:</p>
+
+<pre class="brush: js">var foo = 0;
+switch (foo) {
+  case -1:
+&nbsp;   console.log('negative 1');
+    break;
+  case 0: // foo is 0 so criteria met here so this block will run
+&nbsp;   console.log(0)
+ &nbsp;&nbsp; // NOTE: the forgotten break would have been here
+&nbsp; case 1: // no break statement in 'case 0:' so this case will run as well
+&nbsp;   console.log(1);
+&nbsp;&nbsp; &nbsp;break; // it encounters this break so will not continue into 'case 2:'
+&nbsp; case 2:
+&nbsp;   console.log(2);
+&nbsp;&nbsp; &nbsp;break;
+&nbsp; default:
+    console.log('default');
+}</pre>
+
+<h3 id="Methods_for_multi-criteria_case">Methods for multi-criteria case</h3>
+
+<p>Source for this technique is here:</p>
+
+<p>Switch statement multiple cases in JavaScript (Stack Overflow)</p>
+
+<h4 id="Multi-case_-_single_operation">Multi-case - single operation</h4>
+
+<p>This method takes advantage of the fact that if there is no break below a case statement it will continue to execute the next case statement regardless if the case meets the criteria. See the section title "What happens if I forgot a break?"</p>
+
+<p>This is an example of a single operation sequential switch statement, where four different values perform exactly the same.</p>
+
+<pre class="brush: js">var Animal = 'Giraffe';
+switch (Animal) {
+  case 'Cow':
+&nbsp; case 'Giraffe':
+&nbsp; case 'Dog':
+&nbsp; case 'Pig':
+&nbsp;   console.log('This animal will go on Noah\'s Ark.');
+&nbsp;&nbsp; &nbsp;break;
+  case 'Dinosaur':
+&nbsp; default:
+&nbsp;   console.log('This animal will not.');
+}</pre>
+
+<h4 id="Multi-case_-_chained_operations">Multi-case - chained operations</h4>
+
+<p>This is an example of a multiple-operation sequential switch statement, where, depending on the provided integer, you can receive different output. This shows you that it wil traverse in the order that you put the case statements, and it does not have to be numerically sequential. In JavaScript, you can even mix in definitions of strings into these case statements as well.</p>
+
+<pre class="brush: js">var foo = 1;
+var output = 'Output: ';
+switch (foo) {
+  case 10:
+    output += 'So ';
+&nbsp; case 1:
+    output += 'What ';
+    output += 'Is ';
+&nbsp; case 2:
+&nbsp;   output += 'Your ';
+  case 3:
+    output += 'Name';
+  case 4:
+    output += '?';
+    console.log(output);
+    break;
+  case 5:
+    output += '!';
+    console.log(output);
+    break;
+&nbsp; default:
+&nbsp;   console.log('Please pick a number from 0 to 6!');
+}</pre>
+
+<p>Output from this example:</p>
+
+
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

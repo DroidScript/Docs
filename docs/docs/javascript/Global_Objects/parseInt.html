@@ -1,0 +1,179 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>parseInt</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>parseInt</h2></div>
+
+<p>The <code><strong>parseInt()</strong></code> function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">parseInt(<em>string</em>, <em>radix</em>);</pre>
+
+<h2 id="Parameters">Parameters</h2>
+
+<dl>
+ <dt><code>string</code></dt>
+ <dd>The value to parse. If <code>string</code> is not a string, then it is converted to one. Leading whitespace in the string is ignored.</dd>
+</dl>
+
+<dl>
+ <dt><code>radix</code></dt>
+ <dd>An integer between 2 and 36 that represents the <var>radix</var> (the base in mathematical numeral systems) of the above mentioned string. Specify <code>10</code> for the decimal numeral system commonly used by humans. <strong>Always specify this parameter</strong> to eliminate reader confusion and to guarantee predictable behavior. Different implementations produce different results when a radix is not specified.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The <code>parseInt</code> function converts its first argument to a string, parses it, and returns an integer or <code>NaN</code>. If not <code>NaN</code>, the returned value will be the decimal integer representation of the first argument taken as a number in the specified <var>radix</var> (base). For example, a <var>radix</var> of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above <code>10</code>, the letters of the alphabet indicate numerals greater than <code>9</code>. For example, for hexadecimal numbers (base 16), <code>A</code> through <code>F</code> are used.</p>
+
+<p>If <code>parseInt</code> encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. <code>parseInt</code> truncates numbers to integer values. Leading and trailing spaces are allowed.</p>
+
+<p>If <var>radix</var> is <code>undefined</code> or 0 (or absent), JavaScript assumes the following:</p>
+
+<ul>
+ <li>If the input <code>string</code> begins with "0x" or "0X", <var>radix</var> is 16 (hexadecimal) and the remainder of the string is parsed.</li>
+ <li>If the input <code>string</code> begins with "0", <var>radix</var> is eight (octal) or 10 (decimal).&nbsp; Exactly which radix is chosen is implementation-dependent.&nbsp; ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.&nbsp; For this reason <strong>always specify a radix when using <code>parseInt</code></strong>.</li>
+ <li>If the input <code>string</code> begins with any other value, the radix is 10 (decimal).</li>
+</ul>
+
+<p>If the first character cannot be converted to a number, <code>parseInt</code> returns <code>NaN</code>.</p>
+
+<p>For arithmetic purposes, the <code>NaN</code> value is not a number in any radix. You can call the <b>isNaN</b> function to determine if the result of <code>parseInt</code> is <code>NaN</code>. If <code>NaN</code> is passed on to arithmetic operations, the operation results will also be <code>NaN</code>.</p>
+
+<p>To convert number to its string literal in a particular radix use <code>intValue.toString(radix)</code>.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_parseInt">Using <code>parseInt</code></h3>
+
+<p>The following examples all return <strong><code>15</code></strong>:</p>
+
+<pre class="brush: js">parseInt(" 0xF", 16);
+parseInt(" F", 16);
+parseInt("17", 8);
+parseInt(021, 8);
+parseInt("015", 10);
+parseInt(15.99, 10);
+parseInt("FXX123", 16);
+parseInt("1111", 2);
+parseInt("15*3", 10);
+parseInt("15e2", 10);
+parseInt("15px", 10);
+parseInt("12", 13);
+</pre>
+
+<p>The following examples all return <strong><code>NaN</code></strong>:</p>
+
+<pre class="brush: js">parseInt("Hello", 8); // Not a number at all
+parseInt("546", 2);   // Digits are not valid for binary representations
+</pre>
+
+<p>The following examples all return <strong><code>-15</code></strong>:</p>
+
+<pre class="brush: js">parseInt("-F", 16);
+parseInt("-0F", 16);
+parseInt("-0XF", 16);
+parseInt(-15.1, 10)
+parseInt(" -17", 8);
+parseInt(" -15", 10);
+parseInt("-1111", 2);
+parseInt("-15e1", 10);
+parseInt("-12", 13);
+</pre>
+
+<p>The following example returns <strong><code>224</code></strong>:</p>
+
+<pre class="brush: js">parseInt("0e0", 16);
+</pre>
+
+<h2 id="Octal_interpretations_with_no_radix">Octal interpretations with no radix</h2>
+
+<p>Although discouraged by ECMAScript 3 and forbidden by ECMAScript 5, many implementations interpret a numeric string beginning with a leading <code>0</code> as octal. The following may have an octal result, or it may have a decimal result.&nbsp; <strong>Always specify a radix to avoid this unreliable behavior.</strong></p>
+
+<pre class="brush: js">parseInt("0e0"); // 0
+parseInt("08"); // 0, '8' is not an octal digit.
+</pre>
+
+<h3 id="ECMAScript_5_removes_octal_interpretation">ECMAScript 5 removes octal interpretation</h3>
+
+<p>The ECMAScript 5 specification of the function <code>parseInt</code> no longer allows implementations to treat Strings beginning with a <code>0</code> character as octal values. ECMAScript 5 states:</p>
+
+<p>The <code>parseInt</code> function produces an integer value dictated by interpretation of the contents of the string argument according to the specified radix. Leading white space in string is ignored. If radix is undefined or <code>0</code>, it is assumed to be <code>10</code> except when the number begins with the character pairs <code>0x</code> or <code>0X</code>, in which case a radix of 16 is assumed.</p>
+
+<p>This differs from ECMAScript 3, which discouraged but allowed octal interpretation.</p>
+
+<p>Many implementations have not adopted this behavior as of 2013, and because older browsers must be supported, <strong>always specify a radix</strong>.</p>
+
+<h2 id="A_stricter_parse_function">A stricter parse function</h2>
+
+<p>It is sometimes useful to have a stricter way to parse int values. Regular expressions can help:</p>
+
+<pre class="brush: js">filterInt = function (value) {
+  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
+    return Number(value);
+  return NaN;
+}
+
+console.log(filterInt('421'));               // 421
+console.log(filterInt('-421'));              // -421
+console.log(filterInt('+421'));              // 421
+console.log(filterInt('Infinity'));          // Infinity
+console.log(filterInt('421e+0'));            // NaN
+console.log(filterInt('421hop'));            // NaN
+console.log(filterInt('hop1.61803398875'));  // NaN
+console.log(filterInt('1.61803398875'));     // NaN
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,183 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.split()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.split()</h2></div>
+
+<p>The <strong><code>split()</code></strong> method splits a <b>String</b> object into an array of strings by separating the string into substrings.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.split([<var>separator</var>[, <var>limit</var>]])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>separator</code></dt>
+ <dd>Optional. Specifies the character(s) to use for separating the string. The <code>separator</code> is treated as a string or a <b>regular expression</b>. If <code>separator</code> is omitted, the array returned contains one element consisting of the entire string. If <code>separator</code> is an empty string, <code>str</code> is converted to an array of characters.</dd>
+ <dt><code>limit</code></dt>
+ <dd>Optional. Integer specifying a limit on the number of splits to be found. The <code>split()</code> method still splits on every match of <code>separator</code>, but it truncates the returned array to at most <code>limit</code> elements.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The <code>split()</code> method returns the new array.</p>
+
+<p>When found, <code>separator</code> is removed from the string and the substrings are returned in an array. If <code>separator</code> is not found or is omitted, the array contains one element consisting of the entire string. If <code>separator</code> is an empty string, <code>str</code> is converted to an array of characters.</p>
+
+<p>If <code>separator</code> is a regular expression that contains capturing parentheses, then each time <code>separator</code> is matched, the results (including any undefined results) of the capturing parentheses are spliced into the output array. However, not all browsers support this capability.</p>
+
+<p><script>Note("When the string is empty, <code>split()</code> returns an array containing one empty string, rather than an empty array.")</script></p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_split()">Using <code>split()</code></h3>
+
+<p>The following example defines a function that splits a string into an array of strings using the specified separator. After splitting the string, the function displays messages indicating the original string (before the split), the separator used, the number of elements in the array, and the individual array elements.</p>
+
+<pre class="brush: js">function splitString(stringToSplit, separator) {
+  var arrayOfStrings = stringToSplit.split(separator);
+
+  console.log('The original string is: "' + stringToSplit + '"');
+  console.log('The separator is: "' + separator + '"');
+  console.log('The array has ' + arrayOfStrings.length + ' elements: ' + arrayOfStrings.join(' / '));
+}
+
+var tempestString = 'Oh brave new world that has such people in it.';
+var monthString = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec';
+
+var space = ' ';
+var comma = ',';
+
+splitString(tempestString, space);
+splitString(tempestString);
+splitString(monthString, comma);
+</pre>
+
+<p>This example produces the following output:</p>
+
+<pre>The original string is: "Oh brave new world that has such people in it."
+The separator is: " "
+The array has 10 elements: Oh / brave / new / world / that / has / such / people / in / it.
+
+The original string is: "Oh brave new world that has such people in it."
+The separator is: "undefined"
+The array has 1 elements: Oh brave new world that has such people in it.
+
+The original string is: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+The separator is: ","
+The array has 12 elements: Jan / Feb / Mar / Apr / May / Jun / Jul / Aug / Sep / Oct / Nov / Dec
+</pre>
+
+<h3 id="Removing_spaces_from_a_string">Removing spaces from a string</h3>
+
+<p>In the following example, <code>split()</code> looks for 0 or more spaces followed by a semicolon followed by 0 or more spaces and, when found, removes the spaces from the string. <code>nameList</code> is the array returned as a result of <code>split()</code>.</p>
+
+<pre class="brush: js">var names = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
+
+console.log(names);
+
+var re = /\s*;\s*/;
+var nameList = names.split(re);
+
+console.log(nameList);
+</pre>
+
+<p>This logs two lines; the first line logs the original string, and the second line logs the resulting array.</p>
+
+<pre>Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand
+Harry Trump,Fred Barney,Helen Rigby,Bill Abel,Chris Hand
+</pre>
+
+<h3 id="Returning_a_limited_number_of_splits">Returning a limited number of splits</h3>
+
+<p>In the following example, <code>split()</code> looks for 0 or more spaces in a string and returns the first 3 splits that it finds.</p>
+
+<pre class="brush: js">var myString = 'Hello World. How are you doing?';
+var splits = myString.split(' ', 3);
+
+console.log(splits);
+</pre>
+
+<p>This script displays the following:</p>
+
+<pre>Hello,World.,How
+</pre>
+
+<h3 id="Capturing_parentheses">Capturing parentheses</h3>
+
+<p>If <code>separator</code> contains capturing parentheses, matched results are returned in the array.</p>
+
+<pre class="brush: js">var myString = 'Hello 1 word. Sentence number 2.';
+var splits = myString.split(/(\d)/);
+
+console.log(splits);
+</pre>
+
+<p>This script displays the following:</p>
+
+<pre>Hello ,1, word. Sentence number ,2,.
+</pre>
+
+<h3 id="Reversing_a_String_using_split()">Reversing a String using <code>split()</code></h3>
+
+<pre class="brush: js">var str = 'asdfghjkl';
+var strReverse = str.split('').reverse().join(''); // 'lkjhgfdsa'
+// split() returns an array on which reverse() and join() can be applied
+</pre>
+
+<p><strong>Bonus:</strong> use <b>===", "#Identity_strict_equality_(===)</b> operator to test if the original string was palindrome.</p>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

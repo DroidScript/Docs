@@ -1,0 +1,102 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.toLocaleFormat()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.toLocaleFormat()</h2> </div>
+
+<p>The non-standard <strong><code>toLocaleFormat()</code></strong> method converts a date to a string using the specified formatting. <b>Intl.DateTimeFormat</b> is an alternative to format dates in a standards-compliant way. See also the newer version of <b><i>dateObj</i>.toLocaleDateString()</b>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.toLocaleFormat(<var>formatString</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>formatString</code></dt>
+ <dd>A format string in the same format expected by the <code>strftime()</code> function in C.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The <code>toLocaleFormat()</code> method provides greater software control over the formatting of the generated date and/or time. Names for months and days of the week are localized using the operating system's locale. However, ordering of the day and month and other localization tasks are not handled automatically since you have control over the order in which they occur. You should take care that the format string is localized properly according to the user's system settings. Be aware that the locale used is not necessarily the same as the locale of the browser.</p>
+
+<p>Extension and XULRunner developers should know that just loading the format string from a <code>.dtd</code> or <code>.properties</code> file using a <code>chrome://<em>somedomain</em>/locale/<em>somefile.ext</em></code> URI should be <strong>avoided</strong>, as the <code>.dtd</code>/<code>.properties</code> file and the <code>toLocaleFormat()</code> method does not not necessarily use the same locale, which could result in odd looking or even ambiguous or unreadable dates.</p>
+
+<p>Also note that the behavior of the used locale depends on the platform, and the user might customize the locale used, so using the system locale the choose the format string might in some cases not even be adequate. You might consider using some of the more general <code>toLocale*</code> methods of the <b>Date</b> object or doing your own custom localization of the date to be displayed using some of the <code>get*</code> methods of the <b>Date</b> object instead of using this method.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toLocaleFormat()">Using <code>toLocaleFormat()</code></h3>
+
+<pre class="brush: js">var today = new Date();
+var date = today.toLocaleFormat('%A, %B %e, %Y'); // Bad example
+</pre>
+
+<p>In this example, <code>toLocaleFormat()</code> returns a string such as "Wednesday, October 3, 2007". Note that the format string in this example is not properly localized, which will result in the problems described above.</p>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>When using the DateJS library you can polyfill <b><i>dateObj</i>.toLocaleDateString()</b> like this:</p>
+
+<pre class="brush: js">if (!<i>dateObj</i>.toLocaleFormat) {
+    (function() {
+        <i>dateObj</i>.toLocaleFormat = function(formatString) {
+            return this.format(formatString);
+        };
+    }());
+}</pre>
+
+
+
+<p>[Not part of any specification. Implemented in JavaScript 1.6.]</p>
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

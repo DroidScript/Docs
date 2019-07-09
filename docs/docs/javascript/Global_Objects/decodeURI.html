@@ -1,0 +1,84 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>decodeURI</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>decodeURI</h2></div>
+
+<p>The <code><strong>decodeURI()</strong></code> function decodes a Uniform Resource Identifier (URI) previously created by <b>encodeURI</b> or by a similar routine.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>decodeURI(<em>encodedURI</em>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>encodedURI</code></dt>
+ <dd>A complete, encoded Uniform Resource Identifier.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by <b>encodeURI</b>. The character “<code>#</code>” is not decoded from escape sequences.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Decoding_a_Cyrillic_URL">Decoding a Cyrillic URL</h3>
+
+<pre class="brush: js">decodeURI("https://developer.mozilla.org/ru/docs/JavaScript_%D1%88%D0%B5%D0%BB%D0%BB%D1%8B");
+// "https://developer.mozilla.org/ru/docs/JavaScript_шеллы"
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,45 @@
+<sample Choose Phone Number>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btnChoose = app.CreateButton( "Choose Phone", 0.5, 0.1 );
+	btnChoose.SetOnTouch( btnChoose_OnTouch );
+	lay.AddChild( btnChoose );
+
+	app.AddLayout( lay );
+}
+
+function btnChoose_OnTouch()
+{
+	<b>app.ChooseContact( "phone", OnPhoneChoose );</b>
+}
+
+function OnPhoneChoose( name, number )
+{
+     app.ShowPopup( name + " " + number );
+}
+</sample>
+
+<sample Choose Email Address>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btnChoose = app.CreateButton( "Choose Email", 0.5, 0.1 );
+	btnChoose.SetOnTouch( btnChoose_OnTouch );
+	lay.AddChild( btnChoose );
+
+	app.AddLayout( lay );
+}
+
+function btnChoose_OnTouch()
+{
+	<b>app.ChooseContact( "email", OnEmailChoose );</b>
+}
+
+function OnEmailChoose( name, email )
+{
+     app.ShowPopup( name + " " + email );
+}
+</sample>

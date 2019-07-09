@@ -1,0 +1,188 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>delete</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>delete</h2></div>
+
+<p>The <strong><code>delete</code> operator</strong> removes a property from an object.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">delete <em>expression</em> </pre>
+
+<p>where <em>expression</em> should evaluate to a property reference, e.g.:</p>
+
+<pre class="syntaxbox">delete <em>object.property</em>
+delete <em>object</em>['<em>property</em>']
+</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>object</code></dt>
+ <dd>The name of an object, or an expression evaluating to an object.</dd>
+ <dt><code>property</code></dt>
+ <dd>The property to delete.</dd>
+</dl>
+
+<h3 id="Return_value">Return value</h3>
+
+<p>Throws in strict mode if the property is an own non-configurable property (returns <code>false</code> in non-strict). Returns <code>true</code> in all other cases.</p>
+
+<h2 id="Description">Description</h2>
+
+<p>Unlike what common belief suggests, the <code>delete</code> operator has <strong>nothing</strong> to do with directly freeing memory (it only does indirectly via breaking references. See the memory management page for more details).</p>
+
+<p>If the <code>delete</code> operator succeeds, it removes the property from the object entirely. However, if a property with the same name exists on the object's prototype chain, the object will inherit that property from the prototype.</p>
+
+<p><code>delete</code> is only effective on an object's properties. It has no effect on variable or function names.<br>
+ While sometimes mis-characterized as global variables, assignments that don't specify an object (e.g. <code>x = 5</code>) are actually property assignments on the global object.</p>
+
+<p><code>delete</code> can't remove certain properties of predefined objects (like Object, Array, Math etc). These are described in ECMAScript 5 and later as non-configurable.</p>
+
+<h3 id="Temporal_dead_zone">Temporal dead zone</h3>
+
+<p>The "temporal dead zone" (TDZ), specified in ECMAScript 6 for <code>const</code> and <code>let</code> declarations, also applies to the <code>delete</code> operator. Thus, code like the following will throw a <b>ReferenceError</b>.</p>
+
+<pre class="brush: js">function foo() { 
+  delete x;
+  let x;
+}
+
+function bar() { 
+  delete y; 
+  const y; 
+}</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<pre class="brush: js">x = 42;         // creates the property x on the global object
+var y = 43;     // creates the property y on the global object, and marks it as non-configurable
+myobj = {
+  h: 4,
+  k: 5
+};
+
+// x is a property of the global object and can be deleted
+delete x;       // returns true
+
+// y is not configurable, so it cannot be deleted                
+delete y;       // returns false 
+
+// delete doesn't affect certain predefined properties
+delete Math.PI; // returns false 
+
+// user-defined properties can be deleted
+delete myobj.h; // returns true 
+
+// myobj is a property of the global object, not a variable,
+// so it can be deleted
+delete myobj;   // returns true
+
+function f() {
+  var z = 44;
+
+  // delete doesn't affect local variable names
+  delete z;     // returns false
+}
+</pre>
+
+<p>If the object inherits a property from a prototype, and doesn't have the property itself, the property can't be deleted by referencing the object. You can, however, delete it directly on the prototype.</p>
+
+<pre class="brush: js">function Foo(){}
+Foo.prototype.bar = 42;
+var foo = new Foo();
+
+// returns true, but with no effect, 
+// since bar is an inherited property
+delete foo.bar;           
+
+// logs 42, property still inherited
+console.log(foo.bar);
+
+// deletes property on prototype
+delete Foo.prototype.bar; 
+
+// logs "undefined", property no longer inherited
+console.log(foo.bar);           </pre>
+
+<h3 id="Deleting_array_elements">Deleting array elements</h3>
+
+<p>When you delete an array element, the array length is not affected. This holds even if you delete the last element of the array.</p>
+
+<p>When the <code>delete</code> operator removes an array element, that element is no longer in the array. In the following example, <code>trees[3]</code> is removed with <code>delete</code>.</p>
+
+<pre class="brush: js">var trees = ["redwood","bay","cedar","oak","maple"];
+delete trees[3];
+if (3 in trees) {
+    // this does not get executed
+}</pre>
+
+<p>If you want an array element to exist but have an undefined value, use the <code>undefined</code> value instead of the <code>delete</code> operator. In the following example, <code>trees[3]</code> is assigned the value undefined, but the array element still exists:</p>
+
+<pre class="brush: js">var trees = ["redwood","bay","cedar","oak","maple"];
+trees[3] = undefined;
+if (3 in trees) {
+    // this gets executed
+}</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<h2 id="Cross-browser_notes">Cross-browser notes</h2>
+
+<p>Although ECMAScript makes iteration order of objects implementation-dependent, it may appear that all major browsers support an iteration order based on the earliest added property coming first (at least for properties not on the prototype). However, in the case of Internet Explorer, when one uses <code>delete</code> on a property, some confusing behavior results, preventing other browsers from using simple objects like object literals as ordered associative arrays. In Explorer, while the property <em>value</em> is indeed set to undefined, if one later adds back a property with the same name, the property will be iterated in its <em>old</em> position--not at the end of the iteration sequence as one might expect after having deleted the property and then added it back.</p>
+
+<p>So, if you want to simulate an ordered associative array in a cross-browser environment, you are forced to either use two separate arrays (one for the keys and the other for the values), or build an array of single-property objects, etc.</p>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

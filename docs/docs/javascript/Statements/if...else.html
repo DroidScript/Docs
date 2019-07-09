@@ -1,0 +1,166 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>if...else</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>if...else</h2></div>
+
+<p>The <strong>if statement</strong> executes a statement if a specified condition is true. If the condition is false, another statement can be executed.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">if (<em>condition</em>)
+   <em>statement1</em>
+[else
+   <em>statement2</em>]
+</pre>
+
+<dl>
+ <dt><code>condition</code></dt>
+ <dd>An expression that evaluates to true or false.</dd>
+</dl>
+
+<dl>
+ <dt><code>statement1</code></dt>
+ <dd>Statement that is executed if <code>condition</code> evaluates to true. Can be any statement, including further nested <code>if</code> statements. To execute multiple statements, use a block statement ({ ... }) to group those statements, to execute no statements, use an empty statement.</dd>
+</dl>
+
+<dl>
+ <dt><code>statement2</code></dt>
+ <dd>Statement that is executed if <code>condition</code> evaluates to false and the <code>else</code> clause exists. Can be any statement, including block statements and further nested <code>if</code> statements.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Multiple <code>if...else</code> statements can be nested to create an <code>else if</code> clause. Note that there is no <code>elseif</code> (in one word) keyword in JavaScript.</p>
+
+<pre class="eval">if (<em>condition1</em>)
+   <em>statement1</em>
+else if (<em>condition2</em>)
+   <em>statement2</em>
+else if (<em>condition3</em>)
+   <em>statement3</em>
+...
+else
+   <em>statementN</em>
+</pre>
+
+<p>To see how this works, this is how it would look like if the nesting were properly indented:</p>
+
+<pre class="eval">if (<em>condition1</em>)
+   <em>statement1</em>
+else
+   if (<em>condition2</em>)
+      <em>statement2</em>
+   else
+      if (<em>condition3</em>)
+...
+</pre>
+
+<p>To execute multiple statements within a clause, use a block statement (<code>{ ... }</code>) to group those statements. In general, it is a good practice to always use block statements, especially in code involving nested <code>if</code> statements:</p>
+
+<pre class="eval">if (<em>condition</em>) {
+   <em>statements1</em>
+} else {
+   <em>statements2</em>
+}
+</pre>
+
+<p>Do not confuse the primitive boolean values <code>true</code> and <code>false</code> with the true and false values of the Boolean object. Any value that is not <code>undefined</code>, <code>null</code>, <code>0</code>, <code>NaN</code>, or the empty string (<code>""</code>), and any object, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. For example:</p>
+
+<pre class="brush: js">var b = new Boolean(false);
+if (b) // this condition evaluates to true
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_if...else">Using <code>if...else</code></h3>
+
+<pre class="brush: js">if (cipher_char === from_char) {
+   result = result + to_char;
+   x++;
+} else {
+   result = result + clear_char;
+}
+</pre>
+
+<h3 id="Using_else_if">Using <code>else if</code></h3>
+
+<p>Note that there is no <code>elseif</code> syntax in JavaScript. However, you can write it with a space between <code>else</code> and <code>if</code>:</p>
+
+<pre class="brush: js">if (x &gt; 5) {
+
+} else if (x &gt; 50) {
+
+} else {
+
+}</pre>
+
+<h3 id="Assignment_within_the_conditional_expression">Assignment within the conditional expression</h3>
+
+<p>It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:</p>
+
+<pre class="brush: js">if (x = y) {
+   /* do the right thing */
+}
+</pre>
+
+<p>If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment. For example:</p>
+
+<pre class="brush: js">if ((x = y)) {
+   /* do the right thing */
+}
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

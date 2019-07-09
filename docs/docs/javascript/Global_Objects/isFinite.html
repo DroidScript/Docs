@@ -1,0 +1,93 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>isFinite</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>isFinite</h2></div>
+
+<p>The global <code><strong>isFinite()</strong></code> function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">isFinite(<em>testValue</em>)</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>testValue</code></dt>
+ <dd>The value to be tested for finiteness.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p><code>isFinite</code> is a top-level function and is not associated with any object.</p>
+
+<p>You can use this function to determine whether a number is a finite number. The <code>isFinite</code> function examines the number in its argument. If the argument is <code>NaN</code>, positive infinity, or negative infinity, this method returns <code>false</code>; otherwise, it returns <code>true</code>.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<pre class="brush: js">isFinite(Infinity);  // false
+isFinite(NaN);       // false
+isFinite(-Infinity); // false
+
+isFinite(0);         // true
+isFinite(2e64);      // true
+isFinite(null);      // true
+
+
+isFinite("0");       // true, would've been false with the 
+                     // more robust Number.isFinite("0")
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

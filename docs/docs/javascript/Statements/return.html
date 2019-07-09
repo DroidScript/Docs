@@ -1,0 +1,151 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>return</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>return</h2></div>
+
+<p>The <strong><code>return</code> statement</strong> ends function execution and specifies a value to be returned to the function caller.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">return [[expression]]; </pre>
+
+<dl>
+ <dt><code>expression</code></dt>
+ <dd>The expression to return. If omitted, <code>undefined</code> is returned instead.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>When a <code>return</code> statement is called in a function, the execution of this function is stopped. If specified, a given value is returned to the function caller. If the expression is omitted, <code>undefined</code> is returned instead. The following return statements all break the function execution:</p>
+
+<pre class="brush: js">return;
+return true;
+return false;
+return x;
+return x + y / 3;
+</pre>
+
+<h3 id="Automatic_Semicolon_Insertion">Automatic Semicolon Insertion</h3>
+
+<p>The <code>return</code> statement is affected by automatic semicolon insertion (ASI). No line terminator is allowed between the <code>return</code> keyword and the expression.</p>
+
+<pre class="brush: js">return
+a + b;
+</pre>
+
+<p>is transformed by ASI into:</p>
+
+<pre>return; 
+a + b;
+</pre>
+
+<p>The console will warn "unreachable code after return statement".</p>
+
+<div class="note">Starting with Gecko 40 , a warning is shown in the console if unreachable code is found after a return statement.</div>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="return">return</h3>
+
+<p>The following function returns the square of its argument, <code>x</code>, where <code>x</code> is a number.</p>
+
+<pre class="brush: js">function square(x) {
+   return x * x;
+}
+</pre>
+
+<h3 id="Interrupt_a_function">Interrupt a function</h3>
+
+<p>A function immediately stops at the point where <code>return</code> is called.</p>
+
+<pre class="brush: js">function counter() {
+  for (var count = 1; ; count++) {  // infinite loop
+    console.log(count + "A"); // until 5
+      if (count === 5) {          
+        return;
+      }
+      console.log(count + "B");  // until 4
+    }
+  console.log(count + "C");  // never appears
+}
+
+counter();
+
+// Output:
+// 1A
+// 1B
+// 2A
+// 2B
+// 3A
+// 3B
+// 4A
+// 4B
+// 5A
+</pre>
+
+<h3 id="Returning_a_function">Returning a function</h3>
+
+<p>See also the article about Closures.</p>
+
+<pre class="brush: js">function magic(x) {
+  return function calc(x) { return x * 42 };
+}
+
+var answer = magic();
+answer(1337); // 56154
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

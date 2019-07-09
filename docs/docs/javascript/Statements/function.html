@@ -1,0 +1,128 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>function</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>function</h2></div>
+
+<p>The <strong>function declaration</strong> defines a function with the specified parameters.</p>
+
+<p>You can also define functions using the <b>Function</b> constructor and a <b>function expression</b>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">function <em>name</em>([<em>param</em>,[, <em>param</em>,[..., <em>param</em>]]]) {
+   [<em>statements</em>]
+}
+</pre>
+
+<dl>
+ <dt><code>name</code></dt>
+ <dd>The function name.</dd>
+</dl>
+
+<dl>
+ <dt><code>param</code></dt>
+ <dd>The name of an argument to be passed to the function. A function can have up to 255 arguments.</dd>
+</dl>
+
+<dl>
+ <dt><code>statements</code></dt>
+ <dd>The statements which comprise the body of the function.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>A function created with a function declaration is a <code>Function</code> object and has all the properties, methods and behavior of <code>Function</code> objects. See <b>Function</b> for detailed information on functions.</p>
+
+<p>A function can also be created using an expression (see <b>function expression</b>).</p>
+
+<p>By default, functions return <code>undefined</code>. To return any other value, the function must have a <b>return</b> statement that specifies the value to return.</p>
+
+<h3 id="Conditionally_created_functions">Conditionally created functions</h3>
+
+<p>Functions can be conditionally declared, that is, a function statement can be nested within an <code>if</code> statement. Most browsers other than Mozilla will treat such conditional declarations as an unconditional declaration and create the function whether the condition is true or not, see this article for an overview. Therefore they should not be used, for conditional creation use function expressions.</p>
+
+<h3 id="Function_declaration_hoisting">Function declaration hoisting</h3>
+
+<p>Function declarations in JavaScript are hoisting the function definition. You can use the function before you declared it:</p>
+
+<pre class="brush: js">hoisted(); // logs "foo"
+
+function hoisted() {
+  console.log("foo");
+}
+</pre>
+
+<p>Note that <b>function expressions</b> are not hoisted:</p>
+
+<pre class="brush: js">notHoisted(); // TypeError: notHoisted is not a function
+
+var notHoisted = function() {
+   console.log("bar");
+};
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_function">Using <code>function</code></h3>
+
+<p>The following code declares a function that returns the total amount of sales, when given the number of units sold of products <code>a</code>, <code>b</code>, and <code>c</code>.</p>
+
+<pre class="brush: js">function calc_sales(units_a, units_b, units_c) {
+   return units_a*79 + units_b * 129 + units_c * 699;
+}
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

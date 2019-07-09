@@ -1,0 +1,7 @@
+<sample Check Wifi Enabled>
+function OnStart()
+{
+    <b>var wifiEnabled = app.IsWifiEnabled();</b>
+    app.Alert( wifiEnabled, "Wifi Enabled:" );
+}
+</sample>

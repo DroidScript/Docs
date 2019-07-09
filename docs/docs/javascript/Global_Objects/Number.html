@@ -1,0 +1,164 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Number</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Number</h2></div>
+
+
+
+<div></div>
+
+
+
+
+
+
+
+
+
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt><a href="Number/toExponential().html"><code><i>numObj</i>.toExponential()</code></a></dt>
+ <dd>Returns a string representing the number in exponential notation.</dd>
+ <dt><a href="Number/toFixed().html"><code><i>numObj</i>.toFixed()</code></a></dt>
+ <dd>Returns a string representing the number in fixed-point notation.</dd>
+ <dt><a href="Number/toLocaleString().html"><code><i>numObj</i>.toLocaleString()</code></a></dt>
+ <dd>Returns a string with a language sensitive representation of this number. Overrides the <b>Object.prototype.toLocaleString()</b> method.</dd>
+ <dt><a href="Number/toPrecision().html"><code><i>numObj</i>.toPrecision()</code></a></dt>
+ <dd>Returns a string representing the number to a specified precision in fixed-point or exponential notation.</dd>
+ <dt><a href="Number/toSource().html"><code><i>numObj</i>.toSource()</code></a> </dt>
+ <dd>Returns an object literal representing the specified <b>Number</b> object; you can use this value to create a new object. Overrides the <b>Object.prototype.toSource()</b> method.</dd>
+ <dt><a href="Number/toString().html"><code><i>numObj</i>.toString()</code></a></dt>
+ <dd>Returns a string representing the specified object in the specified radix (base). Overrides the <b>Object.prototype.toString()</b> method.</dd>
+ <dt><a href="Number/valueOf().html"><code><i>numObj</i>.valueOf()</code></a></dt>
+ <dd>Returns the primitive value of the specified object. Overrides the <b>Object.prototype.valueOf()</b> method.</dd>
+</dl>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ constructor can be modified to affect all <code>Number</code> instances.</p>
+
+
+
+<div></div>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_the_Number_object_to_assign_values_to_numeric_variables">Using the <code>Number</code> object to assign values to numeric variables</h3>
+
+<p>The following example uses the <code>Number</code> object's properties to assign values to several numeric variables:</p>
+
+<pre class="brush: js">var biggestNum = Number.MAX_VALUE;
+var smallestNum = Number.MIN_VALUE;
+var infiniteNum = Number.POSITIVE_INFINITY;
+var negInfiniteNum = Number.NEGATIVE_INFINITY;
+var notANum = Number.NaN;
+</pre>
+
+<h3 id="Integer_range_for_Number">Integer range for <code>Number</code></h3>
+
+<p>The following example shows minimum and maximum integer values that can be represented as <code>Number</code> object (for details, refer to ECMAScript standard, chapter <em>8.5 The Number Type</em>):</p>
+
+<pre class="brush: js">var biggestInt = 9007199254740992;
+var smallestInt = -9007199254740992;
+</pre>
+
+<p>When parsing data that has been serialized to JSON, integer values falling out of this range can be expected to become corrupted when JSON parser coerces them to <code>Number</code> type. Using <b>String</b> instead is a possible workaround.</p>
+
+<h3 id="Using_Number_to_convert_a_Date_object">Using <code>Number</code> to convert a <code>Date</code> object</h3>
+
+<p>The following example converts the <b>Date</b> object to a numerical value using <code>Number</code> as a function:</p>
+
+<pre class="brush: js">var d = new Date('December 17, 1995 03:24:00');
+console.log(Number(d));
+</pre>
+
+<p>This logs "819199440000".</p>
+
+<h3 id="Convert_numeric_strings_to_numbers">Convert numeric strings to numbers</h3>
+
+<pre class="brush: js">Number("123")     // 123
+Number("")        // 0
+Number("0x11")    // 17
+Number("0b11")    // 3
+Number("0o11")    // 9
+Number("foo")     // NaN
+Number("100a")    // NaN
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

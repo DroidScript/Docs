@@ -1,0 +1,149 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>for...of</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>for...of</h2><script>harmony</script></div>
+
+<p>The <strong><code>for...of</code> statement </strong>creates a loop Iterating over iterable objects (including <b>Array</b>,&nbsp;<b>Map</b>, <b>Set</b>,&nbsp;arguments&nbsp;object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">for (<em>variable</em> of <em>object</em>) {
+  <em>statement
+</em>}
+</pre>
+
+<dl>
+ <dt><code>variable</code></dt>
+ <dd>On each iteration a value of a different property is assigned to <em>variable</em>.</dd>
+ <dt><code>object</code></dt>
+ <dd>Object whose enumerable properties are iterated.</dd>
+</dl>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Difference_between_for...of_and_for...in">Difference between <code>for...of</code> and <code>for...in</code></h3>
+
+<p>The following example shows the difference between a <code>for...of</code> loop and a <code>for...in</code> loop. While <code>for...in</code> iterates over property names, <code>for...of</code> iterates over property values:</p>
+
+<pre class="brush:js">let arr = [3, 5, 7];
+arr.foo = "hello";
+
+for (let i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (let i of arr) {
+   console.log(i); // logs "3", "5", "7"
+}
+</pre>
+
+<h3 id="Using_Array.prototype.forEach()">Using <code>Array.prototype.forEach()</code></h3>
+
+<p>To get the same property values the <code>for...of</code> loop would return, you can also use the <b>Array.prototype.forEach()</b> method:</p>
+
+<pre class="brush: js">let arr = [3, 5, 7];
+arr.foo = "hello";
+
+arr.forEach(function (element, index) {
+    console.log(element); // logs "3", "5", "7"
+    console.log(index);   // logs "0", "1", "2"
+});
+
+// or with Object.keys()
+
+Object.keys(arr).forEach(function (element, index) {
+    console.log(arr[element]); // logs "3", "5", "7", "hello"
+    console.log(arr[index]);   // logs "3", "5", "7", undefined
+});</pre>
+
+<h3 id="Iterating_over_DOM_collections">Iterating over DOM collections</h3>
+
+<p>Iterating over DOM collections like <script>domxref("NodeList")</script>: the following example adds a <code>read</code> class to paragraphs that are direct descendants of an article:</p>
+
+<pre class="brush:js">// Note: This will only work in platforms that have
+// implemented NodeList.prototype[Symbol.iterator]
+let articleParagraphs = document.querySelectorAll("article &gt; p");
+
+for (let paragraph of articleParagraphs) {
+  paragraph.classList.add("read");
+}
+</pre>
+
+<h3 id="Iterating_over_generators">Iterating over generators</h3>
+
+<p>You can also iterate over generators:</p>
+
+<pre class="brush:js">function* fibonacci() { // a generator function
+    let [prev, curr] = [0, 1];
+    for (;;) {
+        [prev, curr] = [curr, prev + curr];
+        yield curr;
+    }
+}
+
+for (let n of fibonacci()) {
+    // truncate the sequence at 1000
+    if (n &gt; 1000)
+        break;
+    console.log(n);
+}
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<p>[1] From Chrome 29 to Chrome 37 this feature was available behind a preference. In chrome://flags/#enable-javascript-harmony, activate the entry “Enable Experimental JavaScript”.</p>
+
+<p>[2] From Gecko 17 (Firefox 17 / Thunderbird 17 / SeaMonkey 2.14) to Gecko 26 (Firefox 26 / Thunderbird 26 / SeaMonkey 2.23 / Firefox OS 1.2) the <code>iterator</code> property was used (bug 907077), and from Gecko 27 to Gecko 35 the <code>"@@iterator"</code> placeholder was used. In Gecko 36 (Firefox 36 / Thunderbird 36 / SeaMonkey 2.33), the <code>@@iterator</code> symbol got implemented (bug 918828).</p>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,109 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.lastIndexOf()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.lastIndexOf()</h2></div>
+
+<p>The <strong><code>lastIndexOf()</code></strong> method returns the index within the calling <b>String</b> object of the last occurrence of the specified value, or -1 if not found. The calling string is searched backward, starting at <code>fromIndex</code>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.lastIndexOf(<var>searchValue</var>[, <var>fromIndex</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>searchValue</code></dt>
+ <dd>A string representing the value to search for.</dd>
+ <dt><code>fromIndex</code></dt>
+ <dd>Optional. The location within the calling string to start the search at, indexed from left to right. It can be any integer. The default value is <code>str.length</code>. If it is negative, it is treated as 0. If <code>fromIndex &gt; str.length</code>, <code>fromIndex</code> is treated as <code>str.length</code>.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character is <code>stringName.length - 1</code>.</p>
+
+<pre class="brush: js">'canal'.lastIndexOf('a');     // returns 3
+'canal'.lastIndexOf('a', 2);  // returns 1
+'canal'.lastIndexOf('a', 0);  // returns -1
+'canal'.lastIndexOf('x');     // returns -1
+</pre>
+
+<h3 id="Case-sensitivity">Case-sensitivity</h3>
+
+<p>The <code>lastIndexOf()</code> method is case sensitive. For example, the following expression returns -1:</p>
+
+<pre class="brush: js">'Blue Whale, Killer Whale'.lastIndexOf('blue'); // returns -1
+</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_indexOf()_and_lastIndexOf()">Using <code>indexOf()</code> and <code>lastIndexOf()</code></h3>
+
+<p>The following example uses <b>indexOf()</b> and <code>lastIndexOf()</code> to locate values in the string <code>"Brave new world"</code>.</p>
+
+<pre class="brush: js">var anyString = 'Brave new world';
+
+console.log('The index of the first w from the beginning is ' + anyString.indexOf('w'));
+// logs 8
+console.log('The index of the first w from the end is ' + anyString.lastIndexOf('w')); 
+// logs 10
+console.log('The index of "new" from the beginning is ' + anyString.indexOf('new'));
+// logs 6
+console.log('The index of "new" from the end is ' + anyString.lastIndexOf('new'));
+// logs 6
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

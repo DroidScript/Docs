@@ -1,0 +1,344 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Assignment Operators</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Assignment Operators</h2></div>
+
+<p>An <strong>assignment operator</strong> assigns a value to its left operand based on the value of its right operand.</p>
+
+<h2 id="Overview">Overview</h2>
+
+<p>The basic assignment operator is equal (<code>=</code>), which assigns the value of its right operand to its left operand. That is, <code>x = y</code> assigns the value of <code>y</code> to <code>x</code>. The other assignment operators are usually shorthand for standard operations, as shown in the following definitions and examples.</p>
+
+
+
+<h2 id="Assignment">Assignment</h2>
+
+<p>Simple assignment operator which assigns a value to a variable. Chaining the assignment operator is possible in order to assign a single value to multiple variables. See the example.</p>
+
+<h3 id="Syntax">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x = y
+</pre>
+
+<h3 id="Examples">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variables
+//  x = 5
+//  y = 10
+//  z = 25
+
+x = y     // x is 10
+x = y = z // x, y and z are all 25
+</pre>
+
+<h2 id="Addition_assignment">Addition assignment</h2>
+
+<p>The addition assignment operator <strong>adds</strong> the value of the right operand to a variable and assigns the result to the variable. The types of the two operands determine the behavior of the addition assignment operator. Addition or concatenation is possible. See the <b>addition operator</b> for more details.</p>
+
+<h3 id="Syntax">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x += y 
+<strong>Meaning:</strong>  x  = x + y
+</pre>
+
+<h3 id="Examples">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variables
+//  foo = "foo"
+//  bar = 5
+//  baz = true
+
+
+// Number + Number -&gt; addition
+bar += 2 // 7
+
+// Boolean + Number -&gt; addition
+baz += 1 // 2
+
+// Boolean + Boolean -&gt; addition
+baz += false // 0
+
+// Number + String -&gt; concatenation
+bar += "foo" // "5foo"
+
+// String + Boolean -&gt; concatenation
+foo += false // "foofalse"
+
+// String + String -&gt; concatenation
+foo += "bar" // "foobar"
+</pre>
+
+<h2 id="Subtraction_assignment">Subtraction assignment</h2>
+
+<p>The subtraction assignment operator <strong>subtracts</strong> the value of the right operand from a variable and assigns the result to the variable. See the <b>subtraction operator</b> for more details.</p>
+
+<h4 id="Syntax_3">Syntax</h4>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x -= y 
+<strong>Meaning:</strong>  x  = x - y
+</pre>
+
+<h4 id="Examples_3">Examples</h4>
+
+<pre class="brush: js">// Assuming the following variable
+//  bar = 5
+
+bar -= 2     // 3
+bar -= "foo" // NaN
+</pre>
+
+<h2 id="Multiplication_assignment">Multiplication assignment</h2>
+
+<p>The multiplication assignment operator <strong>multiplies</strong> a variable by the value of the right operand and assigns the result to the variable. See the <b>multiplication operator</b> for more details.</p>
+
+<h3 id="Syntax_4">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x *= y 
+<strong>Meaning:</strong>  x  = x * y
+</pre>
+
+<h3 id="Examples_4">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variable
+//  bar = 5
+
+bar *= 2     // 10
+bar *= "foo" // NaN
+</pre>
+
+<h2 id="Division_assignment">Division assignment</h2>
+
+<p>The division assignment operator <strong>divides</strong> a variable by the value of the right operand and assigns the result to the variable. See the <b>division operator</b> for more details.</p>
+
+<h3 id="Syntax_5">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x /= y 
+<strong>Meaning:</strong>  x  = x / y
+</pre>
+
+<h3 id="Examples_5">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variable
+//  bar = 5
+
+bar /= 2     // 2.5
+bar /= "foo" // NaN
+bar /= 0     // Infinity
+</pre>
+
+<h2 id="Remainder_assignment">Remainder assignment</h2>
+
+<p>The remainder assignment operator <strong>divides</strong> a variable by the value of the right operand and assigns the <strong>remainder</strong> to the variable. See the <b>remainder operator</b> for more details.</p>
+
+<h3 id="Syntax_6">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x %= y 
+<strong>Meaning:</strong>  x  = x % y
+</pre>
+
+<h3 id="Examples_6">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variable
+//  bar = 5
+
+bar %= 2     // 1
+bar %= "foo" // NaN
+bar %= 0     // NaN
+</pre>
+
+<h2 id="Exponentiation_assignment">Exponentiation assignment</h2>
+
+<p>[ECMAScript 2016 (ES7) proposal]</p>
+
+<p>The exponentiation assignment operator returns the result of raising first operand to the <strong>power</strong> second operand. See the <b>exponentiation operator</b> for more details.</p>
+
+<h3 id="Syntax_7">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x **= y 
+<strong>Meaning:</strong>  x  = x ** y
+</pre>
+
+<h3 id="Examples_7">Examples</h3>
+
+<pre class="brush: js">// Assuming the following variable
+//  bar = 5
+
+bar **= 2     // 25
+bar **= "foo" // NaN</pre>
+
+<h2 id="Left_shift_assignment">Left shift assignment</h2>
+
+<p>The left shift assignment operator moves the specified amount of bits to the left and assigns the result to the variable. See the <b>left shift operator</b> for more details.</p>
+
+<h3 id="Syntax_8">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x &lt;&lt;= y 
+<strong>Meaning:</strong>  x   = x &lt;&lt; y
+</pre>
+
+<h3 id="Examples_8">Examples</h3>
+
+<pre class="brush: js">var bar = 5; //  (00000000000000000000000000000101)
+bar &lt;&lt;= 2; // 20 (00000000000000000000000000010100)
+</pre>
+
+<h2 id="Right_shift_assignment">Right shift assignment</h2>
+
+<p>The right shift assignment operator moves the specified amount of bits to the right and assigns the result to the variable. See the <b>right shift operator</b> for more details.</p>
+
+<h3 id="Syntax_9">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x &gt;&gt;= y 
+<strong>Meaning:</strong>  x   = x &gt;&gt; y
+</pre>
+
+<h3 id="Examples_9">Examples</h3>
+
+<pre class="brush: js">var bar = 5; //   (00000000000000000000000000000101)
+bar &gt;&gt;= 2;   // 1 (00000000000000000000000000000001)
+
+var bar -5; //    (-00000000000000000000000000000101)
+bar &gt;&gt;= 2;  // -2 (-00000000000000000000000000000010)
+</pre>
+
+<h2 id="Unsigned_right_shift_assignment">Unsigned right shift assignment</h2>
+
+<p>The unsigned right shift assignment operator moves the specified amount of bits to the right and assigns the result to the variable. See the <b> unsigned right shift operator</b> for more details.</p>
+
+<h3 id="Syntax_10">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x &gt;&gt;&gt;= y 
+<strong>Meaning:</strong>  x    = x &gt;&gt;&gt; y
+</pre>
+
+<h3 id="Examples_10">Examples</h3>
+
+<pre class="brush: js">var bar = 5; //   (00000000000000000000000000000101)
+bar &gt;&gt;&gt;= 2;  // 1 (00000000000000000000000000000001)
+
+var bar = -5; // (-00000000000000000000000000000101)
+bar &gt;&gt;&gt;= 2; // 1073741822 (00111111111111111111111111111110)</pre>
+
+<h2 id="Bitwise_AND_assignment">Bitwise AND assignment</h2>
+
+<p>The bitwise AND assignment operator uses the binary representation of both operands, does a bitwise AND operation on them and assigns the result to the variable. See the <b>bitwise AND operator</b> for more details.</p>
+
+<h3 id="Syntax_11">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x &amp;= y 
+<strong>Meaning:</strong>  x  = x &amp; y
+</pre>
+
+<h3 id="Example">Example</h3>
+
+<pre class="brush: js">var bar = 5;
+// 5:     00000000000000000000000000000101
+// 2:     00000000000000000000000000000010
+bar &amp;= 2; // 0
+</pre>
+
+<h2 id="Bitwise_XOR_assignment">Bitwise XOR assignment</h2>
+
+<p>The bitwise XOR assignment operator uses the binary representation of both operands, does a bitwise XOR operation on them and assigns the result to the variable. See the <b>bitwise XOR operator</b> for more details.</p>
+
+<h3 id="Syntax_12">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x ^= y 
+<strong>Meaning:</strong>  x  = x ^ y
+</pre>
+
+<h3 id="Example">Example</h3>
+
+<pre class="brush: js">var bar = 5;
+bar ^= 2; // 7
+// 5: 00000000000000000000000000000101
+// 2: 00000000000000000000000000000010
+// -----------------------------------
+// 7: 00000000000000000000000000000111
+</pre>
+
+<h2 id="Bitwise_OR_assignment">Bitwise OR assignment</h2>
+
+<p>The bitwise OR assignment operator uses the binary representation of both operands, does a bitwise OR operation on them and assigns the result to the variable. See the <b>bitwise OR operator</b> for more details.</p>
+
+<h3 id="Syntax_13">Syntax</h3>
+
+<pre class="syntaxbox"><strong>Operator:</strong> x |= y 
+<strong>Meaning:</strong>  x  = x | y
+</pre>
+
+<h3 id="Example_3">Example</h3>
+
+<pre class="brush: js">var bar = 5;
+bar |= 2; // 7
+// 5: 00000000000000000000000000000101
+// 2: 00000000000000000000000000000010
+// -----------------------------------
+// 7: 00000000000000000000000000000111
+</pre>
+
+<h2 id="Examples_11">Examples</h2>
+
+<h3 id="Left_operand_with_another_assignment_operator">Left operand with another assignment operator</h3>
+
+<p>In unusual situations, the assignment operator (e.g.<code> x += y</code>) is not identical to the meaning expression (here <code>x = x + y</code>). When the left operand of an assignment operator itself contains an assignment operator, the left operand is evaluated only once. For example:</p>
+
+<pre class="brush: js">a[i++] += 5         // i is evaluated only once
+a[i++] = a[i++] + 5 // i is evaluated twice
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

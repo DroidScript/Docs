@@ -1,0 +1,11 @@
+<sample Progress Bar>
+function OnStart()
+{
+	<b>app.ShowProgressBar( "Loading..." );
+
+	for( prog = 0; prog < 100; prog++ )
+	    app.UpdateProgressBar( prog );
+
+	app.HideProgressBar();</b>
+}
+</sample>

@@ -1,0 +1,107 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>numObj</i>.toString()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>numObj</i>.toString()</h2></div>
+
+<p>The <strong><code>toString()</code></strong> method returns a string representing the specified <b>Number</b> object.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>numObj</var>.toString([<var>radix</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>radix</code></dt>
+ <dd>Optional. An integer between 2 and 36 specifying the base to use for representing numeric values.</dd>
+</dl>
+
+<h3 id="Errors_thrown">Errors thrown</h3>
+
+<dl>
+ <dt><b>RangeError</b></dt>
+ <dd>If <code>toString()</code> is given a radix not between 2 and 36, a <b>RangeError</b> is thrown.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The <b>Number</b> object overrides the <code>toString()</code> method of the <b>Object</b> object; it does not inherit <b>Object.prototype.toString()</b>. For <b>Number</b> objects, the <code>toString()</code> method returns a string representation of the object in the specified radix.</p>
+
+<p>The <code>toString()</code> method parses its first argument, and attempts to return a string representation in the specified radix (base). For radixes above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), <code>a</code> through <code>f</code> are used.</p>
+
+<p>If the <code>radix</code> is not specified, the preferred radix is assumed to be 10.</p>
+
+<p>If the <code>numObj</code> is negative, the sign is preserved. This is the case even if the radix is 2; the string returned is the positive binary representation of the <code>numObj</code> preceded by a <code>-</code> sign, <strong>not</strong> the two's complement of the <code>numObj</code>.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toString">Using <code>toString</code></h3>
+
+<pre class="brush: js">var count = 10;
+
+console.log(count.toString());    // displays '10'
+console.log((17).toString());     // displays '17'
+
+var x = 6;
+
+console.log(x.toString(2));       // displays '110'
+console.log((254).toString(16));  // displays 'fe'
+
+console.log((-10).toString(2)); &nbsp; // displays '-1010'
+console.log((-0xff).toString(2)); // displays '-11111111'
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

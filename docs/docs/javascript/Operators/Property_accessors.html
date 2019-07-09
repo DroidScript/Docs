@@ -1,0 +1,134 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Property accessors</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Property accessors</h2></div>
+
+<p>Property accessors provide access to an object's properties by using the dot notation or the bracket notation.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">object.property
+object["property"]
+</pre>
+
+<h2 id="Description">Description</h2>
+
+<p>One can think of an object as an <em>associative array</em> (a.k.a. <em>map</em>, <em>dictionary</em>, <em>hash</em>, <em>lookup table</em>). The <em>keys</em> in this array are the names of the object's properties. It's typical when speaking of an object's properties to make a distinction between properties and methods. However, the property/method distinction is little more than a convention. A method is simply a property that can be called, for example if it has a reference to a Function instance as its value.</p>
+
+<p>There are two ways to access properties: dot notation and bracket notation.</p>
+
+<h3 id="Dot_notation">Dot notation</h3>
+
+<pre class="brush: js">get = object.property;
+object.property = set;
+</pre>
+
+<p>In this code, <code>property</code> must be a valid JavaScript identifier, i.e. a sequence of alphanumerical characters, also including the underscore ("<code>_</code>") and dollar sign ("<code>$</code>"), that cannot start with a number. For example, <code>object.$1</code> is valid, while <code>object.1</code> is not.</p>
+
+<pre class="brush: js">document.createElement('pre');
+</pre>
+
+<p>Here, the method named "createElement" is retrieved from <code>document</code> and is called.</p>
+
+<h3 id="Bracket_notation">Bracket notation</h3>
+
+<pre class="brush: js">get = object[property_name];
+object[property_name] = set;
+</pre>
+
+<p><code>property_name</code> is a string. The string does not have to be a valid identifier; it can have any value, e.g. "1foo", "!bar!", or even " " (a space).</p>
+
+<pre class="brush: js">document['createElement']('pre');
+</pre>
+
+<p>This does the exact same thing as the previous example.</p>
+
+<h3 id="Property_names">Property names</h3>
+
+<p>Property names must be strings. This means that non-string objects cannot be used as keys in the object. Any non-string object, including a number, is typecasted into a string via the toString method.</p>
+
+<pre class="brush: js">var object = {};
+object['1'] = 'value';
+console.log(object[1]);
+</pre>
+
+<p>This outputs "value", since 1 is type-casted into '1'.</p>
+
+<pre class="brush: js">var foo = {unique_prop: 1}, bar = {unique_prop: 2}, object = {};
+object[foo] = 'value';
+console.log(object[bar]);
+</pre>
+
+<p>This also outputs "value", since both foo and bar are converted to the same string. In the SpiderMonkey JavaScript engine, this string would be "['object Object']".</p>
+
+<h3 id="Method_binding">Method binding</h3>
+
+<p>A method is not bound to the object that it is a method of. Specifically, <code>this</code> is not fixed in a method, i.e., <code>this</code> does not necessarily refer to an object containing the method. <code>this</code> is instead "passed" by the function call. See method binding.</p>
+
+<h3 id="Note_on_eval">Note on <code>eval</code></h3>
+
+<p>JavaScript novices often make the mistake of using eval where the bracket notation can be used instead. For example, the following syntax is often seen in many scripts.</p>
+
+<pre class="brush: js">x = eval('document.forms.form_name.elements.' + strFormControl + '.value');
+</pre>
+
+<p><code>eval</code> is slow and should be avoided whenever possible. Also, <code>strFormControl</code> would have to hold an identifier, which is not required for names and IDs of form controls. It is better to use bracket notation instead:</p>
+
+<pre class="brush: js">x = document.forms["form_name"].elements[strFormControl].value;
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

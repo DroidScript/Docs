@@ -1,0 +1,159 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.charCodeAt()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.charCodeAt()</h2></div>
+
+<p>The <strong><code>charCodeAt()</code></strong> method returns the numeric Unicode value of the character at the given index (except for unicode codepoints &gt; 0x10000).</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.charCodeAt(<var>index</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>index</code></dt>
+ <dd>An integer greater than or equal to 0 and less than the length of the string; if it is not a number, it defaults to 0.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Unicode code points range from 0 to 1114111 (0x10FFFF). The first 128 Unicode code points are a direct match of the ASCII character encoding. For information on Unicode, see the JavaScript Guide.</p>
+
+<p>Note that <code>charCodeAt()</code> will always return a value that is less than 65536. This is because the higher code points are represented by a pair of (lower valued) "surrogate" pseudo-characters which are used to comprise the real character. Because of this, in order to examine or reproduce the full character for individual characters of value 65536 and above, for such characters, it is necessary to retrieve not only <code>charCodeAt(i)</code>, but also <code>charCodeAt(i+1)</code> (as if examining/reproducing a string with two letters). See example 2 and 3 below.</p>
+
+<p><code>charCodeAt()</code> returns <b>NaN</b> if the given index is less than 0 or is equal to or greater than the length of the string.</p>
+
+<p>Backward compatibilty: In historic versions (like JavaScript 1.2) the <code>charCodeAt()</code> method returns a number indicating the ISO-Latin-1 codeset value of the character at the given index. The ISO-Latin-1 codeset ranges from 0 to 255. The first 0 to 127 are a direct match of the ASCII character set.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_charCodeAt()">Using <code>charCodeAt()</code></h3>
+
+<p>The following example returns 65, the Unicode value for A.</p>
+
+<pre class="brush: js">'ABC'.charCodeAt(0); // returns 65
+</pre>
+
+<h3 id="Fixing_charCodeAt()_to_handle_non-Basic-Multilingual-Plane_characters_if_their_presence_earlier_in_the_string_is_unknown">Fixing <code>charCodeAt()</code> to handle non-Basic-Multilingual-Plane characters if their presence earlier in the string is unknown</h3>
+
+<p>This version might be used in for loops and the like when it is unknown whether non-BMP characters exist before the specified index position.</p>
+
+<pre class="brush: js">function fixedCharCodeAt(str, idx) {
+  // ex. fixedCharCodeAt('\uD800\uDC00', 0); // 65536
+  // ex. fixedCharCodeAt('\uD800\uDC00', 1); // false
+  idx = idx || 0;
+  var code = str.charCodeAt(idx);
+  var hi, low;
+  
+  // High surrogate (could change last hex to 0xDB7F to treat high
+  // private surrogates as single characters)
+  if (0xD800 &lt;= code &amp;&amp; code &lt;= 0xDBFF) {
+    hi = code;
+    low = str.charCodeAt(idx + 1);
+    if (isNaN(low)) {
+      throw 'High surrogate not followed by low surrogate in fixedCharCodeAt()';
+    }
+    return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
+  }
+  if (0xDC00 &lt;= code &amp;&amp; code &lt;= 0xDFFF) { // Low surrogate
+    // We return false to allow loops to skip this iteration since should have
+    // already handled high surrogate above in the previous iteration
+    return false;
+    /*hi = str.charCodeAt(idx - 1);
+    low = code;
+    return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;*/
+  }
+  return code;
+}
+</pre>
+
+<h3 id="Fixing_charCodeAt()_to_handle_non-Basic-Multilingual-Plane_characters_if_their_presence_earlier_in_the_string_is_known">Fixing <code>charCodeAt()</code> to handle non-Basic-Multilingual-Plane characters if their presence earlier in the string is known</h3>
+
+<pre class="brush: js">function knownCharCodeAt(str, idx) {
+  str += '';
+  var code,
+      end = str.length;
+
+  var surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+  while ((surrogatePairs.exec(str)) != null) {
+    var li = surrogatePairs.lastIndex;
+    if (li - 2 &lt; idx) {
+      idx++;
+    }
+    else {
+      break;
+    }
+  }
+
+  if (idx &gt;= end || idx &lt; 0) {
+    return NaN;
+  }
+
+  code = str.charCodeAt(idx);
+
+  var hi, low;
+  if (0xD800 &lt;= code &amp;&amp; code &lt;= 0xDBFF) {
+    hi = code;
+    low = str.charCodeAt(idx + 1);
+    // Go one further, since one of the "characters" is part of a surrogate pair
+    return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000;
+  }
+  return code;
+}
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

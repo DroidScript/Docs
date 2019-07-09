@@ -1,9 +1,22 @@
-<sample Example>
+<sample Click Counter>
+var clicks = 0, file = "demofile";
+
 function OnStart()
 {
-<b>	num = app.LoadNumber( "MyNumber", 42 );
-</b>	app.ShowPopup( num );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	app.SaveNumber( "MyNumber", num+1 );
-}</sample>
+    <b>clicks = app.LoadNumber( "clicks", 0, file );</b>
 
+    btn = app.CreateButton( "Click Me", 0.5, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+	app.SaveNumber( "clicks", ++clicks, file );
+	app.ShowPopup( "Clicks: " + clicks );
+}
+</sample>

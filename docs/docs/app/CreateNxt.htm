@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateNxt</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>CreateNxt</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Returns a Nxt object.</p>
+
+			<div class="samp">
+			nxt = app.CreateNxt() → <b>app object:</b> Nxt
+			</div>
+
+			<p><br>The following methods are available on the <b>Nxt</b> object:</p>
+
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Beep</a>( <a href="#pop_num_hrz" data-transition="pop" data-rel="popup">frequency</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Brake</a>( <a href="#pop_str_001" data-transition="pop" data-rel="popup">motors</a> )</div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">CheckConnection</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Connect</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Disconnect</a>()</div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Drive</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">motors</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">power</a>, <a href="#pop_num_flt" data-transition="pop" data-rel="popup">rotations</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">FileFindFirst</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">pattern</a> ) → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">FileFindNext</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">handle</a> ) → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">GetBtAddress</a>() → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">GetBtName</a>() → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">GetCurrentProgram</a>() → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">GetRotationCount</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">motor</a> ) → <b>number:</b> <i>integer</i></div>
+			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “Nxt”</div>
+			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">IsBluetoothEnabled</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">IsConnected</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">IsMotorIdle</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">motor</a> )</div>
+			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">IsPaired</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_005" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">PlaySoundFile</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a> )</div>
+			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">ReadColorSensor</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>integer</i> 1..6</div>
+			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">ReadDistanceSensor</a>( <a href="#pop_num_002" data-transition="pop" data-rel="popup">input</a> ) → <b>number:</b> <i>float</i></div>
+			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">ReadLightSensor</a>( <a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">active</a> ) → <b>number:</b> <i>integer</i></div>
+			<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">ReadMail</a>( <a href="#pop_num_004" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_007" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">remove</a> ) → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">ReadSoundSensor</a>( <a href="#pop_num_005" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>float</i></div>
+			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">ReadTouchSensor</a>( <a href="#pop_num_006" data-transition="pop" data-rel="popup">input</a> ) → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">RequestEnable</a>()</div>
+			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">Reset</a>( <a href="#pop_str_009" data-transition="pop" data-rel="popup">motors</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SendMail</a>( <a href="#pop_num_007" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_mul_001" data-transition="pop" data-rel="popup">message</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetInvert</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">invert</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetLampColor</a>( <a href="#pop_num_008" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour</a> )</div>
+			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetOnConnectEx</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetOnConnected</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">ShowDevices</a>()</div>
+			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">StartProgram</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">name</a> )</div>
+			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">Stop</a>( <a href="#pop_str_00b" data-transition="pop" data-rel="popup">motors</a> )</div>
+			<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">StopProgram</a>()</div>
+			<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">ToColorName</a>( <a href="#pop_num_009" data-transition="pop" data-rel="popup">val</a> ) → <b>string:</b> “black” or “blue” or “green” or “yellow” or “red” or “white”</div>
+
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_num_hrz" class="ui-content"><b>number:</b> <i>hertz</i></div>
+		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content">play tone with given frequency for a given time in milliseconds</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content">stop feeding motors with power</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content">check whether phone/tablet wa connected to the NXT</div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content">Connects to the Bluetooth device</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content">Disconnect NXT from Phone/Tablet</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
+		<div data-role="popup" id="pop_num_flt" class="ui-content"><b>number:</b> <i>float</i></div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content">commands NXT to drive motors</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content">Returns Bluetooth address of connected NXT brick</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content">Returns Bluetooth name of connected NXT</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content">returns current running program name</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content">GetRotationCount</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content">IsBluetoothEnabled</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content">IsConnected</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content">Returns whether the control is currently useable by the user.</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content">Checks if a motor is currently powered</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"></div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content">PlaySoundFile for given times</div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> “ColorDetect” or “LightSense” or “RedSense” or “GreenSense” or “BlueSense”</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content">ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">5</a>,6:white</div>
+		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content">ReadDistanceSensor in centimeters</div>
+		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content">ReadLightSensor -> value between 0 and 100</div>
+		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>integer</i> 1..10</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> “Text” or “Number” or “Logic”</div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content">ReadMail</div>
+		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> “DB” or “DbA”</div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content">ReadSoundSensor</div>
+		<div data-role="popup" id="pop_num_006" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_dsc_01a" class="ui-content">ReadTouchSensor</div>
+		<div data-role="popup" id="pop_dsc_01b" class="ui-content">show enable bluetooth dialog when bluetooth disabled</div>
+		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_dsc_01c" class="ui-content">Reset motors</div>
+		<div data-role="popup" id="pop_num_007" class="ui-content"><b>number:</b> <i>integer</i> 1..10</div>
+		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> “Text” or “Number” or “Logic”</div>
+		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_dsc_01d" class="ui-content">SendMail</div>
+		<div data-role="popup" id="pop_dsc_01e" class="ui-content">inverts direction of motor commands</div>
+		<div data-role="popup" id="pop_num_008" class="ui-content"><b>number:</b> <i>integer</i> 1..4</div>
+		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...</i></div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content">?</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_020" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_022" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content">show paired NXT list to connect to one via bluetooth</div>
+		<div data-role="popup" id="pop_dsc_024" class="ui-content">StartProgram</div>
+		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> “A” or “B” or “C”</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content">Stop</div>
+		<div data-role="popup" id="pop_dsc_026" class="ui-content">StopProgram</div>
+		<div data-role="popup" id="pop_num_009" class="ui-content"><b>number:</b> <i>integer</i> 1..6</div>
+		<div data-role="popup" id="pop_dsc_027" class="ui-content">convert color integer got via ReadColorSensor to color name</div>
+
+	</div>
+</body>
+
+</html>

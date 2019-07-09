@@ -1,0 +1,7 @@
+<sample Check Debugging>
+function OnStart()
+{
+    <b>var isDbg = app.IsDebugging();</b>
+    app.Alert( isDbg, "now debugging:" );
+}
+</sample>

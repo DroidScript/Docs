@@ -1,0 +1,105 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.toISOString()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.toISOString()</h2></div>
+
+<p>The <strong><code>toISOString()</code></strong> method returns a string in <em>simplified</em>&nbsp;extended ISO format (ISO 8601), which is always 24 characters long: <strong><code>YYYY-MM-DDTHH:mm:ss.sssZ</code></strong>. The timezone is always zero UTC offset, as denoted by the suffix <code>"Z"</code>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.toISOString()</code></pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toISOString()">Using <code>toISOString()</code></h3>
+
+<pre class="brush: js">var today = new Date('05 October 2011 14:48 UTC');
+
+console.log(today.toISOString()); // Returns 2011-10-05T14:48:00.000Z
+</pre>
+
+<p>The above example uses parsing of a non–standard string value that may not be correctly parsed in non–Mozilla browsers.</p>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This method was standardized in ECMA-262 5th edition. Engines which have not been updated to support this method can work around the absence of this method using the following shim:</p>
+
+<pre class="brush: js">if (!<i>dateObj</i>.toISOString) {
+  (function() {
+
+    function pad(number) {
+      if (number &lt; 10) {
+        return '0' + number;
+      }
+      return number;
+    }
+
+    <i>dateObj</i>.toISOString = function() {
+      return this.getUTCFullYear() +
+        '-' + pad(this.getUTCMonth() + 1) +
+        '-' + pad(this.getUTCDate()) +
+        'T' + pad(this.getUTCHours()) +
+        ':' + pad(this.getUTCMinutes()) +
+        ':' + pad(this.getUTCSeconds()) +
+        '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) +
+        'Z';
+    };
+
+  }());
+}
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

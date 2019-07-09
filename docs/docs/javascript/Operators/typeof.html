@@ -1,0 +1,159 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>typeof</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>typeof</h2></div>
+
+<p>The <strong><code>typeof</code> operator</strong> returns a string indicating the type of the unevaluated operand.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<p>The <code>typeof</code> operator is followed by its operand:</p>
+
+<pre class="syntaxbox"><code>typeof <code><em>operand</em></code></code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<p><code><em>operand</em></code> is an expression representing the object or primitive whose type is to be returned.</p>
+
+<h2 id="Description">Description</h2>
+
+<p>The following table summarizes the possible return values of <code>typeof</code>. For more information about types and primitives, see also the JavaScript data structure page.</p>
+
+
+
+<h2 id="Examples">Examples</h2>
+
+<pre class="brush:js">// Numbers
+typeof 37 === 'number';
+typeof 3.14 === 'number';
+typeof Math.LN2 === 'number';
+typeof Infinity === 'number';
+typeof NaN === 'number'; // Despite being "Not-A-Number"
+typeof Number(1) === 'number'; // but never use this form!
+
+
+// Strings
+typeof "" === 'string';
+typeof "bla" === 'string';
+typeof (typeof 1) === 'string'; // typeof always return a string
+typeof String("abc") === 'string'; // but never use this form!
+
+
+// Booleans
+typeof true === 'boolean';
+typeof false === 'boolean';
+typeof Boolean(true) === 'boolean'; // but never use this form!
+
+
+// Symbols
+typeof Symbol() === 'symbol'
+typeof Symbol('foo') === 'symbol'
+typeof Symbol.iterator === 'symbol'
+
+
+// Undefined
+typeof undefined === 'undefined';
+typeof blabla === 'undefined'; // an undefined variable
+
+
+// Objects
+typeof {a:1} === 'object';
+
+// use Array.isArray or Object.prototype.toString.call
+// to differentiate regular objects from arrays
+typeof [1, 2, 4] === 'object';
+
+typeof new Date() === 'object';
+
+
+// The following is confusing. Don't use!
+typeof new Boolean(true) === 'object'; 
+typeof new Number(1) === 'object'; 
+typeof new String("abc") === 'object';
+
+
+// Functions
+typeof function(){} === 'function';
+typeof class C {} === 'function';
+typeof Math.sin === 'function';
+</pre>
+
+<h3 id="null"><code>null</code></h3>
+
+<pre class="brush:js">// This stands since the beginning of JavaScript
+typeof null === 'object';
+</pre>
+
+<p>In the first implementation of JavaScript, JavaScript values were represented as a type tag and a value. The type tag for objects was 0. <code>null</code> was represented as the NULL pointer (0x00 in most platforms). Consequently, null had 0 as type tag, hence the bogus <code>typeof</code> return value. (reference)</p>
+
+<p>A fix was proposed for ECMAScript (via an opt-in), but&nbsp;was rejected. It would have resulted in <code>typeof null === 'null'</code>.</p>
+
+<h3 id="Regular_expressions">Regular expressions</h3>
+
+<p>Callable regular expressions were a non-standard addition in some browsers.</p>
+
+<pre class="brush:js">typeof /s/ === 'function'; // Chrome 1-12 Non-conform to ECMAScript 5.1
+typeof /s/ === 'object';   // Firefox 5+  Conform to ECMAScript 5.1
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+<h2 id="IE-specific_notes">IE-specific notes</h2>
+
+<p>On IE 6, 7, and 8 a lot of host objects are objects and not functions. For example:</p>
+
+<pre class="brush: js">typeof alert === 'object'</pre>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

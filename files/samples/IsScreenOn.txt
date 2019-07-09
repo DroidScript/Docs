@@ -1,8 +1,13 @@
-<sample Example>
+<sample Check Screen On>
 function OnStart()
 {
-<b>	screenOn = app.IsScreenOn();
-</b>	app.ShowPopup( screenOn );
+    app.ShowPopup( "You may now disable your screen." )
+    setTimeout( checkScreenOn, 5000 );
+}
+
+function checkScreenOn()
+{
+    <b>screenOn = app.IsScreenOn();</b>
+    app.ShowPopup( screenOn, "Screen On:" );
 }
 </sample>
-

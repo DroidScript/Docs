@@ -1,0 +1,173 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.round</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.round</h2></div>
+
+<p>The <strong><code>Math.round()</code></strong> function returns the value of a number rounded to the nearest integer.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.round(<var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>x</code></dt>
+ <dd>A number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>If the fractional portion of number is 0.5 or greater, the argument is rounded to the next higher integer. If the fractional portion of number is less than 0.5, the argument is rounded to the next lower integer.</p>
+
+<p>Because <code>round()</code> is a static method of <code>Math</code>, you always use it as <code>Math.round()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code>&nbsp;has&nbsp;no constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.round()">Using <code>Math.round()</code></h3>
+
+<pre class="brush: js">// Returns the value 20
+x = Math.round(20.49);
+
+// Returns the value 21
+x = Math.round(20.5);
+
+// Returns the value -20
+x = Math.round(-20.5);
+
+// Returns the value -21
+x = Math.round(-20.51);
+
+// Returns the value 1 (!)
+// Note the rounding error because of inaccurate floating point arithmetics
+// Compare this with Math.round10(1.005, -2) from the example below
+x = Math.round(1.005*100)/100;
+</pre>
+
+<h3 id="Decimal_rounding">Decimal rounding</h3>
+
+<pre class="brush: js">// Closure
+(function() {
+  /**
+   * Decimal adjustment of a number.
+   *
+   * @param {String}  type  The type of adjustment.
+   * @param {Number}  value The number.
+   * @param {Integer} exp   The exponent (the 10 logarithm of the adjustment base).
+   * @returns {Number} The adjusted value.
+   */
+  function decimalAdjust(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (isNaN(value) || !(typeof exp === 'number' &amp;&amp; exp % 1 === 0)) {
+      return NaN;
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
+  // Decimal round
+  if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+      return decimalAdjust('round', value, exp);
+    };
+  }
+  // Decimal floor
+  if (!Math.floor10) {
+    Math.floor10 = function(value, exp) {
+      return decimalAdjust('floor', value, exp);
+    };
+  }
+  // Decimal ceil
+  if (!Math.ceil10) {
+    Math.ceil10 = function(value, exp) {
+      return decimalAdjust('ceil', value, exp);
+    };
+  }
+})();
+
+// Round
+Math.round10(55.55, -1);   // 55.6
+Math.round10(55.549, -1);  // 55.5
+Math.round10(55, 1);       // 60
+Math.round10(54.9, 1);     // 50
+Math.round10(-55.55, -1);  // -55.5
+Math.round10(-55.551, -1); // -55.6
+Math.round10(-55, 1);      // -50
+Math.round10(-55.1, 1);    // -60
+Math.round10(1.005, -2);   // 1.01 -- compare this with Math.round(1.005*100)/100 above
+// Floor
+Math.floor10(55.59, -1);   // 55.5
+Math.floor10(59, 1);       // 50
+Math.floor10(-55.51, -1);  // -55.6
+Math.floor10(-51, 1);      // -60
+// Ceil
+Math.ceil10(55.51, -1);    // 55.6
+Math.ceil10(51, 1);        // 60
+Math.ceil10(-55.59, -1);   // -55.5
+Math.ceil10(-59, 1);       // -50
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GetInstalledApps</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>GetInstalledApps</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Returns a list of objects containing informations about installed apps.</p>
+
+			<div class="samp">
+			app.GetInstalledApps() → <b>list:</b> [{ <a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">uid</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">targetSdkVersion</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">dataDir</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">sourceDir</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">publicSourceDir</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">nativeLibraryDir</a> }]
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Show installed apps</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowProgress();<br>
+				<br>
+				&#160;&#160;&#160;&#160;var lay = app.CreateLayout( &quot;linear&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var list = app.GetInstalledApps();<br>
+				<br>
+				&#160;&#160;&#160;&#160;lst = app.CreateList( &quot;&quot;, 1, 1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				<br>
+				&#160;&#160;&#160;&#160;for(var i in list) {<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var a = list[i];<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst.AddItem(a.packageName);<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout(lay);<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+
+	</div>
+</body>
+
+</html>

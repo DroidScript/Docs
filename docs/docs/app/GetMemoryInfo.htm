@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GetMemoryInfo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>GetMemoryInfo</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Returns an object containing informations about the RAM memory.</p>
+
+			<div class="samp">
+			app.GetMemoryInfo() → <b>object:</b> { <a href="#pop_num_byt" data-transition="pop" data-rel="popup">avail</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">low</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">threshold</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">total</a> }
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Basic</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var mem = app.GetMemoryInfo();</b><br>
+				&#160;&#160;&#160;&#160;var s = JSON.stringify( mem );<br>
+				&#160;&#160;&#160;&#160;app.Alert( s.replace( /,/g, &quot;,\n &quot;) );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Show Memory</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;fillxy,vcenter&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, .8, -1, &quot;monospace,multiline&quot; );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 25 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.Animate( ShowMemory, 2 );<br>
+				}<br>
+				<br>
+				function ShowMemory() {<br>
+				<br>
+				&#160;&#160;&#160;&#160;var mem = app.GetMemoryInfo();<br>
+				<br>
+				&#160;&#160;&#160;&#160;text =<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Math.round( mem.avail / 1024 ** 2 ) + &quot;/&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Math.round( mem.total / 1024 ** 2 ) + &quot; MB&lt;br&gt;&lt;br&gt;&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Math.round( 100 * mem.avail / mem.total ) + &quot;%&quot;;<br>
+				<br>
+				&#160;&#160;&#160;&#160;if( mem.low ) color = &quot;red&quot;;<br>
+				&#160;&#160;&#160;&#160;else color = &quot;white&quot;;<br>
+				<br>
+				&#160;&#160;&#160;&#160;txt.SetHtml( text.fontcolor( color ));<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+
+	</div>
+</body>
+
+</html>

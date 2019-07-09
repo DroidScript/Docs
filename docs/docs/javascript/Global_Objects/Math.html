@@ -1,0 +1,154 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math</h2></div>
+
+<p><strong><code>Math</code></strong> is a built-in object that has properties and methods for mathematical constants and functions. Not a function object.</p>
+
+<h2 id="Description">Description</h2>
+
+<p>Unlike the other global objects, <code>Math</code> is not a constructor. All properties and methods of <code>Math</code> are static. You refer to the constant pi as <code>Math.PI</code> and you call the sine function as <code>Math.sin(x)</code>, where <code>x</code> is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.</p>
+
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt><a href="Math/E.html"><code>Math.E</code></a></dt>
+ <dd>Euler's constant and the base of natural logarithms, approximately 2.718.</dd>
+ <dt><a href="Math/LN2.html"><code>Math.LN2</code></a></dt>
+ <dd>Natural logarithm of 2, approximately 0.693.</dd>
+ <dt><a href="Math/LN10.html"><code>Math.LN10</code></a></dt>
+ <dd>Natural logarithm of 10, approximately 2.303.</dd>
+ <dt><a href="Math/LOG2E.html"><code>Math.LOG2E</code></a></dt>
+ <dd>Base 2 logarithm of E, approximately 1.443.</dd>
+ <dt><a href="Math/LOG10E.html"><code>Math.LOG10E</code></a></dt>
+ <dd>Base 10 logarithm of E, approximately 0.434.</dd>
+ <dt><a href="Math/PI.html"><code>Math.PI</code></a></dt>
+ <dd>Ratio of the circumference of a circle to its diameter, approximately 3.14159.</dd>
+ <dt><a href="Math/SQRT1_2.html"><code>Math.SQRT1_2</code></a></dt>
+ <dd>Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.</dd>
+ <dt><a href="Math/SQRT2.html"><code>Math.SQRT2</code></a></dt>
+ <dd>Square root of 2, approximately 1.414.</dd>
+</dl>
+
+<h2 id="Methods">Methods</h2>
+
+<div class="note">
+<p>Note that the trigonometric functions (<code>sin()</code>, <code>cos()</code>, <code>tan()</code>, <code>asin()</code>, <code>acos()</code>, <code>atan()</code>, <code>atan2()</code>) expect or return angles in radians. To convert radians to degrees, divide by <code>(Math.PI / 180)</code>, and multiply by this to convert the other way.</p>
+</div>
+
+<div class="note">
+<p>Note a lot of the math functions have a precision that's implementation-dependent. This means that different browsers can give a different result, and even the same JS engine on a different OS or architecture can give different results.</p>
+</div>
+
+<dl>
+ <dt><a href="Math/abs.html"><code>Math.abs(x)</code></a></dt>
+ <dd>Returns the absolute value of a number.</dd>
+ <dt><a href="Math/acos.html"><code>Math.acos(x)</code></a></dt>
+ <dd>Returns the arccosine of a number.</dd>
+ 
+ <dt><a href="Math/asin.html"><code>Math.asin(x)</code></a></dt>
+ <dd>Returns the arcsine of a number.</dd>
+ 
+ <dt><a href="Math/atan.html"><code>Math.atan(x)</code></a></dt>
+ <dd>Returns the arctangent of a number.</dd>
+ 
+ <dt><a href="Math/atan2.html"><code>Math.atan2(y, x)</code></a></dt>
+ <dd>Returns the arctangent of the quotient of its arguments.</dd>
+ 
+ <dt><a href="Math/ceil.html"><code>Math.ceil(x)</code></a></dt>
+ <dd>Returns the smallest integer greater than or equal to a number.</dd>
+ 
+ <dt><a href="Math/cos.html"><code>Math.cos(x)</code></a></dt>
+ <dd>Returns the cosine of a number.</dd>
+ 
+ <dt><a href="Math/exp.html"><code>Math.exp(x)</code></a></dt>
+ <dd>Returns E<sup>x</sup>, where <var>x</var> is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.</dd>
+ 
+ <dt><a href="Math/floor.html"><code>Math.floor(x)</code></a></dt>
+ <dd>Returns the largest integer less than or equal to a number.</dd>
+ 
+ 
+ 
+ <dt><a href="Math/log.html"><code>Math.log(x)</code></a></dt>
+ <dd>Returns the natural logarithm (log<sub>e</sub>, also ln) of a number.</dd>
+ 
+ 
+ 
+ <dt><a href="Math/max.html"><code>Math.max([x[, y[, …]]])</code></a></dt>
+ <dd>Returns the largest of zero or more numbers.</dd>
+ <dt><a href="Math/min.html"><code>Math.min([x[, y[, …]]])</code></a></dt>
+ <dd>Returns the smallest of zero or more numbers.</dd>
+ <dt><a href="Math/pow.html"><code>Math.pow(x, y)</code></a></dt>
+ <dd>Returns base to the exponent power, that is, <code>base<sup>exponent</sup></code>.</dd>
+ <dt><a href="Math/random.html"><code>Math.random()</code></a></dt>
+ <dd>Returns a pseudo-random number between 0 and 1.</dd>
+ <dt><a href="Math/round.html"><code>Math.round(x)</code></a></dt>
+ <dd>Returns the value of a number rounded to the nearest integer.</dd>
+ 
+ <dt><a href="Math/sin.html"><code>Math.sin(x)</code></a></dt>
+ <dd>Returns the sine of a number.</dd>
+ 
+ <dt><a href="Math/sqrt.html"><code>Math.sqrt(x)</code></a></dt>
+ <dd>Returns the positive square root of a number.</dd>
+ <dt><a href="Math/tan.html"><code>Math.tan(x)</code></a></dt>
+ <dd>Returns the tangent of a number.</dd>
+ 
+ <dt><code>Math.toSource()</code> </dt>
+ <dd>Returns the string <code>"Math"</code>.</dd>
+ 
+</dl>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

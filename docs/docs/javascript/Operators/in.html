@@ -1,0 +1,142 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>in</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>in</h2></div>
+
+<p>The <strong><code>in</code> operator</strong> returns <code>true</code> if the specified property is in the specified object.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><em>prop</em> in <em>objectName</em></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>prop</code></dt>
+ <dd>A string or numeric expression representing a property name or array index.</dd>
+</dl>
+
+<dl>
+ <dt><code>objectName</code></dt>
+ <dd>Name of an object.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The following examples show some uses of the <code>in</code> operator.</p>
+
+<pre class="brush:js">// Arrays
+var trees = new Array("redwood", "bay", "cedar", "oak", "maple");
+0 in trees        // returns true
+3 in trees        // returns true
+6 in trees        // returns false
+"bay" in trees    // returns false (you must specify the 
+                  // index number, not the value at that index)
+"length" in trees // returns true (length is an Array property)
+
+// Predefined objects
+"PI" in Math          // returns true
+
+// Custom objects
+var mycar = {make: "Honda", model: "Accord", year: 1998};
+"make" in mycar  // returns true
+"model" in mycar // returns true
+</pre>
+
+<p>You must specify an object on the right side of the <code>in</code> operator. For example, you can specify a string created with the <code>String</code> constructor, but you cannot specify a string literal.</p>
+
+<pre class="brush:js">var color1 = new String("green");
+"length" in color1 // returns true
+
+var color2 = "coral";
+// generates an error (color2 is not a String object)
+"length" in color2
+</pre>
+
+<h3 id="Using_in_with_deleted_or_undefined_properties">Using <code>in</code> with deleted or undefined properties</h3>
+
+<p>If you delete a property with the <code>delete</code> operator, the <code>in</code> operator returns <code>false</code> for that property.</p>
+
+<pre class="brush:js">var mycar = {make: "Honda", model: "Accord", year: 1998};
+delete mycar.make;
+"make" in mycar;  // returns false
+
+var trees = new Array("redwood", "bay", "cedar", "oak", "maple");
+delete trees[3];
+3 in trees; // returns false
+</pre>
+
+<p>If you set a property to <b>undefined</b> but do not delete it, the <code>in</code> operator returns true for that property.</p>
+
+<pre class="brush:js">var mycar = {make: "Honda", model: "Accord", year: 1998};
+mycar.make = undefined;
+"make" in mycar;  // returns true
+</pre>
+
+<pre class="brush:js">var trees = new Array("redwood", "bay", "cedar", "oak", "maple");
+trees[3] = undefined;
+3 in trees; // returns true
+</pre>
+
+<h3 id="Inherited_properties">Inherited properties</h3>
+
+<p>The <code>in</code> operator returns <code>true</code> for properties in the prototype chain.</p>
+
+<pre class="brush:js">"toString" in {}; // returns true
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

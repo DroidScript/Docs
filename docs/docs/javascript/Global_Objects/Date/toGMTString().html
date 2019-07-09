@@ -1,0 +1,81 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.toGMTString()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.toGMTString()</h2> <script>deprecated_header</script></div>
+
+<p>The <strong><code>toGMTString()</code></strong> method converts a date to a string, using Internet Greenwich Mean Time (GMT) conventions. The exact format of the value returned by <code>toGMTString()</code> varies according to the platform and browser, in general it should represent a human readable date string.</p>
+
+<div class="note">
+<p><strong>Note:</strong> <code>toGMTString()</code> is deprecated and should no longer be used. It remains implemented only for backward compatibility; please use <b>toUTCString()</b> instead.</p>
+</div>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.toGMTString()</code></pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Simple_example">Simple example</h3>
+
+<p>In this example, the <code>toGMTString()</code> method converts the date to GMT (UTC) using the operating system's time-zone offset and returns a string value that is similar to the following form. The exact format depends on the platform.</p>
+
+<pre class="brush: js">var today = new Date();
+var str = today.toGMTString();  // deprecated! use toUTCString()
+
+console.log(str);               // Mon, 18 Dec 1995 17:28:35 GMT
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

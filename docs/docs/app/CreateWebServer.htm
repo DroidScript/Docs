@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateWebServer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>CreateWebServer</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Web servers form the foundation of the web, especially the Internet of Things (IoT).</p>
+
+			<div class="samp">
+			sock = app.CreateWebServer( <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> WebServer
+			</div>
+
+			<p>Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.</p>
+
+			<div class="samp">
+			wbs.SetFolder( path );
+			</div>
+
+			<p>Start the server using the Start method.</p>
+
+			<div class="samp">
+			 wbs.Start();
+			</div>
+
+			<p>And stop it using the Stop method.</p>
+
+			<div class="samp">
+			wbs.Stop();
+			</div>
+
+			<p>The following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.<br>
+			<br>
+			For simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Basic</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var ip = app.GetIPAddress();<br>
+				<br>
+				&#160;&#160;&#160;&#160;if( ip == &quot;0.0.0.0&quot; )<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;alert( &quot;Please Enable Wi-Fi&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.Exit();<br>
+				&#160;&#160;&#160;&#160;}<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var s = &quot;Type the following address into your&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot; browser\n\n&quot; + ip +&quot;:8080&quot;;<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( s, 0.8, 0.5, &quot;MultiLine&quot; );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;serv = app.CreateWebServer( 8080 );<br>
+				&#160;&#160;&#160;&#160;serv.SetFolder( &quot;/sdcard/DroidScript&quot; );<br>
+				&#160;&#160;&#160;&#160;serv.Start();<br>
+				</b>}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p>The second example shows how to accept file upload and permit directory listings by including permissions in the options parameter of the app.CreateWebServer method.<br>
+			<br>
+			It also adds a servlet to respond to messsages from the web client. A servelet can be used to process data supplied by a user via form elements or it can handle requests made from the client application.<br>
+			<br>
+			To get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - File Uploads</h3>
+				<div id="examp1" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var ip = app.GetIPAddress();<br>
+				<br>
+				&#160;&#160;&#160;&#160;if( ip == &quot;0.0.0.0&quot; )<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;alert( &quot;Please Enable Wi-Fi&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.Exit();<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var s = &quot;Type the following address into your&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot; browser\n\n&quot; + ip +&quot;:8080&quot;;<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( s, 0.8, 0.5, &quot;MultiLine&quot; );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;serv = app.CreateWebServer( 8080, &quot;Upload,ListDir&quot; );<br>
+				&#160;&#160;&#160;&#160;serv.SetFolder( &quot;/sdcard/DroidScript&quot; );<br>
+				&#160;&#160;&#160;&#160;serv.AddServlet( &quot;/message&quot;, OnServlet );<br>
+				&#160;&#160;&#160;&#160;serv.Start();<br>
+				</b>}<br>
+				<br>
+				&#160;&#160;&#160;&#160;function OnServlet( request, info )<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;serv.SetResponse( &quot;Got it!&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup(  info.remoteAddress + &quot; says: &quot; + request.msg );<br>
+				&#160;&#160;&#160;&#160;}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p>Web sockets are faster than servlets and can be used for both client - server applications or peer-to-peer systems where each connected node is both a client and a server without a centralized server.<br>
+			<br>
+			This makes web sockets very useful for datasharing in multiplayer games.<br>
+			<br>
+			All requests sent to the same servlet will queue up behind each other and are processed in order. The server application is said to be blocking all other requests whilst a servlet completes each task synchronously.<br>
+			<br>
+			Web sockets recieve the request and then start a process to handle the request. When the task is complete any data or messages to be returned will be sent back to the relevant connected clients. In this case the server application is said to be non-blocking or asynchronous.<br>
+			<br>
+			Web sockets can be used for broadcast purposes, for example sending the same message to all connected clients. They can also be used to send different direct messages to a specific one device using the IP address.<br>
+			<br>
+			The following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.</p>
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Send and Receive messages</h3>
+				<div id="examp2" style="font-size:70%">
+					var indexhtml = `<br>
+				&lt;html&gt;<br>
+				&lt;head&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;title&gt;WebSockets Demo&lt;/title&gt;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&lt;script&gt;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var count = 0;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Connect to server via web sockets.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function Connect()<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Check web sockets are supported.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if (!window.WebSocket)<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;alert(&quot;WebSocket not supported by this browser&quot;);<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Open web socket to phone.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws = new WebSocket( &quot;ws://&quot;+window.location.host );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onopen = ws_onopen;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onmessage = ws_onmessage;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onclose = ws_onclose;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onerror = ws_onerror;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Send a message to the server.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function Send()<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.send( &quot;Hello &quot; + count++ );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Handle socket open.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onopen()<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = &quot;Socket Open&quot;;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Handle messages from phone.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onmessage( msg )<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = msg.data;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Other websocket callbacks.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onclose()<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = &quot;Socket Closed&quot;;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onerror(e)<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = &quot;Socket Error: &quot; + e.data;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				&#160;&#160;&#160;&#160;&lt;/script&gt;<br>
+				&lt;/head&gt;<br>
+				<br>
+				&lt;body&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;h2&gt;DroidScript WebSockets Demo&lt;/h2&gt;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&lt;div id=&quot;id_info&quot;&gt;Ready&lt;/div&gt;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&lt;button onclick=&quot;Connect()&quot;&gt;Connect&lt;/button&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;button onclick=&quot;Send()&quot;&gt;Send Message&lt;/button&gt;<br>
+				<br>
+				&lt;/body&gt;<br>
+				&lt;/html&gt;<br>
+				`;<br>
+				<br>
+				// Init variables.<br>
+				var count = 0;<br>
+				<br>
+				// Called when application is started.<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;// Create the Index.html file<br>
+				&#160;&#160;&#160;&#160;// note: in regular use move the html to a separate file<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( &quot;Index.html&quot;, indexhtml );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Check wifi is enabled.<br>
+				&#160;&#160;&#160;&#160;ip = app.GetIPAddress();<br>
+				&#160;&#160;&#160;&#160;if( ip == &quot;0.0.0.0&quot; ) {<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Please Enable Wi-Fi&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.Exit();<br>
+				&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Prevent wifi from powering down.<br>
+				&#160;&#160;&#160;&#160;app.PreventWifiSleep();<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Create a layout with objects vertically centered.<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Create a text label and add it to layout.<br>
+				&#160;&#160;&#160;&#160;var s = &quot;Type the following address into your&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot; browser(s)\n\n&quot; + ip +&quot;:8080&quot;;<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( s, 0.8, 0.3, &quot;AutoScale,MultiLine&quot; );<br>
+				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Create a text label and add it to layout.<br>
+				&#160;&#160;&#160;&#160;txtMsg = app.CreateText( &quot;&quot;, 0.8, 0.3, &quot;AutoScale,MultiLine&quot; );<br>
+				&#160;&#160;&#160;&#160;txtMsg.SetTextSize( 22 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txtMsg );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Create a 'Send Message' button.<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Send Message&quot;, 0.4, 0.1);<br>
+				&#160;&#160;&#160;&#160;btn.SetMargins( 0, 0.05, 0, 0 );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( SendMessage );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Add layout to app.<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Create and run web server on port 8080.<br>
+				&#160;&#160;&#160;&#160;serv = app.CreateWebServer( 8080 );<br>
+				&#160;&#160;&#160;&#160;serv.SetFolder( app.GetAppPath() );<br>
+				&#160;&#160;&#160;&#160;serv.SetOnReceive( serv_OnReceive );<br>
+				&#160;&#160;&#160;&#160;serv.Start();<br>
+				<br>
+				&#160;&#160;&#160;&#160;// Start timer to show WebSock connections.<br>
+				&#160;&#160;&#160;&#160;setInterval( ShowConnections, 3000 );<br>
+				}<br>
+				<br>
+				// Show who is connected.<br>
+				function ShowConnections()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var clients = serv.GetWebSockClients();<br>
+				<br>
+				&#160;&#160;&#160;&#160;if( clients.length &gt; 0 )<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// Make a list of clients.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var list = &quot;&quot;;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for( var i=0; i &lt; clients.length; i++ )<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;list += clients[i].remoteAddress + &quot;\n&quot;;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// Show client list.<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt.SetText( list );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				}<br>
+				<br>
+				// Send a message to all connected socket clients.<br>
+				function SendMessage()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;// Note: You can send to a specific client by passing<br>
+				&#160;&#160;&#160;&#160;// the IP address as the second parameter.<br>
+				&#160;&#160;&#160;&#160;serv.SendText( &quot;Hello &quot; + count++ )<br>
+				}<br>
+				<br>
+				// Called when messages arrive from websocket clients.<br>
+				function serv_OnReceive( msg, ip )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;txtMsg.SetText( ip + &quot;: &quot; + msg );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			<p><br>The following methods are available on the <b>WebServer</b> object:</p>
+
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AddRedirect</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">pattern</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">location</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">AddServlet</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">path</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “WebServer”</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetWebSockClients</a>() → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SendText</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">txt</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">ip</a> )</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetFolder</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">folder</a> )</div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnReceive</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnUpload</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetResponse</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">text</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SetUploadFolder</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">folder</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">Start</a>()</div>
+			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">Stop</a>()</div>
+
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “<a href="" onclick="prompt( '#', 'App.ShowPopup( Show files in folder' )">ListDir</a>” or “<a href="" onclick="prompt( '#', 'App.ShowPopup( Allow file uploads' )">Upload</a>” or “<a href="" onclick="prompt( '#', 'App.ShowPopup( Ignore index.html' )">NoWelcome</a>” or “<a href="" onclick="prompt( '#', 'App.ShowPopup( Reflect web socket messages back to all clients' )">Reflect</a>”</div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content">SetOnUpload</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"></div>
+
+	</div>
+</body>
+
+</html>

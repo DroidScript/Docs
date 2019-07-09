@@ -1,0 +1,86 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>null</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>null</h2></div>
+
+<p>The value <code>null</code> is a JavaScript literal representing null or an "empty" value, i.e. no object value is present. It is one of JavaScript's primitive values.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>null </code></pre>
+
+<h2 id="Description">Description</h2>
+
+<p>The value <code>null</code> is a literal (not a property of the global object like <b>Global_Objects/undefined","undefined</b> can be). In APIs, <code>null</code> is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).</p>
+
+<pre class="brush: js">// foo does not exist, it is not defined and has never been initialized:
+&gt; foo
+"ReferenceError: foo is not defined"
+
+// foo is known to exist now but it has no type or value:
+&gt; var foo = null; foo
+"null"
+</pre>
+
+<h3 id="Difference_between_null_and_undefined">Difference between <code>null</code> and <code>undefined</code></h3>
+
+<pre class="brush: js">typeof null        // object (bug in ECMAScript, should be null)
+typeof undefined   // undefined
+null === undefined // false
+null  == undefined // true
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

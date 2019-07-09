@@ -1,0 +1,104 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.cosh</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.cosh</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.cosh()</code></strong> function returns the hyperbolic cosine of a number, that can be expressed using the <b>constant e</b>:</p>
+
+<p><math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mo rspace="thinmathspace" lspace="0em">Math.cosh(x)</mo></mstyle><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>-</mo><mi>x</mi></mrow></msup></mrow><mn>2</mn></mfrac></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.cosh(x)</script> = \frac{e^x + e^{-x</script>{2}</annotation></semantics></math></p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.cosh(<var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>x</code></dt>
+ <dd>A number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Because <code>cosh()</code> is a static method of <code>Math</code>, you always use it as <code>Math.cosh()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.cosh()">Using <code>Math.cosh()</code></h3>
+
+<pre class="brush: js">Math.cosh(0);  // 1
+Math.cosh(1);  // 1.5430806348152437
+Math.cosh(-1); // 1.5430806348152437
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This can be emulated with the help of the <b>Math.exp()</b> function:</p>
+
+<pre class="brush: js">Math.cosh = Math.cosh || function(x) {
+  return (Math.exp(x) + Math.exp(-x)) / 2;
+}
+</pre>
+
+<p>or using only one call to the <b>Math.exp()</b> function:</p>
+
+<pre class="brush: js">Math.cosh = Math.cosh || function(x) {
+  var y = Math.exp(x);
+  return (y + 1 / y) / 2;
+};
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

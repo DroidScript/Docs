@@ -1,0 +1,101 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>numObj</i>.toFixed()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>numObj</i>.toFixed()</h2></div>
+
+<p>The <strong><code>toFixed()</code></strong> method formats a number using fixed-point notation.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>numObj</var>.toFixed([<var>digits</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>digits</code></dt>
+ <dd>Optional. The number of digits to appear after the decimal point; this may be a value between 0 and 20, inclusive, and implementations may optionally support a larger range of values. If this argument is omitted, it is treated as 0.</dd>
+</dl>
+
+<h3 id="Returns">Returns</h3>
+
+<p>A string representation of <code>numObj</code> that does not use exponential notation and has exactly <code>digits</code> digits after the decimal place. The number is rounded if necessary, and the fractional part is padded with zeros if necessary so that it has the specified length. If <code>numObj</code> is greater than <code>1e+21</code>, this method simply calls <b><i>numObj</i>.toString()</b> and returns a string in exponential notation.</p>
+
+<h3 id="Throws">Throws</h3>
+
+<dl>
+ <dt><b>RangeError</b></dt>
+ <dd>If <code>digits</code> is too small or too large. Values between 0 and 20, inclusive, will not cause a <b>RangeError</b>. Implementations are allowed to support larger and smaller values as well.</dd>
+ <dt><b>TypeError</b></dt>
+ <dd>If this method is invoked on an object that is not a <b>Number</b>.</dd>
+</dl>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toFixed">Using <code>toFixed</code></h3>
+
+<pre class="brush: js">var numObj = 12345.6789;
+
+numObj.toFixed();       // Returns '12346': note rounding, no fractional part
+numObj.toFixed(1);      // Returns '12345.7': note rounding
+numObj.toFixed(6);      // Returns '12345.678900': note added zeros
+(1.23e+20).toFixed(2);  // Returns '123000000000000000000.00'
+(1.23e-10).toFixed(2);  // Returns '0.00'
+2.34.toFixed(1);        // Returns '2.3'
+-2.34.toFixed(1);       // Returns -2.3 (due to operator precedence, negative number literals don't return a string...)
+(-2.34).toFixed(1);     // Returns '-2.3' (...unless you use parentheses)
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

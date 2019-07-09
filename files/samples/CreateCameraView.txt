@@ -3,13 +3,16 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	cam = app.CreateCameraView( 0.8, 0.4 );
-	lay.AddChild( cam );
-	setTimeout( "cam.StartPreview()", 1000 );
+	<b>cam = app.CreateCameraView( 0.8, 0.4 );
+    cam.SetOnReady( cam_OnReady );
+	lay.AddChild( cam );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
+function cam_OnReady() {
+  cam.StartPreview();
+}
 </sample>
 
 <sample Take pictures>
@@ -17,16 +20,20 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	cam = app.CreateCameraView( 0.8, 0.4 );
-	lay.AddChild( cam );
-	cam.SetPictureSize( 1024, 768 );
-	setTimeout( "cam.StartPreview()", 1000 );
+	<b>cam = app.CreateCameraView( 0.8, 0.4 );
+    cam.SetOnReady( cam_OnReady );
+	lay.AddChild( cam );</b>
 
-</b>	btn = app.CreateButton( "Snap", 0.3, -1 );
+	btn = app.CreateButton( "Snap", 0.3, -1 );
 	btn.SetOnTouch( Snap );
 	lay.AddChild( btn );
 
 	app.AddLayout( lay );
+}
+
+function cam_OnReady() {
+    cam.SetPictureSize( 1024, 768 );
+    cam.StartPreview();
 }
 
 function Snap()
@@ -35,4 +42,3 @@ function Snap()
 	app.ShowPopup("Picture saved");
 }
 </sample>
-

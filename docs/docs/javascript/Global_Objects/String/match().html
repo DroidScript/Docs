@@ -1,0 +1,132 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.match()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.match()</h2></div>
+
+<p>The <strong><code>match()</code></strong> method retrieves the matches when matching a <em>string</em> against a <em>regular expression</em>.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.match(<var>regexp</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>regexp</code></dt>
+ <dd>A regular expression object. If a non-RegExp object <code>obj</code> is passed, it is implicitly converted to a <b>RegExp</b> by using <code>new RegExp(obj)</code>.</dd>
+</dl>
+
+<h3 id="Return_value">Return value</h3>
+
+<dl>
+ <dt><code>array</code></dt>
+ <dd>An <b>Array</b> containing the matched results or <b>null</b> if there were no matches.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>If the regular expression does not include the <code>g</code> flag, returns the same result as <b>RegExp.exec()</b>. The returned <b>Array</b> has an extra <code>input</code> property, which contains the original string that was parsed. In addition, it has an <code>index</code> property, which represents the zero-based index of the match in the string.</p>
+
+<p>If the regular expression includes the <code>g</code> flag, the method returns an <b>Array</b> containing all matched substrings rather than match objects. Captured groups are not returned.&nbsp;If there were no matches, the method returns <b>null</b>.</p>
+
+<h3 id="See_also_RegExp_methods">See also: <code>RegExp</code> methods</h3>
+
+<ul>
+ <li>If you need to know if a string matches a regular expression <b>RegExp</b>, use <b>search()</b>.</li>
+ <li>If you only want the first match found, you might want to use <b>RegExp.exec()</b> instead.</li>
+ <li>if you want to obtain capture groups and the global flag is set,&nbsp;you need to use <b>RegExp.exec()</b> instead.</li>
+</ul>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_match()">Using <code>match()</code></h3>
+
+<p>In the following example, <code>match()</code> is used to find <code>'Chapter'</code> followed by 1 or more numeric characters followed by a decimal point and numeric character 0 or more times. The regular expression includes the <code>i</code> flag so that case will be ignored.</p>
+
+<pre class="brush: js">var str = 'For more information, see Chapter 3.4.5.1';
+var re = /(chapter \d+(\.\d)*)/i;
+var found = str.match(re);
+
+console.log(found);
+
+// logs ['Chapter 3.4.5.1', 'Chapter 3.4.5.1', '.1']
+
+// 'Chapter 3.4.5.1' is the first match and the first value 
+// remembered from `(Chapter \d+(\.\d)*)`.
+
+// '.1' is the last value remembered from `(\.\d)`.
+</pre>
+
+<h3 id="Using_global_and_ignore_case_flags_with_match()">Using global and ignore case flags with <code>match()</code></h3>
+
+<p>The following example demonstrates the use of the global and ignore case flags with <code>match()</code>. All letters A through E and a through e are returned, each its own element in the array.</p>
+
+<pre class="brush: js">var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+var regexp = /[A-E]/gi;
+var matches_array = str.match(regexp);
+
+console.log(matches_array);
+// ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+<h2 id="Firefox-specific_notes">Firefox-specific notes</h2>
+
+<ul>
+ <li>Starting with Gecko 27 , this method has been adjusted to conform with the ECMAScript specification. When <code>match()</code> is called with a global regular expression, the <b>RegExp.lastIndex</b> property (if specified) will be reset to <code>0</code> ().</li>
+ <li>Starting with Gecko 39 , the non-standard <code>flags</code> argument is deprecated and throws a console warning (). This property is Gecko-only and will be removed in the future.</li>
+</ul>
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

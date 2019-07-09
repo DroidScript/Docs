@@ -1,0 +1,7 @@
+<sample Check Engine>
+function OnStart()
+{
+    <b>var isEngine = app.IsEngine();</b>
+    app.Alert( isEngine, "is Engine:" );
+}
+</sample>

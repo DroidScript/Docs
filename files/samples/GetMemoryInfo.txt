@@ -1,0 +1,38 @@
+<sample Basic>
+function OnStart()
+{
+    <b>var mem = app.GetMemoryInfo();</b>
+    var s = JSON.stringify( mem );
+    app.Alert( s.replace( /,/g, ",\n ") );
+}
+</sample>
+
+<sample Show Memory>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" );
+
+    txt = app.CreateText( "", .8, -1, "monospace,multiline" );
+    txt.SetTextSize( 25 );
+    lay.AddChild( txt );
+
+    app.AddLayout( lay );
+
+    app.Animate( ShowMemory, 2 );
+}
+
+function ShowMemory() {
+
+    var mem = app.GetMemoryInfo();
+
+    text =
+        Math.round( mem.avail / 1024 ** 2 ) + "/" +
+        Math.round( mem.total / 1024 ** 2 ) + " MB<br><br>" +
+        Math.round( 100 * mem.avail / mem.total ) + "%";
+
+    if( mem.low ) color = "red";
+    else color = "white";
+
+    txt.SetHtml( text.fontcolor( color ));
+}
+</sample>

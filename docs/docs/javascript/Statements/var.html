@@ -1,0 +1,197 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>var</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>var</h2></div>
+
+<p>The <strong><code>variable</code> statement</strong> declares a variable, optionally initializing it to a value.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">var <em>varname1 [</em>= <em>value1 [</em>, <em>varname2 [</em>, <em>varname3 ... [</em>, <em>varnameN]]]]</em>;</pre>
+
+<dl>
+ <dt><code>varnameN</code></dt>
+ <dd>Variable name. It can be any legal identifier.</dd>
+</dl>
+
+<dl>
+ <dt><code>valueN</code></dt>
+ <dd>Initial value of the variable. It can be any legal expression.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Variable declarations, wherever they occur, are processed before any code is executed. The scope of a variable declared with <code>var</code> is its current <em>execution context</em>, which is either the enclosing function or, for variables declared outside any function, global.</p>
+
+<p>Assigning a value to an undeclared variable implicitly creates it as a global variable (it becomes a property of the global object) when the assignment is executed. The differences between declared and undeclared variables are:</p>
+
+<p>1. Declared variables are constrained in the execution context in which they are declared. Undeclared variables are always global.</p>
+
+<pre class="brush: js">function x() {
+  y = 1;   // Throws a ReferenceError in strict mode
+  var z = 2;
+}
+
+x();
+
+console.log(y); // logs "1" 
+console.log(z); // Throws a ReferenceError: z is not defined outside x
+</pre>
+
+<p>2. Declared variables are created before any code is executed. Undeclared variables do not exist until the code assigning to them is executed.</p>
+
+<pre class="brush: js">console.log(a);                // Throws a ReferenceError.
+console.log('still going...'); // Never executes.</pre>
+
+<pre class="brush: js">var a;
+console.log(a);                // logs "undefined" or "" depending on browser.
+console.log('still going...'); // logs "still going...".</pre>
+
+<p>3. Declared variables are a non-configurable property of their execution context (function or global). Undeclared variables are configurable (e.g. can be deleted).</p>
+
+<pre class="brush: js">var a = 1;
+b = 2;
+
+delete this.a; // Throws a TypeError in strict mode. Fails silently otherwise.
+delete this.b;
+
+console.log(a, b); // Throws a ReferenceError. 
+// The 'b' property was deleted and no longer exists.</pre>
+
+<p>Because of these three differences, failure to declare variables will very likely lead to unexpected results. Thus <strong>it is recommended to always declare variables, regardless of whether they are in a function or global scope.</strong> And in ECMAScript 5 strict mode, assigning to an undeclared variable throws an error.</p>
+
+<h3 id="var_hoisting">var hoisting</h3>
+
+<p>Because variable declarations (and declarations in general) are processed before any code is executed, declaring a variable anywhere in the code is equivalent to declaring it at the top. This also means that a variable can appear to be used before it's declared. This behavior is called "hoisting", as it appears that the variable declaration is moved to the top of the function or global code.</p>
+
+<pre class="brush: js">bla = 2
+var bla;
+// ...
+
+// is implicitly understood as:
+
+var bla;
+bla = 2;
+</pre>
+
+<p>For that reason, it is recommended to always declare variables at the top of their scope (the top of global code and the top of function code) so it's clear which variables are function scoped (local) and which are resolved on the scope chain.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Declaring_and_initializing_two_variables">Declaring and initializing two variables</h3>
+
+<pre class="brush: js">var a = 0, b = 0;
+</pre>
+
+<h3 id="Assigning_two_variables_with_single_string_value">Assigning two variables with single string value</h3>
+
+<pre class="brush: js">var a = "A";
+var b = a;
+
+// Equivalent to:
+
+var a, b = a = "A";
+</pre>
+
+<p>Be mindful of the order:</p>
+
+<pre class="brush: js">var x = y, y = 'A';
+console.log(x + y); // undefinedA
+</pre>
+
+<p>Here, <code>x</code> and <code>y</code> are declared before any code is executed, the assignments occur later. At the time "<code>x = y</code>" is evaluated, <code>y</code>&nbsp;exists so no <code>ReferenceError</code> is thrown and its value is '<code>undefined</code>'. So, <code>x</code> is assigned the undefined value. Then, <code>y</code> is assigned a value of 'A'. Consequently, after the first line, <code>x === undefined &amp;&amp; y === 'A'</code>, hence the result.</p>
+
+<h3 id="Initialization_of_several_variables">Initialization of several variables</h3>
+
+<pre class="brush: js">var x = 0;
+
+function f(){
+  var x = y = 1; // x is declared locally. y is not!
+}
+f();
+
+console.log(x, y); // 0, 1
+// x is the global one as expected
+// y leaked outside of the function, though!&nbsp;</pre>
+
+<h3 id="Implicit_globals_and_outer_function_scope">Implicit globals and outer function scope</h3>
+
+<p>Variables that appear to be implicit globals may be references to variables in an outer function scope:</p>
+
+<pre class="brush: js">var x = 0;  // x is declared global, then assigned a value of 0
+
+console.log(typeof z); // undefined, since z doesn't exist yet
+
+function a() { // when a is called,
+  var y = 2;   // y is declared local to function a, then assigned a value of 2
+
+  console.log(x, y);   // 0 2 
+
+  function b() {       // when b is called
+    x = 3;  // assigns 3 to existing global x, doesn't create a new global var
+    y = 4;  // assigns 4 to existing outer y, doesn't create a new global var
+    z = 5;  // creates a new global variable z and assigns a value of 5. 
+  }         // (Throws a ReferenceError in strict mode.)
+
+  b();     // calling b creates z as a global variable
+  console.log(x, y, z);  // 3 4 5
+}
+
+a();                   // calling a also calls b
+console.log(x, z);     // 3 5
+console.log(typeof y); // undefined as y is local to function a</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

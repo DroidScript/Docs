@@ -1,0 +1,133 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.clz32</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.clz32</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.clz32()</code></strong> function returns the number of leading zero bits in the 32-bit binary representation of a number.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.clz32(<var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>x</code></dt>
+ <dd>A number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>"<code>clz32</code>" is short for <code>CountLeadingZeroes32</code>.</p>
+
+<p>If <code>x</code> is not a number, then it will be converted to a number first, then converted to a 32-bit unsigned integer.</p>
+
+<p>If the converted 32-bit unsigned integer is <code>0</code>, then return <code>32</code>, because all bits are <code>0</code>.</p>
+
+<p>This function is particularly useful for systems that compile to JS, like Emscripten.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.clz32()">Using <code>Math.clz32()</code></h3>
+
+<pre class="brush: js">Math.clz32(1);                // 31
+Math.clz32(1000);             // 22
+Math.clz32();                 // 32
+
+[NaN, Infinity, -Infinity, 0, -0, null, undefined, 'foo', {}, []].filter(
+function(n) {
+  return Math.clz32(n) !== 32
+});                           // []
+
+Math.clz32(true);             // 31
+Math.clz32(3.5);              // 30
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This polyfill depends on&nbsp;<b>Math.imul</b>.</p>
+
+<pre class="brush: js">Math.clz32 = Math.clz32 || (function () {
+&nbsp; 'use strict';
+
+  var table = [
+&nbsp;   32, 31,  0, 16,  0, 30,  3,  0, 15,  0,  0,  0, 29, 10,  2,  0,
+&nbsp;    0,  0, 12, 14, 21,  0, 19,  0,  0, 28,  0, 25,  0,  9,  1,  0,
+&nbsp;   17,  0,  4,   ,  0,  0, 11,  0, 13, 22, 20,  0, 26,  0,  0, 18,
+&nbsp;    5,  0,  0, 23,  0, 27,  0,  6,  0, 24,  7,  0,  8,  0,  0,  0]
+
+&nbsp; // Adapted from an algorithm in Hacker's Delight, page 103.
+&nbsp; return function (x) {
+    // Note that the variables may not necessarily be the same.
+
+&nbsp;   // 1. Let n = ToUint32(x).
+    var v = Number(x) &gt;&gt;&gt; 0
+
+&nbsp;   // 2. Let p be the number of leading zero bits in the 32-bit binary representation of n.
+&nbsp;   v |= v &gt;&gt;&gt; 1
+&nbsp;   v |= v &gt;&gt;&gt; 2
+&nbsp;   v |= v &gt;&gt;&gt; 4
+&nbsp;   v |= v &gt;&gt;&gt; 8
+&nbsp;   v |= v &gt;&gt;&gt; 16
+&nbsp;   v = table[Math.imul(v, 0x06EB14F9) &gt;&gt;&gt; 26]
+
+&nbsp;   // Return p.
+&nbsp;   return v
+&nbsp; }
+})();
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

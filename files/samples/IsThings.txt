@@ -1,0 +1,7 @@
+<sample Check OS is Things>
+function OnStart()
+{
+    <b>var isThings = app.IsThings();</b>
+    app.Alert( isThings, "IsThings" );
+}
+</sample>

@@ -1,0 +1,105 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>function</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>function</h2></div>
+
+<p>The <strong><code>function</code></strong> keyword can be used to define a function inside an expression.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">function [<em>name</em>]([<em>param1</em>[, <em>param2[</em>, ..., <em>paramN</em>]]]) {
+   <em>statements</em>
+}</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>name</code></dt>
+ <dd>The function name. Can be omitted, in which case the function is <em>anonymous</em>. The name is only local to the function body.</dd>
+ <dt><code>paramN</code></dt>
+ <dd>The name of an argument to be passed to the function.</dd>
+ <dt><code>statements</code></dt>
+ <dd>The statements which comprise the body of the function.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>A function expression is very similar to and has almost the same syntax as a function statement (see function statement for details). The main difference between a function expression and a function statement is the <em>function name,</em> which can be omitted in function expressions to create <em>anonymous</em> functions. See also the chapter about functions for more information.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<p>The following example defines an unnamed function and assigns it to <code>x</code>. The function returns the square of its argument:</p>
+
+<pre class="brush: js">var x = function(y) {
+   return y * y;
+};
+</pre>
+
+<h3 id="Named_function_expression">Named function expression</h3>
+
+<p>If you want to refer to the current function inside the function body, you need to create a named function expression. This name is then local only to the function body (scope). This also avoids using the non-standard <code>arguments.callee</code> property.</p>
+
+<pre class="brush: js">var math = {
+  'factorial': function factorial(n) {
+    if (n &lt;= 1)
+      return 1;
+    return n * factorial(n - 1);
+  }
+};
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,0 +1,49 @@
+<sample Connect to Device>
+
+function OnStart()
+{
+    app.ShowProgress( "Enabling Bluetooth" );
+    if( !app.IsBluetoothEnabled() )
+        app.SetBluetoothEnabled( true );
+
+	while( !app.IsBluetoothOn() ) app.Wait(.4);
+	app.HideProgress();
+
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    lst = app.CreateList( "", 0.9, 0.5 );
+    lst.SetOnTouch( lst_OnTouch );
+    lay.AddChild( lst );
+
+    var devices = app.GetPairedBtDevices();
+	for( var d in devices )
+	    lst.AddItem( devices[d].name, devices[d].address );
+
+	app.AddLayout( lay );
+
+	bt = app.CreateBluetoothSerial();
+	bt.SetOnConnect( bt_OnConnect );
+	bt.SetSplitMode( "End", "\n" );
+
+	bt.Listen( true );
+}
+
+function lst_OnTouch( title, body, type, index )
+{
+    app.ShowProgress( "Connecting..." );
+    <b>bt.Connect( title );</b>
+}
+
+function bt_OnConnect( ok, data )
+{
+    app.HideProgress();
+
+    if( ok ) {
+        if( typeof data == "object" )
+            app.ShowPopup( "Connected!" );
+        else
+            alert( "Connected to " + ok + " (" + data + ")" );
+    } else
+        app.ShowPopup( "Failed to connect!" );
+}
+</sample>

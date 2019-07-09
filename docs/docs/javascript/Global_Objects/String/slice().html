@@ -1,0 +1,104 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.slice()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.slice()</h2></div>
+
+<p>The <strong><code>slice()</code></strong> method extracts a section of a string and returns a new string.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.slice(<var>beginSlice</var>[, <var>endSlice</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>beginSlice</code></dt>
+ <dd>The zero-based index at which to begin extraction. If negative, it is treated as <code>sourceLength + beginSlice</code> where <code>sourceLength</code> is the length of the string (for example, if <code>beginSlice</code> is -3 it is treated as <code>sourceLength - 3</code>).</dd>
+ <dt><code>endSlice</code></dt>
+ <dd>Optional. The zero-based index at which to end extraction. If omitted, <code>slice()</code> extracts to the end of the string. If negative, it is treated as <code>sourceLength + endSlice</code> where <code>sourceLength</code> is the length of the string (for example, if&nbsp;<code>endSlice</code> is -3 it is treated as <code>sourceLength - 3)</code>.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p><code>slice()</code> extracts the text from one string and returns a new string. Changes to the text in one string do not affect the other string.</p>
+
+<p><code>slice()</code> extracts up to but not including <code>endSlice</code>. <code>str.slice(1, 4)</code> extracts the second character through the fourth character (characters indexed 1, 2, and 3).</p>
+
+<p>As an example, <code>str.slice(2, -1)</code> extracts the third character through the second to last character in the string.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_slice()_to_create_a_new_string">Using <code>slice()</code> to create a new string</h3>
+
+<p>The following example uses <code>slice()</code> to create a new string.</p>
+
+<pre class="brush: js">var str1 = 'The morning is upon us.';
+var str2 = str1.slice(4, -2);
+
+console.log(str2); // OUTPUT: morning is upon u
+</pre>
+
+<h3 id="Using_slice()_with_negative_indexes">Using <code>slice()</code> with negative indexes</h3>
+
+<p>The following example uses <code>slice()</code> with negative indexes.</p>
+
+<pre class="brush: js">var str = 'The morning is upon us.';
+str.slice(-3);     // returns 'us.'
+str.slice(-3, -1); // returns 'us'
+str.slice(0, -1);  // returns 'The morning is upon us'
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

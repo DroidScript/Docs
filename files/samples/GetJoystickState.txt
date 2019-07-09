@@ -1,25 +1,31 @@
-<sample Example>
+<sample Show States>
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+	lay = app.CreateLayout( "linear" );
 
-	txt = app.CreateText( "", 1.0, -1, "MultiLine" );
+    txt = app.CreateText( "", 1, 1, "monospace,left,multiline" );
 	lay.AddChild( txt );
 
 	app.AddLayout( lay );
 
-	setInterval( ShowState, 200 );
+    app.SetDebug( "console" );
+	app.Animate( ShowStates, 10 );
 }
 
-function ShowState()
+function ShowStates()
 {
-<b>	var abtn = app.GetJoystickState( 0, "A" );
-	var bbtn = app.GetJoystickState( 0, "B" );
-	var xaxis = app.GetJoystickState( 0, "axis-0" );
-	var yaxis = app.GetJoystickState( 0, "axis-1" );
-</b>
-	msg = "A:" + abtn + " B:" + bbtn + "\n";
-	msg += " X-Axis:" + xaxis.toFixed(2) + " Y-Axis:" + yaxis.toFixed(2);
-	txt.SetText( msg );
-}</sample>
+    var keys = "A|B|C|X|Y|Z|R1|L1|Up|Down|Left|Right|Start|ThumbLeft|ThumbRight|" +
+        "axis-0|axis-1|axis-2|axis-3|axis-4|axis-5|axis-6|axis-7|axis-8|axis-9";
 
+    keys = keys.split("|");
+
+    var lst = [];
+    for(var i in keys)
+    {
+        <b>var state = app.GetJoystickState(0, keys[i]);</b>
+        lst.push(keys[i] + ": " + state);
+    }
+
+    txt.SetText( lst.join( "\n" ) );
+}
+</sample>

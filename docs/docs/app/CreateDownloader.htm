@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateDownloader</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>CreateDownloader</h1>
+		</div>
+
+		<div data-role="content">
+			<p>The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage.</p>
+
+			<div class="samp">
+			dwn = app.CreateDownloader( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Downloader
+			</div>
+
+			<p>You can download a file with the <b>Download</b> method which accepts a <i>source url</i> and a <i>target directory</i>:</p>
+
+			<div class="samp">
+			dwn.Download( srcFileUrl, targetDir );
+			</div>
+
+			<p>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the <i>“NoDialog”</i> <b>option</b>.<br>
+			<br>
+			If you want to know when the download process has finished (or failed) you can define a callback functioni with the <b>SetOnComplete</b> method:</p>
+
+			<div class="samp">
+			dload.SetOnComplete( callback );
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Example</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var srcFileUrl=&quot;http://sgarman.net/downloadable.txt&quot;;<br>
+				&#160;&#160;&#160;&#160;var targetDir=&quot;/sdcard&quot;;<br>
+				<br>
+				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;dload = app.CreateDownloader();<br>
+				&#160;&#160;&#160;&#160;dload.SetOnComplete( dload_OnComplete );<br>
+				&#160;&#160;&#160;&#160;dload.Download( srcFileUrl, targetDir );<br>
+				</b>}<br>
+				<br>
+				function dload_OnComplete()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup(&quot;Download complete&quot;);<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<p><br>The following methods are available on the <b>Downloader</b> object:</p>
+
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Download</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">headers</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetProgress</a>() → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetSize</a>() → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “Downloader”</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsComplete</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnCancel</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnComplete</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnDownload</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetOnError</a>( <a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )</div>
+
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “NoDialog” or “Light”</div>
+		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content">Download file</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content">get current download progress</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content">get target download size</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content">return whether download compleated or not</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content">? called when download cancelled</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content">called when download finished</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: path to file or folder ( "/absolute/..." or "relative/..." )' )">path</a>)</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content">?</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">error</a>)</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content">called when error occurred while downloading</div>
+
+	</div>
+</body>
+
+</html>

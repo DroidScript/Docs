@@ -1,0 +1,22 @@
+<sample Choose Account>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btnChoose = app.CreateButton( "Choose Account", 0.5, 0.1 );
+	btnChoose.SetOnTouch( btnChoose_OnTouch );
+	lay.AddChild( btnChoose );
+
+	app.AddLayout( lay );
+}
+
+function btnChoose_OnTouch()
+{
+	<b>app.ChooseAccount( OnChoose );</b>
+}
+
+function OnChoose( account )
+{
+    alert( "selected account: " + account );
+}
+</sample>

@@ -1,0 +1,192 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>super</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><script>harmony</script> <h2>super</h2></div>
+
+<p>The <strong>super</strong> keyword is used to call functions on an object's parent.</p>
+
+<p>The <code>super.prop</code> and <code>super[expr]</code> expressions are valid in any method definition in both classes and object literals.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">super([arguments]); // calls the parent constructor.
+super.functionOnParent([arguments]);
+</pre>
+
+<h2 id="Description">Description</h2>
+
+<p>When used in a constructor, the <code>super</code> keyword appears alone and must be used before the <code>this</code> keyword can be used. This keyword can also be used to call functions on a parent object.</p>
+
+<h2 id="Example">Example</h2>
+
+<h3 id="Using_super_in_classes">Using <code>super</code> in classes</h3>
+
+<p>This code snippet is taken from the classes sample (live demo).</p>
+
+<pre class="brush: js">class Polygon {
+  constructor(height, width) {
+    this.name = 'Polygon';
+    this.height = height;
+    this.width = width;
+  }
+  sayName() {
+    console.log('Hi, I am a ', this.name + '.');
+  }
+}
+
+class Square extends Polygon {
+  constructor(length) {
+    this.height; // ReferenceError, super needs to be called first!
+    
+    // Here, it calls the parent class' constructor with lengths
+    // provided for the Polygon's width and height
+    super(length, length);
+    
+    // Note: In derived classes, super() must be called before you
+    // can use 'this'. Leaving this out will cause a reference error.
+    this.name = 'Square';
+  }
+
+  get area() {
+    return this.height * this.width;
+  }
+
+  set area(value) {
+    this.area = value;
+  } 
+}</pre>
+
+<h3 id="Super-calling_static_methods">Super-calling static methods</h3>
+
+<p>You are also able to call super on static methods.</p>
+
+<pre class="brush: js">class Human {
+  constructor() {}
+  static ping() {
+    return 'ping';
+  }
+}
+
+class Computer extends Human {
+  constructor() {}
+  static pingpong() {
+    return super.ping() + ' pong';
+  }
+}
+Computer.pingpong(); // 'ping pong'
+</pre>
+
+<h3 id="Deleting_super_properties_will_throw">Deleting super properties will throw</h3>
+
+<p>You can not use the delete operator and <code>super.prop</code> or <code>super[expr]</code> to delete a parent class' property, it will throw a <b>ReferenceError</b>.</p>
+
+<pre class="brush: js">class Base {
+  constructor() {}
+  foo() {}
+}
+class Derived {
+  constructor() {}
+  delete() {
+    delete super.foo;
+  }
+}
+
+new Derived().delete(); // ReferenceError: invalid delete involving 'super'. </pre>
+
+<h3 id="Super.prop_can_not_overwrite_non-writable_properties"><code>Super.prop</code> can not overwrite non-writable properties</h3>
+
+<p>When defining non-writable properties with e.g. <b>Object.defineProperty</b>, <code>super</code> can not overwrite the value of the property.</p>
+
+<pre class="brush: js">class X {
+  constructor() {
+    Object.defineProperty(this, "prop", {
+      configurable: true,
+      writable: false, 
+      value: 1
+    });
+  } 
+  f() { 
+    super.prop = 2;
+  }
+}
+
+var x = new X();
+x.f();
+console.log(x.prop); // 1
+</pre>
+
+<h3 id="Using_super.prop_in_object_literals">Using <code>super.prop</code> in object literals</h3>
+
+<p>Super can also be used in the object initializer / literal notation. In this example, two objects define a method. In the second object, <code>super</code> calls the first object's method. This works with the help of <b>Object.setPrototypeOf()</b> with which we are able to set the prototype of <code>obj2</code> to <code>obj1</code>, so that <code>super</code> is able to find <code>method1</code> on <code>obj1</code>.</p>
+
+<pre class="brush: js">var obj1 = {
+  method1() {
+    console.log("method 1");
+  }
+}
+
+var obj2 = {
+  method2() {
+   super.method1();
+  }
+}
+
+Object.setPrototypeOf(obj2, obj1);
+obj2.method2(); // logs "method 1"
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

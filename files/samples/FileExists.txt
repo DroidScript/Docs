@@ -1,8 +1,10 @@
 <sample Example>
 function OnStart()
 {
-<b>	exists = app.FileExists( "/sdcard/wftest.txt" );
-</b>	app.ShowPopup( exists );
+    <b>if(app.FileExists("myFile.txt")) {
+        app.ShowPopup("myFile exists!");
+    } else {
+        app.ShowPopup("myFile does not exist!");
+    }</b>
 }
 </sample>
-

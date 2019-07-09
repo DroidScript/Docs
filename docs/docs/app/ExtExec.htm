@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ExtExec</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+
+		<div data-role="header" data-position="fixed">
+			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+			<h1>ExtExec</h1>
+		</div>
+
+		<div data-role="content">
+			<p>ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.</p>
+
+			<div class="samp">
+			app.ExtExec( <a href="#pop_str_001" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">args</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			</div>
+
+			<p>The Termux app runs as a service and there's almost no limit to what you can achieve with a full blown Linux machine running on your Android device!<br>
+			<br>
+			How about installing git, or nodejs or using ssh or gzip.<br>
+			Try typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.</p>
+			<h3>Enable Termux</h3>
+			<p>To <b>enable termux</b> support you have to install <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://play.google.com/store/apps/details?id=com.termux');">Termux</a> and the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://play.google.com/store/apps/details?id=com.termux.tasker');">Tasker</a> Plugin from PlayStore first.<br>
+			<br>
+			Then give termux <b>sdcard permissions</b> in the Android settings under apps/termux.<br>
+			<br>
+			After that create a symbolic link from the tasker plugin folder to your home directory:</p>
+
+			<div class="samp">
+			mkdir -p .termux /sdcard/termux/scripts<br>
+			ln -s /sdcard/termux/scripts .termux/tasker
+			</div>
+
+			<p>Finally you can run a termux shell script from inside DroidScript:</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Open Termux and pass arguments</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( &quot;/sdcard/termux/scripts/hello.sh&quot;, &quot;echo Hello $1 and $2&quot; );<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var err = app.ExtExec( &quot;termux&quot;, &quot;hello.sh&quot;, 'World &quot;' + app.GetUser() + '&quot;', &quot;&quot; );</b><br>
+				&#160;&#160;&#160;&#160;if( err ) app.Alert( &quot;Termux Error:&quot; + err );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Execute in Background and retreive output</h3>
+				<div id="examp1" style="font-size:70%">
+					var itv, lock = &quot;/sdcard/.termuxlock&quot;;<br>
+				var script = `<br>
+				{  # this is a comment<br>
+				&#160;&#160;&#160;&#160;echo This is a message  # prints to stdout<br>
+				&#160;&#160;&#160;&#160;sleep 1  # waits 1 second<br>
+				&#160;&#160;&#160;&#160;echo This is an error  1&gt;&amp;2  # prints to stderr<br>
+				} 1&gt;/sdcard/out.txt 2&gt;/sdcard/err.txt; # forward stdout and stderr to files<br>
+				rm ` + lock; // remove script lock file<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( &quot;/sdcard/termux/scripts/hello.sh&quot;, script );<br>
+				&#160;&#160;&#160;&#160;app.WriteFile( lock, &quot;&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Script is running&quot; );<br>
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">var err = app.ExtExec( &quot;termux&quot;, &quot;hello.sh&quot;, &quot;&quot;, &quot;hide&quot; );</b><br>
+				&#160;&#160;&#160;&#160;if(err) app.Alert(err);<br>
+				<br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, .8, .8, &quot;monospace,multiline,left&quot; );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;itv = setInterval( CheckReady, 100 );<br>
+				}<br>
+				<br>
+				function CheckReady()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( !app.FileExists( lock ))<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;clearInterval(itv);<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var stdout = app.ReadFile( &quot;/sdcard/out.txt&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var stderr = app.ReadFile( &quot;/sdcard/err.txt&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var text =<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;stdout:\n&quot; + stdout + &quot;\n\n&quot; +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;stderr:\n&quot; + stderr;<br>
+				<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt.SetText( text );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			
+			<br>
+		</div>
+
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “termux”</div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “hide”</div>
+
+	</div>
+</body>
+
+</html>

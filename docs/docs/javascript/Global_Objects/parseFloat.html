@@ -1,0 +1,131 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>parseFloat</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div>
+<div>
+<div><h2>parseFloat</h2></div>
+</div>
+</div>
+
+<p>The <code><strong>parseFloat()</strong></code> function parses a string argument and returns a floating point number.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">parseFloat(<em>string</em>)</pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>string</code></dt>
+ <dd>A string that represents the value you want to parse.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p><code>parseFloat</code> is a top-level function and is not associated with any object.</p>
+
+<p><code>parseFloat</code> parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.</p>
+
+<p>If the first character cannot be converted to a number, <code>parseFloat</code> returns <code>NaN</code>.</p>
+
+<p>For arithmetic purposes, the <code>NaN</code> value is not a number in any radix. You can call the <b>isNaN</b> function to determine if the result of <code>parseFloat</code> is <code>NaN</code>. If <code>NaN</code> is passed on to arithmetic operations, the operation results will also be <code>NaN</code>.</p>
+
+<p><code>parseFloat</code> can also parse and return the value <code>Infinity</code>. You can use the <b>isFinite</b> function to determine if the result is a finite number (not <code>Infinity</code>, <code>-Infinity</code>, or <code>NaN</code>).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="parseFloat_returning_a_number"><code>parseFloat</code> returning a number</h3>
+
+<p>The following examples all return <strong>3.14</strong></p>
+
+<pre class="brush:js">parseFloat("3.14");
+parseFloat("314e-2");
+parseFloat("0.0314E+2");
+parseFloat("3.14more non-digit characters");
+</pre>
+
+<h3 id="parseFloat_returning_NaN"><code>parseFloat</code> returning NaN</h3>
+
+<p>The following example returns <code>NaN</code></p>
+
+<pre class="brush: js">parseFloat("FF2");
+</pre>
+
+<h3 id="A_stricter_parse_function">A stricter parse function</h3>
+
+<p>It is sometime useful to have a stricter way to parse float values, regular expressions can help :</p>
+
+<pre class="brush: js">var filterFloat = function (value) {
+    if(/^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
+      .test(value))
+      return Number(value);
+  return NaN;
+}
+
+console.log(filterFloat('421'));               // 421
+console.log(filterFloat('-421'));              // -421
+console.log(filterFloat('+421'));              // 421
+console.log(filterFloat('Infinity'));          // Infinity
+console.log(filterFloat('1.61803398875'));     // 1.61803398875
+console.log(filterFloat('421e+0'));            // NaN
+console.log(filterFloat('421hop'));            // NaN
+console.log(filterFloat('hop1.61803398875'));  // NaN
+
+</pre>
+
+<p>Note that this code is an example only; it does not accept valid numbers such as <code>1.</code> or <code>.5</code>.</p>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

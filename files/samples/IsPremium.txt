@@ -1,0 +1,7 @@
+<sample Check Premium subscription>
+function OnStart()
+{
+    <b>var premium = app.IsPremium();</b>
+    app.Alert( premium, "IsPremium" );
+}
+</sample>

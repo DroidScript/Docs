@@ -1,0 +1,57 @@
+<sample Open Termux and pass arguments>
+function OnStart()
+{
+    app.WriteFile( "/sdcard/termux/scripts/hello.sh", "echo Hello $1 and $2" );
+    <b>var err = app.ExtExec( "termux", "hello.sh", 'World "' + app.GetUser() + '"', "" );</b>
+    if( err ) app.Alert( "Termux Error:" + err );
+}
+</sample>
+
+<sample Execute in Background and retreive output>
+var itv, lock = "/sdcard/.termuxlock";
+var script = `
+{  # this is a comment
+    echo This is a message  # prints to stdout
+    sleep 1  # waits 1 second
+    echo This is an error  1>&2  # prints to stderr
+} 1>/sdcard/out.txt 2>/sdcard/err.txt; # forward stdout and stderr to files
+rm ` + lock; // remove script lock file
+
+function OnStart()
+{
+    app.WriteFile( "/sdcard/termux/scripts/hello.sh", script );
+    app.WriteFile( lock, "" );
+
+    app.ShowProgress( "Script is running" );
+    <b>var err = app.ExtExec( "termux", "hello.sh", "", "hide" );</b>
+    if(err) app.Alert(err);
+
+
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    txt = app.CreateText( "", .8, .8, "monospace,multiline,left" );
+    lay.AddChild( txt );
+
+    app.AddLayout( lay );
+
+    itv = setInterval( CheckReady, 100 );
+}
+
+function CheckReady()
+{
+    if( !app.FileExists( lock ))
+    {
+        app.HideProgress();
+        clearInterval(itv);
+
+        var stdout = app.ReadFile( "/sdcard/out.txt" );
+        var stderr = app.ReadFile( "/sdcard/err.txt" );
+
+        var text =
+            "stdout:\n" + stdout + "\n\n" +
+            "stderr:\n" + stderr;
+
+        txt.SetText( text );
+    }
+}
+</sample>

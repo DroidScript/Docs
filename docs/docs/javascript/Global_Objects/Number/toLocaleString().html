@@ -1,0 +1,165 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>numObj</i>.toLocaleString()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>numObj</i>.toLocaleString()</h2></div>
+
+<p>The <strong><code>toLocaleString()</code></strong> method returns a string with a language sensitive representation of this number.</p>
+
+<p>The new <code>locales</code> and <code>options</code> arguments let applications specify the language whose formatting conventions should be used and customize the behavior of the function. In older implementations, which ignore the <code>locales</code> and <code>options</code> arguments, the locale used and the form of the string returned are entirely implementation dependent.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><em>numObj</em>.toLocaleString(</code><code>[locales [, options]])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<p>Check the Browser compatibility section to see which browsers support the <code>locales</code> and <code>options</code> arguments, and the Example: Checking for support for <code>locales</code> and <code>options</code> arguments for feature detection.</p>
+
+<div class="note">
+<p><strong>Note:</strong> ECMAScript Internationalization API, implemented with Firefox&nbsp;29, added the <code>locales</code> argument to the <code>Number.toLocaleString()</code> method. If the argument is <b>undefined</b>, this method returns localized digits specified by the OS, while the previous versions of Firefox returned Western Arabic&nbsp;digits. This change has been reported as a regression affecting backward compatibility which might be fixed soon. ()</p>
+</div>
+
+<div></div>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_toLocaleString">Using <code>toLocaleString</code></h3>
+
+<p>In basic use without specifying a locale, a formatted string in the default locale and with default options is returned.</p>
+
+<pre class="brush: js">var number = 3500;
+
+console.log(number.toLocaleString()); // Displays "3,500" if in U.S. English locale
+</pre>
+
+<h3 id="Checking_for_support_for_locales_and_options_arguments">Checking for support for <code>locales</code> and <code>options</code> arguments</h3>
+
+<p>The <code>locales</code> and <code>options</code> arguments are not supported in all browsers yet. To check for support in ES5.1 and later implementations, the requirement that illegal language tags are rejected with a <b>RangeError</b> exception can be used:</p>
+
+<pre class="brush: js">function toLocaleStringSupportsLocales() {
+  var number = 0;
+  try {
+    number.toLocaleString('i');
+  } catch (e) {
+    return e​.name === 'RangeError';
+  }
+  return false;
+}
+</pre>
+
+<p>Prior to ES5.1, implementations were not required to throw a range error exception if <code>toLocaleString</code>&nbsp;is called with arguments.</p>
+
+<p>A check that&nbsp;works in all hosts, including those supporting ECMA-262 prior to ed&nbsp;5.1, is to test for the features specified in ECMA-402 that are required to support regional options for <code><i>numObj</i>.toLocaleString</code> directly:</p>
+
+<pre class="brush: js">function toLocaleStringSupportsOptions() {
+  return !!(typeof Intl == 'object' &amp;&amp; Intl &amp;&amp; typeof Intl.NumberFormat == 'function');
+}
+</pre>
+
+<p>This tests for a global <code>Intl</code> object, checks that it's not <code>null</code> and that it has a <code>NumberFormat</code> property that is a function.</p>
+
+<h3 id="Using_locales">Using <code>locales</code></h3>
+
+<p>This example shows some of the variations in localized number formats. In order to get the format of the language used in the user interface of your application, make sure to specify that language (and possibly some fallback languages) using the <code>locales</code> argument:</p>
+
+<pre class="brush: js">var number = 123456.789;
+
+// German uses comma as decimal separator and period for thousands
+console.log(number.toLocaleString('de-DE'));
+// → 123.456,789
+
+// Arabic in most Arabic speaking countries uses Eastern Arabic digits
+console.log(number.toLocaleString('ar-EG'));
+// → ١٢٣٤٥٦٫٧٨٩
+
+// India uses thousands/lakh/crore separators
+console.log(number.toLocaleString('en-IN'));
+// → 1,23,456.789
+
+// the nu extension key requests a numbering system, e.g. Chinese decimal
+console.log(number.toLocaleString('zh-Hans-CN-u-nu-hanidec'));
+// → 一二三,四五六.七八九
+
+// when requesting a language that may not be supported, such as
+// Balinese, include a fallback language, in this case Indonesian
+console.log(number.toLocaleString(['ban', 'id']));
+// → 123.456,789
+</pre>
+
+<h3 id="Using_options">Using <code>options</code></h3>
+
+<p>The results provided by <code>toLocaleString</code> can be customized using the <code>options</code> argument:</p>
+
+<pre class="brush: js">var number = 123456.789;
+
+// request a currency format
+console.log(number.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' }));
+// → 123.456,79&nbsp;€
+
+// the Japanese yen doesn't use a minor unit
+console.log(number.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }))
+// → ￥123,457
+
+// limit to three significant digits
+console.log(number.toLocaleString('en-IN', { maximumSignificantDigits: 3 }));
+// → 1,23,000
+</pre>
+
+<h2 id="Performance">Performance</h2>
+
+<p>When formatting large numbers of numbers, it is better to create a <b>NumberFormat</b> object and use the function provided by its <b>NumberFormat.format</b> property.</p>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

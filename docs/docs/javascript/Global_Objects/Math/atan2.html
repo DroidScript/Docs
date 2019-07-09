@@ -1,0 +1,102 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.atan2</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.atan2</h2></div>
+
+<p>The <strong><code>Math.atan2()</code></strong> function returns the arctangent of the quotient of its arguments.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.atan2(<var>y</var>, <var>x</var>)</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>y</code></dt>
+ <dd>First number.</dd>
+ <dt><code>x</code></dt>
+ <dd>Second number.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>The <code>Math.atan2()</code> method returns a numeric value between -π and π representing the angle theta of an <code>(x,&nbsp;y)</code> point. This is the counterclockwise angle, measured in radians, between the positive X axis, and the point <code>(x,&nbsp;y)</code>. Note that the arguments to this function pass the y-coordinate first and the x-coordinate second.</p>
+
+<p><code>Math.atan2()</code> is passed separate <code>x</code> and <code>y</code> arguments, and <code>Math.atan()</code> is passed the ratio of those two arguments.</p>
+
+<p>Because <code>atan2()</code> is a static method of <code>Math</code>, you always use it as <code>Math.atan2()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.atan2()">Using <code>Math.atan2()</code></h3>
+
+<pre class="brush: js">Math.atan2(90, 15); // 1.4056476493802699
+Math.atan2(15, 90); // 0.16514867741462683
+
+Math.atan2(±0, -0);               // ±PI.
+Math.atan2(±0, +0);               // ±0.
+Math.atan2(±0, -x);               // ±PI for x &gt; 0.
+Math.atan2(±0, x);                // ±0 for x &gt; 0.
+Math.atan2(-y, ±0);               // -PI/2 for y &gt; 0.
+Math.atan2(y, ±0);                // PI/2 for y &gt; 0.
+Math.atan2(±y, -Infinity);        // ±PI for finite y &gt; 0.
+Math.atan2(±y, +Infinity);        // ±0 for finite y &gt; 0.
+Math.atan2(±Infinity, x);         // ±PI/2 for finite x.
+Math.atan2(±Infinity, -Infinity); // ±3*PI/4.
+Math.atan2(±Infinity, +Infinity); // ±PI/4.
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

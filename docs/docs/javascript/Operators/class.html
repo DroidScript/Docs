@@ -1,0 +1,101 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>class</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><script>Harmony</script> <h2>class</h2></div>
+
+<p>The <strong>class expression</strong> is one way define a class in ECMAScript 6. Similar to function expressions, class expressions can be named or unnamed. If named, the name of the class is local the class body only. JavaScript classes are using prototype-based inheritance.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">var MyClass = class <em>[className]</em> [extends] {
+&nbsp; // class body
+};</pre>
+
+<h2 id="Description">Description</h2>
+
+<p>A class expression has a similar syntax to a class statement. However, with class expressions, you are able to omit the class name ("binding identifier"), which you can't with class statements.</p>
+
+<p>Just like with class statements, the class body of class expressions is executed in strict mode.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="A_simple_class_expression">A simple class expression</h3>
+
+<p>This is just a simple anonymous class expression which you can refer to using the variable "Foo".</p>
+
+<pre class="brush: js">var Foo = class {
+  constructor() {}
+  bar() {
+    return "Hello World!";
+  }
+};
+
+var instance = new Foo();
+instance.bar(); // "Hello World!"
+</pre>
+
+<h3 id="Named_class_expressions">Named class expressions</h3>
+
+<p>If you want to refer to the current class inside the class body, you can create a named class expression. This name is only visible in the scope of the class expression itself.</p>
+
+<pre class="brush: js">// TBD
+var Foo = class NamedFoo {
+  
+}
+</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show Screen Height>
 function OnStart()
 {
-<b>	height = app.GetScreenHeight();
-</b>	app.ShowPopup( height );
+    <b>var height = app.GetScreenHeight();</b>
+    app.Alert( height );
 }
 </sample>
-

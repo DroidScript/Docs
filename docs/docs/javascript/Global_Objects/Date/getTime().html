@@ -1,0 +1,101 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>dateObj</i>.getTime()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>dateObj</i>.getTime()</h2></div>
+
+<p>The <strong><code>getTime()</code></strong> method returns the numeric value corresponding to the time for the specified date according to universal time.</p>
+
+<p>You can use this method to help assign a date and time to another <b>Date</b> object. This method is functionally equivalent to the <b>valueOf()</b> method.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>dateObj</var>.getTime()</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<p>None.</p>
+
+<h3 id="Return_value">Return value</h3>
+
+<p>The value returned by the <code>getTime()</code> method is the number of milliseconds since 1 January 1970 00:00:00 UTC.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_getTime()_for_copying_dates">Using <code>getTime()</code> for copying dates</h3>
+
+<p>Constructing a date object with the identical time value.</p>
+
+<pre class="brush: js">var birthday = new Date(1994, 12, 10);
+var copy = new Date();
+copy.setTime(birthday.getTime());
+</pre>
+
+<h3 id="Measuring_execution_time">Measuring execution time</h3>
+
+<p>Subtracting two subsequent <code>getTime()</code> calls on newly generated <b>Date</b> objects, give the time span between these two calls. This can be used to calculate the executing time of some operations. See also <b>Date.now()</b> to prevent instantiating unnecessary <b>Date</b> objects.</p>
+
+<pre class="brush: js">var end, start;
+
+start = new Date();
+for (var i = 0; i &lt; 1000; i++) {
+  Math.sqrt(i);
+}
+end = new Date();
+
+console.log('Operation took ' + (end.getTime() - start.getTime()) + ' msec');
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

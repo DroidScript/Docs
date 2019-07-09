@@ -1,0 +1,131 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../js/energize-min.js"></script>
+	<script src="../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../app.js"></script>
+	<script src="../../js/example.js"></script>
+	<link rel="stylesheet" href="../../css/docs.css" />
+	<script src="../../js/common.js"></script>
+	<script src="../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Spread operator</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Spread operator</h2> <script>Harmony</script></div>
+
+<p>The <strong>spread operator</strong> allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<p>For function calls:</p>
+
+<pre class="brush: js">myFunction(...iterableObj);
+</pre>
+
+<p>For array literals:</p>
+
+<pre class="brush: js">[...iterableObj, 4, 5, 6]</pre>
+
+<p>For destructuring:</p>
+
+<pre class="brush: js">[a, b, ...iterableObj] = [1, 2, 3, 4, 5];</pre>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="A_better_apply">A better apply</h3>
+
+<p><strong>Example:</strong> it is common to use <b>Function.prototype.apply</b> in cases where you want to use an array as arguments to a function.</p>
+
+<pre class="brush: js">function myFunction(x, y, z) { }
+var args = [0, 1, 2];
+myFunction.apply(null, args);</pre>
+
+<p>With ES6 spread you can now write the above as:</p>
+
+<pre class="brush: js">function myFunction(x, y, z) { }
+var args = [0, 1, 2];
+myFunction(...args);</pre>
+
+<p>Any argument in the argument list can use the spread syntax and it can be used multiple times.</p>
+
+<pre class="brush: js">function myFunction(v, w, x, y, z) { }
+var args = [0, 1];
+myFunction(-1, ...args, 2, ...[3]);</pre>
+
+<h3 id="A_more_powerful_array_literal">A more powerful array literal</h3>
+
+<p><strong>Example:</strong> Today if you have an array and want to create a new array with the existing one being part of it, the array literal syntax is no longer sufficient and you have to fall back to imperative code, using a combination of <code>push</code>, <code>splice</code>, <code>concat</code>, etc. With spread syntax this becomes much more succinct:</p>
+
+<pre class="brush: js">var parts = ['shoulders', 'knees'];
+var lyrics = ['head', ...parts, 'and', 'toes']; // <span class="objectBox objectBox-array"><span class="arrayLeftBracket">[</span><span class="objectBox objectBox-string">"head"</span><span class="arrayComma">, </span><span class="objectBox objectBox-string">"shoulders"</span><span class="arrayComma">, </span><span class="objectBox objectBox-string">"knees"</span><span class="arrayComma">, </span><span class="objectBox objectBox-string">"and"</span><span class="arrayComma">, </span><span class="objectBox objectBox-string">"toes"</span></span>]
+</pre>
+
+<p>Just like with spread for argument lists <code>...</code> can be used anywhere in the array literal and it can be used multiple times.</p>
+
+<h3 id="Apply_for_new">Apply for new</h3>
+
+<p><strong>Example:</strong> In ES5 it is not possible to compose <code>new</code> with <code>apply.</code> (In ES5 terms,&nbsp;<code>apply</code> does a <code>[[Call]]</code> and not a <code>[[Construct]].</code>)&nbsp;In ES6 the spread syntax naturally supports this:</p>
+
+<pre class="brush: js">var dateFields = readDateFields(database);
+var d = new Date(...dateFields);</pre>
+
+<h3 id="A_better_push">A better push</h3>
+
+<p><strong>Example:</strong> <b>push</b> is often used to push an array to the end of an existing array. In ES5 this is often done as:</p>
+
+<pre class="brush: js">var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+// Append all items from arr2 onto arr1
+Array.prototype.push.apply(arr1, arr2);</pre>
+
+<p>In ES6 with spread this becomes:</p>
+
+<pre class="brush: js">var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1.push(...arr2);</pre>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

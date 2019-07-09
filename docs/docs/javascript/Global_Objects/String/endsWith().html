@@ -1,0 +1,106 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1><i>str</i>.endsWith()</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2><i>str</i>.endsWith()</h2> <script>harmony</script></div>
+
+<p>The <strong><code>endsWith()</code></strong> method determines whether a string ends with the characters of another string, returning <code>true</code> or <code>false</code> as appropriate.</p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code><var>str</var>.endsWith(<var>searchString</var>[, <var>position</var>])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>searchString</code></dt>
+ <dd>The characters to be searched for at the end of this string.</dd>
+ <dt><code>position</code></dt>
+ <dd>Optional. Search within this string as if this string were only this long; defaults to this string's actual length, clamped within the range established by this string's length.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>This method lets you determine whether or not a string ends with another string.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_endsWith()">Using <code>endsWith()</code></h3>
+
+<pre class="brush: js">var str = 'To be, or not to be, that is the question.';
+
+console.log(str.endsWith('question.')); // true
+console.log(str.endsWith('to be'));     // false
+console.log(str.endsWith('to be', 19)); // true
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This method has been added to the ECMAScript 6 specification and may not be available in all JavaScript implementations yet. However, you can polyfill <code><i>str</i>.endsWith()</code> with the following snippet:</p>
+
+<pre class="brush: js">if (!<i>str</i>.endsWith) {
+&nbsp; <i>str</i>.endsWith = function(searchString, position) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var subjectString = this.toString();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (position === undefined || position &gt; subjectString.length) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position = subjectString.length;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position -= searchString.length;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var lastIndex = subjectString.indexOf(searchString, position);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return lastIndex !== -1 &amp;&amp; lastIndex === position;
+&nbsp; };
+}
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 

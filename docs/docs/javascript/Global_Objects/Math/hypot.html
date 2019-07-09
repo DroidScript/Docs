@@ -1,0 +1,115 @@
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
+	<link rel="stylesheet"  href="../../../css/themes/default/theme.min.css" />
+	<link rel="stylesheet"  href="../../../css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<script src="../../../js/energize-min.js"></script>
+	<script src="../../../js/jquery-1.8.1.min.js"></script>
+	<script src="../../../../../app.js"></script>
+	<script src="../../../js/example.js"></script>
+	<link rel="stylesheet" href="../../../css/docs.css" />
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="../../css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="../../css/mathml.css" rel="stylesheet" type="text/css"/>
+
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Math.hypot</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Math.hypot</h2> <script>harmony</script></div>
+
+<p>The <strong><code>Math.hypot()</code></strong> function returns the square root of the sum of squares of its arguments, that is</p>
+
+<p><math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mrow><mo rspace="thinmathspace" lspace="0em">Math.hypot</mo><mo stretchy="false">(</mo><msub><mi>v</mi><mn>1</mn></msub><mo>,</mo><msub><mi>v</mi><mn>2</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mstyle><mo>=</mo><msqrt><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msubsup><mi>v</mi><mi>i</mi><mn>2</mn></msubsup></mrow></msqrt><mo>=</mo><msqrt><mrow><msubsup><mi>v</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>v</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mo>…</mo><mo>+</mo><msubsup><mi>v</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.hypot}(v_1, v_2, \dots, v_n)} = \sqrt{\sum_{i=1}^n v_i^2} = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}</annotation></semantics></math></p>
+
+<h2 id="Syntax">Syntax</h2>
+
+<pre class="syntaxbox"><code>Math.hypot([<var>value1</var>[, <var>value2</var>[, ...]]])</code></pre>
+
+<h3 id="Parameters">Parameters</h3>
+
+<dl>
+ <dt><code>value1, value2, ...</code></dt>
+ <dd>Numbers.</dd>
+</dl>
+
+<h2 id="Description">Description</h2>
+
+<p>Because <code>hypot()</code> is a static method of <code>Math</code>, you always use it as <code>Math.hypot()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p>
+
+<p>If no arguments are given, the result is +0.</p>
+
+<p>If at least one of arguments cannot be converted to a number, the result is <b>NaN</b>.</p>
+
+<p>With one argument, <code>Math.hypot()</code> returns the same as <code>Math.abs()</code>.</p>
+
+<h2 id="Examples">Examples</h2>
+
+<h3 id="Using_Math.hypot()">Using <code>Math.hypot()</code></h3>
+
+<pre class="brush: js">Math.hypot(3, 4);        // 5
+Math.hypot(3, 4, 5);     // 7.0710678118654755
+Math.hypot();            // 0
+Math.hypot(NaN);         // NaN
+Math.hypot(3, 4, 'foo'); // NaN, +'foo' =&gt; NaN
+Math.hypot(3, 4, '5');   // 7.0710678118654755, +'5' =&gt; 5
+Math.hypot(-3);          // 3, the same as Math.abs(-3)
+</pre>
+
+<h2 id="Polyfill">Polyfill</h2>
+
+<p>This can be emulated using the following function:</p>
+
+<pre class="brush: js">Math.hypot = Math.hypot || function() {
+  var y = 0;
+  var length = arguments.length;
+
+  for (var i = 0; i &lt; length; i++) {
+    if (arguments[i] === Infinity || arguments[i] === -Infinity) {
+      return Infinity;
+    }
+    y += arguments[i] * arguments[i];
+  }
+  return Math.sqrt(y);
+};
+</pre>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 
