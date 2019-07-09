@@ -1,0 +1,18 @@
+<sample Exit dialog>
+function OnStart()
+{
+    app.EnableBackKey( false );
+    app.ShowPopup( "Press the back key" );
+}
+
+function OnBack()
+{
+    var yesNo = app.CreateYesNoDialog( "Exit App?" );
+    yesNo.SetOnTouch( yesNo_OnTouch );
+}
+
+function yesNo_OnTouch( result )
+{
+    if( result == "Yes" ) app.Exit();
+}
+</sample>

@@ -1,18 +1,4 @@
 
-function OnStart() {
-
-	functions = JSON.parse(ReadFile(path + `functions${getl()}.json`, "{}"));
-	basefuncs = JSON.parse(ReadFile(path + `basefuncs${getl()}.json`, "{}"));
-	categories = JSON.parse(ReadFile(path + `categories${getl()}.json`, "{}"));
-
-	categories.All = [];
-	categories.All = keys(functions);
-	
-	if(process.argv.length > 2)
-		process.argv.slice(2).forEach((n) => generateDoc(n));
-	else generateDocs();
-}
-
 	//generates all doc files
 function generateDocs() {
 	app.ShowProgressBar( "Generating files..." );
@@ -896,6 +882,21 @@ function saveCategories() {
 
 
 // ---------------------------- nodejs app wrapper -----------------------------
+
+
+function OnStart() {
+
+	functions = JSON.parse(ReadFile(path + `functions${getl()}.json`, "{}"));
+	basefuncs = JSON.parse(ReadFile(path + `basefuncs${getl()}.json`, "{}"));
+	categories = JSON.parse(ReadFile(path + `categories${getl()}.json`, "{}"));
+
+	categories.All = [];
+	categories.All = keys(functions);
+	
+	if(process.argv.length > 2)
+		process.argv.slice(2).forEach((n) => generateDoc(n));
+	else generateDocs();
+}
 
 var fs = require('fs');
 var rimraf = require("rimraf");

@@ -1,7 +1,7 @@
-<sample Example>
+<sample Show >
 function OnStart()
 {
-<b>	fldr = app.GetPrivateFolder( "MyStuff" );
-</b>	app.ShowPopup( fldr );
-}</sample>
-
+    <b>var path = app.GetPrivateFolder( "temp" );</b>
+    app.Alert( path );
+}
+</sample>

@@ -1,6 +1,8 @@
 <pre>
+            <font color="white"><b>DocsModifier version 3.6</b></font>
+            last changed: 01.03.2019
 
-<font color="white"><b>This app was created by Symbroson for DroidScript.</b></font>
+<b>This app was created by Symbroson for DroidScript.</b>
 
 
 <font color="yellow">**************************************************

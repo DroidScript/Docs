@@ -1,0 +1,7 @@
+<sample Is Keyboard Shown>
+function OnStart()
+{
+    <b>var kbShown = app.IsKeyboardShown();</b>
+    app.Alert( kbShown, "Is Keyboard Shown:" );
+}
+</sample>

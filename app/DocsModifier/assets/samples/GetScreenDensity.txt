@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show Screen Density>
 function OnStart()
 {
-<b>	dpi = app.GetScreenDensity();
-</b>	app.ShowPopup( "dpi = " + dpi );
+    <b>var dens = app.GetScreenDensity();</b>
+    app.Alert( dens );
 }
 </sample>
-

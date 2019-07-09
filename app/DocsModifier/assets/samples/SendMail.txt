@@ -1,7 +1,6 @@
 <sample Example>
 function OnStart()
 {
-<b>	 var file = "/sdcard/MyPic.jpg";
-	 app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", file );
-</b>}</sample>
-
+    app.CopyFile( "/Sys/Img/Hello.png", "/sdcard/Hello.png" );
+    <b>app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png" );</b>
+}</sample>

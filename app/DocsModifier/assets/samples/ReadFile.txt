@@ -1,7 +1,10 @@
-<sample Example>
+<sample Append file and get line count>
 function OnStart()
 {
-<b>	txt = app.ReadFile( "/Sys/Html/Page.htm" );
-</b>	app.ShowPopup( txt );
-}</sample>
+    app.WriteFile( "myFile.txt", "Hello World from Copy\n", "Append" );
 
+    <b>var txt = app.ReadFile("myFile.txt");</b>
+    var length = txt.split("\n").length;
+    app.ShowPopup("myFile contains " + length + " lines");
+}
+</sample>

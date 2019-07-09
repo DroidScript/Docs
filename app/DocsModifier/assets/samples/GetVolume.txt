@@ -1,0 +1,7 @@
+<sample Get System Volume>
+function OnStart()
+{
+    <b>var vol = app.GetVolume();</b>
+    app.Alert( vol, "System Volume:" );
+}
+</sample>

@@ -1,0 +1,7 @@
+<sample Show Language Code>
+function OnStart()
+{
+    <b>var lang_code = app.Language2Code();</b>
+    app.Alert( lang_code, "Language Code:" );
+}
+</sample>

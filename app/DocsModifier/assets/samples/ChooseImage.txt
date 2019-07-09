@@ -1,0 +1,22 @@
+<sample Choose Image>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    btnChoose = app.CreateButton( "Choose Image", 0.5, 0.1 );
+	btnPhone.SetOnTouch( btnChoose_OnTouch );
+	lay.AddChild( btnChoose );
+
+	app.AddLayout( lay );
+}
+
+function btnChoose_OnTouch()
+{
+	<b>app.ChooseImage( "internal", OnChoose );</b>
+}
+
+function OnChoose( path )
+{
+    alert( "image path: " + path );
+}
+</sample>

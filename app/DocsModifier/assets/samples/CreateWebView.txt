@@ -51,7 +51,6 @@ function OnStart()
 	 html += "<<!-- -->/head><<!-- -->body>Hello World!<<!-- -->br>";
 	 html += "<<!-- -->img src='Img/Droid2.png'>";
 	 html += "<<!-- -->/body><<!-- -->/html>";
-	 web.LoadHtml( <a href="#pop_str_htm" data-transition="pop" data-rel="popup">html</a>, "file:///Sys/" );
+	 web.LoadHtml( html, "file:///Sys/" );
 }
 </sample>
-

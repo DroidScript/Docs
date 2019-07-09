@@ -1,31 +1,30 @@
 <sample Video Stream>
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
 
-	app.ShowProgress( "Buffering..." );
+    app.ShowProgress( "Buffering..." );
 
-<b>	player = app.CreateVideoView( 0.9, 0.4 );
-	player.SetOnReady( player_OnReady );
-	player.SetOnError( player_OnError );
-	lay.AddChild( player );
+    player = app.CreateVideoView( 0.9, 0.4 );
+    player.SetOnReady( playerOnReady );
+    player.SetOnError( player_OnError );
+    lay.AddChild( player );
 
-	player.SetFile( "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov" );
-</b>
-	app.AddLayout( lay );
+    <b>player.SetFile( "https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4" );</b>
+
+    app.AddLayout( lay );
 }
 
-function player_OnReady()
+function playerOnReady()
 {
-	app.HideProgress();
-	app.ShowPopup( "OnReady" );
-	player.Play();
+    app.HideProgress();
+    app.ShowPopup( "Ready" );
+    player.Play();
 }
 
-function player_OnError()
+function player_OnError(e)
 {
-	app.HideProgress();
-	app.ShowPopup( "OnError" );
+    app.HideProgress();
+    app.ShowPopup( "Error" );
 }
 </sample>
-

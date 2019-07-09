@@ -1,12 +1,13 @@
 <sample No Title>
 function OnStart()
 {
-<b>	app.Alert( "Hello World!" );
-</b>}</sample>
+	<b>app.Alert( "Hello World!" );</b>
+}
+</sample>
 
-<sample Title>
+<sample Yellow Title>
 function OnStart()
 {
-<b>	app.Alert( "Hello World!", "Message" );
-</b>}
+	<b>app.Alert( "This is an alert box", "Hello Yellow World!", "", -100 );</b>
+}
 </sample>

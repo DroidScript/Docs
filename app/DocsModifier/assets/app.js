@@ -5,297 +5,314 @@ _cbMap = []; _cbId=0; _docs = false; _busy=false; _isV8=false;
 _btl = null; _lvw = null; _ldg = null; 
 _ynd = null; _nxt = null; _smw = null;
 _inf = null; _rec = null; _pst = null;
-_sms = null; _eml = null; 
+_sms = null; _eml = null; _wpr = null;
 _crp = null; _spr = null;
 
 
 function App() 
 {				
-	this.GetType = function() { return "App"; }
-	this.GetObjects = function() { return _map; }
-	this.Exit = function( kill ) { prompt( "#", "App.Exit("+kill ); }
-	this.ToBack = function() { prompt( "#", "App.ToBack(" ); }
-	this.Execute = function( js ) { prompt( "#", "App.Execute("+js ); } 
-	this.StartApp = function( file,options,intent ) { prompt( "#", "App.StartApp(\f"+file+"\f"+options+"\f"+intent ); }
-	this.StopApp = function( name ) { prompt( "#", "App.StopApp("+name ); }
-	this.SetScreenMode = function( mode ) { prompt( "#", "App.SetScreenMode(\f"+mode ); }
-	this.SetOptions = function( options ) { prompt( "#", "App.SetOptions(\f"+options ); }
-	this.SetTheme = function( theme ) { prompt( "#", "App.SetTheme(\f"+(theme?theme.id:null) ); }
-	this.SetPosition = function( left,top,width,height,options ) { prompt( "#", "App.SetPosition(\f"+left+"\f"+top+"\f"+width+"\f"+height+"\f"+options ); }
-	this.SetBackColor = function( clr ) { prompt( "#", "App.SetBackColor(\f"+clr ); }  
-	this.StartService = function( packageName,className ) { prompt( "#", "App.StartService(\f"+packageName+"\f"+className ); }
-	this.StopService = function() { prompt( "#", "App.StopService(" ); }
-	this.StartDebugServer = function() { prompt( "#", "App.StartDebugServer(" ); }
-	this.SendIntent = function( packageName,className,action,category,uri,type,extras,options,callback ) { prompt( "#", "App.SendIntent(\f"+packageName+"\f"+className+"\f"+action+"\f"+category+"\f"+uri+"\f"+type+"\f"+extras+"\f"+options+"\f"+_Cbm(callback) ); }
-	this.BroadcastIntent = function( action,category,data,type,extras ) { prompt( "#", "App.BroadcastIntent(\f"+action+"\f"+category+"\f"+data+"\f"+type+"\f"+extras ); }
-	this.SendMessage = function( msg ) { prompt( "#", "App.SendMessage(\f"+msg ); }
-	this.LoadScript = function( url, callback ) { _LoadScript( url, callback ); }
-	this.LoadPlugin = function( url ) { _LoadPlugin( url ); }
-	this.Try = function( p1,p2,p3 ) { return prompt( "#", "App.Try(\f"+p1+"\f"+p2+"\f"+p3 ); } 
-	this.SysExec = function( cmd,options,maxRead,timeout ) { return prompt( "#", "App.SysExec(\f"+cmd+"\f"+options+"\f"+maxRead+"\f"+timeout ); } 
-	this.SetPriority = function( level ) { prompt( "#", "App.SetPriority(\f"+level ); } 
-	this.Odroid = function( p1,p2,p3 ) { return prompt( "#", "App.Odroid(\f"+p1+"\f"+p2+"\f"+p3 ); }
-	this.GetName = function() { return prompt( "#", "App.GetName(" ); }
-	this.GetPath = function() { return prompt( "#", "App.GetPath(" ); }
-	this.GetAppName = function() { return prompt( "#", "App.GetAppName(" ); }
-	this.GetAppPath = function() { return prompt( "#", "App.GetAppPath(" ); }
-	this.GetVersion = function() { return parseFloat(prompt( "#", "App.GetVersion(" )); }
-	this.GetDSVersion = function() { return parseFloat(prompt( "#", "App.GetDSVersion(" )); }	
-	this.IsNewVersion = function() { return prompt( "#", "App.IsNewVersion(" )=="true"; }
-	this.IsAPK = function() { return prompt( "#", "App.IsAPK(" )=="true"; }	
-	this.IsService = function() { return prompt( "#", "App.IsService(" )=="true"; }	
-	this.IsPremium = function() { return prompt( "#", "App.IsPremium(" )=="true"; }	
-	this.IsEngine = function() { return prompt( "#", "App.IsEngine(" )=="true"; }	
-	this.GetPackageName = function() { return prompt( "#", "App.GetPackageName(" ); }
-	this.CheckLicense = function( key ) { prompt( "#", "App.CheckLicense(\f"+key ); }
-	this.GetAccounts = function() { return prompt( "#", "App.GetAccounts(" ); }
-	this.GetUser = function() { return prompt( "#", "App.GetUser(" ); }
-	this.GetDeviceId = function() { return prompt( "#", "App.GetDeviceId(" ); }
-	this.GetCountryCode = function() { return prompt( "#", "App.GetCountryCode(" ); }
-	this.GetLanguageCode = function() { return prompt( "#", "App.GetLanguageCode(" ); }
-	this.GetCountry = function() { return prompt( "#", "App.GetCountry(" ); }
-	this.GetLanguage = function() { return prompt( "#", "App.GetLanguage(" ); }
-	this.GetOptions = function() { return prompt( "#", "App.GetOptions(" ); }	
-	this.GetSharedText = function( index ) { return prompt( "#", "App.GetSharedText("+index ); }
-	this.GetSharedFiles = function() { var s = prompt( "#", "App.GetSharedFiles(" ); if(s.length) return s.split(","); else return null; }
-	this.GetActivities = function( options ) { return eval(prompt( "#", "App.GetActivities(\f"+options )); }
-	this.IsAppInstalled = function( packageName ) { return prompt( "#", "App.IsAppInstalled(\f"+packageName )=="true"; }	
-	this.GetInstalledApps = function() { return eval(prompt( "#", "App.GetInstalledApps(\f" )); }
-	this.GetRunningApps = function() { return eval(prompt( "#", "App.GetRunningApps(\f" )); }
-	this.GetRunningServices = function() { return eval(prompt( "#", "App.GetRunningServices(\f" )); }
-	this.GetMemoryInfo = function() { return eval(prompt( "#", "App.GetMemoryInfo(\f" )); }
-	this.GetIntent = function() { var s = prompt( "#", "App.GetIntent(" ); if(s.length) return JSON.parse(s); else return null; }
-	this.GetNotifyId = function() { return prompt( "#", "App.GetNotifyId(" ); }
-	this.SetSharedApp = function( name ) { prompt( "#", "App.SetSharedApp("+name ); }
-	this.GetMediaFile = function( appName,ext ) { return prompt( "#", "App.GetMediaFile(\f"+appName+"\f"+ext ); }
-	this.KillApp = function( procId ) { prompt( "#", "App.KillApp("+procId ); }
-	this.CreateShortcut = function( name,iconFile,file,options ) { prompt( "#", "App.CreateShortcut(\f"+name+"\f"+iconFile+"\f"+file+"\f"+options ); }
-	this.GetBuildNum = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }	
-	this.GetOSVersion = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }	
-	this.GetModel = function() { return prompt( "#", "App.GetModel(" ); }	
-	this.IsTablet = function() { return prompt( "#", "App.IsTablet(" )=="true"; }	
-	this.IsChrome = function() { return prompt( "#", "App.IsChrome(" )=="true"; }	
-	this.IsThings = function() { return prompt( "#", "App.IsThings(" )=="true"; }	
-	this.SetOnError = function( callback ) { prompt( "#", "App.SetOnError(\f"+_Cbm(callback) ); }
-	this.SetOnDebug = function( callback ) { prompt( "#", "App.SetOnDebug(\f"+_Cbm(callback) ); }
-	this.SetOnKey = function( callback ) { prompt( "#", "App.SetOnKey(\f"+_Cbm(callback) ); }
-	this.SetOnShowKeyboard = function( callback ) { prompt( "#", "App.SetOnShowKeyboard(\f"+_Cbm(callback) ); }
-	this.SetOnWifiChange = function( callback ) { prompt( "#", "App.SetOnWifiChange(\f"+_Cbm(callback) ); }
-	this.DisableKeys = function( keyList ) { prompt( "#", "App.DisableKeys(\f"+keyList ); }
-	this.GetIPAddress = function() { return prompt( "#", "App.GetIPAddress(" ); }
-	this.GetMacAddress = function() { return prompt( "#", "App.GetMacAddress(" ); }
-	this.GetSSID = function() { return prompt( "#", "App.GetSSID(" ); }
-	this.Broadcast = function( type,msg ) { prompt( "#", "App.Broadcast("+type+"\f"+msg ); }
-	this.SetOnBroadcast = function( callback ) { prompt( "#", "App.SetOnBroadcast("+_Cbm(callback) ); }
-	this.SetData = function( name,value ) { prompt( "#", "App.SetData(\f"+name+"\f"+value ); }
-	this.GetData = function( name ) { return prompt( "#", "App.GetData(\f"+name ); }	
-	this.SetClipboardText = function( txt ) { prompt( "#", "App.SetClipboardText("+txt ); }
-	this.GetClipboardText = function() { return prompt( "#", "App.GetClipboardText(" ); }
-	this.EnableBackKey = function( enable ) { prompt( "#", "App.EnableBackKey("+enable ); }		
-	this.Wait = function( secs ) { prompt( "#", "App.Wait("+secs ); }
-	this.Alert = function( msg,title,options,hue ) { prompt( "#", "App.Alert(\f"+msg+"\f"+title+"\f"+options+"\f"+hue ); }
-	this.HideKeyboard = function( hide ) { prompt( "#", "App.HideKeyboard("+hide ); }
-	this.ShowKeyboard = function( obj ) { return prompt( "#", "App.ShowKeyboard(\f"+obj.id )=="true"; }
-	this.IsKeyboardShown = function() { return prompt( "#", "App.IsKeyboardShown(" )=="true"; }
-	this.GetKeyboardHeight = function() { return prompt( "#", "App.GetKeyboardHeight(" ); }
-	this.TextToSpeech = function( text,pitch,rate,callback,stream,locale,engine ) { prompt( "#", "App.TextToSpeech(\f"+text+"\f"+pitch+"\f"+rate+"\f"+_Cbm(callback)+"\f"+stream+"\f"+locale+"\f"+engine ); }
-	this.Debug = function( msg ) { prompt( "#", "App.Debug(\f"+msg ); }
-	this.Error = function( msg,line,file,quit ) { prompt( "#", "App.Error(\f"+msg+"\f"+line+"\f"+file+"\f"+quit ); }
-	this.SetDebugEnabled = function( enable ) { prompt( "#", "App.SetDebugEnabled("+enable ); _dbg=enable; }
-	this.CreateDebug = function() { prompt( "#", "App.CreateDebug(" ); }
-	this.ShowDebug = function( show ) { prompt( "#", "App.ShowDebug("+show ); }
-	this.SendMail = function( address,subject,body,attach,type ) { prompt( "#", "App.SendMail("+address+"\f"+subject+"\f"+body+"\f"+attach+"\f"+type ); }		
-	this.SendFile = function( file,subject,text,choose ) { prompt( "#", "App.SendFile(\f"+file+"\f"+subject+"\f"+text+"\f"+choose ); }		
-	this.SendText = function( text,subject,choose ) { prompt( "#", "App.SendText(\f"+text+"\f"+subject+"\f"+choose ); }		
-	this._Extract = function( p1 ) { prompt( "#", "App._Extract("+p1 ); }
-	this.ExtractAssets = function( src,dest,overwrite ) { prompt( "#", "App.ExtractAssets(\f"+src+"\f"+dest+"\f"+overwrite ); }
-	this.GetResourceId = function( name,options ) { return parseInt(prompt( "#", "App.GetResourceId(\f"+name+"\f"+options )); }	
-	this.Vibrate = function( pattern ) { prompt( "#", "App.Vibrate("+pattern ); }
-	this.ShowPopup = function( msg,options ) { prompt( "#", "App.ShowPopup("+msg+"\f"+options ); }
-	this.ShowProgress = function( msg,options ) { prompt( "#", "App.ShowProgress(\f"+msg+"\f"+options ); }	
-	this.HideProgress = function() { prompt( "#", "App.HideProgress(" ); }	
-	this.ShowProgressBar = function( title,percent,options ) { prompt( "#", "App.ShowProgressBar(\f"+title+"\f"+percent+"\f"+options ); }	
-	this.UpdateProgressBar = function( percent ) { prompt( "#", "App.UpdateProgressBar(\f"+percent ); }	
-	this.HideProgressBar = function() { prompt( "#", "App.HideProgressBar(" ); }	
-	this.LoadText = function( name,dflt,file ) { return prompt( "#", "App.LoadText("+name+"\f"+dflt+"\f"+file ); }
-	this.LoadNumber = function( name,dflt,file ) { return parseFloat(prompt( "#", "App.LoadNumber("+name+"\f"+dflt+"\f"+file )); }	
-	this.LoadBoolean = function( name,dflt,file ) { return (prompt( "#", "App.LoadBoolean("+name+"\f"+dflt+"\f"+file )=="true"); }
-	this.SaveText = function( name,value,file ) { prompt( "#", "App.SaveText("+name+"\f"+value+"\f"+file ); }
-	this.SaveNumber = function( name,value,file ) { prompt( "#", "App.SaveNumber("+name+"\f"+value+"\f"+file ); }	
-	this.SaveBoolean = function( name,value,file ) { prompt( "#", "App.SaveBoolean("+name+"\f"+value+"\f"+file ); }	
-	this.ClearData = function( file ) { prompt( "#", "App.ClearData(\f"+file ); }
-	this.GetTop = function() { return parseFloat(prompt( "#", "App.GetTop(" )); }
-	this.HasSoftNav = function() { return prompt( "#", "App.HasSoftNav(" )=="true"; }
-	this.GetScreenWidth = function( options ) { return parseFloat(prompt( "#", "App.GetScreenWidth(\f"+options )); }
-	this.GetScreenHeight = function( options ) { return parseFloat(prompt( "#", "App.GetScreenHeight(\f"+options )); }
-	this.GetScreenDensity = function() { return parseFloat(prompt( "#", "App.GetScreenDensity(" )); }
-	this.GetDisplayWidth = function() { return parseFloat(prompt( "#", "App.GetDisplayWidth(" )); }
-	this.GetDisplayHeight = function() { return parseFloat(prompt( "#", "App.GetDisplayHeight(" )); }
-	this.GetDefaultOrientation = function() { return prompt( "#", "App.GetDefaultOrientation(" ); }	
-	this.GetOrientation = function() { return prompt( "#", "App.GetOrientation(" ); }	
-	this.SetOrientation = function( orient,callback ) { prompt( "#", "App.SetOrientation(\f"+orient+"\f"+_Cbm(callback) ); }	
-	this.GetRotation = function() { return parseInt(prompt( "#", "App.GetRotation(" )); }	
-	this.GetBatteryLevel = function() { return parseFloat(prompt( "#", "App.GetBatteryLevel(\f" )); }
-	this.IsCharging = function() { return prompt( "#", "App.IsCharging(" )=="true"; }
-	this.GetChargeType = function() { return prompt( "#", "App.GetChargeType(\f" ); }
-	this.PreventScreenLock = function( mode ) { prompt( "#", "App.PreventScreenLock("+mode ); }	
-	this.PreventWifiSleep = function() { prompt( "#", "App.PreventWifiSleep(" ); }
-	this.SetWifiEnabled = function( enable ) { prompt( "#", "App.SetWifiEnabled(\f"+enable ); }
-	this.IsWifiEnabled = function() { return prompt( "#", "App.IsWifiEnabled(" )=="true"; }
-	this.WifiConnect = function( ssid,key ) { prompt( "#", "App.WifiConnect(\f"+ssid+"\f"+key ); }
-	this.IsConnected = function() { return prompt( "#", "App.IsConnected(" )=="true"; }
-	this.SetBluetoothEnabled = function( enable ) { prompt( "#", "App.SetBluetoothEnabled(\f"+enable ); }
-	this.IsBluetoothEnabled = function() { return prompt( "#", "App.IsBluetoothEnabled(" )=="true"; }
-	this.GetPairedBtDevices = function() { return eval(prompt( "#", "App.GetPairedBTDevices(\f" )); }
-	this.IsBtDevicePaired = function( name ) { return prompt( "#", "App.IsBtDevicePaired(\f"+name )=="true"; } 
-	this.DiscoverBtDevices = function( filter,onFound,onComplete ) { prompt( "#", "App.DiscoverBtDevices(\f"+filter+"\f"+_Cbm(onFound)+"\f"+_Cbm(onComplete) ); }
-	this.PairBtDevice = function( address,callback ) { prompt( "#", "App.PairBtDevice(\f"+address+"\f"+_Cbm(callback) ); }
-	this.UnpairBtDevice = function( address,callback ) { prompt( "#", "App.UnpairBtDevice(\f"+address+"\f"+_Cbm(callback) ); }
-	this.GetBtProfileState = function( type ) { return prompt( "#", "App.GetBtProfileState(\f"+type ); }
-	this.GetBluetoothName = function() { return prompt( "#", "App.GetBluetoothName(" ); }	
-	this.GetBluetoothAddress = function() { return prompt( "#", "App.GetBluetoothAddress(" ); }	
-	this.IsLocationEnabled = function( types ) { return prompt( "#", "App.IsLocationEnabled(\f"+types )=="true"; }
-	this.PlayRingtone = function( type ) { prompt( "#", "App.PlayRingtone(\f"+type ); }
-	this.SetRingerMode = function( mode ) { prompt( "#", "App.SetRingerMode(\f"+mode ); }
-	this.GetRingerMode = function() { return prompt( "#", "App.GetRingerMode(" ); }
-	this.SetSpeakerPhone = function( on ) { prompt( "#", "App.SetSpeakerPhone(\f"+on ); }
-	this.GetSpeakerPhone = function() { return prompt( "#", "App.GetSpeakerPhone(" )=="true"; }
-	this.SetVolume = function( stream,level ) { prompt( "#", "App.SetVolume(\f"+stream+"\f"+level ); }
-	this.GetVolume = function( stream ) { return parseFloat(prompt( "#", "App.GetVolume(\f"+stream )); }
-	this.SetTitle = function( title ) { prompt( "#", "App.SetTitle("+title ); }	
-	this.SetMenu = function( list,iconPath ) { prompt( "#", "App.SetMenu("+list+"\f"+iconPath ); }
-	this.ShowMenu = function() { prompt( "#", "App.ShowMenu(" ); }		
-	this.AddLayout = function( layout ) { prompt( "#", "App.AddLayout("+layout.id ); }	
-	this.RemoveLayout = function( layout ) { prompt( "#", "App.RemoveLayout("+ layout.id ); }
-	this.DestroyLayout = function( layout ) { prompt( "#", "App.DestroyLayout("+ layout.id ); }	
-	this.AddDrawer = function( layout,side,width,grabWidth ) { prompt( "#", "App.AddDrawer(\f"+layout.id+"\f"+side+"\f"+width+"\f"+grabWidth ); }	
-	this.RemoveDrawer = function( layout ) { prompt( "#", "App.RemoveDrawer(\f"+ layout.id ); }
-	this.DestroyDrawer = function( layout ) { prompt( "#", "App.DestroyDrawer(\f"+ layout.id ); }	
-	this.OpenDrawer = function( side ) { prompt( "#", "App.OpenDrawer(\f"+side ); }	
-	this.CloseDrawer = function( side ) { prompt( "#", "App.CloseDrawer(\f"+side ); }	
-	this.LockDrawer = function( side ) { prompt( "#", "App.LockDrawer(\f"+side ); }	
-	this.UnlockDrawer = function( side ) { prompt( "#", "App.UnlockDrawer(\f"+side ); }	
-	this.MakeFolder = function( fldr ) { prompt( "#", "App.MakeFolder("+fldr ); }	
-	this.GetPrivateFolder = function( name ) { return prompt( "#", "App.GetPrivateFolder(\f"+name ); }	
-	this.GetDatabaseFolder = function() { return prompt( "#", "App.GetDatabaseFolder(" ); }
-	this.DeleteDatabase = function( name ) { prompt( "#", "App.DeleteDatabase(\f"+name); }
-	this.FolderExists = function( fldr ) { return prompt( "#", "App.FolderExists("+fldr )=="true"; }
-	this.FileExists = function( file ) { return prompt( "#", "App.FileExists("+file )=="true"; }
-	this.IsFolder = function( fldr ) { return prompt( "#", "App.IsFolder("+fldr )=="true"; }
-	this.ListFolder = function( path,filter,limit,options ) { return eval(prompt( "#", "App.ListFolder(\f"+path+"\f"+filter+"\f"+limit+"\f"+options )); }
-	this.GetExternalFolder = function() { return prompt( "#", "App.GetExternalFolder(" ); }
-	this.GetInternalFolder = function() { return prompt( "#", "App.GetInternalFolder(" ); }
-	this.GetSpecialFolder = function( name ) { return prompt( "#", "App.GetSpecialFolder(\f"+name ); }
-	this.GetEnv = function( name ) { return prompt( "#", "App.GetEnv(\f"+name ); }
-	this.ReadFile = function( file,encoding ) { return prompt( "#", "App.ReadFile(\f"+file+"\f"+encoding ); }
-	this.WriteFile = function( file,text,mode,encoding ) { prompt( "#", "App.WriteFile(\f"+file+"\f"+text+"\f"+mode+"\f"+encoding ); }	
-	this.OpenFile = function( file,type,choose ) { prompt( "#", "App.OpenFile(\f"+file+"\f"+type+"\f"+choose ); }	
-	this.OpenUrl = function( url,type,choose ) { prompt( "#", "App.OpenUrl(\f"+url+"\f"+type+"\f"+choose ); }
-	this.DownloadFile = function( src,dest,title,desc,options ) { prompt( "#", "App.DownloadFile(\f"+src+"\f"+dest+"\f"+title+"\f"+desc+"\f"+options ); }
-	this.ChooseFile = function( msg,type,callback ) { prompt( "#", "App.ChooseFile(\f"+msg+"\f"+type+"\f"+_Cbm(callback) ); }
-	this.ChooseContact = function( type,callback ) { prompt( "#", "App.ChooseContact(\f"+type+"\f"+_Cbm(callback) ); }
-	this.DeleteFile = function( file ) { prompt( "#", "App.DeleteFile("+file); }
-	this.CopyFile = function( src,dest ) { prompt( "#", "App.CopyFile("+src+"\f"+dest); }
-	this.CopyFolder = function( src,dest,overwrite,filter ) { prompt( "#", "App.CopyFolder(\f"+src+"\f"+dest+"\f"+overwrite+"\f"+filter); }
-	this.DeleteFolder = function( fldr ) { prompt( "#", "App.DeleteFolder("+fldr); }
-	this.RenameFile = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
-	this.RenameFolder = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
-	this.UnzipFile = function( src,dest ) { prompt( "#", "App.UnzipFile(\f"+src+"\f"+dest); }
-	this.ZipFile = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
-	this.ZipFolder = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
-	this.GetFreeSpace = function( mode ) { return parseFloat(prompt( "#", "App.GetFreeSpace(\f"+mode)); }
-	this.GetFileDate = function( file ) { var d = parseInt(prompt( "#", "App.GetFileDate(\f"+file)); if( d ) return new Date(d); else return null; }
-	this.GetFileSize = function( file ) { return parseInt(prompt( "#", "App.GetFileSize(\f"+file)); }
-	this.GetThumbnail = function( src,dest,width,height ) { prompt( "#", "App.GetThumbnail(\f"+src+"\f"+dest+"\f"+width+"\f"+height); }
-	this.ScanFile = function( file ) { prompt( "#", "App.ScanFile(\f"+file); }
-	this.GetLastButton = function() { var ret = prompt( "#", "App.GetLastButton(" ); if( ret ) return (_map[ret]); else return null; }
-	this.GetLastToggle = function() { var ret = prompt( "#", "App.GetLastToggle(" ); if( ret ) return (_map[ret]); else return null; }
-	this.GetLastCheckBox = function() { var ret = prompt( "#", "App.GetLastCheckBox(" ); if( ret ) return (_map[ret]); else return null; }
-	this.GetLastImage = function() { var ret = prompt( "#", "App.GetLastImage(" ); if( ret ) return (_map[ret]); else return null; }
-	this.IsBluetoothOn = function() { return prompt( "#", "App.IsBluetoothOn(" )=="true"; }
-	this.IsScreenOn = function() { return prompt( "#", "App.IsScreenOn(" )=="true"; }
-	this.WakeUp = function() { prompt( "#", "App.WakeUp(" ); }
-	this.Unlock = function() { prompt( "#", "App.Unlock(" ); }	
-	this.Lock = function() { prompt( "#", "App.Lock(" ); }	
-	this.SetScreenBrightness = function( level ) { prompt( "#", "App.SetScreenBrightness(\f"+level); }
-	this.SetKioskMode = function( mode,enable,options ) { prompt( "#", "App.SetKioskMode(\f"+mode+"\f"+enable+"\f"+options); }
-	this.GetMetadata = function( file,keys ) { return prompt( "#", "App.GetMetadata(\f"+file+"\f"+keys); }
-	this.SetAlarm = function( type,id,callback,time,interval,options ) { return prompt( "#", "App.SetAlarm(\f"+type+"\f"+id+"\f"+_Cbm(callback)+"\f"+time+"\f"+interval+"\f"+options); }
-	this.Call = function( number ) { prompt( "#", "App.Call(\f"+number ); }
-	this.SimulateTouch = function( obj,x,y,dir ) { prompt( "#", "App.SimulateTouch(\f"+obj.id+"\f"+x+"\f"+y+"\f"+dir ); }
-	this.SimulateKey = function( obj,keyName,modifiers,pause ) { prompt( "#", "App.SimulateKey(\f"+obj.id+"\f"+keyName+"\f"+modifiers+"\f"+pause ); }
-	this.GetJoystickState = function( id,key ) { return parseFloat(prompt( "#", "App.GetJoyState(\f"+id+"\f"+key)); }
-	this.GetJoystickName = function( id ) { return prompt( "#", "App.GetJoyName(\f"+id); }
-	this.SetJoystickOptions = function( options ) { prompt( "#", "App.SetJoystickOptions(\f"+options ); }
-	this.SetAutoBoot = function( auto ) { prompt( "#", "App.SetAutoBoot(\f"+auto); }
-	this.SetAutoWifi = function( auto ) { prompt( "#", "App.SetAutoWifi(\f"+auto); }
-	this.SetAutoStart = function( appName ) { prompt( "#", "App.SetAutoStart(\f"+appName); }
-	this.HttpRequest = function( type,baseUrl,path,params,callback,headers ) { prompt( "#", "App.HttpRequest(\f"+type+"\f"+baseUrl+"\f"+path+"\f"+params+"\f"+_Cbm(callback)+"\f"+headers); }
-	this.UploadFile = function( url,file,name,callback ) { prompt( "#", "App.UploadFile(\f"+url+"\f"+file+"\f"+name+"\f"+_Cbm(callback) ); }
-	this.SaveCookies = function() { prompt( "#", "App.SaveCookies(" ); }	
-	this.ClearCookies = function( session ) { prompt( "#", "App.ClearCookies(\f"+session ); }
-	this.SetUserAgent = function( agent ) { prompt( "#", "App.SetUserAgent(\f"+agent ); } 
-    this.SetUserCreds = function( name,password ) { prompt( "#", "App.SetUserCreds(\f"+name+"\f"+password ); }
-    this.QueryContent = function( uri,columns,select,args,sort ) { return eval(prompt( "#", "App.QueryContent(\f"+uri+"\f"+columns+"\f"+select+"\f"+args+"\f"+sort)); }
-	this.Uri2Path = function( uri ) { return prompt( "#", "App.Uri2Path(\f"+uri); }
+	/*#app*/ this.GetType = function() { return "App"; }
+	/*#app*/ this.GetObjects = function() { return _map; }
+	/*#app*/ this.Exit = function( kill ) { prompt( "#", "App.Exit("+kill ); }
+	/*#app*/ this.ToBack = function() { prompt( "#", "App.ToBack(" ); }
+	/*#app*/ this.Execute = function( js ) { prompt( "#", "App.Execute("+js ); } 
+	/*#app*/ this.StartApp = function( file,options,intent ) { prompt( "#", "App.StartApp(\f"+file+"\f"+options+"\f"+intent ); }
+	/*#app*/ this.StopApp = function( name ) { prompt( "#", "App.StopApp("+name ); }
+	/*#app*/ this.SetScreenMode = function( mode ) { prompt( "#", "App.SetScreenMode(\f"+mode ); }
+	/*#app*/ this.SetOptions = function( options ) { prompt( "#", "App.SetOptions(\f"+options ); }
+	/*#app*/ this.SetTheme = function( theme ) { prompt( "#", "App.SetTheme(\f"+(theme?theme.id:null) ); }
+	/*#app*/ this.SetDensity = function( dpi ) { prompt( "#", "App.SetDensity(\f"+dpi ); }
+	/*#app*/ this.SetPosition = function( left,top,width,height,options ) { prompt( "#", "App.SetPosition(\f"+left+"\f"+top+"\f"+width+"\f"+height+"\f"+options ); }
+	/*#app*/ this.SetBackColor = function( clr ) { prompt( "#", "App.SetBackColor(\f"+clr ); }  
+	/*#app*/ this.StartService = function( packageName,className ) { prompt( "#", "App.StartService(\f"+packageName+"\f"+className ); }
+	/*#app*/ this.StopService = function() { prompt( "#", "App.StopService(" ); }
+	/*#app*/ this.StartDebugServer = function() { prompt( "#", "App.StartDebugServer(" ); }
+	/*#app*/ this.StopDebugServer = function() { prompt( "#", "App.StopDebugServer(" ); }
+	/*#app*/ this.SendIntent = function( packageName,className,action,category,uri,type,extras,options,callback ) { prompt( "#", "App.SendIntent(\f"+packageName+"\f"+className+"\f"+action+"\f"+category+"\f"+uri+"\f"+type+"\f"+extras+"\f"+options+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.BroadcastIntent = function( action,category,data,type,extras,options ) { prompt( "#", "App.BroadcastIntent(\f"+action+"\f"+category+"\f"+data+"\f"+type+"\f"+extras+"\f"+options ); }
+	/*#app*/ this.SendMessage = function( msg ) { prompt( "#", "App.SendMessage(\f"+msg ); }
+	/*#app*/ this.Script = function( file ) { _LoadScriptSync( file ); }
+	/*#app*/ this.LoadScript = function( url, callback ) { _LoadScript( url, callback ); }
+	/*#app*/ this.LoadPlugin = function( url ) { _LoadPlugin( url ); }
+	/*#app*/ this.SysExec = function( cmd,options,maxRead,timeout ) { return prompt( "#", "App.SysExec(\f"+cmd+"\f"+options+"\f"+maxRead+"\f"+timeout ); } 
+	/*#app*/ this.ExtExec = function( name,file,args,options ) { return prompt( "#", "App.ExtExec(\f"+name+"\f"+file+"\f"+args+"\f"+options ); } 
+	/*#app*/ this.SetPriority = function( level ) { prompt( "#", "App.SetPriority(\f"+level ); } 
+	/*#app*/ this.Odroid = function( p1,p2,p3 ) { return prompt( "#", "App.Odroid(\f"+p1+"\f"+p2+"\f"+p3 ); }
+	/*#app*/ this.GetName = function() { return prompt( "#", "App.GetName(" ); }
+	/*#app*/ this.GetPath = function() { return prompt( "#", "App.GetPath(" ); }
+	/*#app*/ this.GetAppName = function() { return prompt( "#", "App.GetAppName(" ); }
+	/*#app*/ this.GetAppPath = function() { return prompt( "#", "App.GetAppPath(" ); }
+	/*#app*/ this.GetVersion = function() { return parseFloat(prompt( "#", "App.GetVersion(" )); }
+	/*#app*/ this.GetDSVersion = function() { return parseFloat(prompt( "#", "App.GetDSVersion(" )); }	
+	/*#app*/ this.IsNewVersion = function() { return prompt( "#", "App.IsNewVersion(" )=="true"; }
+	/*#app*/ this.InIDE = function() { return prompt( "#", "App.InIDE(" )=="true"; }	
+	/*#app*/ this.IsAPK = function() { return prompt( "#", "App.IsAPK(" )=="true"; }	
+	/*#app*/ this.IsService = function() { return prompt( "#", "App.IsService(" )=="true"; }	
+	/*#app*/ this.IsPremium = function() { return prompt( "#", "App.IsPremium(" )=="true"; }	
+	/*#app*/ this.IsEngine = function() { return prompt( "#", "App.IsEngine(" )=="true"; }	
+	/*#app*/ this.GetPackageName = function() { return prompt( "#", "App.GetPackageName(" ); }
+	/*#app*/ this.CheckLicense = function( key ) { prompt( "#", "App.CheckLicense(\f"+key ); }
+	/*#app*/ this.GetAccounts = function() { return prompt( "#", "App.GetAccounts(" ); }
+	/*#app*/ this.GetUser = function() { return prompt( "#", "App.GetUser(" ); }
+	/*#app*/ this.GetDeviceId = function() { return prompt( "#", "App.GetDeviceId(" ); }
+	/*#app*/ this.GetCountryCode = function() { return prompt( "#", "App.GetCountryCode(" ); }
+	/*#app*/ this.GetLanguageCode = function() { return prompt( "#", "App.GetLanguageCode(" ); }
+	/*#app*/ this.GetCountry = function() { return prompt( "#", "App.GetCountry(" ); }
+	/*#app*/ this.GetLanguage = function() { return prompt( "#", "App.GetLanguage(" ); }
+	/*#app*/ this.GetOptions = function() { return prompt( "#", "App.GetOptions(" ); }	
+	/*#app*/ this.GetSharedText = function( index ) { return prompt( "#", "App.GetSharedText("+index ); }
+	/*#app*/ this.GetSharedFiles = function() { var s = prompt( "#", "App.GetSharedFiles(" ); if(s.length) return s.split(","); else return null; }
+	/*#app*/ this.GetActivities = function( options ) { return eval(prompt( "#", "App.GetActivities(\f"+options )); }
+	/*#app*/ this.IsAppInstalled = function( packageName ) { return prompt( "#", "App.IsAppInstalled(\f"+packageName )=="true"; }	
+	/*#app*/ this.GetInstalledApps = function() { return eval(prompt( "#", "App.GetInstalledApps(\f" )); }
+	/*#app*/ this.GetRunningApps = function() { return eval(prompt( "#", "App.GetRunningApps(\f" )); }
+	/*#app*/ this.GetRunningServices = function() { return eval(prompt( "#", "App.GetRunningServices(\f" )); }
+	/*#app*/ this.GetMemoryInfo = function() { return eval(prompt( "#", "App.GetMemoryInfo(\f" )); }
+	/*#app*/ this.GetIntent = function() { var s = prompt( "#", "App.GetIntent(" ); if(s.length) return JSON.parse(s); else return null; }
+	/*#app*/ this.GetNotifyId = function() { return prompt( "#", "App.GetNotifyId(" ); }
+	/*#app*/ this.SetSharedApp = function( name ) { prompt( "#", "App.SetSharedApp("+name ); }
+	/*#app*/ this.GetMediaFile = function( appName,ext ) { return prompt( "#", "App.GetMediaFile(\f"+appName+"\f"+ext ); }
+	/*#app*/ this.KillApp = function( procId ) { prompt( "#", "App.KillApp("+procId ); }
+	/*#app*/ this.CreateShortcut = function( name,iconFile,file,options ) { prompt( "#", "App.CreateShortcut(\f"+name+"\f"+iconFile+"\f"+file+"\f"+options ); }
+	/*#app*/ this.GetBuildNum = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }	
+	/*#app*/ this.GetOSVersion = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }	
+	/*#app*/ this.GetModel = function() { return prompt( "#", "App.GetModel(" ); }	
+	/*#app*/ this.IsTablet = function() { return prompt( "#", "App.IsTablet(" )=="true"; }	
+	/*#app*/ this.IsChrome = function() { return prompt( "#", "App.IsChrome(" )=="true"; }	
+	/*#app*/ this.IsThings = function() { return prompt( "#", "App.IsThings(" )=="true"; }	
+	/*#app*/ this.SetOnError = function( callback ) { prompt( "#", "App.SetOnError(\f"+_Cbm(callback) ); }
+	/*#app*/ this.SetOnDebug = function( callback ) { prompt( "#", "App.SetOnDebug(\f"+_Cbm(callback) ); }
+	/*#app*/ this.SetOnKey = function( callback ) { prompt( "#", "App.SetOnKey(\f"+_Cbm(callback) ); }
+	/*#app*/ this.SetOnShowKeyboard = function( callback ) { prompt( "#", "App.SetOnShowKeyboard(\f"+_Cbm(callback) ); }
+	/*#app*/ this.SetOnWifiChange = function( callback ) { prompt( "#", "App.SetOnWifiChange(\f"+_Cbm(callback) ); }
+	/*#app*/ this.DisableKeys = function( keyList ) { prompt( "#", "App.DisableKeys(\f"+keyList ); }
+	/*#app*/ this.DisableTouch = function( disable ) { prompt( "#", "App.DisableTouch(\f"+disable ); }
+	/*#app*/ this.GetIPAddress = function() { return prompt( "#", "App.GetIPAddress(" ); }
+	/*#app*/ this.GetMacAddress = function() { return prompt( "#", "App.GetMacAddress(" ); }
+	/*#app*/ this.GetSSID = function() { return prompt( "#", "App.GetSSID(" ); }
+	/*#app*/ this.GetRSSI = function() { return parseInt(prompt( "#", "App.GetRSSI(" )); }
+	/*#app*/ this.Broadcast = function( type,msg ) { prompt( "#", "App.Broadcast("+type+"\f"+msg ); }
+	/*#app*/ this.SetOnBroadcast = function( callback ) { prompt( "#", "App.SetOnBroadcast("+_Cbm(callback) ); }
+	/*#app*/ this.SetData = function( name,value ) { prompt( "#", "App.SetData(\f"+name+"\f"+value ); }
+	/*#app*/ this.GetData = function( name ) { return prompt( "#", "App.GetData(\f"+name ); }	
+	/*#app*/ this.SetClipboardText = function( txt ) { prompt( "#", "App.SetClipboardText("+txt ); }
+	/*#app*/ this.GetClipboardText = function() { return prompt( "#", "App.GetClipboardText(" ); }
+	/*#app*/ this.EnableBackKey = function( enable ) { prompt( "#", "App.EnableBackKey("+enable ); }		
+	/*#app*/ this.Wait = function( secs ) { prompt( "#", "App.Wait("+secs ); }
+	/*#app*/ this.Alert = function( msg,title,options,hue ) { prompt( "#", "App.Alert(\f"+msg+"\f"+title+"\f"+options+"\f"+hue ); }
+	/*#app*/ this.HideKeyboard = function( hide ) { prompt( "#", "App.HideKeyboard("+hide ); }
+	/*#app*/ this.ShowKeyboard = function( obj ) { return prompt( "#", "App.ShowKeyboard(\f"+obj.id )=="true"; }
+	/*#app*/ this.IsKeyboardShown = function() { return prompt( "#", "App.IsKeyboardShown(" )=="true"; }
+	/*#app*/ this.GetKeyboardHeight = function() { return prompt( "#", "App.GetKeyboardHeight(" ); }
+	/*#app*/ this.TextToSpeech = function( text,pitch,rate,callback,stream,locale,engine ) { prompt( "#", "App.TextToSpeech(\f"+text+"\f"+pitch+"\f"+rate+"\f"+_Cbm(callback)+"\f"+stream+"\f"+locale+"\f"+engine ); }
+	/*#app*/ this.Debug = function( msg ) { prompt( "#", "App.Debug(\f"+msg ); }
+	/*#app*/ this.Error = function( msg,line,file,quit ) { prompt( "#", "App.Error(\f"+msg+"\f"+line+"\f"+file+"\f"+quit ); }
+	/*#app*/ this.SetDebugEnabled = function( enable ) { prompt( "#", "App.SetDebugEnabled("+enable ); _dbg=enable; }
+	/*#app*/ this.CreateDebug = function() { prompt( "#", "App.CreateDebug(" ); }
+	/*#app*/ this.ShowDebug = function( show ) { prompt( "#", "App.ShowDebug("+show ); }
+	/*#app*/ this.SendMail = function( address,subject,body,attach,type,options ) { prompt( "#", "App.SendMail(\f"+address+"\f"+subject+"\f"+body+"\f"+attach+"\f"+type+"\f"+options ); }		
+	/*#app*/ this.SendFile = function( file,subject,text,choose ) { prompt( "#", "App.SendFile(\f"+file+"\f"+subject+"\f"+text+"\f"+choose ); }		
+	/*#app*/ this.SendText = function( text,subject,choose ) { prompt( "#", "App.SendText(\f"+text+"\f"+subject+"\f"+choose ); }		
+	// this._Extract = function( p1 ) { prompt( "#", "App._Extract("+p1 ); }
+	/*#app*/ this.ExtractAssets = function( src,dest,overwrite ) { prompt( "#", "App.ExtractAssets(\f"+src+"\f"+dest+"\f"+overwrite ); }
+	/*#app*/ this.ExtractPlugins = function() { prompt( "#", "App.ExtractPlugins(\f" ); }
+	/*#app*/ this.GetResourceId = function( name,options ) { return parseInt(prompt( "#", "App.GetResourceId(\f"+name+"\f"+options )); }	
+	/*#app*/ this.Vibrate = function( pattern ) { prompt( "#", "App.Vibrate("+pattern ); }
+	/*#app*/ this.ShowPopup = function( msg,options ) { prompt( "#", "App.ShowPopup("+msg+"\f"+options ); }
+	/*#app*/ this.ShowProgress = function( msg,options ) { prompt( "#", "App.ShowProgress(\f"+msg+"\f"+options ); }	
+	/*#app*/ this.HideProgress = function() { prompt( "#", "App.HideProgress(" ); }	
+	/*#app*/ this.ShowProgressBar = function( title,percent,options ) { prompt( "#", "App.ShowProgressBar(\f"+title+"\f"+percent+"\f"+options ); }	
+	/*#app*/ this.UpdateProgressBar = function( percent ) { prompt( "#", "App.UpdateProgressBar(\f"+percent ); }	
+	/*#app*/ this.HideProgressBar = function() { prompt( "#", "App.HideProgressBar(" ); }	
+	/*#app*/ this.LoadText = function( name,dflt,file ) { return prompt( "#", "App.LoadText("+name+"\f"+dflt+"\f"+file ); }
+	/*#app*/ this.LoadNumber = function( name,dflt,file ) { return parseFloat(prompt( "#", "App.LoadNumber("+name+"\f"+dflt+"\f"+file )); }	
+	/*#app*/ this.LoadBoolean = function( name,dflt,file ) { return (prompt( "#", "App.LoadBoolean("+name+"\f"+dflt+"\f"+file )=="true"); }
+	/*#app*/ this.SaveText = function( name,value,file ) { prompt( "#", "App.SaveText("+name+"\f"+value+"\f"+file ); }
+	/*#app*/ this.SaveNumber = function( name,value,file ) { prompt( "#", "App.SaveNumber("+name+"\f"+value+"\f"+file ); }	
+	/*#app*/ this.SaveBoolean = function( name,value,file ) { prompt( "#", "App.SaveBoolean("+name+"\f"+value+"\f"+file ); }	
+	/*#app*/ this.ClearData = function( file ) { prompt( "#", "App.ClearData(\f"+file ); }
+	/*#app*/ this.ClearValue = function( name,file ) { prompt( "#", "App.ClearValue(\f"+name+"\f"+file ); }
+	/*#app*/ this.GetTop = function() { return parseFloat(prompt( "#", "App.GetTop(" )); }
+	/*#app*/ this.HasSoftNav = function() { return prompt( "#", "App.HasSoftNav(" )=="true"; }
+	/*#app*/ this.GetScreenWidth = function( options ) { return parseFloat(prompt( "#", "App.GetScreenWidth(\f"+options )); }
+	/*#app*/ this.GetScreenHeight = function( options ) { return parseFloat(prompt( "#", "App.GetScreenHeight(\f"+options )); }
+	/*#app*/ this.GetScreenDensity = function() { return parseFloat(prompt( "#", "App.GetScreenDensity(" )); }
+	/*#app*/ this.GetDisplayWidth = function() { return parseFloat(prompt( "#", "App.GetDisplayWidth(" )); }
+	/*#app*/ this.GetDisplayHeight = function() { return parseFloat(prompt( "#", "App.GetDisplayHeight(" )); }
+	/*#app*/ this.GetDefaultOrientation = function() { return prompt( "#", "App.GetDefaultOrientation(" ); }	
+	/*#app*/ this.GetOrientation = function() { return prompt( "#", "App.GetOrientation(" ); }	
+	/*#app*/ this.SetOrientation = function( orient,callback ) { prompt( "#", "App.SetOrientation(\f"+orient+"\f"+_Cbm(callback) ); }	
+	/*#app*/ this.GetRotation = function() { return parseInt(prompt( "#", "App.GetRotation(" )); }	
+	/*#app*/ this.GetBatteryLevel = function() { return parseFloat(prompt( "#", "App.GetBatteryLevel(\f" )); }
+	/*#app*/ this.IsCharging = function() { return prompt( "#", "App.IsCharging(" )=="true"; }
+	/*#app*/ this.GetChargeType = function() { return prompt( "#", "App.GetChargeType(\f" ); }
+	/*#app*/ this.PreventScreenLock = function( mode ) { prompt( "#", "App.PreventScreenLock("+mode ); }	
+	/*#app*/ this.PreventWifiSleep = function() { prompt( "#", "App.PreventWifiSleep(" ); }
+	/*#app*/ this.SetWifiEnabled = function( enable ) { prompt( "#", "App.SetWifiEnabled(\f"+enable ); }
+	/*#app*/ this.IsWifiEnabled = function() { return prompt( "#", "App.IsWifiEnabled(" )=="true"; }
+	/*#app*/ this.WifiConnect = function( ssid,key ) { prompt( "#", "App.WifiConnect(\f"+ssid+"\f"+key ); }
+	/*#app*/ this.IsConnected = function() { return prompt( "#", "App.IsConnected(" )=="true"; }
+	/*#app*/ this.SetBluetoothEnabled = function( enable ) { prompt( "#", "App.SetBluetoothEnabled(\f"+enable ); }
+	/*#app*/ this.IsBluetoothEnabled = function() { return prompt( "#", "App.IsBluetoothEnabled(" )=="true"; }
+	/*#app*/ this.GetPairedBtDevices = function() { return eval(prompt( "#", "App.GetPairedBTDevices(\f" )); }
+	/*#app*/ this.IsBtDevicePaired = function( name ) { return prompt( "#", "App.IsBtDevicePaired(\f"+name )=="true"; } 
+	/*#app*/ this.DiscoverBtDevices = function( filter,onFound,onComplete ) { prompt( "#", "App.DiscoverBtDevices(\f"+filter+"\f"+_Cbm(onFound)+"\f"+_Cbm(onComplete) ); }
+	/*#app*/ this.PairBtDevice = function( address,callback ) { prompt( "#", "App.PairBtDevice(\f"+address+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.UnpairBtDevice = function( address,callback ) { prompt( "#", "App.UnpairBtDevice(\f"+address+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.GetBtProfileState = function( type ) { return prompt( "#", "App.GetBtProfileState(\f"+type ); }
+	/*#app*/ this.GetBluetoothName = function() { return prompt( "#", "App.GetBluetoothName(" ); }	
+	/*#app*/ this.GetBluetoothAddress = function() { return prompt( "#", "App.GetBluetoothAddress(" ); }	
+	/*#app*/ this.IsLocationEnabled = function( types ) { return prompt( "#", "App.IsLocationEnabled(\f"+types )=="true"; }
+	/*#app*/ this.PlayRingtone = function( type ) { prompt( "#", "App.PlayRingtone(\f"+type ); }
+	/*#app*/ this.SetRingerMode = function( mode ) { prompt( "#", "App.SetRingerMode(\f"+mode ); }
+	/*#app*/ this.GetRingerMode = function() { return prompt( "#", "App.GetRingerMode(" ); }
+	/*#app*/ this.SetSpeakerPhone = function( on ) { prompt( "#", "App.SetSpeakerPhone(\f"+on ); }
+	/*#app*/ this.GetSpeakerPhone = function() { return prompt( "#", "App.GetSpeakerPhone(" )=="true"; }
+	/*#app*/ this.SetVolume = function( stream,level ) { prompt( "#", "App.SetVolume(\f"+stream+"\f"+level ); }
+	/*#app*/ this.GetVolume = function( stream ) { return parseFloat(prompt( "#", "App.GetVolume(\f"+stream )); }
+	/*#app*/ this.SetTitle = function( title ) { prompt( "#", "App.SetTitle("+title ); }	
+	/*#app*/ this.SetMenu = function( list,iconPath ) { prompt( "#", "App.SetMenu("+list+"\f"+iconPath ); }
+	/*#app*/ this.ShowMenu = function() { prompt( "#", "App.ShowMenu(" ); }		
+	/*#app*/ this.AddLayout = function( layout ) { prompt( "#", "App.AddLayout("+layout.id ); }	
+	/*#app*/ this.RemoveLayout = function( layout ) { prompt( "#", "App.RemoveLayout("+ layout.id ); }
+	/*#app*/ this.DestroyLayout = function( layout ) { prompt( "#", "App.DestroyLayout("+ layout.id ); }	
+	/*#app*/ this.AddDrawer = function( layout,side,width,grabWidth ) { prompt( "#", "App.AddDrawer(\f"+layout.id+"\f"+side+"\f"+width+"\f"+grabWidth ); }	
+	/*#app*/ this.RemoveDrawer = function( side ) { prompt( "#", "App.RemoveDrawer(\f"+ side ); }
+	/*#app*/ this.OpenDrawer = function( side ) { prompt( "#", "App.OpenDrawer(\f"+side ); }	
+	/*#app*/ this.CloseDrawer = function( side ) { prompt( "#", "App.CloseDrawer(\f"+side ); }	
+	/*#app*/ this.LockDrawer = function( side ) { prompt( "#", "App.LockDrawer(\f"+side ); }	
+	/*#app*/ this.UnlockDrawer = function( side ) { prompt( "#", "App.UnlockDrawer(\f"+side ); }	
+	/*#app*/ this.MakeFolder = function( fldr ) { prompt( "#", "App.MakeFolder("+fldr ); }	
+	/*#app*/ this.GetPrivateFolder = function( name ) { return prompt( "#", "App.GetPrivateFolder(\f"+name ); }	
+	/*#app*/ this.GetDatabaseFolder = function() { return prompt( "#", "App.GetDatabaseFolder(" ); }
+	/*#app*/ this.DeleteDatabase = function( name ) { prompt( "#", "App.DeleteDatabase(\f"+name); }
+	/*#app*/ this.FolderExists = function( fldr ) { return prompt( "#", "App.FolderExists("+fldr )=="true"; }
+	/*#app*/ this.FileExists = function( file ) { return prompt( "#", "App.FileExists("+file )=="true"; }
+	/*#app*/ this.IsFolder = function( fldr ) { return prompt( "#", "App.IsFolder("+fldr )=="true"; }
+	/*#app*/ this.ListFolder = function( path,filter,limit,options ) { return eval(prompt( "#", "App.ListFolder(\f"+path+"\f"+filter+"\f"+limit+"\f"+options )); }
+	/*#app*/ this.GetExternalFolder = function() { return prompt( "#", "App.GetExternalFolder(" ); }
+	/*#app*/ this.GetInternalFolder = function() { return prompt( "#", "App.GetInternalFolder(" ); }
+	/*#app*/ this.GetSpecialFolder = function( name ) { return prompt( "#", "App.GetSpecialFolder(\f"+name ); }
+	/*#app*/ this.GetEnv = function( name ) { return prompt( "#", "App.GetEnv(\f"+name ); }
+	/*#app*/ this.GetPermission = function( type,callback ) { prompt( "#", "App.GetPermission(\f"+type+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.CheckPermission = function( type ) { return prompt( "#", "App.CheckPermission(\f"+type )=="true"; }
+	/*#app*/ this.ReadFile = function( file,encoding ) { return prompt( "#", "App.ReadFile(\f"+file+"\f"+encoding ); }
+	/*#app*/ this.WriteFile = function( file,text,mode,encoding ) { prompt( "#", "App.WriteFile(\f"+file+"\f"+text+"\f"+mode+"\f"+encoding ); }	
+	/*#app*/ this.OpenFile = function( file,type,choose ) { prompt( "#", "App.OpenFile(\f"+file+"\f"+type+"\f"+choose ); }	
+	/*#app*/ this.OpenUrl = function( url,type,choose ) { prompt( "#", "App.OpenUrl(\f"+url+"\f"+type+"\f"+choose ); }
+	/*#app*/ this.DownloadFile = function( src,dest,title,desc,options ) { prompt( "#", "App.DownloadFile(\f"+src+"\f"+dest+"\f"+title+"\f"+desc+"\f"+options ); }
+	/*#app*/ this.ChooseFile = function( msg,type,callback ) { prompt( "#", "App.ChooseFile(\f"+msg+"\f"+type+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.ChooseContact = function( type,callback ) { prompt( "#", "App.ChooseContact(\f"+type+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.ChooseImage = function( options,callback ) { prompt( "#", "App.ChooseImage(\f"+options+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.DeleteFile = function( file ) { prompt( "#", "App.DeleteFile("+file); }
+	/*#app*/ this.CopyFile = function( src,dest ) { prompt( "#", "App.CopyFile("+src+"\f"+dest); }
+	/*#app*/ this.CopyFolder = function( src,dest,overwrite,filter ) { prompt( "#", "App.CopyFolder(\f"+src+"\f"+dest+"\f"+overwrite+"\f"+filter); }
+	/*#app*/ this.DeleteFolder = function( fldr ) { prompt( "#", "App.DeleteFolder("+fldr); }
+	/*#app*/ this.RenameFile = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.RenameFolder = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.ReplaceInFile = function( file,txt,rep,options ) { prompt( "#", "App.ReplaceInFile(\f"+file+"\f"+txt+"\f"+rep+"\f"+options); }
+	/*#app*/ this.UnzipFile = function( src,dest ) { prompt( "#", "App.UnzipFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.ZipFile = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.ZipFolder = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.GetFreeSpace = function( mode ) { return parseFloat(prompt( "#", "App.GetFreeSpace(\f"+mode)); }
+	/*#app*/ this.GetFileDate = function( file ) { var d = parseInt(prompt( "#", "App.GetFileDate(\f"+file)); if( d ) return new Date(d); else return null; }
+	/*#app*/ this.GetFileSize = function( file ) { return parseInt(prompt( "#", "App.GetFileSize(\f"+file)); }
+	/*#app*/ this.GetThumbnail = function( src,dest,width,height ) { prompt( "#", "App.GetThumbnail(\f"+src+"\f"+dest+"\f"+width+"\f"+height); }
+	/*#app*/ this.ScanFile = function( file ) { prompt( "#", "App.ScanFile(\f"+file); }
+	/*#app*/ this.GetLastButton = function() { var ret = prompt( "#", "App.GetLastButton(" ); if( ret ) return (_map[ret]); else return null; }
+	/*#app*/ this.GetLastToggle = function() { var ret = prompt( "#", "App.GetLastToggle(" ); if( ret ) return (_map[ret]); else return null; }
+	/*#app*/ this.GetLastCheckBox = function() { var ret = prompt( "#", "App.GetLastCheckBox(" ); if( ret ) return (_map[ret]); else return null; }
+	/*#app*/ this.GetLastImage = function() { var ret = prompt( "#", "App.GetLastImage(" ); if( ret ) return (_map[ret]); else return null; }
+	/*#app*/ this.IsBluetoothOn = function() { return prompt( "#", "App.IsBluetoothOn(" )=="true"; }
+	/*#app*/ this.IsScreenOn = function() { return prompt( "#", "App.IsScreenOn(" )=="true"; }
+	/*#app*/ this.WakeUp = function() { prompt( "#", "App.WakeUp(" ); }
+	/*#app*/ this.GoToSleep = function() { prompt( "#", "App.GoToSleep(" ); }
+	/*#app*/ this.Unlock = function() { prompt( "#", "App.Unlock(" ); }	
+	/*#app*/ this.Lock = function() { prompt( "#", "App.Lock(" ); }	
+	/*#app*/ this.SetScreenBrightness = function( level ) { prompt( "#", "App.SetScreenBrightness(\f"+level); }
+	/*#app*/ this.SetKioskMode = function( mode,enable,options ) { prompt( "#", "App.SetKioskMode(\f"+mode+"\f"+enable+"\f"+options); }
+	/*#app*/ this.GetMetadata = function( file,keys ) { return prompt( "#", "App.GetMetadata(\f"+file+"\f"+keys); }
+	/*#app*/ this.SetAlarm = function( type,id,callback,time,interval,options ) { return prompt( "#", "App.SetAlarm(\f"+type+"\f"+id+"\f"+_Cbm(callback)+"\f"+time+"\f"+interval+"\f"+options); }
+	/*#app*/ this.Call = function( number ) { prompt( "#", "App.Call(\f"+number ); }
+	/*#app*/ this.SimulateTouch = function( obj,x,y,dir ) { prompt( "#", "App.SimulateTouch(\f"+obj.id+"\f"+x+"\f"+y+"\f"+dir ); }
+	/*#app*/ this.SimulateDrag = function( obj,x1,y1,x2,y2,step,pause ) { prompt( "#", "App.SimulateDrag(\f"+obj.id+"\f"+x1+"\f"+y1+"\f"+x2+"\f"+y2+"\f"+step+"\f"+pause ); }
+	/*#app*/ this.SimulateScroll = function( obj,x,y,dx,dy,count,fling ) { prompt( "#", "App.SimulateScroll(\f"+obj.id+"\f"+x+"\f"+y+"\f"+dx+"\f"+dy+"\f"+count+"\f"+fling ); }
+	/*#app*/ this.SimulateKey = function( obj,keyName,modifiers,pause ) { prompt( "#", "App.SimulateKey(\f"+obj.id+"\f"+keyName+"\f"+modifiers+"\f"+pause ); }
+	/*#app*/ this.GetJoystickState = function( id,key ) { return parseFloat(prompt( "#", "App.GetJoyState(\f"+id+"\f"+key)); }
+	/*#app*/ this.GetJoystickName = function( id ) { return prompt( "#", "App.GetJoyName(\f"+id); }
+	/*#app*/ this.SetJoystickOptions = function( options ) { prompt( "#", "App.SetJoystickOptions(\f"+options ); }
+	/*#app*/ this.SetAutoBoot = function( auto ) { prompt( "#", "App.SetAutoBoot(\f"+auto); }
+	/*#app*/ this.SetAutoWifi = function( auto ) { prompt( "#", "App.SetAutoWifi(\f"+auto); }
+	/*#app*/ this.SetAutoStart = function( appName ) { prompt( "#", "App.SetAutoStart(\f"+appName); }
+	/*#app*/ this.HttpRequest = function( type,baseUrl,path,params,callback,headers ) { prompt( "#", "App.HttpRequest(\f"+type+"\f"+baseUrl+"\f"+path+"\f"+params+"\f"+_Cbm(callback)+"\f"+headers); }
+	/*#app*/ this.UploadFile = function( url,file,name,callback ) { prompt( "#", "App.UploadFile(\f"+url+"\f"+file+"\f"+name+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.SaveCookies = function() { prompt( "#", "App.SaveCookies(" ); }	
+	/*#app*/ this.ClearCookies = function( session ) { prompt( "#", "App.ClearCookies(\f"+session ); }
+	/*#app*/ this.SetUserAgent = function( agent ) { prompt( "#", "App.SetUserAgent(\f"+agent ); } 
+    /*#app*/ this.SetUserCreds = function( name,password ) { prompt( "#", "App.SetUserCreds(\f"+name+"\f"+password ); }
+    /*#app*/ this.QueryContent = function( uri,columns,select,args,sort ) { return eval(prompt( "#", "App.QueryContent(\f"+uri+"\f"+columns+"\f"+select+"\f"+args+"\f"+sort)); }
+	/*#app*/ this.Uri2Path = function( uri ) { return prompt( "#", "App.Uri2Path(\f"+uri); }
+	/*#app*/ this.ScreenShot = function( fileName,quality ) { prompt( "#", "App.ScreenShot(\f"+fileName+"\f"+quality ); }
+	/*#app*/ this.InstallWallpaper = function( packageName,className ) { prompt( "#", "App.InstallWallpaper\f"+packageName+"\f"+className ); }
 	
 	//These objects auto-release when layout is destroyed.		
-	this.CreateLayout = function( type,options ) { var ret = prompt( "#", "App.CreateLayout("+type+"\f"+options ); if( ret ) return new Lay(ret); else return null; }	
-	this.CreateImage = function( file,width,height,options,w,h ) { var ret = prompt( "#", "App.CreateImage("+file+"\f"+width+"\f"+height+"\f"+options+"\f"+w+"\f"+h );  if( ret ) return new Img(ret); else return null; }	
-	this.CreateButton = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateButton("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Btn(ret); else return null;  }		
-	this.CreateToggle = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateToggle("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Tgl(ret); else return null;  }		
-	this.CreateCheckBox = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateCheckBox("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Chk(ret); else return null;  }		
-	this.CreateSpinner = function( list,width,height,options ) { var ret = prompt( "#", "App.CreateSpinner("+list+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Spn(ret); else return null; }		
-	this.CreateSeekBar = function( width,height,options ) { var ret = prompt( "#", "App.CreateSeekBar("+width+"\f"+height+"\f"+options ); if( ret ) return new Skb(ret); else return null; }		
-	this.CreateText = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateText("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Txt(ret); else return null; }		
-	this.CreateTextEdit = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateTextEdit("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Txe(ret); else return null; }		
-	this.CreateList = function( list,width,height,options ) { var ret = prompt( "#", "App.CreateList("+list+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Lst(ret); else return null; }	
-	this.CreateWebView = function( width,height,options,zoom ) { var ret = prompt( "#", "App.CreateWeb(\f"+width+"\f"+height+"\f"+options+"\f"+zoom ); if( ret ) return new Web(ret); else return null; }	
-	this.CreateScroller = function( width,height,options ) { var ret = prompt( "#", "App.CreateScroller("+width+"\f"+height+"\f"+options ); if( ret ) return new Scr(ret); else return null; }	
-	this.CreateCameraView = function( width,height,options ) { var ret = prompt( "#", "App.CreateCameraView("+width+"\f"+height+"\f"+options );  if( ret ) return new Cam(ret); else return null; }	
-	this.CreateVideoView = function( width,height,options ) { var ret = prompt( "#", "App.CreateVideoView(\f"+width+"\f"+height+"\f"+options );  if( ret ) return new Vid(ret); else return null; }	
-	this.CreateWebGLView = function( width,height,options ) { var ret = prompt( "#", "App.CreateWebGLView(\f"+width+"\f"+height+"\f"+options );  if( ret ) return new WGL(ret); else return null; }	
-	this.CreateCodeEdit = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateCodeEdit(\f"+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Cde(ret); else return null; }		
-	this.CreateTheme = function( baseTheme ) { var ret = prompt( "#", "App.CreateTheme(\f"+baseTheme ); if( ret ) return new Thm(ret); else return null;  }		
+	/*#app*/ this.CreateLayout = function( type,options ) { var ret = prompt( "#", "App.CreateLayout("+type+"\f"+options ); if( ret ) return new Lay(ret); else return null; }	
+	/*#app*/ this.CreateImage = function( file,width,height,options,w,h ) { var ret = prompt( "#", "App.CreateImage("+file+"\f"+width+"\f"+height+"\f"+options+"\f"+w+"\f"+h );  if( ret ) return new Img(ret); else return null; }	
+	/*#app*/ this.CreateButton = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateButton("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Btn(ret); else return null;  }		
+	/*#app*/ this.CreateToggle = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateToggle("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Tgl(ret); else return null;  }		
+	/*#app*/ this.CreateCheckBox = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateCheckBox("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Chk(ret); else return null;  }		
+	/*#app*/ this.CreateSpinner = function( list,width,height,options ) { var ret = prompt( "#", "App.CreateSpinner("+list+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Spn(ret); else return null; }		
+	/*#app*/ this.CreateSeekBar = function( width,height,options ) { var ret = prompt( "#", "App.CreateSeekBar("+width+"\f"+height+"\f"+options ); if( ret ) return new Skb(ret); else return null; }		
+	/*#app*/ this.CreateText = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateText("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Txt(ret); else return null; }		
+	/*#app*/ this.CreateTextEdit = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateTextEdit("+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Txe(ret); else return null; }		
+	/*#app*/ this.CreateList = function( list,width,height,options,delim ) { var ret = prompt( "#", "App.CreateList(\f"+list+"\f"+width+"\f"+height+"\f"+options+"\f"+delim ); if( ret ) return new Lst(ret); else return null; }	
+	/*#app*/ this.CreateWebView = function( width,height,options,zoom ) { var ret = prompt( "#", "App.CreateWeb(\f"+width+"\f"+height+"\f"+options+"\f"+zoom ); if( ret ) return new Web(ret); else return null; }	
+	/*#app*/ this.CreateScroller = function( width,height,options ) { var ret = prompt( "#", "App.CreateScroller("+width+"\f"+height+"\f"+options ); if( ret ) return new Scr(ret); else return null; }	
+	/*#app*/ this.CreateCameraView = function( width,height,options ) { var ret = prompt( "#", "App.CreateCameraView("+width+"\f"+height+"\f"+options );  if( ret ) return new Cam(ret); else return null; }	
+	/*#app*/ this.CreateVideoView = function( width,height,options ) { var ret = prompt( "#", "App.CreateVideoView(\f"+width+"\f"+height+"\f"+options );  if( ret ) return new Vid(ret); else return null; }	
+	/*#app*/ this.CreateGameView = function( width,height,options ) { var ret = prompt( "#", "App.CreateGameView(\f"+width+"\f"+height+"\f"+options );  if( ret ) return new WGL(ret); else return null; }	
+	/*#app*/ this.CreateCodeEdit = function( text,width,height,options ) { var ret = prompt( "#", "App.CreateCodeEdit(\f"+text+"\f"+width+"\f"+height+"\f"+options ); if( ret ) return new Cde(ret); else return null; }		
+	/*#app*/ this.CreateTheme = function( baseTheme ) { var ret = prompt( "#", "App.CreateTheme(\f"+baseTheme ); if( ret ) return new Thm(ret); else return null;  }		
 	
 	//These objects auto-release (ie. single instance)
-	this.CreateYesNoDialog = function( msg,options ) { if( _ynd ) _ynd.Release(); var ret = prompt( "#", "App.CreateYesNoDialog(\f"+msg+"\f"+options ); if( ret ) _ynd = new Ynd(ret); else _ynd = null; return _ynd; }		
-	this.CreateListDialog = function( title,list,options ) { if( _ldg ) _ldg.Release(); var ret = prompt( "#", "App.CreateListDialog(\f"+title+"\f"+list+"\f"+options ); if( ret ) _ldg = new Ldg(ret); else _ldg = null; return _ldg; }	
-	this.CreateListView = function( list,title,options ) { if( _lvw ) _lvw.Release(); var ret = prompt( "#", "App.CreateListView(\f"+list+"\f"+title+"\f"+options ); if( ret ) _lvw = new Lvw(ret); else _lvw = null; return _lvw; }	
-	this.CreateBluetoothList = function( filter ) { if( _btl ) _btl.Release(); var ret = prompt( "#", "App.CreateBluetoothList("+filter ); if( ret) _btl = new Btl(ret); else _btl = null; return _btl; }	
-	this.CreateAudioRecorder = function() { if( _rec ) _rec.Release(); var ret = prompt( "#", "App.CreateAudioRecorder(" ); if( ret) _rec = new Rec(ret); else _rec = null; return _rec; }
-	this.CreateSMS = function() { if( _sms ) _sms.Release(); var ret = prompt( "#", "App.CreateSMS(" ); if( ret) _sms = new SMS(ret); else _sms = null; return _sms; }
-	this.CreateEmail = function( account,password ) { if( _eml ) _eml.Release(); var ret = prompt( "#", "App.CreateEmail("+account+"\f"+password ); if( ret) _eml = new EMAIL(ret); else _eml = null; return _eml; }
-	this.CreateSmartWatch = function( type ) { if( _smw ) _smw.Release(); var ret = prompt( "#", "App.CreateSmartWatch(\f"+type ); if( ret) _smw = new SMW(ret); else _smw = null; return _smw; }
-	this.CreateCrypt = function( options ) { if( _crp ) _crp.Release(); var ret = prompt( "#", "App.CreateCrypt(\f"+options ); if( ret) _crp = new Crp(ret); else _crp = null; return _crp; }
-	this.CreateSpeechRec = function( options ) { if( _spr ) _spr.Release(); var ret = prompt( "#", "App.CreateSpeechRec(\f"+options ); if( ret) _spr = new Spr(ret); else _spr = null; return _spr; }
-	this.CreatePhoneState = function( types ) { if( _pst ) _pst.Release(); var ret = prompt( "#", "App.CreatePhoneState(\f"+types ); if( ret) _pst = new Pst(ret); else _pst = null; return _pst; }
+	/*#app*/ this.CreateYesNoDialog = function( msg,options ) { if( _ynd ) _ynd.Release(); var ret = prompt( "#", "App.CreateYesNoDialog(\f"+msg+"\f"+options ); if( ret ) _ynd = new Ynd(ret); else _ynd = null; return _ynd; }		
+	/*#app*/ this.CreateListDialog = function( title,list,options ) { if( _ldg ) _ldg.Release(); var ret = prompt( "#", "App.CreateListDialog(\f"+title+"\f"+list+"\f"+options ); if( ret ) _ldg = new Ldg(ret); else _ldg = null; return _ldg; }	
+	/*#app*/ this.CreateListView = function( list,title,options ) { if( _lvw ) _lvw.Release(); var ret = prompt( "#", "App.CreateListView(\f"+list+"\f"+title+"\f"+options ); if( ret ) _lvw = new Lvw(ret); else _lvw = null; return _lvw; }	
+	/*#app*/ this.CreateBluetoothList = function( filter ) { if( _btl ) _btl.Release(); var ret = prompt( "#", "App.CreateBluetoothList("+filter ); if( ret) _btl = new Btl(ret); else _btl = null; return _btl; }	
+	/*#app*/ this.CreateAudioRecorder = function() { if( _rec ) _rec.Release(); var ret = prompt( "#", "App.CreateAudioRecorder(" ); if( ret) _rec = new Rec(ret); else _rec = null; return _rec; }
+	/*#app*/ this.CreateSMS = function() { if( _sms ) _sms.Release(); var ret = prompt( "#", "App.CreateSMS(" ); if( ret) _sms = new SMS(ret); else _sms = null; return _sms; }
+	/*#app*/ this.CreateEmail = function( account,password ) { if( _eml ) _eml.Release(); var ret = prompt( "#", "App.CreateEmail("+account+"\f"+password ); if( ret) _eml = new EMAIL(ret); else _eml = null; return _eml; }
+	/*#app*/ this.CreateSmartWatch = function( type ) { if( _smw ) _smw.Release(); var ret = prompt( "#", "App.CreateSmartWatch(\f"+type ); if( ret) _smw = new SMW(ret); else _smw = null; return _smw; }
+	/*#app*/ this.CreateCrypt = function( options ) { if( _crp ) _crp.Release(); var ret = prompt( "#", "App.CreateCrypt(\f"+options ); if( ret) _crp = new Crp(ret); else _crp = null; return _crp; }
+	/*#app*/ this.CreateSpeechRec = function( options ) { if( _spr ) _spr.Release(); var ret = prompt( "#", "App.CreateSpeechRec(\f"+options ); if( ret) _spr = new Spr(ret); else _spr = null; return _spr; }
+	/*#app*/ this.CreatePhoneState = function( types ) { if( _pst ) _pst.Release(); var ret = prompt( "#", "App.CreatePhoneState(\f"+types ); if( ret) _pst = new Pst(ret); else _pst = null; return _pst; }
+	/*#app*/ this.CreateWallpaper = function( options ) { if( _wpr ) _wpr.Release(); var ret = prompt( "#", "App.CreateWallpaper(\f"+options ); if( ret) _wpr = new Wpr(ret); else _wpr = null; return _wpr; }
 	
 	//These objects need releasing manually.
-	this.CreateDialog = function( title,options ) { var ret = prompt( "#", "App.CreateDialog(\f"+title+"\f"+options ); if( ret ) return new Dlg(ret); else return null; }		
-	this.CreateMediaPlayer = function() { var ret = prompt( "#", "App.CreateMediaPlayer(" ); if( ret ) return new Aud(ret); else return null; }
-	this.CreateSensor = function( type,options ) { var ret = prompt( "#", "App.CreateSensor("+type+"\f"+options ); if( ret ) return new Sns(ret); else return null; }		
-	this.CreateLocator = function( type,options ) { var ret = prompt( "#", "App.CreateLocator("+type+"\f"+options ); if( ret ) return new Loc(ret); else return null; }		
-	this.CreateNetClient = function( type ) { var ret = prompt( "#", "App.CreateNetClient("+type ); if( ret ) return new Net(ret); else return null; }
-	this.CreateNxtRemote = function() { var ret = prompt( "#", "App.CreateNxtRemote(" ); if( ret ) return new Nxt(ret,null); else return null; }	
-	this.CreateWebServer = function( port,options ) { var ret = prompt( "#", "App.CreateWebServer("+port+"\f"+options ); if( ret ) return new Wbs(ret); else return null; }	
-	this.CreateUSBSerial = function( baudRate,dataBits,stopBits,parity,device ) { var ret = prompt( "#", "App.CreateUSBSerial(\f"+baudRate+"\f"+dataBits+"\f"+stopBits+"\f"+parity+"\f"+device ); if( ret ) return new Usb(ret); else return null; }	
-	this.CreateSysProc = function( cmd ) { var ret = prompt( "#", "App.CreateSysProc(\f"+cmd ); if( ret ) return new Sys(ret); else return null; }	
-	this.CreateService = function( packageName,className,callback,options ) { var ret = prompt( "#", "App.CreateService(\f"+packageName+"\f"+className+"\f"+options+"\f"+_Cbm(callback) ); if( ret ) return new Svc(ret); else return null; }	
-	this.CreateObject = function( name ) { try { return eval( "new "+name+"()" ); } catch(e) { return null; } }	
-	this.CreateSynth = function( type ) { var ret = prompt( "#", "App.CreateSynth("+type ); if( ret ) return new Syn(ret); else return null; }	
-	this.CreateBluetoothSerial = function( mode ) { var ret = prompt( "#", "App.CreateBluetoothSerial(\f"+mode ); if( ret ) return new Bts(ret); else return null; }	
-	this.CreateZipUtil = function( mode ) { var ret = prompt( "#", "App.CreateZipUtil(\f"+mode ); if( ret ) return new Zip(ret); else return null; }	
-	this.CreateDownloader = function( options ) { var ret = prompt( "#", "App.CreateDownloader(\f"+options ); if( ret ) return new Dwn(ret); else return null; }	
-	this.CreateMediaStore = function() { var ret = prompt( "#", "App.CreateMediaStore(" ); if( ret ) return new Med(ret); else return null; }	
-	this.CreatePlayStore = function() { var ret = prompt( "#", "App.CreatePlayStore(" ); if( ret ) return new Ply(ret); else return null; }	
-	this.CreateNotification = function( options ) { var ret = prompt( "#", "App.CreateNotification(\f"+options ); if( ret ) return new Not(ret); else return null; }	
-	this.CreateFile = function( file,mode ) { var ret = prompt( "#", "App.CreateFile(\f"+file+"\f"+mode ); if( ret ) return new Fil(ret); else return null; }	
+	/*#app*/ this.CreateDialog = function( title,options ) { var ret = prompt( "#", "App.CreateDialog(\f"+title+"\f"+options ); if( ret ) return new Dlg(ret); else return null; }		
+	/*#app*/ this.CreateMediaPlayer = function() { var ret = prompt( "#", "App.CreateMediaPlayer(" ); if( ret ) return new Aud(ret); else return null; }
+	/*#app*/ this.CreateSensor = function( type,options ) { var ret = prompt( "#", "App.CreateSensor("+type+"\f"+options ); if( ret ) return new Sns(ret); else return null; }		
+	/*#app*/ this.CreateLocator = function( type,options ) { var ret = prompt( "#", "App.CreateLocator("+type+"\f"+options ); if( ret ) return new Loc(ret); else return null; }		
+	/*#app*/ this.CreateNetClient = function( type ) { var ret = prompt( "#", "App.CreateNetClient("+type ); if( ret ) return new Net(ret); else return null; }
+	/*#app*/ this.CreateNxtRemote = function() { var ret = prompt( "#", "App.CreateNxtRemote(" ); if( ret ) return new Nxt(ret,null); else return null; }	
+	/*#app*/ this.CreateWebServer = function( port,options ) { var ret = prompt( "#", "App.CreateWebServer("+port+"\f"+options ); if( ret ) return new Wbs(ret); else return null; }	
+	/*#app*/ this.CreateUSBSerial = function( baudRate,dataBits,stopBits,parity,device ) { var ret = prompt( "#", "App.CreateUSBSerial(\f"+baudRate+"\f"+dataBits+"\f"+stopBits+"\f"+parity+"\f"+device ); if( ret ) return new Usb(ret); else return null; }	
+	/*#app*/ this.CreateSysProc = function( cmd,env,dir ) { var ret = prompt( "#", "App.CreateSysProc(\f"+cmd+"\f"+env+"\f"+dir ); if( ret ) return new Sys(ret); else return null; }	
+	/*#app*/ this.CreateService = function( packageName,className,callback,options ) { var ret = prompt( "#", "App.CreateService(\f"+packageName+"\f"+className+"\f"+options+"\f"+_Cbm(callback) ); if( ret ) return new Svc(ret); else return null; }	
+	/*#app*/ this.CreateObject = function( name ) { try { return eval( "new "+name+"()" ); } catch(e) { return null; } }	
+	/*#app*/ this.CreateSynth = function( type ) { var ret = prompt( "#", "App.CreateSynth("+type ); if( ret ) return new Syn(ret); else return null; }	
+	/*#app*/ this.CreateBluetoothSerial = function( mode ) { var ret = prompt( "#", "App.CreateBluetoothSerial(\f"+mode ); if( ret ) return new Bts(ret); else return null; }	
+	/*#app*/ this.CreateZipUtil = function( mode ) { var ret = prompt( "#", "App.CreateZipUtil(\f"+mode ); if( ret ) return new Zip(ret); else return null; }	
+	/*#app*/ this.CreateDownloader = function( options ) { var ret = prompt( "#", "App.CreateDownloader(\f"+options ); if( ret ) return new Dwn(ret); else return null; }	
+	/*#app*/ this.CreateMediaStore = function() { var ret = prompt( "#", "App.CreateMediaStore(" ); if( ret ) return new Med(ret); else return null; }	
+	/*#app*/ this.CreatePlayStore = function() { var ret = prompt( "#", "App.CreatePlayStore(" ); if( ret ) return new Ply(ret); else return null; }	
+	/*#app*/ this.CreateNotification = function( options ) { var ret = prompt( "#", "App.CreateNotification(\f"+options ); if( ret ) return new Not(ret); else return null; }	
+	/*#app*/ this.CreateFile = function( file,mode ) { var ret = prompt( "#", "App.CreateFile(\f"+file+"\f"+mode ); if( ret ) return new Fil(ret); else return null; }	
 	
 	//Special methods.
 	this.Start = function() { if(typeof OnStart=='function') { OnStart(); prompt("#","_Start"); } }
 	
-	this.GA = function( cmd )
+	/*#app*/ this.GA = function( cmd )
 	{
 		try {
 			if( cmd.toLowerCase()=='create' ) {
@@ -314,7 +331,7 @@ function App()
 	var _anim_t = 0;
 	function _animatev8() {if(_cbAnimate) {var t=new Date().getTime(); _cbAnimate(t,t-_anim_t); _anim_t=t;}}
 	function _animate() {if(_cbAnimate) {var t=new Date().getTime(); _cbAnimate(t,t-_anim_t); _anim_t=t; requestAnimationFrame(_animate);}}
-	this.Animate = function( callback,fps )
+	/*#app*/ this.Animate = function( callback,fps )
 	{
 		_cbAnimate = callback;
 		_anim_t = new Date().getTime();
@@ -329,24 +346,30 @@ function App()
 		}
 	}
 	
-	this.Language2Code = function(name) { 
+	/*#app*/ this.Language2Code = function(name) { 
 		if( name ) return _languages.codes[name.toLowerCase()]; 
 		else return _curLang; 
 	}
 
-	this.SetLanguage = function( name ) { 
-		var json = app.ReadFile( "lang.json" );
+	/*#app*/ this.SetLanguage = function( name ) { 
+		var json = app.ReadFile( "lang.json" )
 		_languages = JSON.parse(json);
 		_curLang = _languages.codes[name.toLowerCase()];
 	}
 
 	//Helper classes.
-	this.CreateNxt = function() { var nxtHelp = new _NxtHelp(); return nxtHelp.nxt_CreateNxt(); }
-	this.CreateTabs = function( list,width,height,options ) { return new _Tabs( list,width,height,options ); }
-	this.CreateWebSocket = function( id,ip,port,options ) { return new _WebSock( id,ip,port,options ); }
+	/*#app*/ this.CreateNxt = function() { var nxtHelp = new _NxtHelp(); return nxtHelp.nxt_CreateNxt(); }
+	/*#app*/ this.CreateTabs = function( list,width,height,options ) { return new _Tabs( list,width,height,options ); }
+	/*#app*/ this.CreateWebSocket = function( id,ip,port,options ) { return new _WebSock( id,ip,port,options ); }
+	/*#app*/ this.CreateWizard = function( title,width,height,callback ) { return new _Wizard( title,width,height,callback ) }
+	
+	//Externally defined methods.
+	/*#app*/ this.ShowTextDialog = function( title,deflt,callback ) { _ShowTextDialog( title,deflt,callback ) }
+	/*#app*/ this.ShowTip = function( msg,left,top,timeOut,options ) { _ShowTip( msg,left,top,timeOut,options ) }
+	/*#app*/ this.PlaySound = function( file ) { _PlaySound( file ) }
 	
 	//Hybrid objects.
-	this.CreateGLView = function( width,height,options ) 
+	/*#app*/ this.CreateGLView = function( width,height,options ) 
 	{
 	    var glv = null;
 	    if( options.toLowerCase().indexOf("fast2d") > -1 )
@@ -364,7 +387,7 @@ function App()
 		return glv;
 	}
 	
-	this.OpenDatabase = function( name ) 
+	/*#app*/ this.OpenDatabase = function( name ) 
 	{
 		_LoadScriptSync( "/Sys/cp.js" );
 		_LoadScriptSync( "/Sys/sql.js" );
@@ -398,7 +421,8 @@ function SObj( id )
 	_map[id] = this; 
 	this.id = id;
 	this.Destroy  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; } 
-    this.Release  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; }        
+    this.Release  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; } 
+    this.Method  = function(name,types,p1,p2,p3,p4) { return prompt( this.id, "Obj.Method(\f"+name+"\f"+types+"\f"+p1+"\f"+p2+"\f"+p3+"\f"+p4 );  }       
 }
 
 function Obj( id )
@@ -407,36 +431,38 @@ function Obj( id )
 	this.id = id;
 	this._left = 0; this._top = 0; 
 	this.Destroy  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; } 
-    this.Release  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; }        
-    this.SetVisibility  = function( mode ) { prompt( this.id, "Obj.SetVisibility("+mode ); }    
-    this.GetVisibility  = function() { return prompt( this.id, "Obj.GetVisibility(" ); }   
-    this.Hide  = function() { prompt( this.id, "Obj.SetVisibility(Hide" ); } 
-    this.Gone  = function() { prompt( this.id, "Obj.SetVisibility(Gone" ); }   
-    this.Show  = function() { prompt( this.id, "Obj.SetVisibility(Show" ); } 
-    this.IsVisible  = function() { return prompt( this.id, "Obj.GetVisibility(" )=="Show"; }  
-    this.IsEnabled  = function() { return prompt( this.id, "Obj.IsEnabled(" )=="true"; } 
-    this.SetEnabled  = function( enable ) { prompt( this.id, "Obj.SetEnabled(\f"+enable ); }    
-    this.SetPadding  = function( left,top,right,bottom,mode ) { prompt( this.id, "Obj.SetPadding(\f"+left+"\f"+top+"\f"+right+"\f"+bottom+"\f"+mode ); }
-    this.SetMargins  = function( left,top,right,bottom,mode ) { prompt( this.id, "Obj.SetMargins(\f"+left+"\f"+top+"\f"+right+"\f"+bottom+"\f"+mode ); }
-    this.SetBackground  = function( file,options ) { prompt( this.id, "Obj.SetBackground("+file+"\f"+options ); }
-    this.SetBackColor  = function( clr ) { prompt( this.id, "Obj.SetBackColor("+clr ); }  
-    this.SetBackGradient  = function( colour1,colour2,colour3,options ) { prompt( this.id, "Obj.SetBackGradient(Linear\f"+colour1+"\f"+colour2+"\f"+colour3+"\f"+options+"\f"+null+"\f"+null+"\f"+null ); }  
-    this.SetBackGradientRadial  = function( x,y,radius,colour1,colour2,colour3,options ) { prompt( this.id, "Obj.SetBackGradient(Radial\f"+x+"\f"+y+"\f"+radius+"\f"+colour1+"\f"+colour2+"\f"+colour3+"\f"+options ); }  
-    this.SetColorFilter  = function( clr,mode ) { prompt( this.id, "Obj.SetColorFilter(\f"+clr+"\f"+mode ); }
-    this.AdjustColor  = function( hue,sat,bright,cont ) { prompt( this.id, "Obj.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
-    this.SetPosition  = function( left,top,width,height,options ) { prompt( this.id, "Obj.SetPosition(\f"+left+"\f"+top+"\f"+width+"\f"+height+"\f"+options ); this._left = left; this._top = top;}
-    this.SetSize  = function( width,height,options ) { prompt( this.id, "Obj.SetSize(\f"+width+"\f"+height+"\f"+options ); }
-    this.GetWidth  = function( options ) { return prompt( this.id, "Obj.GetWidth(\f"+options ); }  
-    this.GetHeight  = function( options ) { return prompt( this.id, "Obj.GetHeight(\f"+options ); }   
-    this.GetAbsWidth  = function() { return prompt( this.id, "Obj.GetAbsWidth(" ); }  
-    this.GetAbsHeight  = function() { return prompt( this.id, "Obj.GetAbsHeight(" ); }   
-    this.GetLeft  = function( options ) { return prompt( this.id, "Obj.GetLeft(\f"+options ); }  
-    this.GetTop  = function( options ) { return prompt( this.id, "Obj.GetTop(\f"+options ); }   
-    this.GetPosition  = function( options ) { return eval(prompt( this.id, "Obj.GetPosition(\f"+options )); } 
-    this.SetScale  = function( x,y ) { prompt(this.id,"Obj.SetScale(\f"+x+"\f"+y); }
-    this.Focus  = function() { prompt(this.id,"Obj.Focus(\f"); }
-    this.ClearFocus  = function() { prompt(this.id,"Obj.ClearFocus(\f"); }
-    this.Tween = function( target,duration,type,repeat,yoyo,callback ) { _Tween.apply( this, [target,duration,type,repeat,yoyo,callback] ); }
+    this.Release  = function() { prompt( this.id, "Obj.Release(" ); _map[this.id] = null; }  
+    this.Method  = function(name,types,p1,p2,p3,p4) { return prompt( this.id, "Obj.Method(\f"+name+"\f"+types+"\f"+p1+"\f"+p2+"\f"+p3+"\f"+p4 );  }             
+    /*#obj*/ this.SetVisibility  = function( mode ) { prompt( this.id, "Obj.SetVisibility("+mode ); }    
+    /*#obj*/ this.GetVisibility  = function() { return prompt( this.id, "Obj.GetVisibility(" ); }   
+    /*#obj*/ this.Hide  = function() { prompt( this.id, "Obj.SetVisibility(Hide" ); } 
+    /*#obj*/ this.Gone  = function() { prompt( this.id, "Obj.SetVisibility(Gone" ); }   
+    /*#obj*/ this.Show  = function() { prompt( this.id, "Obj.SetVisibility(Show" ); } 
+    /*#obj*/ this.IsVisible  = function() { return prompt( this.id, "Obj.GetVisibility(" )=="Show"; }  
+    /*#obj*/ this.IsEnabled  = function() { return prompt( this.id, "Obj.IsEnabled(" )=="true"; } 
+    /*#obj*/ this.SetEnabled  = function( enable ) { prompt( this.id, "Obj.SetEnabled(\f"+enable ); }    
+    /*#obj*/ this.SetPadding  = function( left,top,right,bottom,mode ) { prompt( this.id, "Obj.SetPadding(\f"+left+"\f"+top+"\f"+right+"\f"+bottom+"\f"+mode ); }
+    /*#obj*/ this.SetMargins  = function( left,top,right,bottom,mode ) { prompt( this.id, "Obj.SetMargins(\f"+left+"\f"+top+"\f"+right+"\f"+bottom+"\f"+mode ); }
+    /*#obj*/ this.SetBackground  = function( file,options ) { prompt( this.id, "Obj.SetBackground("+file+"\f"+options ); }
+    /*#obj*/ this.SetBackAlpha  = function( alpha ) { prompt( this.id, "Obj.SetBackAlpha(\f"+alpha ); }
+    /*#obj*/ this.SetBackColor  = function( clr ) { prompt( this.id, "Obj.SetBackColor(\f"+clr ); }  
+    /*#obj*/ this.SetBackGradient  = function( colour1,colour2,colour3,options ) { prompt( this.id, "Obj.SetBackGradient(Linear\f"+colour1+"\f"+colour2+"\f"+colour3+"\f"+options+"\f"+null+"\f"+null+"\f"+null ); }  
+    /*#obj*/ this.SetBackGradientRadial  = function( x,y,radius,colour1,colour2,colour3,options ) { prompt( this.id, "Obj.SetBackGradient(Radial\f"+x+"\f"+y+"\f"+radius+"\f"+colour1+"\f"+colour2+"\f"+colour3+"\f"+options ); }  
+    /*#obj*/ this.SetColorFilter  = function( clr,mode ) { prompt( this.id, "Obj.SetColorFilter(\f"+clr+"\f"+mode ); }
+    /*#obj*/ this.AdjustColor  = function( hue,sat,bright,cont ) { prompt( this.id, "Obj.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
+    /*#obj*/ this.SetPosition  = function( left,top,width,height,options ) { prompt( this.id, "Obj.SetPosition(\f"+left+"\f"+top+"\f"+width+"\f"+height+"\f"+options ); this._left = left; this._top = top;}
+    /*#obj*/ this.SetSize  = function( width,height,options ) { prompt( this.id, "Obj.SetSize(\f"+width+"\f"+height+"\f"+options ); }
+    /*#obj*/ this.GetWidth  = function( options ) { return prompt( this.id, "Obj.GetWidth(\f"+options ); }  
+    /*#obj*/ this.GetHeight  = function( options ) { return prompt( this.id, "Obj.GetHeight(\f"+options ); }   
+    /*#obj*/ this.GetAbsWidth  = function() { return prompt( this.id, "Obj.GetAbsWidth(" ); }  
+    /*#obj*/ this.GetAbsHeight  = function() { return prompt( this.id, "Obj.GetAbsHeight(" ); }   
+    /*#obj*/ this.GetLeft  = function( options ) { return prompt( this.id, "Obj.GetLeft(\f"+options ); }  
+    /*#obj*/ this.GetTop  = function( options ) { return prompt( this.id, "Obj.GetTop(\f"+options ); }   
+    /*#obj*/ this.GetPosition  = function( options ) { return eval(prompt( this.id, "Obj.GetPosition(\f"+options )); } 
+    /*#obj*/ this.SetScale  = function( x,y ) { prompt(this.id,"Obj.SetScale(\f"+x+"\f"+y); }
+    /*#obj*/ this.Focus  = function() { prompt(this.id,"Obj.Focus(\f"); }
+    /*#obj*/ this.ClearFocus  = function() { prompt(this.id,"Obj.ClearFocus(\f"); }
+    /*#obj*/ this.Tween = function( target,duration,type,repeat,yoyo,callback ) { _Tween.apply( this, [target,duration,type,repeat,yoyo,callback] ); }
 }
 
 function Thm( id )
@@ -491,79 +517,81 @@ function Img( id )
 {
     var obj = new Obj( id ); 
     obj._auto = true; obj._gfb = "";
-    obj.GetType = function() { return "Image"; }
-    obj.Clear = function() { if( obj._auto ) prompt( obj.id, "Img.Clear(" ); else { this.Draw("c"); } } 
-    obj.Update = function() { if( obj._auto ) prompt( obj.id, "Img.Update(" ); else { prompt( obj.id, "Img.Batch("+obj._gfb ); obj._gfb = ""; } }
-    obj.SetAutoUpdate = function( onoff ) { obj._auto=onoff; prompt( obj.id, "Img.SetAutoUpdate(\f"+onoff ); }
-    obj.SetPixelMode = function( onoff ) { prompt( obj.id, "Img.SetPixelMode(\f"+onoff ); }
+    /*#img*/ obj.GetType = function() { return "Image"; }
+    /*#img*/ obj.Clear = function() { if( obj._auto ) prompt( obj.id, "Img.Clear(" ); else { this.Draw("c"); } } 
+    /*#img*/ obj.Update = function() { if( obj._auto ) prompt( obj.id, "Img.Update(" ); else { prompt( obj.id, "Img.Batch("+obj._gfb ); obj._gfb = ""; } }
+    /*#img*/ obj.SetAutoUpdate = function( onoff ) { obj._auto=onoff; prompt( obj.id, "Img.SetAutoUpdate(\f"+onoff ); }
+    /*#img*/ obj.SetPixelMode = function( onoff ) { prompt( obj.id, "Img.SetPixelMode(\f"+onoff ); }
     obj.SetName = function( name ) { prompt( obj.id, "Img.SetName("+name ); }
     obj.GetName = function() { return prompt( obj.id, "Img.GetName(" ); }
-    obj.SetImage = function( image,width,height,options ) { 
+    /*#img*/ obj.SetImage = function( image,width,height,options ) { 
 		if( typeof image=="string" ) prompt( obj.id, "Img.LoadImage(\f"+image+"\f"+width+"\f"+height+"\f"+options ); 
 		else prompt( obj.id, "Img.CopyImage(\f"+(image?image.id:null)+"\f"+width+"\f"+height+"\f"+options );
 	}
-	obj.GetPixelData = function( format,left,top,width,height ) { return prompt( obj.id, "Img.GetPixelData(\f"+format+"\f"+left+"\f"+top+"\f"+width+"\f"+height ); }
-	obj.SetPixelData = function( data,width,height,options ) { return prompt( obj.id, "Img.SetPixelData(\f"+data+"\f"+width+"\f"+height+"\f"+options ); }
-    obj.GetPixelColor = function( x,y ) { return eval(prompt( obj.id, "Img.GetPixelColor(\f"+x+"\f"+y )); }
-    obj.SetSize = function( width,height,options ) { prompt( obj.id, "Img.SetSize(\f"+width+"\f"+height+"\f"+options ); }
-    obj.GetHeight = function() { return parseFloat(prompt( obj.id, "Img.GetHeight(" )); }
-    obj.GetWidth = function() { return parseFloat(prompt( obj.id, "Img.GetWidth(" )); }
-    obj.GetAbsHeight = function() { return parseFloat(prompt( obj.id, "Img.GetAbsHeight(" )); }
-    obj.GetAbsWidth = function() { return parseFloat(prompt( obj.id, "Img.GetAbsWidth(" )); }
-    obj.SetOnTouch = function( callback ) { prompt( obj.id, "Img.SetOnTouch("+_Cbm(callback) ); } 
-    obj.SetOnTouchUp = function( callback ) { prompt( obj.id, "Img.SetOnTouchUp("+_Cbm(callback) ); }  
-    obj.SetOnTouchMove = function( callback ) { prompt( obj.id, "Img.SetOnTouchMove("+_Cbm(callback) ); }
-    obj.SetOnTouchDown = function( callback ) { prompt( obj.id, "Img.SetOnTouchDown("+_Cbm(callback) ); } 
-    obj.SetOnLongTouch = function( callback ) { prompt( obj.id, "Img.SetOnLongTouch("+_Cbm(callback) ); } 
-    obj.SetOnLoad = function( callback ) { prompt( obj.id, "Img.SetOnLoad\f"+_Cbm(callback) ); }   
-    obj.SetTouchable = function( touchable ) { prompt( obj.id, "Img.SetTouchable("+touchable ); }
-    obj.SetMaxRate = function( ms ) { prompt( obj.id, "Img.SetMaxRate("+ms ); }
-    obj.SetColorFilter = function( clr,mode ) { prompt( obj.id, "Img.SetColorFilter(\f"+clr+"\f"+mode ); }
-    obj.AdjustColor = function( hue,sat,bright,cont ) { prompt( obj.id, "Img.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
-    obj.DrawImage = function( image,x,y,w,h,angle,mode ) { 
+	/*#img*/ obj.GetPixelData = function( format,left,top,width,height ) { return prompt( obj.id, "Img.GetPixelData(\f"+format+"\f"+left+"\f"+top+"\f"+width+"\f"+height ); }
+	/*#img*/ obj.SetPixelData = function( data,width,height,options ) { return prompt( obj.id, "Img.SetPixelData(\f"+data+"\f"+width+"\f"+height+"\f"+options ); }
+    /*#img*/ obj.GetPixelColor = function( x,y ) { return eval(prompt( obj.id, "Img.GetPixelColor(\f"+x+"\f"+y )); }
+    /*#img*/ obj.SetSize = function( width,height,options ) { prompt( obj.id, "Img.SetSize(\f"+width+"\f"+height+"\f"+options ); }
+    /*#img*/ obj.GetHeight = function() { return parseFloat(prompt( obj.id, "Img.GetHeight(" )); }
+    /*#img*/ obj.GetWidth = function() { return parseFloat(prompt( obj.id, "Img.GetWidth(" )); }
+    /*#img*/ obj.GetAbsHeight = function() { return parseFloat(prompt( obj.id, "Img.GetAbsHeight(" )); }
+    /*#img*/ obj.GetAbsWidth = function() { return parseFloat(prompt( obj.id, "Img.GetAbsWidth(" )); }
+    /*#img*/ obj.SetOnTouch = function( callback ) { prompt( obj.id, "Img.SetOnTouch("+_Cbm(callback) ); } 
+    /*#img*/ obj.SetOnTouchUp = function( callback ) { prompt( obj.id, "Img.SetOnTouchUp("+_Cbm(callback) ); }  
+    /*#img*/ obj.SetOnTouchMove = function( callback ) { prompt( obj.id, "Img.SetOnTouchMove("+_Cbm(callback) ); }
+    /*#img*/ obj.SetOnTouchDown = function( callback ) { prompt( obj.id, "Img.SetOnTouchDown("+_Cbm(callback) ); } 
+    /*#img*/ obj.SetOnLongTouch = function( callback ) { prompt( obj.id, "Img.SetOnLongTouch("+_Cbm(callback) ); } 
+    /*#img*/ obj.SetOnLoad = function( callback ) { prompt( obj.id, "Img.SetOnLoad\f"+_Cbm(callback) ); }   
+    /*#img*/ obj.SetTouchable = function( touchable ) { prompt( obj.id, "Img.SetTouchable("+touchable ); }
+    /*#img*/ obj.SetMaxRate = function( ms ) { prompt( obj.id, "Img.SetMaxRate("+ms ); }
+    /*#img*/ obj.SetColorFilter = function( clr,mode ) { prompt( obj.id, "Img.SetColorFilter(\f"+clr+"\f"+mode ); }
+    /*#img*/ obj.AdjustColor = function( hue,sat,bright,cont ) { prompt( obj.id, "Img.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
+    /*#img*/ obj.MeasureText = function( txt ) { return eval(prompt( obj.id, "Img.MeasureText(\f"+txt)); }
+    /*#img*/ obj.DrawImage = function( image,x,y,w,h,angle,mode ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawImage\f"+(image?image.id:null)+"\f"+x+"\f"+y+"\f"+w+"\f"+h+"\f"+angle+"\f"+mode ); 
 		else this.Draw( "i", (image?image.id:null), x,y,(w?w:-1),(h?h:-1),angle,mode ); }
-	obj.DrawImageMtx = function( image,matrix ) { 
+	/*#img*/ obj.DrawImageMtx = function( image,matrix ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawImageMtx\f"+(image?image.id:null)+"\f"+matrix ); 
 		else this.Draw( "m", (image?image.id:null), matrix ); }
-    obj.DrawPoint = function( x,y ) { 
+    /*#img*/ obj.DrawPoint = function( x,y ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawPoint("+x+"\f"+y ); else this.Draw( "p", null, x,y ); }
-    obj.DrawCircle = function( x,y,radius ) { 
+    /*#img*/ obj.DrawCircle = function( x,y,radius ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawCircle("+x+"\f"+y+"\f"+radius );
 		else this.Draw( "e", null, x,y,radius ); }
-    obj.DrawArc = function( x1,y1,x2,y2,start,sweep ) { 
+    /*#img*/ obj.DrawArc = function( x1,y1,x2,y2,start,sweep ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawArc("+x1+"\f"+y1+"\f"+x2+"\f"+y2+"\f"+start+"\f"+sweep );
 		else this.Draw( "a", null, x1,y1,x2,y2,start,sweep ); }
-    obj.DrawLine = function( x1,y1,x2,y2 ) { 
+    /*#img*/ obj.DrawLine = function( x1,y1,x2,y2 ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawLine("+x1+"\f"+y1+"\f"+x2+"\f"+y2 ); 
 		else this.Draw( "l", null, x1,y1,x2,y2 ); }
-    obj.DrawRectangle = function( x1,y1,x2,y2 ) { 
+    /*#img*/ obj.DrawRectangle = function( x1,y1,x2,y2 ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawRect("+x1+"\f"+y1+"\f"+x2+"\f"+y2 );
 		else this.Draw( "r", null, x1,y1,x2,y2 ); }
-    obj.DrawText = function( txt,x,y ) { 
+    /*#img*/ obj.DrawText = function( txt,x,y ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawText("+txt+"\f"+x+"\f"+y ); 
 		else this.Draw( "t", txt, x, y, 0,0,0 ); }
-	obj.DrawSamples = function( data,range ) { 
+	/*#img*/ obj.DrawSamples = function( data,range ) { 
 		if( obj._auto ) prompt( obj.id, "Img.DrawSamples(\f"+data+"\f"+range ); 
 		else this.Draw( "g", data, range, 0,0,0,0 ); }
-	obj.SetAlpha = function( alpha ) { if( obj._auto ) prompt( obj.id, "Img.SetAlpha("+alpha ); else this.Draw( "k",null,alpha ); }
-    obj.SetColor = function( clr ) { if( obj._auto ) prompt( obj.id, "Img.SetColor("+clr ); else this.Draw( "o", clr ); }
-    obj.SetTextSize = function( size ) { if( obj._auto ) prompt( obj.id, "Img.SetTextSize("+size ); else this.Draw( "x",null,size ); }
-    obj.SetFontFile = function( file ) { if( obj._auto ) prompt( obj.id, "Img.SetFontFile(\f"+file ); else this.Draw( "f",file ); }  
-    obj.SetLineWidth = function( width ) { if( obj._auto ) prompt( obj.id, "Img.SetLineWidth("+width ); else this.Draw( "w",null,width ); }
-    obj.SetPaintColor = function( clr ) { if( obj._auto ) prompt( obj.id, "Img.SetPaintColor("+clr ); else this.Draw( "n",clr ); }
-    obj.SetPaintStyle = function( style ) { if( obj._auto ) prompt( obj.id, "Img.SetPaintStyle("+style ); else this.Draw( "s",style ); } 
-    obj.Rotate = function( angle,pivX,pivY ) { prompt( obj.id, "Img.Rotate("+angle+"\f"+pivX+"\f"+pivY ); }
-    obj.Move = function( x,y ) { prompt( obj.id, "Img.Move("+x+"\f"+y ); }
-    obj.Scale = function( x,y ) { prompt( obj.id, "Img.Scale("+x+"\f"+y ); }
-    obj.Skew = function( x,y ) { prompt( obj.id, "Img.Skew("+x+"\f"+y ); }
-    obj.Transform = function( matrix ) { prompt( obj.id, "Img.Transform(\f"+matrix ); }
-    obj.Reset = function() { prompt( obj.id, "Img.Reset(" ); }
-    obj.Flatten = function() { prompt( obj.id, "Img.Flatten(" ); }
-    obj.Save = function( fileName,quality ) { prompt( obj.id, "Img.Save\f"+fileName+"\f"+quality ); }
-    obj.Draw = function( func, p1, p2, p3, p4, p5, p6, p7 ) {
+	/*#img*/ obj.SetAlpha = function( alpha ) { if( obj._auto ) prompt( obj.id, "Img.SetAlpha("+alpha ); else this.Draw( "k",null,alpha ); }
+    /*#img*/ obj.SetColor = function( clr ) { if( obj._auto ) prompt( obj.id, "Img.SetColor("+clr ); else this.Draw( "o", clr ); }
+    /*#img*/ obj.SetTextSize = function( size ) { if( obj._auto ) prompt( obj.id, "Img.SetTextSize("+size ); else this.Draw( "x",null,size ); }
+    /*#img*/ obj.SetFontFile = function( file ) { if( obj._auto ) prompt( obj.id, "Img.SetFontFile(\f"+file ); else this.Draw( "f",file ); }  
+    /*#img*/ obj.SetLineWidth = function( width ) { if( obj._auto ) prompt( obj.id, "Img.SetLineWidth("+width ); else this.Draw( "w",null,width ); }
+    /*#img*/ obj.SetPaintColor = function( clr ) { if( obj._auto ) prompt( obj.id, "Img.SetPaintColor("+clr ); else this.Draw( "n",clr ); }
+    /*#img*/ obj.SetPaintStyle = function( style ) { if( obj._auto ) prompt( obj.id, "Img.SetPaintStyle("+style ); else this.Draw( "s",style ); } 
+    /*#img*/ obj.Rotate = function( angle,pivX,pivY ) { prompt( obj.id, "Img.Rotate("+angle+"\f"+pivX+"\f"+pivY ); }
+    /*#img*/ obj.Move = function( x,y ) { prompt( obj.id, "Img.Move("+x+"\f"+y ); }
+    /*#img*/ obj.Scale = function( x,y ) { prompt( obj.id, "Img.Scale("+x+"\f"+y ); }
+    /*#img*/ obj.Skew = function( x,y ) { prompt( obj.id, "Img.Skew("+x+"\f"+y ); }
+    /*#img*/ obj.Transform = function( matrix ) { prompt( obj.id, "Img.Transform(\f"+matrix ); }
+    /*#img*/ obj.Reset = function() { prompt( obj.id, "Img.Reset(" ); }
+    /*#img*/ obj.Flatten = function() { prompt( obj.id, "Img.Flatten(" ); }
+    /*#img*/ obj.Save = function( fileName,quality ) { prompt( obj.id, "Img.Save\f"+fileName+"\f"+quality ); }
+    /*#img*/ obj.DrawFrame = function( ms ) { prompt( obj.id, "Img.DrawFrame\f"+ms ); }
+    /*#img*/ obj.Draw = function( func, p1, p2, p3, p4, p5, p6, p7 ) {
 		if( obj._gfb.length > 2 ) obj._gfb += "\f";
-		obj._gfb += func + "ï¿½" + p1 + "ï¿½" + p2 + "ï¿½" + p3 + "ï¿½" + p4 + "ï¿½" + p5 + "ï¿½" + p6 + "ï¿½" + p7;
+		obj._gfb += func + "¬" + p1 + "¬" + p2 + "¬" + p3 + "¬" + p4 + "¬" + p5 + "¬" + p6 + "¬" + p7;
 	}
     return obj;
 }
@@ -840,6 +868,7 @@ function Web( id )
     obj.SetUserCreds = function( name,password ) { prompt( obj.id, "Web.SetUserCreds(\f"+name+"\f"+password ); }
     obj.SimulateKey = function( keyName,modifiers,pause ) { prompt( obj.id, "Web.SimulateKey(\f"+keyName+"\f"+modifiers+"\f"+pause ); }
     obj.SetRedirect = function( urlFrom, urlTo ) { prompt( obj.id, "Web.SetRedirect(\f"+urlFrom+"\f"+urlTo ); } 
+    obj.SetTouchMode = function( mode ) { prompt( obj.id, "Web.SetTouchMode(\f"+mode ); } 
     return obj;
 }
 
@@ -866,8 +895,9 @@ function Dlg( id )
 	obj.RemoveLayout = function( layout ) { prompt( obj.id, "Dlg.RemoveLayout("+ layout.id ); }	
 	obj.Show = function() { prompt( obj.id, "Dlg.Show(" ); }
 	obj.Hide = function() { prompt( obj.id, "Dlg.Hide(" ); }
+	obj.IsVisible = function() { return prompt( obj.id, "Dlg.IsVisible\f" )=="true"; } 
 	obj.Dismiss = function() { prompt( obj.id, "Dlg.Dismiss(" ); }
-	obj.SetTitle = function( title ) { prompt( obj.id, "Dlg.SetTitle(\f"+ title ); }
+	obj.SetTitle = function( title,options ) { prompt( obj.id, "Dlg.SetTitle(\f"+title+"\f"+options ); }
 	obj.SetBackColor = function( clr ) { prompt( obj.id, "Dlg.SetBackColor(\f"+clr ); } 
 	obj.SetBackground = function( file,options ) { prompt( obj.id, "Dlg.SetBackground(\f"+file+"\f"+options ); }
 	obj.AdjustColor = function( hue,sat,bright,cont ) { prompt( obj.id, "Dlg.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
@@ -953,6 +983,7 @@ function Net( id )
     obj.ReceiveDatagrams = function( port,mode ) { prompt( obj.id, "Net.ReceiveDatagrams(\f"+port+"\f"+mode ); }  
     obj.SetOnReceive = function( callback ) { prompt( obj.id, "Net.SetOnReceive("+_Cbm(callback) ); }           
     obj.AutoReceive = function( server,port,mode ) { return prompt( obj.id, "Net.AutoReceive("+server+"\f"+port+"\f"+mode ); } 
+    obj.WakeOnLan = function( ip,mac ) { prompt( obj.id, "Net.WakeOnLan(\f"+ip+"\f"+mac ); }
     return obj;   
 }
 
@@ -1162,11 +1193,10 @@ function GLV( id )
 function WGL( id )
 {
     var obj = new Obj( id );  
-    obj.GetType = function() { return "WebGLView"; }
-    obj.Release = function() { prompt( obj.id, "WGL.Release(" ); _map[obj.id] = null; }
-    obj.Destroy = function() { prompt( obj.id, "WGL.Release(" ); _map[obj.id] = null; }
-    obj.Execute = function( p1,p2,p3,p4 ) { prompt( obj.id, "WGL.Execute(\f"+p1+"\f"+p2+"\f"+p3+"\f"+p4 ); } 
-    obj.Exec = function( p1,p2,p3,p4 ) { _gfx.Exec( p1,p2,p3,p4 ); }
+    obj.GetType = function() { return "GameView"; }
+    obj.Destroy = function() { prompt( obj.id, "WGL.Destroy(" ); _map[obj.id] = null; }
+    obj.SetFile = function( file ) { prompt( obj.id, "WGL.SetFile(\f"+file ); } 
+    obj.SetFrameRate = function( fps ) { prompt( obj.id, "WGL.SetFrameRate(\f"+fps ); } 
     obj.SetOnTouch = function( callback ) { prompt( obj.id, "WGL.SetOnTouch(\f"+_Cbm(callback) ); } 
     obj.SetOnTouchUp = function( callback ) { prompt( obj.id, "WGL.SetOnTouchUp(\f"+_Cbm(callback) ); }  
     obj.SetOnTouchMove = function( callback ) { prompt( obj.id, "WGL.SetOnTouchMove(\f"+_Cbm(callback) ); }
@@ -1349,6 +1379,7 @@ function Wbs( id )
     obj.SendText = function( txt, ip ) { prompt( obj.id, "Wbs.SendText(\f"+txt+"\f"+ip ); }
     obj.GetWebSockClients = function() { return eval(prompt( obj.id, "Wbs.GetWebSockClients(" )); }
     obj.SetOnReceive = function( callback ) { prompt( obj.id, "Wbs.SetOnReceive(\f"+_Cbm(callback) ); }  
+    obj.SetOnUpload = function( callback ) { prompt( obj.id, "Wbs.SetOnUpload(\f"+_Cbm(callback) ); }
     return obj;
 }
 
@@ -1417,6 +1448,7 @@ function Plg( id )
 	}
 	obj.SendImg = function( cmd,img,width,height ) { return prompt( obj.id, "Plg.SendImg\f"+cmd+"\f"+(img?img.id:null)+"\f"+width+"\f"+height ); }
     obj.SendCam = function( cmd,cam ) { return prompt(obj.id, "Plg.SendCam\f"+cmd+"\f"+(cam?cam.id:null) ); }
+    obj.Destroy = function() { prompt(obj.id, "Plg.Destroy" ); }
     return obj;
 }
 
@@ -1478,6 +1510,15 @@ function Syn( id )
     return obj;
 }
 
+function Wpr( id )
+{
+    var obj = new SObj( id );  
+    obj.GetType = function() { return "Wallpaper"; }
+    obj.IsVisible = function() { return prompt( obj.id, "Wpr.IsVisible\f" )=="true"; } 
+   	return obj;
+}
+
+function _Try( p1,p2,p3,p4 ) { return prompt( "#", "App.Try(\f"+p1+"\f"+p2+"\f"+p3+"\f"+p4 ); } 
 function _Call( id, func, params ) { if( func ) func.apply( _map[id], params ); }
 function _Cb( obj, func ) { return new _ObjCb(obj, func); }
 function _ObjCb( obj, func ) { _cbMap[++_cbId] = obj; this.name = "_cbMap['"+_cbId+"']."+func; }
@@ -1496,6 +1537,7 @@ function _LoadScript( url, callback )
     if( _scripts[url] ) { 
 		if( callback ) callback(); return; 
 	}
+	if( url.slice(-4)==".dsj" ) url += ".js";
 	var dbg = _dbg; app.SetDebugEnabled( false );
 	if( url.indexOf(":")<0 && !app.FileExists(url) ) 
 	    alert("Error: "+url+" not found!" + 
@@ -1516,6 +1558,7 @@ function _LoadScript( url, callback )
 function _LoadScriptSync( url )
 {
     if( _scripts[url] ) return; 
+    if( url.slice(-4)==".dsj" ) url += ".js";
     var dbg = _dbg; app.SetDebugEnabled( false );
     if( url.indexOf(":")<0 && !app.FileExists(url) ) 
 	    alert("Error: "+url+" not found!" + 
@@ -1582,38 +1625,3 @@ function _AddPermissions() {}
 function _RemovePermissions() {}
 function _AddOptions() {}
 
-if( typeof navigator=="undefined" ) { navigator = {userAgent:"Android"} };
-if( navigator.userAgent.indexOf("Android")>-1 )
-{
-	//Provide toast popup on Remix.
-	_dlgPop = null;
-	if( app.GetModel().indexOf("Remix")>-1 )
-	{
-		app.ShowPopup = function( msg, options )
-		{
-			if( options ) options = options.toLowerCase();
-			else options = "";
-			if( _dlgPop==null ) 
-			{ 
-				_dlgPop = app.CreateDialog( null, "NoDim,NoTouch,NoFocus" ); 
-				_dlgPop.SetBackColor( "#cc000000" );
-				_dlgPop.SetPosition( -1, options.indexOf("bottom")>-1 ? 0.75 : 0.25  );
-				var lay = app.CreateLayout( "linear", "vcenter" );
-				lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );
-				_dlgPop.AddLayout( lay );
-				_txtDlgPop = app.CreateText( msg );
-				_txtDlgPop.SetTextSize( 22 );
-				_txtDlgPop.SetTextColor( "#ffffff" );
-				lay.AddChild( _txtDlgPop );
-			}
-			else _txtDlgPop.SetText( msg );
-			_dlgPop.Show();
-			if( _dlgPop.timer ) clearTimeout( _dlgPop.timer ); 
-			var time = ( options.indexOf("short") ? 2000 : 4000 );
-			_dlgPop.timer = setTimeout( function() { _dlgPop.Hide(); }, time );
-		}
-	}
-
-	//Init app.
-	prompt( "#", "_Init" );
-}

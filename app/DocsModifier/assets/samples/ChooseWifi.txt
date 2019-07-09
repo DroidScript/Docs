@@ -1,0 +1,22 @@
+<sample Choose WiFi Network>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btnChoose = app.CreateButton( "Choose WiFi", 0.5, 0.1 );
+	btnChoose.SetOnTouch( btnChoose_OnTouch );
+	lay.AddChild( btnChoose );
+
+	app.AddLayout( lay );
+}
+
+function btnChoose_OnTouch()
+{
+	<b>app.ChooseWifi( "", "", OnWifiChoose );</b>
+}
+
+function OnWifiChoose( ssid )
+{
+     app.ShowPopup( "User selected " + ssid );
+}
+</sample>

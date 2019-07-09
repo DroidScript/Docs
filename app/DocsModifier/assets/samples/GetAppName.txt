@@ -1,8 +1,7 @@
-<sample Example>
+<sample Show app name>
 function OnStart()
 {
-<b>	name = app.GetAppName();
-</b>	app.ShowPopup( name );
+    <b>var name = app.GetAppName();</b>
+    app.Alert( name );
 }
 </sample>
-

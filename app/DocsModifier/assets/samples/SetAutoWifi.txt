@@ -1,0 +1,6 @@
+<sample Auto Enable WiFi>
+function OnStart()
+{
+	app.SetAutoWifi( true );
+}
+</sample>

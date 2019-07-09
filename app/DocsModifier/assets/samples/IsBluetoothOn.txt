@@ -1,8 +1,14 @@
-<sample Example>
+<sample Check Bluetooth Status>
 function OnStart()
 {
-<b>	btOn = app.IsBluetoothOn();
-</b>	app.ShowPopup( btOn );
+    var status = app.IsBluetoothEnabled()
+    <b>var state = app.IsBluetoothOn();</b>
+
+    app.ShowPopup(
+        "Bluetooth is " +
+        (status ? "enabled" : "disabled") +
+        (status == state ? " and " : " but ") +
+        (state ? "on" : "off")
+    );
 }
 </sample>
-

@@ -1,0 +1,28 @@
+<sample Get Saved Data>
+function OnStart()
+{
+    app.SetData( "myvar", "Hello World!" );
+    <b>var data = app.GetData("myvar");</b>
+    app.Alert( data, "Saved Data:" );
+}
+</sample>
+
+<sample Random Value>
+function OnStart()
+{
+	app.SetData( "number", 100 * Math.random() | 0 );
+
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	btn = app.CreateButton( "Press Me", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function OnMenu( item )
+{
+	<b>app.GetData( "number" );</b>
+}
+</sample>

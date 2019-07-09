@@ -1,0 +1,7 @@
+<sample Check /sdcard/ available>
+function OnStart()
+{
+    <b>var isFolder = app.IsFolder("/sdcard/");</b>
+    app.Alert( isFolder, "/sdcard/ is Folder:" );
+}
+</sample>
