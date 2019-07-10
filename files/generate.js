@@ -196,7 +196,7 @@ function getDocData( f, useAppPop ) {
 
 	// convert constructor line
 	for( i in f.pNames ) {
-		if( f.pNames[i] == "event" ) {
+	    if( f.pNames[i] == "event" ) {
 			Globals.useEventPop = true;
 			mArgs.push(
 				`<a pop="${Globals.saveHref}" href="" onclick='$( this.getAttribute( "pop" ) ).bind( {popupafterclose:function(){$( "#pop_std_evt" ).popup( "open", {"transition":"pop"} )}} );$( this.getAttribute( "pop" ) ).popup( "close" )'>event</a>`
@@ -426,9 +426,8 @@ function toArgPop( name, types ) {
 	var s = types.map(
 		(type, i) => "<b>" + typenames[type[0]] +
 			(hrefs[type[1]] ? 
-				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) : 
-				(last = "", type[2] ? ":</b>" : "</b>")
-			) + (type[2] ? last + " " : last)
+				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) : ""
+			) + (type[2] ? `:${last} ` : last)
 		);
 	
 	// add formatted possible values

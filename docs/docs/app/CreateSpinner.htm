@@ -29,7 +29,7 @@
 			<p>Create Spinners using the CreateSpinner method of the app object.</p>
 
 			<div class="samp">
-			spn = app.CreateSpinner( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Spinner
+			spn = app.CreateSpinner( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Spinner
 			</div>
 
 			<p>You can allow the Spinner to auto-size by leaving out the dimensions or you can specify a <b>width</b> and/or <b>height</b> as decimal fractions of the screen's width and height.<br>
@@ -99,10 +99,10 @@
 			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">SetColorFilter</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
 			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetList</a>( <a href="#pop_str_com" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">delim</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetOnTouch</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">SetPosition</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_00d" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">SetScale</a>( <a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )</div>
 			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">SetSize</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_00e" data-transition="pop" data-rel="popup">options</a> )</div>
@@ -117,6 +117,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
 		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> 100..100</div>
@@ -151,7 +152,7 @@
 		<div data-role="popup" id="pop_dsc_013" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_dsc_014" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
 		<div data-role="popup" id="pop_dsc_015" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_016" class="ui-content">SelectItem</div>
 		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
@@ -169,7 +170,6 @@
 		<div data-role="popup" id="pop_dsc_01c" class="ui-content">Adjust the visual color effect with a colour and a given BlendMode. More information about BlendMode can be found in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/graphics/BlendMode.html');">Android Developer page</a>.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_dsc_01d" class="ui-content">En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
-		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
 		<div data-role="popup" id="pop_dsc_01e" class="ui-content">override list</div>
 		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> “px” or “sp” or “dip” or “mm” or “pt”</div>
 		<div data-role="popup" id="pop_dsc_01f" class="ui-content">Define a distance to other controls on each side of the control.</div>
