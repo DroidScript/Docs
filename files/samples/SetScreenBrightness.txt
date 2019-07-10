@@ -1,6 +1,19 @@
-<sample Example>
+<sample SetScreenBrightness Demo>
 function OnStart()
 {
-<b>	app.SetScreenBrightness( 0.25 );
-</b>}</sample>
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay.SetBackColor( "white" );
 
+    spn = app.CreateSeekBar( 1 );
+    spn.SetOnChange( SetScreenBrightness );
+    spn.SetRange( 1 );
+    lay.AddChild( spn );
+
+	app.AddLayout( lay );
+}
+
+function SetScreenBrightness( level )
+{
+    app.SetScreenBrightness( level );
+}
+</sample>

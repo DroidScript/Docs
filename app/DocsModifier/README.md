@@ -13,7 +13,7 @@
  - file structure
  - how to use
  - source code
-   - tionale operators
+   - ternary operators
    - higher order functions
 
 
@@ -186,12 +186,12 @@ When you start the app the first time it shows the
       performance or because of other reasons
 
 
-<font color="green">**** tional operators ****</font>
+<font color="green">**** ternary operators ****</font>
 
-	Tionale operators are an excellent
+	Ternary operators are an excellent
 	way for shorting if conditions.
 	Instead of using long conditions
-	and store values etc. - use tional
+	and store values etc. - use ternary
 	operators!
 
 	<font color="white"><b>Syntax:</b></font>

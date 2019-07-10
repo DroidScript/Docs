@@ -2,7 +2,8 @@
 	// declare global variables
 var
     // hide functions and methods which are matching this regex
-	regHide = /_[\w\W]*|Destroy|Release|CreateObject|data|id/g,
+    regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Draw|ReplaceInFile|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
+	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later
 	functions, categories, info, tchd,
 	listHrefs, listTypes, listFolderSH,
@@ -47,7 +48,7 @@ function OnStart() {
 
     if(Object.keys) keys = Object.keys;
     if(Object.values) values = Object.values;
-    
+
 		// loads all source files
 	showProgress("loading sources...");
 	app.LoadScript("Dialogs.js", function() {
@@ -144,26 +145,26 @@ function OnLoadScript() {
 	// called after all (re)sources loaded
 function OnLoad() {
 	// define declared globals
-    
+
 		// load all functions
 	if(getl() && !app.FileExists(path + "functions" + getl() + ".json"))
 	    app.CopyFile(path + "functions.json", path + "functions" + getl() + ".json")
 	functions = JSON.parse(app.ReadFile(path + "functions" + getl() + ".json") || "{}");
-	
+
 		// load categories {category: [items]} and add the "all" section
 	if(getl() && !app.FileExists(path + "categories" + getl() + ".json"))
 	    app.CopyFile(path + "categories.json", path + "categories" + getl() + ".json")
 	categories = JSON.parse(app.ReadFile(path + "categories" + getl() + ".json") || "{}");
-	
+
 	categories.All = {};
 	for(var f in functions) categories.All[f] = f + ".htm";
 	controlArgs = JSON.parse(app.ReadFile(path + "controlArgs.json") || "{}");
-	
+
 	showProgress("loading GUI...");
 	createGUI();
-	
+
 	app.SetDebugEnabled(false);
-	
+
 	app.ShowPopup("DS Version: " + app.GetDSVersion());
 	if(app.LoadText("lastVersion", "") != app.GetDSVersion()) loadNews();
 
@@ -178,7 +179,7 @@ function OnLoad() {
 function loadNews() {
     // update app functions
 	var news = [];
-	
+
 	for(var i in app) {
 	    // remove hidden app functions
 	    if(hidden(i)) {
@@ -188,13 +189,13 @@ function loadNews() {
 	        }
 	        continue;
 	    }
-	    
+
 	    // add new app functions
 	    if(!functions[i]) {
 			news.push("+ ".fontcolor("green") + i + markFunc(app[i]));
 			functions[i] = getBaseFuncObj(i, app[i]);
 		}
-		
+
 		if(isControl(i)) {
             // create temp control
 			var ctrl = loadControl(i, getArgs(app[i]));
@@ -209,14 +210,14 @@ function loadNews() {
         	        }
         	        continue;
         	    }
-	    
+
                 // add new subfunctions
 	            if(!functions[i].subf[j] && ctrl[j]) {
 			        news.push("+ ".fontcolor("green") + i + "." + j + markFunc(ctrl[j]));
 		    		functions[i].subf[j] = getBaseFuncObj(j, ctrl[j]);
 			    }
 		    }
-		    
+
             // remove deleted subfunctions
 		    for(var j in functions[i].subf) {
 	            if(!ctrl[j]) {
@@ -230,7 +231,7 @@ function loadNews() {
     		    if(ctrl.Destroy) ctrl.Destroy();
 	    }
     }
-    
+
     // remove deleted app functions
     for(var i in functions) {
 	    if(hidden(i)) continue;
@@ -241,7 +242,7 @@ function loadNews() {
 			    delete categories[j][i];
 		}
     }
-    
+
     hideProgress();
     if(news.length) Dlgs.News.show(news);
 	delete news;
@@ -250,7 +251,7 @@ function loadNews() {
     // get control object
 function loadControl(name, pNames) {
     var obj, args = [];
-    
+
         // one heck of a workaround for websockets trying to reopen
     if(name == "CreateWebSocket") {
         t_WebSocket   = WebSocket;
@@ -267,19 +268,19 @@ function loadControl(name, pNames) {
         var con = controlName(name);
         obj = window[con] ? window[con]("#-1") : null;
     }
-    
+
     while(!obj) {
-		args = prompt("type the argument list\napp." + name + 
+		args = prompt("type the argument list\napp." + name +
 			"(" + pNames + ')\n\nie: "Linear", "FillXY,VCenter"');
 		if(args == null) return false;
-		
-		try { args = JSON.parse("[" + args + "]") } 
+
+		try { args = JSON.parse("[" + args + "]") }
 		catch(e) { alert("args invalid: " + e); };
-		
+
 		try { obj = app[name].apply(this, args); }
 		catch(e) { alert("creation failed: " + e); obj = null; }
 	}
-	
+
 	if(args.length) {
 		controlArgs[name] = args;
 		saveControlArgs();
@@ -289,9 +290,9 @@ function loadControl(name, pNames) {
 
 	// called when back button pressed
 function OnBack() {
-    
+
 	switch(vis) {
-	    
+
 		case 1: // edit layout shown
 			if(changed) { // ask for saving before cancel if smth was changed
 				Dlgs.Confirm.show("Save \"" + curF.name + "\" first?", function(reply, btn) {
@@ -307,7 +308,7 @@ function OnBack() {
 				vis = 0;
 			}
 		break;
-		
+
 		case 2: // edit examples layout shown
 			var sName = GUI.edtSName.GetText(),
 				sCode = GUI.edtSCode.GetText();
@@ -326,7 +327,7 @@ function OnBack() {
 				vis = 1;
 			}
 		break;
-		
+
 		case 3: // subfunction loaded
 			curF = functions[doc];
 			vis = 1; doc = "";
@@ -334,7 +335,7 @@ function OnBack() {
 			GUI.btnEdtSamp.SetEnabled(true);
 			loadDoc(curF);
 		break;
-		
+
 		default: // 0: start layout shown
 			if(cat) loadCategs(cat = "");
 			else Dlgs.Confirm.show("Do you really want to exit?", function(reply) {
@@ -362,7 +363,7 @@ function loadDoc(f) {
 	curF = f;
 	if(control && control.Destroy) control.Destroy();
 	var isObj = isControl(f.name), tchd = false;
-	
+
 	GUI.lstSubf.SetVisibility(isObj? "Show" : "Hide");
 	GUI.lstParams.SetVisibility(f.isfunc? "Show" : "Hide");
 	GUI.btnRType.SetVisibility(isObj? "Hide" : "Show");
@@ -370,7 +371,7 @@ function loadDoc(f) {
 
 	GUI.txtName.SetText(f.name || "");
 	GUI.edtDesc.setText(f.desc || "");
-	
+
 	if(!f.shortDesc && isObj) {
 		GUI.edtShortDesc.SetText("returns a " + f.name.slice(6) + " object.");
 		tchd = true;
@@ -388,7 +389,7 @@ function loadDoc(f) {
 	if(isObj && app[f.name]) {
 		if(!(control = loadControl(f.name, f.pNames))) return false;
 	} else control = null;
-	
+
 	loadSubfLst();
 	loadPreview();
 	loadParamLst();
@@ -490,7 +491,11 @@ function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
     // return new empty function element
 function emptyFunc(title) { return { name:title, desc:"", pNames:[], pTypes:[], isfunc:true, retval:"", subf:{} }; }
     // validate control status
-function isControl(name) { return name.startsWith("Create") && (app[name]? app[name].toString().indexOf("return") > -1 : false); }
+function isControl(name) {
+	return (name.match(regControl)) && (app[name]?
+		app[name].toString().indexOf("return") > -1 :
+		!!functions[name].subf);  //! for debug, :false
+}
 	// convert arguments to function line like in the docs
 function funcLine(name, params, rtype) {
 	return name + (params.length? "(" + params.join(", ") + ")" : "()") +
@@ -509,7 +514,7 @@ function assign() {
 function getAbbrev(s) {
 	if(controlName(s).length == 3)
 	    return controlName(s).toLowerCase();
-    
+
 	var count = 0;
 	        // remove 'Create'
 	return s.slice(6)
@@ -542,7 +547,7 @@ function tos(o, intd, m) {
 	if(intd == undefined) intd = "";
 	if(m == undefined) m = true;
 	s = m ? intd : "";
-	
+
 	if(o === null) return "null";
 	else if(o === undefined) return "undefined";
 	else switch(o.constructor.name) {
@@ -625,7 +630,7 @@ function getSamplesObj(name) {
 
 	// calls a method if the control content wasnt modified after 3 seconds
 function setModifier(obj, callb) {
-    
+
 	obj.setText = callb;
 	obj.tmt = null;
 	obj.SetOnChange(_ObjCbm(function() {
@@ -633,7 +638,7 @@ function setModifier(obj, callb) {
 		changed = true;
 		obj.tmt = setTimeout(callb, 3000);
 	}));
-	
+
 	obj.fireCallback = function() {
 		clearTimeout(obj.tmt);
 		changed = true;
@@ -658,7 +663,7 @@ function fstrip(s) {
 	// returns wether a value is missing in the function
 function isIncomplete(f) {
     var lst = [];
-    
+
 		// check subfunctions
 	for(var i in f.subf)
 		if(isIncomplete(f.subf[i])) { lst.push("sf"); break; }
@@ -667,7 +672,7 @@ function isIncomplete(f) {
 	for(var i = 0; i < f.pTypes.length; i++)
 		if(f.pTypes[i].constructor.name != "Object")
 			if(!fstrip(f.pTypes[i]).length) { lst.push("pt"); break; }
-		
+
 		// check description
 	if(!fstrip(f.desc = f.desc || "").length || f.desc == f.name) lst.push("d");
 

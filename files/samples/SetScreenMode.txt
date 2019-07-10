@@ -1,6 +1,17 @@
-<sample Example>
+<sample SetScreenMode Demo>
 function OnStart()
 {
-<b>	app.SetScreenMode( "Full" );
-</b>}</sample>
+	lay = app.CreateLayout( "Linear", "Vertical,VCenter,FillXY" );
 
+	spn = app.CreateSpinner( "Default,Normal,Full,Game" );
+	spn.SetOnChange( SetScreenMode );
+	lay.AddChild( spn );
+
+	app.AddLayout( lay );
+}
+
+function SetScreenMode( mode )
+{
+    <b>app.SetScreenMode( mode );</b>
+}
+</sample>

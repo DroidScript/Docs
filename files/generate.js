@@ -1,4 +1,6 @@
 
+var curDoc;
+
 	//generates all doc files
 function generateDocs() {
 	app.ShowProgressBar( "Generating files..." );
@@ -32,7 +34,7 @@ function generateDocs() {
 			for( var j in tsubf ) {
 				if(hidden(j)) continue;
 				if(typeof(tsubf[j]) == "string" && tsubf[j].startsWith("#")) {
-					if(!basefuncs[tsubf[j]]) throw `basefunc ${tsubf[j]} not found!`;
+					if(!basefuncs[tsubf[j]]) Throw(Error(`basefunc ${tsubf[j]} not found!`));
 					tctrl[j] = basefuncs[tsubf[j]].shortDesc;
 				} else tctrl[j] = tsubf[j].shortDesc;
 			}
@@ -90,7 +92,7 @@ function generateNavigators() {
 				// .replace( "%n", JSON.stringify(navs) )
 			);
 		});
-		
+	
 	app.WriteFile( 
 		path + "docs" + getl() + "/Categories.htm", 
 		naviBase
@@ -101,60 +103,64 @@ function generateNavigators() {
 
 // generates one document by function name
 function generateDoc( name ) {
+	curDoc = `docs${getl()}/app/${name}.htm`;
+
+	// reset globals
+		// it still exists because it was necessary to do it this way in python
+		// and I haven't changed it during the translation
+	Globals = {
+		popDefs: [],
+		useEventPop: false,
+		saveHref:    false,
+		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0}
+	};
+
+	/* find next documents by categories
+	var navs = {};
+	keys(categories).forEach(function(c, i, l) {
+		l = categories[c].sort( sortAsc ).filter(nothidden);
+		if((i = l.indexOf(name)) != -1) {
+			navs[c] = [
+				l[(i + l.length - 1) % l.length] + ".htm", 
+				l[(i + 1) % l.length] + ".htm"
+			];
+		}
+	});*/
 	
-	//try {
-		// reset globals
-			// it still exists because it was necessary to do it this way in python
-			// and I haven't changed it during the translation
-		Globals = {
-			popDefs: [],
-			useEventPop: false,
-			saveHref:    false,
-			spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0}
-		};
+	try {
+	    //get an object with the html-converted data
+	    var data = getDocData(functions[name]),
+		    //insert everything into the doc base string
+		    html = htmlBase
+			    // subfunctions
+			    .replace(/%b/g, isControl(name) ? subfHead
+				    .replace(/%t/g, name.slice(6))
+				    .replace("%f", data.mets) : ""
+			    )
+			    // description
+			    .replace("%d", getDesc(name)
+				    .replace("%s", (
+					    functions[name].abbrev ? functions[name].abbrev + " = " : "") +
+					    `app.${name}(${data.args})` + data.ret)
+				    .replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
+			    )
+			    // popup object list
+			    .replace(/%p/, Globals.popDefs.join(""))
+			    // title occurances
+			    .replace(/%t/g, name)
+			    // remove empty <p> tags
+			    .replace(/\n?\t*<p><\/p>/g, "")      
+			    // remove leading whitespace in <p> tag
+			    .replace(/<p>(<br>\s+)+/g, "<p>");   
+			    // add navigator target object
+			    //.replace(/%n/, JSON.stringify(navs)) 
 
-		/* find next documents by categories
-		var navs = {};
-		keys(categories).forEach(function(c, i, l) {
-			l = categories[c].sort( sortAsc ).filter(nothidden);
-			if((i = l.indexOf(name)) != -1) {
-				navs[c] = [
-					l[(i + l.length - 1) % l.length] + ".htm", 
-					l[(i + 1) % l.length] + ".htm"
-				];
-			}
-		});*/
-		
-		//get an object with the html-converted data
-		var data = getDocData(functions[name]),
-			//insert everything into the doc base string
-			html = htmlBase
-				// subfunctions
-				.replace(/%b/g, isControl(name) ? subfHead
-					.replace(/%t/g, name.slice(6))
-					.replace("%f", data.mets) : ""
-				)
-				// description
-				.replace("%d", getDesc(name)
-					.replace("%s", (
-						functions[name].abbrev ? functions[name].abbrev + " = " : "") +
-						`app.${name}(${data.args})` + data.ret)
-					.replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
-				)
-				// popup object list
-				.replace(/%p/, Globals.popDefs.join(""))
-				// title occurances
-				.replace(/%t/g, name)
-				// remove empty <p> tags
-				.replace(/\n?\t*<p><\/p>/g, "")      
-				// remove leading whitespace in <p> tag
-				.replace(/<p>(<br>\s+)+/g, "<p>");   
-				// add navigator target object
-				//.replace(/%n/, JSON.stringify(navs)) 
-
-		//save doc file
-		app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
-	//} catch(e) { app.Alert( e, "while generating " + name + ".htm:", "", 255 ); }
+	    //save doc file
+	    app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
+    } catch(e) {
+        console.error( /*\x1b[31m*/`while generating "${curDoc}":` );
+        throw e;
+    }
 }
 
 // converts a function object into an html snippets object
@@ -226,7 +232,7 @@ function getDocData( f, useAppPop ) {
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
-			if(!basefuncs[met]) throw "basefunc " + met + " not found!";
+			if(!basefuncs[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = basefuncs[met];
 		}
 
@@ -293,7 +299,7 @@ function getDesc(name) {
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/(\s|<br>)*<sample (.*?)>/g, (m, _, n) => 
-			(s = samples[n] || Throw(`sample ${n} not found for ${name}`),
+			(s = samples[n] || Throw(Error(`sample ${n} not found for ${name}`)),
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
 		) + "</p>" + values(samples).concat("").reduce((a, b) => a + b);
 }
@@ -373,12 +379,16 @@ function typeDesc( types, isDSO ) {
 				case "str": return s[i] + rplop( type[2], true );
 				case "lst":
 				case "obj": return s[i] + replaceTypes( type[2], false );
-				default: throw "unknown type " + type[1];
+				case "dso":
+				    if(!functions[type[2]])
+				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
+				    return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+				default: Throw(Error("unknown type " + type[1]));
 			}
 		} else {
 			if(s[i] == undefined) {
 				if(isDSO) return "<b>app object:</b> " + type[1];
-				else throw "unknown type " + type[1];
+				else Throw(Error("unknown type " + type[1]));
 			}
 			return s[i];
 		}
@@ -410,7 +420,7 @@ function toArgPop( name, types ) {
 		)
 	);
 
-	// start of type desc string. [optional], [:] if followed by value
+	// start of type desc string. (info: [optional], [:] if followed by value)
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
 	var last = "</b>";
 	var s = types.map(
@@ -433,7 +443,11 @@ function toArgPop( name, types ) {
 					return s[i]; break;
 				case "lst":
 				case "obj": return s[i] + replW( replaceTypes( type[2], true )); break;
-				default: throw "unknown type " + type[1];
+				case "dso":
+				    if(!functions[type[2]])
+				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
+				    return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+				default: Throw(Error("unknown type " + type[1]));
 			}
 		} else return s[i];
 	});
@@ -570,6 +584,9 @@ function newTxtPopup(  id, text) {
 }
 function newAppPopup(desc, type) { 
 	return appPopup.replace("%s", desc).replace("%s", type);
+}
+function newLink(target, text) {
+	return `<a href="${target}">${text}</a>`;
 }
 function dbg(v){ console.log(v); return v; }
 
@@ -719,6 +736,8 @@ var 	//navigator list item
 	//global variables
 var 	//globals for one doc
 	Globals,
+	    // app object constructor name prefixes
+	regConPrefix = /^(Create|Open)/,
 	//bases for...
 		//available typenames
 	typenames = {
@@ -739,9 +758,6 @@ var 	//globals for one doc
 		"bin":"",
 		"dso":"",
 		/*"mul":"", // multiple separated with ||*/
-		"dso_glv":"app GLView image",
-		"dso_img":"app image",
-		"dso_lay":"app layout",
 		"fnc":"",
 		"lst":"",
 		"lst_obj":"of objects",
@@ -806,7 +822,8 @@ var
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor
 	lang = "en",     // current language
-	path = "/home/symbroson/Projects/DroidScript/work/Docs/";
+	path = __dirname + "/";
+
 
 function getl(l) { if(l == undefined) l = lang; return l == "en"? "" : "-" + l; }
 function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
@@ -898,7 +915,7 @@ function OnStart() {
 	else generateDocs();
 }
 
-var fs = require('fs');
+var fs = require("fs");
 var rimraf = require("rimraf");
 
 app = {

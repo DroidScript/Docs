@@ -4,7 +4,7 @@
 		"isfunc": true,
 		"name": "AddDrawer",
 		"pNames": ["layout", "side", "width"],
-		"pTypes": ["dso_lay", "str-left|right", "num_srw"],
+		"pTypes": ["dso-CreateLayout", "str-left|right", "num_srw"],
 		"shortDesc": "Adds a slide-able layout on given side."
 	},
 	"AddLayout": {
@@ -12,7 +12,7 @@
 		"isfunc": true,
 		"name": "AddLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "Adds a layout to the app"
 	},
 	"Alert": {
@@ -757,7 +757,7 @@
 				"isfunc": true,
 				"name": "SetDuplicateImage",
 				"pNames": ["image1", "image2"],
-				"pTypes": ["dso_img", "dso_img"],
+				"pTypes": ["dso-CreateImage", "dso-CreateImage"],
 				"shortDesc": ""
 			},
 			"SetEnabled": "#1602385882",
@@ -885,7 +885,7 @@
 				"isfunc": true,
 				"name": "SetPreviewImage",
 				"pNames": ["image"],
-				"pTypes": ["dso_img"],
+				"pTypes": ["dso-CreateImage"],
 				"shortDesc": ""
 			},
 			"SetScale": "#1990464376",
@@ -1424,7 +1424,7 @@
 				"isfunc": true,
 				"name": "AddLayout",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": ""
 			},
 			"AdjustColor": "#1794786072",
@@ -1475,7 +1475,7 @@
 				"isfunc": true,
 				"name": "RemoveLayout",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": ""
 			},
 			"SetBackAlpha": "#1162431318",
@@ -2033,7 +2033,7 @@
 				"isfunc": true,
 				"name": "DrawImage",
 				"pNames": ["image", "x", "y", "w", "h", "angle", "mode"],
-				"pTypes": ["dso_img", "num", "num", "num", "num", "num_deg", "str"],
+				"pTypes": ["dso-CreateImage", "num", "num", "num", "num", "num_deg", "str"],
 				"shortDesc": ""
 			},
 			"DrawImageMtx": {
@@ -2041,7 +2041,7 @@
 				"isfunc": true,
 				"name": "DrawImageMtx",
 				"pNames": ["image", "matrix"],
-				"pTypes": ["dso_img", "lst"],
+				"pTypes": ["dso-CreateImage", "lst"],
 				"shortDesc": ""
 			},
 			"DrawLine": {
@@ -2230,7 +2230,7 @@
 				"isfunc": true,
 				"name": "SetImage",
 				"pNames": ["image", "width", "height", "options"],
-				"pTypes": ["str_pth||dso_img", "num_srw", "num_srh", "str-rescale"],
+				"pTypes": ["str_pth||dso-CreateImage", "num_srw", "num_srh", "str-rescale"],
 				"shortDesc": ""
 			},
 			"SetLineWidth": {
@@ -4636,7 +4636,7 @@
 				"isfunc": true,
 				"name": "AddChild",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Add a (layout) control."
 			},
 			"AdjustColor": "#1794786072",
@@ -4646,7 +4646,7 @@
 				"isfunc": true,
 				"name": "DestroyChild",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Remove a child and destroy the world. Why even trying to create something new."
 			},
 			"Focus": "#7324472769",
@@ -5966,7 +5966,7 @@
 				"name": "GetLayout",
 				"pNames": ["name"],
 				"pTypes": ["str"],
-				"retval": "dso_lay",
+				"retval": "dso-CreateLayout",
 				"shortDesc": ""
 			},
 			"GetLeft": "#1237814406",
@@ -7890,7 +7890,7 @@
 		"isfunc": true,
 		"name": "DestroyLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "Destroy a layout."
 	},
 	"DisableKeys": {
@@ -8531,7 +8531,7 @@
 		"shortDesc": "Get ID of a resource."
 	},
 	"GetRingerMode": {
-		"desc": "Returns the current ringer mode of the device. which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
+		"desc": "Returns the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
 		"isfunc": true,
 		"name": "GetRingerMode",
 		"pNames": [],
@@ -8621,7 +8621,7 @@
 		"shortDesc": "Get value of shared text."
 	},
 	"GetSpeakerPhone": {
-		"desc": "Returns a boolean indicating whether the speaker is enabled for phone calls. Returns false if no call is active.",
+		"desc": "Returns a boolean indicating whether the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"isfunc": true,
 		"name": "GetSpeakerPhone",
 		"pNames": [],
@@ -9408,7 +9408,7 @@
 		"isfunc": true,
 		"name": "RemoveLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "RemoveLayout"
 	},
 	"RenameFile": {
@@ -9785,7 +9785,7 @@
 				"isfunc": true,
 				"name": "callback",
 				"pNames": ["state", "ssid"],
-				"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED"],
+				"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED", "str"],
 				"shortDesc": "callback"
 			}
 		],
@@ -9823,59 +9823,59 @@
 		"shortDesc": "Change app position and size."
 	},
 	"SetPriority": {
-		"desc": "?",
+		"desc": "Changes the GUI thread priority.",
 		"isfunc": true,
 		"name": "SetPriority",
 		"pNames": ["level"],
-		"pTypes": ["str-Low|High"],
-		"shortDesc": "SetPriority"
+		"pTypes": ["str-Low|Medium|High"],
+		"shortDesc": "Change GUI thread priority."
 	},
 	"SetRingerMode": {
-		"desc": "?",
+		"desc": "Change the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
 		"isfunc": true,
 		"name": "SetRingerMode",
 		"pNames": ["mode"],
-		"pTypes": ["?"],
-		"shortDesc": "SetRingerMode"
+		"pTypes": ["str-Normal|Vibrate|Silent"],
+		"shortDesc": "Set current device ringer mode."
 	},
 	"SetScreenBrightness": {
-		"desc": "SetScreenBrightness",
+		"desc": "Change the screen brightness to a value between 0 and 1, where 0 is the lowest and 1 the highest possible brightness value.",
 		"isfunc": true,
 		"name": "SetScreenBrightness",
 		"pNames": ["level"],
-		"pTypes": ["num_prc"],
-		"shortDesc": "SetScreenBrightness"
+		"pTypes": ["num_flt-0..1"],
+		"shortDesc": "Change screen brightness."
 	},
 	"SetScreenMode": {
-		"desc": "SetScreenMode",
+		"desc": "Changes the screen mode of your application. If null is passed, the [SetMenu.htm](app menu) will be dismissed. When called, the global OnConfig function will be called (if defined).",
 		"isfunc": true,
 		"name": "SetScreenMode",
 		"pNames": ["mode"],
-		"pTypes": ["str-Game|Full|Normal|Default"],
+		"pTypes": ["str-Default|Normal|Full|Game"],
 		"shortDesc": "SetScreenMode"
 	},
 	"SetSharedApp": {
-		"desc": "? define app started when app called via intent?",
+		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data.",
 		"isfunc": true,
 		"name": "SetSharedApp",
 		"pNames": ["name"],
-		"pTypes": ["str"],
-		"shortDesc": "SetSharedApp"
+		"pTypes": ["str-AppName"],
+		"shortDesc": "Auto-Launch Project when shared data received."
 	},
 	"SetSpeakerPhone": {
-		"desc": "?",
+		"desc": "En/Disables the speaker for phone calls.\n\nSee also: @GetSpeakerPhone.",
 		"isfunc": true,
 		"name": "SetSpeakerPhone",
 		"pNames": ["on"],
 		"pTypes": ["bin"],
-		"shortDesc": "SetSpeakerPhone"
+		"shortDesc": "En/Disable speaker for phone calls."
 	},
 	"SetTheme": {
 		"desc": "SetTheme",
 		"isfunc": true,
 		"name": "SetTheme",
 		"pNames": ["theme"],
-		"pTypes": ["str-light|dark|?"],
+		"pTypes": ["dso-CreateTheme"],
 		"shortDesc": "SetTheme"
 	},
 	"SetTitle": {
