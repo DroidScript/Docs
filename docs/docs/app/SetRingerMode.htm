@@ -26,17 +26,55 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Change the current ringer mode of the device which can be <i>“Normal”</i>, <i>“Vibrate”</i> or <i>“Silent”</i>.</p>
 
 			<div class="samp">
-			app.SetRingerMode( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">mode</a> )
+			app.SetRingerMode( <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - SetRingerMode Demo</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;spn = app.CreateSpinner( &quot;Normal,Vibrate,Silent&quot; );<br>
+				&#160;&#160;&#160;&#160;spn.SetOnChange( SetRingerMode );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( spn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Press Me&quot;, 0.3, 0.1 );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( Notify );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function SetRingerMode( mode )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetRingerMode( mode );</b><br>
+				}<br>
+				<br>
+				function Notify()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var ntf = app.CreateNotification();<br>
+				&#160;&#160;&#160;&#160;ntf.SetMessage( &quot;RingerMode Demo&quot;, &quot;RingerMode Demo notifies:&quot;, &quot;Helo World&quot; );<br>
+				&#160;&#160;&#160;&#160;ntf.Notify();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Normal” or “Vibrate” or “Silent”</div>
 
 	</div>
 </body>

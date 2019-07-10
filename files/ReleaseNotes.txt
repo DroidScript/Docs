@@ -291,8 +291,8 @@ DS 1.62a2
 - Removed 'WebView Gauges' and 'WebView Graphs' samples moved to downloadable demos.
 - Fixed drawer lock/unlock bug.
 - Enabled mixing of width/height vals with 'FillX', 'FillY' option.
-- Fixed app.SetScreenMode to remove menus when null/empty string used.
-- Changed app.SetScreenMode to fire OnConfig.
+-.Fixed app.SetScreenMode to remove menus when null/empty string used.
+-.Changed app.SetScreenMode to fire OnConfig.
 
 DS 1.62a1
 - Added game engine (alpha)!
@@ -464,7 +464,7 @@ DS 1.50
 - Added app.IsCharging and app.GetChargeType() methods.
 - Added app.SetSpeakerPhone() and app.GetSpeakerPhone() methods.
 - Added app.Animate() method (use instead of setInterval for smoother animation).
-- Added app.SetPriority() method to change GUI thread priority ('Low','Medium','High').
+-.Added app.SetPriority() method to change GUI thread priority ('Low','Medium','High').
 - Change game samples to use app.Animate() (gives smoother framerate).
 - Using _AddOption( "NoDom" ) now forces app into high performance mode.
 - APK 'Network' permissions issue fixed for app.WifiConnect, app.SetOnWifiChange.
@@ -822,9 +822,9 @@ DS 1.23b
 - Intellisense now works for controls in WiFi IDE.
 - Device name and connected state shown in WiFi IDE.
 - Connection password added to WiFi IDE (optional).
-- Added new 'Game' mode to app.SetScreenMode().
-- app.SetScreenMode("Full") now works on devices with virtual buttons.
-- app.SetScreenMode("Full") now works in html apps.
+-.Added new 'Game' mode to app.SetScreenMode().
+-.app.SetScreenMode("Full") now works on devices with virtual buttons.
+-.app.SetScreenMode("Full") now works in html apps.
 -.Added new "Reflect" option to app.CreateWebServer.
 -.Added new "Alias" option to app.CreateImage (makes drawing jagged).
 - Added new low level file access object app.CreateFile().

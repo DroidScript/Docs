@@ -29,7 +29,7 @@
 			<p>CreateCodeEdit is a control for premium users which is like a TextEdit but it has advanced methods.</p>
 
 			<div class="samp">
-			cde = app.CreateCodeEdit( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> CodeEdit
+			cde = app.CreateCodeEdit( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> CodeEdit
 			</div>
 
 			<p><br>The following methods are available on the <b>CodeEdit</b> object:</p>
@@ -82,12 +82,12 @@
 			<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">SetEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
 			<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">SetHtml</a>( <a href="#pop_str_htm" data-transition="pop" data-rel="popup">str</a> )</div>
 			<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetLanguage</a>( <a href="#pop_str_00b" data-transition="pop" data-rel="popup">ext</a> )</div>
-			<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">SetNavigationMethod</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">method</a> )</div>
 			<div class="samp"><a href="#pop_dsc_033" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_034" data-transition="pop" data-rel="popup">SetOnDoubleTap</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_035" data-transition="pop" data-rel="popup">SetOnKey</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_037" data-transition="pop" data-rel="popup">SetPosition</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_00e" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_038" data-transition="pop" data-rel="popup">SetScale</a>( <a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )</div>
 			<div class="samp"><a href="#pop_dsc_039" data-transition="pop" data-rel="popup">SetSelectMode</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">onOff</a> )</div>
@@ -108,7 +108,7 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_num_srw" class="ui-content"><b>number:</b> <i>fraction of screen width</i></div>
 		<div data-role="popup" id="pop_num_srh" class="ui-content"><b>number:</b> <i>fraction of screen height</i></div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
 		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> 100..100</div>
@@ -150,7 +150,7 @@
 		<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
 		<div data-role="popup" id="pop_dsc_01c" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_dsc_01d" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
 		<div data-role="popup" id="pop_dsc_01e" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_01f" class="ui-content">selected text</div>
 		<div data-role="popup" id="pop_dsc_020" class="ui-content">redo undone action</div>
@@ -165,6 +165,7 @@
 		<div data-role="popup" id="pop_dsc_026" class="ui-content">Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
 		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...</i></div>
 		<div data-role="popup" id="pop_dsc_027" class="ui-content">Changes the background color of the control.</div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> “left-right” or “right-left” or “top-bottom” or “bottom-top” or “bl-tr” or “br-tl” or “tl-br” or “tr-bl”</div>
 		<div data-role="popup" id="pop_dsc_028" class="ui-content">Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.</div>
 		<div data-role="popup" id="pop_dsc_029" class="ui-content">Define a radial color gradient for the background of control.</div>

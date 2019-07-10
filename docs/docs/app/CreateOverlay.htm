@@ -29,7 +29,7 @@
 			<p>CreateOverlay.</p>
 
 			<div class="samp">
-			ovl = app.CreateOverlay( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )
+			ovl = app.CreateOverlay( <a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p><br>The following methods are available on the <b>Overlay</b> object:</p>
@@ -62,8 +62,8 @@
 			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">SetBackground</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">SetColorFilter</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">colour</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">SetEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetPadding</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetPosition</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">layout</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetScale</a>( <a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )</div>
 			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetSize</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_00c" data-transition="pop" data-rel="popup">options</a> )</div>
@@ -74,6 +74,7 @@
 			<br>
 		</div>
 
+		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content">AddLayout</div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
@@ -107,7 +108,7 @@
 		<div data-role="popup" id="pop_dsc_012" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_dsc_013" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <i>comma “,” separated</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
 		<div data-role="popup" id="pop_dsc_014" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_015" class="ui-content">RemoveLayout</div>
 		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>

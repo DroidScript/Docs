@@ -1,1 +1,11 @@
- 
+<sample Input Name>
+function OnStart()
+{
+	<b>app.ShowTextDialog( "Type your Name:", "", OnInputName );</b>
+}
+
+function OnInputName( name )
+{
+    app.ShowPopup( "Your name is " + name );
+}
+</sample>

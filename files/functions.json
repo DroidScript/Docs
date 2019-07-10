@@ -4,7 +4,7 @@
 		"isfunc": true,
 		"name": "AddDrawer",
 		"pNames": ["layout", "side", "width"],
-		"pTypes": ["dso_lay", "str-left|right", "num_srw"],
+		"pTypes": ["dso-CreateLayout", "str-left|right", "num_srw"],
 		"shortDesc": "Adds a slide-able layout on given side."
 	},
 	"AddLayout": {
@@ -12,7 +12,7 @@
 		"isfunc": true,
 		"name": "AddLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "Adds a layout to the app"
 	},
 	"Alert": {
@@ -20,7 +20,7 @@
 		"isfunc": true,
 		"name": "Alert",
 		"pNames": ["message", "title", "options", "hue"],
-		"pTypes": ["str", "str", "str-NoDim,NoFocus", "num_int--180..180"],
+		"pTypes": ["str", "str", "str_com-NoDim,NoFocus", "num_int--180..180"],
 		"shortDesc": "Shows a popup message with an 'OK' button to exit"
 	},
 	"Animate": {
@@ -54,7 +54,7 @@
 		"isfunc": true,
 		"name": "BroadcastIntent",
 		"pNames": ["action", "category", "data", "type", "extras", "options"],
-		"pTypes": ["str-android action", "str", "str", "str", "str", "str"],
+		"pTypes": ["str-android action", "str", "str", "str", "str", "str_com"],
 		"shortDesc": "Send broadcast intent"
 	},
 	"Call": {
@@ -134,7 +134,7 @@
 		"isfunc": true,
 		"name": "ChooseImage",
 		"pNames": ["options", "callback"],
-		"pTypes": ["str-internal|external|", {
+		"pTypes": ["str_com-internal|external|", {
 				"desc": "callback",
 				"isfunc": true,
 				"name": "callback",
@@ -156,7 +156,7 @@
 				"pNames": ["ssid"],
 				"pTypes": ["str"],
 				"shortDesc": "callback"
-			}, "str-force|large", "str_com-ssids"],
+			}, "str_com-force|large", "str_com-ssids"],
 		"shortDesc": "Let the user choose a WiFi network."
 	},
 	"ClearCookies": {
@@ -495,7 +495,7 @@
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str-FontAwesome,Html,SingleLine,Custom,NoPad,FillX|FillY|FillXY,Normal|Aluminium|Gray|Lego"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX|FillY|FillXY,Normal|Aluminium|Gray|Lego"],
 		"retval": "Button",
 		"shortDesc": "Creates a button control.",
 		"subf": {
@@ -567,7 +567,7 @@
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str-Front,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"pTypes": ["num_srw", "num_srh", "str_com-Front,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
 		"retval": "CameraView",
 		"shortDesc": "Returns a CameraView object to access the device camera.",
 		"subf": {
@@ -757,7 +757,7 @@
 				"isfunc": true,
 				"name": "SetDuplicateImage",
 				"pNames": ["image1", "image2"],
-				"pTypes": ["dso_img", "dso_img"],
+				"pTypes": ["dso-CreateImage", "dso-CreateImage"],
 				"shortDesc": ""
 			},
 			"SetEnabled": "#1602385882",
@@ -885,7 +885,7 @@
 				"isfunc": true,
 				"name": "SetPreviewImage",
 				"pNames": ["image"],
-				"pTypes": ["dso_img"],
+				"pTypes": ["dso-CreateImage"],
 				"shortDesc": ""
 			},
 			"SetScale": "#1990464376",
@@ -965,7 +965,7 @@
 		"isfunc": true,
 		"name": "CreateCheckBox",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "?"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com"],
 		"retval": "CheckBox",
 		"shortDesc": "Returns a CheckBox object.",
 		"subf": {
@@ -1029,14 +1029,14 @@
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
 				"pTypes": [
-                    {
-            	        "desc": "callback function",
-            	        "isfunc": true,
-            	        "name": "callback",
-            	        "pNames": ["isChecked"],
-            	        "pTypes": ["bin"],
-            	        "shortDesc": "callback"
-                    }
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["isChecked"],
+						"pTypes": ["bin"],
+						"shortDesc": "callback"
+					}
 				],
 				"shortDesc": "Define a callback function for click event."
 			},
@@ -1058,7 +1058,7 @@
 		"isfunc": true,
 		"name": "CreateCodeEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "?"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com"],
 		"retval": "CodeEdit",
 		"shortDesc": "Returns a CodeEdit object.",
 		"subf": {
@@ -1357,7 +1357,7 @@
 		"isfunc": true,
 		"name": "CreateCrypt",
 		"pNames": ["options"],
-		"pTypes": ["?"],
+		"pTypes": ["str_com"],
 		"retval": "Crypt",
 		"shortDesc": "Returns a Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
@@ -1415,7 +1415,7 @@
 		"isfunc": true,
 		"name": "CreateDialog",
 		"pNames": ["title", "options"],
-		"pTypes": ["str", "str-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
+		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"retval": "Dialog",
 		"shortDesc": "Returns a Dialog object to display messages",
 		"subf": {
@@ -1424,7 +1424,7 @@
 				"isfunc": true,
 				"name": "AddLayout",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": ""
 			},
 			"AdjustColor": "#1794786072",
@@ -1475,7 +1475,7 @@
 				"isfunc": true,
 				"name": "RemoveLayout",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": ""
 			},
 			"SetBackAlpha": "#1162431318",
@@ -1544,7 +1544,7 @@
 		"isfunc": true,
 		"name": "CreateDownloader",
 		"pNames": ["options"],
-		"pTypes": ["str-NoDialog|Light"],
+		"pTypes": ["str_com-NoDialog|Light"],
 		"retval": "Downloader",
 		"shortDesc": "Returns a Downloader object.",
 		"subf": {
@@ -1913,7 +1913,7 @@
 		"isfunc": true,
 		"name": "CreateGameView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["?", "?", "?"],
+		"pTypes": ["?", "?", "str_com"],
 		"shortDesc": "CreateGameView",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -1978,11 +1978,11 @@
 	},
 	"CreateImage": {
 		"abbrev": "img",
-        "desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the _“Button”_ **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the _“fix”_ **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, “fix”, 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the _“alias”_ **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, “alias” );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [https://open.gl/transformations](transformation matrix). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
+		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the _“Button”_ **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the _“fix”_ **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, “fix”, 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the _“alias”_ **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, “alias” );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [https://open.gl/transformations](transformation matrix). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
 		"isfunc": true,
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["str_pth", "num", "num", "str-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper", "num_pxl", "num_pxl"],
+		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper", "num_pxl", "num_pxl"],
 		"retval": "Image",
 		"shortDesc": "Returns a Image object.",
 		"subf": {
@@ -2033,7 +2033,7 @@
 				"isfunc": true,
 				"name": "DrawImage",
 				"pNames": ["image", "x", "y", "w", "h", "angle", "mode"],
-				"pTypes": ["dso_img", "num", "num", "num", "num", "num_deg", "str"],
+				"pTypes": ["dso-CreateImage", "num", "num", "num", "num", "num_deg", "str"],
 				"shortDesc": ""
 			},
 			"DrawImageMtx": {
@@ -2041,7 +2041,7 @@
 				"isfunc": true,
 				"name": "DrawImageMtx",
 				"pNames": ["image", "matrix"],
-				"pTypes": ["dso_img", "lst"],
+				"pTypes": ["dso-CreateImage", "lst"],
 				"shortDesc": ""
 			},
 			"DrawLine": {
@@ -2149,7 +2149,7 @@
 				"name": "MeasureText",
 				"pNames": ["txt"],
 				"pTypes": ["str"],
-                "retval": "obj-{ width:orw, height:orh }",
+				"retval": "obj-{ width:orw, height:orh }",
 				"shortDesc": "MeasureText"
 			},
 			"Method": "#1023663567",
@@ -2230,7 +2230,7 @@
 				"isfunc": true,
 				"name": "SetImage",
 				"pNames": ["image", "width", "height", "options"],
-				"pTypes": ["str_pth||dso_img", "num_srw", "num_srh", "str-rescale"],
+				"pTypes": ["str_pth||dso-CreateImage", "num_srw", "num_srh", "str-rescale"],
 				"shortDesc": ""
 			},
 			"SetLineWidth": {
@@ -2424,7 +2424,7 @@
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-Linear|Absolute|Frame", "str-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
+		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
 		"retval": "Layout",
 		"shortDesc": "Returns a Layout object.",
 		"subf": {
@@ -2645,7 +2645,7 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str-Expand,Menu,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com-Expand,Menu,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
 		"shortDesc": "Returns a List object.",
 		"subf": {
@@ -2975,7 +2975,7 @@
 		"isfunc": true,
 		"name": "CreateListDialog",
 		"pNames": ["title", "list", "options"],
-		"pTypes": ["str", "str", "str-Multi|?"],
+		"pTypes": ["str", "str", "str_com-Multi|?"],
 		"retval": "ListDialog",
 		"shortDesc": "Returns a ListDialog object.",
 		"subf": {
@@ -3077,7 +3077,7 @@
 		"isfunc": true,
 		"name": "CreateLocator",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-GPS,Network", "?"],
+		"pTypes": ["str_com-GPS,Network", "str_com"],
 		"retval": "Locator",
 		"shortDesc": "Returns a Locator object.",
 		"subf": {
@@ -3654,11 +3654,11 @@
 	},
 	"CreateNotification": {
 		"abbrev": "ntf",
-        "desc": "The Notification object can be used to put messages in the notification drawer. The _“AutoCancel”_ **option** will automatically dismiss the notificatin if the user touches it. _“FullScreen”_ tries to create a larger notification on the screen. And _“OnGoing”_ makes the Notification closeable by your app only.\n\nUse the SetMessage method to tell the object what to display\n<js>notify.SetMessage( ticker, title, text );</js>\nThe Notify method tells it to send the notification:\n<js>notify.Notify( id );</js>\nWhen the user touches your notification, your app will come to the front, even if it was not running.\n\nIf you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.",
+		"desc": "The Notification object can be used to put messages in the notification drawer. The _“AutoCancel”_ **option** will automatically dismiss the notificatin if the user touches it. _“FullScreen”_ tries to create a larger notification on the screen. And _“OnGoing”_ makes the Notification closeable by your app only.\n\nUse the SetMessage method to tell the object what to display\n<js>notify.SetMessage( ticker, title, text );</js>\nThe Notify method tells it to send the notification:\n<js>notify.Notify( id );</js>\nWhen the user touches your notification, your app will come to the front, even if it was not running.\n\nIf you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.",
 		"isfunc": true,
 		"name": "CreateNotification",
 		"pNames": ["options"],
-		"pTypes": ["str-Ongoing,AutoCancel,FullScreen"],
+		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen"],
 		"retval": "Notification",
 		"shortDesc": "Returns a Notification object.",
 		"subf": {
@@ -4438,7 +4438,7 @@
 		"isfunc": true,
 		"name": "CreateOverlay",
 		"pNames": ["options"],
-		"pTypes": ["?"],
+		"pTypes": ["str_com"],
 		"shortDesc": "CreateOverlay",
 		"subf": {
 			"AddLayout": {
@@ -4562,15 +4562,15 @@
 				"name": "GetBillingInfo",
 				"pNames": ["prodIDs", "callback", "options"],
 				"pTypes": ["str", {
-                    "abbrev": "",
-                    "desc": "callback function",
-                    "isfunc": true,
-                    "name": "callback",
-                    "pNames": [],
-                    "pTypes": [],
-                    "shortDesc": "callback",
-                    "subf": {}
-                }, "str-SUBS"],
+						"abbrev": "",
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback",
+						"subf": {}
+					}, "str-SUBS"],
 				"retval": "?",
 				"shortDesc": ""
 			},
@@ -4579,16 +4579,19 @@
 				"isfunc": true,
 				"name": "GetPurchases",
 				"pNames": ["callback", "options"],
-				"pTypes": [{
-                    "abbrev": "",
-                    "desc": "callback function",
-                    "isfunc": true,
-                    "name": "callback",
-                    "pNames": [],
-                    "pTypes": [],
-                    "shortDesc": "callback",
-                    "subf": {}
-                }, "str-SUBS"],
+				"pTypes": [
+					{
+						"abbrev": "",
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback",
+						"subf": {}
+					},
+					"str-SUBS"
+				],
 				"retval": "?",
 				"shortDesc": ""
 			},
@@ -4608,15 +4611,15 @@
 				"name": "Purchase",
 				"pNames": ["prodID", "token", "callback", "options"],
 				"pTypes": ["str", "str", {
-                    "abbrev": "",
-                    "desc": "callback function",
-                    "isfunc": true,
-                    "name": "callback",
-                    "pNames": [],
-                    "pTypes": [],
-                    "shortDesc": "callback",
-                    "subf": {}
-                }, "str-SUBS"],
+						"abbrev": "",
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback",
+						"subf": {}
+					}, "str-SUBS"],
 				"shortDesc": ""
 			}
 		}
@@ -4627,7 +4630,7 @@
 		"isfunc": true,
 		"name": "CreateScroller",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
+		"pTypes": ["num_srw", "num_srh", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
 		"retval": "Scroller",
 		"shortDesc": "Returns a Scroller object.",
 		"subf": {
@@ -4636,7 +4639,7 @@
 				"isfunc": true,
 				"name": "AddChild",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Add a (layout) control."
 			},
 			"AdjustColor": "#1794786072",
@@ -4646,7 +4649,7 @@
 				"isfunc": true,
 				"name": "DestroyChild",
 				"pNames": ["layout"],
-				"pTypes": ["dso_lay"],
+				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Remove a child and destroy the world. Why even trying to create something new."
 			},
 			"Focus": "#7324472769",
@@ -4739,7 +4742,7 @@
 		"isfunc": true,
 		"name": "CreateSeekBar",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "?"],
+		"pTypes": ["num_srw", "num_srh", "str_com"],
 		"retval": "SeekBar",
 		"shortDesc": "Returns a SeekBar object.",
 		"subf": {
@@ -4827,7 +4830,7 @@
 		"isfunc": true,
 		"name": "CreateSensor",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str-Slow|Medium|Fast|Fastest"],
+		"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
 		"retval": "Sensor",
 		"shortDesc": "Returns a Sensor object.",
 		"subf": {
@@ -4950,7 +4953,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"shortDesc": "callback"
-			}, "str-Persist:attempts to force restart if service killed"],
+			}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "Service",
 		"shortDesc": "Returns a Service object.",
 		"subf": {
@@ -5020,7 +5023,7 @@
 		"isfunc": true,
 		"name": "CreateShortcut",
 		"pNames": ["name", "iconFile", "file", "options"],
-		"pTypes": ["str", "str_pth", "str_pth", "?"],
+		"pTypes": ["str", "str_pth", "str_pth", "str_com"],
 		"shortDesc": "CreateShortcut"
 	},
 	"CreateSmartWatch": {
@@ -5346,7 +5349,7 @@
 		"isfunc": true,
 		"name": "CreateSpeechRec",
 		"pNames": ["options"],
-		"pTypes": ["str-NoBeep,Partial"],
+		"pTypes": ["str_com-NoBeep,Partial"],
 		"retval": "SpeechRec",
 		"shortDesc": "Returns a SpeechRec object.",
 		"subf": {
@@ -5461,7 +5464,7 @@
 		"isfunc": true,
 		"name": "CreateSpinner",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pTypes": ["?", "?", "?", "str_com"],
 		"retval": "Spinner",
 		"shortDesc": "Returns a Spinner object.",
 		"subf": {
@@ -5824,7 +5827,7 @@
 		"isfunc": true,
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
-		"pTypes": ["str_pip", "str", "str_pth", "str-combine:combines stdout and stderr|builder:force use of proc builder"],
+		"pTypes": ["str_pip", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "SysProc",
 		"shortDesc": "Returns a SysProc object.",
 		"subf": {
@@ -5902,7 +5905,7 @@
 		"isfunc": true,
 		"name": "CreateTabs",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_srw", "num_srw", "?"],
+		"pTypes": ["str_com", "num_srw", "num_srw", "str_com"],
 		"retval": "Tabs",
 		"shortDesc": "Returns a Tabs object.",
 		"subf": {
@@ -5966,7 +5969,7 @@
 				"name": "GetLayout",
 				"pNames": ["name"],
 				"pTypes": ["str"],
-				"retval": "dso_lay",
+				"retval": "dso-CreateLayout",
 				"shortDesc": ""
 			},
 			"GetLeft": "#1237814406",
@@ -6164,7 +6167,7 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
 		"retval": "Text",
 		"shortDesc": "Returns a Text object.",
 		"subf": {
@@ -6358,7 +6361,7 @@
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
 		"retval": "TextEdit",
 		"shortDesc": "Returns a TextEdit object.",
 		"subf": {
@@ -6753,7 +6756,7 @@
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str-FontAwesome,Custom,NoPad"],
+		"pTypes": ["str", "num_srw", "num_srh", "str_com-FontAwesome,Custom,NoPad"],
 		"retval": "Toggle",
 		"shortDesc": "Returns a Toggle object.",
 		"subf": {
@@ -6966,9 +6969,9 @@
 		"isfunc": true,
 		"name": "CreateVideoView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "?"],
+		"pTypes": ["num_srw", "num_srh", "str_com"],
 		"retval": "VideoView",
-		"shortDesc": "returns a VideoView object.",
+		"shortDesc": "Returns a VideoView object.",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -7162,7 +7165,7 @@
 		"isfunc": true,
 		"name": "CreateWallpaper",
 		"pNames": ["options"],
-		"pTypes": ["?"],
+		"pTypes": ["str_com"],
 		"shortDesc": "CreateWallpaper",
 		"subf": {
 			"GetType": {
@@ -7183,7 +7186,7 @@
 		"isfunc": true,
 		"name": "CreateWebServer",
 		"pNames": ["port", "options"],
-		"pTypes": ["num_int", "str-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index.html|Reflect:Reflect web socket messages back to all clients"],
+		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index.html|Reflect:Reflect web socket messages back to all clients"],
 		"retval": "WebServer",
 		"shortDesc": "Returns a WebServer object.",
 		"subf": {
@@ -7294,7 +7297,7 @@
 		"isfunc": true,
 		"name": "CreateWebSocket",
 		"pNames": ["id", "ip", "port", "options"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pTypes": ["?", "?", "?", "str_com"],
 		"retval": "WebSocket",
 		"shortDesc": "Returns a WebSocket object.",
 		"subf": {
@@ -7391,7 +7394,7 @@
 		"isfunc": true,
 		"name": "CreateWebView",
 		"pNames": ["width", "height", "options", "zoom"],
-		"pTypes": ["?", "?", "str-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade", "?"],
+		"pTypes": ["?", "?", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade", "?"],
 		"retval": "WebView",
 		"shortDesc": "Returns a WebView object.",
 		"subf": {
@@ -7688,7 +7691,7 @@
 		"isfunc": true,
 		"name": "CreateYesNoDialog",
 		"pNames": ["message", "options"],
-		"pTypes": ["?", "str-TouchModal"],
+		"pTypes": ["?", "str_com-TouchModal"],
 		"retval": "YesNoDialog",
 		"shortDesc": "Returns a YesNoDialog object.",
 		"subf": {
@@ -7890,7 +7893,7 @@
 		"isfunc": true,
 		"name": "DestroyLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "Destroy a layout."
 	},
 	"DisableKeys": {
@@ -7936,11 +7939,11 @@
 		"isfunc": true,
 		"name": "DownloadFile",
 		"pNames": ["source", "destination", "title", "description", "options"],
-		"pTypes": ["str", "str_pth", "str", "str", "str-NoDialog"],
+		"pTypes": ["str", "str_pth", "str", "str", "str_com-NoDialog"],
 		"shortDesc": "Download a file with Androids download manager."
 	},
 	"EnableBackKey": {
-		"desc": "Allows to en- or disable the devices back key. When it is disabled the app event _OnBack()_ will called when the user presses the back button - otherwise the app exits.\n\nYou can use this method to create a custom _BACK_ command that allows you to navigate between your layouts.\n\n",
+		"desc": "Allows to en- or disable the devices back key. When it is disabled the app event _OnBack()_ will called when the user presses the back button - otherwise the app exits.\n\nYou can use this method to create a custom _BACK_ command that allows you to navigate between your layouts.",
 		"isfunc": true,
 		"name": "EnableBackKey",
 		"pNames": ["enable"],
@@ -7976,7 +7979,7 @@
 		"isfunc": true,
 		"name": "ExtExec",
 		"pNames": ["name", "file", "args", "options"],
-		"pTypes": ["str-termux", "str_pth", "str", "str-hide"],
+		"pTypes": ["str-termux", "str_pth", "str", "str_com-hide"],
 		"shortDesc": "Execute a bash script using Termux."
 	},
 	"ExtractAssets": {
@@ -8282,7 +8285,7 @@
 		"shortDesc": "Get internal storage path."
 	},
 	"GetIPAddress": {
-        "desc": "GetIPAddress returns the current network ip address. It should look like “0.0.0.0” which is the default value for disabled internet connection. The individual numbers can have values between 0 and 255.",
+		"desc": "GetIPAddress returns the current network ip address. It should look like “0.0.0.0” which is the default value for disabled internet connection. The individual numbers can have values between 0 and 255.",
 		"isfunc": true,
 		"name": "GetIPAddress",
 		"pNames": [],
@@ -8444,7 +8447,7 @@
 		"shortDesc": "Get map of created DroidScript objects."
 	},
 	"GetOptions": {
-		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value. ",
+		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value.",
 		"isfunc": true,
 		"name": "GetOptions",
 		"pNames": [],
@@ -8503,13 +8506,13 @@
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
 		"pTypes": ["str_lst-Camera|ExtSDcard|Network|Storage|Overlay|SMS", {
-	        "desc": "callback function",
-	        "isfunc": true,
-	        "name": "callback",
-	        "pNames": ["ungranted"],
-	        "pTypes": ["str_lst|str_uri"],
-	        "shortDesc": "callback"
-        }],
+				"desc": "callback function",
+				"isfunc": true,
+				"name": "callback",
+				"pNames": ["ungranted"],
+				"pTypes": ["str_lst|str_uri"],
+				"shortDesc": "callback"
+			}],
 		"shortDesc": "GetPermission"
 	},
 	"GetPrivateFolder": {
@@ -8526,12 +8529,12 @@
 		"isfunc": true,
 		"name": "GetResourceId",
 		"pNames": ["name", "options"],
-		"pTypes": ["str", "str-android"],
+		"pTypes": ["str", "str_com-android"],
 		"retval": "str",
 		"shortDesc": "Get ID of a resource."
 	},
 	"GetRingerMode": {
-		"desc": "Returns the current ringer mode of the device. which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
+		"desc": "Returns the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
 		"isfunc": true,
 		"name": "GetRingerMode",
 		"pNames": [],
@@ -8589,7 +8592,7 @@
 		"isfunc": true,
 		"name": "GetScreenHeight",
 		"pNames": ["options"],
-		"pTypes": ["str-Real"],
+		"pTypes": ["str_com-Real"],
 		"retval": "num_pxl",
 		"shortDesc": "Get width of device screen."
 	},
@@ -8598,7 +8601,7 @@
 		"isfunc": true,
 		"name": "GetScreenWidth",
 		"pNames": ["options"],
-		"pTypes": ["str-Real"],
+		"pTypes": ["str_com-Real"],
 		"retval": "num_pxl",
 		"shortDesc": "Get height of device screen."
 	},
@@ -8621,7 +8624,7 @@
 		"shortDesc": "Get value of shared text."
 	},
 	"GetSpeakerPhone": {
-		"desc": "Returns a boolean indicating whether the speaker is enabled for phone calls. Returns false if no call is active.",
+		"desc": "Returns a boolean indicating whether the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"isfunc": true,
 		"name": "GetSpeakerPhone",
 		"pNames": [],
@@ -8660,7 +8663,7 @@
 		"isfunc": true,
 		"name": "GetTop",
 		"pNames": ["options"],
-		"pTypes": ["str-px"],
+		"pTypes": ["str_com-px"],
 		"retval": "num_srh",
 		"shortDesc": "GetTop"
 	},
@@ -8692,13 +8695,13 @@
 		"shortDesc": "Get apk version number."
 	},
 	"GetVolume": {
-		"desc": "Returns the level of a given volume type as a number between 0 and 1. By default the system volume is returned.",
+		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the _“System”_ volume is returned.",
 		"isfunc": true,
 		"name": "GetVolume",
 		"pNames": ["stream"],
 		"pTypes": ["str-alarm|dtmf|music|notification|ring|system|voicecall"],
 		"retval": "num_flt-0..1",
-		"shortDesc": "Get level of a given volume type."
+		"shortDesc": "Get volume of a given audio type."
 	},
 	"GoToSleep": {
 		"desc": "Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)",
@@ -8981,7 +8984,7 @@
 		"shortDesc": "Check if the mobile Wifi Access Point is enabled."
 	},
 	"IsWifiEnabled": {
-		"desc": "Returns a boolean indicating whether the Wifi adapter is enabled on the user device.",
+		"desc": "Returns a boolean indicating whether Wifi is enabled on the user device.",
 		"isfunc": true,
 		"name": "IsWifiEnabled",
 		"pNames": [],
@@ -9011,8 +9014,8 @@
 		"isfunc": true,
 		"name": "ListFolder",
 		"pNames": ["path", "filter", "limit", "options"],
-		"pTypes": ["str_pth", "str", "num_int", "str-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items"],
-        "retval": "lst-[ paths:str_pth ]",
+		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items"],
+		"retval": "lst-[ paths:str_pth ]",
 		"shortDesc": "Get a list of files ans folders contained in a specific folder."
 	},
 	"LoadBoolean": {
@@ -9021,7 +9024,7 @@
 		"name": "LoadBoolean",
 		"pNames": ["name", "default", "file"],
 		"pTypes": ["str", "bin", "str_pth"],
-        "retval": "bin",
+		"retval": "bin",
 		"shortDesc": "Load saved boolean value."
 	},
 	"LoadNumber": {
@@ -9030,7 +9033,7 @@
 		"name": "LoadNumber",
 		"pNames": ["name", "default", "file"],
 		"pTypes": ["str", "num", "str_pth"],
-        "retval": "num",
+		"retval": "num",
 		"shortDesc": "Load saved boolean value."
 	},
 	"LoadPlugin": {
@@ -9065,12 +9068,12 @@
 		"shortDesc": "Load saved text value."
 	},
 	"Lock": {
-		"desc": "?",
+		"desc": "Locks the device.\n\n<font color='red'>**Requires Root**</font>",
 		"isfunc": true,
 		"name": "Lock",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "Lock"
+		"shortDesc": "Lock the device."
 	},
 	"LockDrawer": {
 		"desc": "Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.",
@@ -9089,23 +9092,23 @@
 		"shortDesc": "Create new folder in the local fs."
 	},
 	"Odroid": {
-        "abbrev": "odr",
+		"abbrev": "odr",
 		"desc": "?",
 		"isfunc": true,
 		"name": "Odroid",
 		"pNames": ["p1", "p2", "p3"],
 		"pTypes": ["?", "?", "?"],
 		"shortDesc": "Odroid",
-        "subf": {}
+		"subf": {}
 	},
 	"OpenDatabase": {
-        "abbrev": "db",
-        "desc": "OpenDatabase",
+		"abbrev": "db",
+		"desc": "OpenDatabase",
 		"isfunc": true,
 		"name": "OpenDatabase",
 		"pNames": ["name"],
 		"pTypes": ["str"],
-        "retval": "Database",
+		"retval": "Database",
 		"shortDesc": "OpenDatabase",
 		"subf": {
 			"addTransaction": {
@@ -9118,16 +9121,6 @@
 				"shortDesc": "addTransaction",
 				"subf": {}
 			},
-			"close": {
-				"abbrev": "",
-				"desc": "close",
-				"isfunc": true,
-				"name": "close",
-				"pNames": ["success", "error"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "close",
-				"subf": {}
-			},
 			"Close": {
 				"abbrev": "",
 				"desc": "Close",
@@ -9136,6 +9129,16 @@
 				"pNames": [],
 				"pTypes": [],
 				"shortDesc": "Close",
+				"subf": {}
+			},
+			"close": {
+				"abbrev": "",
+				"desc": "close",
+				"isfunc": true,
+				"name": "close",
+				"pNames": ["success", "error"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "close",
 				"subf": {}
 			},
 			"databaseFeatures": {
@@ -9360,7 +9363,7 @@
 		"isfunc": true,
 		"name": "PreventScreenLock",
 		"pNames": ["mode"],
-		"pTypes": ["bin||str-Full|Partial"],
+		"pTypes": ["bin||str-Full:Device can sleep, Screen and Keyboard on|Partial:CPU always on, Screen and Keyboard off"],
 		"shortDesc": "Prevent screen from locking after some time."
 	},
 	"PreventWifiSleep": {
@@ -9384,7 +9387,7 @@
 		"isfunc": true,
 		"name": "Quit",
 		"pNames": ["msg", "title", "options"],
-		"pTypes": ["str", "str", "str-NoDim,NoFocus"],
+		"pTypes": ["str", "str", "str_com-NoDim,NoFocus"],
 		"shortDesc": "Quit the app with showing a dialog and exit after closing."
 	},
 	"ReadFile": {
@@ -9408,7 +9411,7 @@
 		"isfunc": true,
 		"name": "RemoveLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso_lay"],
+		"pTypes": ["dso-CreateLayout"],
 		"shortDesc": "RemoveLayout"
 	},
 	"RenameFile": {
@@ -9428,11 +9431,11 @@
 		"shortDesc": "Rename or move a local folder."
 	},
 	"ReplaceInFile": {
-		"desc": "Replaces text in a local file.",
+		"desc": "Replaces all occurances of some text or a regex pattern in a local file with some other text.",
 		"isfunc": true,
 		"name": "ReplaceInFile",
 		"pNames": ["file", "txt", "rep", "options"],
-		"pTypes": ["str_pth", "str", "str", "str"],
+		"pTypes": ["str_pth", "str", "str", "str_com"],
 		"shortDesc": "Replace text in a local file."
 	},
 	"SaveBoolean": {
@@ -9504,7 +9507,7 @@
 		"isfunc": true,
 		"name": "SendIntent",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
-		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{name:str, type:str, value:str}]", "str-result", {
+		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{name:str, type:str, value:str}]", "str_com-result", {
 				"desc": "Callback",
 				"isfunc": true,
 				"name": "callback",
@@ -9519,7 +9522,7 @@
 		"isfunc": true,
 		"name": "SendMail",
 		"pNames": ["address", "subject", "body", "attach", "type", "options"],
-		"pTypes": ["str", "str", "str", "str_pth", "str_mim", "str-SendTo"],
+		"pTypes": ["str", "str", "str", "str_pth", "str_mim", "str_com-SendTo"],
 		"shortDesc": "Open the EMail app and autofill fields."
 	},
 	"SendMessage": {
@@ -9539,7 +9542,7 @@
 		"shortDesc": "Open the SMS app and autofill fields."
 	},
 	"SendText": {
-        "desc": "This Method is used for sharing text between apps.\n\nIf choose is defined, an android dialog will appear with the **choose** value as info text.\nOtherwise the dialog will appear if the user did not specify an app which should be always opened for this type of data.\n\nThe **subject** parameter seems to be obsolete these times and is just kept for backwards compatibility.",
+		"desc": "This Method is used for sharing text between apps.\n\nIf choose is defined, an android dialog will appear with the **choose** value as info text.\nOtherwise the dialog will appear if the user did not specify an app which should be always opened for this type of data.\n\nThe **subject** parameter seems to be obsolete these times and is just kept for backwards compatibility.",
 		"isfunc": true,
 		"name": "SendText",
 		"pNames": ["text", "subject", "choose"],
@@ -9558,7 +9561,7 @@
 				"pNames": ["id"],
 				"pTypes": ["str||num_int"],
 				"shortDesc": "callback"
-			}, "num_dat", "num_mls", "str-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
+			}, "num_dat", "num_mls", "str_com-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
 		"shortDesc": "SetAlarm"
 	},
 	"SetAutoBoot": {
@@ -9622,7 +9625,7 @@
 		"isfunc": true,
 		"name": "SetDebug",
 		"pNames": ["switches"],
-		"pTypes": ["str-console,ds,adb"],
+		"pTypes": ["str_com-console,ds,adb,all"],
 		"shortDesc": "Control the debug level of the program."
 	},
 	"SetDebugEnabled": {
@@ -9654,7 +9657,7 @@
 		"isfunc": true,
 		"name": "SetInForeground",
 		"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-		"pTypes": ["str", "str", "str_pth", "str_pth", "str-min|low|default|high|max"],
+		"pTypes": ["str", "str", "str_pth", "str_pth", "str-min|low|default|high|none"],
 		"shortDesc": "Set services to run in the foreground."
 	},
 	"SetJoystickOptions": {
@@ -9662,7 +9665,7 @@
 		"isfunc": true,
 		"name": "SetJoystickOptions",
 		"pNames": ["options"],
-		"pTypes": ["str-ForwardKeys:allows the joystick key presses to pass onto the child controls of the main activity"],
+		"pTypes": ["str_com-ForwardKeys:allows the joystick key presses to pass onto the child controls of the main activity"],
 		"shortDesc": "Set options for the connected joystick."
 	},
 	"SetKioskMode": {
@@ -9670,7 +9673,7 @@
 		"isfunc": true,
 		"name": "SetKioskMode",
 		"pNames": ["mode", "enable", "options"],
-		"pTypes": ["str-Power,Status,Nav,NavRight", "bin", "str-Black,Tasks:prevents recent tasks button working"],
+		"pTypes": ["str_com-Power,Status,Nav,NavRight", "bin", "str_com-Black,Tasks:prevents recent tasks button working"],
 		"shortDesc": "Blocks android functionality outside your app."
 	},
 	"SetLanguage": {
@@ -9682,7 +9685,7 @@
 		"shortDesc": "Load the language code from lang.json"
 	},
 	"SetMenu": {
-		"desc": "Set the app menu fields.\n\nSee Also: @ShowMenu.",
+		"desc": "Set the app menu fields. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
 		"isfunc": true,
 		"name": "SetMenu",
 		"pNames": ["list", "iconPath"],
@@ -9785,7 +9788,7 @@
 				"isfunc": true,
 				"name": "callback",
 				"pNames": ["state", "ssid"],
-				"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED"],
+				"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED", "str"],
 				"shortDesc": "callback"
 			}
 		],
@@ -9796,7 +9799,7 @@
 		"isfunc": true,
 		"name": "SetOptions",
 		"pNames": ["options"],
-		"pTypes": ["str-UseBrowser,NoKeys|ShowKeys,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn"],
+		"pTypes": ["str_com-UseBrowser,NoKeys|ShowKeys,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn"],
 		"shortDesc": "Define global app options."
 	},
 	"SetOrientation": {
@@ -9819,164 +9822,156 @@
 		"isfunc": true,
 		"name": "SetPosition",
 		"pNames": ["left", "top", "width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "num_srw", "num_srh", "str-px"],
+		"pTypes": ["num_srw", "num_srh", "num_srw", "num_srh", "str_com-px"],
 		"shortDesc": "Change app position and size."
 	},
 	"SetPriority": {
-		"desc": "?",
+		"desc": "Changes the GUI thread priority.",
 		"isfunc": true,
 		"name": "SetPriority",
 		"pNames": ["level"],
-		"pTypes": ["str-Low|High"],
-		"shortDesc": "SetPriority"
+		"pTypes": ["str-Low|Medium|High"],
+		"shortDesc": "Change GUI thread priority."
 	},
 	"SetRingerMode": {
-		"desc": "?",
+		"desc": "Change the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
 		"isfunc": true,
 		"name": "SetRingerMode",
 		"pNames": ["mode"],
-		"pTypes": ["?"],
-		"shortDesc": "SetRingerMode"
+		"pTypes": ["str-Normal|Vibrate|Silent"],
+		"shortDesc": "Set current device ringer mode."
 	},
 	"SetScreenBrightness": {
-		"desc": "SetScreenBrightness",
+		"desc": "Change the screen brightness to a value between 0 and 1, where 0 is the lowest and 1 the highest possible brightness value.",
 		"isfunc": true,
 		"name": "SetScreenBrightness",
 		"pNames": ["level"],
-		"pTypes": ["num_prc"],
-		"shortDesc": "SetScreenBrightness"
+		"pTypes": ["num_flt-0..1"],
+		"shortDesc": "Change screen brightness."
 	},
 	"SetScreenMode": {
-		"desc": "SetScreenMode",
+		"desc": "Changes the screen mode of your application. If null is passed, the [SetMenu.htm](app menu) will be dismissed. When called, the global OnConfig function will be called (if defined).",
 		"isfunc": true,
 		"name": "SetScreenMode",
 		"pNames": ["mode"],
-		"pTypes": ["str-Game|Full|Normal|Default"],
+		"pTypes": ["str-Default|Normal|Full|Game"],
 		"shortDesc": "SetScreenMode"
 	},
 	"SetSharedApp": {
-		"desc": "? define app started when app called via intent?",
+		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data. Check out the 'Shared Data' sample in the DS samples section.",
 		"isfunc": true,
 		"name": "SetSharedApp",
 		"pNames": ["name"],
-		"pTypes": ["str"],
-		"shortDesc": "SetSharedApp"
+		"pTypes": ["str-AppName"],
+		"shortDesc": "Auto-Launch Project when shared data received."
 	},
 	"SetSpeakerPhone": {
-		"desc": "?",
+		"desc": "En/Disables the speaker for phone calls.\n\nSee also: @GetSpeakerPhone.",
 		"isfunc": true,
 		"name": "SetSpeakerPhone",
 		"pNames": ["on"],
 		"pTypes": ["bin"],
-		"shortDesc": "SetSpeakerPhone"
+		"shortDesc": "En/Disable speaker for phone calls."
 	},
 	"SetTheme": {
-		"desc": "SetTheme",
+		"desc": "Change the theme of your app to any created [CreateTheme.htm](Theme Object). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.",
 		"isfunc": true,
 		"name": "SetTheme",
 		"pNames": ["theme"],
-		"pTypes": ["str-light|dark|?"],
-		"shortDesc": "SetTheme"
-	},
-	"SetTitle": {
-		"desc": "SetTitle",
-		"isfunc": true,
-		"name": "SetTitle",
-		"pNames": ["title"],
-		"pTypes": ["str"],
-		"shortDesc": "SetTitle"
+		"pTypes": ["dso-CreateTheme"],
+		"shortDesc": "Change the theme of your app."
 	},
 	"SetUserAgent": {
-		"desc": "?",
+		"desc": "Change the user agent for html apps. For more details [https://en.wikipedia.org/wiki/User_agent](ask Wikipedia).",
 		"isfunc": true,
 		"name": "SetUserAgent",
 		"pNames": ["agent"],
-		"pTypes": ["?"],
-		"shortDesc": "SetUserAgent"
+		"pTypes": ["str"],
+		"shortDesc": "Change the user agent."
 	},
 	"SetUserCreds": {
-		"desc": "?",
+		"desc": "Set user credentials in an html app for websites that require user login.",
 		"isfunc": true,
 		"name": "SetUserCreds",
 		"pNames": ["name", "password"],
 		"pTypes": ["str", "str"],
-		"shortDesc": "SetUserCreds"
+		"shortDesc": "Set user credentials."
 	},
 	"SetVolume": {
-		"desc": "SetVolume",
+		"desc": "Set the volume of a given volume type as a number between 0 and 1.",
 		"isfunc": true,
 		"name": "SetVolume",
 		"pNames": ["stream", "level", "options"],
-		"pTypes": ["str-alarm|dtmf|music|notification|ring|system|voicecall", "num_prc", "str-ShowUI"],
-		"shortDesc": "SetVolume"
+		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_flt-0..1", "str_com-ShowUI"],
+		"shortDesc": "Change volume of a given audio type."
 	},
 	"SetWifiApEnabled": {
-		"desc": "SetWifiApEnabled",
+		"desc": "En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.\nIt automatically disabled WiFi if it was enabled.\n\n<font color='red'>**This method is available for Android 6 or older only!**</font>",
 		"isfunc": true,
 		"name": "SetWifiApEnabled",
 		"pNames": ["enable", "ssid", "key"],
-		"pTypes": ["?", "?", "?"],
-		"shortDesc": "SetWifiApEnabled"
+		"pTypes": ["bin", "str", "str"],
+		"shortDesc": "En/Disable the mobile Wifi Access Point of the device."
 	},
 	"SetWifiEnabled": {
-		"desc": "SetWifiEnabled",
+		"desc": "En/Disable Wifi on the device.",
 		"isfunc": true,
 		"name": "SetWifiEnabled",
 		"pNames": ["enable"],
 		"pTypes": ["bin"],
-		"shortDesc": "SetWifiEnabled"
+		"shortDesc": "En/Disable Wifi on the device."
 	},
 	"ShowDebug": {
-		"desc": "Show debug console",
+		"desc": "Show/Hide the debug console as overlay in your app, after calling @CreatgeDebug.",
 		"isfunc": true,
 		"name": "ShowDebug",
 		"pNames": ["show"],
 		"pTypes": ["bin"],
-		"shortDesc": "ShowDebug"
+		"shortDesc": "Show the in-app debug console."
 	},
 	"ShowKeyboard": {
-		"desc": "ShowKeyboard",
+		"desc": "Shows the keyboard on a focussed control.\n\nSee Also: @CreateTextEdit",
 		"isfunc": true,
 		"name": "ShowKeyboard",
 		"pNames": ["obj"],
 		"pTypes": ["dso"],
 		"retval": "bin",
-		"shortDesc": "ShowKeyboard"
+		"shortDesc": "Show keyboard on a focussed control."
 	},
 	"ShowMenu": {
-		"desc": "ShowMenu",
+		"desc": "Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @SetMenu",
 		"isfunc": true,
 		"name": "ShowMenu",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "ShowMenu"
+		"shortDesc": "Show the in-app menu."
 	},
 	"ShowPopup": {
-		"desc": "ShowPopup",
+		"desc": "Shows a simple popup message on the screen. It automatically disappears after about 5 secods or after an even shorter time if you pass the _“Short”_ **option**, or when the user touches the screen.",
 		"isfunc": true,
 		"name": "ShowPopup",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str-top|bottom|short|?"],
-		"shortDesc": "ShowPopup"
+		"pTypes": ["str", "str_com-Bottom|Short"],
+		"shortDesc": "Show a popup message."
 	},
 	"ShowProgress": {
-		"desc": "ShowProgress",
+		"desc": "Shows a rotating progress circle indicating that something happens and that the user should keep his extremities with him until the process completed.",
 		"isfunc": true,
 		"name": "ShowProgress",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str-NoDim:Don't darken background"],
-		"shortDesc": "ShowProgress"
+		"pTypes": ["str", "str_com-NoDim:Don't darken background"],
+		"shortDesc": "Show a progress indicator."
 	},
 	"ShowProgressBar": {
-		"desc": "ShowProgressBar",
+		"desc": "Shows a dialog with a bar indicating the current progress of a certain thing.\n\nSee Also: UpdateProgressBar, HideProgressBar",
 		"isfunc": true,
 		"name": "ShowProgressBar",
 		"pNames": ["title", "percent", "options"],
-		"pTypes": ["str", "num_prc", "?"],
-		"shortDesc": "ShowProgressBar"
+		"pTypes": ["str", "num_prc", "str_com-Light"],
+		"shortDesc": "Show a progress bar dialog."
 	},
 	"ShowTextDialog": {
-		"desc": "Equal to prompt()",
+		"desc": "Shows a text input dialog with a title to allow the user to input some text.",
 		"isfunc": true,
 		"name": "ShowTextDialog",
 		"pNames": ["title", "default", "callback"],
@@ -9988,15 +9983,15 @@
 				"pTypes": ["str"],
 				"shortDesc": "callback"
 			}],
-		"shortDesc": "ShowTextDialog"
+		"shortDesc": "Show a text input dialog."
 	},
 	"ShowTip": {
-		"desc": "Show tooltip popup message on screen",
+		"desc": "Shows a tooltip message on the screen.",
 		"isfunc": true,
 		"name": "ShowTip",
 		"pNames": ["message", "left", "top", "timeOut", "options"],
-		"pTypes": ["str", "num_srw", "num_srw", "num_mls", "?"],
-		"shortDesc": "ShowTip"
+		"pTypes": ["str", "num_srw", "num_srw", "num_mls", "str_com-Down"],
+		"shortDesc": "Shows a tooltip message on the screen."
 	},
 	"SimulateDrag": {
 		"desc": "SimulateDrag",
@@ -10043,7 +10038,7 @@
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str-debug|?", "str-{actionstr-typestr-data", "{extras}}"],
+		"pTypes": ["str_pth", "str_com-debug|?", "str-{actionstr-typestr-data", "{extras}}"],
 		"shortDesc": "StartApp"
 	},
 	"StartDebugServer": {
@@ -10091,7 +10086,7 @@
 		"isfunc": true,
 		"name": "SysExec",
 		"pNames": ["command", "options", "maxRead", "timeout"],
-		"pTypes": ["str", "str-su|sh", "?", "?"],
+		"pTypes": ["str", "str_com-su|sh", "?", "?"],
 		"shortDesc": "SysExec"
 	},
 	"TextToSpeech": {

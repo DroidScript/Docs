@@ -26,12 +26,39 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetWifiEnabled.</p>
+			<p>En/Disable Wifi on the device.</p>
 
 			<div class="samp">
 			app.SetWifiEnabled( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Toggle WiFi</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;tgl = app.CreateToggle( &quot;WiFi&quot;, -1, 0.1 );<br>
+				&#160;&#160;&#160;&#160;tgl.SetOnTouch( tgl_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( tgl );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function tgl_OnTouch( enable )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetWifiEnabled( enable );</b><br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

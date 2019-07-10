@@ -1,3 +1,18 @@
+<sample Basic>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	edt = app.CreateTextEdit( "Hell World" );
+    edt.Focus();
+	lay.AddChild( edt );
+
+	app.AddLayout( lay );
+
+	app.ShowKeyboard( edt );
+}
+</sample>
+
 <sample Toggle Keyboard>
 function OnStart()
 {

@@ -26,19 +26,32 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetScreenBrightness.</p>
+			<p>Change the screen brightness to a value between 0 and 1, where 0 is the lowest and 1 the highest possible brightness value.</p>
 
 			<div class="samp">
-			app.SetScreenBrightness( <a href="#pop_num_prc" data-transition="pop" data-rel="popup">level</a> )
+			app.SetScreenBrightness( <a href="#pop_num_001" data-transition="pop" data-rel="popup">level</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Example</h3>
+				<h3>Example - SetScreenBrightness Demo</h3>
 				<div id="examp0" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.SetScreenBrightness( 0.25 );<br>
-				</b>}
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;lay.SetBackColor( &quot;white&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;spn = app.CreateSeekBar( 1 );<br>
+				&#160;&#160;&#160;&#160;spn.SetOnChange( SetScreenBrightness );<br>
+				&#160;&#160;&#160;&#160;spn.SetRange( 1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( spn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function SetScreenBrightness( level )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.SetScreenBrightness( level );<br>
+				}
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -52,7 +65,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>float:</i> 0..1</div>
 
 	</div>
 </body>

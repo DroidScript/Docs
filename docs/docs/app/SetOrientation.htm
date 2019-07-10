@@ -26,24 +26,30 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetOrientation.</p>
+			<p>Set the display orientation to a fixed value.</p>
 
 			<div class="samp">
 			app.SetOrientation( <a href="#pop_str_001" data-transition="pop" data-rel="popup">orient</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
+			<p>You can unlock it again passing <i>“Default”</i> as <b>orientation</b>.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Example</h3>
+				<h3>Example - Change Orientation</h3>
 				<div id="examp0" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.SetOrientation( &quot;Landscape&quot; );<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
 				<br>
-				</b>&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;Vertical&quot; );<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;Hello&quot; );<br>
-				&#160;&#160;&#160;&#160;txt.SetTextSize( 32 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				&#160;&#160;&#160;&#160;spn = app.CreateSpinner( &quot;Default,Landscape,ReverseLandscape,Portrait,ReversePortrait&quot;, 0.3, 0.1 );<br>
+				&#160;&#160;&#160;&#160;spn.SetOnChange( SetOrientation );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( spn );<br>
+				<br>
 				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function SetOrientation( orient )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetOrientation( orient )</b><br>
 				}
 				</div>
 				<div name="divCopy" align="right">
@@ -58,7 +64,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Landscape” or “ReverseLandscape” or “Portrait” or “ReversePortrait” or “Default”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Default” or “Landscape” or “ReverseLandscape” or “Portrait” or “ReversePortrait”</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 
 	</div>

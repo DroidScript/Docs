@@ -26,17 +26,56 @@
 		</div>
 
 		<div data-role="content">
-			<p>Called when keyboard was shown.</p>
+			<p>Define a callback function to detect when keyboard visible state has changed.</p>
 
 			<div class="samp">
 			app.SetOnShowKeyboard( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Toggle Keyboard</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;tgl = app.CreateToggle( &quot;Keyboard&quot;, 0.3, 0.1 );<br>
+				&#160;&#160;&#160;&#160;tgl.SetOnTouch( tgl_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( tgl );<br>
+				<br>
+				&#160;&#160;&#160;&#160;edt = app.CreateTextEdit( &quot;Text&quot;, .8, .1 );<br>
+				&#160;&#160;&#160;&#160;edt.Focus();<br>
+				&#160;&#160;&#160;&#160;lay.AddChild(edt);<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.SetOnShowKeyboard( OnKeyboardShown );<br>
+				}<br>
+				<br>
+				function tgl_OnTouch( show )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if( show ) app.ShowKeyboard( edt );<br>
+				&#160;&#160;&#160;&#160;else app.HideKeyboard();<br>
+				}<br>
+				<br>
+				<b id = "snip0"  style = "font-size:100%">function OnKeyboard( shown )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Keyboard shown: &quot; + shown );<br>
+				}</b>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( boolean' )">shown</a>)</div>
 
 	</div>
 </body>

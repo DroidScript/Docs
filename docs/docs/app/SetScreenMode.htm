@@ -26,19 +26,31 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetScreenMode.</p>
+			<p>Changes the screen mode of your application.</p>
 
 			<div class="samp">
 			app.SetScreenMode( <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
 			</div>
 
+			<p>If null is passed, the <a href="SetMenu.htm">app menu</a> will be dismissed. When called, the global OnConfig function will be called (if defined).</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Example</h3>
+				<h3>Example - SetScreenMode Demo</h3>
 				<div id="examp0" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.SetScreenMode( &quot;Full&quot; );<br>
-				</b>}
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;Vertical,VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;spn = app.CreateSpinner( &quot;Default,Normal,Full,Game&quot; );<br>
+				&#160;&#160;&#160;&#160;spn.SetOnChange( SetScreenMode );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( spn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function SetScreenMode( mode )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetScreenMode( mode );</b><br>
+				}
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -52,7 +64,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “game” or “full” or “normal” or “default” or “?”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Default” or “Normal” or “Full” or “Game”</div>
 
 	</div>
 </body>

@@ -2,7 +2,6 @@
 function OnStart()
 {
     app.CreateDebug();
-    app.ShowDebug(true);
 
 	app.Debug("default 1");   // default on
 	console.log("default 2"); // default on
