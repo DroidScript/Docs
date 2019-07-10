@@ -26,19 +26,20 @@
 		</div>
 
 		<div data-role="content">
-			<p>ShowPopup.</p>
+			<p>Shows a simple popup message on the screen.</p>
 
 			<div class="samp">
 			app.ShowPopup( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
+			<p>It automatically disappears after about 5 secods or after an even shorter time if you pass the <i>“Short”</i> <b>option</b>, or when the user touches the screen.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Top</h3>
 				<div id="examp0" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello World!&quot; );<br>
-				</b>}
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.ShowPopup( &quot;Hello World!&quot; );</b><br>
+				}
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -53,8 +54,8 @@
 				<div id="examp1" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello World!&quot;, &quot;Bottom,Short&quot; );<br>
-				</b>}
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app.ShowPopup( &quot;Hello World!&quot;, &quot;Bottom,Short&quot; );</b><br>
+				}
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -69,7 +70,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “top” or “bottom” or “short” or “?”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Bottom” or “Short”</div>
 
 	</div>
 </body>

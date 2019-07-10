@@ -26,19 +26,44 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetPosition.</p>
+			<p>Change the main app's position and size.</p>
 
 			<div class="samp">
-			app.SetPosition( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )
+			app.SetPosition( <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_srh" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
+			<p>Mostly used for transparent apps.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - SetPosition</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetPosition( 0.2, 0.2, .6, .6 );</b><br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,fillxy&quot; );<br>
+				&#160;&#160;&#160;&#160;lay.SetBackColor(&quot;blue&quot;)<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Hello World&quot;, 0.3, 0.1 ); // 1, 1 will overflow<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
 		<div data-role="popup" id="pop_num_srw" class="ui-content"><b>number:</b> <i>fraction of screen width</i></div>
 		<div data-role="popup" id="pop_num_srh" class="ui-content"><b>number:</b> <i>fraction of screen height</i></div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “px”</div>
 
 	</div>
 </body>

@@ -26,17 +26,37 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Change the user agent for html apps.</p>
 
 			<div class="samp">
-			app.SetUserAgent( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">agent</a> )
+			app.SetUserAgent( <a href="#pop_std_str" data-transition="pop" data-rel="popup">agent</a> )
 			</div>
 
+			<p>For more details <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://en.wikipedia.org/wiki/User_agent');">ask Wikipedia</a>.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Example</h3>
+				<div id="examp0" style="font-size:70%">
+					var defaultUserAgent = navigator.userAgent;<br>
+				var myUserAgent = defaultUserAgent;<br>
+				<br>
+				function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.SetUserAgent( myUserAgent );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
 	</div>
 </body>

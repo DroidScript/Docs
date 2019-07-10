@@ -69,7 +69,7 @@ function generateNavigators() {
 		.filter(nothidden)
 		.sort( sortAsc )
 		.forEach(function(cat, i, l) {
-		
+		    
 			nav += newNaviItem(cat + ".htm", cat );
 			list = categories[cat]
 				.sort( sortAsc )
@@ -112,7 +112,7 @@ function generateDoc( name ) {
 		popDefs: [],
 		useEventPop: false,
 		saveHref:    false,
-		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0}
+		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
 	};
 
 	/* find next documents by categories
@@ -438,7 +438,7 @@ function toArgPop( name, types ) {
 				case "num":
 				case "str":
 					s[i] += rplop( type[2], type[0] == "str" );
-					if( ["options", "mode"].indexOf(name) > -1 && type.length == 3 && type[2].indexOf(":") > -1)
+					if(type.length == 3 && type[2].indexOf(":") > -1)
 						s[i] = s[i].replace(/“(\w+):([^”]*)/g, "“" + newAppPopup("$2", "$1"))
 					return s[i]; break;
 				case "lst":
@@ -458,7 +458,7 @@ function toArgPop( name, types ) {
 		types = types[0];
 		var pop = 
 			(types[1].match("_") || types[2] ? "" : "std_") +
-			(!types[2] ? types[1].replace("?","ukn") :
+			(!types[2] ? types[1].replace("?", "ukn") :
 				types[0] + "_" + incpop( types[0], 1 )
 			);
 		tryAddType(newDefPopup( pop, str[0]));
@@ -540,7 +540,7 @@ function addMarkdown(s) {
 		// links
 		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, url, name) {
 			// exists in docs folder? direct link : open in external app
-			return white + (app.FileExists(`docs/app/${url}`) ? 
+			return white + (app.FileExists(path + "docs/app/" + url) ? 
 				`<a href="${url}">` :
 				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
 				+ `${name}</a>`;
@@ -815,7 +815,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Draw|ReplaceInFile|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
+	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later

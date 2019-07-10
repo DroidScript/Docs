@@ -26,17 +26,50 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetWifiApEnabled.</p>
+			<p>En/Disable the mobile Wifi Access Point of the device.</p>
 
 			<div class="samp">
-			app.SetWifiApEnabled( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">enable</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">key</a> )
+			app.SetWifiApEnabled( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a> )
 			</div>
 
+			<p>You can define a custom WiFi AP name and a password as credentials for other people.<br>
+			It automatically disabled WiFi if it was enabled.<br>
+			<br>
+			<font color='red'><b>This method is available for Android 6 or older only!</b></font></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - WiFi Access Point</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;tgl = app.CreateToggle( &quot;WiFi Access Point&quot;, -1, 0.1 );<br>
+				&#160;&#160;&#160;&#160;tgl.SetOnTouch( tgl_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( tgl );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function tgl_OnTouch( enable )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">if( enable ) app.SetWifiApEnabled( true, &quot;DS Wifi AP&quot;, &quot;mypass&quot; );<br>
+				&#160;&#160;&#160;&#160;else app.SetWifiApEnabled( false );</b><br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
 	</div>
 </body>

@@ -26,18 +26,47 @@
 		</div>
 
 		<div data-role="content">
-			<p>SetVolume.</p>
+			<p>Set the volume of a given volume type as a number between 0 and 1.</p>
 
 			<div class="samp">
-			app.SetVolume( <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">level</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			app.SetVolume( <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a>, <a href="#pop_num_001" data-transition="pop" data-rel="popup">level</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Set Volume</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;skb = app.CreateSeekBar( 1 );<br>
+				&#160;&#160;&#160;&#160;skb.SetRange( 1 );<br>
+				&#160;&#160;&#160;&#160;skb.SetOnChange( SetVolume );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( skb );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}<br>
+				<br>
+				function SetVolume( value )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetVolume( &quot;Music&quot;, value );</b><br>
+				&#160;&#160;&#160;&#160;app.PlaySound( &quot;/Sys/Snd/Poing.ogg&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “alarm” or “dtmf” or “music” or “notification” or “ring” or “system” or “voicecall”</div>
-		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Alarm” or “<a href="" onclick="prompt( '#', 'App.ShowPopup( Dual Tone Multi-Frequency' )">DTMF</a>” or “Music” or “Notification” or “Ring” or “System” or “Voicecall”</div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>float</i> 0..1</div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “ShowUI”</div>
 
 	</div>

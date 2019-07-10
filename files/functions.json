@@ -8692,13 +8692,13 @@
 		"shortDesc": "Get apk version number."
 	},
 	"GetVolume": {
-		"desc": "Returns the level of a given volume type as a number between 0 and 1. By default the system volume is returned.",
+		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the _“System”_ volume is returned.",
 		"isfunc": true,
 		"name": "GetVolume",
 		"pNames": ["stream"],
 		"pTypes": ["str-alarm|dtmf|music|notification|ring|system|voicecall"],
 		"retval": "num_flt-0..1",
-		"shortDesc": "Get level of a given volume type."
+		"shortDesc": "Get volume of a given audio type."
 	},
 	"GoToSleep": {
 		"desc": "Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)",
@@ -8981,7 +8981,7 @@
 		"shortDesc": "Check if the mobile Wifi Access Point is enabled."
 	},
 	"IsWifiEnabled": {
-		"desc": "Returns a boolean indicating whether the Wifi adapter is enabled on the user device.",
+		"desc": "Returns a boolean indicating whether Wifi is enabled on the user device.",
 		"isfunc": true,
 		"name": "IsWifiEnabled",
 		"pNames": [],
@@ -9065,12 +9065,12 @@
 		"shortDesc": "Load saved text value."
 	},
 	"Lock": {
-		"desc": "?",
+		"desc": "Locks the device.\n\n<font color='red'>**Requires Root**</font>",
 		"isfunc": true,
 		"name": "Lock",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "Lock"
+		"shortDesc": "Lock the device."
 	},
 	"LockDrawer": {
 		"desc": "Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.",
@@ -9360,7 +9360,7 @@
 		"isfunc": true,
 		"name": "PreventScreenLock",
 		"pNames": ["mode"],
-		"pTypes": ["bin||str-Full|Partial"],
+		"pTypes": ["bin||str-Full:Device can sleep, Screen and Keyboard on|Partial:CPU always on, Screen and Keyboard off"],
 		"shortDesc": "Prevent screen from locking after some time."
 	},
 	"PreventWifiSleep": {
@@ -9428,7 +9428,7 @@
 		"shortDesc": "Rename or move a local folder."
 	},
 	"ReplaceInFile": {
-		"desc": "Replaces text in a local file.",
+		"desc": "Replaces all occurances of some text or a regex pattern in a local file with some other text.",
 		"isfunc": true,
 		"name": "ReplaceInFile",
 		"pNames": ["file", "txt", "rep", "options"],
@@ -9622,7 +9622,7 @@
 		"isfunc": true,
 		"name": "SetDebug",
 		"pNames": ["switches"],
-		"pTypes": ["str-console,ds,adb"],
+		"pTypes": ["str-console,ds,adb,all"],
 		"shortDesc": "Control the debug level of the program."
 	},
 	"SetDebugEnabled": {
@@ -9654,7 +9654,7 @@
 		"isfunc": true,
 		"name": "SetInForeground",
 		"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-		"pTypes": ["str", "str", "str_pth", "str_pth", "str-min|low|default|high|max"],
+		"pTypes": ["str", "str", "str_pth", "str_pth", "str-min|low|default|high|none"],
 		"shortDesc": "Set services to run in the foreground."
 	},
 	"SetJoystickOptions": {
@@ -9682,7 +9682,7 @@
 		"shortDesc": "Load the language code from lang.json"
 	},
 	"SetMenu": {
-		"desc": "Set the app menu fields.\n\nSee Also: @ShowMenu.",
+		"desc": "Set the app menu fields. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
 		"isfunc": true,
 		"name": "SetMenu",
 		"pNames": ["list", "iconPath"],
@@ -9855,7 +9855,7 @@
 		"shortDesc": "SetScreenMode"
 	},
 	"SetSharedApp": {
-		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data.",
+		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data. Check out the 'Shared Data' sample in the DS samples section.",
 		"isfunc": true,
 		"name": "SetSharedApp",
 		"pNames": ["name"],
@@ -9871,112 +9871,104 @@
 		"shortDesc": "En/Disable speaker for phone calls."
 	},
 	"SetTheme": {
-		"desc": "SetTheme",
+		"desc": "Change the theme of your app to any created [CreateTheme.htm](Theme Object). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.",
 		"isfunc": true,
 		"name": "SetTheme",
 		"pNames": ["theme"],
 		"pTypes": ["dso-CreateTheme"],
-		"shortDesc": "SetTheme"
-	},
-	"SetTitle": {
-		"desc": "SetTitle",
-		"isfunc": true,
-		"name": "SetTitle",
-		"pNames": ["title"],
-		"pTypes": ["str"],
-		"shortDesc": "SetTitle"
+		"shortDesc": "Change the theme of your app."
 	},
 	"SetUserAgent": {
-		"desc": "?",
+		"desc": "Change the user agent for html apps. For more details [https://en.wikipedia.org/wiki/User_agent](ask Wikipedia).",
 		"isfunc": true,
 		"name": "SetUserAgent",
 		"pNames": ["agent"],
-		"pTypes": ["?"],
-		"shortDesc": "SetUserAgent"
+		"pTypes": ["str"],
+		"shortDesc": "Change the user agent."
 	},
 	"SetUserCreds": {
-		"desc": "?",
+		"desc": "Set user credentials in an html app for websites that require user login.",
 		"isfunc": true,
 		"name": "SetUserCreds",
 		"pNames": ["name", "password"],
 		"pTypes": ["str", "str"],
-		"shortDesc": "SetUserCreds"
+		"shortDesc": "Set user credentials."
 	},
 	"SetVolume": {
-		"desc": "SetVolume",
+		"desc": "Set the volume of a given volume type as a number between 0 and 1.",
 		"isfunc": true,
 		"name": "SetVolume",
 		"pNames": ["stream", "level", "options"],
-		"pTypes": ["str-alarm|dtmf|music|notification|ring|system|voicecall", "num_prc", "str-ShowUI"],
-		"shortDesc": "SetVolume"
+		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_flt-0..1", "str-ShowUI"],
+		"shortDesc": "Change volume of a given audio type."
 	},
 	"SetWifiApEnabled": {
-		"desc": "SetWifiApEnabled",
+		"desc": "En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.\nIt automatically disabled WiFi if it was enabled.\n\n<font color='red'>**This method is available for Android 6 or older only!**</font>",
 		"isfunc": true,
 		"name": "SetWifiApEnabled",
 		"pNames": ["enable", "ssid", "key"],
-		"pTypes": ["?", "?", "?"],
-		"shortDesc": "SetWifiApEnabled"
+		"pTypes": ["bin", "str", "str"],
+		"shortDesc": "En/Disable the mobile Wifi Access Point of the device."
 	},
 	"SetWifiEnabled": {
-		"desc": "SetWifiEnabled",
+		"desc": "En/Disable Wifi on the device.",
 		"isfunc": true,
 		"name": "SetWifiEnabled",
 		"pNames": ["enable"],
 		"pTypes": ["bin"],
-		"shortDesc": "SetWifiEnabled"
+		"shortDesc": "En/Disable Wifi on the device."
 	},
 	"ShowDebug": {
-		"desc": "Show debug console",
+		"desc": "Show/Hide the debug console as overlay in your app, after calling @CreatgeDebug.",
 		"isfunc": true,
 		"name": "ShowDebug",
 		"pNames": ["show"],
 		"pTypes": ["bin"],
-		"shortDesc": "ShowDebug"
+		"shortDesc": "Show the in-app debug console."
 	},
 	"ShowKeyboard": {
-		"desc": "ShowKeyboard",
+		"desc": "Shows the keyboard on a focussed control.\n\nSee Also: @CreateTextEdit",
 		"isfunc": true,
 		"name": "ShowKeyboard",
 		"pNames": ["obj"],
 		"pTypes": ["dso"],
 		"retval": "bin",
-		"shortDesc": "ShowKeyboard"
+		"shortDesc": "Show keyboard on a focussed control."
 	},
 	"ShowMenu": {
-		"desc": "ShowMenu",
+		"desc": "Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @SetMenu",
 		"isfunc": true,
 		"name": "ShowMenu",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "ShowMenu"
+		"shortDesc": "Show the in-app menu."
 	},
 	"ShowPopup": {
-		"desc": "ShowPopup",
+		"desc": "Shows a simple popup message on the screen. It automatically disappears after about 5 secods or after an even shorter time if you pass the _“Short”_ **option**, or when the user touches the screen.",
 		"isfunc": true,
 		"name": "ShowPopup",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str-top|bottom|short|?"],
-		"shortDesc": "ShowPopup"
+		"pTypes": ["str", "str-Bottom|Short"],
+		"shortDesc": "Show a popup message."
 	},
 	"ShowProgress": {
-		"desc": "ShowProgress",
+		"desc": "Shows a rotating progress circle indicating that something happens and that the user should keep his extremities with him until the process completed.",
 		"isfunc": true,
 		"name": "ShowProgress",
 		"pNames": ["message", "options"],
 		"pTypes": ["str", "str-NoDim:Don't darken background"],
-		"shortDesc": "ShowProgress"
+		"shortDesc": "Show a progress indicator."
 	},
 	"ShowProgressBar": {
-		"desc": "ShowProgressBar",
+		"desc": "Shows a dialog with a bar indicating the current progress of a certain thing.\n\nSee Also: UpdateProgressBar, HideProgressBar",
 		"isfunc": true,
 		"name": "ShowProgressBar",
 		"pNames": ["title", "percent", "options"],
-		"pTypes": ["str", "num_prc", "?"],
-		"shortDesc": "ShowProgressBar"
+		"pTypes": ["str", "num_prc", "str-Light"],
+		"shortDesc": "Show a progress bar dialog."
 	},
 	"ShowTextDialog": {
-		"desc": "Equal to prompt()",
+		"desc": "Shows a text input dialog with a title to allow the user to input some text.",
 		"isfunc": true,
 		"name": "ShowTextDialog",
 		"pNames": ["title", "default", "callback"],
@@ -9988,15 +9980,15 @@
 				"pTypes": ["str"],
 				"shortDesc": "callback"
 			}],
-		"shortDesc": "ShowTextDialog"
+		"shortDesc": "Show a text input dialog."
 	},
 	"ShowTip": {
-		"desc": "Show tooltip popup message on screen",
+		"desc": "Shows a tooltip message on the screen.",
 		"isfunc": true,
 		"name": "ShowTip",
 		"pNames": ["message", "left", "top", "timeOut", "options"],
-		"pTypes": ["str", "num_srw", "num_srw", "num_mls", "?"],
-		"shortDesc": "ShowTip"
+		"pTypes": ["str", "num_srw", "num_srw", "num_mls", "str-Down"],
+		"shortDesc": "Shows a tooltip message on the screen."
 	},
 	"SimulateDrag": {
 		"desc": "SimulateDrag",

@@ -26,12 +26,36 @@
 		</div>
 
 		<div data-role="content">
-			<p>Show tooltip popup message on screen.</p>
+			<p>Shows a tooltip message on the screen.</p>
 
 			<div class="samp">
-			app.ShowTip( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">timeOut</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )
+			app.ShowTip( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">timeOut</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Show Tool-Tip</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;edt = app.CreateTextEdit( &quot;&quot;, 0.5 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( edt );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var pos = edt.GetPosition( &quot;screen&quot; );<br>
+				&#160;&#160;&#160;&#160;app.ShowTip( &quot;Type some text here&quot;, pos.left, pos.top, 3000, &quot;Down&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
@@ -39,7 +63,7 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_num_srw" class="ui-content"><b>number:</b> <i>fraction of screen width</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Down”</div>
 
 	</div>
 </body>

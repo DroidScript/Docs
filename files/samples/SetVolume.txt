@@ -1,1 +1,19 @@
- 
+<sample Set Volume>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	skb = app.CreateSeekBar( 1 );
+	skb.SetRange( 1 );
+	skb.SetOnChange( SetVolume );
+	lay.AddChild( skb );
+
+	app.AddLayout( lay );
+}
+
+function SetVolume( value )
+{
+    <b>app.SetVolume( "Music", value );</b>
+    app.PlaySound( "/Sys/Snd/Poing.ogg" );
+}
+</sample>
