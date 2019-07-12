@@ -1,6 +1,6 @@
 {
 	"AddDrawer": {
-		"desc": "AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out",
+		"desc": "AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.\n\nSee Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer",
 		"isfunc": true,
 		"name": "AddDrawer",
 		"pNames": ["layout", "side", "width"],
@@ -8,7 +8,7 @@
 		"shortDesc": "Adds a slide-able layout on given side."
 	},
 	"AddLayout": {
-		"desc": "AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)",
+		"desc": "AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)\n\nSee Also: @RemoveLayout",
 		"isfunc": true,
 		"name": "AddLayout",
 		"pNames": ["layout"],
@@ -16,7 +16,7 @@
 		"shortDesc": "Adds a layout to the app"
 	},
 	"Alert": {
-		"desc": "Alert shows a simple text dialog with a colored title and a 'Ok' button to exit. If title was not given the dialog looks like a normal alert box.\nWithout the NoDim option the background behind the dialog will be darkened.",
+		"desc": "Alert shows a simple text dialog with a colored title and a 'Ok' button to exit. If title was not given the dialog looks like a normal alert box.\nWithout the NoDim option the background behind the dialog will be darkened.\n\nSee Also: \n\nSee Also: @Error, @ShowTextDialog, CreateYesNoDialog.",
 		"isfunc": true,
 		"name": "Alert",
 		"pNames": ["message", "title", "options", "hue"],
@@ -42,12 +42,12 @@
 		"shortDesc": "SetInterval equivalent used with 'NoDom' option"
 	},
 	"Broadcast": {
-		"desc": "Broadcast is used for broadcasting messages between DroidScript apps.",
+		"desc": "Broadcast is used for broadcasting messages between DroidScript apps.\n\nSee Also: @SetOnBroadcast",
 		"isfunc": true,
 		"name": "Broadcast",
 		"pNames": ["type", "message"],
 		"pTypes": ["str-Exec", "str"],
-		"shortDesc": "Used for broadcasting messages between DroidScript apps"
+		"shortDesc": "Used for broadcasting messages between DroidScript apps."
 	},
 	"BroadcastIntent": {
 		"desc": "Send a broadcasting intent with a custom action.",
@@ -74,7 +74,7 @@
 		"shortDesc": "Checks if app is licensed with Google Play"
 	},
 	"CheckPermission": {
-		"desc": "CheckPermission checks whether the permission of a particular component has been granted.",
+		"desc": "CheckPermission checks whether the permission of a particular component has been granted.\n\nSee Also: @GetPermission",
 		"isfunc": true,
 		"name": "CheckPermission",
 		"pNames": ["type"],
@@ -83,7 +83,7 @@
 		"shortDesc": "Checks if permission was granted"
 	},
 	"ChooseAccount": {
-		"desc": "Opens an Android dialog and allows the user to select one of his registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.",
+		"desc": "Opens an Android dialog and allows the user to select one of his registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.\n\nSee Also: @GetAccounts",
 		"isfunc": true,
 		"name": "ChooseAccount",
 		"pNames": ["callback"],
@@ -115,7 +115,7 @@
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseFile": {
-		"desc": "ChooseFile opens a file picker for user to select a file.",
+		"desc": "ChooseFile opens a file picker for user to select a file.\n\nSee Also: @ReadFile",
 		"isfunc": true,
 		"name": "ChooseFile",
 		"pNames": ["message", "type", "callback"],
@@ -130,7 +130,7 @@
 		"shortDesc": "Let the user choose a file"
 	},
 	"ChooseImage": {
-		"desc": "ChooseImage opens the photo gallery for user to select an image.",
+		"desc": "ChooseImage opens the photo gallery for user to select an image.\n\nSee Also: @CreateImage",
 		"isfunc": true,
 		"name": "ChooseImage",
 		"pNames": ["options", "callback"],
@@ -145,7 +145,7 @@
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseWifi": {
-		"desc": "ChooseWifi lets the user select a WiFi network in his range.\n\n**title1** and **title2** are the titles for the scanning and the selection process. They default to “Scanning” and “Select WiFi”.\n\nThe **callback** function returns the name and the ssid of the selected network.\n\nYou can set the _force_ option so that the dialog cannot be closed until the user has selected an item.\n\nFinally you can add extra items as pipe “|” separated string - ie. to add a default “[None]” entry to select no wifi network.",
+		"desc": "ChooseWifi lets the user select a WiFi network in his range.\n\n**title1** and **title2** are the titles for the scanning and the selection process. They default to “Scanning” and “Select WiFi”.\n\nThe **callback** function returns the name and the ssid of the selected network.\n\nYou can set the _force_ option so that the dialog cannot be closed until the user has selected an item.\n\nFinally you can add extra items as pipe “|” separated string - ie. to add a default “[None]” entry to select no wifi network.\n\nSee Also: @WifiConnect",
 		"isfunc": true,
 		"name": "ChooseWifi",
 		"pNames": ["title1", "title2", "callback", "options", "extra"],
@@ -160,7 +160,7 @@
 		"shortDesc": "Let the user choose a WiFi network."
 	},
 	"ClearCookies": {
-		"desc": "ClearCookies clears the saved cookies for webviews or html apps. If session was not given, the latest one will be selected.",
+		"desc": "ClearCookies clears the saved cookies for webviews or html apps. If session was not given, the latest one will be selected.\n\nSee Also: @SaveCookies",
 		"isfunc": true,
 		"name": "ClearCookies",
 		"pNames": ["session"],
@@ -168,7 +168,7 @@
 		"shortDesc": "Clears saved web cookies"
 	},
 	"ClearData": {
-		"desc": "ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.",
+		"desc": "ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SetData, \n\nSee Also: @GetData",
 		"isfunc": true,
 		"name": "ClearData",
 		"pNames": ["file"],
@@ -176,7 +176,7 @@
 		"shortDesc": "Deletes app.Save*() storage."
 	},
 	"ClearValue": {
-		"desc": "ClearValue deletes a variable saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.",
+		"desc": "ClearValue deletes a variable saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SaveText, @SaveNumber, @SaveBoolean",
 		"isfunc": true,
 		"name": "ClearValue",
 		"pNames": ["name", "file"],
@@ -184,7 +184,7 @@
 		"shortDesc": "Deletes a variable saved via app.Save*()"
 	},
 	"CloseDrawer": {
-		"desc": "Closes the drawer layout on the given side with slide animation.",
+		"desc": "Closes the drawer layout on the given side with slide animation.\n\nSee Also: @OpenDrawer",
 		"isfunc": true,
 		"name": "CloseDrawer",
 		"pNames": ["side"],
@@ -192,7 +192,7 @@
 		"shortDesc": "Closes the drawer layout on the given side."
 	},
 	"CopyFile": {
-		"desc": "CopyFile copies a file to a given destination. The target must locate to the actual target file, not the folder. An existing file will be overridden.",
+		"desc": "CopyFile copies a file to a given destination. The target must locate to the actual target file, not the folder. An existing file will be overridden.\n\nSee Also: @RenameFile, @DeleteFile, @FileExists",
 		"isfunc": true,
 		"name": "CopyFile",
 		"pNames": ["source", "destination"],
@@ -200,7 +200,7 @@
 		"shortDesc": "Copies a file to a given destination"
 	},
 	"CopyFolder": {
-		"desc": "CopyFolder copies a folder to a given destination. If override is false and the folder already exists in the destination, it will not be copied.",
+		"desc": "CopyFolder copies a folder to a given destination. If override is false and the folder already exists in the destination, it will not be copied.\n\nSee Also: @RenameFolder, @DeleteFolder, @FolderExists",
 		"isfunc": true,
 		"name": "CopyFolder",
 		"pNames": ["source", "destination", "overwrite", "filter"],
@@ -1054,7 +1054,7 @@
 	},
 	"CreateCodeEdit": {
 		"abbrev": "cde",
-		"desc": "CreateCodeEdit is a control for premium users which is like a TextEdit but it has advanced methods.",
+		"desc": "CreateCodeEdit is a control for premium users which is like a TextEdit but it has advanced methods.\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateCodeEdit",
 		"pNames": ["text", "width", "height", "options"],
@@ -1882,7 +1882,7 @@
 	},
 	"CreateGame": {
 		"abbrev": "gam",
-		"desc": "CreateGame automatically turns your app in game mode and adds a [CreateGameView.htm](GameView) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.\nYou can still access the GameView and the layout where it was added to via gam.game and gam.lay.",
+		"desc": "CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.\nYou can still access the GameView and the layout where it was added to via gam.game and gam.lay.",
 		"isfunc": true,
 		"name": "CreateGame",
 		"pNames": ["file", "orient"],
@@ -1978,7 +1978,7 @@
 	},
 	"CreateImage": {
 		"abbrev": "img",
-		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the _“Button”_ **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the _“fix”_ **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, “fix”, 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the _“alias”_ **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, “alias” );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [https://open.gl/transformations](transformation matrix). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
+		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the _“Button”_ **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the _“fix”_ **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, “fix”, 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the _“alias”_ **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, “alias” );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](https://open.gl/transformations). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
 		"isfunc": true,
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
@@ -2149,7 +2149,7 @@
 				"name": "MeasureText",
 				"pNames": ["txt"],
 				"pTypes": ["str"],
-				"retval": "obj-{ width:orw, height:orh }",
+				"retval": "obj-{ width:num_orw, height:num_orh }",
 				"shortDesc": "MeasureText"
 			},
 			"Method": "#1023663567",
@@ -3027,46 +3027,6 @@
 				"pNames": ["title"],
 				"pTypes": ["str"],
 				"shortDesc": ""
-			},
-			"Show": "#1243391562"
-		}
-	},
-	"CreateListView": {
-		"abbrev": "lvw",
-		"desc": "This method creates a full screen list dialog",
-		"isfunc": true,
-		"name": "CreateListView",
-		"pNames": ["list", "title"],
-		"pTypes": ["str", "str"],
-		"retval": "ListView",
-		"shortDesc": "Returns a ListView object.",
-		"subf": {
-			"GetType": {
-				"desc": "Returns the control class name.",
-				"isfunc": true,
-				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str-ListView",
-				"shortDesc": "Returns the control class name."
-			},
-			"Method": "#1023663567",
-			"SetOnTouch": {
-				"desc": "Define a callback function that is called when the user touches the control.",
-				"isfunc": true,
-				"name": "SetOnTouch",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["title"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": "Define a callback function for touch events."
 			},
 			"Show": "#1243391562"
 		}
@@ -4434,7 +4394,7 @@
 	},
 	"CreateOverlay": {
 		"abbrev": "ovl",
-		"desc": "CreateOverlay",
+		"desc": "CreateOverlay\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateOverlay",
 		"pNames": ["options"],
@@ -4548,7 +4508,7 @@
 	},
 	"CreatePlayStore": {
 		"abbrev": "pls",
-		"desc": "?",
+		"desc": "PlayStore\n\n<premium>",
 		"isfunc": true,
 		"name": "CreatePlayStore",
 		"pNames": [],
@@ -4626,7 +4586,7 @@
 	},
 	"CreateScroller": {
 		"abbrev": "scr",
-		"desc": "If you have much data to display which does not fit in the area you have availabe or want to use, you probably want using a **Scroller**. The options for the Scroller are the same as the LinearLayout fill options, which set how a Scroller sizes within it's parent:- “FillX”, “FillY” and “FillXY”. By default Scrollers will auto-size to wrap their contents.\n\nTo add other controls to your scroller you need to put them in a scroller [CreateLayout.htm](layout) first, which you can then add to the scroller object.",
+		"desc": "If you have much data to display which does not fit in the area you have availabe or want to use, you probably want using a **Scroller**. The options for the Scroller are the same as the LinearLayout fill options, which set how a Scroller sizes within it's parent:- “FillX”, “FillY” and “FillXY”. By default Scrollers will auto-size to wrap their contents.\n\nTo add other controls to your scroller you need to put them in a scroller [layout](CreateLayout.htm) first, which you can then add to the scroller object.",
 		"isfunc": true,
 		"name": "CreateScroller",
 		"pNames": ["width", "height", "options"],
@@ -6163,7 +6123,7 @@
 	},
 	"CreateText": {
 		"abbrev": "txt",
-		"desc": "If you want to display text in your app you can use the Text object. You can use the _“Multiline”_ **option** to allow multi-line text and the _“Left”_ or _“Right”_ options to align the text. The default is single line centered text.\nOther options you will see used in the samples include _“AutoScale”_, _“Bold”_, _“Html”_ and _“FontAwesome”_.\nUse the **SetText** and **GetText** functions of the Text object to set and get it's text.\n<sample Single line>\nYou can change the look of a Text using the **SetBackColor** and **SetTextColor** functions on the Text object.\n<sample Multi line>\nText can be shortened using ellipsis (...) when the size of the control is too small to show all the text. Use the **SetEllipsize** to control where the ellipsis is placed. Available modes are _“start”_, _“middle”_, _“end”_ and _“marq”_.\n<sample Ellipsize>\nYou can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [CreateLayout.htm](Layouts) for examples of how to use these functions.",
+		"desc": "If you want to display text in your app you can use the Text object. You can use the _“Multiline”_ **option** to allow multi-line text and the _“Left”_ or _“Right”_ options to align the text. The default is single line centered text.\nOther options you will see used in the samples include _“AutoScale”_, _“Bold”_, _“Html”_ and _“FontAwesome”_.\nUse the **SetText** and **GetText** functions of the Text object to set and get it's text.\n<sample Single line>\nYou can change the look of a Text using the **SetBackColor** and **SetTextColor** functions on the Text object.\n<sample Multi line>\nText can be shortened using ellipsis (...) when the size of the control is too small to show all the text. Use the **SetEllipsize** to control where the ellipsis is placed. Available modes are _“start”_, _“middle”_, _“end”_ and _“marq”_.\n<sample Ellipsize>\nYou can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
@@ -6357,7 +6317,7 @@
 	},
 	"CreateTextEdit": {
 		"abbrev": "edt",
-		"desc": "If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the _“numbers”_ **option**.\n\nYou can use the **SetOnChange** method of the TextEdit to set the name of a function you want to be called when a the text is changed.\n\nUse the **SetText** and **GetText** functions to set and get the text in the TextEdit.\n<sample Using OnChange>\nYou can change the look of a TextEdit using the **SetBackColor** and **SetTextColor** functions on the TextEdit object.<sample Blue on White>\nYou can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [CreateLayout.htm](Layouts) for examples of how to use these functions.",
+		"desc": "If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the _“numbers”_ **option**.\n\nYou can use the **SetOnChange** method of the TextEdit to set the name of a function you want to be called when a the text is changed.\n\nUse the **SetText** and **GetText** functions to set and get the text in the TextEdit.\n<sample Using OnChange>\nYou can change the look of a TextEdit using the **SetBackColor** and **SetTextColor** functions on the TextEdit object.<sample Blue on White>\nYou can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
@@ -6606,7 +6566,7 @@
 	},
 	"CreateTheme": {
 		"abbrev": "thm",
-		"desc": "Returns a Theme object.",
+		"desc": "Returns a Theme object.\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateTheme",
 		"pNames": ["baseTheme"],
@@ -6752,7 +6712,7 @@
 	},
 	"CreateToggle": {
 		"abbrev": "tgl",
-		"desc": "Toggle buttons are basically [CreateButton.htm](Buttons) with a light indicating if it is activated or not. The user can toggle this state by pressing on it.\n%c\n You can allow the toggle button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.\n\nYou can get the state of the toggle button at any time using the **GetChecked** method of the button. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.",
+		"desc": "Toggle buttons are basically [Buttons](CreateButton.htm) with a light indicating if it is activated or not. The user can toggle this state by pressing on it.\n%c\n You can allow the toggle button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.\n\nYou can get the state of the toggle button at any time using the **GetChecked** method of the button. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.",
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
@@ -7161,7 +7121,7 @@
 	},
 	"CreateWallpaper": {
 		"abbrev": "wlp",
-		"desc": "CreateWallpaper",
+		"desc": "CreateWallpaper\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateWallpaper",
 		"pNames": ["options"],
@@ -7625,7 +7585,7 @@
 	},
 	"CreateWizard": {
 		"abbrev": "wiz",
-		"desc": "CreateWizard",
+		"desc": "CreateWizard\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateWizard",
 		"pNames": ["title", "width", "height", "callback"],
@@ -7857,7 +7817,7 @@
 		}
 	},
 	"Debug": {
-		"desc": "This function is an app equivalent to console.log(msg) which writes text into a console visible in debug mode “true” or “console”.",
+		"desc": "This function is an app equivalent to console.log(msg) which writes text into a console visible in debug mode “true” or “console”.\n\nSee Also: @SetDebug",
 		"isfunc": true,
 		"name": "Debug",
 		"pNames": ["message"],
@@ -7865,7 +7825,7 @@
 		"shortDesc": "Debug messages to the console."
 	},
 	"DeleteDatabase": {
-		"desc": "DeleteDatabase removes a specific database",
+		"desc": "DeleteDatabase removes a specific database\n\nSee Also: @OpenDatabase",
 		"isfunc": true,
 		"name": "DeleteDatabase",
 		"pNames": ["name"],
@@ -7873,7 +7833,7 @@
 		"shortDesc": "Deletes a database."
 	},
 	"DeleteFile": {
-		"desc": "DeleteFile deletes a given file from the filesystem. This makes it hard to restore it!",
+		"desc": "DeleteFile deletes a given file from the filesystem. This makes it hard to restore it!\n\nSee Also: @WriteFile, @RenameFile, @FileExists",
 		"isfunc": true,
 		"name": "DeleteFile",
 		"pNames": ["file"],
@@ -7881,7 +7841,7 @@
 		"shortDesc": "Deletes a file"
 	},
 	"DeleteFolder": {
-		"desc": "DeleteFolder does the same as DeleteFile but with folders. It recursively removes all files and folders of the given folder and finally deletes it.",
+		"desc": "DeleteFolder does the same as DeleteFile but with folders. It recursively removes all files and folders of the given folder and finally deletes it.\n\nSee Also: @MakeFolder, @RenameFolder, @FolderExists",
 		"isfunc": true,
 		"name": "DeleteFolder",
 		"pNames": ["folder"],
@@ -7889,7 +7849,7 @@
 		"shortDesc": "Delete a folder."
 	},
 	"DestroyLayout": {
-		"desc": "DestroyLayout destroys a layout and all its contents so it can't be used any more. As a result, all memory occupied by these objects will be released.",
+		"desc": "DestroyLayout destroys a layout and all its contents so it can't be used any more. As a result, all memory occupied by these objects will be released.\n\nSee Also: @CreateLayout, @AddLayout",
 		"isfunc": true,
 		"name": "DestroyLayout",
 		"pNames": ["layout"],
@@ -7897,7 +7857,7 @@
 		"shortDesc": "Destroy a layout."
 	},
 	"DisableKeys": {
-		"desc": "DisableKeys prevents the default behavior of several hard, soft or keyboard keys.\nThis way you can apply a custom action for them using @SetOnKey.\n\nYou can find the complete list of keycodes on the [https://developer.android.com/reference/android/view/KeyEvent#summary](Android Developer Page)",
+		"desc": "DisableKeys prevents the default behavior of several hard, soft or keyboard keys.\nThis way you can apply a custom action for them using @SetOnKey.\n\nYou can find the complete list of keycodes on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#summary)",
 		"isfunc": true,
 		"name": "DisableKeys",
 		"pNames": ["keyList"],
@@ -7913,7 +7873,7 @@
 		"shortDesc": "Suppress all touch events."
 	},
 	"DiscoverBtDevices": {
-		"desc": "Use DiscoverBtDevices to search for other bluetooth devices which are not paired with the current device. If any was found it will be forwarded directly to the **onFound** callback. If the search has finished **onComplete** function will be called.",
+		"desc": "Use DiscoverBtDevices to search for other bluetooth devices which are not paired with the current device. If any was found it will be forwarded directly to the **onFound** callback. If the search has finished **onComplete** function will be called.\n\nSee Also: @CreateBluetoothSerial, @PairBtDevice, @IsBtDevicePaired",
 		"isfunc": true,
 		"name": "DiscoverBtDevices",
 		"pNames": ["filter", "onFound", "onComplete"],
@@ -7943,7 +7903,7 @@
 		"shortDesc": "Download a file with Androids download manager."
 	},
 	"EnableBackKey": {
-		"desc": "Allows to en- or disable the devices back key. When it is disabled the app event _OnBack()_ will called when the user presses the back button - otherwise the app exits.\n\nYou can use this method to create a custom _BACK_ command that allows you to navigate between your layouts.",
+		"desc": "Allows to en- or disable the devices back key. When it is disabled the global _OnBack_ app event will called when the user presses the back button - otherwise the app exits.\n\nYou can use this method to create a custom _BACK_ command that allows you to navigate between your layouts.",
 		"isfunc": true,
 		"name": "EnableBackKey",
 		"pNames": ["enable"],
@@ -7951,7 +7911,7 @@
 		"shortDesc": "EnableBackKey"
 	},
 	"Error": {
-		"desc": "Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.",
+		"desc": "Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.\n\nSee Also: @Alert",
 		"isfunc": true,
 		"name": "Error",
 		"pNames": ["message", "line", "file", "quit"],
@@ -7959,7 +7919,7 @@
 		"shortDesc": "Show an error message."
 	},
 	"Execute": {
-		"desc": "Executes a piece of code asynchroneously to your program. It is designed for interacting with your main app from within a [CreateWebView.htm](WebView).",
+		"desc": "Executes a piece of code asynchroneously to your program. It is designed for interacting with your main app from within a [WebView](CreateWebView.htm).",
 		"isfunc": true,
 		"name": "Execute",
 		"pNames": ["js"],
@@ -7975,7 +7935,7 @@
 		"shortDesc": "Close and stop the app."
 	},
 	"ExtExec": {
-		"desc": "ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.\nThe Termux app runs as a service and there's almost no limit to what you can achieve with a full blown Linux machine running on your Android device!\n\nHow about installing git, or nodejs or using ssh or gzip.\nTry typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.\n<h3>Enable Termux</h3>\nTo **enable termux** support you have to install [https://play.google.com/store/apps/details?id=com.termux](Termux) and the [https://play.google.com/store/apps/details?id=com.termux.tasker](Tasker) Plugin from PlayStore first.\n\nThen give termux **sdcard permissions** in the Android settings under apps/termux.\n\nAfter that create a symbolic link from the tasker plugin folder to your home directory:\n<bash>mkdir -p .termux /sdcard/termux/scripts\nln -s /sdcard/termux/scripts .termux/tasker</bash>Finally you can run a termux shell script from inside DroidScript:",
+		"desc": "ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.\n\n<premium>\n\nThe Termux app runs as a service and there's almost no limit to what you can achieve with a full blown Linux machine running on your Android device!\n\nHow about installing git, or nodejs or using ssh or gzip.\nTry typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.\n<h3>Enable Termux</h3>\nTo **enable termux** support you have to install [Termux](https://play.google.com/store/apps/details?id=com.termux) and the [Tasker](https://play.google.com/store/apps/details?id=com.termux.tasker) Plugin from PlayStore first.\n\nThen give termux **sdcard permissions** in the Android settings under apps/termux.\n\nAfter that create a symbolic link from the tasker plugin folder to your home directory:\n<bash>mkdir -p .termux /sdcard/termux/scripts\nln -s /sdcard/termux/scripts .termux/tasker</bash>Finally you can run a termux shell script from inside DroidScript:",
 		"isfunc": true,
 		"name": "ExtExec",
 		"pNames": ["name", "file", "args", "options"],
@@ -7999,7 +7959,7 @@
 		"shortDesc": "Forcefully update your plugins."
 	},
 	"FileExists": {
-		"desc": "FileExists returns a boolean indicating whether a given file exists in your filesystem or not.",
+		"desc": "FileExists returns a boolean indicating whether a given file exists in your filesystem or not.\n\nSee Also: @WriteFile, @CopyFile, @RenameFile",
 		"isfunc": true,
 		"name": "FileExists",
 		"pNames": ["file"],
@@ -8008,7 +7968,7 @@
 		"shortDesc": "Returns whether the file exists."
 	},
 	"FolderExists": {
-		"desc": "Returns a boolean indicating whether a given folder exits or not.",
+		"desc": "Returns a boolean indicating whether a given folder exits or not.\n\nSee Also: @MakeFolder, @CopyFolder, @RenameFolder",
 		"isfunc": true,
 		"name": "FolderExists",
 		"pNames": ["folder"],
@@ -8017,7 +7977,7 @@
 		"shortDesc": "Returns whether the folder exists."
 	},
 	"GA": {
-		"desc": "With **G**oogle **A**nalytics implemented via analytics.js you can track the use of your apps in real-time and watch as people are using it all over the planet and see what city they are in. You can get lots of usage statistics including what version of your app they are using, what version of Android, the time of day they are using your app, what device they are using and even which parts of the app people are using the most.\n\nYou can find more informations on the [https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference](Google Developers page).",
+		"desc": "With **G**oogle **A**nalytics implemented via analytics.js you can track the use of your apps in real-time and watch as people are using it all over the planet and see what city they are in. You can get lots of usage statistics including what version of your app they are using, what version of Android, the time of day they are using your app, what device they are using and even which parts of the app people are using the most.\n\nYou can find more informations on the [Google Developers page](https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference).\n\n<premium>",
 		"isfunc": true,
 		"name": "GA",
 		"pNames": ["command", "[...fields]", "options"],
@@ -8025,7 +7985,7 @@
 		"shortDesc": "Google Analytics"
 	},
 	"GetAccounts": {
-		"desc": "Returns a string of all known account names on the device separated with comma ','.",
+		"desc": "Returns a string of all known account names on the device separated with comma ','.\n\nSee Also: @ChooseAccount",
 		"isfunc": true,
 		"name": "GetAccounts",
 		"pNames": [],
@@ -8034,7 +7994,7 @@
 		"shortDesc": "GetAccounts"
 	},
 	"GetActivities": {
-		"desc": "GetActivities returns a list of object of currently running activities.",
+		"desc": "GetActivities returns a list of object of currently running activities.\n\nSee Also: @GetRunningApps, @GetRunningServices",
 		"isfunc": true,
 		"name": "GetActivities",
 		"pNames": [],
@@ -8052,7 +8012,7 @@
 		"shortDesc": "Get current app name."
 	},
 	"GetAppPath": {
-		"desc": "Returns the path to the app assets folder. If it's a DroidScript project the path should be “/sdcard/DroidScript/appname” - If it is an apk it is “/Assets”",
+		"desc": "Returns the path to the app assets folder. If it's a DroidScript project the path should be “/sdcard/DroidScript/appname” - If it is an apk it is “/Assets”\n\nSee Also: @GetPath, @GetPrivateFolder",
 		"isfunc": true,
 		"name": "GetAppPath",
 		"pNames": [],
@@ -8061,7 +8021,7 @@
 		"shortDesc": "Get path to app assets"
 	},
 	"GetBatteryLevel": {
-		"desc": "Returns the current battery level of the device in percent.",
+		"desc": "Returns the current battery level of the device in percent.\n\nSee Also: @GetChargeType, @IsCharging",
 		"isfunc": true,
 		"name": "GetBatteryLevel",
 		"pNames": [],
@@ -8070,7 +8030,7 @@
 		"shortDesc": "Get current battery level."
 	},
 	"GetBluetoothAddress": {
-		"desc": "Returns the hexadecimal Bluetooth address of the device, following the pattern “00:00:00:00:00:00”.",
+		"desc": "Returns the hexadecimal Bluetooth address of the device, following the pattern “00:00:00:00:00:00”.\n\nSee Also: @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "GetBluetoothAddress",
 		"pNames": [],
@@ -8079,16 +8039,16 @@
 		"shortDesc": "Get the bluetooth address."
 	},
 	"GetBluetoothName": {
-		"desc": "Returns the Bluetooth name of the device",
+		"desc": "Returns the Bluetooth name of the device.\n\nSee Also: @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "GetBluetoothName",
 		"pNames": [],
 		"pTypes": [],
 		"retval": "str",
-		"shortDesc": "Get the bluetooth name"
+		"shortDesc": "Get the bluetooth name."
 	},
 	"GetBtProfileState": {
-		"desc": "Returns the Bluetooth State of a given Bt connection type.",
+		"desc": "Returns the Bluetooth State of a given Bt connection type.\n\nSee Also: @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "GetBtProfileState",
 		"pNames": ["type"],
@@ -8106,7 +8066,7 @@
 		"shortDesc": "Get APK build number."
 	},
 	"GetChargeType": {
-		"desc": "Returns the current charge type. If the device isn't charging the result is “None”.",
+		"desc": "Returns the current charge type. If the device isn't charging the result is “None”.\n\nSee Also: @GetBatteryLevel, @IsCharging",
 		"isfunc": true,
 		"name": "GetChargeType",
 		"pNames": [],
@@ -8115,7 +8075,7 @@
 		"shortDesc": "Get current charge type."
 	},
 	"GetClipboardText": {
-		"desc": "GetClipboardText returns text that was last copied to the clipboard.",
+		"desc": "GetClipboardText returns text that was last copied to the clipboard.\n\nSee Also: @SetClipboardText",
 		"isfunc": true,
 		"name": "GetClipboardText",
 		"pNames": [],
@@ -8124,7 +8084,7 @@
 		"shortDesc": "Get latest clipboard text."
 	},
 	"GetCountry": {
-		"desc": "Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)",
+		"desc": "Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)\n\nSee Also: @GetCountryCode, \n\nSee Also: @GetLanguage",
 		"isfunc": true,
 		"name": "GetCountry",
 		"pNames": [],
@@ -8133,7 +8093,7 @@
 		"shortDesc": "Get user country name."
 	},
 	"GetCountryCode": {
-		"desc": "Returns the code of the device country (ie. “GB” or “DE”)",
+		"desc": "Returns the code of the device country (ie. “GB” or “DE”)\n\nSee Also: @GetCountry, GetLanguageCode",
 		"isfunc": true,
 		"name": "GetCountryCode",
 		"pNames": [],
@@ -8142,7 +8102,7 @@
 		"shortDesc": "Get users country code."
 	},
 	"GetData": {
-		"desc": "Returns data stored via app.SetData(key, value). All data will be lost when the app is closed.",
+		"desc": "Returns data stored via app.SetData(key, value). All data will be lost when the app is closed.\n\nSee Also: @SetData",
 		"isfunc": true,
 		"name": "GetData",
 		"pNames": ["name"],
@@ -8151,7 +8111,7 @@
 		"shortDesc": "Retreive saved data."
 	},
 	"GetDatabaseFolder": {
-		"desc": "Returns the path to the database folder of the app. An example pattern is “/data/data/packageName/databases”.",
+		"desc": "Returns the path to the database folder of the app. An example pattern is “/data/data/packageName/databases”.\n\nSee Also: @OpenDatabase",
 		"isfunc": true,
 		"name": "GetDatabaseFolder",
 		"pNames": [],
@@ -8160,7 +8120,7 @@
 		"shortDesc": "Get apps database folder."
 	},
 	"GetDefaultOrientation": {
-		"desc": "Returns the default Orientation of the device. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.",
+		"desc": "Returns the default Orientation of the device. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.\n\nSee Also: @SetOrientation, @GetOrientation",
 		"isfunc": true,
 		"name": "GetDefaultOrientation",
 		"pNames": [],
@@ -8178,7 +8138,7 @@
 		"shortDesc": "Get device ID."
 	},
 	"GetDisplayHeight": {
-		"desc": "Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.",
+		"desc": "Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.\n\nSee Also: @GetScreenHeight",
 		"isfunc": true,
 		"name": "GetDisplayHeight",
 		"pNames": [],
@@ -8187,7 +8147,7 @@
 		"shortDesc": "Get apps display height."
 	},
 	"GetDisplayWidth": {
-		"desc": "Get the display width of the app in pixels. Therefore virtual buttons won't be included to the value.",
+		"desc": "Get the display width of the app in pixels. Therefore virtual buttons won't be included to the value.\n\nSee Also: @GetScreenWidth",
 		"isfunc": true,
 		"name": "GetDisplayWidth",
 		"pNames": [],
@@ -8196,12 +8156,13 @@
 		"shortDesc": "Get apps display width."
 	},
 	"GetDrawerState": {
-		"desc": "GetDrawerState",
+		"desc": "Returns the current drawer state of a drawer on a given side.\n\nSee Also: @OpenDrawer, @CloseDrawer, @AddDrawer",
 		"isfunc": true,
 		"name": "GetDrawerState",
 		"pNames": ["side"],
-		"pTypes": ["?"],
-		"shortDesc": "GetDrawerState"
+		"pTypes": ["str-left|right"],
+        "retval": "str-Open|Closed",
+		"shortDesc": "Get current drawer state."
 	},
 	"GetDSVersion": {
 		"desc": "Returns the current DroidScript version number in the format 0.00.",
@@ -8222,7 +8183,7 @@
 		"shortDesc": "Get environment variable."
 	},
 	"GetExternalFolder": {
-		"desc": "GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is smth like “/storage/extsd” or “/storage/extSdCard”",
+		"desc": "GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is smth like “/storage/extsd” or “/storage/extSdCard”\n\nSee Also: @GetInternalFolder",
 		"isfunc": true,
 		"name": "GetExternalFolder",
 		"pNames": [],
@@ -8258,7 +8219,7 @@
 		"shortDesc": "Get remaining storage size."
 	},
 	"GetInstalledApps": {
-		"desc": "Returns a list of objects containing informations about installed apps.",
+		"desc": "Returns a list of objects containing informations about installed apps.\n\nSee Also: @GetRunningApps, @GetRunningServices",
 		"isfunc": true,
 		"name": "GetInstalledApps",
 		"pNames": [],
@@ -8267,7 +8228,7 @@
 		"shortDesc": "Get data about installed apps."
 	},
 	"GetIntent": {
-		"desc": "Returns an intent object sent to the app.",
+		"desc": "Returns an intent object sent to the app.\n\nSee Also: @SendIntent",
 		"isfunc": true,
 		"name": "GetIntent",
 		"pNames": [],
@@ -8276,7 +8237,7 @@
 		"shortDesc": "Get received intent data."
 	},
 	"GetInternalFolder": {
-		"desc": "Get devices internal “/sdcard/” path. Normally it should be “/storage/emulated/legacy”.",
+		"desc": "Get devices internal “/sdcard/” path. Normally it should be “/storage/emulated/legacy”.\n\nSee Also: @GetExternalFolder",
 		"isfunc": true,
 		"name": "GetInternalFolder",
 		"pNames": [],
@@ -8294,7 +8255,7 @@
 		"shortDesc": "Get network IP address"
 	},
 	"GetJoystickName": {
-		"desc": "Returns the name of a conected joystick.",
+		"desc": "Returns the name of a conected joystick.\n\nSee Also: @GetJoystickState",
 		"isfunc": true,
 		"name": "GetJoystickName",
 		"pNames": ["id"],
@@ -8303,7 +8264,7 @@
 		"shortDesc": "GetJoystickName"
 	},
 	"GetJoystickState": {
-		"desc": "Returns the state of a connected joystick. The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.",
+		"desc": "Returns the state of a connected joystick. The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.\n\nSee Also: @GetJoystickName",
 		"isfunc": true,
 		"name": "GetJoystickState",
 		"pNames": ["id", "key"],
@@ -8312,7 +8273,7 @@
 		"shortDesc": "GetJoystickState"
 	},
 	"GetKeyboardHeight": {
-		"desc": "Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.",
+		"desc": "Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.\n\nSee Also: @ShowKeyboard",
 		"isfunc": true,
 		"name": "GetKeyboardHeight",
 		"pNames": [],
@@ -8321,7 +8282,7 @@
 		"shortDesc": "Get current keyboard height."
 	},
 	"GetLanguage": {
-		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”)",
+		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n\nSee Also: @GetLanguageCode, @GetCountry, @SetLanguage",
 		"isfunc": true,
 		"name": "GetLanguage",
 		"pNames": [],
@@ -8330,49 +8291,13 @@
 		"shortDesc": "GetLanguage"
 	},
 	"GetLanguageCode": {
-		"desc": "GetLanguageCode returns the user language code (ie. “en” or “de”)",
+		"desc": "GetLanguageCode returns the user language code (ie. “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
 		"isfunc": true,
 		"name": "GetLanguageCode",
 		"pNames": [],
 		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get user language code."
-	},
-	"GetLastButton": {
-		"desc": "Returns the last button which was pressed",
-		"isfunc": true,
-		"name": "GetLastButton",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "dso",
-		"shortDesc": "GetLastButton"
-	},
-	"GetLastCheckBox": {
-		"desc": "Returns the last check box which was pressed",
-		"isfunc": true,
-		"name": "GetLastCheckBox",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "dso",
-		"shortDesc": "GetLastCheckBox"
-	},
-	"GetLastImage": {
-		"desc": "Returns the last image which was pressed",
-		"isfunc": true,
-		"name": "GetLastImage",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "dso",
-		"shortDesc": "GetLastImage"
-	},
-	"GetLastToggle": {
-		"desc": "Returns the last toggle which was pressed",
-		"isfunc": true,
-		"name": "GetLastToggle",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "dso",
-		"shortDesc": "GetLastToggle"
 	},
 	"GetMacAddress": {
 		"desc": "Returns the alphanumeric **M**edia-**A**ccess-**C**ontrol address of the device. Style should be “00:00:00:00:00:00”. The individual numbers can have hexadecimal values between 00 and FF.",
@@ -8384,7 +8309,7 @@
 		"shortDesc": "Get devices MAC address."
 	},
 	"GetMediaFile": {
-		"desc": "Returns a path to an unambiguous media file be like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”. The folder to that file will be created automatically.",
+		"desc": "Returns a path to an unambiguous media file be like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”. The folder to that file will be created automatically.\n\nSee Also: @CreateImage, @CreateCameraView",
 		"isfunc": true,
 		"name": "GetMediaFile",
 		"pNames": ["appName", "ext"],
@@ -8402,7 +8327,7 @@
 		"shortDesc": "Get RAM memory information."
 	},
 	"GetMetadata": {
-		"desc": "Returns a string list of metadata values contained in an audio file.",
+		"desc": "Returns a string list of metadata values contained in an audio file.\n\nSee Also: @CreateMediaPlayer",
 		"isfunc": true,
 		"name": "GetMetadata",
 		"pNames": ["file", "keys"],
@@ -8429,7 +8354,7 @@
 		"shortDesc": "Get APK name."
 	},
 	"GetNotifyId": {
-		"desc": "If the app was started by a notification, this function will return the id of that notification.",
+		"desc": "If the app was started by a notification, this function will return the id of that notification.\n\nSee Also: @CreateNotification",
 		"isfunc": true,
 		"name": "GetNotifyId",
 		"pNames": [],
@@ -8447,7 +8372,7 @@
 		"shortDesc": "Get map of created DroidScript objects."
 	},
 	"GetOptions": {
-		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value.",
+		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value.\n\nSee Also: @SetOptions",
 		"isfunc": true,
 		"name": "GetOptions",
 		"pNames": [],
@@ -8456,7 +8381,7 @@
 		"shortDesc": "Get app options."
 	},
 	"GetOrientation": {
-		"desc": "Returns the current device orientation. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.",
+		"desc": "Returns the current device orientation. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.\n\nSee Also: @SetOrientation, @GetDefaultOrientation, @GetRotation",
 		"isfunc": true,
 		"name": "GetOrientation",
 		"pNames": [],
@@ -8483,7 +8408,7 @@
 		"shortDesc": "Get APK package name."
 	},
 	"GetPairedBtDevices": {
-		"desc": "Returns a list of objects containing the name and bluetooth address of paired devices. Note that Bluetooth must be turned on to receive this information.",
+		"desc": "Returns a list of objects containing the name and bluetooth address of paired devices. Note that Bluetooth must be turned on to receive this information.\n\nSee Also: @UnpairBtDevice, @CreateBluetoothSerial, @DiscoverBtDevices",
 		"isfunc": true,
 		"name": "GetPairedBtDevices",
 		"pNames": [],
@@ -8492,7 +8417,7 @@
 		"shortDesc": "Get list of paired bluetooth devices."
 	},
 	"GetPath": {
-		"desc": "Returns the path to the local storage folder of the APK.",
+		"desc": "Returns the path to the local storage folder of the APK.\n\nSee Also: @GetAppPath, @GetPrivateFolder",
 		"isfunc": true,
 		"name": "GetPath",
 		"pNames": [],
@@ -8501,7 +8426,7 @@
 		"shortDesc": "Get APK's local storage path."
 	},
 	"GetPermission": {
-		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only _“ExtSDCard”_ the path URI of the user-selected folder.",
+		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only _“ExtSDCard”_ the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
@@ -8516,7 +8441,7 @@
 		"shortDesc": "GetPermission"
 	},
 	"GetPrivateFolder": {
-		"desc": "Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.",
+		"desc": "Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.\n\nSee Also: @GetAppPath, @GetPath",
 		"isfunc": true,
 		"name": "GetPrivateFolder",
 		"pNames": ["name"],
@@ -8525,7 +8450,7 @@
 		"shortDesc": "Get path to a private folder."
 	},
 	"GetResourceId": {
-		"desc": "Returns the id of a resource.",
+		"desc": "Returns the id of a resource.\n\nSee Also: @LoadPlugin",
 		"isfunc": true,
 		"name": "GetResourceId",
 		"pNames": ["name", "options"],
@@ -8535,7 +8460,7 @@
 	},
 	"GetRingerMode": {
 		"desc": "Returns the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
-		"isfunc": true,
+		"isfunc\n\nSee Also: @SetRingerMode": true,
 		"name": "GetRingerMode",
 		"pNames": [],
 		"pTypes": [],
@@ -8543,7 +8468,7 @@
 		"shortDesc": "Get current device ringer mode."
 	},
 	"GetRotation": {
-		"desc": "Returns the current rotation of the device around it's Z-Axis in 90 degree steps. The values are relative to the initial orientation of the device on startup.",
+		"desc": "Returns the current rotation of the device around it's Z-Axis in 90 degree steps. The values are relative to the initial orientation of the device on startup.\n\nSee Also: @GetOrientation",
 		"isfunc": true,
 		"name": "GetRotation",
 		"pNames": [],
@@ -8552,7 +8477,7 @@
 		"shortDesc": "Get device rotation."
 	},
 	"GetRSSI": {
-		"desc": "Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).\n\n</p><h3>Understanding RSSI</h3><table><thead align='left'><tr><th width=\"15%\">Signal Strength</th><th width=\"10%\">TL;DR</th><th width=\"20%\">Required for</th></tr></thead><tbody><tr><td>-30 dBm</td><td>Amazing</td><td>N/A</td></tr><tr><td>-67 dBm</td><td>Very Good</td><td>VoIP/VoWiFi, streaming video</td></tr><tr><td>-70 dBm</td><td>Okay</td><td>Email, web</td></tr><tr><td>-80 dBm</td><td>Not Good</td><td>N/A</td></tr><tr><td>-90 dBm</td><td>Unusable</td><td>N/A</td></tr><tr><td>-127 dBm</td><td>Disabled</td><td>N/A</td></tr></tbody></table><p>source: [https://www.metageek.com/training/resources/understanding-rssi.html](metageek.com)",
+		"desc": "Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).\n\n</p><h3>Understanding RSSI</h3><table><thead align='left'><tr><th width=\"15%\">Signal Strength</th><th width=\"10%\">TL;DR</th><th width=\"20%\">Required for</th></tr></thead><tbody><tr><td>-30 dBm</td><td>Amazing</td><td>N/A</td></tr><tr><td>-67 dBm</td><td>Very Good</td><td>VoIP/VoWiFi, streaming video</td></tr><tr><td>-70 dBm</td><td>Okay</td><td>Email, web</td></tr><tr><td>-80 dBm</td><td>Not Good</td><td>N/A</td></tr><tr><td>-90 dBm</td><td>Unusable</td><td>N/A</td></tr><tr><td>-127 dBm</td><td>Disabled</td><td>N/A</td></tr></tbody></table><p>source: [metageek.com](https://www.metageek.com/training/resources/understanding-rssi.html)\n\nSee Also: @SetWifiEnabled, @IsWifiEnabled",
 		"isfunc": true,
 		"name": "GetRSSI",
 		"pNames": [],
@@ -8561,7 +8486,7 @@
 		"shortDesc": "Get RSSI in dBm"
 	},
 	"GetRunningApps": {
-		"desc": "Returns a list of objects containing info about all currently running apps in the fore- or background.",
+		"desc": "Returns a list of objects containing info about all currently running apps in the fore- or background.\n\nSee Also: @GetRunningServices, @GetInstalledApps",
 		"isfunc": true,
 		"name": "GetRunningApps",
 		"pNames": [],
@@ -8570,7 +8495,7 @@
 		"shortDesc": "Get list of running apps."
 	},
 	"GetRunningServices": {
-		"desc": "Returns a list of objects containing info about all currently running services in the background.",
+		"desc": "Returns a list of objects containing info about all currently running services in the background.\n\nSee Also: @GetRunningApps, @GetInstalledApps",
 		"isfunc": true,
 		"name": "GetRunningServices",
 		"pNames": [],
@@ -8579,7 +8504,7 @@
 		"shortDesc": "Get list of running services."
 	},
 	"GetScreenDensity": {
-		"desc": "Returns the density of the device's screen.",
+		"desc": "Returns the density of the device's screen.\n\nSee Also: @GetScreenWidth, @GetScreenHeight, @SetDensity",
 		"isfunc": true,
 		"name": "GetScreenDensity",
 		"pNames": [],
@@ -8588,7 +8513,7 @@
 		"shortDesc": "Get the screen density."
 	},
 	"GetScreenHeight": {
-		"desc": "Returns the total screen height of the device in pixels. With the 'Real' **option** softkeys will be included in the value.",
+		"desc": "Returns the total screen height of the device in pixels. With the 'Real' **option** softkeys will be included in the value.\n\nSee Also: @GetScreenWidth, @GetScreenDensity",
 		"isfunc": true,
 		"name": "GetScreenHeight",
 		"pNames": ["options"],
@@ -8597,7 +8522,7 @@
 		"shortDesc": "Get width of device screen."
 	},
 	"GetScreenWidth": {
-		"desc": "Returns the total screen width of the device in pixels. With the 'Real' **option** softkeys will be included in the value.",
+		"desc": "Returns the total screen width of the device in pixels. With the 'Real' **option** softkeys will be included in the value.\n\nSee Also: @GetScreenHeight, @GetScreenDensity",
 		"isfunc": true,
 		"name": "GetScreenWidth",
 		"pNames": ["options"],
@@ -8606,7 +8531,7 @@
 		"shortDesc": "Get height of device screen."
 	},
 	"GetSharedFiles": {
-		"desc": "Returns a path list of files shared with the app. If the results were retreived they can't be read an other time, unless they will be shared again.",
+		"desc": "Returns a path list of files shared with the app. If the results were retreived they can't be read an other time, unless they will be shared again.\n\nSee Also: @GetSharedText, @SendFile, @SendText",
 		"isfunc": true,
 		"name": "GetSharedFiles",
 		"pNames": [],
@@ -8615,7 +8540,7 @@
 		"shortDesc": "Get list of shared files."
 	},
 	"GetSharedText": {
-		"desc": "Returns the value of a shared text. If the result is returned, it cannot be read another time unless it is shared again.",
+		"desc": "Returns the value of a shared text. If the result is returned, it cannot be read another time unless it is shared again.\n\nSee Also: @GetSharedFiles, @SendFile, @SendText",
 		"isfunc": true,
 		"name": "GetSharedText",
 		"pNames": [],
@@ -8633,7 +8558,7 @@
 		"shortDesc": "Returns whether the speaker is enabled."
 	},
 	"GetSpecialFolder": {
-		"desc": "Returns the full path to a special folder commonly used for images, videos, music etc.",
+		"desc": "Returns the full path to a special folder commonly used for images, videos, music etc.\n\nSee Also: @GetPath, @GetAppPath, @WriteFile",
 		"isfunc": true,
 		"name": "GetSpecialFolder",
 		"pNames": ["name"],
@@ -8642,7 +8567,7 @@
 		"shortDesc": "Get full path to a special media folder."
 	},
 	"GetSSID": {
-		"desc": "Returns the name (SSID) of the current network the user is connected with. If WiFi is disabled “<unknown ssid>” is returned.",
+		"desc": "Returns the name (SSID) of the current network the user is connected with. If WiFi is disabled “<unknown ssid>” is returned.\n\nSee Also: @IsWifiEnabled, @SetWifiEnabled, @WifiConnect",
 		"isfunc": true,
 		"name": "GetSSID",
 		"pNames": [],
@@ -8651,7 +8576,7 @@
 		"shortDesc": "Get WiFi network SSID (name)."
 	},
 	"GetThumbnail": {
-		"desc": "Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.",
+		"desc": "Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.\n\nSee Also: @CreateImage",
 		"isfunc": true,
 		"name": "GetThumbnail",
 		"pNames": ["source", "destination", "width", "height"],
@@ -8677,7 +8602,7 @@
 		"shortDesc": "GetType"
 	},
 	"GetUser": {
-		"desc": "Returns the email-address of the currently active user account.",
+		"desc": "Returns the email-address of the currently active user account.\n\nSee Also: @GetAccounts",
 		"isfunc": true,
 		"name": "GetUser",
 		"pNames": [],
@@ -8695,7 +8620,7 @@
 		"shortDesc": "Get apk version number."
 	},
 	"GetVolume": {
-		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the _“System”_ volume is returned.",
+		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the _“System”_ volume is returned.\n\nSee Also: @SetVolume",
 		"isfunc": true,
 		"name": "GetVolume",
 		"pNames": ["stream"],
@@ -8704,7 +8629,7 @@
 		"shortDesc": "Get volume of a given audio type."
 	},
 	"GoToSleep": {
-		"desc": "Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)",
+		"desc": "Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)\n\nSee Also: @WakeUp",
 		"isfunc": true,
 		"name": "GoToSleep",
 		"pNames": [],
@@ -8721,7 +8646,7 @@
 		"shortDesc": "Returns whether device has soft keys."
 	},
 	"HideKeyboard": {
-		"desc": "Hides the device keyboard if it is currently shown.",
+		"desc": "Hides the device keyboard if it is currently shown.\n\nSee Also: @ShowKeyboard, @SetOnShowKeyboard",
 		"isfunc": true,
 		"name": "HideKeyboard",
 		"pNames": [],
@@ -8737,7 +8662,7 @@
 		"shortDesc": "Hide progress indicator."
 	},
 	"HideProgressBar": {
-		"desc": "Hides a previously shown progress bar dialog.\nSee also @ShowProgressBar and @UpdateProgressBar.",
+		"desc": "Hides a previously shown progress bar dialog.\nSee also @ShowProgressBar, @UpdateProgressBar.",
 		"isfunc": true,
 		"name": "HideProgressBar",
 		"pNames": [],
@@ -8768,7 +8693,7 @@
 		"shortDesc": "InIDE"
 	},
 	"InstallWallpaper": {
-		"desc": "Let the user install a device wallpaper located in the 'Wallpaper.js' script in the project root folder.\nSee also @CreateWallpaper.",
+		"desc": "Let the user install a device wallpaper located in the 'Wallpaper.js' script in the project root folder.\n\n<premium>\n\nSee also @CreateWallpaper.",
 		"isfunc": true,
 		"name": "InstallWallpaper",
 		"pNames": ["packageName", "className"],
@@ -8786,7 +8711,7 @@
 		"shortDesc": "Returns true if ran from apk."
 	},
 	"IsAppInstalled": {
-		"desc": "Returns a boolean indicating whether an app given by a package name is installed.\n\nSee also: @GetPackageName",
+		"desc": "Returns a boolean indicating whether an app given by a package name is installed.\n\nSee also: @GetPackageName, @GetInstalledApps",
 		"isfunc": true,
 		"name": "IsAppInstalled",
 		"pNames": ["packageName"],
@@ -8795,7 +8720,7 @@
 		"shortDesc": "Check if package is installed."
 	},
 	"IsBluetoothEnabled": {
-		"desc": "Return whether bluetooth was enabled",
+		"desc": "Return whether bluetooth was enabled. \n\nSee Also: @SetBluetoothEnabled",
 		"isfunc": true,
 		"name": "IsBluetoothEnabled",
 		"pNames": [],
@@ -8804,7 +8729,7 @@
 		"shortDesc": "Check bluetooth enabled."
 	},
 	"IsBluetoothOn": {
-		"desc": "Returns a boolean indicating whether bluetooth is enabled and on.",
+		"desc": "Returns a boolean indicating whether bluetooth is enabled and on.\n\nSee Also: @CreateBluetoothSerial, @DiscoverBtDevices",
 		"isfunc": true,
 		"name": "IsBluetoothOn",
 		"pNames": [],
@@ -8813,7 +8738,7 @@
 		"shortDesc": "Check if bluetooth is on."
 	},
 	"IsBtDevicePaired": {
-		"desc": "Returns a boolean indicating whether a given bluetooth device was paired with the user device.",
+		"desc": "Returns a boolean indicating whether a given bluetooth device was paired with the user device.\n\nSee Also: @GetPairedBtDevices, @UnpairBtDevice",
 		"isfunc": true,
 		"name": "IsBtDevicePaired",
 		"pNames": ["name"],
@@ -8822,7 +8747,7 @@
 		"shortDesc": "Check bt paired state to other device."
 	},
 	"IsCharging": {
-		"desc": "Returns a boolean indicating whether phone is currently charging or not.",
+		"desc": "Returns a boolean indicating whether phone is currently charging or not.\n\nSee Also: @GetBatteryLevel, @GetChargeType",
 		"isfunc": true,
 		"name": "IsCharging",
 		"pNames": [],
@@ -8831,7 +8756,7 @@
 		"shortDesc": "Check whether device is charging."
 	},
 	"IsChrome": {
-		"desc": "Returns a boolean indicating whether the device is running on ChromeOS.",
+		"desc": "Returns a boolean indicating whether the device is running on ChromeOS.\n\nSee Also: @IsTablet, @IsThings",
 		"isfunc": true,
 		"name": "IsChrome",
 		"pNames": [],
@@ -8840,7 +8765,7 @@
 		"shortDesc": "Check if device OS is ChromeOS."
 	},
 	"IsConnected": {
-		"desc": "Returns a boolean indicating whether the device is connected to any network.",
+		"desc": "Returns a boolean indicating whether the device is connected to any network.\n\nSee Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange",
 		"isfunc": true,
 		"name": "IsConnected",
 		"pNames": [],
@@ -8848,17 +8773,8 @@
 		"retval": "bin",
 		"shortDesc": "Check if device is connected to any network."
 	},
-	"IsDebugEnabled": {
-		"desc": "Returns a boolean indicating whether debugging is currently enabled.\nSee also @SettDebug.",
-		"isfunc": true,
-		"name": "IsDebugEnabled",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "bin",
-		"shortDesc": "Check whether debug is enabled."
-	},
 	"IsDebugging": {
-		"desc": "Returns a boolean indicating whether the app is currently debugging.\nSee also @SettDebug.",
+		"desc": "Returns a boolean indicating whether the app is currently debugging.\nSee also @SetDebug, @Debug",
 		"isfunc": true,
 		"name": "IsDebugging",
 		"pNames": [],
@@ -8866,17 +8782,8 @@
 		"retval": "bin",
 		"shortDesc": "Check whether app is debugging."
 	},
-	"IsEngine": {
-		"desc": "Returns a boolean indicating whether IsEngine",
-		"isfunc": true,
-		"name": "IsEngine",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "bin",
-		"shortDesc": "IsEngine"
-	},
 	"IsFolder": {
-		"desc": "Returns a boolean indicating whether the passed fs path leads to a folder.",
+		"desc": "Returns a boolean indicating whether the passed fs path leads to a folder.\n\nSee Also: @FolderExists, @FileExists",
 		"isfunc": true,
 		"name": "IsFolder",
 		"pNames": ["folder"],
@@ -8885,7 +8792,7 @@
 		"shortDesc": "Check if path leads to a folder."
 	},
 	"IsKeyboardShown": {
-		"desc": "Returns a boolean indicating whether the device keyboard is currently visible or not.",
+		"desc": "Returns a boolean indicating whether the device keyboard is currently visible or not.\n\nSee Also: @ShowKeyboard, @HideKeyboard",
 		"isfunc": true,
 		"name": "IsKeyboardShown",
 		"pNames": [],
@@ -8894,7 +8801,7 @@
 		"shortDesc": "Check whether device keyboard is shown."
 	},
 	"IsLocationEnabled": {
-		"desc": "Returns a boolean indicating whether a specific location mode was enabled.",
+		"desc": "Returns a boolean indicating whether a specific location mode was enabled.\n\nSee Also: @CreateLocator",
 		"isfunc": true,
 		"name": "IsLocationEnabled",
 		"pNames": ["mode"],
@@ -8957,7 +8864,7 @@
 		"shortDesc": "Check if app has finished loading."
 	},
 	"IsTablet": {
-		"desc": "Returns a boolean indicating whether the user device is a tablet.",
+		"desc": "Returns a boolean indicating whether the user device is a tablet.\n\nSee Also: @IsThings, @IsChrome",
 		"isfunc": true,
 		"name": "IsTablet",
 		"pNames": [],
@@ -8966,7 +8873,7 @@
 		"shortDesc": "Check if user device is a tablet."
 	},
 	"IsThings": {
-		"desc": "Returns a boolean indicating whether the OS is AndroidThings.",
+		"desc": "Returns a boolean indicating whether the OS is AndroidThings.\n\nSee Also: @IsTablet, @IsChrome",
 		"isfunc": true,
 		"name": "IsThings",
 		"pNames": [],
@@ -8975,7 +8882,7 @@
 		"shortDesc": "Check if OS is AndroidThings."
 	},
 	"IsWifiApEnabled": {
-		"desc": "Returns a boolean indicating whether the mobile Wifi Access Point is enabled on the user device.",
+		"desc": "Returns a boolean indicating whether the mobile Wifi Access Point is enabled on the user device.\n\nSee Also: @SetWifiApEnabled",
 		"isfunc": true,
 		"name": "IsWifiApEnabled",
 		"pNames": [],
@@ -8984,7 +8891,7 @@
 		"shortDesc": "Check if the mobile Wifi Access Point is enabled."
 	},
 	"IsWifiEnabled": {
-		"desc": "Returns a boolean indicating whether Wifi is enabled on the user device.",
+		"desc": "Returns a boolean indicating whether Wifi is enabled on the user device.\n\nSee Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled",
 		"isfunc": true,
 		"name": "IsWifiEnabled",
 		"pNames": [],
@@ -9001,7 +8908,7 @@
 		"shortDesc": "Kill an app by its pid."
 	},
 	"Language2Code": {
-		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.",
+		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.\n\nSee Also: @GetLanguage",
 		"isfunc": true,
 		"name": "Language2Code",
 		"pNames": ["name"],
@@ -9010,7 +8917,7 @@
 		"shortDesc": "Convert language name to its code or get current language code."
 	},
 	"ListFolder": {
-		"desc": "The ListFolder method returns a list of all files and folders in a given folder.\nThe _filter_ **parameter** is an can be used to specify a filter pattern. For example to find only mp3 files, you would specify _“.mp3”_ as a filter\n\nThe You can also **option**ally sort the list in alphabetica order with the _“alphasort”_ option.",
+		"desc": "The ListFolder method returns a list of all files and folders in a given folder.\nThe _filter_ **parameter** is an can be used to specify a filter pattern. For example to find only mp3 files, you would specify _“.mp3”_ as a filter\n\nThe You can also **option**ally sort the list in alphabetica order with the _“alphasort”_ option.\n\nSee Also: @IsFolder, @CreateList",
 		"isfunc": true,
 		"name": "ListFolder",
 		"pNames": ["path", "filter", "limit", "options"],
@@ -9019,7 +8926,7 @@
 		"shortDesc": "Get a list of files ans folders contained in a specific folder."
 	},
 	"LoadBoolean": {
-		"desc": "Load a saved boolean value to remember varibale values between multiple app starts. See also: @SaveBoolean.",
+		"desc": "Load a saved boolean value to remember varibale values between multiple app starts.\n\nSee also: @SaveBoolean.",
 		"isfunc": true,
 		"name": "LoadBoolean",
 		"pNames": ["name", "default", "file"],
@@ -9028,7 +8935,7 @@
 		"shortDesc": "Load saved boolean value."
 	},
 	"LoadNumber": {
-		"desc": "Load a saved number value to remember varibale values between multiple app starts. See also: @SaveNumber.",
+		"desc": "Load a saved number value to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
 		"isfunc": true,
 		"name": "LoadNumber",
 		"pNames": ["name", "default", "file"],
@@ -9037,7 +8944,7 @@
 		"shortDesc": "Load saved boolean value."
 	},
 	"LoadPlugin": {
-		"desc": "Import an installed plugin to your app. You can download plugins from [http://droidscript.org/plugins/](DroidScript's plugin page), [https://play.google.com/store/search?q=DroidScript+Plugin](Google Playstore) or you can create self-written plugins.\n\nYou can find instructions on how to create plugins on DroidScript.org) or on my [https://symbroson.blogspot.com/search/label/Plugins](BlogSpot page).",
+		"desc": "Import an installed plugin to your app. You can download plugins from [DroidScript's plugin page](http://droidscript.org/plugins/), [Google Playstore](https://play.google.com/store/search?q=DroidScript+Plugin) or you can create self-written plugins.\n\nYou can find instructions on how to create plugins on DroidScript.org) or on my [BlogSpot page](https://symbroson.blogspot.com/search/label/Plugins).",
 		"isfunc": true,
 		"name": "LoadPlugin",
 		"pNames": ["url"],
@@ -9045,7 +8952,7 @@
 		"shortDesc": "Load an installed plugin to your app."
 	},
 	"LoadScript": {
-		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.",
+		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.\n\nSee Also: @Script",
 		"isfunc": true,
 		"name": "LoadScript",
 		"pNames": ["path", "callback"],
@@ -9060,7 +8967,7 @@
 		"shortDesc": "Asynchronously import an external JavaScript file.\nSee Also: @Script."
 	},
 	"LoadText": {
-		"desc": "Load saved text value to remember varibale values between multiple app starts. See also: @SaveText.",
+		"desc": "Load saved text value to remember varibale values between multiple app starts.\n\nSee also: @SaveText.",
 		"isfunc": true,
 		"name": "LoadText",
 		"pNames": ["name", "default", "file"],
@@ -9076,7 +8983,7 @@
 		"shortDesc": "Lock the device."
 	},
 	"LockDrawer": {
-		"desc": "Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.",
+		"desc": "Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.\n\nSee Also: @AddDrawer",
 		"isfunc": true,
 		"name": "LockDrawer",
 		"pNames": ["side"],
@@ -9084,22 +8991,12 @@
 		"shortDesc": "Hide and lock a drawer."
 	},
 	"MakeFolder": {
-		"desc": "Creates a new folder in the local filesystem.",
+		"desc": "Creates a new folder in the local filesystem.\n\nSee Also: @FolderExists",
 		"isfunc": true,
 		"name": "MakeFolder",
 		"pNames": ["folder"],
 		"pTypes": ["str_pth"],
 		"shortDesc": "Create new folder in the local fs."
-	},
-	"Odroid": {
-		"abbrev": "odr",
-		"desc": "?",
-		"isfunc": true,
-		"name": "Odroid",
-		"pNames": ["p1", "p2", "p3"],
-		"pTypes": ["?", "?", "?"],
-		"shortDesc": "Odroid",
-		"subf": {}
 	},
 	"OpenDatabase": {
 		"abbrev": "db",
@@ -9304,7 +9201,7 @@
 		}
 	},
 	"OpenDrawer": {
-		"desc": "Opens the drawer layout on the given side with slide animation.",
+		"desc": "Opens the drawer layout on the given side with slide animation.\n\nSee Also: @AddDrawer",
 		"isfunc": true,
 		"name": "OpenDrawer",
 		"pNames": ["side"],
@@ -9320,7 +9217,7 @@
 		"shortDesc": "Allow user to open a file with an external app."
 	},
 	"OpenUrl": {
-		"desc": "Allows the user to open an url with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.",
+		"desc": "Allows the user to open an url with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.\n\nSee Also: @CreateWebView, @OpenFile",
 		"isfunc": true,
 		"name": "OpenUrl",
 		"pNames": ["url", "type", "choose"],
@@ -9328,7 +9225,7 @@
 		"shortDesc": "Allow user to open an url with an external app."
 	},
 	"PairBtDevice": {
-		"desc": "Pairs a bluetooth device with yours.",
+		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
 		"isfunc": true,
 		"name": "PairBtDevice",
 		"pNames": ["address", "callback"],
@@ -9351,7 +9248,7 @@
 		"shortDesc": "Play specific ringtone type."
 	},
 	"PlaySound": {
-		"desc": "Plays a sound file stored remotely or on the local filesystem.",
+		"desc": "Plays a sound file stored remotely or on the local filesystem.\n\nSee Also: @CreateMediaPlayer",
 		"isfunc": true,
 		"name": "PlaySound",
 		"pNames": ["file"],
@@ -9367,7 +9264,7 @@
 		"shortDesc": "Prevent screen from locking after some time."
 	},
 	"PreventWifiSleep": {
-		"desc": "Prevent the device WiFi from powering down.",
+		"desc": "Prevent the device WiFi from powering down.\n\nSee Also: @SetWifiEnabled, @IsWifiEnabled",
 		"isfunc": true,
 		"name": "PreventWifiSleep",
 		"pNames": [],
@@ -9375,12 +9272,12 @@
 		"shortDesc": "Prevent Wifi from powering down."
 	},
 	"QueryContent": {
-		"desc": "?",
+		"desc": "Queries content from the android content model. The **uri** typically have the syntax “content://authority/path/id”. You can find more infos about it on the [Android Developer page](https://developer.android.com/reference/android/content/ContentUris).\n\nThe **coloumns** are specific for the database you are accessing. You can get this information from the respective content provider.\n\n**select** is a optional sql command to filter the results.\n\n**args** is an optional parameter for arguments you want to include to the sql command. The placeholder for these arguments are '?' signs in the sql command.\n\n<premium>",
 		"isfunc": true,
 		"name": "QueryContent",
 		"pNames": ["uri", "columns", "select", "args", "sort"],
-		"pTypes": ["str_url", "str_com", "str_sql", "lst", "str-ASC|DESC"],
-		"shortDesc": "QueryContent"
+		"pTypes": ["str_url", "str_com", "str_sql", "lst", "str-coloumn:a coloumn specified in 'coloumns'"],
+		"shortDesc": "Queries content from the android content model."
 	},
 	"Quit": {
 		"desc": "Quits the app with showing an @Alert dialog box before exiting. The function will pause the program and exit before any further commands can be executed.",
@@ -9439,7 +9336,7 @@
 		"shortDesc": "Replace text in a local file."
 	},
 	"SaveBoolean": {
-		"desc": "Save a boolean value to remember varibale values between multiple app starts. See also: @LoadBoolean.",
+		"desc": "Save a boolean value to remember varibale values between multiple app starts.\n\nSee also: @LoadBoolean.",
 		"isfunc": true,
 		"name": "SaveBoolean",
 		"pNames": ["name", "value", "file"],
@@ -9447,7 +9344,7 @@
 		"shortDesc": "Save a boolean value across multiple starts."
 	},
 	"SaveCookies": {
-		"desc": "Saves cookies for webviews or html apps.",
+		"desc": "Saves cookies for webviews or html apps.\n\nSee also: @ClearCookies",
 		"isfunc": true,
 		"name": "SaveCookies",
 		"pNames": [],
@@ -9455,7 +9352,7 @@
 		"shortDesc": "Save web cookies."
 	},
 	"SaveNumber": {
-		"desc": "Save a number value to remember varibale values between multiple app starts. See also: @LoadNumber.",
+		"desc": "Save a number value to remember varibale values between multiple app starts.\n\nSee also: @LoadNumber.",
 		"isfunc": true,
 		"name": "SaveNumber",
 		"pNames": ["name", "value", "file"],
@@ -9463,7 +9360,7 @@
 		"shortDesc": "Save a number value across multiple starts."
 	},
 	"SaveText": {
-		"desc": "Save a text value to remember varibale values between multiple app starts. See also: @LoadText.",
+		"desc": "Save a text value to remember varibale values between multiple app starts.\n\nSee also: @LoadText.",
 		"isfunc": true,
 		"name": "SaveText",
 		"pNames": ["name", "value", "file"],
@@ -9479,7 +9376,7 @@
 		"shortDesc": "Adds media files to phone gallery."
 	},
 	"ScreenShot": {
-		"desc": "Takes a screen shot of your app and saves it to the specified path. Quality is an **option**al percentage value for jpg files defaulting to 95.",
+		"desc": "Takes a screen shot of your app and saves it to the specified path. Quality is an **option**al percentage value for jpg files defaulting to 95.\n\nSee also: @GetMediaFile",
 		"isfunc": true,
 		"name": "ScreenShot",
 		"pNames": ["fileName", "quality"],
@@ -9487,15 +9384,15 @@
 		"shortDesc": "Take a screen shot of your app."
 	},
 	"Script": {
-		"desc": "Loads a local JavaScript file synchronously to your app to make its functionality available in your app.",
+		"desc": "Loads a local JavaScript file synchronously to your app to make its functionality available in your app.\n\nSee Also: @LoadScript",
 		"isfunc": true,
 		"name": "Script",
 		"pNames": ["file"],
 		"pTypes": ["str_pth"],
-		"shortDesc": "Synchronously import an external JavaScript file.\n\n@See Also: @LoadScript."
+		"shortDesc": "Synchronously import an external JavaScript file."
 	},
 	"SendFile": {
-		"desc": "Send a file to a remote target, ie. via Email. The **subject** and **text** arguments will be auto filled and the **choose** text will be displayed when the user selects the target app. Default may be smth like _'Complete action using'_.",
+		"desc": "Send a file to a remote target, ie. via Email. The **subject** and **text** arguments will be auto filled and the **choose** text will be displayed when the user selects the target app. Default may be smth like _'Complete action using'_.\n\nSee Also: @SendText, @SendMail",
 		"isfunc": true,
 		"name": "SendFile",
 		"pNames": ["file", "subject", "text", "choose"],
@@ -9503,7 +9400,7 @@
 		"shortDesc": "Send a file to a remote target."
 	},
 	"SendIntent": {
-		"desc": "Intens can be used to perform an operation between different applications or activities. _It is basically a passive data structure holding an abstract description of an action to be performed_.\n\n**package name** and **class name** can specify the intent target, but you can also leave them null and define a **category** instead to let the user choose an application of that categoy.\n\nIf you expect a **callback** you have to pass the “result” **option**. The **result code** can be\n\t-1: _operation succeeded_\n\t1: _user-defined activity results_\n\t0: _operation canceled_\n\nYou can find some common used examples for that in the [https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent](DroidScript Wiki)\nFor more information visit the [https://developer.android.com/reference/android/content/Intent.html](Android Developer Page). There you can find informations about the [https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions](activity), [https://developer.android.com/reference/android/content/Intent.html#standard-categories](category) and [https://developer.android.com/reference/android/content/Intent.html#standard-extra-data](extra).",
+		"desc": "Intens can be used to perform an operation between different applications or activities. _It is basically a passive data structure holding an abstract description of an action to be performed_.\n\n**package name** and **class name** can specify the intent target, but you can also leave them null and define a **category** instead to let the user choose an application of that categoy.\n\nIf you expect a **callback** you have to pass the “result” **option**. The **result code** can be\n\t-1: _operation succeeded_\n\t1: _user-defined activity results_\n\t0: _operation canceled_\n\nYou can find some common used examples for that in the [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent)\nFor more information visit the [Android Developer Page](https://developer.android.com/reference/android/content/Intent.html). There you can find informations about the [activity](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions), [category](https://developer.android.com/reference/android/content/Intent.html#standard-categories) and [extra](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data).\n\nSee Also: @GetIntent",
 		"isfunc": true,
 		"name": "SendIntent",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
@@ -9518,7 +9415,7 @@
 		"shortDesc": "SendIntent"
 	},
 	"SendMail": {
-		"desc": "Send an EMail to someune using the default mail application. The passed argumets will be auto-filled. %c",
+		"desc": "Send an EMail to someune using the default mail application. The passed argumets will be auto-filled. %c\n\nSee Also: @SendSMS, @SendFile",
 		"isfunc": true,
 		"name": "SendMail",
 		"pNames": ["address", "subject", "body", "attach", "type", "options"],
@@ -9534,7 +9431,7 @@
 		"shortDesc": "Send message from Service to main app."
 	},
 	"SendSMS": {
-		"desc": "Send an SMS to someone using the default SMS application. The passed argumets will be auto-filled or requested by the SMS app otherwise. %c",
+		"desc": "Send an SMS to someone using the default SMS application. The passed argumets will be auto-filled or requested by the SMS app otherwise. %c\n\nSee Also: @SendMail, @SendText, @SendFile",
 		"isfunc": true,
 		"name": "SendSMS",
 		"pNames": ["msg", "number"],
@@ -9542,7 +9439,7 @@
 		"shortDesc": "Open the SMS app and autofill fields."
 	},
 	"SendText": {
-		"desc": "This Method is used for sharing text between apps.\n\nIf choose is defined, an android dialog will appear with the **choose** value as info text.\nOtherwise the dialog will appear if the user did not specify an app which should be always opened for this type of data.\n\nThe **subject** parameter seems to be obsolete these times and is just kept for backwards compatibility.",
+		"desc": "This Method is used for sharing text between apps.\n\nIf choose is defined, an android dialog will appear with the **choose** value as info text.\nOtherwise the dialog will appear if the user did not specify an app which should be always opened for this type of data.\n\nThe **subject** parameter seems to be obsolete these times and is just kept for backwards compatibility.\n\nSee Also: @SendFile",
 		"isfunc": true,
 		"name": "SendText",
 		"pNames": ["text", "subject", "choose"],
@@ -9550,7 +9447,7 @@
 		"shortDesc": "Share text between apps."
 	},
 	"SetAlarm": {
-		"desc": "SetAlarm to start app automatically",
+		"desc": "Set a time when you want your app to start automatically if it is not already opened. When the alarm is fired, the global _OnAlarm_ event will be fired.",
 		"isfunc": true,
 		"name": "SetAlarm",
 		"pNames": ["type", "id", "callback", "time", "interval", "options"],
@@ -9562,7 +9459,7 @@
 				"pTypes": ["str||num_int"],
 				"shortDesc": "callback"
 			}, "num_dat", "num_mls", "str_com-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
-		"shortDesc": "SetAlarm"
+		"shortDesc": "Set alarm to open your app at a specific time."
 	},
 	"SetAutoBoot": {
 		"desc": "Causes the current running APK to be started automatically when your device boots.",
@@ -9573,7 +9470,7 @@
 		"shortDesc": "Autostart APK when device boots."
 	},
 	"SetAutoStart": {
-		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.",
+		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.\n\nSee Also: @SetSharedApp",
 		"isfunc": true,
 		"name": "SetAutoStart",
 		"pNames": ["appName"],
@@ -9597,7 +9494,7 @@
 		"shortDesc": "Change the app's background color."
 	},
 	"SetBluetoothEnabled": {
-		"desc": "Enables Bluetooth on the device.",
+		"desc": "Enables Bluetooth on the device.\n\nSee Also: @IsBluetoothEnabled, @IsBluetoothOn, @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "SetBluetoothEnabled",
 		"pNames": ["enable"],
@@ -9605,7 +9502,7 @@
 		"shortDesc": "Enable Bluetooth on the device."
 	},
 	"SetClipboardText": {
-		"desc": "The SetClipboardText method puts text data on the device clip board. This allows you to copy and paste text between different applications.",
+		"desc": "The SetClipboardText method puts text data on the device clip board. This allows you to copy and paste text between different applications.\n\nSee Also: @GetClipboardText",
 		"isfunc": true,
 		"name": "SetClipboardText",
 		"pNames": ["text"],
@@ -9613,7 +9510,7 @@
 		"shortDesc": "Change the device clipboard text."
 	},
 	"SetData": {
-		"desc": "Saves variables until the app closes. All saved data will be lost afterwards. %c",
+		"desc": "Saves variables until the app closes. All saved data will be lost afterwards. %c\n\nSee Also: @GetData, @ClearData",
 		"isfunc": true,
 		"name": "SetData",
 		"pNames": ["name", "value"],
@@ -9621,23 +9518,15 @@
 		"shortDesc": "Save data while app is running."
 	},
 	"SetDebug": {
-		"desc": "SetDebug lets you control the debugging level. The availabe modes are:\nconsole: allows console.log messages\nds: allows app.Debug messages\nadb: allows adb debug messages (ie at apk startup)\ntrue: enable all debug messages\nfalse or “”: disable able all debug messages\n\nNote that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.",
+		"desc": "SetDebug lets you control the debugging level. The availabe modes are:\nconsole: allows console.log messages\nds: allows app.Debug messages\nadb: allows adb debug messages (ie at apk startup)\ntrue: enable all debug messages\nfalse or “”: disable able all debug messages\n\nNote that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.\n\nSee Also: @Debug, @IsDebugging",
 		"isfunc": true,
 		"name": "SetDebug",
 		"pNames": ["switches"],
 		"pTypes": ["str_com-console,ds,adb,all"],
 		"shortDesc": "Control the debug level of the program."
 	},
-	"SetDebugEnabled": {
-		"desc": "**deprecated** En/disable console logging while running app",
-		"isfunc": true,
-		"name": "SetDebugEnabled",
-		"pNames": ["enable"],
-		"pTypes": ["bin"],
-		"shortDesc": "deprecated! En/disable console logging"
-	},
 	"SetDensity": {
-		"desc": "Changes the dpi value (dots per inch) that affects the content of any control created afterwards. The smaller the value, the smaller the scaling.",
+		"desc": "Changes the dpi value (dots per inch) that affects the content of any control created afterwards. The smaller the value, the smaller the scaling.\n\nSee Also: @GetScreenDensity",
 		"isfunc": true,
 		"name": "SetDensity",
 		"pNames": ["dpi"],
@@ -9645,7 +9534,7 @@
 		"shortDesc": "Changes the dpi value for any control creatred afterwards."
 	},
 	"SetInBackground": {
-		"desc": "Set the current service to run in the background.\n\nSee Also: @StartSevice.",
+		"desc": "Set the current service to run in the background.\n\nSee Also: @StartSevice, @SetInForeground.",
 		"isfunc": true,
 		"name": "SetInBackground",
 		"pNames": [],
@@ -9653,7 +9542,7 @@
 		"shortDesc": "Set services to run in the background."
 	},
 	"SetInForeground": {
-		"desc": "Set the current service to run in the foreground.\n\nSee Also: @StartSevice.",
+		"desc": "Set the current service to run in the foreground.\n\nSee Also: @StartSevice, SetInBackground",
 		"isfunc": true,
 		"name": "SetInForeground",
 		"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
@@ -9661,7 +9550,7 @@
 		"shortDesc": "Set services to run in the foreground."
 	},
 	"SetJoystickOptions": {
-		"desc": "Set options for the connected joystick. The _“forwardkeys”_ **option** allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).",
+		"desc": "Set options for the connected joystick. The _“forwardkeys”_ **option** allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).\n\nSee Also: @GetJoystickName, @GetJoystickState",
 		"isfunc": true,
 		"name": "SetJoystickOptions",
 		"pNames": ["options"],
@@ -9669,7 +9558,7 @@
 		"shortDesc": "Set options for the connected joystick."
 	},
 	"SetKioskMode": {
-		"desc": "Blocks android functionality to keep the rest of your phone safe while others may use your app.",
+		"desc": "Blocks android functionality to keep the rest of your phone safe while others may use your app.\n\n<premium>",
 		"isfunc": true,
 		"name": "SetKioskMode",
 		"pNames": ["mode", "enable", "options"],
@@ -9677,7 +9566,7 @@
 		"shortDesc": "Blocks android functionality outside your app."
 	},
 	"SetLanguage": {
-		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [http://www.loc.gov/standards/iso639-2/php/code_list.php](standard 2 letter language codes).",
+		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetLanguage",
 		"isfunc": true,
 		"name": "SetLanguage",
 		"pNames": ["name"],
@@ -9685,7 +9574,7 @@
 		"shortDesc": "Load the language code from lang.json"
 	},
 	"SetMenu": {
-		"desc": "Set the app menu fields. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
+		"desc": "Set the app menu fields. When a menu entry is touched, the global _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
 		"isfunc": true,
 		"name": "SetMenu",
 		"pNames": ["list", "iconPath"],
@@ -9744,7 +9633,7 @@
 		"shortDesc": "Called on thrown JS errors."
 	},
 	"SetOnKey": {
-		"desc": "You can use SetOnKey for receiving and handling all key events fired in the application.\n\nYou may want to use it with **DisableKeys** - i.e. for defining a custom _ENTER_ command for automatic control focussing.\n\nYou can find the complete list of keys and their codes on the [https://developer.android.com/reference/android/view/KeyEvent#summary](Android Developer Page).",
+		"desc": "You can use SetOnKey for receiving and handling all key events fired in the application.\n\nYou may want to use it with **DisableKeys** - i.e. for defining a custom _ENTER_ command for automatic control focussing.\n\nYou can find the complete list of keys and their codes on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#summary).\n\nSee Also: @SimulateKey",
 		"isfunc": true,
 		"name": "SetOnKey",
 		"pNames": ["callback"],
@@ -9761,7 +9650,7 @@
 		"shortDesc": "Catch key events fired in your app."
 	},
 	"SetOnShowKeyboard": {
-		"desc": "Define a callback function to detect when keyboard visible state has changed.",
+		"desc": "Define a callback function to detect when keyboard visible state has changed.\n\nSee Also: @ShowKeyboard, @HideKeyboard",
 		"isfunc": true,
 		"name": "SetOnShowKeyboard",
 		"pNames": ["callback"],
@@ -9778,7 +9667,7 @@
 		"shortDesc": "Called on keyboard visibility changes."
 	},
 	"SetOnWifiChange": {
-		"desc": "Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be _“CONNECTING”_, _“CONNECTED”_, or _“DISCONNECTED”_. The WiFi ssid is passed on _“CONNECTED”_ only.",
+		"desc": "Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be _“CONNECTING”_, _“CONNECTED”_, or _“DISCONNECTED”_. The WiFi ssid is passed on _“CONNECTED”_ only.\n\nSee Also: @WifiConnect, @WifiScan",
 		"isfunc": true,
 		"name": "SetOnWifiChange",
 		"pNames": ["callback"],
@@ -9795,7 +9684,7 @@
 		"shortDesc": "Called on WiFi connected state changes."
 	},
 	"SetOptions": {
-		"desc": "Define some global options for the app.",
+		"desc": "Define some global options for the app.\n\nSee Also: @GetOptions",
 		"isfunc": true,
 		"name": "SetOptions",
 		"pNames": ["options"],
@@ -9803,7 +9692,7 @@
 		"shortDesc": "Define global app options."
 	},
 	"SetOrientation": {
-		"desc": "Set the display orientation to a fixed value. You can unlock it again passing _“Default”_ as **orientation**.",
+		"desc": "Set the display orientation to a fixed value. You can unlock it again passing _“Default”_ as **orientation**.\n\nSee Also: @GetOrientation",
 		"isfunc": true,
 		"name": "SetOrientation",
 		"pNames": ["orient", "callback"],
@@ -9834,7 +9723,7 @@
 		"shortDesc": "Change GUI thread priority."
 	},
 	"SetRingerMode": {
-		"desc": "Change the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
+		"desc": "Change the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.\n\nSee Also: @GetRingerMode",
 		"isfunc": true,
 		"name": "SetRingerMode",
 		"pNames": ["mode"],
@@ -9850,7 +9739,7 @@
 		"shortDesc": "Change screen brightness."
 	},
 	"SetScreenMode": {
-		"desc": "Changes the screen mode of your application. If null is passed, the [SetMenu.htm](app menu) will be dismissed. When called, the global OnConfig function will be called (if defined).",
+		"desc": "Changes the screen mode of your application. If null is passed, the [app menu](SetMenu.htm) will be dismissed. When called, the global OnConfig function will be called (if defined).",
 		"isfunc": true,
 		"name": "SetScreenMode",
 		"pNames": ["mode"],
@@ -9858,7 +9747,7 @@
 		"shortDesc": "SetScreenMode"
 	},
 	"SetSharedApp": {
-		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data. Check out the 'Shared Data' sample in the DS samples section.",
+		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data. Check out the 'Shared Data' sample in the DS samples section.\n\nSee Also: @SetAutoStart",
 		"isfunc": true,
 		"name": "SetSharedApp",
 		"pNames": ["name"],
@@ -9874,7 +9763,7 @@
 		"shortDesc": "En/Disable speaker for phone calls."
 	},
 	"SetTheme": {
-		"desc": "Change the theme of your app to any created [CreateTheme.htm](Theme Object). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.",
+		"desc": "Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.\n\n<premium>",
 		"isfunc": true,
 		"name": "SetTheme",
 		"pNames": ["theme"],
@@ -9882,7 +9771,7 @@
 		"shortDesc": "Change the theme of your app."
 	},
 	"SetUserAgent": {
-		"desc": "Change the user agent for html apps. For more details [https://en.wikipedia.org/wiki/User_agent](ask Wikipedia).",
+		"desc": "Change the user agent for html apps. For more details [ask Wikipedia](https://en.wikipedia.org/wiki/User_agent).",
 		"isfunc": true,
 		"name": "SetUserAgent",
 		"pNames": ["agent"],
@@ -9898,7 +9787,7 @@
 		"shortDesc": "Set user credentials."
 	},
 	"SetVolume": {
-		"desc": "Set the volume of a given volume type as a number between 0 and 1.",
+		"desc": "Set the volume of a given volume type as a number between 0 and 1.\n\nSee Also: @GetVolume",
 		"isfunc": true,
 		"name": "SetVolume",
 		"pNames": ["stream", "level", "options"],
@@ -9906,7 +9795,7 @@
 		"shortDesc": "Change volume of a given audio type."
 	},
 	"SetWifiApEnabled": {
-		"desc": "En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.\nIt automatically disabled WiFi if it was enabled.\n\n<font color='red'>**This method is available for Android 6 or older only!**</font>",
+		"desc": "En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.\nIt automatically disabled WiFi if it was enabled.\n\n<font color='red'>**This method is available for Android 6 or older only!**</font>\n\nSee Also: @IsWifiApEnabled, @IsWifiEnabled",
 		"isfunc": true,
 		"name": "SetWifiApEnabled",
 		"pNames": ["enable", "ssid", "key"],
@@ -9914,7 +9803,7 @@
 		"shortDesc": "En/Disable the mobile Wifi Access Point of the device."
 	},
 	"SetWifiEnabled": {
-		"desc": "En/Disable Wifi on the device.",
+		"desc": "En/Disable Wifi on the device.\n\nSee Also: @SetWifiEnabled, @IsWifiApEnabled, @WifiScan",
 		"isfunc": true,
 		"name": "SetWifiEnabled",
 		"pNames": ["enable"],
@@ -9922,7 +9811,7 @@
 		"shortDesc": "En/Disable Wifi on the device."
 	},
 	"ShowDebug": {
-		"desc": "Show/Hide the debug console as overlay in your app, after calling @CreatgeDebug.",
+		"desc": "Show/Hide the debug console as overlay in your app, after calling @CreatgeDebug.\n\nSee Also: @Debug",
 		"isfunc": true,
 		"name": "ShowDebug",
 		"pNames": ["show"],
@@ -9930,7 +9819,7 @@
 		"shortDesc": "Show the in-app debug console."
 	},
 	"ShowKeyboard": {
-		"desc": "Shows the keyboard on a focussed control.\n\nSee Also: @CreateTextEdit",
+		"desc": "Shows the keyboard on a focussed control.\n\nSee Also: @HideKeyboard",
 		"isfunc": true,
 		"name": "ShowKeyboard",
 		"pNames": ["obj"],
@@ -10002,7 +9891,7 @@
 		"shortDesc": "Simulates a drag event on an app object."
 	},
 	"SimulateKey": {
-		"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0](Android Developer Page)",
+		"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0)",
 		"isfunc": true,
 		"name": "SimulateKey",
 		"pNames": ["obj", "keyName", "modifiers", "pause"],
@@ -10034,7 +9923,7 @@
 		"shortDesc": "Start your DS app in an html project."
 	},
 	"StartApp": {
-		"desc": "Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.",
+		"desc": "Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.\n\nSee Also: @StopApp",
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
@@ -10082,7 +9971,7 @@
 		"shortDesc": "Stops a running app service."
 	},
 	"SysExec": {
-		"desc": "Executes a shell command on the android shell. **NOTE:** You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.",
+		"desc": "Executes a shell command on the android shell. **NOTE:** You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.\n\nSee Also: @ExtExec",
 		"isfunc": true,
 		"name": "SysExec",
 		"pNames": ["command", "options", "maxRead", "timeout"],
@@ -10091,7 +9980,7 @@
 		"shortDesc": "Execute a shell command on the android shell."
 	},
 	"TextToSpeech": {
-		"desc": "Uses the android TextToSpeech engine to audiolize text. You can use different locales depending on the user language. A list of languages and their locales (LCID string) can be found on [https://www.science.co.il/language/Locale-codes.php](www.science.co.il).",
+		"desc": "Uses the android TextToSpeech engine to audiolize text. You can use different locales depending on the user language. A list of languages and their locales (LCID string) can be found on [www.science.co.il](https://www.science.co.il/language/Locale-codes.php).",
 		"isfunc": true,
 		"name": "TextToSpeech",
 		"pNames": ["text", "pitch", "rate", "callback", "stream", "locale", "engine"],
@@ -10106,7 +9995,7 @@
 		"shortDesc": "Audiolize text."
 	},
 	"ToBack": {
-		"desc": "Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.\n\nSee Also: @ToFronts",
+		"desc": "Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.\n\nSee Also: @ToFront",
 		"isfunc": true,
 		"name": "ToBack",
 		"pNames": [],
@@ -10114,7 +10003,7 @@
 		"shortDesc": "Put the app in the background."
 	},
 	"ToFront": {
-		"desc": "Brings the app back to the foreground. See Also: @ToBack.",
+		"desc": "Brings the app back to the foreground.\n\nSee Also: @ToBack.",
 		"isfunc": true,
 		"name": "ToFront",
 		"pNames": [],
@@ -10122,7 +10011,7 @@
 		"shortDesc": "Bring your app to the foreground."
 	},
 	"Unlock": {
-		"desc": "Unlocks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also @Lock",
+		"desc": "Unlocks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also: @Lock",
 		"isfunc": true,
 		"name": "Unlock",
 		"pNames": [],
@@ -10138,7 +10027,7 @@
 		"shortDesc": "Unlock a locked drawer."
 	},
 	"UnpairBtDevice": {
-		"desc": "Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.",
+		"desc": "Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.\n\nSee Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "UnpairBtDevice",
 		"pNames": ["address", "callback"],
@@ -10184,7 +10073,7 @@
 		"shortDesc": "Uploads a file to a server."
 	},
 	"Uri2Path": {
-		"desc": "Decodes a URI encoded string.",
+		"desc": "Decodes a URI encoded string.\n\nSee Also: @SetOnError",
 		"isfunc": true,
 		"name": "Uri2Path",
 		"pNames": ["uri"],
@@ -10209,7 +10098,7 @@
 		"shortDesc": "Perform a synchronous delay."
 	},
 	"WakeUp": {
-		"desc": "Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)",
+		"desc": "Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)\n\nSee Also: @GoToSleep",
 		"isfunc": true,
 		"name": "WakeUp",
 		"pNames": [],
@@ -10248,7 +10137,7 @@
 		"shortDesc": "Write text to a local file."
 	},
 	"ZipFile": {
-		"desc": "Compresses a local file to a zip file.",
+		"desc": "Compresses a local file to a zip file.\n\nSee Also: @ZipFolder",
 		"isfunc": true,
 		"name": "ZipFile",
 		"pNames": ["source", "destination"],
@@ -10256,7 +10145,7 @@
 		"shortDesc": "Compress a file to zip."
 	},
 	"ZipFolder": {
-		"desc": "Recursively compresses a local folder to a zip file.",
+		"desc": "Recursively compresses a local folder to a zip file.\n\nSee Also: @ZipFile, @UnzipFile",
 		"isfunc": true,
 		"name": "ZipFolder",
 		"pNames": ["source", "destination"],

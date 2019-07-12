@@ -301,7 +301,9 @@ function getDesc(name) {
 		.replace(/(\s|<br>)*<sample (.*?)>/g, (m, _, n) => 
 			(s = samples[n] || Throw(Error(`sample ${n} not found for ${name}`)),
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
-		) + "</p>" + values(samples).concat("").reduce((a, b) => a + b);
+		)
+		.replace("<premium>", premiumHint)
+		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
 
 // read and return html converted example snippets file
@@ -536,7 +538,7 @@ function replaceTypes(s, useAppPop) {
 function addMarkdown(s) {
 	return s
 		// links
-		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, url, name) {
+		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url) {
 			// exists in docs folder? direct link : open in external app
 			return white + (app.FileExists(path + "docs/app/" + url) ? 
 				`<a href="${url}">` :
@@ -548,7 +550,8 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
 		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")       // *italic*
 		.replace(/([^\\]|^)_([^]*?[^\\])_/g, "$1<i>$2</i>")         // _italic_
-		.replace(/([^\\]|^)\`([^]*?[^\\])\`/g, "$1<kbd>$2</kbd>")   // `monospace`
+		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")   // `monospace`
+		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
 		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm">$2</a>') // @DocReference
 		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
@@ -617,6 +620,8 @@ var 	//navigator list item
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
 		//subfunctions list
 	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
+	    // premium note
+	premiumHint = "<font color='blue'><b>Note: This function is a premium function. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></font>";
 		//example snippets
 	sampBase = `
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -813,7 +818,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Start|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)/m,
+	regHide = /(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)/m,
 		// interpret matching app. functions as control constructors
 	regControl = /(Create.*|OpenDatabase|Odroid)/m,
 		// defined in OnStart or later

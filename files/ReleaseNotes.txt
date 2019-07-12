@@ -2,7 +2,7 @@
 
 DS 1.74b1
 - Changed to darker look and feel for Wifi IDE.
-- Added dark mode in Wifi IDE for Premium users.
+-.Added dark mode in Wifi IDE for Premium users.
 - Added app.SendImage() method.
 - Modified internal _Cbm function slightly to allow use of local scope callback funcs.
 - More docs added (thanks to AlexF)
@@ -23,7 +23,7 @@ DS 1.73b1
 - Added "Wifi Access Point" and "IOT Device" samples.
 - Added "GPIO Banana-Pi" and "UART Banana-Pi" samples.
 - Added app.Quit( msg,[title],[options] ) method (shows message and force quits app).
-- Added premium nag popup every month (for non-premium users).
+-.Added premium nag popup every month (for non-premium users).
 
 DS 1.73a8
 - Added intellisense to device editor for GameView methods and objects.
@@ -106,7 +106,7 @@ DS 1.71
 - Chromebook blocks game template now working.
 - Fixed black background on 'SDK' menu on Chromebook.
 - Delayed homepage load by 2 seconds (else sometimes fails).
-- Chromebook Terminal tab now fixed (for premium users)
+-.Chromebook Terminal tab now fixed (for premium users)
 - Terminal extension now works after second wifi button press.
 - Fixed app.Execute() double quotes bug.
 - SQLite now works with NODOM option.
@@ -160,7 +160,7 @@ DS 1.69a2
 - Added .data JavaScript property to all DS object for safely storing user data.
 - Fixed small memory leak related to anonymous functions as callbacks.
 - Added 'id' property to websockets and websocket callbacks.
-- Remote Android shell Terminal added to Wifi IDE (premium only).
+-.Remote Android shell Terminal added to Wifi IDE (premium only).
 -.Added 'Persist' option to app.CreateService() (attempts to force restart if service killed).
 - Added app/svc.SetInForeground( title,text,largeIcon,smallIcon,importance ) for services.
 - Added app/svc.SetInBackground() for services.
@@ -181,8 +181,8 @@ DS 1.68
 DS 1.67b1
 - app.SetKioskMode() now asks for appropriate permissions when required.
 - app.GetPermission() now suppports the 'overlay' keyword.
-- Added app.CreateOverlay() method (Premium only).
-- Added "Chat Heads" sample (Premium only).
+-.Added app.CreateOverlay() method (Premium only).
+-.Added "Chat Heads" sample (Premium only).
 - Added 'rawX','rawY',screenX,screenY params to Image and Layout OnTouch callbacks.
 - Fixed Launcher sample for >= Oreo.
 - Added app.ChooseAccount() to request user's device email address.
@@ -279,7 +279,7 @@ DS 1.63a1
 - Added screenshot button to Wifi IDE (screen shots now captured to .edit folder).
 -.Added 'nofocus' option to app.Alert() method (useful for kiosk mode)
 - Added dlg.IsVisible() method.
-- Added new app.CreateWizard + new 'Wizard' sample for premium users.
+-.Added new app.CreateWizard + new 'Wizard' sample for premium users.
 - Fixed recent bug with img.SetImage() not allowing image as first param.
 - Added 'base64' mode to app.WriteFile method (writes a base64 string to raw binary data)
 - Added app.SimulateScroll( obj,x,y,dx,dy,count,fling ) method, simulates mouse wheel scrolls.
@@ -338,7 +338,7 @@ DS 1.59a1
 - Added 'json' mode to app.HttpRequest method.
 
 DS 158a1
-- Enabled creation of live wallpapers for premium users!
+-.Enabled creation of live wallpapers for premium users!
 - Changed .js files inside SPK files to .js.txt to side step Google security issues.
 - Added 'SaveSPK' option to device editor (saves to /DroidScript/SPKs folder).
 - Added app.SetDensity to scale density of all controls in app (call before creating controls).
@@ -482,7 +482,7 @@ DS 1.50
 - Back/arrow keys not responding in dialogs with Gboard fixed.
 - Flags data now added to activity intent json results.
 - Link to video tutorial now in docs.
-- Added Google Analytics support + premium sample.
+-.Added Google Analytics support + premium sample.
 - Fixed SMS non-number (carrier) text messages causing error
 - When an SMS is received the 'number' param no longer drops the leading "+" sign.
 -.JS alert boxes now are now themed (disable with app.SetOptions("NoThemeAlerts")).
@@ -553,7 +553,7 @@ DS 1.36
 - Added ctl.IsEnabled() method to all controls.
 - Added usb.SetDataMode() and usb.SetSplitMode() methods.
 - Enabled calendar access through content app.QueryContent() method.
-- Added calendar query sample for premium users.
+-.Added calendar query sample for premium users.
 - Added web.SetOnError() method, callback returns params:- errNum, errMsg, url.
 - Fixed tabs bug introduced in 1.35b.
 - Fixed short menu when starting in landscape mode.
@@ -567,7 +567,7 @@ DS 1.36
 - Plugins can now contain native .so files.
 - Added SetGravity() method to linear layouts (left,top,right,bottom,center,vcenter).
 -.Added "ReverseLandscape" and "ReversePortrait" options to app.SetOrientation() method.
-- Added Linux "Terminal" sample for premium users.
+-.Added Linux "Terminal" sample for premium users.
 - Added app.PlayRingtone() method ("Alarm", "Notification", "Ringtone" ).
 - Added multiple pathPatterns support to build.json (eg. ".*\\.jpg,.*\\.txt")
 
@@ -580,12 +580,12 @@ DS 1.35b
 - Added app.ChooseContact() method.
 - Added new "Choose" sample (get user to choose files or contacts).
 - Added support for Remix Mini (runs in desktop mode).
-- Added 'Launcher' sample (advanced sample for premium users only).
+-.Added 'Launcher' sample (advanced sample for premium users only).
 - Added img.SetPixelMode method (allows use of pixel coords in drawing funcs).
 - Changed manifest to show running apps separately in task manager (can alt-tab on remix).
 -.Added SetPosition() method and 'TouchModal', 'NoTouch', 'NoFocus' options to custom dialogs.
 - Added cam.SetVideoSize( width, height ) method.
-- Added new "Query Content" sample (advanced sample for premium users only).
+-.Added new "Query Content" sample (advanced sample for premium users only).
 - Added result callback parameter to web.Execute() method.
 -?Added 'Horiz' option to list control (makes title and body text flow horizontally)
 - Added lst.SetColumnWidths(icon,title,body) method to list control.
@@ -601,8 +601,8 @@ DS 1.35b
 DS 1.34b
 - Enabled homeScreen/launcher creation using build.json (e.g. "homeScreen":true ).
 - Enabled new config.json file and headless mode.
-- Added new 'SDK' menu item (Plugin generator) for premium users.
-- Added _sdk_ file detection to enable SDK menu for non premium users.
+-.Added new 'SDK' menu item (Plugin generator) for premium users.
+-.Added _sdk_ file detection to enable SDK menu for non premium users.
 - Added new app.UploadFile( url, file, name, callback ) method.
 - Added file sharing/opening filter option to build.json (e.g. "pathPattern":".*\\.txt" ).
 - Layouts now support touch methods (only OnTouchDown works when in 'touchthrough' mode).
@@ -621,16 +621,16 @@ DS 1.34b
 - Added 'orientation' option to config.json file (forces a particular orientation).
 - Fixed app.GetVersion was not working in german.
 - Fixed App.Get/SetClipboardText() fails in service.
-- Added option for file '/sdcard/DroidScript/_nopremium_' to disable premium.
+-.Added option for file '/sdcard/DroidScript/_nopremium_' to disable premium.
 - Changed http server upload limit increased to 1 Gig.
 
 DS 1.33
 - Improved device code editor (large file support, yoyo, search+replace, volume moves cursor).
 - Code completion/suggestions + method info added to both editors.
 - Added transparent App support using _AddOptions( "Transparent" ) [premium only].
-- Added App theming with app.CreateTheme() method [premium only].
-- Added App theming sample [premium only].
-- Added new app.CreateCodeEdit() method [premium only].
+-.Added App theming with app.CreateTheme() method [premium only].
+-.Added App theming sample [premium only].
+-.Added new app.CreateCodeEdit() method [premium only].
 - Enabled MediaPlayer object to stream music over http.
 - Added app.SetPosition() to allow tiny popop transparent Apps.
 - Passwords now available in TextEdit (use 'password' option).
@@ -652,7 +652,7 @@ DS 1.33
 - Progress now supports 'NoDim' option.
 - Moved minimum platform support up to API 11 (Honeycomb).
 - Custom dialog now supports 'NoDim' option.
-- Added app.IsPremium() method (only meaningful when running inside IDE)
+-.Added app.IsPremium() method (only meaningful when running inside IDE)
 -.Custom buttons now padded by default (use 'NoPad' option to remove).
 - Websockets now firing callbacks inside a service.
 - Added 'FadeIn', 'FadeOut', 'CrossFade' to lay.Animate() + extra 'time' parameter.
@@ -679,9 +679,9 @@ DS 1.32
 
 DS 1.31b
 - Added new 'DroidScript Premuim' option.
-- Added new device browser to WiFi editor [premium]
-- Add Playstore IAP sample [premium].
-- Add Playstore subscriptions template [premium].
+-.Added new device browser to WiFi editor [premium]
+-.Add Playstore IAP sample [premium].
+-.Add Playstore subscriptions template [premium].
 - Added support for a new build.json file (enabled more advanced build options).
 - Added serv.AddRedirect(pattern,location) method to web server object.
 - Added _RemovePermissions() function.

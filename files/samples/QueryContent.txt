@@ -1,1 +1,20 @@
- 
+<sample Show Contacts>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+	lst = app.CreateList( "", 1, 1 );
+	lay.AddChild( lst );
+	app.AddLayout( lay );
+
+    var uri = "content://com.android.contacts/data";
+    var columns = "display_name,data1";
+    var select = "mimetype='vnd.android.cursor.item/phone_v2'";
+    var rows = app.QueryContent( uri, columns, select, null, "display_name" );
+
+    var list = [];
+    for(var i in rows)
+        list.push( rows[i].display_name + ":" + rows[i].data1 + ": " );
+
+    lst.SetList( list );
+}
+</sample>
