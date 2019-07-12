@@ -26,12 +26,36 @@
 		</div>
 
 		<div data-role="content">
-			<p>UploadFile to server.</p>
+			<p>Uploads a file to a server.</p>
 
 			<div class="samp">
 			app.UploadFile( <a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Upload File</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var name = app.GetAppName() + &quot;.js&quot;;<br>
+				&#160;&#160;&#160;&#160;var file = app.GetAppPath() + &quot;/&quot; + name;<br>
+				&#160;&#160;&#160;&#160;app.UploadFile( &quot;https://yourwebsite.com/upload&quot;, file, name, OnUpload );<br>
+				}<br>
+				<br>
+				function OnUpload( error, file, result )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;if(error) app.Alert( &quot;Upload Failed!&quot; )<br>
+				&#160;&#160;&#160;&#160;else app.ShowPopup( &quot;Response:\n&quot; + result, &quot;Upload Successful!&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

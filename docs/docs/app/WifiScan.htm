@@ -26,17 +26,45 @@
 		</div>
 
 		<div data-role="content">
-			<p>WifiScan.</p>
+			<p>Scans the surroundings for any available Wifi networks.</p>
 
 			<div class="samp">
-			app.WifiScan( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )
+			app.WifiScan( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Conect to DS WiFi AP</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;lst = app.CreateList( &quot;&quot;, 1, 1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.ShowProgress();<br>
+				&#160;&#160;&#160;&#160;app.WifiScan( OnWifi );</b><br>
+				}<br>
+				<br>
+				function OnWifi( ssid )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lst.SetList( ssid, &quot;\\|&quot; )<br>
+				&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: pipe “|” separated' )">ssids</a>)</div>
 
 	</div>
 </body>

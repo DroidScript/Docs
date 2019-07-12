@@ -32,24 +32,16 @@
 			app.GoToSleep()
 			</div>
 
-			<p>(This has the same effect as pressing the power button)</p>
+			<p>(This has the same effect as pressing the power button)<br>
+			<br>
+			See Also: <a href="WakeUp.htm">WakeUp</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Put Device to Sleep</h3>
+				<h3>Example - Sleep and Wake</h3>
 				<div id="examp0" style="font-size:70%">
 					function OnStart()<br>
 				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Sleep&quot;, 0.3, 0.1 );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( btn_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				}<br>
-				<br>
-				function btn_OnTouch()<br>
-				{<br>
 				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.GoToSleep();</b><br>
+				&#160;&#160;&#160;&#160;setTimeout(&quot;app.WakeUp()&quot;, 5000)<br>
 				}
 				</div>
 				<div name="divCopy" align="right">

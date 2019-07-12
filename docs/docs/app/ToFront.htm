@@ -26,12 +26,40 @@
 		</div>
 
 		<div data-role="content">
-			<p>ToFront.</p>
+			<p>Brings the app back to the foreground.</p>
 
 			<div class="samp">
 			app.ToFront()
 			</div>
 
+			<p>See Also: <a href="ToBack.htm">ToBack</a>.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Hide and Peek</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ToBack();<br>
+				&#160;&#160;&#160;&#160;setTimeout(&quot;app.ToFront()&quot;, 5000);<br>
+				}<br>
+				<br>
+				function OnPause()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;OnPause&quot; );<br>
+				}<br>
+				<br>
+				function OnResume()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;OnResume&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

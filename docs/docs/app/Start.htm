@@ -26,12 +26,41 @@
 		</div>
 
 		<div data-role="content">
-			<p>Start app.</p>
+			<p>Starts your DS app in an html project.</p>
 
 			<div class="samp">
 			app.Start()
 			</div>
 
+			<p>Call it in the document.onload function in order to initialize DroidScript and execute your OnStart() function.</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Html App</h3>
+				<div id="examp0" style="font-size:70%">
+					&lt;html&gt;<br>
+				&lt;head&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;<br>
+				&#160;&#160;&#160;&#160;&lt;script src='file:///android_asset/app.js'&gt;&lt;/script&gt;<br>
+				&lt;/head&gt;<br>
+				<br>
+				&lt;script&gt;<br>
+				&#160;&#160;&#160;&#160;function OnStart()<br>
+				&#160;&#160;&#160;&#160;{<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;HTML Rocks!&quot; );<br>
+				&#160;&#160;&#160;&#160;}<br>
+				&lt;/script&gt;<br>
+				<br>
+				&lt;body onload=&quot;app.Start()&quot; style=&quot;background-color: #ffffff;&quot;&gt;<br>
+				&lt;/body&gt;<br>
+				&lt;/html&gt;
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

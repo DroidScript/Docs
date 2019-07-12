@@ -26,12 +26,47 @@
 		</div>
 
 		<div data-role="content">
-			<p>SimulateTouch.</p>
+			<p>Simulates a touch event on a rouchable control.</p>
 
 			<div class="samp">
 			app.SimulateTouch( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_orw" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_orh" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">dir</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Pressing Buttons</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Press Me&quot;, 0.3, 0.1 );<br>
+				&#160;&#160;&#160;&#160;btn.SetOnTouch( btn_OnTouch );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.Animate( SimulateTouch, 1/2 );<br>
+				}<br>
+				<br>
+				function SimulateTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.SimulateTouch( btn, 0.5, 0.5, &quot;down&quot; );<br>
+				}<br>
+				<br>
+				var i = 1;<br>
+				function btn_OnTouch()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello World &quot; + i++ );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

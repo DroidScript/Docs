@@ -26,17 +26,40 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Connect to a WiFi network by specifying the ssid and a password.</p>
 
 			<div class="samp">
-			app.WifiConnect( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">key</a> )
+			app.WifiConnect( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a> )
 			</div>
 
+			<p>See Also: <a href="WifiScan.htm">WifiScan</a>, <a href="SetOnWifiChange.htm">SetOnWifiChange</a>, <a href="SetWifiApEnabled.htm">SetWifiApEnabled</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Conect to DS WiFi AP</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.WifiConnect( &quot;DS WiFi AP&quot;, &quot;mypass&quot; );</b><br>
+				&#160;&#160;&#160;&#160;app.SetOnWifiChange( OnWifiChange );<br>
+				}<br>
+				<br>
+				function OnWifiChange( state, ssid )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( ssid + &quot; &quot; + state );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
 	</div>
 </body>

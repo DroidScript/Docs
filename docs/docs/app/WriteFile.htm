@@ -26,12 +26,13 @@
 		</div>
 
 		<div data-role="content">
-			<p>WriteFile.</p>
+			<p>Writes text to a local file.</p>
 
 			<div class="samp">
-			app.WriteFile( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">encoding</a> )
+			app.WriteFile( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">encoding</a> )
 			</div>
 
+			<p>See Also: <a href="ReadFile.htm">ReadFile</a>.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Append file and get line count</h3>
 				<div id="examp0" style="font-size:70%">
@@ -59,6 +60,7 @@
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Append” or “ASCII”</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “US-ASCII” or “UTF-8” or “UTF-16” or “UTF-16BE” or “UTF-16LE” or “windows-1252” or “ISO-8859-1:Latin-1”</div>
 
 	</div>
 </body>

@@ -26,12 +26,51 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Queries content from the android content model.</p>
 
 			<div class="samp">
 			app.QueryContent( <a href="#pop_str_url" data-transition="pop" data-rel="popup">uri</a>, <a href="#pop_str_com" data-transition="pop" data-rel="popup">columns</a>, <a href="#pop_str_sql" data-transition="pop" data-rel="popup">select</a>, <a href="#pop_std_lst" data-transition="pop" data-rel="popup">args</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">sort</a> )
 			</div>
 
+			<p>The <b>uri</b> typically have the syntax “content://authority/path/id”. You can find more infos about it on the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/ContentUris');">Android Developer page</a>.<br>
+			<br>
+			The <b>coloumns</b> are specific for the database you are accessing. You can get this information from the respective content provider.<br>
+			<br>
+			<b>select</b> is a optional sql command to filter the results.<br>
+			<br>
+			<b>args</b> is an optional parameter for arguments you want to include to the sql command. The placeholder for these arguments are '?' signs in the sql command.<br>
+			<br>
+			<font color='blue'><b>Note: This function is a premium function. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></font></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Show Contacts</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;lst = app.CreateList( &quot;&quot;, 1, 1 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var uri = &quot;content://com.android.contacts/data&quot;;<br>
+				&#160;&#160;&#160;&#160;var columns = &quot;display_name,data1&quot;;<br>
+				&#160;&#160;&#160;&#160;var select = &quot;mimetype='vnd.android.cursor.item/phone_v2'&quot;;<br>
+				&#160;&#160;&#160;&#160;var rows = app.QueryContent( uri, columns, select, null, &quot;display_name&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;var list = [];<br>
+				&#160;&#160;&#160;&#160;for(var i in rows)<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;list.push( rows[i].display_name + &quot;:&quot; + rows[i].data1 + &quot;: &quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;lst.SetList( list );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
@@ -40,7 +79,7 @@
 		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma “,” separated</i></div>
 		<div data-role="popup" id="pop_str_sql" class="ui-content"><b>string:</b> <i>sql code</i></div>
 		<div data-role="popup" id="pop_std_lst" class="ui-content"><b>list</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “ASC” or “DESC”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “<a href="" onclick="prompt( '#', 'App.ShowPopup( a coloumn specified in 'coloumns'' )">coloumn</a>”</div>
 
 	</div>
 </body>

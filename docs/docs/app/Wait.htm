@@ -26,12 +26,30 @@
 		</div>
 
 		<div data-role="content">
-			<p>Wait.</p>
+			<p>Performs a synchronous delay in your program.</p>
 
 			<div class="samp">
 			app.Wait( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Synchronous delay</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;alert( &quot;Press Ok to start the delay.&quot; )<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.Wait( 5 );</b><br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Done.&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

@@ -26,12 +26,31 @@
 		</div>
 
 		<div data-role="content">
-			<p>ZipFile.</p>
+			<p>Compresses a local file to a zip file.</p>
 
 			<div class="samp">
 			app.ZipFile( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a> )
 			</div>
 
+			<p>See Also: <a href="ZipFolder.htm">ZipFolder</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Zip File</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;var file = &quot;/sdcard/DroidScript/Hello World/Hello World.js&quot;;<br>
+				&#160;&#160;&#160;&#160;app.ZipFile( file, file + &quot;.zip&quot; );<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Compressed to &quot; + file + &quot;.zip&quot; )<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
