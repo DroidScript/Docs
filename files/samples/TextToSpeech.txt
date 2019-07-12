@@ -1,6 +1,5 @@
 <sample Example>
 function OnStart()
 {
-<b>	app.TextToSpeech( "DroidScript is awesome!", 1.0, 1.0 );
-</b>}</sample>
-
+	<b>app.TextToSpeech( "DroidScript is awesome!", 1.0, 1.0 );</b>
+}</sample>

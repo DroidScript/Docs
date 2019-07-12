@@ -283,7 +283,7 @@ function getDesc(name) {
 	var samples = getSamples(name);
 	if( desc.indexOf(".") == -1 ) desc += ".";
 	
-	return "<p>" + addMarkdown(replW( desc ))
+	return "<p>" + replaceTypes(addMarkdown(replW( desc )))
 		// exclude <h> tags from <p>
 		.replace(
 			/(<\/?p>)?(\s|<br>)*(<(h\d?)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g, 
@@ -516,10 +516,9 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(RegExp(
-		"(\\b[\\w_]+)\\s*:\\s*(\\b[a-z]{3}(_[a-z]{3})?\\b)((\s*\\s[}\\]])|\\s*)?", "g"),
+	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?\b)(\s*[}\]]?)?/g,
 		function(m, name, type, _, close) {
-			if(useAppPop) {
+		    if(useAppPop) {
 				return newAppPopup(
 					typenames[type.slice(0, 3)] +
 						(hrefs[type] ? ": " + hrefs[type] : "") +
@@ -814,9 +813,9 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
+	regHide = /(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Start|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)/m,
 		// interpret matching app. functions as control constructors
-	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
+	regControl = /(Create.*|OpenDatabase|Odroid)/m,
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor

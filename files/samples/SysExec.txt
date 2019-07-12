@@ -1,1 +1,15 @@
- 
+<sample ListDir SH>
+function OnStart()
+{
+    <b>var delim = "\0";
+    var list = app.SysExec( 'ls -ap /sdcard/;exit', "sh,log" );
+    list = list.split( "\n" ).join( delim );</b>
+
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	lst = app.CreateList( list, 1, 1, "", delim );
+	lay.AddChild( lst );
+
+	app.AddLayout( lay );
+}
+</sample>

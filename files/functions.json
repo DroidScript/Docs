@@ -9068,7 +9068,7 @@
 		"shortDesc": "Load saved text value."
 	},
 	"Lock": {
-		"desc": "Locks the device.\n\n<font color='red'>**Requires Root**</font>",
+		"desc": "Locks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also: @Unlock",
 		"isfunc": true,
 		"name": "Lock",
 		"pNames": [],
@@ -9994,150 +9994,151 @@
 		"shortDesc": "Shows a tooltip message on the screen."
 	},
 	"SimulateDrag": {
-		"desc": "SimulateDrag",
+		"desc": "Simulates a drag event on an app object in a scrollable container.",
 		"isfunc": true,
 		"name": "SimulateDrag",
 		"pNames": ["obj", "x1", "y1", "x2", "y2", "step", "pause"],
-		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-		"shortDesc": "SimulateDrag"
+		"pTypes": ["dso", "num_srw", "num_srh", "num_srw", "num_srh", "num", "num"],
+		"shortDesc": "Simulates a drag event on an app object."
 	},
 	"SimulateKey": {
-		"desc": "SimulateKey",
+		"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0](Android Developer Page)",
 		"isfunc": true,
 		"name": "SimulateKey",
 		"pNames": ["obj", "keyName", "modifiers", "pause"],
-		"pTypes": ["dso", "str-VOLUME_DOWN|VOLUME_UP|BACK|MENU", "?", "num"],
-		"shortDesc": "SimulateKey"
+		"pTypes": ["dso", "str", "str-Ctrl,Alt,Meta,Caps,Function", "num"],
+		"shortDesc": "Simulates a key event on an app object."
 	},
 	"SimulateScroll": {
-		"desc": "SimulateScroll",
+		"desc": "Simulates a scroll event on a scrollable app object.",
 		"isfunc": true,
 		"name": "SimulateScroll",
 		"pNames": ["obj", "x", "y", "dx", "dy", "count", "fling"],
-		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-		"shortDesc": "SimulateScroll"
+		"pTypes": ["dso", "num_srw", "num_srh", "num_srw", "num_srh", "num", "num"],
+		"shortDesc": "Simulates a scroll event on a scrollable app object."
 	},
 	"SimulateTouch": {
-		"desc": "SimulateTouch",
+		"desc": "Simulates a touch event on a rouchable control.",
 		"isfunc": true,
 		"name": "SimulateTouch",
 		"pNames": ["obj", "x", "y", "dir"],
 		"pTypes": ["dso", "num_orw", "num_orh", "str-Down|Move|Up"],
-		"shortDesc": "SimulateTouch"
+		"shortDesc": "Simulate a touch event on a rouchable control."
 	},
 	"Start": {
-		"desc": "Start app",
+		"desc": "Starts your DS app in an html project. Call it in the document.onload function in order to initialize DroidScript and execute your OnStart() function.",
 		"isfunc": true,
 		"name": "Start",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "Start"
+		"shortDesc": "Start your DS app in an html project."
 	},
 	"StartApp": {
-		"desc": "StartApp",
+		"desc": "Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.",
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str_com-debug|?", "str-{actionstr-typestr-data", "{extras}}"],
-		"shortDesc": "StartApp"
+		"pTypes": ["str_pth", "str_com-Debug:start app in debug mode|remote", "str-{ action:str, type:str, data:obj, extras:obj }"],
+		"shortDesc": "Starts an app in a new window."
 	},
 	"StartDebugServer": {
-		"desc": "?",
+		"desc": "Starts a debug server which can be used to debug your app on headless devices.\n\nSee Also: @StopDebugServer",
 		"isfunc": true,
 		"name": "StartDebugServer",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "StartDebugServer"
+		"shortDesc": "Start remote debug server"
 	},
 	"StartService": {
-		"desc": "StartService",
+		"desc": "Starts a service which runs parallel to your app.\n\nSee Also: @StopService.",
 		"isfunc": true,
 		"name": "StartService",
 		"pNames": ["packageName", "className"],
-		"pTypes": ["?", "?"],
-		"shortDesc": "StartService"
+		"pTypes": ["str", "str"],
+		"shortDesc": "Starts a parallel service."
 	},
 	"StopApp": {
-		"desc": "StopApp started via app.StartApp()",
+		"desc": "Stops an app started via @StartApp.",
 		"isfunc": true,
 		"name": "StopApp",
 		"pNames": ["name"],
 		"pTypes": ["str_pth"],
-		"shortDesc": "StopApp"
+		"shortDesc": "Stop an app started via @StartApp."
 	},
 	"StopDebugServer": {
-		"desc": "StopDebugServer",
+		"desc": "Stops a running debug server.\n\nSee Also: @StartDebugServer",
 		"isfunc": true,
 		"name": "StopDebugServer",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "StopDebugServer"
+		"shortDesc": "Stop a running debug server."
 	},
 	"StopService": {
-		"desc": "StopService",
+		"desc": "Stops a service started via @StartService.",
 		"isfunc": true,
 		"name": "StopService",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "StopService"
+		"shortDesc": "Stops a running app service."
 	},
 	"SysExec": {
-		"desc": "SysExec",
+		"desc": "Executes a shell command on the android shell. **NOTE:** You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.",
 		"isfunc": true,
 		"name": "SysExec",
 		"pNames": ["command", "options", "maxRead", "timeout"],
-		"pTypes": ["str", "str_com-su|sh", "?", "?"],
-		"shortDesc": "SysExec"
+		"pTypes": ["str", "str-log:logs output to console,sh|su", "num", "num_sec"],
+        "retval": "str",
+		"shortDesc": "Execute a shell command on the android shell."
 	},
 	"TextToSpeech": {
-		"desc": "Uses android TextToSpeech method",
+		"desc": "Uses the android TextToSpeech engine to audiolize text. You can use different locales depending on the user language. A list of languages and their locales (LCID string) can be found on [https://www.science.co.il/language/Locale-codes.php](www.science.co.il).",
 		"isfunc": true,
 		"name": "TextToSpeech",
 		"pNames": ["text", "pitch", "rate", "callback", "stream", "locale", "engine"],
-		"pTypes": ["str", "?", "?", {
+		"pTypes": ["str", "num", "num", {
 				"desc": "Callback",
 				"isfunc": true,
 				"name": "callback",
 				"pNames": [],
 				"pTypes": [],
 				"shortDesc": "callback"
-			}, "?", "?", "?"],
-		"shortDesc": "TextToSpeech"
+			}, "str-music", "str", "?"],
+		"shortDesc": "Audiolize text."
 	},
 	"ToBack": {
-		"desc": "Close app and run it in background",
+		"desc": "Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.\n\nSee Also: @ToFronts",
 		"isfunc": true,
 		"name": "ToBack",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "ToBack"
+		"shortDesc": "Put the app in the background."
 	},
 	"ToFront": {
-		"desc": "ToFront",
+		"desc": "Brings the app back to the foreground. See Also: @ToBack.",
 		"isfunc": true,
 		"name": "ToFront",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "ToFront"
+		"shortDesc": "Bring your app to the foreground."
 	},
 	"Unlock": {
-		"desc": "?",
+		"desc": "Unlocks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also @Lock",
 		"isfunc": true,
 		"name": "Unlock",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "Unlock"
+		"shortDesc": "Unlocks the device."
 	},
 	"UnlockDrawer": {
-		"desc": "Unlock locked drawer",
+		"desc": "Unlocks a locked drawer.\nSee Also @LockDrawer, @AddDrawer",
 		"isfunc": true,
 		"name": "UnlockDrawer",
 		"pNames": ["side"],
 		"pTypes": ["str-left|right"],
-		"shortDesc": "UnlockDrawer"
+		"shortDesc": "Unlock a locked drawer."
 	},
 	"UnpairBtDevice": {
-		"desc": "UnpairBtDevice",
+		"desc": "Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.",
 		"isfunc": true,
 		"name": "UnpairBtDevice",
 		"pNames": ["address", "callback"],
@@ -10149,26 +10150,26 @@
 				"pTypes": [],
 				"shortDesc": "callback"
 			}],
-		"shortDesc": "UnpairBtDevice"
+		"shortDesc": "Unpair a paired Bluetooth device."
 	},
 	"UnzipFile": {
-		"desc": "UnzipFile",
+		"desc": "Extracts the contents of a zip file to a given target folder.\n\nSee Also: @ZipFolder, @ZipFile",
 		"isfunc": true,
 		"name": "UnzipFile",
 		"pNames": ["source", "destination"],
 		"pTypes": ["str_pth", "str_pth"],
-		"shortDesc": "UnzipFile"
+		"shortDesc": "Unzip a zip file."
 	},
 	"UpdateProgressBar": {
-		"desc": "UpdateProgressBar",
+		"desc": "Updates the progress percentage of a ProgressBar.\nSee Also: @ShowProgressBar, @HideProgressBar.",
 		"isfunc": true,
 		"name": "UpdateProgressBar",
 		"pNames": ["percent"],
 		"pTypes": ["num_prc"],
-		"shortDesc": "UpdateProgressBar"
+		"shortDesc": "Update the ProgressBar percentage."
 	},
 	"UploadFile": {
-		"desc": "UploadFile to server",
+		"desc": "Uploads a file to a server.",
 		"isfunc": true,
 		"name": "UploadFile",
 		"pNames": ["url", "file", "name", "callback"],
@@ -10180,78 +10181,86 @@
 				"pTypes": [],
 				"shortDesc": "callback"
 			}],
-		"shortDesc": "UploadFile"
+		"shortDesc": "Uploads a file to a server."
 	},
 	"Uri2Path": {
-		"desc": "?",
+		"desc": "Decodes a URI encoded string.",
 		"isfunc": true,
 		"name": "Uri2Path",
 		"pNames": ["uri"],
-		"pTypes": ["?"],
-		"shortDesc": "Uri2Path"
+		"pTypes": ["str_uri"],
+		"retval": "str",
+		"shortDesc": "Decode a URI encoded string."
 	},
 	"Vibrate": {
-		"desc": "Vibrate in milliseconds “pause,play,pause,play,...”",
+		"desc": "Makes the device vibrate in a specified pattern in millisecond values:\n“pause:num\\_mls,play:num\\_mls,pause:num\\_mls,play:num\\_mls,...”",
 		"isfunc": true,
 		"name": "Vibrate",
 		"pNames": ["pattern"],
 		"pTypes": ["str_com"],
-		"shortDesc": "Vibrate"
+		"shortDesc": "Vibrate device in a pattern."
 	},
 	"Wait": {
-		"desc": "Wait",
+		"desc": "Performs a synchronous delay in your program.",
 		"isfunc": true,
 		"name": "Wait",
 		"pNames": ["seconds"],
 		"pTypes": ["num_sec"],
-		"shortDesc": "Wait"
+		"shortDesc": "Perform a synchronous delay."
 	},
 	"WakeUp": {
-		"desc": "?",
+		"desc": "Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)",
 		"isfunc": true,
 		"name": "WakeUp",
 		"pNames": [],
 		"pTypes": [],
-		"shortDesc": "WakeUp"
+		"shortDesc": "Wake the screen up."
 	},
 	"WifiConnect": {
-		"desc": "?",
+		"desc": "Connect to a WiFi network by specifying the ssid and a password. See Also: @WifiScan, @SetOnWifiChange, @SetWifiApEnabled",
 		"isfunc": true,
 		"name": "WifiConnect",
 		"pNames": ["ssid", "key"],
-		"pTypes": ["?", "?"],
-		"shortDesc": "WifiConnect"
+		"pTypes": ["str", "str"],
+		"shortDesc": "Connect to a WiFi network."
 	},
 	"WifiScan": {
-		"desc": "WifiScan",
+		"desc": "Scans the surroundings for any available Wifi networks.",
 		"isfunc": true,
 		"name": "WifiScan",
 		"pNames": ["callback"],
-		"pTypes": ["?"],
-		"shortDesc": "WifiScan"
+		"pTypes": [{
+				"desc": "Callback",
+				"isfunc": true,
+				"name": "callback",
+				"pNames": ["ssids"],
+				"pTypes": ["str_pip"],
+				"shortDesc": "callback"
+			}],
+		"shortDesc": "Scan for any available Wifi networks."
 	},
 	"WriteFile": {
-		"desc": "WriteFile",
+		"desc": "Writes text to a local file.\n\nSee Also: @ReadFile.",
 		"isfunc": true,
 		"name": "WriteFile",
 		"pNames": ["file", "text", "mode", "encoding"],
-		"pTypes": ["str_pth", "str", "str-Append|ASCII", "str"],
-		"shortDesc": "WriteFile"
+		"pTypes": ["str_pth", "str", "str-Append|ASCII", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1"],
+		"shortDesc": "Write text to a local file."
 	},
 	"ZipFile": {
-		"desc": "ZipFile",
+		"desc": "Compresses a local file to a zip file.",
 		"isfunc": true,
 		"name": "ZipFile",
 		"pNames": ["source", "destination"],
 		"pTypes": ["str_pth", "str_pth"],
-		"shortDesc": "ZipFile"
+		"shortDesc": "Compress a file to zip."
 	},
 	"ZipFolder": {
-		"desc": "ZipFolder",
+		"desc": "Recursively compresses a local folder to a zip file.",
 		"isfunc": true,
 		"name": "ZipFolder",
 		"pNames": ["source", "destination"],
 		"pTypes": ["str_pth", "str_pth"],
-		"shortDesc": "ZipFolder"
+		"shortDesc": "Compress a folder to zip."
 	}
 }

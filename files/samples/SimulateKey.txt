@@ -1,1 +1,18 @@
- 
+<sample Infinite Monkey>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+	edt = app.CreateTextEdit( "", 0.8, 0.3, "nokeyboard" );
+	lay.AddChild( edt );
+	app.AddLayout( lay );
+
+	app.Animate( SimulateKey, 2 );
+}
+
+function SimulateKey()
+{
+    var ran = 65 + Math.floor(Math.random() * 26);
+    var char = String.fromCharCode( ran );
+    <b>app.SimulateKey( edt, char );</b>
+}
+</sample>
