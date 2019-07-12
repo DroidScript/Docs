@@ -1,1 +1,8 @@
- 
+<sample Zip Folder>
+function OnStart()
+{
+    var folder = "/sdcard/DroidScript/Hello World";
+	app.ZipFolder( folder, folder + ".zip" );
+	app.ShowPopup( "Compressed to " + folder + ".zip" );
+}
+</sample>

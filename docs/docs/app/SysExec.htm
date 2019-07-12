@@ -26,19 +26,48 @@
 		</div>
 
 		<div data-role="content">
-			<p>SysExec.</p>
+			<p>Executes a shell command on the android shell.</p>
 
 			<div class="samp">
-			app.SysExec( <a href="#pop_std_str" data-transition="pop" data-rel="popup">command</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">maxRead</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">timeout</a> )
+			app.SysExec( <a href="#pop_std_str" data-transition="pop" data-rel="popup">command</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">maxRead</a>, <a href="#pop_num_sec" data-transition="pop" data-rel="popup">timeout</a> ) → <b>string</b>
 			</div>
 
+			<p><b>NOTE:</b> You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.<br>
+			<br>
+			See Also: <a href="ExtExec.htm">ExtExec</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - ListDir SH</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var delim = &quot;\0&quot;;<br>
+				&#160;&#160;&#160;&#160;var list = app.SysExec( 'ls -ap /sdcard/;exit', &quot;sh,log&quot; );<br>
+				&#160;&#160;&#160;&#160;list = list.split( &quot;\n&quot; ).join( delim );</b><br>
+				<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;lst = app.CreateList( list, 1, 1, &quot;&quot;, delim );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “su” or “sh”</div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “<a href="" onclick="prompt( '#', 'App.ShowPopup( logs output to console' )">log</a>”, “sh” or “su”</div>
+		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
 
 	</div>
 </body>

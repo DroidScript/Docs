@@ -10,7 +10,7 @@ function OnStart()
     var text =
         'Message: "' + msg + '"\n' +
         'Line: ' + line + '\n' +
-        'File: "' + decodeURI(file) + '"';
+        'File: "' + app.Uri2Path(file) + '"';
 
     app.Alert( text, "Received error message:" );
 }</b>

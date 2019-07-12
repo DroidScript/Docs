@@ -1,1 +1,17 @@
- 
+<sample App to Background>
+function OnStart()
+{
+    alert( "App will now go to back." );
+    app.ToBack();
+}
+
+function OnPause()
+{
+    app.ShowPopup( "OnPause" );
+}
+
+function OnResume()
+{
+    app.ShowPopup( "OnResume" );
+}
+</sample>

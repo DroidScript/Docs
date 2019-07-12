@@ -1,1 +1,6 @@
- 
+<sample Unzip File>
+function OnStart()
+{
+	<b>app.UnzipFile( "yourfile.zip", "/sdcard/Extracted" );</b>
+}
+</sample>

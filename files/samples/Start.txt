@@ -1,1 +1,18 @@
- 
+<sample Html App>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'></script>
+</head>
+
+<script>
+    function OnStart()
+    {
+        app.ShowPopup( "HTML Rocks!" );
+    }
+</script>
+
+<body onload="app.Start()" style="background-color: #ffffff;">
+</body>
+</html>
+</sample>

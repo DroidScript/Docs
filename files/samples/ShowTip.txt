@@ -8,7 +8,7 @@ function OnStart()
 
 	app.AddLayout( lay );
 
-    var pos = edt.GetPosition( "screen" );
-    app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" );
+    <b>var pos = edt.GetPosition( "screen" );
+    app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" );</b>
 }
 </sample>

@@ -26,12 +26,48 @@
 		</div>
 
 		<div data-role="content">
-			<p>Unlock locked drawer.</p>
+			<p>Unlocks a locked drawer.</p>
 
 			<div class="samp">
 			app.UnlockDrawer( <a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a> )
 			</div>
 
+			<p>See Also <a href="LockDrawer.htm">LockDrawer</a>, <a href="AddDrawer.htm">AddDrawer</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Basic</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;FillXY,VCenter&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;tgl = app.CreateToggle( &quot;Locked&quot;, -1, -1, &quot;fontawesome&quot; );<br>
+				&#160;&#160;&#160;&#160;tgl.SetPadding( .1, .05, .1, .05 );<br>
+				&#160;&#160;&#160;&#160;tgl.SetOnTouch( OnLockChange );<br>
+				&#160;&#160;&#160;&#160;tgl.SetTextSize( 30 );<br>
+				&#160;&#160;&#160;&#160;lay.AddChild( tgl );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<br>
+				&#160;&#160;&#160;&#160;layDrawer = app.CreateLayout( &quot;Linear&quot;, &quot;FillXY,VCenter&quot; );<br>
+				&#160;&#160;&#160;&#160;layDrawer.SetBackground( &quot;/Sys/Img/BlueBack.jpg&quot; );<br>
+				<br>
+				&#160;&#160;&#160;&#160;app.AddDrawer( layDrawer, &quot;left&quot;, 0.8 );<br>
+				}<br>
+				<br>
+				function OnLockChange( lock )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">if( lock ) app.LockDrawer( &quot;left&quot; );<br>
+				&#160;&#160;&#160;&#160;else app.UnlockDrawer( &quot;left&quot; );</b><br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

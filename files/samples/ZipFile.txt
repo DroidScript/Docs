@@ -1,1 +1,8 @@
- 
+<sample Zip File>
+function OnStart()
+{
+    var file = "/sdcard/DroidScript/Hello World/Hello World.js";
+	app.ZipFile( file, file + ".zip" );
+	app.ShowPopup( "Compressed to " + file + ".zip" )
+}
+</sample>

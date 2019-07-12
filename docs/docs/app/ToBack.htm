@@ -26,12 +26,42 @@
 		</div>
 
 		<div data-role="content">
-			<p>Close app and run it in background.</p>
+			<p>Hides the app but continue running it in the background.</p>
 
 			<div class="samp">
 			app.ToBack()
 			</div>
 
+			<p>If called, the global <i>OnPause</i> event will be fired and if reshown, <i>OnResume</i> is fired.<br>
+			<br>
+			See Also: <a href="ToFront.htm">ToFront</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - App to Background</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;alert( &quot;App will now go to back.&quot; );<br>
+				&#160;&#160;&#160;&#160;app.ToBack();<br>
+				}<br>
+				<br>
+				function OnPause()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;OnPause&quot; );<br>
+				}<br>
+				<br>
+				function OnResume()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;OnResume&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

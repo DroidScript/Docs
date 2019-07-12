@@ -1,1 +1,17 @@
- 
+<sample Catch App Errors>
+function OnStart()
+{
+    app.SetOnError( OnError );
+    throw "My thrown error";
+}
+
+function OnError( msg, line, file )
+{
+    <b>var text =
+        'Message: "' + msg + '"\n' +
+        'Line: ' + line + '\n' +
+        'File: "' + app.Uri2Path(file) + '"';</b>
+
+    app.Alert( text, "Received error message:" );
+}
+</sample>

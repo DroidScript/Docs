@@ -1,1 +1,14 @@
- 
+<sample Conect to DS WiFi AP>
+
+function OnStart()
+{
+	<b>app.WifiConnect( "DS WiFi AP", "mypass" );</b>
+	app.SetOnWifiChange( OnWifiChange );
+}
+
+function OnWifiChange( state, ssid )
+{
+    app.ShowPopup( ssid + " " + state );
+}
+
+</sample>

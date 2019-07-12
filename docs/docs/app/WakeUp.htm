@@ -26,12 +26,32 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Forces the screen to turn on the screen.</p>
 
 			<div class="samp">
 			app.WakeUp()
 			</div>
 
+			<p>(This has the same effect as pressing the power button in sleep mode)<br>
+			<br>
+			See Also: <a href="GoToSleep.htm">GoToSleep</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Sleep and Wake</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.GoToSleep();<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">setTimeout(&quot;app.WakeUp()&quot;, 5000)</b><br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>

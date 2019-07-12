@@ -305,7 +305,7 @@
 			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">IsOverlap</a>( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_srw" data-transition="pop" data-rel="popup">depth</a> ) → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">IsVisible</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">MeasureText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a> ) → <b>object:</b> { <a href="#pop_std_orw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_orh" data-transition="pop" data-rel="popup">height</a> }</div>
+			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">MeasureText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a> ) → <b>object:</b> { <a href="#pop_num_orw" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_orh" data-transition="pop" data-rel="popup">height</a> }</div>
 			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
 			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">Move</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )</div>
 			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">Reset</a>()</div>
@@ -379,7 +379,7 @@
 		<div data-role="popup" id="pop_dsc_009" class="ui-content">DrawLine</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content">draw single pixel</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content">DrawRectangle</div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [<a href="" onclick="prompt( '#', 'App.ShowPopup( number' )">data</a>]</div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [<a href="" onclick="prompt( '#', 'App.ShowPopup( number]' )">data</a></div>
 		<div data-role="popup" id="pop_dsc_00c" class="ui-content">draws a graph in relation to the range</div>
 		<div data-role="popup" id="pop_dsc_00d" class="ui-content">DrawText</div>
 		<div data-role="popup" id="pop_dsc_00e" class="ui-content">?</div>
@@ -411,8 +411,8 @@
 		<div data-role="popup" id="pop_num_srw" class="ui-content"><b>number:</b> <i>fraction of screen width</i></div>
 		<div data-role="popup" id="pop_dsc_020" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_dsc_021" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
-		<div data-role="popup" id="pop_std_orw" class="ui-content"><b>undefined</b></div>
-		<div data-role="popup" id="pop_std_orh" class="ui-content"><b>undefined</b></div>
+		<div data-role="popup" id="pop_num_orw" class="ui-content"><b>number:</b> <i>fraction of object width</i></div>
+		<div data-role="popup" id="pop_num_orh" class="ui-content"><b>number:</b> <i>fraction of object height</i></div>
 		<div data-role="popup" id="pop_dsc_022" class="ui-content">MeasureText</div>
 		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
 		<div data-role="popup" id="pop_dsc_023" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>

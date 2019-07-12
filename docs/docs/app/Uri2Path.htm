@@ -26,17 +26,45 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>Decodes a URI encoded string.</p>
 
 			<div class="samp">
-			app.Uri2Path( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">uri</a> )
+			app.Uri2Path( <a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a> ) → <b>string</b>
 			</div>
 
+			<p>See Also: <a href="SetOnError.htm">SetOnError</a></p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Catch App Errors</h3>
+				<div id="examp0" style="font-size:70%">
+					function OnStart()<br>
+				{<br>
+				&#160;&#160;&#160;&#160;app.SetOnError( OnError );<br>
+				&#160;&#160;&#160;&#160;throw &quot;My thrown error&quot;;<br>
+				}<br>
+				<br>
+				function OnError( msg, line, file )<br>
+				{<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var text =<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Message: &quot;' + msg + '&quot;\n' +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Line: ' + line + '\n' +<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'File: &quot;' + app.Uri2Path(file) + '&quot;';</b><br>
+				<br>
+				&#160;&#160;&#160;&#160;app.Alert( text, &quot;Received error message:&quot; );<br>
+				}
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_uri" class="ui-content"><b>string:</b> <i>URI encoded</i></div>
 
 	</div>
 </body>
