@@ -4,7 +4,7 @@
 		"isfunc": true,
 		"name": "AddDrawer",
 		"pNames": ["layout", "side", "width"],
-		"pTypes": ["dso-CreateLayout", "str-left|right", "num_srw"],
+		"pTypes": ["dso-CreateLayout", "str-left|right", "num_frc"],
 		"shortDesc": "Adds a slide-able layout on given side."
 	},
 	"AddLayout": {
@@ -37,7 +37,7 @@
 				"pTypes": ["num_mls", "num_mls"],
 				"shortDesc": "callback"
 			},
-			"num_int"
+			"num_fps"
 		],
 		"shortDesc": "SetInterval equivalent used with 'NoDom' option"
 	},
@@ -227,22 +227,22 @@
 				"shortDesc": "Returns a list of frequency values."
 			},
 			"GetPeak": {
-				"desc": "returns PMPO value (Peak music power output)",
+				"desc": "Returns the PMPO value (Peak music power output).",
 				"isfunc": true,
 				"name": "GetPeak",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_flt",
-				"shortDesc": "Returns PMPO value."
+				"shortDesc": "Returns the PMPO value."
 			},
 			"GetRMS": {
-				"desc": "returns RMS value (Root Mean Square)",
+				"desc": "Returns the RMS value (Root Mean Square)",
 				"isfunc": true,
 				"name": "GetRMS",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_flt",
-				"shortDesc": "returns RMS value"
+				"shortDesc": "Returns the RMS value"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -255,7 +255,7 @@
 			},
 			"Method": "#1023663567",
 			"Pause": {
-				"desc": "Pause the recording temporally.",
+				"desc": "Pauses the recording temporally.",
 				"isfunc": true,
 				"name": "Pause",
 				"pNames": [],
@@ -298,11 +298,11 @@
 	},
 	"CreateBluetoothList": {
 		"abbrev": "btl",
-		"desc": "CreateBluetoothList is an Android dialog which allows user to select a Bluetooth device from paired and discovered devices. You can also use @GetPairedBtDevices and @DiscoverBtDevices.",
+		"desc": "CreateBluetoothList shows an Android dialog which allows the user to select a Bluetooth device from paired and discovered devices. See Also: @GetPairedBtDevices, @DiscoverBtDevices.",
 		"isfunc": true,
 		"name": "CreateBluetoothList",
 		"pNames": ["filter"],
-		"pTypes": ["?"],
+		"pTypes": ["str"],
 		"retval": "BluetoothList",
 		"shortDesc": "Returns a BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
@@ -316,7 +316,7 @@
 				"shortDesc": "Returns the control class name."
 			},
 			"SetOnTouch": {
-				"desc": "Define a callback function that is called when the user touches the control.",
+				"desc": "Define a callback function that is called when the user selects an element.",
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
@@ -345,7 +345,7 @@
 		"shortDesc": "Communicate with other Bluetooth devices.",
 		"subf": {
 			"Clear": {
-				"desc": "Clears the Bluetooth buffer stored in the serial connection.",
+				"desc": "Clears the Bluetooth buffer of the serial connection.",
 				"isfunc": true,
 				"name": "Clear",
 				"pNames": [],
@@ -353,7 +353,7 @@
 				"shortDesc": "Clears the Bluetooth buffer."
 			},
 			"Connect": {
-				"desc": "Connect to a Bluetooth device via its name or address. The oppenent must have called bt.Listen before.",
+				"desc": "Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.",
 				"isfunc": true,
 				"name": "Connect",
 				"pNames": ["name", "channel"],
@@ -378,7 +378,7 @@
 				"shortDesc": "Returns the control class name."
 			},
 			"IsBluetoothEnabled": {
-				"desc": "Returns a boolean indicating whether the Bluetooth is enabled or not.",
+				"desc": "Returns a boolean indicating whether Bluetooth is enabled or not.",
 				"isfunc": true,
 				"name": "IsBluetoothEnabled",
 				"pNames": [],
@@ -396,7 +396,7 @@
 				"shortDesc": "Returns whether a Bluetooth connection exists."
 			},
 			"IsPaired": {
-				"desc": "Returns a Boolean indicating whether the device was been paired with a particular bluetooth name.",
+				"desc": "Returns a Boolean indicating whether a specific device is paired using its Bt name.",
 				"isfunc": true,
 				"name": "IsPaired",
 				"pNames": ["name"],
@@ -447,7 +447,7 @@
 				"shortDesc": "Called after disconnecting from bluetooth connection."
 			},
 			"SetOnReceive": {
-				"desc": "SetOnReceive is called automatically after data has been received via the Bluetooth serial connection.",
+				"desc": "The SetOnReceive callback is called automatically after data has been received via the Bluetooth serial connection.",
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
@@ -491,11 +491,11 @@
 	},
 	"CreateButton": {
 		"abbrev": "btn",
-		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t_// your OnTouch code goes here_\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions. Setting the width and height to _-1_ whilst using the _“FillX”_ option will allow it to fill the layout width.\n\nYou can customize the visual look in many ways by either using one of the existing style **options** _“Alum”_ or _“Gray”_, or you can use _“Custom”_ and define a custom style with the **SetStyle** method.",
+		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t_// your OnTouch code goes here_\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the _“FillX”_ option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** _“Alum”_ or _“Gray”_, or you can use _“Custom”_ and define a custom style with the **SetStyle** method.\n<sample Change Style>",
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX|FillY|FillXY,Normal|Aluminium|Gray|Lego"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX|FillY|FillXY,Normal|Aluminium|Gray|Lego"],
 		"retval": "Button",
 		"shortDesc": "Creates a button control.",
 		"subf": {
@@ -545,11 +545,11 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "styling with custom option",
+				"desc": "Costomize the button in several ways",
 				"isfunc": true,
 				"name": "SetStyle",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num_srw", "str_col", "num_int", "bin", "?"],
+				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
 				"shortDesc": ""
 			},
 			"SetText": "#8207502354",
@@ -567,106 +567,106 @@
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str_com-Front,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
 		"retval": "CameraView",
 		"shortDesc": "Returns a CameraView object to access the device camera.",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"AutoCapture": {
-				"desc": "? take multiple pictures?",
+				"desc": "Automatically takes pictures if a motion was detected by cam.MotionMosaic.",
 				"isfunc": true,
 				"name": "AutoCapture",
 				"pNames": ["path", "file", "maxCount"],
 				"pTypes": ["str_pth", "str_pth", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Takes a picture if a motion was detected."
 			},
 			"ClearFocus": "#1362225380",
 			"FindFaces": {
-				"desc": "finds faces",
+				"desc": "Finds faces in the current camera view.",
 				"isfunc": true,
 				"name": "FindFaces",
-				"pNames": ["max"],
+				"pNames": ["maxCount"],
 				"pTypes": ["num_int"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "obj-{confidence:num_frc, eyeDistance:num, midPoint:obj:{x:num, y:num}, pose:num_int}",
+				"shortDesc": "Find faces in the current camera view."
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetCameraCount": {
-				"desc": "?",
+				"desc": "Returns the amount of cameras built in to the device.",
 				"isfunc": true,
 				"name": "GetCameraCount",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Returns the device camera count."
 			},
 			"GetColorEffects": {
-				"desc": "get available effects",
+				"desc": "Returns a list of available color effects for the camera.",
 				"isfunc": true,
 				"name": "GetColorEffects",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon)",
-				"shortDesc": ""
+				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
+				"shortDesc": "Returns a list of available color effects."
 			},
 			"GetHeight": "#2576212953",
 			"GetImageHeight": {
-				"desc": "GetImageHeight",
+				"desc": "Returns the camera capture height in pixels.",
 				"isfunc": true,
 				"name": "GetImageHeight",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "num_srh",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Returns the camera height."
 			},
 			"GetImageWidth": {
-				"desc": "GetImageWidth",
+				"desc": "Returns the camera capture width in pixels.",
 				"isfunc": true,
 				"name": "GetImageWidth",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "num_srw",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Returns the camera width."
 			},
 			"GetLeft": "#1237814406",
 			"GetMaxZoom": {
-				"desc": "GetMaxZoom",
+				"desc": "Returns the hightst possible zoom value.",
 				"isfunc": true,
 				"name": "GetMaxZoom",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num",
-				"shortDesc": ""
+				"shortDesc": "Returns the hightst possible zoom value."
 			},
 			"GetParameters": {
-				"desc": "?",
+				"desc": "Get properties, possible values and settings of the camera as “key=value; pairs.",
 				"isfunc": true,
 				"name": "GetParameters",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str_smc-key1=value1;key2=value2;...",
+				"shortDesc": "Get camera parameters."
 			},
 			"GetParent": "#3557841648",
 			"GetPictureSizes": {
-				"desc": "“w x h,w x h,...”",
+				"desc": "Returns a list of possible picture dimensions.",
 				"isfunc": true,
 				"name": "GetPictureSizes",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str_com-“ w1 x h1\\,w2 x h2\\,...”",
+				"shortDesc": "Returns a list of possible picture dimensions."
 			},
 			"GetPixelData": {
-				"desc": "get pixel data of given area",
+				"desc": "Returns the pixel data of the current camery view in a base64 encoded raw bitmap, png or jpg format.",
 				"isfunc": true,
 				"name": "GetPixelData",
 				"pNames": ["format", "left", "top", "width", "height"],
-				"pTypes": ["str-rawbase64|pngbase64|jpgbase64", "num_orw", "num_orh", "num_orw", "num_orh"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["str-rawbase64|pngbase64|jpgbase64", "num_frc", "num_frc", "num_frc", "num_frc"],
+				"retval": "str_b64",
+				"shortDesc": "Returns base64 pixel data as raw bitmap, png or jpg format."
 			},
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
@@ -682,60 +682,68 @@
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"GetZoom": {
-				"desc": "get curent zoom",
+				"desc": "Returns the curent zoom value.",
 				"isfunc": true,
 				"name": "GetZoom",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num",
-				"shortDesc": ""
+				"shortDesc": "Returns the curent zoom value."
 			},
 			"Gone": "#5528553362",
 			"HasFlash": {
-				"desc": "HasFlash",
+				"desc": "Returns a boolean indicating whether the currently used camera has a camera flash.",
 				"isfunc": true,
 				"name": "HasFlash",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns if the current camera supports flashlight."
 			},
 			"Hide": "#5372805812",
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsRecording": {
-				"desc": "",
+				"desc": "Returns a boolea indicating whether the camera is currently recording a video.",
 				"isfunc": true,
 				"name": "IsRecording",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns if the camera is currently recording."
 			},
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"MotionMosaic": {
-				"desc": "?",
+				"desc": "Defines a raster which is used for motion detection.\nUse AutoCapture to take pictures if a motion was detected.",
 				"isfunc": true,
 				"name": "MotionMosaic",
 				"pNames": ["xtiles", "ytiles", "sensitivity", "minPeriod", "image"],
-				"pTypes": ["?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_int", "num_int", "num_prc", "num_mls", "dso-CreateImage"],
+				"shortDesc": "Define a raster for motion detection."
 			},
 			"Record": {
-				"desc": "record for given time",
+				"desc": "Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().",
 				"isfunc": true,
 				"name": "Record",
 				"pNames": ["file", "seconds"],
 				"pTypes": ["str_pth", "num_sec"],
-				"shortDesc": ""
+				"shortDesc": "Start recording video."
 			},
 			"ReportColors": {
 				"desc": "?",
 				"isfunc": true,
 				"name": "ReportColors",
 				"pNames": ["list", "callback", "sampSize", "maxRate"],
-				"pTypes": ["?", "?", "?", "?"],
+				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2\\,y2\\|...",
+                    {
+    					"desc": "Callback",
+    					"isfunc": true,
+    					"name": "callback",
+    					"pNames": [],
+    					"pTypes": [],
+    					"shortDesc": "callback"
+	                }, "num_pxl", "num_mls"],
 				"shortDesc": ""
 			},
 			"SetBackAlpha": "#1162431318",
@@ -744,76 +752,43 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorEffect": {
-				"desc": "set effect",
+				"desc": "Applies a color effect to the camera.",
 				"isfunc": true,
 				"name": "SetColorEffect",
 				"pNames": ["effect"],
 				"pTypes": ["str-none|mono|negative|solarize|sepia|positionterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"],
-				"shortDesc": ""
+				"shortDesc": "Applies a color effect to the camera."
 			},
 			"SetColorFilter": "#1096996086",
 			"SetDuplicateImage": {
-				"desc": "? like SetPrevImg but multiple?",
+				"desc": "Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.",
 				"isfunc": true,
 				"name": "SetDuplicateImage",
 				"pNames": ["image1", "image2"],
 				"pTypes": ["dso-CreateImage", "dso-CreateImage"],
-				"shortDesc": ""
+				"shortDesc": "Define two camera view duplicate targets."
 			},
 			"SetEnabled": "#1602385882",
 			"SetFlash": {
-				"desc": "SetFlash",
+				"desc": "En- or disables the camera flash if available.",
 				"isfunc": true,
 				"name": "SetFlash",
 				"pNames": ["onoff"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En-/Disables the camera flash."
 			},
 			"SetFocusMode": {
 				"desc": "?",
 				"isfunc": true,
 				"name": "SetFocusMode",
 				"pNames": ["mode"],
-				"pTypes": ["str-Video", "?"],
+				"pTypes": ["str-Auto|Picture:for taking pictures|Video:for recording videos|Macro|EDOF:Extended Depth Of Field for continuous digital focusing|Fixed|Infinity"],
 				"shortDesc": ""
 			},
 			"SetMargins": "#1741900074",
-			"SetOnFocus": {
-				"desc": "?",
-				"isfunc": true,
-				"name": "SetOnFocus",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
-			},
-			"SetOnMotion": {
-				"desc": "?",
-				"isfunc": true,
-				"name": "SetOnMotion",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
-			},
+			"SetOnFocus": "#9283752301",
 			"SetOnPicture": {
-				"desc": "?",
+				"desc": "Defines a callback function which is called if cam.AutoCapture took a picture. The _file_ parameter contains the path to the image file.",
 				"isfunc": true,
 				"name": "SetOnPicture",
 				"pNames": ["callback"],
@@ -822,15 +797,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["file"],
+						"pTypes": ["str_pth"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when cam.AutoCapture took a picture."
 			},
 			"SetOnReady": {
-				"desc": "called when cam loaded",
+				"desc": "Defines a callback function which is called when the camera is ready for use.",
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
@@ -844,117 +819,117 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called if the camera is ready for use."
 			},
 			"SetOrientation": {
-				"desc": "? does nothing when tried",
+				"desc": "Rotates the camera view.",
 				"isfunc": true,
 				"name": "SetOrientation",
 				"pNames": ["angle"],
-				"pTypes": ["num_deg"],
-				"shortDesc": ""
+				"pTypes": ["num_deg-0|90|180|270"],
+				"shortDesc": "Rotates the camera view."
 			},
 			"SetPadding": "#1923105617",
 			"SetParameter": {
-				"desc": "?",
+				"desc": "Change property values of the camera.\nSee GetProperties to get a full list of available keys.",
 				"isfunc": true,
 				"name": "SetParameter",
 				"pNames": ["name", "value"],
-				"pTypes": ["str", "all"],
-				"shortDesc": ""
+				"pTypes": ["str", "num|str"],
+				"shortDesc": "Change camera properties."
 			},
 			"SetPictureSize": {
-				"desc": "set pixel size",
+				"desc": "Define a custom picture size in pixels.",
 				"isfunc": true,
 				"name": "SetPictureSize",
 				"pNames": ["width", "height"],
-				"pTypes": ["num_int", "num_int"],
-				"shortDesc": ""
+				"pTypes": ["num_pxl", "num_pxl"],
+				"shortDesc": "Define a custom picture size in pixels."
 			},
 			"SetPosition": "#1425862386",
 			"SetPostRotation": {
-				"desc": "? does nothing when tried",
+				"desc": "Rotates captured image in any desired angle in degrees.",
 				"isfunc": true,
 				"name": "SetPostRotation",
 				"pNames": ["angle"],
 				"pTypes": ["num_deg"],
-				"shortDesc": ""
+				"shortDesc": "Rotate the captured image."
 			},
 			"SetPreviewImage": {
-				"desc": "? change preview to image?",
+				"desc": "Defines an image control which will show the captured picture automatically when taken.",
 				"isfunc": true,
 				"name": "SetPreviewImage",
 				"pNames": ["image"],
 				"pTypes": ["dso-CreateImage"],
-				"shortDesc": ""
+				"shortDesc": "Define a preview image for captured pictures."
 			},
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetSound": {
-				"desc": "SetSound",
+				"desc": "En-/Disables the camera sound playing when taking pictures.",
 				"isfunc": true,
 				"name": "SetSound",
 				"pNames": ["enabled"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "n-/Disables the camera sound."
 			},
 			"SetVideoSize": {
-				"desc": "set pixel size",
+				"desc": "Define a custom video recording size in pixels.",
 				"isfunc": true,
 				"name": "SetVideoSize",
 				"pNames": ["width", "height"],
-				"pTypes": ["num_int", "num_int"],
-				"shortDesc": ""
+				"pTypes": ["num_pxl", "num_pxl"],
+				"shortDesc": "Define custom video recording size."
 			},
 			"SetVisibility": "#1004824195",
 			"SetZoom": {
-				"desc": "SetZoom",
+				"desc": "Change the zoom value of the camera.",
 				"isfunc": true,
 				"name": "SetZoom",
 				"pNames": ["level"],
 				"pTypes": ["num"],
-				"shortDesc": ""
+				"shortDesc": "Change the zoom value of the camera."
 			},
 			"Show": "#1243391562",
 			"StartPreview": {
-				"desc": "start camera & preview on display,needed for flash",
+				"desc": "Start the camera preview on the display.",
 				"isfunc": true,
 				"name": "StartPreview",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start the camera preview."
 			},
 			"Stop": {
-				"desc": "stop camera",
+				"desc": "Stop recording a video.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop recording video."
 			},
 			"StopPreview": {
-				"desc": "stop camera",
+				"desc": "Stop the camera preview on the display.",
 				"isfunc": true,
 				"name": "StopPreview",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop the camera preview."
 			},
 			"Stream": {
-				"desc": "?",
+				"desc": "Streams the camera view to a local ip.",
 				"isfunc": true,
 				"name": "Stream",
 				"pNames": ["ip", "port", "quality", "fps", "mtu"],
-				"pTypes": ["str", "num_int", "num_prc", "num_int", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "num_int", "num_prc", "num_fps", "num_mtu"],
+				"shortDesc": "Streams the camera view to a local ip."
 			},
 			"TakePicture": {
-				"desc": "TakePicture",
+				"desc": "Takes a picture of the current view and saves it to a file.",
 				"isfunc": true,
 				"name": "TakePicture",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Save the current camera view to a file."
 			},
 			"Tween": "#2114624769"
 		}
@@ -965,7 +940,7 @@
 		"isfunc": true,
 		"name": "CreateCheckBox",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CheckBox",
 		"shortDesc": "Returns a CheckBox object.",
 		"subf": {
@@ -1058,7 +1033,7 @@
 		"isfunc": true,
 		"name": "CreateCodeEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CodeEdit",
 		"shortDesc": "Returns a CodeEdit object.",
 		"subf": {
@@ -1913,7 +1888,7 @@
 		"isfunc": true,
 		"name": "CreateGameView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["?", "?", "str_com"],
+		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"shortDesc": "CreateGameView",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -1963,7 +1938,7 @@
 				"isfunc": true,
 				"name": "SetFrameRate",
 				"pNames": ["fps"],
-				"pTypes": ["?"],
+				"pTypes": ["num_fps"],
 				"shortDesc": "SetFrameRate"
 			},
 			"SetMargins": "#1741900074",
@@ -1982,7 +1957,7 @@
 		"isfunc": true,
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper", "num_pxl", "num_pxl"],
+		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "Image",
 		"shortDesc": "Returns a Image object.",
 		"subf": {
@@ -2149,7 +2124,7 @@
 				"name": "MeasureText",
 				"pNames": ["txt"],
 				"pTypes": ["str"],
-				"retval": "obj-{ width:num_orw, height:num_orh }",
+				"retval": "obj-{ width:num_frc, height:num_frc }",
 				"shortDesc": "MeasureText"
 			},
 			"Method": "#1023663567",
@@ -2230,7 +2205,7 @@
 				"isfunc": true,
 				"name": "SetImage",
 				"pNames": ["image", "width", "height", "options"],
-				"pTypes": ["str_pth||dso-CreateImage", "num_srw", "num_srh", "str-rescale"],
+				"pTypes": ["str_pth||dso-CreateImage", "num_frc", "num_frc", "str-rescale"],
 				"shortDesc": ""
 			},
 			"SetLineWidth": {
@@ -2645,7 +2620,7 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com-Expand,Menu,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand,Menu,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
 		"shortDesc": "Returns a List object.",
 		"subf": {
@@ -2847,7 +2822,7 @@
 				"isfunc": true,
 				"name": "SetIconMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
-				"pTypes": ["num_srw", "num_srh", "num_srw", "num_srh", "?"],
+				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "?"],
 				"shortDesc": ""
 			},
 			"SetIconSize": {
@@ -2927,7 +2902,7 @@
 				"isfunc": true,
 				"name": "SetTextMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
-				"pTypes": ["num_srw", "num_srh", "num_srw", "num_srh", "?", "?"],
+				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "?", "?"],
 				"shortDesc": ""
 			},
 			"SetTextShadow": "#1093247031",
@@ -4590,7 +4565,7 @@
 		"isfunc": true,
 		"name": "CreateScroller",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
+		"pTypes": ["num_frc", "num_frc", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
 		"retval": "Scroller",
 		"shortDesc": "Returns a Scroller object.",
 		"subf": {
@@ -4625,7 +4600,7 @@
 				"name": "GetScrollX",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "num_orw",
+				"retval": "num_frc",
 				"shortDesc": "Get horizontal scroll bar position."
 			},
 			"GetScrollY": {
@@ -4634,7 +4609,7 @@
 				"name": "GetScrollY",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "num_orh",
+				"retval": "num_frc",
 				"shortDesc": "Get vertical scroll bar position."
 			},
 			"GetTop": "#1981028136",
@@ -4668,7 +4643,7 @@
 				"isfunc": true,
 				"name": "ScrollBy",
 				"pNames": ["x", "y"],
-				"pTypes": ["num_orw", "num_orw"],
+				"pTypes": ["num_frc", "num_frc"],
 				"shortDesc": "Scroll relative to the current scroll position."
 			},
 			"ScrollTo": {
@@ -4676,7 +4651,7 @@
 				"isfunc": true,
 				"name": "ScrollTo",
 				"pNames": ["x", "y"],
-				"pTypes": ["num_orw", "num_orw"],
+				"pTypes": ["num_frc", "num_frc"],
 				"shortDesc": "Scrolls to a given fixed position."
 			},
 			"SetBackAlpha": "#1162431318",
@@ -4702,7 +4677,7 @@
 		"isfunc": true,
 		"name": "CreateSeekBar",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str_com"],
+		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "SeekBar",
 		"shortDesc": "Returns a SeekBar object.",
 		"subf": {
@@ -5009,7 +4984,7 @@
 				"isfunc": true,
 				"name": "CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
-				"pTypes": ["str_pth", "num_srw", "num_srw", "?", "num_int", "num_int"],
+				"pTypes": ["str_pth", "num_frc", "num_frc", "?", "num_int", "num_int"],
 				"shortDesc": ""
 			},
 			"CreateLayout": {
@@ -5033,7 +5008,7 @@
 				"isfunc": true,
 				"name": "CreateText",
 				"pNames": ["text", "width", "height", "options"],
-				"pTypes": ["str", "num_srw", "num_srh", "str-x1:scale html images,x2:scale html images,x3:scale html images,x4:scale html images"],
+				"pTypes": ["str", "num_frc", "num_frc", "str-x1:scale html images,x2:scale html images,x3:scale html images,x4:scale html images"],
 				"shortDesc": ""
 			},
 			"GetVersion": {
@@ -5210,7 +5185,7 @@
 				"isfunc": true,
 				"name": "ShowLayout",
 				"pNames": ["layout", "x", "y"],
-				"pTypes": ["obj-SWlay", "num_srw", "num_srh"],
+				"pTypes": ["obj-SWlay", "num_frc", "num_frc"],
 				"shortDesc": ""
 			},
 			"ShowMessage": {
@@ -5865,7 +5840,7 @@
 		"isfunc": true,
 		"name": "CreateTabs",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_srw", "num_srw", "str_com"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com"],
 		"retval": "Tabs",
 		"shortDesc": "Returns a Tabs object.",
 		"subf": {
@@ -6127,7 +6102,7 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
 		"retval": "Text",
 		"shortDesc": "Returns a Text object.",
 		"subf": {
@@ -6321,7 +6296,7 @@
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
 		"retval": "TextEdit",
 		"shortDesc": "Returns a TextEdit object.",
 		"subf": {
@@ -6527,26 +6502,7 @@
 				],
 				"shortDesc": ""
 			},
-			"SetOnFocus": {
-				"desc": "SetOnFocus",
-				"isfunc": true,
-				"name": "SetOnFocus",
-				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnFocus"
-			},
-			"SetOnTouch": "#2088093920",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSelection": {
-				"desc": "SetSelection",
-				"isfunc": true,
-				"name": "SetSelection",
-				"pNames": ["start", "stop"],
-				"pTypes": ["num_int", "num_int"],
-				"shortDesc": ""
-			},
+			"SetOnFocus": "#9283752301",
 			"SetSize": "#1296070870",
 			"SetText": "#8207502354",
 			"SetTextColor": "#1093247031",
@@ -6716,7 +6672,7 @@
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_srw", "num_srh", "str_com-FontAwesome,Custom,NoPad"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad"],
 		"retval": "Toggle",
 		"shortDesc": "Returns a Toggle object.",
 		"subf": {
@@ -6784,7 +6740,7 @@
 				"isfunc": true,
 				"name": "SetStyle",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow", "checkClr"],
-				"pTypes": ["str_col", "str_col", "num_srw", "str_col", "num_int", "bin", "?"],
+				"pTypes": ["str_col", "str_col", "num_frc", "str_col", "num_int", "bin", "?"],
 				"shortDesc": ""
 			},
 			"SetText": "#8207502354",
@@ -6929,7 +6885,7 @@
 		"isfunc": true,
 		"name": "CreateVideoView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str_com"],
+		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "VideoView",
 		"shortDesc": "Returns a VideoView object.",
 		"subf": {
@@ -8589,7 +8545,7 @@
 		"name": "GetTop",
 		"pNames": ["options"],
 		"pTypes": ["str_com-px"],
-		"retval": "num_srh",
+		"retval": "num_frc",
 		"shortDesc": "GetTop"
 	},
 	"GetType": {
@@ -8625,7 +8581,7 @@
 		"name": "GetVolume",
 		"pNames": ["stream"],
 		"pTypes": ["str-alarm|dtmf|music|notification|ring|system|voicecall"],
-		"retval": "num_flt-0..1",
+		"retval": "num_frc",
 		"shortDesc": "Get volume of a given audio type."
 	},
 	"GoToSleep": {
@@ -9711,7 +9667,7 @@
 		"isfunc": true,
 		"name": "SetPosition",
 		"pNames": ["left", "top", "width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "num_srw", "num_srh", "str_com-px"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str_com-px"],
 		"shortDesc": "Change app position and size."
 	},
 	"SetPriority": {
@@ -9735,7 +9691,7 @@
 		"isfunc": true,
 		"name": "SetScreenBrightness",
 		"pNames": ["level"],
-		"pTypes": ["num_flt-0..1"],
+		"pTypes": ["num_frc"],
 		"shortDesc": "Change screen brightness."
 	},
 	"SetScreenMode": {
@@ -9791,7 +9747,7 @@
 		"isfunc": true,
 		"name": "SetVolume",
 		"pNames": ["stream", "level", "options"],
-		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_flt-0..1", "str_com-ShowUI"],
+		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_frc", "str_com-ShowUI"],
 		"shortDesc": "Change volume of a given audio type."
 	},
 	"SetWifiApEnabled": {
@@ -9879,7 +9835,7 @@
 		"isfunc": true,
 		"name": "ShowTip",
 		"pNames": ["message", "left", "top", "timeOut", "options"],
-		"pTypes": ["str", "num_srw", "num_srw", "num_mls", "str_com-Down"],
+		"pTypes": ["str", "num_frc", "num_frc", "num_mls", "str_com-Down"],
 		"shortDesc": "Shows a tooltip message on the screen."
 	},
 	"SimulateDrag": {
@@ -9887,7 +9843,7 @@
 		"isfunc": true,
 		"name": "SimulateDrag",
 		"pNames": ["obj", "x1", "y1", "x2", "y2", "step", "pause"],
-		"pTypes": ["dso", "num_srw", "num_srh", "num_srw", "num_srh", "num", "num"],
+		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"],
 		"shortDesc": "Simulates a drag event on an app object."
 	},
 	"SimulateKey": {
@@ -9903,7 +9859,7 @@
 		"isfunc": true,
 		"name": "SimulateScroll",
 		"pNames": ["obj", "x", "y", "dx", "dy", "count", "fling"],
-		"pTypes": ["dso", "num_srw", "num_srh", "num_srw", "num_srh", "num", "num"],
+		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"],
 		"shortDesc": "Simulates a scroll event on a scrollable app object."
 	},
 	"SimulateTouch": {
@@ -9911,7 +9867,7 @@
 		"isfunc": true,
 		"name": "SimulateTouch",
 		"pNames": ["obj", "x", "y", "dir"],
-		"pTypes": ["dso", "num_orw", "num_orh", "str-Down|Move|Up"],
+		"pTypes": ["dso", "num_frc", "num_frc", "str-Down|Move|Up"],
 		"shortDesc": "Simulate a touch event on a rouchable control."
 	},
 	"Start": {

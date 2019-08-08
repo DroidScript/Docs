@@ -1,5 +1,5 @@
 
-var curDoc;
+var curDoc = null, curSubf = null;
 
 	//generates all doc files
 function generateDocs() {
@@ -158,7 +158,7 @@ function generateDoc( name ) {
 	    //save doc file
 	    app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
     } catch(e) {
-        console.error( /*\x1b[31m*/`while generating "${curDoc}":` );
+        console.error( /*\x1b[31m*/`while generating "${curDoc}": ${curSubf||""}` );
         throw e;
     }
 }
@@ -229,6 +229,7 @@ function getDocData( f, useAppPop ) {
 
 	for( k = 0; k < mkeys.length; k++ ) {
 		var met = f.subf[mkeys[k]], retval = "", type;
+		curSubf = f.name;
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
@@ -271,6 +272,7 @@ function getDocData( f, useAppPop ) {
 			methods += subfBase.replace( "%s", pop.txt + retval );
 		} */
 	}
+	curSubf = null;
 
 	if( Globals.useEventPop ) tryAddType( eventPop );
 
@@ -440,10 +442,10 @@ function toArgPop( name, types ) {
 				case "str":
 					s[i] += rplop( type[2], type[0] == "str" );
 					if(type.length == 3 && type[2].indexOf(":") > -1)
-						s[i] = s[i].replace(/“(\w+):([^”]*)/g, "“" + newAppPopup("$2", "$1"))
-					return s[i]; break;
+						s[i] = s[i].replace(/\b(\w+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
+					return s[i];
 				case "lst":
-				case "obj": return s[i] + replW( replaceTypes( type[2], true )); break;
+				case "obj": return s[i] + replW( replaceTypes( type[2], true ));
 				case "dso":
 				    if(!functions[type[2]])
 				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
@@ -518,7 +520,7 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?\b)(\s*[}\]]?)?/g,
+	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?)\b(\s*[,}\]]?)?/g,
 		function(m, name, type, _, close) {
 		    if(useAppPop) {
 				return newAppPopup(
@@ -541,7 +543,7 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url) {
 			// exists in docs folder? direct link : open in external app
 			return white + (app.FileExists(path + "docs/app/" + url) ? 
-				`<a href="${url}">` :
+				`<a href="${url}" data-ajax="false">` :
 				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
 				+ `${name}</a>`;
 			}
@@ -553,8 +555,8 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")   // `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
-		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm">$2</a>') // @DocReference
-		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
+		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm" data-ajax="false">$2</a>') // @DocReference
+		.replace(/\\([_*~@])/g, "$1");                             // consume \ escaped markdown
 }
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -567,8 +569,10 @@ function reprs( s ) { return s.replace( /\n/g, "\\n" ).replace( /\t/g, "\\t" ); 
 	//replace "&" and "|" operators with "and" and "or"
 function rplop( s, n ) {
 	return replW( (n? '“' + s + '”' : s)
+		.replace( /\\(.)/g, (m,c)=>`§${c.charCodeAt(0)}§` )
 		.replace( /\|/g, n? '” or “' : " or " )
-		.replace( /\&|,/g, n? '”, “' : ", " )
+		.replace( /,/g, n? '”, “' : ", " )
+		.replace( /§(\d+)§/g, (m,c)=>`${String.fromCharCode(c)}` )
 	);
 }
 function Throw(err) {
@@ -587,7 +591,7 @@ function newAppPopup(desc, type) {
 	return appPopup.replace("%s", desc).replace("%s", type);
 }
 function newLink(target, text) {
-	return `<a href="${target}">${text}</a>`;
+	return `<a href="${target}" data-ajax="false">${text}</a>`;
 }
 function dbg(v){ console.log(v); return v; }
 
@@ -775,20 +779,18 @@ var 	//globals for one doc
 		"num_prc":"percent",
 		"num_sec":"seconds",
 		"num_mls":"milliseconds",
-		"num_orh":"fraction of object height",
-		"num_orw":"fraction of object width",
-		"num_srh":"fraction of screen height",
-		"num_srw":"fraction of screen width",
-		"num_prh":"fraction of parent height",
-		"num_prw":"fraction of parent width",
-		"num_deg":"angle in degrees ( 0 - 360 )",
-		"num_rad":"angle in radient ( 0 - 2*π )",
+		"num_frc":"fraction (0..1)",
+		"num_fps":"frames per second",
+		"num_deg":"angle in degrees (0..360)",
+		"num_rad":"angle in radient (0..2*π)",
+		"num_mtu":"maximum transmission unit",
 		"num_smtp":"<pre>	  <u> server			   SSL	 TLS</u>\ngmail: smtp.gmail.com	   465	 578\nyahoo: smtp.mail.yahoo.com  465	 578\ngmx  : mail.gmx.net		 465	 587</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
 		"num_imap":"<pre>	  <u> server			   SSL</u>\ngmail: imap.gmail.com	   993\nyahoo: imap.mail.yahoo.com  993\ngmx  : imap.gmx.net		 993</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
 		"str":"",
 		"str_lst":"comma “,” separated",
 		"str_com":"comma “,” separated",
 		"str_pip":"pipe “|” separated",
+		"str_smc":"semicolon “;” separated",
 		"str_col":'<br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...',
 		"str_fmt":"format",
 		"str_htm":"html",
@@ -810,6 +812,7 @@ var 	//globals for one doc
 		"str_num":"number",
 		"str_int":"integer",
 		"str_flt":"float",
+		"str_b64":"base64 encoded",
 		"str_pxl":"integer in pixels"
 	};
 
@@ -818,7 +821,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/m,
+	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later

@@ -1,1 +1,12 @@
- 
+<sample Basic>
+function OnStart()
+{
+    lst = app.CreateBluetoothList();
+    lst.SetOnTouch( OnBtList );
+}
+
+function OnBtList(name, address)
+{
+    app.Alert("Name: " + name + "\nAddress: " + address, "Result");
+}
+</sample>
