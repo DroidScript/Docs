@@ -38,16 +38,16 @@
 				<h3>Example - Show remaining internal and external storage</h3>
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> intSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"internal"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> extSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"external"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				<br>
-				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> text <span class="token operator">=</span><br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"internal: "</span> <span class="token operator">+</span> intSize <span class="token operator">+</span> <span class="token string">" MB\n"</span> <span class="token operator">+</span><br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"external: "</span> <span class="token operator">+</span> extSize <span class="token operator">+</span> <span class="token string">" MB"</span><span class="token punctuation">;</span><br>
-				<br>
-				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> intSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"internal"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> extSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"external"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> text <span class="token operator">=</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"internal: "</span> <span class="token operator">+</span> intSize <span class="token operator">+</span> <span class="token string">" MB\n"</span> <span class="token operator">+</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"external: "</span> <span class="token operator">+</span> extSize <span class="token operator">+</span> <span class="token string">" MB"</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

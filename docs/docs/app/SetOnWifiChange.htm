@@ -41,19 +41,19 @@
 				<h3>Example - Detect WiFi Changes</h3>
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetOnWifiChange</span><span class="token punctuation">(</span> OnWifiChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span><br>
-				<br>
-				<b id = "snip0"  style = "font-size:100%"><span class="token keyword">function</span> <span class="token function">OnWifiChange</span><span class="token punctuation">(</span> <span class="token parameter">state<span class="token punctuation">,</span> ssid</span> <span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> state<span class="token punctuation">.</span><span class="token function">EndsWith</span><span class="token punctuation">(</span> <span class="token string">"ED"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> state <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span> ssid <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
-				&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> state <span class="token punctuation">)</span><br>
-				<span class="token punctuation">}</span></b>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetOnWifiChange</span><span class="token punctuation">(</span> OnWifiChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<b id = "snip0"  style = "font-size:100%"><span class="token keyword">function</span> <span class="token function">OnWifiChange</span><span class="token punctuation">(</span> <span class="token parameter">state<span class="token punctuation">,</span> ssid</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> state<span class="token punctuation">.</span><span class="token function">EndsWith</span><span class="token punctuation">(</span> <span class="token string">"ED"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> state <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span> ssid <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> state <span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span></b>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

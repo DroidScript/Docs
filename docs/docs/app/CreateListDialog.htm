@@ -40,16 +40,16 @@
 				<h3>Example - Basic</h3>
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Choices"</span><span class="token punctuation">,</span> <span class="token string">"Add,Remove,Delete"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				</b><span class="token punctuation">}</span><br>
-				<br>
-				<span class="token keyword">function</span> <span class="token function">dlg_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">item</span> <span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span>
+					<span class="token punctuation">{</span><br>
+					<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Choices"</span><span class="token punctuation">,</span> <span class="token string">"Add,Remove,Delete"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					</b><span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">dlg_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">item</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -63,16 +63,16 @@
 				<h3>Example - Multi</h3>
 				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Days"</span><span class="token punctuation">,</span> <span class="token string">"Mon,Tues,Wed,Thurs,Fri,Sat,Sun"</span><span class="token punctuation">,</span> <span class="token string">"Multi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				</b><span class="token punctuation">}</span><br>
-				<br>
-				<span class="token keyword">function</span> <span class="token function">dlg_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">item<span class="token punctuation">,</span> isChecked</span> <span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item <span class="token operator">+</span> <span class="token string">" isChecked = "</span> <span class="token operator">+</span> isChecked <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span>
+					<span class="token punctuation">{</span><br>
+					<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Days"</span><span class="token punctuation">,</span> <span class="token string">"Mon,Tues,Wed,Thurs,Fri,Sat,Sun"</span><span class="token punctuation">,</span> <span class="token string">"Multi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					</b><span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">dlg_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">item<span class="token punctuation">,</span> isChecked</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item <span class="token operator">+</span> <span class="token string">" isChecked = "</span> <span class="token operator">+</span> isChecked <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
