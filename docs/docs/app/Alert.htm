@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -37,14 +39,14 @@
 			<br>
 			See Also:<br>
 			<br>
-			See Also: <a href="Error.htm">Error</a>, <a href="ShowTextDialog.htm">ShowTextDialog</a>, CreateYesNoDialog.</p>
+			See Also: <a href="Error.htm" data-ajax="false">Error</a>, <a href="ShowTextDialog.htm" data-ajax="false">ShowTextDialog</a>, CreateYesNoDialog.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - No Title</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.Alert( &quot;Hello World!&quot; );</b><br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -57,10 +59,10 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Yellow Title</h3>
 				<div id="examp1" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app.Alert( &quot;This is an alert box&quot;, &quot;Hello Yellow World!&quot;, &quot;&quot;, -100 );</b><br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"This is an alert box"</span><span class="token punctuation">,</span> <span class="token string">"Hello Yellow World!"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">100</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -75,7 +77,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “NoDim”, “NoFocus”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDim”</font>, <font class='docstring'>“NoFocus”</font></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> -180..180</div>
 
 	</div>

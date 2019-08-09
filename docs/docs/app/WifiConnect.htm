@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -32,20 +34,20 @@
 			app.WifiConnect( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a> )
 			</div>
 
-			<p>See Also: <a href="WifiScan.htm">WifiScan</a>, <a href="SetOnWifiChange.htm">SetOnWifiChange</a>, <a href="SetWifiApEnabled.htm">SetWifiApEnabled</a></p>
+			<p>See Also: <a href="WifiScan.htm" data-ajax="false">WifiScan</a>, <a href="SetOnWifiChange.htm" data-ajax="false">SetOnWifiChange</a>, <a href="SetWifiApEnabled.htm" data-ajax="false">SetWifiApEnabled</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Conect to DS WiFi AP</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.WifiConnect( &quot;DS WiFi AP&quot;, &quot;mypass&quot; );</b><br>
-				&#160;&#160;&#160;&#160;app.SetOnWifiChange( OnWifiChange );<br>
-				}<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">WifiConnect</span><span class="token punctuation">(</span> <span class="token string">"DS WiFi AP"</span><span class="token punctuation">,</span> <span class="token string">"mypass"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetOnWifiChange</span><span class="token punctuation">(</span> OnWifiChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				function OnWifiChange( state, ssid )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowPopup( ssid + &quot; &quot; + state );<br>
-				}
+				<span class="token keyword">function</span> <span class="token function">OnWifiChange</span><span class="token punctuation">(</span> <span class="token parameter">state<span class="token punctuation">,</span> ssid</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> ssid <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> state <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

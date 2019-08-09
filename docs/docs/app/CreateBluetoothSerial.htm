@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -35,52 +37,44 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Connect to Device</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Enabling Bluetooth&quot; );<br>
-				&#160;&#160;&#160;&#160;if( !app.IsBluetoothEnabled() )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.SetBluetoothEnabled( true );<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;while( !app.IsBluetoothOn() ) app.Wait(.4);<br>
-				&#160;&#160;&#160;&#160;app.HideProgress();<br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token number">.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">bt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothSerial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;bt<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> bt_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;bt<span class="token punctuation">.</span><span class="token function">SetSplitMode</span><span class="token punctuation">(</span> <span class="token string">"End"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;bt<span class="token punctuation">.</span><span class="token function">Listen</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<br>
-				&#160;&#160;&#160;&#160;lst = app.CreateList( &quot;&quot;, 0.9, 0.5 );<br>
-				&#160;&#160;&#160;&#160;lst.SetOnTouch( lst_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
+				&#160;&#160;&#160;&#160;lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>lst_OnTouch<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;var devices = app.GetPairedBtDevices();<br>
-				&#160;&#160;&#160;&#160;for( var d in devices )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst.AddItem( devices[d].name, devices[d].address );<br>
+				<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Connecting..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;bt<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> address <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				<span class="token keyword">function</span> <span class="token function">bt_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">ok<span class="token punctuation">,</span> data</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;bt = app.CreateBluetoothSerial();<br>
-				&#160;&#160;&#160;&#160;bt.SetOnConnect( bt_OnConnect );<br>
-				&#160;&#160;&#160;&#160;bt.SetSplitMode( &quot;End&quot;, &quot;\n&quot; );<br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> ok <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> data <span class="token operator">==</span> <span class="token string">"object"</span> <span class="token punctuation">)</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Connected!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">else</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Connected to "</span> <span class="token operator">+</span> ok <span class="token operator">+</span> <span class="token string">" ("</span> <span class="token operator">+</span> data <span class="token operator">+</span> <span class="token string">")"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;bt.Listen( true );<br>
-				}<br>
-				<br>
-				function lst_OnTouch( title, body, type, index )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Connecting...&quot; );<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">bt.Connect( title );</b><br>
-				}<br>
-				<br>
-				function bt_OnConnect( ok, data )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				<br>
-				&#160;&#160;&#160;&#160;if( ok ) {<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if( typeof data == &quot;object&quot; )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Connected!&quot; );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;else<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;alert( &quot;Connected to &quot; + ok + &quot; (&quot; + data + &quot;)&quot; );<br>
-				&#160;&#160;&#160;&#160;} else<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Failed to connect!&quot; );<br>
-				}
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bt<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span><span class="token string">"hello from "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetBluetoothName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">}</span> <span class="token keyword">else</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -95,7 +89,7 @@
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Clear</a>()</div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Connect</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">channel</a> )</div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Disconnect</a>()</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “BluetoothSerial”</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“BluetoothSerial”</font></div>
 			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsBluetoothEnabled</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">IsConnected</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">IsPaired</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>boolean</b></div>
@@ -112,27 +106,27 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Text” or “Int” or “Hex”</div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">Clears the Bluetooth buffer stored in the serial connection.</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content">Clears the Bluetooth buffer of the serial connection.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Connect to a Bluetooth device via its name or address. The oppenent must have called bt.Listen before.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content">Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content">Disconnect your device from an eventually existant connection. Calls the OnDisconnect callback function on both devices.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content">Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">Returns a boolean indicating whether the Bluetooth is enabled or not.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content">Returns a boolean indicating whether Bluetooth is enabled or not.</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content">Returns a boolean indicating whether a Bluetooth connection exists to another device.</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">Returns a Boolean indicating whether the device was been paired with a particular bluetooth name.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content">Returns a Boolean indicating whether a specific device is paired using its Bt name.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content">Listen to your serial connection for any incoming mesages by passing <i>true</i> as first argument, <s>or stop listening by passing false</s>. It has to be called before an other device can connect with yours via bt.Connect.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content">If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">name</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">address</a>)</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content">If the device has sent the connection request<br>&#160;&#160;name is of type boolean (true if the connection was established successful)<br>&#160;&#160;and address is your BluetoothSerial object<br><br>if the device has received the connection request<br>&#160;&#160;name is a string with the clients bluetooth name<br>&#160;&#160;and address includes the bluetooth address.</div>
 		<div data-role="popup" id="pop_dsc_00c" class="ui-content">SetOnDisconnect will be called on both devices after disconnecting from an existing bluetooth connection.</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">data</a>)</div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content">SetOnReceive is called automatically after data has been received via the Bluetooth serial connection.</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> “End” or “Start-End” or “Size”</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content">The SetOnReceive callback is called automatically after data has been received via the Bluetooth serial connection.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“End”</font> or <font class='docstring'>“Start-End”</font> or <font class='docstring'>“Size”</font></div>
 		<div data-role="popup" id="pop_std_str|int" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_dsc_00e" class="ui-content">Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.<br>p2 and p3 have different purposes for different modes:<br><style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>

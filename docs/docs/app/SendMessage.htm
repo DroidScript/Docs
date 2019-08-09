@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -35,9 +37,9 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Services</h3>
 				<div id="examp0" style="font-size:70%">
-					//our Service.js code.<br>
-				//In regular usage move this code to a separate Service.js file<br>
-				var servicejs = `<br>
+					<span class="token comment">//our Service.js code.</span><br>
+				<span class="token comment">//In regular usage move this code to a separate Service.js file</span><br>
+				<span class="token keyword">var</span> servicejs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 				//Init variables.<br>
 				var count = 0;<br>
 				var diff = 1;<br>
@@ -45,7 +47,7 @@
 				//Called when service is started.<br>
 				function OnStart()<br>
 				{<br>
-				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello from Service!&quot; );<br>
+				&#160;&#160;&#160;&#160;app.ShowPopup( "Hello from Service!" );<br>
 				<br>
 				&#160;&#160;&#160;&#160;//Start a timer to do some regular work.<br>
 				&#160;&#160;&#160;&#160;setInterval( DoWork, 500 );<br>
@@ -57,7 +59,7 @@
 				&#160;&#160;&#160;&#160;app.Debug( msg );<br>
 				<br>
 				&#160;&#160;&#160;&#160;//Handle commands from main App.<br>
-				&#160;&#160;&#160;&#160;if( msg == &quot;change&quot; ) diff = (diff &gt; 0 ? -1 : 1);<br>
+				&#160;&#160;&#160;&#160;if( msg == "change" ) diff = (diff &amp;gt; 0 ? -1 : 1);<br>
 				}<br>
 				<br>
 				//This is where we do some regular background task<br>
@@ -66,55 +68,55 @@
 				{<br>
 				&#160;&#160;&#160;&#160;count += diff;<br>
 				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SendMessage( count );</b><br>
-				}`<br>
+				}</span><span class="token template-punctuation string">`</span></span><br>
 				<br>
-				function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;//Create the Service.js file<br>
-				&#160;&#160;&#160;&#160;//(In regular usage create the file yourself)<br>
-				&#160;&#160;&#160;&#160;app.WriteFile(&quot;Service.js&quot;, servicejs );<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Create the Service.js file</span><br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//(In regular usage create the file yourself)</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">"Service.js"</span><span class="token punctuation">,</span> servicejs <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Create a layout.<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Create a layout.</span><br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Create text control to display data from the service.<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.4 );<br>
-				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Create text control to display data from the service.</span><br>
+				&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Create an 'Send Message' button.<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Send Message to Service&quot;, 0.6, 0.1 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.SendMessage(&quot;change&quot;); } );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Create an 'Send Message' button.</span><br>
+				&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Send Message to Service"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Create a 'Stop Service' button.<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Stop Service&quot;, 0.6, 0.1 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.Stop(); } );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Create a 'Stop Service' button.</span><br>
+				&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Stop Service"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Add layout to app.<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Add layout to app.</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//Start/connect to our service.<br>
-				&#160;&#160;&#160;&#160;svc = app.CreateService( &quot;this&quot;, &quot;this&quot;, OnServiceReady );<br>
-				&#160;&#160;&#160;&#160;svc.SetOnMessage( OnServiceMessage );<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//Start/connect to our service.</span><br>
+				&#160;&#160;&#160;&#160;svc <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateService</span><span class="token punctuation">(</span> <span class="token string">"this"</span><span class="token punctuation">,</span> <span class="token string">"this"</span><span class="token punctuation">,</span> OnServiceReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;svc<span class="token punctuation">.</span><span class="token function">SetOnMessage</span><span class="token punctuation">(</span> OnServiceMessage <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;//This will cause your service to start at boot.<br>
-				&#160;&#160;&#160;&#160;//(Set it to &quot;none&quot; if you need to stop it starting)<br>
-				&#160;&#160;&#160;&#160;//app.SetAutoBoot( &quot;Service&quot; );<br>
-				}<br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//This will cause your service to start at boot.</span><br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//(Set it to "none" if you need to stop it starting)</span><br>
+				&#160;&#160;&#160;&#160;<span class="token comment">//app.SetAutoBoot( "Service" );</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				//Called after our service has started.<br>
-				function OnServiceReady()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.Debug( &quot;Service Ready&quot; );<br>
-				}<br>
+				<span class="token comment">//Called after our service has started.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnServiceReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span> <span class="token string">"Service Ready"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				//Called when messages comes from our service.<br>
-				function OnServiceMessage( msg )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;txt.SetText( &quot;Count: &quot; + msg );<br>
-				}
+				<span class="token comment">//Called when messages comes from our service.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnServiceMessage</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"Count: "</span> <span class="token operator">+</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

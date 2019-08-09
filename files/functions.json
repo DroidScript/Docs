@@ -656,7 +656,7 @@
 				"name": "GetPictureSizes",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "str_com-“ w1 x h1\\,w2 x h2\\,...”",
+				"retval": "str_com-w1 x h1\\,w2 x h2\\,...",
 				"shortDesc": "Returns a list of possible picture dimensions."
 			},
 			"GetPixelData": {
@@ -719,7 +719,7 @@
 				"isfunc": true,
 				"name": "MotionMosaic",
 				"pNames": ["xtiles", "ytiles", "sensitivity", "minPeriod", "image"],
-				"pTypes": ["num_int", "num_int", "num_prc", "num_mls", "dso-CreateImage"],
+				"pTypes": ["num_int", "num_int", "num_pxl", "num_mls", "dso-CreateImage"],
 				"shortDesc": "Define a raster for motion detection."
 			},
 			"Record": {
@@ -731,20 +731,20 @@
 				"shortDesc": "Start recording video."
 			},
 			"ReportColors": {
-				"desc": "?",
+				"desc": "Keeps tracks of the average color around a given point.",
 				"isfunc": true,
 				"name": "ReportColors",
 				"pNames": ["list", "callback", "sampSize", "maxRate"],
-				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2\\,y2\\|...",
+				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2:num_frc\\,y2:num_frc\\|...",
                     {
     					"desc": "Callback",
     					"isfunc": true,
     					"name": "callback",
-    					"pNames": [],
-    					"pTypes": [],
+    					"pNames": ["data"],
+    					"pTypes": ["lst-[[r1,g1,b1], [r2,g2,b2], ...]"],
     					"shortDesc": "callback"
 	                }, "num_pxl", "num_mls"],
-				"shortDesc": ""
+				"shortDesc": "Keeps tracks of the average color around a given point."
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",

@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -37,45 +39,45 @@
 			ds: allows app.Debug messages<br>
 			adb: allows adb debug messages (ie at apk startup)<br>
 			true: enable all debug messages<br>
-			false or “”: disable able all debug messages<br>
+			false or <font class='docstring'>“”</font>: disable able all debug messages<br>
 			<br>
 			Note that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.<br>
 			<br>
-			See Also: <a href="Debug.htm">Debug</a>, <a href="IsDebugging.htm">IsDebugging</a></p>
+			See Also: <a href="Debug.htm" data-ajax="false">Debug</a>, <a href="IsDebugging.htm" data-ajax="false">IsDebugging</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Demonstration</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.CreateDebug();<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">CreateDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;default 1&quot;);   // default on<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;default 2&quot;); // default on<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"default 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// default on</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"default 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// default on</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.SetDebug(&quot;adb&quot;);<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;adb 3&quot;);&#160;&#160;&#160;&#160;   // off<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;adb 4&quot;);&#160;&#160;&#160;&#160; // off<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"adb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"adb 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;   <span class="token comment">// off</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"adb 4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160; <span class="token comment">// off</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.SetDebug(&quot;console&quot;);</b><br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;console 5&quot;);   // off<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;console 6&quot;); // on<br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"console"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"console 5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// off</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"console 6"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// on</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.SetDebug(&quot;ds&quot;);<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;ds 7&quot;);&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;// on<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;ds 8&quot;);&#160;&#160;&#160;&#160;  // off<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"ds"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"ds 7"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token comment">// on</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ds 8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;  <span class="token comment">// off</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.SetDebug(&quot;&quot;);<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;null 9&quot;);&#160;&#160;&#160;&#160;  // off<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;null 10&quot;);   // off<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"null 9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;  <span class="token comment">// off</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"null 10"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// off</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.SetDebug(&quot;true&quot;);<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;true 11&quot;);&#160;&#160;&#160;&#160; // on<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;true 12&quot;);   // on<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"true 11"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160; <span class="token comment">// on</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"true 12"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// on</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.SetDebug(&quot;false&quot;);<br>
-				&#160;&#160;&#160;&#160;app.Debug(&quot;hello 13&quot;);&#160;&#160;&#160;&#160;// off<br>
-				&#160;&#160;&#160;&#160;console.log(&quot;hello 14&quot;);  // off<br>
-				}
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"false"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"hello 13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;<span class="token comment">// off</span><br>
+				&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hello 14"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// off</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -89,7 +91,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “console”, “ds”, “adb”, “all”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“console”</font>, <font class='docstring'>“ds”</font>, <font class='docstring'>“adb”</font>, <font class='docstring'>“all”</font></div>
 
 	</div>
 </body>

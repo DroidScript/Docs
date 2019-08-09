@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -32,14 +34,14 @@
 			app.ShowPopup( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
-			<p>It automatically disappears after about 5 secods or after an even shorter time if you pass the <i>“Short”</i> <b>option</b>, or when the user touches the screen.</p>
+			<p>It automatically disappears after about 5 secods or after an even shorter time if you pass the <i><font class='docstring'>“Short”</font></i> <b>option</b>, or when the user touches the screen.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Top</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.ShowPopup( &quot;Hello World!&quot; );</b><br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -52,10 +54,10 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Bottom</h3>
 				<div id="examp1" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app.ShowPopup( &quot;Hello World!&quot;, &quot;Bottom,Short&quot; );</b><br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span> <span class="token string">"Bottom,Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -70,7 +72,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “Bottom” or “Short”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Bottom”</font> or <font class='docstring'>“Short”</font></div>
 
 	</div>
 </body>

@@ -167,6 +167,9 @@ function setTheme( theme )
 	
 	var lnkDocs = document.getElementById('themeDocs');
 	if(lnkDocs) lnkDocs.href = lnkDocs.href.replace(/(.*\/).*/, "$1docs-" + theme + ".css");
+	
+	var lnkPrism = document.getElementById('themePrism');
+	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
 // get current theme from cookie

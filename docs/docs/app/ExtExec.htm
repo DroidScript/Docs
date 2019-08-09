@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -54,12 +56,12 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Open Termux and pass arguments</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.WriteFile( &quot;/sdcard/termux/scripts/hello.sh&quot;, &quot;echo Hello $1 and $2&quot; );<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var err = app.ExtExec( &quot;termux&quot;, &quot;hello.sh&quot;, 'World &quot;' + app.GetUser() + '&quot;', &quot;&quot; );</b><br>
-				&#160;&#160;&#160;&#160;if( err ) app.Alert( &quot;Termux Error:&quot; + err );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> <span class="token string">"echo Hello $1 and $2"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> err <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Termux Error:"</span> <span class="token operator">+</span> err <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -72,52 +74,52 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Execute in Background and retreive output</h3>
 				<div id="examp1" style="font-size:70%">
-					var itv, lock = &quot;/sdcard/.termuxlock&quot;;<br>
-				var script = `<br>
+					<span class="token keyword">var</span> itv<span class="token punctuation">,</span> lock <span class="token operator">=</span> <span class="token string">"/sdcard/.termuxlock"</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">var</span> script <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 				{  # this is a comment<br>
 				&#160;&#160;&#160;&#160;echo This is a message  # prints to stdout<br>
 				&#160;&#160;&#160;&#160;sleep 1  # waits 1 second<br>
-				&#160;&#160;&#160;&#160;echo This is an error  1&gt;&amp;2  # prints to stderr<br>
-				} 1&gt;/sdcard/out.txt 2&gt;/sdcard/err.txt; # forward stdout and stderr to files<br>
-				rm ` + lock; // remove script lock file<br>
+				&#160;&#160;&#160;&#160;echo This is an error  1&amp;gt;&amp;amp;2  # prints to stderr<br>
+				} 1&amp;gt;/sdcard/out.txt 2&amp;gt;/sdcard/err.txt; # forward stdout and stderr to files<br>
+				rm </span><span class="token template-punctuation string">`</span></span> <span class="token operator">+</span> lock<span class="token punctuation">;</span> <span class="token comment">// remove script lock file</span><br>
 				<br>
-				function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.WriteFile( &quot;/sdcard/termux/scripts/hello.sh&quot;, script );<br>
-				&#160;&#160;&#160;&#160;app.WriteFile( lock, &quot;&quot; );<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> script <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> lock<span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Script is running&quot; );<br>
-				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">var err = app.ExtExec( &quot;termux&quot;, &quot;hello.sh&quot;, &quot;&quot;, &quot;hide&quot; );</b><br>
-				&#160;&#160;&#160;&#160;if(err) app.Alert(err);<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Script is running"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
 				<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, .8, .8, &quot;monospace,multiline,left&quot; );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
+				&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token string">"monospace,multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;itv = setInterval( CheckReady, 100 );<br>
-				}<br>
+				&#160;&#160;&#160;&#160;itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> CheckReady<span class="token punctuation">,</span> <span class="token number">100</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				function CheckReady()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;if( !app.FileExists( lock ))<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;clearInterval(itv);<br>
+				<span class="token keyword">function</span> <span class="token function">CheckReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">FileExists</span><span class="token punctuation">(</span> lock <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">clearInterval</span><span class="token punctuation">(</span>itv<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var stdout = app.ReadFile( &quot;/sdcard/out.txt&quot; );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var stderr = app.ReadFile( &quot;/sdcard/err.txt&quot; );<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">var</span> stdout <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/out.txt"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">var</span> stderr <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/err.txt"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var text =<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;stdout:\n&quot; + stdout + &quot;\n\n&quot; +<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;stderr:\n&quot; + stderr;<br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">var</span> text <span class="token operator">=</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"stdout:\n"</span> <span class="token operator">+</span> stdout <span class="token operator">+</span> <span class="token string">"\n\n"</span> <span class="token operator">+</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"stderr:\n"</span> <span class="token operator">+</span> stderr<span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt.SetText( text );<br>
-				&#160;&#160;&#160;&#160;}<br>
-				}
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -131,10 +133,10 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “termux”</div>
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“termux”</font></div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “hide”</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“hide”</font></div>
 
 	</div>
 </body>

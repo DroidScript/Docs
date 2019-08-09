@@ -304,6 +304,7 @@ function getDesc(name) {
 			(s = samples[n] || Throw(Error(`sample ${n} not found for ${name}`)),
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
 		)
+		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
 		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
@@ -313,35 +314,32 @@ function getSamples( name ) {
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );
 
 	// replace special html characters and convert to list
-	samp = samp
-		.replace( /\&/g, "&amp;" )
-		.replace( /\</g, "&lt;" )
-		.replace( /\>/g, "&gt;" )
-		.replace( /\"/g, "&quot;" )
-		.split( "&lt;/sample&gt;" )
-		.slice( 0 , -1 );
+	samp = samp.split( "</sample>" ).slice( 0 , -1 );
 	
 	// convert samples to required html format
 	for( var i in samp ) {
 		s = samp[i].trim();
-		var p = s.indexOf( "&gt;" ),
-			title = s.slice( 11, p );
-		samples[title] = toHtmlSamp( s.slice( p + 4 ), title, i );
+		var p = s.indexOf( ">" ),
+			title = s.slice( 8, p );
+		samples[title] = toHtmlSamp( s.slice( p + 1 ), title, i );
 	}
 	return samples;
 }
 
 // convert a sample to html code
 function toHtmlSamp( c, t, n ) {
-	c = c.trim()
+    c = c.replace( /<\/?b>/g, "§§")
+	c = Prism.highlight(c.trim(), Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
-		.replace( /\n/g, "<br>\n\t\t\t\t" );
-	
+    	.replace( /\n/g, "<br>\n\t\t\t\t\t" )
+    	.replace( /§§([^]+?)§§/g, "<b id = \"snip%i\"  style = \"font-size:100%\">$1</b>" )
+	    //.replace( /</g, "&lt;" )
+	    //.replace( />/g, "&gt;" )
+	    //.replace( /&/g, "&amp;" )
+
 	return sampBase
-		.replace( "%b", c
-		.replace( "&lt;b&gt;", "<b id = \"snip%i\"  style = \"font-size:100%\">" ) )
-		.replace( "&lt;/b&gt;", "</b>" )
+		.replace( "%b", c)
 		.replace( /%i/g, n )
 		.replace( /%t/g, t )
 }
@@ -369,10 +367,8 @@ function typeDesc( types, isDSO ) {
 	var s = types.map(
 		(type, i) => typenames[type[0]] ?
 			"<b>" + typenames[type[0]] + (hrefs[type[1]] ? 
-				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) : 
-				(last = "", type[2] ? ":</b>" : "</b>")
-			) + (type[2] ? last + " " : last) :
-			undefined
+				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) :""
+			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 	
 	return types.map(function(type, i) {
@@ -396,7 +392,8 @@ function typeDesc( types, isDSO ) {
 			}
 			return s[i];
 		}
-	}).join("\n");
+	}).join("\n")
+	.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>");
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
@@ -464,14 +461,14 @@ function toArgPop( name, types ) {
 			(!types[2] ? types[1].replace("?", "ukn") :
 				types[0] + "_" + incpop( types[0], 1 )
 			);
-		tryAddType(newDefPopup( pop, str[0]));
+		tryAddType(newDefPopup( pop, str[0].replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( pop, name );
 		
 	} else {
 		// for values with multiple types
 		tryAddType( newDefPopup(
 			"mul_" + incpop( "mul", 1 ),
-			str.join("<br>")));
+			str.join("<br>").replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( "mul_" + incpop( "mul" ), name );
 	}
 }
@@ -672,6 +669,7 @@ var 	//navigator list item
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="css/docs-default.css"/>
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
@@ -709,7 +707,9 @@ var 	//navigator list item
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -791,13 +791,13 @@ var 	//globals for one doc
 		"str_com":"comma “,” separated",
 		"str_pip":"pipe “|” separated",
 		"str_smc":"semicolon “;” separated",
-		"str_col":'<br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...',
+		"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',
 		"str_fmt":"format",
 		"str_htm":"html",
 		"str_mim":"mimetype",
 		"str_mod":"mode",
-		"str_ort":'"Default", "Portrait", "Landscape"',
-		"str_pth":'path to file or folder ( "/absolute/..." or "relative/..." )',
+		"str_ort":'“Default”, “Portrait”, “Landscape”',
+		"str_pth":'path to file or folder ( “/absolute/...” or “relative/...” )',
 		"str_sql":"sql code",
 		"str_sty":"style",
 		"str_url":"url path",
@@ -923,6 +923,10 @@ function OnStart() {
 
 var fs = require("fs");
 var rimraf = require("rimraf");
+var Prism = require('prismjs');
+//console.log(hljavascript(hljs))
+console.log()
+
 
 app = {
 	ReadFile: (p) => fs.readFileSync(p, "utf8"),

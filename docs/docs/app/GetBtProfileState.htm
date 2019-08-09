@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -29,26 +31,26 @@
 			<p>Returns the Bluetooth State of a given Bt connection type.</p>
 
 			<div class="samp">
-			app.GetBtProfileState( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>string:</b> “Connected” or “Disconnected”
+			app.GetBtProfileState( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>string:</b> <font class='docstring'>“Connected”</font> or <font class='docstring'>“Disconnected”</font>
 			</div>
 
-			<p>See Also: <a href="CreateBluetoothSerial.htm">CreateBluetoothSerial</a></p>
+			<p>See Also: <a href="CreateBluetoothSerial.htm" data-ajax="false">CreateBluetoothSerial</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Show Bluetooth Profile State</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;var states = &quot;a2dp|headset|gatt|health&quot;.split( &quot;|&quot; );<br>
-				&#160;&#160;&#160;&#160;var lst = [];<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> states <span class="token operator">=</span> <span class="token string">"a2dp|headset|gatt|health"</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"|"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;for( var i in states )<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var state = app.GetBtProfileState( states[i] );</b><br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst.push( states[i] +  + &quot;: &quot; + state);<br>
-				&#160;&#160;&#160;&#160;}<br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> states <span class="token punctuation">)</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetBtProfileState</span><span class="token punctuation">(</span> states<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> states<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span>  <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.Alert( lst.join( &quot;\n&quot; ) );<br>
-				}
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> lst<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -62,7 +64,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “a2dp” or “headset” or “gatt” or “health”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“a2dp”</font> or <font class='docstring'>“headset”</font> or <font class='docstring'>“gatt”</font> or <font class='docstring'>“health”</font></div>
 
 	</div>
 </body>

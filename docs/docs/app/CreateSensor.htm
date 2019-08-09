@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -34,28 +36,28 @@
 
 			<p>You can use the <b>SetOnChange</b> function of the Sensor to set the name of a function you want to be called when a the changes occur.<br>
 			<br>
-			Change the rate that a sensor checks for changes by adding one the options “Fastest”, “Fast”, “Medium” or “Slow”. “Slow” is the default.</p>
+			Change the rate that a sensor checks for changes by adding one the options <font class='docstring'>“Fastest”</font>, <font class='docstring'>“Fast”</font>, <font class='docstring'>“Medium”</font> or <font class='docstring'>“Slow”</font>. <font class='docstring'>“Slow”</font> is the default.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Accelerometer</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.8, 0.3, &quot;Multiline&quot; );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns = app.CreateSensor( &quot;Accelerometer&quot; );<br>
-				&#160;&#160;&#160;&#160;sns.SetOnChange( sns_OnChange );<br>
-				&#160;&#160;&#160;&#160;sns.Start();<br>
+				<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				</b>}<br>
+				</b><span class="token punctuation">}</span><br>
 				<br>
-				function sns_OnChange( x, y, z, time )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;txt.SetText( &quot;x=&quot; + x + &quot;\n y=&quot; + y + &quot;\n z=&quot; + z );<br>
-				}
+				<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">,</span> time</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"x="</span> <span class="token operator">+</span> x <span class="token operator">+</span> <span class="token string">"\n y="</span> <span class="token operator">+</span> y <span class="token operator">+</span> <span class="token string">"\n z="</span> <span class="token operator">+</span> z <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -68,27 +70,27 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Orientation</h3>
 				<div id="examp1" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.8, 0.3, &quot;Multiline&quot; );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns = app.CreateSensor( &quot;Orientation&quot; );<br>
-				&#160;&#160;&#160;&#160;sns.SetOnChange( sns_OnChange );<br>
-				&#160;&#160;&#160;&#160;sns.Start();<br>
+				<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				</b>}<br>
+				</b><span class="token punctuation">}</span><br>
 				<br>
-				function sns_OnChange( azimuth, pitch, roll, time )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;var msg = &quot; azimuth = &quot; + azimuth.toFixed(1);<br>
-				&#160;&#160;&#160;&#160;msg += &quot;\n pitch = &quot; + pitch.toFixed(1);<br>
-				&#160;&#160;&#160;&#160;msg += &quot;\n roll = &quot; + roll.toFixed(1);<br>
-				&#160;&#160;&#160;&#160;txt.SetText( msg );<br>
-				}
+				<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">azimuth<span class="token punctuation">,</span> pitch<span class="token punctuation">,</span> roll<span class="token punctuation">,</span> time</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">" azimuth = "</span> <span class="token operator">+</span> azimuth<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;msg <span class="token operator">+=</span> <span class="token string">"\n pitch = "</span> <span class="token operator">+</span> pitch<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;msg <span class="token operator">+=</span> <span class="token string">"\n roll = "</span> <span class="token operator">+</span> roll<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -101,24 +103,24 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Light</h3>
 				<div id="examp2" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;Linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.8, 0.3 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
+				&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				<b id = "snip2"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns = app.CreateSensor( &quot;Light&quot; );<br>
-				&#160;&#160;&#160;&#160;sns.SetOnChange( sns_OnChange );<br>
-				&#160;&#160;&#160;&#160;sns.Start();<br>
+				<b id = "snip2"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				</b>}<br>
+				</b><span class="token punctuation">}</span><br>
 				<br>
-				function sns_OnChange( lux )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;txt.SetText( &quot;level = &quot; + lux + &quot; lux&quot; );<br>
-				}
+				<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">lux</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"level = "</span> <span class="token operator">+</span> lux <span class="token operator">+</span> <span class="token string">" lux"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -131,10 +133,10 @@
 			<p><br>The following methods are available on the <b>Sensor</b> object:</p>
 
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetAzimuth</a>() → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetNames</a>() → <b>string:</b> <i>comma “,” separated</i></div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetNames</a>() → <b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPitch</a>() → <b>unknown</b></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetRoll</a>() → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “Sensor”</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Sensor”</font></div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetValues</a>() → <b>unknown</b></div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetMaxRate</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">rate</a> )</div>
@@ -146,8 +148,8 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Accelerometer” or “MagneticField” or “Orientation” or “Light” or “Proximity” or “Temperature” or “GameRotation” or “GeomagneticRotation” or “Gravity” or “Gyroscope” or “HeartRate” or “Acceleration” or “Pressure” or “Humidity” or “RotationMotion” or “StepCounter” or “StepDetector”</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “Slow” or “Medium” or “Fast” or “Fastest”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Accelerometer”</font> or <font class='docstring'>“MagneticField”</font> or <font class='docstring'>“Orientation”</font> or <font class='docstring'>“Light”</font> or <font class='docstring'>“Proximity”</font> or <font class='docstring'>“Temperature”</font> or <font class='docstring'>“GameRotation”</font> or <font class='docstring'>“GeomagneticRotation”</font> or <font class='docstring'>“Gravity”</font> or <font class='docstring'>“Gyroscope”</font> or <font class='docstring'>“HeartRate”</font> or <font class='docstring'>“Acceleration”</font> or <font class='docstring'>“Pressure”</font> or <font class='docstring'>“Humidity”</font> or <font class='docstring'>“RotationMotion”</font> or <font class='docstring'>“StepCounter”</font> or <font class='docstring'>“StepDetector”</font></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Slow”</font> or <font class='docstring'>“Medium”</font> or <font class='docstring'>“Fast”</font> or <font class='docstring'>“Fastest”</font></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns a list of builtin sensors in your device.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"></div>
@@ -155,7 +157,7 @@
 		<div data-role="popup" id="pop_dsc_005" class="ui-content">Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"></div>

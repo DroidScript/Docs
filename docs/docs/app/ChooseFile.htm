@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -32,37 +34,37 @@
 			app.ChooseFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
-			<p>See Also: <a href="ReadFile.htm">ReadFile</a></p>
+			<p>See Also: <a href="ReadFile.htm" data-ajax="false">ReadFile</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Choose File by Mimetype</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;var list = &quot;*/*,application/text,application/apk,application/zip,&quot; +<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,&quot; +<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg&quot;;<br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">"*/*,application/text,application/apk,application/zip,"</span> <span class="token operator">+</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,"</span> <span class="token operator">+</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;spnMime = app.CreateSpinner(list);<br>
-				&#160;&#160;&#160;&#160;lay.AddChild(spnMime);<br>
+				&#160;&#160;&#160;&#160;spnMime <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>spnMime<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;btnChoose = app.CreateButton( &quot;Choose File&quot;, 0.5, 0.1 );<br>
-				&#160;&#160;&#160;&#160;btnChoose.SetOnTouch( btnChoose_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btnChoose );<br>
+				&#160;&#160;&#160;&#160;btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose File"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				}<br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				function btnChoose_OnTouch()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app.ChooseFile( &quot;Choose a File&quot;, spnMime.GetText(), OnChoose );</b><br>
-				}<br>
+				<span class="token keyword">function</span> <span class="token function">btnChoose_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseFile</span><span class="token punctuation">(</span> <span class="token string">"Choose a File"</span><span class="token punctuation">,</span> spnMime<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				function OnChoose( file )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;alert( &quot;file path: &quot; + file );<br>
-				}
+				<span class="token keyword">function</span> <span class="token function">OnChoose</span><span class="token punctuation">(</span> <span class="token parameter">file</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"file path: "</span> <span class="token operator">+</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -77,8 +79,8 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “mimetype”</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: path to file or folder ( "/absolute/..." or "relative/..." )' )">path</a>)</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“mimetype”</font></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: path to file or folder ( “/absolute/...” or “relative/...” )' )">path</a>)</div>
 
 	</div>
 </body>

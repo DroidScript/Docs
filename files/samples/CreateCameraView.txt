@@ -42,3 +42,82 @@ function Snap()
 	app.ShowPopup("Picture saved");
 }
 </sample>
+
+<sample Record>
+
+function OnStart()
+{
+    app.SetOrientation("Landscape");
+
+	lay = app.CreateLayout( "Linear", "Horizontal,FillXY,VCenter" );
+
+	cam = app.CreateCameraView( .9, 1 );
+	cam.SetOnReady( cam_OnReady );
+	lay.AddChild( cam );
+
+	tgl = app.CreateToggle( "Rec", 0.1 );
+    tgl.SetOnTouch( Record );
+	lay.AddChild( tgl );
+
+	app.AddLayout( lay );
+
+	recFolder = "/sdcard/Videos";
+	app.MakeFolder( recFolder );
+}
+
+function cam_OnReady()
+{
+    cam.SetFocusMode( "Video" );
+    cam.StartPreview();
+}
+
+function Record( start )
+{
+	if( start )
+	{
+	    cam.Record( recFolder + "/test.mp4" );
+        app.ShowPopup("Recording");
+	}
+	else
+	{
+	    cam.Stop();
+        app.ShowPopup("Saved to " + recFolder + "/test.mp4");
+	}
+}
+</sample>
+
+<sample Motion detector>
+
+var sensitivity = 10; // motion threshold
+var minPeriod = 500;  // millisecs
+var snapFolder = "/sdcard/Snaps";
+
+function OnStart()
+{
+	app.SetOrientation( "Landscape" );
+
+    lay = app.CreateLayout( "linear", "fillxy,VCenter" );
+
+	layCam = app.CreateLayout( "Frame" );
+	lay.AddChild( layCam );
+
+	cam = app.CreateCameraView( 1, 1, "front" );
+    cam.SetOnReady( StartDetection );
+	layCam.AddChild( cam );
+
+	app.AddLayout( lay );
+}
+
+function StartDetection()
+{
+	var w = cam.GetImageWidth();
+	var h = cam.GetImageHeight();
+
+	img = app.CreateImage( null, 1, 1, "Fix", w, h );
+	img.SetAlpha( 0.5 );
+	layCam.AddChild( img );
+
+	cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img );
+	cam.StartPreview();
+}
+</sample>

@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -32,26 +34,26 @@
 			app.SetOnWifiChange( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
-			<p>The <b>state</b> parameter can be <i>“CONNECTING”</i>, <i>“CONNECTED”</i>, or <i>“DISCONNECTED”</i>. The WiFi ssid is passed on <i>“CONNECTED”</i> only.<br>
+			<p>The <b>state</b> parameter can be <i><font class='docstring'>“CONNECTING”</font></i>, <i><font class='docstring'>“CONNECTED”</font></i>, or <i><font class='docstring'>“DISCONNECTED”</font></i>. The WiFi ssid is passed on <i><font class='docstring'>“CONNECTED”</font></i> only.<br>
 			<br>
-			See Also: <a href="WifiConnect.htm">WifiConnect</a>, <a href="WifiScan.htm">WifiScan</a></p>
+			See Also: <a href="WifiConnect.htm" data-ajax="false">WifiConnect</a>, <a href="WifiScan.htm" data-ajax="false">WifiScan</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Detect WiFi Changes</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.SetOnWifiChange( OnWifiChange );<br>
-				}<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetOnWifiChange</span><span class="token punctuation">(</span> OnWifiChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				<b id = "snip0"  style = "font-size:100%">function OnWifiChange( state, ssid )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;if( state.EndsWith( &quot;ED&quot; ))<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( state + &quot;\n&quot; + ssid );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				&#160;&#160;&#160;&#160;}<br>
-				&#160;&#160;&#160;&#160;else app.ShowProgress( state )<br>
-				}</b>
+				<b id = "snip0"  style = "font-size:100%"><span class="token keyword">function</span> <span class="token function">OnWifiChange</span><span class="token punctuation">(</span> <span class="token parameter">state<span class="token punctuation">,</span> ssid</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> state<span class="token punctuation">.</span><span class="token function">EndsWith</span><span class="token punctuation">(</span> <span class="token string">"ED"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> state <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span> ssid <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+				&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> state <span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span></b>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

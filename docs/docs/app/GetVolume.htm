@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -29,20 +31,20 @@
 			<p>Returns the volume level of a given audio type as a number between 0 and 1.</p>
 
 			<div class="samp">
-			app.GetVolume( <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a> ) → <b>number:</b> <i>float</i> 0..1
+			app.GetVolume( <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a> ) → <b>number:</b> <i>fraction (0..1)</i>
 			</div>
 
-			<p>By default the <i>“System”</i> volume is returned.<br>
+			<p>By default the <i><font class='docstring'>“System”</font></i> volume is returned.<br>
 			<br>
-			See Also: <a href="SetVolume.htm">SetVolume</a></p>
+			See Also: <a href="SetVolume.htm" data-ajax="false">SetVolume</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Get System Volume</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var vol = app.GetVolume();</b><br>
-				&#160;&#160;&#160;&#160;app.Alert( vol, &quot;System Volume:&quot; );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> vol <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetVolume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> vol<span class="token punctuation">,</span> <span class="token string">"System Volume:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -56,7 +58,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “alarm” or “dtmf” or “music” or “notification” or “ring” or “system” or “voicecall”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“alarm”</font> or <font class='docstring'>“dtmf”</font> or <font class='docstring'>“music”</font> or <font class='docstring'>“notification”</font> or <font class='docstring'>“ring”</font> or <font class='docstring'>“system”</font> or <font class='docstring'>“voicecall”</font></div>
 
 	</div>
 </body>
