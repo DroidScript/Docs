@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetAlarm</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Set a time when you want your app to start automatically if it is not already opened.</p>
@@ -75,8 +79,10 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">SetAlarm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%"><span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> now <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;§<br>
+					§<span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> now <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>§<br>
+					§<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"You may now pause or exit the app"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;<span class="token comment">// app.ToBack();</span><br>
 					&#160;&#160;&#160;&#160;<span class="token comment">// app.Exit();</span><br>
@@ -101,11 +107,11 @@
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Set”</font> or <font class='docstring'>“Repeat”</font> or <font class='docstring'>“Cancel”</font></div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string
-number: integer' )">id</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string
+number: integer')">id</a>)</div>
 		<div data-role="popup" id="pop_num_dat" class="ui-content"><b>number:</b> <i>Datetime in milliseconds (from JS Date object)</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ExactIdle”</font> or <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( only works for single shot alarms' )">Exact</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( Opens main app if called from a service' )">App</a>”</font></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ExactIdle”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('only works for single shot alarms')">Exact</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('Opens main app if called from a service')">App</a>”</font></div>
 
 	</div>
 </body>

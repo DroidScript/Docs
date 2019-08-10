@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateSensor</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>The sensor object can be used to access numerous sensors of your device.</p>
@@ -48,11 +52,13 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					§<br>
+					§&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					</b><span class="token punctuation">}</span><br>
+					§<br>
+					§<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">,</span> time</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
@@ -78,11 +84,13 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					§<br>
+					§&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					</b><span class="token punctuation">}</span><br>
+					§<br>
+					§<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">azimuth<span class="token punctuation">,</span> pitch<span class="token punctuation">,</span> roll<span class="token punctuation">,</span> time</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
@@ -111,11 +119,13 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip2"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					§<br>
+					§&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					</b><span class="token punctuation">}</span><br>
+					§<br>
+					§<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">lux</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>

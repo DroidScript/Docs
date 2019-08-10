@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateSysProc</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Returns a SysProc object.</p>
@@ -52,7 +56,7 @@
 		<div data-role="popup" id="pop_str_pip" class="ui-content"><b>string:</b> <i>pipe <font class='docstring'>“|”</font> separated</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( combines stdout and stderr' )">combine</a>”</font> or <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( force use of proc builder' )">builder</a>”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('combines stdout and stderr')">combine</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('force use of proc builder')">builder</a>”</font></div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns the control class name.</div>

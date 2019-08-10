@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetRunningServices</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Returns a list of objects containing info about all currently running services in the background.</p>
@@ -48,7 +52,8 @@
 					&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">SetTextSize1</span><span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRunningServices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;§<br>
+					§<span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRunningServices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> list <span class="token punctuation">)</span><br>
 					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
@@ -57,7 +62,8 @@
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"user: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>user <span class="token operator">+</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"\npid: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>pid<span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> a<span class="token punctuation">.</span>name<span class="token punctuation">,</span> body <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span></b><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span>§<br>
+					§<br>
 					<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>

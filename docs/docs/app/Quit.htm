@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>Quit</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Quits the app with showing an <a href="Alert.htm" data-ajax="false">Alert</a> dialog box before exiting.</p>
@@ -41,7 +45,9 @@
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Exciting"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">Quit</span><span class="token punctuation">(</span> <span class="token string">"App will now exit anyway."</span><span class="token punctuation">,</span> <span class="token string">"No error detected."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;§<br>
+					§app<span class="token punctuation">.</span><span class="token function">Quit</span><span class="token punctuation">(</span> <span class="token string">"App will now exit anyway."</span><span class="token punctuation">,</span> <span class="token string">"No error detected."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>§<br>
+					§<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Exited"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// not shown</span><br>
 					<span class="token punctuation">}</span>
 				</div>
