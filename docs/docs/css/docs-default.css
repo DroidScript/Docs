@@ -28,3 +28,16 @@ pre {
     font-family : sans-serif;
       font-size : 90%;
 }
+
+.androidPopup {
+    color: #fff;
+    margin: auto;
+    opacity: 0.9;
+    padding: 10px;
+    display: none;
+    text-align: center;
+    background-color: #555;
+    border-radius: 30px;
+    position: relative;
+    width: max-content;
+}
