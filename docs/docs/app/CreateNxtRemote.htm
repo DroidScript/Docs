@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateNxtRemote</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Returns a NxtRemote object.</p>
@@ -114,7 +118,7 @@
 		<div data-role="popup" id="pop_dsc_014" class="ui-content">PlaySoundFile for given times</div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“ColorDetect”</font> or <font class='docstring'>“LightSense”</font> or <font class='docstring'>“RedSense”</font> or <font class='docstring'>“GreenSense”</font> or <font class='docstring'>“BlueSense”</font></div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content">ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined,' )">5</a>6:white</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content">ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,<a href="" onclick="app.ShowPopup('undefined')">5</a>,6:white</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_dsc_016" class="ui-content">ReadDistanceSensor in centimeters</div>
 		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>

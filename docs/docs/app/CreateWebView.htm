@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateWebView</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>You can create a control to display local or remote web pages in your App using the <b>CreateWebView</b> method.</p>
@@ -39,18 +43,18 @@
 			You can use the <b>LoadUrl</b> method to load an internal or external web page or the <b>LoadHtml</b> method to load text directly from within your App.</p>
 
 			<div class="samp">
-			web.LoadUrl( url, options );
+			web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> url<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 
 			<div class="samp">
-			 web.LoadHtml( html, baseFolder, options );
+			web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> baseFolder<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>If you need to, you can use the <b>Execute</b> method to execute JavaScript code within the WebView.</p>
 
 			<div class="samp">
-			web.Execute( text );
+			web<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -199,7 +203,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( prevents copy/paste popup' )">NoActionBar</a>”</font> or <font class='docstring'>“NoPause”</font> or <font class='docstring'>“NoApp”</font> or <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( enable use of camera and microphone (and WebRTC)' )">AllowCapture</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( makes softkeyboard useful for html code editors' )">UseBasicInput</a>”</font>, <font class='docstring'>“Overview”</font>, <font class='docstring'>“NoScrollBars”</font>, <font class='docstring'>“ScrollFade”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('prevents copy/paste popup')">NoActionBar</a>”</font> or <font class='docstring'>“NoPause”</font> or <font class='docstring'>“NoApp”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('enable use of camera and microphone (and WebRTC)')">AllowCapture</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('makes softkeyboard useful for html code editors')">UseBasicInput</a>”</font>, <font class='docstring'>“Overview”</font>, <font class='docstring'>“NoScrollBars”</font>, <font class='docstring'>“ScrollFade”</font></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
 		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> 100..100</div>
@@ -240,10 +244,10 @@
 		<div data-role="popup" id="pop_dsc_019" class="ui-content">Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_dsc_01a" class="ui-content">Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 		<div data-role="popup" id="pop_str_htm" class="ui-content"><b>string:</b> <i>html</i></div>
-		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( support zooming gestures' )">allowzoom</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( zoom out the content to fit the WebView by width' )">autozoom</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( support the viewport meta tag' )">wide</a>”</font>, <font class='docstring'>“ a wide viewport is used if the viewport meta tag is missing”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( WebView will not react to long touches' )">nolongtouch</a>”</font></div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('support zooming gestures')">allowzoom</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('zoom out the content to fit the WebView by width')">autozoom</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('support the viewport meta tag')">wide</a>”</font>, <font class='docstring'>“ a wide viewport is used if the viewport meta tag is missing”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('WebView will not react to long touches')">nolongtouch</a>”</font></div>
 		<div data-role="popup" id="pop_dsc_01b" class="ui-content"></div>
 		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
-		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( support zooming gestures' )">allowzoom</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( zoom out the content to fit the WebView by width' )">autozoom</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( support the viewport meta tag' )">wide</a>”</font>, <font class='docstring'>“ a wide viewport is used if the viewport meta tag is missing”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( WebView will not react to long touches' )">nolongtouch</a>”</font></div>
+		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('support zooming gestures')">allowzoom</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('zoom out the content to fit the WebView by width')">autozoom</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('support the viewport meta tag')">wide</a>”</font>, <font class='docstring'>“ a wide viewport is used if the viewport meta tag is missing”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('WebView will not react to long touches')">nolongtouch</a>”</font></div>
 		<div data-role="popup" id="pop_dsc_01c" class="ui-content">LoadUrl</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
@@ -266,11 +270,11 @@
 		<div data-role="popup" id="pop_str_00d" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 		<div data-role="popup" id="pop_dsc_027" class="ui-content">Define a distance to other controls on each side of the control.</div>
 		<div data-role="popup" id="pop_dsc_028" class="ui-content">SetOnConsole</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">error</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">error</a>)</div>
 		<div data-role="popup" id="pop_dsc_029" class="ui-content">called when error appeared</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_dsc_02a" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('undefined')">event</a>)</div>
 		<div data-role="popup" id="pop_dsc_02b" class="ui-content">Define a callback function that is called when the user touches the control. In addition, an <b>event</b> object is passed to the callback function to obtain information about the touch <b>type</b>, the touch <b>position(s)</b>, the <b>amount</b> of touches and the <b>control</b> that was touched.</div>
 		<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 		<div data-role="popup" id="pop_dsc_02c" class="ui-content">Define distances that elements within the control are to maintain from the control borders.</div>
@@ -288,7 +292,7 @@
 		<div data-role="popup" id="pop_dsc_034" class="ui-content">Change the visibility of the control to one of the available modes:<br><b>Show:</b> visible<br><b>Hide:</b> invisible but still consuming space<br><b>Gone:</b> invisible and not consuming space</div>
 		<div data-role="popup" id="pop_dsc_035" class="ui-content">Set the visibility of the control to “Show”.</div>
 		<div data-role="popup" id="pop_dsc_036" class="ui-content">?</div>
-		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">x</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">y</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">sw</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">sh</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: angle in degrees (0..360) }' )">rot</a></div>
+		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
 		<div data-role="popup" id="pop_str_012" class="ui-content"><b>string:</b> <font class='docstring'>“Linear.None”</font> or <font class='docstring'>“Quadratic.In/Out”</font> or <font class='docstring'>“Cubic.In/Out”</font> or <font class='docstring'>“Quartic.In/Out”</font> or <font class='docstring'>“Quintic.In/Out”</font> or <font class='docstring'>“Sinusoidal.In/Out”</font> or <font class='docstring'>“Exponential.In/Out”</font> or <font class='docstring'>“Circular.In/Out”</font> or <font class='docstring'>“Elastic.In/Out”</font> or <font class='docstring'>“Back.In/Out”</font> or <font class='docstring'>“Bounce.In/Out”</font></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>

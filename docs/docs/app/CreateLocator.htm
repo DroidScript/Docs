@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateLocator</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>The Locator component can be used to find your whereabouts on the planet using either your device's GPS or information from your network.</p>
@@ -86,7 +90,7 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( object: { provider:str,&#160;&#160;latitude:num,&#160;&#160;longitude:num,&#160;&#160;speed:num,&#160;&#160;bearing:num,&#160;&#160;altitude:num,&#160;&#160;accuracy:num_met }' )">data</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: { provider:str,&#160;&#160;latitude:num,&#160;&#160;longitude:num,&#160;&#160;speed:num,&#160;&#160;bearing:num,&#160;&#160;altitude:num,&#160;&#160;accuracy:num_met }')">data</a>)</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content">Define a function called when some of the values changed.</div>
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content">Set Locator update frequency in seconds</div>

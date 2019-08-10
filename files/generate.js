@@ -311,7 +311,7 @@ function getDesc(name) {
 		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
-function l(s){console.log("-----"+s+"-----");return s;}
+
 // read and return html converted example snippets file
 function getSamples( name ) {
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );

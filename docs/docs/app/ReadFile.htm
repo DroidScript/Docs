@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ReadFile</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Reads a file from the local filesystem and returns its contents.</p>
@@ -60,7 +64,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“windows-1252”</font> or <font class='docstring'>“ISO-8859-<a href="" onclick="prompt( '#', 'App.ShowPopup( Latin-1' )">1</a>”</font> or <font class='docstring'>“base64”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“windows-1252”</font> or <font class='docstring'>“ISO-8859-<a href="" onclick="app.ShowPopup('Latin-1')">1</a>”</font> or <font class='docstring'>“base64”</font></div>
 
 	</div>
 </body>

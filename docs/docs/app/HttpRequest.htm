@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>HttpRequest</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>HttpRequest sends a request to a server.</p>
@@ -69,7 +73,7 @@
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“GET”</font> or <font class='docstring'>“POST”</font></div>
 		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( boolean' )">error</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">reply</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('boolean')">error</a>, <a href="" onclick="app.ShowPopup('string')">reply</a>)</div>
 
 	</div>
 </body>

@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetVolume</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Set the volume of a given volume type as a number between 0 and 1.</p>
@@ -68,7 +72,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Alarm”</font> or <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( Dual Tone Multi-Frequency' )">DTMF</a>”</font> or <font class='docstring'>“Music”</font> or <font class='docstring'>“Notification”</font> or <font class='docstring'>“Ring”</font> or <font class='docstring'>“System”</font> or <font class='docstring'>“Voicecall”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Alarm”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('Dual Tone Multi-Frequency')">DTMF</a>”</font> or <font class='docstring'>“Music”</font> or <font class='docstring'>“Notification”</font> or <font class='docstring'>“Ring”</font> or <font class='docstring'>“System”</font> or <font class='docstring'>“Voicecall”</font></div>
 		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ShowUI”</font></div>
 

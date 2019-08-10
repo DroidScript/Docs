@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateMediaStore</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Returns a MediaStore object.</p>
@@ -66,11 +70,11 @@
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“artist”</font> or <font class='docstring'>“album”</font> or <font class='docstring'>“?”</font></div>
 		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“external”</font> or <font class='docstring'>“?”</font></div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( object: [{id:num_int, album:str, artist:str, numSongs:num_int}]' )">result</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: [{id:num_int, album:str, artist:str, numSongs:num_int}]')">result</a>)</div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( object: [{id:num_int, artist:str, numAlbums:num_int, numTracks:num_int}]' )">result</a>)</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: [{id:num_int, artist:str, numAlbums:num_int, numTracks:num_int}]')">result</a>)</div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( object: [{title:str, album:str, albumID:num_int, artistId:num_int, artist:str, artistId:num_int, duration:num_mls, size:num_int-bytes, uri:str}]' )">result</a>)</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: [{title:str, album:str, albumID:num_int, artistId:num_int, artist:str, artistId:num_int, duration:num_mls, size:num_int-bytes, uri:str}]')">result</a>)</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content">?</div>
 
 	</div>

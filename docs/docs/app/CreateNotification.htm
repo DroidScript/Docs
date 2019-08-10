@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateNotification</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>The Notification object can be used to put messages in the notification drawer.</p>
@@ -39,13 +43,13 @@
 			Use the SetMessage method to tell the object what to display</p>
 
 			<div class="samp">
-			notify.SetMessage( ticker, title, text );
+			notify<span class="token punctuation">.</span><span class="token function">SetMessage</span><span class="token punctuation">(</span> ticker<span class="token punctuation">,</span> title<span class="token punctuation">,</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>The Notify method tells it to send the notification:</p>
 
 			<div class="samp">
-			notify.Notify( id );
+			notify<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>When the user touches your notification, your app will come to the front, even if it was not running.<br>

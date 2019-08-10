@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOnBroadcast</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Define a callback function for incoming Broadcast messages.</p>
@@ -39,7 +43,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">type</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">msg</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('string')">msg</a>)</div>
 
 	</div>
 </body>

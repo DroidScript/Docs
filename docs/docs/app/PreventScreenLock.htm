@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>PreventScreenLock</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>The <i>PreventScreenLock</i> method prevents the device screen from dimming and locking while your app is in the foreground.</p>
@@ -54,7 +58,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>boolean</b><br><b>string:</b> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( Device can sleep' )">Full</a>”</font>, <font class='docstring'>“ Screen and Keyboard on”</font> or <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( CPU always on' )">Partial</a>”</font>, <font class='docstring'>“ Screen and Keyboard off”</font></div>
+		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>boolean</b><br><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('Device can sleep')">Full</a>”</font>, <font class='docstring'>“ Screen and Keyboard on”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('CPU always on')">Partial</a>”</font>, <font class='docstring'>“ Screen and Keyboard off”</font></div>
 
 	</div>
 </body>

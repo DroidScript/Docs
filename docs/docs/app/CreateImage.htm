@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateImage</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Image controls can be used to display images such like png, jpg or gif.<br>
@@ -157,15 +161,15 @@
 			This way you can also specify a fixed pixel size to the image you can use the <i><font class='docstring'>“fix”</font></i> <b>option</b> and pass values for the <b>pxw</b> and <b>pxh</b> parameters.</p>
 
 			<div class="samp">
-			img = app.CreateImage( null, 0.8, 0.5, <font class='docstring'>“fix”</font>, 20, 20 );<br>
-			img.DrawLine( 0, 0, 1, 1 );
+			img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"fix"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+			img<span class="token punctuation">.</span><span class="token function">DrawLine</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>If you dislike the anti-alias effect you can apply the <i><font class='docstring'>“alias”</font></i> <b>option</b> on a higher resolution image and draw a low-resolution image on it:</p>
 
 			<div class="samp">
-			img2 = app.CreateImage( null, .8, .5, <font class='docstring'>“alias”</font> );<br>
-			img2.DrawImage( img, 0, 0, 1, 1, 0 );
+			img2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"alias"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+			img2<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> img<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://open.gl/transformations');">transformation matrix</a>. Check out the <b>Draw*</b> methods in the method list below to get more details about all drawing functions.</p>
@@ -358,7 +362,7 @@
 
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“fix”</font>, <font class='docstring'>“alias”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( use pixel values for size' )">px</a>”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( causes image to depress like a button when touched' )">Button</a>”</font>, <font class='docstring'>“ScaleCenter”</font>, <font class='docstring'>“async”</font>, <font class='docstring'>“FontAwesome”</font>, <font class='docstring'>“Resize”</font>, <font class='docstring'>“TouchThrough”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( allows loading of app icons' )">Icon</a>”</font>, <font class='docstring'>“wallpaper”</font>, <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( prevent gifs from playing automatically' )">NoPlay</a>”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“fix”</font>, <font class='docstring'>“alias”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</font>, <font class='docstring'>“ScaleCenter”</font>, <font class='docstring'>“async”</font>, <font class='docstring'>“FontAwesome”</font>, <font class='docstring'>“Resize”</font>, <font class='docstring'>“TouchThrough”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</font>, <font class='docstring'>“wallpaper”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</font></div>
 		<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
@@ -381,7 +385,7 @@
 		<div data-role="popup" id="pop_dsc_009" class="ui-content">DrawLine</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content">draw single pixel</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content">DrawRectangle</div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [<a href="" onclick="prompt( '#', 'App.ShowPopup( number]' )">data</a></div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [<a href="" onclick="app.ShowPopup('number')">data</a>]</div>
 		<div data-role="popup" id="pop_dsc_00c" class="ui-content">draws a graph in relation to the range</div>
 		<div data-role="popup" id="pop_dsc_00d" class="ui-content">DrawText</div>
 		<div data-role="popup" id="pop_dsc_00e" class="ui-content">?</div>
@@ -451,15 +455,15 @@
 		<div data-role="popup" id="pop_dsc_038" class="ui-content">change name</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_dsc_039" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( app object' )">self</a>)</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('app object')">self</a>)</div>
 		<div data-role="popup" id="pop_dsc_03a" class="ui-content">callen when object long pressed</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('undefined')">event</a>)</div>
 		<div data-role="popup" id="pop_dsc_03b" class="ui-content">Define a callback function that is called when the user touches the control. In addition, an <b>event</b> object is passed to the callback function to obtain information about the touch <b>type</b>, the touch <b>position(s)</b>, the <b>amount</b> of touches and the <b>control</b> that was touched.</div>
-		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('undefined')">event</a>)</div>
 		<div data-role="popup" id="pop_dsc_03c" class="ui-content">called when finger comes down</div>
-		<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('undefined')">event</a>)</div>
 		<div data-role="popup" id="pop_dsc_03d" class="ui-content">called when finger was moved over screen</div>
-		<div data-role="popup" id="pop_fnc_006" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( undefined' )">event</a>)</div>
+		<div data-role="popup" id="pop_fnc_006" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('undefined')">event</a>)</div>
 		<div data-role="popup" id="pop_dsc_03e" class="ui-content">called when finger leaves screen</div>
 		<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 		<div data-role="popup" id="pop_dsc_03f" class="ui-content">Define distances that elements within the control are to maintain from the control borders.</div>
@@ -480,7 +484,7 @@
 		<div data-role="popup" id="pop_dsc_04a" class="ui-content">Set the visibility of the control to “Show”.</div>
 		<div data-role="popup" id="pop_dsc_04b" class="ui-content">?</div>
 		<div data-role="popup" id="pop_dsc_04c" class="ui-content">?</div>
-		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">x</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">y</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">sw</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: fraction (0..1),' )">sh</a> <a href="" onclick="prompt( '#', 'App.ShowPopup( number: angle in degrees (0..360) }' )">rot</a></div>
+		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
 		<div data-role="popup" id="pop_str_013" class="ui-content"><b>string:</b> <font class='docstring'>“Linear.None”</font> or <font class='docstring'>“Quadratic.In/Out”</font> or <font class='docstring'>“Cubic.In/Out”</font> or <font class='docstring'>“Quartic.In/Out”</font> or <font class='docstring'>“Quintic.In/Out”</font> or <font class='docstring'>“Sinusoidal.In/Out”</font> or <font class='docstring'>“Exponential.In/Out”</font> or <font class='docstring'>“Circular.In/Out”</font> or <font class='docstring'>“Elastic.In/Out”</font> or <font class='docstring'>“Back.In/Out”</font> or <font class='docstring'>“Bounce.In/Out”</font></div>
 		<div data-role="popup" id="pop_fnc_007" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_dsc_04d" class="ui-content">Performs an animation on the control.<br>The <b>target</b> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <b>type</b> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <b>repeat</b>s you can control how many times you want to play the animation.<br><br>If you have <b>jojo</b> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <b>callback</b> function will be called after the animation has finished. Well, it's about time!</div>

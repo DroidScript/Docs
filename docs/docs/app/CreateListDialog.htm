@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateListDialog</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.</p>
@@ -117,7 +121,7 @@
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content">Changes the background to an image which can be repeated using the <b>repeat</b> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">title</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( boolean' )">checked</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">title</a>, <a href="" onclick="app.ShowPopup('boolean')">checked</a>)</div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content">Define a callback function that is called when the user touches a list item.</div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“dp”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
