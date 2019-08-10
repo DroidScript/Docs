@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SysExec</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Executes a shell command on the android shell.</p>
@@ -34,23 +40,23 @@
 
 			<p><b>NOTE:</b> You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.<br>
 			<br>
-			See Also: <a href="ExtExec.htm">ExtExec</a></p>
+			See Also: <a href="ExtExec.htm" data-ajax="false">ExtExec</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - ListDir SH</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var delim = &quot;\0&quot;;<br>
-				&#160;&#160;&#160;&#160;var list = app.SysExec( 'ls -ap /sdcard/;exit', &quot;sh,log&quot; );<br>
-				&#160;&#160;&#160;&#160;list = list.split( &quot;\n&quot; ).join( delim );</b><br>
-				<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;lst = app.CreateList( list, 1, 1, &quot;&quot;, delim );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( lst );<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> delim <span class="token operator">=</span> <span class="token string">"\0"</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">SysExec</span><span class="token punctuation">(</span> <span class="token string">'ls -ap /sdcard/;exit'</span><span class="token punctuation">,</span> <span class="token string">"sh,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;list <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> list<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -65,7 +71,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “<a href="" onclick="prompt( '#', 'App.ShowPopup( logs output to console' )">log</a>”, “sh” or “su”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('logs output to console')">log</a>”</font>, <font class='docstring'>“sh”</font> or <font class='docstring'>“su”</font></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
 

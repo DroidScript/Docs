@@ -3,9 +3,10 @@
 var agent = navigator.userAgent;
 console.log( "agent = " + agent );
 
-var isChromeOS = ( agent.indexOf("Chrome OS")>-1 || agent.indexOf("Chromebook")>-1 || agent.indexOf("PixelBook")>-1 ); 
-var useWebIDE = ( agent.indexOf("Remix")>-1 || isChromeOS );
-var isAndroid = ( agent.indexOf("Android")>-1 );
+var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook")>-1 || agent.indexOf("PixelBook")>-1 ); 
+var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
+var isAndroid = ( agent.indexOf("Android") > -1 );
+var isDS = ( agent.indexOf("; wv)")>-1 );
 var serverAddress = "";
 var curTheme;
 
@@ -38,6 +39,8 @@ $(document).on("mobileinit", function()
 
 	if( navigator.userAgent.indexOf("Android")==-1 )
 		$.mobile.ignoreContentEnabled = true;
+	
+	if(!isDS) app.ShowPopup = ShowPopup;
 		
 	//Ask parent for DS adddress.
 	parent.postMessage( "getaddress:", "*" );
@@ -69,7 +72,7 @@ $(document).live( 'pageshow',function(event, ui)
 			hidecopy();
 		
 		//If on Android, save current page.
-		if( isAndroid && !useWebIDE ) {
+		if( isDS && !useWebIDE ) {
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
 		}
 			
@@ -167,6 +170,9 @@ function setTheme( theme )
 	
 	var lnkDocs = document.getElementById('themeDocs');
 	if(lnkDocs) lnkDocs.href = lnkDocs.href.replace(/(.*\/).*/, "$1docs-" + theme + ".css");
+	
+	var lnkPrism = document.getElementById('themePrism');
+	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
 // get current theme from cookie
@@ -176,3 +182,9 @@ function getTheme() {
 	return theme;
 }
 
+function ShowPopup(msg){
+    var pop = $("#appPopup");
+    if(pop.is(":visible")) pop.stop().fadeOut(200, function() { pop.text(msg); });
+    else pop.text(msg);
+    pop.fadeIn().delay(1500).fadeOut();
+}

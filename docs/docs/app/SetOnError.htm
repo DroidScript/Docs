@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOnError</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Define a callback function to catch thrown errors messages.</p>
@@ -32,25 +38,25 @@
 			app.SetOnError( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
-			<p>See also: <a href="Error.htm">Error</a></p>
+			<p>See also: <a href="Error.htm" data-ajax="false">Error</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Catch JS Errors</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.SetOnError( OnError );<br>
-				&#160;&#160;&#160;&#160;throw &quot;My thrown error&quot;;<br>
-				}<br>
-				<br>
-				<b id = "snip0"  style = "font-size:100%">function OnError( msg, line, file )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;var text =<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Message: &quot;' + msg + '&quot;\n' +<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Line: ' + line + '\n' +<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'File: &quot;' + app.Uri2Path(file) + '&quot;';<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.Alert( text, &quot;Received error message:&quot; );<br>
-				}</b>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">throw</span> <span class="token string">"My thrown error"</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<b id = "snip0"  style = "font-size:100%"><span class="token keyword">function</span> <span class="token function">OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg<span class="token punctuation">,</span> line<span class="token punctuation">,</span> file</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> text <span class="token operator">=</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">'Line: '</span> <span class="token operator">+</span> line <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">'File: "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">Uri2Path</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> text<span class="token punctuation">,</span> <span class="token string">"Received error message:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span></b>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -64,7 +70,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">error</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">error</a>)</div>
 
 	</div>
 </body>

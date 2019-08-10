@@ -16,7 +16,7 @@ function SayHello()
 }
 </sample>
 
-<sample Fixed size>
+<sample Fixed Size>
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -34,7 +34,7 @@ function SayHello()
 }
 </sample>
 
-<sample Fill layout width>
+<sample Fill Layout Width>
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -53,7 +53,7 @@ function SayHello()
 }
 </sample>
 
-<sample Change style>
+<sample Change Style>
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
@@ -71,4 +71,3 @@ function OnStart()
 	app.AddLayout( lay );
 }
 </sample>
-

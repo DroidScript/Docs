@@ -9,29 +9,19 @@ function OnStart()
 	while( !app.IsBluetoothOn() ) app.Wait(.4);
 	app.HideProgress();
 
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    <b>bt = app.CreateBluetoothSerial();
+    bt.SetOnConnect( bt_OnConnect );
+    bt.SetSplitMode( "End", "\n" );
+    bt.Listen( true );</b>
 
-    lst = app.CreateList( "", 0.9, 0.5 );
-    lst.SetOnTouch( lst_OnTouch );
-    lay.AddChild( lst );
-
-    var devices = app.GetPairedBtDevices();
-	for( var d in devices )
-	    lst.AddItem( devices[d].name, devices[d].address );
-
-	app.AddLayout( lay );
-
-	bt = app.CreateBluetoothSerial();
-	bt.SetOnConnect( bt_OnConnect );
-	bt.SetSplitMode( "End", "\n" );
-
-	bt.Listen( true );
+    lst = app.CreateBluetoothList();
+    lst.SetOnTouch(lst_OnTouch);
 }
 
-function lst_OnTouch( title, body, type, index )
+function lst_OnTouch( name, address )
 {
     app.ShowProgress( "Connecting..." );
-    <b>bt.Connect( title );</b>
+    bt.Connect( address );
 }
 
 function bt_OnConnect( ok, data )
@@ -43,6 +33,8 @@ function bt_OnConnect( ok, data )
             app.ShowPopup( "Connected!" );
         else
             alert( "Connected to " + ok + " (" + data + ")" );
+
+        bt.Write("hello from " + app.GetBluetoothName());
     } else
         app.ShowPopup( "Failed to connect!" );
 }

@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>StopDebugServer</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Stops a running debug server.</p>
@@ -32,7 +38,7 @@
 			app.StopDebugServer()
 			</div>
 
-			<p>See Also: <a href="StartDebugServer.htm">StartDebugServer</a></p>
+			<p>See Also: <a href="StartDebugServer.htm" data-ajax="false">StartDebugServer</a></p>
 			
 			<br>
 		</div>

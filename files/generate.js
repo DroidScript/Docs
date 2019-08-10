@@ -1,5 +1,5 @@
 
-var curDoc;
+var curDoc = null, curSubf = null;
 
 	//generates all doc files
 function generateDocs() {
@@ -158,7 +158,7 @@ function generateDoc( name ) {
 	    //save doc file
 	    app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
     } catch(e) {
-        console.error( /*\x1b[31m*/`while generating "${curDoc}":` );
+        console.error( /*\x1b[31m*/`while generating "${curDoc}": ${curSubf||""}` );
         throw e;
     }
 }
@@ -229,6 +229,7 @@ function getDocData( f, useAppPop ) {
 
 	for( k = 0; k < mkeys.length; k++ ) {
 		var met = f.subf[mkeys[k]], retval = "", type;
+		curSubf = f.name;
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
@@ -271,6 +272,7 @@ function getDocData( f, useAppPop ) {
 			methods += subfBase.replace( "%s", pop.txt + retval );
 		} */
 	}
+	curSubf = null;
 
 	if( Globals.useEventPop ) tryAddType( eventPop );
 
@@ -294,14 +296,18 @@ function getDesc(name) {
 			`.</p>\n${funcBase}\t\t\t<p>`)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash)>([^]*?)<\/\2>(\s|<br>)*/g,
-			`</p>\n${funcBase.replace("%s", "$3")}\t\t\t<p>`)
+			/(\s|<br>)*<(js|bash)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
+			    `</p>\n${funcBase.replace("%s", Prism.languages[lang] ?
+			    Prism.highlight(code.replace(/<br>/g, "\n"), Prism.languages[lang], lang)
+			    .replace(/\n/g, "<br>") : code)}\t\t\t<p>`)
+	    // format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/(\s|<br>)*<sample (.*?)>/g, (m, _, n) => 
 			(s = samples[n] || Throw(Error(`sample ${n} not found for ${name}`)),
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
 		)
+		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
 		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
@@ -311,35 +317,32 @@ function getSamples( name ) {
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );
 
 	// replace special html characters and convert to list
-	samp = samp
-		.replace( /\&/g, "&amp;" )
-		.replace( /\</g, "&lt;" )
-		.replace( /\>/g, "&gt;" )
-		.replace( /\"/g, "&quot;" )
-		.split( "&lt;/sample&gt;" )
-		.slice( 0 , -1 );
+	samp = samp.split( "</sample>" ).slice( 0 , -1 );
 	
 	// convert samples to required html format
 	for( var i in samp ) {
 		s = samp[i].trim();
-		var p = s.indexOf( "&gt;" ),
-			title = s.slice( 11, p );
-		samples[title] = toHtmlSamp( s.slice( p + 4 ), title, i );
+		var p = s.indexOf( ">" ),
+			title = s.slice( 8, p );
+		samples[title] = toHtmlSamp( s.slice( p + 1 ), title, i );
 	}
 	return samples;
 }
 
 // convert a sample to html code
 function toHtmlSamp( c, t, n ) {
-	c = c.trim()
+    c = c.replace( /<\/?b>/g, "§§")
+	c = Prism.highlight(c.trim(), Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
-		.replace( /\n/g, "<br>\n\t\t\t\t" );
-	
+    	.replace( /\n/g, "<br>\n\t\t\t\t\t" )
+    	.replace( /§§([^]+?)§§/g, "<b id = \"snip%i\"  style = \"font-size:100%\">$1</b>" )
+	    //.replace( /</g, "&lt;" )
+	    //.replace( />/g, "&gt;" )
+	    //.replace( /&/g, "&amp;" )
+
 	return sampBase
-		.replace( "%b", c
-		.replace( "&lt;b&gt;", "<b id = \"snip%i\"  style = \"font-size:100%\">" ) )
-		.replace( "&lt;/b&gt;", "</b>" )
+		.replace( "%b", c)
 		.replace( /%i/g, n )
 		.replace( /%t/g, t )
 }
@@ -367,10 +370,8 @@ function typeDesc( types, isDSO ) {
 	var s = types.map(
 		(type, i) => typenames[type[0]] ?
 			"<b>" + typenames[type[0]] + (hrefs[type[1]] ? 
-				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) : 
-				(last = "", type[2] ? ":</b>" : "</b>")
-			) + (type[2] ? last + " " : last) :
-			undefined
+				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) :""
+			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 	
 	return types.map(function(type, i) {
@@ -394,7 +395,8 @@ function typeDesc( types, isDSO ) {
 			}
 			return s[i];
 		}
-	}).join("\n");
+	}).join("\n")
+	.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>");
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
@@ -440,10 +442,10 @@ function toArgPop( name, types ) {
 				case "str":
 					s[i] += rplop( type[2], type[0] == "str" );
 					if(type.length == 3 && type[2].indexOf(":") > -1)
-						s[i] = s[i].replace(/“(\w+):([^”]*)/g, "“" + newAppPopup("$2", "$1"))
-					return s[i]; break;
+						s[i] = s[i].replace(/\b(\w+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
+					return s[i];
 				case "lst":
-				case "obj": return s[i] + replW( replaceTypes( type[2], true )); break;
+				case "obj": return s[i] + replW( replaceTypes( type[2], true ));
 				case "dso":
 				    if(!functions[type[2]])
 				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
@@ -462,14 +464,14 @@ function toArgPop( name, types ) {
 			(!types[2] ? types[1].replace("?", "ukn") :
 				types[0] + "_" + incpop( types[0], 1 )
 			);
-		tryAddType(newDefPopup( pop, str[0]));
+		tryAddType(newDefPopup( pop, str[0].replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( pop, name );
 		
 	} else {
 		// for values with multiple types
 		tryAddType( newDefPopup(
 			"mul_" + incpop( "mul", 1 ),
-			str.join("<br>")));
+			str.join("<br>").replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( "mul_" + incpop( "mul" ), name );
 	}
 }
@@ -518,15 +520,14 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?\b)(\s*[}\]]?)?/g,
+	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?)\b(\s*[,}\]]?)?/g,
 		function(m, name, type, _, close) {
 		    if(useAppPop) {
 				return newAppPopup(
 					typenames[type.slice(0, 3)] +
-						(hrefs[type] ? ": " + hrefs[type] : "") +
-						(close || ""),
+						(hrefs[type] ? ": " + hrefs[type] : ""),
 					name
-				)
+				) + (close || "")
 			} else {
 				return toArgPop(name, type) + (close || "")
 			}
@@ -541,7 +542,7 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url) {
 			// exists in docs folder? direct link : open in external app
 			return white + (app.FileExists(path + "docs/app/" + url) ? 
-				`<a href="${url}">` :
+				`<a href="${url}" data-ajax="false">` :
 				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
 				+ `${name}</a>`;
 			}
@@ -553,8 +554,8 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")   // `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
-		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm">$2</a>') // @DocReference
-		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
+		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm" data-ajax="false">$2</a>') // @DocReference
+		.replace(/\\([_*~@])/g, "$1");                             // consume \ escaped markdown
 }
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -567,8 +568,10 @@ function reprs( s ) { return s.replace( /\n/g, "\\n" ).replace( /\t/g, "\\t" ); 
 	//replace "&" and "|" operators with "and" and "or"
 function rplop( s, n ) {
 	return replW( (n? '“' + s + '”' : s)
+		.replace( /\\(.)/g, (m,c)=>`§${c.charCodeAt(0)}§` )
 		.replace( /\|/g, n? '” or “' : " or " )
-		.replace( /\&|,/g, n? '”, “' : ", " )
+		.replace( /,/g, n? '”, “' : ", " )
+		.replace( /§(\d+)§/g, (m,c)=>`${String.fromCharCode(c)}` )
 	);
 }
 function Throw(err) {
@@ -587,7 +590,7 @@ function newAppPopup(desc, type) {
 	return appPopup.replace("%s", desc).replace("%s", type);
 }
 function newLink(target, text) {
-	return `<a href="${target}">${text}</a>`;
+	return `<a href="${target}" data-ajax="false">${text}</a>`;
 }
 function dbg(v){ console.log(v); return v; }
 
@@ -615,7 +618,7 @@ var 	//navigator list item
 		//jquery-popup link tag
 	txtPopup = '<a href="#pop_%s" data-transition="pop" data-rel="popup">%s</a>',
 		//app-popup tag
-	appPopup = '<a href="" onclick="prompt( \'#\', \'App.ShowPopup( %s\' )">%s</a>',
+	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		//popup objct
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
 		//subfunctions list
@@ -645,14 +648,14 @@ var 	//navigator list item
 			&#160;&#160;&#160;&#160;X: <b>number:</b> fraction of screen width,<br>
 			&#160;&#160;&#160;&#160;Y: <b>number:</b> fraction of screen height,<br>
 			&#160;&#160;&#160;&#160;x: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x3</a>
 			],<br>
 			&#160;&#160;&#160;&#160;y: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y3</a>
 			]<br>
 		}
 		</div>`.replace(/[\n\t]+/g, "");
@@ -668,6 +671,7 @@ var 	//navigator list item
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="css/docs-default.css"/>
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
@@ -705,7 +709,9 @@ var 	//navigator list item
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -720,6 +726,10 @@ var 	//navigator list item
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
+		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
 
 		<div data-role="content">
@@ -775,27 +785,25 @@ var 	//globals for one doc
 		"num_prc":"percent",
 		"num_sec":"seconds",
 		"num_mls":"milliseconds",
-		"num_orh":"fraction of object height",
-		"num_orw":"fraction of object width",
-		"num_srh":"fraction of screen height",
-		"num_srw":"fraction of screen width",
-		"num_prh":"fraction of parent height",
-		"num_prw":"fraction of parent width",
-		"num_deg":"angle in degrees ( 0 - 360 )",
-		"num_rad":"angle in radient ( 0 - 2*π )",
+		"num_frc":"fraction (0..1)",
+		"num_fps":"frames per second",
+		"num_deg":"angle in degrees (0..360)",
+		"num_rad":"angle in radient (0..2*π)",
+		"num_mtu":"maximum transmission unit",
 		"num_smtp":"<pre>	  <u> server			   SSL	 TLS</u>\ngmail: smtp.gmail.com	   465	 578\nyahoo: smtp.mail.yahoo.com  465	 578\ngmx  : mail.gmx.net		 465	 587</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
 		"num_imap":"<pre>	  <u> server			   SSL</u>\ngmail: imap.gmail.com	   993\nyahoo: imap.mail.yahoo.com  993\ngmx  : imap.gmx.net		 993</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
 		"str":"",
 		"str_lst":"comma “,” separated",
 		"str_com":"comma “,” separated",
 		"str_pip":"pipe “|” separated",
-		"str_col":'<br>&nbsp;&nbsp;hexadecimal: "#rrggbb", "#aarrggbb"<br>&nbsp;&nbsp;colourName: "red", "green", ...',
+		"str_smc":"semicolon “;” separated",
+		"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',
 		"str_fmt":"format",
 		"str_htm":"html",
 		"str_mim":"mimetype",
 		"str_mod":"mode",
-		"str_ort":'"Default", "Portrait", "Landscape"',
-		"str_pth":'path to file or folder ( "/absolute/..." or "relative/..." )',
+		"str_ort":'“Default”, “Portrait”, “Landscape”',
+		"str_pth":'path to file or folder ( “/absolute/...” or “relative/...” )',
 		"str_sql":"sql code",
 		"str_sty":"style",
 		"str_url":"url path",
@@ -810,6 +818,7 @@ var 	//globals for one doc
 		"str_num":"number",
 		"str_int":"integer",
 		"str_flt":"float",
+		"str_b64":"base64 encoded",
 		"str_pxl":"integer in pixels"
 	};
 
@@ -818,7 +827,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/m,
+	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later
@@ -833,6 +842,7 @@ function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
 function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
 function sortAsc(a, b) { return a.toString().toLowerCase() > b.toString().toLowerCase()? 1 : -1 }
 function hidden(name) { return name.match(regHide); }
+function l(s){console.log("-----"+s+"-----");return s;}
 function nothidden(name) { return !name.match(regHide); }
 function crop(n, min, max) { return n < min? min : max != undefined && n > max? max : n; }
 function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
@@ -920,6 +930,8 @@ function OnStart() {
 
 var fs = require("fs");
 var rimraf = require("rimraf");
+var Prism = require('prismjs');
+
 
 app = {
 	ReadFile: (p) => fs.readFileSync(p, "utf8"),

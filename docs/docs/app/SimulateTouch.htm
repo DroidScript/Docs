@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,40 +26,44 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SimulateTouch</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Simulates a touch event on a rouchable control.</p>
 
 			<div class="samp">
-			app.SimulateTouch( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_orw" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_orh" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">dir</a> )
+			app.SimulateTouch( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">dir</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Pressing Buttons</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Press Me&quot;, 0.3, 0.1 );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( btn_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.Animate( SimulateTouch, 1/2 );<br>
-				}<br>
-				<br>
-				function SimulateTouch()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.SimulateTouch( btn, 0.5, 0.5, &quot;down&quot; );<br>
-				}<br>
-				<br>
-				var i = 1;<br>
-				function btn_OnTouch()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello World &quot; + i++ );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Press Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> SimulateTouch<span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">SimulateTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SimulateTouch</span><span class="token punctuation">(</span> btn<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"down"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>
+					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Hello World "</span> <span class="token operator">+</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -72,9 +78,8 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
-		<div data-role="popup" id="pop_num_orw" class="ui-content"><b>number:</b> <i>fraction of object width</i></div>
-		<div data-role="popup" id="pop_num_orh" class="ui-content"><b>number:</b> <i>fraction of object height</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “Down” or “Move” or “Up”</div>
+		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Down”</font> or <font class='docstring'>“Move”</font> or <font class='docstring'>“Up”</font></div>
 
 	</div>
 </body>

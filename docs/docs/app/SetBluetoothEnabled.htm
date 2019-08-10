@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetBluetoothEnabled</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Enables Bluetooth on the device.</p>
@@ -32,19 +38,19 @@
 			app.SetBluetoothEnabled( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 			</div>
 
-			<p>See Also: <a href="IsBluetoothEnabled.htm">IsBluetoothEnabled</a>, <a href="IsBluetoothOn.htm">IsBluetoothOn</a>, <a href="CreateBluetoothSerial.htm">CreateBluetoothSerial</a></p>
+			<p>See Also: <a href="IsBluetoothEnabled.htm" data-ajax="false">IsBluetoothEnabled</a>, <a href="IsBluetoothOn.htm" data-ajax="false">IsBluetoothOn</a>, <a href="CreateBluetoothSerial.htm" data-ajax="false">CreateBluetoothSerial</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Enabling Bluetooth</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Enabling Bluetooth&quot; );<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">if( !app.IsBluetoothEnabled() )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.SetBluetoothEnabled( true );</b><br>
-				<br>
-				&#160;&#160;&#160;&#160;while( !app.IsBluetoothOn() ) app.Wait( 0.3 );<br>
-				&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -57,70 +63,70 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - En/Disable Bluetooth</h3>
 				<div id="examp1" style="font-size:70%">
-					var itv = 0;<br>
-				<br>
-				function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;btnSave = app.CreateButton( &quot;Enable&quot;, 0.5, 0.1 );<br>
-				&#160;&#160;&#160;&#160;btnSave.SetOnTouch( btn_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btnSave );<br>
-				<br>
-				&#160;&#160;&#160;&#160;btnLoad = app.CreateButton( &quot;Disable&quot;, 0.5, 0.1 );<br>
-				&#160;&#160;&#160;&#160;btnLoad.SetOnTouch( btn_OnTouch );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btnLoad );<br>
-				<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				}<br>
-				<br>
-				function btn_OnTouch()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;if( itv ) return;<br>
-				&#160;&#160;&#160;&#160;var op = this.GetText();<br>
-				<br>
-				&#160;&#160;&#160;&#160;if( op == &quot;Enable&quot; )<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Enabling Bluetooth&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if( !app.IsBluetoothEnabled() )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.SetBluetoothEnabled( true );<br>
-				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv = setInterval( checkBtOn, 200 );<br>
-				&#160;&#160;&#160;&#160;}<br>
-				&#160;&#160;&#160;&#160;else<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowProgress( &quot;Disabling Bluetooth&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if( app.IsBluetoothEnabled() )<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.SetBluetoothEnabled( false );<br>
-				<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv = setInterval( checkBtOff, 200 );<br>
-				&#160;&#160;&#160;&#160;}<br>
-				}<br>
-				<br>
-				function CheckBtOn()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;if( app.IsBluetoothOn() )<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Bluetooth is on&quot; );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;clearInterval( itv );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv = 0;<br>
-				&#160;&#160;&#160;&#160;}<br>
-				}<br>
-				<br>
-				<br>
-				function CheckBtOff()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;if( !app.IsBluetoothOn() )<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.HideProgress();<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Bluetooth is off&quot; );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;clearInterval( itv );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv = 0;<br>
-				&#160;&#160;&#160;&#160;}<br>
-				}
+					<span class="token keyword">var</span> itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;btnSave <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Enable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btnSave<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnSave <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;btnLoad <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Disable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btnLoad<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnLoad <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> op <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> op <span class="token operator">==</span> <span class="token string">"Enable"</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOn<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Disabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOff<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">CheckBtOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is on"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">CheckBtOff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is off"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

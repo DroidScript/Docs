@@ -4,6 +4,8 @@
 
 Preview available at https://alex-symbroson.github.io/Docs
 
+Mobile-sized iframe for desktop browsers: https://alex-symbroson.github.io/Docs/docs
+
 ### Structure
 
 - **app/DocsModifier:** the DroidScript application for editing the docs easily

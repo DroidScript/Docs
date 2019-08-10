@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetJoystickOptions</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Set options for the connected joystick.</p>
@@ -32,16 +38,16 @@
 			app.SetJoystickOptions( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
-			<p>The <i>“forwardkeys”</i> <b>option</b> allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).<br>
+			<p>The <i><font class='docstring'>“forwardkeys”</font></i> <b>option</b> allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).<br>
 			<br>
-			See Also: <a href="GetJoystickName.htm">GetJoystickName</a>, <a href="GetJoystickState.htm">GetJoystickState</a></p>
+			See Also: <a href="GetJoystickName.htm" data-ajax="false">GetJoystickName</a>, <a href="GetJoystickState.htm" data-ajax="false">GetJoystickState</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - ForwardKeys</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.SetJoystickOptions( &quot;ForwardKeys&quot; );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SetJoystickOptions</span><span class="token punctuation">(</span> <span class="token string">"ForwardKeys"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -55,7 +61,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “<a href="" onclick="prompt( '#', 'App.ShowPopup( allows the joystick key presses to pass onto the child controls of the main activity' )">ForwardKeys</a>”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('allows the joystick key presses to pass onto the child controls of the main activity')">ForwardKeys</a>”</font></div>
 
 	</div>
 </body>

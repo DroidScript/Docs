@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetNotifyId</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>If the app was started by a notification, this function will return the id of that notification.</p>
@@ -32,26 +38,26 @@
 			app.GetNotifyId() → <b>string</b>
 			</div>
 
-			<p>See Also: <a href="CreateNotification.htm">CreateNotification</a></p>
+			<p>See Also: <a href="CreateNotification.htm" data-ajax="false">CreateNotification</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Example</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var id = app.GetNotifyId();</b><br>
-				<br>
-				&#160;&#160;&#160;&#160;if( id ) app.Alert( id, &quot;Notification ID&quot; );<br>
-				&#160;&#160;&#160;&#160;else<br>
-				&#160;&#160;&#160;&#160;{<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not = app.CreateNotification();<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not.SetMessage(<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;You have an urgent notification&quot;,<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;Press me!&quot;, &quot;Do as the title says.&quot;<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;);<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not.Notify( 1234 );<br>
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;setTimeout( app.Exit,  2000 );<br>
-				&#160;&#160;&#160;&#160;}<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> id <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetNotifyId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> id <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> id<span class="token punctuation">,</span> <span class="token string">"Notification ID"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNotification</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not<span class="token punctuation">.</span><span class="token function">SetMessage</span><span class="token punctuation">(</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"You have an urgent notification"</span><span class="token punctuation">,</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">"Press me!"</span><span class="token punctuation">,</span> <span class="token string">"Do as the title says."</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span> <span class="token number">1234</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">setTimeout</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span>Exit<span class="token punctuation">,</span>  <span class="token number">2000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

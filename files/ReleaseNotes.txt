@@ -1,11 +1,45 @@
+DS 175b2
+- Added missing 64 bit libs for FastCanvas.
 
+DS 175b1
+- Fixed logic of app.SetOptions( "usebrowser") was inverted for HTML apps.
+- Fixed anchor tags with local relative file paths in HTML apps and WebViews.
+- Removed admin filter from manifest (please use 'X' version of DS for kiosk apps)
 
-DS 1.74b1
+DS 175a3
+- Fixed Webview data dir prefix issue for Android 9.
+- lst.SetEllipsize now sets both title and body.
+- GameView physics enabled for Text objects.
+- GameView Tween method fixed for Text objects.
+- obj.IsOverlap() fixed for Linear Layouts.
+- Temporarily removed support for NoDom option.
+- Removed support for GameView 'gles' mode.
+
+DS 175a2
+- Added support for 64bit and API28 (required by Google Play)
+- app.SetKioskMode( "LockTask", true ) enables proper Android COSU kiosk apps.
+- app.SetKioskMode( "Pin", true ) enables proper pinning/unpinning of tasks.
+- app.ReplaceInFile() options param can now be left blank.
+- app.ReplaceInFile() now accepts regex strings.
+- Updated GameView intellisense to include Text object.
+- Improved gfx.CreateText() to allow numerics (previously had to use .toString()).
+- Added gfx.RemoveText(), gfx.RemoveGraphic(), gfx.RemoveBackground() methods.
+- Added sprite.Contains(x,y) method.
+- Added sprite.Flip( sprite, horiz, vert ) method.
+
+DS 175a1
+- Updated some samples to use 'this' instead of app.GetLast*
+- Removed app.CreateListView(), use app.CreateListDialog instead.
+- Sped up SQLite callbacks again.
+- Added 'modal' and 'kiosk' option to app.CreateDialog().
+- Fixed custom dialog sizing issue when using app.SetDensity().
+
+DS 174
 - Changed to darker look and feel for Wifi IDE.
--.Added dark mode in Wifi IDE for Premium users.
+- Added dark mode in Wifi IDE for Premium users.
 - Added app.SendImage() method.
 - Modified internal _Cbm function slightly to allow use of local scope callback funcs.
-- More docs added (thanks to AlexF)
+- More docs added (thanks to Symbroson)
 - Added _AddPlugins() function to allow manual inclusion of plugins.
 - Added web.SetTextZoom( zoom ).
 - app.CreateBluetoothList now requests permission "Location" for > Android 8.

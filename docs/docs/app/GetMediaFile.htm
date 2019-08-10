@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,25 +26,29 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetMediaFile</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
-			<p>Returns a path to an unambiguous media file be like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”.</p>
+			<p>Returns a path to an unambiguous media file be like <font class='docstring'>“/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”</font>.</p>
 
 			<div class="samp">
-			app.GetMediaFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">appName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">ext</a> ) → <b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i>
+			app.GetMediaFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">appName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">ext</a> ) → <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
 			</div>
 
 			<p>The folder to that file will be created automatically.<br>
 			<br>
-			See Also: <a href="CreateImage.htm">CreateImage</a>, <a href="CreateCameraView.htm">CreateCameraView</a></p>
+			See Also: <a href="CreateImage.htm" data-ajax="false">CreateImage</a>, <a href="CreateCameraView.htm" data-ajax="false">CreateCameraView</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Get Media File</h3>
 				<div id="examp0" style="font-size:70%">
-					function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">var path = app.GetMediaFile(&quot;Hello World&quot;, &quot;.png&quot;);</b><br>
-				&#160;&#160;&#160;&#160;app.Alert( path );<br>
-				}
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMediaFile</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token string">".png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>

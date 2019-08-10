@@ -96,6 +96,7 @@
         "CreateCodeEdit",
         "CreateGLView",
         "CreateImage",
+        "CreateLayout",
         "CreateList",
         "CreateListDialog",
         "CreateListView",

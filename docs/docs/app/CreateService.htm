@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,13 +26,17 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateService</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.<br>
 			<br>
 			DroidScript Services run in a separate process and can take advantage of multi-CPU devices, this allows CPU intensive calculations or slow procedures to be done in the background without slowing down or interfering with the main application.<br>
 			<br>
-			Any file in your project with the filename <i>“Service.js”</i> will run as a hidden background service.<br>
+			Any file in your project with the filename <i><font class='docstring'>“Service.js”</font></i> will run as a hidden background service.<br>
 			<br>
 			A service can be created and started using the <b>CreateService</b> method of the app object in your main application file:.</p>
 
@@ -38,26 +44,26 @@
 			srv = app.CreateService( <a href="#pop_str_001" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">className</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Service
 			</div>
 
-			<p>Use “this” for the <i>packageName</i> and <i>className</i> parameters.<br>
+			<p>Use <font class='docstring'>“this”</font> for the <i>packageName</i> and <i>className</i> parameters.<br>
 			<br>
 			Your service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.<br>
 			<br>
 			You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.</p>
 
 			<div class="samp">
-			app.SetAutoBoot( “Service” );
+			app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>Stop a service using the Stop method.</p>
 
 			<div class="samp">
-			svc.Stop();
+			svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>Messages can be sent from your app to the service using the SendMessage method on the service object:</p>
 
 			<div class="samp">
-			svc.SendMessage( msg );
+			svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>You will need to provide a message handler to receive and process the messages (see example below).<br>
@@ -65,7 +71,7 @@
 			Send messages from the service to the main app by using the SendMessage method of the app object:</p>
 
 			<div class="samp">
-			app.SendMessage( msg );
+			app<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>This will also need a message handler on the application (see example below).<br>
@@ -75,86 +81,86 @@
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Services</h3>
 				<div id="examp0" style="font-size:70%">
-					//our Service.js code.<br>
-				//In regular usage move this code to a separate Service.js file<br>
-				var servicejs = `<br>
-				//Init variables.<br>
-				var count = 0;<br>
-				var diff = 1;<br>
-				<br>
-				//Called when service is started.<br>
-				function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.ShowPopup( &quot;Hello from Service!&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Start a timer to do some regular work.<br>
-				&#160;&#160;&#160;&#160;setInterval( DoWork, 500 );<br>
-				}<br>
-				<br>
-				//Called when we get a message from main app.<br>
-				function OnMessage( msg )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.Debug( msg );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Handle commands from main App.<br>
-				&#160;&#160;&#160;&#160;if( msg == &quot;change&quot; ) diff = (diff &gt; 0 ? -1 : 1);<br>
-				}<br>
-				<br>
-				//This is where we do some regular background task<br>
-				//(here we just modify a counter and send it back to the app, if its running).<br>
-				function DoWork()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;count += diff;<br>
-				&#160;&#160;&#160;&#160;app.SendMessage( count );<br>
-				}`<br>
-				<br>
-				function OnStart()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;//Create the Service.js file<br>
-				&#160;&#160;&#160;&#160;//(In regular usage create the file yourself)<br>
-				&#160;&#160;&#160;&#160;app.WriteFile(&quot;Service.js&quot;, servicejs );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Create a layout.<br>
-				&#160;&#160;&#160;&#160;lay = app.CreateLayout( &quot;linear&quot;, &quot;VCenter,FillXY&quot; );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Create text control to display data from the service.<br>
-				&#160;&#160;&#160;&#160;txt = app.CreateText( &quot;&quot;, 0.4 );<br>
-				&#160;&#160;&#160;&#160;txt.SetTextSize( 22 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( txt );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Create an 'Send Message' button.<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Send Message to Service&quot;, 0.6, 0.1 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.SendMessage(&quot;change&quot;); } );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Create a 'Stop Service' button.<br>
-				&#160;&#160;&#160;&#160;btn = app.CreateButton( &quot;Stop Service&quot;, 0.6, 0.1 );<br>
-				&#160;&#160;&#160;&#160;lay.AddChild( btn );<br>
-				&#160;&#160;&#160;&#160;btn.SetOnTouch( function(){ svc.Stop(); } );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Add layout to app.<br>
-				&#160;&#160;&#160;&#160;app.AddLayout( lay );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//Start/connect to our service.<br>
-				&#160;&#160;&#160;&#160;svc = app.CreateService( &quot;this&quot;, &quot;this&quot;, OnServiceReady );<br>
-				&#160;&#160;&#160;&#160;svc.SetOnMessage( OnServiceMessage );<br>
-				<br>
-				&#160;&#160;&#160;&#160;//This will cause your service to start at boot.<br>
-				&#160;&#160;&#160;&#160;//(Set it to &quot;none&quot; if you need to stop it starting)<br>
-				&#160;&#160;&#160;&#160;//app.SetAutoBoot( &quot;Service&quot; );<br>
-				}<br>
-				<br>
-				//Called after our service has started.<br>
-				function OnServiceReady()<br>
-				{<br>
-				&#160;&#160;&#160;&#160;app.Debug( &quot;Service Ready&quot; );<br>
-				}<br>
-				<br>
-				//Called when messages comes from our service.<br>
-				function OnServiceMessage( msg )<br>
-				{<br>
-				&#160;&#160;&#160;&#160;txt.SetText( &quot;Count: &quot; + msg );<br>
-				}
+					<span class="token comment">//our Service.js code.</span><br>
+					<span class="token comment">//In regular usage move this code to a separate Service.js file</span><br>
+					<span class="token keyword">var</span> servicejs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
+					//Init variables.<br>
+					var count = 0;<br>
+					var diff = 1;<br>
+					<br>
+					//Called when service is started.<br>
+					function OnStart()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.ShowPopup( "Hello from Service!" );<br>
+					<br>
+					&#160;&#160;&#160;&#160;//Start a timer to do some regular work.<br>
+					&#160;&#160;&#160;&#160;setInterval( DoWork, 500 );<br>
+					}<br>
+					<br>
+					//Called when we get a message from main app.<br>
+					function OnMessage( msg )<br>
+					{<br>
+					&#160;&#160;&#160;&#160;app.Debug( msg );<br>
+					<br>
+					&#160;&#160;&#160;&#160;//Handle commands from main App.<br>
+					&#160;&#160;&#160;&#160;if( msg == "change" ) diff = (diff > 0 ? -1 : 1);<br>
+					}<br>
+					<br>
+					//This is where we do some regular background task<br>
+					//(here we just modify a counter and send it back to the app, if its running).<br>
+					function DoWork()<br>
+					{<br>
+					&#160;&#160;&#160;&#160;count += diff;<br>
+					&#160;&#160;&#160;&#160;app.SendMessage( count );<br>
+					}</span><span class="token template-punctuation string">`</span></span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Create the Service.js file</span><br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//(In regular usage create the file yourself)</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">"Service.js"</span><span class="token punctuation">,</span> servicejs <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Create a layout.</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Create text control to display data from the service.</span><br>
+					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Create an 'Send Message' button.</span><br>
+					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Send Message to Service"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Create a 'Stop Service' button.</span><br>
+					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Stop Service"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Add layout to app.</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//Start/connect to our service.</span><br>
+					&#160;&#160;&#160;&#160;svc <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateService</span><span class="token punctuation">(</span> <span class="token string">"this"</span><span class="token punctuation">,</span> <span class="token string">"this"</span><span class="token punctuation">,</span> OnServiceReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;svc<span class="token punctuation">.</span><span class="token function">SetOnMessage</span><span class="token punctuation">(</span> OnServiceMessage <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//This will cause your service to start at boot.</span><br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//(Set it to "none" if you need to stop it starting)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token comment">//app.SetAutoBoot( "Service" );</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token comment">//Called after our service has started.</span><br>
+					<span class="token keyword">function</span> <span class="token function">OnServiceReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span> <span class="token string">"Service Ready"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token comment">//Called when messages comes from our service.</span><br>
+					<span class="token keyword">function</span> <span class="token function">OnServiceMessage</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"Count: "</span> <span class="token operator">+</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
@@ -166,7 +172,7 @@
 			<p>Inspect the debug console and see the log messages from the service in gray.</p>
 			<p><br>The following methods are available on the <b>Service</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> “Service”</div>
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Service”</font></div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_004" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">SendMessage</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )</div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetInBackground</a>()</div>
@@ -177,19 +183,19 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> “this” or “?”</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> “this” or “?”</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“this”</font> or <font class='docstring'>“?”</font></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“this”</font> or <font class='docstring'>“?”</font></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “<a href="" onclick="prompt( '#', 'App.ShowPopup( attempts to force restart if service killed' )">Persist</a>”</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('attempts to force restart if service killed')">Persist</a>”</font></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content">Returns the control class name.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “boolean”, “char”, “byte”, “short”, “int”, “long”, “float”, “double”</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content">SendMessage to the service</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content">SetInBackground</div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content">SetInForeground</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">message</a>)</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">message</a>)</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content">callback called when message arrived</div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content">Stop service</div>
 

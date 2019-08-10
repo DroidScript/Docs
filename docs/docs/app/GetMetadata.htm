@@ -8,7 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
 	<script src="../../app.js"></script>
@@ -24,21 +26,25 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetMetadata</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Returns a string list of metadata values contained in an audio file.</p>
 
 			<div class="samp">
-			app.GetMetadata( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">keys</a> ) → <b>string:</b> <i>comma “,” separated</i>
+			app.GetMetadata( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">keys</a> ) → <b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i>
 			</div>
 
-			<p>See Also: <a href="CreateMediaPlayer.htm">CreateMediaPlayer</a></p>
+			<p>See Also: <a href="CreateMediaPlayer.htm" data-ajax="false">CreateMediaPlayer</a></p>
 			
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( "/absolute/..." or "relative/..." )</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma “,” separated:</i> “album”, “artist”, “genre”, “title”, “composer”, “author”, “duration”, “bitrate”, “width”, “height”</div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“album”</font>, <font class='docstring'>“artist”</font>, <font class='docstring'>“genre”</font>, <font class='docstring'>“title”</font>, <font class='docstring'>“composer”</font>, <font class='docstring'>“author”</font>, <font class='docstring'>“duration”</font>, <font class='docstring'>“bitrate”</font>, <font class='docstring'>“width”</font>, <font class='docstring'>“height”</font></div>
 
 	</div>
 </body>
