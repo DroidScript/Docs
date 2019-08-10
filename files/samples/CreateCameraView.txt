@@ -1,4 +1,4 @@
-<sample Show camera preview>
+<sample Show Camera Preview>
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -43,7 +43,7 @@ function Snap()
 }
 </sample>
 
-<sample Record>
+<sample Record Video>
 
 function OnStart()
 {
@@ -86,7 +86,7 @@ function Record( start )
 }
 </sample>
 
-<sample Motion detector>
+<sample Motion Detector>
 
 var sensitivity = 10; // motion threshold
 var minPeriod = 500;  // millisecs

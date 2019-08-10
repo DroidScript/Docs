@@ -563,7 +563,7 @@
 	},
 	"CreateCameraView": {
 		"abbrev": "cam",
-		"desc": "**CameraView**s are used to create a preview of the device camera.\nYou can use the “Front” option to show the front camera's preview.\n\nThe camera needs some time to initialize first.\nYou can define a callback function via **SetOnReady** which is called if the camera can be used.\nThere you have to to call the **StartPreview** function of the CameraView control to start the preview.",
+		"desc": "**CameraView**s are used to access the device camera.\nYou can use the “Front” option to show the front camera instead of the default back camera.\n\nThe camera needs some time to initialize first.\nYou can define a callback function via **SetOnReady** which is called if the camera can be used.\nThere you have to to call the **StartPreview** function of the CameraView control to start the preview.\n<sample Show Camera Preview>\nThe basic functionality of the camera control is taking pictures or recording video.\n<sample Take pictures>\n<sample Record Video>\nBut it provides advanced image processing functions as well. These are color reporting, motion detection and face recognision.\n<sample Motion Detector>\nMore samples can be found in the samples section of DroidScript.",
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],

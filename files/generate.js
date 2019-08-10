@@ -525,10 +525,9 @@ function replaceTypes(s, useAppPop) {
 		    if(useAppPop) {
 				return newAppPopup(
 					typenames[type.slice(0, 3)] +
-						(hrefs[type] ? ": " + hrefs[type] : "") +
-						(close || ""),
+						(hrefs[type] ? ": " + hrefs[type] : ""),
 					name
-				)
+				) + (close || "")
 			} else {
 				return toArgPop(name, type) + (close || "")
 			}
@@ -619,7 +618,7 @@ var 	//navigator list item
 		//jquery-popup link tag
 	txtPopup = '<a href="#pop_%s" data-transition="pop" data-rel="popup">%s</a>',
 		//app-popup tag
-	appPopup = '<a href="" onclick="prompt( \'#\', \'App.ShowPopup( %s\' )">%s</a>',
+	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		//popup objct
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
 		//subfunctions list
@@ -649,14 +648,14 @@ var 	//navigator list item
 			&#160;&#160;&#160;&#160;X: <b>number:</b> fraction of screen width,<br>
 			&#160;&#160;&#160;&#160;Y: <b>number:</b> fraction of screen height,<br>
 			&#160;&#160;&#160;&#160;x: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x3</a>
 			],<br>
 			&#160;&#160;&#160;&#160;y: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y3</a>
 			]<br>
 		}
 		</div>`.replace(/[\n\t]+/g, "");
@@ -727,6 +726,10 @@ var 	//navigator list item
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
+		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
 
 		<div data-role="content">
@@ -839,6 +842,7 @@ function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
 function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
 function sortAsc(a, b) { return a.toString().toLowerCase() > b.toString().toLowerCase()? 1 : -1 }
 function hidden(name) { return name.match(regHide); }
+function l(s){console.log("-----"+s+"-----");return s;}
 function nothidden(name) { return !name.match(regHide); }
 function crop(n, min, max) { return n < min? min : max != undefined && n > max? max : n; }
 function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
