@@ -296,8 +296,11 @@ function getDesc(name) {
 			`.</p>\n${funcBase}\t\t\t<p>`)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash)>([^]*?)<\/\2>(\s|<br>)*/g,
-			`</p>\n${funcBase.replace("%s", "$3")}\t\t\t<p>`)
+			/(\s|<br>)*<(js|bash)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
+			    `</p>\n${funcBase.replace("%s", Prism.languages[lang] ?
+			    Prism.highlight(code.replace(/<br>/g, "\n"), Prism.languages[lang], lang)
+			    .replace(/\n/g, "<br>") : code)}\t\t\t<p>`)
+	    // format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/(\s|<br>)*<sample (.*?)>/g, (m, _, n) => 
@@ -308,7 +311,7 @@ function getDesc(name) {
 		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
-
+function l(s){console.log("-----"+s+"-----");return s;}
 // read and return html converted example snippets file
 function getSamples( name ) {
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );
@@ -924,8 +927,6 @@ function OnStart() {
 var fs = require("fs");
 var rimraf = require("rimraf");
 var Prism = require('prismjs');
-//console.log(hljavascript(hljs))
-console.log()
 
 
 app = {
