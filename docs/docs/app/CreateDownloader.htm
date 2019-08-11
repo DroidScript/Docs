@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateDownloader</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage.</p>
@@ -37,7 +41,7 @@
 			<p>You can download a file with the <b>Download</b> method which accepts a <i>source url</i> and a <i>target directory</i>:</p>
 
 			<div class="samp">
-			dwn.Download( srcFileUrl, targetDir );
+			dwn<span class="token punctuation">.</span><span class="token function">Download</span><span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the <i><font class='docstring'>“NoDialog”</font></i> <b>option</b>.<br>
@@ -45,7 +49,7 @@
 			If you want to know when the download process has finished (or failed) you can define a callback functioni with the <b>SetOnComplete</b> method:</p>
 
 			<div class="samp">
-			dload.SetOnComplete( callback );
+			dload<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> callback <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -106,9 +110,9 @@
 		<div data-role="popup" id="pop_dsc_007" class="ui-content">? called when download cancelled</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content">called when download finished</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: path to file or folder ( “/absolute/...” or “relative/...” )' )">path</a>)</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>)</div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content">?</div>
-		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string' )">error</a>)</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">error</a>)</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content">called when error occurred while downloading</div>
 
 	</div>

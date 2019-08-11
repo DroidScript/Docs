@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>StartApp</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Starts an app in a new window.</p>
@@ -58,8 +62,8 @@
 		</div>
 
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( start app in debug mode' )">Debug</a>”</font> or <font class='docstring'>“remote”</font></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“{ <a href="" onclick="prompt( '#', 'App.ShowPopup( str' )">action</a>”</font>, <font class='docstring'>“ <a href="" onclick="prompt( '#', 'App.ShowPopup( str' )">type</a>”</font>, <font class='docstring'>“ <a href="" onclick="prompt( '#', 'App.ShowPopup( obj' )">data</a>”</font>, <font class='docstring'>“ <a href="" onclick="prompt( '#', 'App.ShowPopup( obj }' )">extras</a>”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('start app in debug mode')">Debug</a>”</font> or <font class='docstring'>“remote”</font></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“{ <a href="" onclick="app.ShowPopup('str')">action</a>”</font>, <font class='docstring'>“ <a href="" onclick="app.ShowPopup('str')">type</a>”</font>, <font class='docstring'>“ <a href="" onclick="app.ShowPopup('obj')">data</a>”</font>, <font class='docstring'>“ <a href="" onclick="app.ShowPopup('obj }')">extras</a>”</font></div>
 
 	</div>
 </body>

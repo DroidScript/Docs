@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>Animate</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.</p>
@@ -118,7 +122,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( number: milliseconds' )">time</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: milliseconds' )">dtime</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: milliseconds')">time</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">dtime</a>)</div>
 		<div data-role="popup" id="pop_num_fps" class="ui-content"><b>number:</b> <i>frames per second</i></div>
 
 	</div>

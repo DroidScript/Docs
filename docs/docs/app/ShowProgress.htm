@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ShowProgress</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>Shows a rotating progress circle indicating that something happens and that the user should keep his extremities with him until the process completed.</p>
@@ -56,7 +60,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="prompt( '#', 'App.ShowPopup( Don't darken background' )">NoDim</a>”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('Don't darken background')">NoDim</a>”</font></div>
 
 	</div>
 </body>

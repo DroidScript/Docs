@@ -26,6 +26,10 @@
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOnKey</h1>
 		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
 
 		<div data-role="content">
 			<p>You can use SetOnKey for receiving and handling all key events fired in the application.</p>
@@ -124,7 +128,7 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="prompt( '#', 'App.ShowPopup( string: “DOWN” or “UP”' )">action</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string: “ENTER”, “VOLUME_DOWN”, “VOLUME_UP”, “BACK”, “MENU”, “...”' )">name</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( number: integer' )">keycode</a>, <a href="" onclick="prompt( '#', 'App.ShowPopup( string: “Shift”, “Ctrl”, “Alt”, “Meta”' )">extrakeys</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “DOWN” or “UP”')">action</a>, <a href="" onclick="app.ShowPopup('string: “ENTER”, “VOLUME_DOWN”, “VOLUME_UP”, “BACK”, “MENU”, “...”')">name</a>, <a href="" onclick="app.ShowPopup('number: integer')">keycode</a>, <a href="" onclick="app.ShowPopup('string: “Shift”, “Ctrl”, “Alt”, “Meta”')">extrakeys</a>)</div>
 
 	</div>
 </body>
