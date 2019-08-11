@@ -491,7 +491,7 @@
 	},
 	"CreateButton": {
 		"abbrev": "btn",
-		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t_// your OnTouch code goes here_\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the _“FillX”_ option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** _“Alum”_ or _“Gray”_, or you can use _“Custom”_ and define a custom style with the **SetStyle** method.\n<sample Change Style>",
+		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t// your OnTouch code goes here\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the _“FillX”_ option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** _“Alum”_ or _“Gray”_, or you can use _“Custom”_ and define a custom style with the **SetStyle** method.\n<sample Change Style>",
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
@@ -563,7 +563,7 @@
 	},
 	"CreateCameraView": {
 		"abbrev": "cam",
-		"desc": "**CameraView**s are used to create a preview of the device camera.\nYou can use the “Front” option to show the front camera's preview.\n\nThe camera needs some time to initialize first.\nYou can define a callback function via **SetOnReady** which is called if the camera can be used.\nThere you have to to call the **StartPreview** function of the CameraView control to start the preview.",
+		"desc": "**CameraView**s are used to access the device camera.\nYou can use the “Front” option to show the front camera instead of the default back camera.\n\nThe camera needs some time to initialize first.\nYou can define a callback function via **SetOnReady** which is called if the camera can be used.\nThere you have to to call the **StartPreview** function of the CameraView control to start the preview.\n<sample Show Camera Preview>\nThe basic functionality of the camera control is taking pictures or recording video.\n<sample Take pictures>\n<sample Record Video>\nBut it provides advanced image processing functions as well. These are color reporting, motion detection and face recognision.\n<sample Motion Detector>\nMore samples can be found in the samples section of DroidScript.",
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],

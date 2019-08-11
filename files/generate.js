@@ -298,8 +298,8 @@ function getDesc(name) {
 		.replace(
 			/(\s|<br>)*<(js|bash)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
 			    `</p>\n${funcBase.replace("%s", Prism.languages[lang] ?
-			    Prism.highlight(code.replace(/<br>/g, "\n"), Prism.languages[lang], lang)
-			    .replace(/\n/g, "<br>") : code)}\t\t\t<p>`)
+			    Prism.highlight(code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"), Prism.languages[lang], lang)
+			    .replace(/§s§/g, "&#160;").replace(/\n/g, "<br>") : code)}\t\t\t<p>`)
 	    // format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
@@ -311,7 +311,7 @@ function getDesc(name) {
 		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
-function l(s){console.log("-----"+s+"-----");return s;}
+
 // read and return html converted example snippets file
 function getSamples( name ) {
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );
@@ -331,12 +331,12 @@ function getSamples( name ) {
 
 // convert a sample to html code
 function toHtmlSamp( c, t, n ) {
-    c = c.replace( /<\/?b>/g, "§§")
+    c = c.replace( /<\/?b>/g, "§b§")
 	c = Prism.highlight(c.trim(), Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
     	.replace( /\n/g, "<br>\n\t\t\t\t\t" )
-    	.replace( /§§([^]+?)§§/g, "<b id = \"snip%i\"  style = \"font-size:100%\">$1</b>" )
+    	.replace( /§b§([^]+?)§b§/g, "<b id = \"snip%i\"  style = \"font-size:100%\">$1</b>" )
 	    //.replace( /</g, "&lt;" )
 	    //.replace( />/g, "&gt;" )
 	    //.replace( /&/g, "&amp;" )
@@ -525,10 +525,9 @@ function replaceTypes(s, useAppPop) {
 		    if(useAppPop) {
 				return newAppPopup(
 					typenames[type.slice(0, 3)] +
-						(hrefs[type] ? ": " + hrefs[type] : "") +
-						(close || ""),
+						(hrefs[type] ? ": " + hrefs[type] : ""),
 					name
-				)
+				) + (close || "")
 			} else {
 				return toArgPop(name, type) + (close || "")
 			}
@@ -619,7 +618,7 @@ var 	//navigator list item
 		//jquery-popup link tag
 	txtPopup = '<a href="#pop_%s" data-transition="pop" data-rel="popup">%s</a>',
 		//app-popup tag
-	appPopup = '<a href="" onclick="prompt( \'#\', \'App.ShowPopup( %s\' )">%s</a>',
+	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		//popup objct
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
 		//subfunctions list
@@ -649,14 +648,14 @@ var 	//navigator list item
 			&#160;&#160;&#160;&#160;X: <b>number:</b> fraction of screen width,<br>
 			&#160;&#160;&#160;&#160;Y: <b>number:</b> fraction of screen height,<br>
 			&#160;&#160;&#160;&#160;x: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen width')">x3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen width')">x3</a>
 			],<br>
 			&#160;&#160;&#160;&#160;y: <b>list:</b> [
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y1</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y2</a>,
-				<a href="" onClick="prompt('#','App.ShowPopup(fraction of screen height')">y3</a>
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y1</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y2</a>,
+				<a href="" onClick="app.ShowPopup('fraction of screen height')">y3</a>
 			]<br>
 		}
 		</div>`.replace(/[\n\t]+/g, "");
@@ -727,6 +726,10 @@ var 	//navigator list item
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
+		</div>
+		
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
 
 		<div data-role="content">
@@ -839,6 +842,7 @@ function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
 function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
 function sortAsc(a, b) { return a.toString().toLowerCase() > b.toString().toLowerCase()? 1 : -1 }
 function hidden(name) { return name.match(regHide); }
+function l(s){console.log("-----"+s+"-----");return s;}
 function nothidden(name) { return !name.match(regHide); }
 function crop(n, min, max) { return n < min? min : max != undefined && n > max? max : n; }
 function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
