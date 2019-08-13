@@ -84,16 +84,16 @@ $(document).live( 'pageshow',function(event, ui)
 			OnPageShow();
 		}
 		
-		// set current document theme
-		var theme = getTheme();
-		console.log("setTheme(" + theme + ")");
-		setTheme(theme);
-		
-		// check if theme changed, even after history.back()
-		setInterval(function() {
-			var theme = getTheme();
-			if(theme != curTheme) setTheme(theme);
-		}, 1000);
+		if( !isDS ) {
+		    // set current document theme
+		    setTheme(getTheme());
+		    
+		    // check if theme changed, even after history.back()
+		    if(false) setInterval(function() {
+			    var theme = getTheme();
+			    if(theme != curTheme) setTheme(theme);
+		    }, 1000);
+		}
 	}
 	//catch( e ) {}
 });
@@ -162,8 +162,10 @@ function OnPageShow()
 // set the current theme. (default, dark)
 function setTheme( theme )
 {
+    if(curTheme == theme) return;
 	curTheme = theme;
-	document.cookie = "theme=" + theme;
+	localStorage.setItem("dsDocsTheme", theme);
+	console.log("setTheme('" + theme + "')");
 	
 	var lnkJQuery = document.getElementById('themeJQ');
 	if(lnkJQuery) lnkJQuery.href = lnkJQuery.href.replace(/(.*\/).*/, "$1theme-" + theme + ".min.css");
@@ -175,16 +177,16 @@ function setTheme( theme )
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
-// get current theme from cookie
+// get current theme from localStorage
 function getTheme() {
-	var theme = document.cookie.replace(/(^|.*;\s*)theme\s*\=\s*([^;]*).*$|^.*$/, "$2");
-	if(!theme) theme = "default";
-	return theme;
+    return localStorage.setItem("dsDocsTheme") || "default";
 }
 
+// app.ShowPopup equivalent for browsers 
 function ShowPopup(msg){
     var pop = $("#appPopup");
     if(pop.is(":visible")) pop.stop().fadeOut(200, function() { pop.text(msg); });
     else pop.text(msg);
     pop.fadeIn().delay(1500).fadeOut();
 }
+
