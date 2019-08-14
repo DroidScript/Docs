@@ -443,7 +443,7 @@ function toArgPop( name, types ) {
 				case "str":
 					s[i] += rplop( type[2], type[0] == "str" );
 					if(type.length == 3 && type[2].indexOf(":") > -1)
-						s[i] = s[i].replace(/\b(\w+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
+						s[i] = s[i].replace(/\b([\w_.]+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
 					return s[i];
 				case "lst":
 				case "obj": return s[i] + replW( replaceTypes( type[2], true ));
@@ -521,7 +521,7 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?)\b(\s*[,}\]]?)?/g,
+	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?)\b(\s*[,}\]]?)?/g,
 		function(m, name, type, _, close) {
 		    if(useAppPop) {
 				return newAppPopup(
@@ -791,8 +791,6 @@ var 	//globals for one doc
 		"num_deg":"angle in degrees (0..360)",
 		"num_rad":"angle in radient (0..2*π)",
 		"num_mtu":"maximum transmission unit",
-		"num_smtp":"<pre>	  <u> server			   SSL	 TLS</u>\ngmail: smtp.gmail.com	   465	 578\nyahoo: smtp.mail.yahoo.com  465	 578\ngmx  : mail.gmx.net		 465	 587</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
-		"num_imap":"<pre>	  <u> server			   SSL</u>\ngmail: imap.gmail.com	   993\nyahoo: imap.mail.yahoo.com  993\ngmx  : imap.gmx.net		 993</pre>".replace( /\n/g, "<br>" ).replace( /  /g, "&#160;&#160;" ),
 		"str":"",
 		"str_lst":"comma “,” separated",
 		"str_com":"comma “,” separated",
@@ -815,12 +813,13 @@ var 	//globals for one doc
 		"num_gbt":"Gigabytes",
 		"num_dat":"Datetime in milliseconds (from JS Date object)",
 		
-		"str_acc":"account EMail",
+		"str_acc":"account Email",
 		"str_num":"number",
 		"str_int":"integer",
 		"str_flt":"float",
 		"str_b64":"base64 encoded",
-		"str_pxl":"integer in pixels"
+		"str_pxl":"integer in pixels",
+		"str_eml":"comma separated email addresses or names"
 	};
 
 
@@ -830,7 +829,7 @@ var
 	// hide functions and methods which are matching this regex
 	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
-	regControl = /^(Create.*|OpenDatabase|Odroid)$/,
+	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor

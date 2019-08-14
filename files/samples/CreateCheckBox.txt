@@ -3,11 +3,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	chk = app.CreateCheckBox( "Enable Stuff" );
+	<b>chk = app.CreateCheckBox( "Enable Stuff" );
 	chk.SetOnTouch( ShowState );
 	lay.AddChild( chk );
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );</b>
 }
 
 function ShowState( isChecked )
@@ -15,4 +15,3 @@ function ShowState( isChecked )
 	app.ShowPopup( "Checked = " + isChecked, "Short" );
 }
 </sample>
-

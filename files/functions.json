@@ -950,13 +950,13 @@
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetChecked": {
-				"desc": "",
+				"desc": "Returns a boolean indicating whether the checkbox is currently checked or not.",
 				"isfunc": true,
 				"name": "GetChecked",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Get current checked state."
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -988,18 +988,18 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetChecked": {
-				"desc": "",
+				"desc": "Changes the current checked state of the CheckBox.",
 				"isfunc": true,
 				"name": "SetChecked",
 				"pNames": ["checked"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Changes the ckecked state."
 			},
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": {
-				"desc": "Define a callback function that is called when the user touches the control.",
+				"desc": "Define a callback function that is called when the user touches the CheckBox.",
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
@@ -1013,7 +1013,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": "Define a callback function for click event."
+				"shortDesc": "Called when the CheckBox was touched."
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
@@ -1040,80 +1040,80 @@
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "clear actions for undo/redo",
+				"desc": "Clears the undo/redo history.",
 				"isfunc": true,
 				"name": "ClearHistory",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Clears the undo/redo history."
 			},
 			"Copy": {
-				"desc": "copy selected text",
+				"desc": "Copies the selected text to the device clipboard.",
 				"isfunc": true,
 				"name": "Copy",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Copy selected text to the clipboard."
 			},
 			"Cut": {
-				"desc": "cut selected text",
+				"desc": "Cut selected text and copies it to the device clipboard.",
 				"isfunc": true,
 				"name": "Cut",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Cut selected text to the clipboard."
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetCursorLine": {
-				"desc": "GetCursorLine",
+				"desc": "Returns the current line index where the cursor is located.",
 				"isfunc": true,
 				"name": "GetCursorLine",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the current cursor line index."
 			},
 			"GetCursorPos": {
-				"desc": "GetCursorPos",
+				"desc": "Returns the index of the character where the cursor is currently located.",
 				"isfunc": true,
 				"name": "GetCursorPos",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the cursor position in the text."
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
 			"GetLineStart": {
-				"desc": "? from which line?",
+				"desc": "Returns at which character in the text a certain line begins.",
 				"isfunc": true,
 				"name": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the start character index of a line."
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetSelectedText": {
-				"desc": "GetSelectedText",
+				"desc": "Returns the currently selected text.",
 				"isfunc": true,
 				"name": "GetSelectedText",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Get the selected text."
 			},
 			"GetSelectMode": {
-				"desc": "GetSelectMode",
+				"desc": "Returns a boolean indicating whether there is currently some text selected.",
 				"isfunc": true,
 				"name": "GetSelectMode",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Get current selection state."
 			},
 			"GetText": "#2387569276",
 			"GetTop": "#1981028136",
@@ -1131,80 +1131,80 @@
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"HighlightLine": {
-				"desc": "HighlightLine",
+				"desc": "Highlights a specific line in the text with a thin red underline.",
 				"isfunc": true,
 				"name": "HighlightLine",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Underlines a certain line in the text."
 			},
 			"InsertText": {
-				"desc": "InsertText",
+				"desc": "Inserts a string at the current cursor position.",
 				"isfunc": true,
 				"name": "InsertText",
-				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": ""
+				"pNames": ["text"],
+				"pTypes": ["str"],
+				"shortDesc": "Insert text at the current cursor position."
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"Paste": {
-				"desc": "selected text",
+				"desc": "Paste text from the clipboard at the current cursor position.",
 				"isfunc": true,
 				"name": "Paste",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Paste clipboard to the current cursor position."
 			},
 			"Redo": {
-				"desc": "redo undone action",
+				"desc": "Redo an undone action.",
 				"isfunc": true,
 				"name": "Redo",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Redo an undone action."
 			},
 			"Replace": {
-				"desc": "why theres no replace text arg?",
+				"desc": "Replaces the current selection with the passed text.",
 				"isfunc": true,
 				"name": "Replace",
 				"pNames": ["text"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Replace the selected text."
 			},
 			"ReplaceAll": {
-				"desc": "",
+				"desc": "Replace all occurances of a string in the text.",
 				"isfunc": true,
 				"name": "ReplaceAll",
 				"pNames": ["text", "newText", "matchCase", "wholeWord"],
 				"pTypes": ["str", "str", "bin", "bin"],
-				"shortDesc": ""
+				"shortDesc": "Replace all occurances of a string in the text."
 			},
 			"ReplaceText": {
-				"desc": "ReplaceText",
+				"desc": "Replaces a given range in the text with some string.",
 				"isfunc": true,
 				"name": "ReplaceText",
 				"pNames": ["text", "start", "end"],
 				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Replace a range of the text with a string."
 			},
 			"Search": {
-				"desc": "",
+				"desc": "Search for a string in the text in a given direction and selects it.",
 				"isfunc": true,
 				"name": "Search",
-				"pNames": ["text", "dir", "matchCase", "wholeWord"],
-				"pTypes": ["str", "str-Up|Down|?", "bin", "bin"],
-				"shortDesc": ""
+				"pNames": ["text", "direction", "matchCase", "wholeWord"],
+				"pTypes": ["str", "str-Up|Down", "bin", "bin"],
+				"shortDesc": "Search and select a string in the text."
 			},
 			"SelectAll": {
-				"desc": "SelectAll",
+				"desc": "Selects the whole text.",
 				"isfunc": true,
 				"name": "SelectAll",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Select the whole text."
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -1213,43 +1213,43 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetColorScheme": {
-				"desc": "?",
+				"desc": "Changes the color scheme of the CodeEdit.",
 				"isfunc": true,
 				"name": "SetColorScheme",
 				"pNames": ["scheme"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-Dark|Light"],
+				"shortDesc": "Changes the color scheme."
 			},
 			"SetCursorPos": {
-				"desc": "SetCursorPos",
+				"desc": "Change the curernt cursor position.",
 				"isfunc": true,
 				"name": "SetCursorPos",
 				"pNames": ["position"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Change the curernt cursor position."
 			},
 			"SetEnabled": "#1602385882",
 			"SetHtml": "#8753208754",
 			"SetLanguage": {
-				"desc": "?",
+				"desc": "Change the highlighted language syntax.",
 				"isfunc": true,
 				"name": "SetLanguage",
 				"pNames": ["ext"],
 				"pTypes": ["str-.js,.java,.php,.c,.cpp,.cs,.rb,.m,.py,.txt"],
-				"shortDesc": ""
+				"shortDesc": "Change the highlighted language syntax."
 			},
 			"SetMargins": "#1741900074",
 			"SetNavigationMethod": {
-				"desc": "",
+				"desc": "Select between navigating using the Yoyo or standard touch.",
 				"isfunc": true,
 				"name": "SetNavigationMethod",
 				"pNames": ["method"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-Yoyo|Touch"],
+				"shortDesc": "Select between Yoyo or Touch mode."
 			},
 			"SetOnChange": "#2137502353",
 			"SetOnDoubleTap": {
-				"desc": "called when double pressed yoyo",
+				"desc": "Defines a callback function which is called when the user double-taps the Yoyo.",
 				"isfunc": true,
 				"name": "SetOnDoubleTap",
 				"pNames": ["callback"],
@@ -1263,10 +1263,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Define a Yoyo double-tap callback function"
 			},
 			"SetOnKey": {
-				"desc": "called when device key pressed",
+				"desc": "Define a callback function which is called when a key event appears.",
 				"isfunc": true,
 				"name": "SetOnKey",
 				"pNames": ["callback"],
@@ -1275,60 +1275,60 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": ["action", "keyname", "keycode", "?"],
-						"pTypes": ["str-Down|Move|Up", "str-VOLUME_DOWN|VOLUME_UP|BACK|MENU", "num_int", "?"],
+						"pNames": ["action", "keyname", "keycode", "extra"],
+						"pTypes": ["str-Down|Move|Up", "str-VOLUME_DOWN|VOLUME_UP|BACK|MENU", "num_int", "str-Shift,Ctrl,Alt,Meta"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Define a key-event callback function."
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
 			"SetSelection": {
-				"desc": "SetSelection",
+				"desc": "Selects part of the text in a given range.",
 				"isfunc": true,
 				"name": "SetSelection",
 				"pNames": ["start", "stop"],
 				"pTypes": ["num_int", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Selects part of the text in a given range."
 			},
 			"SetSelectMode": {
-				"desc": "en/disable text selection",
+				"desc": "En/Disables the selection mode for the cursor.",
 				"isfunc": true,
 				"name": "SetSelectMode",
 				"pNames": ["onOff"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disable cursor selection mode."
 			},
 			"SetSize": "#1296070870",
 			"SetText": "#8207502354",
 			"SetTextColor": "#1093247031",
 			"SetTextSize": "#5019790423",
 			"SetUseKeyboard": {
-				"desc": "en/disable android standard keyboard",
+				"desc": "En/Disable usage of the device keyboard.",
 				"isfunc": true,
 				"name": "SetUseKeyboard",
 				"pNames": ["onOff"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disable device keyboard."
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
 			"Tween": "#2114624769",
 			"Undo": {
-				"desc": "undo action",
+				"desc": "Undo an action.",
 				"isfunc": true,
 				"name": "Undo",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Undo an action."
 			}
 		}
 	},
 	"CreateCrypt": {
 		"abbrev": "crp",
-		"desc": "CreateCrypt  component is used to encrypt or decrypt a string with a given key or create a hash of it.",
+		"desc": "The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.",
 		"isfunc": true,
 		"name": "CreateCrypt",
 		"pNames": ["options"],
@@ -1337,22 +1337,22 @@
 		"shortDesc": "Returns a Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
 			"Decrypt": {
-				"desc": "decrypt text with key",
+				"desc": "Decrypt text with a key.",
 				"isfunc": true,
 				"name": "Decrypt",
 				"pNames": ["text", "password"],
 				"pTypes": ["str", "str"],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Decrypt text"
 			},
 			"Encrypt": {
-				"desc": "encrypt text with key",
+				"desc": "Encrypt text with a key.",
 				"isfunc": true,
 				"name": "Encrypt",
 				"pNames": ["text", "password"],
 				"pTypes": ["str", "str"],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Encrypt text."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -1364,25 +1364,23 @@
 				"shortDesc": "Returns the control class name."
 			},
 			"Hash": {
-				"desc": "one-way encryption",
+				"desc": "Build a hash of a string for one-way encryption.",
 				"isfunc": true,
 				"name": "Hash",
 				"pNames": ["text", "mode", "options"],
-				"pTypes": ["str", "str-MD5|?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str-MD5", "str"],
+				"shortDesc": "Get a hash from a string."
 			},
 			"Method": "#1023663567"
 		}
 	},
 	"CreateDebug": {
-		"abbrev": "dbg",
 		"desc": "CreateDebug is used to show the console as overlay above the app in order to see the debug logs.",
 		"isfunc": true,
 		"name": "CreateDebug",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "Debug",
-		"shortDesc": "Returns a Debug object."
+		"shortDesc": "Shows a debug log overlay."
 	},
 	"CreateDialog": {
 		"abbrev": "dlg",
@@ -1395,30 +1393,23 @@
 		"shortDesc": "Returns a Dialog object to display messages",
 		"subf": {
 			"AddLayout": {
-				"desc": "AddLayout",
+				"desc": "Add the content layout to the dialog.",
 				"isfunc": true,
 				"name": "AddLayout",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"],
-				"shortDesc": ""
+				"shortDesc": "Add content layout."
 			},
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
-			"Dismiss": {
-				"desc": "hide dialog",
-				"isfunc": true,
-				"name": "Dismiss",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": ""
-			},
+			"Dismiss": "#1924613953",
 			"EnableBackKey": {
-				"desc": "EnableBackKey",
+				"desc": "En/Disables the device back key to hide the dialog.",
 				"isfunc": true,
 				"name": "EnableBackKey",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disables hiding via presing the back key."
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1446,12 +1437,12 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"RemoveLayout": {
-				"desc": "RemoveLayout",
+				"desc": "Removes a content layout.",
 				"isfunc": true,
 				"name": "RemoveLayout",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"],
-				"shortDesc": ""
+				"shortDesc": "Removes a content layout."
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -1462,7 +1453,7 @@
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnBack": {
-				"desc": "called when device's back button pressed",
+				"desc": "Define a callback function which is called when the device's back button was pressed while the dialog was on front.",
 				"isfunc": true,
 				"name": "SetOnBack",
 				"pNames": ["callback"],
@@ -1476,10 +1467,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when back button was pressed while the dialog was shown."
 			},
 			"SetOnCancel": {
-				"desc": "valled when dialog was cancelled",
+				"desc": "Define a callback function which is called when the dialog is cancelled.",
 				"isfunc": true,
 				"name": "SetOnCancel",
 				"pNames": ["callback"],
@@ -1493,7 +1484,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the dialog is cancelled."
 			},
 			"SetOnTouch": "#2088093920",
 			"SetPadding": "#1923105617",
@@ -1501,12 +1492,12 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetTitle": {
-				"desc": "SetTitle",
+				"desc": "Changes the title of the dialog.",
 				"isfunc": true,
 				"name": "SetTitle",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Changes the dialog title."
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -1524,30 +1515,30 @@
 		"shortDesc": "Returns a Downloader object.",
 		"subf": {
 			"Download": {
-				"desc": "Download file",
+				"desc": "Start downloading a file.",
 				"isfunc": true,
 				"name": "Download",
 				"pNames": ["url", "fldr", "name", "headers"],
-				"pTypes": ["str_url", "str_pth", "str", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_url", "str_pth", "str", "str"],
+				"shortDesc": "Download a file."
 			},
 			"GetProgress": {
-				"desc": "get current download progress",
+				"desc": "Returns the current download progress.",
 				"isfunc": true,
 				"name": "GetProgress",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Get current download progress."
 			},
 			"GetSize": {
-				"desc": "get target download size",
+				"desc": "Returns the target download size in bytes.",
 				"isfunc": true,
 				"name": "GetSize",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_byt",
+				"shortDesc": "Get target download size in bytes."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -1559,17 +1550,17 @@
 				"shortDesc": "Returns the control class name."
 			},
 			"IsComplete": {
-				"desc": "return whether download compleated or not",
+				"desc": "Returns a boolean indicating whether the download has compleated or not.",
 				"isfunc": true,
 				"name": "IsComplete",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Get download completed state."
 			},
 			"Method": "#1023663567",
 			"SetOnCancel": {
-				"desc": "? called when download cancelled",
+				"desc": "Define a callback function which is called when download is cancelled.",
 				"isfunc": true,
 				"name": "SetOnCancel",
 				"pNames": ["callback"],
@@ -1578,15 +1569,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["file"],
+						"pTypes": ["str_pth"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when download is cancelled."
 			},
 			"SetOnComplete": {
-				"desc": "called when download finished",
+				"desc": "Define a callback function which is called when the download is finished.",
 				"isfunc": true,
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
@@ -1600,10 +1591,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the download is finished"
 			},
 			"SetOnDownload": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when the download is downloaded.",
 				"isfunc": true,
 				"name": "SetOnDownload",
 				"pNames": ["callback"],
@@ -1617,10 +1608,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the download is downloaded."
 			},
 			"SetOnError": {
-				"desc": "called when error occurred while downloading",
+				"desc": "Define a callback function which is called when an error occurred while downloading the file.",
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
@@ -1634,13 +1625,13 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when an error occurred while downloading."
 			}
 		}
 	},
 	"CreateEmail": {
 		"abbrev": "eml",
-		"desc": "CreateEmail component allows user to send emails.",
+		"desc": "The Email component allows us to send and receive emails without user interaction.",
 		"isfunc": true,
 		"name": "CreateEmail",
 		"pNames": ["account", "password"],
@@ -1659,31 +1650,31 @@
 			},
 			"Method": "#1023663567",
 			"Receive": {
-				"desc": "receive emails",
+				"desc": "Start receiving emails from a given folder.",
 				"isfunc": true,
 				"name": "Receive",
 				"pNames": ["folder", "maxCount", "filter"],
-				"pTypes": ["str_pth", "num_int", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth", "num_int", "str"],
+				"shortDesc": "Start receiving emails."
 			},
 			"Send": {
-				"desc": "send email",
+				"desc": "Send an email to someone.",
 				"isfunc": true,
 				"name": "Send",
 				"pNames": ["subject", "body", "sender", "recipients", "attach"],
 				"pTypes": ["str", "str", "str-email address", "str-email address", "str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Send an email."
 			},
 			"SetIMAP": {
-				"desc": "for receiving messages",
+				"desc": "Set IMAP or POP3 settings for receiving messages.",
 				"isfunc": true,
 				"name": "SetIMAP",
 				"pNames": ["server", "port"],
-				"pTypes": ["num_imap", "num_int-465 (SSL)"],
-				"shortDesc": ""
+				"pTypes": ["str-imap/pop.gmail.com:google|imap/pop.mail.yahoo.com:yahoo|imap/pop.gmx.net:gmx", "num_int-993:imap|995:pop"],
+				"shortDesc": "Set IMAP settings for receiving messages."
 			},
 			"SetOnMessage": {
-				"desc": "called when received message",
+				"desc": "Define a callback function which is called when a message is received.",
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
@@ -1692,15 +1683,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["data"],
+						"pTypes": ["obj-{ from:str_eml, to:str_eml, cc:str_eml, subject:str, body:str }"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when a message is received."
 			},
 			"SetOnStatus": {
-				"desc": "",
+				"desc": "Define a callback function which is called when a status changed.",
 				"isfunc": true,
 				"name": "SetOnStatus",
 				"pNames": ["callback"],
@@ -1710,19 +1701,19 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["status"],
-						"pTypes": ["str"],
+						"pTypes": ["str-Receive complete|Failed to receive emails: ...|Failed to send email: ..."],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when a status changed."
 			},
 			"SetSMTP": {
-				"desc": "for sending messages",
+				"desc": "Set SMTP settings for sending messages.",
 				"isfunc": true,
 				"name": "SetSMTP",
 				"pNames": ["server", "port"],
-				"pTypes": ["num_smtp", "num_int-993 (SSL)"],
-				"shortDesc": ""
+				"pTypes": ["str:smtp.gmail.com:google,smtp.mail.yahoo.com:yahoo,mail.gmx.net:gmx", "num_int-465:SSL|578:TLS (gmail, yahoo)|587:gmx"],
+				"shortDesc": "Set SMTP settings for sending messages."
 			}
 		}
 	},
@@ -1737,12 +1728,12 @@
 		"shortDesc": "Returns a File object",
 		"subf": {
 			"Close": {
-				"desc": "",
+				"desc": "Close File",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Close File"
 			},
 			"GetLength": {
 				"desc": "length in bytes",
@@ -2955,14 +2946,7 @@
 		"shortDesc": "Returns a ListDialog object.",
 		"subf": {
 			"AdjustColor": "#1794786072",
-			"Dismiss": {
-				"desc": "hide dialog",
-				"isfunc": true,
-				"name": "Dismiss",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": ""
-			},
+			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,
@@ -7548,14 +7532,7 @@
 		"pTypes": ["?", "?", "?", "?"],
 		"shortDesc": "CreateWizard",
 		"subf": {
-			"Dismiss": {
-				"desc": "Dismiss",
-				"isfunc": true,
-				"name": "Dismiss",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Dismiss"
-			},
+			"Dismiss": "#1924613953",
 			"Finish": {
 				"desc": "Finish",
 				"isfunc": true,
@@ -7612,14 +7589,7 @@
 		"shortDesc": "Returns a YesNoDialog object.",
 		"subf": {
 			"AdjustColor": "#1794786072",
-			"Dismiss": {
-				"desc": "hide dialog",
-				"isfunc": true,
-				"name": "Dismiss",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": ""
-			},
+			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,

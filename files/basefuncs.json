@@ -13,6 +13,13 @@
 				"pTypes": [],
 				"shortDesc": "Removes the focus of the control."
 			},
+			"#1924613953": { "name": "Dismiss",
+				"desc": "Hide the control and remove it from the screen.",
+				"isfunc": true,
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Hides the control and removes it from the screen."
+			},
 			"#1500174100": { "name": "Explode",
 				"desc": "Destroys the control with an explode animation and sound.",
 				"isfunc": true,
