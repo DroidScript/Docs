@@ -714,13 +714,13 @@
 		"Method": "Access Java object methods via reflection.",
 		"Receive": "Start receiving emails.",
 		"Send": "Send an email.",
-		"SetIMAP": "Set an IMAP for receiving messages.",
+		"SetIMAP": "Set IMAP settings for receiving messages.",
 		"SetOnMessage": "Called when a message is received.",
 		"SetOnStatus": "Called when a status changed.",
-		"SetSMTP": ""
+		"SetSMTP": "Set SMTP settings for sending messages."
 	},
 	"fil": {
-		"Close": "",
+		"Close": "Close File",
 		"GetLength": "",
 		"GetPointer": "GetPointer",
 		"GetType": "Returns the control class name.",
