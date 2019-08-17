@@ -9,9 +9,9 @@ function OnStart()
 
 	app.AddLayout( lay );
 
-	player = app.CreateMediaPlayer();
+	<b>player = app.CreateMediaPlayer();
 	player.SetOnComplete( player_OnComplete );
-	player.SetFile( "/Sys/Snd/Poing.ogg" );
+	player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
 }
 
 function btn_OnTouch()

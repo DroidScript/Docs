@@ -3,18 +3,17 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY" );
 
-<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	<b>glview = app.CreateGLView( 1, 1, "Fast2d" );
 	lay.AddChild( glview );
 
-	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame );
-</b>
+	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame );</b>
+
 	app.AddLayout( lay );
 }
 
 function DrawFrame()
 {
 	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 );
-
 	glview.Render();
 }
 </sample>
@@ -26,11 +25,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY" );
 
-<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	<b>glview = app.CreateGLView( 1, 1, "Fast2d" );
 	lay.AddChild( glview );
 
-	img = glview.CreateImage( "/Sys/Img/Hello.png", StartRendering );
-</b>
+	img = glview.CreateImage( "/Sys/Img/Hello.png", StartRendering );</b>
+
 	app.AddLayout( lay );
 }
 
@@ -50,7 +49,7 @@ function DrawFrame()
 }
 </sample>
 
-<sample DrawSprite>
+<sample Sprite Sheet Animation>
 var spriteCount = 8;
 var srcWidth = 50;
 var srcHeight = 60;
@@ -60,11 +59,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY" );
 
-<b>	glview = app.CreateGLView( 1, 1, "Fast2d" );
+	<b>glview = app.CreateGLView( 1, 1, "Fast2d" );
 	lay.AddChild( glview );
 
-	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering );
-</b>
+	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering );</b>
+
 	app.AddLayout( lay );
 }
 
@@ -84,7 +83,5 @@ function DrawFrame()
 				0.3, 0.4, 0.3, -1 );
 
 	glview.Render();
-
 	frameCount++;
 }</sample>
-

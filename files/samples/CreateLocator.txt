@@ -1,11 +1,11 @@
 <sample Get Location Updates>
 function OnStart()
 {
-<b>	loc = app.CreateLocator("GPS,Network");
+	<b>loc = app.CreateLocator("GPS,Network");
 	loc.SetOnChange(loc_OnChange);
 	loc.Start();
-	app.ShowPopup("Locating");
-</b>}
+	app.ShowPopup("Locating");</b>
+}
 
 function loc_OnChange(pos)
 {

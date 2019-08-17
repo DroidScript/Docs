@@ -1,17 +1,6 @@
-<sample Example>
+<sample Demo>
 
 function OnStart()
-{
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
-
-	btn = app.CreateButton( "Show Dialog", 0.6, 0.1 );
-	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
-
-	app.AddLayout( lay );
-}
-
-function btn_OnTouch()
 {
 	dlg = app.CreateDialog( "Custom Dialog" );
 

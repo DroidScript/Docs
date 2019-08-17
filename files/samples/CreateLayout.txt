@@ -1,9 +1,9 @@
 <sample Vertical>
 function OnStart()
 {
-<b>	lay = app.CreateLayout( "Linear", "Vertical" );
+	<b>lay = app.CreateLayout( "Linear", "Vertical" );</b>
 
-</b>	btnA = app.CreateButton( "A", 0.2, 0.1 );
+	btnA = app.CreateButton( "A", 0.2, 0.1 );
 	lay.AddChild( btnA );
 
 	btnB = app.CreateButton( "B", 0.2, 0.1 );
@@ -19,9 +19,9 @@ function OnStart()
 <sample Horizontal>
 function OnStart()
 {
-<b>	lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );
+	<b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );</b>
 
-</b>	btnA = app.CreateButton( "A", 0.2, 0.1 );
+	btnA = app.CreateButton( "A", 0.2, 0.1 );
 	lay.AddChild( btnA );
 
 	btnB = app.CreateButton( "B", 0.2, 0.1 );
@@ -42,8 +42,8 @@ function OnStart()
 	btnA = app.CreateButton( "A", 0.6, 0.1 );
 	layVert.AddChild( btnA );
 
-<b>	layHoriz = app.CreateLayout( "Linear", "Horizontal" );
-</b>	layVert.AddChild( layHoriz );
+	<b>layHoriz = app.CreateLayout( "Linear", "Horizontal" );
+	layVert.AddChild( layHoriz );</b>
 
 	btnB1 = app.CreateButton( "B1", 0.2, 0.1 );
 	layHoriz.AddChild( btnB1 );
@@ -64,9 +64,8 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-
-<b>	layFrm = app.CreateLayout( "Frame" );
-</b>	img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 );
+	<b>layFrm = app.CreateLayout( "Frame" );</b>
+	img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 );
 	layFrm.AddChild( img1 );
 
 	img2 = app.CreateImage( "/Sys/Img/Hello.png", 0.5 );
@@ -84,9 +83,9 @@ function OnStart()
 
 function btn_OnTouch()
 {
-	if( img2.GetVisibility()=="Hide" )
-	&nbsp;img2.SetVisibility( "Show" );
+	if( img2.GetVisibility() == "Hide" )
+    	img2.SetVisibility( "Show" );
 	else
-	&nbsp;img2.SetVisibility( "Hide" );
+	   img2.SetVisibility( "Hide" );
 }
 </sample>

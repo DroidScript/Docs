@@ -5,12 +5,12 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 );
+	<b>lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 );
 	lst.SetOnTouch( lst_OnTouch );
 	lst.SetOnLongTouch( lst_OnLongTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )
@@ -30,13 +30,13 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4  );
+	<b>lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4  );
 	lst.SetTextColor( "#ff666666" );
 	lst.SetBackColor( "#ffffffff" );
 	lst.SetOnTouch( lst_OnTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )
@@ -51,12 +51,12 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	var data = "Folder:folder,Audio:audio,Photo:photo,Video:video";
+	<b>var data = "Folder:folder,Audio:audio,Photo:photo,Video:video";
 	lst = app.CreateList( data, 0.8, 0.4 );
 	lst.SetOnTouch( lst_OnTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )
@@ -71,13 +71,13 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	var data = "The Hobbit:Author^c^ J.R.R. Tolkien:null";
+	<b>var data = "The Hobbit:Author^c^ J.R.R. Tolkien:null";
 	data += ",Watership Down:Author^c^ Richard Adams:null";
 	lst = app.CreateList( data, 0.8, 0.4 );
 	lst.SetOnTouch( lst_OnTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )
@@ -92,14 +92,14 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	var data = "Button 1,Button 2,Button 3,Button 4";
+	<b>var data = "Button 1,Button 2,Button 3,Button 4";
 	lst = app.CreateList( data, 0.8, 0.8, "OrangeButton" );
 	lst.SetBackColor( "#ffffff" );
 	lst.SetPadding( 0.1, 0.1, 0.1, 0.1 );
 	lst.SetOnTouch( lst_OnTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )
@@ -114,20 +114,20 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	var data = "";
-	for( var i=1; i<=30; i++)
+	<b>var data = "";
+	for( var i = 1; i <= 30; i++ )
 	{
-		if( i>1 ) data += ",";
-		data += "Item "+i+":Details for item "+i+":null";
+		if( i > 1 ) data += ",";
+		data += "Item " + i + ":Details for item " + i + ":null";
 	}
 	lst = app.CreateList( data, 1, 1, "WhiteGrad" );
 	lst.SetTextColor1( "#ff555558");
 	lst.SetTextColor2( "#ff555558" );
 	lst.SetTextMargins( 0.04, 0, 0, 0 );
 	lst.SetOnTouch( lst_OnTouch );
-	lay.AddChild( lst );
+	lay.AddChild( lst );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function lst_OnTouch( title, body, type, index )

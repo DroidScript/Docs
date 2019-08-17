@@ -66,7 +66,7 @@ function OnStart()
 	img.SetColor( "#8888ff" );
 	img.SetPaintColor( "#ff0000" );
 	img.DrawCircle( 0.5, 0.5, 0.1 );
-	img.DrawRectangle( 0.7, 0.7, 0.05 );
+	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 );
 
 </b>	app.AddLayout( lay );
 }

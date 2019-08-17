@@ -1,10 +1,10 @@
 <sample Basic>
 function OnStart()
 {
-<b>	dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
+	<b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
 	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();
-</b>}
+	dlg.Show();</b>
+}
 
 function dlg_OnTouch( item )
 {
@@ -15,10 +15,10 @@ function dlg_OnTouch( item )
 <sample Multi>
 function OnStart()
 {
-<b>	dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
+	<b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
 	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();
-</b>}
+	dlg.Show();</b>
+}
 
 function dlg_OnTouch( item, isChecked )
 {

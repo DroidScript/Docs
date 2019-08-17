@@ -94,10 +94,13 @@ optionally you can specify a subtype of your type separated with an underscore. 
 - `str_lst`: comma separated
 - `str_url`: url
 
+if the subtype you need isn't specified here you can add a 'basetype:description' to display a custom description. Example:
+- `num:top left x coordinate`
+
 if there is a fixed set of argument vales available you can add them separated with pipes '`|`' for alternatives or commas '`,`', with a leading '`-`' to begin the list. Example:
 - `str_com-Linear|Frame|Absolute`
 
-To describe a possivle argument value more you can add a description text separated with '`:`'. Example:
+To describe a possible argument value more you can add a description text separated with '`:`'. Example:
 - `str_com-Linear:linear ordered objects|Frame|Absolute`
 
 #### Type Popups

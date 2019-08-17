@@ -1,1 +1,7 @@
- 
+<sample Demo>
+function OnStart()
+{
+	app.CopyFile("/assets/samples/Game_Bounce.js", "script.js");
+	app.CreateGame("script.js", "landscape");
+}
+</sample>

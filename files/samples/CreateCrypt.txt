@@ -1,1 +1,54 @@
- 
+<sample Basic>
+function OnStart()
+{
+    text = "Hello World!";
+    <b>crpt = app.CreateCrypt();
+    var encr = crpt.Encrypt(text, "key");
+    var decr = crpt.Decrypt(encr, "key");
+    var hash = crpt.Hash(text);</b>
+
+    app.Alert(
+        'text: "' + text + '"\n' +
+        'encr: "' + encr + '"\n' +
+        'decr: "' + decr + '"\n' +
+        'hash: "' + hash + '"\n' ,
+        "Data"
+    );
+}
+</sample>
+
+<sample Encrypt using device id>
+function OnStart()
+{
+	crp = app.CreateCrypt();
+	ShowDialog( "Hello World" );
+}
+
+function ShowDialog( data )
+{
+    app.ShowTextDialog("input text", data, OnText);
+}
+
+function OnText( text )
+{
+	var dlg = app.CreateYesNoDialog( "Choose option", "NoCancel" );
+	dlg.SetOnTouch( OnAction );
+	dlg.data.text = text;
+    dlg.Show();
+	dlg.SetButtonText( "Encrypt", "Decrypt" );
+}
+
+function OnAction( result )
+{
+    if( result == "Yes" )
+    {
+        result = crp.Encrypt( this.data.text, app.GetDeviceId() );
+        ShowDialog( result );
+    }
+    else if( result == "No" )
+    {
+        result = crp.Decrypt( this.data.text, app.GetDeviceId() );
+        ShowDialog( result );
+    }
+}
+</sample>

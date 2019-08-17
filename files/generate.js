@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var curDoc = null, curSubf = null;
+var warnEnbl = false;
 
 	//generates all doc files
 function generateDocs() {
@@ -112,7 +113,6 @@ function generateDoc( name ) {
 	Globals = {
 		popDefs: [],
 		useEventPop: false,
-		saveHref:    false,
 		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
 	};
 
@@ -134,7 +134,7 @@ function generateDoc( name ) {
 		    //insert everything into the doc base string
 		    html = htmlBase
 			    // subfunctions
-			    .replace(/%b/g, isControl(name) ? subfHead
+			    .replace(/%b/g, isControl(name) && data.mets ? subfHead
 				    .replace(/%t/g, name.slice(6))
 				    .replace("%f", data.mets) : ""
 			    )
@@ -146,7 +146,7 @@ function generateDoc( name ) {
 				    .replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
 			    )
 			    // popup object list
-			    .replace(/%p/, Globals.popDefs.join(""))
+			    .replace(/%p/, Globals.popDefs.join("\n"))
 			    // title occurances
 			    .replace(/%t/g, name)
 			    // remove empty <p> tags
@@ -172,12 +172,13 @@ function getDocData( f, useAppPop ) {
 		useAppPop = false;
 
 	// default descriptions and capitalizing
+	f.shortDesc = f.shortDesc.trim();
 	if( !f.shortDesc ) {
 		f.shortDesc = f.name;
 		tchd = true;
 	}
-	f.shortDesc = f.shortDesc.trim();
-	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() + f.shortDesc.slice(1);
+	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
+	    f.shortDesc.slice(1, f.shortDesc.endsWith(".") ? -1 : undefined );
 
 	if( !f.desc ) {
 		f.desc = f.shortDesc;
@@ -197,12 +198,7 @@ function getDocData( f, useAppPop ) {
 
 	// convert constructor line
 	for( i in f.pNames ) {
-	    if( f.pNames[i] == "event" ) {
-			Globals.useEventPop = true;
-			mArgs.push(
-				`<a pop="${Globals.saveHref}" href="" onclick='$( this.getAttribute( "pop" ) ).bind( {popupafterclose:function(){$( "#pop_std_evt" ).popup( "open", {"transition":"pop"} )}} );$( this.getAttribute( "pop" ) ).popup( "close" )'>event</a>`
-			);
-		} else if( useAppPop ) {
+	    if( useAppPop ) {
 			mArgs.push(
 				newAppPopup( typeDesc( f.pTypes[i] ), f.pNames[i] )
 				.replace( /<\/?b>/g, "")
@@ -220,9 +216,7 @@ function getDocData( f, useAppPop ) {
 
 	// return data if there are no subfunctions
 	if( !f.subf || !keys( f.subf ).length )
-		return useAppPop ?
-			{ args: mArgs, ret: fretval } :
-			{ args: mArgs, ret: fretval, mets: "" }
+		return { args: mArgs, ret: fretval, mets: "" }
 
 	var k, methods = "",
 		// function list
@@ -230,7 +224,7 @@ function getDocData( f, useAppPop ) {
 
 	for( k = 0; k < mkeys.length; k++ ) {
 		var met = f.subf[mkeys[k]], retval = "", type;
-		curSubf = f.name;
+		curSubf = met.name;
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
@@ -247,11 +241,6 @@ function getDocData( f, useAppPop ) {
 			tchd = true;
 		}
 
-		// special popup for OnTouch-event-object
-		if( met.pNames.length == 1 && met.pTypes[0].constructor.name == "Object" &&
-			met.pTypes[0].pNames.length == 1 && met.pTypes[0].pNames[0] == "event" )
-			Globals.saveHref = true;
-
 		//convert return value
 		if( met.retval )
 			retval = " → " + typeDesc( met.retval );
@@ -259,10 +248,11 @@ function getDocData( f, useAppPop ) {
 		//convert function types
 		if( met.isfunc ) {
 			var args = [], type, pop;
-			for( i in met.pNames )
+			for( i in met.pNames ) {
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
+			}
 			
-			pop = descPopup( met.name, replW( met.desc) );
+			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` + replW( met.desc) );
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
@@ -332,20 +322,26 @@ function getSamples( name ) {
 
 // convert a sample to html code
 function toHtmlSamp( c, t, n ) {
-    c = c.replace( /<\/?b>/g, "§b§")
+    var hasBold = c.indexOf("<b>") > -1 && c.indexOf("</b>") > c.indexOf("<b>");
+    if(!hasBold) Warn(`${curDoc} sample "${t}" has no bold area\n`);
+	
+	c = c.replace( /<\/?b>/g, "§b§");
 	c = Prism.highlight(c.trim(), Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
     	.replace( /\n/g, "<br>\n\t\t\t\t\t" )
-    	.replace( /§b§([^]+?)§b§/g, "<b id = \"snip%i\"  style = \"font-size:100%\">$1</b>" )
-	    //.replace( /</g, "&lt;" )
-	    //.replace( />/g, "&gt;" )
-	    //.replace( /&/g, "&amp;" )
+    
+    if(hasBold) {
+        c = sampBase
+            .replace( "%b", c )
+            .replace( /§b§([^]+?)§b§/g, "<b id=\"snip%i\" style=\"font-size:100%\">$1</b>" );
+    } else {
+        c = sampBase
+            .replace( /.*<a.*onclick="copy\( snip%i \)">.*<\/a>\n/, "" )
+            .replace( "%b", c );
+    }
 
-	return sampBase
-		.replace( "%b", c)
-		.replace( /%i/g, n )
-		.replace( /%t/g, t )
+    return c.replace( /%i/g, n ).replace( /%t/g, t );
 }
 
 // returns a description popup object
@@ -370,8 +366,8 @@ function typeDesc( types, isDSO ) {
 	var last = "</b>";
 	var s = types.map(
 		(type, i) => typenames[type[0]] ?
-			"<b>" + typenames[type[0]] + (hrefs[type[1]] ? 
-				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) :""
+			"<b>" + typenames[type[0]] + (typedesc[type[1]] ? 
+				(last = "</i>", ":</b> <i>" + typedesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 	
@@ -410,28 +406,37 @@ function toArgPop( name, types ) {
 		tryAddType(newDefPopup(
 			"fnc_" + incpop( "fnc" ),
 			"<b>function</b>(" + types.pNames.map(
-				(n, i) => toArgAppPop(n, types.pTypes[i])
+				(n, i) => toArgAppPop(n, types.pTypes[i]).replace(/onclick=".*?"/, function(m) {
+				    if(types.pTypes[i] != "event") return m;
+				    Globals.useEventPop = true;
+			        return `onclick='$(this.parentNode).bind({popupafterclose:function(){$("#pop_std_evt").popup("open", {"transition":"pop"})}});$(this.parentNode).popup("close")'`
+				})
 			).join(", ") + ")" )
 		);
-
-		if( Globals.saveHref ) Globals.saveHref = "#pop_fnc_" + incpop( "fnc" );
+   
 		return newTxtPopup( "fnc_" + incpop( "fnc" ), name );
 	}
 
 	// multiple types
 	types = types.split("||").map(
-		(type) => [type.slice(0,3)].concat(
-			type.replace("-", '\x01').split('\x01')
-		)
-	);
+		 function(type) {
+		    return [type.slice(0,3)].concat(
+		            // custom type desc
+			    type.replace(/^(...):([^-]*)/, (m, btype, href) =>
+			            (typedesc[btype + "_tmp"] = href, btype + "_tmp"))
+		            // sample vals
+			        .replace(/-/, '\x01').split('\x01')
+		    )
+	    }
+    );
 
 	// start of type desc string. (info: [optional], [:] if followed by value)
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
 	var last = "</b>";
-	var s = types.map(
-		(type, i) => "<b>" + typenames[type[0]] +
-			(hrefs[type[1]] ? 
-				(last = "</i>", ":</b> <i>" + hrefs[type[1]]) : ""
+	var s = types
+	    .map((type, i) => "<b>" + typenames[type[0]] +
+			(typedesc[type[1]] ?
+				(last = "</i>", ":</b> <i>" + typedesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last)
 		);
 	
@@ -460,11 +465,13 @@ function toArgPop( name, types ) {
 	// save popup definition and return popup text (= link)
 	if(types.length == 1) {
 		types = types[0];
+		if(types[1].endsWith("_tmp")) types[2] = true;
 		var pop = 
 			(types[1].match("_") || types[2] ? "" : "std_") +
 			(!types[2] ? types[1].replace("?", "ukn") :
 				types[0] + "_" + incpop( types[0], 1 )
 			);
+		if(pop.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop))
 		tryAddType(newDefPopup( pop, str[0].replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( pop, name );
 		
@@ -487,7 +494,7 @@ function toArgAppPop( name, types ) {
 	return newAppPopup(
 		types.map(
 			(type) => typenames[type[0]] +
-				(hrefs[type[1]] ? ": " + hrefs[type[1]] : "") +
+				(typedesc[type[1]] ? ": " + typedesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
 			).join("\n"),
 		name
@@ -496,12 +503,12 @@ function toArgAppPop( name, types ) {
 
 //adds a type to the type popup list if it doesnt exist yet
 function tryAddType( typelst ) {
-	var tlst = typelst.split( "\n" )
-	for( i = 0; i < tlst.length; i++ ) {
-		if( !tlst[i] ) continue;
-		if( Globals.popDefs.indexOf( tlst[i] + "\n" ) == -1 )
-			Globals.popDefs.push( tlst[i] + "\n" );
-	}
+	var tlst = typelst.split( "\n" ).forEach( function(def, i) {
+		if( !def ) return;
+		var con = def.slice(def.indexOf(">") + 1);
+		if( Globals.popDefs.indexOf( def ) == -1 )
+			Globals.popDefs.push( def );
+	});
 }
 
 //replace whitespace with html syntax whitespace
@@ -521,12 +528,12 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?)\b(\s*[,}\]]?)?/g,
-		function(m, name, type, _, close) {
+	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?(-[^ .]*))\b(\s*[,}\]]?)?/g,
+		function(m, name, type, _, _, close) {
 		    if(useAppPop) {
 				return newAppPopup(
 					typenames[type.slice(0, 3)] +
-						(hrefs[type] ? ": " + hrefs[type] : ""),
+						(typedesc[type] ? ": " + typedesc[type] : ""),
 					name
 				) + (close || "")
 			} else {
@@ -545,7 +552,7 @@ function addMarkdown(s) {
 			return white + (app.FileExists(path + "docs/app/" + url) ? 
 				`<a href="${url}" data-ajax="false">` :
 				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
-				+ `${name}</a>`;
+				+ `${name||url}</a>`;
 			}
 		)
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
@@ -561,7 +568,7 @@ function addMarkdown(s) {
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
 	//returns the type name or description of a value or the value itself
-function getv( v ) { return hrefs[v] || typenames[v] || v; }
+function getv( v ) { return typedesc[v] || typenames[v] || v; }
 	//returns a comma separated list of object keys
 function skeys( o ) { return "" + keys( o ); }
 	//replaces \ paceholders with its placeholder 'name'
@@ -575,24 +582,13 @@ function rplop( s, n ) {
 		.replace( /§(\d+)§/g, (m,c)=>`${String.fromCharCode(c)}` )
 	);
 }
-function Throw(err) {
-	throw err;
-}
-function newNaviItem(link, text) { 
-	return naviItem.replace("%s", link).replace("%s", text);
-}
-function newDefPopup(  id, text) {
-	return defPopup.replace("%s",   id).replace("%s", text);
-}
-function newTxtPopup(  id, text) { 
-	return txtPopup.replace("%s",   id).replace("%s", text);
-}
-function newAppPopup(desc, type) { 
-	return appPopup.replace("%s", desc).replace("%s", type);
-}
-function newLink(target, text) {
-	return `<a href="${target}" data-ajax="false">${text}</a>`;
-}
+function Throw(err) { throw err; }
+function Warn(msg) { if(warnEnbl) console.error("Warning: " + msg); }
+function newNaviItem(link, text) { return naviItem.replace("%s", link).replace("%s", text); }
+function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("%s", text); }
+function newTxtPopup(  id, text) { return txtPopup.replace("%s",   id).replace("%s", text); }
+function newAppPopup(desc, type) { return appPopup.replace("%s", desc).replace("%s", type); }
+function newLink(target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function dbg(v){ console.log(v); return v; }
 
 /* % placeholder descriptions in the html base strings
@@ -625,7 +621,7 @@ var 	//navigator list item
 		//subfunctions list
 	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
 	    // premium note
-	premiumHint = "<font color='blue'><b>Note: This function is a premium function. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></font>";
+	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
 		//example snippets
 	sampBase = `
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -688,6 +684,7 @@ var 	//navigator list item
 		<div data-role="header" data-position="fixed">
 			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div><!-- /header -->
 
 		<div data-role="content">
@@ -727,6 +724,7 @@ var 	//navigator list item
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -755,7 +753,6 @@ var 	//globals for one doc
 	//bases for...
 		//available typenames
 	typenames = {
-		"?":"unknown",
 		"all":"all types",
 		"bin":"boolean",
 		"dso":"app object",
@@ -763,63 +760,66 @@ var 	//globals for one doc
 		"lst":"list",
 		"num":"number",
 		"obj":"object",
-		"str":"string"
+		"str":"string",
+		"?":"unknown"
 	},
 		//special types and descriptions
-	hrefs = {
+	typedesc = {
 		"?"  :"",
 		"all":"",
 		"bin":"",
 		"dso":"",
-		/*"mul":"", // multiple separated with ||*/
 		"fnc":"",
 		"lst":"",
+		
 		"lst_obj":"of objects",
+		/*"mul":"", // multiple separated with ||*/
+		
 		"num":"",
-		"num_dhx":"0-255",
-		"num_flt":"float",
-		"num_hrz":"hertz",
-		"num_pxl":"pixel",
-		"num_fac":"factor",
-		"num_met":"meters",
-		"num_int":"integer",
-		"num_prc":"percent",
-		"num_sec":"seconds",
-		"num_mls":"milliseconds",
-		"num_frc":"fraction (0..1)",
-		"num_fps":"frames per second",
+		"num_byt":"Bytes",
+		"num_dat":"Datetime in milliseconds (from JS Date object)",
 		"num_deg":"angle in degrees (0..360)",
-		"num_rad":"angle in radient (0..2*π)",
+		"num_dhx":"0-255",
+		"num_fac":"factor",
+		"num_flt":"float",
+		"num_fps":"frames per second",
+		"num_frc":"fraction (0..1)",
+		"num_gbt":"Gigabytes",
+		"num_hrz":"hertz",
+		"num_int":"integer",
+		"num_met":"meters",
+		"num_mls":"milliseconds",
 		"num_mtu":"maximum transmission unit",
+		"num_prc":"percent",
+		"num_pxl":"pixel",
+		"num_rad":"angle in radient (0..2*π)",
+		"num_sec":"seconds",
+		
 		"str":"",
-		"str_lst":"comma “,” separated",
-		"str_com":"comma “,” separated",
-		"str_pip":"pipe “|” separated",
-		"str_smc":"semicolon “;” separated",
+		"str_acc":"account Email",
+		"str_b64":"base64 encoded",
 		"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',
+		"str_com":"comma “,” separated",
+		"str_eml":"comma separated email addresses or names",
+		"str_flt":"float",
 		"str_fmt":"format",
-		"str_htm":"html",
+		"str_htm":"html code",
+		"str_int":"integer",
+		"str_jsc":"javascript code",
+		"str_lst":"comma “,” separated",
 		"str_mim":"mimetype",
 		"str_mod":"mode",
+		"str_num":"number",
+		"str_oid":"object id “#id”",
 		"str_ort":'“Default”, “Portrait”, “Landscape”',
+		"str_pip":"pipe “|” separated",
 		"str_pth":'path to file or folder ( “/absolute/...” or “relative/...” )',
+		"str_pxl":"integer in pixels",
+		"str_smc":"semicolon “;” separated",
 		"str_sql":"sql code",
 		"str_sty":"style",
-		"str_url":"url path",
 		"str_uri":"URI encoded",
-		"str_oid":"object id “#id”",
-		
-		"num_byt":"Bytes",
-		"num_gbt":"Gigabytes",
-		"num_dat":"Datetime in milliseconds (from JS Date object)",
-		
-		"str_acc":"account Email",
-		"str_num":"number",
-		"str_int":"integer",
-		"str_flt":"float",
-		"str_b64":"base64 encoded",
-		"str_pxl":"integer in pixels",
-		"str_eml":"comma separated email addresses or names"
+		"str_url":"url path"
 	};
 
 
