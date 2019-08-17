@@ -187,8 +187,8 @@ function getTheme() {
 // app.ShowPopup equivalent for browsers 
 function ShowPopup(msg){
     var pop = $("#appPopup");
-    if(pop.is(":visible")) pop.stop().fadeOut(200, function() { pop.text(msg); });
+    if(pop.is(":visible")) pop.stop().fadeOut(100, function() { pop.text(msg); });
     else pop.text(msg);
-    pop.fadeIn().delay(1500).fadeOut();
+    pop.fadeIn(200).delay(1500).fadeOut(200);
 }
 

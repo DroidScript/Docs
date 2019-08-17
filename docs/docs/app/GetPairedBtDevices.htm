@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetPairedBtDevices</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -35,7 +36,7 @@
 			<p>Returns a list of objects containing the name and bluetooth address of paired devices.</p>
 
 			<div class="samp">
-			app.GetPairedBtDevices() → <b>list:</b> <i>of objects:</i> { <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a> }
+			app.GetPairedBtDevices() → <b>list:</b> <i>of objects:</i> { name:str, address:str }
 			</div>
 
 			<p>Note that Bluetooth must be turned on to receive this information.<br>
@@ -69,7 +70,7 @@
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> devices <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPairedBtDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> devices <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPairedBtDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> devices <span class="token punctuation">)</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>address <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -88,7 +89,6 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
 	</div>
 </body>

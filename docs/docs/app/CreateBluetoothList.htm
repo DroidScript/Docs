@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateBluetoothList</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -54,7 +55,6 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
 				</div>
@@ -70,10 +70,9 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>btl.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">address</a>)</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Define a callback function that is called when the user selects an element.</div>
-
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>btl.SetOnTouch</b><br>Define a callback function that is called when the user selects an element.</div>
 	</div>
 </body>
 

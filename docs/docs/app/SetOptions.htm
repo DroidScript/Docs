@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOptions</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +45,6 @@
 		</div>
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“UseBrowser”</font>, <font class='docstring'>“NoKeys”</font> or <font class='docstring'>“ShowKeys”</font>, <font class='docstring'>“NoThemeAlerts”</font>, <font class='docstring'>“IgnoreSslErrors”</font>, <font class='docstring'>“TouchModal”</font>, <font class='docstring'>“NoTouch”</font>, <font class='docstring'>“NoFocus”</font>, <font class='docstring'>“Secure”</font>, <font class='docstring'>“ShowLocked”</font>, <font class='docstring'>“WakeScreen”</font>, <font class='docstring'>“ScreenOn”</font></div>
-
 	</div>
 </body>
 

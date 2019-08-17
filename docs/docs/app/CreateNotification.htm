@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateNotification</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -61,7 +62,7 @@
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Sending notification"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">notify <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNotification</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">notify <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNotification</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;notify<span class="token punctuation">.</span><span class="token function">SetMessage</span><span class="token punctuation">(</span> <span class="token string">"Ticker"</span><span class="token punctuation">,</span> <span class="token string">"Title"</span><span class="token punctuation">,</span> <span class="token string">"Text"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;notify<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span> <span class="token string">"testID"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;<span class="token function">setTimeout</span><span class="token punctuation">(</span> cancel<span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -97,19 +98,18 @@
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Ongoing”</font>, <font class='docstring'>“AutoCancel”</font>, <font class='docstring'>“FullScreen”</font></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">Cancel a notification with a specific id.</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns the control class name.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content">Send the notification to the user.</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ntf.Cancel</b><br>Cancel a notification with a specific id.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ntf.GetType</b><br>Returns the control class name.</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ntf.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ntf.Notify</b><br>Send the notification to the user.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">Set an image which will be displayed bigger than usual.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ntf.SetLargeImage</b><br>Set an image which will be displayed bigger than usual.</div>
 		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>&nbsp;&nbsp;colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content">Activate the device notification LEDs.</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">Set notification texts.</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content">Set a small image in your notification.</div>
-
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ntf.SetLights</b><br>Activate the device notification LEDs.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ntf.SetMessage</b><br>Set notification texts.</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>ntf.SetSmallImage</b><br>Set a small image in your notification.</div>
 	</div>
 </body>
 

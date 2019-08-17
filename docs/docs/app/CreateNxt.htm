@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateNxt</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -85,78 +86,77 @@
 
 		<div data-role="popup" id="pop_num_hrz" class="ui-content"><b>number:</b> <i>hertz</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">play tone with given frequency for a given time in milliseconds</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>nxt.Beep</b><br>play tone with given frequency for a given time in milliseconds</div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">stop feeding motors with power</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content">check whether phone/tablet wa connected to the NXT</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>nxt.Brake</b><br>stop feeding motors with power</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>nxt.CheckConnection</b><br>check whether phone/tablet wa connected to the NXT</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content">Connects to the Bluetooth device</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">Disconnect NXT from Phone/Tablet</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>nxt.Connect</b><br>Connects to the Bluetooth device</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>nxt.Disconnect</b><br>Disconnect NXT from Phone/Tablet</div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
 		<div data-role="popup" id="pop_num_flt" class="ui-content"><b>number:</b> <i>float</i></div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content">commands NXT to drive motors</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">?</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content">?</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content">Returns Bluetooth address of connected NXT brick</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content">Returns Bluetooth name of connected NXT</div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content">returns current running program name</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>nxt.Drive</b><br>commands NXT to drive motors</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>nxt.FileFindFirst</b><br>?</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>nxt.FileFindNext</b><br>?</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>nxt.GetBtAddress</b><br>Returns Bluetooth address of connected NXT brick</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>nxt.GetBtName</b><br>Returns Bluetooth name of connected NXT</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>nxt.GetCurrentProgram</b><br>returns current running program name</div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content">GetRotationCount</div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content">Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content">IsBluetoothEnabled</div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content">IsConnected</div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content">Returns whether the control is currently useable by the user.</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>nxt.GetRotationCount</b><br>GetRotationCount</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>nxt.GetType</b><br>Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>nxt.IsBluetoothEnabled</b><br>IsBluetoothEnabled</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>nxt.IsConnected</b><br>IsConnected</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>nxt.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_011" class="ui-content">Checks if a motor is currently powered</div>
-		<div data-role="popup" id="pop_dsc_012" class="ui-content"></div>
-		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
-		<div data-role="popup" id="pop_dsc_013" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>nxt.IsMotorIdle</b><br>Checks if a motor is currently powered</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>nxt.IsPaired</b><br></div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>nxt.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content">PlaySoundFile for given times</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>nxt.PlaySoundFile</b><br>PlaySoundFile for given times</div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“ColorDetect”</font> or <font class='docstring'>“LightSense”</font> or <font class='docstring'>“RedSense”</font> or <font class='docstring'>“GreenSense”</font> or <font class='docstring'>“BlueSense”</font></div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content">ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,<a href="" onclick="app.ShowPopup('undefined')">5</a>,6:white</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>nxt.ReadColorSensor</b><br>ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,5:red,6:white</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_dsc_016" class="ui-content">ReadDistanceSensor in centimeters</div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>nxt.ReadDistanceSensor</b><br>ReadDistanceSensor in centimeters</div>
 		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-		<div data-role="popup" id="pop_dsc_017" class="ui-content">ReadLightSensor -> value between 0 and 100</div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>nxt.ReadLightSensor</b><br>ReadLightSensor -> value between 0 and 100</div>
 		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
 		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Number”</font> or <font class='docstring'>“Logic”</font></div>
-		<div data-role="popup" id="pop_dsc_018" class="ui-content">ReadMail</div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>nxt.ReadMail</b><br>ReadMail</div>
 		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“DB”</font> or <font class='docstring'>“DbA”</font></div>
-		<div data-role="popup" id="pop_dsc_019" class="ui-content">ReadSoundSensor</div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>nxt.ReadSoundSensor</b><br>ReadSoundSensor</div>
 		<div data-role="popup" id="pop_num_006" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_dsc_01a" class="ui-content">ReadTouchSensor</div>
-		<div data-role="popup" id="pop_dsc_01b" class="ui-content">show enable bluetooth dialog when bluetooth disabled</div>
+		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>nxt.ReadTouchSensor</b><br>ReadTouchSensor</div>
+		<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>nxt.RequestEnable</b><br>show enable bluetooth dialog when bluetooth disabled</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_01c" class="ui-content">Reset motors</div>
+		<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>nxt.Reset</b><br>Reset motors</div>
 		<div data-role="popup" id="pop_num_007" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Number”</font> or <font class='docstring'>“Logic”</font></div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_01d" class="ui-content">SendMail</div>
-		<div data-role="popup" id="pop_dsc_01e" class="ui-content">inverts direction of motor commands</div>
+		<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>nxt.SendMail</b><br>SendMail</div>
+		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>nxt.SetInvert</b><br>inverts direction of motor commands</div>
 		<div data-role="popup" id="pop_num_008" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
 		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>&nbsp;&nbsp;colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
-		<div data-role="popup" id="pop_dsc_01f" class="ui-content">?</div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>nxt.SetLampColor</b><br>?</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_020" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>nxt.SetOnConnect</b><br>called when NXT has successfully connected via Bluetooth</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_021" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>nxt.SetOnConnectEx</b><br>called when NXT has successfully connected via Bluetooth</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_022" class="ui-content">called when NXT has successfully connected via Bluetooth</div>
-		<div data-role="popup" id="pop_dsc_023" class="ui-content">show paired NXT list to connect to one via bluetooth</div>
-		<div data-role="popup" id="pop_dsc_024" class="ui-content">StartProgram</div>
+		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>nxt.SetOnConnected</b><br>called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>nxt.ShowDevices</b><br>show paired NXT list to connect to one via bluetooth</div>
+		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>nxt.StartProgram</b><br>StartProgram</div>
 		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_025" class="ui-content">Stop</div>
-		<div data-role="popup" id="pop_dsc_026" class="ui-content">StopProgram</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>nxt.Stop</b><br>Stop</div>
+		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>nxt.StopProgram</b><br>StopProgram</div>
 		<div data-role="popup" id="pop_num_009" class="ui-content"><b>number:</b> <i>integer:</i> 1..6</div>
-		<div data-role="popup" id="pop_dsc_027" class="ui-content">convert color integer got via ReadColorSensor to color name</div>
-
+		<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>nxt.ToColorName</b><br>convert color integer got via ReadColorSensor to color name</div>
 	</div>
 </body>
 

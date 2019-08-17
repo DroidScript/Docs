@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetPermission</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +45,7 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnPermission</span><span class="token punctuation">(</span> <span class="token parameter">pathURI</span> <span class="token punctuation">)</span><br>
@@ -66,7 +67,6 @@
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Camera”</font> or <font class='docstring'>“ExtSDcard”</font> or <font class='docstring'>“Network”</font> or <font class='docstring'>“Storage”</font> or <font class='docstring'>“Overlay”</font> or <font class='docstring'>“SMS”</font></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">ungranted</a>)</div>
-
 	</div>
 </body>
 

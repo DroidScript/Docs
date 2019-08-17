@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreatePlayStore</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -34,7 +35,7 @@
 		<div data-role="content">
 			<p>PlayStore<br>
 			<br>
-			<font color='blue'><b>Note: This function is a premium function. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></font>.</p>
+			<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>.</p>
 
 			<div class="samp">
 			pls = app.CreatePlayStore() → <b>app object:</b> PlayStore
@@ -54,17 +55,16 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pls.GetBillingInfo</b><br></div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content">Returns the control class name.</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pls.GetPurchases</b><br></div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>pls.GetType</b><br>Returns the control class name.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pls.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">?</div>
-
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>pls.Purchase</b><br>?</div>
 	</div>
 </body>
 

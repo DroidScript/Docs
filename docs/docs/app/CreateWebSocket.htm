@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateWebSocket</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -53,18 +54,17 @@
 
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">close web socket</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content">return whether WS was opened</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wbs.Close</b><br>close web socket</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wbs.GetSocket</b><br></div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wbs.IsOpen</b><br>return whether WS was opened</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content">send text over the WS</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>wbs.Send</b><br>send text over the WS</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">called when WS closed</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>wbs.SetOnClose</b><br>called when WS closed</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">message</a>)</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content">called when recived text</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>wbs.SetOnMessage</b><br>called when recived text</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">called when WS loaded/opened</div>
-
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>wbs.SetOnOpen</b><br>called when WS loaded/opened</div>
 	</div>
 </body>
 

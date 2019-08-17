@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ShowProgressBar</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +45,7 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowProgressBar</span><span class="token punctuation">(</span> <span class="token string">"Loading..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowProgressBar</span><span class="token punctuation">(</span> <span class="token string">"Loading..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> prog <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> prog <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> prog<span class="token operator">++</span> <span class="token punctuation">)</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">UpdateProgressBar</span><span class="token punctuation">(</span> prog <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -67,7 +68,6 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Light”</font></div>
-
 	</div>
 </body>
 

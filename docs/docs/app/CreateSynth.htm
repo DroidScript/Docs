@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateSynth</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -80,48 +81,47 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>syn.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>syn.PlayMidiTune</b><br></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>syn.PlayNote</b><br></div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>syn.PlayTone</b><br></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>syn.SetDelay</b><br></div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">SetDelayEnabled</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>syn.SetDelayEnabled</b><br>SetDelayEnabled</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>syn.SetFeedback</b><br></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content">SetPhaserEnabled</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_011" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_012" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_013" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content">SetVcaEnabled</div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_016" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_017" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_018" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_019" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_01a" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_01b" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_01c" class="ui-content">SetVcfEnabled</div>
-		<div data-role="popup" id="pop_dsc_01d" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_01e" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_01f" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>syn.SetFrequency</b><br></div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>syn.SetNoteLength</b><br></div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>syn.SetPhaser</b><br></div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>syn.SetPhaserDryWet</b><br></div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>syn.SetPhaserEnabled</b><br>SetPhaserEnabled</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>syn.SetPhaserFeedback</b><br></div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>syn.SetPhaserRange</b><br></div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>syn.SetPhaserRate</b><br></div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>syn.SetVca</b><br></div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>syn.SetVcaAttack</b><br></div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>syn.SetVcaDecay</b><br></div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>syn.SetVcaEnabled</b><br>SetVcaEnabled</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>syn.SetVcaRelease</b><br></div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>syn.SetVcaSustain</b><br></div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>syn.SetVcf</b><br></div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>syn.SetVcfAttack</b><br></div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>syn.SetVcfCutoff</b><br></div>
+		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>syn.SetVcfDecay</b><br></div>
+		<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>syn.SetVcfDepth</b><br></div>
+		<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>syn.SetVcfEnabled</b><br>SetVcfEnabled</div>
+		<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>syn.SetVcfRelease</b><br></div>
+		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>syn.SetVcfResonance</b><br></div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>syn.SetVcfSustain</b><br></div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
-		<div data-role="popup" id="pop_dsc_020" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_021" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_022" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_023" class="ui-content"></div>
-
+		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>syn.SetVolume</b><br></div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>syn.SetWaveShape</b><br></div>
+		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>syn.Start</b><br></div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>syn.Stop</b><br></div>
 	</div>
 </body>
 

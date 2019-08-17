@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateSensor</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -52,7 +53,7 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip0"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip0" style="font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
@@ -82,7 +83,7 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip1"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip1" style="font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
@@ -115,7 +116,7 @@
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id = "snip2"  style = "font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip2" style="font-size:100%">&#160;&#160;&#160;&#160;sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
@@ -154,24 +155,23 @@
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Accelerometer”</font> or <font class='docstring'>“MagneticField”</font> or <font class='docstring'>“Orientation”</font> or <font class='docstring'>“Light”</font> or <font class='docstring'>“Proximity”</font> or <font class='docstring'>“Temperature”</font> or <font class='docstring'>“GameRotation”</font> or <font class='docstring'>“GeomagneticRotation”</font> or <font class='docstring'>“Gravity”</font> or <font class='docstring'>“Gyroscope”</font> or <font class='docstring'>“HeartRate”</font> or <font class='docstring'>“Acceleration”</font> or <font class='docstring'>“Pressure”</font> or <font class='docstring'>“Humidity”</font> or <font class='docstring'>“RotationMotion”</font> or <font class='docstring'>“StepCounter”</font> or <font class='docstring'>“StepDetector”</font></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Slow”</font> or <font class='docstring'>“Medium”</font> or <font class='docstring'>“Fast”</font> or <font class='docstring'>“Fastest”</font></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns a list of builtin sensors in your device.</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>sns.GetAzimuth</b><br></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>sns.GetNames</b><br>Returns a list of builtin sensors in your device.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>sns.GetPitch</b><br></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sns.GetRoll</b><br></div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>sns.GetType</b><br>Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>sns.GetValues</b><br></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font></div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>sns.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>sns.SetMaxRate</b><br></div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"></div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>sns.SetMinChange</b><br></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"></div>
-
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>sns.SetOnChange</b><br></div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>sns.Start</b><br></div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>sns.Stop</b><br></div>
 	</div>
 </body>
 

@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOnKey</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -60,7 +61,7 @@
 					<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetOnKey</span><span class="token punctuation">(</span> OnKey <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetOnKey</span><span class="token punctuation">(</span> OnKey <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
 					&#160;&#160;&#160;&#160;edt<span class="token punctuation">.</span><span class="token function">Focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowKeyboard</span><span class="token punctuation">(</span> edt <span class="token punctuation">)</span><br>
@@ -104,7 +105,7 @@
 					<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetOnKey</span><span class="token punctuation">(</span> OnKey <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetOnKey</span><span class="token punctuation">(</span> OnKey <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnKey</span><span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> name<span class="token punctuation">,</span> code<span class="token punctuation">,</span> extra</span><span class="token punctuation">)</span><br>
@@ -129,7 +130,6 @@
 		</div>
 
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “DOWN” or “UP”')">action</a>, <a href="" onclick="app.ShowPopup('string: “ENTER”, “VOLUME_DOWN”, “VOLUME_UP”, “BACK”, “MENU”, “...”')">name</a>, <a href="" onclick="app.ShowPopup('number: integer')">keycode</a>, <a href="" onclick="app.ShowPopup('string: “Shift”, “Ctrl”, “Alt”, “Meta”')">extrakeys</a>)</div>
-
 	</div>
 </body>
 

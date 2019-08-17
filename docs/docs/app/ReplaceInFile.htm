@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ReplaceInFile</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +45,7 @@
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"Hello world, exciting world."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ReplaceInFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"world"</span><span class="token punctuation">,</span> <span class="token string">"user"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ReplaceInFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"world"</span><span class="token punctuation">,</span> <span class="token string">"user"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Result"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
@@ -62,7 +63,7 @@
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"Hello world, exciting world."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">ReplaceInFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"(\\w+)o (\\w+)"</span><span class="token punctuation">,</span> <span class="token string">"$2 is $1"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ReplaceInFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"(\\w+)o (\\w+)"</span><span class="token punctuation">,</span> <span class="token string">"$2 is $1"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span> <span class="token string">"file.txt"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Result"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
@@ -81,7 +82,6 @@
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
-
 	</div>
 </body>
 

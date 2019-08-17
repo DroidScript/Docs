@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetOnError</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -48,7 +49,7 @@
 					&#160;&#160;&#160;&#160;<span class="token keyword">throw</span> <span class="token string">"My thrown error"</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
-					<b id = "snip0"  style = "font-size:100%"><span class="token keyword">function</span> <span class="token function">OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg<span class="token punctuation">,</span> line<span class="token punctuation">,</span> file</span> <span class="token punctuation">)</span><br>
+					<b id="snip0" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg<span class="token punctuation">,</span> line<span class="token punctuation">,</span> file</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> text <span class="token operator">=</span><br>
 					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
@@ -71,7 +72,6 @@
 		</div>
 
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">error</a>)</div>
-
 	</div>
 </body>
 

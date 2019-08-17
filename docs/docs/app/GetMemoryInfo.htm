@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetMemoryInfo</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -35,7 +36,7 @@
 			<p>Returns an object containing informations about the RAM memory.</p>
 
 			<div class="samp">
-			app.GetMemoryInfo() → <b>object:</b> { <a href="#pop_num_byt" data-transition="pop" data-rel="popup">avail</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">low</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">threshold</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">total</a> }
+			app.GetMemoryInfo() → <b>object:</b> { avail:num_byt, low:bin, threshold:num_byt, total:num_byt }
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -43,7 +44,7 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> mem <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex">/,/g</span><span class="token punctuation">,</span> <span class="token string">",\n "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
@@ -88,7 +89,6 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
 				</div>
@@ -99,8 +99,6 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 
 	</div>
 </body>

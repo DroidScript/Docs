@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>Animate</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -65,7 +66,7 @@
 					<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>
@@ -97,7 +98,7 @@
 					<br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip1"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span>OnAnimate<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span>OnAnimate<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>
@@ -124,7 +125,6 @@
 
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: milliseconds')">time</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">dtime</a>)</div>
 		<div data-role="popup" id="pop_num_fps" class="ui-content"><b>number:</b> <i>frames per second</i></div>
-
 	</div>
 </body>
 

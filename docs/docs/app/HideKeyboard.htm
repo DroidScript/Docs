@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>HideKeyboard</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -59,7 +60,7 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">tgl_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">show</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span> show <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">ShowKeyboard</span><span class="token punctuation">(</span> edt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span> show <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">ShowKeyboard</span><span class="token punctuation">(</span> edt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">HideKeyboard</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span>
 				</div>

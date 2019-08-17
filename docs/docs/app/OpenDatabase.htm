@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>OpenDatabase</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -59,22 +60,21 @@
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content">Close</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content">Delete</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>db.Close</b><br>Close</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>db.Delete</b><br>Delete</div>
 		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content">ExecuteSql</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content">GetName</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content">GetType</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content">addTransaction</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content">close</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content">executeSql</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content">open</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content">openError</div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content">openSuccess</div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content">readTransaction</div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content">startNextTransaction</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content">transaction</div>
-
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>db.ExecuteSql</b><br>ExecuteSql</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>db.GetName</b><br>GetName</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>db.GetType</b><br>GetType</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>db.addTransaction</b><br>addTransaction</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>db.close</b><br>close</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>db.executeSql</b><br>executeSql</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>db.open</b><br>open</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>db.openError</b><br>openError</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>db.openSuccess</b><br>openSuccess</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>db.readTransaction</b><br>readTransaction</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>db.startNextTransaction</b><br>startNextTransaction</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>db.transaction</b><br>transaction</div>
 	</div>
 </body>
 

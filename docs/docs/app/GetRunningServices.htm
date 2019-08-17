@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetRunningServices</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -35,7 +36,7 @@
 			<p>Returns a list of objects containing info about all currently running services in the background.</p>
 
 			<div class="samp">
-			app.GetRunningServices() → <b>list:</b> <i>of objects:</i> { <a href="#pop_num_int" data-transition="pop" data-rel="popup">user</a>, <a href="#pop_num_bin" data-transition="pop" data-rel="popup">pid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> }
+			app.GetRunningServices() → <b>list:</b> <i>of objects:</i> { user:num_int, pid:num_bin, name:str }
 			</div>
 
 			<p>See Also: <a href="GetRunningApps.htm" data-ajax="false">GetRunningApps</a>, <a href="GetInstalledApps.htm" data-ajax="false">GetInstalledApps</a></p>
@@ -52,7 +53,7 @@
 					&#160;&#160;&#160;&#160;lst<span class="token punctuation">.</span><span class="token function">SetTextSize1</span><span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRunningServices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRunningServices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> list <span class="token punctuation">)</span><br>
 					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
@@ -80,9 +81,6 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_num_bin" class="ui-content"><b>number</b></div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
 	</div>
 </body>

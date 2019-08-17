@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetVolume</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -56,7 +57,7 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token string">"Music"</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token string">"Music"</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">PlaySound</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
@@ -75,7 +76,6 @@
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Alarm”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('Dual Tone Multi-Frequency')">DTMF</a>”</font> or <font class='docstring'>“Music”</font> or <font class='docstring'>“Notification”</font> or <font class='docstring'>“Ring”</font> or <font class='docstring'>“System”</font> or <font class='docstring'>“Voicecall”</font></div>
 		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ShowUI”</font></div>
-
 	</div>
 </body>
 

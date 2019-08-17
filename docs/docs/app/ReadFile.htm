@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ReadFile</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -46,7 +47,7 @@
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"Hello World from Copy\n"</span><span class="token punctuation">,</span> <span class="token string">"Append"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> length <span class="token operator">=</span> txt<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFile contains "</span> <span class="token operator">+</span> length <span class="token operator">+</span> <span class="token string">" lines"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
@@ -65,7 +66,6 @@
 
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“windows-1252”</font> or <font class='docstring'>“ISO-8859-<a href="" onclick="app.ShowPopup('Latin-1')">1</a>”</font> or <font class='docstring'>“base64”</font></div>
-
 	</div>
 </body>
 

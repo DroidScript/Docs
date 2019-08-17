@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetSharedFiles</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -35,7 +36,7 @@
 			<p>Returns a path list of files shared with the app.</p>
 
 			<div class="samp">
-			app.GetSharedFiles() → <b>list:</b> [ <a href="#pop_str_pth" data-transition="pop" data-rel="popup">path</a> ]
+			app.GetSharedFiles() → <b>list:</b> [ path:str_pth ]
 			</div>
 
 			<p>If the results were retreived they can't be read an other time, unless they will be shared again.<br>
@@ -46,7 +47,7 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%"><span class="token keyword">var</span> files <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetSharedFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%"><span class="token keyword">var</span> files <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetSharedFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> files <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> files<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"No shared files received."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -64,7 +65,6 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 
 	</div>
 </body>

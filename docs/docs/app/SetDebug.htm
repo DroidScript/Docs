@@ -25,6 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SetDebug</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 		
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -62,7 +63,7 @@
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"adb 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160;   <span class="token comment">// off</span><br>
 					&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"adb 4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#160;&#160;&#160;&#160; <span class="token comment">// off</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<b id = "snip0"  style = "font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"console"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span><span class="token string">"console"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span><span class="token string">"console 5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// off</span><br>
 					&#160;&#160;&#160;&#160;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"console 6"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// on</span><br>
 					<br>
@@ -96,7 +97,6 @@
 		</div>
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“console”</font>, <font class='docstring'>“ds”</font>, <font class='docstring'>“adb”</font>, <font class='docstring'>“all”</font></div>
-
 	</div>
 </body>
 
