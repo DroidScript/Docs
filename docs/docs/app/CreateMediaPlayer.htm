@@ -49,20 +49,13 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Play"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
 					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">player <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;player<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span>Play<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;player<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> player_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					&#160;&#160;&#160;&#160;player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
-					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token keyword">function</span> <span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					&#160;&#160;&#160;&#160;player<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
@@ -88,13 +81,13 @@
 			<p><br>The following methods are available on the <b>MediaPlayer</b> object:</p>
 
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetDuration</a>() → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPosition</a>( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>object:</b> { left: num, top: num, right: num, bottom: num }</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetDuration</a>() → <b>number:</b> <i>seconds</i></div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPosition</a>( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>object:</b> { <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“MediaPlayer”</font></div>
 			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsLooping</a>()</div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">IsPlaying</a>()</div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">IsReady</a>()</div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
 			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Pause</a>()</div>
 			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">Play</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">from</a> )</div>
 			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SeekTo</a>( <a href="#pop_num_flt" data-transition="pop" data-rel="popup">time</a> )</div>
@@ -109,35 +102,36 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ply.Close</b><br></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ply.GetDuration</b><br></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ply.Close</b><br>Close the media player and thus make it unuseable for further use.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ply.GetDuration</b><br>Returns the total duration of the currently loaded song in seconds.</div>
+		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“screen”</font>, <font class='docstring'>“px”</font></div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ply.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <b>screen</b> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ply.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ply.IsLooping</b><br></div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ply.IsPlaying</b><br></div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ply.IsReady</b><br></div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ply.IsLooping</b><br>Returns a boolean indicating whether the media player will replay the song from the begining if it has finished.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ply.IsPlaying</b><br>Returns a boolean indicating whether the media player is currently playing.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ply.IsReady</b><br>Returns a boolean indicating whether the media player is ready for use.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>ply.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>ply.Pause</b><br></div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>ply.Pause</b><br>Pause the current playing song.</div>
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>ply.Play</b><br>Play given time in in seconds</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>ply.Play</b><br>Play the current loaded song from the last paused time or from a given start time in in seconds.</div>
 		<div data-role="popup" id="pop_num_flt" class="ui-content"><b>number:</b> <i>float</i></div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>ply.SeekTo</b><br>SeekTo given time in seconds</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>ply.SeekTo</b><br>Seek the player to a given time in seconds.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>ply.SetFile</b><br>SetFile</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>ply.SetFile</b><br>Load a sound file to the media player.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>ply.SetLooping</b><br>SetLooping mode</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>ply.SetLooping</b><br>Define whether the media player should replay the song when completed.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>ply.SetOnComplete</b><br>called when</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>ply.SetOnComplete</b><br>Define a callback function which is called when a playing sound file has finished playing.</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>ply.SetOnReady</b><br>called when playing file finished</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>ply.SetOnReady</b><br>Define a callback function which is called when the player is ready for use.</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>ply.SetOnSeekDone</b><br>?</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>ply.SetOnSeekDone</b><br>Define a callback function which is called when a seeking process is done.</div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
-		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>ply.SetVolume</b><br>SetVolume</div>
-		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>ply.Stop</b><br></div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>ply.SetVolume</b><br>Change the volume of the playing song.</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>ply.Stop</b><br>Stop playing a song.</div>
 	</div>
 </body>
 

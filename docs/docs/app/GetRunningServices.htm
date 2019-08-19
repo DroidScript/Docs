@@ -36,7 +36,7 @@
 			<p>Returns a list of objects containing info about all currently running services in the background.</p>
 
 			<div class="samp">
-			app.GetRunningServices() → <b>list:</b> <i>of objects:</i> { user:num_int, pid:num_bin, name:str }
+			app.GetRunningServices() → <b>list:</b> <i>of objects:</i> { <a href="#pop_num_int" data-transition="pop" data-rel="popup">user</a>, <a href="#pop_num_bin" data-transition="pop" data-rel="popup">pid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> }
 			</div>
 
 			<p>See Also: <a href="GetRunningApps.htm" data-ajax="false">GetRunningApps</a>, <a href="GetInstalledApps.htm" data-ajax="false">GetInstalledApps</a></p>
@@ -81,7 +81,9 @@
 			<br>
 		</div>
 
-
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_num_bin" class="ui-content"><b>number</b></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

@@ -92,11 +92,11 @@
 			
 			<p><br>The following methods are available on the <b>AudioRecorder</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetData</a>() → <b>list:</b> [frequencies:num_int]</div>
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetData</a>() → <b>list:</b> [<a href="#pop_num_int" data-transition="pop" data-rel="popup">frequencies</a>]</div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetPeak</a>() → <b>number:</b> <i>float</i></div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetRMS</a>() → <b>number:</b> <i>float</i></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“AudioRecorder”</font></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Pause</a>()</div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetFile</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )</div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetFrequency</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">frequency</a> )</div>
@@ -106,12 +106,13 @@
 			<br>
 		</div>
 
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>rec.GetData</b><br>Returns a list of 320 frequency values.</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>rec.GetPeak</b><br>Returns the PMPO value (Peak music power output).</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>rec.GetRMS</b><br>Returns the RMS value (Root Mean Square)</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>rec.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>rec.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>rec.Pause</b><br>Pauses the recording temporally.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>

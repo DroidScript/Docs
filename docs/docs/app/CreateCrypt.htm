@@ -117,7 +117,7 @@
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Encrypt</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">password</a> ) → <b>string</b></div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Crypt”</font></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Hash</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
 
 			<br>
 		</div>
@@ -127,9 +127,9 @@
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>crp.Decrypt</b><br>Decrypt text with a key.</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>crp.Encrypt</b><br>Encrypt text with a key.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>crp.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“MD5”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“MD5”</font> or <font class='docstring'>“SHA-1”</font> or <font class='docstring'>“SHA-256”</font></div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>crp.Hash</b><br>Build a hash of a string for one-way encryption.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“boolean”</font>, <font class='docstring'>“char”</font>, <font class='docstring'>“byte”</font>, <font class='docstring'>“short”</font>, <font class='docstring'>“int”</font>, <font class='docstring'>“long”</font>, <font class='docstring'>“float”</font>, <font class='docstring'>“double”</font>, <font class='docstring'>“String”</font>, <font class='docstring'>“CharSequence”</font>, <font class='docstring'>“...”</font></div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>crp.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 	</div>
 </body>

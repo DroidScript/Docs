@@ -36,7 +36,7 @@
 			<p>Returns an intent object sent to the app.</p>
 
 			<div class="samp">
-			app.GetIntent() → <b>object:</b> { action:str, type:str, data:str, flags:num_int, extras: { app_intent:str, app_file:str_pth, app_options:str } }
+			app.GetIntent() → <b>object:</b> { <a href="#pop_std_str" data-transition="pop" data-rel="popup">action</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">flags</a>, extras: { <a href="#pop_std_str" data-transition="pop" data-rel="popup">app_intent</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">app_file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">app_options</a> } }
 			</div>
 
 			<p>See Also: <a href="SendIntent.htm" data-ajax="false">SendIntent</a></p>
@@ -61,7 +61,9 @@
 			<br>
 		</div>
 
-
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>
 
