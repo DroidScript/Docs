@@ -1,20 +1,13 @@
 <sample Playing Audio>
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
-
-	btn = app.CreateButton( "Play", 0.4, 0.1 );
-	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
-
-	app.AddLayout( lay );
-
 	<b>player = app.CreateMediaPlayer();
+    player.SetOnReady(Play);
 	player.SetOnComplete( player_OnComplete );
 	player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
 }
 
-function btn_OnTouch()
+function Play()
 {
 	player.Play();
 }

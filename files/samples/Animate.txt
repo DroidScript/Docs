@@ -22,7 +22,7 @@ function OnAnimate( time, dtime )
 </sample>
 
 <sample SpeedTest>
-_AddOptions( "NoDom" );
+cfg.No_Dom;
 
 var ltime = Date.now(), c = 0;
 

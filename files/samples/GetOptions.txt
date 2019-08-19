@@ -1,5 +1,5 @@
 <sample Show App Options>
-cfg.NoDom, cfg.Portrait;
+cfg.No_Dom, cfg.Portrait;
 
 function OnStart()
 {

@@ -592,7 +592,7 @@ DS 1.36
 - Fixed tabs bug introduced in 1.35b.
 - Fixed short menu when starting in landscape mode.
 - Added 'engine' parameter to app.TextToSpeech method (allows swapping voices).
-- Added 'time' parameter to Locator (GPS) callback.
+-.Added 'time' parameter to Locator (GPS) callback.
 - Added serv.Stop() method to web server.
 - Added Sys.In() and Sys.Err() method (reads console input and error streams).
 - Added cam.SetOrientation() and cam.SetPostRotation() methods.
@@ -621,7 +621,7 @@ DS 1.35b
 - Added cam.SetVideoSize( width, height ) method.
 -.Added new "Query Content" sample (advanced sample for premium users only).
 - Added result callback parameter to web.Execute() method.
--?Added 'Horiz' option to list control (makes title and body text flow horizontally)
+-.Added 'Horiz' option to list control (makes title and body text flow horizontally)
 - Added lst.SetColumnWidths(icon,title,body) method to list control.
 -?Added lst.SetIconSize() and 'inner' and 'outer' option to lst.SetTextMargins().
 -.Add lst.SetIconMargins() method and 'Menu' mode to list control.
@@ -641,7 +641,7 @@ DS 1.34b
 - Added file sharing/opening filter option to build.json (e.g. "pathPattern":".*\\.txt" ).
 - Layouts now support touch methods (only OnTouchDown works when in 'touchthrough' mode).
 - Added app.CreateWebSocket method for handling reliable connected web sockets.
-- Enabled use of FontAwsome icons in the list control.
+-.Enabled use of FontAwsome icons in the list control.
 - Added 'NoWrap' and 'Log' options to Text object (Log=='multiline,left,nowrap').
 - Added txtEdit.SetOnEnter() method (disables enter key and fires callback).
 - Added .Hide .Show .Gone .Isvisible methods to all objects.

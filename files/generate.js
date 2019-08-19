@@ -187,6 +187,7 @@ function getDocData( f, useAppPop ) {
 	f.desc = f.desc.trim();
 	f.desc = f.desc.charAt(0).toUpperCase() + f.desc.slice(1);
 
+    // abbrev for controls
 	if( isControl(f.name) ) {
 		if( !f.abbrev ) {
 			f.abbrev = getAbbrev( f.name );
@@ -528,7 +529,7 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?(-[^ .]*))\b(\s*[,}\]]?)?/g,
+	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?(-[^ .]*)?)\b(\s*[,}\]]?)?/g,
 		function(m, name, type, _, _, close) {
 		    if(useAppPop) {
 				return newAppPopup(
@@ -806,7 +807,7 @@ var 	//globals for one doc
 		"str_htm":"html code",
 		"str_int":"integer",
 		"str_jsc":"javascript code",
-		"str_lst":"comma “,” separated",
+		"str_lst":"separated",
 		"str_mim":"mimetype",
 		"str_mod":"mode",
 		"str_num":"number",

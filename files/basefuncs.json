@@ -135,7 +135,7 @@
 				"pTypes": [],
 				"shortDesc": "Hides the control visually"
 			},
-			"#1744802827": { "name": "IsEnabled",
+            "#1744802827": { "name": "IsEnabled",
 				"desc": "Returns whether the control is currently useable by the user.",
 				"isfunc": true,
 				"pNames": [],
@@ -151,14 +151,7 @@
 				"retval": "bin",
 				"shortDesc": "Returns whether the control overlaps with another"
 			},
-			"#0197498372": { "name": "SetFontFile",
-				"desc": "Change the font style by defining a font file.",
-				"isfunc": true,
-				"pNames": ["file"],
-				"pTypes": ["str_pth"],
-				"shortDesc": "Change the used font"
-			},
-			"#1814300863": { "name": "IsVisible",
+            "#1814300863": { "name": "IsVisible",
 				"desc": "Returns whether the control is currently visible to the user, ignoring overlaying controls.",
 				"isfunc": true,
 				"pNames": [],
@@ -170,8 +163,16 @@
 				"desc": "Allows access to other functions defined on the object in Java via reflection.",
 				"isfunc": true,
 				"pNames": ["name", "types", "p1", "p2", "p3", "p4"],
-				"pTypes": ["str", "str_lst-boolean,char,byte,short,int,long,float,double,String,CharSequence,...", "str", "str", "str", "str"],
+				"pTypes": ["str", "lst-boolean,char,byte,short,int,long,float,double,String,CharSequence,...", "str", "str", "str", "str"],
+                "retval": "all",
 				"shortDesc": "Access Java object methods via reflection"
+			},
+			"#0197498372": { "name": "SetFontFile",
+				"desc": "Change the font style by defining a font file.",
+				"isfunc": true,
+				"pNames": ["file"],
+				"pTypes": ["str_pth"],
+				"shortDesc": "Change the used font"
 			},
 			"#1162431318": { "name": "SetBackAlpha",
 				"desc": "Set the transparency of the background by an alpha value between **0** (_no transparency_) and **0.99** (_full transparent_) or **1** (_no transparency_) and **256** (_full transparent_)",
@@ -226,7 +227,7 @@
 				"desc": "Will cause the inner text to be broken with ... at the start or the end if it cannot fit in the control.",
 				"isfunc": true,
 				"pNames": ["mode"],
-				"pTypes": ["str-start|end"],
+				"pTypes": ["str-start|middle|end"],
 				"shortDesc": "Auto-crop text to fit in control"
 			},
 			"#8753208754": { "name": "SetHtml",

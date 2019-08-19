@@ -3,11 +3,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	img = app.CreateImage( "/Sys/Img/Droid1.png" );
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png" );
 	img.SetOnTouch( img_OnTouch );
-	lay.AddChild( img );
+	lay.AddChild( img );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function img_OnTouch( ev )
@@ -22,11 +22,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 );
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 );
 	img.SetOnTouch( img_OnTouch );
-	lay.AddChild( img );
+	lay.AddChild( img );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function img_OnTouch( ev )
@@ -41,11 +41,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 );
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 );
 	img.SetOnTouch( img_OnTouch );
-	lay.AddChild( img );
+	lay.AddChild( img );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function img_OnTouch( ev )
@@ -60,20 +60,20 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	img = app.CreateImage( null, 0.8, 0.8 );
+	<b>img = app.CreateImage( null, 0.8, 0.8 );
 	lay.AddChild( img );
 
 	img.SetColor( "#8888ff" );
 	img.SetPaintColor( "#ff0000" );
 	img.DrawCircle( 0.5, 0.5, 0.1 );
-	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 );
+	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 </sample>
 
 <sample Advanced Clock Animating>
-cfg.NoDom, cfg.Portrait;
+cfg.No_Dom, cfg.Portrait;
 
 var wh;
 
@@ -103,6 +103,8 @@ function OnStart()
 
 function OnAnimate( time, dtime )
 {
+    time = Date.now();
+    
     // calculate pointer position from current time
     var secs = time / 1000;
     var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));

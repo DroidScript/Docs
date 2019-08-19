@@ -1368,7 +1368,7 @@
 				"isfunc": true,
 				"name": "Hash",
 				"pNames": ["text", "mode", "options"],
-				"pTypes": ["str", "str-MD5", "str"],
+				"pTypes": ["str", "str-MD5|SHA-1|SHA-256", "str"],
 				"shortDesc": "Get a hash from a string"
 			},
 			"Method": "#1023663567"
@@ -2275,7 +2275,7 @@
 				"isfunc": true,
 				"name": "SetPixelData",
 				"pNames": ["data", "width", "height", "options"],
-				"pTypes": ["str_b64", "num:screen relative (0..1)", "num:screen relative (0..1)", "str"],
+				"pTypes": ["str_b64-&lt;rawbase64&gt;|data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;,data&colon;image/png;base64&comma;&lt;pngbase64&gt;", "num", "num", "str-px,icon,resize|rescale|square,fix:set bitmap size"],
 				"shortDesc": "Set base64 encoded pixel data"
 			},
 			"SetPixelMode": {
@@ -2486,21 +2486,21 @@
 	},
 	"CreateList": {
 		"abbrev": "lst",
-		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the _':'_ (colon) character. If you need to use a colon character in your item text then use this character sequence: _“^c^”_.\nYou can have one icon and some body text using the following formats:\n\n_“title : icon”\n“title : body : icon”\n“title : body : extra : icon”_\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: _“folder”_, _“audiofolder”_, _“photofolder”_, _“videofolder”_, _“audio”_, _“photo”_, _“video”_ and _“playlist”_.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
+		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the _“&colon;”_ (colon) character. If you need to use a colon character in your item text then use this character sequence: _“^c^”_.\nYou can have one icon and some body text using the following formats&colon;\n\n_“title&colon;icon”\n“title&colon;body&colon;icon”\n“title&colon;body&colon;extra&colon;icon”_\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: _“folder”_, _“audiofolder”_, _“photofolder”_, _“videofolder”_, _“audio”_, _“photo”_, _“video”_ and _“playlist”_.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand,Menu,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
 		"shortDesc": "Returns a List object",
 		"subf": {
 			"AddItem": {
-				"desc": "",
+				"desc": "Adds an entry to the list.",
 				"isfunc": true,
 				"name": "AddItem",
 				"pNames": ["title", "body", "image"],
 				"pTypes": ["str", "str", "str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Adds an entry to the list."
 			},
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -2509,41 +2509,41 @@
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetItem": {
-				"desc": "get item data by title",
+				"desc": "Returns item data of an item with a specific title.",
 				"isfunc": true,
 				"name": "GetItem",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "obj-{ title:str, body:str, image:str_pth }",
+				"shortDesc": "Returns item data by a title."
 			},
 			"GetItemByIndex": {
-				"desc": "GetItemByIndex",
+				"desc": "Returns item data of an item on a specific index.",
 				"isfunc": true,
 				"name": "GetItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "obj-{ title:str, body:str, image:str_pth }",
+				"shortDesc": "Returns item data by an index."
 			},
 			"GetLeft": "#1237814406",
 			"GetLength": {
-				"desc": "GetLength",
+				"desc": "Returns the amount of items in the lists.",
 				"isfunc": true,
 				"name": "GetLength",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Returns the list length"
 			},
 			"GetList": {
-				"desc": "get full list data",
+				"desc": "Returns the full list data as an object.",
 				"isfunc": true,
 				"name": "GetList",
 				"pNames": ["delim"],
 				"pTypes": ["str"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "lst-[{ title:str, body:str, image:str_pth }]",
+				"shortDesc": "Returns the whole list as object"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -2563,72 +2563,72 @@
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"InsertItem": {
-				"desc": "InsertItem",
+				"desc": "Inserts an item at s specific index in the list.",
 				"isfunc": true,
 				"name": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
 				"pTypes": ["num_int", "str", "str", "str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Inserts an item into the list"
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"RemoveAll": {
-				"desc": "RemoveAll",
+				"desc": "Removes all entries of the list.",
 				"isfunc": true,
 				"name": "RemoveAll",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Clears the list"
 			},
 			"RemoveItem": {
-				"desc": "RemoveItem",
+				"desc": "Removes an item with a specific title from the list.",
 				"isfunc": true,
 				"name": "RemoveItem",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Removes an item by its title"
 			},
 			"RemoveItemByIndex": {
-				"desc": "RemoveItemByIndex",
+				"desc": "Removes an item on a specific index from the list",
 				"isfunc": true,
 				"name": "RemoveItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Removes an item by its index"
 			},
 			"ScrollToItem": {
-				"desc": "ScrollToItem",
+				"desc": "Scrolls the list to an item with a specific title.",
 				"isfunc": true,
 				"name": "ScrollToItem",
 				"pNames": ["title", "body"],
 				"pTypes": ["str", "str"],
-				"shortDesc": ""
+				"shortDesc": "Scrolls to an item by its title"
 			},
 			"ScrollToItemByIndex": {
-				"desc": "ScrollToItemByIndex",
+				"desc": "Scrolls the list to an item on a specific index.",
 				"isfunc": true,
 				"name": "ScrollToItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Scrolls the list to a specific index"
 			},
 			"SelectItem": {
-				"desc": "SelectItem",
+				"desc": "Highlights an item with a specific title.",
 				"isfunc": true,
 				"name": "SelectItem",
 				"pNames": ["title", "body", "scroll"],
 				"pTypes": ["str", "str", "bin"],
-				"shortDesc": ""
+				"shortDesc": "Highlight an item by its title and body"
 			},
 			"SelectItemByIndex": {
-				"desc": "SelectItemByIndex",
+				"desc": "Highlights an item on a specific index.",
 				"isfunc": true,
 				"name": "SelectItemByIndex",
 				"pNames": ["index", "scroll"],
 				"pTypes": ["num_int", "bin"],
-				"shortDesc": ""
+				"shortDesc": "Highlight an item by its index"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -2637,20 +2637,20 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetColumnWidths": {
-				"desc": "?",
+				"desc": "Changes the coloumn withs for title, body and icon. Often used with the “Horiz” option.",
 				"isfunc": true,
 				"name": "SetColumnWidths",
 				"pNames": ["icon", "title", "body", "mode"],
-				"pTypes": ["?", "str", "str", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc", "str", "str", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Change coloumn widths"
 			},
 			"SetDivider": {
-				"desc": "",
+				"desc": "Changes the item divider height and color.",
 				"isfunc": true,
 				"name": "SetDivider",
 				"pNames": ["height", "colour"],
-				"pTypes": ["num_pxl", "str_col"],
-				"shortDesc": ""
+				"pTypes": ["num_frc", "str_col"],
+				"shortDesc": "Changes the divider style"
 			},
 			"SetEllipsize": "#0897234673",
 			"SetEllipsize1": {
@@ -2658,74 +2658,74 @@
 				"isfunc": true,
 				"name": "SetEllipsize1",
 				"pNames": ["mode"],
-				"pTypes": ["str-start|end"],
+				"pTypes": ["str-start|middle|end"],
 				"shortDesc": "Auto-crop titles to fit in control"
 			},
 			"SetEllipsize2": {
-				"desc": "Will cause the element bodys to be broken with ... at the start or the end if it cannot fit in the control.",
+				"desc": "Will cause the element bodies to be broken with ... at the start or the end if it cannot fit in the control.",
 				"isfunc": true,
 				"name": "SetEllipsize2",
 				"pNames": ["mode"],
-				"pTypes": ["str-start|end"],
+				"pTypes": ["str-start|middle|end"],
 				"shortDesc": "Auto-crop bodys to fit in control"
 			},
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetHiTextColor1": {
-				"desc": "?",
+				"desc": "Change the highlight color of titles when selected.",
 				"isfunc": true,
 				"name": "SetHiTextColor1",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
-				"shortDesc": ""
+				"shortDesc": "Change selected title highlight color"
 			},
 			"SetHiTextColor2": {
-				"desc": "?",
+				"desc": "Change the highlight color of bodies when selected.",
 				"isfunc": true,
 				"name": "SetHiTextColor2",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
-				"shortDesc": ""
+				"shortDesc": "Change selected body highlight color"
 			},
 			"SetIconMargins": {
-				"desc": "icon borders",
+				"desc": "Change the outer icon border distance.",
 				"isfunc": true,
 				"name": "SetIconMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
-				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Change icon margins"
 			},
 			"SetIconSize": {
-				"desc": "SetIconSize",
+				"desc": "Changes the icon size.",
 				"isfunc": true,
 				"name": "SetIconSize",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Change the icon size"
 			},
 			"SetItem": {
-				"desc": "SetItem",
+				"desc": "Change the content of an element with a specific title.",
 				"isfunc": true,
 				"name": "SetItem",
 				"pNames": ["title", "newTitle", "newBody", "newImage"],
 				"pTypes": ["str", "str", "str", "str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Change the content of an element by its title"
 			},
 			"SetItemByIndex": {
-				"desc": "SetItemByIndex",
+				"desc": "Change the content of an element on a specific index.",
 				"isfunc": true,
 				"name": "SetItemByIndex",
 				"pNames": ["index", "newTitle", "newBody", "newImage"],
 				"pTypes": ["num_int", "str", "str", "str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Change the content of an element by its index"
 			},
 			"SetList": {
-				"desc": "SetList",
+				"desc": "Set the content of the whole list.",
 				"isfunc": true,
 				"name": "SetList",
 				"pNames": ["list", "delim"],
-				"pTypes": ["str_com", "str"],
-				"shortDesc": ""
+				"pTypes": ["str_lst-title|title&colon;icon|title&colon;body&colon;icon", "str"],
+				"shortDesc": "Set the content of the whole list"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -2736,62 +2736,55 @@
 			"SetSize": "#1296070870",
 			"SetTextColor": "#0175303923",
 			"SetTextColor1": {
-				"desc": "?",
+				"desc": "Change the default text color of titles.",
 				"isfunc": true,
 				"name": "SetTextColor1",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
-				"shortDesc": ""
+				"shortDesc": "Change the default text color of titles."
 			},
 			"SetTextColor2": {
-				"desc": "?",
+				"desc": "Change the default text color of bodies.",
 				"isfunc": true,
 				"name": "SetTextColor2",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
-				"shortDesc": ""
+				"shortDesc": "Change the default text color of bodies"
 			},
-			"SetTextMargins": {
-				"desc": "change position from current",
-				"isfunc": true,
-				"name": "SetTextMargins",
-				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
-				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "?", "?"],
-				"shortDesc": ""
-			},
+			"SetTextMargins": "#1741900074",
 			"SetTextShadow": "#1093247031",
 			"SetTextShadow1": {
-				"desc": "?",
+				"desc": "Apply text shadows to titles.",
 				"isfunc": true,
 				"name": "SetTextShadow1",
 				"pNames": ["radius", "dx", "dy", "color"],
 				"pTypes": ["num_deg", "num_int", "num_int", "str_col"],
-				"shortDesc": ""
+				"shortDesc": "Apply shadow to titles"
 			},
 			"SetTextShadow2": {
-				"desc": "?",
+				"desc": "Apply text shadows to bodies.",
 				"isfunc": true,
 				"name": "SetTextShadow2",
 				"pNames": ["radius", "dx", "dy", "color"],
 				"pTypes": ["num_deg", "num_int", "num_int", "str_col"],
-				"shortDesc": ""
+				"shortDesc": "Apply shadow to bodies"
 			},
 			"SetTextSize": "#5019790423",
 			"SetTextSize1": {
-				"desc": "?",
+				"desc": "Change the text size for titles.",
 				"isfunc": true,
 				"name": "SetTextSize1",
 				"pNames": ["size", "mode"],
-				"pTypes": ["num", "?"],
-				"shortDesc": ""
+				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Set title text size"
 			},
 			"SetTextSize2": {
-				"desc": "?",
+				"desc": "Change the text size for bodies.",
 				"isfunc": true,
 				"name": "SetTextSize2",
 				"pNames": ["size", "mode"],
-				"pTypes": ["num", "str"],
-				"shortDesc": ""
+				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Set body text size"
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -2843,12 +2836,12 @@
 			"SetSize": "#1296070870",
 			"SetTextColor": "#0175303923",
 			"SetTitle": {
-				"desc": "change dialog title",
+				"desc": "Change the dialog title.",
 				"isfunc": true,
 				"name": "SetTitle",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Change the dialog title"
 			},
 			"Show": "#1243391562"
 		}
@@ -2864,7 +2857,7 @@
 		"shortDesc": "Returns a Locator object",
 		"subf": {
 			"GetBearingTo": {
-				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location. ",
+				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.",
 				"isfunc": true,
 				"name": "GetBearingTo",
 				"pNames": ["latitude", "longitude"],
@@ -2873,7 +2866,7 @@
 				"shortDesc": "Calculate bearing between current and given position"
 			},
 			"GetDistanceTo": {
-				"desc": "Returns the approximate distance in meters between this location and the given location. ",
+				"desc": "Returns the approximate distance in meters between this location and the given location.",
 				"isfunc": true,
 				"name": "GetDistanceTo",
 				"pNames": ["latitude", "longitude"],
@@ -2892,7 +2885,7 @@
 			},
 			"Method": "#1023663567",
 			"SetOnChange": {
-				"desc": "Define a function called when some of the values changed.",
+				"desc": "Define a function which is called when some of the values changed.",
 				"isfunc": true,
 				"name": "SetOnChange",
 				"pNames": ["callback"],
@@ -2901,12 +2894,12 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": ["data"],
-						"pTypes": ["obj-{ provider:str, latitude:num, longitude:num, speed:num, bearing:num, altitude:num, accuracy:num_met }"],
+						"pNames": ["data", "time"],
+						"pTypes": ["obj-{ provider:str, latitude:num, longitude:num, speed:num, bearing:num, altitude:num, accuracy:num_met }", "num_mls"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when some of the values changed"
 			},
 			"SetRate": {
 				"desc": "Set Locator update frequency in seconds",
@@ -2945,21 +2938,21 @@
 		"shortDesc": "Returns a MediaPlayer object",
 		"subf": {
 			"Close": {
-				"desc": "",
+				"desc": "Close the media player and thus make it unuseable for further use.",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Close the media player."
 			},
 			"GetDuration": {
-				"desc": "",
+				"desc": "Returns the total duration of the currently loaded song in seconds.",
 				"isfunc": true,
 				"name": "GetDuration",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_sec",
+				"shortDesc": "Get the song length in seconds"
 			},
 			"GetPosition": "#1605064214",
 			"GetType": {
@@ -2972,72 +2965,72 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsLooping": {
-				"desc": "",
+				"desc": "Returns a boolean indicating whether the media player will replay the song from the begining if it has finished.",
 				"isfunc": true,
 				"name": "IsLooping",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Returns if the player is looping."
 			},
 			"IsPlaying": {
-				"desc": "",
+				"desc": "Returns a boolean indicating whether the media player is currently playing.",
 				"isfunc": true,
 				"name": "IsPlaying",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Get current playing state"
 			},
 			"IsReady": {
-				"desc": "",
+				"desc": "Returns a boolean indicating whether the media player is ready for use.",
 				"isfunc": true,
 				"name": "IsReady",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Returns if player is useable yet"
 			},
 			"Method": "#1023663567",
 			"Pause": {
-				"desc": "",
+				"desc": "Pause the current playing song.",
 				"isfunc": true,
 				"name": "Pause",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Pause the current playing song"
 			},
 			"Play": {
-				"desc": "Play given time in in seconds",
+				"desc": "Play the current loaded song from the last paused time or from a given start time in in seconds.",
 				"isfunc": true,
 				"name": "Play",
 				"pNames": ["from"],
 				"pTypes": ["num_sec"],
-				"shortDesc": ""
+				"shortDesc": "Play the current loaded song"
 			},
 			"SeekTo": {
-				"desc": "SeekTo given time in seconds",
+				"desc": "Seek the player to a given time in seconds.",
 				"isfunc": true,
 				"name": "SeekTo",
 				"pNames": ["time"],
 				"pTypes": ["num_flt"],
-				"shortDesc": ""
+				"shortDesc": "Seek the player to a given time"
 			},
 			"SetFile": {
-				"desc": "SetFile",
+				"desc": "Load a sound file to the media player.",
 				"isfunc": true,
 				"name": "SetFile",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Load a sound file to the player"
 			},
 			"SetLooping": {
-				"desc": "SetLooping mode",
+				"desc": "Define whether the media player should replay the song when completed.",
 				"isfunc": true,
 				"name": "SetLooping",
 				"pNames": ["loop"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Set looping mode"
 			},
 			"SetOnComplete": {
-				"desc": "called when",
+				"desc": "Define a callback function which is called when a playing sound file has finished playing.",
 				"isfunc": true,
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
@@ -3051,10 +3044,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the player has finished playing a track"
 			},
 			"SetOnReady": {
-				"desc": "called when playing file finished",
+				"desc": "Define a callback function which is called when the player is ready for use.",
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
@@ -3068,10 +3061,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the player is ready for use"
 			},
 			"SetOnSeekDone": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when a seeking process is done.",
 				"isfunc": true,
 				"name": "SetOnSeekDone",
 				"pNames": ["callback"],
@@ -3085,23 +3078,23 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when ply.Seek has finished"
 			},
 			"SetVolume": {
-				"desc": "SetVolume",
+				"desc": "Change the volume of the playing song.",
 				"isfunc": true,
 				"name": "SetVolume",
 				"pNames": ["left", "right"],
 				"pTypes": ["num_prc", "num_prc"],
-				"shortDesc": ""
+				"shortDesc": "Set the playing volume"
 			},
 			"Stop": {
-				"desc": "",
+				"desc": "Stop playing a song.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop playing a song"
 			}
 		}
 	},
@@ -8091,12 +8084,12 @@
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_lst-Camera|ExtSDcard|Network|Storage|Overlay|SMS", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS", {
 				"desc": "callback function",
 				"isfunc": true,
 				"name": "callback",
 				"pNames": ["ungranted"],
-				"pTypes": ["str_lst|str_uri"],
+				"pTypes": ["str_com|str_uri"],
 				"shortDesc": "callback"
 			}],
 		"shortDesc": "GetPermission"
