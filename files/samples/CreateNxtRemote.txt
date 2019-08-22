@@ -1,1 +1,85 @@
- 
+<sample Basic>
+function OnStart()
+{
+    <b>nxt = app.CreateNxt();
+    nxt.SetOnConnected( OnConnected );
+    nxt.ShowDevices();</b>
+}
+
+function OnConnected()
+{
+    nxt.Beep( 100, 500 );
+}
+</sample>
+
+<sample Auto Connect>
+function OnStart()
+{
+	nxt = app.CreateNxt();
+
+	<b>var deviceName = "myNXTbrick";
+	var paired = nxt.IsPaired( deviceName );
+	if (paired)
+	{
+	    app.ShowProgress( "Connecting to " + deviceName + "..." );
+            nxt.SetOnConnect( nxt_OnConnect );
+            nxt.Connect( deviceName );
+	}</b>
+}
+
+function nxt_OnConnect( success, nxt )
+{
+    if( success ) {
+        app.ShowPopup( "Connected to: " + nxt.GetBtName() + " : " + nxt.GetBtAddress() );
+        nxt.Beep( 2000, 200 );
+    }
+    else app.Alert( "Failed to connect!" );
+    app.HideProgress();
+}
+</sample>
+
+<sample Sensors>
+function OnStart()
+{
+    nxt = app.CreateNxt();
+
+    lay = app.CreateLayout( "linear", "FillXY,VCenter" );
+
+    var list = "Color,Distance,Light,Mail,Sound,Touch"
+    spnType = app.CreateSpinner( list, .3 );
+    spnType.SetOnChange( spnType_OnChange );
+    lay.AddChild( spnType );
+
+    spnInput = app.CreateSpinner( "1,2,3,4", .3 );
+    lay.AddChild( spnInput );
+
+    btn = app.CreateButton( "Measure", .3, .1 );
+    btn.SetOnTouch( ReadSensor );
+    lay.AddChild( btn );
+
+    app.AddLayout( lay );
+}
+
+function spnType_OnChange()
+{
+    app.SimulateTouch( spnInput );
+}
+
+function ReadSensor()
+{
+    var res = "invalid", inp = Number(spnInput.GetText());
+
+    switch( spnType.GetText() )
+    {
+        case "Color": res = nxt.ToColorName( nxt.ReadColorSensor( inp, "ColorDetect" )); break;
+        case "Distance": res = nxt.ReadDistanceSensor( inp ) + " cm"; break;
+        case "Light": res = nxt.ReadLightSensor( inp, false ); break;
+        case "Mail": res = nxt.ReadMail( inp, "Text", false ); break;
+        case "Sound": res = nxt.ReadSoundSensor( inp, "dB" ); break;
+        case "Touch": res = nxt.ReadTouchSensor( inp ); break;
+    }
+
+    if(res) app.ShowPopup( res );
+    else app.ShowPopup( "No Value" );
+}
+</sample>

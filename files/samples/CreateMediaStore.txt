@@ -1,1 +1,86 @@
- 
+
+<sample Query Artists>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    lst = app.CreateList( "", 1, .9 );
+    lay.AddChild( lst );
+
+    app.AddLayout( lay );
+
+    app.ShowProgress( "Query Artists" );
+    media = app.CreateMediaStore();
+    media.SetOnArtistsResult( media_OnArtistsResult );
+    media.QueryArtists( "", "artist", "external" );
+}
+
+function media_OnArtistsResult( result )
+{
+    result.forEach( function( m )
+    {
+        var s = "";
+        for( var k in m ) s += k + ": " + m[k] + "\n";
+        lst.AddItem( m.artist, s.slice( 0, -4 ), "" );
+    } );
+    app.HideProgress();
+}
+</sample>
+
+<sample Query Albums>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    lst = app.CreateList( "", 1, .9 );
+    lst.SetColumnWidths( 0.3 );
+    lst.SetIconSize( 0.2 );
+    lay.AddChild( lst );
+
+    app.AddLayout( lay );
+
+    app.ShowProgress( "Query Albums" );
+    media = app.CreateMediaStore();
+    media.SetOnAlbumsResult( media_OnAlbumsResult );
+    media.QueryAlbums( "", "album", "external" );
+}
+
+function media_OnAlbumsResult( result )
+{
+    result.forEach( function( m )
+    {
+        var s = "";
+        for( var k in m ) s += k + ": " + m[k] + "\n";
+        lst.AddItem( m.album, s.slice( 0, -4 ), m.albumArt == "null" ? "audio" : m.albumArt );
+    } );
+    app.HideProgress();
+}
+</sample>
+
+<sample Query Media>
+function OnStart()
+{
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    lst = app.CreateList( "", 1, .9 );
+    lay.AddChild( lst );
+
+    app.AddLayout( lay );
+
+    app.ShowProgress( "Query Media" );
+    media = app.CreateMediaStore();
+    media.SetOnMediaResult( media_OnMediaResult );
+    media.QueryMedia( "", "title", "external" );
+}
+
+function media_OnMediaResult( result )
+{
+    result.forEach( function( m )
+    {
+        var s = "";
+        for( var k in m ) s += k + ": " + m[k] + "\n";
+        lst.AddItem( m.title, s.slice( 0, -4 ), "" );
+    } );
+    app.HideProgress();
+}
+</sample>

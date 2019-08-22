@@ -378,7 +378,7 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsBluetoothEnabled": {
-				"desc": "Returns a boolean indicating whether Bluetooth is enabled or not.",
+				"desc": "Checks if Bluetooth is enabled or not.",
 				"isfunc": true,
 				"name": "IsBluetoothEnabled",
 				"pNames": [],
@@ -387,7 +387,7 @@
 				"shortDesc": "Returns whether Bluetooth is enabled"
 			},
 			"IsConnected": {
-				"desc": "Returns a boolean indicating whether a Bluetooth connection exists to another device.",
+				"desc": "Checks if a Bluetooth connection exists to another device.",
 				"isfunc": true,
 				"name": "IsConnected",
 				"pNames": [],
@@ -396,7 +396,7 @@
 				"shortDesc": "Returns whether a Bluetooth connection exists"
 			},
 			"IsPaired": {
-				"desc": "Returns a Boolean indicating whether a specific device is paired using its Bt name.",
+				"desc": "Checks if a specific device is paired using its Bt name.",
 				"isfunc": true,
 				"name": "IsPaired",
 				"pNames": ["name"],
@@ -491,7 +491,7 @@
 	},
 	"CreateButton": {
 		"abbrev": "btn",
-		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t// your OnTouch code goes here\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the _“FillX”_ option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** _“Alum”_ or _“Gray”_, or you can use _“Custom”_ and define a custom style with the **SetStyle** method.\n<sample Change Style>",
+		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t// your OnTouch code goes here\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the “FillX” option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** “Alum” or “Gray”, or you can use “Custom” and define a custom style with the **SetStyle** method.\n<sample Change Style>",
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
@@ -692,7 +692,7 @@
 			},
 			"Gone": "#5528553362",
 			"HasFlash": {
-				"desc": "Returns a boolean indicating whether the currently used camera has a camera flash.",
+				"desc": "Checks if the currently used camera has a camera flash.",
 				"isfunc": true,
 				"name": "HasFlash",
 				"pNames": [],
@@ -736,14 +736,14 @@
 				"name": "ReportColors",
 				"pNames": ["list", "callback", "sampSize", "maxRate"],
 				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2:num_frc\\,y2:num_frc\\|...",
-                    {
-    					"desc": "Callback",
-    					"isfunc": true,
-    					"name": "callback",
-    					"pNames": ["data"],
-    					"pTypes": ["lst-[[r1,g1,b1], [r2,g2,b2], ...]"],
-    					"shortDesc": "callback"
-	                }, "num_pxl", "num_mls"],
+					{
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["data"],
+						"pTypes": ["lst-[[r1,g1,b1], [r2,g2,b2], ...]"],
+						"shortDesc": "callback"
+					}, "num_pxl", "num_mls"],
 				"shortDesc": "Keeps tracks of the average color around a given point"
 			},
 			"SetBackAlpha": "#1162431318",
@@ -950,7 +950,7 @@
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetChecked": {
-				"desc": "Returns a boolean indicating whether the checkbox is currently checked or not.",
+				"desc": "Checks if the checkbox is currently checked or not.",
 				"isfunc": true,
 				"name": "GetChecked",
 				"pNames": [],
@@ -1107,7 +1107,7 @@
 				"shortDesc": "Get the selected text"
 			},
 			"GetSelectMode": {
-				"desc": "Returns a boolean indicating whether there is currently some text selected.",
+				"desc": "Checks if there is currently some text selected.",
 				"isfunc": true,
 				"name": "GetSelectMode",
 				"pNames": [],
@@ -1384,7 +1384,7 @@
 	},
 	"CreateDialog": {
 		"abbrev": "dlg",
-		"desc": "Custom dialogs appear on top of the app and thus can be used to show temporary information or collect data from the user. They are also useful for displaying configuration or settings controls.\n%cDialogs are resizeable and you can also change the look of them so that they fit in with the theme of your application.\n\nA custom dialog needs a layout to add the controls to. Use the @CreateLayout method of the **app** object to add a layout.<js>layDlg = app.CreateLayout( type, options );\ndlg.AddLayout( layDlg );</js>If you have added all your controls to the dialog layout you can use the **Show** method to show the dialog.\n\nNormally the user can cancel the dialog by pressing the _BACK_ button of the device, but you can disable that option by using the _“NoCancel”_ **option**. In order to close the dialog now, you have to call **Dismiss**.",
+		"desc": "Custom dialogs appear on top of the app and thus can be used to show temporary information or collect data from the user. They are also useful for displaying configuration or settings controls.\n%cDialogs are resizeable and you can also change the look of them so that they fit in with the theme of your application.\n\nA custom dialog needs a layout to add the controls to. Use the @CreateLayout method of the **app** object to add a layout.<js>layDlg = app.CreateLayout( type, options );\ndlg.AddLayout( layDlg );</js>If you have added all your controls to the dialog layout you can use the **Show** method to show the dialog.\n\nNormally the user can cancel the dialog by pressing the _BACK_ button of the device, but you can disable that option by using the “NoCancel” **option**. In order to close the dialog now, you have to call **Dismiss**.",
 		"isfunc": true,
 		"name": "CreateDialog",
 		"pNames": ["title", "options"],
@@ -1506,7 +1506,7 @@
 	},
 	"CreateDownloader": {
 		"abbrev": "dwn",
-		"desc": "The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage. You can download a file with the **Download** method which accepts a _source url_ and a _target directory_:<js>dwn.Download( srcFileUrl, targetDir );</js>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the _“NoDialog”_ **option**.\n\nIf you want to know when the download process has finished (or failed) you can define a callback functioni with the **SetOnComplete** method:<js>dload.SetOnComplete( callback );</js>",
+		"desc": "The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage. You can download a file with the **Download** method which accepts a _source url_ and a _target directory_:<js>dwn.Download( srcFileUrl, targetDir );</js>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the “NoDialog” **option**.\n\nIf you want to know when the download process has finished (or failed) you can define a callback functioni with the **SetOnComplete** method:<js>dload.SetOnComplete( callback );</js>",
 		"isfunc": true,
 		"name": "CreateDownloader",
 		"pNames": ["options"],
@@ -1550,7 +1550,7 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsComplete": {
-				"desc": "Returns a boolean indicating whether the download has compleated or not.",
+				"desc": "Checks if the download has compleated or not.",
 				"isfunc": true,
 				"name": "IsComplete",
 				"pNames": [],
@@ -1794,13 +1794,13 @@
 				"name": "ReadTextAsync",
 				"pNames": ["type", "callback"],
 				"pTypes": ["str-Line:read one line terminated by “\n”, “\r” or “\r\n”|Char:read big-endian 16-bit character", {
-        	        "desc": "callback function",
-        	        "isfunc": true,
-        	        "name": "callback",
-        	        "pNames": ["data"],
-        	        "pTypes": ["str"],
-        	        "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Asynchronously read data as text"
 			},
 			"Seek": {
@@ -1951,7 +1951,7 @@
 	},
 	"CreateImage": {
 		"abbrev": "img",
-		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the _“Button”_ **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the _“fix”_ **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, \"fix\", 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the _“alias”_ **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, \"alias\" );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](http://www.it.hiof.no/\\~borres/j3d/math/twod/p-twod.html#ma2d35). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
+		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the “Button” **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the “fix” **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, \"fix\", 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the “alias” **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, \"alias\" );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](http://www.it.hiof.no/\\~borres/j3d/math/twod/p-twod.html#ma2d35). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
 		"isfunc": true,
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
@@ -2086,7 +2086,7 @@
 				"name": "GetPixelColor",
 				"pNames": ["x", "y"],
 				"pTypes": ["num", "num"],
-				"retval": "lst-[red:num_dhx,green:num_dhx,blue:num_dhx]",
+				"retval": "lst-[ red:num_dhx, green:num_dhx, blue:num_dhx ]",
 				"shortDesc": "Returns color values of a pixel"
 			},
 			"GetPixelData": {
@@ -2258,7 +2258,7 @@
 				"desc": "Change the current paint color for drawing methods.",
 				"isfunc": true,
 				"name": "SetPaintColor",
-				"pNames": ["colour"],
+				"pNames": ["color"],
 				"pTypes": ["str_col"],
 				"shortDesc": "Change the paint color"
 			},
@@ -2329,7 +2329,7 @@
 	},
 	"CreateLayout": {
 		"abbrev": "lay",
-		"desc": "Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 3 types of layout: _**“Linear”**_, _**“Absolute”**_ and _**“Frame”**_.\n\nLayouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.\n\nYou can add child objects to the Layout using the AddChild function:\n<js>lay.AddChild( object );</js>\nThe alignment of chlld objects within a layout can be set by adding the **options** _“Left”_, _“Right”_, _“Bottom”_ and _“VCenter”_, by default objects will be aligned _“Top,Center”_.\n<h3>Linear Layouts</h3>\nLinear layouts are probably the most useful type and are used to organize controls in either the default _“Vertical”_ or _“Horizontal”_ direction on screen.\n<sample Vertical>\n<sample Horizontal>\nBy default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout sizes within it's parent: “FillX”, “FillY” and “FillXY”.\n<sample Combined>\n<h3>Frame Layouts</h3>\nFrame layouts are used to display objects in front or behind each other. Every time the **AddChild** function is called on a Frame layout, the child object is placed in a new layer in front of the previously added object at the top left of the frame.\n\nFrame Layouts are useful if you wish to do **animated Flips** or **Slides** to reveal layers of objects or use **transparency**.\n<sample Image Swap>\n<h3>Absolute Layouts</h3>\nAbsolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the **SetPosition** and **SetSize** functions of each of the child objects. However, you are encouraged use linear layouts for most of your programs, unless it is _absolute_ly necessary.",
+		"desc": "Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 3 types of layout: _**“Linear”**_, _**“Absolute”**_ and _**“Frame”**_.\n\nLayouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.\n\nYou can add child objects to the Layout using the AddChild function:\n<js>lay.AddChild( object );</js>\nThe alignment of chlld objects within a layout can be set by adding the **options** “Left”, “Right”, “Bottom” and “VCenter”, by default objects will be aligned “Top,Center”.\n<h3>Linear Layouts</h3>\nLinear layouts are probably the most useful type and are used to organize controls in either the default “Vertical” or “Horizontal” direction on screen.\n<sample Vertical>\n<sample Horizontal>\nBy default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout sizes within it's parent: “FillX”, “FillY” and “FillXY”.\n<sample Combined>\n<h3>Frame Layouts</h3>\nFrame layouts are used to display objects in front or behind each other. Every time the **AddChild** function is called on a Frame layout, the child object is placed in a new layer in front of the previously added object at the top left of the frame.\n\nFrame Layouts are useful if you wish to do **animated Flips** or **Slides** to reveal layers of objects or use **transparency**.\n<sample Image Swap>\n<h3>Absolute Layouts</h3>\nAbsolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the **SetPosition** and **SetSize** functions of each of the child objects. However, you are encouraged use linear layouts for most of your programs, unless it is _absolute_ly necessary.",
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
@@ -2413,7 +2413,7 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"RemoveChild": {
-                "desc": "Removes a child from the layout.",
+				"desc": "Removes a child from the layout.",
 				"isfunc": true,
 				"name": "RemoveChild",
 				"pNames": ["child"],
@@ -2486,11 +2486,11 @@
 	},
 	"CreateList": {
 		"abbrev": "lst",
-		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the _“&colon;”_ (colon) character. If you need to use a colon character in your item text then use this character sequence: _“^c^”_.\nYou can have one icon and some body text using the following formats&colon;\n\n_“title&colon;icon”\n“title&colon;body&colon;icon”\n“title&colon;body&colon;extra&colon;icon”_\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: _“folder”_, _“audiofolder”_, _“photofolder”_, _“videofolder”_, _“audio”_, _“photo”_, _“video”_ and _“playlist”_.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
+		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “&colon;” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.\nYou can have one icon and some body text using the following formats&colon;\n\n“title”\n“title&colon;icon”\n“title&colon;body&colon;icon”\n“title&colon;body&colon;extra&colon;icon”\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: “audio”, “photo”, “video”, “folder”, “audiofolder”, “photofolder”, “videofolder” and “playlist”.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
 		"shortDesc": "Returns a List object",
 		"subf": {
@@ -2648,7 +2648,7 @@
 				"desc": "Changes the item divider height and color.",
 				"isfunc": true,
 				"name": "SetDivider",
-				"pNames": ["height", "colour"],
+				"pNames": ["height", "color"],
 				"pTypes": ["num_frc", "str_col"],
 				"shortDesc": "Changes the divider style"
 			},
@@ -2793,7 +2793,7 @@
 	},
 	"CreateListDialog": {
 		"abbrev": "ldg",
-		"desc": "If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.\nUse the **SetOnTouch** method of the ListDialog object to set the name of a function you want to be called every times a list item is selected. The selected item is passed that function as parameter.\n<sample Basic>\nou can use the _“Multi”_ **option** to create a ListDialog with check boxes against each item. This allows multiple list items to be selected. An extra parameter isChecked is passed to the OnTouch callback function when a check box is checked or unchecked.<Example Multi>",
+		"desc": "If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.\nUse the **SetOnTouch** method of the ListDialog object to set the name of a function you want to be called every times a list item is selected. The selected item is passed that function as parameter.\n<sample Basic>\nou can use the “Multi” **option** to create a ListDialog with check boxes against each item. This allows multiple list items to be selected. An extra parameter isChecked is passed to the OnTouch callback function when a check box is checked or unchecked.<Example Multi>",
 		"isfunc": true,
 		"name": "CreateListDialog",
 		"pNames": ["title", "list", "options"],
@@ -2965,7 +2965,7 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsLooping": {
-				"desc": "Returns a boolean indicating whether the media player will replay the song from the begining if it has finished.",
+				"desc": "Checks if the media player will replay the song from the begining if it has finished.",
 				"isfunc": true,
 				"name": "IsLooping",
 				"pNames": [],
@@ -2973,7 +2973,7 @@
 				"shortDesc": "Returns if the player is looping."
 			},
 			"IsPlaying": {
-				"desc": "Returns a boolean indicating whether the media player is currently playing.",
+				"desc": "Checks if the media player is currently playing.",
 				"isfunc": true,
 				"name": "IsPlaying",
 				"pNames": [],
@@ -2981,7 +2981,7 @@
 				"shortDesc": "Get current playing state"
 			},
 			"IsReady": {
-				"desc": "Returns a boolean indicating whether the media player is ready for use.",
+				"desc": "Checks if the media player is ready for use.",
 				"isfunc": true,
 				"name": "IsReady",
 				"pNames": [],
@@ -3100,7 +3100,7 @@
 	},
 	"CreateMediaStore": {
 		"abbrev": "med",
-		"desc": "Returns a MediaStore object.",
+		"desc": "The MediaStore is used to query audio information from the android provider or from the device in the /sdcard/Music folder.",
 		"isfunc": true,
 		"name": "CreateMediaStore",
 		"pNames": [],
@@ -3109,22 +3109,22 @@
 		"shortDesc": "Returns a MediaStore object",
 		"subf": {
 			"GetAlbumArt": {
-				"desc": "?",
+				"desc": "Loads the album image to an existing image:dso-CreateImage.",
 				"isfunc": true,
 				"name": "GetAlbumArt",
 				"pNames": ["image", "id", "options"],
-				"pTypes": ["?", "num_int", "?"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["dso-CreateImage", "num_int", "str-internal|external"],
+				"retval": "bin",
+				"shortDesc": "Load the album art to an image"
 			},
 			"GetSongArt": {
-				"desc": "?",
+				"desc": "Loads the song image to an existing image:dso-CreateImage.",
 				"isfunc": true,
 				"name": "GetSongArt",
 				"pNames": ["image", "id", "options"],
-				"pTypes": ["?", "num_int", "?"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["dso-CreateImage", "num_int", "str-internal|external"],
+				"retval": "bin",
+				"shortDesc": "Load the song art to an image"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3137,31 +3137,31 @@
 			},
 			"Method": "#1023663567",
 			"QueryAlbums": {
-				"desc": "?",
+				"desc": "Search for media albums.",
 				"isfunc": true,
 				"name": "QueryAlbums",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "?", "str-external", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_sql", "str:coloumns-album,\\_id,albumArt,artist,numSongs,firstYear,lastYear", "str-internal|external"],
+				"shortDesc": "Search for media albums"
 			},
 			"QueryArtists": {
-				"desc": "?",
+				"desc": "Search for media artists.",
 				"isfunc": true,
 				"name": "QueryArtists",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "?", "str-external", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_sql", "str:coloumns-\\_id,artist,numAlbums,numTracks", "str-internal|external"],
+				"shortDesc": "Search for media artists"
 			},
 			"QueryMedia": {
-				"desc": "?",
+				"desc": "Search for media.",
 				"isfunc": true,
 				"name": "QueryMedia",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "str-artist|album|?", "str-external|?"],
-				"shortDesc": ""
+				"pTypes": ["str_sql", "str:coloumns-title,\\_id,duration,size,uri,album,albumID;artist,artistId", "str-internal|external"],
+				"shortDesc": "Search for media"
 			},
 			"SetOnAlbumsResult": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when an album query has finished.",
 				"isfunc": true,
 				"name": "SetOnAlbumsResult",
 				"pNames": ["callback"],
@@ -3171,14 +3171,14 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["obj-[{id:num_int,album:str,artist:str,numSongs:num_int}]"],
+						"pTypes": ["lst-[{ album:str, id:num_int, albumArt:str_pth, artist:str, numSongs:num_int, firstYear:str, lastYear:str }]"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when album query has finished"
 			},
 			"SetOnArtistsResult": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when a artist query has finished.",
 				"isfunc": true,
 				"name": "SetOnArtistsResult",
 				"pNames": ["callback"],
@@ -3188,14 +3188,14 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["obj-[{id:num_int,artist:str,numAlbums:num_int,numTracks:num_int}]"],
+						"pTypes": ["lst-[{ id:num_int, artist:str, numAlbums:num_int, numTracks:num_int }]"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when artist query has finished"
 			},
 			"SetOnMediaResult": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when a media query has finished.",
 				"isfunc": true,
 				"name": "SetOnMediaResult",
 				"pNames": ["callback"],
@@ -3205,72 +3205,72 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["obj-[{title:str,album:str,albumID:num_int,artistId:num_int,artist:str,artistId:num_int,duration:num_mls,size:num_int-bytes,uri:str}]"],
+						"pTypes": ["lst-[{ title:str, id:num_int, duration:num_mls, size:num_byt, uri:str, album:str, albumID:num_int, artist:str, artistId:num_int }]"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when media query has finished"
 			}
 		}
 	},
 	"CreateNetClient": {
 		"abbrev": "net",
-		"desc": "Returns a NetClient object.",
+		"desc": "NetClients can be used to communicate with servers on the web. You can choose between two different protocols:\n\tThe connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.\n\tThe connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.\n\nNote: A few routers block fast UDP messages by default",
 		"isfunc": true,
 		"name": "CreateNetClient",
 		"pNames": ["type"],
-		"pTypes": ["str-TCP|Raw"],
+		"pTypes": ["str-UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message"],
 		"retval": "NetClient",
 		"shortDesc": "Returns a NetClient object",
 		"subf": {
 			"AutoReceive": {
-				"desc": "receive data automatically",
+				"desc": "Receive TCP received data automatically by calling the OnReceive callback.",
 				"isfunc": true,
 				"name": "AutoReceive",
 				"pNames": ["server", "port", "mode"],
-				"pTypes": ["str_url", "num_int", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_url", "num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
+				"shortDesc": "Calls the OnReceive callback for incoming TCP data"
 			},
 			"Close": {
-				"desc": "Close",
+				"desc": "Closes the NetClient socket.",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Close"
+				"shortDesc": "Closes the NetClient socket"
 			},
 			"Connect": {
-				"desc": "Connect NetClient",
+				"desc": "Connect the NetClient to a server.",
 				"isfunc": true,
 				"name": "Connect",
 				"pNames": ["address", "port"],
 				"pTypes": ["str_url", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Connect to a server"
 			},
 			"Disconnect": {
-				"desc": "Disconnect netClient",
+				"desc": "Disconnect the NetClient from the server.",
 				"isfunc": true,
 				"name": "Disconnect",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Disconnect from server"
 			},
 			"DownloadFile": {
-				"desc": "?",
+				"desc": "Downloads a file via TCP from the server.",
 				"isfunc": true,
 				"name": "DownloadFile",
 				"pNames": ["file"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-url"],
+				"shortDesc": "Downloads a file via TCP from the server"
 			},
 			"GetBroadcastAddress": {
-				"desc": "GetBroadcastAddress",
+				"desc": "Returns the broadcast address of UDP connections.",
 				"isfunc": true,
 				"name": "GetBroadcastAddress",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns the broadcast address of UDP connections."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3282,84 +3282,85 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsConnected": {
-				"desc": "return whether netClient is connected",
+				"desc": "Checks if the NetClient is connected to a server.",
 				"isfunc": true,
 				"name": "IsConnected",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Get NetClient connected state"
 			},
 			"IsEnabled": "#1744802827",
 			"Method": "#1023663567",
 			"ReceiveBytes": {
-				"desc": "receive data",
+				"desc": "Receive data as bytes.",
 				"isfunc": true,
 				"name": "ReceiveBytes",
 				"pNames": ["mode"],
-				"pTypes": ["str-Int|Hex|?"],
-				"retval": "str-data",
-				"shortDesc": ""
+				"pTypes": ["str-Int|Hex"],
+				"retval": "lst-[ bytes:num_byt ]",
+				"shortDesc": "Receive data as bytes"
 			},
 			"ReceiveDatagram": {
-				"desc": "ReceiveDatagram",
+				"desc": "Receive an UDP Datagram.",
 				"isfunc": true,
 				"name": "ReceiveDatagram",
 				"pNames": ["mode", "port", "timeout"],
-				"pTypes": ["str-Int|Hex|?", "num_int", "num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "num_int", "num"],
+				"retval": "str",
+				"shortDesc": "Receive an UDP Datagram"
 			},
 			"ReceiveDatagrams": {
-				"desc": "ReceiveDatagrams",
+				"desc": "Receive datagrams over UDP and calls the OnReceive callback for each one.",
 				"isfunc": true,
 				"name": "ReceiveDatagrams",
 				"pNames": ["port", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "ReceiveDatagrams"
+				"pTypes": ["num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
+				"shortDesc": "Receive UDP datagrams"
 			},
 			"ReceiveFile": {
-				"desc": "ReceiveFile",
+				"desc": "Receive a file via TCP from the server.",
 				"isfunc": true,
 				"name": "ReceiveFile",
 				"pNames": ["file", "wait"],
 				"pTypes": ["str", "num"],
-				"shortDesc": ""
+				"retval": "str",
+				"shortDesc": "Receive a file via TCP from the server"
 			},
 			"ReceiveText": {
-				"desc": "ReceiveText",
+				"desc": "Receive text from TCP connection.",
 				"isfunc": true,
 				"name": "ReceiveText",
 				"pNames": ["mode"],
-				"pTypes": ["str-UTF-8|?"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
+				"retval": "str",
+				"shortDesc": "Receive text over TCP"
 			},
 			"SendBytes": {
-				"desc": "SendBytes",
+				"desc": "Send bytes over TCP connection.",
 				"isfunc": true,
 				"name": "SendBytes",
 				"pNames": ["data", "mode"],
-				"pTypes": ["str", "str-Int|Hex|?"],
-				"shortDesc": ""
+				"pTypes": ["lst-[ bytes:num_byt ]||str_com-bytes:hexadecimal 00..FF", "str-Int|Hex"],
+				"shortDesc": "Send bytes over TCP"
 			},
 			"SendDatagram": {
-				"desc": "",
+				"desc": "Send an UDP Datagram.",
 				"isfunc": true,
 				"name": "SendDatagram",
 				"pNames": ["data", "mode", "address", "port", "options"],
-				"pTypes": ["?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "str_url", "num_int", "str-Text|Hex|Bytes"],
+				"shortDesc": "Send an UDP Datagram"
 			},
 			"SendText": {
-				"desc": "SendText",
+				"desc": "Sends text over TCP connection.",
 				"isfunc": true,
 				"name": "SendText",
 				"pNames": ["text", "mode"],
-				"pTypes": ["str", "str-UTF-8|?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
+				"shortDesc": "Sends text over TCP"
 			},
 			"SetOnConnect": {
-				"desc": "",
+				"desc": "Define a callback function which is called when a TCP connection could be established or if it failed to connect to the server. The _connected_ state is passed as first argument.",
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
@@ -3373,10 +3374,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when TCP connected or failed to connect to a server."
 			},
 			"SetOnDownload": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when a TCP file download has finished.",
 				"isfunc": true,
 				"name": "SetOnDownload",
 				"pNames": ["callback"],
@@ -3385,15 +3386,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["something"],
+						"pTypes": ["num_int"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "called when a file download has finished"
 			},
 			"SetOnReceive": {
-				"desc": "called when receivend some data",
+				"desc": "Define a callback function which is called when a TCP NetClient received some data when AutoReceive was set.",
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
@@ -3402,34 +3403,34 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["address"],
+						"pTypes": ["str"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when a TCP NetClient received some data via AutoReceive"
 			},
 			"SetTimeout": {
-				"desc": "set notification display. ticker display upon active, title on notification, sub text below title",
+				"desc": "Define an interval in which the client should check for new messages.",
 				"isfunc": true,
 				"name": "SetTimeout",
 				"pNames": ["seconds"],
 				"pTypes": ["num_sec"],
-				"shortDesc": ""
+				"shortDesc": "Timeout between two receive checks"
 			},
 			"WakeOnLan": {
-				"desc": "WakeOnLan",
+				"desc": "WakeOnLan\n\n<premium>",
 				"isfunc": true,
 				"name": "WakeOnLan",
 				"pNames": ["ip", "mac"],
-				"pTypes": ["?", "?"],
+				"pTypes": ["str", "str"],
 				"shortDesc": "WakeOnLan"
 			}
 		}
 	},
 	"CreateNotification": {
 		"abbrev": "ntf",
-		"desc": "The Notification object can be used to put messages in the notification drawer. The _“AutoCancel”_ **option** will automatically dismiss the notificatin if the user touches it. _“FullScreen”_ tries to create a larger notification on the screen. And _“OnGoing”_ makes the Notification closeable by your app only.\n\nUse the SetMessage method to tell the object what to display\n<js>notify.SetMessage( ticker, title, text );</js>\nThe Notify method tells it to send the notification:\n<js>notify.Notify( id );</js>\nWhen the user touches your notification, your app will come to the front, even if it was not running.\n\nIf you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.",
+		"desc": "The Notification object can be used to put messages in the notification drawer. The “AutoCancel” **option** will automatically dismiss the notificatin if the user touches it. “FullScreen” tries to create a larger notification on the screen. And “OnGoing” makes the Notification closeable by your app only.\n\nUse the SetMessage method to tell the object what to display\n<js>notify.SetMessage( ticker, title, text );</js>\nThe Notify method tells it to send the notification:\n<js>notify.Notify( id );</js>\nWhen the user touches your notification, your app will come to the front, even if it was not running.\n\nIf you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.",
 		"isfunc": true,
 		"name": "CreateNotification",
 		"pNames": ["options"],
@@ -3475,7 +3476,7 @@
 				"desc": "Activate the device notification LEDs.",
 				"isfunc": true,
 				"name": "SetLights",
-				"pNames": ["colour", "onMs", "offMs"],
+				"pNames": ["color", "onMs", "offMs"],
 				"pTypes": ["str_col", "num_mls", "num_mls"],
 				"shortDesc": "Activate device notification LEDs"
 			},
@@ -3499,7 +3500,7 @@
 	},
 	"CreateNxt": {
 		"abbrev": "nxt",
-		"desc": "Returns a Nxt object.",
+		"desc": "The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.",
 		"isfunc": true,
 		"name": "nxt",
 		"pNames": [],
@@ -3508,107 +3509,107 @@
 		"shortDesc": "Returns a Nxt object",
 		"subf": {
 			"Beep": {
-				"desc": "play tone with given frequency for a given time in milliseconds",
+				"desc": "Play tone with given frequency for a given time in milliseconds.",
 				"isfunc": true,
 				"name": "Beep",
 				"pNames": ["frequency", "duration"],
 				"pTypes": ["num_hrz", "num_mls"],
-				"shortDesc": ""
+				"shortDesc": "Play frequency tone"
 			},
 			"Brake": {
-				"desc": "stop feeding motors with power",
+				"desc": "Brakes motors by lowering the input power.",
 				"isfunc": true,
 				"name": "Brake",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Brakes motors smoothly"
 			},
 			"CheckConnection": {
-				"desc": "check whether phone/tablet wa connected to the NXT",
+				"desc": "Check whether phone/tablet is connected to the NXT.",
 				"isfunc": true,
 				"name": "CheckConnection",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if device is connected to NXT"
 			},
 			"Connect": {
-				"desc": "Connects to the Bluetooth device",
+				"desc": "Connects to the NXT device via Bluetooth.",
 				"isfunc": true,
 				"name": "Connect",
 				"pNames": ["name"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Connect to NXT"
 			},
 			"Disconnect": {
-				"desc": "Disconnect NXT from Phone/Tablet",
+				"desc": "Disconnect Phone/Tablet from NXT.",
 				"isfunc": true,
 				"name": "Disconnect",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Disconnect NXT"
 			},
 			"Drive": {
 				"desc": "commands NXT to drive motors",
 				"isfunc": true,
 				"name": "Drive",
 				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A|B|C", "num_prc", "num_flt", "?"],
+				"pTypes": ["str-A,B,C", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
 				"shortDesc": ""
 			},
 			"FileFindFirst": {
-				"desc": "?",
+				"desc": "Find the first program file of the NXT.",
 				"isfunc": true,
 				"name": "FileFindFirst",
 				"pNames": ["pattern"],
-				"pTypes": ["?"],
+				"pTypes": ["str"],
 				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Find first program file"
 			},
 			"FileFindNext": {
-				"desc": "?",
+				"desc": "Find next program file on the NXT.",
 				"isfunc": true,
 				"name": "FileFindNext",
 				"pNames": ["handle"],
 				"pTypes": ["?"],
 				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Find next program"
 			},
 			"GetBtAddress": {
-				"desc": "Returns Bluetooth address of connected NXT brick",
+				"desc": "Returns Bluetooth address of a connected NXT brick",
 				"isfunc": true,
 				"name": "GetBtAddress",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns NXT Bt address"
 			},
 			"GetBtName": {
-				"desc": "Returns Bluetooth name of connected NXT",
+				"desc": "Returns Bluetooth name of a connected NXT brick",
 				"isfunc": true,
 				"name": "GetBtName",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns NXT Bt name"
 			},
 			"GetCurrentProgram": {
-				"desc": "returns current running program name",
+				"desc": "Returns the name of the currently running program.",
 				"isfunc": true,
 				"name": "GetCurrentProgram",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns the current running program name"
 			},
 			"GetRotationCount": {
-				"desc": "GetRotationCount",
+				"desc": "Returns the wheel encoder value of a motor.",
 				"isfunc": true,
 				"name": "GetRotationCount",
 				"pNames": ["motor"],
-				"pTypes": ["str-A|B|C"],
+				"pTypes": ["str-A,B,C"],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Returns a wheel encoder value."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3620,146 +3621,154 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsBluetoothEnabled": {
-				"desc": "IsBluetoothEnabled",
+				"desc": "Checks if bluetooth is enabled on the device.",
 				"isfunc": true,
 				"name": "IsBluetoothEnabled",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns whether bt is enabled"
 			},
 			"IsConnected": {
-				"desc": "IsConnected",
+				"desc": "Checks if the device is connected to a NXT.",
 				"isfunc": true,
 				"name": "IsConnected",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns whether NXT is connected"
 			},
-			"IsEnabled": "#1744802827",
+			"IsEnabled": {
+				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
+				"isfunc": true,
+				"name": "IsBluetoothEnabled",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "bin",
+				"shortDesc": "Returns whether bt is enabled"
+			},
 			"IsMotorIdle": {
 				"desc": "Checks if a motor is currently powered",
 				"isfunc": true,
 				"name": "IsMotorIdle",
 				"pNames": ["motor"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Check if a motor is powered"
 			},
 			"IsPaired": {
-				"desc": "",
+				"desc": "Checks if a Bluetooth device with a given name is paired with our device.",
 				"isfunc": true,
 				"name": "IsPaired",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Checks if the device is paired with an other"
 			},
 			"Method": "#1023663567",
 			"PlaySoundFile": {
-				"desc": "PlaySoundFile for given times",
+				"desc": "Play a sound file for a given amount of times.",
 				"isfunc": true,
 				"name": "PlaySoundFile",
 				"pNames": ["file", "repeat"],
 				"pTypes": ["str_pth", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Play a sound file"
 			},
 			"ReadColorSensor": {
-				"desc": "ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,5:red,6:white",
+				"desc": "Read a color sensor value on the input where the sensor is plugged into.\n\nIn “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.\nYou can use the ToColorName function to convert from these six values to a color name.\nAll other modes return a value between 0 and 1023.",
 				"isfunc": true,
 				"name": "ReadColorSensor",
 				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1..4", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6",
-				"shortDesc": ""
+				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
+				"retval": "num_int-1..6||num_int-0..1023",
+				"shortDesc": "Read a color sensor value"
 			},
 			"ReadDistanceSensor": {
-				"desc": "ReadDistanceSensor in centimeters",
+				"desc": "Reads the distance measured by the ultrasonic sensor in centimeters.",
 				"isfunc": true,
 				"name": "ReadDistanceSensor",
 				"pNames": ["input"],
 				"pTypes": ["num_int-1..4"],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Get measured ultrasinic distance in cm"
 			},
 			"ReadLightSensor": {
-				"desc": "ReadLightSensor -> value between 0 and 100",
+				"desc": "Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.",
 				"isfunc": true,
 				"name": "ReadLightSensor",
 				"pNames": ["input", "active"],
 				"pTypes": ["num_int-1..4", "bin"],
-				"retval": "num_int",
-				"shortDesc": ""
+				"retval": "num_int-0..100",
+				"shortDesc": "Measures the light intensity"
 			},
 			"ReadMail": {
-				"desc": "ReadMail",
+				"desc": "Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.",
 				"isfunc": true,
 				"name": "ReadMail",
 				"pNames": ["mailbox", "type", "remove"],
 				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "bin"],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Reads a message from the NXT brick's mail box"
 			},
 			"ReadSoundSensor": {
-				"desc": "ReadSoundSensor",
+				"desc": "Reads the sound pressure level of the surrounding.",
 				"isfunc": true,
 				"name": "ReadSoundSensor",
 				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1..4", "str-DB|DbA"],
+				"pTypes": ["num_int-1..4", "str-DB:Decibels|DbA:A-weighted Decibels"],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Measure the sound pressure level"
 			},
 			"ReadTouchSensor": {
-				"desc": "ReadTouchSensor",
+				"desc": "Returns whether the touch sensor switch is currently pushed.",
 				"isfunc": true,
 				"name": "ReadTouchSensor",
 				"pNames": ["input"],
 				"pTypes": ["num_int-1..4"],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if the touch sensor is pressed"
 			},
 			"RequestEnable": {
-				"desc": "show enable bluetooth dialog when bluetooth disabled",
+				"desc": "Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.",
 				"isfunc": true,
 				"name": "RequestEnable",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Request enabling bluetooth if it isn't"
 			},
 			"Reset": {
-				"desc": "Reset motors",
+				"desc": "Reset wheel encoder offset to 0.",
 				"isfunc": true,
 				"name": "Reset",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Reset wheel encoder offset to 0."
 			},
 			"SendMail": {
-				"desc": "SendMail",
+				"desc": "Sends a message to the NXT brick's mail box.",
 				"isfunc": true,
 				"name": "SendMail",
 				"pNames": ["mailbox", "type", "message"],
 				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "str||num_int"],
-				"shortDesc": ""
+				"shortDesc": "Sends a message to the NXT brick's mail box."
 			},
 			"SetInvert": {
-				"desc": "inverts direction of motor commands",
+				"desc": "Provides a convenient way to invert the direction of the motor commands.",
 				"isfunc": true,
 				"name": "SetInvert",
 				"pNames": ["invert"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Inverts the direction of motor commands"
 			},
 			"SetLampColor": {
-				"desc": "?",
+				"desc": "Changes the color sensor LED to one color of “White”, “Red”, “Green”, “Blue” or “Off”",
 				"isfunc": true,
 				"name": "SetLampColor",
-				"pNames": ["input", "colour"],
-				"pTypes": ["num_int-1..4", "str_col"],
-				"shortDesc": ""
+				"pNames": ["input", "color"],
+				"pTypes": ["num_int-1..4", "str_col-“White”|“Red”|“Green”|“Blue”|“Off”"],
+				"shortDesc": "Change sensor LED color"
 			},
 			"SetOnConnect": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
+				"desc": "Define a callback function which is called when the NXT has been connected via Bluetooth or if it failed to.",
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
@@ -3768,15 +3777,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["connected"],
+						"pTypes": ["bin"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when NXT connection established or failed"
 			},
 			"SetOnConnected": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
+				"desc": "Define a callback function which is called when the NXT has been successfully connected via Bluetooth",
 				"isfunc": true,
 				"name": "SetOnConnected",
 				"pNames": ["callback"],
@@ -3790,7 +3799,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when bt connection established"
 			},
 			"SetOnConnectEx": {
 				"desc": "called when NXT has successfully connected via Bluetooth",
@@ -3810,51 +3819,51 @@
 				"shortDesc": ""
 			},
 			"ShowDevices": {
-				"desc": "show paired NXT list to connect to one via bluetooth",
+				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
 				"isfunc": true,
 				"name": "ShowDevices",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Shows a list of paired NXT devices to connect to"
 			},
 			"StartProgram": {
-				"desc": "StartProgram",
+				"desc": "Starts an NXT-G program on the NXT brick if available.",
 				"isfunc": true,
 				"name": "StartProgram",
 				"pNames": ["name"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Starts an NXT-G program"
 			},
 			"Stop": {
-				"desc": "Stop",
+				"desc": "Stop powering some motors.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Stop powering some motors."
 			},
 			"StopProgram": {
-				"desc": "StopProgram",
+				"desc": "Stops a the currently running NXT-G program.",
 				"isfunc": true,
 				"name": "StopProgram",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stops the current running program"
 			},
 			"ToColorName": {
-				"desc": "convert color integer got via ReadColorSensor to color name",
+				"desc": "Converts a color integer received from ReadColorSensor to a meaningful color name.",
 				"isfunc": true,
 				"name": "ToColorName",
 				"pNames": ["val"],
 				"pTypes": ["num_int-1..6"],
 				"retval": "str-black|blue|green|yellow|red|white",
-				"shortDesc": ""
+				"shortDesc": "Convert color number to its name"
 			}
 		}
 	},
 	"CreateNxtRemote": {
 		"abbrev": "nxtr",
-		"desc": "Returns a NxtRemote object.",
+		"desc": "The NXTRemote object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.",
 		"isfunc": true,
 		"name": "CreateNxtRemote",
 		"pNames": [],
@@ -3862,108 +3871,108 @@
 		"retval": "NxtRemote",
 		"shortDesc": "Returns a NxtRemote object",
 		"subf": {
-			"Beep": {
-				"desc": "play tone with given frequency for a given time in milliseconds",
+            "Beep": {
+				"desc": "Play tone with given frequency for a given time in milliseconds.",
 				"isfunc": true,
 				"name": "Beep",
 				"pNames": ["frequency", "duration"],
 				"pTypes": ["num_hrz", "num_mls"],
-				"shortDesc": ""
+				"shortDesc": "Play frequency tone"
 			},
 			"Brake": {
-				"desc": "stop feeding motors with power",
+				"desc": "Brakes motors by lowering the input power.",
 				"isfunc": true,
 				"name": "Brake",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Brakes motors smoothly"
 			},
 			"CheckConnection": {
-				"desc": "check whether phone/tablet wa connected to the NXT",
+				"desc": "Check whether phone/tablet is connected to the NXT.",
 				"isfunc": true,
 				"name": "CheckConnection",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if device is connected to NXT"
 			},
 			"Connect": {
-				"desc": "Connects to the Bluetooth device",
+				"desc": "Connects to the NXT device via Bluetooth.",
 				"isfunc": true,
 				"name": "Connect",
 				"pNames": ["name"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Connect to NXT"
 			},
 			"Disconnect": {
-				"desc": "Disconnect NXT from Phone/Tablet",
+				"desc": "Disconnect Phone/Tablet from NXT.",
 				"isfunc": true,
 				"name": "Disconnect",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Disconnect NXT"
 			},
 			"Drive": {
 				"desc": "commands NXT to drive motors",
 				"isfunc": true,
 				"name": "Drive",
 				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A|B|C", "num_prc", "num_flt", "?"],
+				"pTypes": ["str-A,B,C", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
 				"shortDesc": ""
 			},
 			"FileFindFirst": {
-				"desc": "?",
+				"desc": "Find the first program file of the NXT.",
 				"isfunc": true,
 				"name": "FileFindFirst",
 				"pNames": ["pattern"],
-				"pTypes": ["?"],
+				"pTypes": ["str"],
 				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Find first program file"
 			},
 			"FileFindNext": {
-				"desc": "?",
+				"desc": "Find next program file on the NXT.",
 				"isfunc": true,
 				"name": "FileFindNext",
 				"pNames": ["handle"],
 				"pTypes": ["?"],
 				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Find next program"
 			},
 			"GetBtAddress": {
-				"desc": "Returns Bluetooth address of connected NXT brick",
+				"desc": "Returns Bluetooth address of a connected NXT brick",
 				"isfunc": true,
 				"name": "GetBtAddress",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns NXT Bt address"
 			},
 			"GetBtName": {
-				"desc": "Returns Bluetooth name of connected NXT",
+				"desc": "Returns Bluetooth name of a connected NXT brick",
 				"isfunc": true,
 				"name": "GetBtName",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns NXT Bt name"
 			},
 			"GetCurrentProgram": {
-				"desc": "returns current running program name",
+				"desc": "Returns the name of the currently running program.",
 				"isfunc": true,
 				"name": "GetCurrentProgram",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Returns the current running program name"
 			},
 			"GetRotationCount": {
-				"desc": "GetRotationCount",
+				"desc": "Returns the wheel encoder value of a motor.",
 				"isfunc": true,
 				"name": "GetRotationCount",
 				"pNames": ["motor"],
-				"pTypes": ["str-A|B|C"],
+				"pTypes": ["str-A,B,C"],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Returns a wheel encoder value."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3975,146 +3984,154 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsBluetoothEnabled": {
-				"desc": "IsBluetoothEnabled",
+				"desc": "Checks if bluetooth is enabled on the device.",
 				"isfunc": true,
 				"name": "IsBluetoothEnabled",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns whether bt is enabled"
 			},
 			"IsConnected": {
-				"desc": "IsConnected",
+				"desc": "Checks if the device is connected to a NXT.",
 				"isfunc": true,
 				"name": "IsConnected",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Returns whether NXT is connected"
 			},
-			"IsEnabled": "#1744802827",
+			"IsEnabled": {
+				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
+				"isfunc": true,
+				"name": "IsBluetoothEnabled",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "bin",
+				"shortDesc": "Returns whether bt is enabled"
+			},
 			"IsMotorIdle": {
 				"desc": "Checks if a motor is currently powered",
 				"isfunc": true,
 				"name": "IsMotorIdle",
 				"pNames": ["motor"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Check if a motor is powered"
 			},
 			"IsPaired": {
-				"desc": "",
+				"desc": "Checks if a Bluetooth device with a given name is paired with our device.",
 				"isfunc": true,
 				"name": "IsPaired",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Checks if the device is paired with an other"
 			},
 			"Method": "#1023663567",
 			"PlaySoundFile": {
-				"desc": "PlaySoundFile for given times",
+				"desc": "Play a sound file for a given amount of times.",
 				"isfunc": true,
 				"name": "PlaySoundFile",
 				"pNames": ["file", "repeat"],
 				"pTypes": ["str_pth", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Play a sound file"
 			},
 			"ReadColorSensor": {
-				"desc": "ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,5:red,6:white",
+				"desc": "Read a color sensor value on the input where the sensor is plugged into.\n\nIn “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.\nYou can use the ToColorName function to convert from these six values to a color name.\nAll other modes return a value between 0 and 1023.",
 				"isfunc": true,
 				"name": "ReadColorSensor",
 				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1..4", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6",
-				"shortDesc": ""
+				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
+				"retval": "num_int-1..6||num_int-0..1023",
+				"shortDesc": "Read a color sensor value"
 			},
 			"ReadDistanceSensor": {
-				"desc": "ReadDistanceSensor in centimeters",
+				"desc": "Reads the distance measured by the ultrasonic sensor in centimeters.",
 				"isfunc": true,
 				"name": "ReadDistanceSensor",
 				"pNames": ["input"],
 				"pTypes": ["num_int-1..4"],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Get measured ultrasinic distance in cm"
 			},
 			"ReadLightSensor": {
-				"desc": "ReadLightSensor -> value between 0 and 100",
+				"desc": "Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.",
 				"isfunc": true,
 				"name": "ReadLightSensor",
 				"pNames": ["input", "active"],
 				"pTypes": ["num_int-1..4", "bin"],
-				"retval": "num_int",
-				"shortDesc": ""
+				"retval": "num_int-0..100",
+				"shortDesc": "Measures the light intensity"
 			},
 			"ReadMail": {
-				"desc": "ReadMail",
+				"desc": "Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.",
 				"isfunc": true,
 				"name": "ReadMail",
 				"pNames": ["mailbox", "type", "remove"],
 				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "bin"],
-				"retval": "str|num",
-				"shortDesc": ""
+				"retval": "str",
+				"shortDesc": "Reads a message from the NXT brick's mail box"
 			},
 			"ReadSoundSensor": {
-				"desc": "ReadSoundSensor",
+				"desc": "Reads the sound pressure level of the surrounding.",
 				"isfunc": true,
 				"name": "ReadSoundSensor",
 				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1..4", "str-DB|DbA"],
+				"pTypes": ["num_int-1..4", "str-DB:Decibels|DbA:A-weighted Decibels"],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Measure the sound pressure level"
 			},
 			"ReadTouchSensor": {
-				"desc": "ReadTouchSensor",
+				"desc": "Returns whether the touch sensor switch is currently pushed.",
 				"isfunc": true,
 				"name": "ReadTouchSensor",
 				"pNames": ["input"],
 				"pTypes": ["num_int-1..4"],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if the touch sensor is pressed"
 			},
 			"RequestEnable": {
-				"desc": "show enable bluetooth dialog when bluetooth disabled",
+				"desc": "Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.",
 				"isfunc": true,
 				"name": "RequestEnable",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Request enabling bluetooth if it isn't"
 			},
 			"Reset": {
-				"desc": "Reset motors",
+				"desc": "Reset wheel encoder offset to 0.",
 				"isfunc": true,
 				"name": "Reset",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Reset wheel encoder offset to 0."
 			},
 			"SendMail": {
-				"desc": "SendMail",
+				"desc": "Sends a message to the NXT brick's mail box.",
 				"isfunc": true,
 				"name": "SendMail",
 				"pNames": ["mailbox", "type", "message"],
 				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "str||num_int"],
-				"shortDesc": ""
+				"shortDesc": "Sends a message to the NXT brick's mail box."
 			},
 			"SetInvert": {
-				"desc": "inverts direction of motor commands",
+				"desc": "Provides a convenient way to invert the direction of the motor commands.",
 				"isfunc": true,
 				"name": "SetInvert",
 				"pNames": ["invert"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Inverts the direction of motor commands"
 			},
 			"SetLampColor": {
-				"desc": "?",
+				"desc": "Changes the color sensor LED to one color of “White”, “Red”, “Green”, “Blue” or “Off”",
 				"isfunc": true,
 				"name": "SetLampColor",
 				"pNames": ["input", "color"],
-				"pTypes": ["num_int-1..4", "str_col"],
-				"shortDesc": ""
+				"pTypes": ["num_int-1..4", "str_col-“White”|“Red”|“Green”|“Blue”|“Off”"],
+				"shortDesc": "Change sensor LED color"
 			},
 			"SetOnConnect": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
+				"desc": "Define a callback function which is called when the NXT has been connected via Bluetooth or if it failed to.",
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
@@ -4123,15 +4140,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["connected"],
+						"pTypes": ["bin"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when NXT connection established or failed"
 			},
 			"SetOnConnected": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
+				"desc": "Define a callback function which is called when the NXT has been successfully connected via Bluetooth",
 				"isfunc": true,
 				"name": "SetOnConnected",
 				"pNames": ["callback"],
@@ -4145,7 +4162,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when bt connection established"
 			},
 			"SetOnConnectEx": {
 				"desc": "called when NXT has successfully connected via Bluetooth",
@@ -4165,45 +4182,45 @@
 				"shortDesc": ""
 			},
 			"ShowDevices": {
-				"desc": "show paired NXT list to connect to one via bluetooth",
+				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
 				"isfunc": true,
 				"name": "ShowDevices",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Shows a list of paired NXT devices to connect to"
 			},
 			"StartProgram": {
-				"desc": "StartProgram",
+				"desc": "Starts an NXT-G program on the NXT brick if available.",
 				"isfunc": true,
 				"name": "StartProgram",
 				"pNames": ["name"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Starts an NXT-G program"
 			},
 			"Stop": {
-				"desc": "Stop",
+				"desc": "Stop powering some motors.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": ["motors"],
-				"pTypes": ["str-A|B|C"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C"],
+				"shortDesc": "Stop powering some motors."
 			},
 			"StopProgram": {
-				"desc": "StopProgram",
+				"desc": "Stops a the currently running NXT-G program.",
 				"isfunc": true,
 				"name": "StopProgram",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stops the current running program"
 			},
 			"ToColorName": {
-				"desc": "convert color integer got via ReadColorSensor to color name",
+				"desc": "Converts a color integer received from ReadColorSensor to a meaningful color name.",
 				"isfunc": true,
 				"name": "ToColorName",
 				"pNames": ["val"],
 				"pTypes": ["num_int-1..6"],
 				"retval": "str-black|blue|green|yellow|red|white",
-				"shortDesc": ""
+				"shortDesc": "Convert color number to its name"
 			}
 		}
 	},
@@ -4717,7 +4734,7 @@
 	},
 	"CreateService": {
 		"abbrev": "srv",
-		"desc": "Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.\n\nDroidScript Services run in a separate process and can take advantage of multi-CPU devices, this allows CPU intensive calculations or slow procedures to be done in the background without slowing down or interfering with the main application.\n\nAny file in your project with the filename _“Service.js”_ will run as a hidden background service.\n\nA service can be created and started using the **CreateService** method of the app object in your main application file:\n%c\nUse “this” for the _packageName_ and _className_ parameters.\n\nYour service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.\n\nYou can set the service to start automatically when the device is booted if required; with the **SetAutoBoot** method of the **app** object.\n<js>app.SetAutoBoot( \"Service\" );</js>Stop a service using the Stop method.\n<js>svc.Stop();</js>\nMessages can be sent from your app to the service using the SendMessage method on the service object:\n<js>svc.SendMessage( msg );</js>\nYou will need to provide a message handler to receive and process the messages (see example below).\n\nSend messages from the service to the main app by using the SendMessage method of the app object:\n<js>app.SendMessage( msg );</js>\nThis will also need a message handler on the application (see example below).\n\nAdding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.\n<sample Services>\nInspect the debug console and see the log messages from the service in gray.",
+		"desc": "Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.\n\nDroidScript Services run in a separate process and can take advantage of multi-CPU devices, this allows CPU intensive calculations or slow procedures to be done in the background without slowing down or interfering with the main application.\n\nAny file in your project with the filename “Service.js” will run as a hidden background service.\n\nA service can be created and started using the **CreateService** method of the app object in your main application file:\n%c\nUse “this” for the _packageName_ and _className_ parameters.\n\nYour service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.\n\nYou can set the service to start automatically when the device is booted if required; with the **SetAutoBoot** method of the **app** object.\n<js>app.SetAutoBoot( \"Service\" );</js>Stop a service using the Stop method.\n<js>svc.Stop();</js>\nMessages can be sent from your app to the service using the SendMessage method on the service object:\n<js>svc.SendMessage( msg );</js>\nYou will need to provide a message handler to receive and process the messages (see example below).\n\nSend messages from the service to the main app by using the SendMessage method of the app object:\n<js>app.SendMessage( msg );</js>\nThis will also need a message handler on the application (see example below).\n\nAdding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.\n<sample Services>\nInspect the debug console and see the log messages from the service in gray.",
 		"isfunc": true,
 		"name": "CreateService",
 		"pNames": ["packageName", "className", "callback", "options"],
@@ -5874,7 +5891,7 @@
 	},
 	"CreateText": {
 		"abbrev": "txt",
-		"desc": "If you want to display text in your app you can use the Text object. You can use the _“Multiline”_ **option** to allow multi-line text and the _“Left”_ or _“Right”_ options to align the text. The default is single line centered text.\nOther options you will see used in the samples include _“AutoScale”_, _“Bold”_, _“Html”_ and _“FontAwesome”_.\nUse the **SetText** and **GetText** functions of the Text object to set and get it's text.\n<sample Single line>\nYou can change the look of a Text using the **SetBackColor** and **SetTextColor** functions on the Text object.\n<sample Multi line>\nText can be shortened using ellipsis (...) when the size of the control is too small to show all the text. Use the **SetEllipsize** to control where the ellipsis is placed. Available modes are _“start”_, _“middle”_, _“end”_ and _“marq”_.\n<sample Ellipsize>\nYou can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
+		"desc": "If you want to display text in your app you can use the Text object. You can use the “Multiline” **option** to allow multi-line text and the “Left” or “Right” options to align the text. The default is single line centered text.\nOther options you will see used in the samples include “AutoScale”, “Bold”, “Html” and “FontAwesome”.\nUse the **SetText** and **GetText** functions of the Text object to set and get it's text.\n<sample Single line>\nYou can change the look of a Text using the **SetBackColor** and **SetTextColor** functions on the Text object.\n<sample Multi line>\nText can be shortened using ellipsis (...) when the size of the control is too small to show all the text. Use the **SetEllipsize** to control where the ellipsis is placed. Available modes are “start”, “middle”, “end” and “marq”.\n<sample Ellipsize>\nYou can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
@@ -6004,7 +6021,7 @@
 	},
 	"CreateTextEdit": {
 		"abbrev": "edt",
-		"desc": "If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the _“numbers”_ **option**.\n\nYou can use the **SetOnChange** method of the TextEdit to set the name of a function you want to be called when a the text is changed.\n\nUse the **SetText** and **GetText** functions to set and get the text in the TextEdit.\n<sample Using OnChange>\nYou can change the look of a TextEdit using the **SetBackColor** and **SetTextColor** functions on the TextEdit object.<sample Blue on White>\nYou can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
+		"desc": "If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the “numbers” **option**.\n\nYou can use the **SetOnChange** method of the TextEdit to set the name of a function you want to be called when a the text is changed.\n\nUse the **SetText** and **GetText** functions to set and get the text in the TextEdit.\n<sample Using OnChange>\nYou can change the look of a TextEdit using the **SetBackColor** and **SetTextColor** functions on the TextEdit object.<sample Blue on White>\nYou can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
@@ -7613,7 +7630,7 @@
 		"shortDesc": "Forcefully update your plugins"
 	},
 	"FileExists": {
-		"desc": "FileExists returns a boolean indicating whether a given file exists in your filesystem or not.\n\nSee Also: @WriteFile, @CopyFile, @RenameFile",
+		"desc": "FileExists Checks if a given file exists in your filesystem or not.\n\nSee Also: @WriteFile, @CopyFile, @RenameFile",
 		"isfunc": true,
 		"name": "FileExists",
 		"pNames": ["file"],
@@ -7622,7 +7639,7 @@
 		"shortDesc": "Returns whether the file exists"
 	},
 	"FolderExists": {
-		"desc": "Returns a boolean indicating whether a given folder exits or not.\n\nSee Also: @MakeFolder, @CopyFolder, @RenameFolder",
+		"desc": "Checks if a given folder exits or not.\n\nSee Also: @MakeFolder, @CopyFolder, @RenameFolder",
 		"isfunc": true,
 		"name": "FolderExists",
 		"pNames": ["folder"],
@@ -7774,7 +7791,7 @@
 		"shortDesc": "Get apps database folder"
 	},
 	"GetDefaultOrientation": {
-		"desc": "Returns the default Orientation of the device. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.\n\nSee Also: @SetOrientation, @GetOrientation",
+		"desc": "Returns the default Orientation of the device. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.\n\nSee Also: @SetOrientation, @GetOrientation",
 		"isfunc": true,
 		"name": "GetDefaultOrientation",
 		"pNames": [],
@@ -7815,7 +7832,7 @@
 		"name": "GetDrawerState",
 		"pNames": ["side"],
 		"pTypes": ["str-left|right"],
-        "retval": "str-Open|Closed",
+		"retval": "str-Open|Closed",
 		"shortDesc": "Get current drawer state"
 	},
 	"GetDSVersion": {
@@ -8035,7 +8052,7 @@
 		"shortDesc": "Get app options"
 	},
 	"GetOrientation": {
-		"desc": "Returns the current device orientation. The result modes can be _“Portrait”_ if the device width is smaller than the device height, or _“Landscape”_ vice versa.\n\nSee Also: @SetOrientation, @GetDefaultOrientation, @GetRotation",
+		"desc": "Returns the current device orientation. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.\n\nSee Also: @SetOrientation, @GetDefaultOrientation, @GetRotation",
 		"isfunc": true,
 		"name": "GetOrientation",
 		"pNames": [],
@@ -8080,7 +8097,7 @@
 		"shortDesc": "Get APK's local storage path"
 	},
 	"GetPermission": {
-		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only _“ExtSDCard”_ the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
+		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
@@ -8113,7 +8130,7 @@
 		"shortDesc": "Get ID of a resource"
 	},
 	"GetRingerMode": {
-		"desc": "Returns the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.",
+		"desc": "Returns the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.",
 		"isfunc\n\nSee Also: @SetRingerMode": true,
 		"name": "GetRingerMode",
 		"pNames": [],
@@ -8203,7 +8220,7 @@
 		"shortDesc": "Get value of shared text"
 	},
 	"GetSpeakerPhone": {
-		"desc": "Returns a boolean indicating whether the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
+		"desc": "Checks if the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"isfunc": true,
 		"name": "GetSpeakerPhone",
 		"pNames": [],
@@ -8274,7 +8291,7 @@
 		"shortDesc": "Get apk version number"
 	},
 	"GetVolume": {
-		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the _“System”_ volume is returned.\n\nSee Also: @SetVolume",
+		"desc": "Returns the volume level of a given audio type as a number between 0 and 1. By default the “System” volume is returned.\n\nSee Also: @SetVolume",
 		"isfunc": true,
 		"name": "GetVolume",
 		"pNames": ["stream"],
@@ -8291,7 +8308,7 @@
 		"shortDesc": "Puts the phone into sleep mode"
 	},
 	"HasSoftNav": {
-		"desc": "Returns a boolean indicating whether the device has a soft navigation bar on the screen.",
+		"desc": "Checks if the device has a soft navigation bar on the screen.",
 		"isfunc": true,
 		"name": "HasSoftNav",
 		"pNames": [],
@@ -8365,7 +8382,7 @@
 		"shortDesc": "Returns true if ran from apk"
 	},
 	"IsAppInstalled": {
-		"desc": "Returns a boolean indicating whether an app given by a package name is installed.\n\nSee also: @GetPackageName, @GetInstalledApps",
+		"desc": "Checks if an app given by a package name is installed.\n\nSee also: @GetPackageName, @GetInstalledApps",
 		"isfunc": true,
 		"name": "IsAppInstalled",
 		"pNames": ["packageName"],
@@ -8383,7 +8400,7 @@
 		"shortDesc": "Check bluetooth enabled"
 	},
 	"IsBluetoothOn": {
-		"desc": "Returns a boolean indicating whether bluetooth is enabled and on.\n\nSee Also: @CreateBluetoothSerial, @DiscoverBtDevices",
+		"desc": "Checks if bluetooth is enabled and on.\n\nSee Also: @CreateBluetoothSerial, @DiscoverBtDevices",
 		"isfunc": true,
 		"name": "IsBluetoothOn",
 		"pNames": [],
@@ -8392,7 +8409,7 @@
 		"shortDesc": "Check if bluetooth is on"
 	},
 	"IsBtDevicePaired": {
-		"desc": "Returns a boolean indicating whether a given bluetooth device was paired with the user device.\n\nSee Also: @GetPairedBtDevices, @UnpairBtDevice",
+		"desc": "Checks if a given bluetooth device was paired with the user device.\n\nSee Also: @GetPairedBtDevices, @UnpairBtDevice",
 		"isfunc": true,
 		"name": "IsBtDevicePaired",
 		"pNames": ["name"],
@@ -8401,7 +8418,7 @@
 		"shortDesc": "Check bt paired state to other device"
 	},
 	"IsCharging": {
-		"desc": "Returns a boolean indicating whether phone is currently charging or not.\n\nSee Also: @GetBatteryLevel, @GetChargeType",
+		"desc": "Checks if phone is currently charging or not.\n\nSee Also: @GetBatteryLevel, @GetChargeType",
 		"isfunc": true,
 		"name": "IsCharging",
 		"pNames": [],
@@ -8410,7 +8427,7 @@
 		"shortDesc": "Check whether device is charging"
 	},
 	"IsChrome": {
-		"desc": "Returns a boolean indicating whether the device is running on ChromeOS.\n\nSee Also: @IsTablet, @IsThings",
+		"desc": "Checks if the device is running on ChromeOS.\n\nSee Also: @IsTablet, @IsThings",
 		"isfunc": true,
 		"name": "IsChrome",
 		"pNames": [],
@@ -8419,7 +8436,7 @@
 		"shortDesc": "Check if device OS is ChromeOS"
 	},
 	"IsConnected": {
-		"desc": "Returns a boolean indicating whether the device is connected to any network.\n\nSee Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange",
+		"desc": "Checks if the device is connected to any network.\n\nSee Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange",
 		"isfunc": true,
 		"name": "IsConnected",
 		"pNames": [],
@@ -8428,7 +8445,7 @@
 		"shortDesc": "Check if device is connected to any network"
 	},
 	"IsDebugging": {
-		"desc": "Returns a boolean indicating whether the app is currently debugging.\nSee also @SetDebug, @Debug",
+		"desc": "Checks if the app is currently debugging.\nSee also @SetDebug, @Debug",
 		"isfunc": true,
 		"name": "IsDebugging",
 		"pNames": [],
@@ -8437,7 +8454,7 @@
 		"shortDesc": "Check whether app is debugging"
 	},
 	"IsFolder": {
-		"desc": "Returns a boolean indicating whether the passed fs path leads to a folder.\n\nSee Also: @FolderExists, @FileExists",
+		"desc": "Checks if the passed fs path leads to a folder.\n\nSee Also: @FolderExists, @FileExists",
 		"isfunc": true,
 		"name": "IsFolder",
 		"pNames": ["folder"],
@@ -8446,7 +8463,7 @@
 		"shortDesc": "Check if path leads to a folder"
 	},
 	"IsKeyboardShown": {
-		"desc": "Returns a boolean indicating whether the device keyboard is currently visible or not.\n\nSee Also: @ShowKeyboard, @HideKeyboard",
+		"desc": "Checks if the device keyboard is currently visible or not.\n\nSee Also: @ShowKeyboard, @HideKeyboard",
 		"isfunc": true,
 		"name": "IsKeyboardShown",
 		"pNames": [],
@@ -8455,7 +8472,7 @@
 		"shortDesc": "Check whether device keyboard is shown"
 	},
 	"IsLocationEnabled": {
-		"desc": "Returns a boolean indicating whether a specific location mode was enabled.\n\nSee Also: @CreateLocator",
+		"desc": "Checks if a specific location mode was enabled.\n\nSee Also: @CreateLocator",
 		"isfunc": true,
 		"name": "IsLocationEnabled",
 		"pNames": ["mode"],
@@ -8464,7 +8481,7 @@
 		"shortDesc": "Check if location method is enabled"
 	},
 	"IsNavBarOnRight": {
-		"desc": "Returns a boolean indicating whether the Navigation Bar is on the righthand side of the display.",
+		"desc": "Checks if the Navigation Bar is on the righthand side of the display.",
 		"isfunc": true,
 		"name": "IsNavBarOnRight",
 		"pNames": [],
@@ -8473,7 +8490,7 @@
 		"shortDesc": "Check if NavBar is on righthand side"
 	},
 	"IsNewVersion": {
-		"desc": "Returns a boolean indicating whether the apk version number increased compared to the last time started.",
+		"desc": "Checks if the apk version number increased compared to the last time started.",
 		"isfunc": true,
 		"name": "IsNewVersion",
 		"pNames": [],
@@ -8482,7 +8499,7 @@
 		"shortDesc": "Check if apk version increased"
 	},
 	"IsPremium": {
-		"desc": "Returns a boolean indicating whether the user has a DroidScript premium subscription inside the IDE.",
+		"desc": "Checks if the user has a DroidScript premium subscription inside the IDE.",
 		"isfunc": true,
 		"name": "IsPremium",
 		"pNames": [],
@@ -8491,7 +8508,7 @@
 		"shortDesc": "Check if user has a DroidScript Premium subscription"
 	},
 	"IsScreenOn": {
-		"desc": "Returns a boolean indicating whether the device screen is currently on.",
+		"desc": "Checks if the device screen is currently on.",
 		"isfunc": true,
 		"name": "IsScreenOn",
 		"pNames": [],
@@ -8500,7 +8517,7 @@
 		"shortDesc": "Check if device screen is on"
 	},
 	"IsService": {
-		"desc": "Returns a boolean indicating whether the currently running app instance is a service.",
+		"desc": "Checks if the currently running app instance is a service.",
 		"isfunc": true,
 		"name": "IsService",
 		"pNames": [],
@@ -8509,7 +8526,7 @@
 		"shortDesc": "Check id app is a service"
 	},
 	"IsStarted": {
-		"desc": "Returns a boolean indicating whether the app has finished loading. It will return true after OnStart has returned.",
+		"desc": "Checks if the app has finished loading. It will return true after OnStart has returned.",
 		"isfunc": true,
 		"name": "IsStarted",
 		"pNames": [],
@@ -8518,7 +8535,7 @@
 		"shortDesc": "Check if app has finished loading"
 	},
 	"IsTablet": {
-		"desc": "Returns a boolean indicating whether the user device is a tablet.\n\nSee Also: @IsThings, @IsChrome",
+		"desc": "Checks if the user device is a tablet.\n\nSee Also: @IsThings, @IsChrome",
 		"isfunc": true,
 		"name": "IsTablet",
 		"pNames": [],
@@ -8527,7 +8544,7 @@
 		"shortDesc": "Check if user device is a tablet"
 	},
 	"IsThings": {
-		"desc": "Returns a boolean indicating whether the OS is AndroidThings.\n\nSee Also: @IsTablet, @IsChrome",
+		"desc": "Checks if the OS is AndroidThings.\n\nSee Also: @IsTablet, @IsChrome",
 		"isfunc": true,
 		"name": "IsThings",
 		"pNames": [],
@@ -8536,7 +8553,7 @@
 		"shortDesc": "Check if OS is AndroidThings"
 	},
 	"IsWifiApEnabled": {
-		"desc": "Returns a boolean indicating whether the mobile Wifi Access Point is enabled on the user device.\n\nSee Also: @SetWifiApEnabled",
+		"desc": "Checks if the mobile Wifi Access Point is enabled on the user device.\n\nSee Also: @SetWifiApEnabled",
 		"isfunc": true,
 		"name": "IsWifiApEnabled",
 		"pNames": [],
@@ -8545,7 +8562,7 @@
 		"shortDesc": "Check if the mobile Wifi Access Point is enabled"
 	},
 	"IsWifiEnabled": {
-		"desc": "Returns a boolean indicating whether Wifi is enabled on the user device.\n\nSee Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled",
+		"desc": "Checks if Wifi is enabled on the user device.\n\nSee Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled",
 		"isfunc": true,
 		"name": "IsWifiEnabled",
 		"pNames": [],
@@ -8571,7 +8588,7 @@
 		"shortDesc": "Convert language name to its code or get current language code"
 	},
 	"ListFolder": {
-		"desc": "The ListFolder method returns a list of all files and folders in a given folder.\nThe _filter_ **parameter** is an can be used to specify a filter pattern. For example to find only mp3 files, you would specify _“.mp3”_ as a filter\n\nThe You can also **option**ally sort the list in alphabetica order with the _“alphasort”_ option.\n\nSee Also: @IsFolder, @CreateList",
+		"desc": "The ListFolder method returns a list of all files and folders in a given folder.\nThe _filter_ **parameter** is an can be used to specify a filter pattern. For example to find only mp3 files, you would specify “.mp3” as a filter\n\nThe You can also **option**ally sort the list in alphabetica order with the “alphasort” option.\n\nSee Also: @IsFolder, @CreateList",
 		"isfunc": true,
 		"name": "ListFolder",
 		"pNames": ["path", "filter", "limit", "options"],
@@ -8896,7 +8913,7 @@
 	"PlayRingtone": {
 		"desc": "PlayRingtone",
 		"isfunc": true,
-		"name": "Play a specific ringtone type based on the users device settings for ringtones. _Type_ can be _“Alarm”_, _“Norification”_ or _“Ringtone”_.",
+		"name": "Play a specific ringtone type based on the users device settings for ringtones. _Type_ can be “Alarm”, “Norification” or “Ringtone”.",
 		"pNames": ["type"],
 		"pTypes": ["str-Alarm|Notification|Ringtone"],
 		"shortDesc": "Play specific ringtone type"
@@ -9204,7 +9221,7 @@
 		"shortDesc": "Set services to run in the foreground"
 	},
 	"SetJoystickOptions": {
-		"desc": "Set options for the connected joystick. The _“forwardkeys”_ **option** allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).\n\nSee Also: @GetJoystickName, @GetJoystickState",
+		"desc": "Set options for the connected joystick. The “forwardkeys” **option** allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).\n\nSee Also: @GetJoystickName, @GetJoystickState",
 		"isfunc": true,
 		"name": "SetJoystickOptions",
 		"pNames": ["options"],
@@ -9321,7 +9338,7 @@
 		"shortDesc": "Called on keyboard visibility changes"
 	},
 	"SetOnWifiChange": {
-		"desc": "Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be _“CONNECTING”_, _“CONNECTED”_, or _“DISCONNECTED”_. The WiFi ssid is passed on _“CONNECTED”_ only.\n\nSee Also: @WifiConnect, @WifiScan",
+		"desc": "Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be “CONNECTING”, “CONNECTED”, or “DISCONNECTED”. The WiFi ssid is passed on “CONNECTED” only.\n\nSee Also: @WifiConnect, @WifiScan",
 		"isfunc": true,
 		"name": "SetOnWifiChange",
 		"pNames": ["callback"],
@@ -9346,7 +9363,7 @@
 		"shortDesc": "Define global app options"
 	},
 	"SetOrientation": {
-		"desc": "Set the display orientation to a fixed value. You can unlock it again passing _“Default”_ as **orientation**.\n\nSee Also: @GetOrientation",
+		"desc": "Set the display orientation to a fixed value. You can unlock it again passing “Default” as **orientation**.\n\nSee Also: @GetOrientation",
 		"isfunc": true,
 		"name": "SetOrientation",
 		"pNames": ["orient", "callback"],
@@ -9377,7 +9394,7 @@
 		"shortDesc": "Change GUI thread priority"
 	},
 	"SetRingerMode": {
-		"desc": "Change the current ringer mode of the device which can be _“Normal”_, _“Vibrate”_ or _“Silent”_.\n\nSee Also: @GetRingerMode",
+		"desc": "Change the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.\n\nSee Also: @GetRingerMode",
 		"isfunc": true,
 		"name": "SetRingerMode",
 		"pNames": ["mode"],
@@ -9490,7 +9507,7 @@
 		"shortDesc": "Show the in-app menu"
 	},
 	"ShowPopup": {
-		"desc": "Shows a simple popup message on the screen. It automatically disappears after about 5 secods or after an even shorter time if you pass the _“Short”_ **option**, or when the user touches the screen.",
+		"desc": "Shows a simple popup message on the screen. It automatically disappears after about 5 secods or after an even shorter time if you pass the “Short” **option**, or when the user touches the screen.",
 		"isfunc": true,
 		"name": "ShowPopup",
 		"pNames": ["message", "options"],
@@ -9630,7 +9647,7 @@
 		"name": "SysExec",
 		"pNames": ["command", "options", "maxRead", "timeout"],
 		"pTypes": ["str", "str-log:logs output to console,sh|su", "num", "num_sec"],
-        "retval": "str",
+		"retval": "str",
 		"shortDesc": "Execute a shell command on the android shell"
 	},
 	"TextToSpeech": {

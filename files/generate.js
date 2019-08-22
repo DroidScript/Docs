@@ -253,7 +253,8 @@ function getDocData( f, useAppPop ) {
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 			}
 			
-			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` + replW( met.desc) );
+			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` +
+			    replW( met.desc.replace("<premium>", premiumHint) ));
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
@@ -805,6 +806,7 @@ var 	//globals for one doc
 		"str_flt":"float",
 		"str_fmt":"format",
 		"str_htm":"html code",
+		"str_hex":"hexadecimal “00”..“FF”",
 		"str_int":"integer",
 		"str_jsc":"javascript code",
 		"str_lst":"separated",
@@ -828,7 +830,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOnTouchEx|data|id|S?Obj)$/,
+	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later

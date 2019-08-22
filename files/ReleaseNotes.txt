@@ -306,7 +306,7 @@ DS 1.64a4
 DS 164a3
 - Various Game engine updates.
 - Added app.ExtractPlugins method.
-- Added obj.Method( name,types,p1,p2,p3,p4 ) access Java via reflection (premium).
+-.Added obj.Method( name,types,p1,p2,p3,p4 ) access Java via reflection (premium).
 
 DS 1.63a1
 - Added Block based editing for DSJ files (still in alpha)!
@@ -350,7 +350,7 @@ DS 1.60b1
 DS 1.59b1
 - Added new 'Button' option to image controls (causes image to depress like a button when touched)
 - Added new app.DisableTouch() to disable/enable all touch events on controls in main activity.
-- Added new net.WakeOnLan(ip,mac) for premium users.
+-.Added new net.WakeOnLan(ip,mac) for premium users.
 - Added support for controlling media players with app.BroadcastIntent() method (see forum).
 -.Added 'TouchModal' option to YesNoDialog.
 - Changed ShowProgress and YesNoDialog to 'TouchModal' by default (use 'NoTouchModal' to revert)
@@ -648,7 +648,7 @@ DS 1.34b
 - Added support for html file input boxes on Lollipop and higher.
 -?Added 'IgnoreSslErrors' option to webview and app.SetOptions.
 - Device app list no longer refreshes on WiFi file edits.
-- Added 'address' param to udp OnReceive callback.
+-.Added 'address' param to udp OnReceive callback.
 - Added app.IsAppInstalled() and app.GetActivities() methods (useful for making launchers).
 -.Added "Icon" option to img.CreateImage (allows loading of app icons).
 -.Added callback option to app.SendIntent() when using 'result' option.

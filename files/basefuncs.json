@@ -81,7 +81,7 @@
 				"retval": "obj-{ left: num, top: num, right: num, bottom: num }",
 				"shortDesc": "Returns data about position and size"
 			},
-            "#2387569276": { "name": "GetText",
+			"#2387569276": { "name": "GetText",
 				"desc": "Returns the current displayed text of the control.",
 				"isfunc": true,
 				"pNames": [],
@@ -97,7 +97,7 @@
 				"retval": "num",
 				"shortDesc": "Returns the current text size"
 			},
-            "#1981028136": { "name": "GetTop",
+			"#1981028136": { "name": "GetTop",
 				"desc": "Get the distance from the control to the upper parent border as height relative float or in pixels with the **px** option.",
 				"isfunc": true,
 				"pNames": ["options"],
@@ -135,7 +135,7 @@
 				"pTypes": [],
 				"shortDesc": "Hides the control visually"
 			},
-            "#1744802827": { "name": "IsEnabled",
+			"#1744802827": { "name": "IsEnabled",
 				"desc": "Returns whether the control is currently useable by the user.",
 				"isfunc": true,
 				"pNames": [],
@@ -151,7 +151,7 @@
 				"retval": "bin",
 				"shortDesc": "Returns whether the control overlaps with another"
 			},
-            "#1814300863": { "name": "IsVisible",
+			"#1814300863": { "name": "IsVisible",
 				"desc": "Returns whether the control is currently visible to the user, ignoring overlaying controls.",
 				"isfunc": true,
 				"pNames": [],
@@ -160,11 +160,11 @@
 				"shortDesc": "Returns whether the control is currently visible"
 			},
 			"#1023663567": { "name": "Method",
-				"desc": "Allows access to other functions defined on the object in Java via reflection.",
+				"desc": "Allows access to other functions defined on the object in Java via reflection.\n\n<premium>",
 				"isfunc": true,
 				"pNames": ["name", "types", "p1", "p2", "p3", "p4"],
 				"pTypes": ["str", "lst-boolean,char,byte,short,int,long,float,double,String,CharSequence,...", "str", "str", "str", "str"],
-                "retval": "all",
+				"retval": "all",
 				"shortDesc": "Access Java object methods via reflection"
 			},
 			"#0197498372": { "name": "SetFontFile",
@@ -191,14 +191,14 @@
 			"#7112142192": { "name": "SetBackGradient",
 				"desc": "Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.",
 				"isfunc": true,
-				"pNames": ["colour1", "colour2", "colour3", "options"],
+				"pNames": ["color1", "color2", "color3", "options"],
 				"pTypes": ["str_col", "str_col", "?", "str-left-right|right-left|top-bottom|bottom-top|bl-tr|br-tl|tl-br|tr-bl"],
 				"shortDesc": "Define the background color of the control with a gradient"
 			},
 			"#1101641465": { "name": "SetBackGradientRadial",
 				"desc": "Define a radial color gradient for the background of control.",
 				"isfunc": true,
-				"pNames": ["x", "y", "radius", "colour1", "colour2", "colour3", "options"],
+				"pNames": ["x", "y", "radius", "color1", "color2", "color3", "options"],
 				"pTypes": ["num_frc", "num_frc", "num_frc", "str_col", "str_col", "?", "?"],
 				"shortDesc": "Define a radial background color gradient"
 			},
@@ -210,9 +210,9 @@
 				"shortDesc": "Change the background to an image"
 			},
 			"#1096996086": { "name": "SetColorFilter",
-				"desc": "Adjust the visual color effect with a colour and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
+				"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
 				"isfunc": true,
-				"pNames": ["colour", "mode"],
+				"pNames": ["color", "mode"],
 				"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
 				"shortDesc": "Adjust the visual color effect with different BlendModes"
 			},
@@ -270,7 +270,7 @@
 			"#0175303923": { "name": "SetTextColor",
 				"desc": "Change the TextColor of the contained text.",
 				"isfunc": true,
-				"pNames": ["colour"],
+				"pNames": ["color"],
 				"pTypes": ["str_col"],
 				"shortDesc": "Change the TextColor"
 			},
@@ -304,21 +304,21 @@
 				],
 				"shortDesc": "Callback for changes made by the user"
 			},
-            "#9283752301": { "name": "SetOnFocus",
+			"#9283752301": { "name": "SetOnFocus",
 				"desc": "Define a callback function called when the user focuses the control.",
 				"isfunc": true,
 				"pNames": ["callback"],
 				"pTypes": [{
-                    "desc": "Callback",
-                    "isfunc": true,
-                    "name": "callback",
-                    "pNames": [],
-                    "pTypes": [],
-                    "shortDesc": "callback"
-                }],
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the control gets focused"
 			},
-            "#2735982374": { "name": "SetOnLongTouch",
+			"#2735982374": { "name": "SetOnLongTouch",
 				"desc": "Define a callback function which is called when the object has been long pressed.",
 				"isfunc": true,
 				"pNames": ["callback"],
@@ -350,7 +350,7 @@
 				],
 				"shortDesc": "Define a callback function for user toches"
 			},
-            "#2938578932": { "name": "SetOnTouchDown",
+			"#2938578932": { "name": "SetOnTouchDown",
 				"desc": "Define a callback function which is called when the user started toching the control.",
 				"isfunc": true,
 				"pNames": ["callback"],
@@ -366,7 +366,7 @@
 				],
 				"shortDesc": "Called when the user starts touching the control"
 			},
-            "#2039582034": { "name": "SetOnTouchMove",
+			"#2039582034": { "name": "SetOnTouchMove",
 				"desc": "Define a callback function which is called when the user drags his finger over the screen.",
 				"isfunc": true,
 				"pNames": ["callback"],
@@ -382,7 +382,7 @@
 				],
 				"shortDesc": "Called when the user drags his finger over the screen"
 			},
-            "#9861324731": { "name": "SetOnTouchUp",
+			"#9861324731": { "name": "SetOnTouchUp",
 				"desc": "Define a callback function which is called when the users finger leaves the screen.",
 				"isfunc": true,
 				"pNames": ["callback"],
@@ -426,7 +426,7 @@
 				"pTypes": ["num", "num", "str-px|sp|dip|dp|mm|pt"],
 				"shortDesc": "Change the size of the control"
 			},
-            "#2562918782": { "name": "SetTouchable",
+			"#2562918782": { "name": "SetTouchable",
 				"desc": "En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.",
 				"isfunc": true,
 				"pNames": ["touchable"],
@@ -452,21 +452,21 @@
 				"isfunc": true,
 				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
 				"pTypes": [
-                    "obj-{ x:num_frc, y:num_frc, sw:num_frc, sh:num_frc, rot:num_deg }",
-                    "num_mls",
-                    "str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out",
-                    "num_int",
-                    "bin", {
-            	        "abbrev": "",
-            	        "desc": "callback function",
-            	        "isfunc": true,
-            	        "name": "callback",
-            	        "pNames": [],
-            	        "pTypes": [],
-            	        "shortDesc": "callback",
-            	        "subf": {}
-                    }
-                ],
+					"obj-{ x:num_frc, y:num_frc, sw:num_frc, sh:num_frc, rot:num_deg }",
+					"num_mls",
+					"str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out",
+					"num_int",
+					"bin", {
+						"abbrev": "",
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback",
+						"subf": {}
+					}
+				],
 				"shortDesc": ""
 			}
 }
