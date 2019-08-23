@@ -1,1 +1,36 @@
- 
+<sample Memory Monitor>
+cfg.Portrait;
+
+function OnStart()
+{
+    app.ToBack();
+	lay = app.CreateLayout( "Linear" );
+
+    img = app.CreateImage( null, .3, .1 );
+    img.SetBackColor( "#66333333" );
+    img.SetAutoUpdate( false );
+    lay.AddChild( img );
+
+	ovl = app.CreateOverlay();
+    ovl.AddLayout( lay, 0.8, app.GetTop() );
+
+    app.Animate( Update, 1 );
+}
+
+var lst = new Array(100).fill(1e5);
+
+function Update( time )
+{
+    var mem = app.GetMemoryInfo();
+    lst.push( Math.round( 100 * mem.avail / mem.total ) - 50 );
+    lst = lst.slice( -100 );
+
+    img.Clear();
+    img.SetPaintColor( "red" );
+    img.DrawLine( 0, mem.threshold / mem.total, 1, mem.threshold / mem.total );
+
+    img.SetPaintColor( "white" );
+    img.DrawSamples( lst, 50 );
+    img.Update();
+}
+</sample>

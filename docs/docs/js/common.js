@@ -3,7 +3,7 @@
 var agent = navigator.userAgent;
 console.log( "agent = " + agent );
 
-var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook")>-1 || agent.indexOf("PixelBook")>-1 ); 
+var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 ); 
 var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
 var isAndroid = ( agent.indexOf("Android") > -1 );
 var isDS = ( agent.indexOf("; wv)") > -1 );
@@ -12,13 +12,13 @@ var serverAddress = "";
 // set current theme
 var curTheme = location.href.match(/[^?]*[?&]theme=([^&]*)/);
 if(curTheme && history.replaceState)
-    try { history.replaceState({}, "Documentation", "Docs.htm"); } catch(e) {}
+	try { history.replaceState({}, "Documentation", "Docs.htm"); } catch(e) {}
 setTheme(curTheme ? curTheme[1] : getTheme());
 
 //Hook into cross frame messaging
 window.addEventListener("message", function(event) 
-{console.log("message")
-    console.log("msg: "+event)
+{
+	console.log("msg: "+event)
 	var params = event.data.split("|");
 	var cmd = params[0];
 
@@ -31,7 +31,7 @@ window.addEventListener("message", function(event)
 //Change defaults.
 //Note: I have also modified animation-duration:350ms->100ms in JQM css files;
 $(document).on("mobileinit", function()
-{console.log("init")
+{
 	//$.extend( $.mobile , { ajaxEnabled: false }); //<-- so #bookmarks work.
 	$.mobile.defaultPageTransition = 'none'; //'fade';
 	$.mobile.buttonMarkup.hoverDelay = 10;
@@ -51,20 +51,20 @@ $(document).on("mobileinit", function()
 	//Ask parent for DS adddress.
 	parent.postMessage( "getaddress:", "*" );
 
-    // check theme in other browsers after history fwd/bck
+	// check theme in other browsers after history fwd/bck
 	// workaround for pages being loaded from cache
 	if(!isDS && !useWebIDE) setInterval(function()
-    {
-        if(curTheme != getTheme()) setTheme(getTheme());
-    }, 200);
+	{
+		if(curTheme != getTheme()) setTheme(getTheme());
+	}, 200);
 });
  
 $(document).ready(function () 
-{console.log("ready")
+{
 });
 
 $(document).live( 'pageshow',function(event, ui)
-{console.log("show")
+{
 	//try
 	{
 		//Remove IOIO links if not relevent.
@@ -111,20 +111,20 @@ function OnPageShow()
 			//Create a list of plugins.
 			var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
 			var fldr = app.GetPrivateFolder( "Plugins" );
-			var list = app.ListFolder( fldr,"");
-			for( var i=0; i<list.length && list[0]!=""; i++ )
+			var list = app.ListFolder( fldr, "");
+			for( var i = 0; i < list.length && list[0] != ""; i++ )
 			{
 				//Filter for folders.
 				var plugName = list[i];
 				if( app.IsFolder( fldr+"/"+plugName ) )
 				{
 					//Get case sensitive title of plugin from inc file.
-					var incFiles = app.ListFolder( fldr+"/"+plugName, ".inc", 1 );
+					var incFiles = app.ListFolder( fldr + "/" + plugName, ".inc", 1 );
 					if( incFiles.length > 0 ) {
 						var jarName = incFiles[0];
 						var plugTitle = jarName.split(".")[0];
-						var url = "file://"+fldr+"/"+plugName+"/"+plugTitle+".html";
-						html += "<li><a href=\""+ url +"\">"+ plugTitle +"</a></li>";
+						var url = "file://" + fldr + "/" + plugName + "/" + plugTitle + ".html";
+						html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
 					}
 				}
 			}
@@ -144,11 +144,11 @@ function OnPageShow()
 				
 				//Build html list.
 				var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
-				for( var i=0; i<list.length && list[0]!=""; i++ )
+				for( var i = 0; i < list.length && list[0] != ""; i++ )
 				{
 					var plugTitle = list[i];
-					var url = "plugins/"+plugTitle.toLowerCase()+"/"+plugTitle+".html";
-					html += "<li><a href=\""+ url +"\">"+ plugTitle +"</a></li>";
+					var url = "plugins/" + plugTitle.toLowerCase() + "/" + plugTitle + ".html";
+					html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
 				}
 				html += "</ul>";
 				$('#divPlugs').html(html);
@@ -164,7 +164,7 @@ function OnPageShow()
 // set the current theme. (default, dark)
 function setTheme( theme )
 {
-    if(curTheme == theme) return;
+	if(curTheme == theme) return;
 	curTheme = theme;
 	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
 	console.log("setTheme('" + theme + "')");
@@ -181,14 +181,14 @@ function setTheme( theme )
 
 // get current theme from localStorage
 function getTheme() {
-    return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
+	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
 }
 
 // app.ShowPopup equivalent for browsers 
 function ShowPopup(msg){
-    var pop = $("#appPopup");
-    if(pop.is(":visible")) pop.stop().fadeOut(100, function() { pop.text(msg); });
-    else pop.text(msg);
-    pop.fadeIn(200).delay(1500).fadeOut(200);
+	var pop = $("#appPopup");
+	if(pop.is(":visible")) pop.stop().fadeOut(100, function() { pop.text(msg); });
+	else pop.text(msg);
+	pop.fadeIn(200).delay(1500).fadeOut(200);
 }
 

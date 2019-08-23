@@ -289,10 +289,15 @@ function getDesc(name) {
 			`.</p>\n${funcBase}\t\t\t<p>`)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
-			    `</p>\n${funcBase.replace("%s", Prism.languages[lang] ?
-			    Prism.highlight(code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"), Prism.languages[lang], lang)
-			    .replace(/§s§/g, "&#160;").replace(/\n/g, "<br>") : code)}\t\t\t<p>`)
+			/(\s|<br>)*<(js|bash|smp)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
+			    `</p>\n${funcBase //(code.indexOf("\n") > -1 ? funcBase : "\t\t\t" + funcBase.replace(/\n|\t/g, ""))
+			        .replace("%s", Prism.languages[lang] ?
+			            Prism.highlight(
+			                code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"),
+			                Prism.languages[lang], lang
+			            ).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>")
+			            : code
+		            )}\t\t\t<p>`)
 	    // format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		// expandable samples (per <sample name> tag or add to desc)

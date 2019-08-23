@@ -10,7 +10,7 @@ function OnStart()
 	txt.SetTextSize( 12 );
 	lay.AddChild( txt );
 
-    app.AddLayout(lay);
+    app.AddLayout( lay );
 
 	<b>net = app.CreateNetClient( "TCP,Raw" );
 	net.SetOnConnect( net_OnConnect );
@@ -59,14 +59,14 @@ function net_OnConnect( connected )
 {
 	if( !connected ) return app.ShowPopup( "Failed to connect!" );
 
-    if(sent) return sent = msg != "";
+    if( sent ) return sent = msg != "";
     else sent = true;
 
 	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
 }
 
 var msg = "";
-function OnReceive(s)
+function OnReceive( s )
 {
     msg += s;
 
@@ -95,7 +95,7 @@ function OnStart()
     net = app.CreateNetClient( "UDP" );
 
     address = net.GetBroadcastAddress();
-    mid = app.GetDeviceId();
+    id = app.GetDeviceId();
     port = 19700;
 
     setInterval( CheckForMsg, 500 );
@@ -112,10 +112,10 @@ function CheckForMsg()
     var packet = net.ReceiveDatagram( "UTF-8", port, 10 );
     if( packet )
     {
-        var parts = packet.split("|");
+        var parts = packet.split( "|" );
 
-        if( parts[0] != mid )
-            app.ShowPopup( parts[1]);
+        if( parts[0] != id )
+            app.ShowPopup( parts[1] );
     }
 }
 </sample>

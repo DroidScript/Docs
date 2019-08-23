@@ -224,7 +224,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "lst-[frequencies:num_int]",
-				"shortDesc": "Returns a list of frequency values"
+				"shortDesc": "returns a new list of frequency values"
 			},
 			"GetPeak": {
 				"desc": "Returns the PMPO value (Peak music power output).",
@@ -253,7 +253,6 @@
 				"retval": "str-AudioRecorder",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"Pause": {
 				"desc": "Pauses the recording temporally.",
 				"isfunc": true,
@@ -304,7 +303,7 @@
 		"pNames": ["filter"],
 		"pTypes": ["str"],
 		"retval": "BluetoothList",
-		"shortDesc": "Returns a BluetoothList object with selectable list of paired and discovered Bluetooth devices",
+		"shortDesc": "returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -569,7 +568,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
 		"retval": "CameraView",
-		"shortDesc": "Returns a CameraView object to access the device camera",
+		"shortDesc": "returns a new CameraView object to access the device camera",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"AutoCapture": {
@@ -609,7 +608,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
-				"shortDesc": "Returns a list of available color effects"
+				"shortDesc": "returns a new list of available color effects"
 			},
 			"GetHeight": "#2576212953",
 			"GetImageHeight": {
@@ -657,7 +656,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_com-w1 x h1\\,w2 x h2\\,...",
-				"shortDesc": "Returns a list of possible picture dimensions"
+				"shortDesc": "returns a new list of possible picture dimensions"
 			},
 			"GetPixelData": {
 				"desc": "Returns the pixel data of the current camery view in a base64 encoded raw bitmap, png or jpg format.",
@@ -942,7 +941,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CheckBox",
-		"shortDesc": "Returns a CheckBox object",
+		"shortDesc": "returns a new CheckBox object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -1035,7 +1034,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CodeEdit",
-		"shortDesc": "Returns a CodeEdit object",
+		"shortDesc": "returns a new CodeEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -1334,7 +1333,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
 		"retval": "Crypt",
-		"shortDesc": "Returns a Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
+		"shortDesc": "returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
 			"Decrypt": {
 				"desc": "Decrypt text with a key.",
@@ -1370,8 +1369,7 @@
 				"pNames": ["text", "mode", "options"],
 				"pTypes": ["str", "str-MD5|SHA-1|SHA-256", "str"],
 				"shortDesc": "Get a hash from a string"
-			},
-			"Method": "#1023663567"
+			}
 		}
 	},
 	"CreateDebug": {
@@ -1390,7 +1388,7 @@
 		"pNames": ["title", "options"],
 		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"retval": "Dialog",
-		"shortDesc": "Returns a Dialog object to display messages",
+		"shortDesc": "returns a new Dialog object to display messages",
 		"subf": {
 			"AddLayout": {
 				"desc": "Add the content layout to the dialog.",
@@ -1512,7 +1510,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoDialog|Light"],
 		"retval": "Downloader",
-		"shortDesc": "Returns a Downloader object",
+		"shortDesc": "returns a new Downloader object",
 		"subf": {
 			"Download": {
 				"desc": "Start downloading a file.",
@@ -1648,7 +1646,6 @@
 				"retval": "str-Email",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"Receive": {
 				"desc": "Start receiving emails from a given folder.",
 				"isfunc": true,
@@ -1725,7 +1722,7 @@
 		"pNames": ["file", "mode"],
 		"pTypes": ["str_pth", "str-r|w|rw"],
 		"retval": "File",
-		"shortDesc": "Returns a File object",
+		"shortDesc": "returns a new File object",
 		"subf": {
 			"Close": {
 				"desc": "Close File",
@@ -1761,7 +1758,6 @@
 				"retval": "str-File",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"ReadData": {
 				"desc": "Reads a amount of bytes from the file.",
 				"isfunc": true,
@@ -1957,7 +1953,7 @@
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
 		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "Image",
-		"shortDesc": "Returns a Image object",
+		"shortDesc": "returns a new Image object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Clear": {
@@ -2335,7 +2331,7 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
 		"retval": "Layout",
-		"shortDesc": "Returns a Layout object",
+		"shortDesc": "returns a new Layout object",
 		"subf": {
 			"AddChild": {
 				"desc": "Adds a control to the layout.",
@@ -2492,7 +2488,7 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
-		"shortDesc": "Returns a List object",
+		"shortDesc": "returns a new List object",
 		"subf": {
 			"AddItem": {
 				"desc": "Adds an entry to the list.",
@@ -2799,7 +2795,7 @@
 		"pNames": ["title", "list", "options"],
 		"pTypes": ["str", "str", "str_com-Multi|?"],
 		"retval": "ListDialog",
-		"shortDesc": "Returns a ListDialog object",
+		"shortDesc": "returns a new ListDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Dismiss": "#1924613953",
@@ -2854,7 +2850,7 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str_com-GPS,Network", "str_com"],
 		"retval": "Locator",
-		"shortDesc": "Returns a Locator object",
+		"shortDesc": "returns a new Locator object",
 		"subf": {
 			"GetBearingTo": {
 				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.",
@@ -2883,7 +2879,6 @@
 				"retval": "str-Locator",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"SetOnChange": {
 				"desc": "Define a function which is called when some of the values changed.",
 				"isfunc": true,
@@ -2935,7 +2930,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "MediaPlayer",
-		"shortDesc": "Returns a MediaPlayer object",
+		"shortDesc": "returns a new MediaPlayer object",
 		"subf": {
 			"Close": {
 				"desc": "Close the media player and thus make it unuseable for further use.",
@@ -2988,7 +2983,6 @@
 				"pTypes": [],
 				"shortDesc": "Returns if player is useable yet"
 			},
-			"Method": "#1023663567",
 			"Pause": {
 				"desc": "Pause the current playing song.",
 				"isfunc": true,
@@ -3106,7 +3100,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "MediaStore",
-		"shortDesc": "Returns a MediaStore object",
+		"shortDesc": "returns a new MediaStore object",
 		"subf": {
 			"GetAlbumArt": {
 				"desc": "Loads the album image to an existing image:dso-CreateImage.",
@@ -3135,7 +3129,6 @@
 				"retval": "str-MediaStore",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"QueryAlbums": {
 				"desc": "Search for media albums.",
 				"isfunc": true,
@@ -3221,7 +3214,7 @@
 		"pNames": ["type"],
 		"pTypes": ["str-UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message"],
 		"retval": "NetClient",
-		"shortDesc": "Returns a NetClient object",
+		"shortDesc": "returns a new NetClient object",
 		"subf": {
 			"AutoReceive": {
 				"desc": "Receive TCP received data automatically by calling the OnReceive callback.",
@@ -3290,7 +3283,6 @@
 				"shortDesc": "Get NetClient connected state"
 			},
 			"IsEnabled": "#1744802827",
-			"Method": "#1023663567",
 			"ReceiveBytes": {
 				"desc": "Receive data as bytes.",
 				"isfunc": true,
@@ -3436,7 +3428,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen"],
 		"retval": "Notification",
-		"shortDesc": "Returns a Notification object",
+		"shortDesc": "returns a new Notification object",
 		"subf": {
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
@@ -3455,7 +3447,6 @@
 				"retval": "str-Notification",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"Notify": {
 				"desc": "Send the notification to the user.",
 				"isfunc": true,
@@ -3506,7 +3497,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "Nxt",
-		"shortDesc": "Returns a Nxt object",
+		"shortDesc": "returns a new Nxt object",
 		"subf": {
 			"Beep": {
 				"desc": "Play tone with given frequency for a given time in milliseconds.",
@@ -3521,7 +3512,7 @@
 				"isfunc": true,
 				"name": "Brake",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Brakes motors smoothly"
 			},
 			"CheckConnection": {
@@ -3554,7 +3545,7 @@
 				"isfunc": true,
 				"name": "Drive",
 				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A,B,C", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
+				"pTypes": ["str-A,B,C|ABC", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
 				"shortDesc": ""
 			},
 			"FileFindFirst": {
@@ -3607,9 +3598,9 @@
 				"isfunc": true,
 				"name": "GetRotationCount",
 				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"retval": "num_int",
-				"shortDesc": "Returns a wheel encoder value."
+				"shortDesc": "returns a new wheel encoder value."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3652,7 +3643,7 @@
 				"isfunc": true,
 				"name": "IsMotorIdle",
 				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Check if a motor is powered"
 			},
 			"IsPaired": {
@@ -3664,7 +3655,6 @@
 				"retval": "bin",
 				"shortDesc": "Checks if the device is paired with an other"
 			},
-			"Method": "#1023663567",
 			"PlaySoundFile": {
 				"desc": "Play a sound file for a given amount of times.",
 				"isfunc": true,
@@ -3679,7 +3669,7 @@
 				"name": "ReadColorSensor",
 				"pNames": ["input", "mode"],
 				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6||num_int-0..1023",
+				"retval": "num_int-1..6 or 0..1023",
 				"shortDesc": "Read a color sensor value"
 			},
 			"ReadDistanceSensor": {
@@ -3740,7 +3730,7 @@
 				"isfunc": true,
 				"name": "Reset",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Reset wheel encoder offset to 0."
 			},
 			"SendMail": {
@@ -3839,7 +3829,7 @@
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Stop powering some motors."
 			},
 			"StopProgram": {
@@ -3869,7 +3859,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "NxtRemote",
-		"shortDesc": "Returns a NxtRemote object",
+		"shortDesc": "returns a new NxtRemote object",
 		"subf": {
             "Beep": {
 				"desc": "Play tone with given frequency for a given time in milliseconds.",
@@ -3884,7 +3874,7 @@
 				"isfunc": true,
 				"name": "Brake",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Brakes motors smoothly"
 			},
 			"CheckConnection": {
@@ -3917,7 +3907,7 @@
 				"isfunc": true,
 				"name": "Drive",
 				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A,B,C", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
+				"pTypes": ["str-A,B,C|ABC", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
 				"shortDesc": ""
 			},
 			"FileFindFirst": {
@@ -3970,9 +3960,9 @@
 				"isfunc": true,
 				"name": "GetRotationCount",
 				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"retval": "num_int",
-				"shortDesc": "Returns a wheel encoder value."
+				"shortDesc": "returns a new wheel encoder value."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4015,7 +4005,7 @@
 				"isfunc": true,
 				"name": "IsMotorIdle",
 				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Check if a motor is powered"
 			},
 			"IsPaired": {
@@ -4027,7 +4017,6 @@
 				"retval": "bin",
 				"shortDesc": "Checks if the device is paired with an other"
 			},
-			"Method": "#1023663567",
 			"PlaySoundFile": {
 				"desc": "Play a sound file for a given amount of times.",
 				"isfunc": true,
@@ -4042,7 +4031,7 @@
 				"name": "ReadColorSensor",
 				"pNames": ["input", "mode"],
 				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6||num_int-0..1023",
+				"retval": "num_int-1..6 or 0..1023",
 				"shortDesc": "Read a color sensor value"
 			},
 			"ReadDistanceSensor": {
@@ -4103,7 +4092,7 @@
 				"isfunc": true,
 				"name": "Reset",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Reset wheel encoder offset to 0."
 			},
 			"SendMail": {
@@ -4202,7 +4191,7 @@
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C"],
+				"pTypes": ["str-A,B,C|ABC"],
 				"shortDesc": "Stop powering some motors."
 			},
 			"StopProgram": {
@@ -4226,31 +4215,22 @@
 	},
 	"CreateOverlay": {
 		"abbrev": "ovl",
-		"desc": "CreateOverlay\n\n<premium>",
+		"desc": "Overlays are displayed above everything on the screen - even on the home screen or above other applications. Overlays can be created from services as well which makes them almost perfect for interacting with them.\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateOverlay",
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
-		"shortDesc": "CreateOverlay",
+		"shortDesc": "Returns a new Overlay object.",
 		"subf": {
 			"AddLayout": {
-				"desc": "AddLayout",
+				"desc": "Adds a layout to the overlay.",
 				"isfunc": true,
 				"name": "AddLayout",
 				"pNames": ["layout", "left", "top", "options"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "AddLayout"
+				"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str-px"],
+				"shortDesc": "Adds layout to overlay"
 			},
-			"AdjustColor": "#1794786072",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
 			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,
@@ -4259,55 +4239,33 @@
 				"pTypes": [],
 				"shortDesc": "GetType"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
 			"RemoveLayout": {
-				"desc": "RemoveLayout",
+				"desc": "Removes a layout from the overlay.",
 				"isfunc": true,
 				"name": "RemoveLayout",
 				"pNames": ["layout"],
-				"pTypes": ["?"],
-				"shortDesc": "RemoveLayout"
+				"pTypes": ["dso-CreateLayout"],
+				"shortDesc": "Remove layout from overlay"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
-			"SetPadding": "#1923105617",
 			"SetPosition": {
-				"desc": "SetPosition",
+				"desc": "Defines the position of a contained layout.",
 				"isfunc": true,
 				"name": "SetPosition",
 				"pNames": ["layout", "left", "top", "options"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "SetPosition"
-			},
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+				"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str-px"],
+				"shortDesc": "Changes a child layout position"
+			}
 		}
 	},
 	"CreatePhoneState": {
 		"abbrev": "pst",
-		"desc": "?",
+		"desc": "The PhoneState component is able to detect phone state changes.\n\nThe callback data depends on the type:\n\n<smp>“CellLocation” : **object:** { cellId:num\\_int, areaCode:num\\_int }</smp>\n<smp>“DataConnection” : **object:** { state:str-Connected|Disconnected, networkType:str-Unknown }</smp>\n<smp>“DataActivity” : **unknown**</smp>\n<smp>“CallState” : **object:** { state:str-Idle, number:str\\_num }</smp>\n<smp>“ServiceState” : **string:** “OutOfService”</smp>\n<smp>“SignalStrength” : **number:** _float_</smp>\n<smp>“CallForwarding” : **boolean**</smp>\n<smp>“MessageWaiting” : **boolean**</smp>",
 		"isfunc": true,
 		"name": "CreatePhoneState",
 		"pNames": ["types"],
-		"pTypes": ["?"],
+		"pTypes": ["str-CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting"],
 		"retval": "PhoneState",
-		"shortDesc": "Returns a PhoneState object",
+		"shortDesc": "returns a new PhoneState object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4318,23 +4276,38 @@
 				"retval": "str-PhoneState",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
-			"SetOnChange": "#2137502353",
+			"SetOnChange": {
+				"desc": "Define a callback function which is called when a phone state has changed.",
+				"isfunc": true,
+                "name": "SetOnChange",
+				"pNames": ["callback"],
+				"pTypes": [
+					{
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["type", "data"],
+						"pTypes": ["str-CellLocation|DataConnection|DataActivity|CallState|ServiceState|SignalStrength|CallForwarding|MessageWaiting", "all"],
+						"shortDesc": "callback"
+					}
+				],
+				"shortDesc": "Called when a phone state has changed"
+            },
 			"Start": {
-				"desc": "",
+				"desc": "Start listening.",
 				"isfunc": true,
 				"name": "Start",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start listening"
 			},
 			"Stop": {
-				"desc": "",
+				"desc": "Stop listening.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop listening"
 			}
 		}
 	},
@@ -4346,7 +4319,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "PlayStore",
-		"shortDesc": "Returns a PlayStore object",
+		"shortDesc": "returns a new PlayStore object",
 		"subf": {
 			"GetBillingInfo": {
 				"desc": "",
@@ -4424,7 +4397,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
 		"retval": "Scroller",
-		"shortDesc": "Returns a Scroller object",
+		"shortDesc": "returns a new Scroller object",
 		"subf": {
 			"AddChild": {
 				"desc": "Add a layout to the scroller.",
@@ -4536,7 +4509,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "SeekBar",
-		"shortDesc": "Returns a SeekBar object",
+		"shortDesc": "returns a new SeekBar object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -4624,7 +4597,7 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
 		"retval": "Sensor",
-		"shortDesc": "Returns a Sensor object",
+		"shortDesc": "returns a new Sensor object",
 		"subf": {
 			"GetAzimuth": {
 				"desc": "",
@@ -4642,7 +4615,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_com",
-				"shortDesc": "Returns a list of builtin sensors"
+				"shortDesc": "returns a new list of builtin sensors"
 			},
 			"GetPitch": {
 				"desc": "",
@@ -4747,7 +4720,7 @@
 				"shortDesc": "callback"
 			}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "Service",
-		"shortDesc": "Returns a Service object",
+		"shortDesc": "returns a new Service object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4826,7 +4799,7 @@
 		"pNames": ["type"],
 		"pTypes": ["?"],
 		"retval": "SmartWatch",
-		"shortDesc": "Returns a SmartWatch object",
+		"shortDesc": "returns a new SmartWatch object",
 		"subf": {
 			"AddLayout": {
 				"desc": "?",
@@ -5079,7 +5052,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "SMS",
-		"shortDesc": "Returns a SMS object",
+		"shortDesc": "returns a new SMS object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5143,7 +5116,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoBeep,Partial"],
 		"retval": "SpeechRec",
-		"shortDesc": "Returns a SpeechRec object",
+		"shortDesc": "returns a new SpeechRec object",
 		"subf": {
 			"Cancel": {
 				"desc": "stop recognision",
@@ -5258,7 +5231,7 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["?", "?", "?", "str_com"],
 		"retval": "Spinner",
-		"shortDesc": "Returns a Spinner object",
+		"shortDesc": "returns a new Spinner object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -5335,7 +5308,7 @@
 		"pNames": ["type"],
 		"pTypes": ["?"],
 		"retval": "Synth",
-		"shortDesc": "Returns a Synth object",
+		"shortDesc": "returns a new Synth object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5621,7 +5594,7 @@
 		"pNames": ["cmd", "env", "dir", "options"],
 		"pTypes": ["str_pip", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "SysProc",
-		"shortDesc": "Returns a SysProc object",
+		"shortDesc": "returns a new SysProc object",
 		"subf": {
 			"Err": {
 				"desc": "",
@@ -5699,7 +5672,7 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str_com", "num_frc", "num_frc", "str_com"],
 		"retval": "Tabs",
-		"shortDesc": "Returns a Tabs object",
+		"shortDesc": "returns a new Tabs object",
 		"subf": {
 			"AddChild": {
 				"desc": "",
@@ -5897,7 +5870,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
 		"retval": "Text",
-		"shortDesc": "Returns a Text object",
+		"shortDesc": "returns a new Text object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6027,7 +6000,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
 		"retval": "TextEdit",
-		"shortDesc": "Returns a TextEdit object",
+		"shortDesc": "returns a new TextEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6257,7 +6230,7 @@
 		"pNames": ["baseTheme"],
 		"pTypes": ["?"],
 		"retval": "Theme",
-		"shortDesc": "Returns a Theme object",
+		"shortDesc": "returns a new Theme object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"GetType": {
@@ -6403,7 +6376,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad"],
 		"retval": "Toggle",
-		"shortDesc": "Returns a Toggle object",
+		"shortDesc": "returns a new Toggle object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6488,7 +6461,7 @@
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
 		"pTypes": ["?", "?", "?", "?", "?"],
 		"retval": "USBSerial",
-		"shortDesc": "Returns a USBSerial object",
+		"shortDesc": "returns a new USBSerial object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -6616,7 +6589,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "VideoView",
-		"shortDesc": "Returns a VideoView object",
+		"shortDesc": "returns a new VideoView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6833,7 +6806,7 @@
 		"pNames": ["port", "options"],
 		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index.html|Reflect:Reflect web socket messages back to all clients"],
 		"retval": "WebServer",
-		"shortDesc": "Returns a WebServer object",
+		"shortDesc": "returns a new WebServer object",
 		"subf": {
 			"AddRedirect": {
 				"desc": "",
@@ -6944,7 +6917,7 @@
 		"pNames": ["id", "ip", "port", "options"],
 		"pTypes": ["?", "?", "?", "str_com"],
 		"retval": "WebSocket",
-		"shortDesc": "Returns a WebSocket object",
+		"shortDesc": "returns a new WebSocket object",
 		"subf": {
 			"Close": {
 				"desc": "close web socket",
@@ -7041,7 +7014,7 @@
 		"pNames": ["width", "height", "options", "zoom"],
 		"pTypes": ["?", "?", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade", "?"],
 		"retval": "WebView",
-		"shortDesc": "Returns a WebView object",
+		"shortDesc": "returns a new WebView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Back": {
@@ -7331,7 +7304,7 @@
 		"pNames": ["message", "options"],
 		"pTypes": ["?", "str_com-TouchModal"],
 		"retval": "YesNoDialog",
-		"shortDesc": "Returns a YesNoDialog object",
+		"shortDesc": "returns a new YesNoDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Dismiss": "#1924613953",
@@ -7385,7 +7358,7 @@
 		"pNames": ["mode"],
 		"pTypes": ["?"],
 		"retval": "ZipUtil",
-		"shortDesc": "Returns a ZipUtil object",
+		"shortDesc": "returns a new ZipUtil object",
 		"subf": {
 			"AddFile": {
 				"desc": "AddFile",

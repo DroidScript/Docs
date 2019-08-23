@@ -1,1 +1,27 @@
- 
+<sample Demo>
+
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+	txt = app.CreateText( "", 0.95, 0.95, "multiline,left" );
+	txt.SetTextSize( 14 );
+	lay.AddChild( txt );
+
+	app.AddLayout( lay );
+
+	var types = "CellLocation,DataConnection,DataActivity,CallState,"
+	    + "ServiceState,SignalStrength,CallForwarding,MessageWaiting";
+
+    state = app.CreatePhoneState( types );
+    state.SetOnChange( state_OnChange );
+    state.Start();
+}
+
+var log = [];
+function state_OnChange( type, data )
+{
+    log.push( type.bold() + ":<br>\t" + JSON.stringify(data) );
+    txt.SetHtml( log.join("<br>") );
+}
+</sample>

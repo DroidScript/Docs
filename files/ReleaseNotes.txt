@@ -407,7 +407,7 @@ DS 1.55b
 - Added bluetooth listen sample.
 - Added updated and re-organised docs (thanks to AlexF).
 - Fixed Immediate window execute bug.
-- Added.'NoScrollBar' and 'ScrollFade' options to Scroller control.
+-.Added 'NoScrollBar' and 'ScrollFade' options to Scroller control.
 -.Added 'NoApp' option to WebView to prevent app.* calls.
 - Obfuscation errors are now trapped and displayed.
 - Added 'Bluetooth Select' sample.
@@ -418,44 +418,15 @@ DS 1.55b
 -.Added new webview option "AllowCapture" to enable use of camera and microphone (and WebRTC).
 - Added new grabWidth parameter to app.AddDrawer method.
 
-DS 1.54
-- Fixed error handling override on webview (SetOnError method).
-- Added USB serial support for Pimoroni Flotilla Dock and AdaFruit Circuit Playground.
-- Added support for Spanish language, docs and samples.
-- Added multi-file handling to device editor.
-- Keyboard navigation added to device editor (Ctrl-I,Ctrl-SPACE,Ctrl-O).
-- Added Ctrl-C,Ctrl-V,Ctrl-X,Ctrl-Z,Ctrl-Y,Ctrl-A,Ctrl-D handling to device editor.
-- Added Ctrl-F,Ctrl-H,Ctrl-K,Ctrl-S handling to device editor.
-- Added Tab/Shift-Tab indent/outdent to device editor for physical keyboards.
--.Added SetEllipsize() method and 'SingleLine' option to button control.
-- Empty jar file no longer required in JavaScript based plugins.
-- app.SysExec() now shows error stream (use NoErrors option to disable).
-- app.SysExec() now has extra maxLines and a timeout parameter.
-- $ shell commands from WiFi editor now shows error stream.
-- $ shell commands from WiFi editor now work even if app is not running.
-- Added app.GetBtProfileState() method (use 'a2dp','headset', 'gatt', 'health' ).
-- Docs now loaded from sdcard (makes user editing/translation easier)
-- Fixed bug in app.GetMemoryInfo() method.
-- Added SetProgressBarOptions() method to theme object.
--.Added 'light' option to Downloader object (controls progress bar theme)
-- Fixed excessive 'ScreenSize changed' logging on Remix.
-- Starting activities via app.SendIntent() in services now works without needing 'newtask' option.
-- Added img.SetPixelData method (takes base64 data string).
-- Added img.Flatten() translate,scale,skew,alpha are applied to image data (can be saved).
-- Enabled use of Wifi editor over wired network.
-
 DS 1.52
 - Fixed error handling override on webview (SetOnError method).
 - Fixed files list not being hidden when showing docs/samples.
 - Fixed launcher text size on low-res phones.
 - Fixed language download problems on Kitkat devices.
-
 - Fixed language download problems on JellyBean devices.
 - Added USB serial support for Pimoroni Flotilla Dock and AdaFruit Circuit Playground.
-
 - Added support for spanish language, docs and samples.
 - Fixed problem with editing HTML files with multi-file version of DS.
-
 - Added multi-file handling to device editor.
 - Keyboard navigation added to device editor (Ctrl-I,Ctrl-SPACE,Ctrl-O).
 - Added Ctrl-C,Ctrl-V,Ctrl-X,Ctrl-Z,Ctrl-Y,Ctrl-A,Ctrl-D handling to device editor.
@@ -469,13 +440,11 @@ DS 1.52
 - $ shell commands from WiFi editor now work even if app is not running.
 - Added app.GetBtProfileState() method (use 'a2dp','headset', 'gatt', 'health' ).
 - Docs now loaded from sdcard (makes user editing/translation easier)
-
 - Fixed bug in app.GetMemoryInfo() method.
 - Added SetProgressBarOptions() method to theme object.
 -.Added 'light' option to Downloader object (controls progress bar theme)
 - Fixed excessive 'ScreenSize changed' logging on Remix.
 - Starting activities via app.SendIntent() in services now works without needing 'newtask' option.
-
 - Added img.SetPixelData method (takes base64 data string).
 - Added img.Flatten() translate,scale,skew,alpha are applied to image data (can be saved).
 - Enabled use of Wifi editor over wired network.
@@ -743,7 +712,7 @@ DS 1.30b
 -.Added lst.SetTextSize2() and 'normal' option (turns of bold title text).
 - Added app.GetKeyboardHeight() method.
 - Updated fontawesome to version 4.4.
-- Added app.CreatePhoneState() listens for phone state changes (including cell location).
+-.Added app.CreatePhoneState() listens for phone state changes (including cell location).
 - Added 'Phone States' sample.
 - Added app.GetSSID() method.
 - Added txt.Log( msg,options ) method to text control (useful for logging).
@@ -785,28 +754,6 @@ DS 1.28b
 - Fixed bug with usb serial connections introduced in 1.27b.
 - Added app.ClearData() method (clears app.SaveText/SaveNumber..etc values).
 
-DS 1.27b
-- Added support for background services (sample on forum)!
-- Added support for custom buttons and added 'Button Styles' sample.
-- Addded 'IngoreErrors' option to WebView control.
-- Added 'Voice Command' continuous speech recognition sample.
-- Added app.SendFile() method (sends files to other Apps, user chooses).
-- Added web.Print() method to webview (prints docs on Kitkat or greater).
-- Added web.Capture(filename) method to webview control (captures jpeg of visible page).
-- Added optional id parameter to notification Notify() and Cancel() methods.
-- Added 'ScrollFade' option to webview.
-- Added "file" type to SendIntent extras + 'Send Files' sample.
-- Added support for 'MakeBlock Orion' OTG/USB comms.
-- Added support for chinese Arduino clones (CH340 USB/Serial chips).
-- Added 'USB Arduino' sample.
-- Added quality parameter to img.Save() method + support for png files.
--?Added 'GrayScale' and 'JSON' options to GetPixelData() + 'QVGA','VGA',etc prescaling option.
-- Added app.SetOnKey(callback) method (reports key changes, including volume key).
-- Added app.DisableKeys(keyList) method (disables normal function of given keys).
-- Fixed issue with app.TextToSpeech() params being ignored on second call.
--.Added 'Partial' option to app.CreateSpeechRec() method
-- Added IsListening(), Stop() and Cancel() methods to SpeechRec object.
-
 DS 1.26b
 - Added support for background services (sample on forum)!
 - Added support for custom buttons and added 'Button Styles' sample.
@@ -822,15 +769,14 @@ DS 1.26b
 - Added support for chinese Arduino clones (CH340 USB/Serial chips).
 - Added 'USB Arduino' sample.
 - Added quality parameter to img.Save() method + support for png files.
-- Added?'GrayScale' and 'JSON' options to GetPixelData() + 'QVGA','VGA',etc prescaling option.
+-?Added 'GrayScale' and 'JSON' options to GetPixelData() + 'QVGA','VGA',etc prescaling option.
 - Added app.SetOnKey(callback) method (reports key changes, including volume key).
 - Added app.DisableKeys(keyList) method (disables normal function of given keys).
 - Fixed issue with app.TextToSpeech() params being ignored on second call.
-- Added.'Partial' option to app.CreateSpeechRec() method
+-.Added 'Partial' option to app.CreateSpeechRec() method
 - Added IsListening(), Stop() and Cancel() methods to SpeechRec object.
 
 DS 1.25b July 7th 2015
-
 - Added app.SetVolume(stream,level) [streams: alarm,dtmf,music,notification,ring,system,voicecall]
 - Added app.GetVolume(stream) method.
 - Added app.GetAccounts() method.
