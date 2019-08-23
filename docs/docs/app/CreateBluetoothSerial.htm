@@ -118,13 +118,13 @@
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>bls.Connect</b><br>Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>bls.Disconnect</b><br>Disconnect your device from an eventually existant connection. Calls the OnDisconnect callback function on both devices.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>bls.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>bls.IsBluetoothEnabled</b><br>Returns a boolean indicating whether Bluetooth is enabled or not.</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>bls.IsConnected</b><br>Returns a boolean indicating whether a Bluetooth connection exists to another device.</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>bls.IsPaired</b><br>Returns a Boolean indicating whether a specific device is paired using its Bt name.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>bls.IsBluetoothEnabled</b><br>Checks if Bluetooth is enabled or not.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>bls.IsConnected</b><br>Checks if a Bluetooth connection exists to another device.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>bls.IsPaired</b><br>Checks if a specific device is paired using its Bt name.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>bls.Listen</b><br>Listen to your serial connection for any incoming mesages by passing <i>true</i> as first argument, <s>or stop listening by passing false</s>. It has to be called before an other device can connect with yours via bt.Connect.</div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>bls.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>bls.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>bls.RequestEnable</b><br>If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">address</a>)</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>bls.SetOnConnect</b><br>If the device has sent the connection request<br>&#160;&#160;name is of type boolean (true if the connection was established successful)<br>&#160;&#160;and address is your BluetoothSerial object<br><br>if the device has received the connection request<br>&#160;&#160;name is a string with the clients bluetooth name<br>&#160;&#160;and address includes the bluetooth address.</div>

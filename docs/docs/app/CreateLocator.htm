@@ -73,11 +73,10 @@
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetBearingTo</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">latitude</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">longitude</a> ) → <b>number</b></div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetDistanceTo</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">latitude</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">longitude</a> ) → <b>number</b></div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Locator”</font></div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetRate</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">rate</a> )</div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Start</a>()</div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">Stop</a>()</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetRate</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">rate</a> )</div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Start</a>()</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Stop</a>()</div>
 
 			<br>
 		</div>
@@ -88,15 +87,12 @@
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>loc.GetBearingTo</b><br>Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>loc.GetDistanceTo</b><br>Returns the approximate distance in meters between this location and the given location.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>loc.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>loc.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: { provider:str,&#160;&#160;latitude:num,&#160;&#160;longitude:num,&#160;&#160;speed:num,&#160;&#160;bearing:num,&#160;&#160;altitude:num,&#160;&#160;accuracy:num_met }')">data</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">time</a>)</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>loc.SetOnChange</b><br>Define a function which is called when some of the values changed.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>loc.SetOnChange</b><br>Define a function which is called when some of the values changed.</div>
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>loc.SetRate</b><br>Set Locator update frequency in seconds</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>loc.Start</b><br>Start the locator.</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>loc.Stop</b><br>Stop the locator.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>loc.SetRate</b><br>Set Locator update frequency in seconds</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>loc.Start</b><br>Start the locator.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>loc.Stop</b><br>Stop the locator.</div>
 	</div>
 </body>
 

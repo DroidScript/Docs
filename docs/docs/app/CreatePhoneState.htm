@@ -33,32 +33,109 @@
 		</div>
 
 		<div data-role="content">
-			<p>?.</p>
+			<p>The PhoneState component is able to detect phone state changes.</p>
 
 			<div class="samp">
-			pst = app.CreatePhoneState( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">types</a> ) → <b>app object:</b> PhoneState
+			pst = app.CreatePhoneState( <a href="#pop_str_001" data-transition="pop" data-rel="popup">types</a> ) → <b>app object:</b> PhoneState
 			</div>
 
+			<p>The callback data depends on the type:</p>
+
+			<div class="samp">
+			<font class='docstring'>“CellLocation”</font> : <b>object:</b> { <a href="#pop_num_int" data-transition="pop" data-rel="popup">cellId</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">areaCode</a> }
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“DataConnection”</font> : <b>object:</b> { <a href="#pop_str_002" data-transition="pop" data-rel="popup">state</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">networkType</a> }
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“DataActivity”</font> : <b>unknown</b>
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“CallState”</font> : <b>object:</b> { <a href="#pop_str_004" data-transition="pop" data-rel="popup">state</a>, <a href="#pop_str_num" data-transition="pop" data-rel="popup">number</a> }
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“ServiceState”</font> : <b>string:</b> <font class='docstring'>“OutOfService”</font>
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“SignalStrength”</font> : <b>number:</b> <i>float</i>
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“CallForwarding”</font> : <b>boolean</b>
+			</div>
+
+
+			<div class="samp">
+			<font class='docstring'>“MessageWaiting”</font> : <b>boolean</b>
+			</div>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Demo</h3>
+				<div id="examp0" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreatePhoneState</span><span class="token punctuation">(</span> types <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;state<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;state<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">var</span> log <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+					<span class="token keyword">function</span> <span class="token function">state_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">type<span class="token punctuation">,</span> data</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;log<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> type<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			<p><br>The following methods are available on the <b>PhoneState</b> object:</p>
 
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“PhoneState”</font></div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Start</a>()</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Stop</a>()</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">SetOnChange</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Start</a>()</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Stop</a>()</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“CellLocation”</font>, <font class='docstring'>“DataConnection”</font>, <font class='docstring'>“DataActivity”</font>, <font class='docstring'>“CallState”</font>, <font class='docstring'>“ServiceState”</font>, <font class='docstring'>“SignalStrength”</font>, <font class='docstring'>“CallForwarding”</font>, <font class='docstring'>“MessageWaiting”</font></div>
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pst.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pst.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>pst.SetOnChange</b><br>Called when the containing data has been changed by the user.</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pst.Start</b><br></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>pst.Stop</b><br></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “CellLocation” or “DataConnection” or “DataActivity” or “CallState” or “ServiceState” or “SignalStrength” or “CallForwarding” or “MessageWaiting”')">type</a>, <a href="" onclick="app.ShowPopup('all types')">data</a>)</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pst.SetOnChange</b><br>Define a callback function which is called when a phone state has changed.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>pst.Start</b><br>Start listening.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pst.Stop</b><br>Stop listening.</div>
+		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“Connected”</font> or <font class='docstring'>“Disconnected”</font></div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Unknown”</font></div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“Idle”</font></div>
+		<div data-role="popup" id="pop_str_num" class="ui-content"><b>string:</b> <i>number</i></div>
 	</div>
 </body>
 

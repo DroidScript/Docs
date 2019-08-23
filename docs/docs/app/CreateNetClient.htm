@@ -33,80 +33,235 @@
 		</div>
 
 		<div data-role="content">
-			<p>Returns a NetClient object.</p>
+			<p>NetClients can be used to communicate with servers on the web.</p>
 
 			<div class="samp">
 			net = app.CreateNetClient( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>app object:</b> NetClient
 			</div>
 
+			<p>You can choose between two different protocols:<br>
+			&#160;&#160;The connection based <i><b>T</b>ransmission<b>C</b>ontrol<b>P</b>rotocol</i> which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.<br>
+			&#160;&#160;The connectionless <i><b>U</b>ser<b>D</b>atagram<b>P</b>rotocol</i> which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.<br>
+			<br>
+			Note: A few routers block fast UDP messages by default</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - TCP Basic</h3>
+				<div id="examp0" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"ignoreerrors"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateTextEdit</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"ReadOnly,NoKeyboard"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">12</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">net_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">connected</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>connected <span class="token punctuation">)</span> <span class="token keyword">return</span> app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SendText</span><span class="token punctuation">(</span> <span class="token string">"GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n"</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">,</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">do</span> msg <span class="token operator">+=</span> s <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">ReceiveText</span><span class="token punctuation">(</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">while</span><span class="token punctuation">(</span> s<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">Disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - TCP AutoReceive</h3>
+				<div id="examp1" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"ignoreerrors"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateTextEdit</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"ReadOnly,NoKeyboard"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">12</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<b id="snip1" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">AutoReceive</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">var</span> sent <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><br>
+					<span class="token keyword">function</span> <span class="token function">net_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">connected</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>connected <span class="token punctuation">)</span> <span class="token keyword">return</span> app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> sent <span class="token punctuation">)</span> <span class="token keyword">return</span> sent <span class="token operator">=</span> msg <span class="token operator">!=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> sent <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SendText</span><span class="token punctuation">(</span> <span class="token string">"GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n"</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					<span class="token keyword">function</span> <span class="token function">OnReceive</span><span class="token punctuation">(</span> <span class="token parameter">s</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;msg <span class="token operator">+=</span> s<span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span> <span class="token string">"\r\n\r\n"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;msg <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - UDP Messaging</h3>
+				<div id="examp2" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Send"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"UDP"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;address <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">GetBroadcastAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;id <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetDeviceId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;port <span class="token operator">=</span> <span class="token number">19700</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token function">setInterval</span><span class="token punctuation">(</span> CheckForMsg<span class="token punctuation">,</span> <span class="token number">500</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> packet <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token string">"|Hello"</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;net<span class="token punctuation">.</span><span class="token function">SendDatagram</span><span class="token punctuation">(</span> packet<span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> port <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">CheckForMsg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> packet <span class="token operator">=</span> net<span class="token punctuation">.</span><span class="token function">ReceiveDatagram</span><span class="token punctuation">(</span> <span class="token string">"UTF-8"</span><span class="token punctuation">,</span> port<span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> packet <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">var</span> parts <span class="token operator">=</span> packet<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"|"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> parts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!=</span> id <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> parts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			<p><br>The following methods are available on the <b>NetClient</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AutoReceive</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">server</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AutoReceive</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">server</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Close</a>()</div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Connect</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )</div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Disconnect</a>()</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">DownloadFile</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">file</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">DownloadFile</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">file</a> )</div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetBroadcastAddress</a>() → <b>string</b></div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“NetClient”</font></div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">IsConnected</a>()</div>
 			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">ReceiveBytes</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> ) → <b>string:</b> <font class='docstring'>“data”</font></div>
-			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">ReceiveDatagram</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a> ) → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">ReceiveDatagrams</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">ReceiveFile</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">wait</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">ReceiveText</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">mode</a> ) → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SendBytes</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SendDatagram</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SendText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetOnDownload</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetOnReceive</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">SetTimeout</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )</div>
-			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">WakeOnLan</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">ip</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">mac</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">ReceiveBytes</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">mode</a> ) → <b>list:</b> [ <a href="#pop_num_byt" data-transition="pop" data-rel="popup">bytes</a> ]</div>
+			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">ReceiveDatagram</a>( <a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a> ) → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">ReceiveDatagrams</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">ReceiveFile</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">wait</a> ) → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">ReceiveText</a>( <a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> ) → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SendBytes</a>( <a href="#pop_mul_001" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SendDatagram</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SendText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
+			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetOnDownload</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetOnReceive</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetTimeout</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )</div>
+			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">WakeOnLan</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">mac</a> )</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“TCP”</font> or <font class='docstring'>“Raw”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('fast but does not guarantee data correctness')">UDP</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('slow but guarantees data correctness')">TCP</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('drop 4 Byte header before every message')">Raw</a>”</font></div>
 		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>net.AutoReceive</b><br>receive data automatically</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>net.Close</b><br>Close</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>net.Connect</b><br>Connect NetClient</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>net.Disconnect</b><br>Disconnect netClient</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>net.DownloadFile</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>net.GetBroadcastAddress</b><br>GetBroadcastAddress</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>net.AutoReceive</b><br>Receive TCP received data automatically by calling the OnReceive callback.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>net.Close</b><br>Closes the NetClient socket.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>net.Connect</b><br>Connect the NetClient to a server.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>net.Disconnect</b><br>Disconnect the NetClient from the server.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“url”</font></div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>net.DownloadFile</b><br>Downloads a file via TCP from the server.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>net.GetBroadcastAddress</b><br>Returns the broadcast address of UDP connections.</div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>net.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>net.IsConnected</b><br>return whether netClient is connected</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>net.IsConnected</b><br>Checks if the NetClient is connected to a server.</div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>net.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>net.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font> or <font class='docstring'>“?”</font></div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>net.ReceiveBytes</b><br>receive data</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font> or <font class='docstring'>“?”</font></div>
+		<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>net.ReceiveBytes</b><br>Receive data as bytes.</div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>net.ReceiveDatagram</b><br>ReceiveDatagram</div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>net.ReceiveDatagrams</b><br>ReceiveDatagrams</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>net.ReceiveFile</b><br>ReceiveFile</div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“?”</font></div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>net.ReceiveText</b><br>ReceiveText</div>
-		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font> or <font class='docstring'>“?”</font></div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>net.SendBytes</b><br>SendBytes</div>
-		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>net.SendDatagram</b><br></div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“?”</font></div>
-		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>net.SendText</b><br>SendText</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>net.ReceiveDatagram</b><br>Receive an UDP Datagram.</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>net.ReceiveDatagrams</b><br>Receive datagrams over UDP and calls the OnReceive callback for each one.</div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>net.ReceiveFile</b><br>Receive a file via TCP from the server.</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>net.ReceiveText</b><br>Receive text from TCP connection.</div>
+		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>list:</b> [ <a href="" onclick="app.ShowPopup('number: Bytes')">bytes</a> ]<br><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('hexadecimal 00..FF')">bytes</a>”</font></div>
+		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>net.SendBytes</b><br>Send bytes over TCP connection.</div>
+		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Hex”</font> or <font class='docstring'>“Bytes”</font></div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>net.SendDatagram</b><br>Send an UDP Datagram.</div>
+		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>net.SendText</b><br>Sends text over TCP connection.</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('boolean')">connected</a>)</div>
-		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>net.SetOnConnect</b><br></div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>net.SetOnDownload</b><br>?</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>net.SetOnReceive</b><br>called when receivend some data</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>net.SetOnConnect</b><br>Define a callback function which is called when a TCP connection could be established or if it failed to connect to the server. The <i>connected</i> state is passed as first argument.</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: integer')">something</a>)</div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>net.SetOnDownload</b><br>Define a callback function which is called when a TCP file download has finished.</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">address</a>)</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>net.SetOnReceive</b><br>Define a callback function which is called when a TCP NetClient received some data when AutoReceive was set.</div>
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
-		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>net.SetTimeout</b><br>set notification display. ticker display upon active, title on notification, sub text below title</div>
-		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>net.WakeOnLan</b><br>WakeOnLan</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>net.SetTimeout</b><br>Define an interval in which the client should check for new messages.</div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>net.WakeOnLan</b><br>WakeOnLan<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 	</div>
 </body>
 

@@ -33,12 +33,124 @@
 		</div>
 
 		<div data-role="content">
-			<p>Returns a NxtRemote object.</p>
+			<p>The NXTRemote object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.</p>
 
 			<div class="samp">
 			nxtr = app.CreateNxtRemote() → <b>app object:</b> NxtRemote
 			</div>
 
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Basic</h3>
+				<div id="examp0" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">SetOnConnected</span><span class="token punctuation">(</span> OnConnected <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">ShowDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">OnConnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">Beep</span><span class="token punctuation">(</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">500</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Auto Connect</h3>
+				<div id="examp1" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<b id="snip1" style="font-size:100%"><span class="token keyword">var</span> deviceName <span class="token operator">=</span> <span class="token string">"myNXTbrick"</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> paired <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">IsPaired</span><span class="token punctuation">(</span> deviceName <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span> <span class="token punctuation">(</span>paired<span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Connecting to "</span> <span class="token operator">+</span> deviceName <span class="token operator">+</span> <span class="token string">"..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> nxt_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> deviceName <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span></b><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">nxt_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">success<span class="token punctuation">,</span> nxt</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> success <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Connected to: "</span> <span class="token operator">+</span> nxt<span class="token punctuation">.</span><span class="token function">GetBtName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> nxt<span class="token punctuation">.</span><span class="token function">GetBtAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nxt<span class="token punctuation">.</span><span class="token function">Beep</span><span class="token punctuation">(</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Sensors</h3>
+				<div id="examp2" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">"Color,Distance,Light,Mail,Sound,Touch"</span><br>
+					&#160;&#160;&#160;&#160;spnType <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span> list<span class="token punctuation">,</span> <span class="token number">.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;spnType<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> spnType_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> spnType <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;spnInput <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span> <span class="token string">"1,2,3,4"</span><span class="token punctuation">,</span> <span class="token number">.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> spnInput <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Measure"</span><span class="token punctuation">,</span> <span class="token number">.3</span><span class="token punctuation">,</span> <span class="token number">.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> ReadSensor <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">spnType_OnChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">SimulateTouch</span><span class="token punctuation">(</span> spnInput <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">ReadSensor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> res <span class="token operator">=</span> <span class="token string">"invalid"</span><span class="token punctuation">,</span> inp <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>spnInput<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">switch</span><span class="token punctuation">(</span> spnType<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Color"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ToColorName</span><span class="token punctuation">(</span> nxt<span class="token punctuation">.</span><span class="token function">ReadColorSensor</span><span class="token punctuation">(</span> inp<span class="token punctuation">,</span> <span class="token string">"ColorDetect"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Distance"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ReadDistanceSensor</span><span class="token punctuation">(</span> inp <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" cm"</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Light"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ReadLightSensor</span><span class="token punctuation">(</span> inp<span class="token punctuation">,</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Mail"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ReadMail</span><span class="token punctuation">(</span> inp<span class="token punctuation">,</span> <span class="token string">"Text"</span><span class="token punctuation">,</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Sound"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ReadSoundSensor</span><span class="token punctuation">(</span> inp<span class="token punctuation">,</span> <span class="token string">"dB"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">case</span> <span class="token string">"Touch"</span><span class="token punctuation">:</span> res <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">ReadTouchSensor</span><span class="token punctuation">(</span> inp <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					<br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> res <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					&#160;&#160;&#160;&#160;<span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"No Value"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				</div>
+			</div>
+
+			
 			<p><br>The following methods are available on the <b>NxtRemote</b> object:</p>
 
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Beep</a>( <a href="#pop_num_hrz" data-transition="pop" data-rel="popup">frequency</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a> )</div>
@@ -46,8 +158,8 @@
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">CheckConnection</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Connect</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )</div>
 			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Disconnect</a>()</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Drive</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">motors</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">power</a>, <a href="#pop_num_flt" data-transition="pop" data-rel="popup">rotations</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">FileFindFirst</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">pattern</a> ) → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Drive</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">motors</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">power</a>, <a href="#pop_num_001" data-transition="pop" data-rel="popup">rotations</a>, <a href="#pop_num_002" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">FileFindFirst</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">pattern</a> ) → <b>unknown</b></div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">FileFindNext</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">handle</a> ) → <b>unknown</b></div>
 			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">GetBtAddress</a>() → <b>string</b></div>
 			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">GetBtName</a>() → <b>string</b></div>
@@ -56,107 +168,102 @@
 			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Nxt”</font></div>
 			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">IsBluetoothEnabled</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">IsConnected</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">IsBluetoothEnabled</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">IsMotorIdle</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">motor</a> )</div>
 			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">IsPaired</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">PlaySoundFile</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a> )</div>
-			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">ReadColorSensor</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>integer:</i> 1..6</div>
-			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">ReadDistanceSensor</a>( <a href="#pop_num_002" data-transition="pop" data-rel="popup">input</a> ) → <b>number:</b> <i>float</i></div>
-			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">ReadLightSensor</a>( <a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">active</a> ) → <b>number:</b> <i>integer</i></div>
-			<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">ReadMail</a>( <a href="#pop_num_004" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">remove</a> ) → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">ReadSoundSensor</a>( <a href="#pop_num_005" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>float</i></div>
-			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">ReadTouchSensor</a>( <a href="#pop_num_006" data-transition="pop" data-rel="popup">input</a> ) → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">RequestEnable</a>()</div>
-			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">Reset</a>( <a href="#pop_str_008" data-transition="pop" data-rel="popup">motors</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SendMail</a>( <a href="#pop_num_007" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_mul_001" data-transition="pop" data-rel="popup">message</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetInvert</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">invert</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetLampColor</a>( <a href="#pop_num_008" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
-			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetOnConnectEx</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetOnConnected</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">ShowDevices</a>()</div>
-			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">StartProgram</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">name</a> )</div>
-			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">Stop</a>( <a href="#pop_str_00a" data-transition="pop" data-rel="popup">motors</a> )</div>
-			<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">StopProgram</a>()</div>
-			<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">ToColorName</a>( <a href="#pop_num_009" data-transition="pop" data-rel="popup">val</a> ) → <b>string:</b> <font class='docstring'>“black”</font> or <font class='docstring'>“blue”</font> or <font class='docstring'>“green”</font> or <font class='docstring'>“yellow”</font> or <font class='docstring'>“red”</font> or <font class='docstring'>“white”</font></div>
+			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">PlaySoundFile</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a> )</div>
+			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">ReadColorSensor</a>( <a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>integer:</i> 1..6 or 0..1023</div>
+			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">ReadDistanceSensor</a>( <a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a> ) → <b>number:</b> <i>float</i></div>
+			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">ReadLightSensor</a>( <a href="#pop_num_005" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">active</a> ) → <b>number:</b> <i>integer:</i> 0..100</div>
+			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">ReadMail</a>( <a href="#pop_num_006" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">remove</a> ) → <b>string</b></div>
+			<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">ReadSoundSensor</a>( <a href="#pop_num_007" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> ) → <b>number:</b> <i>float</i></div>
+			<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">ReadTouchSensor</a>( <a href="#pop_num_008" data-transition="pop" data-rel="popup">input</a> ) → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">RequestEnable</a>()</div>
+			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">Reset</a>( <a href="#pop_str_008" data-transition="pop" data-rel="popup">motors</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">SendMail</a>( <a href="#pop_num_009" data-transition="pop" data-rel="popup">mailbox</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_mul_001" data-transition="pop" data-rel="popup">message</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetInvert</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">invert</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetLampColor</a>( <a href="#pop_num_00a" data-transition="pop" data-rel="popup">input</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">color</a> )</div>
+			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetOnConnected</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">ShowDevices</a>()</div>
+			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">StartProgram</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">name</a> )</div>
+			<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">Stop</a>( <a href="#pop_str_00b" data-transition="pop" data-rel="popup">motors</a> )</div>
+			<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">StopProgram</a>()</div>
+			<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">ToColorName</a>( <a href="#pop_num_00b" data-transition="pop" data-rel="popup">val</a> ) → <b>string:</b> <font class='docstring'>“black”</font> or <font class='docstring'>“blue”</font> or <font class='docstring'>“green”</font> or <font class='docstring'>“yellow”</font> or <font class='docstring'>“red”</font> or <font class='docstring'>“white”</font></div>
 
 			<br>
 		</div>
 
 		<div data-role="popup" id="pop_num_hrz" class="ui-content"><b>number:</b> <i>hertz</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>nxtr.Beep</b><br>play tone with given frequency for a given time in milliseconds</div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>nxtr.Brake</b><br>stop feeding motors with power</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>nxtr.CheckConnection</b><br>check whether phone/tablet wa connected to the NXT</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>nxtr.Beep</b><br>Play tone with given frequency for a given time in milliseconds.</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>nxtr.Brake</b><br>Brakes motors by lowering the input power.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>nxtr.CheckConnection</b><br>Check whether phone/tablet is connected to the NXT.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>nxtr.Connect</b><br>Connects to the Bluetooth device</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>nxtr.Disconnect</b><br>Disconnect NXT from Phone/Tablet</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>nxtr.Connect</b><br>Connects to the NXT device via Bluetooth.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>nxtr.Disconnect</b><br>Disconnect Phone/Tablet from NXT.</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
-		<div data-role="popup" id="pop_num_flt" class="ui-content"><b>number:</b> <i>float</i></div>
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>percent:</i> -100..100</div>
+		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>float:</i> 0 or rotations</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>nxtr.Drive</b><br>commands NXT to drive motors</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>nxtr.FileFindFirst</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>nxtr.FileFindNext</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>nxtr.GetBtAddress</b><br>Returns Bluetooth address of connected NXT brick</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>nxtr.GetBtName</b><br>Returns Bluetooth name of connected NXT</div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>nxtr.GetCurrentProgram</b><br>returns current running program name</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>nxtr.GetRotationCount</b><br>GetRotationCount</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>nxtr.FileFindFirst</b><br>Find the first program file of the NXT.</div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>nxtr.FileFindNext</b><br>Find next program file on the NXT.</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>nxtr.GetBtAddress</b><br>Returns Bluetooth address of a connected NXT brick</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>nxtr.GetBtName</b><br>Returns Bluetooth name of a connected NXT brick</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>nxtr.GetCurrentProgram</b><br>Returns the name of the currently running program.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>nxtr.GetRotationCount</b><br>Returns the wheel encoder value of a motor.</div>
 		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>nxtr.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>nxtr.IsBluetoothEnabled</b><br>IsBluetoothEnabled</div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>nxtr.IsConnected</b><br>IsConnected</div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>nxtr.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>nxtr.IsBluetoothEnabled</b><br>Checks if bluetooth is enabled on the device.</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>nxtr.IsConnected</b><br>Checks if the device is connected to a NXT.</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>nxtr.IsBluetoothEnabled</b><br>Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
 		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>nxtr.IsMotorIdle</b><br>Checks if a motor is currently powered</div>
-		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>nxtr.IsPaired</b><br></div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>nxtr.Method</b><br>Allows access to other functions defined on the object in Java via reflection.</div>
+		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>nxtr.IsPaired</b><br>Checks if a Bluetooth device with a given name is paired with our device.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>nxtr.PlaySoundFile</b><br>PlaySoundFile for given times</div>
-		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>nxtr.PlaySoundFile</b><br>Play a sound file for a given amount of times.</div>
+		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer:</i> 1</div>
 		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“ColorDetect”</font> or <font class='docstring'>“LightSense”</font> or <font class='docstring'>“RedSense”</font> or <font class='docstring'>“GreenSense”</font> or <font class='docstring'>“BlueSense”</font></div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>nxtr.ReadColorSensor</b><br>ReadColorSensor with option: intensity value between 0 and 1023,without options: 1:black,2:blue,3:green,4:yellow,<a href="" onclick="app.ShowPopup('undefined')">5</a>,6:white</div>
-		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>nxtr.ReadDistanceSensor</b><br>ReadDistanceSensor in centimeters</div>
-		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>nxtr.ReadLightSensor</b><br>ReadLightSensor -> value between 0 and 100</div>
-		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Number”</font> or <font class='docstring'>“Logic”</font></div>
-		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>nxtr.ReadMail</b><br>ReadMail</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>nxtr.ReadColorSensor</b><br>Read a color sensor value on the input where the sensor is plugged into.<br><br>In “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.<br>You can use the ToColorName function to convert from these six values to a color name.<br>All other modes return a value between 0 and 1023.</div>
+		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>nxtr.ReadDistanceSensor</b><br>Reads the distance measured by the ultrasonic sensor in centimeters.</div>
 		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“DB”</font> or <font class='docstring'>“DbA”</font></div>
-		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>nxtr.ReadSoundSensor</b><br>ReadSoundSensor</div>
-		<div data-role="popup" id="pop_num_006" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>nxtr.ReadTouchSensor</b><br>ReadTouchSensor</div>
-		<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>nxtr.RequestEnable</b><br>show enable bluetooth dialog when bluetooth disabled</div>
-		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>nxtr.Reset</b><br>Reset motors</div>
-		<div data-role="popup" id="pop_num_007" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>nxtr.ReadLightSensor</b><br>Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.</div>
+		<div data-role="popup" id="pop_num_006" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Number”</font> or <font class='docstring'>“Logic”</font></div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>nxtr.ReadMail</b><br>Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.</div>
+		<div data-role="popup" id="pop_num_007" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('Decibels')">DB</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('A-weighted Decibels')">DbA</a>”</font></div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>nxtr.ReadSoundSensor</b><br>Reads the sound pressure level of the surrounding.</div>
+		<div data-role="popup" id="pop_num_008" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>nxtr.ReadTouchSensor</b><br>Returns whether the touch sensor switch is currently pushed.</div>
+		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>nxtr.RequestEnable</b><br>Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.</div>
+		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
+		<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>nxtr.Reset</b><br>Reset wheel encoder offset to 0.</div>
+		<div data-role="popup" id="pop_num_009" class="ui-content"><b>number:</b> <i>integer:</i> 1..10</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Number”</font> or <font class='docstring'>“Logic”</font></div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>nxtr.SendMail</b><br>SendMail</div>
-		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>nxtr.SetInvert</b><br>inverts direction of motor commands</div>
-		<div data-role="popup" id="pop_num_008" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
-		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>&nbsp;&nbsp;colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
-		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>nxtr.SetLampColor</b><br>?</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>nxtr.SetOnConnect</b><br>called when NXT has successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>nxtr.SendMail</b><br>Sends a message to the NXT brick's mail box.</div>
+		<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>nxtr.SetInvert</b><br>Provides a convenient way to invert the direction of the motor commands.</div>
+		<div data-role="popup" id="pop_num_00a" class="ui-content"><b>number:</b> <i>integer:</i> 1..4</div>
+		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>&nbsp;&nbsp;colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...:</i> <font class='docstring'>““White”</font>” or <font class='docstring'>““Red”</font>” or <font class='docstring'>““Green”</font>” or <font class='docstring'>““Blue”</font>” or <font class='docstring'>““Off”</font>”</div>
+		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>nxtr.SetLampColor</b><br>Changes the color sensor LED to one color of “White”, “Red”, “Green”, “Blue” or “Off”</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('boolean')">connected</a>)</div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>nxtr.SetOnConnect</b><br>Define a callback function which is called when the NXT has been connected via Bluetooth or if it failed to.</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>nxtr.SetOnConnectEx</b><br>called when NXT has successfully connected via Bluetooth</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>nxtr.SetOnConnected</b><br>called when NXT has successfully connected via Bluetooth</div>
-		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>nxtr.ShowDevices</b><br>show paired NXT list to connect to one via bluetooth</div>
-		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>nxtr.StartProgram</b><br>StartProgram</div>
-		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font></div>
-		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>nxtr.Stop</b><br>Stop</div>
-		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>nxtr.StopProgram</b><br>StopProgram</div>
-		<div data-role="popup" id="pop_num_009" class="ui-content"><b>number:</b> <i>integer:</i> 1..6</div>
-		<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>nxtr.ToColorName</b><br>convert color integer got via ReadColorSensor to color name</div>
+		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>nxtr.SetOnConnected</b><br>Define a callback function which is called when the NXT has been successfully connected via Bluetooth</div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>nxtr.ShowDevices</b><br>Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.</div>
+		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>nxtr.StartProgram</b><br>Starts an NXT-G program on the NXT brick if available.</div>
+		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font>, <font class='docstring'>“B”</font>, <font class='docstring'>“C”</font> or <font class='docstring'>“ABC”</font></div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>nxtr.Stop</b><br>Stop powering some motors.</div>
+		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>nxtr.StopProgram</b><br>Stops a the currently running NXT-G program.</div>
+		<div data-role="popup" id="pop_num_00b" class="ui-content"><b>number:</b> <i>integer:</i> 1..6</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>nxtr.ToColorName</b><br>Converts a color integer received from ReadColorSensor to a meaningful color name.</div>
 	</div>
 </body>
 
