@@ -24,7 +24,7 @@
 		"shortDesc": "Shows a popup message with an 'OK' button to exit"
 	},
 	"Animate": {
-		"desc": "Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.\nwhen using _AddOptions( “NoDom” ); to cause a high performance you cannot use SetInterval but Animate.\n\ncomparison:\n\nnormal:\n\tsetInterval: about 242 calls per second\n\tapp.animate: about 217 calls per second\n\nwith “NoDom” option:\n\tsetInterval: error\n\tapp.Animate: up to 1000 calls per second",
+		"desc": "Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.\nwhen using _AddOptions( “NoDom” ); to cause a high performance you cannot use SetInterval but Animate.\n\ncomparison:\n\nnormal:\n\tsetInterval&colon; about 242 calls per second\n\tapp.animate&colon; about 217 calls per second\n\nwith “NoDom” option:\n\tsetInterval&colon; error\n\tapp.Animate&colon; up to 1000 calls per second",
 		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["callback", "fps"],
@@ -134,12 +134,12 @@
 		"isfunc": true,
 		"name": "ChooseImage",
 		"pNames": ["options", "callback"],
-		"pTypes": ["str_com-internal|external|", {
+		"pTypes": ["str_com-|internal|external", {
 				"desc": "callback",
 				"isfunc": true,
 				"name": "callback",
 				"pNames": ["path"],
-				"pTypes": ["str_path"],
+				"pTypes": ["str_pth"],
 				"shortDesc": "callback"
 			}],
 		"shortDesc": "Let the user choose an image"
@@ -224,7 +224,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "lst-[frequencies:num_int]",
-				"shortDesc": "returns a new list of frequency values"
+				"shortDesc": "Returns a new list of frequency values"
 			},
 			"GetPeak": {
 				"desc": "Returns the PMPO value (Peak music power output).",
@@ -303,7 +303,7 @@
 		"pNames": ["filter"],
 		"pTypes": ["str"],
 		"retval": "BluetoothList",
-		"shortDesc": "returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
+		"shortDesc": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -568,7 +568,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
 		"retval": "CameraView",
-		"shortDesc": "returns a new CameraView object to access the device camera",
+		"shortDesc": "Returns a new CameraView object to access the device camera",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"AutoCapture": {
@@ -586,7 +586,7 @@
 				"name": "FindFaces",
 				"pNames": ["maxCount"],
 				"pTypes": ["num_int"],
-				"retval": "obj-{confidence:num_frc, eyeDistance:num, midPoint:obj:{x:num, y:num}, pose:num_int}",
+				"retval": "obj-{ confidence:num_frc&comma; eyeDistance:num&comma; midPoint:obj:{x:num&comma; y:num}&comma; pose:num_int }",
 				"shortDesc": "Find faces in the current camera view"
 			},
 			"Focus": "#7324472769",
@@ -608,7 +608,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
-				"shortDesc": "returns a new list of available color effects"
+				"shortDesc": "Returns a new list of available color effects"
 			},
 			"GetHeight": "#2576212953",
 			"GetImageHeight": {
@@ -656,7 +656,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_com-w1 x h1\\,w2 x h2\\,...",
-				"shortDesc": "returns a new list of possible picture dimensions"
+				"shortDesc": "Returns a new list of possible picture dimensions"
 			},
 			"GetPixelData": {
 				"desc": "Returns the pixel data of the current camery view in a base64 encoded raw bitmap, png or jpg format.",
@@ -777,12 +777,12 @@
 				"shortDesc": "En-/Disables the camera flash"
 			},
 			"SetFocusMode": {
-				"desc": "?",
+				"desc": "Change the cameras focus mode depending on the purpose.",
 				"isfunc": true,
 				"name": "SetFocusMode",
 				"pNames": ["mode"],
 				"pTypes": ["str-Auto|Picture:for taking pictures|Video:for recording videos|Macro|EDOF:Extended Depth Of Field for continuous digital focusing|Fixed|Infinity"],
-				"shortDesc": ""
+				"shortDesc": "Change focus mode"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnFocus": "#9283752301",
@@ -941,7 +941,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CheckBox",
-		"shortDesc": "returns a new CheckBox object",
+		"shortDesc": "Returns a new CheckBox object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -1034,7 +1034,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
 		"retval": "CodeEdit",
-		"shortDesc": "returns a new CodeEdit object",
+		"shortDesc": "Returns a new CodeEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -1333,7 +1333,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
 		"retval": "Crypt",
-		"shortDesc": "returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
+		"shortDesc": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
 			"Decrypt": {
 				"desc": "Decrypt text with a key.",
@@ -1388,7 +1388,7 @@
 		"pNames": ["title", "options"],
 		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"retval": "Dialog",
-		"shortDesc": "returns a new Dialog object to display messages",
+		"shortDesc": "Returns a new Dialog object to display messages",
 		"subf": {
 			"AddLayout": {
 				"desc": "Add the content layout to the dialog.",
@@ -1510,7 +1510,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoDialog|Light"],
 		"retval": "Downloader",
-		"shortDesc": "returns a new Downloader object",
+		"shortDesc": "Returns a new Downloader object",
 		"subf": {
 			"Download": {
 				"desc": "Start downloading a file.",
@@ -1681,7 +1681,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["data"],
-						"pTypes": ["obj-{ from:str_eml, to:str_eml, cc:str_eml, subject:str, body:str }"],
+						"pTypes": ["obj-{ from:str_eml&comma; to:str_eml&comma; cc:str_eml&comma; subject:str&comma; body:str }"],
 						"shortDesc": "callback"
 					}
 				],
@@ -1709,7 +1709,7 @@
 				"isfunc": true,
 				"name": "SetSMTP",
 				"pNames": ["server", "port"],
-				"pTypes": ["str-smtp.gmail.com:google,smtp.mail.yahoo.com:yahoo,mail.gmx.net:gmx", "num_int-465:SSL|578:TLS (gmail, yahoo)|587:gmx"],
+				"pTypes": ["str-smtp.gmail.com:google,smtp.mail.yahoo.com:yahoo,mail.gmx.net:gmx", "num_int-465:SSL|578:TLS (gmail&comma; yahoo)|587:gmx"],
 				"shortDesc": "Set SMTP settings for sending messages"
 			}
 		}
@@ -1722,7 +1722,7 @@
 		"pNames": ["file", "mode"],
 		"pTypes": ["str_pth", "str-r|w|rw"],
 		"retval": "File",
-		"shortDesc": "returns a new File object",
+		"shortDesc": "Returns a new File object",
 		"subf": {
 			"Close": {
 				"desc": "Close File",
@@ -1780,7 +1780,7 @@
 				"isfunc": true,
 				"name": "ReadText",
 				"pNames": ["type"],
-				"pTypes": ["str-UTF:read UTF-8 string with 2 byte header,Line:read one line terminated by “\n”, “\r” or “\r\n”|Char:read big-endian 16-bit character"],
+				"pTypes": ["str-UTF:read UTF-8 string with 2 byte header,Line:\"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n\"|Char:read big-endian 16-bit character"],
 				"retval": "str",
 				"shortDesc": "Read data as text"
 			},
@@ -1789,7 +1789,7 @@
 				"isfunc": true,
 				"name": "ReadTextAsync",
 				"pNames": ["type", "callback"],
-				"pTypes": ["str-Line:read one line terminated by “\n”, “\r” or “\r\n”|Char:read big-endian 16-bit character", {
+				"pTypes": ["str-Line:\"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n\"|Char:read big-endian 16-bit character", {
 					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
@@ -1851,7 +1851,7 @@
 	},
 	"CreateGame": {
 		"abbrev": "gam",
-		"desc": "CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.\nYou can still access the GameView and the layout where it was added to via gam.game:dso-CreateGameView and gam.lay:dso-CreateLayout",
+		"desc": "CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.\nYou can still access the GameView and the layout where it was added to via gam.game:dso-\"CreateGameView\" and gam.lay:dso-CreateLayout",
 		"isfunc": true,
 		"name": "CreateGame",
 		"pNames": ["file", "orient"],
@@ -1953,7 +1953,7 @@
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
 		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "Image",
-		"shortDesc": "returns a new Image object",
+		"shortDesc": "Returns a new Image object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Clear": {
@@ -2118,7 +2118,7 @@
 				"name": "MeasureText",
 				"pNames": ["txt"],
 				"pTypes": ["str"],
-				"retval": "obj-{ width:num_frc, height:num_frc }",
+				"retval": "obj-{ width:num_frc&comma; height:num_frc }",
 				"shortDesc": "Measures the size of a given text"
 			},
 			"Method": "#1023663567",
@@ -2195,7 +2195,7 @@
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetImage": {
-				"desc": "Set the content to an image:dso-CreateImage control or specify a path to an image which will then be loaded.",
+				"desc": "Set the content to an image:dso-\"CreateImage\" control or specify a path to an image which will then be loaded.",
 				"isfunc": true,
 				"name": "SetImage",
 				"pNames": ["image", "width", "height", "options"],
@@ -2331,7 +2331,7 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
 		"retval": "Layout",
-		"shortDesc": "returns a new Layout object",
+		"shortDesc": "Returns a new Layout object",
 		"subf": {
 			"AddChild": {
 				"desc": "Adds a control to the layout.",
@@ -2488,7 +2488,7 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
 		"retval": "List",
-		"shortDesc": "returns a new List object",
+		"shortDesc": "Returns a new List object",
 		"subf": {
 			"AddItem": {
 				"desc": "Adds an entry to the list.",
@@ -2510,7 +2510,7 @@
 				"name": "GetItem",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"retval": "obj-{ title:str, body:str, image:str_pth }",
+				"retval": "obj-{ title:str&comma; body:str&comma; image:str_pth }",
 				"shortDesc": "Returns item data by a title."
 			},
 			"GetItemByIndex": {
@@ -2519,7 +2519,7 @@
 				"name": "GetItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"retval": "obj-{ title:str, body:str, image:str_pth }",
+				"retval": "obj-{ title:str&comma; body:str&comma; image:str_pth }",
 				"shortDesc": "Returns item data by an index."
 			},
 			"GetLeft": "#1237814406",
@@ -2538,7 +2538,7 @@
 				"name": "GetList",
 				"pNames": ["delim"],
 				"pTypes": ["str"],
-				"retval": "lst-[{ title:str, body:str, image:str_pth }]",
+				"retval": "lst-[{ title:str&comma; body:str&comma; image:str_pth }]",
 				"shortDesc": "Returns the whole list as object"
 			},
 			"GetParent": "#3557841648",
@@ -2795,7 +2795,7 @@
 		"pNames": ["title", "list", "options"],
 		"pTypes": ["str", "str", "str_com-Multi|?"],
 		"retval": "ListDialog",
-		"shortDesc": "returns a new ListDialog object",
+		"shortDesc": "Returns a new ListDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Dismiss": "#1924613953",
@@ -2850,7 +2850,7 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str_com-GPS,Network", "str_com"],
 		"retval": "Locator",
-		"shortDesc": "returns a new Locator object",
+		"shortDesc": "Returns a new Locator object",
 		"subf": {
 			"GetBearingTo": {
 				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.",
@@ -2890,7 +2890,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["data", "time"],
-						"pTypes": ["obj-{ provider:str, latitude:num, longitude:num, speed:num, bearing:num, altitude:num, accuracy:num_met }", "num_mls"],
+						"pTypes": ["obj-{ provider:str&comma; latitude:num&comma; longitude:num&comma; speed:num&comma; bearing:num&comma; altitude:num&comma; accuracy:num_met }", "num_mls"],
 						"shortDesc": "callback"
 					}
 				],
@@ -2930,7 +2930,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "MediaPlayer",
-		"shortDesc": "returns a new MediaPlayer object",
+		"shortDesc": "Returns a new MediaPlayer object",
 		"subf": {
 			"Close": {
 				"desc": "Close the media player and thus make it unuseable for further use.",
@@ -3100,7 +3100,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "MediaStore",
-		"shortDesc": "returns a new MediaStore object",
+		"shortDesc": "Returns a new MediaStore object",
 		"subf": {
 			"GetAlbumArt": {
 				"desc": "Loads the album image to an existing image:dso-CreateImage.",
@@ -3164,7 +3164,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["lst-[{ album:str, id:num_int, albumArt:str_pth, artist:str, numSongs:num_int, firstYear:str, lastYear:str }]"],
+						"pTypes": ["lst-[{ album:str&comma; id:num_int&comma; albumArt:str_pth&comma; artist:str&comma; numSongs:num_int&comma; firstYear:str&comma; lastYear:str }]"],
 						"shortDesc": "callback"
 					}
 				],
@@ -3181,7 +3181,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["lst-[{ id:num_int, artist:str, numAlbums:num_int, numTracks:num_int }]"],
+						"pTypes": ["lst-[{ id:num_int&comma; artist:str&comma; numAlbums:num_int&comma; numTracks:num_int }]"],
 						"shortDesc": "callback"
 					}
 				],
@@ -3198,7 +3198,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["result"],
-						"pTypes": ["lst-[{ title:str, id:num_int, duration:num_mls, size:num_byt, uri:str, album:str, albumID:num_int, artist:str, artistId:num_int }]"],
+						"pTypes": ["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"],
 						"shortDesc": "callback"
 					}
 				],
@@ -3214,7 +3214,7 @@
 		"pNames": ["type"],
 		"pTypes": ["str-UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message"],
 		"retval": "NetClient",
-		"shortDesc": "returns a new NetClient object",
+		"shortDesc": "Returns a new NetClient object",
 		"subf": {
 			"AutoReceive": {
 				"desc": "Receive TCP received data automatically by calling the OnReceive callback.",
@@ -3332,7 +3332,7 @@
 				"isfunc": true,
 				"name": "SendBytes",
 				"pNames": ["data", "mode"],
-				"pTypes": ["lst-[ bytes:num_byt ]||str_com-bytes:hexadecimal 00..FF", "str-Int|Hex"],
+				"pTypes": ["lst-[ bytes:num_byt ]||str_com-bytes:hexadecimal 00&period;&period;FF", "str-Int|Hex"],
 				"shortDesc": "Send bytes over TCP"
 			},
 			"SendDatagram": {
@@ -3428,7 +3428,7 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen"],
 		"retval": "Notification",
-		"shortDesc": "returns a new Notification object",
+		"shortDesc": "Returns a new Notification object",
 		"subf": {
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
@@ -3497,7 +3497,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "Nxt",
-		"shortDesc": "returns a new Nxt object",
+		"shortDesc": "Returns a new Nxt object",
 		"subf": {
 			"Beep": {
 				"desc": "Play tone with given frequency for a given time in milliseconds.",
@@ -3600,369 +3600,7 @@
 				"pNames": ["motor"],
 				"pTypes": ["str-A,B,C|ABC"],
 				"retval": "num_int",
-				"shortDesc": "returns a new wheel encoder value."
-			},
-			"GetType": {
-				"desc": "Returns the control class name.",
-				"isfunc": true,
-				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str-Nxt",
-				"shortDesc": "Returns the control class name"
-			},
-			"IsBluetoothEnabled": {
-				"desc": "Checks if bluetooth is enabled on the device.",
-				"isfunc": true,
-				"name": "IsBluetoothEnabled",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "bin",
-				"shortDesc": "Returns whether bt is enabled"
-			},
-			"IsConnected": {
-				"desc": "Checks if the device is connected to a NXT.",
-				"isfunc": true,
-				"name": "IsConnected",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "bin",
-				"shortDesc": "Returns whether NXT is connected"
-			},
-			"IsEnabled": {
-				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
-				"isfunc": true,
-				"name": "IsBluetoothEnabled",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "bin",
-				"shortDesc": "Returns whether bt is enabled"
-			},
-			"IsMotorIdle": {
-				"desc": "Checks if a motor is currently powered",
-				"isfunc": true,
-				"name": "IsMotorIdle",
-				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Check if a motor is powered"
-			},
-			"IsPaired": {
-				"desc": "Checks if a Bluetooth device with a given name is paired with our device.",
-				"isfunc": true,
-				"name": "IsPaired",
-				"pNames": ["name"],
-				"pTypes": ["str"],
-				"retval": "bin",
-				"shortDesc": "Checks if the device is paired with an other"
-			},
-			"PlaySoundFile": {
-				"desc": "Play a sound file for a given amount of times.",
-				"isfunc": true,
-				"name": "PlaySoundFile",
-				"pNames": ["file", "repeat"],
-				"pTypes": ["str_pth", "num_int"],
-				"shortDesc": "Play a sound file"
-			},
-			"ReadColorSensor": {
-				"desc": "Read a color sensor value on the input where the sensor is plugged into.\n\nIn “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.\nYou can use the ToColorName function to convert from these six values to a color name.\nAll other modes return a value between 0 and 1023.",
-				"isfunc": true,
-				"name": "ReadColorSensor",
-				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6 or 0..1023",
-				"shortDesc": "Read a color sensor value"
-			},
-			"ReadDistanceSensor": {
-				"desc": "Reads the distance measured by the ultrasonic sensor in centimeters.",
-				"isfunc": true,
-				"name": "ReadDistanceSensor",
-				"pNames": ["input"],
-				"pTypes": ["num_int-1..4"],
-				"retval": "num_flt",
-				"shortDesc": "Get measured ultrasinic distance in cm"
-			},
-			"ReadLightSensor": {
-				"desc": "Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.",
-				"isfunc": true,
-				"name": "ReadLightSensor",
-				"pNames": ["input", "active"],
-				"pTypes": ["num_int-1..4", "bin"],
-				"retval": "num_int-0..100",
-				"shortDesc": "Measures the light intensity"
-			},
-			"ReadMail": {
-				"desc": "Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.",
-				"isfunc": true,
-				"name": "ReadMail",
-				"pNames": ["mailbox", "type", "remove"],
-				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "bin"],
-				"retval": "str",
-				"shortDesc": "Reads a message from the NXT brick's mail box"
-			},
-			"ReadSoundSensor": {
-				"desc": "Reads the sound pressure level of the surrounding.",
-				"isfunc": true,
-				"name": "ReadSoundSensor",
-				"pNames": ["input", "mode"],
-				"pTypes": ["num_int-1..4", "str-DB:Decibels|DbA:A-weighted Decibels"],
-				"retval": "num_flt",
-				"shortDesc": "Measure the sound pressure level"
-			},
-			"ReadTouchSensor": {
-				"desc": "Returns whether the touch sensor switch is currently pushed.",
-				"isfunc": true,
-				"name": "ReadTouchSensor",
-				"pNames": ["input"],
-				"pTypes": ["num_int-1..4"],
-				"retval": "bin",
-				"shortDesc": "Check if the touch sensor is pressed"
-			},
-			"RequestEnable": {
-				"desc": "Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.",
-				"isfunc": true,
-				"name": "RequestEnable",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Request enabling bluetooth if it isn't"
-			},
-			"Reset": {
-				"desc": "Reset wheel encoder offset to 0.",
-				"isfunc": true,
-				"name": "Reset",
-				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Reset wheel encoder offset to 0."
-			},
-			"SendMail": {
-				"desc": "Sends a message to the NXT brick's mail box.",
-				"isfunc": true,
-				"name": "SendMail",
-				"pNames": ["mailbox", "type", "message"],
-				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "str||num_int"],
-				"shortDesc": "Sends a message to the NXT brick's mail box."
-			},
-			"SetInvert": {
-				"desc": "Provides a convenient way to invert the direction of the motor commands.",
-				"isfunc": true,
-				"name": "SetInvert",
-				"pNames": ["invert"],
-				"pTypes": ["bin"],
-				"shortDesc": "Inverts the direction of motor commands"
-			},
-			"SetLampColor": {
-				"desc": "Changes the color sensor LED to one color of “White”, “Red”, “Green”, “Blue” or “Off”",
-				"isfunc": true,
-				"name": "SetLampColor",
-				"pNames": ["input", "color"],
-				"pTypes": ["num_int-1..4", "str_col-“White”|“Red”|“Green”|“Blue”|“Off”"],
-				"shortDesc": "Change sensor LED color"
-			},
-			"SetOnConnect": {
-				"desc": "Define a callback function which is called when the NXT has been connected via Bluetooth or if it failed to.",
-				"isfunc": true,
-				"name": "SetOnConnect",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["connected"],
-						"pTypes": ["bin"],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": "Called when NXT connection established or failed"
-			},
-			"SetOnConnected": {
-				"desc": "Define a callback function which is called when the NXT has been successfully connected via Bluetooth",
-				"isfunc": true,
-				"name": "SetOnConnected",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": "Called when bt connection established"
-			},
-			"SetOnConnectEx": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
-				"isfunc": true,
-				"name": "SetOnConnectEx",
-				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
-			},
-			"ShowDevices": {
-				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
-				"isfunc": true,
-				"name": "ShowDevices",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Shows a list of paired NXT devices to connect to"
-			},
-			"StartProgram": {
-				"desc": "Starts an NXT-G program on the NXT brick if available.",
-				"isfunc": true,
-				"name": "StartProgram",
-				"pNames": ["name"],
-				"pTypes": ["str_pth"],
-				"shortDesc": "Starts an NXT-G program"
-			},
-			"Stop": {
-				"desc": "Stop powering some motors.",
-				"isfunc": true,
-				"name": "Stop",
-				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Stop powering some motors."
-			},
-			"StopProgram": {
-				"desc": "Stops a the currently running NXT-G program.",
-				"isfunc": true,
-				"name": "StopProgram",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Stops the current running program"
-			},
-			"ToColorName": {
-				"desc": "Converts a color integer received from ReadColorSensor to a meaningful color name.",
-				"isfunc": true,
-				"name": "ToColorName",
-				"pNames": ["val"],
-				"pTypes": ["num_int-1..6"],
-				"retval": "str-black|blue|green|yellow|red|white",
-				"shortDesc": "Convert color number to its name"
-			}
-		}
-	},
-	"CreateNxtRemote": {
-		"abbrev": "nxtr",
-		"desc": "The NXTRemote object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.",
-		"isfunc": true,
-		"name": "CreateNxtRemote",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "NxtRemote",
-		"shortDesc": "returns a new NxtRemote object",
-		"subf": {
-            "Beep": {
-				"desc": "Play tone with given frequency for a given time in milliseconds.",
-				"isfunc": true,
-				"name": "Beep",
-				"pNames": ["frequency", "duration"],
-				"pTypes": ["num_hrz", "num_mls"],
-				"shortDesc": "Play frequency tone"
-			},
-			"Brake": {
-				"desc": "Brakes motors by lowering the input power.",
-				"isfunc": true,
-				"name": "Brake",
-				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Brakes motors smoothly"
-			},
-			"CheckConnection": {
-				"desc": "Check whether phone/tablet is connected to the NXT.",
-				"isfunc": true,
-				"name": "CheckConnection",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "bin",
-				"shortDesc": "Check if device is connected to NXT"
-			},
-			"Connect": {
-				"desc": "Connects to the NXT device via Bluetooth.",
-				"isfunc": true,
-				"name": "Connect",
-				"pNames": ["name"],
-				"pTypes": ["str"],
-				"shortDesc": "Connect to NXT"
-			},
-			"Disconnect": {
-				"desc": "Disconnect Phone/Tablet from NXT.",
-				"isfunc": true,
-				"name": "Disconnect",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Disconnect NXT"
-			},
-			"Drive": {
-				"desc": "commands NXT to drive motors",
-				"isfunc": true,
-				"name": "Drive",
-				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A,B,C|ABC", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
-				"shortDesc": ""
-			},
-			"FileFindFirst": {
-				"desc": "Find the first program file of the NXT.",
-				"isfunc": true,
-				"name": "FileFindFirst",
-				"pNames": ["pattern"],
-				"pTypes": ["str"],
-				"retval": "?",
-				"shortDesc": "Find first program file"
-			},
-			"FileFindNext": {
-				"desc": "Find next program file on the NXT.",
-				"isfunc": true,
-				"name": "FileFindNext",
-				"pNames": ["handle"],
-				"pTypes": ["?"],
-				"retval": "?",
-				"shortDesc": "Find next program"
-			},
-			"GetBtAddress": {
-				"desc": "Returns Bluetooth address of a connected NXT brick",
-				"isfunc": true,
-				"name": "GetBtAddress",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str",
-				"shortDesc": "Returns NXT Bt address"
-			},
-			"GetBtName": {
-				"desc": "Returns Bluetooth name of a connected NXT brick",
-				"isfunc": true,
-				"name": "GetBtName",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str",
-				"shortDesc": "Returns NXT Bt name"
-			},
-			"GetCurrentProgram": {
-				"desc": "Returns the name of the currently running program.",
-				"isfunc": true,
-				"name": "GetCurrentProgram",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str",
-				"shortDesc": "Returns the current running program name"
-			},
-			"GetRotationCount": {
-				"desc": "Returns the wheel encoder value of a motor.",
-				"isfunc": true,
-				"name": "GetRotationCount",
-				"pNames": ["motor"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"retval": "num_int",
-				"shortDesc": "returns a new wheel encoder value."
+				"shortDesc": "Returns a new wheel encoder value."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4259,13 +3897,13 @@
 	},
 	"CreatePhoneState": {
 		"abbrev": "pst",
-		"desc": "The PhoneState component is able to detect phone state changes.\n\nThe callback data depends on the type:\n\n<smp>“CellLocation” : **object:** { cellId:num\\_int, areaCode:num\\_int }</smp>\n<smp>“DataConnection” : **object:** { state:str-Connected|Disconnected, networkType:str-Unknown }</smp>\n<smp>“DataActivity” : **unknown**</smp>\n<smp>“CallState” : **object:** { state:str-Idle, number:str\\_num }</smp>\n<smp>“ServiceState” : **string:** “OutOfService”</smp>\n<smp>“SignalStrength” : **number:** _float_</smp>\n<smp>“CallForwarding” : **boolean**</smp>\n<smp>“MessageWaiting” : **boolean**</smp>",
+		"desc": "The PhoneState component is able to detect phone state changes.\n\nThe callback data depends on the type:\n\n<smp>“CellLocation” : **object:** { cellId:num\\_int, areaCode:num\\_int }</smp>\n<smp>“DataConnection” : **object:** { state:str-\"Connected|Disconnected\", networkType:str-Unknown }</smp>\n<smp>“DataActivity” : **unknown**</smp>\n<smp>“CallState” : **object:** { state:str-Idle, number:str\\_num }</smp>\n<smp>“ServiceState” : **string:** “OutOfService”</smp>\n<smp>“SignalStrength” : **number:** _float_</smp>\n<smp>“CallForwarding” : **boolean**</smp>\n<smp>“MessageWaiting” : **boolean**</smp>",
 		"isfunc": true,
 		"name": "CreatePhoneState",
 		"pNames": ["types"],
 		"pTypes": ["str-CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting"],
 		"retval": "PhoneState",
-		"shortDesc": "returns a new PhoneState object",
+		"shortDesc": "Returns a new PhoneState object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4313,52 +3951,46 @@
 	},
 	"CreatePlayStore": {
 		"abbrev": "pls",
-		"desc": "PlayStore\n\n<premium>",
+		"desc": "Creates a new PlayStore instance for retreiving informations or purchasing items.\n\n<premium>\n\nNotes: If your email address is listed in the 'licence testing' section of the developer console settings page, then using this sample will result in a test subscription with an order id of '1234' which recurs daily (even if configured for monthly) and you will not be charged.\nSubscriptions can be cancelled in the Google Play App found on your device (they will stay active for the remains of the period that has been purchased).",
 		"isfunc": true,
 		"name": "CreatePlayStore",
 		"pNames": [],
 		"pTypes": [],
 		"retval": "PlayStore",
-		"shortDesc": "returns a new PlayStore object",
+		"shortDesc": "Returns a new PlayStore object",
 		"subf": {
 			"GetBillingInfo": {
-				"desc": "",
+				"desc": "Get product info of paid items from Google Play.",
 				"isfunc": true,
 				"name": "GetBillingInfo",
 				"pNames": ["prodIDs", "callback", "options"],
 				"pTypes": ["str", {
-						"abbrev": "",
 						"desc": "callback function",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback",
-						"subf": {}
-					}, "str-SUBS"],
-				"retval": "?",
-				"shortDesc": ""
+						"pNames": ["items"],
+						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"],
+						"shortDesc": "callback"
+					}, "str-IAP:In-App purchases|SUBS:subscriptions"],
+				"shortDesc": "Get product info from Google Play."
 			},
 			"GetPurchases": {
-				"desc": "",
+				"desc": "Get product info of purchased items from Google Play.",
 				"isfunc": true,
 				"name": "GetPurchases",
 				"pNames": ["callback", "options"],
 				"pTypes": [
 					{
-						"abbrev": "",
 						"desc": "callback function",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback",
-						"subf": {}
+                        "pNames": ["items"],
+						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"],
+						"shortDesc": "callback"
 					},
 					"str-SUBS"
 				],
-				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Get purchased items from Google Play."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4369,9 +4001,8 @@
 				"retval": "str-PlayStore",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"Purchase": {
-				"desc": "?",
+				"desc": "Purchase an item on Google Play.",
 				"isfunc": true,
 				"name": "Purchase",
 				"pNames": ["prodID", "token", "callback", "options"],
@@ -4380,12 +4011,12 @@
 						"desc": "callback function",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
+						"pTypes": ["str", "str", "str", "str", "str"],
 						"shortDesc": "callback",
 						"subf": {}
 					}, "str-SUBS"],
-				"shortDesc": ""
+				"shortDesc": "Purchase an item on Google Play."
 			}
 		}
 	},
@@ -4397,7 +4028,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
 		"retval": "Scroller",
-		"shortDesc": "returns a new Scroller object",
+		"shortDesc": "Returns a new Scroller object",
 		"subf": {
 			"AddChild": {
 				"desc": "Add a layout to the scroller.",
@@ -4405,7 +4036,7 @@
 				"name": "AddChild",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"],
-				"shortDesc": "Add a (layout) control"
+				"shortDesc": "Add a layout control"
 			},
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -4415,7 +4046,7 @@
 				"name": "DestroyChild",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"],
-				"shortDesc": "Remove a child and destroy the world. Why even trying to create something new"
+				"shortDesc": "Devil rises and takes a child with him to hell"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -4425,7 +4056,7 @@
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetScrollX": {
-				"desc": "Get horizontal scroll bar position.",
+				"desc": "Returns the horizontal scroll bar position.",
 				"isfunc": true,
 				"name": "GetScrollX",
 				"pNames": [],
@@ -4434,7 +4065,7 @@
 				"shortDesc": "Get horizontal scroll bar position"
 			},
 			"GetScrollY": {
-				"desc": "Get vertical scroll bar position.",
+				"desc": "Returns the vertical scroll bar position.",
 				"isfunc": true,
 				"name": "GetScrollY",
 				"pNames": [],
@@ -4461,7 +4092,7 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"RemoveChild": {
-				"desc": "Remove a scroller layout.",
+				"desc": "Removes a scroller layout from the scroller.",
 				"isfunc": true,
 				"name": "RemoveChild",
 				"pNames": ["child"],
@@ -4474,7 +4105,7 @@
 				"name": "ScrollBy",
 				"pNames": ["x", "y"],
 				"pTypes": ["num_frc", "num_frc"],
-				"shortDesc": "Scroll relative to the current scroll position"
+				"shortDesc": "Scroll relative to the current position"
 			},
 			"ScrollTo": {
 				"desc": "Scrolls to a given fixed position.",
@@ -4482,7 +4113,7 @@
 				"name": "ScrollTo",
 				"pNames": ["x", "y"],
 				"pTypes": ["num_frc", "num_frc"],
-				"shortDesc": "Scrolls to a given fixed position"
+				"shortDesc": "Scrolls to a given position"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -4509,7 +4140,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "SeekBar",
-		"shortDesc": "returns a new SeekBar object",
+		"shortDesc": "Returns a new SeekBar object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -4531,13 +4162,13 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"GetValue": {
-				"desc": "returns current value",
+				"desc": "Returns the current value of the seek bar.",
 				"isfunc": true,
 				"name": "GetValue",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num",
+				"shortDesc": "Get current value"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4556,33 +4187,33 @@
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetMaxRate": {
-				"desc": "SetMaxRate",
+				"desc": "Change the minimum timeout in milliseconds between two OnChange calls.",
 				"isfunc": true,
 				"name": "SetMaxRate",
 				"pNames": ["rate"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Set rate of OnChange calls"
 			},
 			"SetOnChange": "#2137502353",
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetRange": {
-				"desc": "SetRange",
+				"desc": "Change the value which represents 100% of the seek bar. Default is 100",
 				"isfunc": true,
 				"name": "SetRange",
 				"pNames": ["range"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num"],
+				"shortDesc": "Set value range."
 			},
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetValue": {
-				"desc": "SetValue",
+				"desc": "Change the current seekbar value in the defined range.",
 				"isfunc": true,
 				"name": "SetValue",
 				"pNames": ["val"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num"],
+				"shortDesc": "Set current seekbar value"
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -4597,16 +4228,16 @@
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
 		"retval": "Sensor",
-		"shortDesc": "returns a new Sensor object",
+		"shortDesc": "Returns a new Sensor object",
 		"subf": {
 			"GetAzimuth": {
-				"desc": "",
+				"desc": "Returns the first/x/azimuth value of a sensor.",
 				"isfunc": true,
 				"name": "GetAzimuth",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num",
+				"shortDesc": "Get first value of a sensor"
 			},
 			"GetNames": {
 				"desc": "Returns a list of builtin sensors in your device.",
@@ -4615,25 +4246,25 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_com",
-				"shortDesc": "returns a new list of builtin sensors"
+				"shortDesc": "Returns a list of builtin sensors"
 			},
 			"GetPitch": {
-				"desc": "",
+				"desc": "Returns the second/y/pitch value of a sensor.",
 				"isfunc": true,
 				"name": "GetPitch",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num",
+				"shortDesc": "Get second value of a sensor"
 			},
 			"GetRoll": {
-				"desc": "",
+				"desc": "Returns the third/z/roll value of a sensor.",
 				"isfunc": true,
 				"name": "GetRoll",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num",
+				"shortDesc": "Get third value of a sensor"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4645,33 +4276,33 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"GetValues": {
-				"desc": "",
+				"desc": "Returns all values of a sensor.",
 				"isfunc": true,
 				"name": "GetValues",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "lst-[ first:num, second:num, third:num ]",
+				"shortDesc": "Get all values from sensor"
 			},
 			"Method": "#1023663567",
 			"SetMaxRate": {
-				"desc": "",
+				"desc": "Define a minimum timeout between two OnChage calls.",
 				"isfunc": true,
 				"name": "SetMaxRate",
 				"pNames": ["rate"],
-				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Set maximum OnChange rate"
 			},
 			"SetMinChange": {
-				"desc": "",
+				"desc": "Define a minimum threshold value which triggers a OnChange call.",
 				"isfunc": true,
 				"name": "SetMinChange",
 				"pNames": ["min"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num"],
+				"shortDesc": "Set minimum value difference which triggers OnChange"
 			},
 			"SetOnChange": {
-				"desc": "",
+				"desc": "Define a callback function which is called when a sensor value has changed.",
 				"isfunc": true,
 				"name": "SetOnChange",
 				"pNames": ["callback"],
@@ -4680,28 +4311,28 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["first", "second", "third", "time"],
+						"pTypes": ["num", "num", "num", "num_mls"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when a sensor value has changed"
 			},
 			"Start": {
-				"desc": "",
+				"desc": "Start reading from the sensor.",
 				"isfunc": true,
 				"name": "Start",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start the sensor"
 			},
 			"Stop": {
-				"desc": "",
+				"desc": "Stop reading from the sensor.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop the sensor"
 			}
 		}
 	},
@@ -4711,7 +4342,7 @@
 		"isfunc": true,
 		"name": "CreateService",
 		"pNames": ["packageName", "className", "callback", "options"],
-		"pTypes": ["str-this|?", "str-this|?", {
+		"pTypes": ["str-this|&lt;package&gt;", "str-this|&lt;class&gt;", {
 				"desc": "Callback",
 				"isfunc": true,
 				"name": "callback",
@@ -4720,7 +4351,7 @@
 				"shortDesc": "callback"
 			}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "Service",
-		"shortDesc": "returns a new Service object",
+		"shortDesc": "Returns a new Service object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4731,33 +4362,32 @@
 				"retval": "str-Service",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"SendMessage": {
-				"desc": "SendMessage to the service",
+				"desc": "Sends a message to the service.",
 				"isfunc": true,
 				"name": "SendMessage",
 				"pNames": ["message"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Send message to service"
 			},
 			"SetInBackground": {
-				"desc": "SetInBackground",
+				"desc": "Run service in background.",
 				"isfunc": true,
 				"name": "SetInBackground",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "SetInBackground"
+				"shortDesc": "Run service in background"
 			},
 			"SetInForeground": {
-				"desc": "SetInForeground",
+				"desc": "Run service in foreground.",
 				"isfunc": true,
 				"name": "SetInForeground",
 				"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-				"pTypes": ["?", "?", "?", "?", "?"],
-				"shortDesc": "SetInForeground"
+				"pTypes": ["str", "str", "str_pth", "str_pth", "str-none|min|low|high"],
+				"shortDesc": "Run service in foreground"
 			},
 			"SetOnMessage": {
-				"desc": "callback called when message arrived",
+				"desc": "Define a callback function which is called when a message arrived from the service.",
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
@@ -4771,15 +4401,15 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when service sent a message"
 			},
 			"Stop": {
-				"desc": "Stop service",
+				"desc": "Stop the service.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop service"
 			}
 		}
 	},
@@ -4789,7 +4419,7 @@
 		"name": "CreateShortcut",
 		"pNames": ["name", "iconFile", "file", "options"],
 		"pTypes": ["str", "str_pth", "str_pth", "str_com"],
-		"shortDesc": "CreateShortcut"
+		"shortDesc": "Creates a Home-Screen shortcut to an app"
 	},
 	"CreateSmartWatch": {
 		"abbrev": "smw",
@@ -4797,77 +4427,81 @@
 		"isfunc": true,
 		"name": "CreateSmartWatch",
 		"pNames": ["type"],
-		"pTypes": ["?"],
+		"pTypes": ["str-|Sony"],
 		"retval": "SmartWatch",
-		"shortDesc": "returns a new SmartWatch object",
+		"shortDesc": "Returns a new SmartWatch object",
 		"subf": {
 			"AddLayout": {
-				"desc": "?",
+				"desc": "AddLayout adds a layout to the SmartWatch screen so that it is visible (if not hidden with SetVisibility)",
 				"isfunc": true,
 				"name": "AddLayout",
 				"pNames": ["layout"],
 				"pTypes": ["obj-SWlay"],
-				"shortDesc": ""
+				"shortDesc": "Adds a layout to the SmartWatch"
 			},
 			"CreateImage": {
-				"desc": "?",
+				"desc": "Creates a SmartWatch Image. See also: @CreateImage",
 				"isfunc": true,
 				"name": "CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
-				"pTypes": ["str_pth", "num_frc", "num_frc", "?", "num_int", "num_int"],
-				"shortDesc": ""
+				"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+                "retval": "swo-Image",
+				"shortDesc": "Returns a new SmartWatch Image"
 			},
 			"CreateLayout": {
-				"desc": "?",
+				"desc": "Creates a SmartWatch Layout. See also: @CreateLayout",
 				"isfunc": true,
 				"name": "CreateLayout",
 				"pNames": ["type", "options"],
-				"pTypes": ["str-Linear|Absolute|Frame", "?"],
-				"shortDesc": ""
+				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
+                "retval": "swo-Layout",
+				"shortDesc": "Returns a new SmartWatch Layout"
 			},
 			"CreateSensor": {
-				"desc": "?",
+				"desc": "Creates a SmartWatch Sensor. See also: @CreateSensor",
 				"isfunc": true,
 				"name": "CreateSensor",
 				"pNames": ["name", "options"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
+                "retval": "swo-Sensor",
+				"shortDesc": "Returns a new SmartWatch Sensor"
 			},
 			"CreateText": {
-				"desc": "?",
+				"desc": "Creates a SmartWatch Text. See also: @CreateText",
 				"isfunc": true,
 				"name": "CreateText",
 				"pNames": ["text", "width", "height", "options"],
-				"pTypes": ["str", "num_frc", "num_frc", "str-x1:scale html images,x2:scale html images,x3:scale html images,x4:scale html images"],
-				"shortDesc": ""
+				"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
+                "retval": "swo-Text",
+				"shortDesc": "Returns a new SmartWatch Text"
 			},
 			"GetVersion": {
-				"desc": "GetVersion",
+				"desc": "Returns the SmartWatch DS version number.",
 				"isfunc": true,
 				"name": "GetVersion",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Get SW DS version"
 			},
 			"RemoveLayout": {
-				"desc": "removes SmartWatch layout",
+				"desc": "Removes a SmartWatch layout from the screen.",
 				"isfunc": true,
 				"name": "RemoveLayout",
 				"pNames": ["lay"],
 				"pTypes": ["obj-SWlay"],
-				"shortDesc": ""
+				"shortDesc": "Remove SW layout from the screen"
 			},
 			"SetMenu": {
-				"desc": "define menu list",
+				"desc": "Set the SmartWatch menu fields",
 				"isfunc": true,
 				"name": "SetMenu",
-				"pNames": ["p1", "p2"],
-				"pTypes": ["str_com", "?"],
-				"shortDesc": ""
+				"pNames": ["list", "iconPath"],
+				"pTypes": ["str_com", "str_pth"],
+				"shortDesc": "Set SmartWatch menu."
 			},
 			"SetOnBack": {
-				"desc": "called when pressed back button",
+				"desc": "Define a callback function which is called when the SmartWatch back button was pressed.",
 				"isfunc": true,
 				"name": "SetOnBack",
 				"pNames": ["callback"],
@@ -4881,10 +4515,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "called when SmartWatch back button was pressed"
 			},
 			"SetOnHide": {
-				"desc": "called when smartwatch app hidden",
+				"desc": "Define a callback function which is called when the SmartWatch app is hidden.",
 				"isfunc": true,
 				"name": "SetOnHide",
 				"pNames": ["callback"],
@@ -4898,10 +4532,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch app is hidden"
 			},
 			"SetOnMenu": {
-				"desc": "called when pressed menu button",
+				"desc": "Define a callback function which is called when the SmartWatch menu button is touched.",
 				"isfunc": true,
 				"name": "SetOnMenu",
 				"pNames": ["callback"],
@@ -4915,10 +4549,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch menu button is touched"
 			},
 			"SetOnShow": {
-				"desc": "called when smartwatch app sow",
+				"desc": "Define a callback function which is called when the SmartWatch app is shown.",
 				"isfunc": true,
 				"name": "SetOnShow",
 				"pNames": ["callback"],
@@ -4932,10 +4566,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch app is shown"
 			},
 			"SetOnStart": {
-				"desc": "called when smartwatch app started",
+				"desc": "Define a callback function which is called when the SmartWatch app has started.",
 				"isfunc": true,
 				"name": "SetOnStart",
 				"pNames": ["callback"],
@@ -4949,10 +4583,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch app has started"
 			},
 			"SetOnStop": {
-				"desc": "called when smartwatch app stopped",
+				"desc": "Define a callback function which is called when the SmartWatch app has stopped.",
 				"isfunc": true,
 				"name": "SetOnStop",
 				"pNames": ["callback"],
@@ -4966,10 +4600,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch app has stopped"
 			},
 			"SetOnSwipe": {
-				"desc": "called when swiped over smartwatch",
+				"desc": "Define a callback function which is called when the SmartWatch screen is swiped.",
 				"isfunc": true,
 				"name": "SetOnSwipe",
 				"pNames": ["callback"],
@@ -4978,15 +4612,15 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["dir"],
+						"pTypes": ["str-Left|Up|Right|Down"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SmartWatch screen is swiped"
 			},
 			"SetOnTouch": {
-				"desc": "called when smartwatch touched",
+				"desc": "Define a callback function which is called when the SmartWatch was touched.",
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
@@ -4995,12 +4629,12 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["dir", "x", "y"],
+						"pTypes": ["str-Down|Move|Up", "num_frc", "num_frc"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "called when SmartWatch touched"
 			},
 			"SetScreenState": {
 				"desc": "?",
@@ -5027,20 +4661,20 @@
 				"shortDesc": ""
 			},
 			"StopApp": {
-				"desc": "StopApp",
+				"desc": "Stops the running SmartWatch app.",
 				"isfunc": true,
 				"name": "StopApp",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop running app"
 			},
 			"Vibrate": {
-				"desc": "Vibrates smartwatch",
+				"desc": "Makes the SmartWatch vibrate",
 				"isfunc": true,
 				"name": "Vibrate",
 				"pNames": ["p1", "p2", "p3"],
 				"pTypes": ["?", "?", "?"],
-				"shortDesc": ""
+				"shortDesc": "Vibrate SmartWatch"
 			}
 		}
 	},
@@ -5052,7 +4686,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "SMS",
-		"shortDesc": "returns a new SMS object",
+		"shortDesc": "Returns a new SMS object to send and retreive SMS messages.",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5063,17 +4697,16 @@
 				"retval": "str-SMS",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"Send": {
-				"desc": "send device SMS message",
+				"desc": "Send SMS message.",
 				"isfunc": true,
 				"name": "Send",
 				"pNames": ["number", "message", "options"],
-				"pTypes": ["str", "str", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str", "str-MultiPart:multi-part SMS messaging"],
+				"shortDesc": "Send SMS"
 			},
 			"SetOnMessage": {
-				"desc": "received SMS message callback",
+				"desc": "Define a callback function which is called when the user received a SMS",
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
@@ -5087,10 +4720,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when user received a SMS"
 			},
 			"SetOnStatus": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when a status has changed.",
 				"isfunc": true,
 				"name": "SetOnStatus",
 				"pNames": ["callback"],
@@ -5104,7 +4737,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when a status has changed"
 			}
 		}
 	},
@@ -5116,24 +4749,24 @@
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoBeep,Partial"],
 		"retval": "SpeechRec",
-		"shortDesc": "returns a new SpeechRec object",
+		"shortDesc": "Returns a new SpeechRec object",
 		"subf": {
 			"Cancel": {
-				"desc": "stop recognision",
+				"desc": "Stop recognizing speech.",
 				"isfunc": true,
 				"name": "Cancel",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop recognition"
 			},
 			"GetRMS": {
-				"desc": "?",
+				"desc": "Returns the RMS value (Root Mean Square) from the audio recorder.",
 				"isfunc": true,
 				"name": "GetRMS",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Returns the RMS value"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5145,25 +4778,25 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsListening": {
-				"desc": "returns whether speechRec is listening",
+				"desc": "Check whether SpeechRec is currently listening.",
 				"isfunc": true,
 				"name": "IsListening",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check whether SpeechRec is listening"
 			},
 			"Method": "#1023663567",
 			"Recognize": {
-				"desc": "start speech recognizion",
+				"desc": "Start recognizing speech.",
 				"isfunc": true,
 				"name": "Recognize",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start speech recognition"
 			},
 			"SetOnError": {
-				"desc": "",
+				"desc": "Define a callback function which is called when an error occured.",
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
@@ -5177,10 +4810,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when an error occured."
 			},
 			"SetOnReady": {
-				"desc": "",
+				"desc": "Define a callback function which is called when the SpeechRec object is ready for use.",
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
@@ -5194,10 +4827,10 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when SpeechRec is ready for use"
 			},
 			"SetOnResult": {
-				"desc": "",
+				"desc": "Define a callback function which is called when a text was successfully recognized",
 				"isfunc": true,
 				"name": "SetOnResult",
 				"pNames": ["callback"],
@@ -5211,15 +4844,15 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when text was recognized"
 			},
 			"Stop": {
-				"desc": "Stop speech recognizion",
+				"desc": "Stop speech recognition.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop speech recognition"
 			}
 		}
 	},
@@ -5229,9 +4862,9 @@
 		"isfunc": true,
 		"name": "CreateSpinner",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["?", "?", "?", "str_com"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-"],
 		"retval": "Spinner",
-		"shortDesc": "returns a new Spinner object",
+		"shortDesc": "Returns a new Spinner object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -5263,12 +4896,12 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"SelectItem": {
-				"desc": "SelectItem",
+				"desc": "Change the current shown item",
 				"isfunc": true,
 				"name": "SelectItem",
 				"pNames": ["item"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Change current shown item"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -5278,12 +4911,12 @@
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
 			"SetList": {
-				"desc": "override list",
+				"desc": "Change the item list of the spinner.",
 				"isfunc": true,
 				"name": "SetList",
 				"pNames": ["list", "delim"],
 				"pTypes": ["str_com", "str"],
-				"shortDesc": ""
+				"shortDesc": "Change spinner list"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
@@ -5292,7 +4925,14 @@
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
-			"SetText": "#8207502354",
+			"SetText": {
+				"desc": "Change the current shown item",
+				"isfunc": true,
+				"name": "SelectItem",
+				"pNames": ["item"],
+				"pTypes": ["str"],
+				"shortDesc": "Change current shown item"
+			},
 			"SetTextColor": "#0175303923",
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
@@ -5308,7 +4948,7 @@
 		"pNames": ["type"],
 		"pTypes": ["?"],
 		"retval": "Synth",
-		"shortDesc": "returns a new Synth object",
+		"shortDesc": "Returns a new Synth object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5594,7 +5234,7 @@
 		"pNames": ["cmd", "env", "dir", "options"],
 		"pTypes": ["str_pip", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "SysProc",
-		"shortDesc": "returns a new SysProc object",
+		"shortDesc": "Returns a new SysProc object",
 		"subf": {
 			"Err": {
 				"desc": "",
@@ -5672,7 +5312,7 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str_com", "num_frc", "num_frc", "str_com"],
 		"retval": "Tabs",
-		"shortDesc": "returns a new Tabs object",
+		"shortDesc": "Returns a new Tabs object",
 		"subf": {
 			"AddChild": {
 				"desc": "",
@@ -5870,7 +5510,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
 		"retval": "Text",
-		"shortDesc": "returns a new Text object",
+		"shortDesc": "Returns a new Text object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6000,7 +5640,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
 		"retval": "TextEdit",
-		"shortDesc": "returns a new TextEdit object",
+		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6230,7 +5870,7 @@
 		"pNames": ["baseTheme"],
 		"pTypes": ["?"],
 		"retval": "Theme",
-		"shortDesc": "returns a new Theme object",
+		"shortDesc": "Returns a new Theme object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"GetType": {
@@ -6376,7 +6016,7 @@
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad"],
 		"retval": "Toggle",
-		"shortDesc": "returns a new Toggle object",
+		"shortDesc": "Returns a new Toggle object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6461,7 +6101,7 @@
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
 		"pTypes": ["?", "?", "?", "?", "?"],
 		"retval": "USBSerial",
-		"shortDesc": "returns a new USBSerial object",
+		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -6589,7 +6229,7 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"retval": "VideoView",
-		"shortDesc": "returns a new VideoView object",
+		"shortDesc": "Returns a new VideoView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
@@ -6804,9 +6444,9 @@
 		"isfunc": true,
 		"name": "CreateWebServer",
 		"pNames": ["port", "options"],
-		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index.html|Reflect:Reflect web socket messages back to all clients"],
+		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients"],
 		"retval": "WebServer",
-		"shortDesc": "returns a new WebServer object",
+		"shortDesc": "Returns a new WebServer object",
 		"subf": {
 			"AddRedirect": {
 				"desc": "",
@@ -6917,7 +6557,7 @@
 		"pNames": ["id", "ip", "port", "options"],
 		"pTypes": ["?", "?", "?", "str_com"],
 		"retval": "WebSocket",
-		"shortDesc": "returns a new WebSocket object",
+		"shortDesc": "Returns a new WebSocket object",
 		"subf": {
 			"Close": {
 				"desc": "close web socket",
@@ -7014,7 +6654,7 @@
 		"pNames": ["width", "height", "options", "zoom"],
 		"pTypes": ["?", "?", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade", "?"],
 		"retval": "WebView",
-		"shortDesc": "returns a new WebView object",
+		"shortDesc": "Returns a new WebView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Back": {
@@ -7304,7 +6944,7 @@
 		"pNames": ["message", "options"],
 		"pTypes": ["?", "str_com-TouchModal"],
 		"retval": "YesNoDialog",
-		"shortDesc": "returns a new YesNoDialog object",
+		"shortDesc": "Returns a new YesNoDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Dismiss": "#1924613953",
@@ -7358,7 +6998,7 @@
 		"pNames": ["mode"],
 		"pTypes": ["?"],
 		"retval": "ZipUtil",
-		"shortDesc": "returns a new ZipUtil object",
+		"shortDesc": "Returns a new ZipUtil object",
 		"subf": {
 			"AddFile": {
 				"desc": "AddFile",
@@ -7643,7 +7283,7 @@
 		"name": "GetActivities",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst-[{ label:str, packageName:str, className: str }]",
+		"retval": "lst-[{ label:str&comma; packageName:str&comma; className:str }]",
 		"shortDesc": "GetActivities"
 	},
 	"GetAppName": {
@@ -7674,7 +7314,7 @@
 		"shortDesc": "Get current battery level"
 	},
 	"GetBluetoothAddress": {
-		"desc": "Returns the hexadecimal Bluetooth address of the device, following the pattern “00:00:00:00:00:00”.\n\nSee Also: @CreateBluetoothSerial",
+		"desc": "Returns the hexadecimal Bluetooth address of the device, following the pattern “00&colon;00&colon;00&colon;00&colon;00&colon;00”.\n\nSee Also: @CreateBluetoothSerial",
 		"isfunc": true,
 		"name": "GetBluetoothAddress",
 		"pNames": [],
@@ -7868,7 +7508,7 @@
 		"name": "GetInstalledApps",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst-[{ packageName:str, className:str, uid:num_int, targetSdkVersion:num_int, dataDir:str_pth, sourceDir:str_pth, publicSourceDir:str_pth, nativeLibraryDir:str_pth }]",
+		"retval": "lst-[{ packageName:str&comma; className:str&comma; uid:num_int&comma; targetSdkVersion:num_int&comma; dataDir:str_pth&comma; sourceDir:str_pth&comma; publicSourceDir:str_pth&comma; nativeLibraryDir:str_pth }]",
 		"shortDesc": "Get data about installed apps"
 	},
 	"GetIntent": {
@@ -7877,7 +7517,7 @@
 		"name": "GetIntent",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "obj-{ action:str, type:str, data:str, flags:num_int, extras: { app_intent:str, app_file:str_pth, app_options:str } }",
+		"retval": "obj-{ action:str&comma; type:str&comma; data:str&comma; flags:num_int&comma; extras: { app_intent:str&comma; app_file:str_pth&comma; app_options:str } }",
 		"shortDesc": "Get received intent data"
 	},
 	"GetInternalFolder": {
@@ -7944,7 +7584,7 @@
 		"shortDesc": "Get user language code"
 	},
 	"GetMacAddress": {
-		"desc": "Returns the alphanumeric **M**edia-**A**ccess-**C**ontrol address of the device. Style should be “00:00:00:00:00:00”. The individual numbers can have hexadecimal values between 00 and FF.",
+		"desc": "Returns the alphanumeric **M**edia-**A**ccess-**C**ontrol address of the device. Style should be “00&colon;00&colon;00&colon;00&colon;00&colon;00”. The individual numbers can have hexadecimal values between 00 and FF.",
 		"isfunc": true,
 		"name": "GetMacAddress",
 		"pNames": [],
@@ -7967,7 +7607,7 @@
 		"name": "GetMemoryInfo",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "obj-{ avail:num_byt, low:bin, threshold:num_byt, total:num_byt }",
+		"retval": "obj-{ avail:num_byt&comma; low:bin&comma; threshold:num_byt&comma; total:num_byt }",
 		"shortDesc": "Get RAM memory information"
 	},
 	"GetMetadata": {
@@ -8057,7 +7697,7 @@
 		"name": "GetPairedBtDevices",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ name:str, address:str }",
+		"retval": "lst_obj-{ name:str&comma; address:str }",
 		"shortDesc": "Get list of paired bluetooth devices"
 	},
 	"GetPath": {
@@ -8135,7 +7775,7 @@
 		"name": "GetRunningApps",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ user:num_int, pid:num_bin, name:str, foreground:bin }",
+		"retval": "lst_obj-{ user:num_int&comma; pid:num_bin&comma; name:str&comma; foreground:bin }",
 		"shortDesc": "Get list of running apps"
 	},
 	"GetRunningServices": {
@@ -8144,7 +7784,7 @@
 		"name": "GetRunningServices",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ user:num_int, pid:num_bin, name:str }",
+		"retval": "lst_obj-{ user:num_int&comma; pid:num_bin&comma; name:str }",
 		"shortDesc": "Get list of running services"
 	},
 	"GetScreenDensity": {
@@ -8819,7 +8459,7 @@
 				"name": "readTransaction",
 				"pNames": ["fn", "error", "success"],
 				"pTypes": ["?", "?", "?"],
-				"shortDesc": "readTransaction",
+				"shortDesc": "ReadTransaction",
 				"subf": {}
 			},
 			"startNextTransaction": {
@@ -9048,12 +8688,12 @@
 		"isfunc": true,
 		"name": "SendIntent",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
-		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{name:str, type:str, value:str}]", "str_com-result", {
+		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str&comma; value:str }]", "str_com-result", {
 				"desc": "Callback",
 				"isfunc": true,
 				"name": "callback",
 				"pNames": ["resultCode", "data"],
-				"pTypes": ["num_int--1|0|1", "obj-{action:string, type:string, data:string, flags:integer, extras:object}"],
+				"pTypes": ["num_int--1|0|1", "obj-{ action:string&comma; type:string&comma; data:string&comma; flags:integer&comma; extras:object }"],
 				"shortDesc": "callback"
 			}],
 		"shortDesc": "SendIntent"
@@ -9162,7 +8802,7 @@
 		"shortDesc": "Save data while app is running"
 	},
 	"SetDebug": {
-		"desc": "SetDebug lets you control the debugging level. The availabe modes are:\nconsole: allows console.log messages\nds: allows app.Debug messages\nadb: allows adb debug messages (ie at apk startup)\ntrue: enable all debug messages\nfalse or “”: disable able all debug messages\n\nNote that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.\n\nSee Also: @Debug, @IsDebugging",
+		"desc": "SetDebug lets you control the debugging level. The availabe modes are:\nconsole&colon; allows console.log messages\nds&colon; allows app.Debug messages\nadb&colon; allows adb debug messages (ie at apk startup)\ntrue&colon; enable all debug messages\nfalse or “”: disable able all debug messages\n\nNote that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.\n\nSee Also: @Debug, @IsDebugging",
 		"isfunc": true,
 		"name": "SetDebug",
 		"pNames": ["switches"],
@@ -9496,7 +9136,7 @@
 		"shortDesc": "Show a progress indicator"
 	},
 	"ShowProgressBar": {
-		"desc": "Shows a dialog with a bar indicating the current progress of a certain thing.\n\nSee Also: UpdateProgressBar, HideProgressBar",
+		"desc": "Shows a dialog with a bar indicating the current progress of a certain thing.\n\nSee Also: @UpdateProgressBar, @HideProgressBar",
 		"isfunc": true,
 		"name": "ShowProgressBar",
 		"pNames": ["title", "percent", "options"],
@@ -9571,7 +9211,7 @@
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str_com-Debug:start app in debug mode|remote", "str-{ action:str, type:str, data:obj, extras:obj }"],
+		"pTypes": ["str_pth", "str_com-Debug:start app in debug mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
 		"shortDesc": "Starts an app in a new window"
 	},
 	"StartDebugServer": {
@@ -9734,7 +9374,7 @@
 		"shortDesc": "Vibrate device in a pattern"
 	},
 	"Wait": {
-		"desc": "Performs a synchronous delay in your program.",
+		"desc": "Performs a **synchronous** delay in your program which effectively pauses it.\n\nIts main use is for making brief pauses when communicating with external devices so that they get a chance to do work while your app executes.\n\nBe careful when using this method in your code as Android quickly thinks that your app does not respond if used for over about 30 seconds.",
 		"isfunc": true,
 		"name": "Wait",
 		"pNames": ["seconds"],

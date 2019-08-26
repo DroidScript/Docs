@@ -35,10 +35,12 @@ function generateDocs() {
 
 			for( var j in tsubf ) {
 				if(hidden(j)) continue;
+				
 				if(typeof(tsubf[j]) == "string" && tsubf[j].startsWith("#")) {
 					if(!basefuncs[tsubf[j]]) Throw(Error(`basefunc ${tsubf[j]} not found!`));
 					tctrl[j] = basefuncs[tsubf[j]].shortDesc;
-				} else tctrl[j] = tsubf[j].shortDesc;
+				}
+				else tctrl[j] = tsubf[j].shortDesc;
 			}
 		}
 		info.app[lst[i]] = functions[lst[i]].shortDesc;
@@ -147,6 +149,8 @@ function generateDoc( name ) {
 			    )
 			    // popup object list
 			    .replace(/%p/, Globals.popDefs.join("\n"))
+			    // premium notes
+		        .replace(/<premium>/g, premiumHint)
 			    // title occurances
 			    .replace(/%t/g, name)
 			    // remove empty <p> tags
@@ -158,7 +162,8 @@ function generateDoc( name ) {
 
 	    //save doc file
 	    app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
-    } catch(e) {
+    }
+    catch(e) {
         console.error( /*\x1b[31m*/`while generating "${curDoc}": ${curSubf||""}` );
         throw e;
     }
@@ -200,11 +205,10 @@ function getDocData( f, useAppPop ) {
 	// convert constructor line
 	for( i in f.pNames ) {
 	    if( useAppPop ) {
-			mArgs.push(
-				newAppPopup( typeDesc( f.pTypes[i] ), f.pNames[i] )
-				.replace( /<\/?b>/g, "")
-			);
-		} else {
+			mArgs.push(newAppPopup( typeDesc( f.pTypes[i] ), f.pNames[i] )
+	            .replace( /<\/?\w+?>/g, ""));
+		}
+		else {
 			mArgs.push(toArgPop( f.pNames[i], f.pTypes[i]));
 		}
 	}
@@ -254,12 +258,13 @@ function getDocData( f, useAppPop ) {
 			}
 			
 			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` +
-			    replW( met.desc.replace("<premium>", premiumHint) ));
+			    replW( met.desc ));
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
 				`( ${args.join(", ")} )` : "()" ) + retval );
-		} /* else { //convert other types
+		}
+		/* else { //convert other types
 			var pop = descPopup( met.name, replW( met.desc ) );
 			tryAddType( pop.fnc );
 			methods += subfBase.replace( "%s", pop.txt + retval );
@@ -306,7 +311,6 @@ function getDesc(name) {
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
 		)
 		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
-		.replace("<premium>", premiumHint)
 		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
 }
 
@@ -342,7 +346,8 @@ function toHtmlSamp( c, t, n ) {
         c = sampBase
             .replace( "%b", c )
             .replace( /§b§([^]+?)§b§/g, "<b id=\"snip%i\" style=\"font-size:100%\">$1</b>" );
-    } else {
+    }
+    else {
         c = sampBase
             .replace( /.*<a.*onclick="copy\( snip%i \)">.*<\/a>\n/, "" )
             .replace( "%b", c );
@@ -382,6 +387,7 @@ function typeDesc( types, isDSO ) {
 		if( s[i] && type.length == 3 ) {
 				//allow limited values for parameters
 			switch( type[0] ) {
+			    case "swo":
 				case "num": return s[i] + rplop( type[2] );
 				case "str": return s[i] + rplop( type[2], true );
 				case "lst":
@@ -392,7 +398,8 @@ function typeDesc( types, isDSO ) {
 				    return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
 				default: Throw(Error("unknown type " + type[1]));
 			}
-		} else {
+		}
+		else {
 			if(s[i] == undefined) {
 				if(isDSO) return "<b>app object:</b> " + type[1];
 				else Throw(Error("unknown type " + type[1]));
@@ -453,19 +460,22 @@ function toArgPop( name, types ) {
 			switch( type[0] ) {
 				case "num":
 				case "str":
-					s[i] += rplop( type[2], type[0] == "str" );
+				case "bin":
+			    case "swo":
+					//s[i] += ;
 					if(type.length == 3 && type[2].indexOf(":") > -1)
-						s[i] = s[i].replace(/\b([\w_.]+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
-					return s[i];
+						type[2] = replaceTypes(type[2], true); //.replace(/\b([\w_.]+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
+					return s[i] + rplop( type[2], type[0] == "str" );
 				case "lst":
-				case "obj": return s[i] + replW( replaceTypes( type[2], true ));
+				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				case "dso":
 				    if(!functions[type[2]])
 				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
 				    return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
 				default: Throw(Error("unknown type " + type[1]));
 			}
-		} else return s[i];
+		}
+		else return s[i];
 	});
 
 	// build popup id, "std_type" for common or "type_index" for individual popups
@@ -481,8 +491,8 @@ function toArgPop( name, types ) {
 		if(pop.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop))
 		tryAddType(newDefPopup( pop, str[0].replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
 		return newTxtPopup( pop, name );
-		
-	} else {
+	}
+	else {
 		// for values with multiple types
 		tryAddType( newDefPopup(
 			"mul_" + incpop( "mul", 1 ),
@@ -535,19 +545,34 @@ function incpop( type, i ) {
 }
 
 function replaceTypes(s, useAppPop) {
-	return s.replace(/(\b[\w_.]+)\s*:\s*(\b[a-z]{3}(_[a-z]{3})?(-[^ .]*)?)\b(\s*[,}\]]?)?/g,
-		function(m, name, type, _, _, close) {
+    var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
+    _s.replace(/(\b[\w_.-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|,”}\n]*)?"?/g,
+		function(m, name, type, _, desc, _) {
+		    if( !type && !desc || name.startsWith("Note")) return;
+		    if( desc && desc.startsWith('"')) desc = desc.slice(1);
+		    if( type ) {
+		        if(typenames[type.slice(0, 3)]) {
+		            if(desc) type += "-" + desc, desc = '';
+		        }
+		        else desc = type + (desc || ''), type = '';
+	        }
+		    
+		    var r;
 		    if(useAppPop) {
-				return newAppPopup(
-					typenames[type.slice(0, 3)] +
-						(typedesc[type] ? ": " + typedesc[type] : ""),
-					name
-				) + (close || "")
-			} else {
-				return toArgPop(name, type) + (close || "")
+				r = newAppPopup(
+				    type ? typenames[type.slice(0, 3)] +
+			            (typedesc[type] ? ": " + typedesc[type] : "")
+		            : desc, name);
 			}
+			else {
+				r = type ? toArgPop(name, type) : newAppPopup(name, desc);
+			}
+			
+			s = s.replace(m, r);
+			return "";
 		}
 	);
+	return s;
 }
 
 // convert markdown symbols to html
@@ -763,6 +788,7 @@ var 	//globals for one doc
 		"all":"all types",
 		"bin":"boolean",
 		"dso":"app object",
+		"swo":"SmartWatch object",
 		"fnc":"function",
 		"lst":"list",
 		"num":"number",
@@ -776,6 +802,7 @@ var 	//globals for one doc
 		"all":"",
 		"bin":"",
 		"dso":"",
+		"swo":"",
 		"fnc":"",
 		"lst":"",
 		
@@ -835,7 +862,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
+	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView|NxtRemote)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// defined in OnStart or later
@@ -952,7 +979,7 @@ app = {
 	FolderExists: fs.existsSync,
 	SetDebug: () => 0,
 	ShowProgressBar: (t) => console.log(t + "\n"),
-	UpdateProgressBar: (i,t) => console.log("\033[1A\033[K" + `${i}% ${t}`),
+	UpdateProgressBar: (i,t) => null, //console.log("\033[1A\033[K" + `${i}% ${t}`),
 	HideProgressBar: () => console.log("\033[1A\033[K100% done."),
 	ShowPopup: console.log
 }

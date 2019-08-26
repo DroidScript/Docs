@@ -77,17 +77,19 @@
 	],
 	"Components": [
 		"CreateCrypt",
+		"CreateFile",
 		"CreateLocator",
 		"CreateMediaStore",
 		"CreatePhoneState",
 		"CreatePlayStore",
+		"CreateSensor",
 		"CreateService",
 		"CreateSpeechRec",
 		"CreateSysProc",
 		"CreateUSBSerial",
 		"CreateWebServer",
 		"StartService",
-		"StopService"
+		"CreateZipUtil"
 	],
 	"Controls": [
 		"CreateButton",
@@ -100,8 +102,11 @@
 		"CreateList",
 		"CreateListDialog",
 		"CreateListView",
+		"CreateNotification",
+		"CreateNxt",
 		"CreateScroller",
 		"CreateSeekBar",
+		"CreateSmartWatch",
 		"CreateSpinner",
 		"CreateTabs",
 		"CreateText",
@@ -140,6 +145,7 @@
 		"SetData"
 	],
 	"Device Information": [
+        "CreateSensor",
 		"GetActivities",
 		"GetBatteryLevel",
 		"GetChargeType",
@@ -166,8 +172,6 @@
 	"Device Control": [
 		"CreateNotification",
 		"CreateNxt",
-		"CreateNxtRemote",
-		"CreateSensor",
 		"CreateShortcut",
 		"CreateSmartWatch",
 		"DisableTouch",

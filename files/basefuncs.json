@@ -78,7 +78,7 @@
 				"isfunc": true,
 				"pNames": ["options"],
 				"pTypes": ["str-screen,px"],
-				"retval": "obj-{ left: num, top: num, right: num, bottom: num }",
+				"retval": "obj-{ left:num, top:num, right:num, bottom:num }",
 				"shortDesc": "Returns data about position and size"
 			},
 			"#2387569276": { "name": "GetText",

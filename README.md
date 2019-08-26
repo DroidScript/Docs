@@ -21,6 +21,7 @@ The title should describe what you did in general and the body includes a detail
 
 To update the Github Pages preview move your generated files/docs folder to docs/docs.
 
-<center>**Thank you for your contribution and support of DroidScript.org.!**
+<center>
+<b>Thank you for your contribution and support of DroidScript.org.!</b>
 <br><br><br>
 Thanks for RTFM.</center>

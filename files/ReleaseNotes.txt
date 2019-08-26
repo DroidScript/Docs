@@ -734,7 +734,7 @@ DS 1.28b
 - Added offline JavaScript reference.
 - Added 'include system assets' check box.
 - Enabled app.Vibrate(), app.TextToSpeech(), app.SendIntent(), app.SetAlarm() in services.
-- Added app.GetRunningServices() and app.GetRunningApps() methods.
+-.Added app.GetRunningServices() and app.GetRunningApps() methods.
 - Enabled drag/drop of resources in WiFi IDE.
 - WiFi IDE now stops both service and App when pressing stop button.
 - Added support for multiple simultaneous USB serial devices (OTG hubs).
