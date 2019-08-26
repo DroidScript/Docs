@@ -36,19 +36,19 @@
 			<p>Returns a SmartWatch object.</p>
 
 			<div class="samp">
-			smw = app.CreateSmartWatch( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">type</a> ) → <b>app object:</b> SmartWatch
+			smw = app.CreateSmartWatch( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>app object:</b> SmartWatch
 			</div>
 
 			<p><br>The following methods are available on the <b>SmartWatch</b> object:</p>
 
 			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AddLayout</a>( <a href="#pop_obj_001" data-transition="pop" data-rel="popup">layout</a> )</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">CreateImage</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">pxwidth</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">pxheight</a> )</div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">CreateLayout</a>( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">CreateSensor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">CreateText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">CreateImage</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxwidth</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxheight</a> ) → <b>SmartWatch object:</b> Image</div>
+			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">CreateLayout</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> ) → <b>SmartWatch object:</b> Layout</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">CreateSensor</a>( <a href="#pop_str_005" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> ) → <b>SmartWatch object:</b> Sensor</div>
+			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">CreateText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_007" data-transition="pop" data-rel="popup">options</a> ) → <b>SmartWatch object:</b> Text</div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetVersion</a>() → <b>string</b></div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">RemoveLayout</a>( <a href="#pop_obj_002" data-transition="pop" data-rel="popup">lay</a> )</div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetMenu</a>( <a href="#pop_str_com" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">p2</a> )</div>
+			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetMenu</a>( <a href="#pop_str_com" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">iconPath</a> )</div>
 			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnBack</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetOnHide</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SetOnMenu</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
@@ -66,46 +66,52 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“”</font> or <font class='docstring'>“Sony”</font></div>
 		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> SWlay</div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>smw.AddLayout</b><br>?</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>smw.AddLayout</b><br>AddLayout adds a layout to the SmartWatch screen so that it is visible (if not hidden with SetVisibility)</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>smw.CreateImage</b><br>?</div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Linear”</font> or <font class='docstring'>“Absolute”</font> or <font class='docstring'>“Frame”</font></div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>smw.CreateLayout</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>smw.CreateSensor</b><br>?</div>
+		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“fix”</font>, <font class='docstring'>“alias”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</font>, <font class='docstring'>“ScaleCenter”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('loads the image asynchronously')">async</a>”</font>, <font class='docstring'>“FontAwesome”</font>, <font class='docstring'>“Resize”</font>, <font class='docstring'>“TouchThrough”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</font>, <font class='docstring'>“wallpaper”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</font></div>
+		<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>smw.CreateImage</b><br>Creates a SmartWatch Image. See also: <a href="CreateImage.htm" data-ajax="false">CreateImage</a></div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Linear”</font> or <font class='docstring'>“Absolute”</font> or <font class='docstring'>“Frame”</font></div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“TouchThrough”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('spies on touch events to all children')">TouchSpy</a>”</font>, <font class='docstring'>“Left”</font> or <font class='docstring'>“Top”</font> or <font class='docstring'>“Right”</font> or <font class='docstring'>“Bottom”</font> or <font class='docstring'>“Center”</font> or <font class='docstring'>“VCenter”</font>, <font class='docstring'>“Wrap”</font>, <font class='docstring'>“Horizontal”</font> or <font class='docstring'>“Vertical”</font>, <font class='docstring'>“FillX”</font>, <font class='docstring'>“FillY”</font>, <font class='docstring'>“FillXY”</font></div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>smw.CreateLayout</b><br>Creates a SmartWatch Layout. See also: <a href="CreateLayout.htm" data-ajax="false">CreateLayout</a></div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“Accelerometer”</font> or <font class='docstring'>“MagneticField”</font> or <font class='docstring'>“Orientation”</font> or <font class='docstring'>“Light”</font> or <font class='docstring'>“Proximity”</font> or <font class='docstring'>“Temperature”</font> or <font class='docstring'>“GameRotation”</font> or <font class='docstring'>“GeomagneticRotation”</font> or <font class='docstring'>“Gravity”</font> or <font class='docstring'>“Gyroscope”</font> or <font class='docstring'>“HeartRate”</font> or <font class='docstring'>“Acceleration”</font> or <font class='docstring'>“Pressure”</font> or <font class='docstring'>“Humidity”</font> or <font class='docstring'>“RotationMotion”</font> or <font class='docstring'>“StepCounter”</font> or <font class='docstring'>“StepDetector”</font></div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Slow”</font> or <font class='docstring'>“Medium”</font> or <font class='docstring'>“Fast”</font> or <font class='docstring'>“Fastest”</font></div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>smw.CreateSensor</b><br>Creates a SmartWatch Sensor. See also: <a href="CreateSensor.htm" data-ajax="false">CreateSensor</a></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('scale html images')">x1</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('scale html images')">x2</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('scale html images')">x3</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('scale html images')">x4</a>”</font></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>smw.CreateText</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>smw.GetVersion</b><br>GetVersion</div>
+		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Multiline”</font>, <font class='docstring'>“Left”</font> or <font class='docstring'>“Right”</font>, <font class='docstring'>“Html”</font>, <font class='docstring'>“Bold”</font>, <font class='docstring'>“Monospace”</font>, <font class='docstring'>“AutoSize”</font>, <font class='docstring'>“NoWrap”</font>, <font class='docstring'>“Log”</font></div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>smw.CreateText</b><br>Creates a SmartWatch Text. See also: <a href="CreateText.htm" data-ajax="false">CreateText</a></div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>smw.GetVersion</b><br>Returns the SmartWatch DS version number.</div>
 		<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> SWlay</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>smw.RemoveLayout</b><br>removes SmartWatch layout</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>smw.RemoveLayout</b><br>Removes a SmartWatch layout from the screen.</div>
 		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>smw.SetMenu</b><br>define menu list</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>smw.SetMenu</b><br>Set the SmartWatch menu fields</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>smw.SetOnBack</b><br>called when pressed back button</div>
+		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>smw.SetOnBack</b><br>Define a callback function which is called when the SmartWatch back button was pressed.</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>smw.SetOnHide</b><br>called when smartwatch app hidden</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>smw.SetOnHide</b><br>Define a callback function which is called when the SmartWatch app is hidden.</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>smw.SetOnMenu</b><br>called when pressed menu button</div>
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>smw.SetOnMenu</b><br>Define a callback function which is called when the SmartWatch menu button is touched.</div>
 		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>smw.SetOnShow</b><br>called when smartwatch app sow</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>smw.SetOnShow</b><br>Define a callback function which is called when the SmartWatch app is shown.</div>
 		<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>smw.SetOnStart</b><br>called when smartwatch app started</div>
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>smw.SetOnStart</b><br>Define a callback function which is called when the SmartWatch app has started.</div>
 		<div data-role="popup" id="pop_fnc_006" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>smw.SetOnStop</b><br>called when smartwatch app stopped</div>
-		<div data-role="popup" id="pop_fnc_007" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>smw.SetOnSwipe</b><br>called when swiped over smartwatch</div>
-		<div data-role="popup" id="pop_fnc_008" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>smw.SetOnTouch</b><br>called when smartwatch touched</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>smw.SetOnStop</b><br>Define a callback function which is called when the SmartWatch app has stopped.</div>
+		<div data-role="popup" id="pop_fnc_007" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “Left” or “Up” or “Right” or “Down”')">dir</a>)</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>smw.SetOnSwipe</b><br>Define a callback function which is called when the SmartWatch screen is swiped.</div>
+		<div data-role="popup" id="pop_fnc_008" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “Down” or “Move” or “Up”')">dir</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>)</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>smw.SetOnTouch</b><br>Define a callback function which is called when the SmartWatch was touched.</div>
+		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>smw.SetScreenState</b><br>?</div>
 		<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> SWlay</div>
 		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>smw.ShowLayout</b><br>?</div>
 		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>smw.ShowMessage</b><br>?</div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>smw.StopApp</b><br>StopApp</div>
-		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>smw.Vibrate</b><br>Vibrates smartwatch</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>smw.StopApp</b><br>Stops the running SmartWatch app.</div>
+		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>smw.Vibrate</b><br>Makes the SmartWatch vibrate</div>
 	</div>
 </body>
 

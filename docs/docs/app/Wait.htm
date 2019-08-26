@@ -33,12 +33,15 @@
 		</div>
 
 		<div data-role="content">
-			<p>Performs a synchronous delay in your program.</p>
+			<p>Performs a <b>synchronous</b> delay in your program which effectively pauses it.</p>
 
 			<div class="samp">
 			app.Wait( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )
 			</div>
 
+			<p>Its main use is for making brief pauses when communicating with external devices so that they get a chance to do work while your app executes.<br>
+			<br>
+			Be careful when using this method in your code as Android quickly thinks that your app does not respond if used for over about 30 seconds.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Synchronous delay</h3>
 				<div id="examp0" style="font-size:70%">

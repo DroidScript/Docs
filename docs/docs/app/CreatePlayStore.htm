@@ -33,38 +33,37 @@
 		</div>
 
 		<div data-role="content">
-			<p>PlayStore<br>
-			<br>
-			<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>.</p>
+			<p>Creates a new PlayStore instance for retreiving informations or purchasing items.</p>
 
 			<div class="samp">
 			pls = app.CreatePlayStore() → <b>app object:</b> PlayStore
 			</div>
 
+			<p><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div><br>
+			<br>
+			Notes: If your email address is listed in the 'licence testing' section of the developer console settings page, then using this sample will result in a test subscription with an order id of '1234' which recurs daily (even if configured for monthly) and you will not be charged.<br>
+			Subscriptions can be cancelled in the Google Play App found on your device (they will stay active for the remains of the period that has been purchased).</p>
 			<p><br>The following methods are available on the <b>PlayStore</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetBillingInfo</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">prodIDs</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetPurchases</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> ) → <b>unknown</b></div>
+			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetBillingInfo</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">prodIDs</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetPurchases</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“PlayStore”</font></div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Purchase</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">prodID</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">token</a>, <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Purchase</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">prodID</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">token</a>, <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )</div>
 
 			<br>
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pls.GetBillingInfo</b><br></div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('list: of objects: [{ skuDetailsToken:str, productId:str, type:str, price:str, price_amount_micros:num_int, price_currency_code:str, title:str, description:str }]')">items</a>)</div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('In-App purchases')">IAP</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('subscriptions')">SUBS</a>”</font></div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pls.GetBillingInfo</b><br>Get product info of paid items from Google Play.</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('list: of objects: [{ skuDetailsToken:str, productId:str, type:str, price:str, price_amount_micros:num_int, price_currency_code:str, title:str, description:str }]')">items</a>)</div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pls.GetPurchases</b><br></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pls.GetPurchases</b><br>Get product info of purchased items from Google Play.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>pls.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pls.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">prodId</a>, <a href="" onclick="app.ShowPopup('string')">orderId</a>, <a href="" onclick="app.ShowPopup('string')">purchToken</a>, <a href="" onclick="app.ShowPopup('string')">devToken</a>, <a href="" onclick="app.ShowPopup('string')">packageName</a>)</div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“SUBS”</font></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>pls.Purchase</b><br>?</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pls.Purchase</b><br>Purchase an item on Google Play.</div>
 	</div>
 </body>
 

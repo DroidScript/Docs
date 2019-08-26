@@ -39,13 +39,13 @@
 			lst = app.CreateList( <a href="#pop_std_str" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> List
 			</div>
 
-			<p>The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the <font class='docstring'>“&colon;”</font> (colon) character. If you need to use a colon character in your item text then use this character sequence: <font class='docstring'>“^c^”</font>.<br>
-			You can have one icon and some body text using the following formats&colon;<br>
+			<p>The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the <font class='docstring'>“:”</font> (colon) character. If you need to use a colon character in your item text then use this character sequence: <font class='docstring'>“^c^”</font>.<br>
+			You can have one icon and some body text using the following formats:<br>
 			<br>
 			<font class='docstring'>“title”</font><br>
-			<font class='docstring'>“title&colon;icon”</font><br>
-			<font class='docstring'>“title&colon;body&colon;icon”</font><br>
-			<font class='docstring'>“title&colon;body&colon;extra&colon;icon”</font><br>
+			<font class='docstring'>“title:icon”</font><br>
+			<font class='docstring'>“title:body:icon”</font><br>
+			<font class='docstring'>“title:body:extra:icon”</font><br>
 			<br>
 			Alternatively you can use the <b>AddItem</b> method which accepts <i>title</i>, <i>body</i> and <i>icon</i> as parameters to generically build up your list.<br>
 			<br>
@@ -401,7 +401,7 @@
 		<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>lst.SetIconSize</b><br>Changes the icon size.</div>
 		<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>lst.SetItem</b><br>Change the content of an element with a specific title.</div>
 		<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>lst.SetItemByIndex</b><br>Change the content of an element on a specific index.</div>
-		<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> <i>separated:</i> <font class='docstring'>“title”</font> or <font class='docstring'>“title&colon;icon”</font> or <font class='docstring'>“title&colon;body&colon;icon”</font></div>
+		<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> <i>separated:</i> <font class='docstring'>“title”</font> or <font class='docstring'>“title:icon”</font> or <font class='docstring'>“title:body:icon”</font></div>
 		<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>lst.SetList</b><br>Set the content of the whole list.</div>
 		<div data-role="popup" id="pop_str_012" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 		<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>lst.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>

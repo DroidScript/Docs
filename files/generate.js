@@ -129,7 +129,6 @@ function generateDoc( name ) {
 			];
 		}
 	});*/
-	
 	try {
 	    //get an object with the html-converted data
 	    var data = getDocData(functions[name]),
@@ -151,6 +150,8 @@ function generateDoc( name ) {
 			    .replace(/%p/, Globals.popDefs.join("\n"))
 			    // premium notes
 		        .replace(/<premium>/g, premiumHint)
+			    // some html char placeholders
+			    .replace(/&(\w+);/g, (m, v) => _htm[v] || m)
 			    // title occurances
 			    .replace(/%t/g, name)
 			    // remove empty <p> tags
@@ -865,6 +866,8 @@ var
 	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView|NxtRemote)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
+	    // html char placeholders
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.'},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor

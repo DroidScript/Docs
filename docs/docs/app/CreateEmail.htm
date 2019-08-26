@@ -90,14 +90,14 @@
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“email address”</font></div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>eml.Send</b><br>Send an email to someone.</div>
 		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“imap/<a href="" onclick="app.ShowPopup('google')">pop.gmail.com</a>”</font> or <font class='docstring'>“imap/<a href="" onclick="app.ShowPopup('yahoo')">pop.mail.yahoo.com</a>”</font> or <font class='docstring'>“imap/<a href="" onclick="app.ShowPopup('gmx')">pop.gmx.net</a>”</font></div>
-		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('imap or 995:pop')">993</a></div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('imap')">993</a> or <a href="" onclick="app.ShowPopup('pop')">995</a></div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>eml.SetIMAP</b><br>Set IMAP or POP3 settings for receiving messages.</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: { from:str_eml,&#160;&#160;to:str_eml,&#160;&#160;cc:str_eml,&#160;&#160;subject:str,&#160;&#160;body:str }')">data</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('object: { from:str_eml, to:str_eml, cc:str_eml, subject:str, body:str }')">data</a>)</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>eml.SetOnMessage</b><br>Define a callback function which is called when a message is received.</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “Receive complete” or “Failed to receive emails: ...” or “Failed to send email: ...”')">status</a>)</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>eml.SetOnStatus</b><br>Define a callback function which is called when a status changed.</div>
 		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('google')">smtp.gmail.com</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('yahoo')">smtp.mail.yahoo.com</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('gmx')">mail.gmx.net</a>”</font></div>
-		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('SSL or 578:TLS (gmail')">465</a>,&#160;&#160;yahoo) or <a href="" onclick="app.ShowPopup('gmx')">587</a></div>
+		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('SSL')">465</a> or <a href="" onclick="app.ShowPopup('TLS (gmail, yahoo)')">578</a> or <a href="" onclick="app.ShowPopup('gmx')">587</a></div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>eml.SetSMTP</b><br>Set SMTP settings for sending messages.</div>
 	</div>
 </body>
