@@ -872,7 +872,7 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_.*|Create(Object|GLView|ListView|Nxt|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
+	regHide = /^(_.*|Create(Object|GLView|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 	    // html char placeholders

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -44,9 +44,9 @@
 			<b>package name</b> and <b>class name</b> can specify the intent target, but you can also leave them null and define a <b>category</b> instead to let the user choose an application of that categoy.<br>
 			<br>
 			If you expect a <b>callback</b> you have to pass the <font class='docstring'>“result”</font> <b>option</b>. The <b>result code</b> can be<br>
-			&#160;&#160;-1: <i>operation succeeded</i><br>
-			&#160;&#160;1: <i>user-defined activity results</i><br>
-			&#160;&#160;0: <i>operation canceled</i><br>
+			  -1: <i>operation succeeded</i><br>
+			  1: <i>user-defined activity results</i><br>
+			  0: <i>operation canceled</i><br>
 			<br>
 			You can find some common used examples for that in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent');">DroidScript Wiki</a><br>
 			For more information visit the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html');">Android Developer Page</a>. There you can find informations about the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions');">activity</a>, <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-categories');">category</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-extra-data');">extra</a>.<br>

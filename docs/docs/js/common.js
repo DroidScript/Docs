@@ -173,7 +173,7 @@ function setTheme( theme )
 	if(lnkJQuery) lnkJQuery.href = lnkJQuery.href.replace(/(.*\/).*/, "$1theme-" + theme + ".min.css");
 	
 	var lnkDocs = document.getElementById('themeDocs');
-	if(lnkDocs) lnkDocs.href = lnkDocs.href.replace(/(.*\/).*/, "$1docs-" + theme + ".css");
+	if(lnkDocs) lnkDocs.href = lnkDocs.href.replace(/(.*\/).*/, "$1docs-" + theme + ".min.css");
 	
 	var lnkPrism = document.getElementById('themePrism');
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -42,11 +42,11 @@
 			<p><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></p>
 			<p><br>The following methods are available on the <b>Theme</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AdjustColor</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a>, <a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation</a>, <a href="#pop_num_003" data-transition="pop" data-rel="popup">brightness</a>, <a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )</div>
+			<div class="samp"><a href="#pop_dsc_001" class="baseFunc" data-transition="pop" data-rel="popup">AdjustColor</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a>, <a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation</a>, <a href="#pop_num_003" data-transition="pop" data-rel="popup">brightness</a>, <a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )</div>
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Theme”</font></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetBackColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetBackground</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )</div>
+			<div class="samp"><a href="#pop_dsc_003" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
+			<div class="samp"><a href="#pop_dsc_004" class="baseFunc" data-transition="pop" data-rel="popup">SetBackColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
+			<div class="samp"><a href="#pop_dsc_005" class="baseFunc" data-transition="pop" data-rel="popup">SetBackground</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetBtnTextColor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color</a> )</div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetButtonOptions</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetButtonStyle</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color1</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color2</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">radius</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">strokeClr</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">strokeWidth</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">shadow</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">checkClr</a> )</div>
@@ -58,7 +58,7 @@
 			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">SetProgressBackColor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color</a> )</div>
 			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SetProgressBarOptions</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SetProgressTextColor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color</a> )</div>
-			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetTextColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
+			<div class="samp"><a href="#pop_dsc_011" class="baseFunc" data-transition="pop" data-rel="popup">SetTextColor</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )</div>
 			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetTextEditOptions</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )</div>
 			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetTitleColor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color</a> )</div>
 			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetTitleDividerColor</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color</a> )</div>
@@ -77,7 +77,7 @@
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>thm.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
-		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>&nbsp;&nbsp;hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>&nbsp;&nbsp;colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
+		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>  colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>thm.SetBackColor</b><br>Changes the background color of the control.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>

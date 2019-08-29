@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -46,19 +46,19 @@
 					<span class="token keyword">var</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 					&lt;html><br>
 					&lt;head><br>
-					&#160;&#160;&#160;&#160;&lt;script src='file:///android_asset/app.js'>&lt;/script><br>
+					    &lt;script src='file:///android_asset/app.js'>&lt;/script><br>
 					&lt;/head><br>
 					<br>
 					&lt;script><br>
-					&#160;&#160;&#160;&#160;var source = "html";<br>
-					&#160;&#160;&#160;&#160;function btn_OnTouch()<br>
-					&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );<br>
-					&#160;&#160;&#160;&#160;}<br>
+					    var source = "html";<br>
+					    function btn_OnTouch()<br>
+					    {<br>
+					        app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );<br>
+					    }<br>
 					&lt;/script><br>
 					<br>
 					&lt;body style="text-align: center;"><br>
-					&#160;&#160;&#160;&#160;&lt;input type="button" onclick="btn_OnTouch()" value="Click me!">&lt;/button><br>
+					    &lt;input type="button" onclick="btn_OnTouch()" value="Click me!">&lt;/button><br>
 					&lt;/body><br>
 					&lt;/html></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>
 					<br>
@@ -66,27 +66,27 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span><span class="token string">"call myFunction"</span><span class="token punctuation">,</span> <span class="token number">.4</span><span class="token punctuation">,</span> <span class="token number">.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>btn_OnTouch<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span><span class="token string">"call myFunction"</span><span class="token punctuation">,</span> <span class="token number">.4</span><span class="token punctuation">,</span> <span class="token number">.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>btn_OnTouch<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> <span class="token string">"app.Alert( 'source: "</span> <span class="token operator">+</span> source <span class="token operator">+</span> <span class="token string">"\\ntarget: ' + source );"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> <span class="token string">"app.Alert( 'source: "</span> <span class="token operator">+</span> source <span class="token operator">+</span> <span class="token string">"\\ntarget: ' + source );"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
 				</div>
 			</div>
 

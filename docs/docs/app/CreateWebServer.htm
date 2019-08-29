@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -66,32 +66,32 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span><br>
+					    <span class="token punctuation">{</span><br>
+					        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					        app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token punctuation">}</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">" browser\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
+					        <span class="token string">" browser\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
+					    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id="snip0" style="font-size:100%">&#160;&#160;&#160;&#160;serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip0" style="font-size:100%">    serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					</b><span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
 				</div>
 			</div>
 
@@ -106,40 +106,40 @@
 				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					    <span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span><br>
+					    <span class="token punctuation">{</span><br>
+					        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					        app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token punctuation">}</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">" browser\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
+					        <span class="token string">" browser\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
+					    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id="snip1" style="font-size:100%">&#160;&#160;&#160;&#160;serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">AddServlet</span><span class="token punctuation">(</span> <span class="token string">"/message"</span><span class="token punctuation">,</span> OnServlet <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip1" style="font-size:100%">    serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">AddServlet</span><span class="token punctuation">(</span> <span class="token string">"/message"</span><span class="token punctuation">,</span> OnServlet <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					</b><span class="token punctuation">}</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">function</span> <span class="token function">OnServlet</span><span class="token punctuation">(</span> <span class="token parameter">request<span class="token punctuation">,</span> info</span> <span class="token punctuation">)</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SetResponse</span><span class="token punctuation">(</span> <span class="token string">"Got it!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>  info<span class="token punctuation">.</span>remoteAddress <span class="token operator">+</span> <span class="token string">" says: "</span> <span class="token operator">+</span> request<span class="token punctuation">.</span>msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span>
+					    <span class="token keyword">function</span> <span class="token function">OnServlet</span><span class="token punctuation">(</span> <span class="token parameter">request<span class="token punctuation">,</span> info</span> <span class="token punctuation">)</span><br>
+					    <span class="token punctuation">{</span><br>
+					        serv<span class="token punctuation">.</span><span class="token function">SetResponse</span><span class="token punctuation">(</span> <span class="token string">"Got it!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>  info<span class="token punctuation">.</span>remoteAddress <span class="token operator">+</span> <span class="token string">" says: "</span> <span class="token operator">+</span> request<span class="token punctuation">.</span>msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
@@ -161,68 +161,68 @@
 					<span class="token keyword">var</span> indexhtml <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 					&lt;html><br>
 					&lt;head><br>
-					&#160;&#160;&#160;&#160;&lt;title>WebSockets Demo&lt;/title><br>
+					    &lt;title>WebSockets Demo&lt;/title><br>
 					<br>
-					&#160;&#160;&#160;&#160;&lt;script><br>
+					    &lt;script><br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;var count = 0;<br>
+					        var count = 0;<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Connect to server via web sockets.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function Connect()<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Check web sockets are supported.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if (!window.WebSocket)<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;alert("WebSocket not supported by this browser");<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					        //Connect to server via web sockets.<br>
+					        function Connect()<br>
+					        {<br>
+					            //Check web sockets are supported.<br>
+					            if (!window.WebSocket)<br>
+					            {<br>
+					                alert("WebSocket not supported by this browser");<br>
+					                return;<br>
+					            }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Open web socket to phone.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws = new WebSocket( "ws://"+window.location.host );<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onopen = ws_onopen;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onmessage = ws_onmessage;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onclose = ws_onclose;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.onerror = ws_onerror;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					            //Open web socket to phone.<br>
+					            ws = new WebSocket( "ws://"+window.location.host );<br>
+					            ws.onopen = ws_onopen;<br>
+					            ws.onmessage = ws_onmessage;<br>
+					            ws.onclose = ws_onclose;<br>
+					            ws.onerror = ws_onerror;<br>
+					        }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Send a message to the server.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function Send()<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ws.send( "Hello " + count++ );<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					        //Send a message to the server.<br>
+					        function Send()<br>
+					        {<br>
+					            ws.send( "Hello " + count++ );<br>
+					        }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Handle socket open.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onopen()<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = "Socket Open";<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					        //Handle socket open.<br>
+					        function ws_onopen()<br>
+					        {<br>
+					            id_info.innerHTML = "Socket Open";<br>
+					        }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Handle messages from phone.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onmessage( msg )<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = msg.data;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					        //Handle messages from phone.<br>
+					        function ws_onmessage( msg )<br>
+					        {<br>
+					            id_info.innerHTML = msg.data;<br>
+					        }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;//Other websocket callbacks.<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onclose()<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = "Socket Closed";<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
+					        //Other websocket callbacks.<br>
+					        function ws_onclose()<br>
+					        {<br>
+					            id_info.innerHTML = "Socket Closed";<br>
+					        }<br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;function ws_onerror(e)<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;id_info.innerHTML = "Socket Error: " + e.data;<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br>
-					&#160;&#160;&#160;&#160;&lt;/script><br>
+					        function ws_onerror(e)<br>
+					        {<br>
+					            id_info.innerHTML = "Socket Error: " + e.data;<br>
+					        }<br>
+					    &lt;/script><br>
 					&lt;/head><br>
 					<br>
 					&lt;body><br>
-					&#160;&#160;&#160;&#160;&lt;h2>DroidScript WebSockets Demo&lt;/h2><br>
+					    &lt;h2>DroidScript WebSockets Demo&lt;/h2><br>
 					<br>
-					&#160;&#160;&#160;&#160;&lt;div id="id_info">Ready&lt;/div><br>
+					    &lt;div id="id_info">Ready&lt;/div><br>
 					<br>
-					&#160;&#160;&#160;&#160;&lt;button onclick="Connect()">Connect&lt;/button><br>
-					&#160;&#160;&#160;&#160;&lt;button onclick="Send()">Send Message&lt;/button><br>
+					    &lt;button onclick="Connect()">Connect&lt;/button><br>
+					    &lt;button onclick="Send()">Send Message&lt;/button><br>
 					<br>
 					&lt;/body><br>
 					&lt;/html><br>
@@ -234,90 +234,90 @@
 					<span class="token comment">// Called when application is started.</span><br>
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create the Index.html file</span><br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// note: in regular use move the html to a separate file</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"Index.html"</span><span class="token punctuation">,</span> indexhtml <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create the Index.html file</span><br>
+					    <span class="token comment">// note: in regular use move the html to a separate file</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"Index.html"</span><span class="token punctuation">,</span> indexhtml <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Check wifi is enabled.</span><br>
-					&#160;&#160;&#160;&#160;ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					    <span class="token comment">// Check wifi is enabled.</span><br>
+					    ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">if</span><span class="token punctuation">(</span> ip <span class="token operator">==</span> <span class="token string">"0.0.0.0"</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please Enable Wi-Fi"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					        app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token punctuation">}</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Prevent wifi from powering down.</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">PreventWifiSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Prevent wifi from powering down.</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">PreventWifiSleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create a layout with objects vertically centered.</span><br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create a layout with objects vertically centered.</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create a text label and add it to layout.</span><br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token string">" browser(s)\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create a text label and add it to layout.</span><br>
+					    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"Type the following address into your"</span> <span class="token operator">+</span><br>
+					        <span class="token string">" browser(s)\n\n"</span> <span class="token operator">+</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">;</span><br>
+					    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create a text label and add it to layout.</span><br>
-					&#160;&#160;&#160;&#160;txtMsg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;txtMsg<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txtMsg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create a text label and add it to layout.</span><br>
+					    txtMsg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    txtMsg<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txtMsg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create a 'Send Message' button.</span><br>
-					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Send Message"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> SendMessage <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create a 'Send Message' button.</span><br>
+					    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Send Message"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> SendMessage <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Add layout to app.</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Add layout to app.</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Create and run web server on port 8080.</span><br>
-					&#160;&#160;&#160;&#160;serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> serv_OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Create and run web server on port 8080.</span><br>
+					    serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> serv_OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Start timer to show WebSock connections.</span><br>
-					&#160;&#160;&#160;&#160;<span class="token function">setInterval</span><span class="token punctuation">(</span> ShowConnections<span class="token punctuation">,</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token comment">// Start timer to show WebSock connections.</span><br>
+					    <span class="token function">setInterval</span><span class="token punctuation">(</span> ShowConnections<span class="token punctuation">,</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token comment">// Show who is connected.</span><br>
 					<span class="token keyword">function</span> <span class="token function">ShowConnections</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">var</span> clients <span class="token operator">=</span> serv<span class="token punctuation">.</span><span class="token function">GetWebSockClients</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token keyword">var</span> clients <span class="token operator">=</span> serv<span class="token punctuation">.</span><span class="token function">GetWebSockClients</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;<span class="token keyword">if</span><span class="token punctuation">(</span> clients<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token comment">// Make a list of clients.</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> clients<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;list <span class="token operator">+=</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>remoteAddress <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					    <span class="token keyword">if</span><span class="token punctuation">(</span> clients<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+					    <span class="token punctuation">{</span><br>
+					        <span class="token comment">// Make a list of clients.</span><br>
+					        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> clients<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><br>
+					        <span class="token punctuation">{</span><br>
+					            list <span class="token operator">+=</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>remoteAddress <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
+					        <span class="token punctuation">}</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="token comment">// Show client list.</span><br>
-					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> list <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;<span class="token punctuation">}</span><br>
+					        <span class="token comment">// Show client list.</span><br>
+					        txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> list <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <span class="token punctuation">}</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token comment">// Send a message to all connected socket clients.</span><br>
 					<span class="token keyword">function</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// Note: You can send to a specific client by passing</span><br>
-					&#160;&#160;&#160;&#160;<span class="token comment">// the IP address as the second parameter.</span><br>
-					&#160;&#160;&#160;&#160;serv<span class="token punctuation">.</span><span class="token function">SendText</span><span class="token punctuation">(</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> count<span class="token operator">++</span> <span class="token punctuation">)</span><br>
+					    <span class="token comment">// Note: You can send to a specific client by passing</span><br>
+					    <span class="token comment">// the IP address as the second parameter.</span><br>
+					    serv<span class="token punctuation">.</span><span class="token function">SendText</span><span class="token punctuation">(</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> count<span class="token operator">++</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token comment">// Called when messages arrive from websocket clients.</span><br>
 					<span class="token keyword">function</span> <span class="token function">serv_OnReceive</span><span class="token punctuation">(</span> <span class="token parameter">msg<span class="token punctuation">,</span> ip</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;txtMsg<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> ip <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    txtMsg<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> ip <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 
@@ -327,7 +327,7 @@
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">AddServlet</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">path</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“WebServer”</font></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetWebSockClients</a>() → <b>unknown</b></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
+			<div class="samp"><a href="#pop_dsc_005" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SendText</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">txt</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">ip</a> )</div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetFolder</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">folder</a> )</div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnReceive</a>( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )</div>

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -55,44 +55,44 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Talk To Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Talk To Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					<b id="snip0" style="font-size:100%">&#160;&#160;&#160;&#160;speech <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpeechRec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;speech<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> speech_OnReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;speech<span class="token punctuation">.</span><span class="token function">SetOnResult</span><span class="token punctuation">(</span> speech_OnResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;speech<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> speech_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<b id="snip0" style="font-size:100%">    speech <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpeechRec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    speech<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> speech_OnReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    speech<span class="token punctuation">.</span><span class="token function">SetOnResult</span><span class="token punctuation">(</span> speech_OnResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    speech<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> speech_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					</b><span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;speech<span class="token punctuation">.</span><span class="token function">Recognize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    speech<span class="token punctuation">.</span><span class="token function">Recognize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">speech_OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Listening..."</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Listening..."</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">speech_OnResult</span><span class="token punctuation">(</span> <span class="token parameter">results</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">speech_OnError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please speak more clearly!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please speak more clearly!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
 				</div>
 			</div>
 
@@ -103,7 +103,7 @@
 			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetRMS</a>() → <b>number:</b> <i>float</i></div>
 			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“SpeechRec”</font></div>
 			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">IsListening</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
+			<div class="samp"><a href="#pop_dsc_005" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
 			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Recognize</a>()</div>
 			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnError</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnReady</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
@@ -114,7 +114,7 @@
 		</div>
 
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoBeep”</font>, <font class='docstring'>“Partial”</font></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>spr.Cancel</b><br>Stop recognizing speech.</div>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>spr.Cancel</b><br>Stop recognizing speech and break other processes.</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>spr.GetRMS</b><br>Returns the RMS value (Root Mean Square) from the audio recorder.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>spr.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>spr.IsListening</b><br>Check whether SpeechRec is currently listening.</div>
@@ -128,7 +128,7 @@
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>spr.SetOnReady</b><br>Define a callback function which is called when the SpeechRec object is ready for use.</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">result</a>)</div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>spr.SetOnResult</b><br>Define a callback function which is called when a text was successfully recognized</div>
-		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>spr.Stop</b><br>Stop speech recognition.</div>
+		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>spr.Stop</b><br>Stop speech recording and start recognizing.</div>
 	</div>
 </body>
 

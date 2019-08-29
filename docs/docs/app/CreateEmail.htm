@@ -9,7 +9,7 @@
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -44,24 +44,24 @@
 				<div id="examp0" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;<b id="snip0" style="font-size:100%">email <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateEmail</span><span class="token punctuation">(</span> <span class="token string">"mymail@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"MyPass"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;email<span class="token punctuation">.</span><span class="token function">SetSMTP</span><span class="token punctuation">(</span> <span class="token string">"smtp.gmail.com"</span><span class="token punctuation">,</span> <span class="token number">465</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;email<span class="token punctuation">.</span><span class="token function">SetOnStatus</span><span class="token punctuation">(</span> email_OnStatus <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    <b id="snip0" style="font-size:100%">email <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateEmail</span><span class="token punctuation">(</span> <span class="token string">"mymail@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"MyPass"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    email<span class="token punctuation">.</span><span class="token function">SetSMTP</span><span class="token punctuation">(</span> <span class="token string">"smtp.gmail.com"</span><span class="token punctuation">,</span> <span class="token number">465</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    email<span class="token punctuation">.</span><span class="token function">SetOnStatus</span><span class="token punctuation">(</span> email_OnStatus <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Sending..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;email<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span> <span class="token string">"My Subjewct"</span><span class="token punctuation">,</span> <span class="token string">"My Content"</span><span class="token punctuation">,</span> <span class="token string">"mymail@yahoo.com"</span><span class="token punctuation">,</span> <span class="token string">"myothermail@gmail.com"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Sending..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    email<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span> <span class="token string">"My Subjewct"</span><span class="token punctuation">,</span> <span class="token string">"My Content"</span><span class="token punctuation">,</span> <span class="token string">"mymail@yahoo.com"</span><span class="token punctuation">,</span> <span class="token string">"myothermail@gmail.com"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">email_OnStatus</span><span class="token punctuation">(</span> <span class="token parameter">status</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					&#160;&#160;&#160;&#160;app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> status <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> status <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
 				</div>
 			</div>
 
