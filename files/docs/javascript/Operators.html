@@ -1,0 +1,278 @@
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+	
+	<link href="css/docs.css" rel="stylesheet" type="text/css"/>
+	<link href="css/mathml.css" rel="stylesheet" type="text/css"/>
+	<script src="../js/bookmarks.js"></script>
+	
+	<script> function jsxref(a,b,c,d,e) { document.write("<b>"+b+"</b>"); }</script>
+	<script> function Note(s) { document.write("Note: "+s); }</script>
+	<script> function anch(s) { document.write(s); }</script>
+</head>
+ 
+<body>
+
+<div data-role="page" data-theme="a" data-ajax="false">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' data-theme="c" onclick="history.back(); return false">Back</a> <h1>Operators</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div><h2>Operators</h2></div>
+
+<p>This chapter documents many of the JavaScript language operators, expressions and keywords.</p>
+
+<h2 id="Expressions_and_operators_by_category">Expressions and operators by category</h2>
+
+<p>For an alphabetical listing see the sidebar on the left.</p>
+
+<h3 id="Primary_expressions">Primary expressions</h3>
+
+<p>Basic keywords and general expressions in JavaScript.</p>
+
+<dl>
+ 
+ 
+ <dt><a href="Operators/function.html"><code>function</code></a></dt>
+ <dd>The <code>function</code> keyword defines a function expression.</dd>
+ 
+ 
+ 
+ 
+ <dt><a href="Operators/Global_Objects/Array.html"><code>[]</code></a></dt>
+ <dd>Array initializer/literal syntax.</dd>
+ <dt><a href="Operators/Object_initializer.html"><code>{}</code></a></dt>
+ <dd>Object initializer/literal syntax.</dd>
+ <dt><a href="Operators/Global_Objects/RegExp.html"><code>/ab+c/i</code></a></dt>
+ <dd>Regular expression literal syntax.</dd>
+ 
+ 
+ <dt><a href="Operators/Grouping.html"><code>( )</code></a></dt>
+ <dd>Grouping operator.</dd>
+</dl>
+
+<h3 id="Left-hand-side_expressions">Left-hand-side expressions</h3>
+
+<p>Left values are the destination of an assignment.</p>
+
+<dl>
+ <dt><a href="Operators/Property_accessors.html"><code>Property accessors</code></a></dt>
+ <dd>Member operators provide access to a property or method of an object<br>
+ (<code>object.property</code> and <code>object["property"]</code>).</dd>
+ <dt><a href="Operators/new.html"><code>new</code></a></dt>
+ <dd>The <code>new</code> operator creates an instance of a constructor.</dd>
+ 
+ 
+ 
+</dl>
+
+<h3 id="Increment_and_decrement">Increment and decrement</h3>
+
+<p>Postfix/prefix increment and postfix/prefix decrement operators.</p>
+
+<dl>
+ <dt><a href="Operators/Arithmetic_Operators.html#Increment" data-ajax="false"><code>A++</code></a></dt>
+ <dd>Postfix increment operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Decrement" data-ajax="false"><code>A--</code></a></dt>
+ <dd>Postfix decrement operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Increment" data-ajax="false"><code>++A</code></a></dt>
+ <dd>Prefix increment operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Decrement" data-ajax="false"><code>--A</code></a></dt>
+ <dd>Prefix decrement operator.</dd>
+</dl>
+
+<h3 id="Unary_operators">Unary operators</h3>
+
+<p>A unary operation is operation with only one operand.</p>
+
+<dl>
+ <dt><a href="Operators/delete.html"><code>delete</code></a></dt>
+ <dd>The <code>delete</code> operator deletes a property from an object.</dd>
+ <dt><a href="Operators/void.html"><code>void</code></a></dt>
+ <dd>The <code>void</code> operator discards an expression's return value.</dd>
+ <dt><a href="Operators/typeof.html"><code>typeof</code></a></dt>
+ <dd>The <code>typeof</code> operator determines the type of a given object.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Unary_plus" data-ajax="false"><code>+</code></a></dt>
+ <dd>The unary plus operator converts its operand to Number type.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Unary_negation" data-ajax="false"><code>-</code></a></dt>
+ <dd>The unary negation operator converts its operand to Number type and then negates it.</dd>
+ <dt><a href="Operators/Bitwise_Operators.html#Bitwise_NOT" data-ajax="false"><code>~</code></a></dt>
+ <dd>Bitwise NOT operator.</dd>
+ <dt><a href="Operators/Logical_Operators.html#Logical_NOT" data-ajax="false"><code>!</code></a></dt>
+ <dd>Logical NOT operator.</dd>
+</dl>
+
+<h3 id="Arithmetic_operators">Arithmetic operators</h3>
+
+<p>Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value.</p>
+
+<dl>
+ <dt><a href="Operators/Arithmetic_Operators.html#Addition" data-ajax="false"><code>+</code></a></dt>
+ <dd>Addition operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Subtraction" data-ajax="false"><code>-</code></a></dt>
+ <dd>Subtraction operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Division" data-ajax="false"><code>/</code></a></dt>
+ <dd>Division operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Multiplication" data-ajax="false"><code>*</code></a></dt>
+ <dd>Multiplication operator.</dd>
+ <dt><a href="Operators/Arithmetic_Operators.html#Remainder" data-ajax="false"><code>%</code></a></dt>
+ <dd>Remainder operator.</dd>
+</dl>
+
+<dl>
+ 
+</dl>
+
+<h3 id="Relational_operators">Relational operators</h3>
+
+<p>A comparison operator compares its operands and returns a <code>Boolean</code> value based on whether the comparison is true.</p>
+
+<dl>
+ <dt><a href="Operators/in.html"><code>in</code></a></dt>
+ <dd>The <code>in</code> operator determines whether an object has a given property.</dd>
+ <dt><a href="Operators/instanceof.html"><code>instanceof</code></a></dt>
+ <dd>The <code>instanceof</code> operator determines whether an object is an instance of another object.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Less_than_operator" data-ajax="false"><code>&lt;</code></a></dt>
+ <dd>Less than operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Greater_than_operator" data-ajax="false"><code>&gt;</code></a></dt>
+ <dd>Greater than operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Less_than_or_equal_operator" data-ajax="false"><code>&lt;=</code></a></dt>
+ <dd>Less than or equal operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Greater_than_or_equal_operator" data-ajax="false"><code>&gt;=</code></a></dt>
+ <dd>Greater than or equal operator.</dd>
+</dl>
+
+<h3 id="Equality_operators">Equality operators</h3>
+
+<p>The result of evaluating an equality operator is always of type <code>Boolean</code> based on whether the comparison is true.</p>
+
+<dl>
+ <dt><a href="Operators/Comparison_Operators.html#Equality" data-ajax="false"><code>==</code></a></dt>
+ <dd>Equality operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Inequality" data-ajax="false"><code>!=</code></a></dt>
+ <dd>Inequality operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Identity" data-ajax="false"><code>===</code></a></dt>
+ <dd>Identity operator.</dd>
+ <dt><a href="Operators/Comparison_Operators.html#Nonidentity" data-ajax="false"><code>!==</code></a></dt>
+ <dd>Nonidentity operator.</dd>
+</dl>
+
+<h3 id="Bitwise_shift_operators">Bitwise shift operators</h3>
+
+<p>Operations to shift all bits of the operand.</p>
+
+<dl>
+ <dt><a href="Operators/Bitwise_Operators.html#Left_shift" data-ajax="false"><code>&lt;&lt;</code></a></dt>
+ <dd>Bitwise left shift operator.</dd>
+ <dt><a href="Operators/Bitwise_Operators.html#Right_shift" data-ajax="false"><code>&gt;&gt;</code></a></dt>
+ <dd>Bitwise right shift operator.</dd>
+ <dt><a href="Operators/Bitwise_Operators.html#Unsigned_right_shift" data-ajax="false"><code>&gt;&gt;&gt;</code></a></dt>
+ <dd>Bitwise unsigned right shift operator.</dd>
+</dl>
+
+<h3 id="Binary_bitwise_operators">Binary bitwise operators</h3>
+
+<p>Bitwise operators treat their operands as a set of 32 bits (zeros and ones) and return standard JavaScript numerical values.</p>
+
+<dl>
+ <dt><a href="Operators/Bitwise_Operators.html#Bitwise_AND" data-ajax="false"><code>&amp;</code></a></dt>
+ <dd>Bitwise AND.</dd>
+ <dt><a href="Operators/Bitwise_Operators.html#Bitwise_OR" data-ajax="false"><code>|</code></a></dt>
+ <dd>Bitwise OR.</dd>
+ <dt><a href="Operators/Bitwise_Operators.html#Bitwise_XOR" data-ajax="false"><code>^</code></a></dt>
+ <dd>Bitwise XOR.</dd>
+</dl>
+
+<h3 id="Binary_logical_operators">Binary logical operators</h3>
+
+<p>Logical operators are typically used with boolean (logical) values, and when they are, they return a boolean value.</p>
+
+<dl>
+ <dt><a href="Operators/Logical_Operators.html#Logical_AND" data-ajax="false"><code>&amp;&amp;</code></a></dt>
+ <dd>Logical AND.</dd>
+ <dt><a href="Operators/Logical_Operators.html#Logical_OR" data-ajax="false"><code>||</code></a></dt>
+ <dd>Logical OR.</dd>
+</dl>
+
+<h3 id="Conditional_(ternary)_operator">Conditional (ternary) operator</h3>
+
+<dl>
+ <dt><a href="Operators/Conditional_Operator.html"><code>(condition ? ifTrue : ifFalse)</code></a></dt>
+ <dd>
+ <p>The conditional operator returns one of two values based on the logical value of the condition.</p>
+ </dd>
+</dl>
+
+<h3 id="Assignment_operators">Assignment operators</h3>
+
+<p>An assignment operator assigns a value to its left operand based on the value of its right operand.</p>
+
+<dl>
+ <dt><a href="Operators/Assignment_Operators.html#Assignment" data-ajax="false"><code>=</code></a></dt>
+ <dd>Assignment operator.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Multiplication_assignment" data-ajax="false"><code>*=</code></a></dt>
+ <dd>Multiplication assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Division_assignment" data-ajax="false"><code>/=</code></a></dt>
+ <dd>Division assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Remainder_assignment" data-ajax="false"><code>%=</code></a></dt>
+ <dd>Remainder assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Addition_assignment" data-ajax="false"><code>+=</code></a></dt>
+ <dd>Addition assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Subtraction_assignment" data-ajax="false"><code>-=</code></a></dt>
+ <dd>Subtraction assignment</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Left_shift_assignment" data-ajax="false"><code>&lt;&lt;=</code></a></dt>
+ <dd>Left shift assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Right_shift_assignment" data-ajax="false"><code>&gt;&gt;=</code></a></dt>
+ <dd>Right shift assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Unsigned_right_shift_assignment" data-ajax="false"><code>&gt;&gt;&gt;=</code></a></dt>
+ <dd>Unsigned right shift assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Bitwise_AND_assignment" data-ajax="false"><code>&amp;=</code></a></dt>
+ <dd>Bitwise AND assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Bitwise_XOR_assignment" data-ajax="false"><code>^=</code></a></dt>
+ <dd>Bitwise XOR assignment.</dd>
+ <dt><a href="Operators/Assignment_Operators.html#Bitwise_OR_assignment" data-ajax="false"><code>|=</code></a></dt>
+ <dd>Bitwise OR assignment.</dd>
+ 
+</dl>
+
+<h3 id="Comma_operator">Comma operator</h3>
+
+<dl>
+ <dt><a href="Operators/Comma_Operator.html"><code>,</code></a></dt>
+ <dd>The comma operator allows multiple expressions to be evaluated in a single statement and returns the result of the last expression.</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+ 
+		<br>
+		<p class="lic">&nbsp;<a class="lic" id="extLink" href="http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" data-role="none">
+		Created by Mozilla Contributors</a>, license: <a class="lic" id="extLink" href="http://creativecommons.org/licenses/by-sa/2.5" target="_blank" data-role="none">CC-BY-SA 2.5</a>
+		</p>
+	</div>
+</div>
+
+</body>
+</html>
+ 
