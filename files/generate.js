@@ -14,8 +14,8 @@ function generateDocs() {
 	generateNavigators();
 	app.UpdateProgressBar( 0 );
 	
-	if(!app.FolderExists(path + `docs${getl()}/app`))
-		app.MakeFolder(path + `docs${getl()}/app`);
+	app.DeleteFolder(path + `docs${getl()}/app`);
+	app.MakeFolder(path + `docs${getl()}/app`);
 	
 	// missing: check samples
 	//var lastfuncs = JSON.parse(ReadFile(path + `lastfuncs${getl()}.json`, "{}"));
@@ -78,7 +78,7 @@ function generateNavigators() {
 			list = categories[cat]
 				.sort( sortAsc )
 				.filter(nothidden)
-				.map((func) => newNaviItem(`app/${func}.htm`, func))  // ?cat=" + cat
+				.map((func) => newNaviItem(`app/${func}.htm`, func, getAddClass(functions[func])))  // ?cat=" + cat
 				.join("");
 	
 			/*
@@ -148,10 +148,10 @@ function generateDoc( name ) {
 			    )
 			    // popup object list
 			    .replace(/%p/, Globals.popDefs.join("\n"))
-			    // premium notes
-		        .replace(/<premium>/g, premiumHint)
+			    // additional notes
+		        .replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 			    // some html char placeholders
-			    .replace(/&(\w+);/g, (m, v) => _htm[v] || m)
+			    .replace(/&(.+?);/g, (m, v) => _htm[v] || m)
 			    // title occurances
 			    .replace(/%t/g, name)
 			    // remove empty <p> tags
@@ -162,7 +162,7 @@ function generateDoc( name ) {
 			    //.replace(/%n/, JSON.stringify(navs)) 
 
 	    //save doc file
-	    app.WriteFile( path + `docs${getl()}/app/${name}.htm` , html );
+	    app.WriteFile( path + `docs${getl()}/app/${name}.htm`, html );
     }
     catch(e) {
         console.error( /*\x1b[31m*/`while generating "${curDoc}": ${curSubf||""}` );
@@ -229,13 +229,14 @@ function getDocData( f, useAppPop ) {
 		mkeys = keys( f.subf ).filter(nothidden).sort();
 
 	for( k = 0; k < mkeys.length; k++ ) {
-		var met = f.subf[mkeys[k]], retval = "", type;
+		var met = f.subf[mkeys[k]], retval = "", type, isBase = false;
 		curSubf = met.name;
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
 			if(!basefuncs[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = basefuncs[met];
+			isBase = true;
 		}
 
 		if(!met.isfunc || hidden(met.name)) continue;
@@ -259,7 +260,7 @@ function getDocData( f, useAppPop ) {
 			}
 			
 			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` +
-			    replW( met.desc ));
+			    replW( met.desc ), getAddClass(met) || (isBase ? "baseFunc" : ""));
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
@@ -357,13 +358,21 @@ function toHtmlSamp( c, t, n ) {
     return c.replace( /%i/g, n ).replace( /%t/g, t );
 }
 
+
+function getAddClass(m) {
+    if(m.desc.indexOf("<deprecated") > -1) return "deprHint";
+    if(m.desc.indexOf("<xfeature") > -1) return "deprHint";
+    if(m.desc.indexOf("<premium") > -1) return "premHint";
+    return "";
+}
+
 // returns a description popup object
-function descPopup( text, ptext ) {
+function descPopup( text, ptext, sClass ) {
 	var o = {
 		fnc: newDefPopup(
 			"dsc_" + incpop( "dsc", 1 ),
 			addMarkdown(replaceTypes(ptext, 1))),
-		txt: newTxtPopup( "dsc_" + incpop( "dsc" ), text )
+		txt: newTxtPopup( "dsc_" + incpop( "dsc" ), text, sClass )
 	}
 	return o;
 }
@@ -388,7 +397,6 @@ function typeDesc( types, isDSO ) {
 		if( s[i] && type.length == 3 ) {
 				//allow limited values for parameters
 			switch( type[0] ) {
-			    case "swo":
 				case "num": return s[i] + rplop( type[2] );
 				case "str": return s[i] + rplop( type[2], true );
 				case "lst":
@@ -462,7 +470,6 @@ function toArgPop( name, types ) {
 				case "num":
 				case "str":
 				case "bin":
-			    case "swo":
 					//s[i] += ;
 					if(type.length == 3 && type[2].indexOf(":") > -1)
 						type[2] = replaceTypes(type[2], true); //.replace(/\b([\w_.]+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
@@ -617,9 +624,9 @@ function rplop( s, n ) {
 }
 function Throw(err) { throw err; }
 function Warn(msg) { if(warnEnbl) console.error("Warning: " + msg); }
-function newNaviItem(link, text) { return naviItem.replace("%s", link).replace("%s", text); }
+function newNaviItem(link, text, sClass) { return naviItem.replace("%s", link).replace("%s", sClass ? ` class="${sClass}"` : "").replace("%s", text); }
+function newTxtPopup(  id, text, sClass) { return txtPopup.replace("%s",   id).replace("%s", sClass ? ` class="${sClass}"` : "").replace("%s", text); }
 function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("%s", text); }
-function newTxtPopup(  id, text) { return txtPopup.replace("%s",   id).replace("%s", text); }
 function newAppPopup(desc, type) { return appPopup.replace("%s", desc).replace("%s", type); }
 function newLink(target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function dbg(v){ console.log(v); return v; }
@@ -640,21 +647,25 @@ function dbg(v){ console.log(v); return v; }
 
 // html templates
 var 	//navigator list item
-	naviItem = '\n\t\t\t\t<li><a href="%s">%s</a></li>',
+	naviItem = '\n\t\t\t\t<li><a href="%s"%s>%s</a></li>',
 		// constructor and inline examples
 	funcBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
 		// subfunctions
 	subfBase = '\t\t\t<div class="samp">%s</div>\n',
 		//jquery-popup link tag
-	txtPopup = '<a href="#pop_%s" data-transition="pop" data-rel="popup">%s</a>',
+	txtPopup = '<a href="#pop_%s"%s data-transition="pop" data-rel="popup">%s</a>',
 		//app-popup tag
 	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
-		//popup objct
+		//popup object
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
 		//subfunctions list
 	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
 	    // premium note
 	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
+	    // deprecated note
+	deprecatedHint = "<div class='deprHint'><b>Note: This function is deprecated.%s</b></div>";
+	    // xfeature note
+	xfeatureHint = "<div class='deprHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
 		//example snippets
 	sampBase = `
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -702,7 +713,7 @@ var 	//navigator list item
 	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="css/docs-default.min.css"/>
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
 	<script src="../app.js"></script>
@@ -741,7 +752,7 @@ var 	//navigator list item
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
 
 	<script src="../js/energize-min.js"></script>
 	<script src="../js/jquery-1.8.1.min.js"></script>
@@ -789,7 +800,6 @@ var 	//globals for one doc
 		"all":"all types",
 		"bin":"boolean",
 		"dso":"app object",
-		"swo":"SmartWatch object",
 		"fnc":"function",
 		"lst":"list",
 		"num":"number",
@@ -803,7 +813,6 @@ var 	//globals for one doc
 		"all":"",
 		"bin":"",
 		"dso":"",
-		"swo":"",
 		"fnc":"",
 		"lst":"",
 		
@@ -863,11 +872,11 @@ var 	//globals for one doc
 
 var 
 	// hide functions and methods which are matching this regex
-	regHide = /^(_[\w\W]*|Create(Object|GLView|ListView|NxtRemote)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
+	regHide = /^(_.*|Create(Object|GLView|ListView|Nxt|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 	    // html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.'},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', "#160":"\xa0", nbsp:"\xa0"},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor

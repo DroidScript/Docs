@@ -26,3 +26,23 @@ function OnStart()
     app.HideProgress();
 }
 </sample>
+
+<sample Is In Foreground>
+function OnStart()
+{
+    app.Animate(CheckForeground, 0.2);
+}
+
+function CheckForeground()
+{
+    var apps = app.GetRunningApps();
+    var name = app.GetPackageName();
+    if(!app.IsAPK()) name += ":NewActivityProcess";
+
+    for(var i in apps)
+    {
+        if(apps[i].name == name)
+            app.ShowPopup("In Foreground: " + apps[i].foreground);
+    }
+}
+</sample>

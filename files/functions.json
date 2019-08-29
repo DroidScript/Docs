@@ -494,7 +494,7 @@
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX|FillY|FillXY,Normal|Aluminium|Gray|Lego"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
 		"retval": "Button",
 		"shortDesc": "Creates a button control",
 		"subf": {
@@ -572,11 +572,11 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"AutoCapture": {
-				"desc": "Automatically takes pictures if a motion was detected by cam.MotionMosaic.",
+				"desc": "Automatically takes pictures if a motion was detected by cam.MotionMosaic.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
 				"isfunc": true,
 				"name": "AutoCapture",
 				"pNames": ["path", "file", "maxCount"],
-				"pTypes": ["str_pth", "str_pth", "num_int"],
+				"pTypes": ["str_pth", "str-File_n#_motion", "num_int"],
 				"shortDesc": "Takes a picture if a motion was detected"
 			},
 			"ClearFocus": "#1362225380",
@@ -939,7 +939,7 @@
 		"isfunc": true,
 		"name": "CreateCheckBox",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y"],
 		"retval": "CheckBox",
 		"shortDesc": "Returns a new CheckBox object",
 		"subf": {
@@ -1032,7 +1032,7 @@
 		"isfunc": true,
 		"name": "CreateCodeEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y"],
 		"retval": "CodeEdit",
 		"shortDesc": "Returns a new CodeEdit object",
 		"subf": {
@@ -2329,7 +2329,7 @@
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
+		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
 		"retval": "Layout",
 		"shortDesc": "Returns a new Layout object",
 		"subf": {
@@ -3411,12 +3411,12 @@
 				"shortDesc": "Timeout between two receive checks"
 			},
 			"WakeOnLan": {
-				"desc": "WakeOnLan\n\n<premium>",
+				"desc": "Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.\n\n<premium>",
 				"isfunc": true,
 				"name": "WakeOnLan",
 				"pNames": ["ip", "mac"],
 				"pTypes": ["str", "str"],
-				"shortDesc": "WakeOnLan"
+				"shortDesc": "Wake up devices if they are configured to"
 			}
 		}
 	},
@@ -3491,7 +3491,7 @@
 	},
 	"CreateNxt": {
 		"abbrev": "nxt",
-		"desc": "The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.",
+		"desc": "The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.\n<deprecated Please install and visit the NXT-Docs from the Plugins page>",
 		"isfunc": true,
 		"name": "nxt",
 		"pNames": [],
@@ -4138,7 +4138,7 @@
 		"isfunc": true,
 		"name": "CreateSeekBar",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_frc", "num_frc", "str_com"],
+		"pTypes": ["num_frc", "num_frc", "str_com-FillX/Y"],
 		"retval": "SeekBar",
 		"shortDesc": "Returns a new SeekBar object",
 		"subf": {
@@ -4680,13 +4680,13 @@
 	},
 	"CreateSMS": {
 		"abbrev": "sms",
-		"desc": "Returns a SMS object.",
+		"desc": "Returns a new SMS object to send and retreive SMS messages.\n<xfeature>",
 		"isfunc": true,
 		"name": "CreateSMS",
 		"pNames": [],
 		"pTypes": [],
 		"retval": "SMS",
-		"shortDesc": "Returns a new SMS object to send and retreive SMS messages.",
+		"shortDesc": "Returns a new SMS object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4752,7 +4752,7 @@
 		"shortDesc": "Returns a new SpeechRec object",
 		"subf": {
 			"Cancel": {
-				"desc": "Stop recognizing speech.",
+				"desc": "Stop recognizing speech and break other processes.",
 				"isfunc": true,
 				"name": "Cancel",
 				"pNames": [],
@@ -4847,12 +4847,12 @@
 				"shortDesc": "Called when text was recognized"
 			},
 			"Stop": {
-				"desc": "Stop speech recognition.",
+				"desc": "Stop speech recording and start recognizing.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Stop speech recognition"
+				"shortDesc": "Stop recording and start recognition"
 			}
 		}
 	},
@@ -4862,7 +4862,7 @@
 		"isfunc": true,
 		"name": "CreateSpinner",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-FillX/Y"],
 		"retval": "Spinner",
 		"shortDesc": "Returns a new Spinner object",
 		"subf": {
@@ -4896,7 +4896,7 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"SelectItem": {
-				"desc": "Change the current shown item",
+				"desc": "Change the current shown item\n<deprecated Use SetText instead>",
 				"isfunc": true,
 				"name": "SelectItem",
 				"pNames": ["item"],
@@ -4920,7 +4920,23 @@
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
-			"SetOnTouch": "#2088093920",
+			"SetOnTouch": {
+				"desc": "Define a callback function that is called when the user touches the control.\n<deprecated Use SetOnChange instead>",
+                "name": "SetOnTouch",
+				"isfunc": true,
+				"pNames": ["callback"],
+				"pTypes": [
+					{
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback"
+					}
+				],
+				"shortDesc": "Define a callback function for touch events"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
@@ -5508,7 +5524,7 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log,FillX/Y"],
 		"retval": "Text",
 		"shortDesc": "Returns a new Text object",
 		"subf": {
@@ -5638,7 +5654,7 @@
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines,FillX/Y"],
 		"retval": "TextEdit",
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
@@ -6014,7 +6030,7 @@
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad,FillX/Y"],
 		"retval": "Toggle",
 		"shortDesc": "Returns a new Toggle object",
 		"subf": {
@@ -6652,7 +6668,7 @@
 		"isfunc": true,
 		"name": "CreateWebView",
 		"pNames": ["width", "height", "options", "zoom"],
-		"pTypes": ["?", "?", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade", "?"],
+		"pTypes": ["num_frc", "num_frc", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade,FillX/Y", "?"],
 		"retval": "WebView",
 		"shortDesc": "Returns a new WebView object",
 		"subf": {
@@ -8842,7 +8858,7 @@
 		"shortDesc": "Set options for the connected joystick"
 	},
 	"SetKioskMode": {
-		"desc": "Blocks android functionality to keep the rest of your phone safe while others may use your app.\n\n<premium>",
+		"desc": "Blocks android functionality to keep the rest of your phone safe while others may use your app.\n\n<premium>\n<xfeature>",
 		"isfunc": true,
 		"name": "SetKioskMode",
 		"pNames": ["mode", "enable", "options"],
