@@ -189,6 +189,6 @@ function ShowPopup(msg){
 	var pop = $("#appPopup");
 	if(pop.is(":visible")) pop.stop().fadeOut(100, function() { pop.text(msg); });
 	else pop.text(msg);
-	pop.fadeIn(200).delay(1500).fadeOut(200);
+	pop.fadeIn(200).delay(1500).fadeOut(400);
 }
 

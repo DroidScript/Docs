@@ -75,15 +75,18 @@
 		"UnpairBtDevice"
 	],
 	"Components": [
+		"CreateAudioRecorder",
 		"CreateCrypt",
 		"CreateFile",
 		"CreateLocator",
+		"CreateMediaPlayer",
 		"CreateMediaStore",
 		"CreatePhoneState",
 		"CreatePlayStore",
 		"CreateSensor",
 		"CreateService",
 		"CreateSpeechRec",
+        "CreateSynth",
 		"CreateSysProc",
 		"CreateUSBSerial",
 		"CreateWebServer",

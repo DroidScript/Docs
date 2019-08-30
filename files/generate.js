@@ -229,21 +229,21 @@ function getDocData( f, useAppPop ) {
 		mkeys = keys( f.subf ).filter(nothidden).sort();
 
 	for( k = 0; k < mkeys.length; k++ ) {
-		var met = f.subf[mkeys[k]], retval = "", type, isBase = false;
+		var met = f.subf[mkeys[k]], retval = "", type;
 		curSubf = met.name;
 		
 		// load base func
 		if(typeof(met) == "string" && met.startsWith("#")) {
 			if(!basefuncs[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = basefuncs[met];
-			isBase = true;
+			curSubf = met.name;
 		}
 
-		if(!met.isfunc || hidden(met.name)) continue;
+		if(!met.isfunc || hidden(curSubf)) continue;
 		
 		//add shortDesc entry if missing
 		if( met.shortDesc == undefined ) {
-			functions[f.name].subf[met.name].shortDesc = "";
+			functions[f.name].subf[curSubf].shortDesc = "";
 			met.shortDesc = "";
 			tchd = true;
 		}
@@ -259,15 +259,16 @@ function getDocData( f, useAppPop ) {
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 			}
 			
-			pop = descPopup( met.name, `<b>${f.abbrev}.${met.name}</b><br>` +
-			    replW( met.desc ), getAddClass(met) || (isBase ? "baseFunc" : ""));
+			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
+			    replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
+			    getAddClass(met) || (basefuncs.all.indexOf(curSubf) > -1 ? "baseFunc" : ""));
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
 				`( ${args.join(", ")} )` : "()" ) + retval );
 		}
 		/* else { //convert other types
-			var pop = descPopup( met.name, replW( met.desc ) );
+			var pop = descPopup( curSubf, replW( met.desc ) );
 			tryAddType( pop.fnc );
 			methods += subfBase.replace( "%s", pop.txt + retval );
 		} */
@@ -292,7 +293,7 @@ function getDesc(name) {
 			"</p>\n\t\t\t$3\n\t\t\t<p>")
 		// replace %c with constructor if existent, otherwise insert after first dot
 		.replace(
-			/((?=.*%c)\.?(\s|<br>)*%c|(?!.*%c)\.)(\s|<br>|$)+/,
+			/((?=.*\%c)\.?(\s|<br>)*\%c|((?!.*\%c)\.)(\s|<br>|$)+)/,
 			`.</p>\n${funcBase}\t\t\t<p>`)
 		// replace <js> and <bash> tags with sample
 		.replace(
@@ -313,7 +314,7 @@ function getDesc(name) {
 				delete samples[n], `</p>\n\t\t\t${s}<p>`) // <- actual returned value
 		)
 		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
-		+ "</p>" + values(samples).concat("").reduce((a, b) => a + b)
+		+ "</p>" + Object.values(samples).concat("").reduce((a, b) => a + b);
 }
 
 // read and return html converted example snippets file
@@ -554,7 +555,7 @@ function incpop( type, i ) {
 
 function replaceTypes(s, useAppPop) {
     var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
-    _s.replace(/(\b[\w_.-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|,”}\n]*)?"?/g,
+    _s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\n]*)?"?/g,
 		function(m, name, type, _, desc, _) {
 		    if( !type && !desc || name.startsWith("Note")) return;
 		    if( desc && desc.startsWith('"')) desc = desc.slice(1);
@@ -876,7 +877,7 @@ var
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 	    // html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.', "#160":"\xa0", nbsp:"\xa0"},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":"\xa0", nbsp:"\xa0"},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 	tchd,            // status text changed in editor
@@ -969,6 +970,12 @@ function OnStart() {
 
 	categories.All = [];
 	categories.All = keys(functions);
+	
+	if(app.FileExists("app.js"))
+	    basefuncs.all = app.ReadFile("app.js").split("/*#obj*/ this.").slice(1).map(v => v.slice(0, v.indexOf(" ")))
+	else
+	    basefuncs.all = Object.keys(basefuncs).map(k => basefuncs[k].name);
+	
 	
 	if(process.argv.length > 2)
 		process.argv.slice(2).forEach((n) => generateDoc(n));

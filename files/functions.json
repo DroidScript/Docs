@@ -223,7 +223,7 @@
 				"name": "GetData",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "lst-[frequencies:num_int]",
+				"retval": "lst-[ frequencies:num_int ]",
 				"shortDesc": "Returns a new list of frequency values"
 			},
 			"GetPeak": {
@@ -4958,12 +4958,12 @@
 	},
 	"CreateSynth": {
 		"abbrev": "syn",
-		"desc": "Returns a Synth object.",
+		"desc": "Returns a Synth object which ca produces a variety of sounds, sound effects and music.\n%c\n<h3>Some descriptions</h3>\n**note length:** default is 2.56 seconds.\n**midi note&colon;** like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:\n\tC:60,C#:61,D:62,D#:63,E:64,F:65,F#:66,G:67,G#:68,A:69,A#:70,B:71.\n**duration&colon;** powers of two indicating whole, half, quarter etc. up to thirty second notes.\n**frequency&colon;** A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.\n\tHumans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz\n\n**Phaser:** a sound filter which creates a series of peaks and troughs in the frequency spectrum\n**VoltageControlledAmplifier:** (Variable-Gain Amplifier) electronic amplifier that varies its gain\n**Voltage-Controlled Filter:** electronic amplifier that varies the frequency",
 		"isfunc": true,
 		"name": "CreateSynth",
 		"pNames": ["type"],
-		"pTypes": ["?"],
-		"retval": "Synth",
+		"pTypes": ["str-Signal,VCA,VCF"],
+		"retval": "Returns a new Synth object.",
 		"shortDesc": "Returns a new Synth object",
 		"subf": {
 			"GetType": {
@@ -4975,270 +4975,269 @@
 				"retval": "str-Synth",
 				"shortDesc": "Returns the control class name"
 			},
-			"Method": "#1023663567",
 			"PlayMidiTune": {
-				"desc": "",
+				"desc": "Play a comma-separated sequence of “midi_note&colon;duration” pairs.",
 				"isfunc": true,
 				"name": "PlayMidiTune",
 				"pNames": ["tune"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_com-note1&colon;duration1&comma;note2&colon;duration2&comma;..."],
+				"shortDesc": "Play a sequence of notes"
 			},
 			"PlayNote": {
-				"desc": "",
+				"desc": "Plays a single note",
 				"isfunc": true,
 				"name": "PlayNote",
 				"pNames": ["note"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_int-0..125"],
+				"shortDesc": "Play a single note"
 			},
 			"PlayTone": {
-				"desc": "",
+				"desc": "Plays a frequency tone.",
 				"isfunc": true,
 				"name": "PlayTone",
 				"pNames": ["frequency", "duration"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num:frequency", "num_mls"],
+				"shortDesc": "Plays a frequency tone"
 			},
 			"SetDelay": {
-				"desc": "",
+				"desc": "Change the delay effect difference",
 				"isfunc": true,
 				"name": "SetDelay",
 				"pNames": ["milliseconds"],
 				"pTypes": ["num_mls"],
-				"shortDesc": ""
+				"shortDesc": "Change delay effect difference"
 			},
 			"SetDelayEnabled": {
-				"desc": "SetDelayEnabled",
+				"desc": "Enables the delay effect (plays every note a second time after a given delay)",
 				"isfunc": true,
 				"name": "SetDelayEnabled",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Enables the delay effect"
 			},
 			"SetFeedback": {
-				"desc": "",
+				"desc": "Adds a feedback effect when delay is enabled",
 				"isfunc": true,
 				"name": "SetFeedback",
 				"pNames": ["feedback"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Adds a delay feedback effect"
 			},
 			"SetFrequency": {
-				"desc": "",
+				"desc": "Set the current played frequency",
 				"isfunc": true,
 				"name": "SetFrequency",
 				"pNames": ["frequency"],
 				"pTypes": ["num"],
-				"shortDesc": ""
+				"shortDesc": "Set current frequency"
 			},
 			"SetNoteLength": {
-				"desc": "",
+				"desc": "Set the length of a whole note in seconds. Defaults to 2.56",
 				"isfunc": true,
 				"name": "SetNoteLength",
 				"pNames": ["duration"],
-				"pTypes": ["num_mls"],
-				"shortDesc": ""
+				"pTypes": ["num_sec"],
+				"shortDesc": "Set whole note length"
 			},
 			"SetPhaser": {
-				"desc": "",
+				"desc": "Initializes the phaser effect",
 				"isfunc": true,
 				"name": "SetPhaser",
 				"pNames": ["drywet", "rate", "range", "feedback"],
-				"pTypes": ["bin", "num", "num", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc", "num", "num", "num_frc"],
+				"shortDesc": "Initializes phaser"
 			},
 			"SetPhaserDryWet": {
-				"desc": "",
+				"desc": "Control producing of unprocessed (0) and delayed (1) signals (whatever this means)",
 				"isfunc": true,
 				"name": "SetPhaserDryWet",
 				"pNames": ["drywet"],
-				"pTypes": ["bin"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Control unprocessed/delayed signals ratio"
 			},
 			"SetPhaserEnabled": {
-				"desc": "SetPhaserEnabled",
+				"desc": "En/Disables phaser effect",
 				"isfunc": true,
 				"name": "SetPhaserEnabled",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disables phaser effect"
 			},
 			"SetPhaserFeedback": {
-				"desc": "",
+				"desc": "Enables phaser feedback",
 				"isfunc": true,
 				"name": "SetPhaserFeedback",
 				"pNames": ["feedback"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Enables phaser feedback"
 			},
 			"SetPhaserRange": {
-				"desc": "",
+				"desc": "Set sweep range",
 				"isfunc": true,
 				"name": "SetPhaserRange",
 				"pNames": ["range"],
 				"pTypes": ["num"],
-				"shortDesc": ""
+				"shortDesc": "Set sweep range"
 			},
 			"SetPhaserRate": {
-				"desc": "",
+				"desc": "Set sweeps per second",
 				"isfunc": true,
 				"name": "SetPhaserRate",
 				"pNames": ["rate"],
 				"pTypes": ["num"],
-				"shortDesc": ""
+				"shortDesc": "Set sweeps per second"
 			},
 			"SetVca": {
-				"desc": "",
+				"desc": "Initializes the VCA",
 				"isfunc": true,
 				"name": "SetVca",
 				"pNames": ["attack", "decay", "sustain", "release"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls"],
+				"shortDesc": "Initializes the VCA"
 			},
 			"SetVcaAttack": {
-				"desc": "",
+				"desc": "Set a time where the volume should reach a maximum",
 				"isfunc": true,
 				"name": "SetVcaAttack",
 				"pNames": ["attack"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Set a time of maximum volume"
 			},
 			"SetVcaDecay": {
-				"desc": "",
+				"desc": "Controls time in which the volume is lowered to the sustain value",
 				"isfunc": true,
 				"name": "SetVcaDecay",
 				"pNames": ["decay"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Controls time when volume is lowered to sustain"
 			},
 			"SetVcaEnabled": {
-				"desc": "SetVcaEnabled",
+				"desc": "En/Disables VCA effect",
 				"isfunc": true,
 				"name": "SetVcaEnabled",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disables VCA effect"
 			},
 			"SetVcaRelease": {
-				"desc": "",
+				"desc": "Set a time where the volume should reach a minimum",
 				"isfunc": true,
 				"name": "SetVcaRelease",
 				"pNames": ["release"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num:mls"],
+				"shortDesc": "set a time of minimum volume"
 			},
 			"SetVcaSustain": {
-				"desc": "",
+				"desc": "Set a basis volume",
 				"isfunc": true,
 				"name": "SetVcaSustain",
 				"pNames": ["sustain"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Set a basis volume"
 			},
 			"SetVcf": {
-				"desc": "",
+				"desc": "Initialize the VCF effect",
 				"isfunc": true,
 				"name": "SetVcf",
 				"pNames": ["attack", "decay", "sustain", "release", "cuttoff", "resonance", "depth"],
-				"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls", "num:frequency", "num_frc", "num_frc"],
+				"shortDesc": "Initialize the VCF effect"
 			},
 			"SetVcfAttack": {
-				"desc": "",
+				"desc": "Set a time where the frequencies should reach a maximum",
 				"isfunc": true,
 				"name": "SetVcfAttack",
 				"pNames": ["attack"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Set a time of maximum frequencies"
 			},
 			"SetVcfCutoff": {
-				"desc": "",
+				"desc": "Set a maximum frequency which will never be exceeded",
 				"isfunc": true,
 				"name": "SetVcfCutoff",
 				"pNames": ["cuttoff"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num:frequency"],
+				"shortDesc": "Set a maximum frequency"
 			},
 			"SetVcfDecay": {
-				"desc": "",
+				"desc": "Controls time in which the frequency is lowered to the sustain value.",
 				"isfunc": true,
 				"name": "SetVcfDecay",
 				"pNames": ["decay"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "Controls time when frequency is lowered to sustain"
 			},
 			"SetVcfDepth": {
-				"desc": "",
+				"desc": "Set the strength of the Vcf filter",
 				"isfunc": true,
 				"name": "SetVcfDepth",
 				"pNames": ["depth"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Set filter strength"
 			},
 			"SetVcfEnabled": {
-				"desc": "SetVcfEnabled",
+				"desc": "En/Disables VCF effect",
 				"isfunc": true,
 				"name": "SetVcfEnabled",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "En/Disables VCF effect"
 			},
 			"SetVcfRelease": {
-				"desc": "",
+				"desc": "Set a time where the volume should reach a minimum",
 				"isfunc": true,
 				"name": "SetVcfRelease",
 				"pNames": ["release"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_mls"],
+				"shortDesc": "set a time of minimum frequency"
 			},
 			"SetVcfResonance": {
-				"desc": "",
+				"desc": "Adds a resonance tone",
 				"isfunc": true,
 				"name": "SetVcfResonance",
 				"pNames": ["resonance"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Adds a resonance tone"
 			},
 			"SetVcfSustain": {
-				"desc": "",
+				"desc": "Set a basis frequency",
 				"isfunc": true,
 				"name": "SetVcfSustain",
 				"pNames": ["sustain"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["num_frc"],
+				"shortDesc": "Set a basis frequency"
 			},
 			"SetVolume": {
-				"desc": "",
+				"desc": "Set the overall synthesizer volume",
 				"isfunc": true,
 				"name": "SetVolume",
 				"pNames": ["left", "right"],
-				"pTypes": ["num_prc", "num_prc"],
-				"shortDesc": ""
+				"pTypes": ["num_frc", "num_frc"],
+				"shortDesc": "Set master volume"
 			},
 			"SetWaveShape": {
-				"desc": "",
+				"desc": "Set the wave shape of the synthesizer",
 				"isfunc": true,
 				"name": "SetWaveShape",
 				"pNames": ["shape"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-Sin,Saw,Square,White"],
+				"shortDesc": "Set the wave shape"
 			},
 			"Start": {
-				"desc": "",
+				"desc": "Start playing",
 				"isfunc": true,
 				"name": "Start",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start playing"
 			},
 			"Stop": {
-				"desc": "",
+				"desc": "Stop playing",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop playing"
 			}
 		}
 	},
