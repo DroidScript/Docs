@@ -344,7 +344,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["event"],
-						"pTypes": ["event"],
+						"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
 						"shortDesc": "callback"
 					}
 				],
@@ -360,7 +360,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["event"],
-						"pTypes": ["event"],
+						"pTypes": ["obj-{ source:dso, action:str-Down, count:num_int, x&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
 						"shortDesc": "callback"
 					}
 				],
@@ -376,7 +376,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["event"],
-						"pTypes": ["event"],
+						"pTypes": ["obj-{ source:dso, action:str-Move, count:num_int, x&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
 						"shortDesc": "callback"
 					}
 				],
@@ -392,7 +392,7 @@
 						"isfunc": true,
 						"name": "callback",
 						"pNames": ["event"],
-						"pTypes": ["event"],
+						"pTypes": ["obj-{ source:dso, action:str-Up, count:num_int, x&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
 						"shortDesc": "callback"
 					}
 				],

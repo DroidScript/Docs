@@ -233,7 +233,7 @@
 			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">HasFlash</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_01b" class="baseFunc" data-transition="pop" data-rel="popup">Hide</a>()</div>
 			<div class="samp"><a href="#pop_dsc_01c" class="baseFunc" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_01d" class="baseFunc" data-transition="pop" data-rel="popup">IsOverlap</a>( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> ) → <b>boolean</b></div>
+			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">IsOverlap</a>( <a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> ) → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">IsRecording</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_01f" class="baseFunc" data-transition="pop" data-rel="popup">IsVisible</a>() → <b>boolean</b></div>
 			<div class="samp"><a href="#pop_dsc_020" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
@@ -252,7 +252,7 @@
 			<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">SetFlash</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">onoff</a> )</div>
 			<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">SetFocusMode</a>( <a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )</div>
 			<div class="samp"><a href="#pop_dsc_02f" class="baseFunc" data-transition="pop" data-rel="popup">SetMargins</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>, <a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_030" class="baseFunc" data-transition="pop" data-rel="popup">SetOnFocus</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetOnFocus</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">SetOnPicture</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">SetOnReady</a>( <a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )</div>
 			<div class="samp"><a href="#pop_dsc_033" data-transition="pop" data-rel="popup">SetOrientation</a>( <a href="#pop_num_006" data-transition="pop" data-rel="popup">angle</a> )</div>
@@ -338,7 +338,8 @@
 		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
 		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>cam.Record</b><br>Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <i>pipe <font class='docstring'>“|”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>,<a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>|<a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>,<a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>|...”</font></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('list: [[r1, g1, b1],  [r2, g2, b2],  ...]')">data</a>)</div>
+		<div data-role="popup" id="pop_lst_002" class="ui-content"><b>list:</b> [[r1,g1,b1], [r2,g2,b2], ...]</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="switchPopup(this, '#pop_lst_002')" data-transition="pop" data-rel="popup">data</a>)</div>
 		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>cam.ReportColors</b><br>Keeps tracks of the average color around a given point.</div>
 		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
 		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>cam.SetBackAlpha</b><br>Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
@@ -392,7 +393,7 @@
 		<div data-role="popup" id="pop_str_013" class="ui-content"><b>string:</b> <font class='docstring'>“Show”</font> or <font class='docstring'>“Hide”</font> or <font class='docstring'>“Gone”</font></div>
 		<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>cam.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><b>Show:</b> visible<br><b>Hide:</b> invisible but still consuming space<br><b>Gone:</b> invisible and not consuming space</div>
 		<div data-role="popup" id="pop_dsc_03f" class="ui-content"><b>cam.SetZoom</b><br>Change the zoom value of the camera.</div>
-		<div data-role="popup" id="pop_dsc_040" class="ui-content"><b>cam.Show</b><br>Set the visibility of the control to “Show”.</div>
+		<div data-role="popup" id="pop_dsc_040" class="ui-content"><b>cam.Show</b><br>Set the visibility of the control to <font class='docstring'>“Show”</font>.</div>
 		<div data-role="popup" id="pop_dsc_041" class="ui-content"><b>cam.StartPreview</b><br>Start the camera preview on the display.</div>
 		<div data-role="popup" id="pop_dsc_042" class="ui-content"><b>cam.Stop</b><br>Stop recording a video.</div>
 		<div data-role="popup" id="pop_dsc_043" class="ui-content"><b>cam.StopPreview</b><br>Stop the camera preview on the display.</div>

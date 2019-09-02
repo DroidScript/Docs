@@ -7,9 +7,6 @@ var warnEnbl = false;
 function generateDocs() {
 	app.ShowProgressBar( "Generating files..." );
 
-	// saveCategories();
-	// saveFunctions();
-
 	app.SetDebug("console");
 	generateNavigators();
 	app.UpdateProgressBar( 0 );
@@ -49,11 +46,8 @@ function generateDocs() {
 		app.UpdateProgressBar( last, lst[i] );
 	}
 
-	app.SetDebug(true);
-	if( tchd ) {
-		saveFunctions();
-		tchd = false;
-	}
+	app.SetDebug("all");
+	if( tchd ) saveFunctions();
 	
 	//app.WriteFile( path + `lastfuncs${getl()}.json`, tos(functions) );
 	app.WriteFile( path + "info.json", tos( info ) );
@@ -114,7 +108,6 @@ function generateDoc( name ) {
 		// and I haven't changed it during the translation
 	Globals = {
 		popDefs: [],
-		useEventPop: false,
 		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
 	};
 
@@ -179,39 +172,28 @@ function getDocData( f, useAppPop ) {
 
 	// default descriptions and capitalizing
 	f.shortDesc = f.shortDesc.trim();
-	if( !f.shortDesc ) {
-		f.shortDesc = f.name;
-		tchd = true;
-	}
+	if( !f.shortDesc ) f.shortDesc = f.name;
 	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
 	    f.shortDesc.slice(1, f.shortDesc.endsWith(".") ? -1 : undefined );
 
-	if( !f.desc ) {
-		f.desc = f.shortDesc;
-		tchd = true;
-	}
+	if( !f.desc ) f.desc = f.shortDesc;
 	f.desc = f.desc.trim();
 	f.desc = f.desc.charAt(0).toUpperCase() + f.desc.slice(1);
 
     // abbrev for controls
-	if( isControl(f.name) ) {
-		if( !f.abbrev ) {
-			f.abbrev = getAbbrev( f.name );
-			tchd = true;
-		}
-	}
+	if( isControl(f.name) && !f.abbrev )
+		f.abbrev = getAbbrev( f.name );
 
 	var i, mArgs = [], type, fretval = "";
 
 	// convert constructor line
 	for( i in f.pNames ) {
 	    if( useAppPop ) {
-			mArgs.push(newAppPopup( typeDesc( f.pTypes[i] ), f.pNames[i] )
+			mArgs.push(newAppPopup( f.pNames[i], typeDesc( f.pTypes[i] ) )
 	            .replace( /<\/?\w+?>/g, ""));
 		}
-		else {
+		else 
 			mArgs.push(toArgPop( f.pNames[i], f.pTypes[i]));
-		}
 	}
 
 	mArgs = mArgs.length? ` ${mArgs.join(", ")} ` : "";
@@ -228,7 +210,8 @@ function getDocData( f, useAppPop ) {
 		// function list
 		mkeys = keys( f.subf ).filter(nothidden).sort();
 
-	for( k = 0; k < mkeys.length; k++ ) {
+	for( k = 0; k < mkeys.length; k++ )
+	{
 		var met = f.subf[mkeys[k]], retval = "", type;
 		curSubf = met.name;
 		
@@ -242,10 +225,10 @@ function getDocData( f, useAppPop ) {
 		if(!met.isfunc || hidden(curSubf)) continue;
 		
 		//add shortDesc entry if missing
-		if( met.shortDesc == undefined ) {
+		if( met.shortDesc == undefined )
+		{
 			functions[f.name].subf[curSubf].shortDesc = "";
 			met.shortDesc = "";
-			tchd = true;
 		}
 
 		//convert return value
@@ -253,15 +236,15 @@ function getDocData( f, useAppPop ) {
 			retval = " → " + typeDesc( met.retval );
 
 		//convert function types
-		if( met.isfunc ) {
+		if( met.isfunc )
+		{
 			var args = [], type, pop;
-			for( i in met.pNames ) {
+			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
-			}
 			
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
 			    replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
-			    getAddClass(met) || (basefuncs.all.indexOf(curSubf) > -1 ? "baseFunc" : ""));
+			    getAddClass(met) || (basefuncs.all.indexOf(curSubf) > -1 ? ' class="baseFunc"' : ""));
 			tryAddType( pop.fnc );
 			
 			methods += subfBase.replace( "%s", pop.txt + ( args.length ? 
@@ -275,13 +258,12 @@ function getDocData( f, useAppPop ) {
 	}
 	curSubf = null;
 
-	if( Globals.useEventPop ) tryAddType( eventPop );
-
 	return { args : mArgs, mets : methods, ret : fretval }
 }
 
 // returns an html formatted description of a function
-function getDesc(name) {
+function getDesc(name)
+{
 	var desc = functions[name].desc.trim();
 	var samples = getSamples(name);
 	if( desc.indexOf(".") == -1 ) desc += ".";
@@ -318,14 +300,16 @@ function getDesc(name) {
 }
 
 // read and return html converted example snippets file
-function getSamples( name ) {
+function getSamples( name )
+{
 	var i, s, samples = {}, samp = ReadFile( path + `samples/${name}.txt`, " " );
 
 	// replace special html characters and convert to list
 	samp = samp.split( "</sample>" ).slice( 0 , -1 );
 	
 	// convert samples to required html format
-	for( var i in samp ) {
+	for( var i in samp )
+	{
 		s = samp[i].trim();
 		var p = s.indexOf( ">" ),
 			title = s.slice( 8, p );
@@ -335,7 +319,8 @@ function getSamples( name ) {
 }
 
 // convert a sample to html code
-function toHtmlSamp( c, t, n ) {
+function toHtmlSamp( c, t, n )
+{
     var hasBold = c.indexOf("<b>") > -1 && c.indexOf("</b>") > c.indexOf("<b>");
     if(!hasBold) Warn(`${curDoc} sample "${t}" has no bold area\n`);
 	
@@ -345,12 +330,14 @@ function toHtmlSamp( c, t, n ) {
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
     	.replace( /\n/g, "<br>\n\t\t\t\t\t" )
     
-    if(hasBold) {
+    if(hasBold)
+    {
         c = sampBase
             .replace( "%b", c )
             .replace( /§b§([^]+?)§b§/g, "<b id=\"snip%i\" style=\"font-size:100%\">$1</b>" );
     }
-    else {
+    else
+    {
         c = sampBase
             .replace( /.*<a.*onclick="copy\( snip%i \)">.*<\/a>\n/, "" )
             .replace( "%b", c );
@@ -360,26 +347,28 @@ function toHtmlSamp( c, t, n ) {
 }
 
 
-function getAddClass(m) {
-    if(m.desc.indexOf("<deprecated") > -1) return "deprHint";
-    if(m.desc.indexOf("<xfeature") > -1) return "deprHint";
-    if(m.desc.indexOf("<premium") > -1) return "premHint";
+function getAddClass(m)
+{
+    if(m.desc.indexOf("<deprecated") > -1) return ' class="deprHint"';
+    if(m.desc.indexOf("<xfeature") > -1) return ' class="deprHint"';
+    if(m.desc.indexOf("<premium") > -1) return ' class="premHint"';
     return "";
 }
 
 // returns a description popup object
-function descPopup( text, ptext, sClass ) {
-	var o = {
+function descPopup( text, ptext, sClass )
+{
+	return {
 		fnc: newDefPopup(
 			"dsc_" + incpop( "dsc", 1 ),
 			addMarkdown(replaceTypes(ptext, 1))),
 		txt: newTxtPopup( "dsc_" + incpop( "dsc" ), text, sClass )
-	}
-	return o;
+	};
 }
 
 // returns a formatted description of a type - used for subfunction return values
-function typeDesc( types, isDSO ) {
+function typeDesc( types, isDSO )
+{
 	types = types
 		.split("||")
 		.map((type, i) => [type.slice(0,3)]
@@ -394,56 +383,68 @@ function typeDesc( types, isDSO ) {
 			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 	
-	return types.map(function(type, i) {
-		if( s[i] && type.length == 3 ) {
-				//allow limited values for parameters
-			switch( type[0] ) {
-				case "num": return s[i] + rplop( type[2] );
-				case "str": return s[i] + rplop( type[2], true );
-				case "lst":
-				case "obj": return s[i] + replaceTypes( type[2], false );
-				case "dso":
-				    if(!functions[type[2]])
-				        Throw(Error(`link to unexistent file ${type[2]}.htm`))
-				    return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
-				default: Throw(Error("unknown type " + type[1]));
-			}
-		}
-		else {
-			if(s[i] == undefined) {
-				if(isDSO) return "<b>app object:</b> " + type[1];
-				else Throw(Error("unknown type " + type[1]));
-			}
-			return s[i];
-		}
-	}).join("\n")
-	.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>");
+	return types.map(
+	    function(type, i)
+	    {
+		    if( s[i] && type.length == 3 )
+		    {
+				    //allow limited values for parameters
+			    switch( type[0] )
+			    {
+				    case "num": return s[i] + rplop( type[2] );
+				    case "str": return s[i] + rplop( type[2], true );
+				    case "lst":
+				    case "obj": return s[i] + replaceTypes( type[2], false );
+				    case "dso":
+				        if(!functions[type[2]])
+				            Throw(Error(`link to unexistent file ${type[2]}.htm`))
+				        return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+				    default: Throw(Error("unknown type " + type[1]));
+			    }
+		    }
+		    else
+		    {
+			    if(s[i] == undefined)
+			    {
+				    if(isDSO) return "<b>app object:</b> " + type[1];
+				    else Throw(Error("unknown type " + type[1]));
+			    }
+			    return s[i];
+		    }
+	    }).join("\n")
+	    .replace( /(“.*?”)/g, "<font class='docstring'>$1</font>");
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
-function toArgPop( name, types ) {
+function toArgPop( name, types, doSwitch ) {
 
 	// function callbacks
-	if( typeof types == "object" ) {
+	if( typeof types == "object" )
+	{
 		incpop( "fnc", 1 );
 
 		tryAddType(newDefPopup(
 			"fnc_" + incpop( "fnc" ),
 			"<b>function</b>(" + types.pNames.map(
-				(n, i) => toArgAppPop(n, types.pTypes[i]).replace(/onclick=".*?"/, function(m) {
-				    if(types.pTypes[i] != "event") return m;
-				    Globals.useEventPop = true;
-			        return `onclick='$(this.parentNode).bind({popupafterclose:function(){$("#pop_std_evt").popup("open", {"transition":"pop"})}});$(this.parentNode).popup("close")'`
-				})
+				function(n, i)
+				{
+				    if("lst,obj".indexOf(types.pTypes[i].slice(0, 3)) > -1)
+				        // for lists and objects in callback parameters switch popups
+    				    return toArgPop(n, types.pTypes[i], true);
+				    else
+				        // primitive types get a primitive popup
+				        return toArgAppPop(n, types.pTypes[i]);
+			    }
 			).join(", ") + ")" )
 		);
-   
+        
 		return newTxtPopup( "fnc_" + incpop( "fnc" ), name );
 	}
 
 	// multiple types
 	types = types.split("||").map(
-		 function(type) {
+		 function(type)
+		 {
 		    return [type.slice(0,3)].concat(
 		            // custom type desc
 			    type.replace(/^(...):([^-]*)/, (m, btype, href) =>
@@ -465,15 +466,17 @@ function toArgPop( name, types ) {
 		);
 	
 	// add formatted possible values
-	var str = types.map(function(type, i) {
-		if( type.length == 3 ) {
-			switch( type[0] ) {
+	var str = types.map(function(type, i)
+	{
+		if( type.length == 3 )
+		{
+			switch( type[0] )
+			{
 				case "num":
 				case "str":
 				case "bin":
-					//s[i] += ;
 					if(type.length == 3 && type[2].indexOf(":") > -1)
-						type[2] = replaceTypes(type[2], true); //.replace(/\b([\w_.]+):(\w+[^,|”]+)/g, newAppPopup("$2", "$1"))
+						type[2] = replaceTypes(type[2], true);
 					return s[i] + rplop( type[2], type[0] == "str" );
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
@@ -489,17 +492,25 @@ function toArgPop( name, types ) {
 
 	// build popup id, "std_type" for common or "type_index" for individual popups
 	// save popup definition and return popup text (= link)
-	if(types.length == 1) {
+	if(types.length == 1)
+	{
 		types = types[0];
 		if(types[1].endsWith("_tmp")) types[2] = true;
-		var pop = 
+		var pop_id = 
 			(types[1].match("_") || types[2] ? "" : "std_") +
 			(!types[2] ? types[1].replace("?", "ukn") :
 				types[0] + "_" + incpop( types[0], 1 )
 			);
-		if(pop.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop))
-		tryAddType(newDefPopup( pop, str[0].replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
-		return newTxtPopup( pop, name );
+		if(pop_id.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop));
+		
+		tryAddType(newDefPopup( pop_id, str[0]
+		    .replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )
+		    .replace( /ShowPopup\('.*?'\)/g, m => m.replace(/<.*?>/g, ""), "")
+	    ));
+	    
+		s = newTxtPopup( pop_id, name );
+		if(doSwitch) s = s.replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
+		return s;
 	}
 	else {
 		// for values with multiple types
@@ -518,12 +529,11 @@ function toArgAppPop( name, types ) {
 		);
 	
 	return newAppPopup(
-		types.map(
+		name, types.map(
 			(type) => typenames[type[0]] +
 				(typedesc[type[1]] ? ": " + typedesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
-			).join("\n"),
-		name
+			).join("\n")
 	);
 }
 
@@ -538,7 +548,8 @@ function tryAddType( typelst ) {
 }
 
 //replace whitespace with html syntax whitespace
-function replW( s, n ) {
+function replW( s, n )
+{
 	if( n == undefined ) n = true;
 	return s
 		.replace( /\\\/\\\//g, "#" )
@@ -548,34 +559,39 @@ function replW( s, n ) {
 }
 
 //increase special popup counters and returns its id
-function incpop( type, i ) {
+function incpop( type, i )
+{
 	if( i ) Globals.spop[type] += i;
 	return hex(Globals.spop[type]);
 }
 
-function replaceTypes(s, useAppPop) {
+// accept formats: 'name:"desc"' 'name:type' 'name:"type-values"'
+function replaceTypes(s, useAppPop)
+{
     var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
     _s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\n]*)?"?/g,
-		function(m, name, type, _, desc, _) {
+		function(m, name, type, _, desc, _)
+		{
 		    if( !type && !desc || name.startsWith("Note")) return;
+		    
 		    if( desc && desc.startsWith('"')) desc = desc.slice(1);
-		    if( type ) {
+		    if( type )
+		    {
 		        if(typenames[type.slice(0, 3)]) {
-		            if(desc) type += "-" + desc, desc = '';
-		        }
-		        else desc = type + (desc || ''), type = '';
+		            if(desc) type += "-" + desc, desc = ''; }
+		        else
+		            desc = type + (desc || ''), type = '';
 	        }
 		    
 		    var r;
-		    if(useAppPop) {
-				r = newAppPopup(
-				    type ? typenames[type.slice(0, 3)] +
-			            (typedesc[type] ? ": " + typedesc[type] : "")
-		            : desc, name);
+		    if(useAppPop)
+		    {
+	            if(type && !desc) r = toArgAppPop(name, type);
+	            else r = newAppPopup(name, type ? typenames[type.slice(0, 3)] +
+                        (typedesc[type] ? ": " + typedesc[type] : "") : desc);
 			}
-			else {
-				r = type ? toArgPop(name, type) : newAppPopup(name, desc);
-			}
+			else
+			    r = type ? toArgPop(name, type) : newAppPopup(name, desc);
 			
 			s = s.replace(m, r);
 			return "";
@@ -588,7 +604,8 @@ function replaceTypes(s, useAppPop) {
 function addMarkdown(s) {
 	return s
 		// links
-		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url) {
+		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url)
+		{
 			// exists in docs folder? direct link : open in external app
 			return white + (app.FileExists(path + "docs/app/" + url) ? 
 				`<a href="${url}" data-ajax="false">` :
@@ -615,7 +632,8 @@ function skeys( o ) { return "" + keys( o ); }
 	//replaces \ paceholders with its placeholder 'name'
 function reprs( s ) { return s.replace( /\n/g, "\\n" ).replace( /\t/g, "\\t" ); }
 	//replace "&" and "|" operators with "and" and "or"
-function rplop( s, n ) {
+function rplop( s, n )
+{
 	return replW( (n? '“' + s + '”' : s)
 		.replace( /\\(.)/g, (m,c)=>`§${c.charCodeAt(0)}§` )
 		.replace( /\|/g, n? '” or “' : " or " )
@@ -625,12 +643,12 @@ function rplop( s, n ) {
 }
 function Throw(err) { throw err; }
 function Warn(msg) { if(warnEnbl) console.error("Warning: " + msg); }
-function newNaviItem(link, text, sClass) { return naviItem.replace("%s", link).replace("%s", sClass ? ` class="${sClass}"` : "").replace("%s", text); }
-function newTxtPopup(  id, text, sClass) { return txtPopup.replace("%s",   id).replace("%s", sClass ? ` class="${sClass}"` : "").replace("%s", text); }
+function newNaviItem(link, text, add) { return naviItem.replace("%s", link).replace("%s", add || '').replace("%s", text); }
+function newTxtPopup(  id, text, add) { return txtPopup.replace("%s",   id).replace("%s", add || '').replace("%s", text); }
 function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("%s", text); }
-function newAppPopup(desc, type) { return appPopup.replace("%s", desc).replace("%s", type); }
+function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
 function newLink(target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
-function dbg(v){ console.log(v); return v; }
+function d(v) { console.log(v); return v; }
 
 /* % placeholder descriptions in the html base strings
 	%t: title name
@@ -647,27 +665,30 @@ function dbg(v){ console.log(v); return v; }
 */
 
 // html templates
-var 	//navigator list item
+var		// subfunctions
+	subfBase = '\t\t\t<div class="samp">%s</div>\n',
+ 	    // navigator list item
 	naviItem = '\n\t\t\t\t<li><a href="%s"%s>%s</a></li>',
+	    // reopen popup onclick code
+	switchPop = 'onclick="switchPopup(this, \'#pop_$1\')"',
+		// app-popup tag
+	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		// constructor and inline examples
 	funcBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
-		// subfunctions
-	subfBase = '\t\t\t<div class="samp">%s</div>\n',
-		//jquery-popup link tag
+		// jquery-popup link tag
 	txtPopup = '<a href="#pop_%s"%s data-transition="pop" data-rel="popup">%s</a>',
-		//app-popup tag
-	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
-		//popup object
+		// popup object
 	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
-		//subfunctions list
+		// subfunctions list
 	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
-	    // premium note
-	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
+
 	    // deprecated note
 	deprecatedHint = "<div class='deprHint'><b>Note: This function is deprecated.%s</b></div>";
+	    // premium note
+	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
 	    // xfeature note
 	xfeatureHint = "<div class='deprHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
-		//example snippets
+		// example snippets
 	sampBase = `
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - %t</h3>
@@ -679,28 +700,7 @@ var 	//navigator list item
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp%i )">Copy All</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp%i )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
 				</div>
-			</div>\n\n\t\t\t`,
-		//popup for the event object at OnTouch* callbacks
-	eventPop = `
-		<div data-role="popup" id="pop_std_evt" class="ui-content">
-		{<br>
-			&#160;&#160;&#160;&#160;source: <b>app object</b>,<br>
-			&#160;&#160;&#160;&#160;action: <b>string:</b> "Down" or "Move" or "Up",<br>
-			&#160;&#160;&#160;&#160;count: <b>number:</b> integer,<br>
-			&#160;&#160;&#160;&#160;X: <b>number:</b> fraction of screen width,<br>
-			&#160;&#160;&#160;&#160;Y: <b>number:</b> fraction of screen height,<br>
-			&#160;&#160;&#160;&#160;x: <b>list:</b> [
-				<a href="" onClick="app.ShowPopup('fraction of screen width')">x1</a>,
-				<a href="" onClick="app.ShowPopup('fraction of screen width')">x2</a>,
-				<a href="" onClick="app.ShowPopup('fraction of screen width')">x3</a>
-			],<br>
-			&#160;&#160;&#160;&#160;y: <b>list:</b> [
-				<a href="" onClick="app.ShowPopup('fraction of screen height')">y1</a>,
-				<a href="" onClick="app.ShowPopup('fraction of screen height')">y2</a>,
-				<a href="" onClick="app.ShowPopup('fraction of screen height')">y3</a>
-			]<br>
-		}
-		</div>`.replace(/[\n\t]+/g, "");
+			</div>\n\n\t\t\t`;
 		
 		//docs navigator list base
 	naviBase = `
@@ -880,7 +880,6 @@ var
 	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":"\xa0", nbsp:"\xa0"},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
-	tchd,            // status text changed in editor
 	lang = "en",     // current language
 	path = __dirname + "/";
 

@@ -2482,7 +2482,7 @@
 	},
 	"CreateList": {
 		"abbrev": "lst",
-		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “&colon;” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.\nYou can have one icon and some body text using the following formats&colon;\n\n“title”\n“title&colon;icon”\n“title&colon;body&colon;icon”\n“title&colon;body&colon;extra&colon;icon”\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: “audio”, “photo”, “video”, “folder”, “audiofolder”, “photofolder”, “videofolder” and “playlist”.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
+		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “&colon;” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.\nYou can have one icon and some body text using the following formats&colon;\n\n“title”\n“title&colon;icon”\n“title&colon;body&colon;icon”\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: “audio”, “photo”, “video”, “folder”, “audiofolder”, “photofolder”, “videofolder” and “playlist”.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
@@ -3094,7 +3094,7 @@
 	},
 	"CreateMediaStore": {
 		"abbrev": "med",
-		"desc": "The MediaStore is used to query audio information from the android provider or from the device in the /sdcard/Music folder.",
+		"desc": "The MediaStore is used to query audio information from the android provider or from the device in the “/sdcard/Music” folder.",
 		"isfunc": true,
 		"name": "CreateMediaStore",
 		"pNames": [],
@@ -3150,7 +3150,7 @@
 				"isfunc": true,
 				"name": "QueryMedia",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "str:coloumns-title,\\_id,duration,size,uri,album,albumID;artist,artistId", "str-internal|external"],
+				"pTypes": ["str_sql", "str:coloumns-title,\\_id,duration,size,uri,album,albumID,artist,artistId", "str-internal|external"],
 				"shortDesc": "Search for media"
 			},
 			"SetOnAlbumsResult": {
