@@ -1945,6 +1945,320 @@
 			"Tween": "#2114624769"
 		}
 	},
+    "CreateGLView": {
+		"abbrev": "glv",
+		"desc": "Returns a GLView object.",
+		"isfunc": true,
+		"name": "CreateGLView",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num_srw", "num_srh", "str-fast2d"],
+		"retval": "GLView",
+		"shortDesc": "returns a GLView object.",
+		"subf": {
+			"aspect": {
+				"desc": "width/height relation",
+				"isfunc": false,
+				"name": "aspect",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_flt",
+				"shortDesc": ""
+			},
+			"canvas": {
+				"desc": "[HTMLDivElement]",
+				"isfunc": false,
+				"name": "canvas",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"ClearFocus": "#1362225380",
+			"CreateImage": {
+				"desc": "create dso_glv can be drawn on GLV",
+				"isfunc": true,
+				"name": "CreateImage",
+				"pNames": ["file", "callback"],
+				"pTypes": ["str_pth", {
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"retval": "",
+						"shortDesc": "callback"
+					}],
+				"retval": "dso_glv",
+				"shortDesc": ""
+			},
+            "ctx.clearRect": {
+                "desc": "<deprecated ctx is automatically cleared after render()>",
+                "isfunc": true,
+                "name": "ctx.clearRect",
+                "pNames": ["x", "y", "width", "height"],
+                "pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
+                "retval": "",
+                "shortDesc": "deprecated"
+            },
+            "ctx._drawCommands": {
+                "desc": "",
+                "isfunc": false,
+                "name": "ctx._drawCommands",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "str",
+                "shortDesc": ""
+            },
+            "ctx._globalAlpha": {
+                "desc": "",
+                "isfunc": false,
+                "name": "ctx._globalAlpha",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "num_frc",
+                "shortDesc": ""
+            },
+            "ctx.capture": {
+                "desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
+                "isfunc": true,
+                "name": "ctx.capture",
+                "pNames": ["x", "y", "w", "h", "fileName",
+                    "successCallback", "errorCallback"
+                ],
+                "pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
+                "retval": "",
+                "shortDesc": "Captures the canvas to a png image"
+            },
+            "ctx.drawImage": {
+                "desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
+                "isfunc": true,
+                "name": "ctx.drawImage",
+                "pNames": ["image", "sx", "sy", "sw", "sh", "dx",
+                    "dy", "dw", "dh"
+                ],
+                "pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl",
+                    "num_pxl"],
+                "retval": "",
+                "shortDesc": "Draws part of a sprite to the context"
+            },
+            "ctx.loadTexture": {
+                "desc": "",
+                "isfunc": true,
+                "name": "ctx.loadTexture",
+                "pNames": ["image", "successCallback",
+                    "errorCallback"],
+                "pTypes": ["?", "?", "?"],
+                "retval": "?",
+                "shortDesc": ""
+            },
+            "ctx.render": {
+                "desc": "render the draw commands to the context",
+                "isfunc": true,
+                "name": "ctx.render",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "",
+                "shortDesc": "render draw commands"
+            },
+            "ctx.resetTransform": {
+                "desc": "Reset all transformations to default",
+                "isfunc": true,
+                "name": "ctx.resetTransform",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "",
+                "shortDesc": "Reset all transformations"
+            },
+            "ctx.restore": {
+                "desc": "Restore a previously saved context state",
+                "isfunc": true,
+                "name": "ctx.restore",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "",
+                "shortDesc": "Restore saved context"
+            },
+            "ctx.rotate": {
+                "desc": "Rotates the current applied transformation",
+                "isfunc": true,
+                "name": "ctx.rotate",
+                "pNames": ["angle"],
+                "pTypes": ["num_rad"],
+                "retval": "",
+                "shortDesc": "Rotates the transformation matrix"
+            },
+            "ctx.save": {
+                "desc": "Saves the current context state",
+                "isfunc": true,
+                "name": "ctx.save",
+                "pNames": [],
+                "pTypes": [],
+                "retval": "",
+                "shortDesc": "Saves current context"
+            },
+            "ctx.scale": {
+                "desc": "Scales the current applied transformation matrix",
+                "isfunc": true,
+                "name": "ctx.scale",
+                "pNames": ["a", "d"],
+                "pTypes": ["num_frc", "num_frc"],
+                "retval": "",
+                "shortDesc": "Scale the transformation matrix"
+            },
+            "ctx.setTransform": {
+                "desc": "Set the current transformation matrix",
+                "isfunc": true,
+                "name": "ctx.setTransform",
+                "pNames": ["a", "b", "c", "d", "tx", "ty"],
+                "pTypes": ["?", "?", "?", "?", "?", "?"],
+                "retval": "",
+                "shortDesc": "Set current matrix"
+            },
+            "ctx.transform": {
+                "desc": "Apply an other transformation matrix to the current one",
+                "isfunc": true,
+                "name": "ctx.transform",
+                "pNames": ["a", "b", "c", "d", "tx", "ty"],
+                "pTypes": ["num", "num", "num", "num", "num", "num"],
+                "retval": "",
+                "shortDesc": "Transform the current matrix"
+            },
+            "ctx.translate": {
+                "desc": "'Moves' the current applied transformation matrix",
+                "isfunc": true,
+                "name": "ctx.translate",
+                "pNames": ["tx", "ty"],
+                "pTypes": ["num_pxl", "num_pxl"],
+                "retval": "",
+                "shortDesc": "'Move' the transformation matrix"
+            },
+            "ctx.unloadTexture": {
+                "desc": "",
+                "isfunc": true,
+                "name": "ctx.unloadTexture",
+                "pNames": ["image"],
+                "pTypes": ["?"],
+                "retval": "",
+                "shortDesc": ""
+            },
+			"DrawImage": {
+				"desc": "Draws an image to the canvas",
+				"isfunc": true,
+				"name": "DrawImage",
+				"pNames": ["image", "x", "y", "w", "h", "angle"],
+				"pTypes": ["obj-glv Image", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
+				"retval": "",
+				"shortDesc": "Draw image to canvas"
+			},
+			"DrawSprite": {
+				"desc": "Draws a part of an image to the canvas.",
+				"isfunc": true,
+				"name": "DrawSprite",
+				"pNames": ["sheet", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
+				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc"],
+				"retval": "",
+				"shortDesc": "Draw part of a sprite to the canvas"
+			},
+			"_Exec": {
+				"desc": "calls _gfx.Exec()",
+				"isfunc": true,
+				"name": "Exec",
+				"pNames": ["p1", "p2", "p3", "p4"],
+				"pTypes": ["?", "?", "?", "?"],
+				"retval": "",
+				"shortDesc": ""
+			},
+			"_Execute": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Execute",
+				"pNames": ["p1", "p2", "p3", "p4"],
+				"pTypes": ["?", "?", "?", "?"],
+				"retval": "",
+				"shortDesc": ""
+			},
+			"Explode": "#1500174100",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetContext": {
+				"desc": "Returns the current FastCanvas context",
+				"isfunc": true,
+				"name": "GetContext",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj-ctx",
+				"shortDesc": "returns the glv context"
+			},
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+            "GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"desc": "Returns the control class name.",
+				"isfunc": true,
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-GLView",
+				"shortDesc": "Returns the control class name"
+			},
+			"GetVisibility":"#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"height": {
+				"desc": "height",
+				"isfunc": false,
+				"name": "height",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": ""
+			},
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"Render": {
+				"desc": "Render all draw commands to the canvas",
+				"isfunc": true,
+				"name": "Render",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Render draw commands"
+			},
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetEnabled": "#1602385882",
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2088093920",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769",
+			"width": {
+				"desc": "width",
+				"isfunc": false,
+				"name": "width",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": ""
+			}
+		}
+	},
 	"CreateImage": {
 		"abbrev": "img",
 		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the “Button” **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the “fix” **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, \"fix\", 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the “alias” **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, \"alias\" );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](http://www.it.hiof.no/\\~borres/j3d/math/twod/p-twod.html#ma2d35). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
@@ -4013,8 +4327,7 @@
 						"name": "callback",
 						"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
 						"pTypes": ["str", "str", "str", "str", "str"],
-						"shortDesc": "callback",
-						"subf": {}
+						"shortDesc": "callback"
 					}, "str-SUBS"],
 				"shortDesc": "Purchase an item on Google Play."
 			}
@@ -4414,11 +4727,11 @@
 		}
 	},
 	"CreateShortcut": {
-		"desc": "This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS",
+		"desc": "This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.\nNote: since Android 9 this method prompts a system dialog",
 		"isfunc": true,
 		"name": "CreateShortcut",
 		"pNames": ["name", "iconFile", "file", "options"],
-		"pTypes": ["str", "str_pth", "str_pth", "str_com"],
+		"pTypes": ["str", "str_pth", "str_pth", "str_com-Portrait|Landscape,Transparent,NoDom,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
 		"shortDesc": "Creates a Home-Screen shortcut to an app"
 	},
 	"CreateSmartWatch": {
@@ -7712,7 +8025,7 @@
 		"name": "GetPairedBtDevices",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ name:str&comma; address:str }",
+		"retval": "lst_obj-[{ name:str&comma; address:str }]",
 		"shortDesc": "Get list of paired bluetooth devices"
 	},
 	"GetPath": {
@@ -7790,7 +8103,7 @@
 		"name": "GetRunningApps",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ user:num_int&comma; pid:num_bin&comma; name:str&comma; foreground:bin }",
+		"retval": "lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str&comma; foreground:bin }]",
 		"shortDesc": "Get list of running apps"
 	},
 	"GetRunningServices": {
@@ -7799,7 +8112,7 @@
 		"name": "GetRunningServices",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "lst_obj-{ user:num_int&comma; pid:num_bin&comma; name:str }",
+		"retval": "lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str }]",
 		"shortDesc": "Get list of running services"
 	},
 	"GetScreenDensity": {
@@ -8314,8 +8627,7 @@
 				"name": "addTransaction",
 				"pNames": ["t"],
 				"pTypes": ["?"],
-				"shortDesc": "addTransaction",
-				"subf": {}
+				"shortDesc": "addTransaction"
 			},
 			"Close": {
 				"abbrev": "",
@@ -8324,8 +8636,7 @@
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Close",
-				"subf": {}
+				"shortDesc": "Close"
 			},
 			"close": {
 				"abbrev": "",
@@ -8334,8 +8645,7 @@
 				"name": "close",
 				"pNames": ["success", "error"],
 				"pTypes": ["?", "?"],
-				"shortDesc": "close",
-				"subf": {}
+				"shortDesc": "close"
 			},
 			"databaseFeatures": {
 				"abbrev": "",
@@ -8344,8 +8654,7 @@
 				"name": "databaseFeatures",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "databaseFeatures",
-				"subf": {}
+				"shortDesc": "databaseFeatures"
 			},
 			"dbname": {
 				"abbrev": "",
@@ -8354,8 +8663,7 @@
 				"name": "dbname",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "dbname",
-				"subf": {}
+				"shortDesc": "dbname"
 			},
 			"Delete": {
 				"abbrev": "",
@@ -8364,8 +8672,7 @@
 				"name": "Delete",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Delete",
-				"subf": {}
+				"shortDesc": "Delete"
 			},
 			"executeSql": {
 				"abbrev": "",
@@ -8374,8 +8681,7 @@
 				"name": "executeSql",
 				"pNames": ["statement", "params", "success", "error"],
 				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "executeSql",
-				"subf": {}
+				"shortDesc": "executeSql"
 			},
 			"ExecuteSql": {
 				"abbrev": "",
@@ -8384,8 +8690,7 @@
 				"name": "ExecuteSql",
 				"pNames": ["sql", "params", "success", "error"],
 				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "ExecuteSql",
-				"subf": {}
+				"shortDesc": "ExecuteSql"
 			},
 			"GetName": {
 				"abbrev": "",
@@ -8394,8 +8699,7 @@
 				"name": "GetName",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetName",
-				"subf": {}
+				"shortDesc": "GetName"
 			},
 			"GetType": {
 				"abbrev": "",
@@ -8404,8 +8708,7 @@
 				"name": "GetType",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetType",
-				"subf": {}
+				"shortDesc": "GetType"
 			},
 			"name": {
 				"abbrev": "",
@@ -8414,8 +8717,7 @@
 				"name": "name",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "name",
-				"subf": {}
+				"shortDesc": "name"
 			},
 			"open": {
 				"abbrev": "",
@@ -8424,8 +8726,7 @@
 				"name": "open",
 				"pNames": ["success", "error"],
 				"pTypes": ["?", "?"],
-				"shortDesc": "open",
-				"subf": {}
+				"shortDesc": "open"
 			},
 			"openargs": {
 				"abbrev": "",
@@ -8434,8 +8735,7 @@
 				"name": "openargs",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "openargs",
-				"subf": {}
+				"shortDesc": "openargs"
 			},
 			"openDBs": {
 				"abbrev": "",
@@ -8444,8 +8744,7 @@
 				"name": "openDBs",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "openDBs",
-				"subf": {}
+				"shortDesc": "openDBs"
 			},
 			"openError": {
 				"abbrev": "",
@@ -8454,8 +8753,7 @@
 				"name": "openError",
 				"pNames": ["e"],
 				"pTypes": ["?"],
-				"shortDesc": "openError",
-				"subf": {}
+				"shortDesc": "openError"
 			},
 			"openSuccess": {
 				"abbrev": "",
@@ -8464,8 +8762,7 @@
 				"name": "openSuccess",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "openSuccess",
-				"subf": {}
+				"shortDesc": "openSuccess"
 			},
 			"readTransaction": {
 				"abbrev": "",
@@ -8474,8 +8771,7 @@
 				"name": "readTransaction",
 				"pNames": ["fn", "error", "success"],
 				"pTypes": ["?", "?", "?"],
-				"shortDesc": "ReadTransaction",
-				"subf": {}
+				"shortDesc": "ReadTransaction"
 			},
 			"startNextTransaction": {
 				"abbrev": "",
@@ -8484,8 +8780,7 @@
 				"name": "startNextTransaction",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "startNextTransaction",
-				"subf": {}
+				"shortDesc": "startNextTransaction"
 			},
 			"transaction": {
 				"abbrev": "",
@@ -8494,8 +8789,7 @@
 				"name": "transaction",
 				"pNames": ["fn", "error", "success"],
 				"pTypes": ["?", "?", "?"],
-				"shortDesc": "transaction",
-				"subf": {}
+				"shortDesc": "transaction"
 			}
 		}
 	},
@@ -9226,7 +9520,7 @@
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str_com-Debug:start app in debug mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
+		"pTypes": ["str_pth", "str_com-Portrait|Landscape,Transparent,NoDom,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
 		"shortDesc": "Starts an app in a new window"
 	},
 	"StartDebugServer": {

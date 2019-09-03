@@ -1,1 +1,12 @@
- 
+<sample Demo>
+function OnStart()
+{
+	<b>var apps = app.GetRunningApps();
+	var curApps = apps.filter( function(v) { return v.foreground; });
+    var pid = curApps[0].pid;
+
+    alert( "Kill app " + curApps[0].name );
+    app.KillApp( pid );</b>
+    app.ShowPopup( "Done" ); // not shown
+}
+</sample>

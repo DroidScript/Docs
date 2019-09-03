@@ -1,3 +1,12 @@
+<sample GetNames>
+function OnStart()
+{
+    sns = app.CreateSensor();
+    <b>var names = sns.GetNames();
+    app.Alert(names.replace(/,/g, ",\n"), "Sensor Names");</b>
+}
+</sample>
+
 <sample Accelerometer>
 function OnStart()
 {
@@ -7,11 +16,11 @@ function OnStart()
 	lay.AddChild( txt );
 	app.AddLayout( lay );
 
-<b>	sns = app.CreateSensor( "Accelerometer" );
+	<b>sns = app.CreateSensor( "Accelerometer" );
 	sns.SetOnChange( sns_OnChange );
-	sns.Start();
+	sns.Start();</b>
 
-</b>}
+}
 
 function sns_OnChange( x, y, z, time )
 {
@@ -28,11 +37,11 @@ function OnStart()
 	lay.AddChild( txt );
 	app.AddLayout( lay );
 
-<b>	sns = app.CreateSensor( "Orientation" );
+	<b>sns = app.CreateSensor( "Orientation" );
 	sns.SetOnChange( sns_OnChange );
-	sns.Start();
+	sns.Start();</b>
 
-</b>}
+}
 
 function sns_OnChange( azimuth, pitch, roll, time )
 {
@@ -52,15 +61,13 @@ function OnStart()
 	lay.AddChild( txt );
 	app.AddLayout( lay );
 
-<b>	sns = app.CreateSensor( "Light" );
+	<b>sns = app.CreateSensor( "Light" );
 	sns.SetOnChange( sns_OnChange );
-	sns.Start();
-
-</b>}
+	sns.Start();</b>
+}
 
 function sns_OnChange( lux )
 {
 	txt.SetText( "level = " + lux + " lux" );
 }
 </sample>
-

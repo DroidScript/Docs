@@ -1,1 +1,6 @@
- 
+<sample Example>
+function OnStart()
+{
+    app.SetSharedApp( "Hello World" );
+}
+</sample>

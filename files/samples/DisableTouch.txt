@@ -1,1 +1,18 @@
- 
+<sample Demo>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" );
+
+	btn = app.CreateButton( "Disable", 0.3, 0.1 );
+	btn.SetOnTouch( btn_OnTouch );
+	lay.AddChild( btn );
+
+	app.AddLayout( lay );
+}
+
+function btn_OnTouch()
+{
+	<b>app.DisableTouch( true );</b>
+	app.ShowPopup( "Touch Disabled." );
+}
+</sample>

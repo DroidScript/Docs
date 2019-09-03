@@ -1,1 +1,8 @@
- 
+<sample Demo>
+function OnStart()
+{
+    <b>var file = app.GetAppPath() + "/" + app.GetAppName() + ".js";
+	app.CreateShortcut( "Demo", "/Sys/Img/Icon.png", file );</b>
+    app.ShowPopup( "Add Shortcut" );
+}
+</sample>
