@@ -36,16 +36,35 @@
 			<p>This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.</p>
 
 			<div class="samp">
-			app.CreateShortcut( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">iconFile</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
+			app.CreateShortcut( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">iconFile</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
+			<p>Note: since Android 9 this method prompts a system dialog</p>
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Demo</h3>
+				<div id="examp0" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    <b id="snip0" style="font-size:100%"><span class="token keyword">var</span> file <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetAppName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".js"</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">CreateShortcut</span><span class="token punctuation">(</span> <span class="token string">"Demo"</span><span class="token punctuation">,</span> <span class="token string">"/Sys/Img/Icon.png"</span><span class="token punctuation">,</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Add Shortcut"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				</div>
+			</div>
+
+			
 			
 			<br>
 		</div>
 
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
-		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Portrait”</font> or <font class='docstring'>“Landscape”</font>, <font class='docstring'>“Transparent”</font>, <font class='docstring'>“NoDom”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('start app in debug mode')">Debug</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('runs in GameView mode')">Game</a>”</font> or <font class='docstring'>“remote”</font></div>
 	</div>
 </body>
 
