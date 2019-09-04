@@ -86,7 +86,7 @@
 		"CreateSensor",
 		"CreateService",
 		"CreateSpeechRec",
-        "CreateSynth",
+		"CreateSynth",
 		"CreateSysProc",
 		"CreateUSBSerial",
 		"CreateWebServer",
@@ -147,7 +147,7 @@
 		"SetData"
 	],
 	"Device Information": [
-        "CreateSensor",
+		"CreateSensor",
 		"GetActivities",
 		"GetBatteryLevel",
 		"GetChargeType",

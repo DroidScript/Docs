@@ -1419,15 +1419,15 @@
 		"Stop": "Stop playing"
 	},
 	"sys": {
-		"Err": "",
+		"Err": "Read from stderr",
 		"GetType": "Returns the control class name",
-		"In": "",
+		"In": "Read from stdin",
 		"Method": "Access Java object methods via reflection",
-		"Out": "",
-		"ReadFileAsByte": "",
-		"SetOnError": "SetOnError",
-		"SetOnInput": "SetOnInput",
-		"WriteToFile": ""
+		"Out": "Write to stdout",
+		"ReadFileAsByte": "Read first byte of a file",
+		"SetOnError": "called when stderr changed",
+		"SetOnInput": "called when stdout changed",
+		"WriteToFile": "Write binary data to file"
 	},
 	"tab": {
 		"AddChild": "",

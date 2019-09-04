@@ -1143,7 +1143,7 @@
 				"name": "InsertText",
 				"pNames": ["text"],
 				"pTypes": ["str"],
-				"shortDesc": "Insert text at the current cursor position"
+				"shortDesc": "Insert text at the cursor"
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
@@ -1945,7 +1945,7 @@
 			"Tween": "#2114624769"
 		}
 	},
-    "CreateGLView": {
+	"CreateGLView": {
 		"abbrev": "glv",
 		"desc": "Returns a GLView object.",
 		"isfunc": true,
@@ -1991,156 +1991,156 @@
 				"retval": "dso_glv",
 				"shortDesc": ""
 			},
-            "ctx.clearRect": {
-                "desc": "<deprecated ctx is automatically cleared after render()>",
-                "isfunc": true,
-                "name": "ctx.clearRect",
-                "pNames": ["x", "y", "width", "height"],
-                "pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-                "retval": "",
-                "shortDesc": "deprecated"
-            },
-            "ctx._drawCommands": {
-                "desc": "",
-                "isfunc": false,
-                "name": "ctx._drawCommands",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "str",
-                "shortDesc": ""
-            },
-            "ctx._globalAlpha": {
-                "desc": "",
-                "isfunc": false,
-                "name": "ctx._globalAlpha",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "num_frc",
-                "shortDesc": ""
-            },
-            "ctx.capture": {
-                "desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
-                "isfunc": true,
-                "name": "ctx.capture",
-                "pNames": ["x", "y", "w", "h", "fileName",
-                    "successCallback", "errorCallback"
-                ],
-                "pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
-                "retval": "",
-                "shortDesc": "Captures the canvas to a png image"
-            },
-            "ctx.drawImage": {
-                "desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
-                "isfunc": true,
-                "name": "ctx.drawImage",
-                "pNames": ["image", "sx", "sy", "sw", "sh", "dx",
-                    "dy", "dw", "dh"
-                ],
-                "pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl",
-                    "num_pxl"],
-                "retval": "",
-                "shortDesc": "Draws part of a sprite to the context"
-            },
-            "ctx.loadTexture": {
-                "desc": "",
-                "isfunc": true,
-                "name": "ctx.loadTexture",
-                "pNames": ["image", "successCallback",
-                    "errorCallback"],
-                "pTypes": ["?", "?", "?"],
-                "retval": "?",
-                "shortDesc": ""
-            },
-            "ctx.render": {
-                "desc": "render the draw commands to the context",
-                "isfunc": true,
-                "name": "ctx.render",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "",
-                "shortDesc": "render draw commands"
-            },
-            "ctx.resetTransform": {
-                "desc": "Reset all transformations to default",
-                "isfunc": true,
-                "name": "ctx.resetTransform",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "",
-                "shortDesc": "Reset all transformations"
-            },
-            "ctx.restore": {
-                "desc": "Restore a previously saved context state",
-                "isfunc": true,
-                "name": "ctx.restore",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "",
-                "shortDesc": "Restore saved context"
-            },
-            "ctx.rotate": {
-                "desc": "Rotates the current applied transformation",
-                "isfunc": true,
-                "name": "ctx.rotate",
-                "pNames": ["angle"],
-                "pTypes": ["num_rad"],
-                "retval": "",
-                "shortDesc": "Rotates the transformation matrix"
-            },
-            "ctx.save": {
-                "desc": "Saves the current context state",
-                "isfunc": true,
-                "name": "ctx.save",
-                "pNames": [],
-                "pTypes": [],
-                "retval": "",
-                "shortDesc": "Saves current context"
-            },
-            "ctx.scale": {
-                "desc": "Scales the current applied transformation matrix",
-                "isfunc": true,
-                "name": "ctx.scale",
-                "pNames": ["a", "d"],
-                "pTypes": ["num_frc", "num_frc"],
-                "retval": "",
-                "shortDesc": "Scale the transformation matrix"
-            },
-            "ctx.setTransform": {
-                "desc": "Set the current transformation matrix",
-                "isfunc": true,
-                "name": "ctx.setTransform",
-                "pNames": ["a", "b", "c", "d", "tx", "ty"],
-                "pTypes": ["?", "?", "?", "?", "?", "?"],
-                "retval": "",
-                "shortDesc": "Set current matrix"
-            },
-            "ctx.transform": {
-                "desc": "Apply an other transformation matrix to the current one",
-                "isfunc": true,
-                "name": "ctx.transform",
-                "pNames": ["a", "b", "c", "d", "tx", "ty"],
-                "pTypes": ["num", "num", "num", "num", "num", "num"],
-                "retval": "",
-                "shortDesc": "Transform the current matrix"
-            },
-            "ctx.translate": {
-                "desc": "'Moves' the current applied transformation matrix",
-                "isfunc": true,
-                "name": "ctx.translate",
-                "pNames": ["tx", "ty"],
-                "pTypes": ["num_pxl", "num_pxl"],
-                "retval": "",
-                "shortDesc": "'Move' the transformation matrix"
-            },
-            "ctx.unloadTexture": {
-                "desc": "",
-                "isfunc": true,
-                "name": "ctx.unloadTexture",
-                "pNames": ["image"],
-                "pTypes": ["?"],
-                "retval": "",
-                "shortDesc": ""
-            },
+			"ctx.clearRect": {
+				"desc": "<deprecated ctx is automatically cleared after render()>",
+				"isfunc": true,
+				"name": "ctx.clearRect",
+				"pNames": ["x", "y", "width", "height"],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "deprecated"
+			},
+			"ctx._drawCommands": {
+				"desc": "",
+				"isfunc": false,
+				"name": "ctx._drawCommands",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"ctx._globalAlpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "ctx._globalAlpha",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_frc",
+				"shortDesc": ""
+			},
+			"ctx.capture": {
+				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
+				"isfunc": true,
+				"name": "ctx.capture",
+				"pNames": ["x", "y", "w", "h", "fileName",
+					"successCallback", "errorCallback"
+				],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
+				"retval": "",
+				"shortDesc": "Captures the canvas to a png image"
+			},
+			"ctx.drawImage": {
+				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
+				"isfunc": true,
+				"name": "ctx.drawImage",
+				"pNames": ["image", "sx", "sy", "sw", "sh", "dx",
+					"dy", "dw", "dh"
+				],
+				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl",
+					"num_pxl"],
+				"retval": "",
+				"shortDesc": "Draws part of a sprite to the context"
+			},
+			"ctx.loadTexture": {
+				"desc": "",
+				"isfunc": true,
+				"name": "ctx.loadTexture",
+				"pNames": ["image", "successCallback",
+					"errorCallback"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"ctx.render": {
+				"desc": "render the draw commands to the context",
+				"isfunc": true,
+				"name": "ctx.render",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "render draw commands"
+			},
+			"ctx.resetTransform": {
+				"desc": "Reset all transformations to default",
+				"isfunc": true,
+				"name": "ctx.resetTransform",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Reset all transformations"
+			},
+			"ctx.restore": {
+				"desc": "Restore a previously saved context state",
+				"isfunc": true,
+				"name": "ctx.restore",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Restore saved context"
+			},
+			"ctx.rotate": {
+				"desc": "Rotates the current applied transformation",
+				"isfunc": true,
+				"name": "ctx.rotate",
+				"pNames": ["angle"],
+				"pTypes": ["num_rad"],
+				"retval": "",
+				"shortDesc": "Rotates the transformation matrix"
+			},
+			"ctx.save": {
+				"desc": "Saves the current context state",
+				"isfunc": true,
+				"name": "ctx.save",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Saves current context"
+			},
+			"ctx.scale": {
+				"desc": "Scales the current applied transformation matrix",
+				"isfunc": true,
+				"name": "ctx.scale",
+				"pNames": ["a", "d"],
+				"pTypes": ["num_frc", "num_frc"],
+				"retval": "",
+				"shortDesc": "Scale the transformation matrix"
+			},
+			"ctx.setTransform": {
+				"desc": "Set the current transformation matrix",
+				"isfunc": true,
+				"name": "ctx.setTransform",
+				"pNames": ["a", "b", "c", "d", "tx", "ty"],
+				"pTypes": ["?", "?", "?", "?", "?", "?"],
+				"retval": "",
+				"shortDesc": "Set current matrix"
+			},
+			"ctx.transform": {
+				"desc": "Apply an other transformation matrix to the current one",
+				"isfunc": true,
+				"name": "ctx.transform",
+				"pNames": ["a", "b", "c", "d", "tx", "ty"],
+				"pTypes": ["num", "num", "num", "num", "num", "num"],
+				"retval": "",
+				"shortDesc": "Transform the current matrix"
+			},
+			"ctx.translate": {
+				"desc": "'Moves' the current applied transformation matrix",
+				"isfunc": true,
+				"name": "ctx.translate",
+				"pNames": ["tx", "ty"],
+				"pTypes": ["num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "'Move' the transformation matrix"
+			},
+			"ctx.unloadTexture": {
+				"desc": "",
+				"isfunc": true,
+				"name": "ctx.unloadTexture",
+				"pNames": ["image"],
+				"pTypes": ["?"],
+				"retval": "",
+				"shortDesc": ""
+			},
 			"DrawImage": {
 				"desc": "Draws an image to the canvas",
 				"isfunc": true,
@@ -2192,7 +2192,7 @@
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
-            "GetParent": "#3557841648",
+			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
@@ -4231,7 +4231,7 @@
 			"SetOnChange": {
 				"desc": "Define a callback function which is called when a phone state has changed.",
 				"isfunc": true,
-                "name": "SetOnChange",
+				"name": "SetOnChange",
 				"pNames": ["callback"],
 				"pTypes": [
 					{
@@ -4244,7 +4244,7 @@
 					}
 				],
 				"shortDesc": "Called when a phone state has changed"
-            },
+			},
 			"Start": {
 				"desc": "Start listening.",
 				"isfunc": true,
@@ -4298,7 +4298,7 @@
 						"desc": "callback function",
 						"isfunc": true,
 						"name": "callback",
-                        "pNames": ["items"],
+						"pNames": ["items"],
 						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"],
 						"shortDesc": "callback"
 					},
@@ -4758,7 +4758,7 @@
 				"name": "CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
 				"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
-                "retval": "swo-Image",
+				"retval": "swo-Image",
 				"shortDesc": "Returns a new SmartWatch Image"
 			},
 			"CreateLayout": {
@@ -4767,7 +4767,7 @@
 				"name": "CreateLayout",
 				"pNames": ["type", "options"],
 				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
-                "retval": "swo-Layout",
+				"retval": "swo-Layout",
 				"shortDesc": "Returns a new SmartWatch Layout"
 			},
 			"CreateSensor": {
@@ -4776,7 +4776,7 @@
 				"name": "CreateSensor",
 				"pNames": ["name", "options"],
 				"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
-                "retval": "swo-Sensor",
+				"retval": "swo-Sensor",
 				"shortDesc": "Returns a new SmartWatch Sensor"
 			},
 			"CreateText": {
@@ -4785,7 +4785,7 @@
 				"name": "CreateText",
 				"pNames": ["text", "width", "height", "options"],
 				"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
-                "retval": "swo-Text",
+				"retval": "swo-Text",
 				"shortDesc": "Returns a new SmartWatch Text"
 			},
 			"GetVersion": {
@@ -5235,7 +5235,7 @@
 			"SetOnChange": "#2137502353",
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches the control.\n<deprecated Use SetOnChange instead>",
-                "name": "SetOnTouch",
+				"name": "SetOnTouch",
 				"isfunc": true,
 				"pNames": ["callback"],
 				"pTypes": [
@@ -5556,21 +5556,21 @@
 	},
 	"CreateSysProc": {
 		"abbrev": "sys",
-		"desc": "Returns a SysProc object.",
+		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <font class=\"xfeatHint\">root</font> or “busybox” if <font class=\"deprHint\">installed</font>) which can be reused throughout the program.",
 		"isfunc": true,
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
-		"pTypes": ["str_pip", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
+		"pTypes": ["str:program name-sh|su|busybox", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "SysProc",
 		"shortDesc": "Returns a new SysProc object",
 		"subf": {
 			"Err": {
-				"desc": "",
+				"desc": "Read data from stderr",
 				"isfunc": true,
 				"name": "Err",
 				"pNames": ["maxLines", "options"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_int", "str_com-nowait:dont wait for input"],
+				"shortDesc": "Read from stderr"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5582,59 +5582,74 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"In": {
-				"desc": "",
+				"desc": "Read data from stdin",
 				"isfunc": true,
 				"name": "In",
 				"pNames": ["maxLines", "options"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_int", "str_com-nowait:dont wait for input"],
+				"shortDesc": "Read from stdin"
 			},
 			"Method": "#1023663567",
 			"Out": {
-				"desc": "",
+				"desc": "Writes a command to stdout. A trailing linebreak will execute it.",
 				"isfunc": true,
 				"name": "Out",
 				"pNames": ["command"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str"],
+				"shortDesc": "Write to stdout"
 			},
 			"ReadFileAsByte": {
-				"desc": "",
+				"desc": "Returns the first byte of a file.",
 				"isfunc": true,
 				"name": "ReadFileAsByte",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"retval": "num_byt",
+				"shortDesc": "Read first byte of a file"
 			},
 			"SetOnError": {
-				"desc": "SetOnError",
+				"desc": "Define a callback function which is called when something was written to stderr",
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnError"
+				"pTypes": [{
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "called when stderr changed"
 			},
 			"SetOnInput": {
-				"desc": "SetOnInput",
+				"desc": "Define a callback function which is called when something was written to stdout",
 				"isfunc": true,
 				"name": "SetOnInput",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnInput"
+				"pTypes": [{
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "called when stdout changed"
 			},
 			"WriteToFile": {
-				"desc": "",
+				"desc": "Write a binary string to a file.",
 				"isfunc": true,
 				"name": "WriteToFile",
 				"pNames": ["file", "data"],
 				"pTypes": ["str_pth", "str"],
-				"shortDesc": ""
+				"shortDesc": "Write binary data to file"
 			}
 		}
 	},
 	"CreateTabs": {
 		"abbrev": "tab",
-		"desc": "Returns a Tabs object.",
+		"desc": "Tabs are useful if you have multiple subsections in your app. The user can then press the title of a tab and the control will automatically switch to the corresponding layout.\n%c\nTo add children to a tab layout you have to retreive it first (because they were already created by the control):\n<js>var layTab1 = tab.GetLayout( \"TabName1\" );</js>\nThen you canuse it as every normal layout:dso-\"CreateLayout\" control",
 		"isfunc": true,
 		"name": "CreateTabs",
 		"pNames": ["list", "width", "height", "options"],
@@ -5642,21 +5657,21 @@
 		"retval": "Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
-			"AddChild": {
-				"desc": "",
+			"_AddChild": {
+				"desc": "Adds a control to the layout.",
 				"isfunc": true,
 				"name": "AddChild",
 				"pNames": ["child", "order"],
-				"pTypes": ["dso", "?"],
-				"shortDesc": ""
+				"pTypes": ["dso", "num_int"],
+				"shortDesc": "Add a control to the layout"
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": {
-				"desc": "",
+				"desc": "Animates the layout. Available animations are Fade, Flip, Slide or Scale.",
 				"isfunc": true,
 				"name": "Animate",
 				"pNames": ["type", "callback", "time"],
-				"pTypes": ["?", {
+				"pTypes": ["str-Flip|FadeIn|FadeOut|CrossFade|SlideFromBottom|SlideFromLeft|SlideFromRight|SlideFromTop|SlideToBottom|SlideToLeft|SlideToRight|SlideToTop|ScaleFromBottom|ScaleFromLeft|ScaleFromRight|ScaleFromTop|ScaleToBottom|ScaleToLeft|ScaleToRight|ScaleToTop", {
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
@@ -5664,46 +5679,46 @@
 						"pTypes": [],
 						"shortDesc": "callback"
 					}, "num_mls"],
-				"shortDesc": ""
+				"shortDesc": "Animates the layout"
 			},
-			"ChildToFront": {
-				"desc": "",
+			"_ChildToFront": {
+				"desc": "Moves a child in front of all other children.",
 				"isfunc": true,
 				"name": "ChildToFront",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"shortDesc": ""
+				"shortDesc": "Moves a child to the layout front"
 			},
 			"ClearFocus": "#1362225380",
-			"DestroyChild": {
-				"desc": "",
+			"_DestroyChild": {
+				"desc": "Destroys and removes a child from the layout.",
 				"isfunc": true,
 				"name": "DestroyChild",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"shortDesc": ""
+				"shortDesc": "Destroys and removes a child"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
-			"GetChildOrder": {
-				"desc": "",
+			"_GetChildOrder": {
+				"desc": "Returns the z order of a child.",
 				"isfunc": true,
 				"name": "GetChildOrder",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_int",
+				"shortDesc": "Returns the z order of a child"
 			},
 			"GetHeight": "#2576212953",
 			"GetLayout": {
-				"desc": "",
+				"desc": "Returns the content layout of a given tab.",
 				"isfunc": true,
 				"name": "GetLayout",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"retval": "dso-CreateLayout",
-				"shortDesc": ""
+				"shortDesc": "Get tab content layout"
 			},
 			"GetLeft": "#1237814406",
 			"GetParent": "#3557841648",
@@ -5723,32 +5738,24 @@
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"IsEnabled": "#1744802827",
-			"IsOverlap": {
-				"desc": "",
-				"isfunc": true,
-				"name": "IsOverlap",
-				"pNames": ["obj", "depth"],
-				"pTypes": ["dso", "?"],
-				"retval": "?",
-				"shortDesc": ""
-			},
+			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
-			"parent": {
-				"desc": "parent",
+			"parent.AddTab": {
+				"desc": "Adds a new tab to the tabs control.",
 				"isfunc": false,
 				"name": "parent",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "parent"
+				"pNames": ["name"],
+				"pTypes": ["str"],
+				"shortDesc": "Add a new tab"
 			},
-			"RemoveChild": {
-				"desc": "",
+			"_RemoveChild": {
+				"desc": "Removes a child from the layout.",
 				"isfunc": true,
 				"name": "RemoveChild",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"shortDesc": ""
+				"shortDesc": "Remove a child from the layout"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -5757,25 +5764,32 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
-			"SetGravity": {
-				"desc": "",
+			"_SetGravity": {
+				"desc": "Adjust the placing of contained children.",
 				"isfunc": true,
 				"name": "SetGravity",
 				"pNames": ["gravity"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"],
+				"shortDesc": "Adjust the placing of contained children"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": {
-				"desc": "",
+				"desc": "Define a callback function which is called when the tab has been changed by the user.",
 				"isfunc": true,
 				"name": "SetOnChange",
-				"pNames": ["cb"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pNames": ["callback"],
+				"pTypes": [{
+        	        "desc": "callback function",
+        	        "isfunc": true,
+        	        "name": "callback",
+        	        "pNames": ["name"],
+        	        "pTypes": ["str"],
+        	        "shortDesc": "callback"
+                }],
+				"shortDesc": "Called when current tab changed"
 			},
 			"SetOnChildChange": {
-				"desc": "",
+				"desc": "Defines a callback function which is called when the content of a child control has beed changed by the user.",
 				"isfunc": true,
 				"name": "SetOnChildChange",
 				"pNames": ["callback"],
@@ -5784,25 +5798,25 @@
 						"desc": "Callback",
 						"isfunc": true,
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
+						"pNames": ["src"],
+						"pTypes": ["dso"],
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when the user changed a control content"
 			},
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2088093920",
 			"SetOnTouchDown": "#2938578932",
 			"SetOnTouchMove": "#2039582034",
 			"SetOnTouchUp": "#9861324731",
-			"SetOrientation": {
-				"desc": "",
+			"_SetOrientation": {
+				"desc": "Change the children orientation.",
 				"isfunc": true,
 				"name": "SetOrientation",
 				"pNames": ["orient"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str-Horizontal|Vertical"],
+				"shortDesc": "Change the children orientation"
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
@@ -5810,22 +5824,22 @@
 			"SetSize": "#1296070870",
 			"SetTouchable": "#2562918782",
 			"SetTouchThrough": {
-				"desc": "SetTouchThrough",
+				"desc": "Define whether the layout should forward OnTouch events to underlying controls.",
 				"isfunc": true,
 				"name": "SetTouchThrough",
 				"pNames": ["through"],
-				"pTypes": ["?"],
-				"shortDesc": "SetTouchThrough"
+				"pTypes": ["bin"],
+				"shortDesc": "Enable touch event forwarding"
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
 			"ShowTab": {
-				"desc": "",
+				"desc": "Switch to a given tab name",
 				"isfunc": true,
 				"name": "ShowTab",
 				"pNames": ["name"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Switch current tab"
 			},
 			"Tween": "#2114624769"
 		}
@@ -5847,50 +5861,50 @@
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "return text formatted with html tags",
+				"desc": "Returns the html formatted content.",
 				"isfunc": true,
 				"name": "GetHtml",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_htm",
-				"shortDesc": ""
+				"shortDesc": "Return html formatted text"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
+				"desc": "Returns the amount of lines in the text even with html formatting",
 				"isfunc": true,
 				"name": "GetLineCount",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get amount of text lines"
 			},
 			"GetLineStart": {
-				"desc": "return number of character where a given line starts",
+				"desc": "Returns at which character in the text a certain line begins.",
 				"isfunc": true,
 				"name": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the start character index of a line"
 			},
 			"GetLineTop": {
-				"desc": "?",
+				"desc": "Returns the top position of a given line on the screen.",
 				"isfunc": true,
 				"name": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Get line top position on screen"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
+				"desc": "Returns the maximum amount of lines the control can hold with the current control and font height",
 				"isfunc": true,
 				"name": "GetMaxLines",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get amount of lines fitting in the control"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5914,12 +5928,12 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "append text with line break",
+				"desc": "Append a string to the text separated with a line break",
 				"isfunc": true,
 				"name": "Log",
 				"pNames": ["message", "options"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str_com-Clear:Clears the log before writing,Red|Green|Blue"],
+				"shortDesc": "Append line to the text"
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5933,12 +5947,12 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
+				"desc": "Define a maximum amount of log lines",
 				"isfunc": true,
 				"name": "SetLog",
 				"pNames": ["maxLines"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Set maximum log length"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5973,109 +5987,109 @@
 			"AdjustColor": "#1794786072",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "ClearHistory for undo or redo",
+				"desc": "Clears the undo/redo history.",
 				"isfunc": true,
 				"name": "ClearHistory",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Clear undo/redo history"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetCursorLine": {
-				"desc": "GetCursorLine",
+				"desc": "Returns the current line index where the cursor is located.",
 				"isfunc": true,
 				"name": "GetCursorLine",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the current cursor line index"
 			},
 			"GetCursorPos": {
-				"desc": "GetCursorPos",
+				"desc": "Returns the index of the character where the cursor is currently located.",
 				"isfunc": true,
 				"name": "GetCursorPos",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the cursor position in the text"
 			},
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "returns text formatted with html tags",
+				"desc": "Returns the html formatted content.",
 				"isfunc": true,
 				"name": "GetHtml",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_htm",
-				"shortDesc": ""
+				"shortDesc": "Return html formatted text"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
+				"desc": "Returns the amount of lines in the text even with html formatting",
 				"isfunc": true,
 				"name": "GetLineCount",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get amount of text lines"
 			},
 			"GetLineStart": {
-				"desc": "returns position where given line starts",
+				"desc": "Returns at which character in the text a certain line begins.",
 				"isfunc": true,
 				"name": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get the start character index of a line"
 			},
 			"GetLineTop": {
-				"desc": "",
+				"desc": "Returns the top position of a given line on the screen.",
 				"isfunc": true,
 				"name": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Get line top position on screen"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
+				"desc": "Returns the maximum amount of lines the control can hold with the current control and font height",
 				"isfunc": true,
 				"name": "GetMaxLines",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get amount of lines fitting in the control"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetSelectedText": {
-				"desc": "GetSelectedText",
+				"desc": "Returns the currently selected text.",
 				"isfunc": true,
 				"name": "GetSelectedText",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "Get the selected text"
 			},
 			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
+				"desc": "Returns the position of where the user selection ends.",
 				"isfunc": true,
 				"name": "GetSelectionEnd",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get selection end position"
 			},
 			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
+				"desc": "Returns the position of where the user selection begins.",
 				"isfunc": true,
 				"name": "GetSelectionStart",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_int",
-				"shortDesc": ""
+				"shortDesc": "Get selection start position"
 			},
 			"GetText": "#2387569276",
 			"GetTextSize": "#2530918945",
@@ -6094,32 +6108,32 @@
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"InsertText": {
-				"desc": "",
+				"desc": "Inserts a string at a given position.",
 				"isfunc": true,
 				"name": "InsertText",
-				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": ""
+				"pNames": ["text", "index"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Insert text at a given position"
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"Redo": {
-				"desc": "Redo action",
+				"desc": "Redo an undone action.",
 				"isfunc": true,
 				"name": "Redo",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Redo an undone action"
 			},
 			"ReplaceText": {
-				"desc": "ReplaceText",
+				"desc": "Replaces a given range in the text with some string.",
 				"isfunc": true,
 				"name": "ReplaceText",
 				"pNames": ["text", "start", "end"],
 				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": ""
+				"shortDesc": "Replace a range of the text with a string"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -6128,35 +6142,35 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetCursorColor": {
-				"desc": "SetCursorColor",
+				"desc": "Changes the cursor color.",
 				"isfunc": true,
 				"name": "SetCursorColor",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
-				"shortDesc": ""
+				"shortDesc": "Change cursor color"
 			},
 			"SetCursorPos": {
-				"desc": "SetCursorPos",
+				"desc": "Change the curernt cursor position.",
 				"isfunc": true,
 				"name": "SetCursorPos",
 				"pNames": ["position"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Change the curernt cursor position"
 			},
 			"SetEnabled": "#1602385882",
 			"SetHint": {
-				"desc": "set grey default text which cannot be edited",
+				"desc": "Set a grey default which is shown when the edit is empty",
 				"isfunc": true,
 				"name": "SetHint",
 				"pNames": ["text"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Shows a grey default text"
 			},
 			"SetHtml": "#8753208754",
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "called when pressedstr-Done key(disables line break enter key)",
+				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
 				"isfunc": true,
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
@@ -6170,7 +6184,7 @@
 						"shortDesc": "callback"
 					}
 				],
-				"shortDesc": ""
+				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
 			"SetOnFocus": "#9283752301",
 			"SetSize": "#1296070870",
@@ -6181,12 +6195,12 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769",
 			"Undo": {
-				"desc": "Undo action",
+				"desc": "Undo an action.",
 				"isfunc": true,
 				"name": "Undo",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Undo an action"
 			}
 		}
 	},
@@ -9564,11 +9578,11 @@
 		"shortDesc": "Stops a running app service"
 	},
 	"SysExec": {
-		"desc": "Executes a shell command on the android shell. **NOTE:** You have to add a '<pre>exit</pre>' command at the end of your script because the shell does not terminate automatically after finishing.\n\nSee Also: @ExtExec",
+		"desc": "Executes a shell command on the android shell. **NOTE:** You have to add a '`exit`' command at the end of your script because the shell does not terminate automatically after finishing.\n\nSee Also: @ExtExec",
 		"isfunc": true,
 		"name": "SysExec",
 		"pNames": ["command", "options", "maxRead", "timeout"],
-		"pTypes": ["str", "str-log:logs output to console,sh|su", "num", "num_sec"],
+		"pTypes": ["str", "str-log:logs output to console,noread:dont read result (just execute),sh|su", "num", "num_sec"],
 		"retval": "str",
 		"shortDesc": "Execute a shell command on the android shell"
 	},

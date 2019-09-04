@@ -357,7 +357,7 @@ function toHtmlSamp( c, t, n )
 function getAddClass(m)
 {
 	if(m.desc.indexOf("<deprecated") > -1) return ' class="deprHint"';
-	if(m.desc.indexOf("<xfeature") > -1) return ' class="deprHint"';
+	if(m.desc.indexOf("<xfeature") > -1) return ' class="xfeatHint"';
 	if(m.desc.indexOf("<premium") > -1) return ' class="premHint"';
 	return '';
 }
@@ -689,7 +689,7 @@ var		// subfunctions
 		// premium note
 	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
 		// xfeature note
-	xfeatureHint = "<div class='deprHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
+	xfeatureHint = "<div class='xfeatHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
 		// example snippets
 	sampBase = `
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">

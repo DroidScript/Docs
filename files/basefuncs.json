@@ -245,7 +245,7 @@
 		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
 		"shortDesc": "Define distances to other controls"
 	},
-    "#2137502353": { "name": "SetOnChange",
+	"#2137502353": { "name": "SetOnChange",
 		"desc": "Called when the containing data has been changed by the user.",
 		"isfunc": true,
 		"pNames": ["callback"],
@@ -371,7 +371,7 @@
 		],
 		"shortDesc": "Called when the user finger leaves te screen"
 	},
-    "#1923105617": { "name": "SetPadding",
+	"#1923105617": { "name": "SetPadding",
 		"desc": "Define distances that elements within the control are to maintain from the control borders.",
 		"isfunc": true,
 		"pNames": ["left", "top", "right", "bottom", "mode"],
@@ -399,7 +399,7 @@
 		"pTypes": ["num", "num", "str-px|sp|dip|dp|mm|pt"],
 		"shortDesc": "Change the size of the control"
 	},
-    "#8207502354": { "name": "SetText",
+	"#8207502354": { "name": "SetText",
 		"desc": "Change the currently displayed text in the control.",
 		"isfunc": true,
 		"pNames": ["text"],
