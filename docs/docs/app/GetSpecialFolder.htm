@@ -27,7 +27,7 @@
 			<h1>GetSpecialFolder</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns the full path to a special folder commonly used for images, videos, music etc.</p>
 
 			<div class="samp">
-			app.GetSpecialFolder( <a href="#pop_str_001" data-transition="pop" data-rel="popup">name</a> ) → <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
+			app.GetSpecialFolder(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">name</a> )
+				→ <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
 			</div>
 
 			<p>See Also: <a href="GetPath.htm" data-ajax="false">GetPath</a>, <a href="GetAppPath.htm" data-ajax="false">GetAppPath</a>, <a href="WriteFile.htm" data-ajax="false">WriteFile</a></p>
@@ -55,12 +57,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“DCIM”</font> or <font class='docstring'>“Pictures”</font> or <font class='docstring'>“Movies”</font> or <font class='docstring'>“Downloads”</font> or <font class='docstring'>“Music”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“DCIM”</font> or <font class='docstring'>“Pictures”</font> or <font class='docstring'>“Movies”</font> or <font class='docstring'>“Downloads”</font> or <font class='docstring'>“Music”</font></div>
 	</div>
 </body>
 

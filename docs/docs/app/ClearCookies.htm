@@ -27,7 +27,7 @@
 			<h1>ClearCookies</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,17 +36,18 @@
 			<p>ClearCookies clears the saved cookies for webviews or html apps.</p>
 
 			<div class="samp">
-			app.ClearCookies( <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">session</a> )
+			app.ClearCookies(
+				<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">session</a> )
 			</div>
 
 			<p>If session was not given, the latest one will be selected.<br>
 			<br>
 			See Also: <a href="SaveCookies.htm" data-ajax="false">SaveCookies</a></p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+        <div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
 	</div>
 </body>
 

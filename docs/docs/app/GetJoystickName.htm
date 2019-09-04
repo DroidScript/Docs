@@ -27,7 +27,7 @@
 			<h1>GetJoystickName</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns the name of a conected joystick.</p>
 
 			<div class="samp">
-			app.GetJoystickName( <a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a> ) → <b>unknown</b>
+			app.GetJoystickName(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a> )
+				→ <b>unknown</b>
 			</div>
 
 			<p>See Also: <a href="GetJoystickState.htm" data-ajax="false">GetJoystickState</a></p>
@@ -56,12 +58,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+        <div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 	</div>
 </body>
 

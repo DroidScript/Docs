@@ -27,7 +27,7 @@
 			<h1>CreateService</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -42,7 +42,12 @@
 			A service can be created and started using the <b>CreateService</b> method of the app object in your main application file:.</p>
 
 			<div class="samp">
-			srv = app.CreateService( <a href="#pop_str_001" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">className</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Service
+			srv = app.CreateService(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">packageName</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">className</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
+				→ <b>app object:</b> Service
 			</div>
 
 			<p>Use <font class='docstring'>“this”</font> for the <i>packageName</i> and <i>className</i> parameters.<br>
@@ -78,7 +83,7 @@
 			<p>This will also need a message handler on the application (see example below).<br>
 			<br>
 			Adding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.</p>
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Services</h3>
 				<div id="examp0" style="font-size:70%">
@@ -172,29 +177,54 @@
 			<p>Inspect the debug console and see the log messages from the service in gray.</p>
 			<p><br>The following methods are available on the <b>Service</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Service”</font></div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">SendMessage</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )</div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">SetInBackground</a>()</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetInForeground</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">largeIcon</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">smallIcon</a>, <a href="#pop_str_004" data-transition="pop" data-rel="popup">importance</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnMessage</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Stop</a>()</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Service”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">SendMessage</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">SetInBackground</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetInForeground</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">largeIcon</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">smallIcon</a>,
+				<a href="#pop_str_004" data-transition="pop" data-rel="popup">importance</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnMessage</a>(
+				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Stop</a>()
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“this”</font> or <font class='docstring'>“&lt;package&gt;”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“this”</font> or <font class='docstring'>“&lt;package&gt;”</font></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“this”</font> or <font class='docstring'>“&lt;class&gt;”</font></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('attempts to force restart if service killed')">Persist</a>”</font></div>
+
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>srv.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>srv.SendMessage</b><br>Sends a message to the service.</div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>srv.SetInBackground</b><br>Run service in background.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>srv.SetInForeground</b><br>Run service in foreground.</div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“none”</font> or <font class='docstring'>“min”</font> or <font class='docstring'>“low”</font> or <font class='docstring'>“high”</font></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>srv.SetInForeground</b><br>Run service in foreground.</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">message</a>)</div>
+
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>srv.SetOnMessage</b><br>Define a callback function which is called when a message arrived from the service.</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">message</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>srv.Stop</b><br>Stop the service.</div>
 	</div>
 </body>

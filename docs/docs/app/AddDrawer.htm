@@ -27,7 +27,7 @@
 			<h1>AddDrawer</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>AddDrawer adds layout as drawer on a given side.</p>
 
 			<div class="samp">
-			app.AddDrawer( <a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a> )
+			app.AddDrawer(
+				<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a> )
 			</div>
 
 			<p>If the user swipes from this side to the other the layout will slide out.<br>
@@ -72,12 +75,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+        <div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“left”</font> or <font class='docstring'>“right”</font></div>
 		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
 	</div>

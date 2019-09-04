@@ -27,7 +27,7 @@
 			<h1>SetLanguage</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Loads the current language code from the lang.json file in your project root folder.</p>
 
 			<div class="samp">
-			app.SetLanguage( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
+			app.SetLanguage(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
 			</div>
 
 			<p>Make sure you use the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('http://www.loc.gov/standards/iso639-2/php/code_list.php');">standard 2 letter language codes</a>.<br>
@@ -88,12 +89,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>CopyFolder</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,17 +36,21 @@
 			<p>CopyFolder copies a folder to a given destination.</p>
 
 			<div class="samp">
-			app.CopyFolder( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">overwrite</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">filter</a> )
+			app.CopyFolder(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>,
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">overwrite</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">filter</a> )
 			</div>
 
 			<p>If override is false and the folder already exists in the destination, it will not be copied.<br>
 			<br>
 			See Also: <a href="RenameFolder.htm" data-ajax="false">RenameFolder</a>, <a href="DeleteFolder.htm" data-ajax="false">DeleteFolder</a>, <a href="FolderExists.htm" data-ajax="false">FolderExists</a></p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“pattern”</font></div>
 	</div>

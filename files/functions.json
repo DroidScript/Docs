@@ -218,7 +218,7 @@
 		"shortDesc": "Returns an AudioRecorder object",
 		"subf": {
 			"GetData": {
-				"desc": "Returns a list of 320 frequency values.",
+				"desc": "Returns a list of frequency values. The amount is dependent on the set frequency.",
 				"isfunc": true,
 				"name": "GetData",
 				"pNames": [],

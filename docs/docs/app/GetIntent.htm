@@ -27,7 +27,7 @@
 			<h1>GetIntent</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,14 @@
 			<p>Returns an intent object sent to the app.</p>
 
 			<div class="samp">
-			app.GetIntent() → <b>object:</b> { <a href="#pop_std_str" data-transition="pop" data-rel="popup">action</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">flags</a>, extras: { <a href="#pop_std_str" data-transition="pop" data-rel="popup">app_intent</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">app_file</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">app_options</a> } }
+			app.GetIntent() → <b>object:</b> {
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">action</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">flags</a>, extras: {
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">app_intent</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">app_file</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">app_options</a> } }
 			</div>
 
 			<p>See Also: <a href="SendIntent.htm" data-ajax="false">SendIntent</a></p>
@@ -56,12 +63,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>

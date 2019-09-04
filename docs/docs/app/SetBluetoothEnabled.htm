@@ -27,7 +27,7 @@
 			<h1>SetBluetoothEnabled</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Enables Bluetooth on the device.</p>
 
 			<div class="samp">
-			app.SetBluetoothEnabled( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			app.SetBluetoothEnabled(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 			</div>
 
 			<p>See Also: <a href="IsBluetoothEnabled.htm" data-ajax="false">IsBluetoothEnabled</a>, <a href="IsBluetoothOn.htm" data-ajax="false">IsBluetoothOn</a>, <a href="CreateBluetoothSerial.htm" data-ajax="false">CreateBluetoothSerial</a></p>
@@ -60,7 +61,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - En/Disable Bluetooth</h3>
 				<div id="examp1" style="font-size:70%">
@@ -135,12 +136,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+        <div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 	</div>
 </body>
 

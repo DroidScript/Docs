@@ -71,6 +71,7 @@
 		"isfunc": true,
 		"pNames": [],
 		"pTypes": [],
+		"retval": "dso",
 		"shortDesc": "Returns the parent control object"
 	},
 	"#1605064214": { "name": "GetPosition",

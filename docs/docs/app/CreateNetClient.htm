@@ -27,7 +27,7 @@
 			<h1>CreateNetClient</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>NetClients can be used to communicate with servers on the web.</p>
 
 			<div class="samp">
-			net = app.CreateNetClient( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>app object:</b> NetClient
+			net = app.CreateNetClient(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+				→ <b>app object:</b> NetClient
 			</div>
 
 			<p>You can choose between two different protocols:<br>
@@ -88,7 +90,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - TCP AutoReceive</h3>
 				<div id="examp1" style="font-size:70%">
@@ -142,7 +144,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - UDP Messaging</h3>
 				<div id="examp2" style="font-size:70%">
@@ -190,77 +192,178 @@
 				</div>
 			</div>
 
-			
+
 			<p><br>The following methods are available on the <b>NetClient</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AutoReceive</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">server</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Close</a>()</div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Connect</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Disconnect</a>()</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">DownloadFile</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">file</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetBroadcastAddress</a>() → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“NetClient”</font></div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">IsConnected</a>()</div>
-			<div class="samp"><a href="#pop_dsc_009" class="baseFunc" data-transition="pop" data-rel="popup">IsEnabled</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">ReceiveBytes</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">mode</a> ) → <b>list:</b> [ <a href="#pop_num_byt" data-transition="pop" data-rel="popup">bytes</a> ]</div>
-			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">ReceiveDatagram</a>( <a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a> ) → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">ReceiveDatagrams</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">ReceiveFile</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">wait</a> ) → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">ReceiveText</a>( <a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> ) → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SendBytes</a>( <a href="#pop_mul_001" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SendDatagram</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>, <a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )</div>
-			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SendText</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetOnConnect</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetOnDownload</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetOnReceive</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetTimeout</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )</div>
-			<div class="samp"><a href="#pop_dsc_016" class="premHint" data-transition="pop" data-rel="popup">WakeOnLan</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">mac</a> )</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AutoReceive</a>(
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">server</a>,
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Close</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Connect</a>(
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>,
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Disconnect</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">DownloadFile</a>(
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">file</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetBroadcastAddress</a>() → <b>string</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“NetClient”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">IsConnected</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>boolean</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">ReceiveBytes</a>(
+				<a href="#pop_str_004" data-transition="pop" data-rel="popup">mode</a> )
+				→ <b>list:</b> [
+				<a href="#pop_num_byt" data-transition="pop" data-rel="popup">bytes</a> ]
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">ReceiveDatagram</a>(
+				<a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a>,
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a> )
+				→ <b>string</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">ReceiveDatagrams</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
+				<a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">ReceiveFile</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">wait</a> )
+				→ <b>string</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">ReceiveText</a>(
+				<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+				→ <b>string</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SendBytes</a>(
+				<a href="#pop_mul_001" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SendDatagram</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a>,
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>,
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
+				<a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SendText</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+				<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetOnConnect</a>(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetOnDownload</a>(
+				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetOnReceive</a>(
+				<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetTimeout</a>(
+				<a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="premHint">WakeOnLan</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">mac</a> )
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('fast but does not guarantee data correctness')">UDP</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('slow but guarantees data correctness')">TCP</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('drop 4 Byte header before every message')">Raw</a>”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('fast but does not guarantee data correctness')">UDP</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('slow but guarantees data correctness')">TCP</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('drop 4 Byte header before every message')">Raw</a>”</font></div>
+
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>net.AutoReceive</b><br>Receive TCP received data automatically by calling the OnReceive callback.</div>
 		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>net.AutoReceive</b><br>Receive TCP received data automatically by calling the OnReceive callback.</div>
+
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>net.Close</b><br>Closes the NetClient socket.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>net.Connect</b><br>Connect the NetClient to a server.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>net.Disconnect</b><br>Disconnect the NetClient from the server.</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“url”</font></div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>net.DownloadFile</b><br>Downloads a file via TCP from the server.</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“url”</font></div>
+
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>net.GetBroadcastAddress</b><br>Returns the broadcast address of UDP connections.</div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>net.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>net.IsConnected</b><br>Checks if the NetClient is connected to a server.</div>
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>net.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
 		<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
+
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>net.ReceiveBytes</b><br>Receive data as bytes.</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
+
+		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>net.ReceiveDatagram</b><br>Receive an UDP Datagram.</div>
 		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>net.ReceiveDatagram</b><br>Receive an UDP Datagram.</div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+
 		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>net.ReceiveDatagrams</b><br>Receive datagrams over UDP and calls the OnReceive callback for each one.</div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+
 		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>net.ReceiveFile</b><br>Receive a file via TCP from the server.</div>
-		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+
 		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>net.ReceiveText</b><br>Receive text from TCP connection.</div>
+		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>net.SendBytes</b><br>Send bytes over TCP connection.</div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>list:</b> [ <a href="" onclick="app.ShowPopup('number: Bytes')">bytes</a> ]<br><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('hexadecimal 00..FF')">bytes</a>”</font></div>
 		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Hex”</font></div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>net.SendBytes</b><br>Send bytes over TCP connection.</div>
+
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>net.SendDatagram</b><br>Send an UDP Datagram.</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“Text”</font> or <font class='docstring'>“Hex”</font> or <font class='docstring'>“Bytes”</font></div>
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>net.SendDatagram</b><br>Send an UDP Datagram.</div>
-		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+
 		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>net.SendText</b><br>Sends text over TCP connection.</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('boolean')">connected</a>)</div>
+		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16”</font></div>
+
 		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>net.SetOnConnect</b><br>Define a callback function which is called when a TCP connection could be established or if it failed to connect to the server. The <i>connected</i> state is passed as first argument.</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: integer')">something</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('boolean')">connected</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>net.SetOnDownload</b><br>Define a callback function which is called when a TCP file download has finished.</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">address</a>)</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('number: integer')">something</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>net.SetOnReceive</b><br>Define a callback function which is called when a TCP NetClient received some data when AutoReceive was set.</div>
-		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">address</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>net.SetTimeout</b><br>Define an interval in which the client should check for new messages.</div>
+		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
+
 		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>net.WakeOnLan</b><br>Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 	</div>
 </body>

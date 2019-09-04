@@ -27,7 +27,7 @@
 			<h1>GetJoystickState</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Returns the state of a connected joystick.</p>
 
 			<div class="samp">
-			app.GetJoystickState( <a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">key</a> ) → <b>number</b>
+			app.GetJoystickState(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">key</a> )
+				→ <b>number</b>
 			</div>
 
 			<p>The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.<br>
@@ -82,12 +85,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+        <div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“A”</font> or <font class='docstring'>“B”</font> or <font class='docstring'>“C”</font> or <font class='docstring'>“X”</font> or <font class='docstring'>“Y”</font> or <font class='docstring'>“Z”</font> or <font class='docstring'>“R1”</font> or <font class='docstring'>“L1”</font> or <font class='docstring'>“Left”</font> or <font class='docstring'>“Right”</font> or <font class='docstring'>“Up”</font> or <font class='docstring'>“Down”</font> or <font class='docstring'>“Start”</font> or <font class='docstring'>“ThumbLeft”</font> or <font class='docstring'>“ThumbRight”</font> or <font class='docstring'>“axis-0..9”</font></div>
 	</div>
 </body>

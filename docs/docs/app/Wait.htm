@@ -27,7 +27,7 @@
 			<h1>Wait</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Performs a <b>synchronous</b> delay in your program which effectively pauses it.</p>
 
 			<div class="samp">
-			app.Wait( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )
+			app.Wait(
+				<a href="#pop_num_sec" data-transition="pop" data-rel="popup">seconds</a> )
 			</div>
 
 			<p>Its main use is for making brief pauses when communicating with external devices so that they get a chance to do work while your app executes.<br>
@@ -59,12 +60,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
+        <div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
 	</div>
 </body>
 

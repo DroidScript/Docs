@@ -27,7 +27,7 @@
 			<h1>SetDebug</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>SetDebug lets you control the debugging level.</p>
 
 			<div class="samp">
-			app.SetDebug( <a href="#pop_str_001" data-transition="pop" data-rel="popup">switches</a> )
+			app.SetDebug(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">switches</a> )
 			</div>
 
 			<p>The availabe modes are:<br>
@@ -91,12 +92,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“console”</font>, <font class='docstring'>“ds”</font>, <font class='docstring'>“adb”</font>, <font class='docstring'>“all”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“console”</font>, <font class='docstring'>“ds”</font>, <font class='docstring'>“adb”</font>, <font class='docstring'>“all”</font></div>
 	</div>
 </body>
 

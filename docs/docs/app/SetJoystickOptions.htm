@@ -27,7 +27,7 @@
 			<h1>SetJoystickOptions</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Set options for the connected joystick.</p>
 
 			<div class="samp">
-			app.SetJoystickOptions( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			app.SetJoystickOptions(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p>The <font class='docstring'>“forwardkeys”</font> <b>option</b> allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).<br>
@@ -56,12 +57,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('allows the joystick key presses to pass onto the child controls of the main activity')">ForwardKeys</a>”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“<a href="" onclick="app.ShowPopup('allows the joystick key presses to pass onto the child controls of the main activity')">ForwardKeys</a>”</font></div>
 	</div>
 </body>
 

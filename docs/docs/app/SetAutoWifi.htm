@@ -27,7 +27,7 @@
 			<h1>SetAutoWifi</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Automatically enables the use of the WiFi editor.</p>
 
 			<div class="samp">
-			app.SetAutoWifi( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">auto</a> )
+			app.SetAutoWifi(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">auto</a> )
 			</div>
 
 			<p>This method is mainly useful for headless devices like AndroidTV which don't have a DroidScript UI.</p>
@@ -54,12 +55,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+        <div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 	</div>
 </body>
 

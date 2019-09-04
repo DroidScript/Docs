@@ -27,7 +27,7 @@
 			<h1>GetResourceId</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,15 +36,18 @@
 			<p>Returns the id of a resource.</p>
 
 			<div class="samp">
-			app.GetResourceId( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>string</b>
+			app.GetResourceId(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+				→ <b>string</b>
 			</div>
 
 			<p>See Also: <a href="LoadPlugin.htm" data-ajax="false">LoadPlugin</a></p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“android”</font></div>
 	</div>
 </body>

@@ -27,7 +27,7 @@
 			<h1>Uri2Path</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Decodes a URI encoded string.</p>
 
 			<div class="samp">
-			app.Uri2Path( <a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a> ) → <b>string</b>
+			app.Uri2Path(
+				<a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a> )
+				→ <b>string</b>
 			</div>
 
 			<p>See Also: <a href="SetOnError.htm" data-ajax="false">SetOnError</a></p>
@@ -66,12 +68,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_uri" class="ui-content"><b>string:</b> <i>URI encoded</i></div>
+        <div data-role="popup" id="pop_str_uri" class="ui-content"><b>string:</b> <i>URI encoded</i></div>
 	</div>
 </body>
 

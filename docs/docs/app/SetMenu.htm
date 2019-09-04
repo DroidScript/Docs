@@ -27,7 +27,7 @@
 			<h1>SetMenu</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Set the app menu fields.</p>
 
 			<div class="samp">
-			app.SetMenu( <a href="#pop_str_com" data-transition="pop" data-rel="popup">list</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">iconPath</a> )
+			app.SetMenu(
+				<a href="#pop_str_com" data-transition="pop" data-rel="popup">list</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">iconPath</a> )
 			</div>
 
 			<p>When a menu entry is touched, the global <i>OnMenu</i> event will be called.<br>
@@ -70,7 +72,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Menu Images</h3>
 				<div id="examp1" style="font-size:70%">
@@ -99,12 +101,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
+        <div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>

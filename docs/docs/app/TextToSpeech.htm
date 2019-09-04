@@ -27,7 +27,7 @@
 			<h1>TextToSpeech</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,14 @@
 			<p>Uses the android TextToSpeech engine to audiolize text.</p>
 
 			<div class="samp">
-			app.TextToSpeech( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">pitch</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">locale</a>, <a href="#pop_std_ukn" data-transition="pop" data-rel="popup">engine</a> )
+			app.TextToSpeech(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">pitch</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">locale</a>,
+				<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">engine</a> )
 			</div>
 
 			<p>You can use different locales depending on the user language. A list of languages and their locales (LCID string) can be found on <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://www.science.co.il/language/Locale-codes.php');">www.science.co.il</a>.</p>
@@ -55,12 +62,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“music”</font></div>

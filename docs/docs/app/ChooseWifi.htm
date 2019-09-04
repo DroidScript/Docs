@@ -27,7 +27,7 @@
 			<h1>ChooseWifi</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,12 @@
 			<p>ChooseWifi lets the user select a WiFi network in his range.</p>
 
 			<div class="samp">
-			app.ChooseWifi( <a href="#pop_std_str" data-transition="pop" data-rel="popup">title1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title2</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">extra</a> )
+			app.ChooseWifi(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title1</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title2</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">extra</a> )
 			</div>
 
 			<p><b>title1</b> and <b>title2</b> are the titles for the scanning and the selection process. They default to <font class='docstring'>“Scanning”</font> and <font class='docstring'>“Select WiFi”</font>.<br>
@@ -79,13 +84,15 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">ssid</a>)</div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">ssid</a>
+		)</div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“force”</font> or <font class='docstring'>“large”</font></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ssids”</font></div>
 	</div>

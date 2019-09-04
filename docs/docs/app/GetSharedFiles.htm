@@ -27,7 +27,7 @@
 			<h1>GetSharedFiles</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Returns a path list of files shared with the app.</p>
 
 			<div class="samp">
-			app.GetSharedFiles() → <b>list:</b> [ <a href="#pop_str_pth" data-transition="pop" data-rel="popup">path</a> ]
+			app.GetSharedFiles() → <b>list:</b> [
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">path</a> ]
 			</div>
 
 			<p>If the results were retreived they can't be read an other time, unless they will be shared again.<br>
@@ -60,12 +61,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>
 

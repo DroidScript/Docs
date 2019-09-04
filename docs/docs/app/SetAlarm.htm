@@ -27,7 +27,7 @@
 			<h1>SetAlarm</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,13 @@
 			<p>Set a time when you want your app to start automatically if it is not already opened.</p>
 
 			<div class="samp">
-			app.SetAlarm( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_mul_001" data-transition="pop" data-rel="popup">id</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_num_dat" data-transition="pop" data-rel="popup">time</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">interval</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			app.SetAlarm(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_mul_001" data-transition="pop" data-rel="popup">id</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+				<a href="#pop_num_dat" data-transition="pop" data-rel="popup">time</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">interval</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p>When the alarm is fired, the global <i>OnAlarm</i> event will be fired.</p>
@@ -62,7 +68,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Set Alarm</h3>
 				<div id="examp1" style="font-size:70%">
@@ -98,15 +104,17 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Set”</font> or <font class='docstring'>“Repeat”</font> or <font class='docstring'>“Cancel”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Set”</font> or <font class='docstring'>“Repeat”</font> or <font class='docstring'>“Cancel”</font></div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string
-number: integer')">id</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string
+number: integer')">id</a>
+		)</div>
 		<div data-role="popup" id="pop_num_dat" class="ui-content"><b>number:</b> <i>Datetime in milliseconds (from JS Date object)</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“ExactIdle”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('only works for single shot alarms')">Exact</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('Opens main app if called from a service')">App</a>”</font></div>

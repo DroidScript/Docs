@@ -27,7 +27,7 @@
 			<h1>StartService</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,15 +36,17 @@
 			<p>Starts a service which runs parallel to your app.</p>
 
 			<div class="samp">
-			app.StartService( <a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a> )
+			app.StartService(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a> )
 			</div>
 
 			<p>See Also: <a href="StopService.htm" data-ajax="false">StopService</a>.</p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

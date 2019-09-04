@@ -27,7 +27,7 @@
 			<h1>GetTop</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the <b>px</b> option.</p>
 
 			<div class="samp">
-			app.GetTop( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>number:</b> <i>fraction (0..1)</i>
+			app.GetTop(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+				→ <b>number:</b> <i>fraction (0..1)</i>
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -54,12 +56,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“px”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“px”</font></div>
 	</div>
 </body>
 

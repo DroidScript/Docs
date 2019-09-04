@@ -27,7 +27,7 @@
 			<h1>IsBtDevicePaired</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Checks if a given bluetooth device was paired with the user device.</p>
 
 			<div class="samp">
-			app.IsBtDevicePaired( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>boolean</b>
+			app.IsBtDevicePaired(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
+				→ <b>boolean</b>
 			</div>
 
 			<p>See Also: <a href="GetPairedBtDevices.htm" data-ajax="false">GetPairedBtDevices</a>, <a href="UnpairBtDevice.htm" data-ajax="false">UnpairBtDevice</a></p>
@@ -87,7 +89,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Pairing and Unpairing bluetooth devices</h3>
 				<div id="examp1" style="font-size:70%">
@@ -151,12 +153,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

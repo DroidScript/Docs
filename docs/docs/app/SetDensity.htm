@@ -27,7 +27,7 @@
 			<h1>SetDensity</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Changes the dpi value (dots per inch) that affects the content of any control created afterwards.</p>
 
 			<div class="samp">
-			app.SetDensity( <a href="#pop_std_int" data-transition="pop" data-rel="popup">dpi</a> )
+			app.SetDensity(
+				<a href="#pop_std_int" data-transition="pop" data-rel="popup">dpi</a> )
 			</div>
 
 			<p>The smaller the value, the smaller the scaling.<br>
@@ -72,12 +73,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_int" class="ui-content"><b>undefined</b></div>
+        <div data-role="popup" id="pop_std_int" class="ui-content"><b>undefined</b></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>SetBackColor</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Changes the background color of the app.</p>
 
 			<div class="samp">
-			app.SetBackColor( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+			app.SetBackColor(
+				<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -53,12 +54,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>  colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
+        <div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>  colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
 	</div>
 </body>
 

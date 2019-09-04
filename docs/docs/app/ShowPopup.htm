@@ -27,7 +27,7 @@
 			<h1>ShowPopup</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Shows a simple popup message on the screen.</p>
 
 			<div class="samp">
-			app.ShowPopup( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			app.ShowPopup(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p>It automatically disappears after about 5 secods or after an even shorter time if you pass the <font class='docstring'>“Short”</font> <b>option</b>, or when the user touches the screen.</p>
@@ -55,7 +57,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Bottom</h3>
 				<div id="examp1" style="font-size:70%">
@@ -71,12 +73,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Bottom”</font> or <font class='docstring'>“Short”</font></div>
 	</div>
 </body>

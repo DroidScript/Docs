@@ -27,7 +27,7 @@
 			<h1>GetVolume</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns the volume level of a given audio type as a number between 0 and 1.</p>
 
 			<div class="samp">
-			app.GetVolume( <a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a> ) → <b>number:</b> <i>fraction (0..1)</i>
+			app.GetVolume(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">stream</a> )
+				→ <b>number:</b> <i>fraction (0..1)</i>
 			</div>
 
 			<p>By default the <font class='docstring'>“System”</font> volume is returned.<br>
@@ -58,12 +60,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“alarm”</font> or <font class='docstring'>“dtmf”</font> or <font class='docstring'>“music”</font> or <font class='docstring'>“notification”</font> or <font class='docstring'>“ring”</font> or <font class='docstring'>“system”</font> or <font class='docstring'>“voicecall”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“alarm”</font> or <font class='docstring'>“dtmf”</font> or <font class='docstring'>“music”</font> or <font class='docstring'>“notification”</font> or <font class='docstring'>“ring”</font> or <font class='docstring'>“system”</font> or <font class='docstring'>“voicecall”</font></div>
 	</div>
 </body>
 

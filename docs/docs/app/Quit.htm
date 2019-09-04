@@ -27,7 +27,7 @@
 			<h1>Quit</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Quits the app with showing an <a href="Alert.htm" data-ajax="false">Alert</a> dialog box before exiting.</p>
 
 			<div class="samp">
-			app.Quit( <a href="#pop_std_str" data-transition="pop" data-rel="popup">msg</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			app.Quit(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">msg</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p>The function will pause the program and exit before any further commands can be executed.</p>
@@ -57,12 +60,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDim”</font>, <font class='docstring'>“NoFocus”</font></div>
 	</div>
 </body>

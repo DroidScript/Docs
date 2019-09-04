@@ -27,7 +27,7 @@
 			<h1>ChooseFile</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>ChooseFile opens a file picker for user to select a file.</p>
 
 			<div class="samp">
-			app.ChooseFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.ChooseFile(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>See Also: <a href="ReadFile.htm" data-ajax="false">ReadFile</a></p>
@@ -78,14 +81,16 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“mimetype”</font></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>
+		)</div>
 	</div>
 </body>
 

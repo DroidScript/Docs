@@ -27,7 +27,7 @@
 			<h1>SetOnKey</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>You can use SetOnKey for receiving and handling all key events fired in the application.</p>
 
 			<div class="samp">
-			app.SetOnKey( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.SetOnKey(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>You may want to use it with <b>DisableKeys</b> - i.e. for defining a custom <i>ENTER</i> command for automatic control focussing.<br>
@@ -85,7 +86,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Surprise</h3>
 				<div id="examp1" style="font-size:70%">
@@ -124,12 +125,17 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “DOWN” or “UP”')">action</a>, <a href="" onclick="app.ShowPopup('string: “ENTER”, “VOLUME_DOWN”, “VOLUME_UP”, “BACK”, “MENU”, “...”')">name</a>, <a href="" onclick="app.ShowPopup('number: integer')">keycode</a>, <a href="" onclick="app.ShowPopup('string: “Shift”, “Ctrl”, “Alt”, “Meta”')">extrakeys</a>)</div>
+        <div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: “DOWN” or “UP”')">action</a>,
+			<a href="" onclick="app.ShowPopup('string: “ENTER”, “VOLUME_DOWN”, “VOLUME_UP”, “BACK”, “MENU”, “...”')">name</a>,
+			<a href="" onclick="app.ShowPopup('number: integer')">keycode</a>,
+			<a href="" onclick="app.ShowPopup('string: “Shift”, “Ctrl”, “Alt”, “Meta”')">extrakeys</a>
+		)</div>
 	</div>
 </body>
 

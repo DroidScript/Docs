@@ -27,7 +27,7 @@
 			<h1>CreateNotification</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>The Notification object can be used to put messages in the notification drawer.</p>
 
 			<div class="samp">
-			ntf = app.CreateNotification( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Notification
+			ntf = app.CreateNotification(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+				→ <b>app object:</b> Notification
 			</div>
 
 			<p>The <font class='docstring'>“AutoCancel”</font> <b>option</b> will automatically dismiss the notificatin if the user touches it. <font class='docstring'>“FullScreen”</font> tries to create a larger notification on the screen. And <font class='docstring'>“OnGoing”</font> makes the Notification closeable by your app only.<br>
@@ -81,30 +83,58 @@
 				</div>
 			</div>
 
-			
+
 			<p><br>The following methods are available on the <b>Notification</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Cancel</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a> )</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Notification”</font></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Notify</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a> )</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetLargeImage</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetLights</a>( <a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">onMs</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">offMs</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetMessage</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ticker</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )</div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetSmallImage</a>( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Cancel</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Notification”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Notify</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetLargeImage</a>(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetLights</a>(
+				<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">onMs</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">offMs</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetMessage</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">ticker</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetSmallImage</a>(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Ongoing”</font>, <font class='docstring'>“AutoCancel”</font>, <font class='docstring'>“FullScreen”</font></div>
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Ongoing”</font>, <font class='docstring'>“AutoCancel”</font>, <font class='docstring'>“FullScreen”</font></div>
+
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ntf.Cancel</b><br>Cancel a notification with a specific id.</div>
+		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ntf.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ntf.Notify</b><br>Send the notification to the user.</div>
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ntf.SetLargeImage</b><br>Set an image which will be displayed bigger than usual.</div>
+		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ntf.SetLights</b><br>Activate the device notification LEDs.</div>
 		<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <font class='docstring'>“#rrggbb”</font>, <font class='docstring'>“#aarrggbb”</font><br>  colourName: <font class='docstring'>“red”</font>, <font class='docstring'>“green”</font>, ...</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ntf.SetLights</b><br>Activate the device notification LEDs.</div>
+
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ntf.SetMessage</b><br>Set notification texts.</div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ntf.SetSmallImage</b><br>Set a small image in your notification.</div>
 	</div>

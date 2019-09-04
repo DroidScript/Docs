@@ -27,7 +27,7 @@
 			<h1>OpenUrl</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Allows the user to open an url with an external application on the device.</p>
 
 			<div class="samp">
-			app.OpenUrl( <a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>, <a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">choose</a> )
+			app.OpenUrl(
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>,
+				<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">choose</a> )
 			</div>
 
 			<p>The <b>choose</b> parameter shows the user a custom message in the choose dialog.<br>
@@ -57,12 +60,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
+        <div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 		<div data-role="popup" id="pop_str_mim" class="ui-content"><b>string:</b> <i>mimetype</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>

@@ -27,7 +27,7 @@
 			<h1>SetPriority</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,14 +36,15 @@
 			<p>Changes the GUI thread priority.</p>
 
 			<div class="samp">
-			app.SetPriority( <a href="#pop_str_001" data-transition="pop" data-rel="popup">level</a> )
+			app.SetPriority(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">level</a> )
 			</div>
 
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Low”</font> or <font class='docstring'>“Medium”</font> or <font class='docstring'>“High”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Low”</font> or <font class='docstring'>“Medium”</font> or <font class='docstring'>“High”</font></div>
 	</div>
 </body>
 

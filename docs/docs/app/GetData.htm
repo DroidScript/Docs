@@ -27,7 +27,7 @@
 			<h1>GetData</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns data stored via app.SetData(key, value).</p>
 
 			<div class="samp">
-			app.GetData( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>string</b>
+			app.GetData(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
+				→ <b>string</b>
 			</div>
 
 			<p>All data will be lost when the app is closed.<br>
@@ -59,7 +61,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Random Value</h3>
 				<div id="examp1" style="font-size:70%">
@@ -88,12 +90,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>CheckPermission</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>CheckPermission checks whether the permission of a particular component has been granted.</p>
 
 			<div class="samp">
-			app.CheckPermission( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>boolean</b>
+			app.CheckPermission(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+				→ <b>boolean</b>
 			</div>
 
 			<p>See Also: <a href="GetPermission.htm" data-ajax="false">GetPermission</a></p>
@@ -65,12 +67,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Camera”</font> or <font class='docstring'>“Storage”</font> or <font class='docstring'>“ExtSDcard”</font> or <font class='docstring'>“Network”</font> or <font class='docstring'>“...”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Camera”</font> or <font class='docstring'>“Storage”</font> or <font class='docstring'>“ExtSDcard”</font> or <font class='docstring'>“Network”</font> or <font class='docstring'>“...”</font></div>
 	</div>
 </body>
 

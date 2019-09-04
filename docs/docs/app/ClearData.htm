@@ -27,7 +27,7 @@
 			<h1>ClearData</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>ClearData deletes variables saved via app.Save*().</p>
 
 			<div class="samp">
-			app.ClearData( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			app.ClearData(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
 			</div>
 
 			<p>The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.<br>
@@ -86,12 +87,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>
 

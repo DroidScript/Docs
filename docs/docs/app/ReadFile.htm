@@ -27,7 +27,7 @@
 			<h1>ReadFile</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Reads a file from the local filesystem and returns its contents.</p>
 
 			<div class="samp">
-			app.ReadFile( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">encoding</a> )
+			app.ReadFile(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">encoding</a> )
 			</div>
 
 			<p>See also: <a href="WriteFile.htm" data-ajax="false">WriteFile</a></p>
@@ -59,12 +61,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“US-ASCII”</font> or <font class='docstring'>“UTF-8”</font> or <font class='docstring'>“UTF-16”</font> or <font class='docstring'>“UTF-16BE”</font> or <font class='docstring'>“UTF-16LE”</font> or <font class='docstring'>“windows-1252”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('Latin-1')">ISO-8859-1</a>”</font> or <font class='docstring'>“base64”</font></div>
 	</div>
 </body>

@@ -27,7 +27,7 @@
 			<h1>SetRingerMode</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Change the current ringer mode of the device which can be <font class='docstring'>“Normal”</font>, <font class='docstring'>“Vibrate”</font> or <font class='docstring'>“Silent”</font>.</p>
 
 			<div class="samp">
-			app.SetRingerMode( <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
+			app.SetRingerMode(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
 			</div>
 
 			<p>See Also: <a href="GetRingerMode.htm" data-ajax="false">GetRingerMode</a></p>
@@ -77,12 +78,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Normal”</font> or <font class='docstring'>“Vibrate”</font> or <font class='docstring'>“Silent”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Normal”</font> or <font class='docstring'>“Vibrate”</font> or <font class='docstring'>“Silent”</font></div>
 	</div>
 </body>
 

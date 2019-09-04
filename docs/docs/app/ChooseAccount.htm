@@ -27,7 +27,7 @@
 			<h1>ChooseAccount</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Opens an Android dialog and allows the user to select one of his registered Google/Gmail accounts or add one.</p>
 
 			<div class="samp">
-			app.ChooseAccount( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.ChooseAccount(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>The selected email address is returned as the first argument in the callback function.<br>
@@ -73,12 +74,14 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “email”')">account</a>)</div>
+        <div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: “email”')">account</a>
+		)</div>
 	</div>
 </body>
 

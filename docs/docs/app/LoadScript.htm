@@ -27,7 +27,7 @@
 			<h1>LoadScript</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.</p>
 
 			<div class="samp">
-			app.LoadScript( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">path</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.LoadScript(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">path</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>See Also: <a href="Script.htm" data-ajax="false">Script</a></p>
@@ -65,14 +67,16 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('boolean')">isTrusted</a> }</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">info</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">info</a>
+		)</div>
 	</div>
 </body>
 

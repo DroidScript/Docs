@@ -27,7 +27,7 @@
 			<h1>WifiConnect</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Connect to a WiFi network by specifying the ssid and a password.</p>
 
 			<div class="samp">
-			app.WifiConnect( <a href="#pop_std_str" data-transition="pop" data-rel="popup">ssid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a> )
+			app.WifiConnect(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">ssid</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a> )
 			</div>
 
 			<p>See Also: <a href="WifiScan.htm" data-ajax="false">WifiScan</a>, <a href="SetOnWifiChange.htm" data-ajax="false">SetOnWifiChange</a>, <a href="SetWifiApEnabled.htm" data-ajax="false">SetWifiApEnabled</a></p>
@@ -61,12 +63,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

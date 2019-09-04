@@ -27,7 +27,7 @@
 			<h1>CreateSynth</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns a Synth object which ca produces a variety of sounds, sound effects and music.</p>
 
 			<div class="samp">
-			syn = app.CreateSynth( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> ) → <b>app object:</b> Returns a new Synth object.
+			syn = app.CreateSynth(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+				→ <b>app object:</b> Returns a new Synth object.
 			</div>
 
 			<h3>Some descriptions</h3>
@@ -75,7 +77,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Multiple Synths Song</h3>
 				<div id="examp1" style="font-size:70%">
@@ -111,65 +113,186 @@
 				</div>
 			</div>
 
-			
+
 			<p><br>The following methods are available on the <b>Synth</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Synth”</font></div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">PlayMidiTune</a>( <a href="#pop_str_002" data-transition="pop" data-rel="popup">tune</a> )</div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">PlayNote</a>( <a href="#pop_num_001" data-transition="pop" data-rel="popup">note</a> )</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">PlayTone</a>( <a href="#pop_num_002" data-transition="pop" data-rel="popup">frequency</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a> )</div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetDelay</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">milliseconds</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetDelayEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetFeedback</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetFrequency</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">frequency</a> )</div>
-			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetNoteLength</a>( <a href="#pop_num_sec" data-transition="pop" data-rel="popup">duration</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetPhaser</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">drywet</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a>, <a href="#pop_std_num" data-transition="pop" data-rel="popup">range</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SetPhaserDryWet</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">drywet</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">SetPhaserEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">SetPhaserFeedback</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">SetPhaserRange</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">range</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SetPhaserRate</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a> )</div>
-			<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SetVca</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a> )</div>
-			<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetVcaAttack</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a> )</div>
-			<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetVcaDecay</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a> )</div>
-			<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetVcaEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
-			<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetVcaRelease</a>( <a href="#pop_num_003" data-transition="pop" data-rel="popup">release</a> )</div>
-			<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetVcaSustain</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a> )</div>
-			<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">SetVcf</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a>, <a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a>, <a href="#pop_num_004" data-transition="pop" data-rel="popup">cuttoff</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">resonance</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )</div>
-			<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">SetVcfAttack</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a> )</div>
-			<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">SetVcfCutoff</a>( <a href="#pop_num_005" data-transition="pop" data-rel="popup">cuttoff</a> )</div>
-			<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">SetVcfDecay</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">SetVcfDepth</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">SetVcfEnabled</a>( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">SetVcfRelease</a>( <a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetVcfResonance</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">resonance</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetVcfSustain</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a> )</div>
-			<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetVolume</a>( <a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>, <a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a> )</div>
-			<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetWaveShape</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">shape</a> )</div>
-			<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">Start</a>()</div>
-			<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">Stop</a>()</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Synth”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">PlayMidiTune</a>(
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">tune</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">PlayNote</a>(
+				<a href="#pop_num_001" data-transition="pop" data-rel="popup">note</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">PlayTone</a>(
+				<a href="#pop_num_002" data-transition="pop" data-rel="popup">frequency</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetDelay</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">milliseconds</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetDelayEnabled</a>(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetFeedback</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetFrequency</a>(
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">frequency</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetNoteLength</a>(
+				<a href="#pop_num_sec" data-transition="pop" data-rel="popup">duration</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetPhaser</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">drywet</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a>,
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">range</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SetPhaserDryWet</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">drywet</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">SetPhaserEnabled</a>(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">SetPhaserFeedback</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">feedback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">SetPhaserRange</a>(
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">range</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SetPhaserRate</a>(
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">rate</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SetVca</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetVcaAttack</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetVcaDecay</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetVcaEnabled</a>(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetVcaRelease</a>(
+				<a href="#pop_num_003" data-transition="pop" data-rel="popup">release</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetVcaSustain</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">SetVcf</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a>,
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a>,
+				<a href="#pop_num_004" data-transition="pop" data-rel="popup">cuttoff</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">resonance</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">SetVcfAttack</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">attack</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">SetVcfCutoff</a>(
+				<a href="#pop_num_005" data-transition="pop" data-rel="popup">cuttoff</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">SetVcfDecay</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">decay</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">SetVcfDepth</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">SetVcfEnabled</a>(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">SetVcfRelease</a>(
+				<a href="#pop_num_mls" data-transition="pop" data-rel="popup">release</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SetVcfResonance</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">resonance</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetVcfSustain</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">sustain</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetVolume</a>(
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
+				<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_020" data-transition="pop" data-rel="popup">SetWaveShape</a>(
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">shape</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">Start</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">Stop</a>()
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Signal”</font>, <font class='docstring'>“VCA”</font>, <font class='docstring'>“VCF”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Signal”</font>, <font class='docstring'>“VCA”</font>, <font class='docstring'>“VCF”</font></div>
+
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>syn.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“note1:duration1,note2:duration2,...”</font></div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.PlayMidiTune</b><br>Play a comma-separated sequence of <font class='docstring'>“midi_note:duration”</font> pairs.</div>
-		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 0..125</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“note1:duration1,note2:duration2,...”</font></div>
+
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>syn.PlayNote</b><br>Plays a single note</div>
+		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 0..125</div>
+
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>syn.PlayTone</b><br>Plays a frequency tone.</div>
 		<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>frequency</i></div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>syn.PlayTone</b><br>Plays a frequency tone.</div>
+
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>syn.SetDelay</b><br>Change the delay effect difference</div>
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>syn.SetDelayEnabled</b><br>Enables the delay effect (plays every note a second time after a given delay)</div>
-		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>syn.SetFeedback</b><br>Adds a feedback effect when delay is enabled</div>
-		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>syn.SetFrequency</b><br>Set the current played frequency</div>
-		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
+		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>syn.SetNoteLength</b><br>Set the length of a whole note in seconds. Defaults to 2.56</div>
+		<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
+
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>syn.SetPhaser</b><br>Initializes the phaser effect</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>syn.SetPhaserDryWet</b><br>Control producing of unprocessed (0) and delayed (1) signals (whatever this means)</div>
 		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>syn.SetPhaserEnabled</b><br>En/Disables phaser effect</div>
@@ -180,14 +303,17 @@
 		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>syn.SetVcaAttack</b><br>Set a time where the volume should reach a maximum</div>
 		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>syn.SetVcaDecay</b><br>Controls time in which the volume is lowered to the sustain value</div>
 		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>syn.SetVcaEnabled</b><br>En/Disables VCA effect</div>
-		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>mls</i></div>
 		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>syn.SetVcaRelease</b><br>Set a time where the volume should reach a minimum</div>
+		<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>mls</i></div>
+
 		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>syn.SetVcaSustain</b><br>Set a basis volume</div>
-		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>frequency</i></div>
 		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>syn.SetVcf</b><br>Initialize the VCF effect</div>
+		<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>frequency</i></div>
+
 		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>syn.SetVcfAttack</b><br>Set a time where the frequencies should reach a maximum</div>
-		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>frequency</i></div>
 		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>syn.SetVcfCutoff</b><br>Set a maximum frequency which will never be exceeded</div>
+		<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>frequency</i></div>
+
 		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>syn.SetVcfDecay</b><br>Controls time in which the frequency is lowered to the sustain value.</div>
 		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>syn.SetVcfDepth</b><br>Set the strength of the Vcf filter</div>
 		<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>syn.SetVcfEnabled</b><br>En/Disables VCF effect</div>
@@ -195,8 +321,9 @@
 		<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>syn.SetVcfResonance</b><br>Adds a resonance tone</div>
 		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>syn.SetVcfSustain</b><br>Set a basis frequency</div>
 		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>syn.SetVolume</b><br>Set the overall synthesizer volume</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Sin”</font>, <font class='docstring'>“Saw”</font>, <font class='docstring'>“Square”</font>, <font class='docstring'>“White”</font></div>
 		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>syn.SetWaveShape</b><br>Set the wave shape of the synthesizer</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Sin”</font>, <font class='docstring'>“Saw”</font>, <font class='docstring'>“Square”</font>, <font class='docstring'>“White”</font></div>
+
 		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>syn.Start</b><br>Start playing</div>
 		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>syn.Stop</b><br>Stop playing</div>
 	</div>

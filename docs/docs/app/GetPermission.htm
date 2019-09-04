@@ -27,7 +27,7 @@
 			<h1>GetPermission</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the <b>callback</b> function, or in case of only <font class='docstring'>“ExtSDCard”</font> the path URI of the user-selected folder.</p>
 
 			<div class="samp">
-			app.GetPermission( <a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.GetPermission(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>See Also: <a href="CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
@@ -60,13 +62,15 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Camera”</font> or <font class='docstring'>“ExtSDcard”</font> or <font class='docstring'>“Network”</font> or <font class='docstring'>“Storage”</font> or <font class='docstring'>“Overlay”</font> or <font class='docstring'>“SMS”</font></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">ungranted</a>)</div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Camera”</font> or <font class='docstring'>“ExtSDcard”</font> or <font class='docstring'>“Network”</font> or <font class='docstring'>“Storage”</font> or <font class='docstring'>“Overlay”</font> or <font class='docstring'>“SMS”</font></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">ungranted</a>
+		)</div>
 	</div>
 </body>
 

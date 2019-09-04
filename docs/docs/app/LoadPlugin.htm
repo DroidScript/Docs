@@ -27,7 +27,7 @@
 			<h1>LoadPlugin</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,17 +36,18 @@
 			<p>Import an installed plugin to your app.</p>
 
 			<div class="samp">
-			app.LoadPlugin( <a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a> )
+			app.LoadPlugin(
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a> )
 			</div>
 
 			<p>You can download plugins from <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('http://droidscript.org/plugins/');">DroidScript's plugin page</a>, <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://play.google.com/store/search?q=DroidScript+Plugin');">Google Playstore</a> or you can create self-written plugins.<br>
 			<br>
 			You can find instructions on how to create plugins on DroidScript.org) or on my <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://symbroson.blogspot.com/search/label/Plugins');">BlogSpot page</a>.</p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
+        <div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 	</div>
 </body>
 

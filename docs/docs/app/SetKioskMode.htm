@@ -27,7 +27,7 @@
 			<h1>SetKioskMode</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Blocks android functionality to keep the rest of your phone safe while others may use your app.</p>
 
 			<div class="samp">
-			app.SetKioskMode( <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			app.SetKioskMode(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>,
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div><br>
@@ -55,12 +58,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Power”</font>, <font class='docstring'>“Status”</font>, <font class='docstring'>“Nav”</font>, <font class='docstring'>“NavRight”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Power”</font>, <font class='docstring'>“Status”</font>, <font class='docstring'>“Nav”</font>, <font class='docstring'>“NavRight”</font></div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Black”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('prevents recent tasks button working')">Tasks</a>”</font></div>
 	</div>

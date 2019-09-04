@@ -27,7 +27,7 @@
 			<h1>DiscoverBtDevices</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Use DiscoverBtDevices to search for other bluetooth devices which are not paired with the current device.</p>
 
 			<div class="samp">
-			app.DiscoverBtDevices( <a href="#pop_std_str" data-transition="pop" data-rel="popup">filter</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">onFound</a>, <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">onComplete</a> )
+			app.DiscoverBtDevices(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">filter</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">onFound</a>,
+				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">onComplete</a> )
 			</div>
 
 			<p>If any was found it will be forwarded directly to the <b>onFound</b> callback. If the search has finished <b>onComplete</b> function will be called.<br>
@@ -78,13 +81,16 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">address</a>)</div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">name</a>,
+			<a href="" onclick="app.ShowPopup('string')">address</a>
+		)</div>
 		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 	</div>
 </body>

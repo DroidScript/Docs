@@ -27,7 +27,7 @@
 			<h1>PreventScreenLock</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>The <i>PreventScreenLock</i> method prevents the device screen from dimming and locking while your app is in the foreground.</p>
 
 			<div class="samp">
-			app.PreventScreenLock( <a href="#pop_mul_001" data-transition="pop" data-rel="popup">mode</a> )
+			app.PreventScreenLock(
+				<a href="#pop_mul_001" data-transition="pop" data-rel="popup">mode</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -54,12 +55,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>boolean</b><br><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('Device can sleep')">Full</a>”</font>, <font class='docstring'>“ Screen and Keyboard on”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('CPU always on')">Partial</a>”</font>, <font class='docstring'>“ Screen and Keyboard off”</font></div>
+        <div data-role="popup" id="pop_mul_001" class="ui-content"><b>boolean</b><br><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('Device can sleep')">Full</a>”</font>, <font class='docstring'>“ Screen and Keyboard on”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('CPU always on')">Partial</a>”</font>, <font class='docstring'>“ Screen and Keyboard off”</font></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>SetClipboardText</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>The SetClipboardText method puts text data on the device clip board.</p>
 
 			<div class="samp">
-			app.SetClipboardText( <a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
+			app.SetClipboardText(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
 			</div>
 
 			<p>This allows you to copy and paste text between different applications.<br>
@@ -57,12 +58,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

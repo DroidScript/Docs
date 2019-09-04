@@ -27,7 +27,7 @@
 			<h1>SetOrientation</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Set the display orientation to a fixed value.</p>
 
 			<div class="samp">
-			app.SetOrientation( <a href="#pop_str_001" data-transition="pop" data-rel="popup">orient</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.SetOrientation(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">orient</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>You can unlock it again passing <font class='docstring'>“Default”</font> as <b>orientation</b>.<br>
@@ -68,12 +70,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Default”</font> or <font class='docstring'>“Landscape”</font> or <font class='docstring'>“ReverseLandscape”</font> or <font class='docstring'>“Portrait”</font> or <font class='docstring'>“ReversePortrait”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Default”</font> or <font class='docstring'>“Landscape”</font> or <font class='docstring'>“ReverseLandscape”</font> or <font class='docstring'>“Portrait”</font> or <font class='docstring'>“ReversePortrait”</font></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	</div>
 </body>

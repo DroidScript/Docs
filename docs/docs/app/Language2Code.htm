@@ -27,7 +27,7 @@
 			<h1>Language2Code</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Convert the user language name to it's 2 character long language code.</p>
 
 			<div class="samp">
-			app.Language2Code( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>string</b>
+			app.Language2Code(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
+				→ <b>string</b>
 			</div>
 
 			<p>If no argument is passed, the current language code is returned.<br>
@@ -58,12 +60,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

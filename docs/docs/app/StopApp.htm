@@ -27,7 +27,7 @@
 			<h1>StopApp</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,14 +36,15 @@
 			<p>Stops an app started via <a href="StartApp.htm" data-ajax="false">StartApp</a>.</p>
 
 			<div class="samp">
-			app.StopApp( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">name</a> )
+			app.StopApp(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">name</a> )
 			</div>
 
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>
 

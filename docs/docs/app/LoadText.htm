@@ -27,7 +27,7 @@
 			<h1>LoadText</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Load saved text value to remember varibale values between multiple app starts.</p>
 
 			<div class="samp">
-			app.LoadText( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">default</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			app.LoadText(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">default</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
 			</div>
 
 			<p>See also: <a href="SaveText.htm" data-ajax="false">SaveText</a>.</p>
@@ -83,12 +86,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 	</div>
 </body>

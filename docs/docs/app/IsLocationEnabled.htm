@@ -27,7 +27,7 @@
 			<h1>IsLocationEnabled</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Checks if a specific location mode was enabled.</p>
 
 			<div class="samp">
-			app.IsLocationEnabled( <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> ) → <b>boolean</b>
+			app.IsLocationEnabled(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
+				→ <b>boolean</b>
 			</div>
 
 			<p>See Also: <a href="CreateLocator.htm" data-ajax="false">CreateLocator</a></p>
@@ -56,12 +58,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“GPS”</font> or <font class='docstring'>“Network”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“GPS”</font> or <font class='docstring'>“Network”</font></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>GetPrivateFolder</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.</p>
 
 			<div class="samp">
-			app.GetPrivateFolder( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> ) → <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
+			app.GetPrivateFolder(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a> )
+				→ <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
 			</div>
 
 			<p>See Also: <a href="GetAppPath.htm" data-ajax="false">GetAppPath</a>, <a href="GetPath.htm" data-ajax="false">GetPath</a></p>
@@ -56,12 +58,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

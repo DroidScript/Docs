@@ -27,7 +27,7 @@
 			<h1>ChooseContact</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>ChooseContact opens the Contacts app so that the user can select the name and either the phone number or email address of a user.</p>
 
 			<div class="samp">
-			app.ChooseContact( <a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.ChooseContact(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -70,7 +72,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Choose Email Address</h3>
 				<div id="examp1" style="font-size:70%">
@@ -102,13 +104,16 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “Phone” or “Email”')">name</a>, <a href="" onclick="app.ShowPopup('string')">data</a>)</div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: “Phone” or “Email”')">name</a>,
+			<a href="" onclick="app.ShowPopup('string')">data</a>
+		)</div>
 	</div>
 </body>
 

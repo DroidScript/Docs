@@ -27,7 +27,7 @@
 			<h1>GetMediaFile</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Returns a path to an unambiguous media file be like <font class='docstring'>“/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”</font>.</p>
 
 			<div class="samp">
-			app.GetMediaFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">appName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">ext</a> ) → <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
+			app.GetMediaFile(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">appName</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">ext</a> )
+				→ <b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i>
 			</div>
 
 			<p>The folder to that file will be created automatically.<br>
@@ -58,12 +61,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

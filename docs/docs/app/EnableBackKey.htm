@@ -27,7 +27,7 @@
 			<h1>EnableBackKey</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Allows to en- or disable the devices back key.</p>
 
 			<div class="samp">
-			app.EnableBackKey( <a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+			app.EnableBackKey(
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 			</div>
 
 			<p>When it is disabled the global <i>OnBack</i> app event will called when the user presses the back button - otherwise the app exits.<br>
@@ -69,7 +70,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Menu Images</h3>
 				<div id="examp1" style="font-size:70%">
@@ -91,12 +92,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+        <div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 	</div>
 </body>
 

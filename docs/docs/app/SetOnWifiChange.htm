@@ -27,7 +27,7 @@
 			<h1>SetOnWifiChange</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Define a callback function to detect when the WiFi connected state has changed.</p>
 
 			<div class="samp">
-			app.SetOnWifiChange( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.SetOnWifiChange(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>The <b>state</b> parameter can be <font class='docstring'>“CONNECTING”</font>, <font class='docstring'>“CONNECTED”</font>, or <font class='docstring'>“DISCONNECTED”</font>. The WiFi ssid is passed on <font class='docstring'>“CONNECTED”</font> only.<br>
@@ -67,12 +68,15 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: “CONNECTING” or “CONNECTED” or “DISCONNECTED”')">state</a>, <a href="" onclick="app.ShowPopup('string')">ssid</a>)</div>
+        <div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: “CONNECTING” or “CONNECTED” or “DISCONNECTED”')">state</a>,
+			<a href="" onclick="app.ShowPopup('string')">ssid</a>
+		)</div>
 	</div>
 </body>
 

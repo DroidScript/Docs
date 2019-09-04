@@ -27,7 +27,7 @@
 			<h1>GetThumbnail</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,11 @@
 			<p>Creates a downscaled copy of an existing image.</p>
 
 			<div class="samp">
-			app.GetThumbnail( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">width</a>, <a href="#pop_num_pxl" data-transition="pop" data-rel="popup">height</a> )
+			app.GetThumbnail(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">source</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>,
+				<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">width</a>,
+				<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">height</a> )
 			</div>
 
 			<p>Pass -1 as width or height to keep the aspect ratio.<br>
@@ -66,12 +70,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
 	</div>
 </body>

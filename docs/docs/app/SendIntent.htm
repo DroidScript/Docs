@@ -27,7 +27,7 @@
 			<h1>SendIntent</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,16 @@
 			<p>Intens can be used to perform an operation between different applications or activities.</p>
 
 			<div class="samp">
-			app.SendIntent( <a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">action</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">category</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">uri</a>, <a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">extras</a>, <a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.SendIntent(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">packageName</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">className</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">action</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">category</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">uri</a>,
+				<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_lst_001" data-transition="pop" data-rel="popup">extras</a>,
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p><i>It is basically a passive data structure holding an abstract description of an action to be performed</i>.<br>
@@ -52,18 +61,21 @@
 			For more information visit the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html');">Android Developer Page</a>. There you can find informations about the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions');">activity</a>, <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-categories');">category</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-extra-data');">extra</a>.<br>
 			<br>
 			See Also: <a href="GetIntent.htm" data-ajax="false">GetIntent</a></p>
-			
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“android.intent.action.*”</font></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“android.intent.category.*”</font></div>
 		<div data-role="popup" id="pop_str_mim" class="ui-content"><b>string:</b> <i>mimetype</i></div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('string')">value</a> }]</div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“result”</font></div>
 		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string, type')">action</a>:string, <a href="" onclick="app.ShowPopup('string, flags')">data</a>:integer, <a href="" onclick="app.ShowPopup('object ')">extras</a>}</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: integer: -1 or 0 or 1')">resultCode</a>, <a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">data</a>)</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('number: integer: -1 or 0 or 1')">resultCode</a>,
+			<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">data</a>
+		)</div>
 	</div>
 </body>
 

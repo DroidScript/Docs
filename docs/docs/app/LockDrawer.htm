@@ -27,7 +27,7 @@
 			<h1>LockDrawer</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary.</p>
 
 			<div class="samp">
-			app.LockDrawer( <a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a> )
+			app.LockDrawer(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a> )
 			</div>
 
 			<p>You can only unlock it using the <a href="UnlockDrawer.htm" data-ajax="false">UnlockDrawer</a> method.<br>
@@ -76,7 +77,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Open and Close Drawer via Button</h3>
 				<div id="examp1" style="font-size:70%">
@@ -124,12 +125,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“left”</font> or <font class='docstring'>“right”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“left”</font> or <font class='docstring'>“right”</font></div>
 	</div>
 </body>
 

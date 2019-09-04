@@ -27,7 +27,7 @@
 			<h1>GetMemoryInfo</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,11 @@
 			<p>Returns an object containing informations about the RAM memory.</p>
 
 			<div class="samp">
-			app.GetMemoryInfo() → <b>object:</b> { <a href="#pop_num_byt" data-transition="pop" data-rel="popup">avail</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">low</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">threshold</a>, <a href="#pop_num_byt" data-transition="pop" data-rel="popup">total</a> }
+			app.GetMemoryInfo() → <b>object:</b> {
+				<a href="#pop_num_byt" data-transition="pop" data-rel="popup">avail</a>,
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">low</a>,
+				<a href="#pop_num_byt" data-transition="pop" data-rel="popup">threshold</a>,
+				<a href="#pop_num_byt" data-transition="pop" data-rel="popup">total</a> }
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -56,7 +60,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Show Memory</h3>
 				<div id="examp1" style="font-size:70%">
@@ -94,12 +98,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
+        <div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 	</div>
 </body>

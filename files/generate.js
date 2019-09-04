@@ -149,7 +149,7 @@ function generateDoc( name ) {
 				.replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
 			)
 			// popup object list
-			.replace(/%p/, Globals.popDefs.join("\n"))
+			.replace(/%p/, Globals.popDefs.join("\n\t\t"))
 			// additional notes
 			.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 			// some html char placeholders
@@ -159,7 +159,9 @@ function generateDoc( name ) {
 			// remove empty <p> tags
 			.replace(/\n?\t*<p><\/p>/g, "")
 			// remove leading whitespace in <p> tag
-			.replace(/<p>(<br>\s+)+/g, "<p>");
+			.replace(/<p>(<br>\s+)+/g, "<p>")
+			// remove trailing whitespace
+			.replace(/[ \t]+\n/g, "\n");
 
 	//save doc file
 	app.WriteFile( path + `docs${getl()}/app/${name}.htm`, html );
@@ -198,11 +200,11 @@ function getDocData( f, useAppPop ) {
 			mArgs.push(toArgPop( f.pNames[i], f.pTypes[i]));
 	}
 
-	mArgs = mArgs.length ? ` ${mArgs.join(", ")} ` : "";
+	mArgs = mArgs.length ? mArgs.join(",") + " " : "";
 
 	// convert return value
 	if( f.retval )
-		fretval = " → " + typeDesc( f.retval, true );
+		fretval = (f.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( f.retval, true );
 
 	// return data if there are no subfunctions
 	if( !f.subf || !keys( f.subf ).length )
@@ -235,23 +237,25 @@ function getDocData( f, useAppPop ) {
 
 		//convert return value
 		if( met.retval )
-			retval = " → " + typeDesc( met.retval );
-
+			retval = (met.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( met.retval );
+		
 		//convert function types
 		if( met.isfunc )
 		{
-			var args = [], type, pop;
-			for( i in met.pNames )
-				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
-
+			var args = [], pop;
+    		if((Globals.popDefs[Globals.popDefs.length - 1] || "").indexOf(f.abbrev + ".") == -1) Globals.popDefs.push("");
+			
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
 				replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
 				getAddClass(met) || (basefuncs.all.indexOf(curSubf) > -1 ? ' class="baseFunc"' : ""));
 			tryAddType( pop.fnc );
 
-			var s = pop.txt + ( args.length ? `( ${args.join(", ")} )` : "()" ) + retval;
+			for( i in met.pNames )
+				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
+			
+			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
 			if(curSubf.indexOf(".") > -1) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
-			methods += subfBase.replace( "%s", s );
+		    methods += subfBase.replace( "%s", s );
 		}
 		/* else { //convert other types
 			var pop = descPopup( curSubf, replW( met.desc ) );
@@ -424,11 +428,9 @@ function toArgPop( name, types, doSwitch ) {
 	// function callbacks
 	if( typeof types == "object" )
 	{
-		incpop( "fnc", 1 );
-
-		tryAddType(newDefPopup(
-			"fnc_" + incpop( "fnc" ),
-			"<b>function</b>(" + types.pNames.map(
+		tryAddType( newDefPopup(
+			"fnc_" + incpop( "fnc", 1 ),
+			"<b>function</b>(\n\t\t\t" + types.pNames.map(
 				function(n, i)
 				{
 					if("lst,obj".indexOf(types.pTypes[i].slice(0, 3)) > -1)
@@ -438,7 +440,7 @@ function toArgPop( name, types, doSwitch ) {
 						// primitive types get a primitive popup
 						return toArgAppPop(n, types.pTypes[i]);
 				}
-			).join(", ") + ')' )
+			).join(",\n\t\t\t") + "\n\t\t)" ).replace(/\(\s+\)/, "()")
 		);
 
 		return newTxtPopup( "fnc_" + incpop( "fnc" ), name );
@@ -506,13 +508,13 @@ function toArgPop( name, types, doSwitch ) {
 			);
 		if(pop_id.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop_id));
 
-		tryAddType(newDefPopup( pop_id, str[0]
+		tryAddType( newDefPopup( pop_id, str[0]
 			.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )
 			.replace( /ShowPopup\('.*?'\)/g, m => m.replace(/<.*?>/g, ""), "")
 		));
 
 		s = newTxtPopup( pop_id, name );
-		if(doSwitch) s = s.replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
+		if(doSwitch) s = s.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
 		return s;
 	}
 	else {
@@ -541,13 +543,10 @@ function toArgAppPop( name, types ) {
 }
 
 //adds a type to the type popup list if it doesnt exist yet
-function tryAddType( typelst ) {
-	var tlst = typelst.split( "\n" ).forEach( function(def, i) {
-		if( !def ) return;
-		var con = def.slice(def.indexOf('>') + 1);
-		if( Globals.popDefs.indexOf( def ) == -1 )
-			Globals.popDefs.push( def );
-	});
+function tryAddType( def ) {
+    def = def.trim();
+	if( Globals.popDefs.indexOf( def ) == -1 )
+		Globals.popDefs.push( def );
 }
 
 //replace whitespace with html syntax whitespace
@@ -669,7 +668,7 @@ function d(v) { console.log(v); return v; }
 
 // html templates
 var		// subfunctions
-	subfBase = '\t\t\t<div class="samp">%s</div>\n',
+	subfBase = '\t\t\t<div class="samp">%s\n\t\t\t</div>\n',
  	    // navigator list item
 	naviItem = '\n\t\t\t\t<li><a href="%s"%s>%s</a></li>',
 		// reopen popup onclick code
@@ -679,9 +678,9 @@ var		// subfunctions
 		// constructor and inline examples
 	funcBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
 		// jquery-popup link tag
-	txtPopup = '<a href="#pop_%s"%s data-transition="pop" data-rel="popup">%s</a>',
+	txtPopup = '\n\t\t\t\t<a href="#pop_%s" data-transition="pop" data-rel="popup"%s>%s</a>',
 		// popup object
-	defPopup = '\t\t<div data-role="popup" id="pop_%s" class="ui-content">%s</div>\n',
+	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 		// subfunctions list
 	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
 
@@ -785,7 +784,7 @@ var		// subfunctions
 			<br>
 		</div>
 
-%p
+        %p
 	</div>
 </body>
 

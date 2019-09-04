@@ -27,7 +27,7 @@
 			<h1>Alert</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,11 @@
 			<p>Alert shows a simple text dialog with a colored title and a 'Ok' button to exit.</p>
 
 			<div class="samp">
-			app.Alert( <a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>, <a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a> )
+			app.Alert(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+				<a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a> )
 			</div>
 
 			<p>If title was not given the dialog looks like a normal alert box.<br>
@@ -60,7 +64,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Yellow Title</h3>
 				<div id="examp1" style="font-size:70%">
@@ -76,12 +80,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDim”</font>, <font class='docstring'>“NoFocus”</font></div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> -180..180</div>
 	</div>

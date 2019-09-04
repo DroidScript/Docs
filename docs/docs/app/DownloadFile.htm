@@ -27,7 +27,7 @@
 			<h1>DownloadFile</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,12 @@
 			<p>Downloads a file using the Android's built-in download manager which creates a notification with the current download status and a custom title and description.</p>
 
 			<div class="samp">
-			app.DownloadFile( <a href="#pop_std_str" data-transition="pop" data-rel="popup">source</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">description</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			app.DownloadFile(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">source</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">destination</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">description</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p>In some cases there seems to appear a dialog - you can prevent that using the <i>NoDialog</i> option.<br>
@@ -58,7 +63,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Download to external storage</h3>
 				<div id="examp1" style="font-size:70%">
@@ -75,12 +80,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDialog”</font></div>
 	</div>

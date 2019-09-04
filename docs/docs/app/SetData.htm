@@ -27,7 +27,7 @@
 			<h1>SetData</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Saves variables until the app closes. All saved data will be lost afterwards.</p>
 
 			<div class="samp">
-			app.SetData( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">value</a> )
+			app.SetData(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">value</a> )
 			</div>
 
 			<p>See Also: <a href="GetData.htm" data-ajax="false">GetData</a>, <a href="ClearData.htm" data-ajax="false">ClearData</a></p>
@@ -57,12 +59,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	</div>
 </body>
 

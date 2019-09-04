@@ -27,7 +27,7 @@
 			<h1>GetRunningApps</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,11 @@
 			<p>Returns a list of objects containing info about all currently running apps in the fore- or background.</p>
 
 			<div class="samp">
-			app.GetRunningApps() → <b>list:</b> <i>of objects:</i> [{ <a href="#pop_num_int" data-transition="pop" data-rel="popup">user</a>, <a href="#pop_num_bin" data-transition="pop" data-rel="popup">pid</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_bin" data-transition="pop" data-rel="popup">foreground</a> }]
+			app.GetRunningApps() → <b>list:</b> <i>of objects:</i> [{
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">user</a>,
+				<a href="#pop_num_bin" data-transition="pop" data-rel="popup">pid</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">foreground</a> }]
 			</div>
 
 			<p>See Also: <a href="GetRunningServices.htm" data-ajax="false">GetRunningServices</a>, <a href="GetInstalledApps.htm" data-ajax="false">GetInstalledApps</a></p>
@@ -77,7 +81,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Is In Foreground</h3>
 				<div id="examp1" style="font-size:70%">
@@ -105,12 +109,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+        <div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_num_bin" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>

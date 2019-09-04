@@ -27,7 +27,7 @@
 			<h1>CreateFile</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,10 @@
 			<p>Returns a File object.</p>
 
 			<div class="samp">
-			fil = app.CreateFile( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>, <a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> ) → <b>app object:</b> File
+			fil = app.CreateFile(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
+				→ <b>app object:</b> File
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -70,54 +73,108 @@
 				</div>
 			</div>
 
-			
+
 			<p><br>The following methods are available on the <b>File</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetLength</a>() → <b>number:</b> <i>Bytes</i></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPointer</a>()</div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“File”</font></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">ReadData</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">len</a>, <a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">ReadNumber</a>( <a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a> ) → <b>number</b></div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">ReadText</a>( <a href="#pop_str_004" data-transition="pop" data-rel="popup">type</a> ) → <b>string</b></div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">ReadTextAsync</a>( <a href="#pop_str_005" data-transition="pop" data-rel="popup">type</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Seek</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">offset</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetLength</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">len</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">Skip</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">bytes</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">WriteData</a>( <a href="#pop_str_006" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">WriteNumber</a>( <a href="#pop_std_num" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_008" data-transition="pop" data-rel="popup">type</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">WriteText</a>( <a href="#pop_num_int" data-transition="pop" data-rel="popup">data</a>, <a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a> )</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetLength</a>() → <b>number:</b> <i>Bytes</i>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPointer</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“File”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">ReadData</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">len</a>,
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">ReadNumber</a>(
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a> )
+				→ <b>number</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">ReadText</a>(
+				<a href="#pop_str_004" data-transition="pop" data-rel="popup">type</a> )
+				→ <b>string</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">ReadTextAsync</a>(
+				<a href="#pop_str_005" data-transition="pop" data-rel="popup">type</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Seek</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">offset</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetLength</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">len</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">Skip</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">bytes</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">WriteData</a>(
+				<a href="#pop_str_006" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">WriteNumber</a>(
+				<a href="#pop_std_num" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_str_008" data-transition="pop" data-rel="popup">type</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">WriteText</a>(
+				<a href="#pop_num_int" data-transition="pop" data-rel="popup">data</a>,
+				<a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a> )
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“r”</font> or <font class='docstring'>“w”</font> or <font class='docstring'>“rw”</font></div>
+
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>fil.Close</b><br>Close File</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>fil.GetLength</b><br>Returns the file size in bytes.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>fil.GetPointer</b><br>Returns the current pointer position in the file.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>fil.GetType</b><br>Returns the control class name.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>fil.ReadData</b><br>Reads a amount of bytes from the file.</div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“Int”</font> or <font class='docstring'>“Text”</font> or <font class='docstring'>“Hex”</font></div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>fil.ReadData</b><br>Reads a amount of bytes from the file.</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Byte”</font> or <font class='docstring'>“UByte”</font> or <font class='docstring'>“Bool”</font> or <font class='docstring'>“Float”</font> or <font class='docstring'>“FloatLE”</font> or <font class='docstring'>“Long”</font> or <font class='docstring'>“LongLE”</font> or <font class='docstring'>“Short”</font> or <font class='docstring'>“UShort”</font> or <font class='docstring'>“ShortLE”</font> or <font class='docstring'>“UShortLE”</font> or <font class='docstring'>“Int”</font> or <font class='docstring'>“UInt”</font> or <font class='docstring'>“IntLE”</font></div>
+
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>fil.ReadNumber</b><br>Read numeric data from file.</div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('read UTF-8 string with 2 byte header')">UTF</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</font></div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Byte”</font> or <font class='docstring'>“UByte”</font> or <font class='docstring'>“Bool”</font> or <font class='docstring'>“Float”</font> or <font class='docstring'>“FloatLE”</font> or <font class='docstring'>“Long”</font> or <font class='docstring'>“LongLE”</font> or <font class='docstring'>“Short”</font> or <font class='docstring'>“UShort”</font> or <font class='docstring'>“ShortLE”</font> or <font class='docstring'>“UShortLE”</font> or <font class='docstring'>“Int”</font> or <font class='docstring'>“UInt”</font> or <font class='docstring'>“IntLE”</font></div>
+
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>fil.ReadText</b><br>Read data from the file as text.</div>
-		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</font></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">data</a>)</div>
+		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('read UTF-8 string with 2 byte header')">UTF</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</font></div>
+
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>fil.ReadTextAsync</b><br>Asynchronously reads a single character or a line as text.</div>
+		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</font></div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">data</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>fil.Seek</b><br>CHange pointer position to a given byte in the file.</div>
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>fil.SetLength</b><br>Allocate memory for a file.</div>
 		<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>fil.Skip</b><br>Let the pointer skip a given number of bytes.</div>
+		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>fil.WriteData</b><br>Write data to the file.</div>
 		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“FA,FB,FC”</font> or <font class='docstring'>“250,251,252”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('low order 8-bit bytes')">abc46</a>”</font></div>
 		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <font class='docstring'>“Hex”</font> or <font class='docstring'>“Int”</font> or <font class='docstring'>“Text”</font></div>
-		<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>fil.WriteData</b><br>Write data to the file.</div>
+
+		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>fil.WriteNumber</b><br>Writes a number to the file.</div>
 		<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
 		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <font class='docstring'>“Byte”</font> or <font class='docstring'>“UByte”</font> or <font class='docstring'>“Bool”</font> or <font class='docstring'>“Float”</font> or <font class='docstring'>“FloatLE”</font> or <font class='docstring'>“Long”</font> or <font class='docstring'>“LongLE”</font> or <font class='docstring'>“Short”</font> or <font class='docstring'>“UShort”</font> or <font class='docstring'>“ShortLE”</font> or <font class='docstring'>“UShortLE”</font> or <font class='docstring'>“Int”</font> or <font class='docstring'>“UInt”</font> or <font class='docstring'>“IntLE”</font></div>
-		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>fil.WriteNumber</b><br>Writes a number to the file.</div>
-		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('write UTF-8 encoded text')">UTF</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('8-bit bytes')">Bytes</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('Write big-endian 16-bit characters')">Char</a>”</font></div>
+
 		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>fil.WriteText</b><br>writes text to file</div>
+		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“<a href="" onclick="app.ShowPopup('write UTF-8 encoded text')">UTF</a>”</font>, <font class='docstring'>“<a href="" onclick="app.ShowPopup('8-bit bytes')">Bytes</a>”</font> or <font class='docstring'>“<a href="" onclick="app.ShowPopup('Write big-endian 16-bit characters')">Char</a>”</font></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>Animate</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.</p>
 
 			<div class="samp">
-			app.Animate( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>, <a href="#pop_num_fps" data-transition="pop" data-rel="popup">fps</a> )
+			app.Animate(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+				<a href="#pop_num_fps" data-transition="pop" data-rel="popup">fps</a> )
 			</div>
 
 			<p>when using _AddOptions( <font class='docstring'>“NoDom”</font> ); to cause a high performance you cannot use SetInterval but Animate.<br>
@@ -81,7 +83,7 @@
 				</div>
 			</div>
 
-			
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - SpeedTest</h3>
 				<div id="examp1" style="font-size:70%">
@@ -118,12 +120,15 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('number: milliseconds')">time</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">dtime</a>)</div>
+        <div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('number: milliseconds')">time</a>,
+			<a href="" onclick="app.ShowPopup('number: milliseconds')">dtime</a>
+		)</div>
 		<div data-role="popup" id="pop_num_fps" class="ui-content"><b>number:</b> <i>frames per second</i></div>
 	</div>
 </body>

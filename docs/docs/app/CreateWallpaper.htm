@@ -27,7 +27,7 @@
 			<h1>CreateWallpaper</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -38,24 +38,39 @@
 			<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>.</p>
 
 			<div class="samp">
-			wlp = app.CreateWallpaper( <a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
+			wlp = app.CreateWallpaper(
+				<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
 			</div>
 
 			<p><br>The following methods are available on the <b>Wallpaper</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>()</div>
-			<div class="samp"><a href="#pop_dsc_002" class="baseFunc" data-transition="pop" data-rel="popup">IsVisible</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_003" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>()
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>boolean</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+				→ <b>all types</b>
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
+        <div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
+
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wlp.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wlp.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wlp.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wlp.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 	</div>
 </body>
 

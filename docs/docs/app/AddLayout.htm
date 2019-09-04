@@ -27,7 +27,7 @@
 			<h1>AddLayout</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -38,7 +38,8 @@
 			See Also: <a href="RemoveLayout.htm" data-ajax="false">RemoveLayout</a>.</p>
 
 			<div class="samp">
-			app.AddLayout( <a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a> )
+			app.AddLayout(
+				<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a> )
 			</div>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -62,12 +63,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+        <div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>DisableKeys</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,8 @@
 			<p>DisableKeys prevents the default behavior of several hard, soft or keyboard keys.</p>
 
 			<div class="samp">
-			app.DisableKeys( <a href="#pop_str_001" data-transition="pop" data-rel="popup">keyList</a> )
+			app.DisableKeys(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">keyList</a> )
 			</div>
 
 			<p>This way you can apply a custom action for them using <a href="SetOnKey.htm" data-ajax="false">SetOnKey</a>.<br>
@@ -80,12 +81,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“VOLUME_DOWN”</font>, <font class='docstring'>“VOLUME_UP”</font>, <font class='docstring'>“FORWARD”</font>, <font class='docstring'>“BACK”</font>, <font class='docstring'>“MENU”</font>, <font class='docstring'>“ENTER”</font>, <font class='docstring'>“...”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“VOLUME_DOWN”</font>, <font class='docstring'>“VOLUME_UP”</font>, <font class='docstring'>“FORWARD”</font>, <font class='docstring'>“BACK”</font>, <font class='docstring'>“MENU”</font>, <font class='docstring'>“ENTER”</font>, <font class='docstring'>“...”</font></div>
 	</div>
 </body>
 

@@ -27,7 +27,7 @@
 			<h1>UnpairBtDevice</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Unpairs a paired Bluetooth device by its bt address.</p>
 
 			<div class="samp">
-			app.UnpairBtDevice( <a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>, <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			app.UnpairBtDevice(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>,
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<p>The <i>callback</i> argument is called when the device was successfully unpaired.<br>
@@ -105,12 +107,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	</div>
 </body>

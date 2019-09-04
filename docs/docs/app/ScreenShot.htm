@@ -27,7 +27,7 @@
 			<h1>ScreenShot</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Takes a screen shot of your app and saves it to the specified path.</p>
 
 			<div class="samp">
-			app.ScreenShot( <a href="#pop_str_pth" data-transition="pop" data-rel="popup">fileName</a>, <a href="#pop_num_prc" data-transition="pop" data-rel="popup">quality</a> )
+			app.ScreenShot(
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fileName</a>,
+				<a href="#pop_num_prc" data-transition="pop" data-rel="popup">quality</a> )
 			</div>
 
 			<p>Quality is an <b>option</b>al percentage value for jpg files defaulting to 95.<br>
@@ -65,12 +67,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
+        <div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
 	</div>
 </body>

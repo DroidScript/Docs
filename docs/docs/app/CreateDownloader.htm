@@ -27,7 +27,7 @@
 			<h1>CreateDownloader</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage.</p>
 
 			<div class="samp">
-			dwn = app.CreateDownloader( <a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> ) → <b>app object:</b> Downloader
+			dwn = app.CreateDownloader(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+				→ <b>app object:</b> Downloader
 			</div>
 
 			<p>You can download a file with the <b>Download</b> method which accepts a <i>source url</i> and a <i>target directory</i>:</p>
@@ -78,42 +80,89 @@
 				</div>
 			</div>
 
-			
+
 			<p><br>The following methods are available on the <b>Downloader</b> object:</p>
 
-			<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Download</a>( <a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>, <a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">headers</a> )</div>
-			<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetProgress</a>() → <b>number:</b> <i>fraction (0..1)</i></div>
-			<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetSize</a>() → <b>number:</b> <i>Bytes</i></div>
-			<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Downloader”</font></div>
-			<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsComplete</a>() → <b>boolean</b></div>
-			<div class="samp"><a href="#pop_dsc_006" class="premHint" data-transition="pop" data-rel="popup">Method</a>( <a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>, <a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>, <a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> ) → <b>all types</b></div>
-			<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnCancel</a>( <a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnComplete</a>( <a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnDownload</a>( <a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )</div>
-			<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetOnError</a>( <a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Download</a>(
+				<a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>,
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">headers</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetProgress</a>() → <b>number:</b> <i>fraction (0..1)</i>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetSize</a>() → <b>number:</b> <i>Bytes</i>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Downloader”</font>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsComplete</a>() → <b>boolean</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+				<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+				→ <b>all types</b>
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnCancel</a>(
+				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnComplete</a>(
+				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnDownload</a>(
+				<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetOnError</a>(
+				<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
+			</div>
 
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDialog”</font> or <font class='docstring'>“Light”</font></div>
+        <div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“NoDialog”</font> or <font class='docstring'>“Light”</font></div>
+
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dwn.Download</b><br>Start downloading a file.</div>
 		<div data-role="popup" id="pop_str_url" class="ui-content"><b>string:</b> <i>url path</i></div>
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dwn.Download</b><br>Start downloading a file.</div>
+
 		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dwn.GetProgress</b><br>Returns the current download progress.</div>
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>dwn.GetSize</b><br>Returns the target download size in bytes.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>dwn.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>dwn.IsComplete</b><br>Checks if the download has compleated or not.</div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>dwn.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">file</a>)</div>
+		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>dwn.SetOnCancel</b><br>Define a callback function which is called when download is cancelled.</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">file</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>dwn.SetOnComplete</b><br>Define a callback function which is called when the download is finished.</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>)</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
+
 		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>dwn.SetOnDownload</b><br>Define a callback function which is called when the download is downloaded.</div>
-		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(<a href="" onclick="app.ShowPopup('string')">error</a>)</div>
+		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>
+		)</div>
+
 		<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>dwn.SetOnError</b><br>Define a callback function which is called when an error occurred while downloading the file.</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
+			<a href="" onclick="app.ShowPopup('string')">error</a>
+		)</div>
 	</div>
 </body>
 

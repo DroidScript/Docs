@@ -27,7 +27,7 @@
 			<h1>SendSMS</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -36,7 +36,9 @@
 			<p>Send an SMS to someone using the default SMS application. The passed argumets will be auto-filled or requested by the SMS app otherwise.</p>
 
 			<div class="samp">
-			app.SendSMS( <a href="#pop_std_str" data-transition="pop" data-rel="popup">msg</a>, <a href="#pop_mul_001" data-transition="pop" data-rel="popup">number</a> )
+			app.SendSMS(
+				<a href="#pop_std_str" data-transition="pop" data-rel="popup">msg</a>,
+				<a href="#pop_mul_001" data-transition="pop" data-rel="popup">number</a> )
 			</div>
 
 			<p>See Also: <a href="SendMail.htm" data-ajax="false">SendMail</a>, <a href="SendText.htm" data-ajax="false">SendText</a>, <a href="SendFile.htm" data-ajax="false">SendFile</a></p>
@@ -54,12 +56,12 @@
 				</div>
 			</div>
 
-			
-			
+
+
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+        <div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>number</i><br><b>number</i></div>
 	</div>
 </body>
