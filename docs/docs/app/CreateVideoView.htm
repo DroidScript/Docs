@@ -46,7 +46,7 @@
 			<p>Use <b>SetFile</b> to set the video file or video stream address.</p>
 
 			<div class="samp">
-			player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <font class='docstring'>“https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>file<span class="token operator">-</span>examples<span class="token punctuation">.</span>com<span class="token operator">/</span>wp<span class="token operator">-</span>content<span class="token operator">/</span>uploads<span class="token operator">/</span><span class="token number">2017</span><span class="token operator">/</span><span class="token number">04</span><span class="token operator">/</span>file<span class="token operator">&lt;</span>i<span class="token operator">></span>example<span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span><span class="token constant">MP4</span><span class="token operator">&lt;</span>i<span class="token operator">></span><span class="token number">640</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span><span class="token number">3</span>MG<span class="token punctuation">.</span>mp4”</font> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+			player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
 
 			<p>When the video is ready to play, the <b>OnReady</b> callback function will be called, you can then use <b>Play</b> to start playing the video.<br>
@@ -239,7 +239,7 @@
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetFile</a>(
-				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+				<a href="#pop_mul_001" data-transition="pop" data-rel="popup">file</a> )
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
@@ -263,7 +263,7 @@
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_026" data-transition="pop" data-rel="popup">SetOnSubtitle</a>(
-				<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">callback</a> )
+				<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
@@ -294,7 +294,7 @@
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">SetSubtitles</a>(
-				<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">file</a> )
+				<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
@@ -318,13 +318,13 @@
 				<a href="#pop_str_00e" data-transition="pop" data-rel="popup">type</a>,
 				<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
 				<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>,
-				<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
+				<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback</a> )
 			</div>
 
 			<br>
 		</div>
 
-        <div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
 		<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated</i></div>
 
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>vid.AdjustColor</b><br>Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.</div>
@@ -337,7 +337,7 @@
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>vid.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
 		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>vid.GetAbsHeight</b><br>Get the absolute height of the control in pixels.</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>vid.GetAbsWidth</b><br>Get the absolute width of the control in pixels.</div>
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>vid.GetDuration</b><br>GetDuration in minutes</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>vid.GetDuration</b><br>Retunrs the video duration in seconds.</div>
 		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>vid.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.</div>
 		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font></div>
 
@@ -364,16 +364,16 @@
 		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>vid.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
 		<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
 
-		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>vid.IsPlaying</b><br>returns whether video is currently playing</div>
-		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>vid.IsReady</b><br></div>
+		<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>vid.IsPlaying</b><br>Returns whether the VideoView is currently playing a video</div>
+		<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>vid.IsReady</b><br>Returns whether the video is ready for playing.</div>
 		<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>vid.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 		<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>vid.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 
-		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>vid.Pause</b><br>Pause video</div>
-		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>vid.Play</b><br>Play video</div>
-		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>vid.SeekTo</b><br>SeekTo given time in seconds</div>
+		<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>vid.Pause</b><br>Pauses the video.</div>
+		<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>vid.Play</b><br>Plays the video.</div>
+		<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>vid.SeekTo</b><br>Seek the video to given time in seconds.</div>
 		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
 
 		<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>vid.SetBackAlpha</b><br>Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
@@ -397,22 +397,24 @@
 		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>vid.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 
-		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>vid.SetFile</b><br>SetFile</div>
+		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>vid.SetFile</b><br>Set the video file path or url</div>
+		<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i><br><b>string:</b> <i>url path:</i> <font class='docstring'>“http://url”</font> or <font class='docstring'>“https://url”</font></div>
+
 		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>vid.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 
-		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>vid.SetOnComplete</b><br>? called when</div>
+		<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>vid.SetOnComplete</b><br>Define a callback function which is called when the playback has finished playing</div>
 		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 
-		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>vid.SetOnError</b><br>called when an error appeared</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-			<a href="" onclick="app.ShowPopup('string')">error</a>
-		)</div>
+		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>vid.SetOnError</b><br>Define a callback function which is called when an error occured.</div>
+		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 
-		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>vid.SetOnReady</b><br>called when playing video finished</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>vid.SetOnReady</b><br>Define a callback function which is called when the video is ready for playback.</div>
 		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
 
-		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>vid.SetOnSubtitle</b><br>SetOnSubtitle</div>
+		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>vid.SetOnSubtitle</b><br>Define a callback function which is called when the subtitle text changed.</div>
+		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>()</div>
+
 		<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>vid.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 
@@ -425,20 +427,20 @@
 		<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>vid.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
 		<div data-role="popup" id="pop_str_00c" class="ui-content"><b>string:</b> <font class='docstring'>“px”</font> or <font class='docstring'>“sp”</font> or <font class='docstring'>“dip”</font> or <font class='docstring'>“dp”</font> or <font class='docstring'>“mm”</font> or <font class='docstring'>“pt”</font></div>
 
-		<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>vid.SetSubtitles</b><br>SetSubtitles</div>
+		<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>vid.SetSubtitles</b><br>Set a subtitle file where to retreive the video subtitles from.</div>
 		<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>vid.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><b>Show:</b> visible<br><b>Hide:</b> invisible but still consuming space<br><b>Gone:</b> invisible and not consuming space</div>
 		<div data-role="popup" id="pop_str_00d" class="ui-content"><b>string:</b> <font class='docstring'>“Show”</font> or <font class='docstring'>“Hide”</font> or <font class='docstring'>“Gone”</font></div>
 
-		<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>vid.SetVolume</b><br>SetVolume</div>
+		<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>vid.SetVolume</b><br>Change the video player volume</div>
 		<div data-role="popup" id="pop_num_prc" class="ui-content"><b>number:</b> <i>percent</i></div>
 
 		<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>vid.Show</b><br>Set the visibility of the control to <font class='docstring'>“Show”</font>.</div>
-		<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>vid.Stop</b><br>Stop video</div>
+		<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>vid.Stop</b><br>Stop the video playback.</div>
 		<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>vid.Tween</b><br>Performs an animation on the control.<br>The <b>target</b> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <b>type</b> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <b>repeat</b>s you can control how many times you want to play the animation.<br><br>If you have <b>jojo</b> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <b>callback</b> function will be called after the animation has finished. Well, it's about time!</div>
 		<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
 		<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
 		<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> <font class='docstring'>“Linear.None”</font> or <font class='docstring'>“Quadratic.In/Out”</font> or <font class='docstring'>“Cubic.In/Out”</font> or <font class='docstring'>“Quartic.In/Out”</font> or <font class='docstring'>“Quintic.In/Out”</font> or <font class='docstring'>“Sinusoidal.In/Out”</font> or <font class='docstring'>“Exponential.In/Out”</font> or <font class='docstring'>“Circular.In/Out”</font> or <font class='docstring'>“Elastic.In/Out”</font> or <font class='docstring'>“Back.In/Out”</font> or <font class='docstring'>“Bounce.In/Out”</font></div>
-		<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>()</div>
+		<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>()</div>
 	</div>
 </body>
 
