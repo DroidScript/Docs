@@ -3,9 +3,9 @@ function OnStart()
 {
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-    btn = app.CreateToggle( "Toggle Me" );
-    btn.SetOnTouch( ShowState );
-    lay.AddChild( btn );
+    <b>tgl = app.CreateToggle( "Toggle Me" );
+    tgl.SetOnTouch( ShowState );
+    lay.AddChild( tgl );</b>
 
     app.AddLayout( lay );
 }

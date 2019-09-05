@@ -93,8 +93,15 @@ $(document).live( 'pageshow',function(event, ui)
 		var curPage = $.mobile.activePage.attr('id');
 		
 		//Show plugins list if 'plugins' page is loading.
-		if( curPage=="plugins" ) {
+		if( curPage == "plugins" ) {
 			OnPageShow();
+		}
+		
+		var popup = location.href.match(/#([a-z]+)/i);
+		if(popup) {
+			popup = $("a.ui-link:contains(" + popup[1] + ")");
+			$("html").delay(200).animate({ scrollTop: popup.offset().top + 50 }, 200)
+				.delay(200).queue(function(){ popup.click(); });
 		}
 	}
 	//catch( e ) {}
@@ -152,7 +159,7 @@ function OnPageShow()
 				}
 				html += "</ul>";
 				$('#divPlugs').html(html);
-				$('#divPlugs').trigger("create")
+				$('#divPlugs').trigger("create");
 			};
 			xmlHttp.open( "get", "/ide?cmd=getplugins", true );
 			xmlHttp.send();
@@ -189,14 +196,14 @@ function ShowPopup(msg) {
 	var apop = $("#appPopup");
 	// .animate() works as cancelable delay
 	apop.stop(true).fadeOut(100, function() { apop.text(msg); })
-	    .fadeIn(200).animate({opacity:1}, 1500).fadeOut(400);
+		.fadeIn(200).animate({opacity:1}, 1500).fadeOut(400);
 }
 
 function switchPopup(old, newId) {
-    $(old.parentNode).one({
-        popupafterclose: function() {
-            $(newId).popup("open", {transition: "pop"});
-        }
-    }).popup("close");
+	$(old.parentNode).one({
+		popupafterclose: function() {
+			$(newId).popup("open", {transition: "pop"});
+		}
+	}).popup("close");
 }
 

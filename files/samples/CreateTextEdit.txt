@@ -3,11 +3,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 );
+	<b>edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 );
 	edt.SetOnChange( edt_OnChange );
-	lay.AddChild( edt );
+	lay.AddChild( edt );</b>
 
-</b>	txt = app.CreateText( "", 0.8, 0.3 );
+	txt = app.CreateText( "", 0.8, 0.3 );
 	txt.SetMargins( 0, 0.02, 0, 0 );
 	lay.AddChild( txt );
 
@@ -25,12 +25,31 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );
+	<b>edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );
 	edt.SetTextColor( "#ff6666ff" );
 	edt.SetBackColor( "#ffffffff" );
-	lay.AddChild( edt );
+	lay.AddChild( edt );</b>
 
-</b>	app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 </sample>
 
+<sample Password>
+function OnStart()
+{
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+	<b>edt = app.CreateTextEdit( "", 0.8, 0.4, "Password,Singleline"  );
+    edt.SetHint( "Password" );
+    edt.SetOnEnter( edt_OnEnter );
+	lay.AddChild( edt );</b>
+
+	app.AddLayout( lay );
+}
+
+function edt_OnEnter()
+{
+    var password = edt.GetText();
+    app.ShowPopup( password );
+}
+</sample>

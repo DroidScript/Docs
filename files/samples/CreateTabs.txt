@@ -1,1 +1,20 @@
- 
+<sample Basic>
+function OnStart()
+{
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    var tabs = app.CreateTabs( "Tab 1,Tab 2,Tab 3", 0.8, 0.8, "VCenter" );
+    lay.AddChild( tabs );
+
+    tab1 = tabs.GetLayout( "Tab 1" );
+    tab1.SetBackGradient( "red", "green", "", "left-right" );
+
+    tab1 = tabs.GetLayout( "Tab 2" );
+    tab1.SetBackGradient( "green", "blue", "", "left-right" );
+
+    tab1 = tabs.GetLayout( "Tab 3" );
+    tab1.SetBackGradient( "blue", "red", "", "left-right" );
+
+	app.AddLayout( lay );
+}
+</sample>

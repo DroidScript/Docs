@@ -87,16 +87,14 @@
 		"isfunc": true,
 		"name": "ChooseAccount",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["account"],
-				"pTypes": ["str-email"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["account"],
+			"pTypes": ["str-email"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Let the user choose an google account"
 	},
 	"ChooseContact": {
@@ -105,13 +103,13 @@
 		"name": "ChooseContact",
 		"pNames": ["type", "callback"],
 		"pTypes": ["str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["name", "data"],
-				"pTypes": ["str-Phone|Email", "str"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["name", "data"],
+			"pTypes": ["str-Phone|Email", "str"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseFile": {
@@ -120,13 +118,13 @@
 		"name": "ChooseFile",
 		"pNames": ["message", "type", "callback"],
 		"pTypes": ["str", "str-mimetype", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["path"],
-				"pTypes": ["str_pth"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["path"],
+			"pTypes": ["str_pth"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Let the user choose a file"
 	},
 	"ChooseImage": {
@@ -135,13 +133,13 @@
 		"name": "ChooseImage",
 		"pNames": ["options", "callback"],
 		"pTypes": ["str_com-|internal|external", {
-				"desc": "callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["path"],
-				"pTypes": ["str_pth"],
-				"shortDesc": "callback"
-			}],
+			"desc": "callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["path"],
+			"pTypes": ["str_pth"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseWifi": {
@@ -150,13 +148,13 @@
 		"name": "ChooseWifi",
 		"pNames": ["title1", "title2", "callback", "options", "extra"],
 		"pTypes": ["str", "str", {
-				"desc": "callback function",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["ssid"],
-				"pTypes": ["str"],
-				"shortDesc": "callback"
-			}, "str_com-force|large", "str_com-ssids"],
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["ssid"],
+			"pTypes": ["str"],
+			"shortDesc": "callback"
+		}, "str_com-force|large", "str_com-ssids"],
 		"shortDesc": "Let the user choose a WiFi network"
 	},
 	"ClearCookies": {
@@ -209,7 +207,7 @@
 	},
 	"CreateAudioRecorder": {
 		"abbrev": "rec",
-		"desc": "The AudioRecorder object can be used to listen for sound and record it to a file.\nAfter creation you have to define the recording file with the **SetFile** Method: <js>rec.SetFile( “/sdcard/demofile.wav” );</js>\nAfter that you can **Start** the recording: <js>rec.Start();</js>\nThe recorded audio will then be written to the specified file.\n\nFinally you can also **Stop** the recording: <js>rec.Stop();</js>",
+		"desc": "The AudioRecorder object can be used to listen for sound and record it to a file.\nAfter creation you have to define the recording file with the **SetFile** Method: <js>rec.SetFile( \"/sdcard/demofile.wav\" );</js>\nAfter that you can **Start** the recording: <js>rec.Start();</js>\nThe recorded audio will then be written to the specified file.\n\nFinally you can also **Stop** the recording: <js>rec.Stop();</js>",
 		"isfunc": true,
 		"name": "CreateAudioRecorder",
 		"pNames": [],
@@ -319,16 +317,14 @@
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["name", "address"],
-						"pTypes": ["str", "str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["name", "address"],
+					"pTypes": ["str", "str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function for touch events"
 			}
 		}
@@ -383,7 +379,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": "Returns whether Bluetooth is enabled"
+				"shortDesc": "Checks if Bluetooth is enabled"
 			},
 			"IsConnected": {
 				"desc": "Checks if a Bluetooth connection exists to another device.",
@@ -392,7 +388,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": "Returns whether a Bluetooth connection exists"
+				"shortDesc": "Checks if a Bluetooth connection exists"
 			},
 			"IsPaired": {
 				"desc": "Checks if a specific device is paired using its Bt name.",
@@ -425,16 +421,14 @@
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["name", "address"],
-						"pTypes": ["str", "str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["name", "address"],
+					"pTypes": ["str", "str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetOnDisconnect": {
@@ -450,17 +444,15 @@
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["data"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": "Called after receiving Data via Bluetooth"
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called after received Data via Bluetooth"
 			},
 			"SetSplitMode": {
 				"desc": "Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.\np2 and p3 have different purposes for different modes:\n<style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>",
@@ -476,10 +468,10 @@
 				"name": "SetTimeout",
 				"pNames": ["milliseconds"],
 				"pTypes": ["num_mls"],
-				"shortDesc": ""
+				"shortDesc": "SetTimeout"
 			},
 			"Write": {
-				"desc": "Send data over the serial Bluetooth connection to the other device.",
+				"desc": "Send data over the Bluetooth serial connection to the other device.",
 				"isfunc": true,
 				"name": "Write",
 				"pNames": ["data"],
@@ -544,12 +536,12 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "Costomize the button in several ways",
+				"desc": "Costomize the look of the button.",
 				"isfunc": true,
 				"name": "SetStyle",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
 				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
-				"shortDesc": ""
+				"shortDesc": "Customize the button looks"
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -734,15 +726,14 @@
 				"isfunc": true,
 				"name": "ReportColors",
 				"pNames": ["list", "callback", "sampSize", "maxRate"],
-				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2:num_frc\\,y2:num_frc\\|...",
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["data"],
-						"pTypes": ["lst-[[r1,g1,b1], [r2,g2,b2], ...]"],
-						"shortDesc": "callback"
-					}, "num_pxl", "num_mls"],
+				"pTypes": ["str_pip-x1:num_frc\\,y1:num_frc\\|x2:num_frc\\,y2:num_frc\\|...", {
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["lst-[[r1,g1,b1], [r2,g2,b2], ...]"],
+					"shortDesc": "callback"
+				}, "num_pxl", "num_mls"],
 				"shortDesc": "Keeps tracks of the average color around a given point"
 			},
 			"SetBackAlpha": "#1162431318",
@@ -791,16 +782,14 @@
 				"isfunc": true,
 				"name": "SetOnPicture",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["file"],
-						"pTypes": ["str_pth"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["file"],
+					"pTypes": ["str_pth"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when cam.AutoCapture took a picture"
 			},
 			"SetOnReady": {
@@ -808,16 +797,14 @@
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called if the camera is ready for use"
 			},
 			"SetOrientation": {
@@ -1002,16 +989,14 @@
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "callback function",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["isChecked"],
-						"pTypes": ["bin"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["isChecked"],
+					"pTypes": ["bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the CheckBox was touched"
 			},
 			"SetPadding": "#1923105617",
@@ -1252,16 +1237,14 @@
 				"isfunc": true,
 				"name": "SetOnDoubleTap",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a Yoyo double-tap callback function"
 			},
 			"SetOnKey": {
@@ -1269,16 +1252,14 @@
 				"isfunc": true,
 				"name": "SetOnKey",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["action", "keyname", "keycode", "extra"],
-						"pTypes": ["str-Down|Move|Up", "str-VOLUME_DOWN|VOLUME_UP|BACK|MENU", "num_int", "str-Shift,Ctrl,Alt,Meta"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["action", "keyname", "keycode", "extra"],
+					"pTypes": ["str-Down|Move|Up", "str-VOLUME_DOWN|VOLUME_UP|BACK|MENU", "num_int", "str-Shift,Ctrl,Alt,Meta"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a key-event callback function"
 			},
 			"SetPadding": "#1923105617",
@@ -1455,16 +1436,14 @@
 				"isfunc": true,
 				"name": "SetOnBack",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when back button was pressed while the dialog was shown"
 			},
 			"SetOnCancel": {
@@ -1472,16 +1451,14 @@
 				"isfunc": true,
 				"name": "SetOnCancel",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the dialog is cancelled"
 			},
 			"SetOnTouch": "#2088093920",
@@ -1562,16 +1539,14 @@
 				"isfunc": true,
 				"name": "SetOnCancel",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["file"],
-						"pTypes": ["str_pth"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["file"],
+					"pTypes": ["str_pth"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when download is cancelled"
 			},
 			"SetOnComplete": {
@@ -1579,16 +1554,14 @@
 				"isfunc": true,
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the download is finished"
 			},
 			"SetOnDownload": {
@@ -1596,16 +1569,14 @@
 				"isfunc": true,
 				"name": "SetOnDownload",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["path"],
-						"pTypes": ["str_pth"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["path"],
+					"pTypes": ["str_pth"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the download is downloaded"
 			},
 			"SetOnError": {
@@ -1613,16 +1584,14 @@
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["error"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["error"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when an error occurred while downloading"
 			}
 		}
@@ -1675,16 +1644,14 @@
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["data"],
-						"pTypes": ["obj-{ from:str_eml&comma; to:str_eml&comma; cc:str_eml&comma; subject:str&comma; body:str }"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["obj-{ from:str_eml&comma; to:str_eml&comma; cc:str_eml&comma; subject:str&comma; body:str }"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a message is received"
 			},
 			"SetOnStatus": {
@@ -1692,16 +1659,14 @@
 				"isfunc": true,
 				"name": "SetOnStatus",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["status"],
-						"pTypes": ["str-Receive complete|Failed to receive emails: ...|Failed to send email: ..."],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["status"],
+					"pTypes": ["str-Receive complete|Failed to receive emails: ...|Failed to send email: ..."],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a status changed"
 			},
 			"SetSMTP": {
@@ -1980,16 +1945,25 @@
 				"name": "CreateImage",
 				"pNames": ["file", "callback"],
 				"pTypes": ["str_pth", {
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"retval": "",
-						"shortDesc": "callback"
-					}],
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"retval": "",
+					"shortDesc": "callback"
+				}],
 				"retval": "dso_glv",
 				"shortDesc": ""
+			},
+			"ctx.capture": {
+				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
+				"isfunc": true,
+				"name": "ctx.capture",
+				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
+				"retval": "",
+				"shortDesc": "Captures the canvas to a png image"
 			},
 			"ctx.clearRect": {
 				"desc": "<deprecated ctx is automatically cleared after render()>",
@@ -2009,6 +1983,15 @@
 				"retval": "str",
 				"shortDesc": ""
 			},
+			"ctx.drawImage": {
+				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
+				"isfunc": true,
+				"name": "ctx.drawImage",
+				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
+				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "Draws part of a sprite to the context"
+			},
 			"ctx._globalAlpha": {
 				"desc": "",
 				"isfunc": false,
@@ -2018,35 +2001,11 @@
 				"retval": "num_frc",
 				"shortDesc": ""
 			},
-			"ctx.capture": {
-				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
-				"isfunc": true,
-				"name": "ctx.capture",
-				"pNames": ["x", "y", "w", "h", "fileName",
-					"successCallback", "errorCallback"
-				],
-				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
-				"retval": "",
-				"shortDesc": "Captures the canvas to a png image"
-			},
-			"ctx.drawImage": {
-				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
-				"isfunc": true,
-				"name": "ctx.drawImage",
-				"pNames": ["image", "sx", "sy", "sw", "sh", "dx",
-					"dy", "dw", "dh"
-				],
-				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl",
-					"num_pxl"],
-				"retval": "",
-				"shortDesc": "Draws part of a sprite to the context"
-			},
 			"ctx.loadTexture": {
 				"desc": "",
 				"isfunc": true,
 				"name": "ctx.loadTexture",
-				"pNames": ["image", "successCallback",
-					"errorCallback"],
+				"pNames": ["image", "successCallback", "errorCallback"],
 				"pTypes": ["?", "?", "?"],
 				"retval": "?",
 				"shortDesc": ""
@@ -2204,7 +2163,7 @@
 				"retval": "str-GLView",
 				"shortDesc": "Returns the control class name"
 			},
-			"GetVisibility":"#1672373665",
+			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
 			"height": {
@@ -2546,16 +2505,14 @@
 				"isfunc": true,
 				"name": "SetOnLoad",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["img"],
-						"pTypes": ["dso-CreateImage"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["img"],
+					"pTypes": ["dso-CreateImage"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when image has loaded asynchronously"
 			},
 			"SetOnLongTouch": "#2735982374",
@@ -2662,13 +2619,13 @@
 				"name": "Animate",
 				"pNames": ["type", "callback", "time"],
 				"pTypes": ["str-Flip|FadeIn|FadeOut|CrossFade|SlideFromBottom|SlideFromLeft|SlideFromRight|SlideFromTop|SlideToBottom|SlideToLeft|SlideToRight|SlideToTop|ScaleFromBottom|ScaleFromLeft|ScaleFromRight|ScaleFromTop|ScaleToBottom|ScaleToLeft|ScaleToRight|ScaleToTop", {
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}, "num_mls"],
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}, "num_mls"],
 				"shortDesc": "Animates the layout"
 			},
 			"ChildToFront": {
@@ -2751,16 +2708,14 @@
 				"isfunc": true,
 				"name": "SetOnChildChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["src"],
-						"pTypes": ["dso"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["src"],
+					"pTypes": ["dso"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the user changed a control content"
 			},
 			"SetOnLongTouch": "#2735982374",
@@ -3131,16 +3086,14 @@
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["title", "checked"],
-						"pTypes": ["str", "bin"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["title", "checked"],
+					"pTypes": ["str", "bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
 			"SetSize": "#1296070870",
@@ -3198,16 +3151,14 @@
 				"isfunc": true,
 				"name": "SetOnChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["data", "time"],
-						"pTypes": ["obj-{ provider:str&comma; latitude:num&comma; longitude:num&comma; speed:num&comma; bearing:num&comma; altitude:num&comma; accuracy:num_met }", "num_mls"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data", "time"],
+					"pTypes": ["obj-{ provider:str&comma; latitude:num&comma; longitude:num&comma; speed:num&comma; bearing:num&comma; altitude:num&comma; accuracy:num_met }", "num_mls"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when some of the values changed"
 			},
 			"SetRate": {
@@ -3342,16 +3293,14 @@
 				"isfunc": true,
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the player has finished playing a track"
 			},
 			"SetOnReady": {
@@ -3359,16 +3308,14 @@
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the player is ready for use"
 			},
 			"SetOnSeekDone": {
@@ -3376,16 +3323,14 @@
 				"isfunc": true,
 				"name": "SetOnSeekDone",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when ply.Seek has finished"
 			},
 			"SetVolume": {
@@ -3472,16 +3417,14 @@
 				"isfunc": true,
 				"name": "SetOnAlbumsResult",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["result"],
-						"pTypes": ["lst-[{ album:str&comma; id:num_int&comma; albumArt:str_pth&comma; artist:str&comma; numSongs:num_int&comma; firstYear:str&comma; lastYear:str }]"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["lst-[{ album:str&comma; id:num_int&comma; albumArt:str_pth&comma; artist:str&comma; numSongs:num_int&comma; firstYear:str&comma; lastYear:str }]"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when album query has finished"
 			},
 			"SetOnArtistsResult": {
@@ -3489,16 +3432,14 @@
 				"isfunc": true,
 				"name": "SetOnArtistsResult",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["result"],
-						"pTypes": ["lst-[{ id:num_int&comma; artist:str&comma; numAlbums:num_int&comma; numTracks:num_int }]"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["lst-[{ id:num_int&comma; artist:str&comma; numAlbums:num_int&comma; numTracks:num_int }]"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when artist query has finished"
 			},
 			"SetOnMediaResult": {
@@ -3506,16 +3447,14 @@
 				"isfunc": true,
 				"name": "SetOnMediaResult",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["result"],
-						"pTypes": ["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when media query has finished"
 			}
 		}
@@ -3670,16 +3609,14 @@
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["connected"],
-						"pTypes": ["bin"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["connected"],
+					"pTypes": ["bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when TCP connected or failed to connect to a server."
 			},
 			"SetOnDownload": {
@@ -3687,16 +3624,14 @@
 				"isfunc": true,
 				"name": "SetOnDownload",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["something"],
-						"pTypes": ["num_int"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["something"],
+					"pTypes": ["num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "called when a file download has finished"
 			},
 			"SetOnReceive": {
@@ -3704,16 +3639,14 @@
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["address"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["address"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a TCP NetClient received some data via AutoReceive"
 			},
 			"SetTimeout": {
@@ -3932,7 +3865,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": "Returns whether bt is enabled"
+				"shortDesc": "Checks if bt is enabled"
 			},
 			"IsConnected": {
 				"desc": "Checks if the device is connected to a NXT.",
@@ -3941,7 +3874,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": "Returns whether NXT is connected"
+				"shortDesc": "Checks if NXT is connected"
 			},
 			"IsEnabled": {
 				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
@@ -3950,7 +3883,7 @@
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": "Returns whether bt is enabled"
+				"shortDesc": "Checks if bt is enabled"
 			},
 			"IsMotorIdle": {
 				"desc": "Checks if a motor is currently powered",
@@ -4076,16 +4009,14 @@
 				"isfunc": true,
 				"name": "SetOnConnect",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["connected"],
-						"pTypes": ["bin"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["connected"],
+					"pTypes": ["bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when NXT connection established or failed"
 			},
 			"SetOnConnected": {
@@ -4093,16 +4024,14 @@
 				"isfunc": true,
 				"name": "SetOnConnected",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when bt connection established"
 			},
 			"SetOnConnectEx": {
@@ -4110,16 +4039,14 @@
 				"isfunc": true,
 				"name": "SetOnConnectEx",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"ShowDevices": {
@@ -4233,16 +4160,14 @@
 				"isfunc": true,
 				"name": "SetOnChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["type", "data"],
-						"pTypes": ["str-CellLocation|DataConnection|DataActivity|CallState|ServiceState|SignalStrength|CallForwarding|MessageWaiting", "all"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["type", "data"],
+					"pTypes": ["str-CellLocation|DataConnection|DataActivity|CallState|ServiceState|SignalStrength|CallForwarding|MessageWaiting", "all"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a phone state has changed"
 			},
 			"Start": {
@@ -4279,13 +4204,13 @@
 				"name": "GetBillingInfo",
 				"pNames": ["prodIDs", "callback", "options"],
 				"pTypes": ["str", {
-						"desc": "callback function",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["items"],
-						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"],
-						"shortDesc": "callback"
-					}, "str-IAP:In-App purchases|SUBS:subscriptions"],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["items"],
+					"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"],
+					"shortDesc": "callback"
+				}, "str-IAP:In-App purchases|SUBS:subscriptions"],
 				"shortDesc": "Get product info from Google Play."
 			},
 			"GetPurchases": {
@@ -4321,14 +4246,14 @@
 				"name": "Purchase",
 				"pNames": ["prodID", "token", "callback", "options"],
 				"pTypes": ["str", "str", {
-						"abbrev": "",
-						"desc": "callback function",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
-						"pTypes": ["str", "str", "str", "str", "str"],
-						"shortDesc": "callback"
-					}, "str-SUBS"],
+					"abbrev": "",
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
+					"pTypes": ["str", "str", "str", "str", "str"],
+					"shortDesc": "callback"
+				}, "str-SUBS"],
 				"shortDesc": "Purchase an item on Google Play."
 			}
 		}
@@ -4619,16 +4544,14 @@
 				"isfunc": true,
 				"name": "SetOnChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["first", "second", "third", "time"],
-						"pTypes": ["num", "num", "num", "num_mls"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["first", "second", "third", "time"],
+					"pTypes": ["num", "num", "num", "num_mls"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a sensor value has changed"
 			},
 			"Start": {
@@ -4656,13 +4579,13 @@
 		"name": "CreateService",
 		"pNames": ["packageName", "className", "callback", "options"],
 		"pTypes": ["str-this|&lt;package&gt;", "str-this|&lt;class&gt;", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}, "str_com-Persist:attempts to force restart if service killed"],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "Service",
 		"shortDesc": "Returns a new Service object",
 		"subf": {
@@ -4704,16 +4627,14 @@
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["message"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["message"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when service sent a message"
 			},
 			"Stop": {
@@ -4818,16 +4739,14 @@
 				"isfunc": true,
 				"name": "SetOnBack",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "called when SmartWatch back button was pressed"
 			},
 			"SetOnHide": {
@@ -4835,16 +4754,14 @@
 				"isfunc": true,
 				"name": "SetOnHide",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch app is hidden"
 			},
 			"SetOnMenu": {
@@ -4852,16 +4769,14 @@
 				"isfunc": true,
 				"name": "SetOnMenu",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch menu button is touched"
 			},
 			"SetOnShow": {
@@ -4869,16 +4784,14 @@
 				"isfunc": true,
 				"name": "SetOnShow",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch app is shown"
 			},
 			"SetOnStart": {
@@ -4886,16 +4799,14 @@
 				"isfunc": true,
 				"name": "SetOnStart",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch app has started"
 			},
 			"SetOnStop": {
@@ -4903,16 +4814,14 @@
 				"isfunc": true,
 				"name": "SetOnStop",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch app has stopped"
 			},
 			"SetOnSwipe": {
@@ -4920,16 +4829,14 @@
 				"isfunc": true,
 				"name": "SetOnSwipe",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["dir"],
-						"pTypes": ["str-Left|Up|Right|Down"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["dir"],
+					"pTypes": ["str-Left|Up|Right|Down"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SmartWatch screen is swiped"
 			},
 			"SetOnTouch": {
@@ -4937,16 +4844,14 @@
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["dir", "x", "y"],
-						"pTypes": ["str-Down|Move|Up", "num_frc", "num_frc"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["dir", "x", "y"],
+					"pTypes": ["str-Down|Move|Up", "num_frc", "num_frc"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "called when SmartWatch touched"
 			},
 			"SetScreenState": {
@@ -5023,16 +4928,14 @@
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["message"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["message"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when user received a SMS"
 			},
 			"SetOnStatus": {
@@ -5040,16 +4943,14 @@
 				"isfunc": true,
 				"name": "SetOnStatus",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["status"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["status"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when a status has changed"
 			}
 		}
@@ -5113,16 +5014,14 @@
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["error"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["error"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when an error occured."
 			},
 			"SetOnReady": {
@@ -5130,16 +5029,14 @@
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when SpeechRec is ready for use"
 			},
 			"SetOnResult": {
@@ -5147,16 +5044,14 @@
 				"isfunc": true,
 				"name": "SetOnResult",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["result"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when text was recognized"
 			},
 			"Stop": {
@@ -5235,19 +5130,17 @@
 			"SetOnChange": "#2137502353",
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches the control.\n<deprecated Use SetOnChange instead>",
-				"name": "SetOnTouch",
 				"isfunc": true,
+				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
 			"SetPadding": "#1923105617",
@@ -5672,13 +5565,13 @@
 				"name": "Animate",
 				"pNames": ["type", "callback", "time"],
 				"pTypes": ["str-Flip|FadeIn|FadeOut|CrossFade|SlideFromBottom|SlideFromLeft|SlideFromRight|SlideFromTop|SlideToBottom|SlideToLeft|SlideToRight|SlideToTop|ScaleFromBottom|ScaleFromLeft|ScaleFromRight|ScaleFromTop|ScaleToBottom|ScaleToLeft|ScaleToRight|ScaleToTop", {
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}, "num_mls"],
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}, "num_mls"],
 				"shortDesc": "Animates the layout"
 			},
 			"_ChildToFront": {
@@ -5779,13 +5672,13 @@
 				"name": "SetOnChange",
 				"pNames": ["callback"],
 				"pTypes": [{
-        	        "desc": "callback function",
-        	        "isfunc": true,
-        	        "name": "callback",
-        	        "pNames": ["name"],
-        	        "pTypes": ["str"],
-        	        "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["name"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when current tab changed"
 			},
 			"SetOnChildChange": {
@@ -5793,16 +5686,14 @@
 				"isfunc": true,
 				"name": "SetOnChildChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["src"],
-						"pTypes": ["dso"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["src"],
+					"pTypes": ["dso"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the user changed a control content"
 			},
 			"SetOnLongTouch": "#2735982374",
@@ -5980,7 +5871,7 @@
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines,FillX/Y"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines,FillX/Y,Password:displays characters as dots"],
 		"retval": "TextEdit",
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
@@ -6174,16 +6065,14 @@
 				"isfunc": true,
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
 			"SetOnFocus": "#9283752301",
@@ -6228,131 +6117,138 @@
 			"SetBackColor": "#3857861627",
 			"SetBackground": "#1239127541",
 			"SetBtnTextColor": {
-				"desc": "",
+				"desc": "Define the standard text color of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).",
 				"isfunc": true,
 				"name": "SetBtnTextColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define button text color"
 			},
 			"SetButtonOptions": {
-				"desc": "",
+				"desc": "Define standard options of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).",
 				"isfunc": true,
 				"name": "SetButtonOptions",
 				"pNames": ["options"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
+				"shortDesc": "Define button options"
 			},
 			"SetButtonStyle": {
-				"desc": "",
+				"desc": "Define standard style of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).",
 				"isfunc": true,
 				"name": "SetButtonStyle",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow", "checkClr"],
-				"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc", "str_col"],
+				"shortDesc": "Define button style"
 			},
 			"SetCheckBoxOptions": {
-				"desc": "",
+				"desc": "Define standard options of [check boxes](CreateCheckBox.htm).",
 				"isfunc": true,
 				"name": "SetCheckBoxOptions",
 				"pNames": ["options"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_com-FillX/Y"],
+				"shortDesc": "Define check box options"
 			},
 			"SetDialogBtnColor": {
-				"desc": "",
+				"desc": "Define standard button colors of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetDialogBtnColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define dialog button colors"
 			},
 			"SetDialogBtnTxtColor": {
-				"desc": "",
+				"desc": "Define standard button text colors of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetDialogBtnTxtColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define dialog button text colors"
 			},
 			"SetDialogColor": {
-				"desc": "",
+				"desc": "Define standard dialog background colors of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetDialogColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define dialog background colors"
 			},
 			"SetDimBehind": {
-				"desc": "",
+				"desc": "En/Disables standard dimming of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetDimBehind",
 				"pNames": ["dim"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["bin"],
+				"shortDesc": "Define whether to dim dialog background"
 			},
 			"SetProgressBackColor": {
-				"desc": "",
+				"desc": "Define standard background progress color of [progress indicators](ShowProgress.htm).",
 				"isfunc": true,
 				"name": "SetProgressBackColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define progress background color"
 			},
 			"SetProgressBarOptions": {
-				"desc": "",
+				"desc": "Define standard options of [progress bars](ShowProgressBar.htm).",
 				"isfunc": true,
 				"name": "SetProgressBarOptions",
 				"pNames": ["options"],
 				"pTypes": ["?"],
-				"shortDesc": ""
+				"shortDesc": "Define progress bar options"
 			},
 			"SetProgressTextColor": {
-				"desc": "",
+				"desc": "Define standard text color of [progress indicators](ShowProgress.htm).",
 				"isfunc": true,
 				"name": "SetProgressTextColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define progress text color"
 			},
-			"SetTextColor": "#0175303923",
+			"SetTextColor": {
+				"desc": "Define standard text color of controls.",
+				"isfunc": true,
+				"name": "SetTextColor",
+				"pNames": ["color"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Define control text color"
+			},
 			"SetTextEditOptions": {
-				"desc": "",
+				"desc": "Define standard options of [text edits](CreateTextEdit.htm).",
 				"isfunc": true,
 				"name": "SetTextEditOptions",
 				"pNames": ["options"],
 				"pTypes": ["str-underline"],
-				"shortDesc": ""
+				"shortDesc": "Define text edit options"
 			},
 			"SetTitleColor": {
-				"desc": "",
+				"desc": "Define standard title text color of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetTitleColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define title colors"
 			},
 			"SetTitleDividerColor": {
-				"desc": "",
+				"desc": "Define standard title divider color of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetTitleDividerColor",
 				"pNames": ["color"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_col"],
+				"shortDesc": "Define title divider colors"
 			},
 			"SetTitleHeight": {
-				"desc": "",
+				"desc": "Define standard height of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetTitleHeight",
 				"pNames": ["height", "options"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["num_pxl", "?"],
+				"shortDesc": "Define title height"
 			}
 		}
 	},
 	"CreateToggle": {
 		"abbrev": "tgl",
-		"desc": "Toggle buttons are basically [Buttons](CreateButton.htm) with a light indicating if it is activated or not. The user can toggle this state by pressing on it.\n%c\n You can allow the toggle button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.\n\nYou can get the state of the toggle button at any time using the **GetChecked** method of the button. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.",
+		"desc": "Toggle buttons are basically [Buttons](CreateButton.htm) with an additional light bar indicating if it is activated or not. The user can toggle this state by pressing on it.\n%c\n You can allow the toggle button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.\n\nYou can get the state of the toggle button at any time using the **GetChecked** method of the button. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.",
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
@@ -6366,13 +6262,13 @@
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetChecked": {
-				"desc": "GetChecked",
+				"desc": "Returns whether the toggle is currently activated",
 				"isfunc": true,
 				"name": "GetChecked",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Checks if toggle is activated"
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -6404,12 +6300,12 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetChecked": {
-				"desc": "SetChecked",
+				"desc": "Change the current checked state of the toggle.",
 				"isfunc": true,
 				"name": "SetChecked",
 				"pNames": ["checked"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Change the checked state"
 			},
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
@@ -6420,12 +6316,12 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "",
+				"desc": "Costomize the look of the toggle.",
 				"isfunc": true,
 				"name": "SetStyle",
-				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow", "checkClr"],
-				"pTypes": ["str_col", "str_col", "num_frc", "str_col", "num_int", "bin", "?"],
-				"shortDesc": ""
+				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
+				"shortDesc": "Customize the button looks"
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -6437,11 +6333,11 @@
 	},
 	"CreateUSBSerial": {
 		"abbrev": "usb",
-		"desc": "Returns a USBSerial object.",
+		"desc": "The USBSerial component can be used to communicate with other USB devices connected to yours.\n\nThe default constructor values are:\n\tbaudrate: 9600\n\tTo find out more about RTD and DTR or USB serial at all visit [Wikipedia: RS-232](https://en.wikipedia.org/wiki/RS-232#Data\\_and\\_control\\_signals)\n\n<font class=\"xfeatHint\">Note: this application only works on devices that support OTG and allow access to external serial devices.</font>\n**Known to work:** Nexus7, GalaxyS3/S4, ExperiaZUltra, TescoHudl\n**Dont work:** Nexus4, GalaxyS1, AsusMemo",
 		"isfunc": true,
 		"name": "CreateUSBSerial",
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pTypes": ["num_int-300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600", "num_int-5|6|7|8", "num_int-1|2|15", "num_int-0:none|1:odd|2:even|3:mark|4:space", "str-1st|2nd|3rd|..."],
 		"retval": "USBSerial",
 		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
@@ -6455,117 +6351,115 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"IsConnected": {
-				"desc": "returns whether a USB serial device was connected",
+				"desc": "Returns whether a USB serial device is connected.",
 				"isfunc": true,
 				"name": "IsConnected",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Checks if a USB device is connected"
 			},
 			"Method": "#1023663567",
 			"SetDataMode": {
-				"desc": "?",
+				"desc": "Enable sending data in several modes.",
 				"isfunc": true,
 				"name": "SetDataMode",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
+				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters"],
 				"shortDesc": ""
 			},
 			"SetDTR": {
-				"desc": "?",
+				"desc": "Raises the **D**ata **T**erminal **R**eady state.",
 				"isfunc": true,
 				"name": "SetDTR",
 				"pNames": ["onOff"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Raises the DTR state"
 			},
 			"SetMaxRead": {
-				"desc": "define how many bytes you want to receive maximum",
+				"desc": "Define the maximum amount of bytes you want to receive at once.",
 				"isfunc": true,
 				"name": "SetMaxRead",
 				"pNames": ["bytes"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Set maximum bytes to received"
 			},
 			"SetMaxWrite": {
-				"desc": "define how many bytes you want to send maximum",
+				"desc": "Define maximum amount of bytes to send at once.",
 				"isfunc": true,
 				"name": "SetMaxWrite",
 				"pNames": ["bytes"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Set maximum bytes to send"
 			},
 			"SetOnReceive": {
-				"desc": "called when received data via USB",
+				"desc": "The SetOnReceive callback is called automatically after data has been received via the USB serial connection.",
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["data"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called after received Data via USB"
 			},
 			"SetRTS": {
-				"desc": "?",
+				"desc": "Raises the **R**equest **T**o **S**end state.",
 				"isfunc": true,
 				"name": "SetRTS",
 				"pNames": ["onOff"],
 				"pTypes": ["bin"],
-				"shortDesc": ""
+				"shortDesc": "Raises the RTS state"
 			},
 			"SetSplitMode": {
-				"desc": "?",
+				"desc": "Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.\np2 and p3 have different purposes for different modes:\n<style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>",
 				"isfunc": true,
 				"name": "SetSplitMode",
 				"pNames": ["mode", "p2", "p3"],
-				"pTypes": ["?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str-End|Start-End|Size", "str||int", "str||int"],
+				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
-				"desc": "",
+				"desc": "SetTimeout",
 				"isfunc": true,
 				"name": "SetTimeout",
 				"pNames": ["ms"],
 				"pTypes": ["num_mls"],
-				"shortDesc": ""
+				"shortDesc": "SetTimeout"
 			},
 			"Start": {
-				"desc": "Start USB serial",
+				"desc": "Start listening to the USB serial connection.",
 				"isfunc": true,
 				"name": "Start",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start listening to serial port"
 			},
 			"Stop": {
-				"desc": "Stop USB serial",
+				"desc": "Stop listening on USB serial connection",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop listening to serial port"
 			},
 			"Write": {
-				"desc": "send data to USB serial device",
+				"desc": "Send data over the USB serial connection to the other device.",
 				"isfunc": true,
 				"name": "Write",
 				"pNames": ["text", "encoding"],
 				"pTypes": ["str", "str-UTF-8|US-ASCII"],
-				"shortDesc": ""
+				"shortDesc": "Send data to connected device"
 			}
 		}
 	},
 	"CreateVideoView": {
 		"abbrev": "vid",
-		"desc": "The **VideoView** can be used to play local video files from the filesystem or video streams from remote sources.\nUse **SetFile** to set the video file or video stream address.\n<js>player.SetFile( “https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4” );</js>\nWhen the video is ready to play, the **OnReady** callback function will be called, you can then use **Play** to start playing the video.\n\nIf the video cannot be played, the OnError callback function will be called. Use **SetOnReady** and **SetOnError** to set the names of your **OnReady** and OnError callback functions.",
+		"desc": "The **VideoView** can be used to play local video files from the filesystem or video streams from remote sources.\nUse **SetFile** to set the video file or video stream address.\n<js>player.SetFile( \"https://file-examples.com/wp-content/uploads/2017/04/file\\_example\\_MP4\\_640\\_3MG.mp4\" );</js>\nWhen the video is ready to play, the **OnReady** callback function will be called, you can then use **Play** to start playing the video.\n\nIf the video cannot be played, the OnError callback function will be called. Use **SetOnReady** and **SetOnError** to set the names of your **OnReady** and OnError callback functions.",
 		"isfunc": true,
 		"name": "CreateVideoView",
 		"pNames": ["width", "height", "options"],
@@ -6579,13 +6473,13 @@
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetDuration": {
-				"desc": "GetDuration in minutes",
+				"desc": "Retunrs the video duration in seconds.",
 				"isfunc": true,
 				"name": "GetDuration",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "num_flt",
-				"shortDesc": ""
+				"shortDesc": "Get video duration in seconds"
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -6608,48 +6502,48 @@
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsPlaying": {
-				"desc": "returns whether video is currently playing",
+				"desc": "Returns whether the VideoView is currently playing a video",
 				"isfunc": true,
 				"name": "IsPlaying",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Checks if the view is currently playing"
 			},
 			"IsReady": {
-				"desc": "",
+				"desc": "Returns whether the video is ready for playing.",
 				"isfunc": true,
 				"name": "IsReady",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if the video is ready for playback"
 			},
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"Pause": {
-				"desc": "Pause video",
+				"desc": "Pauses the video.",
 				"isfunc": true,
 				"name": "Pause",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Pause the video"
 			},
 			"Play": {
-				"desc": "Play video",
+				"desc": "Plays the video.",
 				"isfunc": true,
 				"name": "Play",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Play video"
 			},
 			"SeekTo": {
-				"desc": "SeekTo given time in seconds",
+				"desc": "Seek the video to given time in seconds.",
 				"isfunc": true,
 				"name": "SeekTo",
 				"pNames": ["seconds"],
 				"pTypes": ["num_int"],
-				"shortDesc": ""
+				"shortDesc": "Seek to a given playback time"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -6659,114 +6553,115 @@
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
 			"SetFile": {
-				"desc": "SetFile",
+				"desc": "Set the video file path or url",
 				"isfunc": true,
 				"name": "SetFile",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"pTypes": ["str_pth||str_url-http://url|https://url"],
+				"shortDesc": "Set video source"
 			},
 			"SetMargins": "#1741900074",
 			"SetOnComplete": {
-				"desc": "? called when",
+				"desc": "Define a callback function which is called when the playback has finished playing",
 				"isfunc": true,
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when playback finished"
 			},
 			"SetOnError": {
-				"desc": "called when an error appeared",
+				"desc": "Define a callback function which is called when an error occured.",
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["error"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when an error occured"
 			},
 			"SetOnReady": {
-				"desc": "called when playing video finished",
+				"desc": "Define a callback function which is called when the video is ready for playback.",
 				"isfunc": true,
 				"name": "SetOnReady",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
-				"shortDesc": ""
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when video is ready for playback"
 			},
 			"SetOnSubtitle": {
-				"desc": "SetOnSubtitle",
+				"desc": "Define a callback function which is called when the subtitle text changed.",
 				"isfunc": true,
 				"name": "SetOnSubtitle",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnSubtitle"
+				"pTypes": [{
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when subtitle text changed"
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetSubtitles": {
-				"desc": "SetSubtitles",
+				"desc": "Set a subtitle file where to retreive the video subtitles from.",
 				"isfunc": true,
 				"name": "SetSubtitles",
 				"pNames": ["file"],
-				"pTypes": ["?"],
-				"shortDesc": "SetSubtitles"
+				"pTypes": ["str_pth"],
+				"shortDesc": "Set a subtitle source"
 			},
 			"SetVisibility": "#1004824195",
 			"SetVolume": {
-				"desc": "SetVolume",
+				"desc": "Change the video player volume",
 				"isfunc": true,
 				"name": "SetVolume",
 				"pNames": ["left", "right"],
 				"pTypes": ["num_prc", "num_prc"],
-				"shortDesc": ""
+				"shortDesc": "Change the playback volume"
 			},
 			"Show": "#1243391562",
 			"Stop": {
-				"desc": "Stop video",
+				"desc": "Stop the video playback.",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop video playback."
 			},
 			"Tween": "#2114624769"
 		}
 	},
 	"CreateWallpaper": {
 		"abbrev": "wlp",
-		"desc": "CreateWallpaper\n\n<premium>",
+		"desc": "Creates a wallpaper instance in the wallpaper.js script.\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateWallpaper",
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
-		"shortDesc": "CreateWallpaper",
+		"shortDesc": "Returns a new Wallpaper object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -6940,16 +6835,14 @@
 				"isfunc": true,
 				"name": "SetOnClose",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetOnMessage": {
@@ -6957,16 +6850,14 @@
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["message"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["message"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetOnOpen": {
@@ -6974,16 +6865,14 @@
 				"isfunc": true,
 				"name": "SetOnOpen",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			}
 		}
@@ -7144,16 +7033,14 @@
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["error"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["error"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetOnProgress": {
@@ -7161,16 +7048,14 @@
 				"isfunc": true,
 				"name": "SetOnProgress",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetOnTouch": "#2088093920",
@@ -7316,16 +7201,14 @@
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"isfunc": true,
-						"name": "callback",
-						"pNames": ["result"],
-						"pTypes": ["str"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"SetSize": "#1296070870",
@@ -7504,20 +7387,20 @@
 		"name": "DiscoverBtDevices",
 		"pNames": ["filter", "onFound", "onComplete"],
 		"pTypes": ["str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["name", "address"],
-				"pTypes": ["str", "str"],
-				"shortDesc": "callback"
-			}, {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["name", "address"],
+			"pTypes": ["str", "str"],
+			"shortDesc": "callback"
+		}, {
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Search for nearby bluetooth devices"
 	},
 	"DownloadFile": {
@@ -7591,7 +7474,7 @@
 		"pNames": ["file"],
 		"pTypes": ["str_pth"],
 		"retval": "bin",
-		"shortDesc": "Returns whether the file exists"
+		"shortDesc": "Checks if the file exists"
 	},
 	"FolderExists": {
 		"desc": "Checks if a given folder exits or not.\n\nSee Also: @MakeFolder, @CopyFolder, @RenameFolder",
@@ -7600,7 +7483,7 @@
 		"pNames": ["folder"],
 		"pTypes": ["str_pth"],
 		"retval": "bin",
-		"shortDesc": "Returns whether the folder exists"
+		"shortDesc": "Checks if the folder exists"
 	},
 	"GA": {
 		"desc": "With **G**oogle **A**nalytics implemented via analytics.js you can track the use of your apps in real-time and watch as people are using it all over the planet and see what city they are in. You can get lots of usage statistics including what version of your app they are using, what version of Android, the time of day they are using your app, what device they are using and even which parts of the app people are using the most.\n\nYou can find more informations on the [Google Developers page](https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference).\n\n<premium>",
@@ -8057,13 +7940,13 @@
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
 		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS", {
-				"desc": "callback function",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["ungranted"],
-				"pTypes": ["str_com|str_uri"],
-				"shortDesc": "callback"
-			}],
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["ungranted"],
+			"pTypes": ["str_com|str_uri"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "GetPermission"
 	},
 	"GetPrivateFolder": {
@@ -8085,8 +7968,8 @@
 		"shortDesc": "Get ID of a resource"
 	},
 	"GetRingerMode": {
-		"desc": "Returns the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.",
-		"isfunc\n\nSee Also: @SetRingerMode": true,
+		"desc": "Returns the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.\n\nSee Also: @SetRingerMode",
+		"isfunc": true,
 		"name": "GetRingerMode",
 		"pNames": [],
 		"pTypes": [],
@@ -8181,7 +8064,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "bin",
-		"shortDesc": "Returns whether the speaker is enabled"
+		"shortDesc": "Checks if the speaker is enabled"
 	},
 	"GetSpecialFolder": {
 		"desc": "Returns the full path to a special folder commonly used for images, videos, music etc.\n\nSee Also: @GetPath, @GetAppPath, @WriteFile",
@@ -8269,7 +8152,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "bin",
-		"shortDesc": "Returns whether device has soft keys"
+		"shortDesc": "Checks if device has soft keys"
 	},
 	"HideKeyboard": {
 		"desc": "Hides the device keyboard if it is currently shown.\n\nSee Also: @ShowKeyboard, @SetOnShowKeyboard",
@@ -8301,13 +8184,13 @@
 		"name": "HttpRequest",
 		"pNames": ["type", "baseUrl", "path", "params", "callback", "headers"],
 		"pTypes": ["str-GET|POST", "str_url", "str", "str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["error", "reply"],
-				"pTypes": ["bin", "str"],
-				"shortDesc": "callback"
-			}, "str"],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["error", "reply"],
+			"pTypes": ["bin", "str"],
+			"shortDesc": "callback"
+		}, "str"],
 		"shortDesc": "Send Http request"
 	},
 	"InIDE": {
@@ -8583,13 +8466,13 @@
 		"name": "LoadScript",
 		"pNames": ["path", "callback"],
 		"pTypes": ["str_pth", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["info"],
-				"pTypes": ["obj-{ isTrusted:bin }"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["info"],
+			"pTypes": ["obj-{ isTrusted:bin }"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Asynchronously import an external JavaScript file.\nSee Also: @Script"
 	},
 	"LoadText": {
@@ -8643,15 +8526,6 @@
 				"pTypes": ["?"],
 				"shortDesc": "addTransaction"
 			},
-			"Close": {
-				"abbrev": "",
-				"desc": "Close",
-				"isfunc": true,
-				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Close"
-			},
 			"close": {
 				"abbrev": "",
 				"desc": "close",
@@ -8660,6 +8534,15 @@
 				"pNames": ["success", "error"],
 				"pTypes": ["?", "?"],
 				"shortDesc": "close"
+			},
+			"Close": {
+				"abbrev": "",
+				"desc": "Close",
+				"isfunc": true,
+				"name": "Close",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Close"
 			},
 			"databaseFeatures": {
 				"abbrev": "",
@@ -8837,13 +8720,13 @@
 		"name": "PairBtDevice",
 		"pNames": ["address", "callback"],
 		"pTypes": ["str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "PairBtDevice"
 	},
 	"PlayRingtone": {
@@ -9012,13 +8895,13 @@
 		"name": "SendIntent",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
 		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str&comma; value:str }]", "str_com-result", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["resultCode", "data"],
-				"pTypes": ["num_int--1|0|1", "obj-{ action:string&comma; type:string&comma; data:string&comma; flags:integer&comma; extras:object }"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["resultCode", "data"],
+			"pTypes": ["num_int--1|0|1", "obj-{ action:string&comma; type:string&comma; data:string&comma; flags:integer&comma; extras:object }"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "SendIntent"
 	},
 	"SendMail": {
@@ -9059,13 +8942,13 @@
 		"name": "SetAlarm",
 		"pNames": ["type", "id", "callback", "time", "interval", "options"],
 		"pTypes": ["str-Set|Repeat|Cancel", "str||num_int", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["id"],
-				"pTypes": ["str||num_int"],
-				"shortDesc": "callback"
-			}, "num_dat", "num_mls", "str_com-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["id"],
+			"pTypes": ["str||num_int"],
+			"shortDesc": "callback"
+		}, "num_dat", "num_mls", "str_com-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
 		"shortDesc": "Set alarm to open your app at a specific time"
 	},
 	"SetAutoBoot": {
@@ -9193,16 +9076,14 @@
 		"isfunc": true,
 		"name": "SetOnBroadcast",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["type", "msg"],
-				"pTypes": ["str", "str"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["type", "msg"],
+			"pTypes": ["str", "str"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Called on incoming Broadcasts"
 	},
 	"SetOnDebug": {
@@ -9210,16 +9091,14 @@
 		"isfunc": true,
 		"name": "SetOnDebug",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Called on app debug messages"
 	},
 	"SetOnError": {
@@ -9227,16 +9106,14 @@
 		"isfunc": true,
 		"name": "SetOnError",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["error"],
-				"pTypes": ["str"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["error"],
+			"pTypes": ["str"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Called on thrown JS errors"
 	},
 	"SetOnKey": {
@@ -9244,16 +9121,14 @@
 		"isfunc": true,
 		"name": "SetOnKey",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["action", "name", "keycode", "extrakeys"],
-				"pTypes": ["str-DOWN|UP", "str-ENTER,VOLUME_DOWN,VOLUME_UP,BACK,MENU,...", "num_int", "str-Shift,Ctrl,Alt,Meta"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["action", "name", "keycode", "extrakeys"],
+			"pTypes": ["str-DOWN|UP", "str-ENTER,VOLUME_DOWN,VOLUME_UP,BACK,MENU,...", "num_int", "str-Shift,Ctrl,Alt,Meta"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Catch key events fired in your app"
 	},
 	"SetOnShowKeyboard": {
@@ -9261,16 +9136,14 @@
 		"isfunc": true,
 		"name": "SetOnShowKeyboard",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["shown"],
-				"pTypes": ["bin"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["shown"],
+			"pTypes": ["bin"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Called on keyboard visibility changes"
 	},
 	"SetOnWifiChange": {
@@ -9278,16 +9151,14 @@
 		"isfunc": true,
 		"name": "SetOnWifiChange",
 		"pNames": ["callback"],
-		"pTypes": [
-			{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["state", "ssid"],
-				"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED", "str"],
-				"shortDesc": "callback"
-			}
-		],
+		"pTypes": [{
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["state", "ssid"],
+			"pTypes": ["str-CONNECTING|CONNECTED|DISCONNECTED", "str"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Called on WiFi connected state changes"
 	},
 	"SetOptions": {
@@ -9304,13 +9175,13 @@
 		"name": "SetOrientation",
 		"pNames": ["orient", "callback"],
 		"pTypes": ["str-Default|Landscape|ReverseLandscape|Portrait|ReversePortrait", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Fix display orientation"
 	},
 	"SetPosition": {
@@ -9472,13 +9343,13 @@
 		"name": "ShowTextDialog",
 		"pNames": ["title", "default", "callback"],
 		"pTypes": ["str", "str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["text"],
-				"pTypes": ["str"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["text"],
+			"pTypes": ["str"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Show a text input dialog"
 	},
 	"ShowTip": {
@@ -9592,13 +9463,13 @@
 		"name": "TextToSpeech",
 		"pNames": ["text", "pitch", "rate", "callback", "stream", "locale", "engine"],
 		"pTypes": ["str", "num", "num", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}, "str-music", "str", "?"],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}, "str-music", "str", "?"],
 		"shortDesc": "Audiolize text"
 	},
 	"ToBack": {
@@ -9639,13 +9510,13 @@
 		"name": "UnpairBtDevice",
 		"pNames": ["address", "callback"],
 		"pTypes": ["str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Unpair a paired Bluetooth device"
 	},
 	"UnzipFile": {
@@ -9670,13 +9541,13 @@
 		"name": "UploadFile",
 		"pNames": ["url", "file", "name", "callback"],
 		"pTypes": ["str_url", "str_pth", "str", {
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Uploads a file to a server"
 	},
 	"Uri2Path": {
@@ -9726,13 +9597,13 @@
 		"name": "WifiScan",
 		"pNames": ["callback"],
 		"pTypes": [{
-				"desc": "Callback",
-				"isfunc": true,
-				"name": "callback",
-				"pNames": ["ssids"],
-				"pTypes": ["str_pip"],
-				"shortDesc": "callback"
-			}],
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["ssids"],
+			"pTypes": ["str_pip"],
+			"shortDesc": "callback"
+		}],
 		"shortDesc": "Scan for any available Wifi networks"
 	},
 	"WriteFile": {

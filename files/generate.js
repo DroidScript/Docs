@@ -243,7 +243,7 @@ function getDocData( f, useAppPop ) {
 		if( met.isfunc )
 		{
 			var args = [], pop;
-    		if((Globals.popDefs[Globals.popDefs.length - 1] || "").indexOf(f.abbrev + ".") == -1) Globals.popDefs.push("");
+			if((Globals.popDefs[Globals.popDefs.length - 1] || "").indexOf(f.abbrev + ".") == -1) Globals.popDefs.push("");
 			
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
 				replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
@@ -255,7 +255,7 @@ function getDocData( f, useAppPop ) {
 			
 			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
 			if(curSubf.indexOf(".") > -1) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
-		    methods += subfBase.replace( "%s", s );
+			methods += subfBase.replace( "%s", s );
 		}
 		/* else { //convert other types
 			var pop = descPopup( curSubf, replW( met.desc ) );
@@ -544,7 +544,7 @@ function toArgAppPop( name, types ) {
 
 //adds a type to the type popup list if it doesnt exist yet
 function tryAddType( def ) {
-    def = def.trim();
+	def = def.trim();
 	if( Globals.popDefs.indexOf( def ) == -1 )
 		Globals.popDefs.push( def );
 }
@@ -636,9 +636,10 @@ function reprs( s ) { return s.replace( /\n/g, "\\n" ).replace( /\t/g, "\\t" ); 
 	//replace "&" and "|" operators with "and" and "or"
 function rplop( s, n )
 {
-	return replW( (n ? `“${s}”` : s)
+	return replW((n ? `“${s}”` : s)
 		.replace( /\\(.)/g, (m, c) => `§${c.charCodeAt(0)}§` )
 		.replace( /\|/g, n ? "” or “" : " or " )
+		//.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
 		.replace( /,/g, n ? "”, “" : ", " )
 		.replace( /§(\d+)§/g, (m, c) => `${String.fromCharCode(c)}` )
 	);
@@ -784,7 +785,7 @@ var		// subfunctions
 			<br>
 		</div>
 
-        %p
+		%p
 	</div>
 </body>
 
@@ -875,7 +876,7 @@ var 	//globals for one doc
 
 var
 	// hide functions and methods which are matching this regex
-	regHide = /^(_.*|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj|ctx\.(un)?loadTexture)$/,
+	regHide = /^(_.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj|ctx\.(un)?loadTexture)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
@@ -891,7 +892,6 @@ var
 function getl(l) { if(l == undefined) l = lang; return l == "en" ? "" : "-" + l; }
 function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
 function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
-function sortAsc(a, b) { return a.toString().toLowerCase() > b.toString().toLowerCase()? 1 : -1 }
 function l(s) { console.log(`-----${s}-----`); return s; }
 function hidden(name) { return name.match(regHide); }
 function nothidden(name) { return !hidden(name); }
@@ -899,6 +899,12 @@ function crop(n, min, max) { return n < min? min : max != undefined && n > max ?
 function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
 function saveFunctions() { app.WriteFile(path + "functions" + getl() + ".json", tos(functions)); }
 function saveControlArgs() { app.WriteFile(path + "controlArgs.json", tos(controlArgs)); }
+function sortAsc(a, b) {
+	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
+	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
+	var la = a.toLowerCase(), lb = b.toLowerCase();
+	return la == lb ? a < b ? 1 : -1 : la > lb ? 1 : -1;
+}
 
 function isControl(name) {
 	return (name.match(regControl)) && (app[name] ?
@@ -925,31 +931,25 @@ function tos(o, intd, m) {
 		case "String": case "Number": case "Boolean":
 			return s + JSON.stringify(o);
 		case "Array":
-			var n = o.length? (o[0] == null || o[0] == undefined || o[0].constructor.name != "Object") : true;
-			s += n? "[" : "[\n";
+			var n = o.length < 2 || (typeof o[0] != "object");
+			s += n ? "[" : "[\n";
 			for(var i = 0; i < o.length; i++) {
-				s += tos(o[i], intd + "\t", !n);
-				if(i < o.length - 1) s += n? ", " : ",\n";
+				s += tos(o[i], intd + (n ? "" : "\t"), !n);
+				if(i < o.length - 1) s += n ? ", " : ",\n";
 			}
-			return s + (n? "" : "\n" + intd) + "]";
+			return s + (n ? "" : "\n" + intd) + "]";
 		default:
 			var okeys = keys(o).sort(sortAsc);
 			switch(okeys.length) {
-				case 0: return "{}";
-/*				case 1:
-					s += "{ ";
-					for(var i = 0; i < okeys.length; i++) {
-						s += '"' + okeys[i] + '": ' + tos(o[okeys[i]], "", false);
-						if(i < okeys.length - 1) s += ",";
-					}
-				return s + " }";*/
+	case 0: return "{}";
+				case 1: return s += `{ "${okeys[i]}": ${tos(o[okeys[i]], "", false)} }`;
 				default:
 					s += "{\n";
 					for(var i = 0; i < okeys.length; i++) {
-						s += intd + "\t\"" + okeys[i] + '": ' + tos(o[okeys[i]], intd + "\t", false);
+						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
 						if(i < okeys.length - 1) s += ",\n";
 					}
-				return s + "\n" + intd + "}";
+				return s + `\n${intd}}`;
 			}
 	}
 	return s;

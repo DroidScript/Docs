@@ -1,1 +1,41 @@
- 
+<sample Hackers Theme>
+function OnStart()
+{
+    SetHackerTheme();
+
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+    skb = app.CreateSeekBar( .8 );
+    skb.SetValue( 50 );
+    lay.AddChild( skb );
+
+    spn = app.CreateSpinner( "FRED,BILL,MARK", .4, .1 );
+    spn.SetMargins( 0, .05, 0, .05 );
+    lay.AddChild( spn );
+
+	tgl = app.CreateToggle( "Toggle", .3, .1 );
+	lay.AddChild( tgl );
+
+    edt = app.CreateTextEdit( "Hello World", .8 );
+    edt.SetMargins( 0, .05, 0, .05 );
+    lay.AddChild( edt );
+
+    chk = app.CreateCheckBox( "Check me", .3 );
+    lay.AddChild( chk );
+
+	app.AddLayout( lay );
+
+	app.Alert( "My Text", "Custom theme" );
+}
+
+function SetHackerTheme()
+{
+    <b>var theme = app.CreateTheme("dark");
+    theme.SetBtnTextColor( "green" );
+    theme.SetTitleColor( "green" );
+    theme.SetDialogBtnTxtColor( "green" );
+    theme.SetTextColor( "green" );
+    theme.AdjustColor( -76 );
+    app.SetTheme( theme );</b>
+}
+</sample>

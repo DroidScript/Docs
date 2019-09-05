@@ -142,7 +142,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "bin",
-		"shortDesc": "Returns whether the control is useable"
+		"shortDesc": "Checks if the control is useable"
 	},
 	"#1785728721": { "name": "IsOverlap",
 		"desc": "Returns whether the control overlaps with another by a given distance.",
@@ -150,7 +150,7 @@
 		"pNames": ["obj", "depth"],
 		"pTypes": ["dso", "num_frc"],
 		"retval": "bin",
-		"shortDesc": "Returns whether the control overlaps with another"
+		"shortDesc": "Checks if the control overlaps with another"
 	},
 	"#1814300863": { "name": "IsVisible",
 		"desc": "Returns whether the control is currently visible to the user, ignoring overlaying controls.",
@@ -158,7 +158,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "bin",
-		"shortDesc": "Returns whether the control is currently visible"
+		"shortDesc": "Checks if the control is currently visible"
 	},
 	"#1023663567": { "name": "Method",
 		"desc": "Allows access to other functions defined on the object in Java via reflection.\n\n<premium>",
@@ -407,11 +407,11 @@
 		"shortDesc": "Change displayed text"
 	},
 	"#0175303923": { "name": "SetTextColor",
-		"desc": "Change the TextColor of the contained text.",
+		"desc": "Change the text color of the contained text.",
 		"isfunc": true,
 		"pNames": ["color"],
 		"pTypes": ["str_col"],
-		"shortDesc": "Change the TextColor"
+		"shortDesc": "Change the text color"
 	},
 	"#1093247031": { "name": "SetTextShadow",
 		"desc": "Define a shadow displayed around the control.\nThe sun is always shining so there has to be one. Always.",
