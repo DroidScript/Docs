@@ -424,7 +424,7 @@
 		"desc": "Change the size of the contained text.",
 		"isfunc": true,
 		"pNames": ["size", "mode"],
-		"pTypes": ["num", "str-px|dip|sp|mm|pt|pl|ps"],
+		"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
 		"shortDesc": "Change the text size"
 	},
 	"#2562918782": { "name": "SetTouchable",

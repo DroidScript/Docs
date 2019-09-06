@@ -1,1 +1,36 @@
- 
+<sample Basic>
+function OnStart()
+{
+    ip = app.GetIPAddress();
+
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+
+    txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,log" );
+    txt.SetTextSize( 22 );
+    lay.AddChild( txt );
+
+    app.AddLayout( lay );
+
+    serv = app.CreateWebServer( 8080 );
+    serv.SetFolder( app.GetAppPath() );
+    serv.SetOnReceive( serv_OnReceive );
+    serv.Start();
+
+    <b>var sock = app.CreateWebSocket( "sock1", ip, 8080 );
+    sock.SetOnOpen( OnSockOpen );
+    sock.SetOnError( Sock_OnError );</b>
+}
+
+function OnSockOpen()
+{
+    app.ShowPopup( "Connected" );
+    var clients = serv.GetWebSockClients();
+    for(var i in clients)
+        txt.Log( clients[i].id + ": " + clients[i].remoteAddress );
+}
+
+function OnSockClose()
+{
+    app.ShowPopup( "Disconnected" );
+}
+</sample>

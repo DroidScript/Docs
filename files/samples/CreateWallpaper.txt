@@ -1,1 +1,11 @@
- 
+<sample Basic>
+function OnStart()
+{
+    app.ShowPopup( "Hello from wallpaper!" )
+
+    wall = app.CreateWallpaper();
+    var sw = app.GetScreenWidth( "real" )
+    var sh = app.GetScreenHeight( "real" );
+    img = app.CreateImage( "/Sys/Img/StarField.jpg", sw,sh, "px,wallpaper" );
+}
+</sample>

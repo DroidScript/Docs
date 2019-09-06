@@ -212,7 +212,7 @@
 		"name": "CreateAudioRecorder",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "AudioRecorder",
+		"retval": "dso-AudioRecorder",
 		"shortDesc": "Returns an AudioRecorder object",
 		"subf": {
 			"GetData": {
@@ -300,7 +300,7 @@
 		"name": "CreateBluetoothList",
 		"pNames": ["filter"],
 		"pTypes": ["str"],
-		"retval": "BluetoothList",
+		"retval": "dso-BluetoothList",
 		"shortDesc": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
 			"GetType": {
@@ -336,7 +336,7 @@
 		"name": "CreateBluetoothSerial",
 		"pNames": ["mode"],
 		"pTypes": ["str-Text|Int|Hex"],
-		"retval": "BluetoothSerial",
+		"retval": "dso-BluetoothSerial",
 		"shortDesc": "Communicate with other Bluetooth devices",
 		"subf": {
 			"Clear": {
@@ -486,8 +486,8 @@
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
-		"retval": "Button",
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Button",
 		"shortDesc": "Creates a button control",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -559,7 +559,7 @@
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
-		"retval": "CameraView",
+		"retval": "dso-CameraView",
 		"shortDesc": "Returns a new CameraView object to access the device camera",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -926,8 +926,8 @@
 		"isfunc": true,
 		"name": "CreateCheckBox",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y"],
-		"retval": "CheckBox",
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y,NoSound"],
+		"retval": "dso-CheckBox",
 		"shortDesc": "Returns a new CheckBox object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -1018,7 +1018,7 @@
 		"name": "CreateCodeEdit",
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y"],
-		"retval": "CodeEdit",
+		"retval": "dso-CodeEdit",
 		"shortDesc": "Returns a new CodeEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -1313,7 +1313,7 @@
 		"name": "CreateCrypt",
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
-		"retval": "Crypt",
+		"retval": "dso-Crypt",
 		"shortDesc": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
 			"Decrypt": {
@@ -1368,7 +1368,7 @@
 		"name": "CreateDialog",
 		"pNames": ["title", "options"],
 		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
-		"retval": "Dialog",
+		"retval": "dso-Dialog",
 		"shortDesc": "Returns a new Dialog object to display messages",
 		"subf": {
 			"AddLayout": {
@@ -1486,7 +1486,7 @@
 		"name": "CreateDownloader",
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoDialog|Light"],
-		"retval": "Downloader",
+		"retval": "dso-Downloader",
 		"shortDesc": "Returns a new Downloader object",
 		"subf": {
 			"Download": {
@@ -1603,7 +1603,7 @@
 		"name": "CreateEmail",
 		"pNames": ["account", "password"],
 		"pTypes": ["str-email", "str-password"],
-		"retval": "Email",
+		"retval": "dso-Email",
 		"shortDesc": "Returns an Email object for user to send emails",
 		"subf": {
 			"GetType": {
@@ -1686,7 +1686,7 @@
 		"name": "CreateFile",
 		"pNames": ["file", "mode"],
 		"pTypes": ["str_pth", "str-r|w|rw"],
-		"retval": "File",
+		"retval": "dso-File",
 		"shortDesc": "Returns a new File object",
 		"subf": {
 			"Close": {
@@ -1917,7 +1917,7 @@
 		"name": "CreateGLView",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_srw", "num_srh", "str-fast2d"],
-		"retval": "GLView",
+		"retval": "dso-GLView",
 		"shortDesc": "returns a GLView object.",
 		"subf": {
 			"aspect": {
@@ -2006,8 +2006,21 @@
 				"isfunc": true,
 				"name": "ctx.loadTexture",
 				"pNames": ["image", "successCallback", "errorCallback"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "?",
+				"pTypes": ["str_pth", {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["metrics"],
+	                "pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
 				"shortDesc": ""
 			},
 			"ctx.render": {
@@ -2069,7 +2082,7 @@
 				"isfunc": true,
 				"name": "ctx.setTransform",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
-				"pTypes": ["?", "?", "?", "?", "?", "?"],
+				"pTypes": ["num", "num", "num", "num", "num", "num"],
 				"retval": "",
 				"shortDesc": "Set current matrix"
 			},
@@ -2096,7 +2109,7 @@
 				"isfunc": true,
 				"name": "ctx.unloadTexture",
 				"pNames": ["image"],
-				"pTypes": ["?"],
+				"pTypes": ["str_pth"],
 				"retval": "",
 				"shortDesc": ""
 			},
@@ -2124,7 +2137,6 @@
 				"name": "Exec",
 				"pNames": ["p1", "p2", "p3", "p4"],
 				"pTypes": ["?", "?", "?", "?"],
-				"retval": "",
 				"shortDesc": ""
 			},
 			"_Execute": {
@@ -2133,7 +2145,6 @@
 				"name": "Execute",
 				"pNames": ["p1", "p2", "p3", "p4"],
 				"pTypes": ["?", "?", "?", "?"],
-				"retval": "",
 				"shortDesc": ""
 			},
 			"Explode": "#1500174100",
@@ -2225,7 +2236,7 @@
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
 		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
-		"retval": "Image",
+		"retval": "dso-Image",
 		"shortDesc": "Returns a new Image object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -2238,13 +2249,13 @@
 				"shortDesc": "Clears the image content"
 			},
 			"ClearFocus": "#1362225380",
-			"Draw": {
-				"desc": "?",
+			"_Draw": {
+				"desc": "Cache draw command when not autoupdating",
 				"isfunc": true,
 				"name": "Draw",
 				"pNames": ["func", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
-				"pTypes": ["?", "?", "?", "?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str", "num", "num", "num", "num", "num", "num"],
+				"shortDesc": "Cache draw commands"
 			},
 			"DrawArc": {
 				"desc": "Draws an elliptical arc.",
@@ -2601,7 +2612,7 @@
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
-		"retval": "Layout",
+		"retval": "dso-Layout",
 		"shortDesc": "Returns a new Layout object",
 		"subf": {
 			"AddChild": {
@@ -2755,8 +2766,8 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton"],
-		"retval": "List",
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"retval": "dso-List",
 		"shortDesc": "Returns a new List object",
 		"subf": {
 			"AddItem": {
@@ -3063,7 +3074,7 @@
 		"name": "CreateListDialog",
 		"pNames": ["title", "list", "options"],
 		"pTypes": ["str", "str", "str_com-Multi|?"],
-		"retval": "ListDialog",
+		"retval": "dso-ListDialog",
 		"shortDesc": "Returns a new ListDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -3116,7 +3127,7 @@
 		"name": "CreateLocator",
 		"pNames": ["type", "options"],
 		"pTypes": ["str_com-GPS,Network", "str_com"],
-		"retval": "Locator",
+		"retval": "dso-Locator",
 		"shortDesc": "Returns a new Locator object",
 		"subf": {
 			"GetBearingTo": {
@@ -3194,7 +3205,7 @@
 		"name": "CreateMediaPlayer",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "MediaPlayer",
+		"retval": "dso-MediaPlayer",
 		"shortDesc": "Returns a new MediaPlayer object",
 		"subf": {
 			"Close": {
@@ -3358,7 +3369,7 @@
 		"name": "CreateMediaStore",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "MediaStore",
+		"retval": "dso-MediaStore",
 		"shortDesc": "Returns a new MediaStore object",
 		"subf": {
 			"GetAlbumArt": {
@@ -3466,7 +3477,7 @@
 		"name": "CreateNetClient",
 		"pNames": ["type"],
 		"pTypes": ["str-UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message"],
-		"retval": "NetClient",
+		"retval": "dso-NetClient",
 		"shortDesc": "Returns a new NetClient object",
 		"subf": {
 			"AutoReceive": {
@@ -3674,7 +3685,7 @@
 		"name": "CreateNotification",
 		"pNames": ["options"],
 		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen"],
-		"retval": "Notification",
+		"retval": "dso-Notification",
 		"shortDesc": "Returns a new Notification object",
 		"subf": {
 			"Cancel": {
@@ -3743,7 +3754,7 @@
 		"name": "nxt",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "Nxt",
+		"retval": "dso-Nxt",
 		"shortDesc": "Returns a new Nxt object",
 		"subf": {
 			"Beep": {
@@ -3801,7 +3812,7 @@
 				"name": "FileFindFirst",
 				"pNames": ["pattern"],
 				"pTypes": ["str"],
-				"retval": "?",
+				"retval": "str",
 				"shortDesc": "Find first program file"
 			},
 			"FileFindNext": {
@@ -3809,8 +3820,8 @@
 				"isfunc": true,
 				"name": "FileFindNext",
 				"pNames": ["handle"],
-				"pTypes": ["?"],
-				"retval": "?",
+				"pTypes": ["str"],
+				"retval": "str",
 				"shortDesc": "Find next program"
 			},
 			"GetBtAddress": {
@@ -4143,7 +4154,7 @@
 		"name": "CreatePhoneState",
 		"pNames": ["types"],
 		"pTypes": ["str-CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting"],
-		"retval": "PhoneState",
+		"retval": "dso-PhoneState",
 		"shortDesc": "Returns a new PhoneState object",
 		"subf": {
 			"GetType": {
@@ -4195,7 +4206,7 @@
 		"name": "CreatePlayStore",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "PlayStore",
+		"retval": "dso-PlayStore",
 		"shortDesc": "Returns a new PlayStore object",
 		"subf": {
 			"GetBillingInfo": {
@@ -4246,8 +4257,7 @@
 				"name": "Purchase",
 				"pNames": ["prodID", "token", "callback", "options"],
 				"pTypes": ["str", "str", {
-					"abbrev": "",
-					"desc": "callback function",
+						"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
@@ -4265,7 +4275,7 @@
 		"name": "CreateScroller",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
-		"retval": "Scroller",
+		"retval": "dso-Scroller",
 		"shortDesc": "Returns a new Scroller object",
 		"subf": {
 			"AddChild": {
@@ -4377,7 +4387,7 @@
 		"name": "CreateSeekBar",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com-FillX/Y"],
-		"retval": "SeekBar",
+		"retval": "dso-SeekBar",
 		"shortDesc": "Returns a new SeekBar object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -4465,7 +4475,7 @@
 		"name": "CreateSensor",
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
-		"retval": "Sensor",
+		"retval": "dso-Sensor",
 		"shortDesc": "Returns a new Sensor object",
 		"subf": {
 			"GetAzimuth": {
@@ -4586,7 +4596,7 @@
 			"pTypes": [],
 			"shortDesc": "callback"
 		}, "str_com-Persist:attempts to force restart if service killed"],
-		"retval": "Service",
+		"retval": "dso-Service",
 		"shortDesc": "Returns a new Service object",
 		"subf": {
 			"GetType": {
@@ -4662,7 +4672,7 @@
 		"name": "CreateSmartWatch",
 		"pNames": ["type"],
 		"pTypes": ["str-|Sony"],
-		"retval": "SmartWatch",
+		"retval": "dso-SmartWatch",
 		"shortDesc": "Returns a new SmartWatch object",
 		"subf": {
 			"AddLayout": {
@@ -4855,28 +4865,28 @@
 				"shortDesc": "called when SmartWatch touched"
 			},
 			"SetScreenState": {
-				"desc": "?",
+				"desc": "Change the screen state",
 				"isfunc": true,
 				"name": "SetScreenState",
 				"pNames": ["p1"],
 				"pTypes": ["?"],
-				"shortDesc": ""
+				"shortDesc": "Change screen state"
 			},
 			"ShowLayout": {
-				"desc": "?",
+				"desc": "Show a layout on the screen",
 				"isfunc": true,
 				"name": "ShowLayout",
 				"pNames": ["layout", "x", "y"],
 				"pTypes": ["obj-SWlay", "num_frc", "num_frc"],
-				"shortDesc": ""
+				"shortDesc": "Show layout on screen"
 			},
 			"ShowMessage": {
-				"desc": "?",
+				"desc": "Shows a message on the screen",
 				"isfunc": true,
 				"name": "ShowMessage",
 				"pNames": ["message"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Show message on screen"
 			},
 			"StopApp": {
 				"desc": "Stops the running SmartWatch app.",
@@ -4903,7 +4913,7 @@
 		"name": "CreateSMS",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "SMS",
+		"retval": "dso-SMS",
 		"shortDesc": "Returns a new SMS object",
 		"subf": {
 			"GetType": {
@@ -4962,7 +4972,7 @@
 		"name": "CreateSpeechRec",
 		"pNames": ["options"],
 		"pTypes": ["str_com-NoBeep,Partial"],
-		"retval": "SpeechRec",
+		"retval": "dso-SpeechRec",
 		"shortDesc": "Returns a new SpeechRec object",
 		"subf": {
 			"Cancel": {
@@ -5070,8 +5080,8 @@
 		"isfunc": true,
 		"name": "CreateSpinner",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-FillX/Y"],
-		"retval": "Spinner",
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-FillX/Y,NoSound"],
+		"retval": "dso-Spinner",
 		"shortDesc": "Returns a new Spinner object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -5169,7 +5179,7 @@
 		"name": "CreateSynth",
 		"pNames": ["type"],
 		"pTypes": ["str-Signal,VCA,VCF"],
-		"retval": "Returns a new Synth object.",
+		"retval": "dso-Returns a new Synth object.",
 		"shortDesc": "Returns a new Synth object",
 		"subf": {
 			"GetType": {
@@ -5454,7 +5464,7 @@
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
 		"pTypes": ["str:program name-sh|su|busybox", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
-		"retval": "SysProc",
+		"retval": "dso-SysProc",
 		"shortDesc": "Returns a new SysProc object",
 		"subf": {
 			"Err": {
@@ -5547,7 +5557,7 @@
 		"name": "CreateTabs",
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str_com", "num_frc", "num_frc", "str_com"],
-		"retval": "Tabs",
+		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
 			"_AddChild": {
@@ -5741,8 +5751,8 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log,FillX/Y"],
-		"retval": "Text",
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right,Html,Bold,Monospace,NoWrap,Log,FillX/Y"],
+		"retval": "dso-Text",
 		"shortDesc": "Returns a new Text object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -5872,7 +5882,7 @@
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines,FillX/Y,Password:displays characters as dots"],
-		"retval": "TextEdit",
+		"retval": "dso-TextEdit",
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -6099,8 +6109,8 @@
 		"isfunc": true,
 		"name": "CreateTheme",
 		"pNames": ["baseTheme"],
-		"pTypes": ["?"],
-		"retval": "Theme",
+		"pTypes": ["str-Dark|Light"],
+		"retval": "dso-Theme",
 		"shortDesc": "Returns a new Theme object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -6129,7 +6139,7 @@
 				"isfunc": true,
 				"name": "SetButtonOptions",
 				"pNames": ["options"],
-				"pTypes": ["str_com-FontAwesome,Html,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
+				"pTypes": ["str_com-FontAwesome,Html,Monospace,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
 				"shortDesc": "Define button options"
 			},
 			"SetButtonStyle": {
@@ -6193,7 +6203,7 @@
 				"isfunc": true,
 				"name": "SetProgressBarOptions",
 				"pNames": ["options"],
-				"pTypes": ["?"],
+				"pTypes": ["str_com-Light"],
 				"shortDesc": "Define progress bar options"
 			},
 			"SetProgressTextColor": {
@@ -6241,7 +6251,7 @@
 				"isfunc": true,
 				"name": "SetTitleHeight",
 				"pNames": ["height", "options"],
-				"pTypes": ["num_pxl", "?"],
+				"pTypes": ["num_pxl", "str_com-px|dip|sp|mm|pt|pl|ps"],
 				"shortDesc": "Define title height"
 			}
 		}
@@ -6252,8 +6262,8 @@
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Custom,NoPad,FillX/Y"],
-		"retval": "Toggle",
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Monospace,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Toggle",
 		"shortDesc": "Returns a new Toggle object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -6338,7 +6348,7 @@
 		"name": "CreateUSBSerial",
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
 		"pTypes": ["num_int-300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600", "num_int-5|6|7|8", "num_int-1|2|15", "num_int-0:none|1:odd|2:even|3:mark|4:space", "str-1st|2nd|3rd|..."],
-		"retval": "USBSerial",
+		"retval": "dso-USBSerial",
 		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
 			"GetType": {
@@ -6365,7 +6375,7 @@
 				"isfunc": true,
 				"name": "SetDataMode",
 				"pNames": ["mode"],
-				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters"],
+				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:\"UTF-16L/BE\"&gt;"],
 				"shortDesc": ""
 			},
 			"SetDTR": {
@@ -6452,7 +6462,7 @@
 				"isfunc": true,
 				"name": "Write",
 				"pNames": ["text", "encoding"],
-				"pTypes": ["str", "str-UTF-8|US-ASCII"],
+				"pTypes": ["str", "str-US-ASCII|UTF16L/BE"],
 				"shortDesc": "Send data to connected device"
 			}
 		}
@@ -6464,7 +6474,7 @@
 		"name": "CreateVideoView",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
-		"retval": "VideoView",
+		"retval": "dso-VideoView",
 		"shortDesc": "Returns a new VideoView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -6677,29 +6687,36 @@
 	},
 	"CreateWebServer": {
 		"abbrev": "sock",
-		"desc": "Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.\n<js>wbs.SetFolder( path );</js>\nStart the server using the Start method.\n<js> wbs.Start();</js>\nAnd stop it using the Stop method.\n<js>wbs.Stop();</js>\nThe following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.\n\nFor simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.\n<sample Basic>\nThe second example shows how to accept file upload and permit directory listings by including permissions in the options parameter of the app.CreateWebServer method.\n\nIt also adds a servlet to respond to messsages from the web client. A servelet can be used to process data supplied by a user via form elements or it can handle requests made from the client application.\n\nTo get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.\n<sample File Uploads>\nWeb sockets are faster than servlets and can be used for both client - server applications or peer-to-peer systems where each connected node is both a client and a server without a centralized server.\n\nThis makes web sockets very useful for datasharing in multiplayer games.\n\nAll requests sent to the same servlet will queue up behind each other and are processed in order. The server application is said to be blocking all other requests whilst a servlet completes each task synchronously.\n\nWeb sockets recieve the request and then start a process to handle the request. When the task is complete any data or messages to be returned will be sent back to the relevant connected clients. In this case the server application is said to be non-blocking or asynchronous.\n\nWeb sockets can be used for broadcast purposes, for example sending the same message to all connected clients. They can also be used to send different direct messages to a specific one device using the IP address.\n\nThe following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.\n<sample Send and Receive messages>",
+		"desc": "Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.\n<js>wbs.SetFolder( path );</js>\nStart the server using the Start method.\n<js> wbs.Start();</js>\nAnd stop it using the Stop method.\n<js>wbs.Stop();</js>\nThe following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.\n\nFor simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.\n<sample Basic>\nThe second example shows how to accept file upload and permit directory listings by including permissions in the options parameter of the app.CreateWebServer method.\n\nIt also adds a servlet to respond to messsages from the web client. A servelet can be used to process data supplied by a user via form elements or it can handle requests made from the client application.\n\nTo get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.\n<sample Servlets>\nWeb sockets are faster than servlets and can be used for both client - server applications or peer-to-peer systems where each connected node is both a client and a server without a centralized server.\n\nThis makes web sockets very useful for datasharing in multiplayer games.\n\nAll requests sent to the same servlet will queue up behind each other and are processed in order. The server application is said to be blocking all other requests whilst a servlet completes each task synchronously.\n\nWeb sockets recieve the request and then start a process to handle the request. When the task is complete any data or messages to be returned will be sent back to the relevant connected clients. In this case the server application is said to be non-blocking or asynchronous.\nSee Also: @CreateWebSocket\n\nWeb sockets can be used for broadcast purposes, for example sending the same message to all connected clients. They can also be used to send different direct messages to a specific one device using the IP address.\n\nThe following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.\n<sample Send and Receive messages>",
 		"isfunc": true,
 		"name": "CreateWebServer",
 		"pNames": ["port", "options"],
 		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients"],
-		"retval": "WebServer",
+		"retval": "dso-WebServer",
 		"shortDesc": "Returns a new WebServer object",
 		"subf": {
 			"AddRedirect": {
-				"desc": "",
+				"desc": "Redirects a url pattern (with * wildcards) to a target location",
 				"isfunc": true,
 				"name": "AddRedirect",
 				"pNames": ["pattern", "location"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_url", "str_url"],
+				"shortDesc": "Redirect urls"
 			},
 			"AddServlet": {
-				"desc": "",
+				"desc": "Define a callback function which is called when a HTTP GET request on a given servlet name was recieved.",
 				"isfunc": true,
 				"name": "AddServlet",
 				"pNames": ["path", "callback"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str:url path-/name", {
+        	        "desc": "callback function",
+        	        "isfunc": true,
+        	        "name": "callback",
+        	        "pNames": ["args", "info"],
+        	        "pTypes": ["obj-{ parameter&colon; argument }", "obj-{ remoteAddress:str }"],
+        	        "shortDesc": "callback"
+                }],
+				"shortDesc": "Called when servlet received a message"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -6711,127 +6728,141 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"GetWebSockClients": {
-				"desc": "",
+				"desc": "Returns a list of connected client [WebSockets](CreateWebSocket.htm).",
 				"isfunc": true,
 				"name": "GetWebSockClients",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "lst_obj-[{ remoteAddress:str, id:num_int }]",
+				"shortDesc": "Get connected clients"
 			},
 			"Method": "#1023663567",
 			"SendText": {
-				"desc": "",
+				"desc": "Sends a message to a specific client.\nIf no id is given, all clients of the specified ip are notified.\nIf neither ip nor id is given, the message will be sent to all connected clients.",
 				"isfunc": true,
 				"name": "SendText",
-				"pNames": ["txt", "ip"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pNames": ["txt", "ip", "id"],
+				"pTypes": ["str", "str", "num_int"],
+				"shortDesc": "Send message to client(s)"
 			},
 			"SetFolder": {
-				"desc": "",
+				"desc": "Specifies the root folder of the server.",
 				"isfunc": true,
 				"name": "SetFolder",
 				"pNames": ["folder"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth"],
+				"shortDesc": "Set server root folder"
 			},
 			"SetOnReceive": {
-				"desc": "",
+				"desc": "Define a callback function which is called when the server received a message from a client.",
 				"isfunc": true,
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg", "ip", "id"],
+	                "pTypes": ["str", "str", "num_int"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Called when received client message"
 			},
 			"SetOnUpload": {
-				"desc": "SetOnUpload",
+				"desc": "Define a callback function which is called when a file was uploaded to the server.",
 				"isfunc": true,
 				"name": "SetOnUpload",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnUpload"
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["filename", "ip"],
+	                "pTypes": ["str", "str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Called when file uploaded to server"
 			},
 			"SetResponse": {
-				"desc": "",
+				"desc": "Responds to an incoming HTTP request",
 				"isfunc": true,
 				"name": "SetResponse",
 				"pNames": ["text"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str"],
+				"shortDesc": "Respond to incoming HTTP request"
 			},
 			"SetUploadFolder": {
-				"desc": "",
+				"desc": "Set a folder where uploaded files are to be placed.",
 				"isfunc": true,
 				"name": "SetUploadFolder",
 				"pNames": ["folder"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth"],
+				"shortDesc": "Defile file upload destination"
 			},
 			"Start": {
-				"desc": "",
+				"desc": "Start the server.",
 				"isfunc": true,
 				"name": "Start",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Start server"
 			},
 			"Stop": {
-				"desc": "",
+				"desc": "Stop server",
 				"isfunc": true,
 				"name": "Stop",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Stop server"
 			}
 		}
 	},
 	"CreateWebSocket": {
 		"abbrev": "wbs",
-		"desc": "?",
+		"desc": "WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.\nA web socket will automatically open after creating it. Once after finished loading, the **OnOpen** callback is called.\n\nIn order to receive messages from the server you have to specify a **OnMessage** callback.\n\nSee Also: @CreateWebServer",
 		"isfunc": true,
 		"name": "CreateWebSocket",
-		"pNames": ["id", "ip", "port", "options"],
-		"pTypes": ["?", "?", "?", "str_com"],
-		"retval": "WebSocket",
+		"pNames": ["id", "ip", "port"],
+		"pTypes": ["str", "str", "num_int"],
+		"retval": "dso-WebSocket",
 		"shortDesc": "Returns a new WebSocket object",
 		"subf": {
 			"Close": {
-				"desc": "close web socket",
+				"desc": "Close the web socket.",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Close web socket"
 			},
 			"GetSocket": {
-				"desc": "",
+				"desc": "Returns the js Socket instance",
 				"isfunc": true,
 				"name": "GetSocket",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "obj:Javascript Object-Socket",
+				"shortDesc": "Get js Socket instance"
 			},
 			"IsOpen": {
-				"desc": "return whether WS was opened",
+				"desc": "Check whether WebSocket is open",
 				"isfunc": true,
 				"name": "IsOpen",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if WebSocket is open"
 			},
 			"Send": {
-				"desc": "send text over the WS",
+				"desc": "Send a message to the server",
 				"isfunc": true,
 				"name": "Send",
 				"pNames": ["message"],
 				"pTypes": ["str"],
-				"shortDesc": ""
+				"shortDesc": "Send message to server"
 			},
 			"SetOnClose": {
-				"desc": "called when WS closed",
+				"desc": "Define a callback function which is called when the WebSocket has been closed.",
 				"isfunc": true,
 				"name": "SetOnClose",
 				"pNames": ["callback"],
@@ -6843,10 +6874,10 @@
 					"pTypes": [],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when WebSocket was closed"
 			},
 			"SetOnMessage": {
-				"desc": "called when recived text",
+				"desc": "Define a callback function which is called when the WebSocket recived a message from the server.",
 				"isfunc": true,
 				"name": "SetOnMessage",
 				"pNames": ["callback"],
@@ -6858,10 +6889,10 @@
 					"pTypes": ["str"],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when received message from server"
 			},
 			"SetOnOpen": {
-				"desc": "called when WS loaded/opened",
+				"desc": "Define a callback function which is called when the WebSocket has been opened.",
 				"isfunc": true,
 				"name": "SetOnOpen",
 				"pNames": ["callback"],
@@ -6873,7 +6904,7 @@
 					"pTypes": [],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when WebSocket is open"
 			}
 		}
 	},
@@ -6883,47 +6914,47 @@
 		"isfunc": true,
 		"name": "CreateWebView",
 		"pNames": ["width", "height", "options", "zoom"],
-		"pTypes": ["num_frc", "num_frc", "str_com-NoActionBar:prevents copy/paste popup|NoPause|NoApp|AllowCapture:enable use of camera and microphone (and WebRTC),UseBasicInput:makes softkeyboard useful for html code editors,Overview,NoScrollBars,ScrollFade,FillX/Y", "?"],
-		"retval": "WebView",
+		"pTypes": ["num_frc", "num_frc", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser", "num_prc"],
+		"retval": "dso-WebView",
 		"shortDesc": "Returns a new WebView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Back": {
-				"desc": "load previous page if possible",
+				"desc": "Loads the previous page from history.",
 				"isfunc": true,
 				"name": "Back",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Load previous page"
 			},
 			"CanGoBack": {
-				"desc": "returns whether there is a previous page",
+				"desc": "Check whether the user can travel back in history.",
 				"isfunc": true,
 				"name": "CanGoBack",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "Check if history contains a previous page"
 			},
 			"CanGoForward": {
-				"desc": "returns whether there is a following page",
+				"desc": "Check whether the user can travel forward in history.",
 				"isfunc": true,
 				"name": "CanGoForward",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Check if history has a following page"
 			},
 			"Capture": {
-				"desc": "? screenshot?",
+				"desc": "Captures the visible area of the web view to a file.",
 				"isfunc": true,
 				"name": "Capture",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Capture WebView as png"
 			},
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "ClearHistory for Back() and Forward()",
+				"desc": "Clears the page history for Back() and Forward()",
 				"isfunc": true,
 				"name": "ClearHistory",
 				"pNames": [],
@@ -6931,21 +6962,28 @@
 				"shortDesc": ""
 			},
 			"Execute": {
-				"desc": "",
+				"desc": "Executes JavaScript code inside the WebView and passes the result to the callback",
 				"isfunc": true,
 				"name": "Execute",
 				"pNames": ["code", "callback"],
-				"pTypes": ["?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_jsc", {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["result"],
+	                "pTypes": ["all"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Execute JS code inside the WebView"
 			},
 			"Focus": "#7324472769",
 			"Forward": {
-				"desc": "losd next page",
+				"desc": "Loads the following page from history.",
 				"isfunc": true,
 				"name": "Forward",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Load following page"
 			},
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
@@ -6964,13 +7002,13 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"GetUrl": {
-				"desc": "returns current website url",
+				"desc": "Returns the current website url.",
 				"isfunc": true,
 				"name": "GetUrl",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str_url",
-				"shortDesc": ""
+				"shortDesc": "Get current url"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -6980,37 +7018,37 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"LoadHtml": {
-				"desc": "",
+				"desc": "Loads html code to the WebView.",
 				"isfunc": true,
 				"name": "LoadHtml",
 				"pNames": ["html", "baseFolder", "options"],
-				"pTypes": ["str_htm", "str_pth", "str-allowzoom:support zooming gestures,autozoom:zoom out the content to fit the WebView by width,wide:support the viewport meta tag, a wide viewport is used if the viewport meta tag is missing,nolongtouch:WebView will not react to long touches"],
-				"shortDesc": ""
+				"pTypes": ["str_htm", "str_pth", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
+				"shortDesc": "Load html to WebView"
 			},
 			"LoadUrl": {
-				"desc": "LoadUrl",
+				"desc": "Loads an url to the WebView",
 				"isfunc": true,
 				"name": "LoadUrl",
 				"pNames": ["url", "options"],
-				"pTypes": ["str_url", "str-allowzoom:support zooming gestures,autozoom:zoom out the content to fit the WebView by width,wide:support the viewport meta tag, a wide viewport is used if the viewport meta tag is missing,nolongtouch:WebView will not react to long touches"],
-				"shortDesc": ""
+				"pTypes": ["str_url", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
+				"shortDesc": "Load url to WebView"
 			},
 			"Method": "#1023663567",
 			"Print": {
-				"desc": "Print current page",
+				"desc": "Print current page via the builtin android printer dialog.\n\nNote: Available since Android 4.4 KitKat",
 				"isfunc": true,
 				"name": "Print",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Print webpage via anddroid printer dialog"
 			},
 			"Reload": {
-				"desc": "Reload current page",
+				"desc": "Reloads the current page",
 				"isfunc": true,
 				"name": "Reload",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Reload current page"
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -7021,15 +7059,22 @@
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnConsole": {
-				"desc": "SetOnConsole",
+				"desc": "Define a callback function which is called when a message was logged to the console.",
 				"isfunc": true,
 				"name": "SetOnConsole",
 				"pNames": ["callback"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnConsole"
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Called when message logged to console"
 			},
 			"SetOnError": {
-				"desc": "called when error appeared",
+				"desc": "Define a callback function which is called when an error occured.",
 				"isfunc": true,
 				"name": "SetOnError",
 				"pNames": ["callback"],
@@ -7041,10 +7086,10 @@
 					"pTypes": ["str"],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when an error ocured"
 			},
 			"SetOnProgress": {
-				"desc": "?",
+				"desc": "Define a callback function which is called when the webpage loading progress changed",
 				"isfunc": true,
 				"name": "SetOnProgress",
 				"pNames": ["callback"],
@@ -7052,103 +7097,113 @@
 					"desc": "Callback",
 					"isfunc": true,
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
+					"pNames": ["progress"],
+					"pTypes": ["num_prc"],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when loading progress changed"
 			},
 			"SetOnTouch": "#2088093920",
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetRedirect": {
-				"desc": "?",
+				"desc": "Add a url redirection rule.",
 				"isfunc": true,
 				"name": "SetRedirect",
 				"pNames": ["urlFrom", "urlTo"],
 				"pTypes": ["str_url", "str_url"],
-				"shortDesc": ""
+				"shortDesc": "Add url redirection rule"
 			},
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetTouchMode": {
-				"desc": "SetTouchMode",
+				"desc": "Set the control in touch mode.",
 				"isfunc": true,
 				"name": "SetTouchMode",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
-				"shortDesc": "SetTouchMode"
+				"pTypes": ["bin"],
+				"shortDesc": "En/Disable touchmode on the control"
 			},
 			"SetUserAgent": {
-				"desc": "?",
+				"desc": "Defines a custom user agent",
 				"isfunc": true,
 				"name": "SetUserAgent",
 				"pNames": ["agent"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str"],
+				"shortDesc": "Set custom user agent"
 			},
 			"SetUserCreds": {
-				"desc": "?",
+				"desc": "Set login data for websites that require authentication.",
 				"isfunc": true,
 				"name": "SetUserCreds",
 				"pNames": ["name", "password"],
-				"pTypes": ["str", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str"],
+				"shortDesc": "Set authentication/login data"
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
 			"SimulateKey": {
-				"desc": "?",
+				"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).",
 				"isfunc": true,
 				"name": "SimulateKey",
 				"pNames": ["keyName", "modifiers", "pause"],
-				"pTypes": ["?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str", "str-META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON", "num"],
+				"shortDesc": "Simulate key event"
 			},
 			"Tween": "#2114624769"
 		}
 	},
 	"CreateWizard": {
 		"abbrev": "wiz",
-		"desc": "CreateWizard\n\n<premium>",
+		"desc": "The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user.\nThese can be settings and usage terms on first startup or an installation process as you might know from desktop applications.\n%c\nThe callback function will be called each time the user changes the wizard page.\nThe functions gets the current wizard layout and the page index (starting from 1) to identify the current progress.\n<h3>Page Initialisation</h3>\nOn the very first call the page index is **0** which means 'initialisation'.\nThen you have to create and add all wizard pages to the passed (frame) layout.\n\nIn case the user cancels the wizard the index is **-1**.\n\n<premium>",
 		"isfunc": true,
 		"name": "CreateWizard",
-		"pNames": ["title", "width", "height", "callback"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["title", "width", "height", "callback", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", {
+            "desc": "callback function",
+            "isfunc": true,
+            "name": "callback",
+            "pNames": ["lay", "page"],
+            "pTypes": ["dso-CreateLayout", "num_int"],
+            "shortDesc": "callback"
+        }, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"shortDesc": "CreateWizard",
 		"subf": {
 			"Dismiss": "#1924613953",
 			"Finish": {
-				"desc": "Finish",
+				"desc": "Indicate that the Wizard is going to finish on the next page.",
 				"isfunc": true,
 				"name": "Finish",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Finish"
+				"shortDesc": "Indicate that wizard finished"
 			},
 			"GetButtons": {
-				"desc": "GetButtons",
+				"desc": "Returns the list of the three control buttons at the bottom of the wizard.",
 				"isfunc": true,
 				"name": "GetButtons",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetButtons"
+                "retval": "lst_obj-[ btnCancel:dso-CreateButton, btnPrev:dso-CreateButton, btnNext:dso-CreateButton ]",
+				"shortDesc": "Returns list of wiz control buttons"
 			},
 			"GetDialog": {
-				"desc": "GetDialog",
+				"desc": "Returns the dialog:dso-\"CreateDialog\" object of the wizard.",
 				"isfunc": true,
 				"name": "GetDialog",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetDialog"
+				"retval": "dso-CreateDialog",
+				"shortDesc": "Get wiz dialog object"
 			},
 			"GetLayout": {
-				"desc": "GetLayout",
+				"desc": "Return s the content layout:dso-\"CreateLayout\" object of the wizard.",
 				"isfunc": true,
 				"name": "GetLayout",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetLayout"
+				"retval": "dso-CreateLayout",
+				"shortDesc": "Get wiz content layout"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -7169,8 +7224,8 @@
 		"isfunc": true,
 		"name": "CreateYesNoDialog",
 		"pNames": ["message", "options"],
-		"pTypes": ["?", "str_com-TouchModal"],
-		"retval": "YesNoDialog",
+		"pTypes": ["str", "str_com-NoDim,NoFocus,TouchModal"],
+		"retval": "dso-YesNoDialog",
 		"shortDesc": "Returns a new YesNoDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -7189,15 +7244,15 @@
 			"SetBackColor": "#3857861627",
 			"SetBackground": "#1239127541",
 			"SetButtonText": {
-				"desc": "changes text of the two buttons",
+				"desc": "Changes the texts of the two Yes/No buttons.",
 				"isfunc": true,
 				"name": "SetButtonText",
 				"pNames": ["yes", "no"],
 				"pTypes": ["str", "str"],
-				"shortDesc": ""
+				"shortDesc": "Change Yes/No button text"
 			},
 			"SetOnTouch": {
-				"desc": "called when user touches object with pressed button text as parameter",
+				"desc": "Define a callback function which is called when the user touches one of the buttons, passing either “Yes” or “No” to the callback function",
 				"isfunc": true,
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
@@ -7206,10 +7261,10 @@
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["result"],
-					"pTypes": ["str"],
+					"pTypes": ["str-Yes|No"],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": ""
+				"shortDesc": "Called when user selects Yes or No"
 			},
 			"SetSize": "#1296070870",
 			"Show": "#1243391562"
@@ -7217,69 +7272,69 @@
 	},
 	"CreateZipUtil": {
 		"abbrev": "zip",
-		"desc": "Returns a ZipUtil object.",
+		"desc": "The ZipUtil is handy for creating, editing and extracting zip files. You can even add files or texts to existing zip files, list their contents and extract single files from them.",
 		"isfunc": true,
 		"name": "CreateZipUtil",
 		"pNames": ["mode"],
-		"pTypes": ["?"],
-		"retval": "ZipUtil",
-		"shortDesc": "Returns a new ZipUtil object",
+		"pTypes": ["str"],
+		"retval": "dso-ZipUtil",
+        "shortDesc": "Returns a new ZipUtil object",
 		"subf": {
 			"AddFile": {
-				"desc": "AddFile",
+				"desc": "Adds a file to the zip relative to the zip root.",
 				"isfunc": true,
 				"name": "AddFile",
 				"pNames": ["name", "file"],
-				"pTypes": ["str", "str_pth"],
-				"shortDesc": ""
+				"pTypes": ["str:zip path", "str_pth"],
+				"shortDesc": "Add file to zip"
 			},
 			"AddText": {
-				"desc": "?",
+				"desc": "Adds some text to the zip relative to the zip root.",
 				"isfunc": true,
 				"name": "AddText",
 				"pNames": ["name", "text"],
-				"pTypes": ["str", "str"],
-				"shortDesc": ""
+				"pTypes": ["str:zip path", "str"],
+				"shortDesc": "Add text to the zip"
 			},
 			"Close": {
-				"desc": "Close zip util",
+				"desc": "Closes the zip util.",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": ""
+				"shortDesc": "Close ZipUtil"
 			},
 			"Create": {
-				"desc": "Create new zip file",
+				"desc": "Creates a new zip file.",
 				"isfunc": true,
 				"name": "Create",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Create zip file"
 			},
 			"CreateDebugKey": {
-				"desc": "",
+				"desc": "Creates a Debuk keystore file",
 				"isfunc": true,
 				"name": "CreateDebugKey",
 				"pNames": ["file"],
-				"pTypes": ["?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth-debug.keystore"],
+				"shortDesc": "Create debug keystore file"
 			},
 			"CreateKey": {
-				"desc": "",
+				"desc": "Creates a user keystore file",
 				"isfunc": true,
 				"name": "CreateKey",
-				"pNames": ["file", "password", "name", "org"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": ""
+				"pNames": ["file", "password", "name", "organization"],
+				"pTypes": ["str_pth-user.keystore", "str", "str", "str"],
+				"shortDesc": "Create a user keystore file"
 			},
 			"Extract": {
-				"desc": "Extract zip file",
+				"desc": "Extract a single file from the zip to a gived destination.",
 				"isfunc": true,
 				"name": "Extract",
 				"pNames": ["name", "file"],
-				"pTypes": ["str", "str_pth"],
-				"shortDesc": ""
+				"pTypes": ["str:zip path", "str_pth"],
+				"shortDesc": "Extract file from zip"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -7291,37 +7346,37 @@
 				"shortDesc": "Returns the control class name"
 			},
 			"List": {
-				"desc": "List zip directory",
+				"desc": "Returns a list of the files contained in the zip.",
 				"isfunc": true,
 				"name": "List",
 				"pNames": ["path"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Get contained file list"
 			},
-			"Method": "#1023663567",
 			"Open": {
-				"desc": "? read file inside zip?",
+				"desc": "Opens an already existing zip file.",
 				"isfunc": true,
 				"name": "Open",
 				"pNames": ["file"],
 				"pTypes": ["str_pth"],
-				"shortDesc": ""
+				"shortDesc": "Open existing zip"
 			},
 			"Sign": {
-				"desc": "",
+				"desc": "Signs and checks the zip against the keystore file and returns if it is ok.",
 				"isfunc": true,
 				"name": "Sign",
 				"pNames": ["fileIn", "fileOut", "keyStore", "password"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth", "str_pth", "str_pth", "str"],
+                "retval": "bin",
+				"shortDesc": "Sign and check zip against keystore file"
 			},
 			"UpdateManifest": {
-				"desc": "",
+				"desc": "Updates the zip manifest",
 				"isfunc": true,
 				"name": "UpdateManifest",
 				"pNames": ["fileIn", "fileOut", "packageName", "appName", "permissions", "options"],
-				"pTypes": ["?", "?", "?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["str_pth", "str_pth", "str", "str", "str_com", "str_com-Launch,Debug"],
+				"shortDesc": "Update zip manifest"
 			}
 		}
 	},
@@ -7769,7 +7824,7 @@
 		"name": "GetJoystickName",
 		"pNames": ["id"],
 		"pTypes": ["num_int"],
-		"retval": "?",
+		"retval": "str",
 		"shortDesc": "GetJoystickName"
 	},
 	"GetJoystickState": {
@@ -8509,43 +8564,53 @@
 	},
 	"OpenDatabase": {
 		"abbrev": "db",
-		"desc": "OpenDatabase",
+		"desc": "OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time.",
 		"isfunc": true,
 		"name": "OpenDatabase",
 		"pNames": ["name"],
 		"pTypes": ["str"],
-		"retval": "Database",
+		"retval": "dso-Database",
 		"shortDesc": "OpenDatabase",
 		"subf": {
 			"addTransaction": {
-				"abbrev": "",
 				"desc": "addTransaction",
 				"isfunc": true,
 				"name": "addTransaction",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["transaction"],
+				"pTypes": ["obj:JS SQLitePluginTransaction"],
 				"shortDesc": "addTransaction"
 			},
 			"close": {
-				"abbrev": "",
-				"desc": "close",
+				"desc": "Close the database",
 				"isfunc": true,
 				"name": "close",
 				"pNames": ["success", "error"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "close"
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Close the database"
 			},
 			"Close": {
-				"abbrev": "",
-				"desc": "Close",
+				"desc": "Close the database",
 				"isfunc": true,
 				"name": "Close",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Close"
+				"shortDesc": "Close the database"
 			},
 			"databaseFeatures": {
-				"abbrev": "",
 				"desc": "databaseFeatures",
 				"isfunc": false,
 				"name": "databaseFeatures",
@@ -8554,7 +8619,6 @@
 				"shortDesc": "databaseFeatures"
 			},
 			"dbname": {
-				"abbrev": "",
 				"desc": "dbname",
 				"isfunc": false,
 				"name": "dbname",
@@ -8563,70 +8627,107 @@
 				"shortDesc": "dbname"
 			},
 			"Delete": {
-				"abbrev": "",
-				"desc": "Delete",
+				"desc": "Delete the database",
 				"isfunc": true,
 				"name": "Delete",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Delete"
+				"shortDesc": "Delete the database"
 			},
 			"executeSql": {
-				"abbrev": "",
-				"desc": "executeSql",
+				"desc": "Executes a SQL query",
 				"isfunc": true,
 				"name": "executeSql",
 				"pNames": ["statement", "params", "success", "error"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "executeSql"
+				"pTypes": ["str_sql", "lst", {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["tx", "res"],
+	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }", "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["t", "err"],
+	                "pTypes": ["?", "obj-{ message:str }"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Execute SQL query"
 			},
 			"ExecuteSql": {
-				"abbrev": "",
-				"desc": "ExecuteSql",
+				"desc": "Executes a SQL query",
 				"isfunc": true,
 				"name": "ExecuteSql",
 				"pNames": ["sql", "params", "success", "error"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": "ExecuteSql"
+				"pTypes": ["str_sql", "lst", {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["res"],
+	                "pTypes": ["obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["err"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Execute SQL query"
 			},
 			"GetName": {
-				"abbrev": "",
-				"desc": "GetName",
+				"desc": "Returns the database name",
 				"isfunc": true,
 				"name": "GetName",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "GetName"
+				"retval": "str",
+				"shortDesc": "Get database name"
 			},
 			"GetType": {
-				"abbrev": "",
 				"desc": "GetType",
 				"isfunc": true,
 				"name": "GetType",
 				"pNames": [],
 				"pTypes": [],
+				"retval": "str-Database",
 				"shortDesc": "GetType"
 			},
 			"name": {
-				"abbrev": "",
-				"desc": "name",
+				"desc": "The database name",
 				"isfunc": false,
 				"name": "name",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "name"
+				"retval": "str",
+				"shortDesc": "database name"
 			},
 			"open": {
-				"abbrev": "",
-				"desc": "open",
+				"desc": "Opens the database",
 				"isfunc": true,
 				"name": "open",
 				"pNames": ["success", "error"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "open"
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": [],
+	                "pTypes": [],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": "Open database"
 			},
-			"openargs": {
-				"abbrev": "",
+			"_openargs": {
 				"desc": "openargs",
 				"isfunc": false,
 				"name": "openargs",
@@ -8634,26 +8735,24 @@
 				"pTypes": [],
 				"shortDesc": "openargs"
 			},
-			"openDBs": {
-				"abbrev": "",
-				"desc": "openDBs",
+			"_openDBs": {
+				"desc": "contains DBs",
 				"isfunc": false,
 				"name": "openDBs",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "openDBs"
+				"retval": "obj-{ name:obj-Database }",
+				"shortDesc": "open DBs"
 			},
-			"openError": {
-				"abbrev": "",
+			"_openError": {
 				"desc": "openError",
 				"isfunc": true,
 				"name": "openError",
-				"pNames": ["e"],
-				"pTypes": ["?"],
+				"pNames": ["err"],
+				"pTypes": ["str"],
 				"shortDesc": "openError"
 			},
-			"openSuccess": {
-				"abbrev": "",
+			"_openSuccess": {
 				"desc": "openSuccess",
 				"isfunc": true,
 				"name": "openSuccess",
@@ -8662,16 +8761,35 @@
 				"shortDesc": "openSuccess"
 			},
 			"readTransaction": {
-				"abbrev": "",
 				"desc": "readTransaction",
 				"isfunc": true,
 				"name": "readTransaction",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": ["?", "?", "?"],
+				"pTypes": [{
+                    "desc": "callback function",
+                    "isfunc": true,
+                    "name": "callback",
+                    "pNames": ["tx"],
+                    "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+                    "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["err"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["tx", "res"],
+	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"],
+	                "shortDesc": "callback"
+                }],
 				"shortDesc": "ReadTransaction"
 			},
 			"startNextTransaction": {
-				"abbrev": "",
 				"desc": "startNextTransaction",
 				"isfunc": true,
 				"name": "startNextTransaction",
@@ -8680,12 +8798,39 @@
 				"shortDesc": "startNextTransaction"
 			},
 			"transaction": {
-				"abbrev": "",
 				"desc": "transaction",
 				"isfunc": true,
 				"name": "transaction",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": ["?", "?", "?"],
+				"pTypes": [{
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["tx"],
+	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["err"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["fnc", "res"],
+	                "pTypes": [{
+    	                "desc": "callback function",
+    	                "isfunc": true,
+    	                "name": "callback",
+    	                "pNames": ["tx"],
+    	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+    	                "shortDesc": "callback"
+                    }, "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
+	                "shortDesc": "callback"
+                }],
 				"shortDesc": "transaction"
 			}
 		}
@@ -9373,7 +9518,7 @@
 		"isfunc": true,
 		"name": "SimulateKey",
 		"pNames": ["obj", "keyName", "modifiers", "pause"],
-		"pTypes": ["dso", "str", "str-Ctrl,Alt,Meta,Caps,Function", "num"],
+		"pTypes": ["dso", "str", "str-META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON", "num"],
 		"shortDesc": "Simulates a key event on an app object"
 	},
 	"SimulateScroll": {
@@ -9469,7 +9614,7 @@
 			"pNames": [],
 			"pTypes": [],
 			"shortDesc": "callback"
-		}, "str-music", "str", "?"],
+		}, "str-music", "str", "str"],
 		"shortDesc": "Audiolize text"
 	},
 	"ToBack": {

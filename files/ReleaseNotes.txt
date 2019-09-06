@@ -50,7 +50,7 @@ DS 174
 
 DS 1.73b1
 - Added 'boolean' type for obj.Method().
-- WebViews/HTML apps now pause when not in foreground (can use 'NoPause' option).
+-.WebViews/HTML apps now pause when not in foreground (can use 'NoPause' option).
 - Added CHANGE_NETWORK_STATE permission for app.SetWifiApEnabled method (for Orange-Pi).
 - Fixed AdjustColor() exception when dialog has not title.
 - Added public Object GetObject( String id ) to plugin parent object (gets a DS object).
@@ -615,7 +615,7 @@ DS 1.34b
 - Added txtEdit.SetOnEnter() method (disables enter key and fires callback).
 - Added .Hide .Show .Gone .Isvisible methods to all objects.
 - Added support for html file input boxes on Lollipop and higher.
--?Added 'IgnoreSslErrors' option to webview and app.SetOptions.
+-.Added 'IgnoreSslErrors' option to webview and app.SetOptions.
 - Device app list no longer refreshes on WiFi file edits.
 -.Added 'address' param to udp OnReceive callback.
 - Added app.IsAppInstalled() and app.GetActivities() methods (useful for making launchers).
@@ -640,10 +640,10 @@ DS 1.33
 - Added app.SetOnShowKeyboard() method (passes true/false to callback).
 - Added dlg.SetBackColor() method (can be transparent).
 -.Added dlg.SetSize() method (with optional 'px' mode)
-- Added app.SimulateKey() method (eg. app.SimulateKey(edit,"C","SHIFT_LEFT_ON") )
+-.Added app.SimulateKey() method (eg. app.SimulateKey(edit,"C","SHIFT_LEFT_ON") )
 -.Added 'NoDialog' option to the downloader object.
 - Added usb.SetMaxRead(bytes) and usb.SetTimeout(ms) methods.
-- Added new 'pl', 'ps' modes to *.SetTextSize() (scales text in proportion with device resolution)
+-.Added new 'pl', 'ps' modes to *.SetTextSize() (scales text in proportion with device resolution)
 -.Added 'touchmodal','notouch','nofocus','secure','showlocked','wakescreen','screenon' to App.SetOptions().
 - Added edit.SetCursorColor() method.
 - Added icon buttons sample.
@@ -658,10 +658,10 @@ DS 1.33
 -.Added app.IsPremium() method (only meaningful when running inside IDE)
 -.Custom buttons now padded by default (use 'NoPad' option to remove).
 - Websockets now firing callbacks inside a service.
-- Added 'FadeIn', 'FadeOut', 'CrossFade' to lay.Animate() + extra 'time' parameter.
-- Added obj.SetColorFilter( color, mode ) method to most objects (supports Porter-Duff modes).
-- Added obj.AdjustColor( hue, sat, bright, cont ) method to most objects.
-- Added web.SetUserAgent( agent ) method.
+-.Added 'FadeIn', 'FadeOut', 'CrossFade' to lay.Animate() + extra 'time' parameter.
+-.Added obj.SetColorFilter( color, mode ) method to most objects (supports Porter-Duff modes).
+-.Added obj.AdjustColor( hue, sat, bright, cont ) method to most objects.
+-.Added web.SetUserAgent( agent ) method.
 - Added 'Network' permissions when using WebSockets.
 - Fixed SetTextColor and SetTextSize on spinner.
 

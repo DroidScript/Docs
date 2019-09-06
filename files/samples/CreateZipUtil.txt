@@ -1,1 +1,44 @@
- 
+<sample List Contents>
+function OnStart()
+{
+	var name = app.GetAppName();
+	var file = "/sdcard/" + name + ".zip";
+
+	var zip = app.CreateZipUtil();
+	zip.Open( file );
+	var list = zip.List("").split(",");
+	app.Alert(list.join(",\n"));
+	zip.Close();
+}
+</sample>
+
+<sample Compress>
+function OnStart()
+{
+	var name = app.GetAppName();
+	var fldr = app.GetPath() + "/" + name;
+	var file = "/sdcard/" + name + ".zip";
+	app.ShowProgress();
+
+	var zip = app.CreateZipUtil();
+	zip.Create( file );
+	AddFolder( zip, name, fldr );
+	zip.Close();
+
+	app.HideProgress();
+	app.ShowPopup( "saved to " + file );
+}
+
+<b>function AddFolder( zip, name, fldr )
+{
+	var list = app.ListFolder( fldr,"");
+	for( var i = 0; i < list.length; i++ )
+	{
+		var title = list[i];
+		if( !app.IsFolder( fldr + "/" + title ) )
+			zip.AddFile( name + "/" + title, fldr + "/" + title );
+		else
+			AddFolder( zip, name + "/" + title, fldr + "/"+title );
+	}
+}</b>
+</sample>

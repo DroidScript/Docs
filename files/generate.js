@@ -204,7 +204,7 @@ function getDocData( f, useAppPop ) {
 
 	// convert return value
 	if( f.retval )
-		fretval = (f.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( f.retval, true );
+		fretval = (f.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( f.retval );
 
 	// return data if there are no subfunctions
 	if( !f.subf || !keys( f.subf ).length )
@@ -243,18 +243,18 @@ function getDocData( f, useAppPop ) {
 		if( met.isfunc )
 		{
 			var args = [], pop;
-			if((Globals.popDefs[Globals.popDefs.length - 1] || "").indexOf(f.abbrev + ".") == -1) Globals.popDefs.push("");
+			if(!has(Globals.popDefs[Globals.popDefs.length - 1] || "", f.abbrev + ".")) Globals.popDefs.push("");
 			
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
 				replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
-				getAddClass(met) || (basefuncs.all.indexOf(curSubf) > -1 ? ' class="baseFunc"' : ""));
+				getAddClass(met) || (has(basefuncs.all, curSubf) ? ' class="baseFunc"' : ""));
 			tryAddType( pop.fnc );
 
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 			
 			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
-			if(curSubf.indexOf(".") > -1) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
+			if(has(curSubf, '.')) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
 			methods += subfBase.replace( "%s", s );
 		}
 		/* else { //convert other types
@@ -273,7 +273,7 @@ function getDesc(name)
 {
 	var desc = functions[name].desc.trim();
 	var samples = getSamples(name);
-	if( desc.indexOf('.') == -1 ) desc += '.';
+	if(!has(desc, '.')) desc += '.';
 
 	return "<p>" + replaceTypes(addMarkdown(replW( desc )))
 		// exclude <h> tags from <p>
@@ -287,7 +287,7 @@ function getDesc(name)
 		// replace <js> and <bash> tags with sample
 		.replace(
 			/(\s|<br>)*<(js|bash|smp)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
-				`</p>\n${funcBase //(code.indexOf("\n") > -1 ? funcBase : "\t\t\t" + funcBase.replace(/\n|\t/g, ""))
+				`</p>\n${funcBase //(has(code, "\n") ? funcBase : "\t\t\t" + funcBase.replace(/\n|\t/g, ""))
 					.replace("%s", Prism.languages[lang] ?
 						Prism.highlight(
 							code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"),
@@ -328,7 +328,7 @@ function getSamples( name )
 // convert a sample to html code
 function toHtmlSamp( c, t, n )
 {
-	var hasBold = c.indexOf("<b>") > -1 && c.indexOf("</b>") > c.indexOf("<b>");
+	var hasBold = has(c, "<b>") && c.indexOf("</b>") > c.indexOf("<b>");
 	if(!hasBold) Warn(`${curDoc} sample "${t}" has no bold area\n`);
 
 	c = c.replace( /<\/?b>/g, "§b§");
@@ -356,9 +356,9 @@ function toHtmlSamp( c, t, n )
 
 function getAddClass(m)
 {
-	if(m.desc.indexOf("<deprecated") > -1) return ' class="deprHint"';
-	if(m.desc.indexOf("<xfeature") > -1) return ' class="xfeatHint"';
-	if(m.desc.indexOf("<premium") > -1) return ' class="premHint"';
+	if(has(m.desc, "<deprecated") ) return ' class="deprHint"';
+	if(has(m.desc, "<xfeature")) return ' class="xfeatHint"';
+	if(has(m.desc, "<premium")) return ' class="premHint"';
 	return '';
 }
 
@@ -374,13 +374,20 @@ function descPopup( text, ptext, sClass )
 }
 
 // returns a formatted description of a type - used for subfunction return values
-function typeDesc( types, isDSO )
+function typeDesc( types )
 {
-	types = types
-		.split("||")
-		.map((type, i) => [type.slice(0,3)]
-			.concat(type.replace('-', '\x01').split('\x01'))
-		);
+	types = types.split("||").map(
+		 function(type)
+		 {
+			return [type.slice(0, 3)].concat(
+					// custom type desc
+				type.replace(/^(...):([^-]*)/, (m, btype, desc) =>
+						(typedesc[btype + "_tmp"] = desc, btype + "_tmp"))
+					// sample vals
+					.replace(/-/, '\x01').split('\x01')
+			)
+		}
+	);
 
 	var last = "</b>";
 	var s = types.map(
@@ -403,7 +410,7 @@ function typeDesc( types, isDSO )
 					case "lst":
 					case "obj": return s[i] + replaceTypes( type[2], false );
 					case "dso":
-						if(!functions[type[2]])
+						if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
 							Throw(Error(`link to unexistent file ${type[2]}.htm`))
 						return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
 					default: Throw(Error("unknown type " + type[1]));
@@ -413,8 +420,8 @@ function typeDesc( types, isDSO )
 			{
 				if(s[i] == undefined)
 				{
-					if(isDSO) return "<b>app object:</b> " + type[1];
-					else Throw(Error("unknown type " + type[1]));
+					//if(isDSO) return "<b>app object:</b> " + type[1]; else
+					Throw(Error("unknown type " + type[1]));
 				}
 				return s[i];
 			}
@@ -424,7 +431,7 @@ function typeDesc( types, isDSO )
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
 function toArgPop( name, types, doSwitch ) {
-
+	
 	// function callbacks
 	if( typeof types == "object" )
 	{
@@ -433,7 +440,7 @@ function toArgPop( name, types, doSwitch ) {
 			"<b>function</b>(\n\t\t\t" + types.pNames.map(
 				function(n, i)
 				{
-					if("lst,obj".indexOf(types.pTypes[i].slice(0, 3)) > -1)
+					if(types.pTypes[i].isfunc || has("lst,obj", types.pTypes[i].slice(0, 3)))
 						// for lists and objects in callback parameters switch popups
 						return toArgPop(n, types.pTypes[i], true);
 					else
@@ -480,13 +487,13 @@ function toArgPop( name, types, doSwitch ) {
 				case "num":
 				case "str":
 				case "bin":
-					if(type.length == 3 && type[2].indexOf(':') > -1)
+					if(type.length == 3 && has(type[2], ':'))
 						type[2] = replaceTypes(type[2], true);
 					return s[i] + rplop( type[2], type[0] == "str" );
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				case "dso":
-					if(!functions[type[2]])
+					if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
 						Throw(Error(`link to unexistent file ${type[2]}.htm`))
 					return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
 				default: Throw(Error("unknown type " + type[1]));
@@ -545,7 +552,7 @@ function toArgAppPop( name, types ) {
 //adds a type to the type popup list if it doesnt exist yet
 function tryAddType( def ) {
 	def = def.trim();
-	if( Globals.popDefs.indexOf( def ) == -1 )
+	if(!has(Globals.popDefs, def ))
 		Globals.popDefs.push( def );
 }
 
@@ -571,12 +578,17 @@ function incpop( type, i )
 function replaceTypes(s, useAppPop)
 {
 	var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
-	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\n]*)?"?/g,
-		function(m, name, type, _, desc, _)
+	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\]\n]*)?"?/g,
+		function(m, name, type, _, desc)
 		{
+			var r, space = '';
 			if( !type && !desc || name.startsWith("Note")) return;
 
-			if( desc && desc.startsWith('"')) desc = desc.slice(1);
+			if(desc) {
+				if(desc.endsWith(' ')) space = ' ';
+				desc = desc.slice(desc.startsWith('"'), space ? -1 : undefined);
+			}
+			
 			if( type )
 			{
 				if(typenames[type.slice(0, 3)]) {
@@ -584,8 +596,7 @@ function replaceTypes(s, useAppPop)
 				else
 					desc = type + (desc || ''), type = '';
 			}
-
-			var r;
+			
 			if(useAppPop)
 			{
 				if(type && !desc) r = toArgAppPop(name, type);
@@ -595,7 +606,7 @@ function replaceTypes(s, useAppPop)
 			else
 				r = type ? toArgPop(name, type) : newAppPopup(name, desc);
 
-			s = s.replace(m, r);
+			s = s.replace(m, r + space);
 			return '';
 		}
 	);
@@ -895,6 +906,7 @@ function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
 function l(s) { console.log(`-----${s}-----`); return s; }
 function hidden(name) { return name.match(regHide); }
 function nothidden(name) { return !hidden(name); }
+function has(l, v) { return l.indexOf(v) > -1; }
 function crop(n, min, max) { return n < min? min : max != undefined && n > max ? max : n; }
 function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
 function saveFunctions() { app.WriteFile(path + "functions" + getl() + ".json", tos(functions)); }
@@ -908,7 +920,7 @@ function sortAsc(a, b) {
 
 function isControl(name) {
 	return (name.match(regControl)) && (app[name] ?
-		app[name].toString().indexOf("return") > -1 :
+		has(app[name].toString(), "return") :
 		!!functions[name].subf);  //! for debug, :false
 }
 

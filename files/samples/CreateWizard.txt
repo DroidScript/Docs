@@ -1,1 +1,53 @@
- 
+<sample Demo>
+function OnStart()
+{
+    var theme = app.CreateTheme( "light" );
+    app.SetTheme( theme );
+
+    wiz = app.CreateWizard( "My Wizard", 0.7, 0.7, OnWizard  );
+    wiz.Show();
+}
+
+function OnWizard( lay, page )
+{
+    switch( page ) {
+    case 0:
+        wizTxt = app.CreateText( "", -1, -1, "MultiLine" );
+        wizTxt.SetTextSize( 19 );
+        lay.AddChild( wizTxt );
+
+        wizFlag = app.CreateText( "[fa-flag-checkered]", -1, -1, "FontAwesome" );
+        wizFlag.SetMargins( 0, 0.05, 0, 0 );
+        wizFlag.SetTextSize( 64 );
+        wizFlag.Gone();
+        lay.AddChild( wizFlag );
+    break;
+
+    case 1:
+        var msg = "This is the first page of your wizard";
+        wizTxt.SetText( msg );
+    break;
+
+    case 2:
+        var msg = "You can put any controls you like here, including"
+            + " a webview and have as many  pages as you like";
+        wizTxt.SetText( msg );
+        wizFlag.Gone();
+    break;
+
+    case 3:
+       wizTxt.SetText( "Wizard complete!" );
+       wizFlag.Show();
+       wiz.Finish();
+    break;
+
+    case 4:
+       wiz.Dismiss();
+       app.ShowPopup( "Wizard finished" );
+    break;
+
+    case -1:
+        app.ShowPopup( "Wizard cancelled" );
+    }
+}
+</sample>
