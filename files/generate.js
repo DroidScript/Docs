@@ -412,7 +412,10 @@ function typeDesc( types )
 					case "dso":
 						if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
 							Throw(Error(`link to unexistent file ${type[2]}.htm`))
-						return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+						if(functions[type[2]]) 
+							return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+						else
+							return s[i] + type[2];
 					default: Throw(Error("unknown type " + type[1]));
 				}
 			}

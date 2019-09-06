@@ -5179,7 +5179,7 @@
 		"name": "CreateSynth",
 		"pNames": ["type"],
 		"pTypes": ["str-Signal,VCA,VCF"],
-		"retval": "dso-Returns a new Synth object.",
+		"retval": "dso-Synth",
 		"shortDesc": "Returns a new Synth object",
 		"subf": {
 			"GetType": {
