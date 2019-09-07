@@ -100,8 +100,11 @@ $(document).live( 'pageshow',function(event, ui)
 		var popup = location.href.match(/#([a-z]+)/i);
 		if(popup) {
 			popup = $("a.ui-link:contains(" + popup[1] + ")");
-			$("html").delay(200).animate({ scrollTop: popup.offset().top + 50 }, 200)
-				.delay(200).queue(function(){ popup.click(); });
+		    setTimeout(function(){
+		        $("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
+		            .delay(350).queue(function(){ popup.click(); });
+            }, 300);
+			    
 		}
 	}
 	//catch( e ) {}

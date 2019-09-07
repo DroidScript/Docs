@@ -331,7 +331,7 @@
 	},
 	"CreateBluetoothSerial": {
 		"abbrev": "bls",
-		"desc": "The CreateBluetoothSerial object is used for communicating with other Bluetooth devices.The 'Text' mode is set by default, but <b>int</b>eger and <b>hex</b>adecimal values can also be sent.",
+		"desc": "The CreateBluetoothSerial object is used for communicating with other Bluetooth devices.The 'Text' mode is set by default, but **int**eger and **hex**adecimal values can also be sent.",
 		"isfunc": true,
 		"name": "CreateBluetoothSerial",
 		"pNames": ["mode"],
@@ -2326,7 +2326,7 @@
 				"isfunc": true,
 				"name": "DrawSamples",
 				"pNames": ["data", "range"],
-				"pTypes": ["lst-[data:num]", "num"],
+				"pTypes": ["lst-[ data:num ]", "num"],
 				"shortDesc": "Draws a vertically centered sample graph"
 			},
 			"DrawText": {
