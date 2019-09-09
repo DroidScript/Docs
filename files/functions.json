@@ -24,7 +24,7 @@
 		"shortDesc": "Shows a popup message with an 'OK' button to exit"
 	},
 	"Animate": {
-		"desc": "Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.\nwhen using _AddOptions( “NoDom” ); to cause a high performance you cannot use SetInterval but Animate.\n\ncomparison:\n\nnormal:\n\tsetInterval&colon; about 242 calls per second\n\tapp.animate&colon; about 217 calls per second\n\nwith “NoDom” option:\n\tsetInterval&colon; error\n\tapp.Animate&colon; up to 1000 calls per second",
+		"desc": "Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.\nwhen using cfg.NoDom; to cause a high performance you cannot use SetInterval but Animate.\n\ncomparison:\n\nnormal:\n\tsetInterval&colon; about 242 calls per second\n\tapp.animate&colon; about 217 calls per second\n\nwith “NoDom” option:\n\tsetInterval&colon; error\n\tapp.Animate&colon; up to 1000 calls per second",
 		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["callback", "fps"],
@@ -1912,7 +1912,7 @@
 	},
 	"CreateGLView": {
 		"abbrev": "glv",
-		"desc": "Returns a GLView object.",
+		"desc": "GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.\n%c\n\nUse the **CreateImage** method of the GLView object to create an image that can be used with the GLView.\nYou can specity a **callback** function too which will be called once the image is ready to use.\n\nTo draw the sprite on the canvas use the **DrawImage** method.\n<font class=\"red\">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font>\nYou can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.\n\nOnce all drawing has been done, the **Render** method must be called to render all the GLView graphics to the screen.",
 		"isfunc": true,
 		"name": "CreateGLView",
 		"pNames": ["width", "height", "options"],
@@ -1954,163 +1954,6 @@
 					"shortDesc": "callback"
 				}],
 				"retval": "dso_glv",
-				"shortDesc": ""
-			},
-			"ctx.capture": {
-				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
-				"isfunc": true,
-				"name": "ctx.capture",
-				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
-				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
-				"retval": "",
-				"shortDesc": "Captures the canvas to a png image"
-			},
-			"ctx.clearRect": {
-				"desc": "<deprecated ctx is automatically cleared after render()>",
-				"isfunc": true,
-				"name": "ctx.clearRect",
-				"pNames": ["x", "y", "width", "height"],
-				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-				"retval": "",
-				"shortDesc": "deprecated"
-			},
-			"ctx._drawCommands": {
-				"desc": "",
-				"isfunc": false,
-				"name": "ctx._drawCommands",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"ctx.drawImage": {
-				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
-				"isfunc": true,
-				"name": "ctx.drawImage",
-				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
-				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-				"retval": "",
-				"shortDesc": "Draws part of a sprite to the context"
-			},
-			"ctx._globalAlpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "ctx._globalAlpha",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "num_frc",
-				"shortDesc": ""
-			},
-			"ctx.loadTexture": {
-				"desc": "",
-				"isfunc": true,
-				"name": "ctx.loadTexture",
-				"pNames": ["image", "successCallback", "errorCallback"],
-				"pTypes": ["str_pth", {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["metrics"],
-	                "pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
-				"shortDesc": ""
-			},
-			"ctx.render": {
-				"desc": "render the draw commands to the context",
-				"isfunc": true,
-				"name": "ctx.render",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "",
-				"shortDesc": "render draw commands"
-			},
-			"ctx.resetTransform": {
-				"desc": "Reset all transformations to default",
-				"isfunc": true,
-				"name": "ctx.resetTransform",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "",
-				"shortDesc": "Reset all transformations"
-			},
-			"ctx.restore": {
-				"desc": "Restore a previously saved context state",
-				"isfunc": true,
-				"name": "ctx.restore",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "",
-				"shortDesc": "Restore saved context"
-			},
-			"ctx.rotate": {
-				"desc": "Rotates the current applied transformation",
-				"isfunc": true,
-				"name": "ctx.rotate",
-				"pNames": ["angle"],
-				"pTypes": ["num_rad"],
-				"retval": "",
-				"shortDesc": "Rotates the transformation matrix"
-			},
-			"ctx.save": {
-				"desc": "Saves the current context state",
-				"isfunc": true,
-				"name": "ctx.save",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "",
-				"shortDesc": "Saves current context"
-			},
-			"ctx.scale": {
-				"desc": "Scales the current applied transformation matrix",
-				"isfunc": true,
-				"name": "ctx.scale",
-				"pNames": ["a", "d"],
-				"pTypes": ["num_frc", "num_frc"],
-				"retval": "",
-				"shortDesc": "Scale the transformation matrix"
-			},
-			"ctx.setTransform": {
-				"desc": "Set the current transformation matrix",
-				"isfunc": true,
-				"name": "ctx.setTransform",
-				"pNames": ["a", "b", "c", "d", "tx", "ty"],
-				"pTypes": ["num", "num", "num", "num", "num", "num"],
-				"retval": "",
-				"shortDesc": "Set current matrix"
-			},
-			"ctx.transform": {
-				"desc": "Apply an other transformation matrix to the current one",
-				"isfunc": true,
-				"name": "ctx.transform",
-				"pNames": ["a", "b", "c", "d", "tx", "ty"],
-				"pTypes": ["num", "num", "num", "num", "num", "num"],
-				"retval": "",
-				"shortDesc": "Transform the current matrix"
-			},
-			"ctx.translate": {
-				"desc": "'Moves' the current applied transformation matrix",
-				"isfunc": true,
-				"name": "ctx.translate",
-				"pNames": ["tx", "ty"],
-				"pTypes": ["num_pxl", "num_pxl"],
-				"retval": "",
-				"shortDesc": "'Move' the transformation matrix"
-			},
-			"ctx.unloadTexture": {
-				"desc": "",
-				"isfunc": true,
-				"name": "ctx.unloadTexture",
-				"pNames": ["image"],
-				"pTypes": ["str_pth"],
-				"retval": "",
 				"shortDesc": ""
 			},
 			"DrawImage": {
@@ -2159,6 +2002,163 @@
 				"pTypes": [],
 				"retval": "obj-ctx",
 				"shortDesc": "returns the glv context"
+			},
+			"GetContext.ctx.capture": {
+				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
+				"isfunc": true,
+				"name": "ctx.capture",
+				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
+				"retval": "",
+				"shortDesc": "Captures the canvas to a png image"
+			},
+			"GetContext.ctx.clearRect": {
+				"desc": "<deprecated ctx is automatically cleared after render()>",
+				"isfunc": true,
+				"name": "ctx.clearRect",
+				"pNames": ["x", "y", "width", "height"],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "deprecated"
+			},
+			"GetContext.ctx._drawCommands": {
+				"desc": "",
+				"isfunc": false,
+				"name": "ctx._drawCommands",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"GetContext.ctx.drawImage": {
+				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
+				"isfunc": true,
+				"name": "ctx.drawImage",
+				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
+				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "Draws part of a sprite to the context"
+			},
+			"GetContext.ctx._globalAlpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "ctx._globalAlpha",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_frc",
+				"shortDesc": ""
+			},
+			"GetContext.ctx.loadTexture": {
+				"desc": "",
+				"isfunc": true,
+				"name": "ctx.loadTexture",
+				"pNames": ["image", "successCallback", "errorCallback"],
+				"pTypes": ["str_pth", {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["metrics"],
+	                "pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"],
+	                "shortDesc": "callback"
+                }, {
+	                "desc": "callback function",
+	                "isfunc": true,
+	                "name": "callback",
+	                "pNames": ["msg"],
+	                "pTypes": ["str"],
+	                "shortDesc": "callback"
+                }],
+				"shortDesc": ""
+			},
+			"GetContext.ctx.render": {
+				"desc": "render the draw commands to the context",
+				"isfunc": true,
+				"name": "ctx.render",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "render draw commands"
+			},
+			"GetContext.ctx.resetTransform": {
+				"desc": "Reset all transformations to default",
+				"isfunc": true,
+				"name": "ctx.resetTransform",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Reset all transformations"
+			},
+			"GetContext.ctx.restore": {
+				"desc": "Restore a previously saved context state",
+				"isfunc": true,
+				"name": "ctx.restore",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Restore saved context"
+			},
+			"GetContext.ctx.rotate": {
+				"desc": "Rotates the current applied transformation",
+				"isfunc": true,
+				"name": "ctx.rotate",
+				"pNames": ["angle"],
+				"pTypes": ["num_rad"],
+				"retval": "",
+				"shortDesc": "Rotates the transformation matrix"
+			},
+			"GetContext.ctx.save": {
+				"desc": "Saves the current context state",
+				"isfunc": true,
+				"name": "ctx.save",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "",
+				"shortDesc": "Saves current context"
+			},
+			"GetContext.ctx.scale": {
+				"desc": "Scales the current applied transformation matrix",
+				"isfunc": true,
+				"name": "ctx.scale",
+				"pNames": ["a", "d"],
+				"pTypes": ["num_frc", "num_frc"],
+				"retval": "",
+				"shortDesc": "Scale the transformation matrix"
+			},
+			"GetContext.ctx.setTransform": {
+				"desc": "Set the current transformation matrix",
+				"isfunc": true,
+				"name": "ctx.setTransform",
+				"pNames": ["a", "b", "c", "d", "tx", "ty"],
+				"pTypes": ["num", "num", "num", "num", "num", "num"],
+				"retval": "",
+				"shortDesc": "Set current matrix"
+			},
+			"GetContext.ctx.transform": {
+				"desc": "Apply an other transformation matrix to the current one",
+				"isfunc": true,
+				"name": "ctx.transform",
+				"pNames": ["a", "b", "c", "d", "tx", "ty"],
+				"pTypes": ["num", "num", "num", "num", "num", "num"],
+				"retval": "",
+				"shortDesc": "Transform the current matrix"
+			},
+			"GetContext.ctx.translate": {
+				"desc": "'Moves' the current applied transformation matrix",
+				"isfunc": true,
+				"name": "ctx.translate",
+				"pNames": ["tx", "ty"],
+				"pTypes": ["num_pxl", "num_pxl"],
+				"retval": "",
+				"shortDesc": "'Move' the transformation matrix"
+			},
+			"GetContext.ctx.unloadTexture": {
+				"desc": "",
+				"isfunc": true,
+				"name": "ctx.unloadTexture",
+				"pNames": ["image"],
+				"pTypes": ["str_pth"],
+				"retval": "",
+				"shortDesc": ""
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -5459,7 +5459,7 @@
 	},
 	"CreateSysProc": {
 		"abbrev": "sys",
-		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <font class=\"xfeatHint\">root</font> or “busybox” if <font class=\"deprHint\">installed</font>) which can be reused throughout the program.",
+		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <font class=\"red\">root</font> or “busybox” if <font class=\"blue\">installed</font>) which can be reused throughout the program.",
 		"isfunc": true,
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
@@ -6343,7 +6343,7 @@
 	},
 	"CreateUSBSerial": {
 		"abbrev": "usb",
-		"desc": "The USBSerial component can be used to communicate with other USB devices connected to yours.\n\nThe default constructor values are:\n\tbaudrate: 9600\n\tTo find out more about RTD and DTR or USB serial at all visit [Wikipedia: RS-232](https://en.wikipedia.org/wiki/RS-232#Data\\_and\\_control\\_signals)\n\n<font class=\"xfeatHint\">Note: this application only works on devices that support OTG and allow access to external serial devices.</font>\n**Known to work:** Nexus7, GalaxyS3/S4, ExperiaZUltra, TescoHudl\n**Dont work:** Nexus4, GalaxyS1, AsusMemo",
+		"desc": "The USBSerial component can be used to communicate with other USB devices connected to yours.\n\nThe default constructor values are:\n\tbaudrate: 9600\n\tTo find out more about RTD and DTR or USB serial at all visit [Wikipedia: RS-232](https://en.wikipedia.org/wiki/RS-232#Data\\_and\\_control\\_signals)\n\n<font class=\"red\">Note: this application only works on devices that support OTG and allow access to external serial devices.</font>\n**Known to work:** Nexus7, GalaxyS3/S4, ExperiaZUltra, TescoHudl\n**Dont work:** Nexus4, GalaxyS1, AsusMemo",
 		"isfunc": true,
 		"name": "CreateUSBSerial",
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],

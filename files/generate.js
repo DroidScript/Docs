@@ -1002,6 +1002,11 @@ function OnStart() {
 	if(process.argv.length > 2)
 		process.argv.slice(2).forEach((n) => generateDoc(n));
 	else generateDocs();
+	
+	var vn = 0, v = 1000 * (Date.now() / 2592e6 | 0);
+	if(app.FileExists("version.txt"))
+	    vn = Number(app.ReadFile("version.txt")) % 1000 + 1;
+    app.WriteFile("version.txt", v + vn);
 }
 
 var fs = require("fs");
