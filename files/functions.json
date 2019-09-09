@@ -7855,7 +7855,7 @@
 		"shortDesc": "GetLanguage"
 	},
 	"GetLanguageCode": {
-		"desc": "GetLanguageCode returns the user language code (ie. “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
+		"desc": "GetLanguageCode returns the user language code (ie&period; “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
 		"isfunc": true,
 		"name": "GetLanguageCode",
 		"pNames": [],

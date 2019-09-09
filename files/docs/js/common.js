@@ -100,15 +100,19 @@ $(document).live( 'pageshow',function(event, ui)
 		var popup = location.href.match(/#([a-z]+)/i);
 		if(popup) {
 			popup = $("a.ui-link:contains(" + popup[1] + ")");
-		    setTimeout(function(){
+		    setTimeout(function() {
 		        $("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
 		            .delay(350).queue(function(){ popup.click(); });
-            }, 300);
-			    
+            }, 300);  
 		}
+	
+		if(sessionStorage.scrollPosition) {
+            $("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+        }
 	}
 	//catch( e ) {}
 });
+
 
 //Dynamically create plugins page.
 function OnPageShow()
@@ -171,6 +175,12 @@ function OnPageShow()
 	catch( e ) {}
 }
 
+$(window).unload(function() {
+    var scrollPosition = $(document).scrollTop();
+    sessionStorage.scrollPosition = scrollPosition;
+    console.log("set: " + sessionStorage.scrollPosition)
+});
+   
 // set the current theme. (default, dark)
 function setTheme( theme )
 {
