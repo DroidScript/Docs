@@ -53,14 +53,13 @@ $(document).on("mobileinit", function()
 
 	// check theme in other browsers after history fwd/bck
 	// workaround for pages being loaded from cache
-	if(!isDS && !useWebIDE) setInterval(function()
+	if(false && !isDS && !useWebIDE) setInterval(function()
 	{
 		if(curTheme != getTheme()) setTheme(getTheme());
 	}, 200);
 });
 
-$(document).ready(function ()
-{
+$(document).ready(function() {
 });
 
 $(document).live( 'pageshow',function(event, ui)
@@ -95,19 +94,6 @@ $(document).live( 'pageshow',function(event, ui)
 		//Show plugins list if 'plugins' page is loading.
 		if( curPage == "plugins" ) {
 			OnPageShow();
-		}
-
-		var popup = location.href.match(/#([a-z]+)/i);
-		if(popup) {
-			popup = $("a.ui-link:contains(" + popup[1] + ")");
-			setTimeout(function() {
-				$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
-					.delay(350).queue(function(){ popup.click(); });
-			}, 300);
-		}
-
-		if(sessionStorage.scrollPosition) {
-			$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
 		}
 	}
 	//catch( e ) {}
@@ -175,6 +161,20 @@ function OnPageShow()
 	catch( e ) {}
 }
 
+$(window).load(function() {
+	var popup = location.href.match(/#([a-z]+)/i);
+	if(popup)
+	{
+		popup = $("a.ui-link:contains(" + popup[1] + ")");
+		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
+			.delay(350).queue(function(){ popup.click(); });
+	}
+	else if(sessionStorage.scrollPosition)
+	{
+		$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+	}
+});
+
 $(window).unload(function() {
 	var scrollPosition = $(document).scrollTop();
 	sessionStorage.scrollPosition = scrollPosition;
@@ -204,6 +204,12 @@ function getTheme() {
 	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
 }
 
+function OpenUrl( url, type, choose ) {
+	if(isAndroid) app.OpenUrl(url, type, choose );
+	else window.open(url);
+	return false;
+}
+			
 // app.ShowPopup equivalent for browsers
 function ShowPopup(msg) {
 	var apop = $("#appPopup");

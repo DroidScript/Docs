@@ -48,7 +48,7 @@ function generateDocs() {
 	}
 
 	app.SetDebug("all");
-	if( tchd ) saveFunctions();
+	//if( tchd ) saveFunctions();
 
 	//app.WriteFile( path + `lastfuncs${getl()}.json`, tos(functions) );
 	app.WriteFile( path + "info.json", tos(info) );
@@ -68,7 +68,7 @@ function generateIntros() {
 	for(var name of app.ListFolder("intros").sort(sortAsc)) {
 		var s = app.ReadFile(path + `intros${getl()}/` + name);
 
-		name = name.replace(/.txt$/, "");
+		name = name.replace(/.md$/, "");
 		curDoc = `docs${getl()}/intro/${name}.htm`;
 		nav += newNaviItem(`intro/${name}.htm`, name );
 
@@ -209,10 +209,6 @@ function getDocData( f, useAppPop ) {
 	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
 		f.shortDesc.slice(1, f.shortDesc.endsWith('.') ? -1 : undefined );
 
-	if( !f.desc ) f.desc = f.shortDesc;
-	f.desc = f.desc.trim();
-	f.desc = f.desc.charAt(0).toUpperCase() + f.desc.slice(1);
-
 	// abbrev for controls
 	if( isControl(f.name) && !f.abbrev )
 		f.abbrev = getAbbrev( f.name );
@@ -301,13 +297,22 @@ function getDocData( f, useAppPop ) {
 function getDesc(name)
 {
 	var desc = functions[name].desc.trim();
+	if(desc.startsWith("#"))
+	{
+	    if(app.FileExists(path + `functions/${desc.slice(1)}`))
+	        desc = app.ReadFile(path + `functions/${desc.slice(1)}`).trim();
+        else
+            Throw(new Error(`description file ${desc.slice(1)} linked but doesn't exist.`));
+    }
+	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
+	
 	var samples = getSamples(name);
 	if(!has(desc, '.')) desc += '.';
 
 	return "<p>" + replaceTypes(addMarkdown(replW( desc )))
-		// exclude <h> tags from <p>
+		// exclude <h> and <table> tags from <p>
 		.replace(
-			/(<\/?p>)?(\s|<br>)*(<(h\d?)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
+			/(<\/?p>)?(\s|<br>)*(<(h\d?|table)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
 			"</p>\n\t\t\t$3\n\t\t\t<p>")
 		// replace %c with constructor if existent, otherwise insert after first dot
 		.replace(
@@ -319,13 +324,14 @@ function getDesc(name)
 				`</p>\n${funcBase //(has(code, "\n") ? funcBase : "\t\t\t" + funcBase.replace(/\n|\t/g, ""))
 					.replace("%s", Prism.languages[lang] ?
 						Prism.highlight(
-							code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"),
+							code.replace(/<br>/g, "\n").trim().replace(/&#160;/g, "§s§"),
 							Prism.languages[lang], lang
 						).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>")
 						: code
 					)}\t\t\t<p>`)
 		// format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
+		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/(\s|<br>)*<sample (.*?)>/g, (m, _, n) =>
 			(s = samples[n] || Throw(Error(`sample ${n} not found for ${name}`)),
@@ -649,25 +655,33 @@ function replaceTypes(s, useAppPop)
 function addMarkdown(s) {
 	return s
 		// links
-		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url)
-		{
+		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function(match, white, name, url)
+	    {
 			// exists in docs folder? direct link : open in external app
 			return white + (!url.startsWith("http") &&
-				app.FileExists(path + "docs/app/" + url.slice(url.lastIndexOf("/") + 1)) ?
+				(app.FileExists(path + "docs/" + url.replace("../", "")) ||
+				app.FileExists(path + "docs/app/" + url.replace("../", ""))) ?
 				`<a href="${url}" data-ajax="false">` :
-				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
+				`<a href="${url}" onclick="return OpenUrl(this.href);">`)
 				+ `${name||url}</a>`;
-			}
-		)
+		})
+		// link + onclick
+		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function(match, white, name, script)
+		{
+		    script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
+		    return white + `<a href="#" onclick="${script}">${name}</a>`;
+	    })
+		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
+		    white + `<h${h.length}>${title}</h${h.length}>`)
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
 		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")       // *italic*
 		.replace(/([^\\]|^)_([^]*?[^\\])_/g, "$1<i>$2</i>")         // _italic_
-		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")   // `monospace`
+		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")     // `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
 		.replace(/([^\\]|^)@([a-z]+?)\b/gi, '$1<a href="$2.htm" data-ajax="false">$2</a>') // @DocReference
-		.replace(/\\([_*~@])/g, "$1");                             // consume \ escaped markdown
+		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
 }
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -776,7 +790,7 @@ var		// subfunctions
 		<div data-role="header" data-position="fixed">
 			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div><!-- /header -->
 
 		<div data-role="content">
@@ -816,7 +830,7 @@ var		// subfunctions
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>%t</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -862,7 +876,7 @@ var		// subfunctions
 	<div data-role="header">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>%t</h1>
-		<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div><!-- /header -->
 
 	<div data-role="content">

@@ -16,7 +16,7 @@
 		"shortDesc": "Adds a layout to the app"
 	},
 	"Alert": {
-		"desc": "Alert shows a simple text dialog with a colored title and a 'Ok' button to exit. If title was not given the dialog looks like a normal alert box.\nWithout the NoDim option the background behind the dialog will be darkened.\n\nSee Also: \n\nSee Also: @Error, @ShowTextDialog, CreateYesNoDialog.",
+		"desc": "#Alert.md",
 		"isfunc": true,
 		"name": "Alert",
 		"pNames": ["message", "title", "options", "hue"],
@@ -24,7 +24,7 @@
 		"shortDesc": "Shows a popup message with an 'OK' button to exit"
 	},
 	"Animate": {
-		"desc": "Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.\nwhen using cfg.NoDom; to cause a high performance you cannot use SetInterval but Animate.\n\ncomparison:\n\nnormal:\n\tsetInterval&colon; about 242 calls per second\n\tapp.animate&colon; about 217 calls per second\n\nwith “NoDom” option:\n\tsetInterval&colon; error\n\tapp.Animate&colon; up to 1000 calls per second",
+		"desc": "#Animate.md",
 		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["callback", "fps"],
@@ -143,7 +143,7 @@
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseWifi": {
-		"desc": "ChooseWifi lets the user select a WiFi network in his range.\n\n**title1** and **title2** are the titles for the scanning and the selection process. They default to “Scanning” and “Select WiFi”.\n\nThe **callback** function returns the name and the ssid of the selected network.\n\nYou can set the _force_ option so that the dialog cannot be closed until the user has selected an item.\n\nFinally you can add extra items as pipe “|” separated string - ie. to add a default “[None]” entry to select no wifi network.\n\nSee Also: @WifiConnect",
+		"desc": "#ChooseWifi.md",
 		"isfunc": true,
 		"name": "ChooseWifi",
 		"pNames": ["title1", "title2", "callback", "options", "extra"],
@@ -207,7 +207,7 @@
 	},
 	"CreateAudioRecorder": {
 		"abbrev": "rec",
-		"desc": "The AudioRecorder object can be used to listen for sound and record it to a file.\nAfter creation you have to define the recording file with the **SetFile** Method: <js>rec.SetFile( \"/sdcard/demofile.wav\" );</js>\nAfter that you can **Start** the recording: <js>rec.Start();</js>\nThe recorded audio will then be written to the specified file.\n\nFinally you can also **Stop** the recording: <js>rec.Stop();</js>",
+		"desc": "#CreateAudioRecorder.md",
 		"isfunc": true,
 		"name": "CreateAudioRecorder",
 		"pNames": [],
@@ -482,7 +482,7 @@
 	},
 	"CreateButton": {
 		"abbrev": "btn",
-		"desc": "Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method: <js>btn.SetOnTouch( btn\\_OnTouch );\n\nfunction btn\\_OnTouch() {\n\t// your OnTouch code goes here\n}</js>\n <h3>Styling</h3>\nYou can allow the button to auto-size by leaving out the dimensions <sample Default Size> or you can specify a **width** and **height** as decimal fractions.<sample Fixed Size>\nSetting the width and height to _-1_ whilst using the “FillX” option will allow it to fill the layout width.<sample Fill Layout Width>\n\nYou can customize the visual look in many ways by either using one of the existing style **options** “Alum” or “Gray”, or you can use “Custom” and define a custom style with the **SetStyle** method.\n<sample Change Style>",
+		"desc": "#CreateButton.md",
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
@@ -554,7 +554,7 @@
 	},
 	"CreateCameraView": {
 		"abbrev": "cam",
-		"desc": "**CameraView**s are used to access the device camera.\nYou can use the “Front” option to show the front camera instead of the default back camera.\n\nThe camera needs some time to initialize first.\nYou can define a callback function via **SetOnReady** which is called if the camera can be used.\nThere you have to to call the **StartPreview** function of the CameraView control to start the preview.\n<sample Show Camera Preview>\nThe basic functionality of the camera control is taking pictures or recording video.\n<sample Take pictures>\n<sample Record Video>\nBut it provides advanced image processing functions as well. These are color reporting, motion detection and face recognision.\n<sample Motion Detector>\nMore samples can be found in the samples section of DroidScript.",
+		"desc": "#CreateCameraView.md",
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
@@ -922,7 +922,7 @@
 	},
 	"CreateCheckBox": {
 		"abbrev": "chk",
-		"desc": "CheckBoxes can be used to let the user en- or disable specific options in your app. They consist of a ticker box on the left and a text label on the right side.\n\nIt is disabled by default, but you can enable it with the **SetChecked** method to change its initial state.\n\nUse the SetOnTouch method of the CheckBox object to define a function you want to be called when the CheckBox is touched. There you can read  the 'isChecked' parameter to get the current state of the CheckBox:",
+		"desc": "#CreateCheckBox.md",
 		"isfunc": true,
 		"name": "CreateCheckBox",
 		"pNames": ["text", "width", "height", "options"],
@@ -1363,7 +1363,7 @@
 	},
 	"CreateDialog": {
 		"abbrev": "dlg",
-		"desc": "Custom dialogs appear on top of the app and thus can be used to show temporary information or collect data from the user. They are also useful for displaying configuration or settings controls.\n%cDialogs are resizeable and you can also change the look of them so that they fit in with the theme of your application.\n\nA custom dialog needs a layout to add the controls to. Use the @CreateLayout method of the **app** object to add a layout.<js>layDlg = app.CreateLayout( type, options );\ndlg.AddLayout( layDlg );</js>If you have added all your controls to the dialog layout you can use the **Show** method to show the dialog.\n\nNormally the user can cancel the dialog by pressing the _BACK_ button of the device, but you can disable that option by using the “NoCancel” **option**. In order to close the dialog now, you have to call **Dismiss**.",
+		"desc": "#CreateDialog.md",
 		"isfunc": true,
 		"name": "CreateDialog",
 		"pNames": ["title", "options"],
@@ -1481,7 +1481,7 @@
 	},
 	"CreateDownloader": {
 		"abbrev": "dwn",
-		"desc": "The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage. You can download a file with the **Download** method which accepts a _source url_ and a _target directory_:<js>dwn.Download( srcFileUrl, targetDir );</js>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the “NoDialog” **option**.\n\nIf you want to know when the download process has finished (or failed) you can define a callback functioni with the **SetOnComplete** method:<js>dload.SetOnComplete( callback );</js>",
+		"desc": "#CreateDownloader.md",
 		"isfunc": true,
 		"name": "CreateDownloader",
 		"pNames": ["options"],
@@ -1816,7 +1816,7 @@
 	},
 	"CreateGame": {
 		"abbrev": "gam",
-		"desc": "CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.\nYou can still access the GameView and the layout where it was added to via gam.game:dso-\"CreateGameView\" and gam.lay:dso-CreateLayout",
+		"desc": "#CreateGame.md",
 		"isfunc": true,
 		"name": "CreateGame",
 		"pNames": ["file", "orient"],
@@ -1843,7 +1843,7 @@
 	},
 	"CreateGameView": {
 		"abbrev": "gmv",
-		"desc": "The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics. The GameView runs a standalone script which can communicate with the main app via gfx.Execute or gmv.Execute vice versa.\n\nYou can find references of GameView scripting here:\n\t- official DS GameView tutorials: [](https://dsgameview.wixsite.com/gameview)\n\t- inofficial blog from csnakes xXXx: [](https://dsgameengine.blogspot.com)\n\t- An inofficial function list and documentation: [](https://docs.google.com/document/d/1Bs\\_LXQQv-JdZQMaOdsM6rkHPZjaFACVvodATbL5M0H4/view)\n\n\n<h3>GameView in Webbrowsers</h3>\nIf you prefer to work on a PC you can even run and debug your GameView code in a regular web-browser. Check out these demos to see how it works: [](http://androidscript.org/beta/GameViewWeb)",
+		"desc": "#CreateGameView.md",
 		"isfunc": true,
 		"name": "CreateGameView",
 		"pNames": ["width", "height", "options"],
@@ -1912,13 +1912,13 @@
 	},
 	"CreateGLView": {
 		"abbrev": "glv",
-		"desc": "GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.\n%c\n\nUse the **CreateImage** method of the GLView object to create an image that can be used with the GLView.\nYou can specity a **callback** function too which will be called once the image is ready to use.\n\nTo draw the sprite on the canvas use the **DrawImage** method.\n<font class=\"red\">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font>\nYou can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.\n\nOnce all drawing has been done, the **Render** method must be called to render all the GLView graphics to the screen.\n<sample DrawImage>\n\n<h3>Render Loop</h3>To create a rendering loop for a game, use the setInterval JavaScript function to call your drawing function at regular intervals.\nThe example below draws a continuously rotating image by calling the DrawFrame function 30 times each second, updating the angle each time:\n<sample Render Loop>\n\n<h3>Sprite Touch Detection</h3>\nIf you need to want to simulate OnTouch for a GLView Image, you will need to keep track of the position, width and height that it has been drawn with. Then use the GLView OnTouch event to determine if the touch coordinates are within the GLView Image yourself. To prevent touch detect on all sprites on the touch position define a drawing order according to a list.\n<sample Sprite Touch>\n\n<h3>Sprite Animations</h3>\nGLView supports the use of Sprite Sheets. The DrawSprite method can be used to draw part of an image to the GLView.\nThe following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:\n<sample Sprite Sheet Animation>",
+		"desc": "#CreateGLView.md",
 		"isfunc": true,
 		"name": "CreateGLView",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_srw", "num_srh", "str-fast2d"],
 		"retval": "dso-GLView",
-		"shortDesc": "returns a GLView object.",
+		"shortDesc": "Returns a GLView object",
 		"subf": {
 			"aspect": {
 				"desc": "width/height relation",
@@ -2054,20 +2054,20 @@
 				"name": "ctx.loadTexture",
 				"pNames": ["image", "successCallback", "errorCallback"],
 				"pTypes": ["str_pth", {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["metrics"],
-	                "pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["metrics"],
+					"pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"],
+					"shortDesc": "callback"
+				}, {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["msg"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": ""
 			},
 			"GetContext.ctx.render": {
@@ -2231,7 +2231,7 @@
 	},
 	"CreateImage": {
 		"abbrev": "img",
-		"desc": "Image controls can be used to display images such like png, jpg or gif.\nJust pass the file path and your're done.\n%c\nWithout the **width** and **height** dimensions the image will be shown without any scaling.\n<sample Original Size>\nIf you specify one of them and leave the other _null_, _-1_ or blank, it will be scaled so that the aspect ratio is kept.\n<sample Maintain Aspect>\nAnd if you specify both parameters it will be scaled to your wishes.<sample Stretched>\n\nIf you want images to depress like buttons if touched you can use the “Button” **option**.<sample Button>\n\n<h3>Drawing on Images</h3>\nImages are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass _null_ as file parameter.\n\nThis way you can also specify a fixed pixel size to the image you can use the “fix” **option** and pass values for the **pxw** and **pxh** parameters.<js>img = app.CreateImage( null, 0.8, 0.5, \"fix\", 20, 20 );\nimg.DrawLine( 0, 0, 1, 1 );</js>\nIf you dislike the anti-alias effect you can apply the “alias” **option** on a higher resolution image and draw a low-resolution image on it:\n<js>img2 = app.CreateImage( null, .8, .5, \"alias\" );\nimg2.DrawImage( img, 0, 0, 1, 1, 0 );</js>\nThere are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](http://www.it.hiof.no/\\~borres/j3d/math/twod/p-twod.html#ma2d35). Check out the **Draw\\*** methods in the method list below to get more details about all drawing functions.\n<sample Draw Shapes>\n<h3>Drawing on Images _fast_</h3>\nIf you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the **SetAutoUpdate** method. To force the rendering now, you have to call **Update**.\n\nAnother way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.\nFor animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.\n<sample Advanced Clock Animating>",
+		"desc": "#CreateImage.md",
 		"isfunc": true,
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
@@ -2607,7 +2607,7 @@
 	},
 	"CreateLayout": {
 		"abbrev": "lay",
-		"desc": "Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 3 types of layout: _**“Linear”**_, _**“Absolute”**_ and _**“Frame”**_.\n\nLayouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.\n\nYou can add child objects to the Layout using the AddChild function:\n<js>lay.AddChild( object );</js>\nThe alignment of chlld objects within a layout can be set by adding the **options** “Left”, “Right”, “Bottom” and “VCenter”, by default objects will be aligned “Top,Center”.\n<h3>Linear Layouts</h3>\nLinear layouts are probably the most useful type and are used to organize controls in either the default “Vertical” or “Horizontal” direction on screen.\n<sample Vertical>\n<sample Horizontal>\nBy default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout sizes within it's parent: “FillX”, “FillY” and “FillXY”.\n<sample Combined>\n<h3>Frame Layouts</h3>\nFrame layouts are used to display objects in front or behind each other. Every time the **AddChild** function is called on a Frame layout, the child object is placed in a new layer in front of the previously added object at the top left of the frame.\n\nFrame Layouts are useful if you wish to do **animated Flips** or **Slides** to reveal layers of objects or use **transparency**.\n<sample Image Swap>\n<h3>Absolute Layouts</h3>\nAbsolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the **SetPosition** and **SetSize** functions of each of the child objects. However, you are encouraged use linear layouts for most of your programs, unless it is _absolute_ly necessary.",
+		"desc": "#CreateLayout.md",
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
@@ -2762,7 +2762,7 @@
 	},
 	"CreateList": {
 		"abbrev": "lst",
-		"desc": "If you want to display many dataset of the same structure you might consider using the **List** object.\n The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “&colon;” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.\nYou can have one icon and some body text using the following formats&colon;\n\n“title”\n“title&colon;icon”\n“title&colon;body&colon;icon”\n\nAlternatively you can use the **AddItem** method which accepts _title_, _body_ and _icon_ as parameters to generically build up your list.\n\nYou can specify your own icon file for example “Img/MyIcon.png”, or one of the special built-in icons using the following key words: “audio”, “photo”, “video”, “folder”, “audiofolder”, “photofolder”, “videofolder” and “playlist”.\n<sample Title + Icon>\n<sample Title + Body>\nYou can use the **SetOnTouch** and **SetOnLongTouch** methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.\n<sample Simple>\nYou can change the look of a List using the **SetBackColor** and **SetTextColor** functions on the list object. You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions.\n<sample Gray on White>\nYou can also create lists items that look like buttons by using one of the following options: “AlumButton”, “GreenButton”, “OrangeButton”.\n<sample Orange Buttons>\nOr create lists with Gradient backgrounds like this:<sample Gradient Background>",
+		"desc": "#CreateList.md",
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
@@ -3069,7 +3069,7 @@
 	},
 	"CreateListDialog": {
 		"abbrev": "ldg",
-		"desc": "If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.\nUse the **SetOnTouch** method of the ListDialog object to set the name of a function you want to be called every times a list item is selected. The selected item is passed that function as parameter.\n<sample Basic>\nou can use the “Multi” **option** to create a ListDialog with check boxes against each item. This allows multiple list items to be selected. An extra parameter isChecked is passed to the OnTouch callback function when a check box is checked or unchecked.<Example Multi>",
+		"desc": "#CreateListDialog.md",
 		"isfunc": true,
 		"name": "CreateListDialog",
 		"pNames": ["title", "list", "options"],
@@ -3122,7 +3122,7 @@
 	},
 	"CreateLocator": {
 		"abbrev": "loc",
-		"desc": "The Locator component can be used to find your whereabouts on the planet using either your device's GPS or information from your network. The provider specifies where the locator should retreive its information from . “Network” means get the location from the cell network and wifi, “GPS” tells the locator to use the device's GPS\n\nTo Start the locator use the **Start** method. You can also stop it with **Stop**.\nTo get regulat updates about your current positino use the **SetOnChange** function.",
+		"desc": "#CreateLocator.md",
 		"isfunc": true,
 		"name": "CreateLocator",
 		"pNames": ["type", "options"],
@@ -3200,7 +3200,7 @@
 	},
 	"CreateMediaPlayer": {
 		"abbrev": "ply",
-		"desc": "The MediaPlayer object can be used to play sound files from the phone or tablet.\nUse the SetFile method of the MediaPlayer object to set the sound file to play. Supported sound file types include .ogg and .mp3.\n\nWhen the sound file is ready for playback, the **OnReady** callback function will be called. Then you can start playing using the **Start** method.\nIf the sundtrack has finished playing, the **OnComplete** callback fill be called. All together you code could look like that:\n<sample Playing Audio>\nThe SeekTo method can be used to adjust the playback position by passing in the time in seconds. Passing in 0 will set the playback position to the beginning of the sound file.\n<js>player.SeekTo( 0 );</js>",
+		"desc": "#CreateMediaPlayer.md",
 		"isfunc": true,
 		"name": "CreateMediaPlayer",
 		"pNames": [],
@@ -3472,7 +3472,7 @@
 	},
 	"CreateNetClient": {
 		"abbrev": "net",
-		"desc": "NetClients can be used to communicate with servers on the web. You can choose between two different protocols:\n\tThe connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.\n\tThe connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.\n\nNote: A few routers block fast UDP messages by default",
+		"desc": "#CreateNetClient.md",
 		"isfunc": true,
 		"name": "CreateNetClient",
 		"pNames": ["type"],
@@ -3680,7 +3680,7 @@
 	},
 	"CreateNotification": {
 		"abbrev": "ntf",
-		"desc": "The Notification object can be used to put messages in the notification drawer. The “AutoCancel” **option** will automatically dismiss the notificatin if the user touches it. “FullScreen” tries to create a larger notification on the screen. And “OnGoing” makes the Notification closeable by your app only.\n\nUse the SetMessage method to tell the object what to display\n<js>notify.SetMessage( ticker, title, text );</js>\nThe Notify method tells it to send the notification:\n<js>notify.Notify( id );</js>\nWhen the user touches your notification, your app will come to the front, even if it was not running.\n\nIf you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.",
+		"desc": "#CreateNotification.md",
 		"isfunc": true,
 		"name": "CreateNotification",
 		"pNames": ["options"],
@@ -4110,7 +4110,7 @@
 		"name": "CreateOverlay",
 		"pNames": ["options"],
 		"pTypes": ["str_com"],
-		"shortDesc": "Returns a new Overlay object.",
+		"shortDesc": "Returns a new Overlay object",
 		"subf": {
 			"AddLayout": {
 				"desc": "Adds a layout to the overlay.",
@@ -4149,7 +4149,7 @@
 	},
 	"CreatePhoneState": {
 		"abbrev": "pst",
-		"desc": "The PhoneState component is able to detect phone state changes.\n\nThe callback data depends on the type:\n\n<smp>“CellLocation” : **object:** { cellId:num\\_int, areaCode:num\\_int }</smp>\n<smp>“DataConnection” : **object:** { state:str-\"Connected|Disconnected\", networkType:str-Unknown }</smp>\n<smp>“DataActivity” : **unknown**</smp>\n<smp>“CallState” : **object:** { state:str-Idle, number:str\\_num }</smp>\n<smp>“ServiceState” : **string:** “OutOfService”</smp>\n<smp>“SignalStrength” : **number:** _float_</smp>\n<smp>“CallForwarding” : **boolean**</smp>\n<smp>“MessageWaiting” : **boolean**</smp>",
+		"desc": "#CreatePhoneState.md",
 		"isfunc": true,
 		"name": "CreatePhoneState",
 		"pNames": ["types"],
@@ -4201,7 +4201,7 @@
 	},
 	"CreatePlayStore": {
 		"abbrev": "pls",
-		"desc": "Creates a new PlayStore instance for retreiving informations or purchasing items.\n\n<premium>\n\nNotes: If your email address is listed in the 'licence testing' section of the developer console settings page, then using this sample will result in a test subscription with an order id of '1234' which recurs daily (even if configured for monthly) and you will not be charged.\nSubscriptions can be cancelled in the Google Play App found on your device (they will stay active for the remains of the period that has been purchased).",
+		"desc": "#CreatePlayStore.md",
 		"isfunc": true,
 		"name": "CreatePlayStore",
 		"pNames": [],
@@ -4257,7 +4257,7 @@
 				"name": "Purchase",
 				"pNames": ["prodID", "token", "callback", "options"],
 				"pTypes": ["str", "str", {
-						"desc": "callback function",
+					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
@@ -4270,7 +4270,7 @@
 	},
 	"CreateScroller": {
 		"abbrev": "scr",
-		"desc": "If you have much data to display which does not fit in the area you have availabe or want to use, you probably want using a **Scroller**. The options for the Scroller are the same as the LinearLayout fill options, which set how a Scroller sizes within it's parent:- “FillX”, “FillY” and “FillXY”. By default Scrollers will auto-size to wrap their contents.\n\nTo add other controls to your scroller you need to put them in a scroller [layout](CreateLayout.htm) first, which you can then add to the scroller object.",
+		"desc": "#CreateScroller.md",
 		"isfunc": true,
 		"name": "CreateScroller",
 		"pNames": ["width", "height", "options"],
@@ -4382,7 +4382,7 @@
 	},
 	"CreateSeekBar": {
 		"abbrev": "skb",
-		"desc": "SeekBars are bars with a moveable pointer which let the user select a value in a given range.\nThe **SetRange** method of the SeekBar object to sets the value range of the SeekBar and the **SetValue** method sets the current value.\nUse the SetOnChange method to define a function you want to be called when the SeekBar value has changed. You can read the _value_ parameter in your callback function to get the current SeekBar value.",
+		"desc": "#CreateSeekBar.md",
 		"isfunc": true,
 		"name": "CreateSeekBar",
 		"pNames": ["width", "height", "options"],
@@ -4470,7 +4470,7 @@
 	},
 	"CreateSensor": {
 		"abbrev": "sns",
-		"desc": "The sensor object can be used to access numerous sensors of your device. You can use the **SetOnChange** function of the Sensor to set the name of a function you want to be called when a the changes occur.\n\nChange the rate that a sensor checks for changes by adding one the options “Fastest”, “Fast”, “Medium” or “Slow”. “Slow” is the default.",
+		"desc": "#CreateSensor.md",
 		"isfunc": true,
 		"name": "CreateSensor",
 		"pNames": ["type", "options"],
@@ -4584,7 +4584,7 @@
 	},
 	"CreateService": {
 		"abbrev": "srv",
-		"desc": "Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.\n\nDroidScript Services run in a separate process and can take advantage of multi-CPU devices, this allows CPU intensive calculations or slow procedures to be done in the background without slowing down or interfering with the main application.\n\nAny file in your project with the filename “Service.js” will run as a hidden background service.\n\nA service can be created and started using the **CreateService** method of the app object in your main application file:\n%c\nUse “this” for the _packageName_ and _className_ parameters.\n\nYour service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.\n\nYou can set the service to start automatically when the device is booted if required; with the **SetAutoBoot** method of the **app** object.\n<js>app.SetAutoBoot( \"Service\" );</js>Stop a service using the Stop method.\n<js>svc.Stop();</js>\nMessages can be sent from your app to the service using the SendMessage method on the service object:\n<js>svc.SendMessage( msg );</js>\nYou will need to provide a message handler to receive and process the messages (see example below).\n\nSend messages from the service to the main app by using the SendMessage method of the app object:\n<js>app.SendMessage( msg );</js>\nThis will also need a message handler on the application (see example below).\n\nAdding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.\n<sample Services>\nInspect the debug console and see the log messages from the service in gray.",
+		"desc": "#CreateService.md",
 		"isfunc": true,
 		"name": "CreateService",
 		"pNames": ["packageName", "className", "callback", "options"],
@@ -4967,7 +4967,7 @@
 	},
 	"CreateSpeechRec": {
 		"abbrev": "spr",
-		"desc": "The **SpeechRec** object can be used to listen for and recognize speech.\nUse the **Recognize** method of the SpeechRec object to tell it to start listening:\n<js>speech.Recognize();</js>\nWhen the SpeechRec object has started listening, the **OnReady** callback function will be called. Use the **SetOnReady** method to set the name of your OnReady callback function.\n\nIf the SpeechRec object recognizes speech, the **OnResult** callback function will be called. The results are passed to the OnResult callback function as an array, with the most probable result at the front. Use the **SetOnResult** method to set the name of your OnResult callback function.\n\nIf the SpeechRec object does not recognize anything, the **OnError** callback function will be called. Use the **SetOnError** method to set the name of your OnError callback function.",
+		"desc": "#CreateSpeechRec.md",
 		"isfunc": true,
 		"name": "CreateSpeechRec",
 		"pNames": ["options"],
@@ -5076,7 +5076,7 @@
 	},
 	"CreateSpinner": {
 		"abbrev": "spn",
-		"desc": "Create Spinners using the CreateSpinner method of the app object.\nYou can allow the Spinner to auto-size by leaving out the dimensions or you can specify a **width** and/or **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnChange** method of your spinner to set the name of a function you want to be called when the user selects an item.\n\nYou can get the current selection of the Spinner button at any time using the **GetText** method and replace the option list at any time by using the **SetList** method.\n\nUse the **SelectItem** method to select a particular item in code.",
+		"desc": "#CreateSpinner.md",
 		"isfunc": true,
 		"name": "CreateSpinner",
 		"pNames": ["list", "width", "height", "options"],
@@ -5174,7 +5174,7 @@
 	},
 	"CreateSynth": {
 		"abbrev": "syn",
-		"desc": "Returns a Synth object which ca produces a variety of sounds, sound effects and music.\n%c\n<h3>Some descriptions</h3>\n**note length:** default is 2.56 seconds.\n**midi note&colon;** like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:\n\tC:60,C#:61,D:62,D#:63,E:64,F:65,F#:66,G:67,G#:68,A:69,A#:70,B:71.\n**duration&colon;** powers of two indicating whole, half, quarter etc. up to thirty second notes.\n**frequency&colon;** A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.\n\tHumans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz\n\n**Phaser:** a sound filter which creates a series of peaks and troughs in the frequency spectrum\n**VoltageControlledAmplifier:** (Variable-Gain Amplifier) electronic amplifier that varies its gain\n**Voltage-Controlled Filter:** electronic amplifier that varies the frequency",
+		"desc": "#CreateSynth.md",
 		"isfunc": true,
 		"name": "CreateSynth",
 		"pNames": ["type"],
@@ -5552,7 +5552,7 @@
 	},
 	"CreateTabs": {
 		"abbrev": "tab",
-		"desc": "Tabs are useful if you have multiple subsections in your app. The user can then press the title of a tab and the control will automatically switch to the corresponding layout.\n%c\nTo add children to a tab layout you have to retreive it first (because they were already created by the control):\n<js>var layTab1 = tab.GetLayout( \"TabName1\" );</js>\nThen you canuse it as every normal layout:dso-\"CreateLayout\" control",
+		"desc": "#CreateTabs.md",
 		"isfunc": true,
 		"name": "CreateTabs",
 		"pNames": ["list", "width", "height", "options"],
@@ -5747,7 +5747,7 @@
 	},
 	"CreateText": {
 		"abbrev": "txt",
-		"desc": "If you want to display text in your app you can use the Text object. You can use the “Multiline” **option** to allow multi-line text and the “Left” or “Right” options to align the text. The default is single line centered text.\nOther options you will see used in the samples include “AutoScale”, “Bold”, “Html” and “FontAwesome”.\nUse the **SetText** and **GetText** functions of the Text object to set and get it's text.\n<sample Single line>\nYou can change the look of a Text using the **SetBackColor** and **SetTextColor** functions on the Text object.\n<sample Multi line>\nText can be shortened using ellipsis (...) when the size of the control is too small to show all the text. Use the **SetEllipsize** to control where the ellipsis is placed. Available modes are “start”, “middle”, “end” and “marq”.\n<sample Ellipsize>\nYou can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
+		"desc": "#CreateText.md",
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
@@ -5877,7 +5877,7 @@
 	},
 	"CreateTextEdit": {
 		"abbrev": "edt",
-		"desc": "If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the “numbers” **option**.\n\nYou can use the **SetOnChange** method of the TextEdit to set the name of a function you want to be called when a the text is changed.\n\nUse the **SetText** and **GetText** functions to set and get the text in the TextEdit.\n<sample Using OnChange>\nYou can change the look of a TextEdit using the **SetBackColor** and **SetTextColor** functions on the TextEdit object.<sample Blue on White>\nYou can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.",
+		"desc": "#CreateTextEdit.md",
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
@@ -6258,7 +6258,7 @@
 	},
 	"CreateToggle": {
 		"abbrev": "tgl",
-		"desc": "Toggle buttons are basically [Buttons](CreateButton.htm) with an additional light bar indicating if it is activated or not. The user can toggle this state by pressing on it.\n%c\n You can allow the toggle button to auto-size by leaving out the dimensions or you can specify a **width** and **height** as decimal fractions of the screen's width and height.\n\nUse the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.\n\nYou can get the state of the toggle button at any time using the **GetChecked** method of the button. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.",
+		"desc": "#CreateToggle.md",
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
@@ -6343,7 +6343,7 @@
 	},
 	"CreateUSBSerial": {
 		"abbrev": "usb",
-		"desc": "The USBSerial component can be used to communicate with other USB devices connected to yours.\n\nThe default constructor values are:\n\tbaudrate: 9600\n\tTo find out more about RTD and DTR or USB serial at all visit [Wikipedia: RS-232](https://en.wikipedia.org/wiki/RS-232#Data\\_and\\_control\\_signals)\n\n<font class=\"red\">Note: this application only works on devices that support OTG and allow access to external serial devices.</font>\n**Known to work:** Nexus7, GalaxyS3/S4, ExperiaZUltra, TescoHudl\n**Dont work:** Nexus4, GalaxyS1, AsusMemo",
+		"desc": "#CreateUSBSerial.md",
 		"isfunc": true,
 		"name": "CreateUSBSerial",
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
@@ -6469,7 +6469,7 @@
 	},
 	"CreateVideoView": {
 		"abbrev": "vid",
-		"desc": "The **VideoView** can be used to play local video files from the filesystem or video streams from remote sources.\nUse **SetFile** to set the video file or video stream address.\n<js>player.SetFile( \"https://file-examples.com/wp-content/uploads/2017/04/file\\_example\\_MP4\\_640\\_3MG.mp4\" );</js>\nWhen the video is ready to play, the **OnReady** callback function will be called, you can then use **Play** to start playing the video.\n\nIf the video cannot be played, the OnError callback function will be called. Use **SetOnReady** and **SetOnError** to set the names of your **OnReady** and OnError callback functions.",
+		"desc": "#CreateVideoView.md",
 		"isfunc": true,
 		"name": "CreateVideoView",
 		"pNames": ["width", "height", "options"],
@@ -6687,7 +6687,7 @@
 	},
 	"CreateWebServer": {
 		"abbrev": "sock",
-		"desc": "Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.\n<js>wbs.SetFolder( path );</js>\nStart the server using the Start method.\n<js> wbs.Start();</js>\nAnd stop it using the Stop method.\n<js>wbs.Stop();</js>\nThe following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.\n\nFor simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.\n<sample Basic>\nThe second example shows how to accept file upload and permit directory listings by including permissions in the options parameter of the app.CreateWebServer method.\n\nIt also adds a servlet to respond to messsages from the web client. A servelet can be used to process data supplied by a user via form elements or it can handle requests made from the client application.\n\nTo get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.\n<sample Servlets>\nWeb sockets are faster than servlets and can be used for both client - server applications or peer-to-peer systems where each connected node is both a client and a server without a centralized server.\n\nThis makes web sockets very useful for datasharing in multiplayer games.\n\nAll requests sent to the same servlet will queue up behind each other and are processed in order. The server application is said to be blocking all other requests whilst a servlet completes each task synchronously.\n\nWeb sockets recieve the request and then start a process to handle the request. When the task is complete any data or messages to be returned will be sent back to the relevant connected clients. In this case the server application is said to be non-blocking or asynchronous.\nSee Also: @CreateWebSocket\n\nWeb sockets can be used for broadcast purposes, for example sending the same message to all connected clients. They can also be used to send different direct messages to a specific one device using the IP address.\n\nThe following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.\n<sample Send and Receive messages>",
+		"desc": "#CreateWebServer.md",
 		"isfunc": true,
 		"name": "CreateWebServer",
 		"pNames": ["port", "options"],
@@ -6709,13 +6709,13 @@
 				"name": "AddServlet",
 				"pNames": ["path", "callback"],
 				"pTypes": ["str:url path-/name", {
-        	        "desc": "callback function",
-        	        "isfunc": true,
-        	        "name": "callback",
-        	        "pNames": ["args", "info"],
-        	        "pTypes": ["obj-{ parameter&colon; argument }", "obj-{ remoteAddress:str }"],
-        	        "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["args", "info"],
+					"pTypes": ["obj-{ parameter&colon; argument }", "obj-{ remoteAddress:str }"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when servlet received a message"
 			},
 			"GetType": {
@@ -6759,13 +6759,13 @@
 				"name": "SetOnReceive",
 				"pNames": ["callback"],
 				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg", "ip", "id"],
-	                "pTypes": ["str", "str", "num_int"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["msg", "ip", "id"],
+					"pTypes": ["str", "str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when received client message"
 			},
 			"SetOnUpload": {
@@ -6774,13 +6774,13 @@
 				"name": "SetOnUpload",
 				"pNames": ["callback"],
 				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["filename", "ip"],
-	                "pTypes": ["str", "str"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["filename", "ip"],
+					"pTypes": ["str", "str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when file uploaded to server"
 			},
 			"SetResponse": {
@@ -6819,7 +6819,7 @@
 	},
 	"CreateWebSocket": {
 		"abbrev": "wbs",
-		"desc": "WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.\nA web socket will automatically open after creating it. Once after finished loading, the **OnOpen** callback is called.\n\nIn order to receive messages from the server you have to specify a **OnMessage** callback.\n\nSee Also: @CreateWebServer",
+		"desc": "#CreateWebSocket.md",
 		"isfunc": true,
 		"name": "CreateWebSocket",
 		"pNames": ["id", "ip", "port"],
@@ -6910,7 +6910,7 @@
 	},
 	"CreateWebView": {
 		"abbrev": "web",
-		"desc": "You can create a control to display local or remote web pages in your App using the **CreateWebView** method.\nIf you are loading remote web pages, then you might want to use the **SetOnProgress** method to set the name of a callback function that you want called to report the progress of loading the page.\n\nYou can use the **LoadUrl** method to load an internal or external web page or the **LoadHtml** method to load text directly from within your App.\n<js>web.LoadUrl( url, options );</js>\n<js> web.LoadHtml( html, baseFolder, options );</js>\n\nIf you need to, you can use the **Execute** method to execute JavaScript code within the WebView.\n<js>web.Execute( text );</js>",
+		"desc": "#CreateWebView.md",
 		"isfunc": true,
 		"name": "CreateWebView",
 		"pNames": ["width", "height", "options", "zoom"],
@@ -6967,13 +6967,13 @@
 				"name": "Execute",
 				"pNames": ["code", "callback"],
 				"pTypes": ["str_jsc", {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["result"],
-	                "pTypes": ["all"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["result"],
+					"pTypes": ["all"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Execute JS code inside the WebView"
 			},
 			"Focus": "#7324472769",
@@ -7064,13 +7064,13 @@
 				"name": "SetOnConsole",
 				"pNames": ["callback"],
 				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["msg"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when message logged to console"
 			},
 			"SetOnError": {
@@ -7155,18 +7155,18 @@
 	},
 	"CreateWizard": {
 		"abbrev": "wiz",
-		"desc": "The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user.\nThese can be settings and usage terms on first startup or an installation process as you might know from desktop applications.\n%c\nThe callback function will be called each time the user changes the wizard page.\nThe functions gets the current wizard layout and the page index (starting from 1) to identify the current progress.\n<h3>Page Initialisation</h3>\nOn the very first call the page index is **0** which means 'initialisation'.\nThen you have to create and add all wizard pages to the passed (frame) layout.\n\nIn case the user cancels the wizard the index is **-1**.\n\n<premium>",
+		"desc": "#CreateWizard.md",
 		"isfunc": true,
 		"name": "CreateWizard",
 		"pNames": ["title", "width", "height", "callback", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", {
-            "desc": "callback function",
-            "isfunc": true,
-            "name": "callback",
-            "pNames": ["lay", "page"],
-            "pTypes": ["dso-CreateLayout", "num_int"],
-            "shortDesc": "callback"
-        }, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["lay", "page"],
+			"pTypes": ["dso-CreateLayout", "num_int"],
+			"shortDesc": "callback"
+		}, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"shortDesc": "CreateWizard",
 		"subf": {
 			"Dismiss": "#1924613953",
@@ -7184,7 +7184,7 @@
 				"name": "GetButtons",
 				"pNames": [],
 				"pTypes": [],
-                "retval": "lst_obj-[ btnCancel:dso-CreateButton, btnPrev:dso-CreateButton, btnNext:dso-CreateButton ]",
+				"retval": "lst_obj-[ btnCancel:dso-CreateButton, btnPrev:dso-CreateButton, btnNext:dso-CreateButton ]",
 				"shortDesc": "Returns list of wiz control buttons"
 			},
 			"GetDialog": {
@@ -7278,7 +7278,7 @@
 		"pNames": ["mode"],
 		"pTypes": ["str"],
 		"retval": "dso-ZipUtil",
-        "shortDesc": "Returns a new ZipUtil object",
+		"shortDesc": "Returns a new ZipUtil object",
 		"subf": {
 			"AddFile": {
 				"desc": "Adds a file to the zip relative to the zip root.",
@@ -7367,7 +7367,7 @@
 				"name": "Sign",
 				"pNames": ["fileIn", "fileOut", "keyStore", "password"],
 				"pTypes": ["str_pth", "str_pth", "str_pth", "str"],
-                "retval": "bin",
+				"retval": "bin",
 				"shortDesc": "Sign and check zip against keystore file"
 			},
 			"UpdateManifest": {
@@ -7421,7 +7421,7 @@
 		"shortDesc": "Destroy a layout"
 	},
 	"DisableKeys": {
-		"desc": "DisableKeys prevents the default behavior of several hard, soft or keyboard keys.\nThis way you can apply a custom action for them using @SetOnKey.\n\nYou can find the complete list of keycodes on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#summary)",
+		"desc": "#DisableKeys.md",
 		"isfunc": true,
 		"name": "DisableKeys",
 		"pNames": ["keyList"],
@@ -7437,7 +7437,7 @@
 		"shortDesc": "Suppress all touch events"
 	},
 	"DiscoverBtDevices": {
-		"desc": "Use DiscoverBtDevices to search for other bluetooth devices which are not paired with the current device. If any was found it will be forwarded directly to the **onFound** callback. If the search has finished **onComplete** function will be called.\n\nSee Also: @CreateBluetoothSerial, @PairBtDevice, @IsBtDevicePaired",
+		"desc": "#DiscoverBtDevices.md",
 		"isfunc": true,
 		"name": "DiscoverBtDevices",
 		"pNames": ["filter", "onFound", "onComplete"],
@@ -7459,7 +7459,7 @@
 		"shortDesc": "Search for nearby bluetooth devices"
 	},
 	"DownloadFile": {
-		"desc": "Downloads a file using the Android's built-in download manager which creates a notification with the current download status and a custom title and description.\n\nIn some cases there seems to appear a dialog - you can prevent that using the _NoDialog_ option.\n\nWith this methof you won't be able to get a OnComplete callback - if you need that check out @CreateDownloader.",
+		"desc": "#DownloadFile.md",
 		"isfunc": true,
 		"name": "DownloadFile",
 		"pNames": ["source", "destination", "title", "description", "options"],
@@ -7467,7 +7467,7 @@
 		"shortDesc": "Download a file with Androids download manager"
 	},
 	"EnableBackKey": {
-		"desc": "Allows to en- or disable the devices back key. When it is disabled the global _OnBack_ app event will called when the user presses the back button - otherwise the app exits.\n\nYou can use this method to create a custom _BACK_ command that allows you to navigate between your layouts.",
+		"desc": "#EnableBackKey.md",
 		"isfunc": true,
 		"name": "EnableBackKey",
 		"pNames": ["enable"],
@@ -7499,7 +7499,7 @@
 		"shortDesc": "Close and stop the app"
 	},
 	"ExtExec": {
-		"desc": "ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.\n\n<premium>\n\nThe Termux app runs as a service and there's almost no limit to what you can achieve with a full blown Linux machine running on your Android device!\n\nHow about installing git, or nodejs or using ssh or gzip.\nTry typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.\n<h3>Enable Termux</h3>\nTo **enable termux** support you have to install [Termux](https://play.google.com/store/apps/details?id=com.termux) and the [Tasker](https://play.google.com/store/apps/details?id=com.termux.tasker) Plugin from PlayStore first.\n\nThen give termux **sdcard permissions** in the Android settings under apps/termux.\n\nAfter that create a symbolic link from the tasker plugin folder to your home directory:\n<bash>mkdir -p .termux /sdcard/termux/scripts\nln -s /sdcard/termux/scripts .termux/tasker</bash>Finally you can run a termux shell script from inside DroidScript:",
+		"desc": "#ExtExec.md",
 		"isfunc": true,
 		"name": "ExtExec",
 		"pNames": ["name", "file", "args", "options"],
@@ -7541,7 +7541,7 @@
 		"shortDesc": "Checks if the folder exists"
 	},
 	"GA": {
-		"desc": "With **G**oogle **A**nalytics implemented via analytics.js you can track the use of your apps in real-time and watch as people are using it all over the planet and see what city they are in. You can get lots of usage statistics including what version of your app they are using, what version of Android, the time of day they are using your app, what device they are using and even which parts of the app people are using the most.\n\nYou can find more informations on the [Google Developers page](https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference).\n\n<premium>",
+		"desc": "#GA.md",
 		"isfunc": true,
 		"name": "GA",
 		"pNames": ["command", "[...fields]", "options"],
@@ -7828,7 +7828,7 @@
 		"shortDesc": "GetJoystickName"
 	},
 	"GetJoystickState": {
-		"desc": "Returns the state of a connected joystick. The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.\n\nSee Also: @GetJoystickName",
+		"desc": "#GetJoystickState.md",
 		"isfunc": true,
 		"name": "GetJoystickState",
 		"pNames": ["id", "key"],
@@ -8041,7 +8041,7 @@
 		"shortDesc": "Get device rotation"
 	},
 	"GetRSSI": {
-		"desc": "Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).\n\n</p><h3>Understanding RSSI</h3><table><thead align='left'><tr><th width=\"15%\">Signal Strength</th><th width=\"10%\">TL;DR</th><th width=\"20%\">Required for</th></tr></thead><tbody><tr><td>-30 dBm</td><td>Amazing</td><td>N/A</td></tr><tr><td>-67 dBm</td><td>Very Good</td><td>VoIP/VoWiFi, streaming video</td></tr><tr><td>-70 dBm</td><td>Okay</td><td>Email, web</td></tr><tr><td>-80 dBm</td><td>Not Good</td><td>N/A</td></tr><tr><td>-90 dBm</td><td>Unusable</td><td>N/A</td></tr><tr><td>-127 dBm</td><td>Disabled</td><td>N/A</td></tr></tbody></table><p>source: [metageek.com](https://www.metageek.com/training/resources/understanding-rssi.html)\n\nSee Also: @SetWifiEnabled, @IsWifiEnabled",
+		"desc": "#GetRSSI.md",
 		"isfunc": true,
 		"name": "GetRSSI",
 		"pNames": [],
@@ -8481,7 +8481,7 @@
 		"shortDesc": "Convert language name to its code or get current language code"
 	},
 	"ListFolder": {
-		"desc": "The ListFolder method returns a list of all files and folders in a given folder.\nThe _filter_ **parameter** is an can be used to specify a filter pattern. For example to find only mp3 files, you would specify “.mp3” as a filter\n\nThe You can also **option**ally sort the list in alphabetica order with the “alphasort” option.\n\nSee Also: @IsFolder, @CreateList",
+		"desc": "#ListFolder.md",
 		"isfunc": true,
 		"name": "ListFolder",
 		"pNames": ["path", "filter", "limit", "options"],
@@ -8508,7 +8508,7 @@
 		"shortDesc": "Load saved boolean value"
 	},
 	"LoadPlugin": {
-		"desc": "Import an installed plugin to your app. You can download plugins from [DroidScript's plugin page](http://droidscript.org/plugins/), [Google Playstore](https://play.google.com/store/search?q=DroidScript+Plugin) or you can create self-written plugins.\n\nYou can find instructions on how to create plugins on DroidScript.org) or on my [BlogSpot page](https://symbroson.blogspot.com/search/label/Plugins).",
+		"desc": "#LoadPlugin.md",
 		"isfunc": true,
 		"name": "LoadPlugin",
 		"pNames": ["url"],
@@ -8585,21 +8585,24 @@
 				"isfunc": true,
 				"name": "close",
 				"pNames": ["success", "error"],
-				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
+				"pTypes": [
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["msg"],
+						"pTypes": ["str"],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["msg"],
+						"pTypes": ["str"],
+						"shortDesc": "callback"
+					}
+				],
 				"shortDesc": "Close the database"
 			},
 			"Close": {
@@ -8640,20 +8643,20 @@
 				"name": "executeSql",
 				"pNames": ["statement", "params", "success", "error"],
 				"pTypes": ["str_sql", "lst", {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["tx", "res"],
-	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }", "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["t", "err"],
-	                "pTypes": ["?", "obj-{ message:str }"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["tx", "res"],
+					"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }", "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
+					"shortDesc": "callback"
+				}, {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["t", "err"],
+					"pTypes": ["?", "obj-{ message:str }"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Execute SQL query"
 			},
 			"ExecuteSql": {
@@ -8662,20 +8665,20 @@
 				"name": "ExecuteSql",
 				"pNames": ["sql", "params", "success", "error"],
 				"pTypes": ["str_sql", "lst", {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["res"],
-	                "pTypes": ["obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["err"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["res"],
+					"pTypes": ["obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
+					"shortDesc": "callback"
+				}, {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["err"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Execute SQL query"
 			},
 			"GetName": {
@@ -8710,21 +8713,24 @@
 				"isfunc": true,
 				"name": "open",
 				"pNames": ["success", "error"],
-				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": [],
-	                "pTypes": [],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["msg"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }],
+				"pTypes": [
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["msg"],
+						"pTypes": ["str"],
+						"shortDesc": "callback"
+					}
+				],
 				"shortDesc": "Open database"
 			},
 			"_openargs": {
@@ -8765,28 +8771,32 @@
 				"isfunc": true,
 				"name": "readTransaction",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": [{
-                    "desc": "callback function",
-                    "isfunc": true,
-                    "name": "callback",
-                    "pNames": ["tx"],
-                    "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
-                    "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["err"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["tx", "res"],
-	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"],
-	                "shortDesc": "callback"
-                }],
+				"pTypes": [
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["tx"],
+						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["err"],
+						"pTypes": ["str"],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["tx", "res"],
+						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"],
+						"shortDesc": "callback"
+					}
+				],
 				"shortDesc": "ReadTransaction"
 			},
 			"startNextTransaction": {
@@ -8802,35 +8812,42 @@
 				"isfunc": true,
 				"name": "transaction",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": [{
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["tx"],
-	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["err"],
-	                "pTypes": ["str"],
-	                "shortDesc": "callback"
-                }, {
-	                "desc": "callback function",
-	                "isfunc": true,
-	                "name": "callback",
-	                "pNames": ["fnc", "res"],
-	                "pTypes": [{
-    	                "desc": "callback function",
-    	                "isfunc": true,
-    	                "name": "callback",
-    	                "pNames": ["tx"],
-    	                "pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
-    	                "shortDesc": "callback"
-                    }, "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"],
-	                "shortDesc": "callback"
-                }],
+				"pTypes": [
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["tx"],
+						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["err"],
+						"pTypes": ["str"],
+						"shortDesc": "callback"
+					},
+					{
+						"desc": "callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["fnc", "res"],
+						"pTypes": [
+							{
+								"desc": "callback function",
+								"isfunc": true,
+								"name": "callback",
+								"pNames": ["tx"],
+								"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"],
+								"shortDesc": "callback"
+							},
+							"obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"
+						],
+						"shortDesc": "callback"
+					}
+				],
 				"shortDesc": "transaction"
 			}
 		}
@@ -8907,7 +8924,7 @@
 		"shortDesc": "Prevent Wifi from powering down"
 	},
 	"QueryContent": {
-		"desc": "Queries content from the android content model. The **uri** typically have the syntax “content://authority/path/id”. You can find more infos about it on the [Android Developer page](https://developer.android.com/reference/android/content/ContentUris).\n\nThe **coloumns** are specific for the database you are accessing. You can get this information from the respective content provider.\n\n**select** is a optional sql command to filter the results.\n\n**args** is an optional parameter for arguments you want to include to the sql command. The placeholder for these arguments are '?' signs in the sql command.\n\n<premium>",
+		"desc": "#QueryContent.md",
 		"isfunc": true,
 		"name": "QueryContent",
 		"pNames": ["uri", "columns", "select", "args", "sort"],
@@ -9027,7 +9044,7 @@
 		"shortDesc": "Synchronously import an external JavaScript file"
 	},
 	"SendFile": {
-		"desc": "Send a file to a remote target, ie. via Email. The **subject** and **text** arguments will be auto filled and the **choose** text will be displayed when the user selects the target app. Default may be smth like _'Complete action using'_.\n\nSee Also: @SendText, @SendMail",
+		"desc": "#SendFile.md",
 		"isfunc": true,
 		"name": "SendFile",
 		"pNames": ["file", "subject", "text", "choose"],
@@ -9035,7 +9052,7 @@
 		"shortDesc": "Send a file to a remote target"
 	},
 	"SendIntent": {
-		"desc": "Intens can be used to perform an operation between different applications or activities. _It is basically a passive data structure holding an abstract description of an action to be performed_.\n\n**package name** and **class name** can specify the intent target, but you can also leave them null and define a **category** instead to let the user choose an application of that categoy.\n\nIf you expect a **callback** you have to pass the “result” **option**. The **result code** can be\n\t-1: _operation succeeded_\n\t1: _user-defined activity results_\n\t0: _operation canceled_\n\nYou can find some common used examples for that in the [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent)\nFor more information visit the [Android Developer Page](https://developer.android.com/reference/android/content/Intent.html). There you can find informations about the [activity](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions), [category](https://developer.android.com/reference/android/content/Intent.html#standard-categories) and [extra](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data).\n\nSee Also: @GetIntent",
+		"desc": "#SendIntent.md",
 		"isfunc": true,
 		"name": "SendIntent",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
@@ -9074,7 +9091,7 @@
 		"shortDesc": "Open the SMS app and autofill fields"
 	},
 	"SendText": {
-		"desc": "This Method is used for sharing text between apps.\n\nIf choose is defined, an android dialog will appear with the **choose** value as info text.\nOtherwise the dialog will appear if the user did not specify an app which should be always opened for this type of data.\n\nThe **subject** parameter seems to be obsolete these times and is just kept for backwards compatibility.\n\nSee Also: @SendFile",
+		"desc": "#SendText.md",
 		"isfunc": true,
 		"name": "SendText",
 		"pNames": ["text", "subject", "choose"],
@@ -9153,7 +9170,7 @@
 		"shortDesc": "Save data while app is running"
 	},
 	"SetDebug": {
-		"desc": "SetDebug lets you control the debugging level. The availabe modes are:\nconsole&colon; allows console.log messages\nds&colon; allows app.Debug messages\nadb&colon; allows adb debug messages (ie at apk startup)\ntrue&colon; enable all debug messages\nfalse or “”: disable able all debug messages\n\nNote that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.\n\nSee Also: @Debug, @IsDebugging",
+		"desc": "#SetDebug.md",
 		"isfunc": true,
 		"name": "SetDebug",
 		"pNames": ["switches"],
@@ -9185,7 +9202,7 @@
 		"shortDesc": "Set services to run in the foreground"
 	},
 	"SetJoystickOptions": {
-		"desc": "Set options for the connected joystick. The “forwardkeys” **option** allows the joystick key presses to pass onto the child controls of the main activity. (They are normally prevented from reaching child controls).\n\nSee Also: @GetJoystickName, @GetJoystickState",
+		"desc": "#SetJoystickOptions.md",
 		"isfunc": true,
 		"name": "SetJoystickOptions",
 		"pNames": ["options"],
@@ -9262,7 +9279,7 @@
 		"shortDesc": "Called on thrown JS errors"
 	},
 	"SetOnKey": {
-		"desc": "You can use SetOnKey for receiving and handling all key events fired in the application.\n\nYou may want to use it with **DisableKeys** - i.e. for defining a custom _ENTER_ command for automatic control focussing.\n\nYou can find the complete list of keys and their codes on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#summary).\n\nSee Also: @SimulateKey",
+		"desc": "#SetOnKey.md",
 		"isfunc": true,
 		"name": "SetOnKey",
 		"pNames": ["callback"],
@@ -9418,7 +9435,7 @@
 		"shortDesc": "Change volume of a given audio type"
 	},
 	"SetWifiApEnabled": {
-		"desc": "En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.\nIt automatically disabled WiFi if it was enabled.\n\n<font color='red'>**This method is available for Android 6 or older only!**</font>\n\nSee Also: @IsWifiApEnabled, @IsWifiEnabled",
+		"desc": "#SetWifiApEnabled.md",
 		"isfunc": true,
 		"name": "SetWifiApEnabled",
 		"pNames": ["enable", "ssid", "key"],
@@ -9603,7 +9620,7 @@
 		"shortDesc": "Execute a shell command on the android shell"
 	},
 	"TextToSpeech": {
-		"desc": "Uses the android TextToSpeech engine to audiolize text. You can use different locales depending on the user language. A list of languages and their locales (LCID string) can be found on [www.science.co.il](https://www.science.co.il/language/Locale-codes.php).",
+		"desc": "#TextToSpeech.md",
 		"isfunc": true,
 		"name": "TextToSpeech",
 		"pNames": ["text", "pitch", "rate", "callback", "stream", "locale", "engine"],
@@ -9713,7 +9730,7 @@
 		"shortDesc": "Vibrate device in a pattern"
 	},
 	"Wait": {
-		"desc": "Performs a **synchronous** delay in your program which effectively pauses it.\n\nIts main use is for making brief pauses when communicating with external devices so that they get a chance to do work while your app executes.\n\nBe careful when using this method in your code as Android quickly thinks that your app does not respond if used for over about 30 seconds.",
+		"desc": "#Wait.md",
 		"isfunc": true,
 		"name": "Wait",
 		"pNames": ["seconds"],

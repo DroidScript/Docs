@@ -1,0 +1,3 @@
+SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+The **SetRange** method of the SeekBar object to sets the value range of the SeekBar and the **SetValue** method sets the current value.
+Use the SetOnChange method to define a function you want to be called when the SeekBar value has changed. You can read the _value_ parameter in your callback function to get the current SeekBar value.

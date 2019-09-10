@@ -1,0 +1,2 @@
+CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it. It also applies various settings to your app such like the **orientation**, `ScreenMode(“Game”)` and `PreventScreenLock(true)`.
+You can still access the GameView and the layout where it was added to via gam.game:dso-"CreateGameView" and gam.lay:dso-CreateLayout
