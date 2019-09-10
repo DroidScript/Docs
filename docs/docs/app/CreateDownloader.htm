@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateDownloader</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -41,29 +41,18 @@
 				→ <b>app object:</b> Downloader
 			</div>
 
-			<p>You can download a file with the <b>Download</b> method which accepts a <i>source url</i> and a <i>target directory</i>:</p>
-
-			<div class="samp">
-			dwn<span class="token punctuation">.</span><span class="token function">Download</span><span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the <font class='docstring'>“NoDialog”</font> <b>option</b>.<br>
+			<p>You can download a file with the <b>Download</b> method which accepts a <i>source url</i> and a <i>target directory</i>:	<code class="samp">dwn<span class="token punctuation">.</span><span class="token function">Download</span><span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the <font class='docstring'>“NoDialog”</font> <b>option</b>.<br>
 			<br>
-			If you want to know when the download process has finished (or failed) you can define a callback functioni with the <b>SetOnComplete</b> method:</p>
-
-			<div class="samp">
-			dload<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> callback <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
+			If you want to know when the download process has finished (or failed) you can define a callback functioni with the <b>SetOnComplete</b> method:	<code class="samp">dload<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> callback <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Example</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    <span class="token keyword">var</span> srcFileUrl <span class="token operator">=</span> <span class="token string">"http://sgarman.net/downloadable.txt"</span><span class="token punctuation">;</span><br>
 					    <span class="token keyword">var</span> targetDir <span class="token operator">=</span> <span class="token string">"/sdcard"</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip0" style="font-size:100%">dload <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateDownloader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%">dload <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateDownloader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    dload<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> dload_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    dload<span class="token punctuation">.</span><span class="token function">Download</span><span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
@@ -74,9 +63,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 

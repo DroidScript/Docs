@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateWebView</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -46,31 +46,15 @@
 
 			<p>If you are loading remote web pages, then you might want to use the <b>SetOnProgress</b> method to set the name of a callback function that you want called to report the progress of loading the page.<br>
 			<br>
-			You can use the <b>LoadUrl</b> method to load an internal or external web page or the <b>LoadHtml</b> method to load text directly from within your App.</p>
-
-			<div class="samp">
-			web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> url<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-
-			<div class="samp">
-			web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> baseFolder<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>If you need to, you can use the <b>Execute</b> method to execute JavaScript code within the WebView.</p>
-
-			<div class="samp">
-			web<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
+			You can use the <b>LoadUrl</b> method to load an internal or external web page or the <b>LoadHtml</b> method to load text directly from within your App.	<code class="samp">web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> url<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	<code class="samp">web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> baseFolder<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	If you need to, you can use the <b>Execute</b> method to execute JavaScript code within the WebView.	<code class="samp">web<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Remote</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					     <b id="snip0" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Progress"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					     <b id="snip1" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Progress"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     web<span class="token punctuation">.</span><span class="token function">SetOnProgress</span><span class="token punctuation">(</span> web_OnProgess <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
@@ -85,21 +69,21 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Local File</h3>
-				<div id="examp1" style="font-size:70%">
+				<div id="examp2" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					     <b id="snip1" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					     <b id="snip2" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
@@ -109,21 +93,21 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Direct Html</h3>
-				<div id="examp2" style="font-size:70%">
+				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					     <b id="snip2" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					     <b id="snip3" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
@@ -139,9 +123,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 				</div>
 			</div>
 
@@ -495,7 +479,7 @@
 		<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>web.SetBackground</b><br>Changes the background to an image which can be repeated using the <b>repeat</b> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>
 
-		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>web.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/graphics/BlendMode.html');">Android Developer page</a>.</div>
+		<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>web.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
 		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“Add”</font> or <font class='docstring'>“Multiply”</font> or <font class='docstring'>“clear”</font> or <font class='docstring'>“darken”</font> or <font class='docstring'>“lighten”</font> or <font class='docstring'>“overlay”</font> or <font class='docstring'>“screen”</font> or <font class='docstring'>“xor”</font> or <font class='docstring'>“src_in”</font> or <font class='docstring'>“src_out”</font> or <font class='docstring'>“src_atop”</font> or <font class='docstring'>“src_over”</font> or <font class='docstring'>“dst_in”</font> or <font class='docstring'>“dst_out”</font> or <font class='docstring'>“dst_atop”</font> or <font class='docstring'>“dst_over”</font></div>
 
 		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>web.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
@@ -545,7 +529,7 @@
 		<div data-role="popup" id="pop_str_010" class="ui-content"><b>string:</b> <font class='docstring'>“Show”</font> or <font class='docstring'>“Hide”</font> or <font class='docstring'>“Gone”</font></div>
 
 		<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>web.Show</b><br>Set the visibility of the control to <font class='docstring'>“Show”</font>.</div>
-		<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>web.SimulateKey</b><br>Simulates a key event on an app object.<br><br>You can find the complete list of key names on the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0');">Android Developer Page</a>.</div>
+		<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>web.SimulateKey</b><br>Simulates a key event on an app object.<br><br>You can find the complete list of key names on the <a href="https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0" onclick="return OpenUrl(this.href);">Android Developer Page</a>.</div>
 		<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> <font class='docstring'>“META_META_ON”</font>, <font class='docstring'>“META_RIGHT_ON”</font>, <font class='docstring'>“NUM_LOCK_ON”</font>, <font class='docstring'>“SCROLL_LOCK_ON”</font>, <font class='docstring'>“SHIFT_LEFT_ON”</font>, <font class='docstring'>“SHIFT_MASK”</font>, <font class='docstring'>“SHIFT_ON”</font>, <font class='docstring'>“SHIFT_RIGHT_ON”</font>, <font class='docstring'>“SYM_ON”</font></div>
 
 		<div data-role="popup" id="pop_dsc_037" class="ui-content"><b>web.Tween</b><br>Performs an animation on the control.<br>The <b>target</b> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <b>type</b> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <b>repeat</b>s you can control how many times you want to play the animation.<br><br>If you have <b>jojo</b> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <b>callback</b> function will be called after the animation has finished. Well, it's about time!</div>

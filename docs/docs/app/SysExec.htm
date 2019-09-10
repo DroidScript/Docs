@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SysExec</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -49,10 +49,10 @@
 			See Also: <a href="ExtExec.htm" data-ajax="false">ExtExec</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - ListDir SH</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					    <b id="snip0" style="font-size:100%"><span class="token keyword">var</span> delim <span class="token operator">=</span> <span class="token string">"\0"</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> delim <span class="token operator">=</span> <span class="token string">"\0"</span><span class="token punctuation">;</span><br>
 					    <span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">SysExec</span><span class="token punctuation">(</span> <span class="token string">'ls -ap /sdcard/;exit'</span><span class="token punctuation">,</span> <span class="token string">"sh,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    list <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
@@ -65,9 +65,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 

@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateNetClient</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -48,7 +48,7 @@
 			Note: A few routers block fast UDP messages by default</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - TCP Basic</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -62,7 +62,7 @@
 					<br>
 					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip0" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    net<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
@@ -84,16 +84,16 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - TCP AutoReceive</h3>
-				<div id="examp1" style="font-size:70%">
+				<div id="examp2" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -107,7 +107,7 @@
 					<br>
 					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip1" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip2" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    net<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    net<span class="token punctuation">.</span><span class="token function">AutoReceive</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -138,16 +138,16 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - UDP Messaging</h3>
-				<div id="examp2" style="font-size:70%">
+				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -187,8 +187,8 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 				</div>
 			</div>
 

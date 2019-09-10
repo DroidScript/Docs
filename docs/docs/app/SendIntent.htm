@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>SendIntent</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -57,8 +57,8 @@
 			  1: <i>user-defined activity results</i><br>
 			  0: <i>operation canceled</i><br>
 			<br>
-			You can find some common used examples for that in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent');">DroidScript Wiki</a><br>
-			For more information visit the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html');">Android Developer Page</a>. There you can find informations about the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions');">activity</a>, <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-categories');">category</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/content/Intent.html#standard-extra-data');">extra</a>.<br>
+			You can find some common used examples for that in the <a href="https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent" onclick="return OpenUrl(this.href);">DroidScript Wiki</a><br>
+			For more information visit the <a href="https://developer.android.com/reference/android/content/Intent.html" onclick="return OpenUrl(this.href);">Android Developer Page</a>. There you can find informations about the <a href="https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions" onclick="return OpenUrl(this.href);">activity</a>, <a href="https://developer.android.com/reference/android/content/Intent.html#standard-categories" onclick="return OpenUrl(this.href);">category</a> and <a href="https://developer.android.com/reference/android/content/Intent.html#standard-extra-data" onclick="return OpenUrl(this.href);">extra</a>.<br>
 			<br>
 			See Also: <a href="GetIntent.htm" data-ajax="false">GetIntent</a></p>
 

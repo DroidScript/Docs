@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateWebServer</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -42,45 +42,28 @@
 				→ <b>app object:</b> WebServer
 			</div>
 
-			<p>Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.</p>
-
-			<div class="samp">
-			wbs<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>Start the server using the Start method.</p>
-
-			<div class="samp">
-			wbs<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>And stop it using the Stop method.</p>
-
-			<div class="samp">
-			wbs<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>The following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.<br>
+			<p>Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Start the server using the Start method.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	And stop it using the Stop method.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	The following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.<br>
 			<br>
-			For simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.</p>
+			For simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Basic</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    <span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">,</span> <span class="token string">"Type the following address into your browser"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip0" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
@@ -88,17 +71,18 @@
 			<br>
 			It also adds a servlet to respond to messsages from the web client. A servelet can be used to process data supplied by a user via form elements or it can handle requests made from the client application.<br>
 			<br>
-			To get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.</p>
+			To get a better understanding of how client - server messaging works you can view the source of the served demo page and the network view in the developer tools of your favorite browser to see how the simple GET request is sent from the client browser to the servlet for processing by the OnServlet function when the Send Message button is clicked.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Servlets</h3>
-				<div id="examp1" style="font-size:70%">
+				<div id="examp2" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    <span class="token keyword">var</span> ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">,</span> <span class="token string">"Type the following address into your browser"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip1" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip2" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    serv<span class="token punctuation">.</span><span class="token function">AddServlet</span><span class="token punctuation">(</span> <span class="token string">"/message"</span><span class="token punctuation">,</span> OnServlet <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -111,9 +95,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 
@@ -128,11 +112,12 @@
 			<br>
 			Web sockets can be used for broadcast purposes, for example sending the same message to all connected clients. They can also be used to send different direct messages to a specific one device using the IP address.<br>
 			<br>
-			The following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.</p>
+			The following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Send and Receive messages</h3>
-				<div id="examp2" style="font-size:70%">
+				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">var</span> indexhtml <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 					&lt;html><br>
 					&lt;head><br>
@@ -238,8 +223,8 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 				</div>
 			</div>
 
@@ -327,7 +312,7 @@
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>sock.GetType</b><br>Returns the control class name.</div>
 		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sock.GetWebSockClients</b><br>Returns a list of connected client <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('CreateWebSocket.htm');">WebSockets</a>.</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sock.GetWebSockClients</b><br>Returns a list of connected client <a href="CreateWebSocket.htm" onclick="return OpenUrl(this.href);">WebSockets</a>.</div>
 		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>sock.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
 		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 

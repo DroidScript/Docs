@@ -25,17 +25,15 @@
 	<div data-role="header">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>DroidScript</h1>
-		<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div><!-- /header -->
 
 	<div data-role="content">
 		
 		<h3>Scripting Engine</h3>
-		<p>The <b>DroidScript</b> App contains a scripting engine which allows anyone with a bit of <b>JavaScript</b> knowledge to easily write Apps for their mobile phone or tablet. You can write very simple Apps with just a few buttons, or more complex ones which include dynamic graphical interfaces such as the DroidScript application itself, which is written using the very same engine.<br>
+		<p>The <b>DroidScript</b> App contains a scripting engine which allows anyone with a bit of <a href="../javascript/index.html" data-ajax="false">JavaScript</a> knowledge to easily write Apps for their mobile phone or tablet. You can write very simple Apps with just a few buttons, or more complex ones which include dynamic graphical interfaces such as the DroidScript application itself, which is written using the very same engine.<br>
 		<br>
-		As well as creating graphical interfaces, you have access to the Accelerometer, Compass, Light meter, Wifi, Bluetooth, Camera, GPS, SD Card, SMS, Emails, Internet and more. We're always adding new functionality to the engine, so if you want something added just let us know via email or leave a comment on the forum.<br>
-		<br>
-		<i>Note: You can find a link to the forum and our Twitter feed on the about box of DroidScript)</i></p>
+		As well as creating graphical interfaces, you have access to <a href="../Sensors.htm" onclick="return OpenUrl(this.href);">Sensors</a> like the Accelerometer, Compass, Light meter or other device components like <a href="../Network.htm" data-ajax="false">Wifi</a>, <a href="../Bluetooth.htm" data-ajax="false">Bluetooth</a>, <a href="../app/CreateCameraView.htm" data-ajax="false">Camera</a>, <a href="../app/CreateLocator.htm" data-ajax="false">GPS</a>, <a href="../Files.htm" data-ajax="false">SD Card</a>, <a href="../app/CreateSMS.htm" data-ajax="false">SMS</a>, <a href="../app/CreateEmail.htm" data-ajax="false">Emails</a>, <a href="../Network.htm" data-ajax="false">Internet</a> and more. We're always adding new functionality to the engine, so if you want something added just let us know via <a href="mailto:support<a href="droidscript.htm" data-ajax="false">droidscript</a>.org" onclick="return OpenUrl(this.href);">email</a> or leave a comment on the <a href="https://groups.google.com/forum/#!forum/androidscript" onclick="return OpenUrl(this.href);">forum</a>.</p>
 		<h3>App Icons</h3>
 		<p>When you first start DroidScript, you will see a series of icons used to run your JavaScript Apps. There will initially be a simple 'Hello World' example App here for you try. You can launch the App by simply touching the icon. After you have finished with an App, press the phone's 'back' button to return to the main screen. Long press an App's icon to see other available actions.</p>
 		<h3>Editing Scripts</h3>
@@ -43,9 +41,9 @@
 		<br>
 		You can also edit your Apps on a PC or Mac in a browser using the built in Wifi editor, by touching the small arrow button at the top and following the instructions shown. Editing with a full size keyboard is much easier and we recommend that you use the WiFi editing for long coding sessions, especially for larger projects. The Wifi editor also allows you to easily upload image and sound resources to your App.</p>
 		<h3>Samples</h3>
-		<p>DroidScript comes with many sample Apps, ranging from very simple "Hello World" type Apps which show a single button to more complex ones which involve Web pages, Wifi and Phone-PC communication. It's a good idea to copy the script in one of these samples as a starting point for your own Apps. Try to find the one which best matches your requirements.</p>
+		<p>DroidScript comes with many sample Apps, ranging from very simple "Hello World" type Apps which show a single button to more complex ones which involve Web pages, Wifi and Phone-PC communication. It's a good idea to copy the script in one of these samples as a starting point for your own Apps. Try to find the one which best matches your requirements. Have a look at them <a href="#" onclick="app.Execute(&quot;if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();&quot;)">right now</a>!</p>
 		<h3>Measurements</h3>
-		<p>In order to maintain the scale of graphical objects in devices with different screen resolutions and orientations, all positioning and sizing values are given as a decimal <b>fraction</b> of the screen width or height. For example creating a button with a width of 0.5 would make the button half the screen width and using a height of 0.1 would make the button one tenth of screen height. You can however leave out the width and height parameters on many controls if you want the control to size according to its contents.</p>
+		<p>In order to maintain the scale of graphical objects in devices with different screen resolutions and orientations, all positioning and sizing values are given as a decimal <b>fraction</b> of the screen width or height. For example creating a button with a width of 0.5 would make the button half the screen width and using a height of 0.1 would make the button one tenth of screen height. You can however specify -1 or leave out the width and height parameters completely on many controls if you want the control to size according to its contents.</p>
 		<h3>Getting Started</h3>
 		<p>Before starting to write your own Apps it's a good idea to read the documentation explaining '<a href="../app/CreateLayout.htm" data-ajax="false">Layouts</a>' as these are a fundamental part of every DroidScript App.<br>
 		</p>

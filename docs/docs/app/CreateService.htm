@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateService</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -54,39 +54,16 @@
 			<br>
 			Your service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.<br>
 			<br>
-			You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.</p>
-
-			<div class="samp">
-			app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>Stop a service using the Stop method.</p>
-
-			<div class="samp">
-			svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>Messages can be sent from your app to the service using the SendMessage method on the service object:</p>
-
-			<div class="samp">
-			svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>You will need to provide a message handler to receive and process the messages (see example below).<br>
+			You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.	<code class="samp">app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Stop a service using the Stop method.	<code class="samp">svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Messages can be sent from your app to the service using the SendMessage method on the service object:	<code class="samp">svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	You will need to provide a message handler to receive and process the messages (see example below).<br>
 			<br>
-			Send messages from the service to the main app by using the SendMessage method of the app object:</p>
-
-			<div class="samp">
-			app<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>This will also need a message handler on the application (see example below).<br>
+			Send messages from the service to the main app by using the SendMessage method of the app object:	<code class="samp">app<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	This will also need a message handler on the application (see example below).<br>
 			<br>
-			Adding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.</p>
+			Adding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Services</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token comment">//our Service.js code.</span><br>
 					<span class="token comment">//In regular usage move this code to a separate Service.js file</span><br>
 					<span class="token keyword">var</span> servicejs <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
@@ -169,8 +146,8 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 

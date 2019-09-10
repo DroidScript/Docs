@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateGLView</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -50,16 +50,17 @@
 			<font class="red">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font><br>
 			You can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.<br>
 			<br>
-			Once all drawing has been done, the <b>Render</b> method must be called to render all the GLView graphics to the screen.</p>
+			Once all drawing has been done, the <b>Render</b> method must be called to render all the GLView graphics to the screen.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - DrawImage</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip0" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> glview <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					    img <span class="token operator">=</span> glview<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> DrawFrame <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -74,26 +75,27 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
 			<h3>Render Loop</h3>
 			<p>To create a rendering loop for a game, use the setInterval JavaScript function to call your drawing function at regular intervals.<br>
-			The example below draws a continuously rotating image by calling the DrawFrame function 30 times each second, updating the angle each time:</p>
+			The example below draws a continuously rotating image by calling the DrawFrame function 30 times each second, updating the angle each time:<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Render Loop</h3>
-				<div id="examp1" style="font-size:70%">
+				<div id="examp2" style="font-size:70%">
 					<span class="token keyword">var</span> angle <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip1" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip2" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> glview <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					    img <span class="token operator">=</span> glview<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> StartRendering <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -117,18 +119,19 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 
 			<h3>Sprite Touch Detection</h3>
-			<p>If you need to want to simulate OnTouch for a GLView Image, you will need to keep track of the position, width and height that it has been drawn with. Then use the GLView OnTouch event to determine if the touch coordinates are within the GLView Image yourself. To prevent touch detect on all sprites on the touch position define a drawing order according to a list.</p>
+			<p>If you need to want to simulate OnTouch for a GLView Image, you will need to keep track of the position, width and height that it has been drawn with. Then use the GLView OnTouch event to determine if the touch coordinates are within the GLView Image yourself. To prevent touch detect on all sprites on the touch position define a drawing order according to a list.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Sprite Touch</h3>
-				<div id="examp3" style="font-size:70%">
+				<div id="examp4" style="font-size:70%">
 					objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 					<br>
 					<span class="token comment">//Called when application is started.</span><br>
@@ -186,18 +189,19 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
 				</div>
 			</div>
 
 			<h3>Sprite Animations</h3>
 			<p>GLView supports the use of Sprite Sheets. The DrawSprite method can be used to draw part of an image to the GLView.<br>
-			The following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:</p>
+			The following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Sprite Sheet Animation</h3>
-				<div id="examp2" style="font-size:70%">
+				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">var</span> spriteCount <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span><br>
 					<span class="token keyword">var</span> srcWidth <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span><br>
 					<span class="token keyword">var</span> srcHeight <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span><br>
@@ -207,7 +211,7 @@
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip2" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip3" style="font-size:100%">glview <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> glview <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					    img <span class="token operator">=</span> glview<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sprint.png"</span><span class="token punctuation">,</span> StartRendering <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -235,9 +239,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 				</div>
 			</div>
 

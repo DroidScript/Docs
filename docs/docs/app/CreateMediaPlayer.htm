@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateMediaPlayer</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -42,14 +42,15 @@
 			<p>Use the SetFile method of the MediaPlayer object to set the sound file to play. Supported sound file types include .ogg and .mp3.<br>
 			<br>
 			When the sound file is ready for playback, the <b>OnReady</b> callback function will be called. Then you can start playing using the <b>Start</b> method.<br>
-			If the sundtrack has finished playing, the <b>OnComplete</b> callback fill be called. All together you code could look like that:</p>
+			If the sundtrack has finished playing, the <b>OnComplete</b> callback fill be called. All together you code could look like that:<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Playing Audio</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					    <b id="snip0" style="font-size:100%">player <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%">player <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    player<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span>Play<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    player<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> player_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -66,18 +67,13 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
-			<p>The SeekTo method can be used to adjust the playback position by passing in the time in seconds. Passing in 0 will set the playback position to the beginning of the sound file.</p>
-
-			<div class="samp">
-			player<span class="token punctuation">.</span><span class="token function">SeekTo</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
+			<p>The SeekTo method can be used to adjust the playback position by passing in the time in seconds. Passing in 0 will set the playback position to the beginning of the sound file.	<code class="samp">player<span class="token punctuation">.</span><span class="token function">SeekTo</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
 			<p><br>The following methods are available on the <b>MediaPlayer</b> object:</p>
 
 			<div class="samp">

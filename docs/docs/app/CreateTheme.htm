@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateTheme</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +44,7 @@
 			<p><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Hackers Theme</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    <span class="token function">SetHackerTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -76,7 +76,7 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">SetHackerTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					    <b id="snip0" style="font-size:100%"><span class="token keyword">var</span> theme <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateTheme</span><span class="token punctuation">(</span><span class="token string">"dark"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> theme <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateTheme</span><span class="token punctuation">(</span><span class="token string">"dark"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    theme<span class="token punctuation">.</span><span class="token function">SetBtnTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    theme<span class="token punctuation">.</span><span class="token function">SetTitleColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    theme<span class="token punctuation">.</span><span class="token function">SetDialogBtnTxtColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -86,9 +86,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
@@ -219,11 +219,11 @@
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>
 
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>thm.SetBtnTextColor</b><br>Define the standard text color of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('CreateToggle.htm');">toggles</a>.</div>
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>thm.SetButtonOptions</b><br>Define standard options of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('CreateToggle.htm');">toggles</a>.</div>
+		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>thm.SetBtnTextColor</b><br>Define the standard text color of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="CreateToggle.htm" onclick="return OpenUrl(this.href);">toggles</a>.</div>
+		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>thm.SetButtonOptions</b><br>Define standard options of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="CreateToggle.htm" onclick="return OpenUrl(this.href);">toggles</a>.</div>
 		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“FontAwesome”</font>, <font class='docstring'>“Html”</font>, <font class='docstring'>“Monospace”</font>, <font class='docstring'>“SingleLine”</font>, <font class='docstring'>“Custom”</font>, <font class='docstring'>“NoPad”</font>, <font class='docstring'>“FillX/Y”</font>, <font class='docstring'>“Normal”</font> or <font class='docstring'>“Aluminium”</font> or <font class='docstring'>“Gray”</font> or <font class='docstring'>“Lego”</font></div>
 
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>thm.SetButtonStyle</b><br>Define standard style of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('CreateToggle.htm');">toggles</a>.</div>
+		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>thm.SetButtonStyle</b><br>Define standard style of <a href="CreateButton.htm" data-ajax="false">buttons</a> and <a href="CreateToggle.htm" onclick="return OpenUrl(this.href);">toggles</a>.</div>
 		<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
 		<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
 
@@ -236,11 +236,11 @@
 		<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>thm.SetDimBehind</b><br>En/Disables standard dimming of <a href="CreateDialog.htm" data-ajax="false">dialogs</a>.</div>
 		<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
 
-		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>thm.SetProgressBackColor</b><br>Define standard background progress color of <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('ShowProgress.htm');">progress indicators</a>.</div>
-		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>thm.SetProgressBarOptions</b><br>Define standard options of <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('ShowProgressBar.htm');">progress bars</a>.</div>
+		<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>thm.SetProgressBackColor</b><br>Define standard background progress color of <a href="ShowProgress.htm" onclick="return OpenUrl(this.href);">progress indicators</a>.</div>
+		<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>thm.SetProgressBarOptions</b><br>Define standard options of <a href="ShowProgressBar.htm" onclick="return OpenUrl(this.href);">progress bars</a>.</div>
 		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“Light”</font></div>
 
-		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>thm.SetProgressTextColor</b><br>Define standard text color of <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('ShowProgress.htm');">progress indicators</a>.</div>
+		<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>thm.SetProgressTextColor</b><br>Define standard text color of <a href="ShowProgress.htm" onclick="return OpenUrl(this.href);">progress indicators</a>.</div>
 		<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>thm.SetTextColor</b><br>Define standard text color of controls.</div>
 		<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>thm.SetTextEditOptions</b><br>Define standard options of <a href="CreateTextEdit.htm" data-ajax="false">text edits</a>.</div>
 		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <font class='docstring'>“underline”</font></div>

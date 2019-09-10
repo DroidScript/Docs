@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GetRSSI</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -34,18 +34,54 @@
 
 		<div data-role="content">
 			<p>Returns the current <i><b>R</b>eceived <b>S</b>ignal <b>S</b>trength <b>I</b>ndication</i> which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).</p>
-
-			<div class="samp">
-			app.GetRSSI() → <b>number:</b> <i>integer:</i> -127..-30
-			</div>
-
 			<h3>Understanding RSSI</h3>
-			<p><table><thead align='left'><tr><th width="15%">Signal Strength</th><th width="10%">TL;DR</th><th width="20%">Required for</th></tr></thead><tbody><tr><td>-30 dBm</td><td>Amazing</td><td>N/A</td></tr><tr><td>-67 dBm</td><td>Very Good</td><td>VoIP/VoWiFi, streaming video</td></tr><tr><td>-70 dBm</td><td>Okay</td><td>Email, web</td></tr><tr><td>-80 dBm</td><td>Not Good</td><td>N/A</td></tr><tr><td>-90 dBm</td><td>Unusable</td><td>N/A</td></tr><tr><td>-127 dBm</td><td>Disabled</td><td>N/A</td></tr></tbody></table><p>source: <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://www.metageek.com/training/resources/understanding-rssi.html');">metageek.com</a><br>
+			<table>
+			  <thead align='left'>
+			    <tr>
+			      <th width="15%">Signal Strength</th>
+			      <th width="10%">TL;DR</th>
+			      <th width="20%">Required for</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <td>-30 dBm</td>
+			      <td>Amazing</td>
+			      <td>N/A</td>
+			    </tr>
+			    <tr>
+			      <td>-67 dBm</td>
+			      <td>Very Good</td>
+			      <td>VoIP/VoWiFi, streaming video</td>
+			    </tr>
+			    <tr>
+			      <td>-70 dBm</td>
+			      <td>Okay</td>
+			      <td>Email, web</td>
+			    </tr>
+			    <tr>
+			      <td>-80 dBm</td>
+			      <td>Not Good</td>
+			      <td>N/A</td>
+			    </tr>
+			    <tr>
+			      <td>-90 dBm</td>
+			      <td>Unusable</td>
+			      <td>N/A</td>
+			    </tr>
+			    <tr>
+			      <td>-127 dBm</td>
+			      <td>Disabled</td>
+			      <td>N/A</td>
+			    </tr>
+			  </tbody>
+			</table>
+			<p>source: <a href="https://www.metageek.com/training/resources/understanding-rssi.html" onclick="return OpenUrl(this.href);">metageek.com</a><br>
 			<br>
 			See Also: <a href="SetWifiEnabled.htm" data-ajax="false">SetWifiEnabled</a>, <a href="IsWifiEnabled.htm" data-ajax="false">IsWifiEnabled</a></p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Show RSSI</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRSSI<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -58,8 +94,8 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 

@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>GA</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,7 +44,7 @@
 
 			<p>You can get lots of usage statistics including what version of your app they are using, what version of Android, the time of day they are using your app, what device they are using and even which parts of the app people are using the most.<br>
 			<br>
-			You can find more informations on the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference');">Google Developers page</a>.<br>
+			You can find more informations on the <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference" onclick="return OpenUrl(this.href);">Google Developers page</a>.<br>
 			<br>
 			<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></p>
 

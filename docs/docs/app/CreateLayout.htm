@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateLayout</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -46,49 +46,17 @@
 			<br>
 			Layouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.<br>
 			<br>
-			You can add child objects to the Layout using the AddChild function:</p>
-
-			<div class="samp">
-			lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> object <span class="token punctuation">)</span><span class="token punctuation">;</span>
-			</div>
-
-			<p>The alignment of chlld objects within a layout can be set by adding the <b>options</b> <font class='docstring'>“Left”</font>, <font class='docstring'>“Right”</font>, <font class='docstring'>“Bottom”</font> and <font class='docstring'>“VCenter”</font>, by default objects will be aligned <font class='docstring'>“Top,Center”</font>.</p>
+			You can add child objects to the Layout using the AddChild function:	<code class="samp">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> object <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	The alignment of chlld objects within a layout can be set by adding the <b>options</b> <font class='docstring'>“Left”</font>, <font class='docstring'>“Right”</font>, <font class='docstring'>“Bottom”</font> and <font class='docstring'>“VCenter”</font>, by default objects will be aligned <font class='docstring'>“Top,Center”</font>.</p>
 			<h3>Linear Layouts</h3>
-			<p>Linear layouts are probably the most useful type and are used to organize controls in either the default <font class='docstring'>“Vertical”</font> or <font class='docstring'>“Horizontal”</font> direction on screen.</p>
+			<p>Linear layouts are probably the most useful type and are used to organize controls in either the default <font class='docstring'>“Vertical”</font> or <font class='docstring'>“Horizontal”</font> direction on screen.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Vertical</h3>
-				<div id="examp0" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <b id="snip0" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<br>
-					    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Horizontal</h3>
 				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					    <b id="snip1" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    <b id="snip1" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
 					    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -109,11 +77,40 @@
 				</div>
 			</div>
 
-			<p>By default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout sizes within it's parent: <font class='docstring'>“FillX”</font>, <font class='docstring'>“FillY”</font> and <font class='docstring'>“FillXY”</font>.</p>
+			<p></p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Horizontal</h3>
+				<div id="examp2" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    <b id="snip2" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				</div>
+			</div>
+
+			<p>By default Layouts will auto-size to wrap their contents but you have 3 more options as to how a layout sizes within it's parent: <font class='docstring'>“FillX”</font>, <font class='docstring'>“FillY”</font> and <font class='docstring'>“FillXY”</font>.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Combined</h3>
-				<div id="examp2" style="font-size:70%">
+				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    layVert <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -121,7 +118,7 @@
 					    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip2" style="font-size:100%">layHoriz <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip3" style="font-size:100%">layHoriz <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layHoriz <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
 					    btnB1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B1"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -138,25 +135,26 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 				</div>
 			</div>
 
 			<h3>Frame Layouts</h3>
 			<p>Frame layouts are used to display objects in front or behind each other. Every time the <b>AddChild</b> function is called on a Frame layout, the child object is placed in a new layer in front of the previously added object at the top left of the frame.<br>
 			<br>
-			Frame Layouts are useful if you wish to do <b>animated Flips</b> or <b>Slides</b> to reveal layers of objects or use <b>transparency</b>.</p>
+			Frame Layouts are useful if you wish to do <b>animated Flips</b> or <b>Slides</b> to reveal layers of objects or use <b>transparency</b>.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Image Swap</h3>
-				<div id="examp3" style="font-size:70%">
+				<div id="examp4" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip3" style="font-size:100%">layFrm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Frame"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    <b id="snip4" style="font-size:100%">layFrm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Frame"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					    img1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    layFrm<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img1 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
@@ -182,9 +180,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip4 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
 				</div>
 			</div>
 
@@ -511,7 +509,7 @@
 		<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <font class='docstring'>“/absolute/...”</font> or <font class='docstring'>“relative/...”</font> )</i></div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>
 
-		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lay.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/graphics/BlendMode.html');">Android Developer page</a>.</div>
+		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lay.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
 		<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <font class='docstring'>“Add”</font> or <font class='docstring'>“Multiply”</font> or <font class='docstring'>“clear”</font> or <font class='docstring'>“darken”</font> or <font class='docstring'>“lighten”</font> or <font class='docstring'>“overlay”</font> or <font class='docstring'>“screen”</font> or <font class='docstring'>“xor”</font> or <font class='docstring'>“src_in”</font> or <font class='docstring'>“src_out”</font> or <font class='docstring'>“src_atop”</font> or <font class='docstring'>“src_over”</font> or <font class='docstring'>“dst_in”</font> or <font class='docstring'>“dst_out”</font> or <font class='docstring'>“dst_atop”</font> or <font class='docstring'>“dst_over”</font></div>
 
 		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>lay.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>

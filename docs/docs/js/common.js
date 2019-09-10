@@ -3,7 +3,7 @@
 var agent = navigator.userAgent;
 console.log( "agent = " + agent );
 
-var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 ); 
+var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 );
 var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
 var isAndroid = ( agent.indexOf("Android") > -1 );
 var isDS = ( agent.indexOf("; wv)") > -1 );
@@ -16,13 +16,13 @@ if(curTheme && history.replaceState)
 setTheme(curTheme ? curTheme[1] : getTheme());
 
 //Hook into cross frame messaging
-window.addEventListener("message", function(event) 
+window.addEventListener("message", function(event)
 {
 	console.log("msg: "+event)
 	var params = event.data.split("|");
 	var cmd = params[0];
 
-	if( cmd == "address" ) 
+	if( cmd == "address" )
 		serverAddress = params[1];
 	else if( cmd == "setTheme" )
 		setTheme(params[1]);
@@ -45,22 +45,21 @@ $(document).on("mobileinit", function()
 
 	if( navigator.userAgent.indexOf("Android")==-1 )
 		$.mobile.ignoreContentEnabled = true;
-	
+
 	if(!isDS) app.ShowPopup = ShowPopup;
-		
+
 	//Ask parent for DS adddress.
 	parent.postMessage( "getaddress:", "*" );
 
 	// check theme in other browsers after history fwd/bck
 	// workaround for pages being loaded from cache
-	if(!isDS && !useWebIDE) setInterval(function()
+	if(false && !isDS && !useWebIDE) setInterval(function()
 	{
 		if(curTheme != getTheme()) setTheme(getTheme());
 	}, 200);
 });
- 
-$(document).ready(function () 
-{
+
+$(document).ready(function() {
 });
 
 $(document).live( 'pageshow',function(event, ui)
@@ -75,39 +74,26 @@ $(document).live( 'pageshow',function(event, ui)
 		//if( document.getElementById("nxt") ) {
 		//	if( app.GetName()!="NxtScript") nxt.innerHTML = "";
 		//}
-		
+
 		//Set appropriate body style.
 		if( !isAndroid || useWebIDE )
 			document.body.className = "bodyPC";
-		
+
 		//Remove 'Copy' and 'Run' buttons on PC.
 		if( !isAndroid || useWebIDE && !isChromeOS )
 			hidecopy();
-		
+
 		//If on Android, save current page.
 		if( isDS && !useWebIDE ) {
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
 		}
-			
+
 		//Get current page id.
 		var curPage = $.mobile.activePage.attr('id');
-		
+
 		//Show plugins list if 'plugins' page is loading.
 		if( curPage == "plugins" ) {
 			OnPageShow();
-		}
-		
-		var popup = location.href.match(/#([a-z]+)/i);
-		if(popup) {
-			popup = $("a.ui-link:contains(" + popup[1] + ")");
-			setTimeout(function() {
-				$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
-					.delay(350).queue(function(){ popup.click(); });
-			}, 300);  
-		}
-	
-		if(sessionStorage.scrollPosition) {
-			$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
 		}
 	}
 	//catch( e ) {}
@@ -151,11 +137,11 @@ function OnPageShow()
 		{
 			//Get list from device.
 			xmlHttp = new XMLHttpRequest();
-			xmlHttp.onload = function() 
-			{ 
+			xmlHttp.onload = function()
+			{
 				//Extract plugins list.
-				var list = JSON.parse(xmlHttp.responseText).plugins.split(","); 
-				
+				var list = JSON.parse(xmlHttp.responseText).plugins.split(",");
+
 				//Build html list.
 				var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
 				for( var i = 0; i < list.length && list[0] != ""; i++ )
@@ -175,12 +161,26 @@ function OnPageShow()
 	catch( e ) {}
 }
 
+$(window).load(function() {
+	var popup = location.href.match(/#([a-z]+)/i);
+	if(popup)
+	{
+		popup = $("a.ui-link:contains(" + popup[1] + ")");
+		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
+			.delay(350).queue(function(){ popup.click(); });
+	}
+	else if(sessionStorage.scrollPosition)
+	{
+		$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+	}
+});
+
 $(window).unload(function() {
 	var scrollPosition = $(document).scrollTop();
 	sessionStorage.scrollPosition = scrollPosition;
 	console.log("set: " + sessionStorage.scrollPosition)
 });
-   
+
 // set the current theme. (default, dark)
 function setTheme( theme )
 {
@@ -188,13 +188,13 @@ function setTheme( theme )
 	curTheme = theme;
 	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
 	console.log("setTheme('" + theme + "')");
-	
+
 	var lnkJQuery = document.getElementById('themeJQ');
 	if(lnkJQuery) lnkJQuery.href = lnkJQuery.href.replace(/(.*\/).*/, "$1theme-" + theme + ".min.css");
-	
+
 	var lnkDocs = document.getElementById('themeDocs');
 	if(lnkDocs) lnkDocs.href = lnkDocs.href.replace(/(.*\/).*/, "$1docs-" + theme + ".min.css");
-	
+
 	var lnkPrism = document.getElementById('themePrism');
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
@@ -204,7 +204,13 @@ function getTheme() {
 	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
 }
 
-// app.ShowPopup equivalent for browsers 
+function OpenUrl( url, type, choose ) {
+	if(isAndroid) app.OpenUrl(url, type, choose );
+	else window.open(url);
+	return false;
+}
+			
+// app.ShowPopup equivalent for browsers
 function ShowPopup(msg) {
 	var apop = $("#appPopup");
 	// .animate() works as cancelable delay

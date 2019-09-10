@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>ExtExec</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -50,7 +50,7 @@
 			How about installing git, or nodejs or using ssh or gzip.<br>
 			Try typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.</p>
 			<h3>Enable Termux</h3>
-			<p>To <b>enable termux</b> support you have to install <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://play.google.com/store/apps/details?id=com.termux');">Termux</a> and the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://play.google.com/store/apps/details?id=com.termux.tasker');">Tasker</a> Plugin from PlayStore first.<br>
+			<p>To <b>enable termux</b> support you have to install <a href="https://play.google.com/store/apps/details?id=com.termux" onclick="return OpenUrl(this.href);">Termux</a> and the <a href="https://play.google.com/store/apps/details?id=com.termux.tasker" onclick="return OpenUrl(this.href);">Tasker</a> Plugin from PlayStore first.<br>
 			<br>
 			Then give termux <b>sdcard permissions</b> in the Android settings under apps/termux.<br>
 			<br>
@@ -64,25 +64,25 @@
 			<p>Finally you can run a termux shell script from inside DroidScript:</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Open Termux and pass arguments</h3>
-				<div id="examp0" style="font-size:70%">
+				<div id="examp1" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> <span class="token string">"echo Hello $1 and $2"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <b id="snip0" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					    <span class="token keyword">if</span><span class="token punctuation">(</span> err <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Termux Error:"</span> <span class="token operator">+</span> err <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
 			</div>
 
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Execute in Background and retreive output</h3>
-				<div id="examp1" style="font-size:70%">
+				<div id="examp2" style="font-size:70%">
 					<span class="token keyword">var</span> itv<span class="token punctuation">,</span> lock <span class="token operator">=</span> <span class="token string">"/sdcard/.termuxlock"</span><span class="token punctuation">;</span><br>
 					<span class="token keyword">var</span> script <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 					{  # this is a comment<br>
@@ -98,7 +98,7 @@
 					    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> lock<span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Script is running"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					    <b id="snip2" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					    <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
 					<br>
@@ -131,9 +131,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
 

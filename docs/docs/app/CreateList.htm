@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateList</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -53,45 +53,17 @@
 			<br>
 			Alternatively you can use the <b>AddItem</b> method which accepts <i>title</i>, <i>body</i> and <i>icon</i> as parameters to generically build up your list.<br>
 			<br>
-			You can specify your own icon file for example <font class='docstring'>“Img/MyIcon.png”</font>, or one of the special built-in icons using the following key words: <font class='docstring'>“audio”</font>, <font class='docstring'>“photo”</font>, <font class='docstring'>“video”</font>, <font class='docstring'>“folder”</font>, <font class='docstring'>“audiofolder”</font>, <font class='docstring'>“photofolder”</font>, <font class='docstring'>“videofolder”</font> and <font class='docstring'>“playlist”</font>.</p>
+			You can specify your own icon file for example <font class='docstring'>“Img/MyIcon.png”</font>, or one of the special built-in icons using the following key words: <font class='docstring'>“audio”</font>, <font class='docstring'>“photo”</font>, <font class='docstring'>“video”</font>, <font class='docstring'>“folder”</font>, <font class='docstring'>“audiofolder”</font>, <font class='docstring'>“photofolder”</font>, <font class='docstring'>“videofolder”</font> and <font class='docstring'>“playlist”</font>.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Title + Icon</h3>
-				<div id="examp2" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    <b id="snip2" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Folder:folder,Audio:audio,Photo:photo,Video:video"</span><span class="token punctuation">;</span><br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Touched Item = "</span> <span class="token operator">+</span> title <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Title + Body</h3>
 				<div id="examp3" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip3" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"The Hobbit:Author^c^ J.R.R. Tolkien:null"</span><span class="token punctuation">;</span><br>
-					    data <span class="token operator">+=</span> <span class="token string">",Watership Down:Author^c^ Richard Adams:null"</span><span class="token punctuation">;</span><br>
+					    <b id="snip3" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Folder:folder,Audio:audio,Photo:photo,Video:video"</span><span class="token punctuation">;</span><br>
 					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -111,83 +83,18 @@
 				</div>
 			</div>
 
-			<p>You can use the <b>SetOnTouch</b> and <b>SetOnLongTouch</b> methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.</p>
+			<p></p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Simple</h3>
-				<div id="examp0" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    <b id="snip0" style="font-size:100%">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">"Fred,Bill,Jim"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetOnLongTouch</span><span class="token punctuation">(</span> lst_OnLongTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Item = "</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">", Index = "</span> <span class="token operator">+</span> index<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">lst_OnLongTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Long Touch Item = "</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">", Index = "</span> <span class="token operator">+</span> index<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip0 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp0 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp0 )">      Run      </a>
-				</div>
-			</div>
-
-			<p>You can change the look of a List using the <b>SetBackColor</b> and <b>SetTextColor</b> functions on the list object. You can also set a background image/pattern or background gradient for the List using the <b>SetBackground</b> and <b>SetBackGradient</b> functions.</p>
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Gray on White</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    <b id="snip1" style="font-size:100%">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">"Fred,Bill,Jim"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span>  <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"#ff666666"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#ffffffff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Touched Item = "</span> <span class="token operator">+</span> title <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-			<p>You can also create lists items that look like buttons by using one of the following options: <font class='docstring'>“AlumButton”</font>, <font class='docstring'>“GreenButton”</font>, <font class='docstring'>“OrangeButton”</font>.</p>
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Orange Buttons</h3>
+				<h3>Example - Title + Body</h3>
 				<div id="examp4" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip4" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Button 1,Button 2,Button 3,Button 4"</span><span class="token punctuation">;</span><br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"OrangeButton"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#ffffff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetPadding</span><span class="token punctuation">(</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    <b id="snip4" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"The Hobbit:Author^c^ J.R.R. Tolkien:null"</span><span class="token punctuation">;</span><br>
+					    data <span class="token operator">+=</span> <span class="token string">",Watership Down:Author^c^ Richard Adams:null"</span><span class="token punctuation">;</span><br>
+					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<br>
@@ -206,16 +113,114 @@
 				</div>
 			</div>
 
-			<p>Or create lists with Gradient backgrounds like this:</p>
+			<p>You can use the <b>SetOnTouch</b> and <b>SetOnLongTouch</b> methods to define a function you want to be called when a list item is selected. The selected item title, body, type and index are passed into your OnTouch callback function as parameters.<br>
+			</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Gradient Background</h3>
+				<h3>Example - Simple</h3>
+				<div id="examp1" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <b id="snip1" style="font-size:100%">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">"Fred,Bill,Jim"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetOnLongTouch</span><span class="token punctuation">(</span> lst_OnLongTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Item = "</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">", Index = "</span> <span class="token operator">+</span> index<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">lst_OnLongTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Long Touch Item = "</span> <span class="token operator">+</span> title <span class="token operator">+</span> <span class="token string">", Index = "</span> <span class="token operator">+</span> index<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+				</div>
+			</div>
+
+			<p>You can change the look of a List using the <b>SetBackColor</b> and <b>SetTextColor</b> functions on the list object. You can also set a background image/pattern or background gradient for the List using the <b>SetBackground</b> and <b>SetBackGradient</b> functions.<br>
+			</p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Gray on White</h3>
+				<div id="examp2" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <b id="snip2" style="font-size:100%">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">"Fred,Bill,Jim"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span>  <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"#ff666666"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#ffffffff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Touched Item = "</span> <span class="token operator">+</span> title <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+				</div>
+			</div>
+
+			<p>You can also create lists items that look like buttons by using one of the following options: <font class='docstring'>“AlumButton”</font>, <font class='docstring'>“GreenButton”</font>, <font class='docstring'>“OrangeButton”</font>.<br>
+			</p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Orange Buttons</h3>
 				<div id="examp5" style="font-size:70%">
 					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
 					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					<br>
-					    <b id="snip5" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+					    <b id="snip5" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">"Button 1,Button 2,Button 3,Button 4"</span><span class="token punctuation">;</span><br>
+					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"OrangeButton"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#ffffff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetPadding</span><span class="token punctuation">(</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> lst_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+					<br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> type<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Touched Item = "</span> <span class="token operator">+</span> title <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip5 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+				</div>
+			</div>
+
+			<p>Or create lists with Gradient backgrounds like this:</p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Gradient Background</h3>
+				<div id="examp6" style="font-size:70%">
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <b id="snip6" style="font-size:100%"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
 					    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">30</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><br>
 					    <span class="token punctuation">{</span><br>
 					        <span class="token keyword">if</span><span class="token punctuation">(</span> i <span class="token operator">></span> <span class="token number">1</span> <span class="token punctuation">)</span> data <span class="token operator">+=</span> <span class="token string">","</span><span class="token punctuation">;</span><br>
@@ -237,9 +242,9 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip5 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip6 )">    Copy    </a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
 				</div>
 			</div>
 
@@ -712,7 +717,7 @@
 		<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>lst.SetBackground</b><br>Changes the background to an image which can be repeated using the <b>repeat</b> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
 		<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <font class='docstring'>“repeat”</font></div>
 
-		<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>lst.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://developer.android.com/reference/android/graphics/BlendMode.html');">Android Developer page</a>.</div>
+		<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>lst.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
 		<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <font class='docstring'>“Add”</font> or <font class='docstring'>“Multiply”</font> or <font class='docstring'>“clear”</font> or <font class='docstring'>“darken”</font> or <font class='docstring'>“lighten”</font> or <font class='docstring'>“overlay”</font> or <font class='docstring'>“screen”</font> or <font class='docstring'>“xor”</font> or <font class='docstring'>“src_in”</font> or <font class='docstring'>“src_out”</font> or <font class='docstring'>“src_atop”</font> or <font class='docstring'>“src_over”</font> or <font class='docstring'>“dst_in”</font> or <font class='docstring'>“dst_out”</font> or <font class='docstring'>“dst_atop”</font> or <font class='docstring'>“dst_over”</font></div>
 
 		<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>lst.SetColumnWidths</b><br>Changes the coloumn withs for title, body and icon. Often used with the <font class='docstring'>“Horiz”</font> option.</div>

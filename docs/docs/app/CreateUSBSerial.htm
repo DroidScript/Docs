@@ -25,7 +25,7 @@
 		<div data-role="header" data-position="fixed">
 			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 			<h1>CreateUSBSerial</h1>
-			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
 
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,7 +47,7 @@
 
 			<p>The default constructor values are:<br>
 			  baudrate: 9600<br>
-			  To find out more about RTD and DTR or USB serial at all visit <a href="#" onclick="(isAndroid?app.OpenUrl:window.open)('https://en.wikipedia.org/wiki/RS-232#Data_and_control_signals');">Wikipedia: RS-232</a><br>
+			  To find out more about RTD and DTR or USB serial at all visit <a href="https://en.wikipedia.org/wiki/RS-232#Data_and_control_signals" onclick="return OpenUrl(this.href);">Wikipedia: RS-232</a><br>
 			<br>
 			<font class="red">Note: this application only works on devices that support OTG and allow access to external serial devices.</font><br>
 			<b>Known to work:</b> Nexus7, GalaxyS3/S4, ExperiaZUltra, TescoHudl<br>
