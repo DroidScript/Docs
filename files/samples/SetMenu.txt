@@ -18,23 +18,16 @@ function OnMenu( item )
 }
 </sample>
 
-<sample Menu Images>
+<sample Menu Icons>
 function OnStart()
 {
-	<b>menus = "Files:Files.png,Settings:Settings.png";
-	app.SetMenu( menus, "/Sys/Img" );<b>
-
-    lay = app.CreateLayout( "linear", "" );
-
-    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
-    btn.SetOnTouch( app.ShowMenu );
-    lay.AddChild( btn );
-
-    app.AddLayout( lay );
+    <b>menus = "Files:folder,Music:list,Images:picture";
+	app.SetMenu( menus );</b>
+    app.ShowMenu();
 }
 
 function OnMenu( item )
 {
-	app.ShowPopup( item, "Short" );
+    app.ShowPopup( item, "Short" );
 }
 </sample>

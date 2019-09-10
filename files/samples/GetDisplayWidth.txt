@@ -1,7 +1,7 @@
 <sample Show display width>
 function OnStart()
 {
-    var width = app.GetDisplayWidth();
+    <b>var width = app.GetDisplayWidth();</b>
     app.Alert( width );
 }
 </sample>

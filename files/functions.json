@@ -7220,7 +7220,7 @@
 	},
 	"CreateYesNoDialog": {
 		"abbrev": "ynd",
-		"desc": "Returns a YesNoDialog object.",
+		"desc": "The YesNo dialog can be used to let the user confirm a specific action. Its the equivalent to the js confirm function, but it is customizable.",
 		"isfunc": true,
 		"name": "CreateYesNoDialog",
 		"pNames": ["message", "options"],
@@ -7702,7 +7702,7 @@
 		"shortDesc": "Get device ID"
 	},
 	"GetDisplayHeight": {
-		"desc": "Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.\n\nSee Also: @GetScreenHeight",
+		"desc": "Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.\n\nSee Also: @GetDisplayWidth, @GetScreenHeight",
 		"isfunc": true,
 		"name": "GetDisplayHeight",
 		"pNames": [],
@@ -7711,7 +7711,7 @@
 		"shortDesc": "Get apps display height"
 	},
 	"GetDisplayWidth": {
-		"desc": "Get the display width of the app in pixels. Therefore virtual buttons won't be included to the value.\n\nSee Also: @GetScreenWidth",
+		"desc": "Get the display width of the app in pixels. Therefore virtual buttons won't be included to the value.\n\nSee Also: @GetDisplayHeight, @GetScreenWidth",
 		"isfunc": true,
 		"name": "GetDisplayWidth",
 		"pNames": [],

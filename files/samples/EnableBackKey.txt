@@ -1,8 +1,8 @@
 <sample Example>
 function OnStart()
 {
-<b>	app.EnableBackKey( false );
-</b>}
+	<b>app.EnableBackKey( false );</b>
+}
 
 function OnBack()
 {
@@ -16,17 +16,3 @@ function yesNo_OnTouch( result )
 	if( result=="Yes" ) app.Exit();
 }
 </sample>
-
-<sample Menu Images>
-function OnStart()
-{
-<b>	menus = "Files:Files.png,Settings:Settings.png";
-	app.EnableBackKey( menus, "/Sys/Img" );
-</b>}
-
-function OnMenu( item )
-{
-	app.ShowPopup( item, "Short" );
-}
-</sample>
-

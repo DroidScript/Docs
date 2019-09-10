@@ -43,7 +43,7 @@ function demo( div )
 	{
 		app.WriteFile( "/sdcard/.DroidScript/Temp/~demo.js", div.innerText || div.textContent );
 		//app.StartApp( "/sdcard/.DroidScript/Temp/~demo.js" );	
-		app.Execute( "StartApp('/sdcard/.DroidScript/Temp/~demo.js')" );
+		app.Execute( "try { StartApp('/sdcard/.DroidScript/Temp/~demo.js') } catch(e) { app.ShowPopup('Not running insinde DS'); }" );
 	}
 	else
 	{
