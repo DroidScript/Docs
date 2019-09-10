@@ -85,3 +85,61 @@ function DrawFrame()
 	glview.Render();
 	frameCount++;
 }</sample>
+
+<sample Sprite Touch>
+objects = [];
+
+//Called when application is started.
+function OnStart() {
+	//Create layout
+	lay = app.CreateLayout( "linear" );
+
+	//Create GLView
+	glv = app.CreateGLView( 1, 1, "Fast2d" );
+	glv.SetOnTouchUp( touch );
+
+	//set first image
+	img1 = glv.CreateImage( "/Sys/Img/Hello.png" );
+	img1.name = "img1";
+	img1.X = 0.1; img1.Y = 0.3;
+	img1.W = 0.7; img1.H = 0.4;
+	objects.push(img1);
+
+	//set second image
+	img2 = glv.CreateImage( "/Sys/Img/Droid1.png", startRender );
+	img2.name = "img2";
+	img2.X = 0.5; img2.Y = 0.5;
+	img2.W = 0.5; img2.H = 0.3;
+	objects.push(img2);
+
+	lay.AddChild( glv );
+
+	//Add layout to app.
+	app.AddLayout( lay );
+}
+
+// Draw images
+function startRender() {
+	for(var i in objects) draw(objects[i]);
+	glv.Render();
+}
+
+// Check which image was touched
+function touch(ev) {
+	for(var i = objects.length; i-- > 0; ) {
+		if( touched( objects[i], ev ) ) {
+			app.ShowPopup( "touched " + objects[i].name );
+			break;
+		}
+	}
+}
+
+function draw(img, ev) {
+	glv.DrawImage( img, img.X, img.Y, img.W, img.H, 0);
+}
+
+function touched(img, ev) {
+	return img.X < ev.X && img.X + img.W > ev.X
+		&& img.Y < ev.Y && img.Y + img.H > ev.Y;
+}
+</sample>

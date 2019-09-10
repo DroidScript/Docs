@@ -8,10 +8,8 @@ function generateDocs() {
 	app.ShowProgressBar("Generating files...");
 
 	app.SetDebug("console");
-	try { generateNavigators(); } catch(e) {
-		console.error( /*\x1b[31m*/ `while generating "${curDoc}": ${curSubf||""}` );
-		throw e;
-	}
+	generateNavigators();
+	generateIntros();
 	app.UpdateProgressBar( 0 );
 
 	app.DeleteFolder(path + `docs${getl()}/app`);
@@ -27,12 +25,7 @@ function generateDocs() {
 			keys(functions[f].subs).filter(hidden).length);*/
 
 	for( i = 0; i < lst.length; i++ ) {
-
-		try { generateDoc(lst[i]); }
-		catch(e) {
-			console.error( /*\x1b[31m*/ `while generating "${curDoc}": ${curSubf||""}` );
-			throw e;
-		}
+		generateDoc(lst[i]);
 
 		if( isControl(lst[i]) ) {
 			var tctrl = {}, tsubf = functions[lst[i]].subf;
@@ -67,41 +60,87 @@ function generateDocs() {
 	app.ShowPopup("Generated");
 }
 
-function generateNavigators() {
-	var i, j, list, f, categ, nav = '';
+function generateIntros() {
+	app.DeleteFolder(path + `docs${getl()}/intro`);
+	app.MakeFolder(path + `docs${getl()}/intro`);
+	var nav = "";
 
-	// generate html category lists
-	keys( categories )
-		.filter(nothidden)
-		.sort(sortAsc)
-		.forEach(function(cat, i, l) {
-			curDoc = `docs${getl()}/${cat}.htm`;
+	for(var name of app.ListFolder("intros").sort(sortAsc)) {
+		var s = app.ReadFile(path + `intros${getl()}/` + name);
 
-			nav += newNaviItem(cat + ".htm", cat );
-			list = categories[cat]
-				.sort(sortAsc)
-				.filter(nothidden)
-				.map((func) => newNaviItem(`app/${func}.htm`, func, getAddClass(functions[func])))  // ?cat=" + cat
-				.join("");
+		name = name.replace(/.txt$/, "");
+		curDoc = `docs${getl()}/intro/${name}.htm`;
+		nav += newNaviItem(`intro/${name}.htm`, name );
 
-			/*
-			var navs = {cat: [
-					l[(i + l.length - 1) % l.length] + ".htm",
-					l[(i + 1) % l.length] + ".htm"
-				]};*/
+		var html = ("<p>" + replaceTypes(addMarkdown(replW(s)))
+			// exclude <h> tags from <p>
+			.replace(
+				/(<\/?p>)?(\s|<br>)*(<(h\d?)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
+				"</p>\n\t\t$3\n\t\t<p>")
+			// replace <js> and <bash> tags with sample
+			.replace(
+				/(\s|<br>)*<(js|bash|smp)>\s*([^]*?)\s*<\/\2>(\s|<br>)*/g, (m, _, lang, code) =>
+					`</p>\n${funcBase //(has(code, "\n") ? funcBase : "\t\t" + funcBase.replace(/\n|\t/g, ""))
+						.replace("%s", Prism.languages[lang] ?
+							Prism.highlight(
+								code.replace(/<br>/g, "\n").replace(/&#160;/g, "§s§"),
+								Prism.languages[lang], lang
+							).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>")
+							: code
+						)}\t\t<p>`)
+			// format html code on linebreaks
+			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
+			.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
+			+ "</p>")
+			// additional notes
+			.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
+			// some html char placeholders
+			.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
+			// remove leading whitespace in <p> tag
+			.replace(/<p>(<br>\s+)+/g, "<p>")
+			// remove empty <p> tags
+			.replace(/\n?\t*<p><\/p>/g, "")
+			// remove trailing whitespace
+			.replace(/[ \t]+\n/g, "\n");;
 
-			// generate category list html file
-			app.WriteFile( path + `docs${getl()}/${cat}.htm`,
-				(categories[cat].length < 20 ? naviBase :
-					naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
-				.replace( "%l", list )
-				.replace( /%t/g, cat )
-				// .replace( "%n", JSON.stringify(navs) )
-			);
-		});
+		app.WriteFile(path + `docs/intro/${name}.htm`, introBase
+			.replace(/%t/g, name).replace("%c", html));
+	}
 
 	app.WriteFile(
-		path + "docs" + getl() + "/Categories.htm",
+		path + `docs${getl()}/Introduction.htm`,
+		naviBase
+			.replace( "%l", nav )
+			.replace( /%t/g, "Introduction" )
+	);
+}
+
+function generateNavigators() {
+	var list, nav = '';
+
+	// generate html category lists
+	for(var cat of keys( categories ).filter(nothidden).sort(sortAsc)) {
+		curDoc = `docs${getl()}/${cat}.htm`;
+
+		nav += newNaviItem(cat + ".htm", cat );
+		list = categories[cat]
+			.sort(sortAsc)
+			.filter(nothidden)
+			.map((func) => newNaviItem(`app/${func}.htm`, func, getAddClass(functions[func])))  // ?cat=" + cat
+			.join("");
+
+		// generate category list html file
+		app.WriteFile( path + `docs${getl()}/${cat}.htm`,
+			(categories[cat].length < 20 ? naviBase :
+				naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
+			.replace( "%l", list )
+			.replace( /%t/g, cat )
+			// .replace( "%n", JSON.stringify(navs) )
+		);
+	};
+
+	app.WriteFile(
+		path + `docs${getl()}/Categories.htm`,
 		naviBase
 			.replace( "%l", nav )
 			.replace( /%t/g, "Categories" )
@@ -110,6 +149,8 @@ function generateNavigators() {
 
 // generates one document by function name
 function generateDoc( name ) {
+	if(name == "Intros") return generateIntros();
+	if(name == "Navigators") return generateNavigators();
 	curDoc = `docs${getl()}/app/${name}.htm`;
 
 	// reset globals
@@ -119,18 +160,6 @@ function generateDoc( name ) {
 		popDefs: [],
 		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
 	};
-
-	/* find next documents by categories
-	var navs = {};
-	keys(categories).forEach(function(c, i, l) {
-		l = categories[c].sort( sortAsc ).filter(nothidden);
-		if((i = l.indexOf(name)) != -1) {
-			navs[c] = [
-				l[(i + l.length - 1) % l.length] + ".htm",
-				l[(i + 1) % l.length] + ".htm"
-			];
-		}
-	});*/
 
 	//get an object with the html-converted data
 	var data = getDocData(functions[name]),
@@ -238,13 +267,13 @@ function getDocData( f, useAppPop ) {
 		//convert return value
 		if( met.retval )
 			retval = (met.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( met.retval );
-		
+
 		//convert function types
 		if( met.isfunc )
 		{
 			var args = [], pop;
 			if(!has(Globals.popDefs[Globals.popDefs.length - 1] || "", f.abbrev + ".")) Globals.popDefs.push("");
-			
+
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
 				replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
 				getAddClass(met) || (has(basefuncs.all, curSubf) ? ' class="baseFunc"' : ""));
@@ -252,7 +281,7 @@ function getDocData( f, useAppPop ) {
 
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
-			
+
 			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
 			if(has(curSubf, '.')) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
 			methods += subfBase.replace( "%s", s );
@@ -412,7 +441,7 @@ function typeDesc( types )
 					case "dso":
 						if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
 							Throw(Error(`link to unexistent file ${type[2]}.htm`))
-						if(functions[type[2]]) 
+						if(functions[type[2]])
 							return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
 						else
 							return s[i] + type[2];
@@ -434,7 +463,7 @@ function typeDesc( types )
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
 function toArgPop( name, types, doSwitch ) {
-	
+
 	// function callbacks
 	if( typeof types == "object" )
 	{
@@ -591,7 +620,7 @@ function replaceTypes(s, useAppPop)
 				if(desc.endsWith(' ')) space = ' ';
 				desc = desc.slice(desc.startsWith('"'), space ? -1 : undefined);
 			}
-			
+
 			if( type )
 			{
 				if(typenames[type.slice(0, 3)]) {
@@ -599,7 +628,7 @@ function replaceTypes(s, useAppPop)
 				else
 					desc = type + (desc || ''), type = '';
 			}
-			
+
 			if(useAppPop)
 			{
 				if(type && !desc) r = toArgAppPop(name, type);
@@ -623,7 +652,8 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)\[(.*?)\]\((.*?)\)/g, function(match, white, name, url)
 		{
 			// exists in docs folder? direct link : open in external app
-			return white + (app.FileExists(path + "docs/app/" + url) ?
+			return white + (!url.startsWith("http") &&
+				app.FileExists(path + "docs/app/" + url.slice(url.lastIndexOf("/") + 1)) ?
 				`<a href="${url}" data-ajax="false">` :
 				`<a href="#" onclick="(isAndroid?app.OpenUrl:window.open)(\'${url}\');">`)
 				+ `${name||url}</a>`;
@@ -730,7 +760,7 @@ var		// subfunctions
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-default.min.css"/>
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
-	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="css/docs-default.min.css"/>
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
@@ -788,7 +818,7 @@ var		// subfunctions
 			<h1>%t</h1>
 			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 		</div>
-		
+
 		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 			<div id="appPopup" class="androidPopup">Hello World</div>
 		</div>
@@ -803,7 +833,46 @@ var		// subfunctions
 	</div>
 </body>
 
-</html>\n`;
+</html>\n`,
+
+	introBase = `
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>%t</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>%t</h1>
+		<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		%c
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>`;
 
 // ---------------------------- top globs --------------------------------------
 
@@ -999,14 +1068,19 @@ function OnStart() {
 	if(app.FileExists("util.js"))
 		basefuncs.all.concat(app.ReadFile("util.js").split("Obj.prototype.").slice(1).map(v => v.slice(0, v.indexOf(" "))))
 
-	if(process.argv.length > 2)
-		process.argv.slice(2).forEach((n) => generateDoc(n));
-	else generateDocs();
-	
+	try {
+		if(process.argv.length > 2)
+			process.argv.slice(2).forEach((n) => generateDoc(n));
+		else generateDocs();
+	} catch(e) {
+		console.error( /*\x1b[31m*/ `while generating "${curDoc}": ${curSubf||""}` );
+		throw e;
+	}
+
 	var vn = 0, v = 1000 * (Date.now() / 2592e6 | 0);
-	if(app.FileExists("version.txt"))
-	    vn = Number(app.ReadFile("version.txt")) % 1000 + 1;
-    app.WriteFile("version.txt", v + vn);
+	if(app.FileExists("../docs/version.txt"))
+		vn = Number(app.ReadFile("../docs/version.txt")) % 1000 + 1;
+	app.WriteFile("version.txt", v + vn);
 }
 
 var fs = require("fs");

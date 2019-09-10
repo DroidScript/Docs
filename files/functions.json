@@ -536,7 +536,7 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "Costomize the look of the button.",
+				"desc": "Customize the look of the button.",
 				"isfunc": true,
 				"name": "SetStyle",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
@@ -1843,7 +1843,7 @@
 	},
 	"CreateGameView": {
 		"abbrev": "gmv",
-		"desc": "The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics. The GameView runs a standalone script which can communicate with the main app via gfx.Execute or gmv.Execute vice versa.\n\nYou can find references of GameView scripting here:\n\t- official DS GameView tutorials: [](https://dsgameview.wixsite.com/gameview)\n\t- inofficial blog from csnakes xXXx: [](https://dsgameengine.blogspot.com)\n\t- An inofficial function list and documentation: [](https://docs.google.com/document/d/1Bs\\_LXQQv-JdZQMaOdsM6rkHPZjaFACVvodATbL5M0H4/view)\n\n\n<h3>GameView in Webbrowsers</h3>\nIf you prefer to work on a PC you can even run and deug your GameView code in a regular web-browser. Check out these demos to see how it works: [](http://androidscript.org/beta/GameViewWeb)",
+		"desc": "The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics. The GameView runs a standalone script which can communicate with the main app via gfx.Execute or gmv.Execute vice versa.\n\nYou can find references of GameView scripting here:\n\t- official DS GameView tutorials: [](https://dsgameview.wixsite.com/gameview)\n\t- inofficial blog from csnakes xXXx: [](https://dsgameengine.blogspot.com)\n\t- An inofficial function list and documentation: [](https://docs.google.com/document/d/1Bs\\_LXQQv-JdZQMaOdsM6rkHPZjaFACVvodATbL5M0H4/view)\n\n\n<h3>GameView in Webbrowsers</h3>\nIf you prefer to work on a PC you can even run and debug your GameView code in a regular web-browser. Check out these demos to see how it works: [](http://androidscript.org/beta/GameViewWeb)",
 		"isfunc": true,
 		"name": "CreateGameView",
 		"pNames": ["width", "height", "options"],
@@ -1912,7 +1912,7 @@
 	},
 	"CreateGLView": {
 		"abbrev": "glv",
-		"desc": "GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.\n%c\n\nUse the **CreateImage** method of the GLView object to create an image that can be used with the GLView.\nYou can specity a **callback** function too which will be called once the image is ready to use.\n\nTo draw the sprite on the canvas use the **DrawImage** method.\n<font class=\"red\">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font>\nYou can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.\n\nOnce all drawing has been done, the **Render** method must be called to render all the GLView graphics to the screen.",
+		"desc": "GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.\n%c\n\nUse the **CreateImage** method of the GLView object to create an image that can be used with the GLView.\nYou can specity a **callback** function too which will be called once the image is ready to use.\n\nTo draw the sprite on the canvas use the **DrawImage** method.\n<font class=\"red\">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font>\nYou can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.\n\nOnce all drawing has been done, the **Render** method must be called to render all the GLView graphics to the screen.\n<sample DrawImage>\n\n<h3>Render Loop</h3>To create a rendering loop for a game, use the setInterval JavaScript function to call your drawing function at regular intervals.\nThe example below draws a continuously rotating image by calling the DrawFrame function 30 times each second, updating the angle each time:\n<sample Render Loop>\n\n<h3>Sprite Touch Detection</h3>\nIf you need to want to simulate OnTouch for a GLView Image, you will need to keep track of the position, width and height that it has been drawn with. Then use the GLView OnTouch event to determine if the touch coordinates are within the GLView Image yourself. To prevent touch detect on all sprites on the touch position define a drawing order according to a list.\n<sample Sprite Touch>\n\n<h3>Sprite Animations</h3>\nGLView supports the use of Sprite Sheets. The DrawSprite method can be used to draw part of an image to the GLView.\nThe following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:\n<sample Sprite Sheet Animation>",
 		"isfunc": true,
 		"name": "CreateGLView",
 		"pNames": ["width", "height", "options"],

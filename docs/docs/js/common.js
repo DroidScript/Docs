@@ -100,15 +100,15 @@ $(document).live( 'pageshow',function(event, ui)
 		var popup = location.href.match(/#([a-z]+)/i);
 		if(popup) {
 			popup = $("a.ui-link:contains(" + popup[1] + ")");
-		    setTimeout(function() {
-		        $("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
-		            .delay(350).queue(function(){ popup.click(); });
-            }, 300);  
+			setTimeout(function() {
+				$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
+					.delay(350).queue(function(){ popup.click(); });
+			}, 300);  
 		}
 	
 		if(sessionStorage.scrollPosition) {
-            $("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
-        }
+			$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+		}
 	}
 	//catch( e ) {}
 });
@@ -176,9 +176,9 @@ function OnPageShow()
 }
 
 $(window).unload(function() {
-    var scrollPosition = $(document).scrollTop();
-    sessionStorage.scrollPosition = scrollPosition;
-    console.log("set: " + sessionStorage.scrollPosition)
+	var scrollPosition = $(document).scrollTop();
+	sessionStorage.scrollPosition = scrollPosition;
+	console.log("set: " + sessionStorage.scrollPosition)
 });
    
 // set the current theme. (default, dark)

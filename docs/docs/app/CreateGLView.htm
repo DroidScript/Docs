@@ -51,6 +51,7 @@
 			You can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.<br>
 			<br>
 			Once all drawing has been done, the <b>Render</b> method must be called to render all the GLView graphics to the screen.</p>
+
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - DrawImage</h3>
 				<div id="examp0" style="font-size:70%">
@@ -79,6 +80,9 @@
 				</div>
 			</div>
 
+			<h3>Render Loop</h3>
+			<p>To create a rendering loop for a game, use the setInterval JavaScript function to call your drawing function at regular intervals.<br>
+			The example below draws a continuously rotating image by calling the DrawFrame function 30 times each second, updating the angle each time:</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Render Loop</h3>
@@ -119,6 +123,77 @@
 				</div>
 			</div>
 
+			<h3>Sprite Touch Detection</h3>
+			<p>If you need to want to simulate OnTouch for a GLView Image, you will need to keep track of the position, width and height that it has been drawn with. Then use the GLView OnTouch event to determine if the touch coordinates are within the GLView Image yourself. To prevent touch detect on all sprites on the touch position define a drawing order according to a list.</p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - Sprite Touch</h3>
+				<div id="examp3" style="font-size:70%">
+					objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+					<br>
+					<span class="token comment">//Called when application is started.</span><br>
+					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					    <span class="token comment">//Create layout</span><br>
+					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <span class="token comment">//Create GLView</span><br>
+					    glv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGLView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fast2d"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    glv<span class="token punctuation">.</span><span class="token function">SetOnTouchUp</span><span class="token punctuation">(</span> touch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <span class="token comment">//set first image</span><br>
+					    img1 <span class="token operator">=</span> glv<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    img1<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"img1"</span><span class="token punctuation">;</span><br>
+					    img1<span class="token punctuation">.</span><span class="token constant">X</span> <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">;</span> img1<span class="token punctuation">.</span><span class="token constant">Y</span> <span class="token operator">=</span> <span class="token number">0.3</span><span class="token punctuation">;</span><br>
+					    img1<span class="token punctuation">.</span><span class="token constant">W</span> <span class="token operator">=</span> <span class="token number">0.7</span><span class="token punctuation">;</span> img1<span class="token punctuation">.</span><span class="token constant">H</span> <span class="token operator">=</span> <span class="token number">0.4</span><span class="token punctuation">;</span><br>
+					    objects<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>img1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <span class="token comment">//set second image</span><br>
+					    img2 <span class="token operator">=</span> glv<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> startRender <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    img2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"img2"</span><span class="token punctuation">;</span><br>
+					    img2<span class="token punctuation">.</span><span class="token constant">X</span> <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> img2<span class="token punctuation">.</span><span class="token constant">Y</span> <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span><br>
+					    img2<span class="token punctuation">.</span><span class="token constant">W</span> <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> img2<span class="token punctuation">.</span><span class="token constant">H</span> <span class="token operator">=</span> <span class="token number">0.3</span><span class="token punctuation">;</span><br>
+					    objects<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>img2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> glv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+					    <span class="token comment">//Add layout to app.</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token comment">// Draw images</span><br>
+					<span class="token keyword">function</span> <span class="token function">startRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> objects<span class="token punctuation">)</span> <span class="token function">draw</span><span class="token punctuation">(</span>objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    glv<span class="token punctuation">.</span><span class="token function">Render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token comment">// Check which image was touched</span><br>
+					<span class="token keyword">function</span> <span class="token function">touch</span><span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> objects<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">--</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">touched</span><span class="token punctuation">(</span> objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> ev <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					            app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"touched "</span> <span class="token operator">+</span> objects<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					            <span class="token keyword">break</span><span class="token punctuation">;</span><br>
+					        <span class="token punctuation">}</span><br>
+					    <span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token parameter">img<span class="token punctuation">,</span> ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					    glv<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> img<span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token constant">X</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token constant">Y</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token constant">W</span><span class="token punctuation">,</span> img<span class="token punctuation">.</span><span class="token constant">H</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token keyword">function</span> <span class="token function">touched</span><span class="token punctuation">(</span><span class="token parameter">img<span class="token punctuation">,</span> ev</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					    <span class="token keyword">return</span> img<span class="token punctuation">.</span><span class="token constant">X</span> <span class="token operator">&lt;</span> ev<span class="token punctuation">.</span><span class="token constant">X</span> <span class="token operator">&amp;&amp;</span> img<span class="token punctuation">.</span><span class="token constant">X</span> <span class="token operator">+</span> img<span class="token punctuation">.</span><span class="token constant">W</span> <span class="token operator">></span> ev<span class="token punctuation">.</span><span class="token constant">X</span><br>
+					        <span class="token operator">&amp;&amp;</span> img<span class="token punctuation">.</span><span class="token constant">Y</span> <span class="token operator">&lt;</span> ev<span class="token punctuation">.</span><span class="token constant">Y</span> <span class="token operator">&amp;&amp;</span> img<span class="token punctuation">.</span><span class="token constant">Y</span> <span class="token operator">+</span> img<span class="token punctuation">.</span><span class="token constant">H</span> <span class="token operator">></span> ev<span class="token punctuation">.</span><span class="token constant">Y</span><span class="token punctuation">;</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+				</div>
+			</div>
+
+			<h3>Sprite Animations</h3>
+			<p>GLView supports the use of Sprite Sheets. The DrawSprite method can be used to draw part of an image to the GLView.<br>
+			The following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:</p>
 
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 				<h3>Example - Sprite Sheet Animation</h3>
@@ -165,7 +240,6 @@
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 				</div>
 			</div>
-
 
 			<p><br>The following methods are available on the <b>GLView</b> object:</p>
 
