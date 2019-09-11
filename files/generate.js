@@ -69,9 +69,9 @@ function generateNavigators() {
 
 		nav += newNaviItem(cat + ".htm", cat );
 		list = categories[cat]
-			.sort(sortAsc)
 			.filter(nothidden)
-			.map((func) => newNaviItem(`app/${func}.htm`, func, getAddClass(functions[func])))  // ?cat=" + cat
+			.map((func) => func ? newNaviItem(`app/${func}.htm`, func,
+				getAddClass(functions[func])) : "<li></li>")
 			.join("");
 
 		// generate category list html file
@@ -114,30 +114,9 @@ function generateIntros() {
 				return `<sample ${t}>`;
 			});
 
-		var html = ("<p>" + replaceTypes(addMarkdown(replW(s)))
-			// exclude <h> and <table> tags from <p>
-			.replace(
-				/(<\/?p>)?(\s|<br>)*(<(h\d?|table)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
-				"</p>\n\t\t$3\n\t\t<p>")
-			// replace <js> and <bash> tags with sample
-			.replace(
-				/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
-				function(m, w1, lang, nobox, _, code, _, w2)
-				{
-					if(Prism.languages[lang])
-						code = Prism.highlight(
-							code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
-							Prism.languages[lang], lang
-						).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-					
-					if(nobox) return `${w1||''}${code}${w2||''}`;
-					else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
-					else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
-				})
-			+ "</p>")
+		var html = `<p>${replaceTypes(addMarkdown(replW(s)))}</p>`
 			// format html code on linebreaks
 			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
-			.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 			// expandable samples (per <sample name> tag or add to desc)
 			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
 			.replace( /(“.*?”)/g, "<docstr>$1</docstr>");
@@ -156,7 +135,7 @@ function generateIntros() {
 // generates one document by function name
 function generateDoc( name ) {
 	if(name == "Intros") return generateIntros();
-	if(name == "Navigators") return generateNavigators();
+	if(name == "Navs") return generateNavigators();
 	curDoc = `docs${getl()}/app/${name}.htm`;
 	resetGlobals();
 
@@ -171,7 +150,7 @@ function generateDoc( name ) {
 			)
 			// description
 			.replace("%d", getDesc(name)
-				.replace("%s", (
+				.replace("%c", (
 					functions[name].abbrev ? functions[name].abbrev + " = " : "") +
 					`app.${name}(${data.args})` + data.ret)
 				.replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
@@ -193,6 +172,8 @@ function resetGlobals() {
 
 function adjustDoc(html, name) {
 	return html
+		// title occurances
+		.replace(/%t/g, name)
 		// popup object list
 		.replace(/%p/, Globals.popDefs.join("\n\t\t"))
 		// additional notes
@@ -201,15 +182,41 @@ function adjustDoc(html, name) {
 		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
 		// some html char placeholders
 		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
-		// title occurances
-		.replace(/%t/g, name)
+		// replace <js> and <bash> tags with sample
+		.replace(
+			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g, 
+			function(m, w1, lang, nobox, _, code, _, w2, _)
+			{
+			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}>`));
+				if(Prism.languages[lang])
+					code = Prism.highlight(
+						code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
+						Prism.languages[lang], lang
+					).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
+				
+				if(nobox) return `${w1||''}${code}${w2||''}`;
+				else if(has(code, "<br>")) return `</p>\n${newCode(code)}\t\t\t<p>`
+				else return `${w1||''}<code class="samp samp-inline">${code}</code>${w2||''}`;
+			})
 		// remove leading whitespace in <p> tag
-		.replace(/<p>(<br>\s+)+/g, "<p>")
+		.replace(/<p>(<br>|\s+)+/g, "<p>")
+		// remove trailing whitespace in <p> tag
+		.replace(/(<br>|\s+)+<\/p>/g, "</p>")
 		// remove empty <p> tags
 		.replace(/\n?\t*<p><\/p>/g, "")
 		// remove special whitespace from tables
-		.replace(/([\n\t ]+)(<\/?t([rhd]|able))/g,
-			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
+		.replace(/([\n\t\xa0]+)(<\/?t([rhd]|head|body|able))/g,
+			(m, w, t) => w.replace(/\t/g, "    ").replace(/\xa0/g, ' ') + t)
+		// remove trailing <br> tags from table
+		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
+		// add linebreak before <h> and remove <br> tags after </h>
+		.replace(/<p>(<(h\d)>.*<\/\2>)(<br>)?/g, "<p>\n\t\t\t$1")
+		// indent line breaks
+		.replace(/\n\s+<br>\n(\s+)/g, (m, w) => `\n${w.replace("    ", "\t")}<br>\n${w}`)
+		/*/ exclude <h> and <table> tags from <p>
+		.replace(
+			/(<\/?p>|<br>)?(\s|<br>)*(<(h\d?|table)>[^]*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
+			"</p>\n\t\t$3\n\t\t<p>")*/
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
 }
@@ -335,40 +342,19 @@ function getDesc(name)
 			return `<sample ${t}>`;
 		});
 
-	return "<p>" + replaceTypes(addMarkdown(replW( desc )))
-		// exclude <h> and <table> tags from <p>
-		.replace(
-			/(<\/?p>)?(\s|<br>)*(<(h\d?|table)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
-			"</p>\n\t\t\t$3\n\t\t\t<p>")
+	return `<p>${replaceTypes(addMarkdown(replW( desc )))} </p>`
 		// replace %c with constructor if existent, otherwise insert after first dot
 		.replace(
 			/((?=.*\%c)\.?(\s|<br>)*\%c|((?!.*\%c)\.)(\s|<br>|$)+)/,
-			`.</p>\n${funcBase}\t\t\t<p>`)
+			`.</p>\n${newCode("%c")}\t\t\t<p>`)
 		// format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
-		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
-		// replace <js> and <bash> tags with sample
-		.replace(
-			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g, 
-			function(m, w1, lang, nobox, _, code, _, w2, _)
-			{
-			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}>`));
-				if(Prism.languages[lang])
-					code = Prism.highlight(
-						code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
-						Prism.languages[lang], lang
-					).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-				
-				if(nobox) return `${w1||''}${code}${w2||''}`;
-				else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
-				else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
-			})
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
 			(delete samples[t], `</p>\n\t\t\t${s}<p>`) :
 			Throw(Error(`sample ${t} not found for ${name}`)))
 		.replace( /(“.*?”)/g, "<docstr>$1</docstr>")
-		+ "</p>" + Object.values(samples).concat("").reduce((a, b) => a + b);
+		+ Object.values(samples).concat("").reduce((a, b) => a + b);
 }
 
 // read and return html converted example snippets file
@@ -731,6 +717,7 @@ function newTxtPopup(  id, text, add) { return txtPopup.replace("%s",   id).repl
 function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("%s", text); }
 function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
 function newLink(  target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
+function newCode(code) { return codeBase.replace("%s", code); }
 function d(v) { console.log(v); return v; }
 function getHead(d) {
 	d = new Array(d).fill("../").join("");
@@ -761,7 +748,7 @@ var		// subfunctions
 		// app-popup tag
 	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		// constructor and inline examples
-	funcBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
+	codeBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
 		// jquery-popup link tag
 	txtPopup = '\n\t\t\t\t<a href="#pop_%s" data-transition="pop" data-rel="popup"%s>%s</a>',
 		// popup object
@@ -976,7 +963,7 @@ var
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" "},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":"\xa0", nbsp:"\xa0"},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 		// current language

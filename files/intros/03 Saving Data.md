@@ -33,15 +33,14 @@ To clear a saved value use the **app.@../app/ClearValue** method.
 </table>
 
 If you have many properties to save you can use an object structure instead of saving each value on their own.
-Load settings: <js>var cfg = JSON.parse(app.LoadText("settings", "{}"));</js>
-Save settings: <js>app.SaveText("settings", JSON.stringify(cfg));</js>
+Load settings: <js>var cfg = JSON.parse( app.LoadText( "settings", "{}" ));</js>
+Save settings: <js>app.SaveText( "settings", JSON.stringify(cfg) );</js>
 
 <sample App Settings>
 <b>// default settings
 var settings = { version: "1.0", startNo: 0 };
 
 function LoadSettings() {
-	// load saved settings
 	var tmp = JSON.parse(app.LoadText( "settings", "{}" ));
 
 	// update settings object
@@ -60,4 +59,12 @@ function OnStart() {
 }
 </sample App Settings>
 
-##
+## Using Datatbases
+Using Databases is the most elaborate variant of the three.
+
+<red>You should only consider using one if you have to perform complex queries on a large amount of datasets.</red>
+Using JSON objects is more practicable and performant in most cases.
+
+DroidScript provides an extra @../app/OpenDatabase component for databases which uses the SQLitePlugin [cordova-sqlite-storage](https://github.com/xpbrew/cordova-sqlite-storage).
+
+For a demo Have a look at the [Database]{OpenSample("Database")} example.

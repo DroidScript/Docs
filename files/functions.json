@@ -8573,7 +8573,7 @@
 		"shortDesc": "OpenDatabase",
 		"subf": {
 			"addTransaction": {
-				"desc": "addTransaction",
+				"desc": "addTransaction\n<deprecated Use ExecuteSQL instead>",
 				"isfunc": true,
 				"name": "addTransaction",
 				"pNames": ["transaction"],
@@ -8581,7 +8581,7 @@
 				"shortDesc": "addTransaction"
 			},
 			"close": {
-				"desc": "Close the database",
+				"desc": "Close the database\n<deprecated Use Close instead>",
 				"isfunc": true,
 				"name": "close",
 				"pNames": ["success", "error"],
@@ -8614,7 +8614,7 @@
 				"shortDesc": "Close the database"
 			},
 			"databaseFeatures": {
-				"desc": "databaseFeatures",
+				"desc": "databaseFeatures\n<deprecated>",
 				"isfunc": false,
 				"name": "databaseFeatures",
 				"pNames": [],
@@ -8622,7 +8622,7 @@
 				"shortDesc": "databaseFeatures"
 			},
 			"dbname": {
-				"desc": "dbname",
+				"desc": "dbname\n<deprecated>",
 				"isfunc": false,
 				"name": "dbname",
 				"pNames": [],
@@ -8638,7 +8638,7 @@
 				"shortDesc": "Delete the database"
 			},
 			"executeSql": {
-				"desc": "Executes a SQL query",
+				"desc": "Executes a SQL query\n<deprecated Use ExecuteSql instead>",
 				"isfunc": true,
 				"name": "executeSql",
 				"pNames": ["statement", "params", "success", "error"],
@@ -8700,7 +8700,7 @@
 				"shortDesc": "GetType"
 			},
 			"name": {
-				"desc": "The database name",
+				"desc": "The database name\n<deprecated use GetName instead>",
 				"isfunc": false,
 				"name": "name",
 				"pNames": [],
@@ -8709,7 +8709,7 @@
 				"shortDesc": "database name"
 			},
 			"open": {
-				"desc": "Opens the database",
+				"desc": "Opens the database\n<deprecated>",
 				"isfunc": true,
 				"name": "open",
 				"pNames": ["success", "error"],
@@ -8734,7 +8734,7 @@
 				"shortDesc": "Open database"
 			},
 			"_openargs": {
-				"desc": "openargs",
+				"desc": "openargs\n<deprecated>",
 				"isfunc": false,
 				"name": "openargs",
 				"pNames": [],
@@ -8742,7 +8742,7 @@
 				"shortDesc": "openargs"
 			},
 			"_openDBs": {
-				"desc": "contains DBs",
+				"desc": "contains DBs\n<deprecated>",
 				"isfunc": false,
 				"name": "openDBs",
 				"pNames": [],
@@ -8751,7 +8751,7 @@
 				"shortDesc": "open DBs"
 			},
 			"_openError": {
-				"desc": "openError",
+				"desc": "openError\n<deprecated>",
 				"isfunc": true,
 				"name": "openError",
 				"pNames": ["err"],
@@ -8759,7 +8759,7 @@
 				"shortDesc": "openError"
 			},
 			"_openSuccess": {
-				"desc": "openSuccess",
+				"desc": "openSuccess\n<deprecated>",
 				"isfunc": true,
 				"name": "openSuccess",
 				"pNames": [],
@@ -8767,7 +8767,7 @@
 				"shortDesc": "openSuccess"
 			},
 			"readTransaction": {
-				"desc": "readTransaction",
+				"desc": "readTransaction\n<deprecated Use ExecuteSql instead>",
 				"isfunc": true,
 				"name": "readTransaction",
 				"pNames": ["fn", "error", "success"],
@@ -8800,7 +8800,7 @@
 				"shortDesc": "ReadTransaction"
 			},
 			"startNextTransaction": {
-				"desc": "startNextTransaction",
+				"desc": "startNextTransaction\n<deprecated Use ExecuteSql instead>",
 				"isfunc": true,
 				"name": "startNextTransaction",
 				"pNames": [],
@@ -8808,7 +8808,7 @@
 				"shortDesc": "startNextTransaction"
 			},
 			"transaction": {
-				"desc": "transaction",
+				"desc": "transaction\n<deprecated Use ExecuteSql instead>",
 				"isfunc": true,
 				"name": "transaction",
 				"pNames": ["fn", "error", "success"],
