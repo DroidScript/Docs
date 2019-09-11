@@ -42,7 +42,16 @@
 				→ <b>app object:</b> WebServer
 			</div>
 
-			<p>Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Start the server using the Start method.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	And stop it using the Stop method.	<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	The following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.<br>
+			<p>Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.<br>
+			<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			Start the server using the Start method.<br>
+			<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			And stop it using the Stop method.<br>
+			<code class="samp">wbs<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			The following example shows how to create a basic webserver for serving pages over WiFi from your device. It will serve a built in demo page.<br>
 			<br>
 			For simplicity some of the features in the demo page will not work in this first example. Try them and you will see how the server presents errors. The next example shows how to handle all the features of the demo page.<br>
 			</p>

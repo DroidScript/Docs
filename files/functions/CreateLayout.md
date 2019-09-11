@@ -2,8 +2,7 @@ Layouts are container objects which are used to visually organize graphical obje
 
 Layouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.
 
-You can add child objects to the Layout using the AddChild function:
-<js>lay.AddChild( object );</js>
+You can add child objects to the Layout using the AddChild function: <js>lay.AddChild( object );</js>
 The alignment of chlld objects within a layout can be set by adding the **options** “Left”, “Right”, “Bottom” and “VCenter”, by default objects will be aligned “Top,Center”.
 
 ### Linear Layouts

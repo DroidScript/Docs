@@ -70,15 +70,17 @@ function generateIntros() {
 		var samples = {}, sampcnt = 0;
 		
 		name = name.replace(/.md$/, "");
-		curDoc = `docs${getl()}/intro/${name}.htm`;
-		nav += newNaviItem(`intro/${name}.htm`, name );
+		curDoc = `docs${getl()}/intro/${name.replace(/\s/g, "")}.htm`;
+		nav += newNaviItem(
+		    `intro/${name.replace(/\s/g, "")}.htm`,
+		    name = name.replace(/^\d*\s*/, ""));
 		
 		s = s.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
-		    function(m, _, t, c)
-		    {
-		        samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t\t/g, "\n\t\t");
-		        return `<sample ${t}>`;
-	        });
+			function(m, _, t, c)
+			{
+				samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t\t/g, "\n\t\t");
+				return `<sample ${t}>`;
+			});
 
 		var html = ("<p>" + replaceTypes(addMarkdown(replW(s)))
 			// exclude <h> tags from <p>
@@ -87,29 +89,29 @@ function generateIntros() {
 				"</p>\n\t\t$3\n\t\t<p>")
 			// replace <js> and <bash> tags with sample
 			.replace(
-		        /(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
-			    function(m, w1, lang, nobox, _, code, _, w2)
-			    {
-			        if(Prism.languages[lang])
-			            code = Prism.highlight(
-						    code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
-						    Prism.languages[lang], lang
-					    ).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-			        
-				    if(nobox) return `${w1||''}${code}${w2||''}`;
-				    else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
-				    else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
-			    })
+				/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
+				function(m, w1, lang, nobox, _, code, _, w2)
+				{
+					if(Prism.languages[lang])
+						code = Prism.highlight(
+							code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
+							Prism.languages[lang], lang
+						).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
+					
+					if(nobox) return `${w1||''}${code}${w2||''}`;
+					else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
+					else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
+				})
 			+ "</p>")
 			// format html code on linebreaks
-		    .replace(/\s*<br>\s*/g, "<br>\n\t\t")
-		    .replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
-		    // additional notes
+			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
+			.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
+			// additional notes
 			.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 			// expandable samples (per <sample name> tag or add to desc)
-		    .replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
-		    .replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
-		    // some html char placeholders
+			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
+			.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
+			// some html char placeholders
 			.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
 			// remove leading whitespace in <p> tag
 			.replace(/<p>(<br>\s+)+/g, "<p>")
@@ -118,7 +120,7 @@ function generateIntros() {
 			// remove trailing whitespace
 			.replace(/[ \t]+\n/g, "\n");
 
-		app.WriteFile(path + `docs/intro/${name}.htm`, introBase
+		app.WriteFile(path + curDoc, introBase
 			.replace(/%t/g, name).replace("%c", html));
 	}
 
@@ -313,11 +315,11 @@ function getDesc(name)
 	var desc = functions[name].desc.trim();
 	if(desc.startsWith("#"))
 	{
-	    if(app.FileExists(path + `functions/${desc.slice(1)}`))
-	        desc = app.ReadFile(path + `functions/${desc.slice(1)}`).trim();
-        else
-            Throw(new Error(`description file ${desc.slice(1)} linked but doesn't exist.`));
-    }
+		if(app.FileExists(path + `functions/${desc.slice(1)}`))
+			desc = app.ReadFile(path + `functions/${desc.slice(1)}`).trim();
+		else
+			Throw(new Error(`description file ${desc.slice(1)} linked but doesn't exist.`));
+	}
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 	
 	var samples = getSamples(name), s;
@@ -325,11 +327,11 @@ function getDesc(name)
 	if(!has(desc, '.')) desc += '.';
 	
 	desc = desc.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
-	    function(m, _, t, c)
-	    {
-	        samples[t] = toHtmlSamp(c, t, ++sampcnt);
-	        return `<sample ${t}>`;
-        });
+		function(m, _, t, c)
+		{
+			samples[t] = toHtmlSamp(c, t, ++sampcnt);
+			return `<sample ${t}>`;
+		});
 
 	return "<p>" + replaceTypes(addMarkdown(replW( desc )))
 		// exclude <h> and <table> tags from <p>
@@ -340,28 +342,29 @@ function getDesc(name)
 		.replace(
 			/((?=.*\%c)\.?(\s|<br>)*\%c|((?!.*\%c)\.)(\s|<br>|$)+)/,
 			`.</p>\n${funcBase}\t\t\t<p>`)
-	    // format html code on linebreaks
+		// format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
 		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 		// replace <js> and <bash> tags with sample
 		.replace(
-		    /(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
-			function(m, w1, lang, nobox, _, code, _, w2)
+			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g, 
+			function(m, w1, lang, nobox, _, code, _, w2, _)
 			{
-			    if(Prism.languages[lang])
-			        code = Prism.highlight(
+			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}>`));
+				if(Prism.languages[lang])
+					code = Prism.highlight(
 						code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
 						Prism.languages[lang], lang
 					).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-			    
+				
 				if(nobox) return `${w1||''}${code}${w2||''}`;
 				else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
 				else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
 			})
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
-		    (delete samples[t], `</p>\n\t\t\t${s}<p>`) :
-		    Throw(Error(`sample ${t} not found for ${name}`)))
+			(delete samples[t], `</p>\n\t\t\t${s}<p>`) :
+			Throw(Error(`sample ${t} not found for ${name}`)))
 		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
 		+ "</p>" + Object.values(samples).concat("").reduce((a, b) => a + b);
 }
@@ -372,7 +375,7 @@ function getSamples( name )
 	var sampcnt = 0, samples = {}, s = ReadFile( path + `samples/${name}.txt`, " ", true );
 	
 	s.replace(/<sample (.*?)>([^]*?)<\/sample>/g,
-	    (m, t, c) => samples[t] = toHtmlSamp(c, t, ++sampcnt));
+		(m, t, c) => samples[t] = toHtmlSamp(c, t, ++sampcnt));
 	
 	return samples;
 }
@@ -673,7 +676,7 @@ function addMarkdown(s) {
 	return s
 		// links
 		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function(match, white, name, url)
-	    {
+		{
 			// exists in docs folder? direct link : open in external app
 			return white + (!url.startsWith("http") &&
 				(app.FileExists(path + "docs/" + url.replace("../", "")) ||
@@ -685,11 +688,11 @@ function addMarkdown(s) {
 		// link + onclick
 		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function(match, white, name, script)
 		{
-		    script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
-		    return white + `<a href="#" onclick="${script}">${name}</a>`;
-	    })
+			script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
+			return white + `<a href="#" onclick="${script}">${name}</a>`;
+		})
 		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
-		    white + `<h${h.length}>${title}</h${h.length}>`)
+			white + `<h${h.length}>${title}</h${h.length}>`)
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
 		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")       // *italic*
@@ -1108,7 +1111,7 @@ function OnStart() {
 		throw e;
 	}
 
-	var v = 1000 * (Date.now() / 2592e6 | 0);
+	var v = 1000 * (Date.now() / 864e5 | 0);
 	var vn = Number(app.ReadFile("../docs/version.txt", 0)) % 1000 + 1;
 	app.WriteFile("version.txt", v + vn);
 }

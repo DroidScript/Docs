@@ -54,9 +54,21 @@
 			<br>
 			Your service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.<br>
 			<br>
-			You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.	<code class="samp">app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Stop a service using the Stop method.	<code class="samp">svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	Messages can be sent from your app to the service using the SendMessage method on the service object:	<code class="samp">svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	You will need to provide a message handler to receive and process the messages (see example below).<br>
+			You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.<br>
+			<code class="samp">app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
 			<br>
-			Send messages from the service to the main app by using the SendMessage method of the app object:	<code class="samp">app<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	This will also need a message handler on the application (see example below).<br>
+			Stop a service using the Stop method.<br>
+			<code class="samp">svc<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			Messages can be sent from your app to the service using the SendMessage method on the service object:<br>
+			<code class="samp">svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			You will need to provide a message handler to receive and process the messages (see example below).<br>
+			<br>
+			Send messages from the service to the main app by using the SendMessage method of the app object:<br>
+			<code class="samp">app<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			This will also need a message handler on the application (see example below).<br>
 			<br>
 			Adding services to your application is best done working with the WiFi editor (browser IDE) because you will need to edit more than one file and also see debug message from the service. Debug and error messages are shown in gray on the debug tab of the WiFi editor. Pressing the stop button in this IDE will stop both the service and the app, but pressing the back button on your device will stop the app but leave the service running.<br>
 			</p>

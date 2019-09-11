@@ -57,13 +57,42 @@
 		<h3>OnMenu(name)</h3>
 		<p>This event is called when the user selects an item from the in-app menu.<br>
 		See Also: <a href="../app/SetMenu.htm" data-ajax="false">SetMenu</a>, <a href="../app/ShowMenu.htm" data-ajax="false">ShowMenu</a></p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - OnMenu</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"[fa-gear]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span>ShowMenu <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnMenu</span><span class="token punctuation">(</span> <span class="token parameter">item</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
 		<h3>OnBack()</h3>
 		<p>By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling app<span class="token punctuation">.</span><a href="../app/EnableBackKey.htm" data-ajax="false">EnableBackKey</a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>.<br>
 		In this case the OnBack event will be called instead of closing the app. This can be useful to create a confirmation dialog before exiting:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Confirm Exit</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -78,14 +107,14 @@
 				    <span class="token keyword">if</span><span class="token punctuation">(</span>reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip2" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<b id="snip3" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
 				    yndExit<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 			</div>
 		</div>
 
@@ -94,29 +123,11 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Detect Pause</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp4" style="font-size:70%">
 				<span class="token comment">//Called when application is paused.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnPause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span>
-			</div>
-			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
-			</div>
-		</div>
-
-		<h3>OnResume()</h3>
-		<p>The OnPause event will be called when the user returns to your app after sending it to the background.</p>
-
-		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Detect Resume</h3>
-			<div id="examp4" style="font-size:70%">
-				<span class="token comment">//Called when application is resumed.</span><br>
-				<span class="token keyword">function</span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -125,12 +136,30 @@
 			</div>
 		</div>
 
+		<h3>OnResume()</h3>
+		<p>The OnPause event will be called when the user returns to your app after sending it to the background.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Detect Resume</h3>
+			<div id="examp5" style="font-size:70%">
+				<span class="token comment">//Called when application is resumed.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			</div>
+		</div>
+
 		<h3>OnConfig()</h3>
-		<p>OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientatino change.</p>
+		<p>OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientation change.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Layout Orientation</h3>
-			<div id="examp5" style="font-size:70%">
+			<div id="examp6" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -147,7 +176,7 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip5" style="font-size:100%"><span class="token comment">//Called when screen rotates</span><br>
+				<b id="snip6" style="font-size:100%"><span class="token comment">//Called when screen rotates</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> orient <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOrientation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -161,9 +190,9 @@
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip5 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip6 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
 			</div>
 		</div>
 
@@ -172,7 +201,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnAlarm</h3>
-			<div id="examp6" style="font-size:70%">
+			<div id="examp7" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -183,15 +212,15 @@
 				<br>
 				<span class="token comment">//Called when alarm is triggered.</span><br>
 				<span class="token comment">//(Even if your app is closed)</span><br>
-				<b id="snip6" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
+				<b id="snip7" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip6 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip7 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp7 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp7 )">      Run      </a>
 			</div>
 		</div>
 
@@ -200,7 +229,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Received Intent Data</h3>
-			<div id="examp7" style="font-size:70%">
+			<div id="examp8" style="font-size:70%">
 				<span class="token comment">//Handle data sent from other apps.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnData</span><span class="token punctuation">(</span> <span class="token parameter">isStartUp</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
@@ -223,8 +252,8 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp7 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp7 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp8 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp8 )">      Run      </a>
 			</div>
 		</div>
 

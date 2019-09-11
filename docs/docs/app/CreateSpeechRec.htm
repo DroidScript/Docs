@@ -41,7 +41,10 @@
 				→ <b>app object:</b> SpeechRec
 			</div>
 
-			<p>Use the <b>Recognize</b> method of the SpeechRec object to tell it to start listening:	<code class="samp">speech<span class="token punctuation">.</span><span class="token function">Recognize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>	When the SpeechRec object has started listening, the <b>OnReady</b> callback function will be called. Use the <b>SetOnReady</b> method to set the name of your OnReady callback function.<br>
+			<p>Use the <b>Recognize</b> method of the SpeechRec object to tell it to start listening:<br>
+			<code class="samp">speech<span class="token punctuation">.</span><span class="token function">Recognize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			<br>
+			When the SpeechRec object has started listening, the <b>OnReady</b> callback function will be called. Use the <b>SetOnReady</b> method to set the name of your OnReady callback function.<br>
 			<br>
 			If the SpeechRec object recognizes speech, the <b>OnResult</b> callback function will be called. The results are passed to the OnResult callback function as an array, with the most probable result at the front. Use the <b>SetOnResult</b> method to set the name of your OnResult callback function.<br>
 			<br>

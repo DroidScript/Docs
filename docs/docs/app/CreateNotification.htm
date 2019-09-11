@@ -43,7 +43,11 @@
 
 			<p>The <font class='docstring'>“AutoCancel”</font> <b>option</b> will automatically dismiss the notificatin if the user touches it. <font class='docstring'>“FullScreen”</font> tries to create a larger notification on the screen. And <font class='docstring'>“OnGoing”</font> makes the Notification closeable by your app only.<br>
 			<br>
-			Use the SetMessage method to tell the object what to display	<code class="samp">notify<span class="token punctuation">.</span><span class="token function">SetMessage</span><span class="token punctuation">(</span> ticker<span class="token punctuation">,</span> title<span class="token punctuation">,</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	The Notify method tells it to send the notification:	<code class="samp">notify<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span></code>	When the user touches your notification, your app will come to the front, even if it was not running.<br>
+			Use the SetMessage method to tell the object what to display<br>
+			<code class="samp">notify<span class="token punctuation">.</span><span class="token function">SetMessage</span><span class="token punctuation">(</span> ticker<span class="token punctuation">,</span> title<span class="token punctuation">,</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			The Notify method tells it to send the notification:<br>
+			<code class="samp">notify<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+			When the user touches your notification, your app will come to the front, even if it was not running.<br>
 			<br>
 			If you use more than one notification, <b>app.GetNotifyId</b> can be used to check which notification was pressed by the user.</p>
 			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">

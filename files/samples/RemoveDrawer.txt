@@ -16,7 +16,7 @@ function OnStart()
 	btn.SetOnTouch( RemoveDrawer );
 	layDrawer.AddChild( btn );
 
-	app.AddDrawer( layDrawer, "left", 0.8 );</b>
+	app.AddDrawer( layDrawer, "left", 0.8 );
 }
 
 function RemoveDrawer() {

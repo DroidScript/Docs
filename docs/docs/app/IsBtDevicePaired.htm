@@ -57,7 +57,7 @@
 					        paired <span class="token operator">=</span>  app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> devices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					        app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> paired<span class="token punctuation">,</span> devices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">" paired"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 					    <span class="token punctuation">}</span> <span class="token keyword">else</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"No Paired devices found"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>§b§<br>
+					        <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"No Paired devices found"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<span class="token operator">&lt;</span>sample<span class="token operator">></span><br>
 					<br>
@@ -75,8 +75,8 @@
 					<br>
 					<span class="token keyword">function</span> <span class="token function">bt_OnFound</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
 					<span class="token punctuation">{</span><br>
-					    §b§<span class="token keyword">var</span> paired <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">": paired: "</span> <span class="token operator">+</span> paired <span class="token punctuation">)</span><span class="token punctuation">;</span>§b§<br>
+					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> paired <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">": paired: "</span> <span class="token operator">+</span> paired <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 					<span class="token punctuation">}</span><br>
 					<br>
 					<span class="token keyword">function</span> <span class="token function">bt_OnComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
@@ -84,6 +84,7 @@
 					<span class="token punctuation">}</span>
 				</div>
 				<div name="divCopy" align="right">
+				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
 				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 				</div>
