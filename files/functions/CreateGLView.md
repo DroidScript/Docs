@@ -5,7 +5,7 @@ Use the **CreateImage** method of the GLView object to create an image that can 
 You can specity a **callback** function too which will be called once the image is ready to use.
 
 To draw the sprite on the canvas use the **DrawImage** method.
-<font class="red">Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</font>
+<red>Note: don't forget to specify all parameters, including angle. Otherwise the image will not be drawn.</red>
 You can leave either width or height -1 to scale the other parameter according to the sprite aspect ratio.
 
 Once all drawing has been done, the **Render** method must be called to render all the GLView graphics to the screen.

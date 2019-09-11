@@ -5459,7 +5459,7 @@
 	},
 	"CreateSysProc": {
 		"abbrev": "sys",
-		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <font class=\"red\">root</font> or “busybox” if <font class=\"blue\">installed</font>) which can be reused throughout the program.",
+		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.",
 		"isfunc": true,
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
@@ -8539,7 +8539,7 @@
 		"shortDesc": "Load saved text value"
 	},
 	"Lock": {
-		"desc": "Locks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also: @Unlock",
+		"desc": "Locks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Unlock",
 		"isfunc": true,
 		"name": "Lock",
 		"pNames": [],
@@ -9651,7 +9651,7 @@
 		"shortDesc": "Bring your app to the foreground"
 	},
 	"Unlock": {
-		"desc": "Unlocks the device.\n\n<font color='red'>**Requires Root**</font>\n\nSee Also: @Lock",
+		"desc": "Unlocks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Lock",
 		"isfunc": true,
 		"name": "Unlock",
 		"pNames": [],

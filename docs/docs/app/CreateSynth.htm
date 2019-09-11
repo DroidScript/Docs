@@ -44,10 +44,10 @@
 			<h3>Some descriptions</h3>
 			<p><b>note length:</b> default is 2.56 seconds.<br>
 			<b>midi note:</b> like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:<br>
-			  <a href="" onclick="app.ShowPopup('60')">C</a>,<a href="" onclick="app.ShowPopup('61')">C#</a>,<a href="" onclick="app.ShowPopup('62')">D</a>,<a href="" onclick="app.ShowPopup('63')">D#</a>,<a href="" onclick="app.ShowPopup('64')">E</a>,<a href="" onclick="app.ShowPopup('65')">F</a>,<a href="" onclick="app.ShowPopup('66')">F#</a>,<a href="" onclick="app.ShowPopup('67')">G</a>,<a href="" onclick="app.ShowPopup('68')">G#</a>,<a href="" onclick="app.ShowPopup('69')">A</a>,<a href="" onclick="app.ShowPopup('70')">A#</a>,<a href="" onclick="app.ShowPopup('71')">B</a>.<br>
+			    <a href="" onclick="app.ShowPopup('60')">C</a>,<a href="" onclick="app.ShowPopup('61')">C#</a>,<a href="" onclick="app.ShowPopup('62')">D</a>,<a href="" onclick="app.ShowPopup('63')">D#</a>,<a href="" onclick="app.ShowPopup('64')">E</a>,<a href="" onclick="app.ShowPopup('65')">F</a>,<a href="" onclick="app.ShowPopup('66')">F#</a>,<a href="" onclick="app.ShowPopup('67')">G</a>,<a href="" onclick="app.ShowPopup('68')">G#</a>,<a href="" onclick="app.ShowPopup('69')">A</a>,<a href="" onclick="app.ShowPopup('70')">A#</a>,<a href="" onclick="app.ShowPopup('71')">B</a>.<br>
 			<b>duration:</b> powers of two indicating whole, half, quarter etc. up to thirty second notes.<br>
 			<b>frequency:</b> A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.<br>
-			  Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz<br>
+			    Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz<br>
 			<br>
 			<b>Phaser:</b> a sound filter which creates a series of peaks and troughs in the frequency spectrum<br>
 			<b>VoltageControlledAmplifier:</b> (Variable-Gain Amplifier) electronic amplifier that varies its gain<br>
@@ -117,7 +117,7 @@
 			<p><br>The following methods are available on the <b>Synth</b> object:</p>
 
 			<div class="samp">
-				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <font class='docstring'>“Synth”</font>
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Synth”</docstr>
 			</div>
 			<div class="samp">
 				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">PlayMidiTune</a>(
@@ -267,11 +267,11 @@
 			<br>
 		</div>
 
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <font class='docstring'>“Signal”</font>, <font class='docstring'>“VCA”</font>, <font class='docstring'>“VCF”</font></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Signal”</docstr>, <docstr>“VCA”</docstr>, <docstr>“VCF”</docstr></div>
 
 		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>syn.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.PlayMidiTune</b><br>Play a comma-separated sequence of <font class='docstring'>“midi_note:duration”</font> pairs.</div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <font class='docstring'>“,”</font> separated:</i> <font class='docstring'>“note1:duration1,note2:duration2,...”</font></div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.PlayMidiTune</b><br>Play a comma-separated sequence of <docstr>“midi_note:duration”</docstr> pairs.</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“note1:duration1,note2:duration2,...”</docstr></div>
 
 		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>syn.PlayNote</b><br>Plays a single note</div>
 		<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 0..125</div>
@@ -322,7 +322,7 @@
 		<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>syn.SetVcfSustain</b><br>Set a basis frequency</div>
 		<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>syn.SetVolume</b><br>Set the overall synthesizer volume</div>
 		<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>syn.SetWaveShape</b><br>Set the wave shape of the synthesizer</div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <font class='docstring'>“Sin”</font>, <font class='docstring'>“Saw”</font>, <font class='docstring'>“Square”</font>, <font class='docstring'>“White”</font></div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“Sin”</docstr>, <docstr>“Saw”</docstr>, <docstr>“Square”</docstr>, <docstr>“White”</docstr></div>
 
 		<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>syn.Start</b><br>Start playing</div>
 		<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>syn.Stop</b><br>Stop playing</div>

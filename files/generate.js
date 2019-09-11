@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var curDoc = null, curSubf = null;
-var warnEnbl = false;
+var warnEnbl = false, Globals;
 
 	//generates all doc files
 function generateDocs() {
@@ -60,78 +60,6 @@ function generateDocs() {
 	app.ShowPopup("Generated");
 }
 
-function generateIntros() {
-	app.DeleteFolder(path + `docs${getl()}/intro`);
-	app.MakeFolder(path + `docs${getl()}/intro`);
-	var nav = "";
-
-	for(var name of app.ListFolder("intros").sort(sortAsc)) {
-		var s = app.ReadFile(path + `intros${getl()}/` + name);
-		var samples = {}, sampcnt = 0;
-		
-		name = name.replace(/.md$/, "");
-		curDoc = `docs${getl()}/intro/${name.replace(/\s/g, "")}.htm`;
-		nav += newNaviItem(
-		    `intro/${name.replace(/\s/g, "")}.htm`,
-		    name = name.replace(/^\d*\s*/, ""));
-		
-		s = s.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
-			function(m, _, t, c)
-			{
-				samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t\t/g, "\n\t\t");
-				return `<sample ${t}>`;
-			});
-
-		var html = ("<p>" + replaceTypes(addMarkdown(replW(s)))
-			// exclude <h> tags from <p>
-			.replace(
-				/(<\/?p>)?(\s|<br>)*(<(h\d?)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
-				"</p>\n\t\t$3\n\t\t<p>")
-			// replace <js> and <bash> tags with sample
-			.replace(
-				/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
-				function(m, w1, lang, nobox, _, code, _, w2)
-				{
-					if(Prism.languages[lang])
-						code = Prism.highlight(
-							code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
-							Prism.languages[lang], lang
-						).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-					
-					if(nobox) return `${w1||''}${code}${w2||''}`;
-					else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
-					else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
-				})
-			+ "</p>")
-			// format html code on linebreaks
-			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
-			.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
-			// additional notes
-			.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
-			// expandable samples (per <sample name> tag or add to desc)
-			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
-			.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
-			// some html char placeholders
-			.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
-			// remove leading whitespace in <p> tag
-			.replace(/<p>(<br>\s+)+/g, "<p>")
-			// remove empty <p> tags
-			.replace(/\n?\t*<p><\/p>/g, "")
-			// remove trailing whitespace
-			.replace(/[ \t]+\n/g, "\n");
-
-		app.WriteFile(path + curDoc, introBase
-			.replace(/%t/g, name).replace("%c", html));
-	}
-
-	app.WriteFile(
-		path + `docs${getl()}/Introduction.htm`,
-		naviBase
-			.replace( "%l", nav )
-			.replace( /%t/g, "Introduction" )
-	);
-}
-
 function generateNavigators() {
 	var list, nav = '';
 
@@ -163,19 +91,74 @@ function generateNavigators() {
 	);
 }
 
+function generateIntros() {
+	app.DeleteFolder(path + `docs${getl()}/intro`);
+	app.MakeFolder(path + `docs${getl()}/intro`);
+	var nav = "";
+
+	for(var name of app.ListFolder("intros").sort(sortAsc)) {
+		var s = app.ReadFile(path + `intros${getl()}/` + name);
+		var samples = {}, sampcnt = 0;
+		resetGlobals();
+		
+		name = name.replace(/.md$/, "");
+		curDoc = `docs${getl()}/intro/${name.replace(/\s/g, "")}.htm`;
+		nav += newNaviItem(
+		    `intro/${name.replace(/\s/g, "")}.htm`,
+		    name = name.replace(/^\d*\s*/, ""));
+		
+		s = s.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
+			function(m, _, t, c)
+			{
+				samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t\t/g, "\n\t\t");
+				return `<sample ${t}>`;
+			});
+
+		var html = ("<p>" + replaceTypes(addMarkdown(replW(s)))
+			// exclude <h> and <table> tags from <p>
+			.replace(
+				/(<\/?p>)?(\s|<br>)*(<(h\d?|table)>.*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
+				"</p>\n\t\t$3\n\t\t<p>")
+			// replace <js> and <bash> tags with sample
+			.replace(
+				/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>(\s|<br>)*/g, 
+				function(m, w1, lang, nobox, _, code, _, w2)
+				{
+					if(Prism.languages[lang])
+						code = Prism.highlight(
+							code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
+							Prism.languages[lang], lang
+						).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
+					
+					if(nobox) return `${w1||''}${code}${w2||''}`;
+					else if(has(code, "<br>")) return `</p>\n${funcBase.replace("%s", code)}\t\t\t<p>`
+					else return `${w1||''}<code class="samp">${code}</code>${w2||''}`;
+				})
+			+ "</p>")
+			// format html code on linebreaks
+			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
+			.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
+			// expandable samples (per <sample name> tag or add to desc)
+			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
+			.replace( /(“.*?”)/g, "<docstr>$1</docstr>");
+
+		app.WriteFile(path + curDoc, adjustDoc(introBase.replace("%c", html), name));
+	}
+
+	app.WriteFile(
+		path + `docs${getl()}/Introduction.htm`,
+		naviBase
+			.replace( "%l", nav )
+			.replace( /%t/g, "Introduction" )
+	);
+}
+
 // generates one document by function name
 function generateDoc( name ) {
 	if(name == "Intros") return generateIntros();
 	if(name == "Navigators") return generateNavigators();
 	curDoc = `docs${getl()}/app/${name}.htm`;
-
-	// reset globals
-		// it still exists because it was necessary to do it this way in python
-		// and I haven't changed it during the translation
-	Globals = {
-		popDefs: [],
-		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
-	};
+	resetGlobals();
 
 	//get an object with the html-converted data
 	var data = getDocData(functions[name]),
@@ -192,24 +175,43 @@ function generateDoc( name ) {
 					functions[name].abbrev ? functions[name].abbrev + " = " : "") +
 					`app.${name}(${data.args})` + data.ret)
 				.replace(/(<\/div>\n\n\t*<p><br>)<br>/, "$1")
-			)
-			// popup object list
-			.replace(/%p/, Globals.popDefs.join("\n\t\t"))
-			// additional notes
-			.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
-			// some html char placeholders
-			.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
-			// title occurances
-			.replace(/%t/g, name)
-			// remove empty <p> tags
-			.replace(/\n?\t*<p><\/p>/g, "")
-			// remove leading whitespace in <p> tag
-			.replace(/<p>(<br>\s+)+/g, "<p>")
-			// remove trailing whitespace
-			.replace(/[ \t]+\n/g, "\n");
+			);
 
 	//save doc file
-	app.WriteFile( path + `docs${getl()}/app/${name}.htm`, html );
+	app.WriteFile( path + `docs${getl()}/app/${name}.htm`, adjustDoc(html, name) );
+}
+
+// reset globals
+	// it still exists because it was necessary to do it this way in python
+	// and I haven't changed it during the translation
+function resetGlobals() {
+	Globals = {
+		popDefs: [],
+		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
+	};
+}
+
+function adjustDoc(html, name) {
+	return html
+		// popup object list
+		.replace(/%p/, Globals.popDefs.join("\n\t\t"))
+		// additional notes
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
+		// colored passages
+		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
+		// some html char placeholders
+		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
+		// title occurances
+		.replace(/%t/g, name)
+		// remove leading whitespace in <p> tag
+		.replace(/<p>(<br>\s+)+/g, "<p>")
+		// remove empty <p> tags
+		.replace(/\n?\t*<p><\/p>/g, "")
+		// remove special whitespace from tables
+		.replace(/([\n\t ]+)(<\/?t([rhd]|able))/g,
+			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
+		// remove trailing whitespace
+		.replace(/[ \t]+\n/g, "\n");
 }
 
 // converts a function object into an html snippets object
@@ -287,7 +289,7 @@ function getDocData( f, useAppPop ) {
 			if(!has(Globals.popDefs[Globals.popDefs.length - 1] || "", f.abbrev + ".")) Globals.popDefs.push("");
 
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
-				replW( met.desc ).replace( /(“.*?”)/g, "<font class='docstring'>$1</font>"),
+				replW( met.desc ).replace( /(“.*?”)/g, "<docstr>$1</docstr>"),
 				getAddClass(met) || (has(basefuncs.all, curSubf) ? ' class="baseFunc"' : ""));
 			tryAddType( pop.fnc );
 
@@ -295,7 +297,7 @@ function getDocData( f, useAppPop ) {
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 
 			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
-			if(has(curSubf, '.')) s = s.split(".").fill("\xa0\xa0").join("") + s.italics();
+			if(has(curSubf, '.')) s = s.split(".").fill("  ").join("") + s.italics();
 			methods += subfBase.replace( "%s", s );
 		}
 		/* else { //convert other types
@@ -365,7 +367,7 @@ function getDesc(name)
 		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
 			(delete samples[t], `</p>\n\t\t\t${s}<p>`) :
 			Throw(Error(`sample ${t} not found for ${name}`)))
-		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>")
+		.replace( /(“.*?”)/g, "<docstr>$1</docstr>")
 		+ "</p>" + Object.values(samples).concat("").reduce((a, b) => a + b);
 }
 
@@ -484,7 +486,7 @@ function typeDesc( types )
 				return s[i];
 			}
 		}).join("\n")
-		.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>");
+		.replace( /(“.*?”)/g, "<docstr>$1</docstr>");
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
@@ -574,7 +576,7 @@ function toArgPop( name, types, doSwitch ) {
 		if(pop_id.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop_id));
 
 		tryAddType( newDefPopup( pop_id, str[0]
-			.replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )
+			.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )
 			.replace( /ShowPopup\('.*?'\)/g, m => m.replace(/<.*?>/g, ""), "")
 		));
 
@@ -586,7 +588,7 @@ function toArgPop( name, types, doSwitch ) {
 		// for values with multiple types
 		tryAddType( newDefPopup(
 			"mul_" + incpop( "mul", 1 ),
-			str.join("<br>").replace( /(“.*?”)/g, "<font class='docstring'>$1</font>" )));
+			str.join("<br>").replace( /(“.*?”)/g, "<docstr>$1</docstr>" )));
 		return newTxtPopup( "mul_" + incpop( "mul" ), name );
 	}
 }
@@ -621,7 +623,7 @@ function replW( s, n )
 	return s
 		.replace( /\\\/\\\//g, '#' )
 		.replace( /\n/g, n ? "<br>" : "\n" )
-		.replace( /\t/g, "  " )
+		.replace( /\t/g, "    " )
 		.replace( /  /g, "&#160;&#160;" );
 }
 
@@ -730,6 +732,10 @@ function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("
 function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
 function newLink(  target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function d(v) { console.log(v); return v; }
+function getHead(d) {
+	d = new Array(d).fill("../").join("");
+	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
+}
 
 /* % placeholder descriptions in the html base strings
 	%t: title name
@@ -783,12 +789,7 @@ var		// subfunctions
 				</div>
 			</div>\n\n\t\t\t`;
 
-		//docs navigator list base
-	naviBase = `
-<!DOCTYPE html>
-<html>
-
-<head>
+	htmlHead = `<head>
 	<title>%t</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -796,13 +797,20 @@ var		// subfunctions
 	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
 	<link rel="stylesheet" id="themePrism" href="css/themes/prism/default.min.css"/>
 	<link rel="stylesheet" id="themeDocs" href="css/docs-default.min.css"/>
+
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
 	<script src="../app.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/example.js"></script>
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
-</head>
+</head>`,
+		//docs navigator list base
+	naviBase = `
+<!DOCTYPE html>
+<html>
+
+${getHead(0)}
 
 <body>
 	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
@@ -827,22 +835,7 @@ var		// subfunctions
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>%t</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
-	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
-	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
-
-	<script src="../js/energize-min.js"></script>
-	<script src="../js/jquery-1.8.1.min.js"></script>
-	<script src="../../app.js"></script>
-	<script src="../js/common.js"></script>
-	<script src="../js/example.js"></script>
-	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
-</head>
+${getHead(1)}
 
 <body>
 	<div data-role="page" data-theme="a">
@@ -873,21 +866,7 @@ var		// subfunctions
 <!DOCTYPE html>
 <html>
 
-<head>
-	<title>%t</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
-	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
-	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
-	<script src="../js/energize-min.js"></script>
-	<script src="../js/jquery-1.8.1.min.js"></script>
-	<script src="../../app.js"></script>
-	<script src="../js/common.js"></script>
-	<script src="../js/example.js"></script>
-	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
-</head>
+${getHead(1)}
 
 <body>
 
@@ -902,7 +881,7 @@ var		// subfunctions
 	<div data-role="content">
 		%c
 	</div><!-- /content -->
-
+	%p
 </div><!-- /page -->
 
 </body>
@@ -997,7 +976,7 @@ var
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":"\xa0", nbsp:"\xa0"},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" "},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 		// current language
