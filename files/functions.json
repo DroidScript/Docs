@@ -102,12 +102,12 @@
 		"isfunc": true,
 		"name": "ChooseContact",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str", {
+		"pTypes": ["str-Phone|Email", {
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",
 			"pNames": ["name", "data"],
-			"pTypes": ["str-Phone|Email", "str"],
+			"pTypes": ["str", "str"],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Let the user choose an image"
@@ -9480,7 +9480,7 @@
 		"isfunc": true,
 		"name": "ShowPopup",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str_com-Bottom|Short"],
+		"pTypes": ["str", "str_com-Bottom,Short|Long"],
 		"shortDesc": "Show a popup message"
 	},
 	"ShowProgress": {

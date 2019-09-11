@@ -11,7 +11,7 @@ function OnStart()
         paired =  app.IsBtDevicePaired( devices[0].name );
         app.Alert( paired, devices[0].name + " paired" );
     } else
-        app.ShowPopup( "No Paired devices found" );</b>
+        <b>app.ShowPopup( "No Paired devices found" );</b>
 }
 <sample>
 

@@ -19,6 +19,25 @@ function OnLoad() {
 ### OnMenu(name)
 This event is called when the user selects an item from the in-app menu.
 See Also: @../app/SetMenu, @../app/ShowMenu
+<sample OnMenu>
+function OnStart()
+{
+	<b>app.SetMenu( "Start,Stop,Pause" );</b>
+
+    lay = app.CreateLayout( "linear", "" );
+
+    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
+    btn.SetOnTouch( app.ShowMenu );
+    lay.AddChild( btn );
+
+    app.AddLayout( lay );
+}
+
+function OnMenu( item )
+{
+	app.ShowPopup( item, "Short" );
+}
+</sample OnMenu>
 
 ### OnBack()
 By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling <js nobox>app.</js>@../app/EnableBackKey<js nobox>(false)</js>.
@@ -64,7 +83,7 @@ function OnResume()
 </sample Detect Resume>
 
 ### OnConfig()
-OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientatino change.
+OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientation change.
 <sample Layout Orientation>
 function OnStart()
 {
