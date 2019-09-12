@@ -756,7 +756,7 @@ var		// subfunctions
 		// popup object
 	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 		// subfunctions list
-	subfHead = `<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
+	subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
 
 		// deprecated note
 	deprecatedHint = "<div class='deprHint'><b>Note: This function is deprecated.%s</b></div>";

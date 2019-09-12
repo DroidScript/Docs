@@ -78,7 +78,7 @@
 		"isfunc": true,
 		"name": "CheckPermission",
 		"pNames": ["type"],
-		"pTypes": ["str-Camera|Storage|ExtSDcard|Network|..."],
+		"pTypes": ["str-Camera|Storage|ExtSDcard|Network|Location|SMS|Calendar|Body|Contacts|Record|Phone|Accounts|License"],
 		"retval": "bin",
 		"shortDesc": "Checks if permission was granted"
 	},
@@ -7994,7 +7994,7 @@
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Accounts|License", {
 			"desc": "callback function",
 			"isfunc": true,
 			"name": "callback",
