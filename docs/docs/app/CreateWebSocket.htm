@@ -20,129 +20,128 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>CreateWebSocket</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.</p>
-
-			<div class="samp">
-			wbs = app.CreateWebSocket(
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a>,
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>,
-				<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )
-				→ <b>app object:</b> WebSocket
-			</div>
-
-			<p>A web socket will automatically open after creating it. Once after finished loading, the <b>OnOpen</b> callback is called.<br>
-			<br>
-			In order to receive messages from the server you have to specify a <b>OnMessage</b> callback.<br>
-			<br>
-			See Also: <a href="CreateWebServer.htm" data-ajax="false">CreateWebServer</a></p>
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Basic</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">"No connected clients."</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    serv<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> serv_OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> sock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebSocket</span><span class="token punctuation">(</span> <span class="token string">"sock1"</span><span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    sock<span class="token punctuation">.</span><span class="token function">SetOnOpen</span><span class="token punctuation">(</span> OnSockOpen <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    sock<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> Sock_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnSockOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Connected"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token keyword">var</span> clients <span class="token operator">=</span> serv<span class="token punctuation">.</span><span class="token function">GetWebSockClients</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> clients<span class="token punctuation">)</span><br>
-					        txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>remoteAddress <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnSockClose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Disconnected"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<p><br>The following methods are available on the <b>WebSocket</b> object:</p>
-
-			<div class="samp">
-				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetSocket</a>() → <b>object:</b> <i>Javascript Object:</i> Socket
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">IsOpen</a>() → <b>boolean</b>
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Send</a>(
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnClose</a>(
-				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnMessage</a>(
-				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnOpen</a>(
-				<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wbs.Close</b><br>Close the web socket.</div>
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wbs.GetSocket</b><br>Returns the js Socket instance</div>
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wbs.IsOpen</b><br>Check whether WebSocket is open</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>wbs.Send</b><br>Send a message to the server</div>
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>wbs.SetOnClose</b><br>Define a callback function which is called when the WebSocket has been closed.</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>wbs.SetOnMessage</b><br>Define a callback function which is called when the WebSocket recived a message from the server.</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-			<a href="" onclick="app.ShowPopup('string')">message</a>
-		)</div>
-
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>wbs.SetOnOpen</b><br>Define a callback function which is called when the WebSocket has been opened.</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateWebSocket</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.</p>
+
+		<div class="samp">
+		wbs = app.CreateWebSocket(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )
+			→ <b>app object:</b> WebSocket
+		</div>
+
+		<p>A web socket will automatically open after creating it. Once after finished loading, the <b>OnOpen</b> callback is called.<br>
+		<br>
+		In order to receive messages from the server you have to specify a <b>OnMessage</b> callback.<br>
+		<br>
+		See Also: <a href="CreateWebServer.htm" data-ajax="false">CreateWebServer</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    ip <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">"No connected clients."</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"AutoScale,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">22</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    serv <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebServer</span><span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    serv<span class="token punctuation">.</span><span class="token function">SetFolder</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    serv<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> serv_OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> sock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebSocket</span><span class="token punctuation">(</span> <span class="token string">"sock1"</span><span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sock<span class="token punctuation">.</span><span class="token function">SetOnOpen</span><span class="token punctuation">(</span> OnSockOpen <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sock<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> Sock_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSockOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Connected"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> clients <span class="token operator">=</span> serv<span class="token punctuation">.</span><span class="token function">GetWebSockClients</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> clients<span class="token punctuation">)</span><br>
+				        txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>remoteAddress <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSockClose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Disconnected"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<p>The following methods are available on the <b>WebSocket</b> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetSocket</a>() → <b>object:</b> <i>Javascript Object:</i> Socket
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">IsOpen</a>() → <b>boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Send</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnClose</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnMessage</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnOpen</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wbs.Close</b><br>Close the web socket.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wbs.GetSocket</b><br>Returns the js Socket instance</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wbs.IsOpen</b><br>Check whether WebSocket is open</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>wbs.Send</b><br>Send a message to the server</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>wbs.SetOnClose</b><br>Define a callback function which is called when the WebSocket has been closed.</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>wbs.SetOnMessage</b><br>Define a callback function which is called when the WebSocket recived a message from the server.</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('string')">message</a>
+	)</div>
+
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>wbs.SetOnOpen</b><br>Define a callback function which is called when the WebSocket has been opened.</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
+</div>
 </body>
 
 </html>

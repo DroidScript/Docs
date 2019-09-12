@@ -20,59 +20,56 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>Files</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Files</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="true">
-			
-				<li><a href="app/ChooseFile.htm">ChooseFile</a></li>
-				<li><a href="app/ChooseImage.htm">ChooseImage</a></li>
-				<li><a href="app/CopyFile.htm">CopyFile</a></li>
-				<li><a href="app/CopyFolder.htm">CopyFolder</a></li>
-				<li><a href="app/CreateFile.htm">CreateFile</a></li>
-				<li><a href="app/CreateZipUtil.htm">CreateZipUtil</a></li>
-				<li><a href="app/DeleteFile.htm">DeleteFile</a></li>
-				<li><a href="app/DeleteFolder.htm">DeleteFolder</a></li>
-				<li><a href="app/ExtractAssets.htm">ExtractAssets</a></li>
-				<li><a href="app/ExtractPlugins.htm">ExtractPlugins</a></li>
-				<li><a href="app/FileExists.htm">FileExists</a></li>
-				<li><a href="app/FolderExists.htm">FolderExists</a></li>
-				<li><a href="app/GetExternalFolder.htm">GetExternalFolder</a></li>
-				<li><a href="app/GetFileDate.htm">GetFileDate</a></li>
-				<li><a href="app/GetFileSize.htm">GetFileSize</a></li>
-				<li><a href="app/GetFreeSpace.htm">GetFreeSpace</a></li>
-				<li><a href="app/GetInternalFolder.htm">GetInternalFolder</a></li>
-				<li><a href="app/GetMediaFile.htm">GetMediaFile</a></li>
-				<li><a href="app/GetMetadata.htm">GetMetadata</a></li>
-				<li><a href="app/GetPath.htm">GetPath</a></li>
-				<li><a href="app/GetPrivateFolder.htm">GetPrivateFolder</a></li>
-				<li><a href="app/GetResourceId.htm">GetResourceId</a></li>
-				<li><a href="app/GetSpecialFolder.htm">GetSpecialFolder</a></li>
-				<li><a href="app/GetThumbnail.htm">GetThumbnail</a></li>
-				<li><a href="app/IsFolder.htm">IsFolder</a></li>
-				<li><a href="app/ListFolder.htm">ListFolder</a></li>
-				<li><a href="app/MakeFolder.htm">MakeFolder</a></li>
-				<li><a href="app/OpenFile.htm">OpenFile</a></li>
-				<li><a href="app/ReadFile.htm">ReadFile</a></li>
-				<li><a href="app/RenameFile.htm">RenameFile</a></li>
-				<li><a href="app/RenameFolder.htm">RenameFolder</a></li>
-				<li><a href="app/ReplaceInFile.htm">ReplaceInFile</a></li>
-				<li><a href="app/ScanFile.htm">ScanFile</a></li>
-				<li><a href="app/SendFile.htm">SendFile</a></li>
-				<li><a href="app/UnzipFile.htm">UnzipFile</a></li>
-				<li><a href="app/Uri2Path.htm">Uri2Path</a></li>
-				<li><a href="app/WriteFile.htm">WriteFile</a></li>
-				<li><a href="app/ZipFile.htm">ZipFile</a></li>
-				<li><a href="app/ZipFolder.htm">ZipFolder</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="true">
+		
+			<li><a href="app/FileExists.htm">FileExists</a></li>
+			<li><a href="app/ReadFile.htm">ReadFile</a></li>
+			<li><a href="app/WriteFile.htm">WriteFile</a></li>
+			<li><a href="app/ReplaceInFile.htm">ReplaceInFile</a></li>
+			<li><a href="app/CopyFile.htm">CopyFile</a></li>
+			<li><a href="app/RenameFile.htm">RenameFile</a></li>
+			<li><a href="app/DeleteFile.htm">DeleteFile</a></li>
+			<li><a href="app/ZipFile.htm">ZipFile</a></li>
+			<li><a href="app/UnzipFile.htm">UnzipFile</a></li><li></li>
+			<li><a href="app/GetFileDate.htm">GetFileDate</a></li>
+			<li><a href="app/GetFileSize.htm">GetFileSize</a></li>
+			<li><a href="app/GetMetadata.htm">GetMetadata</a></li>
+			<li><a href="app/CreateFile.htm">CreateFile</a></li><li></li>
+			<li><a href="app/FolderExists.htm">FolderExists</a></li>
+			<li><a href="app/IsFolder.htm">IsFolder</a></li>
+			<li><a href="app/MakeFolder.htm">MakeFolder</a></li>
+			<li><a href="app/ListFolder.htm">ListFolder</a></li>
+			<li><a href="app/CopyFolder.htm">CopyFolder</a></li>
+			<li><a href="app/RenameFolder.htm">RenameFolder</a></li>
+			<li><a href="app/DeleteFolder.htm">DeleteFolder</a></li>
+			<li><a href="app/ZipFolder.htm">ZipFolder</a></li><li></li>
+			<li><a href="app/GetMediaFile.htm">GetMediaFile</a></li>
+			<li><a href="app/GetExternalFolder.htm">GetExternalFolder</a></li>
+			<li><a href="app/GetInternalFolder.htm">GetInternalFolder</a></li>
+			<li><a href="app/GetPrivateFolder.htm">GetPrivateFolder</a></li>
+			<li><a href="app/GetSpecialFolder.htm">GetSpecialFolder</a></li><li></li>
+			<li><a href="app/ChooseFile.htm">ChooseFile</a></li>
+			<li><a href="app/ChooseImage.htm">ChooseImage</a></li>
+			<li><a href="app/GetThumbnail.htm">GetThumbnail</a></li>
+			<li><a href="app/OpenFile.htm">OpenFile</a></li>
+			<li><a href="app/ScanFile.htm">ScanFile</a></li>
+			<li><a href="app/SendFile.htm">SendFile</a></li><li></li>
+			<li><a href="app/CreateZipUtil.htm">CreateZipUtil</a></li>
+			<li><a href="app/ExtractAssets.htm">ExtractAssets</a></li>
+			<li><a href="app/ExtractPlugins.htm">ExtractPlugins</a></li>
+			<li><a href="app/GetResourceId.htm">GetResourceId</a></li>
+			<li><a href="app/Uri2Path.htm">Uri2Path</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

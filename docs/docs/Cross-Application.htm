@@ -20,29 +20,28 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>Cross-Application</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Cross-Application</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="false">
-			
-				<li><a href="app/Broadcast.htm">Broadcast</a></li>
-				<li><a href="app/BroadcastIntent.htm">BroadcastIntent</a></li>
-				<li><a href="app/GetIntent.htm">GetIntent</a></li>
-				<li><a href="app/GetSharedFiles.htm">GetSharedFiles</a></li>
-				<li><a href="app/GetSharedText.htm">GetSharedText</a></li>
-				<li><a href="app/SendIntent.htm">SendIntent</a></li>
-				<li><a href="app/SendText.htm">SendText</a></li>
-				<li><a href="app/SetOnBroadcast.htm">SetOnBroadcast</a></li>
-				<li><a href="app/SetSharedApp.htm">SetSharedApp</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		
+			<li><a href="app/Broadcast.htm">Broadcast</a></li>
+			<li><a href="app/BroadcastIntent.htm">BroadcastIntent</a></li>
+			<li><a href="app/SetOnBroadcast.htm">SetOnBroadcast</a></li><li></li>
+			<li><a href="app/GetIntent.htm">GetIntent</a></li>
+			<li><a href="app/SendIntent.htm">SendIntent</a></li><li></li>
+			<li><a href="app/GetSharedFiles.htm">GetSharedFiles</a></li>
+			<li><a href="app/GetSharedText.htm">GetSharedText</a></li>
+			<li><a href="app/SendText.htm">SendText</a></li>
+			<li><a href="app/SetSharedApp.htm">SetSharedApp</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

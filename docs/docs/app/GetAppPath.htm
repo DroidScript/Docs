@@ -20,34 +20,33 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>GetAppPath</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Returns the path to the app assets folder.</p>
-
-			<div class="samp">
-			app.GetAppPath() → <b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
-			</div>
-
-			<p>If it's a DroidScript project the path should be <docstr>“/sdcard/DroidScript/appname”</docstr> - If it is an apk it is <docstr>“/Assets”</docstr><br>
-			<br>
-			See Also: <a href="GetPath.htm" data-ajax="false">GetPath</a>, <a href="GetPrivateFolder.htm" data-ajax="false">GetPrivateFolder</a></p>
-
-			<br>
-		</div>
-
-
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>GetAppPath</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Returns the path to the app assets folder.</p>
+
+		<div class="samp">
+		app.GetAppPath() → <b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
+		</div>
+
+		<p>If it's a DroidScript project the path should be <docstr>“/sdcard/DroidScript/appname”</docstr> - If it is an apk it is <docstr>“/Assets”</docstr><br>
+		<br>
+		See Also: <a href="GetPath.htm" data-ajax="false">GetPath</a>, <a href="GetPrivateFolder.htm" data-ajax="false">GetPrivateFolder</a></p>
+	<br>
+	</div>
+
+
+</div>
 </body>
 
 </html>

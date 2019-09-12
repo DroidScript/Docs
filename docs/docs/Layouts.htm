@@ -20,32 +20,30 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>Layouts</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Layouts</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="false">
-			
-				<li><a href="app/AddDrawer.htm">AddDrawer</a></li>
-				<li><a href="app/AddLayout.htm">AddLayout</a></li>
-				<li><a href="app/CloseDrawer.htm">CloseDrawer</a></li>
-				<li><a href="app/CreateLayout.htm">CreateLayout</a></li>
-				<li><a href="app/CreateOverlay.htm" class="premHint">CreateOverlay</a></li>
-				<li><a href="app/CreateWizard.htm">CreateWizard</a></li>
-				<li><a href="app/DestroyLayout.htm">DestroyLayout</a></li>
-				<li><a href="app/GetDrawerState.htm">GetDrawerState</a></li>
-				<li><a href="app/LockDrawer.htm">LockDrawer</a></li>
-				<li><a href="app/OpenDrawer.htm">OpenDrawer</a></li>
-				<li><a href="app/RemoveDrawer.htm">RemoveDrawer</a></li>
-				<li><a href="app/UnlockDrawer.htm">UnlockDrawer</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		
+			<li><a href="app/CreateLayout.htm">CreateLayout</a></li>
+			<li><a href="app/CreateOverlay.htm" class="premHint">CreateOverlay</a></li>
+			<li><a href="app/AddLayout.htm">AddLayout</a></li>
+			<li><a href="app/DestroyLayout.htm">DestroyLayout</a></li><li></li>
+			<li><a href="app/AddDrawer.htm">AddDrawer</a></li>
+			<li><a href="app/OpenDrawer.htm">OpenDrawer</a></li>
+			<li><a href="app/CloseDrawer.htm">CloseDrawer</a></li>
+			<li><a href="app/GetDrawerState.htm">GetDrawerState</a></li>
+			<li><a href="app/LockDrawer.htm">LockDrawer</a></li>
+			<li><a href="app/UnlockDrawer.htm">UnlockDrawer</a></li>
+			<li><a href="app/RemoveDrawer.htm">RemoveDrawer</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

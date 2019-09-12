@@ -20,30 +20,32 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>UI Control</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>UI Control</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="false">
-			
-				<li><a href="app/GetObjects.htm">GetObjects</a></li>
-				<li><a href="app/HideKeyboard.htm">HideKeyboard</a></li>
-				<li><a href="app/RemoveLayout.htm">RemoveLayout</a></li>
-				<li><a href="app/SetKioskMode.htm" class="xfeatHint">SetKioskMode</a></li>
-				<li><a href="app/SetMenu.htm">SetMenu</a></li>
-				<li><a href="app/SetTheme.htm" class="premHint">SetTheme</a></li>
-				<li><a href="app/SimulateDrag.htm">SimulateDrag</a></li>
-				<li><a href="app/SimulateKey.htm">SimulateKey</a></li>
-				<li><a href="app/SimulateScroll.htm">SimulateScroll</a></li>
-				<li><a href="app/SimulateTouch.htm">SimulateTouch</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		
+			<li><a href="app/AddLayout.htm">AddLayout</a></li>
+			<li><a href="app/RemoveLayout.htm">RemoveLayout</a></li>
+			<li><a href="app/AddDrawer.htm">AddDrawer</a></li>
+			<li><a href="app/RemoveDrawer.htm">RemoveDrawer</a></li>
+			<li><a href="app/SetMenu.htm">SetMenu</a></li>
+			<li><a href="app/ShowMenu.htm">ShowMenu</a></li>
+			<li><a href="app/SetKioskMode.htm" class="xfeatHint">SetKioskMode</a></li>
+			<li><a href="app/SetTheme.htm" class="premHint">SetTheme</a></li><li></li>
+			<li><a href="app/SimulateDrag.htm">SimulateDrag</a></li>
+			<li><a href="app/SimulateKey.htm">SimulateKey</a></li>
+			<li><a href="app/SimulateScroll.htm">SimulateScroll</a></li>
+			<li><a href="app/SimulateTouch.htm">SimulateTouch</a></li><li></li>
+			<li><a href="app/GetObjects.htm">GetObjects</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

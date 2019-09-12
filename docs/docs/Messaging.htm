@@ -20,26 +20,25 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>Messaging</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Messaging</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="false">
-			
-				<li><a href="app/Call.htm">Call</a></li>
-				<li><a href="app/CreateEmail.htm">CreateEmail</a></li>
-				<li><a href="app/CreateSMS.htm" class="xfeatHint">CreateSMS</a></li>
-				<li><a href="app/SendMail.htm">SendMail</a></li>
-				<li><a href="app/SendMessage.htm">SendMessage</a></li>
-				<li><a href="app/SendSMS.htm">SendSMS</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		
+			<li><a href="app/Call.htm">Call</a></li>
+			<li><a href="app/CreateEmail.htm">CreateEmail</a></li>
+			<li><a href="app/CreateSMS.htm" class="xfeatHint">CreateSMS</a></li>
+			<li><a href="app/SendMail.htm">SendMail</a></li>
+			<li><a href="app/SendMessage.htm">SendMessage</a></li>
+			<li><a href="app/SendSMS.htm">SendSMS</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

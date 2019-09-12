@@ -20,79 +20,76 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>GetPairedBtDevices</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Returns a list of objects containing the name and bluetooth address of paired devices.</p>
-
-			<div class="samp">
-			app.GetPairedBtDevices() → <b>list:</b> <i>of objects:</i> [{
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a> }]
-			</div>
-
-			<p>Note that Bluetooth must be turned on to receive this information.<br>
-			<br>
-			See Also: <a href="UnpairBtDevice.htm" data-ajax="false">UnpairBtDevice</a>, <a href="CreateBluetoothSerial.htm" data-ajax="false">CreateBluetoothSerial</a>, <a href="DiscoverBtDevices.htm" data-ajax="false">DiscoverBtDevices</a></p>
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Show </h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">var</span> itv<span class="token punctuation">;</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token number">.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					<br>
-					    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOn<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">checkBtOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-					    <span class="token punctuation">{</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					        <span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					        <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> devices <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPairedBtDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> devices <span class="token punctuation">)</span><br>
-					            lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>address <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					    <span class="token punctuation">}</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>GetPairedBtDevices</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Returns a list of objects containing the name and bluetooth address of paired devices.</p>
+
+		<div class="samp">
+		app.GetPairedBtDevices() → <b>list:</b> <i>of objects:</i> [{
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a> }]
+		</div>
+
+		<p>Note that Bluetooth must be turned on to receive this information.<br>
+		<br>
+		See Also: <a href="UnpairBtDevice.htm" data-ajax="false">UnpairBtDevice</a>, <a href="CreateBluetoothSerial.htm" data-ajax="false">CreateBluetoothSerial</a>, <a href="DiscoverBtDevices.htm" data-ajax="false">DiscoverBtDevices</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Show </h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">var</span> itv<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token number">.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<br>
+				<br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOn<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">checkBtOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> devices <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPairedBtDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token keyword">in</span> devices <span class="token punctuation">)</span><br>
+				            lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> devices<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>address <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+</div>
 </body>
 
 </html>

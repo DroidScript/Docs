@@ -42,28 +42,28 @@
 		<p>Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.<br>
 		To clear a saved value use the <b>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></b> method.</p>
         <table>
-		    <tr>
-		        <th width="10%">Save</th>
-		        <td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
-		        <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
-		        <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
-		    </tr>
-		    <tr>
-		        <th>Load</th>
-		        <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
-		        <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
-		        <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
-		    </tr>
-		    <tr>
-		        <th>Type</th>
-		        <td>Boolean</td>
-		        <td>Number</td>
-		        <td>String</td>
-		    </tr>
+            <tr>
+                <th width="10%">Save</th>
+                <td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
+                <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
+                <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
+            </tr>
+            <tr>
+                <th>Load</th>
+                <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
+                <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
+                <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>Boolean</td>
+                <td>Number</td>
+                <td>String</td>
+            </tr>
         </table>
 		<p>If you have many properties to save you can use an object structure instead of saving each value on their own.<br>
-		Load settings: <code class="samp"><span class="token keyword">var</span> cfg <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span><span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
-		Save settings: <code class="samp">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span><span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>cfg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
+		Load settings: <code class="samp samp-inline"><span class="token keyword">var</span> cfg <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+		Save settings: <code class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>cfg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - App Settings</h3>
@@ -72,9 +72,8 @@
 				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> version<span class="token punctuation">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> startNo<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token comment">// load saved settings</span><br>
 				    <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<br>
+				    <br>
 				    <span class="token comment">// update settings object</span><br>
 				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> tmp<span class="token punctuation">)</span> settings<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
@@ -97,8 +96,15 @@
 			</div>
 		</div>
 
-		<p>##<br>
-		</p>
+		<h2>Using Datatbases</h2>
+		<p>Using Databases is the most elaborate variant of the three.<br>
+		<br>
+		<red>You should only consider using one if you have to perform complex queries on a large amount of datasets.</red><br>
+		Using JSON objects is more practicable and performant in most cases.<br>
+		<br>
+		DroidScript provides an extra <a href="../app/OpenDatabase.htm" data-ajax="false">OpenDatabase</a> component for databases which uses the SQLitePlugin <a href="https://github.com/xpbrew/cordova-sqlite-storage" onclick="return OpenUrl(this.href);">cordova-sqlite-storage</a>.<br>
+		<br>
+		For a demo Have a look at the <a href="#" onclick="OpenSample(&quot;Database&quot;)">Database</a> example.</p>
 	</div><!-- /content -->
 
 </div><!-- /page -->

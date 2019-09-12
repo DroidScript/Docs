@@ -20,50 +20,51 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>Device Control</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Device Control</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="true">
-			
-				<li><a href="app/CreateNotification.htm">CreateNotification</a></li>
-				<li><a href="app/CreateNxt.htm" class="deprHint">CreateNxt</a></li>
-				<li><a href="app/CreateShortcut.htm">CreateShortcut</a></li>
-				<li><a href="app/DisableKeys.htm">DisableKeys</a></li>
-				<li><a href="app/DisableTouch.htm">DisableTouch</a></li>
-				<li><a href="app/EnableBackKey.htm">EnableBackKey</a></li>
-				<li><a href="app/GetClipboardText.htm">GetClipboardText</a></li>
-				<li><a href="app/GetJoystickName.htm">GetJoystickName</a></li>
-				<li><a href="app/GetJoystickState.htm">GetJoystickState</a></li>
-				<li><a href="app/GetVolume.htm">GetVolume</a></li>
-				<li><a href="app/Lock.htm">Lock</a></li>
-				<li><a href="app/PlaySound.htm">PlaySound</a></li>
-				<li><a href="app/PreventScreenLock.htm">PreventScreenLock</a></li>
-				<li><a href="app/Quit.htm">Quit</a></li>
-				<li><a href="app/ScreenShot.htm">ScreenShot</a></li>
-				<li><a href="app/SetAutoBoot.htm">SetAutoBoot</a></li>
-				<li><a href="app/SetClipboardText.htm">SetClipboardText</a></li>
-				<li><a href="app/SetDensity.htm">SetDensity</a></li>
-				<li><a href="app/SetJoystickOptions.htm">SetJoystickOptions</a></li>
-				<li><a href="app/SetOnKey.htm">SetOnKey</a></li>
-				<li><a href="app/SetOnShowKeyboard.htm">SetOnShowKeyboard</a></li>
-				<li><a href="app/SetScreenBrightness.htm">SetScreenBrightness</a></li>
-				<li><a href="app/SetScreenMode.htm">SetScreenMode</a></li>
-				<li><a href="app/SetVolume.htm">SetVolume</a></li>
-				<li><a href="app/SetWifiApEnabled.htm">SetWifiApEnabled</a></li>
-				<li><a href="app/ShowKeyboard.htm">ShowKeyboard</a></li>
-				<li><a href="app/ShowMenu.htm">ShowMenu</a></li>
-				<li><a href="app/SysExec.htm">SysExec</a></li>
-				<li><a href="app/Vibrate.htm">Vibrate</a></li>
-				<li><a href="app/WifiScan.htm">WifiScan</a></li>
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="true">
+		
+			<li><a href="app/GetVolume.htm">GetVolume</a></li>
+			<li><a href="app/SetVolume.htm">SetVolume</a></li>
+			<li><a href="app/GetClipboardText.htm">GetClipboardText</a></li>
+			<li><a href="app/SetClipboardText.htm">SetClipboardText</a></li><li></li>
+			<li><a href="app/CreateNotification.htm">CreateNotification</a></li>
+			<li><a href="app/CreateShortcut.htm">CreateShortcut</a></li>
+			<li><a href="app/ScreenShot.htm">ScreenShot</a></li>
+			<li><a href="app/SysExec.htm">SysExec</a></li>
+			<li><a href="app/Vibrate.htm">Vibrate</a></li><li></li>
+			<li><a href="app/DisableKeys.htm">DisableKeys</a></li>
+			<li><a href="app/DisableTouch.htm">DisableTouch</a></li>
+			<li><a href="app/EnableBackKey.htm">EnableBackKey</a></li>
+			<li><a href="app/SetOnKey.htm">SetOnKey</a></li>
+			<li><a href="app/SetOnShowKeyboard.htm">SetOnShowKeyboard</a></li>
+			<li><a href="app/ShowKeyboard.htm">ShowKeyboard</a></li>
+			<li><a href="app/HideKeyboard.htm">HideKeyboard</a></li><li></li>
+			<li><a href="app/PreventScreenLock.htm">PreventScreenLock</a></li>
+			<li><a href="app/SetAutoBoot.htm">SetAutoBoot</a></li>
+			<li><a href="app/SetDensity.htm">SetDensity</a></li>
+			<li><a href="app/SetScreenBrightness.htm">SetScreenBrightness</a></li>
+			<li><a href="app/SetScreenMode.htm">SetScreenMode</a></li>
+			<li><a href="app/SetWifiApEnabled.htm">SetWifiApEnabled</a></li>
+			<li><a href="app/ScanFile.htm">ScanFile</a></li>
+			<li><a href="app/WifiScan.htm">WifiScan</a></li><li></li>
+			<li><a href="app/Lock.htm">Lock</a></li>
+			<li><a href="app/Unlock.htm">Unlock</a></li>
+			<li><a href="app/WakeUp.htm">WakeUp</a></li>
+			<li><a href="app/GoToSleep.htm">GoToSleep</a></li><li></li>
+			<li><a href="app/CreateNxt.htm" class="deprHint">CreateNxt</a></li>
+			<li><a href="app/GetJoystickName.htm">GetJoystickName</a></li>
+			<li><a href="app/GetJoystickState.htm">GetJoystickState</a></li>
+			<li><a href="app/SetJoystickOptions.htm">SetJoystickOptions</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>

@@ -20,33 +20,32 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>SetOptions</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Define some global options for the app.</p>
-
-			<div class="samp">
-			app.SetOptions(
-				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
-			</div>
-
-			<p>See Also: <a href="GetOptions.htm" data-ajax="false">GetOptions</a></p>
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“UseBrowser”</docstr>, <docstr>“NoKeys”</docstr> or <docstr>“ShowKeys”</docstr>, <docstr>“NoThemeAlerts”</docstr>, <docstr>“IgnoreSslErrors”</docstr>, <docstr>“TouchModal”</docstr>, <docstr>“NoTouch”</docstr>, <docstr>“NoFocus”</docstr>, <docstr>“Secure”</docstr>, <docstr>“ShowLocked”</docstr>, <docstr>“WakeScreen”</docstr>, <docstr>“ScreenOn”</docstr></div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>SetOptions</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Define some global options for the app.</p>
+
+		<div class="samp">
+		app.SetOptions(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+
+		<p>See Also: <a href="GetOptions.htm" data-ajax="false">GetOptions</a></p>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“UseBrowser”</docstr>, <docstr>“NoKeys”</docstr> or <docstr>“ShowKeys”</docstr>, <docstr>“NoThemeAlerts”</docstr>, <docstr>“IgnoreSslErrors”</docstr>, <docstr>“TouchModal”</docstr>, <docstr>“NoTouch”</docstr>, <docstr>“NoFocus”</docstr>, <docstr>“Secure”</docstr>, <docstr>“ShowLocked”</docstr>, <docstr>“WakeScreen”</docstr>, <docstr>“ScreenOn”</docstr></div>
+</div>
 </body>
 
 </html>

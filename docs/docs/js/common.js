@@ -161,7 +161,8 @@ function OnPageShow()
 	catch( e ) {}
 }
 
-$(window).load(function() {
+$(window).load(function()
+{
 	var popup = location.href.match(/#([a-z]+)/i);
 	if(popup)
 	{
@@ -175,7 +176,8 @@ $(window).load(function() {
 	}
 });
 
-$(window).unload(function() {
+$(window).unload(function()
+{
 	var scrollPosition = $(document).scrollTop();
 	sessionStorage.scrollPosition = scrollPosition;
 	console.log("set: " + sessionStorage.scrollPosition)
@@ -200,27 +202,43 @@ function setTheme( theme )
 }
 
 // get current theme from localStorage
-function getTheme() {
+function getTheme()
+{
 	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
 }
 
-function OpenUrl( url, type, choose ) {
+function OpenUrl( url, type, choose )
+{
 	if(isAndroid) app.OpenUrl(url, type, choose );
 	else window.open(url);
 	return false;
 }
-			
+
+function OpenSamples()
+{
+	app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+}
+
+function OpenSample(name)
+{
+	OpenSamples();
+	app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+}
+
 // app.ShowPopup equivalent for browsers
-function ShowPopup(msg) {
+function ShowPopup(msg)
+{
 	var apop = $("#appPopup");
 	// .animate() works as cancelable delay
 	apop.stop(true).fadeOut(100, function() { apop.text(msg); })
 		.fadeIn(200).animate({opacity:1}, 1500).fadeOut(400);
 }
 
-function switchPopup(old, newId) {
+function switchPopup(old, newId)
+{
 	$(old.parentNode).one({
-		popupafterclose: function() {
+		popupafterclose: function()
+		{
 			$(newId).popup("open", {transition: "pop"});
 		}
 	}).popup("close");
