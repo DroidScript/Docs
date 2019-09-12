@@ -20,81 +20,78 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>GetRotation</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Returns the current rotation of the device around it's Z-Axis in 90 degree steps.</p>
-
-			<div class="samp">
-			app.GetRotation() → <b>number:</b> <i>angle in degrees (0..360):</i> 0 or 90 or 180 or 270
-			</div>
-
-			<p>The values are relative to the initial orientation of the device on startup.<br>
-			<br>
-			See Also: <a href="GetOrientation.htm" data-ajax="false">GetOrientation</a></p>
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Repeatedly Show Rotation</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRotation<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">ShowRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> mode <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> mode <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Show Rotation and switch Orientation</h3>
-				<div id="examp2" style="font-size:70%">
-					cfg<span class="token punctuation">.</span>Portrait<span class="token punctuation">;</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRotation<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token string">'app.SetOrientation("landscape")'</span><span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">ShowRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <b id="snip2" style="font-size:100%"><span class="token keyword">var</span> mode <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> mode <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>GetRotation</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Returns the current rotation of the device around it's Z-Axis in 90 degree steps.</p>
+
+		<div class="samp">
+		app.GetRotation() → <b>number:</b> <i>angle in degrees (0..360):</i> 0 or 90 or 180 or 270
+		</div>
+
+		<p>The values are relative to the initial orientation of the device on startup.<br>
+		<br>
+		See Also: <a href="GetOrientation.htm" data-ajax="false">GetOrientation</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Repeatedly Show Rotation</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRotation<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> mode <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> mode <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Show Rotation and switch Orientation</h3>
+			<div id="examp2" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Portrait<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRotation<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token string">'app.SetOrientation("landscape")'</span><span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip2" style="font-size:100%"><span class="token keyword">var</span> mode <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRotation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> mode <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+
+</div>
 </body>
 
 </html>

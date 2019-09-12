@@ -20,66 +20,63 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>DestroyLayout</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>DestroyLayout destroys a layout and all its contents so it can't be used any more.</p>
-
-			<div class="samp">
-			app.DestroyLayout(
-				<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a> )
-			</div>
-
-			<p>As a result, all memory occupied by these objects will be released.<br>
-			<br>
-			See Also: <a href="CreateLayout.htm" data-ajax="false">CreateLayout</a>, <a href="AddLayout.htm" data-ajax="false">AddLayout</a></p>
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Destroy layout and check if deleted</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token comment">//Called when application is started.</span><br>
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Don't Press Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">DestroyLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<br>
-					    <span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"nothing in here!"</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>DestroyLayout</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>DestroyLayout destroys a layout and all its contents so it can't be used any more.</p>
+
+		<div class="samp">
+		app.DestroyLayout(
+			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a> )
+		</div>
+
+		<p>As a result, all memory occupied by these objects will be released.<br>
+		<br>
+		See Also: <a href="CreateLayout.htm" data-ajax="false">CreateLayout</a>, <a href="AddLayout.htm" data-ajax="false">AddLayout</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Destroy layout and check if deleted</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token comment">//Called when application is started.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Don't Press Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">DestroyLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    <span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"nothing in here!"</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+</div>
 </body>
 
 </html>

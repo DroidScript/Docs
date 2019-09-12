@@ -100,25 +100,29 @@ function generateIntros() {
 		var s = app.ReadFile(path + `intros${getl()}/` + name);
 		var samples = {}, sampcnt = 0;
 		resetGlobals();
-		
+
 		name = name.replace(/.md$/, "");
 		curDoc = `docs${getl()}/intro/${name.replace(/\s/g, "")}.htm`;
 		nav += newNaviItem(
 		    `intro/${name.replace(/\s/g, "")}.htm`,
 		    name = name.replace(/^\d*\s*/, ""));
-		
+
 		s = s.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
 			function(m, _, t, c)
 			{
-				samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t\t/g, "\n\t\t");
+				samples[t] = toHtmlSamp(c, t, ++sampcnt).replace(/\n\t\t/g, "\n\t\t");
 				return `<sample ${t}>`;
 			});
 
 		var html = `<p>${replaceTypes(addMarkdown(replW(s)))}</p>`
+			// exclude <h> and <table> tags from <p>
+			.replace(
+				/(<\/p>)?(<br>)?(<(h\d?|table)>[^]*?<\/\4>)(\s|<br>|<p>)*/g,
+				"</p>\n\t\t$3\n\t\t<p>")
 			// format html code on linebreaks
 			.replace(/\s*<br>\s*/g, "<br>\n\t\t")
 			// expandable samples (per <sample name> tag or add to desc)
-			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t\t${samples[t]}<p>`)
+			.replace(/<sample (.*?)>/g, (m, t) => `</p>\n\t\t${samples[t]}<p>`)
 			.replace( /(“.*?”)/g, "<docstr>$1</docstr>");
 
 		app.WriteFile(path + curDoc, adjustDoc(introBase.replace("%c", html), name));
@@ -175,7 +179,7 @@ function adjustDoc(html, name) {
 		// title occurances
 		.replace(/%t/g, name)
 		// popup object list
-		.replace(/%p/, Globals.popDefs.join("\n\t\t"))
+		.replace(/%p/, Globals.popDefs.join("\n\t"))
 		// additional notes
 		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 		// colored passages
@@ -184,7 +188,7 @@ function adjustDoc(html, name) {
 		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g, 
+			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 			function(m, w1, lang, nobox, _, code, _, w2, _)
 			{
 			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}>`));
@@ -193,9 +197,9 @@ function adjustDoc(html, name) {
 						code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
 						Prism.languages[lang], lang
 					).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
-				
+
 				if(nobox) return `${w1||''}${code}${w2||''}`;
-				else if(has(code, "<br>")) return `</p>\n${newCode(code)}\t\t\t<p>`
+				else if(has(code, "<br>")) return `</p>\n${newCode(code)}\t\t<p>`
 				else return `${w1||''}<code class="samp samp-inline">${code}</code>${w2||''}`;
 			})
 		// remove leading whitespace in <p> tag
@@ -209,14 +213,8 @@ function adjustDoc(html, name) {
 			(m, w, t) => w.replace(/\t/g, "    ").replace(/\xa0/g, ' ') + t)
 		// remove trailing <br> tags from table
 		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
-		// add linebreak before <h> and remove <br> tags after </h>
-		.replace(/<p>(<(h\d)>.*<\/\2>)(<br>)?/g, "<p>\n\t\t\t$1")
 		// indent line breaks
-		.replace(/\n\s+<br>\n(\s+)/g, (m, w) => `\n${w.replace("    ", "\t")}<br>\n${w}`)
-		/*/ exclude <h> and <table> tags from <p>
-		.replace(
-			/(<\/?p>|<br>)?(\s|<br>)*(<(h\d?|table)>[^]*?<\/\4>)(\s|<br>)*(<\/?p>)?/g,
-			"</p>\n\t\t$3\n\t\t<p>")*/
+		.replace(/\n\s+<br>\n(\s+)/g, (m, w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
 }
@@ -254,7 +252,7 @@ function getDocData( f, useAppPop ) {
 
 	// convert return value
 	if( f.retval )
-		fretval = (f.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( f.retval );
+		fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( f.retval );
 
 	// return data if there are no subfunctions
 	if( !f.subf || !keys( f.subf ).length )
@@ -287,7 +285,7 @@ function getDocData( f, useAppPop ) {
 
 		//convert return value
 		if( met.retval )
-			retval = (met.pNames.length ? "\n\t\t\t\t" : " ") + "→ " + typeDesc( met.retval );
+			retval = (met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( met.retval );
 
 		//convert function types
 		if( met.isfunc )
@@ -330,11 +328,11 @@ function getDesc(name)
 			Throw(new Error(`description file ${desc.slice(1)} linked but doesn't exist.`));
 	}
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
-	
+
 	var samples = getSamples(name), s;
 	var sampcnt = Object.keys(samples).length;
 	if(!has(desc, '.')) desc += '.';
-	
+
 	desc = desc.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
 		function(m, _, t, c)
 		{
@@ -346,12 +344,16 @@ function getDesc(name)
 		// replace %c with constructor if existent, otherwise insert after first dot
 		.replace(
 			/((?=.*\%c)\.?(\s|<br>)*\%c|((?!.*\%c)\.)(\s|<br>|$)+)/,
-			`.</p>\n${newCode("%c")}\t\t\t<p>`)
+			`.</p>\n${newCode("%c")}\t\t<p>`)
+		// exclude <h> and <table> tags from <p>
+		.replace(
+			/(<\/p>)?(<br>)?(<(h\d?|table)>[^]*?<\/\4>)(\s|<br>|<p>)*/g,
+			"</p>\n\t\t$3\n\t\t<p>")
 		// format html code on linebreaks
-		.replace(/\s*<br>\s*/g, "<br>\n\t\t\t")
+		.replace(/\s*<br>\s*/g, "<br>\n\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
-			(delete samples[t], `</p>\n\t\t\t${s}<p>`) :
+			(delete samples[t], `</p>\n\t\t${s}<p>`) :
 			Throw(Error(`sample ${t} not found for ${name}`)))
 		.replace( /(“.*?”)/g, "<docstr>$1</docstr>")
 		+ Object.values(samples).concat("").reduce((a, b) => a + b);
@@ -361,10 +363,10 @@ function getDesc(name)
 function getSamples( name )
 {
 	var sampcnt = 0, samples = {}, s = ReadFile( path + `samples/${name}.txt`, " ", true );
-	
+
 	s.replace(/<sample (.*?)>([^]*?)<\/sample>/g,
 		(m, t, c) => samples[t] = toHtmlSamp(c, t, ++sampcnt));
-	
+
 	return samples;
 }
 
@@ -378,7 +380,7 @@ function toHtmlSamp( c, t, n )
 	c = Prism.highlight(c, Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
-		.replace( /\n/g, "<br>\n\t\t\t\t\t" )
+		.replace( /\n/g, "<br>\n\t\t\t\t" )
 
 	if(hasBold)
 	{
@@ -483,7 +485,7 @@ function toArgPop( name, types, doSwitch ) {
 	{
 		tryAddType( newDefPopup(
 			"fnc_" + incpop( "fnc", 1 ),
-			"<b>function</b>(\n\t\t\t" + types.pNames.map(
+			"<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
 				{
 					if(types.pTypes[i].isfunc || has("lst,obj", types.pTypes[i].slice(0, 3)))
@@ -493,7 +495,7 @@ function toArgPop( name, types, doSwitch ) {
 						// primitive types get a primitive popup
 						return toArgAppPop(n, types.pTypes[i]);
 				}
-			).join(",\n\t\t\t") + "\n\t\t)" ).replace(/\(\s+\)/, "()")
+			).join(",\n\t\t") + "\n\t)" ).replace(/\(\s+\)/, "()")
 		);
 
 		return newTxtPopup( "fnc_" + incpop( "fnc" ), name );
@@ -740,17 +742,17 @@ function getHead(d) {
 
 // html templates
 var		// subfunctions
-	subfBase = '\t\t\t<div class="samp">%s\n\t\t\t</div>\n',
+	subfBase = '\t\t<div class="samp">%s\n\t\t</div>\n',
  	    // navigator list item
-	naviItem = '\n\t\t\t\t<li><a href="%s"%s>%s</a></li>',
+	naviItem = '\n\t\t\t<li><a href="%s"%s>%s</a></li>',
 		// reopen popup onclick code
 	switchPop = 'onclick="switchPopup(this, \'#pop_$1\')"',
 		// app-popup tag
 	appPopup = '<a href="" onclick="app.ShowPopup(\'%s\')">%s</a>',
 		// constructor and inline examples
-	codeBase = '\n\t\t\t<div class="samp">\n\t\t\t%s\n\t\t\t</div>\n\n',
+	codeBase = '\n\t\t<div class="samp">\n\t\t%s\n\t\t</div>\n\n',
 		// jquery-popup link tag
-	txtPopup = '\n\t\t\t\t<a href="#pop_%s" data-transition="pop" data-rel="popup"%s>%s</a>',
+	txtPopup = '\n\t\t\t<a href="#pop_%s" data-transition="pop" data-rel="popup"%s>%s</a>',
 		// popup object
 	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 		// subfunctions list
@@ -764,17 +766,17 @@ var		// subfunctions
 	xfeatureHint = "<div class='xfeatHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
 		// example snippets
 	sampBase = `
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - %t</h3>
-				<div id="examp%i" style="font-size:70%">
-					%b
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip%i )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp%i )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp%i )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
-				</div>
-			</div>\n\n\t\t\t`;
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - %t</h3>
+			<div id="examp%i" style="font-size:70%">
+				%b
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip%i )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp%i )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp%i )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+			</div>
+		</div>\n\n\t\t`;
 
 	htmlHead = `<head>
 	<title>%t</title>
@@ -800,21 +802,20 @@ var		// subfunctions
 ${getHead(0)}
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-		<div data-role="header" data-position="fixed">
-			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-			<h1>%t</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div><!-- /header -->
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>%t</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
 
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="false">
-			%l
-			</ul>
-		</div><!-- /content -->
-	</div><!-- /page -->
-
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		%l
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body>
 </html>\n`,
 		//whole html document
@@ -825,26 +826,26 @@ ${getHead(0)}
 ${getHead(1)}
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>%t</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			%d
-			%b
-			<br>
-		</div>
-
-		%p
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>%t</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		%d
+		%b
+		<br>
+	</div>
+
+	%p
+</div>
 </body>
 
 </html>\n`,
@@ -1105,4 +1106,3 @@ if(typeof app == "undefined")
 	}
 
 OnStart();
-

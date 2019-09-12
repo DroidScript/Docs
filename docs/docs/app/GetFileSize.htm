@@ -20,49 +20,46 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>GetFileSize</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>GetFileSize returns the size of a file or folder in bytes.</p>
-
-			<div class="samp">
-			app.GetFileSize(
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a> )
-				→ <b>number:</b> <i>float</i>
-			</div>
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Show /sdcard/ folder size</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <span class="token keyword">var</span> size <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetFileSize</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">+</span> <span class="token string">" kB"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>GetFileSize</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>GetFileSize returns the size of a file or folder in bytes.</p>
+
+		<div class="samp">
+		app.GetFileSize(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a> )
+			→ <b>number:</b> <i>float</i>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Show /sdcard/ folder size</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> size <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetFileSize</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">+</span> <span class="token string">" kB"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+</div>
 </body>
 
 </html>

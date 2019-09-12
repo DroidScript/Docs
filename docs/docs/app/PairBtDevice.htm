@@ -20,99 +20,96 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>PairBtDevice</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Pairs a bluetooth device with yours.</p>
-
-			<div class="samp">
-			app.PairBtDevice(
-				<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>,
-				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-
-			<p>See Also: <a href="GetPairedBtDevices.htm" data-ajax="false">GetPairedBtDevices</a>, <a href="IsBtDevicePaired.htm" data-ajax="false">IsBtDevicePaired</a>, <a href="DiscoverBtDevices.htm" data-ajax="false">DiscoverBtDevices</a></p>
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Pairing and Unpairing bluetooth devices</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span> <span class="token number">0.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">DiscoverBtDevices</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> bt_OnFound<span class="token punctuation">,</span> bt_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Discovering bt devices"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> pair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">bt_OnFound</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <span class="token keyword">var</span> image <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
-					    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">)</span> image <span class="token operator">=</span> <span class="token string">"[fa-bluetooth]"</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> image <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">bt_OnComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">pair</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-					    <span class="token punctuation">{</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Pairing "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">PairBtDevice</span><span class="token punctuation">(</span> address<span class="token punctuation">,</span> OnPair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					        lst<span class="token punctuation">.</span><span class="token function">SetItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token punctuation">}</span><br>
-					    <span class="token keyword">else</span><br>
-					    <span class="token punctuation">{</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Unpairing "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					        app<span class="token punctuation">.</span><span class="token function">UnpairBtDevice</span><span class="token punctuation">(</span> address<span class="token punctuation">,</span> OnUnpair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					        lst<span class="token punctuation">.</span><span class="token function">SetItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token punctuation">}</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnPair</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Pairing successful!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnUnpair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Unpairing successful!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>PairBtDevice</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Pairs a bluetooth device with yours.</p>
+
+		<div class="samp">
+		app.PairBtDevice(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+
+		<p>See Also: <a href="GetPairedBtDevices.htm" data-ajax="false">GetPairedBtDevices</a>, <a href="IsBtDevicePaired.htm" data-ajax="false">IsBtDevicePaired</a>, <a href="DiscoverBtDevices.htm" data-ajax="false">DiscoverBtDevices</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Pairing and Unpairing bluetooth devices</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span> <span class="token number">0.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">DiscoverBtDevices</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> bt_OnFound<span class="token punctuation">,</span> bt_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Discovering bt devices"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> pair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">bt_OnFound</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> image <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">)</span> image <span class="token operator">=</span> <span class="token string">"[fa-bluetooth]"</span><span class="token punctuation">;</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> image <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">bt_OnComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">pair</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBtDevicePaired</span><span class="token punctuation">(</span> name <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Pairing "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">PairBtDevice</span><span class="token punctuation">(</span> address<span class="token punctuation">,</span> OnPair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        lst<span class="token punctuation">.</span><span class="token function">SetItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <span class="token keyword">else</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Unpairing "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">UnpairBtDevice</span><span class="token punctuation">(</span> address<span class="token punctuation">,</span> OnUnpair <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        lst<span class="token punctuation">.</span><span class="token function">SetItem</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> name<span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnPair</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> address</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Pairing successful!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnUnpair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">"  "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Unpairing successful!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+</div>
 </body>
 
 </html>

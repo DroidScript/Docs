@@ -20,62 +20,59 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>WifiScan</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>Scans the surroundings for any available Wifi networks.</p>
-
-			<div class="samp">
-			app.WifiScan(
-				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Conect to DS WiFi AP</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">WifiScan</span><span class="token punctuation">(</span> OnWifi <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">OnWifi</span><span class="token punctuation">(</span> <span class="token parameter">ssid</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetList</span><span class="token punctuation">(</span> ssid<span class="token punctuation">,</span> <span class="token string">"\\|"</span> <span class="token punctuation">)</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-
-			<br>
-		</div>
-
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-			<a href="" onclick="app.ShowPopup('string: pipe “|” separated')">ssids</a>
-		)</div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>WifiScan</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Scans the surroundings for any available Wifi networks.</p>
+
+		<div class="samp">
+		app.WifiScan(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Conect to DS WiFi AP</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">WifiScan</span><span class="token punctuation">(</span> OnWifi <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnWifi</span><span class="token punctuation">(</span> <span class="token parameter">ssid</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetList</span><span class="token punctuation">(</span> ssid<span class="token punctuation">,</span> <span class="token string">"\\|"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+	<br>
+	</div>
+
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('string: pipe “|” separated')">ssids</a>
+	)</div>
+</div>
 </body>
 
 </html>

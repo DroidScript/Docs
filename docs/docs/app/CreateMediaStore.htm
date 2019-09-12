@@ -20,230 +20,229 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a">
+<div data-role="page" data-theme="a">
 
-		<div data-role="header" data-position="fixed">
-			<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-			<h1>CreateMediaStore</h1>
-			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-		</div>
-
-		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
-			<div id="appPopup" class="androidPopup">Hello World</div>
-		</div>
-
-		<div data-role="content">
-			<p>The MediaStore is used to query audio information from the android provider or from the device in the <docstr>“/sdcard/Music”</docstr> folder.</p>
-
-			<div class="samp">
-			med = app.CreateMediaStore() → <b>app object:</b> MediaStore
-			</div>
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Query Artists</h3>
-				<div id="examp1" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Artists"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">SetOnArtistsResult</span><span class="token punctuation">(</span> media_OnArtistsResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">QueryArtists</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"artist"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">media_OnArtistsResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
-					    <span class="token punctuation">{</span><br>
-					        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
-					        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-					        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>artist<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Query Albums</h3>
-				<div id="examp2" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetColumnWidths</span><span class="token punctuation">(</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lst<span class="token punctuation">.</span><span class="token function">SetIconSize</span><span class="token punctuation">(</span> <span class="token number">0.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Albums"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">SetOnAlbumsResult</span><span class="token punctuation">(</span> media_OnAlbumsResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">QueryAlbums</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"album"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">media_OnAlbumsResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
-					    <span class="token punctuation">{</span><br>
-					        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
-					        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-					        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>album<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> m<span class="token punctuation">.</span>albumArt <span class="token operator">==</span> <span class="token string">"null"</span> <span class="token operator">?</span> <span class="token string">"audio"</span> <span class="token punctuation">:</span> m<span class="token punctuation">.</span>albumArt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-				<h3>Example - Query Media</h3>
-				<div id="examp3" style="font-size:70%">
-					<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<br>
-					    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Media"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">SetOnMediaResult</span><span class="token punctuation">(</span> media_OnMediaResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    media<span class="token punctuation">.</span><span class="token function">QueryMedia</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span><br>
-					<br>
-					<span class="token keyword">function</span> <span class="token function">media_OnMediaResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
-					<span class="token punctuation">{</span><br>
-					    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
-					    <span class="token punctuation">{</span><br>
-					        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
-					        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-					        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>title<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-					<span class="token punctuation">}</span>
-				</div>
-				<div name="divCopy" align="right">
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-				<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
-				</div>
-			</div>
-
-
-			<p><br>The following methods are available on the <b>MediaStore</b> object:</p>
-
-			<div class="samp">
-				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetAlbumArt</a>(
-				<a href="#pop_dso_001" data-transition="pop" data-rel="popup">image</a>,
-				<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
-				<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
-				→ <b>boolean</b>
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetSongArt</a>(
-				<a href="#pop_dso_002" data-transition="pop" data-rel="popup">image</a>,
-				<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
-				<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
-				→ <b>boolean</b>
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“MediaStore”</docstr>
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">QueryAlbums</a>(
-				<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
-				<a href="#pop_str_003" data-transition="pop" data-rel="popup">sort</a>,
-				<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">QueryArtists</a>(
-				<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
-				<a href="#pop_str_005" data-transition="pop" data-rel="popup">sort</a>,
-				<a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">QueryMedia</a>(
-				<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
-				<a href="#pop_str_007" data-transition="pop" data-rel="popup">sort</a>,
-				<a href="#pop_str_008" data-transition="pop" data-rel="popup">options</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnAlbumsResult</a>(
-				<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnArtistsResult</a>(
-				<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-			<div class="samp">
-				<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnMediaResult</a>(
-				<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
-			</div>
-
-			<br>
-		</div>
-
-
-		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>med.GetAlbumArt</b><br>Loads the album image to an existing <a href="" onclick="app.ShowPopup('app object: CreateImage')">image</a>.</div>
-		<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
-		<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-		<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
-
-		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>med.GetSongArt</b><br>Loads the song image to an existing <a href="" onclick="app.ShowPopup('app object: CreateImage')">image</a>.</div>
-		<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
-		<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
-
-		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>med.GetType</b><br>Returns the control class name.</div>
-		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>med.QueryAlbums</b><br>Search for media albums.</div>
-		<div data-role="popup" id="pop_str_sql" class="ui-content"><b>string:</b> <i>sql code</i></div>
-		<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“album”</docstr>, <docstr>“_id”</docstr>, <docstr>“albumArt”</docstr>, <docstr>“artist”</docstr>, <docstr>“numSongs”</docstr>, <docstr>“firstYear”</docstr>, <docstr>“lastYear”</docstr></div>
-		<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
-
-		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>med.QueryArtists</b><br>Search for media artists.</div>
-		<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“_id”</docstr>, <docstr>“artist”</docstr>, <docstr>“numAlbums”</docstr>, <docstr>“numTracks”</docstr></div>
-		<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
-
-		<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>med.QueryMedia</b><br>Search for media.</div>
-		<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“title”</docstr>, <docstr>“_id”</docstr>, <docstr>“duration”</docstr>, <docstr>“size”</docstr>, <docstr>“uri”</docstr>, <docstr>“album”</docstr>, <docstr>“albumID”</docstr>, <docstr>“artist”</docstr>, <docstr>“artistId”</docstr></div>
-		<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
-
-		<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>med.SetOnAlbumsResult</b><br>Define a callback function which is called when an album query has finished.</div>
-		<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">album</a>, <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">albumArt</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">numSongs</a>, <a href="" onclick="app.ShowPopup('string')">firstYear</a>, <a href="" onclick="app.ShowPopup('string')">lastYear</a> }]</div>
-		<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-			<a href="" onclick="switchPopup(this, '#pop_lst_001')" data-transition="pop" data-rel="popup">result</a>
-		)</div>
-
-		<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>med.SetOnArtistsResult</b><br>Define a callback function which is called when a artist query has finished.</div>
-		<div data-role="popup" id="pop_lst_002" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">numAlbums</a>, <a href="" onclick="app.ShowPopup('number: integer')">numTracks</a> }]</div>
-		<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-			<a href="" onclick="switchPopup(this, '#pop_lst_002')" data-transition="pop" data-rel="popup">result</a>
-		)</div>
-
-		<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>med.SetOnMediaResult</b><br>Define a callback function which is called when a media query has finished.</div>
-		<div data-role="popup" id="pop_lst_003" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">title</a>, <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">duration</a>, <a href="" onclick="app.ShowPopup('number: Bytes')">size</a>, <a href="" onclick="app.ShowPopup('string')">uri</a>, <a href="" onclick="app.ShowPopup('string')">album</a>, <a href="" onclick="app.ShowPopup('number: integer')">albumID</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">artistId</a> }]</div>
-		<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
-			<a href="" onclick="switchPopup(this, '#pop_lst_003')" data-transition="pop" data-rel="popup">result</a>
-		)</div>
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateMediaStore</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>The MediaStore is used to query audio information from the android provider or from the device in the <docstr>“/sdcard/Music”</docstr> folder.</p>
+
+		<div class="samp">
+		med = app.CreateMediaStore() → <b>app object:</b> MediaStore
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Query Artists</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Artists"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">SetOnArtistsResult</span><span class="token punctuation">(</span> media_OnArtistsResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">QueryArtists</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"artist"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">media_OnArtistsResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
+				        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>artist<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Query Albums</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetColumnWidths</span><span class="token punctuation">(</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetIconSize</span><span class="token punctuation">(</span> <span class="token number">0.2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Albums"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">SetOnAlbumsResult</span><span class="token punctuation">(</span> media_OnAlbumsResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">QueryAlbums</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"album"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">media_OnAlbumsResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
+				        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>album<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> m<span class="token punctuation">.</span>albumArt <span class="token operator">==</span> <span class="token string">"null"</span> <span class="token operator">?</span> <span class="token string">"audio"</span> <span class="token punctuation">:</span> m<span class="token punctuation">.</span>albumArt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Query Media</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">.9</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Query Media"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">SetOnMediaResult</span><span class="token punctuation">(</span> media_OnMediaResult <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    media<span class="token punctuation">.</span><span class="token function">QueryMedia</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">"external"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">media_OnMediaResult</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    result<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">m</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> k <span class="token keyword">in</span> m <span class="token punctuation">)</span> s <span class="token operator">+=</span> k <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> m<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
+				        lst<span class="token punctuation">.</span><span class="token function">AddItem</span><span class="token punctuation">(</span> m<span class="token punctuation">.</span>title<span class="token punctuation">,</span> s<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<p>The following methods are available on the <b>MediaStore</b> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetAlbumArt</a>(
+			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">image</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetSongArt</a>(
+			<a href="#pop_dso_002" data-transition="pop" data-rel="popup">image</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“MediaStore”</docstr>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">QueryAlbums</a>(
+			<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">sort</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">QueryArtists</a>(
+			<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">sort</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">QueryMedia</a>(
+			<a href="#pop_str_sql" data-transition="pop" data-rel="popup">filter</a>,
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">sort</a>,
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnAlbumsResult</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnArtistsResult</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnMediaResult</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+	<br>
+	</div>
+
+
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>med.GetAlbumArt</b><br>Loads the album image to an existing <a href="" onclick="app.ShowPopup('app object: CreateImage')">image</a>.</div>
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
+
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>med.GetSongArt</b><br>Loads the song image to an existing <a href="" onclick="app.ShowPopup('app object: CreateImage')">image</a>.</div>
+	<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
+
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>med.GetType</b><br>Returns the control class name.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>med.QueryAlbums</b><br>Search for media albums.</div>
+	<div data-role="popup" id="pop_str_sql" class="ui-content"><b>string:</b> <i>sql code</i></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“album”</docstr>, <docstr>“_id”</docstr>, <docstr>“albumArt”</docstr>, <docstr>“artist”</docstr>, <docstr>“numSongs”</docstr>, <docstr>“firstYear”</docstr>, <docstr>“lastYear”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
+
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>med.QueryArtists</b><br>Search for media artists.</div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“_id”</docstr>, <docstr>“artist”</docstr>, <docstr>“numAlbums”</docstr>, <docstr>“numTracks”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
+
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>med.QueryMedia</b><br>Search for media.</div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <i>coloumns:</i> <docstr>“title”</docstr>, <docstr>“_id”</docstr>, <docstr>“duration”</docstr>, <docstr>“size”</docstr>, <docstr>“uri”</docstr>, <docstr>“album”</docstr>, <docstr>“albumID”</docstr>, <docstr>“artist”</docstr>, <docstr>“artistId”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <docstr>“internal”</docstr> or <docstr>“external”</docstr></div>
+
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>med.SetOnAlbumsResult</b><br>Define a callback function which is called when an album query has finished.</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">album</a>, <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('string: path to file or folder ( “/absolute/...” or “relative/...” )')">albumArt</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">numSongs</a>, <a href="" onclick="app.ShowPopup('string')">firstYear</a>, <a href="" onclick="app.ShowPopup('string')">lastYear</a> }]</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_lst_001')" data-transition="pop" data-rel="popup">result</a>
+	)</div>
+
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>med.SetOnArtistsResult</b><br>Define a callback function which is called when a artist query has finished.</div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">numAlbums</a>, <a href="" onclick="app.ShowPopup('number: integer')">numTracks</a> }]</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_lst_002')" data-transition="pop" data-rel="popup">result</a>
+	)</div>
+
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>med.SetOnMediaResult</b><br>Define a callback function which is called when a media query has finished.</div>
+	<div data-role="popup" id="pop_lst_003" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">title</a>, <a href="" onclick="app.ShowPopup('number: integer')">id</a>, <a href="" onclick="app.ShowPopup('number: milliseconds')">duration</a>, <a href="" onclick="app.ShowPopup('number: Bytes')">size</a>, <a href="" onclick="app.ShowPopup('string')">uri</a>, <a href="" onclick="app.ShowPopup('string')">album</a>, <a href="" onclick="app.ShowPopup('number: integer')">albumID</a>, <a href="" onclick="app.ShowPopup('string')">artist</a>, <a href="" onclick="app.ShowPopup('number: integer')">artistId</a> }]</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_lst_003')" data-transition="pop" data-rel="popup">result</a>
+	)</div>
+</div>
 </body>
 
 </html>
