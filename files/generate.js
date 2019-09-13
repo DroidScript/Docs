@@ -662,8 +662,12 @@ function replaceTypes(s, useAppPop)
 				else r = newAppPopup(name, type ? typenames[type.slice(0, 3)] +
 						(typedesc[type] ? ": " + typedesc[type] : "") : desc);
 			}
-			else
-				r = type ? toArgPop(name, type) : newAppPopup(name, desc);
+			else if(type) r = toArgPop(name, type);
+			else {
+				tryAddType( newDefPopup( "dsc_" + incpop( "dsc", 1 ),
+					desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )));
+				r = newTxtPopup( "dsc_" + incpop( "dsc" ), name );
+			}
 
 			s = s.replace(m, r + space);
 			return '';

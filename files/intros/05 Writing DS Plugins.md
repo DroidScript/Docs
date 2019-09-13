@@ -42,16 +42,16 @@ It may be possible with other IDE's as well (ie. IntelliJ even has a AndroidSDK 
 
 ### Communicate with your Java code
 In order to use the defined Java functions you have to call them from the JS part somehow.
-For this purpose DroidScript provides a **\_CreatePlugin**: component:
+For this purpose DroidScript provides a **\_CreatePlugin** component:
 
 <js>var plg = \_CreatePlugin( classpath:str, options:str\_com )</js>
 <js>plg.Destroy:"Calls Release()"()</js>
 <js>plg.GetType() → **string:** _“Plugin”_</js>
 <js>plg.Send:"Calls CallPlugin(Bundle)"( name:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string**</js>
 <js>plg.SendObj:"Calls CallPlugin(Bundle, Object)"( name:str, obj:dso, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string**</js>
-<js>plg.CreateObj:"Calls CreateObject(Bundle) with a String on &quot;type&quot;"( type:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string:** _“#id”_</js>
-<js>plg.SendImg:"Calls CallPlugin(Bundle) with a byte[] on &quot;img&quot;"( name:str, img:dso-CreateImage, width:num\_pxl, height:num\_pxl ) → **string**</js>
-<js>plg.SendCam:"Calls CallPlugin(Bundle) with a byte[] on &quot;cam&quot;"( name:str, cam:dso-"../app/CreateCameraView" ) → **string**</js>
+<js>plg.CreateObj:"Calls CreateObject(Bundle) with a String on “type”"( type:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string:** _“#id”_</js>
+<js>plg.SendImg:"Calls CallPlugin(Bundle) with a byte[] on “img”"( name:str, img:dso-CreateImage, width:num\_pxl, height:num\_pxl ) → **string**</js>
+<js>plg.SendCam:"Calls CallPlugin(Bundle) with a byte[] on “cam”"( name:str, cam:dso-"../app/CreateCameraView" ) → **string**</js>
 
 On the Java side following functions in <java nobox>public class MyPlugin { }</java> will get called by DroidScript:
 
