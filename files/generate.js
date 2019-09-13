@@ -16,14 +16,8 @@ function generateDocs()
 	app.DeleteFolder(path + `docs${getl()}/app`);
 	app.MakeFolder(path + `docs${getl()}/app`);
 
-	// missing: check samples
-	//var lastfuncs = JSON.parse(ReadFile(path + `lastfuncs${getl()}.json`, "{}"));
 	var i, last = -1, tchd = false, info = { app: {} };
-	var lst = keys(functions)
-		.filter(nothidden)
-		/*.filter((f) =>
-			JSON.stringify(functions[f]) != JSON.stringify(lastfuncs[f]) ||
-			keys(functions[f].subs).filter(hidden).length);*/
+	var lst = keys(functions).filter(nothidden);
 
 	for( i = 0; i < lst.length; i++ )
 	{
@@ -38,7 +32,7 @@ function generateDocs()
 			{
 				if(hidden(j)) continue;
 
-				if(typeof(tsubf[j]) == "string" && tsubf[j].startsWith("#"))
+				if(typeof(tsubf[j]) == "string" && tsubf[j][0] == '#')
 				{
 					if(!basefuncs[tsubf[j]]) Throw(Error(`basefunc ${tsubf[j]} not found!`));
 					tctrl[j] = basefuncs[tsubf[j]].shortDesc;
@@ -112,8 +106,8 @@ function generateIntros()
 		name = name.replace(/.md$/, "");
 		curDoc = `docs${getl()}/intro/${name.replace(/\s/g, "")}.htm`;
 		nav += newNaviItem(
-		    `intro/${name.replace(/\s/g, "")}.htm`,
-		    name = name.replace(/^\d*\s*/, ""));
+			`intro/${name.replace(/\s/g, "")}.htm`,
+			name = name.replace(/^\d*\s*/, ""));
 
 		s = s.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
 			function(m, _, t, c)
@@ -174,22 +168,29 @@ function generateDoc( name )
 }
 
 // reset globals
-	// it still exists because it was necessary to do it this way in python
-	// and I haven't changed it during the translation
 function resetGlobals() {
-	Globals = {
-		popDefs: [],
-		spop: {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0}
-	};
+	popDefs = {};
+	spop = {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0};
 }
 
 function adjustDoc(html, name)
 {
+	var order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
+	var popList = keys(popDefs)
+		.map((d) => newDefPopup(popDefs[d], d))
+		.sort(function(a, b) {
+			a = a.slice(31, 38); b = b.slice(31, 38);
+			if(a.slice(0, 3) == b.slice(0, 3)) {
+				if(isnum(a[4]) == isnum(b[4])) return a.slice(4) < b.slice(4) ? -1 : 1;
+				else return isnum(a[4]) ? 1 : -1;
+			} else return order.indexOf(a.slice(0, 3)) < order.indexOf(b.slice(0, 3)) ? -1 : 1;
+		}).join("\n\t");
+	
 	return html
 		// title occurances
 		.replace(/%t/g, name)
 		// popup object list
-		.replace(/%p/, Globals.popDefs.join("\n\t"))
+		.replace(/%p/, popList)
 		// additional notes
 		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 		// colored passages
@@ -217,7 +218,7 @@ function adjustDoc(html, name)
 						.replace(/\s*<.*?>/g, (m) => (tags.push(m), "§t§"));
 					code = Prism.highlight( code, Prism.languages[lang], lang )
 						.replace(/\n/g, "<br>\n")
-						.replace(/§t§/g, () => tags.shift())
+						.replace(/§t§(<\/span>)?/g, (m, s) => (s||'') + tags.shift())
 						.replace(/§s§/g, "&#160;");
 				}
 
@@ -292,7 +293,8 @@ function getDocData( f, useAppPop )
 		curSubf = met.name;
 
 		// load base func
-		if(typeof(met) == "string" && met.startsWith("#")) {
+		if(typeof(met) == "string" && met[0] == '#')
+		{
 			if(!basefuncs[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = basefuncs[met];
 			curSubf = met.name;
@@ -315,16 +317,16 @@ function getDocData( f, useAppPop )
 		if( met.isfunc )
 		{
 			var args = [], pop;
-			if(!has(Globals.popDefs[Globals.popDefs.length - 1] || "", f.abbrev + ".")) Globals.popDefs.push("");
+			//if(!has(popDefs[popDefs.length - 1] || "", f.abbrev + ".")) popDefs.push("");
 
-			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
-				replW( met.desc ),
+			metpop = newPopup("dsc", curSubf,
+				addMarkdown(replaceTypes(`<b>${f.abbrev}.${curSubf}</b><br>` + replW( met.desc ), true)),
 				getAddClass(met) || (has(basefuncs.all, curSubf) ? ' class="baseFunc"' : ""));
-
+			
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 
-			var s = pop + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
+			var s = metpop + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
 			if(has(curSubf, '.')) s = s.split(".").fill("  ").join("") + s.italics();
 			methods += subfBase.replace( "%s", s );
 		}
@@ -338,17 +340,11 @@ function getDocData( f, useAppPop )
 	return { args : mArgs, mets : methods, ret : fretval }
 }
 
-// returns a description popup object
-function descPopup( text, ptext, sClass )
-{
-	return newPopup("dsc", text, addMarkdown(replaceTypes(ptext, 1)), sClass);
-}
-
 // returns an html formatted description of a function
 function getDesc(name)
 {
 	var desc = functions[name].desc.trim();
-	if(desc.startsWith("#"))
+	if(desc[0] == '#')
 	{
 		if(app.FileExists(path + `functions/${desc.slice(1)}`))
 			desc = app.ReadFile(path + `functions/${desc.slice(1)}`).trim();
@@ -358,7 +354,7 @@ function getDesc(name)
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
 	var samples = getSamples(name), s;
-	var sampcnt = Object.keys(samples).length;
+	var sampcnt = keys(samples).length;
 	if(!has(desc, '.')) desc += '.';
 
 	desc = desc.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
@@ -384,7 +380,7 @@ function getDesc(name)
 			(delete samples[t], `</p>\n\t\t${s}<p>`) :
 			Throw(Error(`sample ${t} not found for ${name}`)))
 		.replace( /(“.*?”)/g, "<docstr>$1</docstr>")
-		+ Object.values(samples).concat("").reduce((a, b) => a + b);
+		+ values(samples).concat("").reduce((a, b) => a + b);
 }
 
 // read and return html converted example snippets file
@@ -464,7 +460,7 @@ function typeDesc( types )
 		{
 			if( s[i] && type.length == 3 )
 			{
-					//allow limited values for parameters
+				//allow limited values for parameters
 				switch( type[0] )
 				{
 					case "num": return s[i] + rplop( type[2] );
@@ -597,13 +593,6 @@ function toArgAppPop( name, types ) {
 	);
 }
 
-//adds a type to the type popup list if it doesnt exist yet
-function tryAddType( def ) {
-	def = def.trim();
-	if(!has(Globals.popDefs, def ))
-		Globals.popDefs.push( def );
-}
-
 //replace whitespace with html syntax whitespace
 function replW( s, n )
 {
@@ -618,23 +607,25 @@ function replW( s, n )
 //increase special popup counters and returns its id
 function incpop( type, i )
 {
-	if( i ) Globals.spop[type] += i;
-	return hex(Globals.spop[type]);
+	if( i ) spop[type] += i;
+	return hex(spop[type]);
 }
 
 // accept formats: 'name:"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
+// using name:'...' will force app popups
 function replaceTypes(s, useAppPop)
 {
 	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
-	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\]\n]*)?"?/g,
+	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\.|[^.|:,”}\]\n])*)?['"]?/g,
 		function(m, name, type, _, desc)
 		{
-			var r, space = '';
-			if( !type && (!desc || desc.startsWith(' ')) || name.startsWith("Note")) return;
+			var r, space = '', tapop = false;
+			if( !type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return;
 			
 			if(desc) {
 				if(desc.endsWith(' ')) space = ' ';
-				desc = desc.slice(desc.startsWith('"'), space ? -1 : undefined);
+				desc = desc.slice(desc[0] == '"', space ? -1 : undefined);
+				if(desc[0] == "'") tapop = true, desc = desc.slice(1);
 				if(typenames[desc.slice(0, 3)] && !desc[4].match(/[a-z]/i)) type = desc, desc = '';
 			}
 
@@ -646,7 +637,7 @@ function replaceTypes(s, useAppPop)
 					desc = type + (desc || ''), type = '';
 			}
 
-			if(useAppPop)
+			if(useAppPop || tapop)
 			{
 				if(type && !desc) r = toArgAppPop(name, type);
 				else r = newAppPopup(name, type ? typenames[type.slice(0, 3)] +
@@ -721,13 +712,20 @@ function newDefPopup(  id, text) { return defPopup.replace("%s",   id).replace("
 function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
 function newLink(  target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function newCode(code) { return codeBase.replace("%s", code); }
-function d(v) { console.log(v); return v; }
+
 function newPopup(type, name, desc, addClass) {
-	var pop_id = Globals.spop[type] == undefined ? type : type + "_" + incpop( type, 1 );
-	if(addClass !== false) desc = desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )
-	tryAddType( newDefPopup( pop_id, desc ));
+	if(addClass !== false) desc = desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" );
+	
+	desc = desc.trim();
+	var pop_id = popDefs[desc];
+	if(!pop_id) {
+		pop_id = spop[type] == undefined ? type : pop_id = type + "_" + incpop( type, 1 );
+		popDefs[desc] = pop_id;
+	}
+	
 	return newTxtPopup( pop_id, name, addClass );
 }
+
 function getHead(d) {
 	d = new Array(d).fill("../").join("");
 	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
@@ -985,16 +983,15 @@ var
 
 
 function getl(l) { if(l == undefined) l = lang; return l == "en" ? "" : "-" + l; }
-function keys(o) { var arr = []; for(var i in o) arr.push(i); return arr; }
-function values(o) { var arr = [], i; for(i in o) arr.push(o[i]); return arr; }
 function l(s) { console.log(`-----${s}-----`); return s; }
 function hidden(name) { return name.match(regHide); }
 function nothidden(name) { return !hidden(name); }
+function isnum(c) { return c >= '0' && c <= '9'; }
 function has(l, v) { return l.indexOf(v) > -1; }
-function crop(n, min, max) { return n < min? min : max != undefined && n > max ? max : n; }
-function saveOldfuncs() { app.WriteFile(path + "oldfuncs" + getl() + ".json", tos(oldfuncs)); }
+function values(o) { return Object.values(o); }
+function keys(o) { return Object.keys(o); }
+function d(v) { console.log(v); return v; }
 function saveFunctions() { app.WriteFile(path + "functions" + getl() + ".json", tos(functions)); }
-function saveControlArgs() { app.WriteFile(path + "controlArgs.json", tos(controlArgs)); }
 function sortAsc(a, b) {
 	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
 	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
@@ -1075,7 +1072,7 @@ function OnStart() {
 	if(app.FileExists("app.js"))
 		basefuncs.all = app.ReadFile("app.js").split("/*#obj*/ this.").slice(1).map(v => v.slice(0, v.indexOf(" ")))
 	else
-		basefuncs.all = Object.keys(basefuncs).map(k => basefuncs[k].name);
+		basefuncs.all = keys(basefuncs).map(k => basefuncs[k].name);
 
 	if(app.FileExists("util.js"))
 		basefuncs.all.concat(app.ReadFile("util.js").split("Obj.prototype.").slice(1).map(v => v.slice(0, v.indexOf(" "))))
@@ -1111,7 +1108,7 @@ if(typeof app == "undefined")
 		FolderExists: fs.existsSync,
 		SetDebug: () => 0,
 		ShowProgressBar: (t) => console.log(t + "\n"),
-		UpdateProgressBar: (i,t) => console.log("\033[1A\033[K" + `${i}% ${t}`),
+		UpdateProgressBar: (i,t) => console.log("\033[1A\033[K" + `${i}% ${t||'Initializing'}`),
 		HideProgressBar: () => console.log("\033[1A\033[K100% done."),
 		ShowPopup: console.log
 	}

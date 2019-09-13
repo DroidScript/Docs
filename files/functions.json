@@ -1916,7 +1916,7 @@
 		"isfunc": true,
 		"name": "CreateGLView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_srw", "num_srh", "str-fast2d"],
+		"pTypes": ["num_frc", "num_frc", "str-fast2d"],
 		"retval": "dso-GLView",
 		"shortDesc": "Returns a GLView object",
 		"subf": {
