@@ -48,30 +48,30 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">"*/*,application/text,application/apk,application/zip,"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">"*/*,application/text,application/apk,application/zip,"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    spnMime <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>spnMime<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">spnMime <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>spnMime<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose File"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose File"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btnChoose_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseFile</span><span class="token punctuation">(</span> <span class="token string">"Choose a File"</span><span class="token punctuation">,</span> spnMime<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseFile</span><span class="token punctuation">(</span> <span class="token string">"Choose a File"</span><span class="token punctuation">,</span> spnMime<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnChoose</span><span class="token punctuation">(</span> <span class="token parameter">file</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"file path: "</span> <span class="token operator">+</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"file path: "</span> <span class="token operator">+</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

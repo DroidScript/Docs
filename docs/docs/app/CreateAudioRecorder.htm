@@ -40,34 +40,34 @@
 		</div>
 
 		<p>After creation you have to define the recording file with the <b>SetFile</b> Method:<br>
-		<code class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+		<div class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></div><br>
 		<br>
-		After that you can <b>Start</b> the recording: <code class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+		After that you can <b>Start</b> the recording: <div class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><br>
 		<br>
 		The recorded audio will then be written to the specified file.<br>
 		<br>
-		Finally you can also <b>Stop</b> the recording: <code class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
+		Finally you can also <b>Stop</b> the recording: <div class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Example</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">rec <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateAudioRecorder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">rec <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateAudioRecorder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please speak"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token function">setTimeout</span><span class="token punctuation">(</span> StopRecording<span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please speak"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span> StopRecording<span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">StopRecording</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Finished recording. Now playing"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Finished recording. Now playing"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    ply <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    ply<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    ply<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> ply<span class="token punctuation">.</span>Play <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">ply <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">ply<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">ply<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> ply<span class="token punctuation">.</span>Play <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

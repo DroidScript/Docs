@@ -46,12 +46,12 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <b id="snip1" style="font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				    <br>
-				    <span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -69,65 +69,65 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    btnSave <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Enable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btnSave<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnSave <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">btnSave <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Enable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">btnSave<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnSave <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    btnLoad <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Disable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btnLoad<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnLoad <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">btnLoad <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Disable"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">btnLoad<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnLoad <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">var</span> op <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> op <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> op <span class="token operator">==</span> <span class="token string">"Enable"</span> <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> op <span class="token operator">==</span> <span class="token string">"Enable"</span> <span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				            app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span></span><br>
+				            <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOn<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
-				    <span class="token keyword">else</span><br>
-				    <span class="token punctuation">{</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Disabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span style="display:inline-block">itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOn<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">else</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Disabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				            app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span></span><br>
+				            <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetBluetoothEnabled</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOff<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span style="display:inline-block">itv <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span> checkBtOff<span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">CheckBtOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is on"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        <span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is on"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">CheckBtOff</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is off"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        <span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Bluetooth is off"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token function">clearInterval</span><span class="token punctuation">(</span> itv <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">itv <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

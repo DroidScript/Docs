@@ -43,46 +43,46 @@
 
 		<p>The callback data depends on the type:<br>
 		<br>
-		<code class="samp samp-inline"><docstr>“CellLocation”</docstr> : <b>object:</b> {
+		<div class="samp samp-inline"><docstr>“CellLocation”</docstr> : <b>object:</b> {
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">cellId</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">areaCode</a> }</code><br>
-		<code class="samp samp-inline"><docstr>“DataConnection”</docstr> : <b>object:</b> {
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">areaCode</a> }</div><br>
+		<div class="samp samp-inline"><docstr>“DataConnection”</docstr> : <b>object:</b> {
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">state</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">networkType</a> }</code><br>
-		<code class="samp samp-inline"><docstr>“DataActivity”</docstr> : <b>unknown</b></code><br>
-		<code class="samp samp-inline"><docstr>“CallState”</docstr> : <b>object:</b> {
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">networkType</a> }</div><br>
+		<div class="samp samp-inline"><docstr>“DataActivity”</docstr> : <b>unknown</b></div><br>
+		<div class="samp samp-inline"><docstr>“CallState”</docstr> : <b>object:</b> {
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">state</a>,
-			<a href="#pop_str_num" data-transition="pop" data-rel="popup">number</a> }</code><br>
-		<code class="samp samp-inline"><docstr>“ServiceState”</docstr> : <b>string:</b> <docstr>“OutOfService”</docstr></code><br>
-		<code class="samp samp-inline"><docstr>“SignalStrength”</docstr> : <b>number:</b> <i>float</i></code><br>
-		<code class="samp samp-inline"><docstr>“CallForwarding”</docstr> : <b>boolean</b></code><br>
-		<code class="samp samp-inline"><docstr>“MessageWaiting”</docstr> : <b>boolean</b></code></p>
+			<a href="#pop_str_num" data-transition="pop" data-rel="popup">number</a> }</div><br>
+		<div class="samp samp-inline"><docstr>“ServiceState”</docstr> : <b>string:</b> <docstr>“OutOfService”</docstr></div><br>
+		<div class="samp samp-inline"><docstr>“SignalStrength”</docstr> : <b>number:</b> <i>float</i></div><br>
+		<div class="samp samp-inline"><docstr>“CallForwarding”</docstr> : <b>boolean</b></div><br>
+		<div class="samp samp-inline"><docstr>“MessageWaiting”</docstr> : <b>boolean</b></div></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Demo</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span class="token keyword">var</span> types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span><br>
-				        <span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span></span><br>
+				        <span style="display:inline-block"><span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreatePhoneState</span><span class="token punctuation">(</span> types <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    state<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    state<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreatePhoneState</span><span class="token punctuation">(</span> types <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">state<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">state<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">var</span> log <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 				<span class="token keyword">function</span> <span class="token function">state_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">type<span class="token punctuation">,</span> data</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    log<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> type<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">log<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> type<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

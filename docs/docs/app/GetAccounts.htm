@@ -45,15 +45,15 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> accounts <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAccounts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				    dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Select an account:"</span><span class="token punctuation">,</span> accounts <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> accounts <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAccounts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateListDialog</span><span class="token punctuation">(</span> <span class="token string">"Select an account:"</span><span class="token punctuation">,</span> accounts <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> dlg_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">dlg_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">account</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Selected Account: "</span> <span class="token operator">+</span> account <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Selected Account: "</span> <span class="token operator">+</span> account <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

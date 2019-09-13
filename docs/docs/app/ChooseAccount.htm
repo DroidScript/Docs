@@ -48,23 +48,23 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose Account"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose Account"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btnChoose_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseAccount</span><span class="token punctuation">(</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseAccount</span><span class="token punctuation">(</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnChoose</span><span class="token punctuation">(</span> <span class="token parameter">account</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"selected account: "</span> <span class="token operator">+</span> account <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"selected account: "</span> <span class="token operator">+</span> account <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

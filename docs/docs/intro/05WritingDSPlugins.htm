@@ -44,42 +44,56 @@
 		- a <b>MyPlugin.html</b> file containing the main page of your plugin documentation.<br>
 		However you can add as many resources to it as you want.<br>
 		<br>
-		There is a generator available which can creates, debug and install plugins on the fly. you can even debug your plugin directly from that app.<br>
+		There is a generator available which can create, debug and install plugins on the fly. you can even debug your plugin directly from that app.<br>
 		Download it from the dspk store: <a href="https://dspk.justplayer.de/browse/view/67" onclick="return OpenUrl(this.href);">https://dspk.justplayer.de/browse/view/67</a></p>
 		<h2>Java Plugins</h2>
 		<p>Writing java plugins is a bit tricky but once you get used to it you can get almost everything working.</p>
 		<h3>Structure</h3>
 		<p>There are two types of Java plugin packages:<br>
 		1. The standard zip file:<br>
-		    - contains a MyPlugin.inc and a MyPlugin.html file as JS plugins<br>
-		    - a MyPlugin.jar file which contains the compiled classes.dex file.<br>
+		    <span style="display:inline-block">- contains a MyPlugin.inc and a MyPlugin.html file as JS plugins</span><br>
+		    <span style="display:inline-block">- a MyPlugin.jar file which contains the compiled classes.dex file.</span><br>
 		2. An APK file:<br>
-		    - an assets/ folder containing the MyPlugin.inc and the MyPlugin.html file<br>
-		    - a compiled classes.dex file<br>
+		    <span style="display:inline-block">- an assets/ folder containing the MyPlugin.inc and the MyPlugin.html file</span><br>
+		    <span style="display:inline-block">- a compiled classes.dex file</span><br>
 		<br>
 		APK files are typically exported by AndroidStudio, AIDE and others.<br>
 		That leads us to the ways how you can write and more importantly compile java plugins.</p>
 		<h3>Compile and Install</h3>
 		<p>1. The android app 'AIDE'<br>
-		    - <a href="https://play.google.com/store/apps/details?id=com.aide.ui" onclick="return OpenUrl(this.href);">Download AIDE from PlayStore</a><br>
-		    - Create a new AIDE project using the DroidScript SDK in the DS menu<br>
-		    - Modify, Build, Install and Run the plugin app. A popup:"Plugin installed. Please restart DroidScript." will appear<br>
+		    <span style="display:inline-block">- <a href="https://play.google.com/store/apps/details?id=com.aide.ui" onclick="return OpenUrl(this.href);">Download AIDE from PlayStore</a></span><br>
+		    <span style="display:inline-block">- Create a new AIDE project using the DroidScript SDK in the DS menu</span><br>
+		    <span style="display:inline-block">- Modify, Build, Install and Run the plugin app. A
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">popup</a> will appear</span><br>
 		<br>
 		2. AndroidStudio<br>
-		    - There is a <a href="https://github.com/DroidScript/Plugin-UserPlugin" onclick="return OpenUrl(this.href);">UserPlugin template</a> available on <a href="https://github.com/DroidScript" onclick="return OpenUrl(this.href);">DroidScript's GitHub page</a><br>
-		    - Follow the instructions in <a href="https://symbroson.blogspot.com/2018/02/ds-java-plugins-android-studio.html" onclick="return OpenUrl(this.href);">this BlogSpot guide</a><br>
+		    <span style="display:inline-block">- There is a <a href="https://github.com/DroidScript/Plugin-UserPlugin" onclick="return OpenUrl(this.href);">UserPlugin template</a> available on <a href="https://github.com/DroidScript" onclick="return OpenUrl(this.href);">DroidScript's GitHub page</a></span><br>
+		    <span style="display:inline-block">- Follow the instructions in <a href="https://symbroson.blogspot.com/2018/02/ds-java-plugins-android-studio.html" onclick="return OpenUrl(this.href);">this BlogSpot guide</a></span><br>
 		<br>
 		It may be possible with other IDE's as well (ie. IntelliJ even has a AndroidSDK Plugin), but this has not been tested before or just couldn't be made to work.</p>
 		<h3>Communicate with your Java code</h3>
 		<p>In order to use the defined Java functions you have to call them from the JS part somehow.<br>
-		For this purpose DroidScript provides a <b>_CreatePlugin</b> component:<br>
-		<br>
-		<code class="samp samp-inline"><span class="token keyword">var</span> plg <span class="token operator">=</span> <span class="token function">_CreatePlugin</span><span class="token punctuation">(</span>
+		For this purpose DroidScript provides a <b>_CreatePlugin</b> component:</p>
+
+		<div class="samp">
+		<span class="token keyword">var</span> plg <span class="token operator">=</span> <span class="token function">_CreatePlugin</span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">classpath</a><span class="token punctuation">,</span>
-			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> <span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">Destroy</a></span><span class="token punctuation">(</span><span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline">plg<span class="token punctuation">.</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> → <b>string<span class="token punctuation">:</span></b> <i><docstr>“Plugin”</docstr></i></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">Send</a></span><span class="token punctuation">(</span>
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> <span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">Destroy</a></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">GetType</a></span><span class="token punctuation">(</span><span class="token punctuation">)</span> → <b>string<span class="token punctuation">:</span></b> <i><docstr>“Plugin”</docstr></i>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">Send</a></span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p1</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_002" data-transition="pop" data-rel="popup">p2</a><span class="token punctuation">,</span>
@@ -88,8 +102,12 @@
 			<a href="#pop_mul_005" data-transition="pop" data-rel="popup">p5</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_006" data-transition="pop" data-rel="popup">p6</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_007" data-transition="pop" data-rel="popup">p7</a><span class="token punctuation">,</span>
-			<a href="#pop_mul_008" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string</b></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendObj</a></span><span class="token punctuation">(</span>
+			<a href="#pop_mul_008" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string</b>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendObj</a></span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a><span class="token punctuation">,</span>
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_009" data-transition="pop" data-rel="popup">p1</a><span class="token punctuation">,</span>
@@ -99,8 +117,12 @@
 			<a href="#pop_mul_00d" data-transition="pop" data-rel="popup">p5</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_00e" data-transition="pop" data-rel="popup">p6</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_00f" data-transition="pop" data-rel="popup">p7</a><span class="token punctuation">,</span>
-			<a href="#pop_mul_010" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string</b></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">CreateObj</a></span><span class="token punctuation">(</span>
+			<a href="#pop_mul_010" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string</b>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">CreateObj</a></span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_011" data-transition="pop" data-rel="popup">p1</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_012" data-transition="pop" data-rel="popup">p2</a><span class="token punctuation">,</span>
@@ -109,39 +131,73 @@
 			<a href="#pop_mul_015" data-transition="pop" data-rel="popup">p5</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_016" data-transition="pop" data-rel="popup">p6</a><span class="token punctuation">,</span>
 			<a href="#pop_mul_017" data-transition="pop" data-rel="popup">p7</a><span class="token punctuation">,</span>
-			<a href="#pop_mul_018" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string<span class="token punctuation">:</span></b> <i><docstr>“#id”</docstr></i></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendImg</a></span><span class="token punctuation">(</span>
+			<a href="#pop_mul_018" data-transition="pop" data-rel="popup">p8</a> <span class="token punctuation">)</span> → <b>string<span class="token punctuation">:</span></b> <i><docstr>“#id”</docstr></i>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendImg</a></span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a><span class="token punctuation">,</span>
 			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">img</a><span class="token punctuation">,</span>
 			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">width</a><span class="token punctuation">,</span>
-			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">height</a> <span class="token punctuation">)</span> → <b>string</b></code><br>
-		<code class="samp samp-inline"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendCam</a></span><span class="token punctuation">(</span>
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">height</a> <span class="token punctuation">)</span> → <b>string</b>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">SendCam</a></span><span class="token punctuation">(</span>
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a><span class="token punctuation">,</span>
-			<a href="#pop_dso_002" data-transition="pop" data-rel="popup">cam</a> <span class="token punctuation">)</span> → <b>string</b></code><br>
-		<br>
-		On the Java side following functions in <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> will get called by DroidScript:<br>
-		<br>
-		<code class="samp samp-inline"><span class="token keyword">public</span>
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup"><span class="token class-name">MyPlugin</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><span class="token keyword">public</span> <span class="token keyword">void</span>
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup"><span class="token class-name">Init</span></a><span class="token punctuation">(</span> <span class="token class-name">Context</span> ctx<span class="token punctuation">,</span> <span class="token class-name">Object</span> parent <span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><span class="token keyword">public</span> <span class="token keyword">void</span>
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup"><span class="token class-name">Release</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><span class="token keyword">public</span> <span class="token class-name">String</span>
-			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup"><span class="token class-name">CallPlugin</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
-			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">b</a> <span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><span class="token keyword">public</span> <span class="token class-name">String</span>
-			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup"><span class="token class-name">CallPlugin</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
-			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">b</a><span class="token punctuation">,</span> <span class="token class-name">Object</span> obj <span class="token punctuation">)</span></code><br>
-		<code class="samp samp-inline"><span class="token keyword">public</span> <span class="token class-name">Object</span>
-			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup"><span class="token class-name">CreateObject</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
-			<a href="#pop_obj_003" data-transition="pop" data-rel="popup">b</a> <span class="token punctuation">)</span></code><br>
-		<!--java>public void CallScript(Bundle b, String webViewId)</java--></p>
+			<a href="#pop_dso_002" data-transition="pop" data-rel="popup">cam</a> <span class="token punctuation">)</span> → <b>string</b>
+		</div>
+
+		<p>On the Java side following functions in <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span> will get called by DroidScript:</p>
+
+		<div class="samp">
+		<span class="token keyword">public</span>
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup"><span class="token class-name">MyPlugin</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<span class="token keyword">public</span> <span class="token keyword">void</span>
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup"><span class="token class-name">Init</span></a><span class="token punctuation">(</span> <span class="token class-name">Context</span> ctx<span class="token punctuation">,</span> <span class="token class-name">Object</span> parent <span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<span class="token keyword">public</span> <span class="token keyword">void</span>
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup"><span class="token class-name">Release</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<span class="token keyword">public</span> <span class="token class-name">String</span>
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup"><span class="token class-name">CallPlugin</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">b</a> <span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<span class="token keyword">public</span> <span class="token class-name">String</span>
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup"><span class="token class-name">CallPlugin</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">b</a><span class="token punctuation">,</span> <span class="token class-name">Object</span> obj <span class="token punctuation">)</span>
+		</div>
+
+
+		<div class="samp">
+		<span class="token keyword">public</span> <span class="token class-name">Object</span>
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup"><span class="token class-name">CreateObject</span></a><span class="token punctuation">(</span> <span class="token class-name">Bundle</span>
+			<a href="#pop_obj_003" data-transition="pop" data-rel="popup">b</a> <span class="token punctuation">)</span>
+		</div>
+
+		<p><!--java noinl>public void CallScript(Bundle b, String webViewId)</java--></p>
 	</div><!-- /content -->
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">Plugin installed. Please restart DroidScript.</div>
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content">Calls Release()</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content">Calls CallPlugin(Bundle)</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">Calls Release()</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Returns the component class name</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">Calls CallPlugin(Bundle)</div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_002" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_003" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
@@ -150,7 +206,7 @@
 	<div data-role="popup" id="pop_mul_006" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_007" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_008" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content">Calls CallPlugin(Bundle, Object)</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content">Calls CallPlugin(Bundle, Object)</div>
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
 	<div data-role="popup" id="pop_mul_009" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_00a" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
@@ -160,7 +216,7 @@
 	<div data-role="popup" id="pop_mul_00e" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_00f" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_010" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content">Calls CreateObject(Bundle) with a String on <docstr>“type”</docstr></div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content">Calls CreateObject(Bundle) with a String on <docstr>“type”</docstr></div>
 	<div data-role="popup" id="pop_mul_011" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_012" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_013" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
@@ -169,19 +225,19 @@
 	<div data-role="popup" id="pop_mul_016" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_017" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
 	<div data-role="popup" id="pop_mul_018" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content">Calls CallPlugin(Bundle) with a byte[] on <docstr>“img”</docstr></div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content">Calls CallPlugin(Bundle) with a byte[] on <docstr>“img”</docstr></div>
 	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
 	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content">Calls CallPlugin(Bundle) with a byte[] on <docstr>“cam”</docstr></div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content">Calls CallPlugin(Bundle) with a byte[] on <docstr>“cam”</docstr></div>
 	<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="../app/CreateCameraView.htm" data-ajax="false">CameraView</a></div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content">Called when a new plugin instance was created</div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content">Called by DroidScript passing the app context/activity and the parent object</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content">Called when java gets rid of your plugin</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content">Called by plg.Send and plg.SendImg</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content">Called when a new plugin instance was created</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content">Called by DroidScript passing the app context/activity and the parent object</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content">Called when java gets rid of your plugin</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content">Called by plg.Send and plg.SendImg</div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">cmd</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content">Called by plg.SendObj</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content">Called by plg.SendObj</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">cmd</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content">Called by plg.CreateObj</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content">Called by plg.CreateObj</div>
 	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>:any, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
 </div><!-- /page -->
 

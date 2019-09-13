@@ -48,19 +48,19 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> yesNo <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span> <span class="token string">"Exit App?"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    yesNo<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> yesNo_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    yesNo<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> yesNo <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span> <span class="token string">"Exit App?"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">yesNo<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> yesNo_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">yesNo<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">yesNo_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> result<span class="token operator">==</span><span class="token string">"Yes"</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> result<span class="token operator">==</span><span class="token string">"Yes"</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

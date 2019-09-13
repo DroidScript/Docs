@@ -41,45 +41,45 @@
 
 		<h3>Understanding RSSI</h3>
         <table>
-            <thead align='left'>
-                <tr>
-                    <th width="15%">Signal Strength</th>
-                    <th width="10%">TL;DR</th>
-                    <th width="20%">Required for</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>-30 dBm</td>
-                    <td>Amazing</td>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <td>-67 dBm</td>
-                    <td>Very Good</td>
-                    <td>VoIP/VoWiFi, streaming video</td>
-                </tr>
-                <tr>
-                    <td>-70 dBm</td>
-                    <td>Okay</td>
-                    <td>Email, web</td>
-                </tr>
-                <tr>
-                    <td>-80 dBm</td>
-                    <td>Not Good</td>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <td>-90 dBm</td>
-                    <td>Unusable</td>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <td>-127 dBm</td>
-                    <td>Disabled</td>
-                    <td>N/A</td>
-                </tr>
-            </tbody>
+		    <span style="display:inline-block"><thead align='left'></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><th width="15%">Signal Strength</th></span><br>
+		            <span style="display:inline-block"><th width="10%">TL;DR</th></span><br>
+		            <span style="display:inline-block"><th width="20%">Required for</th></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		    <span style="display:inline-block"></thead></span><br>
+		    <span style="display:inline-block"><tbody></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-30 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Amazing</td></span><br>
+		            <span style="display:inline-block"><td>N/A</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-67 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Very Good</td></span><br>
+		            <span style="display:inline-block"><td>VoIP/VoWiFi, streaming video</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-70 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Okay</td></span><br>
+		            <span style="display:inline-block"><td>Email, web</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-80 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Not Good</td></span><br>
+		            <span style="display:inline-block"><td>N/A</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-90 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Unusable</td></span><br>
+		            <span style="display:inline-block"><td>N/A</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		        <span style="display:inline-block"><tr></span><br>
+		            <span style="display:inline-block"><td>-127 dBm</td></span><br>
+		            <span style="display:inline-block"><td>Disabled</td></span><br>
+		            <span style="display:inline-block"><td>N/A</td></span><br>
+		        <span style="display:inline-block"></tr></span><br>
+		    <span style="display:inline-block"></tbody></span><br>
         </table>
 		<p>source: <a href="https://www.metageek.com/training/resources/understanding-rssi.html" onclick="return OpenUrl(this.href);">metageek.com</a><br>
 		<br>
@@ -89,13 +89,13 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRSSI<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowRSSI<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">ShowRSSI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> rssi <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRSSI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> rssi <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> rssi <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetRSSI</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> rssi <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

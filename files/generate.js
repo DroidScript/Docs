@@ -186,11 +186,15 @@ function adjustDoc(html, name) {
 		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
 		// some html char placeholders
 		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
+		// text indentation
+		.replace(/(\n\t+(    )+)([^]*?)<br>/g, (m, w, _, t) => 
+			`${w}<span style="display:inline-block">${t}</span><br>`)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash|smp|java)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
-			function(m, w1, lang, nobox, _, code, _, w2, _)
+			/(\s|<br>)*<(js|bash|smp|java)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
+			function(m, w1, lang, options, _, _, code, _, w2, _)
 			{
+				options = options.split(" ");
 			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
 				if(Prism.languages[lang]) {
 					var tags = [];
@@ -204,9 +208,9 @@ function adjustDoc(html, name) {
 						.replace(/§s§/g, "&#160;");
 				}
 
-				if(nobox) return `${w1||''}${code}${w2||''}`;
-				else if(has(code, "<br>")) return `</p>\n${newCode(code)}\t\t<p>`
-				else return `${w1||''}<code class="samp samp-inline">${code}</code>${w2||''}`;
+				if(has(options, "nobox")) return `${w1||''}${code}${w2||''}`;
+				else if(has(code, "<br>") || has(options, "noinl")) return `</p>\n${newCode(code)}\t\t<p>`
+				else return `${w1||''}<div class="samp samp-inline">${code}</div>${w2||''}`;
 			})
 		// remove leading whitespace in <p> tag
 		.replace(/<p>(<br>|\s+)+/g, "<p>")
@@ -215,8 +219,8 @@ function adjustDoc(html, name) {
 		// remove empty <p> tags
 		.replace(/\n?\t*<p><\/p>/g, "")
 		// remove special whitespace from tables
-		.replace(/([\n\t\xa0]+)(<\/?t([rhd]|head|body|able))/g,
-			(m, w, t) => w.replace(/\t/g, "    ").replace(/\xa0/g, ' ') + t)
+		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
+			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
 		// remove escaped linebreaks
 		.replace(/\\<br>/g, "")
 		// remove trailing <br> tags from table
@@ -635,7 +639,7 @@ function incpop( type, i )
 // accept formats: 'name:"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
 function replaceTypes(s, useAppPop)
 {
-	var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
+	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
 	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*| ?\w[^.|:,”}\]\n]*)?"?/g,
 		function(m, name, type, _, desc)
 		{
@@ -983,7 +987,7 @@ var
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":"\xa0", nbsp:"\xa0"},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" "},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 		// current language

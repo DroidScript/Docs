@@ -51,15 +51,15 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				    <span class="token comment">// app.ToBack();</span><br>
-				    <span class="token comment">// app.Exit();</span><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block"><span class="token comment">// app.ToBack();</span></span><br>
+				    <span style="display:inline-block"><span class="token comment">// app.Exit();</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

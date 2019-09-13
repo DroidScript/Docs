@@ -46,28 +46,28 @@
 		<p>Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.<br>
 		To clear a saved value use the <b>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></b> method.</p>
         <table>
-            <tr>
-                <th width="10%">Save</th>
-                <td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
-                <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
-                <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
-            </tr>
-            <tr>
-                <th>Load</th>
-                <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
-                <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
-                <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>Boolean</td>
-                <td>Number</td>
-                <td>String</td>
-            </tr>
+		    <span style="display:inline-block"><tr></span><br>
+		        <span style="display:inline-block"><th width="10%">Save</th></span><br>
+		        <span style="display:inline-block"><td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td></span><br>
+		        <span style="display:inline-block"><td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td></span><br>
+		        <span style="display:inline-block"><td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td></span><br>
+		    <span style="display:inline-block"></tr></span><br>
+		    <span style="display:inline-block"><tr></span><br>
+		        <span style="display:inline-block"><th>Load</th></span><br>
+		        <span style="display:inline-block"><td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td></span><br>
+		        <span style="display:inline-block"><td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td></span><br>
+		        <span style="display:inline-block"><td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td></span><br>
+		    <span style="display:inline-block"></tr></span><br>
+		    <span style="display:inline-block"><tr></span><br>
+		        <span style="display:inline-block"><th>Type</th></span><br>
+		        <span style="display:inline-block"><td>Boolean</td></span><br>
+		        <span style="display:inline-block"><td>Number</td></span><br>
+		        <span style="display:inline-block"><td>String</td></span><br>
+		    <span style="display:inline-block"></tr></span><br>
         </table>
 		<p>If you have many properties to save you can use an object structure instead of saving each value on their own.<br>
-		Load settings: <code class="samp samp-inline"><span class="token keyword">var</span> cfg <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
-		Save settings: <code class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>cfg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
+		Load settings: <div class="samp samp-inline"><span class="token keyword">var</span> cfg <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div><br>
+		Save settings: <div class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>cfg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></div></p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - App Settings</h3>
@@ -76,21 +76,21 @@
 				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> version<span class="token punctuation">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> startNo<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span class="token comment">// update settings object</span><br>
-				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> tmp<span class="token punctuation">)</span> settings<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token comment">// update settings object</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> tmp<span class="token punctuation">)</span> settings<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>settings<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>settings<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    settings<span class="token punctuation">.</span>startNo<span class="token operator">++</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Started "</span> <span class="token operator">+</span> settings<span class="token punctuation">.</span>startNo <span class="token operator">+</span> <span class="token string">". time"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">settings<span class="token punctuation">.</span>startNo<span class="token operator">++</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Started "</span> <span class="token operator">+</span> settings<span class="token punctuation">.</span>startNo <span class="token operator">+</span> <span class="token string">". time"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

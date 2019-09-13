@@ -47,22 +47,22 @@
 
 		<p>baseUrl and path will just be added to one string to get the address.<br>
 		Multiple parameters are available using pipes:<br>
-		    <docstr>“param1=value1|param2=value2”</docstr></p>
+		    <span style="display:inline-block"><docstr>“param1=value1|param2=value2”</docstr></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Get Funfact</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">var</span> address <span class="token operator">=</span> <span class="token string">"http://www.randomfunfacts.com"</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">var</span> address <span class="token operator">=</span> <span class="token string">"http://www.randomfunfacts.com"</span><span class="token punctuation">;</span></span><br>
 				<br>
 				<b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">HttpRequest</span><span class="token punctuation">(</span> <span class="token string">"GET"</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> handleReply <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">handleReply</span><span class="token punctuation">(</span> <span class="token parameter">error<span class="token punctuation">,</span> reply</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> error <span class="token punctuation">)</span> <span class="token function">alert</span><span class="token punctuation">(</span> reply <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">else</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token keyword">var</span> funfact <span class="token operator">=</span> reply<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> reply<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"&lt;i>"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">,</span> reply<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"&lt;/i>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        <span class="token function">alert</span><span class="token punctuation">(</span> funfact <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> error <span class="token punctuation">)</span> <span class="token function">alert</span><span class="token punctuation">(</span> reply <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">else</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">var</span> funfact <span class="token operator">=</span> reply<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span> reply<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"&lt;i>"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">,</span> reply<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"&lt;/i>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span> funfact <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

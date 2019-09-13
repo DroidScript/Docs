@@ -48,39 +48,39 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">var</span> langJson <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 				{<br>
-				    "langs": [ "English", "Español" ],<br>
-				    "codes": { "english":"en", "español":"es" },<br>
-				    "trans" : {<br>
-				        "SelectLang" : {<br>
-				            "en":"Please select your prefered language from the 'Settings' menu",<br>
-				            "es":"Selecciona tu idioma preferido en el menú 'Configuración'"<br>
-				        }<br>
-				    }<br>
+				    <span style="display:inline-block">"langs": [ "English", "Español" ],</span><br>
+				    <span style="display:inline-block">"codes": { "english":"en", "español":"es" },</span><br>
+				    <span style="display:inline-block">"trans" : {</span><br>
+				        <span style="display:inline-block">"SelectLang" : {</span><br>
+				            <span style="display:inline-block">"en":"Please select your prefered language from the 'Settings' menu",</span><br>
+				            <span style="display:inline-block">"es":"Selecciona tu idioma preferido en el menú 'Configuración'"</span><br>
+				        <span style="display:inline-block">}</span><br>
+				    <span style="display:inline-block">}</span><br>
 				}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"lang.json"</span><span class="token punctuation">,</span> langJson <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SetLanguage</span><span class="token punctuation">(</span> <span class="token string">"English"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"lang.json"</span><span class="token punctuation">,</span> langJson <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetLanguage</span><span class="token punctuation">(</span> <span class="token string">"English"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    spinLang <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span> <span class="token string">"English,Español"</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    spinLang<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> spinLang_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> spinLang <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">spinLang <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span> <span class="token string">"English,Español"</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">spinLang<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> spinLang_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> spinLang <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token constant">T</span><span class="token punctuation">(</span> <span class="token string">"SelectLang"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token constant">T</span><span class="token punctuation">(</span> <span class="token string">"SelectLang"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">spinLang_OnChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    language <span class="token operator">=</span> spinLang<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SetLanguage</span><span class="token punctuation">(</span> language <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">language <span class="token operator">=</span> spinLang<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetLanguage</span><span class="token punctuation">(</span> language <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">DestroyLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">DestroyLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

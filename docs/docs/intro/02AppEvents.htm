@@ -45,11 +45,11 @@
 				<span class="token function">setTimeout</span><span class="token punctuation">(</span>OnLoad<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
 				<b id="snip1" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnStart\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnStart\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnLoad\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnLoad\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -68,20 +68,20 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
 				    <br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"[fa-gear]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span>ShowMenu <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"[fa-gear]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span>ShowMenu <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnMenu</span><span class="token punctuation">(</span> <span class="token parameter">item</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -100,20 +100,20 @@
 			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    yndExit <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span><span class="token string">"Exit App?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    yndExit<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> yndExit_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">yndExit <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span><span class="token string">"Exit App?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">yndExit<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> yndExit_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Press the back button"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Press the back button"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">yndExit_OnTouch</span><span class="token punctuation">(</span><span class="token parameter">reply</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span>reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<b id="snip3" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    yndExit<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">yndExit<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
@@ -132,7 +132,7 @@
 				<span class="token comment">//Called when application is paused.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnPause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnPause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -150,7 +150,7 @@
 				<span class="token comment">//Called when application is resumed.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -167,31 +167,31 @@
 			<div id="examp6" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    txt1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt1<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt1 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">txt1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt1<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt1 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    txt2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt2<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt2 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">txt2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt2<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt2 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<b id="snip6" style="font-size:100%"><span class="token comment">//Called when screen rotates</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> orient <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOrientation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt1<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span>orient<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> orient <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOrientation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt1<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span>orient<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span>orient <span class="token operator">==</span> <span class="token string">"Portrait"</span><span class="token punctuation">)</span> orient <span class="token operator">=</span> <span class="token string">"Vertical"</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">else</span> orient <span class="token operator">=</span> <span class="token string">"Horizontal"</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>orient <span class="token operator">==</span> <span class="token string">"Portrait"</span><span class="token punctuation">)</span> orient <span class="token operator">=</span> <span class="token string">"Vertical"</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">else</span> orient <span class="token operator">=</span> <span class="token string">"Horizontal"</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    lay<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span> orient <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    txt2<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> orient <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span> orient <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txt2<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> orient <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
@@ -209,17 +209,17 @@
 			<div id="examp7" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token comment">// app.ToBack();</span><br>
-				    <span class="token comment">// app.Exit();</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetAlarm</span><span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token comment">// app.ToBack();</span></span><br>
+				    <span style="display:inline-block"><span class="token comment">// app.Exit();</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token comment">//Called when alarm is triggered.</span><br>
 				<span class="token comment">//(Even if your app is closed)</span><br>
 				<b id="snip7" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">
@@ -238,22 +238,22 @@
 				<span class="token comment">//Handle data sent from other apps.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnData</span><span class="token punctuation">(</span> <span class="token parameter">isStartUp</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token comment">//Display intent data.</span><br>
-				    <span class="token keyword">var</span> intent <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIntent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span> intent <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">//Extract main data.</span><br>
-				        <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"action: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>action <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-				        s <span class="token operator">+=</span> <span class="token string">"type: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>type <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
-				        s <span class="token operator">+=</span> <span class="token string">"data: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>data <span class="token operator">+</span> <span class="token string">"\n\n"</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token comment">//Display intent data.</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> intent <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIntent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> intent <span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token comment">//Extract main data.</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"action: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>action <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">s <span class="token operator">+=</span> <span class="token string">"type: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>type <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">s <span class="token operator">+=</span> <span class="token string">"data: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>data <span class="token operator">+</span> <span class="token string">"\n\n"</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        <span class="token comment">//Extract extras.</span><br>
-				        s <span class="token operator">+=</span> <span class="token string">"extras:\n"</span><span class="token punctuation">;</span><br>
-				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> key <span class="token keyword">in</span> intent<span class="token punctuation">.</span>extras <span class="token punctuation">)</span><br>
-				            s <span class="token operator">+=</span> key<span class="token operator">+</span><span class="token string">": "</span><span class="token operator">+</span>intent<span class="token punctuation">.</span>extras<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span><br>
+				        <span style="display:inline-block"><span class="token comment">//Extract extras.</span></span><br>
+				        <span style="display:inline-block">s <span class="token operator">+=</span> <span class="token string">"extras:\n"</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> key <span class="token keyword">in</span> intent<span class="token punctuation">.</span>extras <span class="token punctuation">)</span></span><br>
+				            <span style="display:inline-block">s <span class="token operator">+=</span> key<span class="token operator">+</span><span class="token string">": "</span><span class="token operator">+</span>intent<span class="token punctuation">.</span>extras<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></span><br>
 				        <br>
-				        app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token string">"OnData"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token string">"OnData"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

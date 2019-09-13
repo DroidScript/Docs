@@ -48,20 +48,20 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    skb <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSeekBar</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    skb<span class="token punctuation">.</span><span class="token function">SetRange</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    skb<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> SetVolume <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> skb <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">skb <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSeekBar</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">skb<span class="token punctuation">.</span><span class="token function">SetRange</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">skb<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> SetVolume <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> skb <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token string">"Music"</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				    app<span class="token punctuation">.</span><span class="token function">PlaySound</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token string">"Music"</span><span class="token punctuation">,</span> value <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">PlaySound</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

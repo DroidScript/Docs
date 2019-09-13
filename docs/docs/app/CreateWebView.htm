@@ -47,30 +47,30 @@
 		<p>If you are loading remote web pages, then you might want to use the <b>SetOnProgress</b> method to set the name of a callback function that you want called to report the progress of loading the page.<br>
 		<br>
 		You can use the <b>LoadUrl</b> method to load an internal or external web page or the <b>LoadHtml</b> method to load text directly from within your App.<br>
-		<code class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> url<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
-		<code class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> baseFolder<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></code><br>
+		<div class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> url<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></div><br>
+		<div class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> baseFolder<span class="token punctuation">,</span> options <span class="token punctuation">)</span><span class="token punctuation">;</span></div><br>
 		<br>
 		If you need to, you can use the <b>Execute</b> method to execute JavaScript code within the WebView.<br>
-		<code class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span></code></p>
+		<div class="samp samp-inline">web<span class="token punctuation">.</span><span class="token function">Execute</span><span class="token punctuation">(</span> text <span class="token punctuation">)</span><span class="token punctuation">;</span></div></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Remote</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     <br>
-				     <b id="snip1" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Progress"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     web<span class="token punctuation">.</span><span class="token function">SetOnProgress</span><span class="token punctuation">(</span> web_OnProgess <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				     <br>
-				     app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     <br>
-				     web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> <span class="token string">"http:///www.google.com"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"> <b id="snip1" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Progress"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">SetOnProgress</span><span class="token punctuation">(</span> web_OnProgess <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <br>
+				    <span style="display:inline-block"> app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> <span class="token string">"http:///www.google.com"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">web_OnProgess</span><span class="token punctuation">(</span> <span class="token parameter">progress</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				     app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span> <span class="token string">"progress = "</span> <span class="token operator">+</span> progress <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"> app<span class="token punctuation">.</span><span class="token function">Debug</span><span class="token punctuation">(</span> <span class="token string">"progress = "</span> <span class="token operator">+</span> progress <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -86,15 +86,15 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     <br>
-				     <b id="snip2" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				     <br>
-				     app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     <br>
-				     web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> <span class="token string">"file:///Sys/Html/Page.htm"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"> <b id="snip2" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <br>
+				    <span style="display:inline-block"> app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">LoadUrl</span><span class="token punctuation">(</span> <span class="token string">"file:///Sys/Html/Page.htm"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -110,21 +110,21 @@
 			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     <br>
-				     <b id="snip3" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				     lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				     <br>
-				     app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    html <span class="token operator">=</span> <span class="token string">"&lt;html>&lt;body>&lt;center>"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"    &lt;img src='Img/Droid2.png'>"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"    &lt;div style='color:white; font-size:30;'>"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"    Hello World!&lt;/div>&lt;br>"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"&lt;/center>&lt;/body>&lt;/html>"</span><span class="token punctuation">;</span><br>
-				     <br>
-				     web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> <span class="token string">"file:///Sys/"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"> <b id="snip3" style="font-size:100%">web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#00000000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"> lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> web <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <br>
+				    <span style="display:inline-block"> app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">html <span class="token operator">=</span> <span class="token string">"&lt;html>&lt;body>&lt;center>"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"    &lt;img src='Img/Droid2.png'>"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"    &lt;div style='color:white; font-size:30;'>"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"    Hello World!&lt;/div>&lt;br>"</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">"&lt;/center>&lt;/body>&lt;/html>"</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"> web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span> html<span class="token punctuation">,</span> <span class="token string">"file:///Sys/"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

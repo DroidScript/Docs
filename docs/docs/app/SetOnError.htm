@@ -46,18 +46,18 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">throw</span> <span class="token string">"My thrown error"</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">throw</span> <span class="token string">"My thrown error"</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<b id="snip1" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg<span class="token punctuation">,</span> line<span class="token punctuation">,</span> file</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> text <span class="token operator">=</span><br>
-				        <span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
-				        <span class="token string">'Line: '</span> <span class="token operator">+</span> line <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span><br>
-				        <span class="token string">'File: "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">Uri2Path</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> text <span class="token operator">=</span></span><br>
+				        <span style="display:inline-block"><span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">'Line: '</span> <span class="token operator">+</span> line <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span></span><br>
+				        <span style="display:inline-block"><span class="token string">'File: "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">Uri2Path</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> text<span class="token punctuation">,</span> <span class="token string">"Received error message:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> text<span class="token punctuation">,</span> <span class="token string">"Received error message:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div name="divCopy" align="right">

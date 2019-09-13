@@ -8164,7 +8164,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "str-App",
-		"shortDesc": "GetType"
+		"shortDesc": "Returns the object class name"
 	},
 	"GetUser": {
 		"desc": "Returns the email-address of the currently active user account.\n\nSee Also: @GetAccounts",
@@ -8692,13 +8692,13 @@
 				"shortDesc": "Get database name"
 			},
 			"GetType": {
-				"desc": "GetType",
+				"desc": "Returns the component class name.",
 				"isfunc": true,
 				"name": "GetType",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "str-Database",
-				"shortDesc": "GetType"
+				"shortDesc": "Returns the component class name"
 			},
 			"name": {
 				"desc": "The database name\n<deprecated use GetName instead>",
