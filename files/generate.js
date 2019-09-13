@@ -4,7 +4,8 @@ var curDoc = null, curSubf = null;
 var warnEnbl = false, Globals;
 
 	//generates all doc files
-function generateDocs() {
+function generateDocs()
+{
 	app.ShowProgressBar("Generating files...");
 
 	app.SetDebug("console");
@@ -24,17 +25,21 @@ function generateDocs() {
 			JSON.stringify(functions[f]) != JSON.stringify(lastfuncs[f]) ||
 			keys(functions[f].subs).filter(hidden).length);*/
 
-	for( i = 0; i < lst.length; i++ ) {
+	for( i = 0; i < lst.length; i++ )
+	{
 		generateDoc(lst[i]);
 
-		if( isControl(lst[i]) ) {
+		if( isControl(lst[i]) )
+		{
 			var tctrl = {}, tsubf = functions[lst[i]].subf;
 			info[functions[lst[i]].abbrev] = tctrl;
 
-			for( var j in tsubf ) {
+			for( var j in tsubf )
+			{
 				if(hidden(j)) continue;
 
-				if(typeof(tsubf[j]) == "string" && tsubf[j].startsWith("#")) {
+				if(typeof(tsubf[j]) == "string" && tsubf[j].startsWith("#"))
+				{
 					if(!basefuncs[tsubf[j]]) Throw(Error(`basefunc ${tsubf[j]} not found!`));
 					tctrl[j] = basefuncs[tsubf[j]].shortDesc;
 				}
@@ -60,7 +65,8 @@ function generateDocs() {
 	app.ShowPopup("Generated");
 }
 
-function generateNavigators() {
+function generateNavigators()
+{
 	var list, nav = '';
 
 	// generate html category lists
@@ -91,12 +97,14 @@ function generateNavigators() {
 	);
 }
 
-function generateIntros() {
+function generateIntros()
+{
 	app.DeleteFolder(path + `docs${getl()}/intro`);
 	app.MakeFolder(path + `docs${getl()}/intro`);
 	var nav = "";
 
-	for(var name of app.ListFolder("intros").sort(sortAsc)) {
+	for(var name of app.ListFolder("intros").sort(sortAsc))
+	{
 		var s = app.ReadFile(path + `intros${getl()}/` + name);
 		var samples = {}, sampcnt = 0;
 		resetGlobals();
@@ -137,7 +145,8 @@ function generateIntros() {
 }
 
 // generates one document by function name
-function generateDoc( name ) {
+function generateDoc( name )
+{
 	if(name == "Intros") return generateIntros();
 	if(name == "Navs") return generateNavigators();
 	curDoc = `docs${getl()}/app/${name}.htm`;
@@ -174,7 +183,8 @@ function resetGlobals() {
 	};
 }
 
-function adjustDoc(html, name) {
+function adjustDoc(html, name)
+{
 	return html
 		// title occurances
 		.replace(/%t/g, name)
@@ -186,6 +196,9 @@ function adjustDoc(html, name) {
 		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
 		// some html char placeholders
 		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
+		// remove special whitespace from tables
+		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
+			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
 		// text indentation
 		.replace(/(\n\t+(    )+)([^]*?)<br>/g, (m, w, _, t) => 
 			`${w}<span style="display:inline-block">${t}</span><br>`)
@@ -195,7 +208,7 @@ function adjustDoc(html, name) {
 			function(m, w1, lang, options, _, _, code, _, w2, _)
 			{
 				options = options.split(" ");
-			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
+				if(w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
 				if(Prism.languages[lang]) {
 					var tags = [];
 					code = code
@@ -218,9 +231,6 @@ function adjustDoc(html, name) {
 		.replace(/(<br>|\s+)+<\/p>/g, "</p>")
 		// remove empty <p> tags
 		.replace(/\n?\t*<p><\/p>/g, "")
-		// remove special whitespace from tables
-		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
-			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
 		// remove escaped linebreaks
 		.replace(/\\<br>/g, "")
 		// remove trailing <br> tags from table
@@ -232,8 +242,8 @@ function adjustDoc(html, name) {
 }
 
 // converts a function object into an html snippets object
-function getDocData( f, useAppPop ) {
-
+function getDocData( f, useAppPop )
+{
 	//needed for popups in popups
 	if( useAppPop == undefined )
 		useAppPop = false;
@@ -251,8 +261,10 @@ function getDocData( f, useAppPop ) {
 	var i, mArgs = [], type, fretval = "";
 
 	// convert constructor line
-	for( i in f.pNames ) {
-		if( useAppPop ) {
+	for( i in f.pNames )
+	{
+		if( useAppPop ) 
+		{
 			mArgs.push(newAppPopup( f.pNames[i], typeDesc( f.pTypes[i] ) )
 				.replace( /<\/?\w+?>/g, ""));
 		}
@@ -306,26 +318,30 @@ function getDocData( f, useAppPop ) {
 			if(!has(Globals.popDefs[Globals.popDefs.length - 1] || "", f.abbrev + ".")) Globals.popDefs.push("");
 
 			pop = descPopup( curSubf, `<b>${f.abbrev}.${curSubf}</b><br>` +
-				replW( met.desc ).replace( /(“.*?”)/g, "<docstr>$1</docstr>"),
+				replW( met.desc ),
 				getAddClass(met) || (has(basefuncs.all, curSubf) ? ' class="baseFunc"' : ""));
-			tryAddType( pop.fnc );
 
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 
-			var s = pop.txt + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
+			var s = pop + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
 			if(has(curSubf, '.')) s = s.split(".").fill("  ").join("") + s.italics();
 			methods += subfBase.replace( "%s", s );
 		}
 		/* else { //convert other types
 			var pop = descPopup( curSubf, replW( met.desc ) );
-			tryAddType( pop.fnc );
-			methods += subfBase.replace( "%s", pop.txt + retval );
+			methods += subfBase.replace( "%s", pop + retval );
 		} */
 	}
 	curSubf = null;
 
 	return { args : mArgs, mets : methods, ret : fretval }
+}
+
+// returns a description popup object
+function descPopup( text, ptext, sClass )
+{
+	return newPopup("dsc", text, addMarkdown(replaceTypes(ptext, 1)), sClass);
 }
 
 // returns an html formatted description of a function
@@ -419,17 +435,6 @@ function getAddClass(m)
 	return '';
 }
 
-// returns a description popup object
-function descPopup( text, ptext, sClass )
-{
-	return {
-		fnc: newDefPopup(
-			"dsc_" + incpop( "dsc", 1 ),
-			addMarkdown(replaceTypes(ptext, 1))),
-		txt: newTxtPopup( "dsc_" + incpop( "dsc" ), text, sClass )
-	};
-}
-
 // returns a formatted description of a type - used for subfunction return values
 function typeDesc( types )
 {
@@ -478,16 +483,8 @@ function typeDesc( types )
 				}
 			}
 			else
-			{
-				if(s[i] == undefined)
-				{
-					//if(isDSO) return "<b>app object:</b> " + type[1]; else
-					Throw(Error("unknown type " + type[1]));
-				}
-				return s[i];
-			}
-		}).join("\n")
-		.replace( /(“.*?”)/g, "<docstr>$1</docstr>");
+				return s[i] || Throw(Error("unknown type " + type[1]));
+		}).join("\n").replace( /(“.*?”)/g, "<docstr>$1</docstr>");
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
@@ -496,9 +493,8 @@ function toArgPop( name, types, doSwitch ) {
 	// function callbacks
 	if( typeof types == "object" )
 	{
-		tryAddType( newDefPopup(
-			"fnc_" + incpop( "fnc", 1 ),
-			"<b>function</b>(\n\t\t" + types.pNames.map(
+		return newPopup( "fnc", name,
+			("<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
 				{
 					if(types.pTypes[i].isfunc || has("lst,obj", types.pTypes[i].slice(0, 3)))
@@ -508,10 +504,8 @@ function toArgPop( name, types, doSwitch ) {
 						// primitive types get a primitive popup
 						return toArgAppPop(n, types.pTypes[i]);
 				}
-			).join(",\n\t\t") + "\n\t)" ).replace(/\(\s+\)/, "()")
+			).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
 		);
-
-		return newTxtPopup( "fnc_" + incpop( "fnc" ), name );
 	}
 
 	// multiple types
@@ -577,22 +571,14 @@ function toArgPop( name, types, doSwitch ) {
 			);
 		if(pop_id.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop_id));
 
-		tryAddType( newDefPopup( pop_id, str[0]
-			.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )
-			.replace( /ShowPopup\('.*?'\)/g, m => m.replace(/<.*?>/g, ""), "")
-		));
-
-		s = newTxtPopup( pop_id, name );
+		s = newPopup( pop_id, name, str[0].replace(/ShowPopup\('.*?'\)/g,
+			(m) => m.replace(/“/g, "&ldquo;" ).replace(/”/g, "&rdquo;" )), "");
 		if(doSwitch) s = s.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
 		return s;
 	}
-	else {
+	else
 		// for values with multiple types
-		tryAddType( newDefPopup(
-			"mul_" + incpop( "mul", 1 ),
-			str.join("<br>").replace( /(“.*?”)/g, "<docstr>$1</docstr>" )));
-		return newTxtPopup( "mul_" + incpop( "mul" ), name );
-	}
+		return newPopup("mul", name, str.join("<br>"));
 }
 
 function toArgAppPop( name, types ) {
@@ -667,11 +653,7 @@ function replaceTypes(s, useAppPop)
 						(typedesc[type] ? ": " + typedesc[type] : "") : desc);
 			}
 			else if(type) r = toArgPop(name, type);
-			else {
-				tryAddType( newDefPopup( "dsc_" + incpop( "dsc", 1 ),
-					desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )));
-				r = newTxtPopup( "dsc_" + incpop( "dsc" ), name );
-			}
+			else r = newPopup("dsc", name, desc);
 
 			s = s.replace(m, r + space);
 			return '';
@@ -740,6 +722,12 @@ function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("
 function newLink(  target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function newCode(code) { return codeBase.replace("%s", code); }
 function d(v) { console.log(v); return v; }
+function newPopup(type, name, desc, addClass) {
+	var pop_id = Globals.spop[type] == undefined ? type : type + "_" + incpop( type, 1 );
+	if(addClass !== false) desc = desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" )
+	tryAddType( newDefPopup( pop_id, desc ));
+	return newTxtPopup( pop_id, name, addClass );
+}
 function getHead(d) {
 	d = new Array(d).fill("../").join("");
 	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
@@ -762,7 +750,7 @@ function getHead(d) {
 // html templates
 var		// subfunctions
 	subfBase = '\t\t<div class="samp">%s\n\t\t</div>\n',
- 	    // navigator list item
+ 		// navigator list item
 	naviItem = '\n\t\t\t<li><a href="%s"%s>%s</a></li>',
 		// reopen popup onclick code
 	switchPop = 'onclick="switchPopup(this, \'#pop_$1\')"',
@@ -987,7 +975,7 @@ var
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
-	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" "},
+	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" ", ldquo: "“", rdquo: "”"},
 		// defined in OnStart or later
 	functions, basefuncs, categories,
 		// current language

@@ -5,12 +5,12 @@ There are basically two types of plugins: **JavaScript** plugins which will beha
 
 ## JavaScript Plugins
 A basic JS plugin consists of 2 parts:
-- a **MyPlugin.inc** file containing the main JS source code
-- a **MyPlugin.html** file containing the main page of your plugin documentation.
+	- a **MyPlugin.inc** file containing the main JS source code
+	- a **MyPlugin.html** file containing the main page of your plugin documentation.
 However you can add as many resources to it as you want.
 
 There is a generator available which can create, debug and install plugins on the fly. you can even debug your plugin directly from that app.
-Download it from the dspk store: [](https://dspk.justplayer.de/browse/view/67)
+[Download it from the dspk store](https://dspk.justplayer.de/browse/view/67)
 
 
 ## Java Plugins
@@ -44,7 +44,7 @@ It may be possible with other IDE's as well (ie. IntelliJ even has a AndroidSDK 
 In order to use the defined Java functions you have to call them from the JS part somehow.
 For this purpose DroidScript provides a **\_CreatePlugin** component:
 
-<js noinl>var plg = \_CreatePlugin( classpath:str, options:str\_com )</js>
+<js noinl>var plg = \_CreatePlugin( classpath:str-"com.mycompany.plugins.user", options:str\_com )</js>
 <js noinl>plg.Destroy:"Calls Release()"()</js>
 <js noinl>plg.GetType:"Returns the component class name"() → **string:** _“Plugin”_</js>
 <js noinl>plg.Send:"Calls CallPlugin(Bundle)"( name:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string**</js>
