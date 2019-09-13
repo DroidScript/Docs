@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Creating Games</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-default.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/default.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-default.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" data-theme="a" >
+
+	<div data-role="header">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Creating Games</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+	</div><!-- /header -->
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<h2>Introduction</h2>
+		<p>Something many coding beginners dream of is creating their own game. And not infrequently they think of a fancy 3D MMO shooter with eyecatching graphics, many levels, quests, characters and an exciting tears moving story on top of that.<br>
+		The reality looks a bit different but that's actually not a bad thing.<br>
+		<br>
+		Not that you'll be disappointed at the end: No DroidScript doesn't natively support 3D graphics yet. However it might not be far away. Let's be patient.</p>
+		<h2>GUI Games</h2>
+		<p>The by far easiest way to create games without complex maths and drawing commands is using GUI controls for your game.<br>
+		There will be few or even no animations at all. Instead the user can interact with the game like in a normal app.<br>
+		<br>
+		The following sample is a Tic Tac Toe implementation using button controls.<br>
+		It also demonstrates how UI controls can be animated using the Tween method.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Tic Tac Toe</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">var</span> btns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> round <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">var</span> wh <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<br>
+				<span class="token comment">//Called when app started.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span> <span class="token string">"Portrait"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token string">"#3355cc"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">txtPlayer <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">"Player 1"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txtPlayer<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token string">"pl"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txtPlayer<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txtPlayer <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">//Create 3×3 Buttons</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">var</span> layH <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layH <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <br>
+				        <span style="display:inline-block"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span></span><br>
+				        <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				            <span style="display:inline-block"><span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.3</span> <span class="token operator">*</span> wh<span class="token punctuation">,</span> <span class="token string">"gray"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				            <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				            <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token string">"pl"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				            <span style="display:inline-block">layH<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				            <br>
+				            <span style="display:inline-block">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>index <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">*</span> i <span class="token operator">+</span> j<span class="token punctuation">;</span></span><br>
+				            <span style="display:inline-block">btns<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">//Occupy button</span><br>
+				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> player <span class="token operator">=</span> round <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span><span class="token string">"XO"</span><span class="token punctuation">[</span>player <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Tween</span><span class="token punctuation">(</span> <span class="token punctuation">{</span> sw<span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> rot<span class="token punctuation">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">SetTouchable</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">//Check winrows if someone won</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> winRows <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"012"</span><span class="token punctuation">,</span> <span class="token string">"345"</span><span class="token punctuation">,</span> <span class="token string">"678"</span><span class="token punctuation">,</span> <span class="token string">"036"</span><span class="token punctuation">,</span> <span class="token string">"147"</span><span class="token punctuation">,</span> <span class="token string">"258"</span><span class="token punctuation">,</span> <span class="token string">"048"</span><span class="token punctuation">,</span> <span class="token string">"642"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> winRows<span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">var</span> row <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span></span><br>
+				            <span style="display:inline-block">row <span class="token operator">+=</span> btns<span class="token punctuation">[</span>winRows<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <br>
+				        <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>row <span class="token operator">==</span> <span class="token string">"XXX"</span> <span class="token operator">||</span> row <span class="token operator">==</span> <span class="token string">"OOO"</span><span class="token punctuation">)</span></span><br>
+				            <span style="display:inline-block"><span class="token keyword">return</span> <span class="token function">EndGame</span><span class="token punctuation">(</span>player <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">//End game if no more free buttons exists</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span>round <span class="token operator">==</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">EndGame</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">txtPlayer<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"Player "</span> <span class="token operator">+</span> player <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">SetTouchable</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">//Show results and reset</span><br>
+				<span class="token keyword">function</span> <span class="token function">EndGame</span><span class="token punctuation">(</span><span class="token parameter">player</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> player <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Player"</span> <span class="token operator">+</span> player <span class="token operator">+</span> <span class="token string">" won!"</span><span class="token punctuation">,</span> <span class="token string">"Congratulations"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">else</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"It"</span>s a draw<span class="token punctuation">.</span>" <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">// reset game</span></span><br>
+				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">btns<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">btn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> btn<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">SetTouchable</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">round <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+		<h2>Games with Images</h2>
+		<p>The most basic graphics container is the <a href="../app/CreateImage.htm" data-ajax="false">Image</a> control. It also provides the most functionality for drawing like basic shapes, paint style and color, image drawing and even 2D matrix transformations.<br>
+		Despite the fact that the picture view is very powerful, it is not particularly fast.<br>
+		<br>
+		You should definitely use <a href="../app/CreateImage.htm#SetAutoUpdate" data-ajax="false"><span class="samp samp-inline">img<span class="token punctuation">.</span><span class="token function">SetAutoUpdate</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></a> to be able to control when to update the canvas.<br>
+		<br>
+		By default you can achieve a maximum framerate of 60 fps, however the framerate decreases relatively fast the more draw commands you use.<br>
+		<br>
+		The following sample is a simple two-player Pong implementation using basic shapes only.<br>
+		It also demonstrates how you can handle multiple touches, and how a game can be made fps independent, so that collision detection on low fps is no problem any more.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Pong</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">var</span> x1 <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">,</span> x2 <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">,</span> p1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> p2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+				<br>
+				<span class="token comment">// Called when app started.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span> <span class="token string">"Portrait"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">'Linear'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetAutoUpdate</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token function">Score</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">50</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">// Move user bars</span><br>
+				<span class="token keyword">function</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">ev</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> ev<span class="token punctuation">.</span>count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>y<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0.5</span> <span class="token punctuation">)</span> x1 <span class="token operator">=</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">else</span> x2 <span class="token operator">=</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">// Calculate ball movement for a given deltatime</span><br>
+				<span class="token keyword">var</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> v <span class="token operator">=</span> <span class="token number">0.8</span><span class="token punctuation">,</span> dx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> dy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">function</span> <span class="token function">Calculate</span><span class="token punctuation">(</span><span class="token parameter">dt</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">x <span class="token operator">+=</span> v <span class="token operator">*</span> dx <span class="token operator">*</span> dt <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">y <span class="token operator">+=</span> v <span class="token operator">*</span> dy <span class="token operator">*</span> dt <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">v <span class="token operator">+=</span> dt <span class="token operator">/</span> <span class="token number">1e5</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">0.02</span><span class="token punctuation">)</span> dx <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>dx<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">></span> <span class="token number">0.98</span><span class="token punctuation">)</span> dx <span class="token operator">=</span> <span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>dx<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>y <span class="token operator">></span> <span class="token number">0.04</span> <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">0.05</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">></span> x1 <span class="token operator">-</span> <span class="token number">0.1</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> x1 <span class="token operator">+</span> <span class="token number">0.1</span><span class="token punctuation">)</span> dy <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>dy<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>y <span class="token operator">&lt;</span> <span class="token number">0.96</span> <span class="token operator">&amp;&amp;</span> y <span class="token operator">></span> <span class="token number">0.95</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">></span> x2 <span class="token operator">-</span> <span class="token number">0.1</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> x2 <span class="token operator">+</span> <span class="token number">0.1</span><span class="token punctuation">)</span> dy <span class="token operator">=</span> <span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>dy<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>y <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">Score</span><span class="token punctuation">(</span>p2<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>y <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">Score</span><span class="token punctuation">(</span>p1<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">// Core loop</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">t<span class="token punctuation">,</span> dt<span class="token punctuation">,</span> nodraw</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block"><span class="token comment">// Calculate positions in 4 milliseconds steps</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">do</span> <span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token function">Calculate</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">dt <span class="token operator">-=</span> <span class="token number">4</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span>dt <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">// Render state</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawText</span><span class="token punctuation">(</span> p1<span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawText</span><span class="token punctuation">(</span> p2<span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0.6</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> x1 <span class="token operator">-</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> x1 <span class="token operator">+</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.04</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> x2 <span class="token operator">-</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> x2 <span class="token operator">+</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.97</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">// Reset after score</span><br>
+				<span class="token keyword">function</span> <span class="token function">Score</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">x <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> dx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">y <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span> dy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">var</span> <span class="token constant">PI</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">var</span> a <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token constant">PI</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> a <span class="token operator">></span> <span class="token constant">PI</span><span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">)</span> a <span class="token operator">+=</span> <span class="token constant">PI</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">dx <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token constant">PI</span><span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">dy <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token constant">PI</span><span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>

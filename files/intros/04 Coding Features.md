@@ -32,7 +32,9 @@ See also: @../app/GetPermission, @../app/CheckPermission
 DroidScript checks if a callback function already exists and uses it instead of creating a new instance.
 This can cause issues when referring to other local variables in private scopes.
 Therefore you can wrap your callback functions in an I() clause to force DroidScript to create a new callback instance for that scope.
+
 <sample Using I()>
+
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -69,12 +71,14 @@ function NewButton2(name, lay) {
 		app.ShowPopup(name);
 	}));</b>
 }
+
 </sample Using I()>
 
 Alternatively you can make use of the controls **data** property and the **this** keyword in callbacks.
 This way you can assign variariables to the object they belong to and you still make use of the callback optimization by DroidScript:
 
 <sample Using this.data>
+
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -98,4 +102,5 @@ function NewButton2(name, lay) {
 		app.ShowPopup(this.data.name);
 	});</b>
 }
+
 </sample Using this.data>

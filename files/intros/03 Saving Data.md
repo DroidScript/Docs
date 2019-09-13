@@ -37,6 +37,7 @@ Load settings: <js>var cfg = JSON.parse( app.LoadText( "settings", "{}" ));</js>
 Save settings: <js>app.SaveText( "settings", JSON.stringify(cfg) );</js>
 
 <sample App Settings>
+
 <b>// default settings
 var settings = { version: "1.0", startNo: 0 };
 
@@ -57,6 +58,7 @@ function OnStart() {
 	app.ShowPopup("Started " + settings.startNo + ". time");
 	SaveSettings();
 }
+
 </sample App Settings>
 
 ## Using Databases

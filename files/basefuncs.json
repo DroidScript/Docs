@@ -453,7 +453,7 @@
 				"isfunc": true,
 				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
 				"pTypes": [
-					"obj-{ x:num_frc, y:num_frc, sw:num_frc, sh:num_frc, rot:num_deg }",
+					"obj-{ x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }",
 					"num_mls",
 					"str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out",
 					"num_int",

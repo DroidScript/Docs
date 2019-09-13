@@ -224,7 +224,7 @@ function adjustDoc(html, name)
 
 				if(has(options, "nobox")) return `${w1||''}${code}${w2||''}`;
 				else if(has(code, "<br>") || has(options, "noinl")) return `</p>\n${newCode(code)}\t\t<p>`
-				else return `${w1||''}<div class="samp samp-inline">${code}</div>${w2||''}`;
+				else return `${w1||''}<span class="samp samp-inline">${code}</span>${w2||''}`;
 			})
 		// remove leading whitespace in <p> tag
 		.replace(/<p>(<br>|\s+)+/g, "<p>")
@@ -468,11 +468,12 @@ function typeDesc( types )
 					case "lst":
 					case "obj": return s[i] + replaceTypes( type[2], false );
 					case "dso":
-						var func = type[2].replace(/[^/]*\//g, "");
-						if(!curDoc.endsWith(type[2] + ".htm") && !functions[func])
+						var func = type[2].replace(/[^/]*\/|#.*/g, "");
+						if(!curDoc.endsWith(func + ".htm") && !functions[func])
 							Throw(Error(`link to unexistent file ${type[2]}.htm`))
-						if(functions[type[2]])
-							return s[i] + newLink(type[2] + ".htm", func.replace(regConPrefix, ""));
+						if(functions[func])
+							return s[i] + newLink(type[2].replace(/(#.*)|$/, "$1.htm"),
+								func.replace(regConPrefix, ""));
 						else
 							return s[i] + type[2];
 					default: Throw(Error("unknown type " + type[1]));
@@ -544,10 +545,11 @@ function toArgPop( name, types, doSwitch ) {
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				case "dso":
-					var func = type[2].replace(/[^/]*\//g, "");
-					if(!curDoc.endsWith(type[2] + ".htm") && !functions[func])
+					var func = type[2].replace(/[^/]*\/|#.*/g, "");
+					if(!curDoc.endsWith(func + ".htm") && !functions[func])
 						Throw(Error(`link to unexistent file ${type[2]}.htm`))
-					return s[i] + newLink(type[2] + ".htm", func.replace(regConPrefix, ""));
+					return s[i] + newLink(type[2].replace(/(#.*)|$/, "$1.htm"),
+						func.replace(regConPrefix, ""));
 				default: Throw(Error("unknown type " + type[1]));
 			}
 		}
@@ -661,8 +663,8 @@ function addMarkdown(s) {
 		{
 			// exists in docs folder? direct link : open in external app
 			return white + (!url.startsWith("http") &&
-				(app.FileExists(path + "docs/" + url.replace("../", "")) ||
-				app.FileExists(path + "docs/app/" + url.replace("../", ""))) ?
+				(app.FileExists(path + "docs/" + url.replace(/\.\.\/|#.*/g, "")) ||
+				app.FileExists(path + "docs/app/" + url.replace(/\.\.\/|#.*/g, ""))) ?
 				`<a href="${url}" data-ajax="false">` :
 				`<a href="${url}" onclick="return OpenUrl(this.href);">`)
 				+ `${name||url}</a>`;
@@ -682,7 +684,7 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")     // `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
-		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*([a-z]+?))\b/gi, '$1<a href="$2.htm" data-ajax="false">$4</a>') // @DocReference
+		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*([a-z]+?))(#\w+)?\b/gi, '$1<a href="$2.htm$5" data-ajax="false">$4</a>') // @DocReference
 		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
 }
 	// convert int to 3-digit hex
@@ -906,17 +908,8 @@ var 	//globals for one doc
 	},
 		//special types and descriptions
 	typedesc = {
-		"?"  :"",
-		"all":"",
-		"bin":"",
-		"dso":"",
-		"fnc":"",
-		"lst":"",
-
 		"lst_obj":"of objects",
-		/*"mul":"", // multiple separated with ||*/
 
-		"num":"",
 		"num_byt":"Bytes",
 		"num_dat":"Datetime in milliseconds (from JS Date object)",
 		"num_deg":"angle in degrees (0..360)",
@@ -936,7 +929,6 @@ var 	//globals for one doc
 		"num_rad":"angle in radient (0..2*π)",
 		"num_sec":"seconds",
 
-		"str":"",
 		"str_acc":"account Email",
 		"str_b64":"base64 encoded",
 		"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',

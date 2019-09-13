@@ -5,6 +5,7 @@ This is probably the most popular one. It will be called when DroidScript has in
 When OnStart has returned, the apps '**started**' state will be set to <js nobox>true</js>. Therefore **app.@../app/IsStarted()** method will return <js nobox>true</js> as well.
 
 <sample OnStart>
+
 setTimeout(OnLoad);
 
 <b>function OnStart() {
@@ -14,12 +15,15 @@ setTimeout(OnLoad);
 function OnLoad() {
 	alert("called OnLoad\nApp Started: " + app.IsStarted());
 }
+
 </sample OnStart>
 
 ### OnMenu(name)
 This event is called when the user selects an item from the in-app menu.
 See Also: @../app/SetMenu, @../app/ShowMenu
+
 <sample OnMenu>
+
 function OnStart()
 {
 	<b>app.SetMenu( "Start,Stop,Pause" );</b>
@@ -37,12 +41,15 @@ function OnMenu( item )
 {
 	app.ShowPopup( item, "Short" );
 }
+
 </sample OnMenu>
 
 ### OnBack()
 By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling <js nobox>app.</js>@../app/EnableBackKey<js nobox>(false)</js>.
 In this case the OnBack event will be called instead of closing the app. This can be useful to create a confirmation dialog before exiting:
+
 <sample Confirm Exit>
+
 function OnStart()
 {
 	app.EnableBackKey( false );
@@ -60,31 +67,40 @@ function yndExit_OnTouch(reply) {
 <b>function OnBack() {
 	yndExit.Show();
 }</b>
+
 </sample Confirm Exit>
 
 ### OnPause()
 The OnPause event will be called when the user sends the app to the background, ie. when pressing the home button.
+
 <sample Detect Pause>
+
 //Called when application is paused.
 function OnPause()
 {
 	app.ShowPopup( "OnPause" );
 }
+
 </sample Detect Pause>
 
 ### OnResume()
 The OnPause event will be called when the user returns to your app after sending it to the background.
+
 <sample Detect Resume>
+
 //Called when application is resumed.
 function OnResume()
 {
 	app.ShowPopup( "OnResume" );
 }
+
 </sample Detect Resume>
 
 ### OnConfig()
 OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientation change.
+
 <sample Layout Orientation>
+
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -113,11 +129,14 @@ function OnConfig()
 	lay.SetOrientation( orient );
 	txt2.SetText( orient );
 }</b>
+
 </sample Layout Orientation>
 
 ### OnAlarm()
 If you have set up an app [Alarm](../app/SetAlarm) and it is triggered it will call the OnAlarm event.
+
 <sample OnAlarm>
+
 function OnStart()
 {
 	var now = Date.now();
@@ -132,11 +151,14 @@ function OnStart()
 {
 	app.ShowPopup( "Got Alarm: id = " + id );
 }</b>
+
 </sample OnAlarm>
 
 ### OnData()
 When an other app has sent an intent to your app you will get notified by the OnData event. Then you can retrieve the intent object using the app.@../app/GetIntent() method.
+
 <sample Received Intent Data>
+
 //Handle data sent from other apps.
 function OnData( isStartUp )
 {
@@ -157,4 +179,5 @@ function OnData( isStartUp )
 		app.Alert( s, "OnData" );
 	}
 }
+
 </sample Received Intent Data>
