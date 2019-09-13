@@ -59,7 +59,7 @@ function OnStart() {
 }
 </sample App Settings>
 
-## Using Datatbases
+## Using Databases
 Using Databases is the most elaborate variant of the three.
 
 <red>You should only consider using one if you have to perform complex queries on a large amount of datasets.</red>

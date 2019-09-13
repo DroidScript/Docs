@@ -29,11 +29,15 @@
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div><!-- /header -->
 
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
 	<div data-role="content">
 		<p>In your app you can use various event functions which will be automatically called by DroidScript.</p>
 		<h3>OnStart()</h3>
 		<p>This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called <b>after</b> OnStart was called.<br>
-		When OnStart has returned, the apps '<b>started</b>' state will be set to <js nobox>true</js<span class="token boolean">true</span>. Therefore <b>app.<a href="IsStarted.htm" data-ajax="false">IsStarted</a>()</b> method will return <js nobox>true</js><span class="token boolean">true</span> as well.</p>
+		When OnStart has returned, the apps '<b>started</b>' state will be set to <span class="token boolean">true</span>. Therefore <b>app.<a href="../app/IsStarted.htm" data-ajax="false">IsStarted</a>()</b> method will return <span class="token boolean">true</span> as well.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnStart</h3>
@@ -88,7 +92,7 @@
 		</div>
 
 		<h3>OnBack()</h3>
-		<p>By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling <js nobox>app.</jsapp<span class="token punctuation">.</span><a href="../app/EnableBackKey.htm" data-ajax="false">EnableBackKey</a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>.<br>
+		<p>By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling app<span class="token punctuation">.</span><a href="../app/EnableBackKey.htm" data-ajax="false">EnableBackKey</a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>.<br>
 		In this case the OnBack event will be called instead of closing the app. This can be useful to create a confirmation dialog before exiting:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">

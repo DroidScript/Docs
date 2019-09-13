@@ -4,9 +4,9 @@ when using cfg.NoDom; to cause a high performance you cannot use SetInterval but
 comparison:
 
 normal:
-	setInterval&colon; about 242 calls per second
-	app.animate&colon; about 217 calls per second
+	setInterval: about 242 calls per second
+	app.animate: about 217 calls per second
 
 with “NoDom” option:
-	setInterval&colon; error
-	app.Animate&colon; up to 1000 calls per second
+	setInterval: error
+	app.Animate: up to 1000 calls per second

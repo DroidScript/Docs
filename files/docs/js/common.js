@@ -7,6 +7,7 @@ var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook"
 var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
 var isAndroid = ( agent.indexOf("Android") > -1 );
 var isDS = ( agent.indexOf("; wv)") > -1 );
+var isApp = isAndroid && !useWebIDE && !isChromeOS;
 var serverAddress = "";
 
 // set current theme
@@ -189,7 +190,6 @@ function jumpTo(contains)
 	// header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
-		console.log(header)
 		$("html").animate({ scrollTop: header.offset().top - 100 }, 300);
 		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
 			header.click();
@@ -228,13 +228,22 @@ function OpenUrl( url, type, choose )
 	return false;
 }
 
+function CheckApp()
+{
+	if(isApp) return true;
+	ShowPopup("Not running in DroidScript app.");
+	return false;
+}
+
 function OpenSamples()
 {
+	if(!IsApp()) return;
 	app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
 }
 
 function OpenSample(name)
 {
+	if(!IsApp()) return;
 	OpenSamples();
 	app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
 }

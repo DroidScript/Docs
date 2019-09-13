@@ -29,6 +29,10 @@
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div><!-- /header -->
 
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
 	<div data-role="content">
 		<p>In many cases you need to store user specific data like app settings on the users device.<br>
 		DroidScript provides some functions which makes it easier to handle this.<br>
@@ -96,7 +100,7 @@
 			</div>
 		</div>
 
-		<h2>Using Datatbases</h2>
+		<h2>Using Databases</h2>
 		<p>Using Databases is the most elaborate variant of the three.<br>
 		<br>
 		<red>You should only consider using one if you have to perform complex queries on a large amount of datasets.</red><br>

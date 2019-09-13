@@ -36,7 +36,7 @@ function copy( div )
 	else
 		copyToClipboard( div.innerText || div.textContent );
 }
-	
+
 function demo( div ) 
 { 
 	if( isAndroid && !useWebIDE )

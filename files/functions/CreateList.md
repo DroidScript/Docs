@@ -1,6 +1,6 @@
 If you want to display many dataset of the same structure you might consider using the **List** object.
- The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “&colon;” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.
-You can have one icon and some body text using the following formats&colon;
+ The List object supports multi-line list items and can show icons. Multi-line items are created by dividing each list item up using the “:” (colon) character. If you need to use a colon character in your item text then use this character sequence: “^c^”.
+You can have one icon and some body text using the following formats:
 
 “title”
 “title&colon;icon”

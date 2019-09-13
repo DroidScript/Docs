@@ -38,7 +38,7 @@
 		<div class="samp">
 		app.SendSMS(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">msg</a>,
-			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">number</a> )
+			<a href="#pop_str_num" data-transition="pop" data-rel="popup">number</a> )
 		</div>
 
 		<p>See Also: <a href="SendMail.htm" data-ajax="false">SendMail</a>, <a href="SendText.htm" data-ajax="false">SendText</a>, <a href="SendFile.htm" data-ajax="false">SendFile</a></p>
@@ -47,7 +47,7 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">SendSMS</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span> <span class="token number">0123456789</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SendSMS</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span> <span class="token string">"0123456789"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -59,7 +59,7 @@
 	</div>
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>number</i><br><b>number</i></div>
+	<div data-role="popup" id="pop_str_num" class="ui-content"><b>string:</b> <i>number</i></div>
 </div>
 </body>
 

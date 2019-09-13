@@ -188,15 +188,21 @@ function adjustDoc(html, name) {
 		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash|smp)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
+			/(\s|<br>)*<(js|bash|smp|java)( nobox)?>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 			function(m, w1, lang, nobox, _, code, _, w2, _)
 			{
-			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}>`));
-				if(Prism.languages[lang])
-					code = Prism.highlight(
-						code.replace(/<br>/g, "").replace(/&#160;/g, "§s§"),
-						Prism.languages[lang], lang
-					).replace(/§s§/g, "&#160;").replace(/\n/g, "<br>\n");
+			    if(w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
+				if(Prism.languages[lang]) {
+					var tags = [];
+					code = code
+						.replace(/<br>/g, "")
+						.replace(/&#160;/g, "§s§")
+						.replace(/\s*<.*?>/g, (m) => (tags.push(m), "§t§"));
+					code = Prism.highlight( code, Prism.languages[lang], lang )
+						.replace(/\n/g, "<br>\n")
+						.replace(/§t§/g, () => tags.shift())
+						.replace(/§s§/g, "&#160;");
+				}
 
 				if(nobox) return `${w1||''}${code}${w2||''}`;
 				else if(has(code, "<br>")) return `</p>\n${newCode(code)}\t\t<p>`
@@ -211,6 +217,8 @@ function adjustDoc(html, name) {
 		// remove special whitespace from tables
 		.replace(/([\n\t\xa0]+)(<\/?t([rhd]|head|body|able))/g,
 			(m, w, t) => w.replace(/\t/g, "    ").replace(/\xa0/g, ' ') + t)
+		// remove escaped linebreaks
+		.replace(/\\<br>/g, "")
 		// remove trailing <br> tags from table
 		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 		// indent line breaks
@@ -455,10 +463,11 @@ function typeDesc( types )
 					case "lst":
 					case "obj": return s[i] + replaceTypes( type[2], false );
 					case "dso":
-						if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
+						var func = type[2].replace(/[^/]*\//g, "");
+						if(!curDoc.endsWith(type[2] + ".htm") && !functions[func])
 							Throw(Error(`link to unexistent file ${type[2]}.htm`))
 						if(functions[type[2]])
-							return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+							return s[i] + newLink(type[2] + ".htm", func.replace(regConPrefix, ""));
 						else
 							return s[i] + type[2];
 					default: Throw(Error("unknown type " + type[1]));
@@ -541,9 +550,10 @@ function toArgPop( name, types, doSwitch ) {
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				case "dso":
-					if(!curDoc.endsWith(type[2] + ".htm") && !functions[type[2]])
+					var func = type[2].replace(/[^/]*\//g, "");
+					if(!curDoc.endsWith(type[2] + ".htm") && !functions[func])
 						Throw(Error(`link to unexistent file ${type[2]}.htm`))
-					return s[i] + newLink(type[2] + ".htm", type[2].replace(regConPrefix, ""));
+					return s[i] + newLink(type[2] + ".htm", func.replace(regConPrefix, ""));
 				default: Throw(Error("unknown type " + type[1]));
 			}
 		}
@@ -622,7 +632,7 @@ function incpop( type, i )
 	return hex(Globals.spop[type]);
 }
 
-// accept formats: 'name:"desc"' 'name:type' 'name:"type-values"'
+// accept formats: 'name:"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
 function replaceTypes(s, useAppPop)
 {
 	var _s = s.replace(/<(style|a).*?>.*<\/\1>|style=[^>]*/g, '');
@@ -630,11 +640,12 @@ function replaceTypes(s, useAppPop)
 		function(m, name, type, _, desc)
 		{
 			var r, space = '';
-			if( !type && !desc || name.startsWith("Note")) return;
-
+			if( !type && (!desc || desc.startsWith(' ')) || name.startsWith("Note")) return;
+			
 			if(desc) {
 				if(desc.endsWith(' ')) space = ' ';
 				desc = desc.slice(desc.startsWith('"'), space ? -1 : undefined);
+				if(typenames[desc.slice(0, 3)] && !desc[4].match(/[a-z]/i)) type = desc, desc = '';
 			}
 
 			if( type )
@@ -866,6 +877,10 @@ ${getHead(1)}
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div><!-- /header -->
 
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
 	<div data-role="content">
 		%c
 	</div><!-- /content -->
@@ -1086,7 +1101,7 @@ function OnStart() {
 var fs = require("fs");
 var rimraf = require("rimraf");
 var Prism = require('prismjs');
-
+require('prismjs/components/prism-java.min.js');
 
 if(typeof app == "undefined")
 	var app = {

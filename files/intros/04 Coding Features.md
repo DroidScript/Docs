@@ -28,7 +28,7 @@ This will let your app run transparently on the HomeScreen and it will stay on t
 These methods can force DroidScript to add or remove specific permissions from your app.
 See also: @../app/GetPermission, @../app/CheckPermission
 
-## Unique Callbacks&colon; I()
+## Unique Callbacks: I()
 DroidScript checks if a callback function already exists and uses it instead of creating a new instance.
 This can cause issues when referring to other local variables in private scopes.
 Therefore you can wrap your callback functions in an I() clause to force DroidScript to create a new callback instance for that scope.
@@ -54,8 +54,8 @@ function NewButton(name, lay) {
 
 	btn.SetOnTouch( function()
 	{
-	    app.ShowPopup(name);
-    });
+		app.ShowPopup(name);
+	});
 }
 
 function NewButton2(name, lay) {
@@ -64,10 +64,10 @@ function NewButton2(name, lay) {
 	btn.SetMargins( 0, 0.02 );
 	lay.AddChild( btn );
 
-	btn.SetOnTouch( I(function()
+	<b>btn.SetOnTouch( I(function()
 	{
-	    app.ShowPopup(name);
-    }));
+		app.ShowPopup(name);
+	}));</b>
 }
 </sample Using I()>
 
@@ -91,11 +91,11 @@ function NewButton2(name, lay) {
 	btn.SetMargins( 0, 0.02 );
 	lay.AddChild( btn );
 
-	btn.data.name = name;
+	<b>btn.data.name = name;
 
 	btn.SetOnTouch( function()
 	{
-	    app.ShowPopup(this.data.name);
-    });
+		app.ShowPopup(this.data.name);
+	});</b>
 }
 </sample Using this.data>

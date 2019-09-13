@@ -459,7 +459,7 @@
 				"isfunc": true,
 				"name": "SetSplitMode",
 				"pNames": ["mode", "p2", "p3"],
-				"pTypes": ["str-End|Start-End|Size", "str||int", "str||int"],
+				"pTypes": ["str-End|Start-End|Size", "str||num_int", "str||num_int"],
 				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
@@ -6430,7 +6430,7 @@
 				"isfunc": true,
 				"name": "SetSplitMode",
 				"pNames": ["mode", "p2", "p3"],
-				"pTypes": ["str-End|Start-End|Size", "str||int", "str||int"],
+				"pTypes": ["str-End|Start-End|Size", "str||num_int", "str||num_int"],
 				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
@@ -6713,7 +6713,7 @@
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["args", "info"],
-					"pTypes": ["obj-{ parameter&colon; argument }", "obj-{ remoteAddress:str }"],
+					"pTypes": ["obj-{ parameter: argument }", "obj-{ remoteAddress:str }"],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when servlet received a message"
@@ -7351,6 +7351,7 @@
 				"name": "List",
 				"pNames": ["path"],
 				"pTypes": ["str_pth"],
+				"retval": "str_com",
 				"shortDesc": "Get contained file list"
 			},
 			"Open": {
@@ -8485,7 +8486,7 @@
 		"isfunc": true,
 		"name": "ListFolder",
 		"pNames": ["path", "filter", "limit", "options"],
-		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items"],
+		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only"],
 		"retval": "lst-[ paths:str_pth ]",
 		"shortDesc": "Get a list of files ans folders contained in a specific folder"
 	},
@@ -9061,7 +9062,7 @@
 			"isfunc": true,
 			"name": "callback",
 			"pNames": ["resultCode", "data"],
-			"pTypes": ["num_int--1|0|1", "obj-{ action:string&comma; type:string&comma; data:string&comma; flags:integer&comma; extras:object }"],
+			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:string, data:string, flags:integer, extras:object }"],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "SendIntent"
@@ -9087,7 +9088,7 @@
 		"isfunc": true,
 		"name": "SendSMS",
 		"pNames": ["msg", "number"],
-		"pTypes": ["str", "str_num||num"],
+		"pTypes": ["str", "str_num"],
 		"shortDesc": "Open the SMS app and autofill fields"
 	},
 	"SendText": {
@@ -9182,7 +9183,7 @@
 		"isfunc": true,
 		"name": "SetDensity",
 		"pNames": ["dpi"],
-		"pTypes": ["int"],
+		"pTypes": ["num_int"],
 		"shortDesc": "Changes the dpi value for any control creatred afterwards"
 	},
 	"SetInBackground": {

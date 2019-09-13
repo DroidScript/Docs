@@ -2,17 +2,17 @@ In your app you can use various event functions which will be automatically call
 
 ### OnStart()
 This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called **after** OnStart was called.
-When OnStart has returned, the apps '**started**' state will be set to <js nobox>true</js>. Therefore **app.@IsStarted()** method will return <js nobox>true</js> as well.
+When OnStart has returned, the apps '**started**' state will be set to <js nobox>true</js>. Therefore **app.@../app/IsStarted()** method will return <js nobox>true</js> as well.
 
 <sample OnStart>
 setTimeout(OnLoad);
 
 <b>function OnStart() {
-    alert("called OnStart\nApp Started: " + app.IsStarted());
+	alert("called OnStart\nApp Started: " + app.IsStarted());
 }</b>
 
 function OnLoad() {
-    alert("called OnLoad\nApp Started: " + app.IsStarted());
+	alert("called OnLoad\nApp Started: " + app.IsStarted());
 }
 </sample OnStart>
 
@@ -24,13 +24,13 @@ function OnStart()
 {
 	<b>app.SetMenu( "Start,Stop,Pause" );</b>
 
-    lay = app.CreateLayout( "linear", "" );
+	lay = app.CreateLayout( "linear", "" );
 
-    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
-    btn.SetOnTouch( app.ShowMenu );
-    lay.AddChild( btn );
+	btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
+	btn.SetOnTouch( app.ShowMenu );
+	lay.AddChild( btn );
 
-    app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 function OnMenu( item )
@@ -54,7 +54,7 @@ function OnStart()
 }
 
 function yndExit_OnTouch(reply) {
-    if(reply == "Yes") app.Exit();
+	if(reply == "Yes") app.Exit();
 }
 
 <b>function OnBack() {
@@ -87,31 +87,31 @@ OnConfig is called when a device configuration changes, especially the screen or
 <sample Layout Orientation>
 function OnStart()
 {
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-    txt1 = app.CreateText( "" );
-    txt1.SetTextSize( 64 );
-    lay.AddChild( txt1 );
+	txt1 = app.CreateText( "" );
+	txt1.SetTextSize( 64 );
+	lay.AddChild( txt1 );
 
-    txt2 = app.CreateText( "" );
-    txt2.SetTextSize( 64 );
-    lay.AddChild( txt2 );
-    OnConfig();
+	txt2 = app.CreateText( "" );
+	txt2.SetTextSize( 64 );
+	lay.AddChild( txt2 );
+	OnConfig();
 
-    app.AddLayout( lay );
+	app.AddLayout( lay );
 }
 
 <b>//Called when screen rotates
 function OnConfig()
 {
-    var orient = app.GetOrientation();
-    txt1.SetText(orient);
+	var orient = app.GetOrientation();
+	txt1.SetText(orient);
 
-    if(orient == "Portrait") orient = "Vertical";
-    else orient = "Horizontal";
+	if(orient == "Portrait") orient = "Vertical";
+	else orient = "Horizontal";
 
-    lay.SetOrientation( orient );
-    txt2.SetText( orient );
+	lay.SetOrientation( orient );
+	txt2.SetText( orient );
 }</b>
 </sample Layout Orientation>
 
@@ -120,17 +120,17 @@ If you have set up an app [Alarm](../app/SetAlarm) and it is triggered it will c
 <sample OnAlarm>
 function OnStart()
 {
-    var now = Date.now();
-    app.SetAlarm( "Set", 1234, OnAlarm, Date.now() + 3000 );
-    // app.ToBack();
-    // app.Exit();
+	var now = Date.now();
+	app.SetAlarm( "Set", 1234, OnAlarm, Date.now() + 3000 );
+	// app.ToBack();
+	// app.Exit();
 }
 
 //Called when alarm is triggered.
 //(Even if your app is closed)
 <b>function OnAlarm( id )
 {
-    app.ShowPopup( "Got Alarm: id = " + id );
+	app.ShowPopup( "Got Alarm: id = " + id );
 }</b>
 </sample OnAlarm>
 
@@ -140,21 +140,21 @@ When an other app has sent an intent to your app you will get notified by the On
 //Handle data sent from other apps.
 function OnData( isStartUp )
 {
-    //Display intent data.
-    var intent = app.GetIntent();
-    if( intent )
-    {
-        //Extract main data.
-        var s = "action: " + intent.action + "\n";
-        s += "type: " + intent.type + "\n";
-        s += "data: " + intent.data + "\n\n";
+	//Display intent data.
+	var intent = app.GetIntent();
+	if( intent )
+	{
+		//Extract main data.
+		var s = "action: " + intent.action + "\n";
+		s += "type: " + intent.type + "\n";
+		s += "data: " + intent.data + "\n\n";
 
-        //Extract extras.
-        s += "extras:\n";
-        for( var key in intent.extras )
-            s += key+": "+intent.extras[key] + "\n";
+		//Extract extras.
+		s += "extras:\n";
+		for( var key in intent.extras )
+			s += key+": "+intent.extras[key] + "\n";
 
-        app.Alert( s, "OnData" );
-    }
+		app.Alert( s, "OnData" );
+	}
 }
 </sample Received Intent Data>
