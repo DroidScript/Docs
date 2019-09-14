@@ -107,18 +107,19 @@ By default you can achieve a maximum framerate of 60 fps, however the framerate 
 
 The following sample is a simple two-player Pong implementation using basic shapes only.
 It also demonstrates how you can handle multiple touches, and how a game can be made fps independent, so that collision detection on low fps is no problem any more.
+An [advanced version](https://dspk.justplayer.de/browse/view/69) is available on the dspk store.
 
 <sample Pong>
 
+// User variables
 var x1 = 0.5, x2 = 0.5, p1 = 0, p2 = 0;
 
 // Called when app started.
 function OnStart()
 {
     app.SetOrientation( "Portrait" );
-    app.SetDebug( "console" );
 
-    lay = app.CreateLayout( 'Linear' );
+    lay = app.CreateLayout( "Linear" );
 
     img = app.CreateImage( null, 1, 1 );
     img.SetOnTouch( img_OnTouch );
@@ -131,41 +132,42 @@ function OnStart()
     app.Animate( OnAnimate, 50 );
 }
 
-// Move user bars
-function img_OnTouch( ev )
-{
-    for(var i = 0; i < ev.count; i++)
-    {
-        if( ev.y[i] < 0.5 ) x1 = ev.x[i];
-        else x2 = ev.x[i];
-    }
-}
+// Move user bar
+function img_OnTouch( ev ) { x2 = ev.X; }
+
+function crop( v, a, b ) { return v < a ? a : v > b ? b : v; }
 
 // Calculate ball movement for a given deltatime
-var x, y, v = 0.8, dx = 0, dy = 0;
-function Calculate(dt)
+var x, y, v = 0.5, dx = 0, dy = 0;
+function Calculate( dt )
 {
     x += v * dx * dt / 1000;
     y += v * dy * dt / 1000;
+    v += dt / 5e4;
 
-    v += dt / 1e5;
+    if( dy < 0 && y < 0.5)
+        x1 += crop( 10 * (x - x1), -2, 2 ) * dt / 1000;
 
-    if(x < 0.02) dx = Math.abs(dx);
-    if(x > 0.98) dx = -Math.abs(dx);
-    if(y > 0.04 && y < 0.05 && x > x1 - 0.1 && x < x1 + 0.1) dy = Math.abs(dy);
-    if(y < 0.96 && y > 0.95 && x > x2 - 0.1 && x < x2 + 0.1) dy = -Math.abs(dy);
-    if(y < 0) Score(p2++);
-    if(y > 1) Score(p1++);
+    if( x < 0.02 ) dx = Math.abs(dx);
+    if( x > 0.98 ) dx = -Math.abs(dx);
+    if( y > 0.04 && y < 0.05 && x > x1 - 0.1 && x < x1 + 0.1 ) {
+        dy =  Math.abs( dy );
+        dx += 5 * ( x1 - x );
+    }
+    if( y < 0.96 && y > 0.95 && x > x2 - 0.1 && x < x2 + 0.1 ) {
+        dy = -Math.abs( dy );
+        dx += 5 * ( x - x2 );
+    }
+    if( y < 0 ) Score( p2++ );
+    if( y > 1 ) Score( p1++ );
 }
 
 // Core loop
 function OnAnimate( t, dt, nodraw )
 {
     // Calculate positions in 4 milliseconds steps
-    do {
-        Calculate(4);
-        dt -= 4;
-    } while(dt > 0);
+    do { Calculate(4); dt -= 4; }
+    while( dt > 0 );
 
     // Render state
     img.Clear();
@@ -182,15 +184,16 @@ function Score()
 {
     x = 0.5; dx = 0;
     y = 0.5; dy = 0;
+    v = 0.5;
     var PI = Math.PI;
 
     setTimeout( function()
     {
         var a = Math.random() * PI;
         if( a > PI/2 ) a += PI/2;
-        dx = Math.cos(a + PI/4);
-        dy = Math.sin(a + PI/4);
-    }, 1000);
+        dx = Math.cos( a + PI/4 );
+        dy = Math.sin( a + PI/4 );
+    }, 1000 );
 }
 
 </sample Pong>

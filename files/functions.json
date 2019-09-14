@@ -2917,7 +2917,7 @@
 				"isfunc": true,
 				"name": "SetColumnWidths",
 				"pNames": ["icon", "title", "body", "mode"],
-				"pTypes": ["num_frc", "str", "str", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
 				"shortDesc": "Change coloumn widths"
 			},
 			"SetDivider": {

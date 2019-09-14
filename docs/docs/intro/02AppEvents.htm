@@ -34,6 +34,19 @@
 	</div>
 
 	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnStart()')">OnStart()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnMenu(name)')">OnMenu(name)</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnBack()')">OnBack()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnPause()')">OnPause()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnResume()')">OnResume()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnConfig()')">OnConfig()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnAlarm()')">OnAlarm()</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnData()')">OnData()</a></span><br>
+		</div>
+
 		<p>In your app you can use various event functions which will be automatically called by DroidScript.</p>
 		<h3>OnStart()</h3>
 		<p>This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called <b>after</b> OnStart was called.<br>

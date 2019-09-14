@@ -24,7 +24,7 @@ The _Game_ configuration will let your app immediately run in [GameView](../app/
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
 
-## _AddPermissions, _RemovePermissions
+## Permissions
 These methods can force DroidScript to add or remove specific permissions from your app.
 See also: @../app/GetPermission, @../app/CheckPermission
 

@@ -186,7 +186,21 @@ function adjustDoc(html, name)
 			} else return order.indexOf(a.slice(0, 3)) < order.indexOf(b.slice(0, 3)) ? -1 : 1;
 		}).join("\n\t");
 	
+	var toc = [];
+	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function(m, i, t) {
+		if( t != "%t" ) toc.push(
+			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
+			`<a href="" onclick="jumpTo('${t}')">${t}</a><br>`);
+	});
+	if(toc.length) {
+		toc.unshift("<b>Content:</b><br>");
+		toc.unshift('\n\t\t<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">');
+		toc.push("</div>\n\n\t\t");
+	};
+	
 	return html
+		// table of contents
+		.replace(/("content">\n\t\t)/, `$1${toc.join("\n\t\t")}`)
 		// title occurances
 		.replace(/%t/g, name)
 		// popup object list
@@ -673,7 +687,7 @@ function addMarkdown(s) {
 		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function(match, white, name, script)
 		{
 			script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
-			return white + `<a href="#" onclick="${script}">${name}</a>`;
+			return white + `<a href="" onclick="${script}">${name}</a>`;
 		})
 		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
 			white + `<h${h.length}>${title}</h${h.length}>`)

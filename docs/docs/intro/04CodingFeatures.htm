@@ -34,6 +34,18 @@
 	</div>
 
 	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('The cfg object')">The cfg object</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Portrait, cfg.Landscape')">cfg.Portrait, cfg.Landscape</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.NoDom')">cfg.NoDom</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a></span><br>
+		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a></span><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Permissions')">Permissions</a></span><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a></span><br>
+		</div>
+
 		<p>DroidScript provides some methods and flags in the sourcecode which are not available in regular JavaScript code but are interpreted internally by DroidScript.<br>
 		You don't necessarily need to use these features but they are still pretty useful in some cases.</p>
 		<h2>The cfg object</h2>
@@ -54,7 +66,7 @@
 		<h3>cfg.Transparent</h3>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
 		<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></p>
-		<h2><i>AddPermissions, </i>RemovePermissions</h2>
+		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
 		<h2>Unique Callbacks: I()</h2>

@@ -180,7 +180,7 @@ $(window).unload(function()
 function jumpTo(contains)
 {
 	// control popup
-	var popup = $("a.ui-link:contains(" + contains + ")");
+	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if(popup.length) {
 		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
 			.delay(350).queue(function(){ popup.click(); });
@@ -190,7 +190,7 @@ function jumpTo(contains)
 	// header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
-		$("html").animate({ scrollTop: header.offset().top - 100 }, 300);
+		$("html").animate({ scrollTop: header.offset().top }, 300);
 		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
 			header.click();
 		return false;
