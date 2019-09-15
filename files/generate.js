@@ -190,7 +190,7 @@ function adjustDoc(html, name)
 	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function(m, i, t) {
 		if( t != "%t" ) toc.push(
 			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
-			`<a href="" onclick="jumpTo('${t}')">${t}</a><br>`);
+			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t}</a><br>`);
 	});
 	if(toc.length) {
 		toc.unshift("<b>Content:</b><br>");

@@ -174,7 +174,6 @@ $(window).unload(function()
 {
 	var scrollPosition = $(document).scrollTop();
 	sessionStorage.scrollPosition = scrollPosition;
-	console.log("set: " + sessionStorage.scrollPosition)
 });
 
 function jumpTo(contains)
@@ -190,9 +189,15 @@ function jumpTo(contains)
 	// header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
-		$("html").animate({ scrollTop: header.offset().top }, 300);
+		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
+		
 		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
 			header.click();
+		else
+			header.delay(100)
+				.animate({opacity: 0.1}, 400)
+				.animate({opacity: 1.0}, 400);
+		
 		return false;
 	}
 }

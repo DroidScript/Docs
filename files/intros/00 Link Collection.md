@@ -18,7 +18,7 @@
 - [DroidScript](http://androidscript.org/droidscript/tutorials): Provides 'Getting Started with DroidScript' tutorials
 - [GameView](https://dsgameview.wixsite.com/gameview): Provides tutorials for the DroidScript GameView
 
-### Inofficial Websites
+### Unofficial Websites
 - [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php): A community-driven DroidScript wiki
 - [Justin's SPK Store](https://dspk.justplayer.de): Sharing platform for DroidScript Projects (SPKs) and Plugins
 - [Symbroson's DroidScript Blog](https://symbroson.blogspot.com)

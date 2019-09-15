@@ -38,8 +38,11 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Introduction')">Introduction</a></span><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Overview:')">Overview:</a></span><br>
 		    <span style="display:inline-block">• <a href="" onclick="jumpTo('GUI Games')">GUI Games</a></span><br>
 		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Games with Images')">Games with Images</a></span><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Games with GLView')">Games with GLView</a></span><br>
+		    <span style="display:inline-block">• <a href="" onclick="jumpTo('The GameView')">The GameView</a></span><br>
 		</div>
 
 		<h2>Introduction</h2>
@@ -47,6 +50,40 @@
 		The reality looks a bit different but that's actually not a bad thing.<br>
 		<br>
 		Not that you'll be disappointed at the end: No DroidScript doesn't natively support 3D graphics yet. However it might not be far away. Let's be patient.</p>
+		<h2>Overview:</h2>
+		<p>For those who dislike reading I'll summarize some facts about the four ways you can create games in DroidScript:<br>
+		<br>
+		<b>GUI Games:</b><br>
+		    <span style="display:inline-block"><green>+</green> Well suited for beginners</span><br>
+		    <span style="display:inline-block"><green>+</green> Easy animations using <a href="https://github.com/tweenjs/tween.js" onclick="return OpenUrl(this.href);">Tween.js</a></span><br>
+		    <span style="display:inline-block"><green>+</green> Intuitive style customization</span><br>
+		    <span style="display:inline-block"><green>+</green> Builtin touch, change etc. events for each element</span><br>
+		    <span style="display:inline-block"><red>-</red> Not suited for games with many animations and high framerate</span><br>
+		<br>
+		<b>Image View:</b><br>
+		    <span style="display:inline-block"><green>+</green> Supports drawing of basic shapes, text (+ font loading) and image drawing</span><br>
+		    <span style="display:inline-block"><green>+</green> Good for simple games with more complex animations</span><br>
+		    <span style="display:inline-block"><red>-</red> Framerate drops quickly with increasing amount of drawing commands</span><br>
+		        <span style="display:inline-block">- basic shapes/text only: 20 draw commands → 30 fps</span><br>
+		        <span style="display:inline-block">- 6 0.3x0.2 images: ~20 fps (the smaller the drawn image the faster the drawing)</span><br>
+		<br>
+		<b>GLView:</b><br>
+		    <span style="display:inline-block"><green>+</green> Very fast rendering</span><br>
+		    <span style="display:inline-block"><green>+</green> Supports drawing of subareas of a larger image (sprite sheets)</span><br>
+		    <span style="display:inline-block"><red>-</red> Only supports drawing images</span><br>
+		<br>
+		<b>Game View</b><br>
+		    <span style="display:inline-block"><green>+</green> Enormously fast rendering (See the <a href="" onclick="OpenSample('Game BunnyStorm')">Game BunnyStorm sample</a>)</span><br>
+		    <span style="display:inline-block"><green>+</green> Many builtin game features:</span><br>
+		        <span style="display:inline-block"><green>+</green> Physics using Box2D</span><br>
+		        <span style="display:inline-block"><green>+</green> Sounds using JGAudio</span><br>
+		        <span style="display:inline-block"><green>+</green> SpriteSheets and SpriteSheet animations</span><br>
+		        <span style="display:inline-block"><green>+</green> Easy animations using the <a href="https://github.com/tweenjs/tween.js" onclick="return OpenUrl(this.href);">Tween.js</a></span><br>
+		        <span style="display:inline-block"><green>+</green> Bitmap Fonts as game objects using angelcode xml format (visit <a href="http://www.angelcode.com/products/bmfont" onclick="return OpenUrl(this.href);">BMFont Generator</a>)</span><br>
+		    <span style="display:inline-block"><green>+</green> GL rendering and more with PIXI.js</span><br>
+		        <span style="display:inline-block"><green>+</green> basic shapes and polygons as game objects</span><br>
+		    <span style="display:inline-block"><green>+</green> Helper functions and main app access through the gfx object</span><br>
+		    <span style="display:inline-block"><red>-</red> <b>Only works on Android 6 and newer</b></span></p>
 		<h2>GUI Games</h2>
 		<p>The by far easiest way to create games without complex maths and drawing commands is using GUI controls for your game.<br>
 		There will be few or even no animations at all. Instead the user can interact with the game like in a normal app.<br>
@@ -250,6 +287,17 @@
 			</div>
 		</div>
 
+		<h2>Games with GLView</h2>
+		<p>The third option you have is the so called GLView which is based on the <a href="https://github.com/phonegap/phonegap-plugin-fast-canvas" onclick="return OpenUrl(this.href);">FastCanvas Plugin</a><br>
+		<br>
+		The GLView has 2 unique properties:<br>
+		    <span style="display:inline-block">- Your application runs a full screen canvas</span><br>
+		    <span style="display:inline-block">- Use of the 2D canvas API is limited to transforms and drawing images (see: <a href="https://github.com/phonegap/phonegap-plugin-fast-canvas/blob/master/README.md#fastcanvas-api" onclick="return OpenUrl(this.href);">FastCanvas API</a>)</span><br>
+		<br>
+		That does not mean the GLView is bad. The GLView can render an enormous amount of sprites on a acceptable framerate. (Ie. on my device 500 rendered sprites produced a framerate of about 45 fps).<br>
+		This makes it perfect for games using images and sprite sheets only.<br>
+		Additionally the GameView will also run on older devices unlike the last graphic container you'll experience now.</p>
+		<h2>The GameView</h2>
 	</div><!-- /content -->
 
 </div><!-- /page -->

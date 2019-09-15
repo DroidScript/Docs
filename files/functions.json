@@ -2013,7 +2013,7 @@
 				"shortDesc": "Captures the canvas to a png image"
 			},
 			"GetContext.ctx.clearRect": {
-				"desc": "<deprecated ctx is automatically cleared after render()>",
+				"desc": "<deprecated does nothing. ctx is automatically cleared after render()>",
 				"isfunc": true,
 				"name": "ctx.clearRect",
 				"pNames": ["x", "y", "width", "height"],
@@ -2290,11 +2290,11 @@
 				"shortDesc": "Draws an Image"
 			},
 			"DrawImageMtx": {
-				"desc": "Draws an image with a 2d [transformation matrix](http://www.it.hiof.no/\\~borres/j3d/math/twod/p-twod.html#ma2d35).",
+				"desc": "Draws an image with a 2d [transformation matrix](https://docs.rainmeter.net/tips/transformation-matrix-guide).",
 				"isfunc": true,
 				"name": "DrawImageMtx",
 				"pNames": ["image", "matrix"],
-				"pTypes": ["dso-CreateImage", "lst-[[],[],[]]"],
+				"pTypes": ["dso-CreateImage", "lst-[a, b, c, d, tx, ty]"],
 				"shortDesc": "Draws an image with a 2d transformation matrix"
 			},
 			"DrawLine": {

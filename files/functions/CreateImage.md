@@ -29,7 +29,7 @@ img2 = app.CreateImage( null, .8, .5, "alias" );
 img2.DrawImage( img, 0, 0, 1, 1, 0 );
 </js>
 
-There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](http://www.it.hiof.no/\~borres/j3d/math/twod/p-twod.html#ma2d35). Check out the **Draw\*** methods in the method list below to get more details about all drawing functions.
+There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an [transformation matrix](https://docs.rainmeter.net/tips/transformation-matrix-guide). Check out the **Draw\*** methods in the method list below to get more details about all drawing functions.
 <sample Draw Shapes>
 
 ### Drawing on Images _fast_
