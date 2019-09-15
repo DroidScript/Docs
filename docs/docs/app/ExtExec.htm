@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Enable Termux')">Enable Termux</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Enable Termux')">Enable Termux</a><br>
+			</span><br>
 		</div>
 
 		<p>ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.</p>
@@ -49,16 +51,16 @@
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
-		<p><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div><br>
+		<p><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div><br>
 		<br>
 		The Termux app runs as a service and there's almost no limit to what you can achieve with a full blown Linux machine running on your Android device!<br>
 		<br>
 		How about installing git, or nodejs or using ssh or gzip.<br>
 		Try typing 'busybox' at the terminal prompt to see what built-in commands are already available to you.</p>
 		<h3>Enable Termux</h3>
-		<p>To <b>enable termux</b> support you have to install <a href="https://play.google.com/store/apps/details?id=com.termux" onclick="return OpenUrl(this.href);">Termux</a> and the <a href="https://play.google.com/store/apps/details?id=com.termux.tasker" onclick="return OpenUrl(this.href);">Tasker</a> Plugin from PlayStore first.<br>
+		<p>To <strong>enable termux</strong> support you have to install <a href="https://play.google.com/store/apps/details?id=com.termux" onclick="return OpenUrl(this.href);">Termux</a> and the <a href="https://play.google.com/store/apps/details?id=com.termux.tasker" onclick="return OpenUrl(this.href);">Tasker</a> Plugin from PlayStore first.<br>
 		<br>
-		Then give termux <b>sdcard permissions</b> in the Android settings under apps/termux.<br>
+		Then give termux <strong>sdcard permissions</strong> in the Android settings under apps/termux.<br>
 		<br>
 		After that create a symbolic link from the tasker plugin folder to your home directory:</p>
 
@@ -74,7 +76,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> <span class="token string">"echo Hello $1 and $2"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> err <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token string">"Termux Error:"</span> <span class="token operator">+</span> err <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
@@ -104,7 +106,7 @@
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> lock<span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Script is running"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> err <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ExtExec</span><span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<br>
 				<br>

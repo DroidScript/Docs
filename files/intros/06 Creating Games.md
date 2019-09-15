@@ -13,32 +13,32 @@ For those who dislike reading I'll summarize some facts about the four ways you 
 	<green>+</green> Easy animations using [Tween.js](https://github.com/tweenjs/tween.js)
 	<green>+</green> Intuitive style customization
 	<green>+</green> Builtin touch, change etc. events for each element
-	<red>-</red> Not suited for games with many animations and high framerate
+	<red>**-**</red> Not suited for games with many animations and high framerate
 
 **Image View:**
 	<green>+</green> Supports drawing of basic shapes, text (+ font loading) and image drawing
 	<green>+</green> Good for simple games with more complex animations
-	<red>-</red> Framerate drops quickly with increasing amount of drawing commands
+	<red>**-**</red> Framerate drops quickly with increasing amount of drawing commands
 		- basic shapes/text only: 20 draw commands → 30 fps
 		- 6 0.3x0.2 images: ~20 fps (the smaller the drawn image the faster the drawing)
 
 **GLView:**
 	<green>+</green> Very fast rendering
 	<green>+</green> Supports drawing of subareas of a larger image (sprite sheets)
-	<red>-</red> Only supports drawing images
+	<red>**-**</red> Only supports drawing images
 
 **Game View**
 	<green>+</green> Enormously fast rendering (See the [Game BunnyStorm sample]{OpenSample('Game BunnyStorm')})
 	<green>+</green> Many builtin game features:
-		<green>+</green> Physics using Box2D
-		<green>+</green> Sounds using JGAudio
-		<green>+</green> SpriteSheets and SpriteSheet animations
-		<green>+</green> Easy animations using the [Tween.js](https://github.com/tweenjs/tween.js)
-		<green>+</green> Bitmap Fonts as game objects using angelcode xml format (visit [BMFont Generator](http://www.angelcode.com/products/bmfont))
-	<green>+</green> GL rendering and more with PIXI.js
-		<green>+</green> basic shapes and polygons as game objects
+		- Physics using Box2D
+		- Sounds using JGAudio
+		- SpriteSheets and SpriteSheet animations
+		- Easy animations using [Tween.js](https://github.com/tweenjs/tween.js)
+		- Bitmap Fonts as game objects using angelcode xml format (visit [BMFont Generator](http://www.angelcode.com/products/bmfont))
+	<green>+</green> GL rendering and more with [PIXI.js](https://github.com/pixijs/pixi.js/tree/1.5.3)
+		- basic shapes and polygons as game objects
 	<green>+</green> Helper functions and main app access through the gfx object
-	<red>-</red> **Only works on Android 6 and newer**
+	<red>**-**</red> **Only works on Android 6 and newer**
 
 
 ## GUI Games

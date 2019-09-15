@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>Creates a SystemProcedure of a command shell (ie. <docstr>“sh”</docstr>, <docstr>“su”</docstr> if <red>root</red> or <docstr>“busybox”</docstr> if <blue>installed</blue>) which can be reused throughout the program.</p>
@@ -141,7 +143,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>SysProc</b> object:</p>
+		<p>The following methods are available on the <strong>SysProc</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Err</a>(
@@ -204,7 +206,7 @@
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>sys.Err</b><br>Read data from stderr</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>sys.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>sys.In</b><br>Read data from stdin</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sys.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sys.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>sys.Out</b><br>Writes a command to stdout. A trailing linebreak will execute it.</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>sys.ReadFileAsByte</b><br>Returns the first byte of a file.</div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>sys.SetOnError</b><br>Define a callback function which is called when something was written to stderr</div>

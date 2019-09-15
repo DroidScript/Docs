@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.</p>
@@ -49,9 +51,9 @@
 			→ <b>app object:</b> WebSocket
 		</div>
 
-		<p>A web socket will automatically open after creating it. Once after finished loading, the <b>OnOpen</b> callback is called.<br>
+		<p>A web socket will automatically open after creating it. Once after finished loading, the <strong>OnOpen</strong> callback is called.<br>
 		<br>
-		In order to receive messages from the server you have to specify a <b>OnMessage</b> callback.<br>
+		In order to receive messages from the server you have to specify a <strong>OnMessage</strong> callback.<br>
 		<br>
 		See Also: <a href="CreateWebServer.htm" data-ajax="false">CreateWebServer</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -74,9 +76,9 @@
 				    <span style="display:inline-block">serv<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> serv_OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">serv<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> sock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebSocket</span><span class="token punctuation">(</span> <span class="token string">"sock1"</span><span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> sock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebSocket</span><span class="token punctuation">(</span> <span class="token string">"sock1"</span><span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnOpen</span><span class="token punctuation">(</span> OnSockOpen <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> Sock_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> Sock_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnSockOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -101,7 +103,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>WebSocket</b> object:</p>
+		<p>The following methods are available on the <strong>WebSocket</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()

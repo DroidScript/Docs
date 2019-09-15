@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.</p>
@@ -45,15 +47,15 @@
 		nxt = app.CreateNxt() → <b>app object:</b> Nxt
 		</div>
 
-		<p><div class='deprHint'><b>Note: This function is deprecated. Please install and visit the NXT-Docs from the Plugins page</b></div></p>
+		<p><div class='deprHint'><strong>Note: This function is deprecated. Please install and visit the NXT-Docs from the Plugins page</strong></div></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">nxt<span class="token punctuation">.</span><span class="token function">SetOnConnected</span><span class="token punctuation">(</span> OnConnected <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">nxt<span class="token punctuation">.</span><span class="token function">ShowDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">nxt<span class="token punctuation">.</span><span class="token function">ShowDevices</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnConnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -76,14 +78,14 @@
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">nxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNxt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%"><span class="token keyword">var</span> deviceName <span class="token operator">=</span> <span class="token string">"myNXTbrick"</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> deviceName <span class="token operator">=</span> <span class="token string">"myNXTbrick"</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">var</span> paired <span class="token operator">=</span> nxt<span class="token punctuation">.</span><span class="token function">IsPaired</span><span class="token punctuation">(</span> deviceName <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">if</span> <span class="token punctuation">(</span>paired<span class="token punctuation">)</span></span><br>
 				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
 				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Connecting to "</span> <span class="token operator">+</span> deviceName <span class="token operator">+</span> <span class="token string">"..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				            <span style="display:inline-block">nxt<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> nxt_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				            <span style="display:inline-block">nxt<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> deviceName <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span></b></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">nxt_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">success<span class="token punctuation">,</span> nxt</span> <span class="token punctuation">)</span><br>
@@ -159,7 +161,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Nxt</b> object:</p>
+		<p>The following methods are available on the <strong>Nxt</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Beep</a>(

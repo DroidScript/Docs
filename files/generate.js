@@ -215,8 +215,16 @@ function adjustDoc(html, name)
 		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
 			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
 		// text indentation
-		.replace(/(\n\t+(    )+)([^]*?)<br>/g, (m, w, _, t) => 
-			`${w}<span style="display:inline-block">${t}</span><br>`)
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) => 
+			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length-1}em;">` +
+			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) => 
+			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length-1}em;">` +
+			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) => 
+			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length-1}em;">` +
+			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
+		
 		// replace <js> and <bash> tags with sample
 		.replace(
 			/(\s|<br>)*<(js|bash|smp|java)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
@@ -240,6 +248,8 @@ function adjustDoc(html, name)
 				else if(has(code, "<br>") || has(options, "noinl")) return `</p>\n${newCode(code)}\t\t<p>`
 				else return `${w1||''}<span class="samp samp-inline">${code}</span>${w2||''}`;
 			})
+		.replace(/(\n\t+(    )+)(<b .*?>)?([^]*?)(<\/b>)?<br>/g, (m, w, _, b1, t, b2) => 
+			`${w}${b1||''}<span style="display:inline-block">${t}</span>${b2||''}<br>`)
 		// remove leading whitespace in <p> tag
 		.replace(/<p>(<br>|\s+)+/g, "<p>")
 		// remove trailing whitespace in <p> tag
@@ -251,7 +261,7 @@ function adjustDoc(html, name)
 		// remove trailing <br> tags from table
 		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 		// indent line breaks
-		.replace(/\n\s+<br>\n(\s+)/g, (m, w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
+		.replace(/\n\s*<br>\n(\s+)/g, (m, w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
 }
@@ -535,10 +545,10 @@ function toArgPop( name, types, doSwitch ) {
 
 	// start of type desc string. (info: [optional], [:] if followed by value)
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
-	var last = "</b>";
+	var last;
 	var s = types
 		.map((type, i) => "<b>" + typenames[type[0]] +
-			(typedesc[type[1]] ?
+			(last = "</b>", typedesc[type[1]] ?
 				(last = "</i>", ":</b> <i>" + typedesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last)
 		);
@@ -691,6 +701,7 @@ function addMarkdown(s) {
 		})
 		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
 			white + `<h${h.length}>${title}</h${h.length}>`)
+		.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
 		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")       // *italic*
@@ -777,14 +788,14 @@ var		// subfunctions
 		// popup object
 	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 		// subfunctions list
-	subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <b>%t</b> object:</p>\n\n%f`,
+	subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <strong>%t</strong> object:</p>\n\n%f`,
 
 		// deprecated note
-	deprecatedHint = "<div class='deprHint'><b>Note: This function is deprecated.%s</b></div>";
+	deprecatedHint = "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>";
 		// premium note
-	premiumHint = "<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div>";
+	premiumHint = "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>";
 		// xfeature note
-	xfeatureHint = "<div class='xfeatHint'><b>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</b></div>";
+	xfeatureHint = "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>";
 		// example snippets
 	sampBase = `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">

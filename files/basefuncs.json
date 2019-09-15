@@ -200,7 +200,7 @@
 		"desc": "Define a radial color gradient for the background of control.",
 		"isfunc": true,
 		"pNames": ["x", "y", "radius", "color1", "color2", "color3", "options"],
-		"pTypes": ["num_frc", "num_frc", "num_frc", "str_col", "str_col", "?", "?"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "str_col", "str_col", "?", "str_com"],
 		"shortDesc": "Define a radial background color gradient"
 	},
 	"#1239127541": { "name": "SetBackground",

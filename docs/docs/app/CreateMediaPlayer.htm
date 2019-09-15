@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The MediaPlayer object can be used to play sound files from the phone or tablet.</p>
@@ -47,18 +49,18 @@
 
 		<p>Use the SetFile method of the MediaPlayer object to set the sound file to play. Supported sound file types include .ogg and .mp3.<br>
 		<br>
-		When the sound file is ready for playback, the <b>OnReady</b> callback function will be called. Then you can start playing using the <b>Start</b> method.<br>
-		If the sundtrack has finished playing, the <b>OnComplete</b> callback fill be called. All together you code could look like that:</p>
+		When the sound file is ready for playback, the <strong>OnReady</strong> callback function will be called. Then you can start playing using the <strong>Start</strong> method.<br>
+		If the sundtrack has finished playing, the <strong>OnComplete</strong> callback fill be called. All together you code could look like that:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Playing Audio</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">player <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">player <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateMediaPlayer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">player<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span>Play<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">player<span class="token punctuation">.</span><span class="token function">SetOnComplete</span><span class="token punctuation">(</span> player_OnComplete <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">player<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Poing.ogg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -80,7 +82,7 @@
 
 		<p>The SeekTo method can be used to adjust the playback position by passing in the time in seconds. Passing in 0 will set the playback position to the beginning of the sound file: <span class="samp samp-inline">player<span class="token punctuation">.</span><span class="token function">SeekTo</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></p>
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>MediaPlayer</b> object:</p>
+		<p>The following methods are available on the <strong>MediaPlayer</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
@@ -161,7 +163,7 @@
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ply.Close</b><br>Close the media player and thus make it unuseable for further use.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ply.GetDuration</b><br>Returns the total duration of the currently loaded song in seconds.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ply.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <b>screen</b> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ply.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <strong>px</strong> options turns the relative values into pixels.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ply.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ply.IsLooping</b><br>Checks if the media player will replay the song from the begining if it has finished.</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ply.IsPlaying</b><br>Checks if the media player is currently playing.</div>

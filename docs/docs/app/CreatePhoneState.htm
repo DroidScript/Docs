@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The PhoneState component is able to detect phone state changes.</p>
@@ -49,20 +51,20 @@
 
 		<p>The callback data depends on the type:<br>
 		<br>
-		<span class="samp samp-inline"><docstr>“CellLocation”</docstr> : <b>object:</b> {
+		<span class="samp samp-inline"><docstr>“CellLocation”</docstr> : <strong>object:</strong> {
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">cellId</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">areaCode</a> }</span><br>
-		<span class="samp samp-inline"><docstr>“DataConnection”</docstr> : <b>object:</b> {
+		<span class="samp samp-inline"><docstr>“DataConnection”</docstr> : <strong>object:</strong> {
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">state</a>,
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">networkType</a> }</span><br>
-		<span class="samp samp-inline"><docstr>“DataActivity”</docstr> : <b>unknown</b></span><br>
-		<span class="samp samp-inline"><docstr>“CallState”</docstr> : <b>object:</b> {
+		<span class="samp samp-inline"><docstr>“DataActivity”</docstr> : <strong>unknown</strong></span><br>
+		<span class="samp samp-inline"><docstr>“CallState”</docstr> : <strong>object:</strong> {
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">state</a>,
 			<a href="#pop_str_num" data-transition="pop" data-rel="popup">number</a> }</span><br>
-		<span class="samp samp-inline"><docstr>“ServiceState”</docstr> : <b>string:</b> <docstr>“OutOfService”</docstr></span><br>
-		<span class="samp samp-inline"><docstr>“SignalStrength”</docstr> : <b>number:</b> <i>float</i></span><br>
-		<span class="samp samp-inline"><docstr>“CallForwarding”</docstr> : <b>boolean</b></span><br>
-		<span class="samp samp-inline"><docstr>“MessageWaiting”</docstr> : <b>boolean</b></span></p>
+		<span class="samp samp-inline"><docstr>“ServiceState”</docstr> : <strong>string:</strong> <docstr>“OutOfService”</docstr></span><br>
+		<span class="samp samp-inline"><docstr>“SignalStrength”</docstr> : <strong>number:</strong> <i>float</i></span><br>
+		<span class="samp samp-inline"><docstr>“CallForwarding”</docstr> : <strong>boolean</strong></span><br>
+		<span class="samp samp-inline"><docstr>“MessageWaiting”</docstr> : <strong>boolean</strong></span></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Demo</h3>
 			<div id="examp1" style="font-size:70%">
@@ -99,7 +101,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>PhoneState</b> object:</p>
+		<p>The following methods are available on the <strong>PhoneState</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“PhoneState”</docstr>

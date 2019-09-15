@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.<br>
@@ -45,7 +47,7 @@
 		<br>
 		Any file in your project with the filename <docstr>“Service.js”</docstr> will run as a hidden background service.<br>
 		<br>
-		A service can be created and started using the <b>CreateService</b> method of the app object in your main application file:.</p>
+		A service can be created and started using the <strong>CreateService</strong> method of the app object in your main application file:.</p>
 
 		<div class="samp">
 		srv = app.CreateService(
@@ -60,7 +62,7 @@
 		<br>
 		Your service will start running when it's created and a foreground app must exist to manage the service and this foreground app must be run at least one time by the user.<br>
 		<br>
-		You can set the service to start automatically when the device is booted if required; with the <b>SetAutoBoot</b> method of the <b>app</b> object.<br>
+		You can set the service to start automatically when the device is booted if required; with the <strong>SetAutoBoot</strong> method of the <strong>app</strong> object.<br>
 		<span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">SetAutoBoot</span><span class="token punctuation">(</span> <span class="token string">"Service"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 		<br>
 		Stop a service using the Stop method.<br>
@@ -170,7 +172,7 @@
 
 		<p>Inspect the debug console and see the log messages from the service in gray.</p>
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Service</b> object:</p>
+		<p>The following methods are available on the <strong>Service</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Service”</docstr>

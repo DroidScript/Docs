@@ -33,7 +33,7 @@
 	</div>
 
 	<div data-role="content">
-		<p>GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the <b>callback</b> function, or in case of only <docstr>“ExtSDCard”</docstr> the path URI of the user-selected folder.</p>
+		<p>GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the <strong>callback</strong> function, or in case of only <docstr>“ExtSDCard”</docstr> the path URI of the user-selected folder.</p>
 
 		<div class="samp">
 		app.GetPermission(
@@ -47,7 +47,7 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnPermission</span><span class="token punctuation">(</span> <span class="token parameter">pathURI</span> <span class="token punctuation">)</span><br>

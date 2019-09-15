@@ -36,10 +36,12 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
-		<p>The <b>SpeechRec</b> object can be used to listen for and recognize speech.</p>
+		<p>The <strong>SpeechRec</strong> object can be used to listen for and recognize speech.</p>
 
 		<div class="samp">
 		spr = app.CreateSpeechRec(
@@ -47,14 +49,14 @@
 			→ <b>app object:</b> SpeechRec
 		</div>
 
-		<p>Use the <b>Recognize</b> method of the SpeechRec object to tell it to start listening:<br>
+		<p>Use the <strong>Recognize</strong> method of the SpeechRec object to tell it to start listening:<br>
 		<span class="samp samp-inline">speech<span class="token punctuation">.</span><span class="token function">Recognize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 		<br>
-		When the SpeechRec object has started listening, the <b>OnReady</b> callback function will be called. Use the <b>SetOnReady</b> method to set the name of your OnReady callback function.<br>
+		When the SpeechRec object has started listening, the <strong>OnReady</strong> callback function will be called. Use the <strong>SetOnReady</strong> method to set the name of your OnReady callback function.<br>
 		<br>
-		If the SpeechRec object recognizes speech, the <b>OnResult</b> callback function will be called. The results are passed to the OnResult callback function as an array, with the most probable result at the front. Use the <b>SetOnResult</b> method to set the name of your OnResult callback function.<br>
+		If the SpeechRec object recognizes speech, the <strong>OnResult</strong> callback function will be called. The results are passed to the OnResult callback function as an array, with the most probable result at the front. Use the <strong>SetOnResult</strong> method to set the name of your OnResult callback function.<br>
 		<br>
-		If the SpeechRec object does not recognize anything, the <b>OnError</b> callback function will be called. Use the <b>SetOnError</b> method to set the name of your OnError callback function.</p>
+		If the SpeechRec object does not recognize anything, the <strong>OnError</strong> callback function will be called. Use the <strong>SetOnError</strong> method to set the name of your OnError callback function.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Example</h3>
 			<div id="examp1" style="font-size:70%">
@@ -103,7 +105,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>SpeechRec</b> object:</p>
+		<p>The following methods are available on the <strong>SpeechRec</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Cancel</a>()
@@ -162,7 +164,7 @@
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>spr.GetRMS</b><br>Returns the RMS value (Root Mean Square) from the audio recorder.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>spr.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>spr.IsListening</b><br>Check whether SpeechRec is currently listening.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>spr.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>spr.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>spr.Recognize</b><br>Start recognizing speech.</div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>spr.SetOnError</b><br>Define a callback function which is called when an error occured.</div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>spr.SetOnReady</b><br>Define a callback function which is called when the SpeechRec object is ready for use.</div>

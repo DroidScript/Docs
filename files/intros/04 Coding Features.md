@@ -5,7 +5,7 @@ You don't necessarily need to use these features but they are still pretty usefu
 The cfg object can be used to apply app options to your app before it is launched.
 They should be placed at the very top of your main source script.
 
-### cfg.Portrait, cfg.Landscape
+### cfg.Portrait/Landscape
 Defines the initial screen orientation your app will launch in
 
 ### cfg.NoDom

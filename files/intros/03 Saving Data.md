@@ -33,8 +33,8 @@ To clear a saved value use the **app.@../app/ClearValue** method.
 </table>
 
 If you have many properties to save you can use an object structure instead of saving each value on their own.
-Load settings: <js>var cfg = JSON.parse( app.LoadText( "settings", "{}" ));</js>
-Save settings: <js>app.SaveText( "settings", JSON.stringify(cfg) );</js>
+Load settings: <js>var conf = JSON.parse( app.LoadText( "settings", "{}" ));</js>
+Save settings: <js>app.SaveText( "settings", JSON.stringify( conf ));</js>
 
 <sample App Settings>
 

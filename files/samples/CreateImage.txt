@@ -104,7 +104,7 @@ function OnStart()
 function OnAnimate( time, dtime )
 {
     time = Date.now();
-    
+
     // calculate pointer position from current time
     var secs = time / 1000;
     var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));

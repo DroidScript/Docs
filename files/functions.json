@@ -1940,7 +1940,7 @@
 			},
 			"ClearFocus": "#1362225380",
 			"CreateImage": {
-				"desc": "create dso_glv can be drawn on GLV",
+				"desc": "Create a sprite object which can be drawn on the GLView",
 				"isfunc": true,
 				"name": "CreateImage",
 				"pNames": ["file", "callback"],

@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The sensor object can be used to access numerous sensors of your device.</p>
@@ -48,7 +50,7 @@
 			→ <b>app object:</b> Sensor
 		</div>
 
-		<p>You can use the <b>SetOnChange</b> function of the Sensor to set the name of a function you want to be called when a the changes occur.<br>
+		<p>You can use the <strong>SetOnChange</strong> function of the Sensor to set the name of a function you want to be called when a the changes occur.<br>
 		<br>
 		Change the rate that a sensor checks for changes by adding one the options <docstr>“Fastest”</docstr>, <docstr>“Fast”</docstr>, <docstr>“Medium”</docstr> or <docstr>“Slow”</docstr>. <docstr>“Slow”</docstr> is the default.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -57,8 +59,8 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%"><span class="token keyword">var</span> names <span class="token operator">=</span> sns<span class="token punctuation">.</span><span class="token function">GetNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>names<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/,/g</span><span class="token punctuation">,</span> <span class="token string">",\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Sensor Names"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> names <span class="token operator">=</span> sns<span class="token punctuation">.</span><span class="token function">GetNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>names<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/,/g</span><span class="token punctuation">,</span> <span class="token string">",\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"Sensor Names"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -80,9 +82,9 @@
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Accelerometer"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<br>
 				<span class="token punctuation">}</span><br>
 				<br>
@@ -110,9 +112,9 @@
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip3" style="font-size:100%">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip3" style="font-size:100%"><span style="display:inline-block">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Orientation"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<br>
 				<span class="token punctuation">}</span><br>
 				<br>
@@ -143,9 +145,9 @@
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip4" style="font-size:100%">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip4" style="font-size:100%"><span style="display:inline-block">sns <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSensor</span><span class="token punctuation">(</span> <span class="token string">"Light"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> sns_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">sns<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">sns_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">lux</span> <span class="token punctuation">)</span><br>
@@ -162,7 +164,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Sensor</b> object:</p>
+		<p>The following methods are available on the <strong>Sensor</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetAzimuth</a>() → <b>number</b>
@@ -234,7 +236,7 @@
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>sns.GetRoll</b><br>Returns the third/z/roll value of a sensor.</div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>sns.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>sns.GetValues</b><br>Returns all values of a sensor.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>sns.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>sns.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>sns.SetMaxRate</b><br>Define a minimum timeout between two OnChage calls.</div>
 	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>sns.SetMinChange</b><br>Define a minimum threshold value which triggers a OnChange call.</div>
 	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>sns.SetOnChange</b><br>Define a callback function which is called when a sensor value has changed.</div>

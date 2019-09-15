@@ -36,8 +36,10 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Some descriptions')">Some descriptions</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Some descriptions')">Some descriptions</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>Returns a Synth object which ca produces a variety of sounds, sound effects and music.</p>
@@ -49,8 +51,8 @@
 		</div>
 
 		<h3>Some descriptions</h3>
-		<p><b>note length:</b> default is 2.56 seconds.<br>
-		<b>midi note:</b> like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:<br>
+		<p><strong>note length:</strong> default is 2.56 seconds.<br>
+		<strong>midi note:</strong> like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:<br>
 		    <span style="display:inline-block">
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">C</a>,
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup">C#</a>,
@@ -64,13 +66,15 @@
 			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">A</a>,
 			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">A#</a>,
 			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">B</a>.</span><br>
-		<b>duration:</b> powers of two indicating whole, half, quarter etc. up to thirty second notes.<br>
-		<b>frequency:</b> A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.<br>
-		    <span style="display:inline-block">Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz</span><br>
+		<strong>duration:</strong> powers of two indicating whole, half, quarter etc. up to thirty second notes.<br>
+		<strong>frequency:</strong> A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.<br>
+		<span style="display:inline-block;padding-left:1em;">
+			Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz<br>
+		</span><br>
 		<br>
-		<b>Phaser:</b> a sound filter which creates a series of peaks and troughs in the frequency spectrum<br>
-		<b>VoltageControlledAmplifier:</b> (Variable-Gain Amplifier) electronic amplifier that varies its gain<br>
-		<b>Voltage-Controlled Filter:</b> electronic amplifier that varies the frequency</p>
+		<strong>Phaser:</strong> a sound filter which creates a series of peaks and troughs in the frequency spectrum<br>
+		<strong>VoltageControlledAmplifier:</strong> (Variable-Gain Amplifier) electronic amplifier that varies its gain<br>
+		<strong>Voltage-Controlled Filter:</strong> electronic amplifier that varies the frequency</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Tetris Theme</h3>
 			<div id="examp1" style="font-size:70%">
@@ -134,7 +138,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Synth</b> object:</p>
+		<p>The following methods are available on the <strong>Synth</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Synth”</docstr>

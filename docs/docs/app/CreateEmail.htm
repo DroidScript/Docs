@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The Email component allows us to send and receive emails without user interaction.</p>
@@ -53,9 +55,9 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">email <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateEmail</span><span class="token punctuation">(</span> <span class="token string">"mymail@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"MyPass"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">email <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateEmail</span><span class="token punctuation">(</span> <span class="token string">"mymail@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"MyPass"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">email<span class="token punctuation">.</span><span class="token function">SetSMTP</span><span class="token punctuation">(</span> <span class="token string">"smtp.gmail.com"</span><span class="token punctuation">,</span> <span class="token number">465</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">email<span class="token punctuation">.</span><span class="token function">SetOnStatus</span><span class="token punctuation">(</span> email_OnStatus <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">email<span class="token punctuation">.</span><span class="token function">SetOnStatus</span><span class="token punctuation">(</span> email_OnStatus <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Sending..."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">email<span class="token punctuation">.</span><span class="token function">Send</span><span class="token punctuation">(</span> <span class="token string">"My Subjewct"</span><span class="token punctuation">,</span> <span class="token string">"My Content"</span><span class="token punctuation">,</span> <span class="token string">"mymail@yahoo.com"</span><span class="token punctuation">,</span> <span class="token string">"myothermail@gmail.com"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
@@ -76,7 +78,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Email</b> object:</p>
+		<p>The following methods are available on the <strong>Email</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Email”</docstr>

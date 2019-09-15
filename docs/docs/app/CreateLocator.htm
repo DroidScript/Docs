@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The Locator component can be used to find your whereabouts on the planet using either your device's GPS or information from your network.</p>
@@ -50,17 +52,17 @@
 
 		<p>The provider specifies where the locator should retreive its information from . <docstr>“Network”</docstr> means get the location from the cell network and wifi, <docstr>“GPS”</docstr> tells the locator to use the device's GPS<br>
 		<br>
-		To Start the locator use the <b>Start</b> method. You can also stop it with <b>Stop</b>.<br>
-		To get regulat updates about your current positino use the <b>SetOnChange</b> function.</p>
+		To Start the locator use the <strong>Start</strong> method. You can also stop it with <strong>Stop</strong>.<br>
+		To get regulat updates about your current positino use the <strong>SetOnChange</strong> function.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Get Location Updates</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">loc <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLocator</span><span class="token punctuation">(</span><span class="token string">"GPS,Network"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">loc <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLocator</span><span class="token punctuation">(</span><span class="token string">"GPS,Network"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">loc<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span>loc_OnChange<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">loc<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Locating"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Locating"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">loc_OnChange</span><span class="token punctuation">(</span><span class="token parameter">pos</span><span class="token punctuation">)</span><br>
@@ -78,7 +80,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Locator</b> object:</p>
+		<p>The following methods are available on the <strong>Locator</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetBearingTo</a>(

@@ -46,16 +46,20 @@
 		comparison:<br>
 		<br>
 		normal:<br>
-		    <span style="display:inline-block">setInterval: about 242 calls per second</span><br>
-		    <span style="display:inline-block">app.animate: about 217 calls per second</span><br>
+		<span style="display:inline-block;padding-left:1em;">
+			setInterval: about 242 calls per second<br>
+			app.animate: about 217 calls per second<br>
+		</span><br>
 		<br>
 		with <docstr>“NoDom”</docstr> option:<br>
-		    <span style="display:inline-block">setInterval: error</span><br>
-		    <span style="display:inline-block">app.Animate: up to 1000 calls per second</p>
+		<span style="display:inline-block;padding-left:1em;">
+			setInterval: error<br>
+
+		</span><br>app.Animate: up to 1000 calls per second</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Digital Clock</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span> <span class="token string">"Portrait"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetDebugEnabled</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
@@ -68,7 +72,7 @@
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>
@@ -100,7 +104,7 @@
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span>OnAnimate<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span>OnAnimate<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>

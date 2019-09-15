@@ -37,13 +37,17 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		    <span style="display:inline-block">• <a href="" onclick="jumpTo('The cfg object')">The cfg object</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Portrait, cfg.Landscape')">cfg.Portrait, cfg.Landscape</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.NoDom')">cfg.NoDom</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a></span><br>
-		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Permissions')">Permissions</a></span><br>
-		    <span style="display:inline-block">• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a></span><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('The cfg object')">The cfg object</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('cfg.Portrait/Landscape')">cfg.Portrait/Landscape</a><br>
+				- <a href="" onclick="jumpTo('cfg.NoDom')">cfg.NoDom</a><br>
+				- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a><br>
+				- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
+			• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a><br>
+		</span><br>
 		</div>
 
 		<p>DroidScript provides some methods and flags in the sourcecode which are not available in regular JavaScript code but are interpreted internally by DroidScript.<br>
@@ -51,21 +55,21 @@
 		<h2>The cfg object</h2>
 		<p>The cfg object can be used to apply app options to your app before it is launched.<br>
 		They should be placed at the very top of your main source script.</p>
-		<h3>cfg.Portrait, cfg.Landscape</h3>
+		<h3>cfg.Portrait/Landscape</h3>
 		<p>Defines the initial screen orientation your app will launch in</p>
 		<h3>cfg.NoDom</h3>
 		<p><red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.</red><br>
 		<!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.<br>
 		<br>
 		The NoDom config will make use of <a href="https://v8.dev" onclick="return OpenUrl(this.href);">googles V8 engine</a> instead which will cause these DOM objects not being available any more.<br>
-		For example setInterval and setTimeout will not be available any more, but you can use the <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> method instead</b>.<br>
+		For example setInterval and setTimeout will not be available any more, but you can use the <strong>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> method instead</strong>.<br>
 		<br>
 		Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.--></p>
 		<h3>cfg.Game</h3>
 		<p>The <i>Game</i> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
 		<h3>cfg.Transparent</h3>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
-		<div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></p>
+		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
 		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
@@ -108,10 +112,10 @@
 				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
 				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
 				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -121,7 +125,7 @@
 			</div>
 		</div>
 
-		<p>Alternatively you can make use of the controls <b>data</b> property and the <b>this</b> keyword in callbacks.<br>
+		<p>Alternatively you can make use of the controls <strong>data</strong> property and the <strong>this</strong> keyword in callbacks.<br>
 		This way you can assign variariables to the object they belong to and you still make use of the callback optimization by DroidScript:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -143,12 +147,12 @@
 				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span></span><br>
 				    <br>
 				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
 				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
 				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

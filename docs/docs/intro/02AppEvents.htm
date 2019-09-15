@@ -37,20 +37,22 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnStart()')">OnStart()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnMenu(name)')">OnMenu(name)</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnBack()')">OnBack()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnPause()')">OnPause()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnResume()')">OnResume()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnConfig()')">OnConfig()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnAlarm()')">OnAlarm()</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('OnData()')">OnData()</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('OnStart()')">OnStart()</a><br>
+				- <a href="" onclick="jumpTo('OnMenu(name)')">OnMenu(name)</a><br>
+				- <a href="" onclick="jumpTo('OnBack()')">OnBack()</a><br>
+				- <a href="" onclick="jumpTo('OnPause()')">OnPause()</a><br>
+				- <a href="" onclick="jumpTo('OnResume()')">OnResume()</a><br>
+				- <a href="" onclick="jumpTo('OnConfig()')">OnConfig()</a><br>
+				- <a href="" onclick="jumpTo('OnAlarm()')">OnAlarm()</a><br>
+				- <a href="" onclick="jumpTo('OnData()')">OnData()</a><br>
+			</span><br>
 		</div>
 
 		<p>In your app you can use various event functions which will be automatically called by DroidScript.</p>
 		<h3>OnStart()</h3>
-		<p>This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called <b>after</b> OnStart was called.<br>
-		When OnStart has returned, the apps '<b>started</b>' state will be set to <span class="token boolean">true</span>. Therefore <b>app.<a href="../app/IsStarted.htm" data-ajax="false">IsStarted</a>()</b> method will return <span class="token boolean">true</span> as well.</p>
+		<p>This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called <strong>after</strong> OnStart was called.<br>
+		When OnStart has returned, the apps '<strong>started</strong>' state will be set to <span class="token boolean">true</span>. Therefore <strong>app.<a href="../app/IsStarted.htm" data-ajax="false">IsStarted</a>()</strong> method will return <span class="token boolean">true</span> as well.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnStart</h3>
@@ -81,7 +83,7 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>

@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>NetClients can be used to communicate with servers on the web.</p>
@@ -48,8 +50,10 @@
 		</div>
 
 		<p>You can choose between two different protocols:<br>
-		    <span style="display:inline-block">The connection based <i><b>T</b>ransmission<b>C</b>ontrol<b>P</b>rotocol</i> which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.</span><br>
-		    <span style="display:inline-block">The connectionless <i><b>U</b>ser<b>D</b>atagram<b>P</b>rotocol</i> which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.</span><br>
+		<span style="display:inline-block;padding-left:1em;">
+			The connection based <i><strong>T<b>ransmission</strong>C<strong>ontrol</strong>P<strong>rotocol</i> which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.<br>
+			The connectionless <i></strong>U<strong>ser</strong>D<strong>atagram</strong>P</b>rotocol</i> which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.<br>
+		</span><br>
 		<br>
 		Note: A few routers block fast UDP messages by default</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -68,9 +72,9 @@
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">net_OnConnect</span><span class="token punctuation">(</span> <span class="token parameter">connected</span> <span class="token punctuation">)</span><br>
@@ -113,10 +117,10 @@
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">net <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNetClient</span><span class="token punctuation">(</span> <span class="token string">"TCP,Raw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> net_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">SetOnReceive</span><span class="token punctuation">(</span> OnReceive <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">AutoReceive</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">net<span class="token punctuation">.</span><span class="token function">AutoReceive</span><span class="token punctuation">(</span> <span class="token string">"www.randomfunfacts.com"</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">var</span> sent <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span><br>
@@ -200,7 +204,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>NetClient</b> object:</p>
+		<p>The following methods are available on the <strong>NetClient</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AutoReceive</a>(
@@ -348,7 +352,7 @@
 	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>net.SetOnDownload</b><br>Define a callback function which is called when a TCP file download has finished.</div>
 	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>net.SetOnReceive</b><br>Define a callback function which is called when a TCP NetClient received some data when AutoReceive was set.</div>
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>net.SetTimeout</b><br>Define an interval in which the client should check for new messages.</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>net.WakeOnLan</b><br>Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>net.WakeOnLan</b><br>Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 </div>
 </body>
 

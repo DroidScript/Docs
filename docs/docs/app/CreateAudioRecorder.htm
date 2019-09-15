@@ -36,7 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>The AudioRecorder object can be used to listen for sound and record it to a file.</p>
@@ -45,22 +47,22 @@
 		rec = app.CreateAudioRecorder() → <b>app object:</b> AudioRecorder
 		</div>
 
-		<p>After creation you have to define the recording file with the <b>SetFile</b> Method:<br>
+		<p>After creation you have to define the recording file with the <strong>SetFile</strong> Method:<br>
 		<span class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 		<br>
-		After that you can <b>Start</b> the recording: <span class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+		After that you can <strong>Start</strong> the recording: <span class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 		<br>
 		The recorded audio will then be written to the specified file.<br>
 		<br>
-		Finally you can also <b>Stop</b> the recording: <span class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></p>
+		Finally you can also <strong>Stop</strong> the recording: <span class="samp samp-inline">rec<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Example</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">rec <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateAudioRecorder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">rec <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateAudioRecorder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/demofile.wav"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">rec<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Please speak"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span> StopRecording<span class="token punctuation">,</span> <span class="token number">5000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
@@ -85,7 +87,7 @@
 
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>AudioRecorder</b> object:</p>
+		<p>The following methods are available on the <strong>AudioRecorder</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetData</a>() → <b>list:</b> [

@@ -36,9 +36,11 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Drawing on Images')">Drawing on Images</a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Drawing on Images fast')">Drawing on Images <i>fast</i></a></span><br>
-		        <span style="display:inline-block">- <a href="" onclick="jumpTo('Methods')">Methods</a></span><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Drawing on Images')">Drawing on Images</a><br>
+				- <a href="" onclick="jumpTo('Drawing on Images fast')">Drawing on Images <i>fast</i></a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
 		</div>
 
 		<p>Image controls can be used to display images such like png, jpg or gif.<br>
@@ -55,7 +57,7 @@
 			→ <b>app object:</b> Image
 		</div>
 
-		<p>Without the <b>width</b> and <b>height</b> dimensions the image will be shown without any scaling.</p>
+		<p>Without the <strong>width</strong> and <strong>height</strong> dimensions the image will be shown without any scaling.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Original Size</h3>
@@ -64,9 +66,9 @@
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip1" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
@@ -93,9 +95,9 @@
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip3" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip3" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
@@ -122,9 +124,9 @@
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip2" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
@@ -142,7 +144,7 @@
 			</div>
 		</div>
 
-		<p>If you want images to depress like buttons if touched you can use the <docstr>“Button”</docstr> <b>option</b>.</p>
+		<p>If you want images to depress like buttons if touched you can use the <docstr>“Button”</docstr> <strong>option</strong>.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Button</h3>
@@ -173,21 +175,21 @@
 		<h3>Drawing on Images</h3>
 		<p>Images are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass <i>null</i> as file parameter.<br>
 		<br>
-		This way you can also specify a fixed pixel size to the image you can use the <docstr>“fix”</docstr> <b>option</b> and pass values for the <b>pxw</b> and <b>pxh</b> parameters.</p>
+		This way you can also specify a fixed pixel size to the image you can use the <docstr>“fix”</docstr> <strong>option</strong> and pass values for the <strong>pxw</strong> and <strong>pxh</strong> parameters.</p>
 
 		<div class="samp">
 		img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"fix"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 		img<span class="token punctuation">.</span><span class="token function">DrawLine</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 		</div>
 
-		<p>If you dislike the anti-alias effect you can apply the <docstr>“alias”</docstr> <b>option</b> on a higher resolution image and draw a low-resolution image on it:</p>
+		<p>If you dislike the anti-alias effect you can apply the <docstr>“alias”</docstr> <strong>option</strong> on a higher resolution image and draw a low-resolution image on it:</p>
 
 		<div class="samp">
 		img2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token string">"alias"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 		img2<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> img<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 		</div>
 
-		<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="https://docs.rainmeter.net/tips/transformation-matrix-guide" onclick="return OpenUrl(this.href);">transformation matrix</a>. Check out the <b>Draw*</b> methods in the method list below to get more details about all drawing functions.</p>
+		<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="https://docs.rainmeter.net/tips/transformation-matrix-guide" onclick="return OpenUrl(this.href);">transformation matrix</a>. Check out the <strong>Draw*</strong> methods in the method list below to get more details about all drawing functions.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Draw Shapes</h3>
@@ -196,13 +198,13 @@
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><b id="snip4" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip4" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetColor</span><span class="token punctuation">(</span> <span class="token string">"#8888ff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"#ff0000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.75</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b></span><br>
+				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.75</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				    <br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
@@ -215,10 +217,10 @@
 		</div>
 
 		<h3>Drawing on Images <i>fast</i></h3>
-		<p>If you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the <b>SetAutoUpdate</b> method. To force the rendering now, you have to call <b>Update</b>.<br>
+		<p>If you have many draw operations to perform at runtime (ie. for games) you might want to disable the automatic canvas update after each Draw* call using the <strong>SetAutoUpdate</strong> method. To force the rendering now, you have to call <strong>Update</strong>.<br>
 		<br>
 		Another way to increase the animation speed is using the <i>NoDom</i> configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.<br>
-		For animations you can then use the <b>Animate</b> function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.</p>
+		For animations you can then use the <strong>Animate</strong> function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Advanced Clock Animating</h3>
@@ -254,7 +256,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">time <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"></span><br>
+				    <br>
 				    <span style="display:inline-block"><span class="token comment">// calculate pointer position from current time</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">var</span> secs <span class="token operator">=</span> time <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">var</span> angle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
@@ -293,7 +295,7 @@
 		</div>
 
 		<h3>Methods</h3>
-		<p>The following methods are available on the <b>Image</b> object:</p>
+		<p>The following methods are available on the <strong>Image</strong> object:</p>
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">AdjustColor</a>(
@@ -533,7 +535,7 @@
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color1</a>,
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2</a>,
 			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
@@ -715,6 +717,7 @@
 	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>number:</b> <i>percent:</i> for jpg files</div>
 	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
 	<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“fix”</docstr>, <docstr>“alias”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</docstr>, <docstr>“ScaleCenter”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('loads the image asynchronously')">async</a>”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“Resize”</docstr>, <docstr>“TouchThrough”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</docstr>, <docstr>“wallpaper”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“ADD”</docstr> or <docstr>“CLEAR”</docstr> or <docstr>“DARKEN”</docstr> or <docstr>“DST”</docstr> or <docstr>“DST_ATOP”</docstr> or <docstr>“DST_IN”</docstr> or <docstr>“DST_OUT”</docstr> or <docstr>“DST_OVER”</docstr> or <docstr>“LIGHTEN”</docstr> or <docstr>“MULTIPLY”</docstr> or <docstr>“OVERLAY”</docstr> or <docstr>“SCREEN”</docstr> or <docstr>“SRC”</docstr> or <docstr>“SRC_ATOP”</docstr> or <docstr>“SRC_IN”</docstr> or <docstr>“SRC_OUT”</docstr> or <docstr>“SRC_OVER”</docstr> or <docstr>“XOR”</docstr></div>
@@ -732,7 +735,7 @@
 	<div data-role="popup" id="pop_str_013" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
 	<div data-role="popup" id="pop_str_014" class="ui-content"><b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
 	<div data-role="popup" id="pop_str_015" class="ui-content"><b>string:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i><br><b>app object:</i> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i><br><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
 	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
@@ -778,24 +781,24 @@
 	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>img.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
 	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>img.GetAbsHeight</b><br>Get the absolute height of the control in pixels.</div>
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>img.GetAbsWidth</b><br>Get the absolute width of the control in pixels.</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>img.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>img.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <strong>px</strong> option.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <strong>px</strong> option.</div>
 	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>img.GetName</b><br>Returns the name set via SetName.</div>
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>img.GetParent</b><br>Returns the parent control object where the object was added to - commonly a layout.</div>
 	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>img.GetPixelColor</b><br>Returns the [r,g,b] values from a pixel on the image.</div>
 	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>img.GetPixelData</b><br>Returns the raw, png or jpg image data encoded as base64.</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>img.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <b>screen</b> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>img.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <strong>px</strong> options turns the relative values into pixels.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <strong>px</strong> option.</div>
 	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>img.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>img.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><b>Show</b>: visible<br><b>Hide</b>: invisible but still consuming space<br><b>Gone</b>: invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>img.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>img.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>img.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <strong>px</strong> option.</div>
 	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>img.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
 	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>img.Hide</b><br>Hide the control but keep the layout space free.</div>
 	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>img.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
 	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>img.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
 	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>img.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>img.MeasureText</b><br>Measure width and height of a given text with the current image settings.</div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>img.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><b>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</b></div></div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>img.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>img.Move</b><br>Moves the content of the image to the specified position.</div>
 	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>img.Reset</b><br>Resets all transformations.</div>
 	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>img.Rotate</b><br>Rotates the content.</div>
@@ -807,7 +810,7 @@
 	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>img.SetBackColor</b><br>Changes the background color of the control.</div>
 	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>img.SetBackGradient</b><br>Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.</div>
 	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>img.SetBackGradientRadial</b><br>Define a radial color gradient for the background of control.</div>
-	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>img.SetBackground</b><br>Changes the background to an image which can be repeated using the <b>repeat</b> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>img.SetBackground</b><br>Changes the background to an image which can be repeated using the <strong>repeat</strong> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
 	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>img.SetColor</b><br>Fills the image with a specific color.</div>
 	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>img.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
 	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>img.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
@@ -819,7 +822,7 @@
 	<div data-role="popup" id="pop_dsc_038" class="ui-content"><b>img.SetName</b><br>Change the name of the image.</div>
 	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>img.SetOnLoad</b><br>Define a callback function which is called when the image has loaded in <docstr>“async”</docstr> mode.</div>
 	<div data-role="popup" id="pop_dsc_03a" class="ui-content"><b>img.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
-	<div data-role="popup" id="pop_dsc_03b" class="ui-content"><b>img.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <b>event</b> object is passed to the callback function to obtain information about the touch <b>type</b>, the touch <b>position(s)</b>, the <b>amount</b> of touches and the <b>control</b> that was touched.</div>
+	<div data-role="popup" id="pop_dsc_03b" class="ui-content"><b>img.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <strong>position(s)</strong>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
 	<div data-role="popup" id="pop_dsc_03c" class="ui-content"><b>img.SetOnTouchDown</b><br>Define a callback function which is called when the user started toching the control.</div>
 	<div data-role="popup" id="pop_dsc_03d" class="ui-content"><b>img.SetOnTouchMove</b><br>Define a callback function which is called when the user drags his finger over the screen.</div>
 	<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>img.SetOnTouchUp</b><br>Define a callback function which is called when the users finger leaves the screen.</div>
@@ -830,14 +833,14 @@
 	<div data-role="popup" id="pop_dsc_043" class="ui-content"><b>img.SetPixelMode</b><br>En-/Disable pixel mode for the image so that all drawing methods use either control relative or pixel values.</div>
 	<div data-role="popup" id="pop_dsc_044" class="ui-content"><b>img.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
 	<div data-role="popup" id="pop_dsc_045" class="ui-content"><b>img.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
-	<div data-role="popup" id="pop_dsc_046" class="ui-content"><b>img.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
+	<div data-role="popup" id="pop_dsc_046" class="ui-content"><b>img.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <strong>px</strong> option was given.</div>
 	<div data-role="popup" id="pop_dsc_047" class="ui-content"><b>img.SetTextSize</b><br>Change the size of drawn text.</div>
 	<div data-role="popup" id="pop_dsc_048" class="ui-content"><b>img.SetTouchable</b><br>En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.</div>
-	<div data-role="popup" id="pop_dsc_049" class="ui-content"><b>img.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><b>Show:</b> visible<br><b>Hide:</b> invisible but still consuming space<br><b>Gone:</b> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_049" class="ui-content"><b>img.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
 	<div data-role="popup" id="pop_dsc_04a" class="ui-content"><b>img.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 	<div data-role="popup" id="pop_dsc_04b" class="ui-content"><b>img.Skew</b><br>Skews the content.</div>
 	<div data-role="popup" id="pop_dsc_04c" class="ui-content"><b>img.Transform</b><br>Transform the content with a 2d transformation matrix.</div>
-	<div data-role="popup" id="pop_dsc_04d" class="ui-content"><b>img.Tween</b><br>Performs an animation on the control.<br>The <b>target</b> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <b>type</b> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <b>repeat</b>s you can control how many times you want to play the animation.<br><br>If you have <b>jojo</b> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <b>callback</b> function will be called after the animation has finished. Well, it's about time!</div>
+	<div data-role="popup" id="pop_dsc_04d" class="ui-content"><b>img.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>
 	<div data-role="popup" id="pop_dsc_04e" class="ui-content"><b>img.Update</b><br>Update the view in disabled AutoUpdate mode.</div>
 </div>
 </body>
