@@ -14,9 +14,10 @@ function generateScope(name, pattern)
 {
 	curScope = name;
 	regGen = RegExp(pattern || ".*");
-	app.ShowProgressBar("Initializing...");
 
 	if(!pattern) {
+		app.ListFolder("docs" + getl()).map(f =>
+			f.startsWith(curScope + "_") && app.DeleteFile(`docs${getl()}/` + f));
 		app.DeleteFolder(`docs${getl()}/${curScope}`);
 		app.MakeFolder(`docs${getl()}/${curScope}`);
 	}
@@ -50,6 +51,7 @@ function generateScope(name, pattern)
 	}
 	else // no json file available
 	{
+		regGen = RegExp("(?=^info$)[]|(?!^info$)^.*" + regGen.source);
 		// add files from scope folder to be generated
 		scope = {}; base = false; cats = [];
 		for(var n of app.ListFolder(curScope))
@@ -71,9 +73,10 @@ function generateScope(name, pattern)
 	app.WriteFile("version.txt", v + vn);
 }
 
-function generateNavigators(cats, name)
+function generateNavigators(cats, name, pfx)
 {
-	curDoc = `docs${getl()}/${name.replace(/\s+/g,'')}.htm`;
+	curDoc = `docs${getl()}/${pfx||''}${name.replace(/\s+/g,'')}.htm`;
+	pfx = `${pfx||curScope}_`;
 	var nav = '';
 
 	if(cats instanceof Array)
@@ -86,9 +89,9 @@ function generateNavigators(cats, name)
 	{
 		for(var cat of keys(cats).filter(nothidden).sort(sortAsc))
 		{
-			nav += newNaviItem(`${curScope}_${cat.replace(/\s+/g,'')}.htm`, cat );
+			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
 			var tdoc = curDoc;
-				generateNavigators(cats[cat], curScope + "_" + cat.replace(/\s+/g, ''));
+				generateNavigators(cats[cat], cat, pfx);
 			curDoc = tdoc;
 		}
 	} else Throw(Error("Wrong catlist datatype: " + typeof cats));
@@ -105,50 +108,46 @@ function generateNavigators(cats, name)
 function generateDocs(scope)
 {
 	curDoc = curScope;
-	app.UpdateProgressBar( "Generating" );
+	var lst = keys(scope).filter(nothidden).filter(n => !!n.match(regGen));
 
-	var i, last = -1, tchd = false, info = {};
-	var lst = keys(scope).filter(nothidden);
-	info[curScope] = {};
-
-	for( i = 0; i < lst.length; i++ )
+	for( var i = 0; i < lst.length; i++ )
 	{
-		if(lst[i].match(regGen))
-		{
-			generateDoc(lst[i]);
-			last = Math.floor( 100 * i / lst.length )
-			app.UpdateProgressBar( last, curScope + '.' + lst[i] );
-		}
+		generateDoc(lst[i]);
+		app.UpdateProgressBar( Math.floor( 100*i / lst.length ), curScope + '.' + lst[i] );
+	}
 
-		if(!scope[lst[i]].shortDesc) continue;
-		if( isControl(lst[i]) )
-		{
-			var tctrl = {}, tsubf = scope[lst[i]].subf;
-			info[scope[lst[i]].abbrev] = tctrl;
+	if(!"info".match(regGen)) return;
 
-			for( var j in tsubf )
+	curDoc = curScope + "-info.json";
+	var tsubf, info = { [curScope]: {} };
+
+	for(var name of keys(scope).filter(nothidden))
+	{
+		if(!scope[name].shortDesc) continue;
+		info[curScope][lst[i]] = scope[name].shortDesc;
+
+		if(tsubf = scope[name].subf)
+		{
+			var tctrl = {};
+			info[scope[name].abbrev] = tctrl;
+
+			for(var j of keys(tsubf).filter(nothidden))
 			{
-				if(hidden(j)) continue;
-
-				if(typeof(tsubf[j]) == "string" && tsubf[j][0] == '#')
+				if(typeof tsubf[j] == "string" && tsubf[j][0] == '#')
 				{
-					if(!base[tsubf[j]]) Throw(Error(`basefunc ${tsubf[j]} not found!`));
-					tctrl[j] = base[tsubf[j]].shortDesc;
+					if(base && base[tsubf[j]])
+						tctrl[j] = base[tsubf[j]].shortDesc;
+					else
+						Throw(Error(`basefunc ${tsubf[j]} not found!`));
 				}
 				else tctrl[j] = tsubf[j].shortDesc;
 			}
 		}
-		info[curScope][lst[i]] = scope[lst[i]].shortDesc;
 	}
-
-	app.SetDebug("all");
 
 	info = tos(info);
 	if(info.lastIndexOf("}") != 25)
-		app.WriteFile( curScope + "-info.json",  );
-
-	app.HideProgressBar();
-	app.ShowPopup("Generated");
+		app.WriteFile( curDoc, info );
 }
 
 // generates one document by function name
@@ -1086,9 +1085,11 @@ function OnStart() {
 
 		for(var pat of process.argv.slice(2))
 		{
+			app.ShowProgressBar("Generating " + pat);
 			var p = pat.indexOf(".") + 1;
 			if(p) generateScope(pat.slice(0, p-1), pat.slice(p));
 			else generateScope(pat);
+			app.HideProgressBar();
 		}
 	} catch(e) {
 		console.error( /*\x1b[31m*/ `while generating ${curScope} "${curDoc}": ${curSubf||""}` );

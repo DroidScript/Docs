@@ -233,7 +233,7 @@ function OpenUrl( url, type, choose )
 	return false;
 }
 
-function CheckApp()
+function IsApp()
 {
 	if(isApp) return true;
 	ShowPopup("Not running in DroidScript app.");
