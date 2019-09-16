@@ -40,12 +40,14 @@
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">switches</a> )
 		</div>
 
-		<p>The availabe modes are:<br>
-		console: allows console.log messages<br>
-		ds: allows app.Debug messages<br>
-		adb: allows adb debug messages (ie at apk startup)<br>
-		true: enable all debug messages<br>
-		false or <docstr>“”</docstr>: disable able all debug messages<br>
+		<p>The available modes are:<br>
+		<span style="display:inline-block;padding-left:1em;">
+			<docstr>“console”</docstr>: allows console.log messages<br>
+			<docstr>“ds”</docstr>: allows app.Debug messages<br>
+			<docstr>“adb”</docstr>: allows adb debug messages (ie at apk startup)<br>
+			<span class="token boolean">true</span>: enable all debug messages<br>
+			<span class="token boolean">false</span> or <docstr>“”</docstr> : disable all debug messages<br>
+		</span><br>
 		<br>
 		Note that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.<br>
 		<br>
@@ -91,7 +93,9 @@
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 			</div>
 		</div>
-	<br>
+
+
+
 	</div>
 
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“console”</docstr>, <docstr>“ds”</docstr>, <docstr>“adb”</docstr>, <docstr>“all”</docstr></div>

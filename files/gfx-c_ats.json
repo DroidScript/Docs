@@ -1,0 +1,13 @@
+{{
+	"[Physics.Add]": ["Update", "SetMatrix", "Contains", "SetPhysics", "SetShape", "SetVelocity", "AddVelocity", "GetVelocity", "ApplyImpulse", "UpdatePhysics", "EnablePhysics", "RemovePhysics"],
+	"gfx.CreateBackground": ["Scroll", "texture", "sprite"],
+	"gfx.CreateCircle": ["group", "data", "graphic", "visible", "width", "height", "angle", "alpha", "pivotX", "pivotY", "scaleX", "scaleY", "Update", "SetMatrix", "Contains"],
+	"gfx.CreateEllipse": ["group", "data", "graphic", "visible", "width", "height", "angle", "alpha", "pivotX", "pivotY", "scaleX", "scaleY", "Update", "SetMatrix", "Contains"],
+	"gfx.CreatePolygon": ["group", "data", "graphic", "angle", "visible", "pivotX", "pivotY", "alpha", "scaleX", "scaleY", "width", "height", "Update", "SetMatrix", "Contains"],
+	"gfx.CreateRectangle": ["group", "data", "graphic", "visible", "width", "height", "angle", "alpha", "pivotX", "pivotY", "scaleX", "scaleY", "Update", "SetMatrix", "Contains"],
+	"gfx.CreateSound": ["id", "file", "Play", "Pause"],
+	"gfx.CreateSprite": ["visible", "added", "x", "y", "width", "height", "alpha", "sprite", "angle", "pivotX", "pivotY", "scaleX", "scaleY", "aspect", "Update", "SetSize", "SetTexture", "SetTween", "Tween", "SetPlaySpeed", "SetLoop", "Goto", "Stop", "StopAt", "SetRange", "PlayRange", "PlayTo", "Play", "SetSpriteSheet", "Contains", "Flip", "isStrip", "isAtlas", "texture", "group", "data", "SetMatrix"],
+	"gfx.CreateSpriteSheet": ["loader", "sprite", "data"],
+	"gfx.CreateText": ["file", "fontSize", "align", "visible", "width", "height", "angle", "alpha", "pivotX", "pivotY", "scaleX", "scaleY", "Update", "SetMatrix", "Contains"]
+}
+}

@@ -1,0 +1,1765 @@
+{
+	"AddBackground": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddBackground",
+		"pNames": ["obj"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddBasicSprite": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddBasicSprite",
+		"pNames": ["sprite"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddBatch": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddBatch",
+		"pNames": ["batch"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddGraphic": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddGraphic",
+		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
+		"pTypes": ["obj", "num", "num", "?", "?", "num_rad", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddPhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddPhysics",
+		"pNames": ["gravity", "accuracy", "sleep"],
+		"pTypes": ["num", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddSprite": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddSprite",
+		"pNames": ["sprite", "x", "y", "w", "h", "angle", "alpha"],
+		"pTypes": ["?", "num", "num", "?", "?", "num_rad", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AddText": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AddText",
+		"pNames": ["obj", "x", "y", "angle", "alpha"],
+		"pTypes": ["obj", "num", "num", "num_rad", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Animate": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Animate",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"AppExec": {
+		"desc": "",
+		"isfunc": true,
+		"name": "AppExec",
+		"pNames": ["js"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"aspect": {
+		"desc": "",
+		"isfunc": false,
+		"name": "aspect",
+		"retval": "num",
+		"shortDesc": ""
+	},
+	"CreateBackground": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateBackground",
+		"pNames": ["file", "options"],
+		"pTypes": ["str", "str"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"Scroll": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Scroll",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"sprite": {
+				"desc": "",
+				"isfunc": false,
+				"name": "sprite",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"texture": {
+				"desc": "",
+				"isfunc": false,
+				"name": "texture",
+				"retval": "str",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateBasicSprite": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateBasicSprite",
+		"pNames": ["texture"],
+		"pTypes": ["str"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"CreateBatch": {
+		"desc": "",
+		"isfunc": false,
+		"name": "CreateBatch",
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"CreateCircle": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateCircle",
+		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha"],
+		"pTypes": ["num", "?", "num", "?", "num"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"graphic": {
+				"desc": "",
+				"isfunc": false,
+				"name": "graphic",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"group": {
+				"desc": "",
+				"isfunc": false,
+				"name": "group",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateEllipse": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateEllipse",
+		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num", "num", "?", "num", "?", "num", "str"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"graphic": {
+				"desc": "",
+				"isfunc": false,
+				"name": "graphic",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"group": {
+				"desc": "",
+				"isfunc": false,
+				"name": "group",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreatePolygon": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreatePolygon",
+		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["?", "num", "num", "?", "num", "?", "num", "str"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"graphic": {
+				"desc": "",
+				"isfunc": false,
+				"name": "graphic",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"group": {
+				"desc": "",
+				"isfunc": false,
+				"name": "group",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateRectangle": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateRectangle",
+		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num", "num", "?", "num", "?", "num", "str"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"graphic": {
+				"desc": "",
+				"isfunc": false,
+				"name": "graphic",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"group": {
+				"desc": "",
+				"isfunc": false,
+				"name": "group",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateSound": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateSound",
+		"pNames": ["file"],
+		"pTypes": ["str"],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"file": {
+				"desc": "",
+				"isfunc": false,
+				"name": "file",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"id": {
+				"desc": "",
+				"isfunc": false,
+				"name": "id",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"Pause": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Pause",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Play": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Play",
+				"pNames": ["loop", "delay", "gap"],
+				"pTypes": ["num", "num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateSprite": {
+		"abbrev": "spr",
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateSprite",
+		"pNames": ["file", "group", "callback"],
+		"pTypes": ["str", "str", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"added": {
+				"desc": "",
+				"isfunc": false,
+				"name": "added",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"aspect": {
+				"desc": "",
+				"isfunc": false,
+				"name": "aspect",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"Flip": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Flip",
+				"pNames": ["horiz", "vert"],
+				"pTypes": ["?", "?"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Goto": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Goto",
+				"pNames": ["frame"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"group": {
+				"desc": "",
+				"isfunc": false,
+				"name": "group",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"isAtlas": {
+				"desc": "",
+				"isfunc": false,
+				"name": "isAtlas",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"isStrip": {
+				"desc": "",
+				"isfunc": false,
+				"name": "isStrip",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Play": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Play",
+				"pNames": ["startFrame", "speed", "loop"],
+				"pTypes": ["num", "num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"PlayRange": {
+				"desc": "",
+				"isfunc": true,
+				"name": "PlayRange",
+				"pNames": ["firstFrame", "lastFrame", "speed", "loop"],
+				"pTypes": ["num", "num", "num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"PlayTo": {
+				"desc": "",
+				"isfunc": true,
+				"name": "PlayTo",
+				"pNames": ["frame"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetLoop": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetLoop",
+				"pNames": ["loop"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetPlaySpeed": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetPlaySpeed",
+				"pNames": ["speed"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetRange": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetRange",
+				"pNames": ["firstFrame", "lastFrame", "loop", "play", "speed"],
+				"pTypes": ["num", "num", "num", "num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetSize": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetSize",
+				"pNames": ["w", "h"],
+				"pTypes": ["?", "?"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetSpriteSheet": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetSpriteSheet",
+				"pNames": ["sheet"],
+				"pTypes": ["obj"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetTexture": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetTexture",
+				"pNames": ["tx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"SetTween": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetTween",
+				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
+				"pTypes": ["obj", "num", "str", "num", "num", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"sprite": {
+				"desc": "",
+				"isfunc": false,
+				"name": "sprite",
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Stop": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Stop",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"StopAt": {
+				"desc": "",
+				"isfunc": true,
+				"name": "StopAt",
+				"pNames": ["frame"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"texture": {
+				"desc": "",
+				"isfunc": false,
+				"name": "texture",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"Tween": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Tween",
+				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
+				"pTypes": ["obj", "num", "str", "num", "num", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"x": {
+				"desc": "",
+				"isfunc": false,
+				"name": "x",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"y": {
+				"desc": "",
+				"isfunc": false,
+				"name": "y",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateSpriteSheet": {
+		"abbrev": "sht",
+		"desc": " ",
+		"isfunc": true,
+		"name": "CreateSpriteSheet",
+		"pNames": ["file", "callback"],
+		"pTypes": ["str", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": " ",
+		"subf": {
+			"data": {
+				"desc": "",
+				"isfunc": false,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"loader": {
+				"desc": "",
+				"isfunc": false,
+				"name": "loader",
+				"retval": "obj",
+				"shortDesc": ""
+			},
+			"sprite": {
+				"desc": "",
+				"isfunc": false,
+				"name": "sprite",
+				"retval": "?",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateText": {
+		"desc": "",
+		"isfunc": true,
+		"name": "CreateText",
+		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
+		"pTypes": ["str", "num", "str", "?", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": "",
+		"subf": {
+			"align": {
+				"desc": "",
+				"isfunc": false,
+				"name": "align",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"alpha": {
+				"desc": "",
+				"isfunc": false,
+				"name": "alpha",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"angle": {
+				"desc": "",
+				"isfunc": false,
+				"name": "angle",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"Contains": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"file": {
+				"desc": "",
+				"isfunc": false,
+				"name": "file",
+				"retval": "str",
+				"shortDesc": ""
+			},
+			"fontSize": {
+				"desc": "",
+				"isfunc": false,
+				"name": "fontSize",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"height": {
+				"desc": "",
+				"isfunc": false,
+				"name": "height",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"pivotY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "pivotY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleX": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleX",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"scaleY": {
+				"desc": "",
+				"isfunc": false,
+				"name": "scaleY",
+				"retval": "num",
+				"shortDesc": ""
+			},
+			"SetMatrix": {
+				"desc": "",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["num"],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"Update": {
+				"desc": "",
+				"isfunc": true,
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "?",
+				"shortDesc": ""
+			},
+			"visible": {
+				"desc": "",
+				"isfunc": false,
+				"name": "visible",
+				"retval": "bin",
+				"shortDesc": ""
+			},
+			"width": {
+				"desc": "",
+				"isfunc": false,
+				"name": "width",
+				"retval": "num",
+				"shortDesc": ""
+			}
+		}
+	},
+	"CreateTexture": {
+		"desc": "",
+		"isfunc": false,
+		"name": "CreateTexture",
+		"retval": "str",
+		"shortDesc": ""
+	},
+	"data": {
+		"desc": "",
+		"isfunc": false,
+		"name": "data",
+		"retval": "obj",
+		"shortDesc": ""
+	},
+	"EnablePhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "EnablePhysics",
+		"pNames": ["enabled"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Enclose": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Enclose",
+		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
+		"pTypes": ["str", "str", "num", "num", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"GenPixiJson": {
+		"desc": "",
+		"isfunc": true,
+		"name": "GenPixiJson",
+		"pNames": ["path"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"GetContext": {
+		"desc": "",
+		"isfunc": true,
+		"name": "GetContext",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"GetOrder": {
+		"desc": "",
+		"isfunc": true,
+		"name": "GetOrder",
+		"pNames": ["object"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"_HandleTouch": {
+		"desc": "",
+		"isfunc": true,
+		"name": "_HandleTouch",
+		"pNames": ["action", "x", "y"],
+		"pTypes": ["?", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"height": {
+		"desc": "",
+		"isfunc": false,
+		"name": "height",
+		"retval": "num",
+		"shortDesc": ""
+	},
+	"_Init": {
+		"desc": "",
+		"isfunc": true,
+		"name": "_Init",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"IsOverlap": {
+		"desc": "",
+		"isfunc": true,
+		"name": "IsOverlap",
+		"pNames": ["obj1", "obj2", "depth"],
+		"pTypes": ["obj", "obj", "?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"isReady": {
+		"desc": "",
+		"isfunc": false,
+		"name": "isReady",
+		"retval": "bin",
+		"shortDesc": ""
+	},
+	"keyDown": {
+		"desc": "",
+		"isfunc": false,
+		"name": "keyDown",
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"keyState": {
+		"desc": "",
+		"isfunc": false,
+		"name": "keyState",
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Matrix.mtx": {
+		"desc": "",
+		"isfunc": false,
+		"name": "Matrix.mtx",
+		"retval": "num",
+		"shortDesc": ""
+	},
+	"Matrix.Rotate": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Rotate",
+		"pNames": ["angle"],
+		"pTypes": ["num_rad"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Matrix.Scale": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Scale",
+		"pNames": ["sx", "sy"],
+		"pTypes": ["num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Matrix.Set": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Set",
+		"pNames": ["a", "b", "c", "d", "tx", "ty"],
+		"pTypes": ["num:scale", "num:skew", "num:skew", "num:scale", "num:translateX", "num:translateY"],
+		"retval": "",
+		"shortDesc": ""
+	},
+	"Matrix.Skew": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Skew",
+		"pNames": ["skewX", "skewY"],
+		"pTypes": ["num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Matrix.Transform": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Transform",
+		"pNames": ["tx", "ty", "pivotX", "pivotY", "scaleX", "scaleY", "rotation", "skewX", "skewY"],
+		"pTypes": ["num", "num", "num", "num", "num", "num", "num_rad", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Matrix.Translate": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Matrix.Translate",
+		"pNames": ["tx", "ty"],
+		"pTypes": ["num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"objects": {
+		"desc": "",
+		"isfunc": false,
+		"name": "objects",
+		"retval": "num",
+		"shortDesc": ""
+	},
+	"Pause": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Pause",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Physics.Add": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Physics.Add",
+		"pNames": ["obj"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].AddVelocity": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].AddVelocity",
+		"pNames": ["x", "y", "angular", "bodyRelative"],
+		"pTypes": ["num", "num", "num_rad", "?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].ApplyImpulse": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].ApplyImpulse",
+		"pNames": ["x", "y", "offsetX", "offsetY"],
+		"pTypes": ["num", "num", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].Contains": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].Contains",
+		"pNames": ["x", "y"],
+		"pTypes": ["num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].EnablePhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].EnablePhysics",
+		"pNames": ["enable"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].GetVelocity": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].GetVelocity",
+		"pNames": ["component"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].RemovePhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].RemovePhysics",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].SetMatrix": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].SetMatrix",
+		"pNames": ["mtx"],
+		"pTypes": ["num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].SetPhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].SetPhysics",
+		"pNames": ["groupId", "type", "density", "bounce", "friction", "linearDamp", "angularDamp"],
+		"pTypes": ["str", "str", "num", "num", "num", "?", "num_rad"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].SetShape": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].SetShape",
+		"pNames": ["shape", "width", "height"],
+		"pTypes": ["?", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].SetVelocity": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].SetVelocity",
+		"pNames": ["x", "y", "angular", "bodyRelative"],
+		"pTypes": ["num", "num", "num_rad", "?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].Update": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].Update",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"[Physics.Add].UpdatePhysics": {
+		"desc": "",
+		"isfunc": true,
+		"name": "[Physics.Add].UpdatePhysics",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Physics.Init": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Physics.Init",
+		"pNames": ["gravity", "accuracy", "sleep"],
+		"pTypes": ["num", "num", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Physics.obs": {
+		"desc": "",
+		"isfunc": false,
+		"name": "Physics.obs",
+		"retval": "num",
+		"shortDesc": ""
+	},
+	"Physics.SetEnabled": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Physics.SetEnabled",
+		"pNames": ["enabled"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Physics.SetOnCollide": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Physics.SetOnCollide",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Physics.Step": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Physics.Step",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Play": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Play",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"RemoveBackground": {
+		"desc": "",
+		"isfunc": true,
+		"name": "RemoveBackground",
+		"pNames": ["obj"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"RemoveGraphic": {
+		"desc": "",
+		"isfunc": true,
+		"name": "RemoveGraphic",
+		"pNames": ["obj"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"RemoveSprite": {
+		"desc": "",
+		"isfunc": true,
+		"name": "RemoveSprite",
+		"pNames": ["sprite"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"RemoveText": {
+		"desc": "",
+		"isfunc": true,
+		"name": "RemoveText",
+		"pNames": ["obj"],
+		"pTypes": ["obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Render": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Render",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"renderer": {
+		"desc": "",
+		"isfunc": false,
+		"name": "renderer",
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Script": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Script",
+		"pNames": ["url", "callback"],
+		"pTypes": ["?", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetBackColor": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetBackColor",
+		"pNames": ["col"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnCollide": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnCollide",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnKeyDown": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnKeyDown",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnKeyUp": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnKeyUp",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnTouchDown": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnTouchDown",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnTouchMove": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnTouchMove",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOnTouchUp": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOnTouchUp",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetOrder": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetOrder",
+		"pNames": ["object", "order"],
+		"pTypes": ["obj", "num"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SetPixelMode": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SetPixelMode",
+		"pNames": ["usePixels"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"stage": {
+		"desc": "",
+		"isfunc": false,
+		"name": "stage",
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"SwapOrder": {
+		"desc": "",
+		"isfunc": true,
+		"name": "SwapOrder",
+		"pNames": ["object1", "object2"],
+		"pTypes": ["obj", "obj"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"Vibrate": {
+		"desc": "",
+		"isfunc": true,
+		"name": "Vibrate",
+		"pNames": ["pattern"],
+		"pTypes": ["?"],
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"width": {
+		"desc": "",
+		"isfunc": false,
+		"name": "width",
+		"retval": "num",
+		"shortDesc": ""
+	}
+}

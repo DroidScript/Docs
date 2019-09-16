@@ -33,6 +33,14 @@
 	</div>
 
 	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Comparison')">Comparison</a><br>
+			</span><br>
+		</div>
+
 		<p>Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.</p>
 
 		<div class="samp">
@@ -41,21 +49,20 @@
 			<a href="#pop_num_fps" data-transition="pop" data-rel="popup">fps</a> )
 		</div>
 
-		<p>when using cfg.NoDom; to cause a high performance you cannot use SetInterval but Animate.<br>
-		<br>
-		comparison:<br>
-		<br>
-		normal:<br>
+		<p>when using <i>cfg.NoDom</i>; to cause a high performance you cannot use SetInterval but Animate.<br>
+		<red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.</red></p>
+		<h3>Comparison</h3>
+		<p><strong>normal</strong>:<br>
 		<span style="display:inline-block;padding-left:1em;">
-			setInterval: about 242 calls per second<br>
-			app.animate: about 217 calls per second<br>
+			<i>setInterval</i>: about 242 calls per second<br>
+			<i>app.Animate</i>: about 217 calls per second<br>
 		</span><br>
 		<br>
-		with <docstr>“NoDom”</docstr> option:<br>
+		<strong>with <docstr>“NoDom”</docstr> option</strong>:<br>
 		<span style="display:inline-block;padding-left:1em;">
-			setInterval: error<br>
-
-		</span><br>app.Animate: up to 1000 calls per second</p>
+			<i>setInterval</i>: error<br>
+			<i>app.Animate</i>: up to 1000 calls per second<br>
+		</span></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Digital Clock</h3>
 			<div id="examp1" style="font-size:70%">
@@ -123,7 +130,9 @@
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 			</div>
 		</div>
-	<br>
+
+
+
 	</div>
 
 	<div data-role="popup" id="pop_num_fps" class="ui-content"><b>number:</b> <i>frames per second</i></div>

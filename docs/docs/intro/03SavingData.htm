@@ -20,14 +20,13 @@
 </head>
 
 <body>
+<div data-role="page" data-theme="a">
 
-<div data-role="page" data-theme="a" >
-
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>Saving Data</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-	</div><!-- /header -->
+	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 		<div id="appPopup" class="androidPopup">Hello World</div>
@@ -119,9 +118,11 @@
 		DroidScript provides an extra <a href="../app/OpenDatabase.htm" data-ajax="false">OpenDatabase</a> component for databases which uses the SQLitePlugin <a href="https://github.com/xpbrew/cordova-sqlite-storage" onclick="return OpenUrl(this.href);">cordova-sqlite-storage</a>.<br>
 		<br>
 		For a demo Have a look at the <a href="" onclick="OpenSample(&quot;Database&quot;)">Database</a> example.</p>
-	</div><!-- /content -->
 
-</div><!-- /page -->
+	</div>
 
+
+</div>
 </body>
+
 </html>

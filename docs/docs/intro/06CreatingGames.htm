@@ -20,14 +20,13 @@
 </head>
 
 <body>
+<div data-role="page" data-theme="a">
 
-<div data-role="page" data-theme="a" >
-
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>Creating Games</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
-	</div><!-- /header -->
+	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
 		<div id="appPopup" class="androidPopup">Hello World</div>
@@ -64,7 +63,7 @@
 			<red><b>-</b></red> Not suited for games with many animations and high framerate<br>
 		</span><br>
 		<br>
-		<strong>Image View:</strong><br>
+		<b><a href="../app/CreateImage.htm" data-ajax="false">Image View</a>:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			<green>+</green> Supports drawing of basic shapes, text (+ font loading) and image drawing<br>
 			<green>+</green> Good for simple games with more complex animations<br>
@@ -75,14 +74,14 @@
 			</span><br>
 		</span><br>
 		<br>
-		<strong>GLView:</strong><br>
+		<b><a href="../app/CreateGLView.htm" data-ajax="false">GLView</a>:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			<green>+</green> Very fast rendering<br>
 			<green>+</green> Supports drawing of subareas of a larger image (sprite sheets)<br>
 			<red><b>-</b></red> Only supports drawing images<br>
 		</span><br>
 		<br>
-		<strong>Game View</strong><br>
+		<b><a href="../app/CreateGameView.htm" data-ajax="false">Game View</a>:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			<green>+</green> Enormously fast rendering (See the <a href="" onclick="OpenSample('Game BunnyStorm')">Game BunnyStorm sample</a>)<br>
 			<green>+</green> Many builtin game features:<br>
@@ -316,9 +315,11 @@
 		This makes it perfect for games using images and sprite sheets only.<br>
 		Additionally the GameView will also run on older devices unlike the last graphic container you'll experience now.</p>
 		<h2>The GameView</h2>
-	</div><!-- /content -->
 
-</div><!-- /page -->
+	</div>
 
+
+</div>
 </body>
+
 </html>

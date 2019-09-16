@@ -33,13 +33,14 @@
 	</div>
 
 	<div data-role="content">
-		<p>PlayRingtone.</p>
+		<p>Play a specific ringtone type based on the users device settings for ringtones.</p>
 
 		<div class="samp">
 		app.PlayRingtone(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
 		</div>
 
+		<p><i>Type</i> can be <docstr>“Alarm”</docstr>, <docstr>“Notification”</docstr> or <docstr>“Ringtone”</docstr>.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Play Notificatinop Sound</h3>
 			<div id="examp1" style="font-size:70%">
@@ -64,7 +65,9 @@
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 			</div>
 		</div>
-	<br>
+
+
+
 	</div>
 
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Alarm”</docstr> or <docstr>“Notification”</docstr> or <docstr>“Ringtone”</docstr></div>
