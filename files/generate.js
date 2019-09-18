@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var curDoc = null, curSubf = null, curScope = null;
+var curDoc, curSubf, curScope;
 var warnEnbl = false, Globals;
 var scope, base, cats, regGen;
 
@@ -169,10 +169,9 @@ function generateDoc( name )
 	if((keys(scope[name])+'').match(/isfunc|p(Names|Types)|subf/g))
 	{
 		data = getDocData(scope[name]);
-
 		// function line with popups
 		if(scope[name].abbrev) funcLine = scope[name].abbrev + " = ";
-		funcLine += `${curScope}.${name}(${data.args})` + data.ret;
+		funcLine += `${curScope}.${name}` + (scope[name].isfunc ? `(${data.args})` : '') + data.ret;
 
 		// subfunctions of controls with popups
 		if(isControl(name) && data.mets)
@@ -239,7 +238,8 @@ function adjustDoc(html, name)
 		// remove special whitespace from tables
 		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
 			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
-		// text indentation
+
+			// text indentation
 		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) =>
 			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length-1}em;">` +
 			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
@@ -257,7 +257,8 @@ function adjustDoc(html, name)
 			{
 				options = options.split(" ");
 				if(w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
-				if(Prism.languages[lang]) {
+				if(Prism.languages[lang])
+				{
 					var tags = [];
 					code = code
 						.replace(/<br>/g, "")
@@ -266,7 +267,8 @@ function adjustDoc(html, name)
 					code = Prism.highlight( code, Prism.languages[lang], lang )
 						.replace(/\n/g, "<br>\n")
 						.replace(/§t§(<\/span>)?/g, (m, s) => (s||'') + tags.shift())
-						.replace(/§s§/g, "&#160;");
+						.replace(/§s§/g, "&#160;")
+						.replace(/(<span.*em;">)<br>/g, '<br>$1');
 				}
 
 				if(has(options, "nobox")) return `${w1||''}${code}${w2||''}`;
@@ -300,11 +302,11 @@ function formatDesc(desc, name, hasData)
 	var sampcnt = keys(samples).length;
 	if(!has(desc, '.')) desc += '.';
 
-	desc = desc.replace(/(\s|<br>)*<sample (.*?)>([^]*?)<\/sample \2>/g,
-		function(m, _, t, c)
+	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?>([^]*?)<\/sample\2>/g,
+		function(m, _, _, t, c)
 		{
-			samples[t] = toHtmlSamp(c, t, ++sampcnt);
-			return `<sample ${t}>`;
+			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt);
+			return `<sample ${_}>`;
 		});
 
 	desc = `<p>${replaceTypes(addMarkdown(replW( desc )))} </p>`;
@@ -374,7 +376,7 @@ function getDocData( f, useAppPop )
 
 	var k, methods = "",
 		// function list
-		mkeys = keys( f.subf ).filter(nothidden).sort(sortAsc);
+		mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
 	for( k = 0; k < mkeys.length; k++ )
 	{
@@ -389,7 +391,7 @@ function getDocData( f, useAppPop )
 			curSubf = met.name;
 		}
 
-		if(!met.isfunc || hidden(curSubf)) continue;
+		if(hidden(curSubf)) continue;
 
 		//add shortDesc entry if missing
 		if( met.shortDesc == undefined )
@@ -400,29 +402,29 @@ function getDocData( f, useAppPop )
 
 		//convert return value
 		if( met.retval )
-			retval = (met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( met.retval );
+			retval = (met.isfunc && met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( met.retval );
 
 		//convert function types
+		var mdesc = met.desc;
+		if( met.isfunc ) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
+
+		var args = [], metpop = newPopup("dsc", curSubf,
+			addMarkdown(replaceTypes(replW(mdesc), true)),
+			getAddClass(met) || (has(base.all, curSubf) ? ' class="baseFunc"' : ""));
+
 		if( met.isfunc )
 		{
-			var args = [], pop;
-			//if(!has(popDefs[popDefs.length - 1] || "", f.abbrev + ".")) popDefs.push("");
-
-			metpop = newPopup("dsc", curSubf,
-				addMarkdown(replaceTypes(`<b>${f.abbrev}.${curSubf}</b><br>` + replW( met.desc ), true)),
-				getAddClass(met) || (has(base.all, curSubf) ? ' class="baseFunc"' : ""));
-
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
 
-			var s = metpop + ( args.length ? `(${args.join(",")} )` : "()" ) + retval;
-			if(has(curSubf, '.')) s = s.split(".").fill("  ").join("") + s.italics();
-			methods += subfBase.replace( "%s", s );
+			metpop += args.length ? `(${args.join(",")} )` : "()";
+
+			if(has(curSubf, '.'))
+				metpop = curSubf.split(".").fill("  ").join("") + metpop.italics();
+
+			methods += subfBase.replace( "%s", metpop + retval );
 		}
-		/* else { //convert other types
-			var pop = descPopup( curSubf, replW( met.desc ) );
-			methods += subfBase.replace( "%s", pop + retval );
-		} */
+		else methods += subfBase.replace("\n\t\t", "").replace( "%s", metpop.trim() + retval );
 	}
 	curSubf = null;
 
@@ -434,8 +436,9 @@ function getSamples( name )
 {
 	var sampcnt = 0, samples = {}, s = ReadFile(`${curScope}-samples/${name}.txt`, " ", true );
 
-	s.replace(/<sample (.*?)>([^]*?)<\/sample>/g,
-		(m, t, c) => samples[t] = toHtmlSamp(c, t, ++sampcnt));
+	s.replace(/<sample( (.*?))?>([^]*?)<\/sample\1?>/g,
+		(m, _, t, c) => samples[t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt)
+	);
 
 	return samples;
 }
@@ -444,7 +447,7 @@ function getSamples( name )
 function toHtmlSamp( c, t, n )
 {
 	var hasBold = has(c, "<b>") && c.indexOf("</b>") > c.indexOf("<b>");
-	if(!hasBold) Warn(`${curDoc} sample "${t}" has no bold area\n`);
+	if(!hasBold) Warn(`${curDoc} sample "${t||''}" has no bold area\n`);
 
 	c = c.trim().replace( /<\/?b>/g, "§b§");
 	c = Prism.highlight(c, Prism.languages.javascript, 'javascript')
@@ -465,7 +468,7 @@ function toHtmlSamp( c, t, n )
 			.replace( "%b", c );
 	}
 
-	return c.replace( /%i/g, n ).replace( /%t/g, t );
+	return c.replace( /%i/g, n ).replace( /%t/g, t ? " - " + t : '' );
 }
 
 
@@ -532,8 +535,8 @@ function typeDesc( types )
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments
-function toArgPop( name, types, doSwitch ) {
-
+function toArgPop( name, types, doSwitch )
+{
 	// function callbacks
 	if( typeof types == "object" )
 	{
@@ -626,7 +629,8 @@ function toArgPop( name, types, doSwitch ) {
 		return newPopup("mul", name, str.join("<br>"));
 }
 
-function toArgAppPop( name, types ) {
+function toArgAppPop( name, types )
+{
 	types = types.split("||")
 		.map((type) => [type.slice(0,3)]
 			.concat(type.replace('-', '\x01')
@@ -703,7 +707,8 @@ function replaceTypes(s, useAppPop)
 }
 
 // convert markdown symbols to html
-function addMarkdown(s) {
+function addMarkdown(s)
+{
 	return s
 		// links
 		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function(match, white, name, url)
@@ -763,7 +768,8 @@ function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("
 function newLink(  target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 function newCode(code) { return codeBase.replace("%s", code); }
 
-function newPopup(type, name, desc, addClass) {
+function newPopup(type, name, desc, addClass)
+{
 	if(addClass !== false) desc = desc.replace( /(“.*?”)/g, "<docstr>$1</docstr>" );
 
 	desc = desc.trim();
@@ -776,7 +782,8 @@ function newPopup(type, name, desc, addClass) {
 	return newTxtPopup( pop_id, name, addClass );
 }
 
-function getHead(d) {
+function getHead(d)
+{
 	d = new Array(d).fill("../").join("");
 	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
 }
@@ -822,7 +829,7 @@ var		// subfunction
 		// example snippets
 	sampBase = `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - %t</h3>
+			<h3>Example%t</h3>
 			<div id="examp%i" style="font-size:70%">
 				%b
 			</div>
@@ -929,6 +936,7 @@ var 	//globals for one doc
 		"lst_obj":"of objects",
 
 		"num_byt":"Bytes",
+		"num_col":"hexadecimal 0xrrggbb",
 		"num_dat":"Datetime in milliseconds (from JS Date object)",
 		"num_deg":"angle in degrees (0..360)",
 		"num_dhx":"0-255",
@@ -979,7 +987,7 @@ var 	//globals for one doc
 
 var
 	// hide functions and methods which are matching this regex
-	regHide = /^(_.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|data|id|S?Obj|ctx\.(un)?loadTexture)$/,
+	regHide = /^(_.*|.+\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\.(un)?loadTexture)$/,
 		// interpret matching app. functions as control constructors
 	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
@@ -992,8 +1000,8 @@ var
 
 function getl(l) { if(l == undefined) l = lang; return l == "en" ? "" : "-" + l; }
 function l(s) { console.log(`-----${s}-----`); return s; }
-function hidden(name) { return name.match(regHide); }
-function nothidden(name) { return !hidden(name); }
+function hidden(name) { return !!name.match(regHide); }
+function nothidden(name) { return !name.match(regHide); }
 function isnum(c) { return c >= '0' && c <= '9'; }
 function has(l, v) { return l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
@@ -1007,13 +1015,10 @@ function sortAsc(a, b) {
 	return la == lb ? a < b ? 1 : -1 : la > lb ? 1 : -1;
 }
 
-function isControl(name) {
-	return (name.match(regControl)) && (app[name] ?
-		has(app[name].toString(), "return") :
-		scope[name] && !!scope[name].subf);  //! for debug, :false
-}
+function isControl(name) { return !!scope[name].subf; }
 
-function getAbbrev(s) {
+function getAbbrev(s)
+{
 	var count = 0;
 	        // remove 'Create'
 	return s.slice(6)
@@ -1028,7 +1033,8 @@ function getAbbrev(s) {
 		.slice(0, 3).toLowerCase();
 }
 
-function ReadFile(file, dflt, write) {
+function ReadFile(file, dflt, write)
+{
 	if(!file.startsWith("/")) file = file;
 	if(app.FileExists(file)) return app.ReadFile(file);
 	else if(write) app.WriteFile(file, dflt);
@@ -1037,7 +1043,8 @@ function ReadFile(file, dflt, write) {
 
 	// converts a variable to indented string
 	// supports Boolean, Number, String, Array and Object
-function tos(o, intd, m) {
+function tos(o, intd, m)
+{
 	if(intd == undefined) intd = "";
 	if(m == undefined) m = true;
 	s = m ? intd : "";
@@ -1076,7 +1083,8 @@ function tos(o, intd, m) {
 // ---------------------------- nodejs app wrapper -----------------------------
 
 
-function OnStart() {
+function OnStart()
+{
 	try {
 		if(process.argv[2] == "help")
 			return console.error("Syntax:\n\t" +
@@ -1092,7 +1100,7 @@ function OnStart() {
 			app.HideProgressBar();
 		}
 	} catch(e) {
-		console.error( /*\x1b[31m*/ `while generating ${curScope} "${curDoc}": ${curSubf||""}` );
+		console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
 		throw e;
 	}
 }

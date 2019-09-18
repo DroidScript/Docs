@@ -21,7 +21,7 @@
 - [DroidScript](http://androidscript.org/droidscript/tutorials)
 	Provides 'Getting Started with DroidScript' tutorials
 - [GameView](https://dsgameview.wixsite.com/gameview)
-	Provides tutorials for the DroidScript GameView
+	Provides tutorials for the DroidScript GameView. Start with [lesson 1](https://dsgameview.wixsite.com/gameview/tutorial-1)
 
 ### Unofficial Websites
 - [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php)

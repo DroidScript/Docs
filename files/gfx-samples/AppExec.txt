@@ -1,1 +1,10 @@
- 
+<sample>
+cfg.Game;
+
+function OnLoad()
+{
+    gfx.AppExec( "app.ShowPopup('Hello from Game')");
+}
+
+function OnReady() {}
+</sample>

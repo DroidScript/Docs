@@ -1,1 +1,19 @@
- 
+<sample Scroll>
+cfg.Game;
+
+function OnLoad()
+{
+    sky = gfx.CreateBackground( "/Sys/Img/Sky.jpg", "stretch" );
+}
+
+function OnReady()
+{
+    gfx.AddBackground( sky );
+	gfx.Play();
+}
+
+function OnAnimate(t,dt)
+{
+    <b>sky.Scroll(-dt/1000, 0);</b>
+}
+</sample>

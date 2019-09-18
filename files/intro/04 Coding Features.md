@@ -75,7 +75,7 @@ function NewButton2(name, lay) {
 </sample Using I()>
 
 Alternatively you can make use of the controls **data** property and the **this** keyword in callbacks.
-This way you can assign variariables to the object they belong to and you still make use of the callback optimization by DroidScript:
+This way you can assign variables to the object they belong to and you still make use of the callback optimization by DroidScript:
 
 <sample Using this.data>
 

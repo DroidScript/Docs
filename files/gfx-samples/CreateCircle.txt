@@ -1,1 +1,14 @@
- 
+<sample>
+cfg.Game;
+
+function OnLoad()
+{
+    <b>circle = gfx.CreateCircle( 0.4, 0xff1133, 6, 0x7799ff );</b>
+}
+
+function OnReady()
+{
+    gfx.AddGraphic( circle, 0.3, 0.2 );
+    gfx.Play();
+}
+</sample>

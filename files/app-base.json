@@ -259,7 +259,7 @@
 				"shortDesc": "callback"
 			}
 		],
-		"shortDesc": "Callback for changes made by the user"
+		"shortDesc": "Called when content was changed by the user"
 	},
 	"#9283752301": { "name": "SetOnFocus",
 		"desc": "Define a callback function called when the user focuses the control.",

@@ -1,1 +1,14 @@
- 
+<sample Basic>
+cfg.Game;
+
+function OnLoad()
+{
+    sky = gfx.CreateBackground( "/Sys/Img/Sky.jpg", "stretch" );
+}
+
+function OnReady()
+{
+    <b>gfx.AddBackground( sky );</b>
+	gfx.Play();
+}
+</sample>

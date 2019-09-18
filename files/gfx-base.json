@@ -1,0 +1,96 @@
+{
+	"#2974510528": { "name": "alpha",
+		"desc": "The objects alpha value",
+		"isfunc": false,
+		"retval": "num_frc",
+		"shortDesc": "the alpha value"
+	},
+	"#1034034325": { "name": "angle",
+		"desc": "The rotation fraction of the object",
+		"isfunc": false,
+		"retval": "num_frc",
+		"shortDesc": "The rotation fraction"
+	},
+	"#9612465132": { "name": "Contains",
+		"desc": "Checks if a point is contained in the sprite",
+		"isfunc": true,
+		"pNames": ["x", "y"],
+		"pTypes": ["num_frc", "num_frc"],
+		"retval": "bin",
+		"shortDesc": "Check if the sprite contains a point"
+	},
+	"#2865983653": { "name": "data",
+		"desc": "An object for saving individual extra properties.",
+		"isfunc": false,
+		"retval": "obj",
+		"shortDesc": "Extra properties"
+	},
+	"#5017981624": { "name": "graphic",
+		"desc": "",
+		"isfunc": false,
+		"retval": "?",
+		"shortDesc": ""
+	},
+	"#5193861923": { "name": "group",
+		"desc": "The objects group identifier",
+		"isfunc": false,
+		"retval": "str",
+		"shortDesc": "The object's group"
+	},
+	"#0162475314": { "name": "height",
+		"desc": "The height of the object",
+		"isfunc": false,
+		"retval": "num_frc",
+		"shortDesc": "The objects height"
+	},
+	"#2983519836": { "name": "pivotX",
+		"desc": "The x pivot for rotations",
+		"isfunc": false,
+		"retval": "num_frc",
+		"shortDesc": "Rotation x pivot"
+	},
+	"#9812693423": { "name": "pivotY",
+		"desc": "The y pivot for rotations",
+		"isfunc": false,
+		"retval": "num_frc",
+		"shortDesc": "Rotation y pivot"
+	},
+	"#1246873531": { "name": "scaleX",
+		"desc": "The horizontal scaling",
+		"isfunc": false,
+		"retval": "num_fac",
+		"shortDesc": "Horizontal scaling"
+	},
+	"#7124535139": { "name": "scaleY",
+		"desc": "The vertical scaling",
+		"isfunc": false,
+		"retval": "num_fac",
+		"shortDesc": "Vertical scaling"
+	},
+	"#1789264812": { "name": "SetMatrix",
+		"desc": "Set the individual 2d transformation",
+		"isfunc": true,
+		"pNames": ["mtx"],
+		"pTypes": ["dso-Matrix"],
+		"shortDesc": "Set 2d transformation"
+	},
+	"#1274618924": { "name": "Update",
+		"desc": "Updates internal properties",
+		"isfunc": true,
+		"pNames": [],
+		"pTypes": [],
+		"shortDesc": "Updates internal properties"
+	},
+	"#1584619232": { "name": "visible",
+		"desc": "Indicates the objects visibility state",
+		"isfunc": false,
+		"retval": "bin",
+		"shortDesc": "Visibility state"
+	},
+	"#9182648716": { "name": "width",
+		"desc": "The obects width",
+		"isfunc": false,
+		"retval": "num",
+		"shortDesc": "Object width"
+	}
+}

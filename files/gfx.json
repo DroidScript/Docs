@@ -1,69 +1,155 @@
 {
 	"AddBackground": {
-		"desc": "",
+		"desc": "Adds a static background to your game.",
 		"isfunc": true,
 		"name": "AddBackground",
 		"pNames": ["obj"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["dso-CreateBackground"],
+		"shortDesc": "Adds a background to the game"
 	},
-	"AddBasicSprite": {
-		"desc": "",
+	"_AddBasicSprite": {
+		"desc": "Adds a [Basic Sprite](CreateBasicSprite.htm) to your game.",
 		"isfunc": true,
 		"name": "AddBasicSprite",
 		"pNames": ["sprite"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["dso-CreateSprite"],
+		"shortDesc": "Adds a BasicSprite to the game"
 	},
-	"AddBatch": {
-		"desc": "",
+	"_AddBatch": {
+		"desc": "Adds a sprite batch to the game.",
 		"isfunc": true,
 		"name": "AddBatch",
 		"pNames": ["batch"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["dso-CreateBatch"],
+		"shortDesc": "Adds a sprite batch to the game"
 	},
 	"AddGraphic": {
-		"desc": "",
+		"desc": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
 		"isfunc": true,
 		"name": "AddGraphic",
 		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
-		"pTypes": ["obj", "num", "num", "?", "?", "num_rad", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["obj", "num_frc", "num_frc", "num_frc", "num_frc", "num_rad", "num_frc"],
+		"shortDesc": "Adds a basic shape object to the game"
 	},
 	"AddPhysics": {
-		"desc": "",
+		"abbrev": "scs",
+		"desc": "Adds the Box2D physics engine to your game. The method list below shows the functions which are added to game objects when using physics.",
 		"isfunc": true,
 		"name": "AddPhysics",
 		"pNames": ["gravity", "accuracy", "sleep"],
 		"pTypes": ["num", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Adds physics to the game",
+		"subf": {
+			"AddVelocity": {
+				"desc": "Adds linear and angular velocity to the object",
+				"isfunc": true,
+				"name": "AddVelocity",
+				"pNames": ["x", "y", "angular", "bodyRelative"],
+				"pTypes": ["num", "num", "num", "bin"],
+				"shortDesc": "Adds velocity to the object"
+			},
+			"ApplyImpulse": {
+				"desc": "Applies an impulse (impulse=velocity*mass) to the object",
+				"isfunc": true,
+				"name": "ApplyImpulse",
+				"pNames": ["x", "y", "offsetX", "offsetY"],
+				"pTypes": ["num", "num", "num--1..1", "num--1..1"],
+				"shortDesc": "Applies an impulse p=m*v to the object"
+			},
+			"Contains": {
+				"desc": "Checks if a given point is in the hitbox",
+				"isfunc": true,
+				"name": "Contains",
+				"pNames": ["x", "y"],
+				"pTypes": ["num_frc", "num_frc"],
+				"retval": "bin",
+				"shortDesc": "Checks if a point is in the hitbox"
+			},
+			"EnablePhysics": {
+				"desc": "Temporally En/Disables physics for the game object.",
+				"isfunc": true,
+				"name": "EnablePhysics",
+				"pNames": ["enable"],
+				"pTypes": ["bin"],
+				"shortDesc": "Temporally En/Disables physics"
+			},
+			"GetVelocity": {
+				"desc": "Returns the current total linear velocity or the “x”, “y” or “angular” component.",
+				"isfunc": true,
+				"name": "GetVelocity",
+				"pNames": ["component"],
+				"pTypes": ["str-x|y|angular"],
+				"retval": "number",
+				"shortDesc": "Returns the total velocity or a component of it"
+			},
+			"RemovePhysics": {
+				"desc": "Removes physics from the game oblect.",
+				"isfunc": true,
+				"name": "RemovePhysics",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Removes physics"
+			},
+			"SetMatrix": {
+				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
+				"isfunc": true,
+				"name": "SetMatrix",
+				"pNames": ["mtx"],
+				"pTypes": ["dso-Matrix"],
+				"shortDesc": "Applies a 2d transformation"
+			},
+			"SetPhysics": {
+				"desc": "Set the physics properties for the game object.",
+				"isfunc": true,
+				"name": "SetPhysics",
+				"pNames": ["groupId", "type", "density", "bounce", "friction", "linearDamp", "angularDamp"],
+				"pTypes": ["str", "str-moveable|fixed", "num", "num", "num", "num", "num"],
+				"shortDesc": "Set physics properties"
+			},
+			"SetShape": {
+				"desc": "Defines the shape for collision detection of the object.",
+				"isfunc": true,
+				"name": "SetShape",
+				"pNames": ["shape", "width", "height"],
+				"pTypes": ["str-rect|round", "num_frc", "num_frc"],
+				"shortDesc": "Define the collision shape"
+			},
+			"SetVelocity": {
+				"desc": "Set the velocity of the game object.",
+				"isfunc": true,
+				"name": "SetVelocity",
+				"pNames": ["x", "y", "angular", "bodyRelative"],
+				"pTypes": ["num", "num", "num", "bin"],
+				"shortDesc": "Set the object velocity"
+			},
+			"UpdatePhysics": {
+				"desc": "Updates the internal position and size properties",
+				"isfunc": true,
+				"name": "UpdatePhysics",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Update internal physics properties"
+			}
+		}
 	},
 	"AddSprite": {
-		"desc": "",
+		"desc": "Adds a [sprite](CreateSprite.htm) object to the game.",
 		"isfunc": true,
 		"name": "AddSprite",
 		"pNames": ["sprite", "x", "y", "w", "h", "angle", "alpha"],
-		"pTypes": ["?", "num", "num", "?", "?", "num_rad", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["dso-CreateSprite", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"shortDesc": "Adds a sprite object"
 	},
 	"AddText": {
-		"desc": "",
+		"desc": "Adds a [text](CreateText.htm) object to the game.",
 		"isfunc": true,
 		"name": "AddText",
 		"pNames": ["obj", "x", "y", "angle", "alpha"],
-		"pTypes": ["obj", "num", "num", "num_rad", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["dso-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"shortDesc": "Adds a text object"
 	},
-	"Animate": {
-		"desc": "",
+	"_Animate": {
+		"desc": "Animate repeatedly calls a function with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.",
 		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["callback"],
@@ -71,64 +157,62 @@
 			"desc": "callback function",
 			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
+			"pNames": ["time", "dtime"],
+			"pTypes": ["num_mls", "num_mls"],
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Similar to setInterval"
 	},
 	"AppExec": {
-		"desc": "",
+		"desc": "Executes some code in the main app.",
 		"isfunc": true,
 		"name": "AppExec",
 		"pNames": ["js"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["str_jsc"],
+		"shortDesc": "Executes code in the main app"
 	},
 	"aspect": {
-		"desc": "",
+		"desc": "The aspect ratio of the gfx container (display)",
 		"isfunc": false,
 		"name": "aspect",
 		"retval": "num",
-		"shortDesc": ""
+		"shortDesc": "The display aspect ratio"
 	},
 	"CreateBackground": {
-		"desc": "",
+		"abbrev": "bck",
+		"desc": "Creates a background",
 		"isfunc": true,
 		"name": "CreateBackground",
 		"pNames": ["file", "options"],
-		"pTypes": ["str", "str"],
-		"retval": "?",
-		"shortDesc": "",
+		"pTypes": ["str", "str_com-stretch"],
+		"retval": "dso-Background",
+		"shortDesc": "Returns a new background",
 		"subf": {
 			"Scroll": {
-				"desc": "",
+				"desc": "Scrolls the background by a given value",
 				"isfunc": true,
 				"name": "Scroll",
 				"pNames": ["x", "y"],
 				"pTypes": ["num", "num"],
-				"retval": "?",
 				"shortDesc": ""
 			},
-			"sprite": {
+			"_sprite": {
 				"desc": "",
 				"isfunc": false,
 				"name": "sprite",
-				"retval": "?",
+				"retval": "PIXI.Sprite",
 				"shortDesc": ""
 			},
-			"texture": {
+			"_texture": {
 				"desc": "",
 				"isfunc": false,
 				"name": "texture",
-				"retval": "str",
+				"retval": "PIXI.Texture",
 				"shortDesc": ""
 			}
 		}
 	},
-	"CreateBasicSprite": {
+	"_CreateBasicSprite": {
 		"desc": "",
 		"isfunc": true,
 		"name": "CreateBasicSprite",
@@ -137,7 +221,7 @@
 		"retval": "?",
 		"shortDesc": ""
 	},
-	"CreateBatch": {
+	"_CreateBatch": {
 		"desc": "",
 		"isfunc": false,
 		"name": "CreateBatch",
@@ -145,501 +229,122 @@
 		"shortDesc": ""
 	},
 	"CreateCircle": {
-		"desc": "",
+		"abbrev": "cir",
+		"desc": "Creates a circular game object.",
 		"isfunc": true,
 		"name": "CreateCircle",
-		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha"],
-		"pTypes": ["num", "?", "num", "?", "num"],
-		"retval": "?",
-		"shortDesc": "",
+		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "dso-Circle",
+		"shortDesc": "Creates a circle",
 		"subf": {
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
-			"graphic": {
-				"desc": "",
-				"isfunc": false,
-				"name": "graphic",
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"group": {
-				"desc": "",
-				"isfunc": false,
-				"name": "group",
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			}
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
 		}
 	},
 	"CreateEllipse": {
-		"desc": "",
+		"abbrev": "elp",
+		"desc": "Creates a elliptical game object.",
 		"isfunc": true,
 		"name": "CreateEllipse",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
-		"pTypes": ["num", "num", "?", "num", "?", "num", "str"],
-		"retval": "?",
-		"shortDesc": "",
+		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "dso-Ellipse",
+		"shortDesc": "Creates an ellipse",
 		"subf": {
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
-			"graphic": {
-				"desc": "",
-				"isfunc": false,
-				"name": "graphic",
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"group": {
-				"desc": "",
-				"isfunc": false,
-				"name": "group",
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			}
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
 		}
 	},
 	"CreatePolygon": {
-		"desc": "",
+		"abbrev": "pol",
+		"desc": "Creates a polygonal game object.",
 		"isfunc": true,
 		"name": "CreatePolygon",
 		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
-		"pTypes": ["?", "num", "num", "?", "num", "?", "num", "str"],
-		"retval": "?",
-		"shortDesc": "",
+		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "dso-Polygon",
+		"shortDesc": "Creates a polygon",
 		"subf": {
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
-			"graphic": {
-				"desc": "",
-				"isfunc": false,
-				"name": "graphic",
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"group": {
-				"desc": "",
-				"isfunc": false,
-				"name": "group",
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			}
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
 		}
 	},
 	"CreateRectangle": {
-		"desc": "",
+		"abbrev": "rct",
+		"desc": "Creates a rectangular game object.",
 		"isfunc": true,
 		"name": "CreateRectangle",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
-		"pTypes": ["num", "num", "?", "num", "?", "num", "str"],
-		"retval": "?",
-		"shortDesc": "",
+		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "dso-Rectangle",
+		"shortDesc": "Creates a rectangle",
 		"subf": {
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
-			"graphic": {
-				"desc": "",
-				"isfunc": false,
-				"name": "graphic",
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"group": {
-				"desc": "",
-				"isfunc": false,
-				"name": "group",
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			}
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
 		}
 	},
 	"CreateSound": {
+		"abbrev": "snd",
 		"desc": "",
 		"isfunc": true,
 		"name": "CreateSound",
 		"pNames": ["file"],
 		"pTypes": ["str"],
 		"retval": "?",
-		"shortDesc": "",
+		"shortDesc": "Returns a new sound object",
 		"subf": {
 			"file": {
 				"desc": "",
@@ -689,8 +394,8 @@
 			"pTypes": [],
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
-		"shortDesc": "",
+		"retval": "dso-CreateSprite",
+		"shortDesc": "Returns a new sprite object",
 		"subf": {
 			"added": {
 				"desc": "",
@@ -699,20 +404,8 @@
 				"retval": "bin",
 				"shortDesc": ""
 			},
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
 			"aspect": {
 				"desc": "",
 				"isfunc": false,
@@ -720,22 +413,8 @@
 				"retval": "num",
 				"shortDesc": ""
 			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
+			"Contains": "#9612465132",
+			"data": "#2865983653",
 			"Flip": {
 				"desc": "",
 				"isfunc": true,
@@ -754,48 +433,24 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"group": {
-				"desc": "",
-				"isfunc": false,
-				"name": "group",
-				"retval": "str",
-				"shortDesc": ""
-			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"isAtlas": {
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"_isAtlas": {
 				"desc": "",
 				"isfunc": false,
 				"name": "isAtlas",
 				"retval": "bin",
 				"shortDesc": ""
 			},
-			"isStrip": {
+			"_isStrip": {
 				"desc": "",
 				"isfunc": false,
 				"name": "isStrip",
 				"retval": "bin",
 				"shortDesc": ""
 			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
 			"Play": {
 				"desc": "",
 				"isfunc": true,
@@ -823,20 +478,8 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
 			"SetLoop": {
 				"desc": "",
 				"isfunc": true,
@@ -846,15 +489,7 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
+			"SetMatrix": "#1789264812",
 			"SetPlaySpeed": {
 				"desc": "",
 				"isfunc": true,
@@ -916,7 +551,7 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"sprite": {
+			"_sprite": {
 				"desc": "",
 				"isfunc": false,
 				"name": "sprite",
@@ -941,7 +576,7 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"texture": {
+			"_texture": {
 				"desc": "",
 				"isfunc": false,
 				"name": "texture",
@@ -964,29 +599,9 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			},
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716",
 			"x": {
 				"desc": "",
 				"isfunc": false,
@@ -1018,23 +633,17 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": " ",
+		"shortDesc": "Returns a new spritesheet object",
 		"subf": {
-			"data": {
-				"desc": "",
-				"isfunc": false,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": ""
-			},
-			"loader": {
+			"data": "#2865983653",
+			"_loader": {
 				"desc": "",
 				"isfunc": false,
 				"name": "loader",
 				"retval": "obj",
 				"shortDesc": ""
 			},
-			"sprite": {
+			"_sprite": {
 				"desc": "",
 				"isfunc": false,
 				"name": "sprite",
@@ -1044,6 +653,7 @@
 		}
 	},
 	"CreateText": {
+		"abbrev": "txt",
 		"desc": "",
 		"isfunc": true,
 		"name": "CreateText",
@@ -1057,7 +667,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": "",
+		"shortDesc": "Returns a new text object",
 		"subf": {
 			"align": {
 				"desc": "",
@@ -1066,29 +676,9 @@
 				"retval": "str",
 				"shortDesc": ""
 			},
-			"alpha": {
-				"desc": "",
-				"isfunc": false,
-				"name": "alpha",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"angle": {
-				"desc": "",
-				"isfunc": false,
-				"name": "angle",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"Contains": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Contains",
-				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
 			"file": {
 				"desc": "",
 				"isfunc": false,
@@ -1103,97 +693,40 @@
 				"retval": "num",
 				"shortDesc": ""
 			},
-			"height": {
-				"desc": "",
-				"isfunc": false,
-				"name": "height",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"pivotY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "pivotY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleX": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleX",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"scaleY": {
-				"desc": "",
-				"isfunc": false,
-				"name": "scaleY",
-				"retval": "num",
-				"shortDesc": ""
-			},
-			"SetMatrix": {
-				"desc": "",
-				"isfunc": true,
-				"name": "SetMatrix",
-				"pNames": ["mtx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"Update": {
-				"desc": "",
-				"isfunc": true,
-				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
-			},
-			"visible": {
-				"desc": "",
-				"isfunc": false,
-				"name": "visible",
-				"retval": "bin",
-				"shortDesc": ""
-			},
-			"width": {
-				"desc": "",
-				"isfunc": false,
-				"name": "width",
-				"retval": "num",
-				"shortDesc": ""
-			}
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
 		}
 	},
 	"CreateTexture": {
 		"desc": "",
 		"isfunc": false,
 		"name": "CreateTexture",
+		"pNames": [],
+		"pTypes": [],
 		"retval": "str",
-		"shortDesc": ""
+		"shortDesc": "Returns a new texture object"
 	},
 	"data": {
 		"desc": "",
 		"isfunc": false,
 		"name": "data",
 		"retval": "obj",
-		"shortDesc": ""
+		"shortDesc": "Data"
 	},
 	"EnablePhysics": {
 		"desc": "",
 		"isfunc": true,
 		"name": "EnablePhysics",
 		"pNames": ["enabled"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
+		"pTypes": ["bin"],
+		"shortDesc": "EnablePhysics"
 	},
 	"Enclose": {
 		"desc": "",
@@ -1201,8 +734,7 @@
 		"name": "Enclose",
 		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
 		"pTypes": ["str", "str", "num", "num", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Enclose"
 	},
 	"GenPixiJson": {
 		"desc": "",
@@ -1211,7 +743,7 @@
 		"pNames": ["path"],
 		"pTypes": ["?"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "GenPixiJson"
 	},
 	"GetContext": {
 		"desc": "",
@@ -1220,7 +752,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "GetContext"
 	},
 	"GetOrder": {
 		"desc": "",
@@ -1229,32 +761,14 @@
 		"pNames": ["object"],
 		"pTypes": ["obj"],
 		"retval": "?",
-		"shortDesc": ""
-	},
-	"_HandleTouch": {
-		"desc": "",
-		"isfunc": true,
-		"name": "_HandleTouch",
-		"pNames": ["action", "x", "y"],
-		"pTypes": ["?", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "GetOrder"
 	},
 	"height": {
 		"desc": "",
 		"isfunc": false,
 		"name": "height",
 		"retval": "num",
-		"shortDesc": ""
-	},
-	"_Init": {
-		"desc": "",
-		"isfunc": true,
-		"name": "_Init",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "height"
 	},
 	"IsOverlap": {
 		"desc": "",
@@ -1263,96 +777,35 @@
 		"pNames": ["obj1", "obj2", "depth"],
 		"pTypes": ["obj", "obj", "?"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "IsOverlap"
 	},
 	"isReady": {
 		"desc": "",
 		"isfunc": false,
 		"name": "isReady",
 		"retval": "bin",
-		"shortDesc": ""
+		"shortDesc": "IsReady"
 	},
 	"keyDown": {
 		"desc": "",
 		"isfunc": false,
 		"name": "keyDown",
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "KeyDown"
 	},
 	"keyState": {
 		"desc": "",
 		"isfunc": false,
 		"name": "keyState",
 		"retval": "?",
-		"shortDesc": ""
-	},
-	"Matrix.mtx": {
-		"desc": "",
-		"isfunc": false,
-		"name": "Matrix.mtx",
-		"retval": "num",
-		"shortDesc": ""
-	},
-	"Matrix.Rotate": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Rotate",
-		"pNames": ["angle"],
-		"pTypes": ["num_rad"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Matrix.Scale": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Scale",
-		"pNames": ["sx", "sy"],
-		"pTypes": ["num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Matrix.Set": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Set",
-		"pNames": ["a", "b", "c", "d", "tx", "ty"],
-		"pTypes": ["num:scale", "num:skew", "num:skew", "num:scale", "num:translateX", "num:translateY"],
-		"retval": "",
-		"shortDesc": ""
-	},
-	"Matrix.Skew": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Skew",
-		"pNames": ["skewX", "skewY"],
-		"pTypes": ["num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Matrix.Transform": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Transform",
-		"pNames": ["tx", "ty", "pivotX", "pivotY", "scaleX", "scaleY", "rotation", "skewX", "skewY"],
-		"pTypes": ["num", "num", "num", "num", "num", "num", "num_rad", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Matrix.Translate": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Matrix.Translate",
-		"pNames": ["tx", "ty"],
-		"pTypes": ["num", "num"],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "KeyState"
 	},
 	"objects": {
 		"desc": "",
 		"isfunc": false,
 		"name": "objects",
 		"retval": "num",
-		"shortDesc": ""
+		"shortDesc": "Objects"
 	},
 	"Pause": {
 		"desc": "",
@@ -1361,174 +814,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "?",
-		"shortDesc": ""
-	},
-	"Physics.Add": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Physics.Add",
-		"pNames": ["obj"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].AddVelocity": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].AddVelocity",
-		"pNames": ["x", "y", "angular", "bodyRelative"],
-		"pTypes": ["num", "num", "num_rad", "?"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].ApplyImpulse": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].ApplyImpulse",
-		"pNames": ["x", "y", "offsetX", "offsetY"],
-		"pTypes": ["num", "num", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].Contains": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].Contains",
-		"pNames": ["x", "y"],
-		"pTypes": ["num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].EnablePhysics": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].EnablePhysics",
-		"pNames": ["enable"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].GetVelocity": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].GetVelocity",
-		"pNames": ["component"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].RemovePhysics": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].RemovePhysics",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].SetMatrix": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].SetMatrix",
-		"pNames": ["mtx"],
-		"pTypes": ["num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].SetPhysics": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].SetPhysics",
-		"pNames": ["groupId", "type", "density", "bounce", "friction", "linearDamp", "angularDamp"],
-		"pTypes": ["str", "str", "num", "num", "num", "?", "num_rad"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].SetShape": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].SetShape",
-		"pNames": ["shape", "width", "height"],
-		"pTypes": ["?", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].SetVelocity": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].SetVelocity",
-		"pNames": ["x", "y", "angular", "bodyRelative"],
-		"pTypes": ["num", "num", "num_rad", "?"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].Update": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].Update",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"[Physics.Add].UpdatePhysics": {
-		"desc": "",
-		"isfunc": true,
-		"name": "[Physics.Add].UpdatePhysics",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Physics.Init": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Physics.Init",
-		"pNames": ["gravity", "accuracy", "sleep"],
-		"pTypes": ["num", "num", "num"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Physics.obs": {
-		"desc": "",
-		"isfunc": false,
-		"name": "Physics.obs",
-		"retval": "num",
-		"shortDesc": ""
-	},
-	"Physics.SetEnabled": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Physics.SetEnabled",
-		"pNames": ["enabled"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Physics.SetOnCollide": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Physics.SetOnCollide",
-		"pNames": ["callback"],
-		"pTypes": [{
-			"desc": "callback function",
-			"isfunc": true,
-			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
-			"shortDesc": "callback"
-		}],
-		"retval": "?",
-		"shortDesc": ""
-	},
-	"Physics.Step": {
-		"desc": "",
-		"isfunc": true,
-		"name": "Physics.Step",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Pause"
 	},
 	"Play": {
 		"desc": "",
@@ -1537,7 +823,7 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Play"
 	},
 	"RemoveBackground": {
 		"desc": "",
@@ -1546,7 +832,7 @@
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "RemoveBackground"
 	},
 	"RemoveGraphic": {
 		"desc": "",
@@ -1555,7 +841,7 @@
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "RemoveGraphic"
 	},
 	"RemoveSprite": {
 		"desc": "",
@@ -1564,7 +850,7 @@
 		"pNames": ["sprite"],
 		"pTypes": ["?"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "RemoveSprite"
 	},
 	"RemoveText": {
 		"desc": "",
@@ -1573,9 +859,9 @@
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "RemoveText"
 	},
-	"Render": {
+	"_Render": {
 		"desc": "",
 		"isfunc": true,
 		"name": "Render",
@@ -1589,7 +875,7 @@
 		"isfunc": false,
 		"name": "renderer",
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Renderer"
 	},
 	"Script": {
 		"desc": "",
@@ -1605,7 +891,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Script"
 	},
 	"SetBackColor": {
 		"desc": "",
@@ -1614,7 +900,7 @@
 		"pNames": ["col"],
 		"pTypes": ["?"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetBackColor"
 	},
 	"SetOnCollide": {
 		"desc": "",
@@ -1630,7 +916,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnCollide"
 	},
 	"SetOnKeyDown": {
 		"desc": "",
@@ -1646,7 +932,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnKeyDown"
 	},
 	"SetOnKeyUp": {
 		"desc": "",
@@ -1662,7 +948,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnKeyUp"
 	},
 	"SetOnTouchDown": {
 		"desc": "",
@@ -1678,7 +964,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnTouchDown"
 	},
 	"SetOnTouchMove": {
 		"desc": "",
@@ -1694,7 +980,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnTouchMove"
 	},
 	"SetOnTouchUp": {
 		"desc": "",
@@ -1710,7 +996,7 @@
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOnTouchUp"
 	},
 	"SetOrder": {
 		"desc": "",
@@ -1719,9 +1005,9 @@
 		"pNames": ["object", "order"],
 		"pTypes": ["obj", "num"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SetOrder"
 	},
-	"SetPixelMode": {
+	"_SetPixelMode": {
 		"desc": "",
 		"isfunc": true,
 		"name": "SetPixelMode",
@@ -1730,12 +1016,12 @@
 		"retval": "?",
 		"shortDesc": ""
 	},
-	"stage": {
+	"_stage": {
 		"desc": "",
 		"isfunc": false,
 		"name": "stage",
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Stage"
 	},
 	"SwapOrder": {
 		"desc": "",
@@ -1744,7 +1030,7 @@
 		"pNames": ["object1", "object2"],
 		"pTypes": ["obj", "obj"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "SwapOrder"
 	},
 	"Vibrate": {
 		"desc": "",
@@ -1753,13 +1039,13 @@
 		"pNames": ["pattern"],
 		"pTypes": ["?"],
 		"retval": "?",
-		"shortDesc": ""
+		"shortDesc": "Vibrate"
 	},
 	"width": {
 		"desc": "",
 		"isfunc": false,
 		"name": "width",
 		"retval": "num",
-		"shortDesc": ""
+		"shortDesc": "Width"
 	}
 }

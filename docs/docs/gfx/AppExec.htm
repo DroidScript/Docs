@@ -33,18 +33,36 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Executes some code in the main app.</p>
 
 		<div class="samp">
 		gfx.AppExec(
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">js</a> )
-			→ <b>unknown</b>
+			<a href="#pop_str_jsc" data-transition="pop" data-rel="popup">js</a> )
 		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">gfx<span class="token punctuation">.</span><span class="token function">AppExec</span><span class="token punctuation">(</span> <span class="token string">"app.ShowPopup('Hello from Game')"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
 
 
 	</div>
 
-	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+	<div data-role="popup" id="pop_str_jsc" class="ui-content"><b>string:</b> <i>javascript code</i></div>
 </div>
 </body>
 

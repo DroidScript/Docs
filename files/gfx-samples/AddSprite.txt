@@ -1,1 +1,15 @@
- 
+<sample>
+
+cfg.Game;
+
+function OnLoad()
+{
+    droid = gfx.CreateSprite( "/Sys/Img/Hello.png" );
+}
+
+function OnReady()
+{
+    gfx.AddSprite( droid, 0.2, 0.4, 0.5 );
+    gfx.Play();
+}
+</sample>

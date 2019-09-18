@@ -83,6 +83,9 @@ $(document).live( 'pageshow',function(event, ui)
 		//Remove 'Copy' and 'Run' buttons on PC.
 		if( !isAndroid || useWebIDE && !isChromeOS )
 			hidecopy();
+		
+		// hide theme switch button inside DS
+		if(isDS) $(".ui-header > .ui-btn-right").hide();
 
 		//If on Android, save current page.
 		if( isDS && !useWebIDE ) {

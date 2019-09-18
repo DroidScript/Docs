@@ -39,7 +39,7 @@
 			},
 			"num_fps"
 		],
-		"shortDesc": "SetInterval equivalent used with 'NoDom' option"
+		"shortDesc": "Similar to setInterval"
 	},
 	"Broadcast": {
 		"desc": "Broadcast is used for broadcasting messages between DroidScript apps.\n\nSee Also: @SetOnBroadcast",
@@ -1969,8 +1969,8 @@
 				"desc": "Draws a part of an image to the canvas.",
 				"isfunc": true,
 				"name": "DrawSprite",
-				"pNames": ["sheet", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
-				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc"],
+				"pNames": ["sheet", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh", "angle"],
+				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
 				"retval": "",
 				"shortDesc": "Draw part of a sprite to the canvas"
 			},
@@ -2611,7 +2611,7 @@
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
+		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
 		"retval": "dso-Layout",
 		"shortDesc": "Returns a new Layout object",
 		"subf": {
@@ -4697,7 +4697,7 @@
 				"isfunc": true,
 				"name": "CreateLayout",
 				"pNames": ["type", "options"],
-				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough,TouchSpy:spies on touch events to all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
+				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
 				"retval": "swo-Layout",
 				"shortDesc": "Returns a new SmartWatch Layout"
 			},
@@ -5137,7 +5137,23 @@
 				"shortDesc": "Change spinner list"
 			},
 			"SetMargins": "#1741900074",
-			"SetOnChange": "#2137502353",
+			"SetOnChange": {
+				"desc": "Called when the spinner value has been changed by the user.",
+				"isfunc": true,
+				"name": "SetOnChange",
+				"pNames": ["callback"],
+				"pTypes": [
+					{
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["item", "index"],
+						"pTypes": ["str", "num_int"],
+						"shortDesc": "callback"
+					}
+				],
+				"shortDesc": "Called when value changed by the user"
+			},
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches the control.\n<deprecated Use SetOnChange instead>",
 				"isfunc": true,
@@ -5646,8 +5662,8 @@
 			"Method": "#1023663567",
 			"parent.AddTab": {
 				"desc": "Adds a new tab to the tabs control.",
-				"isfunc": false,
-				"name": "parent",
+				"isfunc": true,
+				"name": "parent.AddTab",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"shortDesc": "Add a new tab"
@@ -8614,7 +8630,7 @@
 				"pTypes": [],
 				"shortDesc": "Close the database"
 			},
-			"databaseFeatures": {
+			"_databaseFeatures": {
 				"desc": "databaseFeatures\n<deprecated>",
 				"isfunc": false,
 				"name": "databaseFeatures",
@@ -8622,7 +8638,7 @@
 				"pTypes": [],
 				"shortDesc": "databaseFeatures"
 			},
-			"dbname": {
+			"_dbname": {
 				"desc": "dbname\n<deprecated>",
 				"isfunc": false,
 				"name": "dbname",
