@@ -2783,7 +2783,7 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
 		"retval": "dso-List",
 		"shortDesc": "Returns a new List object",
 		"subf": {

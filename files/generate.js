@@ -2,7 +2,7 @@
 
 var curDoc, curSubf, curScope;
 var warnEnbl = false, Globals;
-var scope, base, cats, regGen;
+var scope, base, navs, regGen;
 
 var scopes = {
 	"intro": "Introduction",
@@ -14,6 +14,8 @@ function generateScope(name, pattern)
 {
 	curScope = name;
 	regGen = RegExp(pattern || ".*");
+	if(!app.FileExists(name + ".json") && !app.FolderExists(name))
+		Throw(Error(`Scope '${name}' doesn't exist.`));
 
 	if(!pattern) {
 		app.ListFolder("docs" + getl()).map(f =>
@@ -25,13 +27,13 @@ function generateScope(name, pattern)
 		app.MakeFolder(`${curScope}-samples`);
 
 	// read categories
-	cats = JSON.parse(ReadFile(curScope + `-cats${getl()}.json`, "{}"));
+	navs = JSON.parse(ReadFile(curScope + `-navs${getl()}.json`, "{}"));
 
 	// read scope members
 	if(scope = JSON.parse(ReadFile(curScope + getl() + ".json", "false")))
 	{
-		if(!keys(cats).length) cats = keys(scope);
-		else cats.All = keys(scope);
+		if(!keys(navs).length) navs = keys(scope);
+		else navs.All = keys(scope);
 
 		// read base functions used in scope
 		if(base = JSON.parse(ReadFile(curScope + `-base${getl()}.json`, "false")))
@@ -53,18 +55,18 @@ function generateScope(name, pattern)
 	{
 		regGen = RegExp("(?=^info$)[]|(?!^info$)^.*" + regGen.source);
 		// add files from scope folder to be generated
-		scope = {}; base = false; cats = [];
+		scope = {}; base = false; navs = [];
 		for(var n of app.ListFolder(curScope))
 		{
 			n = n.slice(0, n.lastIndexOf("."));
-			cats.push(n.replace(/^\s+/, ""));
-			scope[n] = { desc: `#${n}.md`, name: cats[cats.length - 1] };
+			navs.push(n.replace(/^\s+/, ""));
+			scope[n] = { desc: `#${n}.md`, name: navs[navs.length - 1] };
 		}
 	}
 
 	// start generating
 	if("navs".match(regGen))
-		generateNavigators(cats, scopes[curScope] || curScope);
+		generateNavigators(navs, scopes[curScope] || curScope);
 	generateDocs(scope);
 
 	// update version number
@@ -73,31 +75,31 @@ function generateScope(name, pattern)
 	app.WriteFile("version.txt", v + vn);
 }
 
-function generateNavigators(cats, name, pfx)
+function generateNavigators(navs, name, pfx)
 {
 	curDoc = `docs${getl()}/${pfx||''}${name.replace(/\s+/g,'')}.htm`;
 	pfx = `${pfx||curScope}_`;
 	var nav = '';
 
-	if(cats instanceof Array)
+	if(navs instanceof Array)
 	{
-		for(var func of cats = cats.filter(nothidden))
+		for(var func of navs = navs.filter(nothidden))
 			nav += func ? newNaviItem(`${curScope}/${func.replace(/\s+/g,'')}.htm`,
 				func.replace(/^\d+\s*/, ''), getAddClass(scope[func])) : "<li></li>";
 	}
-	else if(cats instanceof Object)
+	else if(navs instanceof Object)
 	{
-		for(var cat of keys(cats).filter(nothidden).sort(sortAsc))
+		for(var cat of keys(navs).filter(nothidden).sort(sortAsc))
 		{
 			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
 			var tdoc = curDoc;
-				generateNavigators(cats[cat], cat, pfx);
+				generateNavigators(navs[cat], cat, pfx);
 			curDoc = tdoc;
 		}
-	} else Throw(Error("Wrong catlist datatype: " + typeof cats));
+	} else Throw(Error("Wrong catlist datatype: " + typeof navs));
 
 	app.WriteFile( curDoc,
-		(keys(cats).length < 15 ? naviBase :
+		(keys(navs).length < 15 ? naviBase :
 			naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
 		.replace( "%l", nav )
 		.replace( /%t/g, name )
@@ -302,7 +304,7 @@ function formatDesc(desc, name, hasData)
 	var sampcnt = keys(samples).length;
 	if(!has(desc, '.')) desc += '.';
 
-	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?>([^]*?)<\/sample\2>/g,
+	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?>([^]*?)<\/sample\2?>/g,
 		function(m, _, _, t, c)
 		{
 			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt);
@@ -1091,6 +1093,9 @@ function OnStart()
 				process.argv.slice(0, 2).join(" ").replace(path, "") +
 				" [scope.[PATTERN]] ..");
 
+		if(process.argv.length == 2)
+			process.argv = process.argv.concat(keys(scopes));
+		
 		for(var pat of process.argv.slice(2))
 		{
 			app.ShowProgressBar("Generating " + pat);
