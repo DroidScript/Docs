@@ -1,6 +1,6 @@
 In many cases you need to store user specific data like app settings on the users device.
 DroidScript provides some functions which makes it easier to handle this.
-<grey>Note: All explained methods are listed in the @../Database section.</grey>
+<grey>Note: All explained methods are listed in the [Database](../app_Database.htm) section.</grey>
 
 ## Save data during one session
 Some settings are just meaningful in a current running program.

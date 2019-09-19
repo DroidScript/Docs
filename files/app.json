@@ -116,7 +116,7 @@
 		"desc": "ChooseFile opens a file picker for user to select a file.\n\nSee Also: @ReadFile",
 		"isfunc": true,
 		"name": "ChooseFile",
-		"pNames": ["message", "type", "callback"],
+		"pNames": ["message", "type", "callback", "fldr"],
 		"pTypes": ["str", "str-mimetype", {
 			"desc": "Callback",
 			"isfunc": true,
@@ -124,7 +124,7 @@
 			"pNames": ["path"],
 			"pTypes": ["str_pth"],
 			"shortDesc": "callback"
-		}],
+		}, "str_pth"],
 		"shortDesc": "Let the user choose a file"
 	},
 	"ChooseImage": {
@@ -531,6 +531,23 @@
 			"SetHtml": "#8753208754",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": "#2398750419",
+			"SetOnLongTouch": {
+				"desc": "Define a callback function which is called when the button has been long pressed.",
+				"isfunc": true,
+				"name": "SetOnLongTouch",
+				"pNames": ["callback"],
+				"pTypes": [
+					{
+						"desc": "Callback",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": [],
+						"pTypes": [],
+						"shortDesc": "callback"
+					}
+				],
+				"shortDesc": "Called when the button was long pressed"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
@@ -6028,7 +6045,7 @@
 				"desc": "Inserts a string at a given position.",
 				"isfunc": true,
 				"name": "InsertText",
-				"pNames": ["text", "index"],
+				"pNames": ["text", "start"],
 				"pTypes": ["str", "num_int"],
 				"shortDesc": "Insert text at a given position"
 			},
@@ -7236,7 +7253,7 @@
 	},
 	"CreateYesNoDialog": {
 		"abbrev": "ynd",
-		"desc": "The YesNo dialog can be used to let the user confirm a specific action. Its the equivalent to the js confirm function, but it is customizable.",
+		"desc": "The YesNo dialog can be used to let the user confirm a specific action. Its the equivalent to the js confirm function, but it is more customizable. <grey>(and doesn't crash when aborting</grey>",
 		"isfunc": true,
 		"name": "CreateYesNoDialog",
 		"pNames": ["message", "options"],
@@ -9250,6 +9267,14 @@
 		"pTypes": ["str_com", "str_pth"],
 		"shortDesc": "Set app menu"
 	},
+	"SetMockLocation": {
+		"desc": "Emulates a GPS location on the device.",
+		"isfunc": true,
+		"name": "SetMockLocation",
+		"pNames": ["lat", "lng", "accuracy"],
+		"pTypes": ["num", "num", "num"],
+		"shortDesc": "Emulate GPS location"
+	},
 	"SetOnBroadcast": {
 		"desc": "Define a callback function for incoming Broadcast messages.\n\nSee also: @Broadcast",
 		"isfunc": true,
@@ -9466,6 +9491,23 @@
 		"pNames": ["enable"],
 		"pTypes": ["bin"],
 		"shortDesc": "En/Disable Wifi on the device"
+	},
+	"ShowCheckList": {
+		"abbrev": "ckl",
+		"desc": "The check list provides a similar functionality to the “Multi” [ListDiaog](CreateListDialog.htm), although you can adjust its initial check states with an object structure.",
+		"isfunc": true,
+		"name": "ShowCheckList",
+		"pNames": ["title", "list", "callback", "width", "height", "options"],
+		"pTypes": ["str", "str-title:str\\:checked:bin||obj-{ title:str, check:bin }", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["data"],
+			"pTypes": ["obj-{ title:str, checked:bin }"],
+			"shortDesc": "callback"
+		}, "num_frc", "num_frc", "str-sun-moon"],
+		"retval": "dso-CheckList",
+		"shortDesc": "Shows a CheckList"
 	},
 	"ShowDebug": {
 		"desc": "Show/Hide the debug console as overlay in your app, after calling @CreateDebug.\n\nSee Also: @Debug",

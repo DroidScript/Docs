@@ -55,6 +55,7 @@
 		"SetFontFile": "Change the used font",
 		"SetHtml": "Set current text to html-formatted text",
 		"SetMargins": "Define distances to other controls",
+		"SetOnLongTouch": "Called when the button was long pressed",
 		"SetOnTouch": "Define a callback function for touch events",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",

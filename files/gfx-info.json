@@ -35,6 +35,19 @@
 		"width": "Object width"
 	},
 	"gfx": { "undefined": "Width" },
+	"phs": {
+		"AddVelocity": "Adds velocity to the object",
+		"ApplyImpulse": "Applies an impulse p=m*v to the object",
+		"Contains": "Checks if a point is in the hitbox",
+		"EnablePhysics": "Temporally En/Disables physics",
+		"GetVelocity": "Returns the total velocity or a component of it",
+		"RemovePhysics": "Removes physics",
+		"SetMatrix": "Applies a 2d transformation",
+		"SetPhysics": "Set physics properties",
+		"SetShape": "Define the collision shape",
+		"SetVelocity": "Set the object velocity",
+		"UpdatePhysics": "Update internal physics properties"
+	},
 	"pol": {
 		"alpha": "the alpha value",
 		"angle": "The rotation fraction",
@@ -68,19 +81,6 @@
 		"Update": "Updates internal properties",
 		"visible": "Visibility state",
 		"width": "Object width"
-	},
-	"scs": {
-		"AddVelocity": "Adds velocity to the object",
-		"ApplyImpulse": "Applies an impulse p=m*v to the object",
-		"Contains": "Checks if a point is in the hitbox",
-		"EnablePhysics": "Temporally En/Disables physics",
-		"GetVelocity": "Returns the total velocity or a component of it",
-		"RemovePhysics": "Removes physics",
-		"SetMatrix": "Applies a 2d transformation",
-		"SetPhysics": "Set physics properties",
-		"SetShape": "Define the collision shape",
-		"SetVelocity": "Set the object velocity",
-		"UpdatePhysics": "Update internal physics properties"
 	},
 	"sht": { "undefined": undefined },
 	"snd": {

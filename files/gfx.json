@@ -32,7 +32,7 @@
 		"shortDesc": "Adds a basic shape object to the game"
 	},
 	"AddPhysics": {
-		"abbrev": "scs",
+		"abbrev": "phs",
 		"desc": "Adds the Box2D physics engine to your game. The method list below shows the functions which are added to game objects when using physics.",
 		"isfunc": true,
 		"name": "AddPhysics",
