@@ -2,7 +2,7 @@
 
 var curDoc, curSubf, curScope, lang;
 var warnEnbl = false, Globals, conf;
-var scope, base, navs, regGen;
+var scope, base, navs, regGen, regHide, regControl;
 
 function generateScope(name, pattern)
 {
@@ -491,7 +491,7 @@ function typeDesc( types )
 			return [type.slice(0, 3)].concat(
 					// custom type desc
 				type.replace(/^(...):([^-]*)/, (m, btype, desc) =>
-						(typedesc[btype + "_tmp"] = desc, btype + "_tmp"))
+						(conf.tdesc[btype + "_tmp"] = desc, btype + "_tmp"))
 					// sample vals
 					.replace(/-/, '\x01').split('\x01')
 			)
@@ -500,9 +500,9 @@ function typeDesc( types )
 
 	var last = "</b>";
 	var s = types.map(
-		(type, i) => typenames[type[0]] ?
-			"<b>" + typenames[type[0]] + (typedesc[type[1]] ?
-				(last = "</i>", ":</b> <i>" + typedesc[type[1]]) : ""
+		(type, i) => conf.tname[type[0]] ?
+			"<b>" + conf.tname[type[0]] + (conf.tdesc[type[1]] ?
+				(last = "</i>", ":</b> <i>" + conf.tdesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 
@@ -563,7 +563,7 @@ function toArgPop( name, types, doSwitch )
 			return [type.slice(0,3)].concat(
 					// custom type desc
 				type.replace(/^(...):([^-]*)/, (m, btype, desc) =>
-						(typedesc[btype + "_tmp"] = desc, btype + "_tmp"))
+						(conf.tdesc[btype + "_tmp"] = desc, btype + "_tmp"))
 					// sample vals
 					.replace(/-/, '\x01').split('\x01')
 			)
@@ -574,9 +574,9 @@ function toArgPop( name, types, doSwitch )
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
 	var last;
 	var s = types
-		.map((type, i) => "<b>" + typenames[type[0]] +
-			(last = "</b>", typedesc[type[1]] ?
-				(last = "</i>", ":</b> <i>" + typedesc[type[1]]) : ""
+		.map((type, i) => "<b>" + conf.tname[type[0]] +
+			(last = "</b>", conf.tdesc[type[1]] ?
+				(last = "</i>", ":</b> <i>" + conf.tdesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last)
 		);
 
@@ -640,8 +640,8 @@ function toArgAppPop( name, types )
 
 	return newAppPopup(
 		name, types.map(
-			(type) => typenames[type[0]] +
-				(typedesc[type[1]] ? ": " + typedesc[type[1]] : "") +
+			(type) => conf.tname[type[0]] +
+				(conf.tdesc[type[1]] ? ": " + conf.tdesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
 			).join("\n")
 	);
@@ -680,12 +680,12 @@ function replaceTypes(s, useAppPop)
 				if(desc.endsWith(' ')) space = ' ';
 				desc = desc.slice(desc[0] == '"', space ? -1 : undefined);
 				if(desc[0] == "'") tapop = true, desc = desc.slice(1);
-				if(typenames[desc.slice(0, 3)] && !desc[4].match(/[a-z]/i)) type = desc, desc = '';
+				if(conf.tname[desc.slice(0, 3)] && !desc[4].match(/[a-z]/i)) type = desc, desc = '';
 			}
 
 			if( type )
 			{
-				if(typenames[type.slice(0, 3)]) {
+				if(conf.tname[type.slice(0, 3)]) {
 					if(desc) type += '-' + desc, desc = ''; }
 				else
 					desc = type + (desc || ''), type = '';
@@ -694,8 +694,8 @@ function replaceTypes(s, useAppPop)
 			if(useAppPop || tapop)
 			{
 				if(type && !desc) r = toArgAppPop(name, type);
-				else r = newAppPopup(name, type ? typenames[type.slice(0, 3)] +
-						(typedesc[type] ? ": " + typedesc[type] : "") : desc);
+				else r = newAppPopup(name, type ? conf.tname[type.slice(0, 3)] +
+						(conf.tdesc[type] ? ": " + conf.tdesc[type] : "") : desc);
 			}
 			else if(type) r = toArgPop(name, type);
 			else r = newPopup("dsc", name, desc);
@@ -742,7 +742,7 @@ function addMarkdown(s)
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
 	//returns the type name or description of a value or the value itself
-function getv( v ) { return typedesc[v] || typenames[v] || v; }
+function getv( v ) { return conf.tdesc[v] || conf.tname[v] || v; }
 	//returns a comma separated list of object keys
 function skeys( o ) { return "" + keys( o ); }
 	//replaces \ paceholders with its placeholder 'name'
@@ -916,79 +916,12 @@ ${getHead(1)}
 var 	//globals for one doc
 	Globals,
 		// app object constructor name prefixes
-	regConPrefix = /^(Create|Open)/,
-	//bases for...
-		//available typenames
-	typenames = {
-		"all":"all types",
-		"bin":"boolean",
-		"dso":"app object",
-		"fnc":"function",
-		"lst":"list",
-		"num":"number",
-		"obj":"object",
-		"str":"string",
-		"?":"unknown"
-	},
-		//special types and descriptions
-	typedesc = {
-		"lst_obj":"of objects",
-
-		"num_byt":"Bytes",
-		"num_col":"hexadecimal 0xrrggbb",
-		"num_dat":"Datetime in milliseconds (from JS Date object)",
-		"num_deg":"angle in degrees (0..360)",
-		"num_dhx":"0-255",
-		"num_fac":"factor",
-		"num_flt":"float",
-		"num_fps":"frames per second",
-		"num_frc":"fraction (0..1)",
-		"num_gbt":"Gigabytes",
-		"num_hrz":"hertz",
-		"num_int":"integer",
-		"num_met":"meters",
-		"num_mls":"milliseconds",
-		"num_mtu":"maximum transmission unit",
-		"num_prc":"percent",
-		"num_pxl":"pixel",
-		"num_rad":"angle in radient (0..2*π)",
-		"num_sec":"seconds",
-
-		"str_acc":"account Email",
-		"str_b64":"base64 encoded",
-		"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',
-		"str_com":"comma “,” separated",
-		"str_eml":"comma separated email addresses or names",
-		"str_flt":"float",
-		"str_fmt":"format",
-		"str_htm":"html code",
-		"str_hex":"hexadecimal “00”..“FF”",
-		"str_int":"integer",
-		"str_jsc":"javascript code",
-		"str_lst":"separated",
-		"str_mim":"mimetype",
-		"str_mod":"mode",
-		"str_num":"number",
-		"str_oid":"object id “#id”",
-		"str_ort":'“Default”, “Portrait”, “Landscape”',
-		"str_pip":"pipe “|” separated",
-		"str_pth":'path to file or folder ( “/absolute/...” or “relative/...” )',
-		"str_pxl":"integer in pixels",
-		"str_smc":"semicolon “;” separated",
-		"str_sql":"sql code",
-		"str_sty":"style",
-		"str_uri":"URI encoded",
-		"str_url":"url path"
-	};
+	regConPrefix = /^(Create|Open)/;
 
 
 // ---------------------------- DocsModifier.js globs --------------------------
 
 var
-	// hide functions and methods which are matching this regex
-	regHide = /^(_.*|.+\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\.(un)?loadTexture)$/,
-		// interpret matching app. functions as control constructors
-	regControl = /^(Create(?!Debug).*|OpenDatabase|Odroid)$/,
 		// html char placeholders
 	_htm = {comma:',', colon:':', bsol:'\\', period:'.', lowbar:'_', verbar: '|', "#160":" ", nbsp:" ", ldquo: "“", rdquo: "”"},
 		// cwd
@@ -1082,6 +1015,8 @@ function tos(o, intd, m)
 function OnStart()
 {
 	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
+	regHide = RegExp(conf.regHide);
+	regControl = RegExp(conf.regControl);
 
 	if(process.argv.length == 2) process.argv.push("");
 	for(var pat of process.argv.slice(2))
