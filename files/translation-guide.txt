@@ -1,0 +1,75 @@
+Translate following texts:
+
+app.json, app-base.json, intro.json
+	desc
+	shortDesc
+
+app-navs.json
+	only the keys, not the lists
+
+app/*.md
+intro/*.md
+
+the values of this object:
+
+{
+	"all":"all types",
+	"bin":"boolean",
+	"dso":"app object",
+	"fnc":"function",
+	"lst":"list",
+	"num":"number",
+	"obj":"object",
+	"str":"string",
+	"?":"unknown"
+}
+
+{
+	"lst_obj":"of objects",
+
+	"num_byt":"Bytes",
+	"num_col":"hexadecimal 0xrrggbb",
+	"num_dat":"Datetime in milliseconds (from JS Date object)",
+	"num_deg":"angle in degrees (0..360)",
+	"num_dhx":"0-255",
+	"num_fac":"factor",
+	"num_flt":"float",
+	"num_fps":"frames per second",
+	"num_frc":"fraction (0..1)",
+	"num_gbt":"Gigabytes",
+	"num_hrz":"hertz",
+	"num_int":"integer",
+	"num_met":"meters",
+	"num_mls":"milliseconds",
+	"num_mtu":"maximum transmission unit",
+	"num_prc":"percent",
+	"num_pxl":"pixel",
+	"num_rad":"angle in radient (0..2*π)",
+	"num_sec":"seconds",
+
+	"str_acc":"account Email",
+	"str_b64":"base64 encoded",
+	"str_col":'<br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ...',
+	"str_com":"comma “,” separated",
+	"str_eml":"comma separated email addresses or names",
+	"str_flt":"float",
+	"str_fmt":"format",
+	"str_htm":"html code",
+	"str_hex":"hexadecimal “00”..“FF”",
+	"str_int":"integer",
+	"str_jsc":"javascript code",
+	"str_lst":"separated",
+	"str_mim":"mimetype",
+	"str_mod":"mode",
+	"str_num":"number",
+	"str_oid":"object id “#id”",
+	"str_ort":'“Default”, “Portrait”, “Landscape”',
+	"str_pip":"pipe “|” separated",
+	"str_pth":'path to file or folder ( “/absolute/...” or “relative/...” )',
+	"str_pxl":"integer in pixels",
+	"str_smc":"semicolon “;” separated",
+	"str_sql":"sql code",
+	"str_sty":"style",
+	"str_uri":"URI encoded",
+	"str_url":"url path"
+};

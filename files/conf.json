@@ -1,0 +1,10 @@
+{
+	"scopes" : {
+		"intro": "Introduction",
+		"app": "Reference",
+		"gfx": "Game Engine"
+	},
+	"langs" : {
+		"en": "English"
+	}
+}

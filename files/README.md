@@ -55,11 +55,17 @@ There you can easily add, commit and even push changes to your repository
 
 The generator has a specific file structure you have to use to be able to generate the docs. Each of them starts with the scope name (ie. app or gfx) which is later used to identify the docs to generate.
 
-- **\<scope\>/\<member\>.md**:
+- **conf.json**:
+	general generation info (languages and scopes)
+- **docs-base**:
+	the css/js sources for every language
+- **\<lang\>**:
+	the generation sources for a specific language
+- **\<lang\>\<scope\>/\<member\>.md**:
 	Put large descriptions of scope members here
-- **\<scope\>-samples/\<member\>.txt**:
+- **\<lang\>\<scope\>-samples/\<member\>.txt**:
 	A file which includes large example codes
-	```js
+	```html
 	// an unnamed sample
 	<sample>
 	/* Your sample code> */
@@ -70,7 +76,7 @@ The generator has a specific file structure you have to use to be able to genera
 	/* Your sample code> */
 	</sample>
 	```
-- **\<scope\>.json**:
+- **\<lang\>\<scope\>.json**:
 	The main generation source in { [JSON Format](#JSON-Format) }
 	```js
 	{
@@ -78,7 +84,7 @@ The generator has a specific file structure you have to use to be able to genera
 		/* ... */
 	}
 	```
-- **\<scope\>-base.json**:
+- **\<lang\>\<scope\>-base.json**:
 	Put member definitions which are often needed here. The keys are 10 digit hashes starting with a '#' which are used to refer to members in the \<scope\>.json file.
 	```js
 	{
@@ -86,7 +92,7 @@ The generator has a specific file structure you have to use to be able to genera
 		/* ... */
 	}
 	```
-- **\<scope\>-navs.json**:
+- **\<lang\>\<scope\>-navs.json**:
 	A structure representing navigators to make it easy for users to quickly find a certain member. There will always be a 'All' category added which includes all members.
 	```js
 	{
@@ -227,9 +233,12 @@ Besides these special formats you also have following standard text formatting f
 ## Generating
 
 - in a terminal navigate to _'files'_ by executing `$ cd files`
-- execute `$ ./generate.js` to generate all docs (`./generate.js` and `node generate.js` are synonym)
+- execute `$ ./generate.js` to generate all docs of every language (`./generate.js` and `node generate.js` are synonym)
+- execute `$ ./generate.js -help` to see more cli help
+- execute `$ ./generate.js \<lang\> [..]` to generate docs of a specific language
 - execute `$ ./generate.js \<scope\> [..]` to generate a specific scope
 - execute `$ ./generate.js \<scope\>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
+- execute `$ ./generate.js \<lang\>.\<scope\> [..]` to generate a specific scope of a language
 
 
 ## Update Github Pages
