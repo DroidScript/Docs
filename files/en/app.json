@@ -668,7 +668,7 @@
 				"shortDesc": "Returns a new list of possible picture dimensions"
 			},
 			"GetPixelData": {
-				"desc": "Returns the pixel data of the current camery view in a base64 encoded raw bitmap, png or jpg format.",
+				"desc": "Returns the current camera's raw, png or jpg image datas encoded as base64.",
 				"isfunc": true,
 				"name": "GetPixelData",
 				"pNames": ["format", "left", "top", "width", "height"],
@@ -2339,11 +2339,11 @@
 				"shortDesc": "Draws a rectangle"
 			},
 			"DrawSamples": {
-				"desc": "Draws a vertically centered graph in relation to the specified range in both direction.\nThe sample value 0 would be vertically centered, -range at the top and range at the bottom.\nThe sample x positions are evenly distributed over the whole image width.",
+				"desc": "Draws a vertically centered graph in relation to the specified range in both direction.\nThe sample value _0_ would be vertically centered, _-range_ at the top and _range_ at the bottom.\nThe sample x positions are evenly distributed over the whole image width.",
 				"isfunc": true,
 				"name": "DrawSamples",
 				"pNames": ["data", "range"],
-				"pTypes": ["lst-[ data:num ]", "num"],
+				"pTypes": ["lst-[ data:num_int ]", "num"],
 				"shortDesc": "Draws a vertically centered sample graph"
 			},
 			"DrawText": {
@@ -6104,7 +6104,7 @@
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
+				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)\nAlong with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_",
 				"isfunc": true,
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
