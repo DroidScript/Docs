@@ -2275,7 +2275,7 @@
 				"shortDesc": "Cache draw commands"
 			},
 			"DrawArc": {
-				"desc": "Draws an elliptical arc.",
+				"desc": "Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.",
 				"isfunc": true,
 				"name": "DrawArc",
 				"pNames": ["x1", "y1", "x2", "y2", "start", "sweep"],
@@ -5914,7 +5914,7 @@
 		"isfunc": true,
 		"name": "CreateTextEdit",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines,FillX/Y,Password:displays characters as dots"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines and change 'Enter' key to 'Done',FillX/Y,Password:displays characters as dots"],
 		"retval": "dso-TextEdit",
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {

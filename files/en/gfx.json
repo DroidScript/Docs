@@ -763,6 +763,15 @@
 		"retval": "?",
 		"shortDesc": "GetOrder"
 	},
+	"GetTime": {
+		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
+		"isfunc": true,
+		"name": "GetTime",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "?",
+		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
+	},
 	"height": {
 		"desc": "",
 		"isfunc": false,

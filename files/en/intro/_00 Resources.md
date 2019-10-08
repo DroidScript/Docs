@@ -1,8 +1,6 @@
 ### Official Websites
 - [Website](http://droidscript.org)
 - [PlayStore](https://play.google.com/store/apps/details?id=com.smartphoneremote.androidscriptfree)
-- [News](http://droidscript.org/news)
-- [Shop](http://droidscript.org/shop)
 - [GitHub](https://github.com/DroidScript)
 
 ### Social Media
