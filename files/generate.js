@@ -52,7 +52,7 @@ function generateScope(name, pattern)
 	}
 	else // no json file available
 	{
-		regGen = RegExp("(?=^info$)[]|(?!^info$)^.*" + regGen.source);
+		regGen = RegExp("(?=^tips$)[]|(?!^tips$)^.*" + regGen.source);
 		// add files from scope folder to be generated
 		scope = {}; base = false; navs = [];
 		for(var n of app.ListFolder(lang + "/" + curScope))
@@ -117,20 +117,20 @@ function generateDocs(scope)
 		app.UpdateProgressBar( Math.floor( 100*i / lst.length ), curScope + '.' + lst[i] );
 	}
 
-	if(!"info".match(regGen)) return;
+	if(!"tips".match(regGen)) return;
 
-	curDoc = lang + `/${curScope}-info.json`;
-	var tsubf, info = { [curScope]: {} };
+	curDoc = lang + `/${curScope}-tips.json`;
+	var tsubf, tips = { [curScope]: {} };
 
 	for(var name of keys(scope).filter(nothidden))
 	{
 		if(!scope[name].shortDesc) continue;
-		info[curScope][lst[i]] = scope[name].shortDesc;
+		tips[curScope][lst[i]] = scope[name].shortDesc;
 
 		if(tsubf = scope[name].subf)
 		{
 			var tctrl = {};
-			info[scope[name].abbrev] = tctrl;
+			tips[scope[name].abbrev] = tctrl;
 
 			for(var j of keys(tsubf).filter(nothidden))
 			{
@@ -146,9 +146,9 @@ function generateDocs(scope)
 		}
 	}
 
-	info = tos(info);
-	if(info.lastIndexOf("}") != 25)
-		app.WriteFile( curDoc, info );
+	tips = tos(tips);
+	if(tips.lastIndexOf("}") != 25)
+		app.WriteFile( curDoc, tips );
 }
 
 // generates one document by function name
@@ -570,7 +570,7 @@ function toArgPop( name, types, doSwitch )
 		}
 	);
 
-	// start of type desc string. (info: [optional], [:] if followed by value)
+	// start of type desc string. (tips: [optional], [:] if followed by value)
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
 	var last;
 	var s = types

@@ -788,6 +788,15 @@
 		"retval": "?",
 		"shortDesc": "IsOverlap"
 	},
+	"IsPaused": {
+		"desc": "Returns whether the game is currently paused.",
+		"isfunc": true,
+		"name": "IsPaused",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "bin",
+		"shortDesc": "Get paused state"
+	},
 	"isReady": {
 		"desc": "",
 		"isfunc": false,
@@ -833,6 +842,14 @@
 		"pTypes": [],
 		"retval": "?",
 		"shortDesc": "Play"
+	},
+	"Reload": {
+		"desc": "Restarts the game from scratch.",
+		"isfunc": true,
+		"name": "Reload",
+		"pNames": [],
+		"pTypes": [],
+		"shortDesc": "Restart gmem from scratch"
 	},
 	"RemoveBackground": {
 		"desc": "",
