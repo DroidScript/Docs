@@ -124,8 +124,9 @@ function generateDocs(scope)
 
 	for(var name of keys(scope).filter(nothidden))
 	{
-		if(!scope[name].shortDesc) continue;
-		tips[curScope][lst[i]] = scope[name].shortDesc;
+		if(scope[name].shortDesc)
+			tips[curScope][name] = scope[name].shortDesc;
+		else continue;
 
 		if(tsubf = scope[name].subf)
 		{
@@ -137,15 +138,16 @@ function generateDocs(scope)
 				if(typeof tsubf[j] == "string" && tsubf[j][0] == '#')
 				{
 					if(base && base[tsubf[j]])
-						tctrl[j] = base[tsubf[j]].shortDesc;
-					else
-						Throw(Error(`basefunc ${tsubf[j]} not found!`));
+					{
+						if(base[tsubf[j]].shortDesc)
+							tctrl[j] = base[tsubf[j]].shortDesc;
+					}
+					else Throw(Error(`basefunc ${tsubf[j]} not found!`));
 				}
-				else tctrl[j] = tsubf[j].shortDesc;
+				else if(tsubf[j].shortDesc) tctrl[j] = tsubf[j].shortDesc;
 			}
 		}
 	}
-
 	tips = tos(tips);
 	if(tips.lastIndexOf("}") != 25)
 		app.WriteFile( curDoc, tips );
@@ -950,7 +952,7 @@ function isControl(name) { return !!scope[name].subf; }
 function getAbbrev(s)
 {
 	var count = 0;
-	        // remove 'Create'
+			// remove 'Create'
 	return s.slice(6)
 			// count uppercases
 		.replace(/[A-Z]/g, function(c) { count++; return c; })
@@ -1031,7 +1033,7 @@ function OnStart()
 					`${process.argv.slice(0,2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
 	-lang=<LANG-CODE>   2 digit code, ie. en de fr pt es ..
-	                    defaults to 'en'
+						defaults to 'en'
 	-help               this help
 
 PATTERN:
