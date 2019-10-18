@@ -49,7 +49,7 @@
 			<a href="#pop_num_002" data-transition="pop" data-rel="popup">dataBits</a>,
 			<a href="#pop_num_003" data-transition="pop" data-rel="popup">stopBits</a>,
 			<a href="#pop_num_004" data-transition="pop" data-rel="popup">parity</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">device</a> )
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">device</a> )
 			→ <b>app object:</b> USBSerial
 		</div>
 
@@ -83,7 +83,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetDataMode</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetDTR</a>(
@@ -107,7 +107,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetSplitMode</a>(
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a>,
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p2</a>,
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p3</a> )
 		</div>
@@ -124,7 +124,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">Write</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">encoding</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">encoding</a> )
 		</div>
 
 	</div>
@@ -137,10 +137,10 @@
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>integer:</i> 5 or 6 or 7 or 8</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>integer:</i> 1 or 2 or 15</div>
 	<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('none')">0</a> or <a href="" onclick="app.ShowPopup('odd')">1</a> or <a href="" onclick="app.ShowPopup('even')">2</a> or <a href="" onclick="app.ShowPopup('mark')">3</a> or <a href="" onclick="app.ShowPopup('space')">4</a></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“1st”</docstr> or <docstr>“2nd”</docstr> or <docstr>“3rd”</docstr> or <docstr>“...”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“US-ASCII”</docstr> or <docstr>“UTF16L/BE”</docstr></div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> pid</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“US-ASCII”</docstr> or <docstr>“UTF16L/BE”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number:</b> <i>integer</i></div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(

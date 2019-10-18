@@ -1491,6 +1491,22 @@
 				"pTypes": ["str"],
 				"shortDesc": "Changes the dialog title"
 			},
+			"SetTitleColor": {
+				"desc": "Changes the color of the title divider.",
+				"isfunc": true,
+				"name": "SetTitleColor",
+				"pNames": ["clr"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Changes the color of the title divider"
+			},
+			"SetTitleHeight": {
+				"desc": "Changes the height of the title bar.",
+				"isfunc": true,
+				"name": "SetTitleHeight",
+				"pNames": ["height", "options"],
+				"pTypes": ["num_pxl", "str_com-px|sp|dip|mm|pt"],
+				"shortDesc": "Change height of the title bar"
+			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
@@ -2783,7 +2799,7 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
 		"retval": "dso-List",
 		"shortDesc": "Returns a new List object",
 		"subf": {
@@ -2934,7 +2950,7 @@
 				"isfunc": true,
 				"name": "SetColumnWidths",
 				"pNames": ["icon", "title", "body", "mode"],
-				"pTypes": ["num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num_frc", "num_frc", "num_frc", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Change coloumn widths"
 			},
 			"SetDivider": {
@@ -2985,7 +3001,7 @@
 				"isfunc": true,
 				"name": "SetIconMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
-				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Change icon margins"
 			},
 			"SetIconSize": {
@@ -2993,7 +3009,7 @@
 				"isfunc": true,
 				"name": "SetIconSize",
 				"pNames": ["size", "mode"],
-				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Change the icon size"
 			},
 			"SetItem": {
@@ -3068,7 +3084,7 @@
 				"isfunc": true,
 				"name": "SetTextSize1",
 				"pNames": ["size", "mode"],
-				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Set title text size"
 			},
 			"SetTextSize2": {
@@ -3076,7 +3092,7 @@
 				"isfunc": true,
 				"name": "SetTextSize2",
 				"pNames": ["size", "mode"],
-				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"pTypes": ["num", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Set body text size"
 			},
 			"SetVisibility": "#1004824195",
@@ -3623,6 +3639,22 @@
 				"pNames": ["data", "mode", "address", "port", "options"],
 				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "str_url", "num_int", "str-Text|Hex|Bytes"],
 				"shortDesc": "Send an UDP Datagram"
+			},
+			"SetDataMode": {
+				"desc": "Enable sending data in several modes.",
+				"isfunc": true,
+				"name": "SetDataMode",
+				"pNames": ["mode"],
+				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:\"UTF-16L/BE\"&gt;"],
+				"shortDesc": "Define data format for outgoing data"
+			},
+			"SetSplitMode": {
+				"desc": "Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls.\np2 and p3 have different purposes for different modes:\n<style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>",
+				"isfunc": true,
+				"name": "SetSplitMode",
+				"pNames": ["mode", "p2", "p3"],
+				"pTypes": ["str-End|Start-End|Size", "str||num_int", "str||num_int"],
+				"shortDesc": "Specify how to split received data"
 			},
 			"SendText": {
 				"desc": "Sends text over TCP connection.",
@@ -6380,7 +6412,7 @@
 		"isfunc": true,
 		"name": "CreateUSBSerial",
 		"pNames": ["baudRate", "dataBits", "stopBits", "parity", "device"],
-		"pTypes": ["num_int-300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600", "num_int-5|6|7|8", "num_int-1|2|15", "num_int-0:none|1:odd|2:even|3:mark|4:space", "str-1st|2nd|3rd|..."],
+		"pTypes": ["num_int-300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600", "num_int-5|6|7|8", "num_int-1|2|15", "num_int-0:none|1:odd|2:even|3:mark|4:space", "num-pid"],
 		"retval": "dso-USBSerial",
 		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
@@ -6409,7 +6441,7 @@
 				"name": "SetDataMode",
 				"pNames": ["mode"],
 				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:\"UTF-16L/BE\"&gt;"],
-				"shortDesc": ""
+				"shortDesc": "Define data format for outgoing data"
 			},
 			"SetDTR": {
 				"desc": "Raises the **D**ata **T**erminal **R**eady state.",
@@ -8028,7 +8060,7 @@
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Accounts|License", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Accounts|License|usb\\:<\"pid:num\">", {
 			"desc": "callback function",
 			"isfunc": true,
 			"name": "callback",
@@ -9547,7 +9579,7 @@
 		"isfunc": true,
 		"name": "ShowProgress",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str_com-NoDim:Don't darken background"],
+		"pTypes": ["str", "str_com-NoDim:Don't darken background,NonModal:allow background touch"],
 		"shortDesc": "Show a progress indicator"
 	},
 	"ShowProgressBar": {
@@ -9708,6 +9740,14 @@
 		"pNames": [],
 		"pTypes": [],
 		"shortDesc": "Bring your app to the foreground"
+	},
+	"Translate": {
+		"desc": "Translates “Ok” and “Cancel” buttons created after this method to the passed strings.",
+		"isfunc": true,
+		"name": "Translate",
+		"pNames": ["Ok", "Cancel"],
+		"pTypes": ["str", "str"],
+		"shortDesc": "Translate “Ok” and “Cancel” buttons"
 	},
 	"Unlock": {
 		"desc": "Unlocks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Lock",
