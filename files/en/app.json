@@ -3258,7 +3258,15 @@
 				"retval": "num_sec",
 				"shortDesc": "Get the song length in seconds"
 			},
-			"GetPosition": "#1605064214",
+            "GetPosition": {
+				"desc": "Returns the elapsed playtime in seconds.",
+				"isfunc": true,
+				"name": "GetPosition",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_sec",
+				"shortDesc": "Get  elapsed playtime in seconds"
+			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,

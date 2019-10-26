@@ -1141,7 +1141,7 @@
 	"ply": {
 		"Close": "Close the media player.",
 		"GetDuration": "Get the song length in seconds",
-		"GetPosition": "Returns data about position and size",
+		"GetPosition": "Get  elapsed playtime in seconds",
 		"GetType": "Returns the control class name",
 		"IsLooping": "Returns if the player is looping.",
 		"IsPlaying": "Get current playing state",
