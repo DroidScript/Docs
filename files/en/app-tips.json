@@ -1566,7 +1566,7 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetText": "Change displayed text",
-		"SetTextColor": "Define a shadow around the control",
+		"SetTextColor": "Change the text color",
 		"SetTextShadow": "Define a shadow around the control",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
