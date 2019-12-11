@@ -41,12 +41,12 @@
 			</span><br>
 		</div>
 
-		<p>.</p>
+		<p>Creates a sound object which can play audio files.</p>
 
 		<div class="samp">
 		snd = gfx.CreateSound(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a> )
-			→ <b>unknown</b>
+			→ <b>game object:</b> Sound
 		</div>
 
 		<h3>Methods</h3>
@@ -54,23 +54,24 @@
 
 		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">file</a> → <b>string</b></div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Pause</a>() → <b>unknown</b>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Pause</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Play</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">loop</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">delay</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">gap</a> )
-			→ <b>unknown</b>
+			<a href="#pop_std_bool" data-transition="pop" data-rel="popup">loop</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">delay</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">gap</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
+	<div data-role="popup" id="pop_std_bool" class="ui-content"><b>undefined</b></div>
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"></div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>snd.Pause</b><br></div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>snd.Play</b><br></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>milliseconds:</i> delay before playback start</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>milliseconds:</i> time gap between two loops</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">Contains the url of the loaded file.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>snd.Pause</b><br>Pause the playback if the sound is currently palaying.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>snd.Play</b><br>Start the playback of the current loaded audio file.</div>
 </div>
 </body>
 

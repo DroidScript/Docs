@@ -13,6 +13,7 @@
 		"all":"all types",
 		"bin":"boolean",
 		"dso":"app object",
+		"gvo":"game object",
 		"fnc":"function",
 		"lst":"list",
 		"num":"number",

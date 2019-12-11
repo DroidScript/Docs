@@ -1,5 +1,5 @@
 {
-	"bck": {},
+	"bck": { "undefined": undefined },
 	"cir": {
 		"alpha": "the alpha value",
 		"angle": "The rotation fraction",
@@ -131,7 +131,11 @@
 		"width": "Object width"
 	},
 	"sht": { "undefined": undefined },
-	"snd": {},
+	"snd": {
+		"file": "The file url",
+		"Pause": "Pause the track",
+		"Play": "Play the soundtrack"
+	},
 	"spr": {
 		"alpha": "the alpha value",
 		"angle": "The rotation fraction",

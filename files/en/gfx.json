@@ -4,7 +4,7 @@
 		"isfunc": true,
 		"name": "AddBackground",
 		"pNames": ["obj"],
-		"pTypes": ["dso-CreateBackground"],
+		"pTypes": ["gvo-CreateBackground"],
 		"shortDesc": "Adds a background to the game"
 	},
 	"_AddBasicSprite": {
@@ -12,7 +12,7 @@
 		"isfunc": true,
 		"name": "AddBasicSprite",
 		"pNames": ["sprite"],
-		"pTypes": ["dso-CreateSprite"],
+		"pTypes": ["gvo-CreateSprite"],
 		"shortDesc": "Adds a BasicSprite to the game"
 	},
 	"_AddBatch": {
@@ -20,7 +20,7 @@
 		"isfunc": true,
 		"name": "AddBatch",
 		"pNames": ["batch"],
-		"pTypes": ["dso-CreateBatch"],
+		"pTypes": ["gvo-CreateBatch"],
 		"shortDesc": "Adds a sprite batch to the game"
 	},
 	"AddGraphic": {
@@ -95,7 +95,7 @@
 				"isfunc": true,
 				"name": "SetMatrix",
 				"pNames": ["mtx"],
-				"pTypes": ["dso-Matrix"],
+				"pTypes": ["gvo-Matrix"],
 				"shortDesc": "Applies a 2d transformation"
 			},
 			"SetPhysics": {
@@ -137,7 +137,7 @@
 		"isfunc": true,
 		"name": "AddSprite",
 		"pNames": ["sprite", "x", "y", "w", "h", "angle", "alpha"],
-		"pTypes": ["dso-CreateSprite", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"pTypes": ["gvo-CreateSprite", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc"],
 		"shortDesc": "Adds a sprite object"
 	},
 	"AddText": {
@@ -145,7 +145,7 @@
 		"isfunc": true,
 		"name": "AddText",
 		"pNames": ["obj", "x", "y", "angle", "alpha"],
-		"pTypes": ["dso-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"pTypes": ["gvo-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
 		"shortDesc": "Adds a text object"
 	},
 	"_Animate": {
@@ -185,7 +185,7 @@
 		"name": "CreateBackground",
 		"pNames": ["file", "options"],
 		"pTypes": ["str", "str_com-stretch"],
-		"retval": "dso-Background",
+		"retval": "gvo-Background",
 		"shortDesc": "Returns a new background",
 		"subf": {
 			"Scroll": {
@@ -194,7 +194,7 @@
 				"name": "Scroll",
 				"pNames": ["x", "y"],
 				"pTypes": ["num", "num"],
-				"shortDesc": ""
+				"shortDesc": "Scroll Background"
 			},
 			"_sprite": {
 				"desc": "",
@@ -235,7 +235,7 @@
 		"name": "CreateCircle",
 		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
-		"retval": "dso-Circle",
+		"retval": "gvo-Circle",
 		"shortDesc": "Creates a circle",
 		"subf": {
 			"alpha": "#2974510528",
@@ -262,7 +262,7 @@
 		"name": "CreateEllipse",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
-		"retval": "dso-Ellipse",
+		"retval": "gvo-Ellipse",
 		"shortDesc": "Creates an ellipse",
 		"subf": {
 			"alpha": "#2974510528",
@@ -289,7 +289,7 @@
 		"name": "CreatePolygon",
 		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
-		"retval": "dso-Polygon",
+		"retval": "gvo-Polygon",
 		"shortDesc": "Creates a polygon",
 		"subf": {
 			"alpha": "#2974510528",
@@ -316,7 +316,7 @@
 		"name": "CreateRectangle",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
-		"retval": "dso-Rectangle",
+		"retval": "gvo-Rectangle",
 		"shortDesc": "Creates a rectangle",
 		"subf": {
 			"alpha": "#2974510528",
@@ -338,22 +338,22 @@
 	},
 	"CreateSound": {
 		"abbrev": "snd",
-		"desc": "",
+		"desc": "Creates a sound object which can play audio files.",
 		"isfunc": true,
 		"name": "CreateSound",
 		"pNames": ["file"],
 		"pTypes": ["str"],
-		"retval": "?",
+		"retval": "gvo-Sound",
 		"shortDesc": "Returns a new sound object",
 		"subf": {
 			"file": {
-				"desc": "",
+				"desc": "Contains the url of the loaded file.",
 				"isfunc": false,
 				"name": "file",
 				"retval": "str",
-				"shortDesc": ""
+				"shortDesc": "The file url"
 			},
-			"id": {
+			"_id": {
 				"desc": "",
 				"isfunc": false,
 				"name": "id",
@@ -361,28 +361,26 @@
 				"shortDesc": ""
 			},
 			"Pause": {
-				"desc": "",
+				"desc": "Pause the playback if the sound is currently palaying.",
 				"isfunc": true,
 				"name": "Pause",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Pause the track"
 			},
 			"Play": {
-				"desc": "",
+				"desc": "Start the playback of the current loaded audio file.",
 				"isfunc": true,
 				"name": "Play",
 				"pNames": ["loop", "delay", "gap"],
-				"pTypes": ["num", "num", "num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["bool", "num_mls-delay before playback start", "num_mls-time gap between two loops"],
+				"shortDesc": "Play the soundtrack"
 			}
 		}
 	},
 	"CreateSprite": {
 		"abbrev": "spr",
-		"desc": "",
+		"desc": "#CreateSprite.md",
 		"isfunc": true,
 		"name": "CreateSprite",
 		"pNames": ["file", "group", "callback"],
@@ -394,7 +392,7 @@
 			"pTypes": [],
 			"shortDesc": "callback"
 		}],
-		"retval": "dso-CreateSprite",
+		"retval": "gvo-CreateSprite",
 		"shortDesc": "Returns a new sprite object",
 		"subf": {
 			"added": {

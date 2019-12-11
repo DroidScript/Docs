@@ -8312,7 +8312,7 @@
 		"isfunc": true,
 		"name": "HttpRequest",
 		"pNames": ["type", "baseUrl", "path", "params", "callback", "headers"],
-		"pTypes": ["str-GET|POST", "str_url", "str", "str", {
+		"pTypes": ["str-GET:retrieve data|POST:submit data|JSON:post json data|PUT:replace target resource|DELETE:deletes the resource|HEAD:omit body", "str_url", "str", "str", {
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",

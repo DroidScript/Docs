@@ -41,16 +41,35 @@
 			</span><br>
 		</div>
 
-		<p>.</p>
+		<p>Creates a sprite object based on an image file containing a sprite or a spritesheet.</p>
 
 		<div class="samp">
 		spr = gfx.CreateSprite(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">group</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>app object:</b> <a href="CreateSprite.htm" data-ajax="false">Sprite</a>
+			→ <b>game object:</b> <a href="CreateSprite.htm" data-ajax="false">Sprite</a>
 		</div>
 
+		<p>To create a new Sprite just pass the image name as first parameter:<br>
+		<br>
+		<span class="samp samp-inline">gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+		<br>
+		<strong>Spritesheets</strong> can be loaded in two ways:<br>
+		<br>
+		The simple one is a specific file pattern<br>
+		<docstr>“Img/Sheetname_<strong><a href="" onclick="app.ShowPopup('number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesy</a></strong>”</docstr> or<br>
+		<docstr>“Img/Sheetname_strip<strong><a href="" onclick="app.ShowPopup('number')">total</a></strong>_<strong><a href="" onclick="app.ShowPopup('number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesy</a></strong>”</docstr><br>
+		if you have a different amount of sprites than the rectangle of <i>spritesx * spritesy</i> sprites.<br>
+		<br>
+		Example from the downloadable demo <a href="https://droidscript.org" onclick="return OpenUrl(this.href);">Grannies and Zombies</a>:</p>
+
+		<div class="samp">
+		granny <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"Img/Granny_1600x1000x8x5"</span><span class="token punctuation">,</span> <span class="token string">"granny"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+		zombie <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"Img/Zombie_strip35_1400x1000x7x5"</span><span class="token punctuation">,</span> <span class="token string">"zombie"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		</div>
+
+		<p>The second way is to create a SpriteSheet using the</p>
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Sprite</strong> object:</p>
 
