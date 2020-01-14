@@ -1,1 +1,5 @@
- 
+<sample Change NavBar Color>
+function OnStart() {
+    <b>app.SetNavBarColor("green");</b>
+}
+</sample>

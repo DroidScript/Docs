@@ -309,7 +309,7 @@
 				"isfunc": true,
 				"name": "SetSource",
 				"pNames": ["src"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str-Default|Camcorder|Mic|Unprocessed|Voicecommunication|Voiceperformance|Voicerecognition"],
 				"shortDesc": "Define the recording file"
 			},
 			"Start": {

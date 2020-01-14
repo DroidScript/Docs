@@ -40,6 +40,29 @@
 			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">dir</a> )
 		</div>
 
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Redirect Assets</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">RedirectAssets</span><span class="token punctuation">(</span><span class="token string">"/sdcard/DroidScript/Hello World/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"Img/Hello World.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 

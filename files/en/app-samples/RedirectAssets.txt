@@ -1,1 +1,13 @@
- 
+<sample Redirect Assets>
+function OnStart()
+{
+    <b>app.RedirectAssets("/sdcard/DroidScript/Hello World/");</b>
+
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+    img = app.CreateImage( "Img/Hello World.png" );
+    lay.AddChild( img );
+
+    app.AddLayout( lay );
+}
+</sample>
