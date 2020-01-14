@@ -1,4 +1,8 @@
 {
+	"adv": {
+		"GetType": "Returns the control class name",
+		"Load": "Loads an ad"
+	},
 	"app": {
 		"AddDrawer": "Adds a slide-able layout on given side",
 		"AddLayout": "Adds a layout to the app",
@@ -20,6 +24,7 @@
 		"CloseDrawer": "Closes the drawer layout on the given side",
 		"CopyFile": "Copies a file to a given destination",
 		"CopyFolder": "Copies a folder to a given destination",
+		"CreateAdView": "Returns an AdView object",
 		"CreateAudioRecorder": "Returns an AudioRecorder object",
 		"CreateBluetoothList": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"CreateBluetoothSerial": "Communicate with other Bluetooth devices",
@@ -183,6 +188,7 @@
 		"IsLocationEnabled": "Check if location method is enabled",
 		"IsNavBarOnRight": "Check if NavBar is on righthand side",
 		"IsNewVersion": "Check if apk version increased",
+		"IsPortrait": "Check if device is in portrait mode",
 		"IsPremium": "Check if user has a DroidScript Premium subscription",
 		"IsScreenOn": "Check if device screen is on",
 		"IsService": "Check id app is a service",
@@ -214,6 +220,7 @@
 		"QueryContent": "Queries content from the android content model",
 		"Quit": "Quit the app with showing a dialog and exit after closing",
 		"ReadFile": "Read the content of a local file",
+		"RedirectAssets": "Read assets from given folder",
 		"RemoveDrawer": "Remove drawer layout from a given side",
 		"RemoveLayout": "RemoveLayout",
 		"RenameFile": "Rename or move a local file",
@@ -227,6 +234,7 @@
 		"ScreenShot": "Take a screen shot of your app",
 		"Script": "Synchronously import an external JavaScript file",
 		"SendFile": "Send a file to a remote target",
+		"SendImage": "Send an image to a remote target",
 		"SendIntent": "SendIntent",
 		"SendMail": "Open the EMail app and autofill fields",
 		"SendMessage": "Send message from Service to main app",
@@ -249,6 +257,7 @@
 		"SetLanguage": "Load the language code from lang.json",
 		"SetMenu": "Set app menu",
 		"SetMockLocation": "Emulate GPS location",
+		"SetNavBarColor": "Set NavBar color",
 		"SetOnBroadcast": "Called on incoming Broadcasts",
 		"SetOnDebug": "Called on app debug messages",
 		"SetOnError": "Called on thrown JS errors",
@@ -264,6 +273,7 @@
 		"SetScreenMode": "SetScreenMode",
 		"SetSharedApp": "Auto-Launch Project when shared data received",
 		"SetSpeakerPhone": "En/Disable speaker for phone calls",
+		"SetStatusBarColor": "Set status bar color",
 		"SetTheme": "Change the theme of your app",
 		"SetUserAgent": "Change the user agent",
 		"SetUserCreds": "Set user credentials",
@@ -322,6 +332,7 @@
 		"Listen": "Listen <s>or stop listening</s> for incoming messages",
 		"Method": "Access Java object methods via reflection",
 		"RequestEnable": "Ask user to enable Bluetooth",
+		"SetDataMode": "Define data format for outgoing data",
 		"SetOnDisconnect": "Called after disconnecting from bluetooth connection",
 		"SetOnReceive": "Called after received Data via Bluetooth",
 		"SetSplitMode": "Specify how to split received data",
@@ -334,6 +345,7 @@
 	},
 	"btn": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -381,6 +393,7 @@
 	},
 	"cam": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"AutoCapture": "Takes a picture if a motion was detected",
 		"ClearFocus": "Removes the focus of the control",
 		"FindFaces": "Find faces in the current camera view",
@@ -452,6 +465,7 @@
 	},
 	"cde": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"ClearHistory": "Clears the undo/redo history",
 		"Copy": "Copy selected text to the clipboard",
@@ -520,6 +534,7 @@
 	},
 	"chk": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -623,7 +638,10 @@
 		"SetSize": "Change the size of the control",
 		"SetTitle": "Changes the dialog title",
 		"SetTitleColor": "Changes the color of the title divider",
+		"SetTitleDividerColor": "Changes the title divider height",
+		"SetTitleDividerHeight": "Changes the divider height",
 		"SetTitleHeight": "Change height of the title bar",
+		"SetTitleTextSize": "Changes the title text size",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”"
 	},
@@ -641,6 +659,7 @@
 	},
 	"edt": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"ClearHistory": "Clear undo/redo history",
 		"Focus": "Set the focus to the control for immediate access",
@@ -818,6 +837,7 @@
 	},
 	"img": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"Clear": "Clears the image content",
 		"ClearFocus": "Removes the focus of the control",
 		"DrawArc": "Draws an elliptical arc",
@@ -897,7 +917,7 @@
 	"lay": {
 		"AddChild": "Add a control to the layout",
 		"AdjustColor": "Adjust the visual color effect of the control",
-		"Animate": "Animates the layout",
+		"Animate": "Animates a control",
 		"ChildToFront": "Moves a child to the layout front",
 		"ClearFocus": "Removes the focus of the control",
 		"DestroyChild": "Destroys and removes a child",
@@ -926,6 +946,8 @@
 		"SetBackGradientRadial": "Define a radial background color gradient",
 		"SetBackground": "Change the background to an image",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
+		"SetCorderRadius": "Apply corner radius to ll's",
+		"SetElevation": "Apply shadow to ll's",
 		"SetEnabled": "En/Disable the control",
 		"SetGravity": "Adjust the placing of contained children",
 		"SetMargins": "Define distances to other controls",
@@ -970,6 +992,7 @@
 	"lst": {
 		"AddItem": "Adds an entry to the list.",
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1067,6 +1090,7 @@
 		"ReceiveDatagrams": "Receive UDP datagrams",
 		"ReceiveFile": "Receive a file via TCP from the server",
 		"ReceiveText": "Receive text over TCP",
+		"ReceiveVideoStream": "Receive video over UDP",
 		"SendBytes": "Send bytes over TCP",
 		"SendDatagram": "Send an UDP Datagram",
 		"SendText": "Sends text over TCP",
@@ -1171,12 +1195,14 @@
 		"Pause": "Pause the recording",
 		"SetFile": "Define the recording file",
 		"SetFrequency": "Define the Recording frequency",
+		"SetSource": "Define the recording file",
 		"Start": "Start recording",
 		"Stop": "Stop recording"
 	},
 	"scr": {
 		"AddChild": "Add a layout control",
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"DestroyChild": "Devil rises and takes a child with him to hell",
 		"Focus": "Set the focus to the control for immediate access",
@@ -1218,6 +1244,7 @@
 	},
 	"skb": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1293,6 +1320,7 @@
 	},
 	"spn": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1404,7 +1432,7 @@
 	},
 	"tab": {
 		"AdjustColor": "Adjust the visual color effect of the control",
-		"Animate": "Animates the layout",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1451,6 +1479,7 @@
 	},
 	"tgl": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1506,6 +1535,7 @@
 		"SetDialogBtnColor": "Define dialog button colors",
 		"SetDialogBtnTxtColor": "Define dialog button text colors",
 		"SetDialogColor": "Define dialog background colors",
+		"SetDialogCornerRadius": "Define dialog corner radius",
 		"SetDimBehind": "Define whether to dim dialog background",
 		"SetProgressBackColor": "Define progress background color",
 		"SetProgressBarOptions": "Define progress bar options",
@@ -1514,10 +1544,13 @@
 		"SetTextEditOptions": "Define text edit options",
 		"SetTitleColor": "Define title colors",
 		"SetTitleDividerColor": "Define title divider colors",
-		"SetTitleHeight": "Define title height"
+		"SetTitleDividerHeight": "Define title divider height",
+		"SetTitleHeight": "Define title height",
+		"SetTitleTextSize": "Define title text size"
 	},
 	"txt": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1648,6 +1681,7 @@
 	},
 	"web": {
 		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
 		"Back": "Load previous page",
 		"CanGoBack": "Check if history contains a previous page",
 		"CanGoForward": "Check if history has a following page",
@@ -1694,6 +1728,7 @@
 		"SetRedirect": "Add url redirection rule",
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
+		"SetTextZoom": "Scales the html text",
 		"SetTouchMode": "En/Disable touchmode on the control",
 		"SetUserAgent": "Set custom user agent",
 		"SetUserCreds": "Set authentication/login data",

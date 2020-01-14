@@ -422,6 +422,15 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
+            "GetFrame": {
+				"desc": "Returns the current frame",
+				"isfunc": true,
+				"name": "GetFrame",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "Get current frame"
+			},
 			"Goto": {
 				"desc": "",
 				"isfunc": true,

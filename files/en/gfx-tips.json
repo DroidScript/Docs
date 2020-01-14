@@ -141,6 +141,7 @@
 		"angle": "The rotation fraction",
 		"Contains": "Check if the sprite contains a point",
 		"data": "Extra properties",
+		"GetFrame": "Get current frame",
 		"group": "The object's group",
 		"height": "The objects height",
 		"pivotX": "Rotation x pivot",

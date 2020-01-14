@@ -1,3 +1,92 @@
+DS 180b2
+- Fixed problem with screen height measurement on phones with hardware buttons.
+
+DS 180b1
+- Added Admob support + sample for premium users.
+- Added net.ReceiveVideoStream() for premium users.
+- Added new 'Card' Layout type + sample.
+-.Added app.SetNavBarColor/SetStatusBarColor for premium users + sample.
+-.Added 'btn-1' to 'btn-12' to app.GetJoystickState() method.
+- Added __BUILD_TIME__ macro.
+-.Added SetCorderRadius(radius) method to Linear layout control.
+- Fixed issue with miscalculated display height for devices with soft nav bars.
+-.Added app.IsPortrait() convenience function.
+- Added 'Location' permission automatically for app.CreateBluetoothSerial() method.
+- Fixed missing leading zero in hexmode response for BtSerial,File,NetClient,UsbSerial objects.
+- Added option to BTSerial for packet length headers, eg. bt.SetSplitMode( "Head", 2, "LE" ).
+- Added raw 'Direct Commands' Nxt serial BT sample (same techique should work for EV3).
+
+DS 179a4
+- Fixed problem with loading DS plugins on Android7 and lower.
+
+DS 179a3
+- Added .startsWith polyfill older Androids.
+- Fixed crash on OrangePi Zero.
+- _AddPermissions() now works in IDE.
+- PuckJS Plugin now requests Location permission in IDE.
+- 3dp accuracy now supported on seekbars.
+- Default seekbar max-rate changed from 20ms to 100ms.
+-.Added app.RedirectAssets. (Reads Img,Snd,Html,Misc assets from given folder not APK).
+-.Added 'NoRedirect' to web.LoadUrl() and web.LoadHtml() methods (blocks asset redirect).
+- Added 'Move' touch events to GameView (and blocked null events)
+
+DS 179a2
+- Fixed app.ShowTip error on touching tooltip.
+- app.WifiScan() now supports 'detail' option (returns array with details).
+
+DS 179a1
+-.Added obj.Animate + animation sample.
+-.Changed ListView to use normal font by default (can use 'bold' option)
+-.Dialog titles are now thinner by default (use 'old' option to revert).
+-.Dialog corners are now rounded by default (use 'old' option to revert).
+-.Dialog title text size is smaller by default (use 'old' option to revert).
+-.Added optional radius param to Dialog.SetBackColor() method.
+-.Added Theme.SetDialogCornerRadius(), Theme.SetTitleDividerHeight(), Theme.SetTitleTextSize().
+-.Added Dialog.SetTitleDividerColor(), Dialog.SetTitleDividerHeight(), Dialog.SetTitleTextSize().
+- Smartened up the Custom Dialog sample.
+- Fixed UDP send method (was broken in v178).
+- Fixed UDP ReceiveDatagrams() method.
+- Improved Wifi Broadcast sample.
+
+DS 178
+- Fixed 127.0.0.1 IDE error for Chromebooks.
+- Removed method tips question mark link for non app.* methods.
+
+DS 177b1
+- Improved dark mode support on device editor.
+-.Added 'BlackGrad' option to list control.
+-.Added gfx.GetTime() method, returns time since last gfx.Pause() or gfx.Play().
+- Fixed sound.Pause() method in GameView.
+- Enabled OnControl() callbacks in GameView even when game is paused.
+-.Added gfx.IsPaused() to GameView.
+-.Added gfx.Reload() to GameView (reloads game from scratch).
+-.Added app.SetMockLocation() for premium users.
+-.Prevented background touch during app.ShowProgress (use 'NonModal' to revert).
+-.Changed 'device' parameter of app.CreateUSBSerial() to select by PID not index.
+-.Allowed app.GetPermission( "usb:"+pid ) for USB devices.
+-.Added app.Translate(cancel,ok) method to translate buttons globally.
+- NetClient now supports SetSplitMode and SetDataMode (for use with AutoReceive).
+-.Added SetTitleHeight() and SetTitleColor() methods to custom dialog.
+
+DS 177a1
+- Added lots of new docs (thanks to Symbroson).
+- Docs now support dark/light mode (thanks to Symbroson).
+- Remote terminal now available by default for premium users.
+- Fixed 'Game' template for non-premium Wifi IDE users.
+- Fixed Service SetInForeground permission issue.
+-.Added btn.SetOnLongTouch method.
+- APK 'Debug Build' option now defaults to off and obfuscate to on.
+-.Added app.ShowCheckList() method + sample.
+- Fixed problem with building APKs on Android 9.
+-.Added optional angle parameter to glview.DrawSprite method.
+-.Added new optional 'folder' parameter to app.ChooseFile method.
+
+DS 176
+- Added support for ublox-7 USB GPS module + Sample.
+- Added android:directBootAware to enable USB serial devices at boot.
+- Changed Hello World sample so it's not re-created every time.
+- Fixed problem with NV21toRGB32 function during camera image processing.
+
 DS 175b2
 - Added missing 64 bit libs for FastCanvas.
 
@@ -8,42 +97,42 @@ DS 175b1
 
 DS 175a3
 - Fixed Webview data dir prefix issue for Android 9.
-- lst.SetEllipsize now sets both title and body.
+-.lst.SetEllipsize now sets both title and body.
 - GameView physics enabled for Text objects.
 - GameView Tween method fixed for Text objects.
 - obj.IsOverlap() fixed for Linear Layouts.
-- Temporarily removed support for NoDom option.
-- Removed support for GameView 'gles' mode.
+-.Temporarily removed support for NoDom option.
+-.Removed support for GameView 'gles' mode.
 
 DS 175a2
 - Added support for 64bit and API28 (required by Google Play)
-- app.SetKioskMode( "LockTask", true ) enables proper Android COSU kiosk apps.
-- app.SetKioskMode( "Pin", true ) enables proper pinning/unpinning of tasks.
-- app.ReplaceInFile() options param can now be left blank.
-- app.ReplaceInFile() now accepts regex strings.
+-.app.SetKioskMode( "LockTask", true ) enables proper Android COSU kiosk apps.
+-.app.SetKioskMode( "Pin", true ) enables proper pinning/unpinning of tasks.
+-.app.ReplaceInFile() options param can now be left blank.
+-.app.ReplaceInFile() now accepts regex strings.
 - Updated GameView intellisense to include Text object.
 - Improved gfx.CreateText() to allow numerics (previously had to use .toString()).
-- Added gfx.RemoveText(), gfx.RemoveGraphic(), gfx.RemoveBackground() methods.
-- Added sprite.Contains(x,y) method.
-- Added sprite.Flip( sprite, horiz, vert ) method.
+-.Added gfx.RemoveText(), gfx.RemoveGraphic(), gfx.RemoveBackground() methods.
+-.Added sprite.Contains(x,y) method.
+-.Added sprite.Flip( sprite, horiz, vert ) method.
 
 DS 175a1
 - Updated some samples to use 'this' instead of app.GetLast*
-- Removed app.CreateListView(), use app.CreateListDialog instead.
+-.Removed app.CreateListView(), use app.CreateListDialog instead.
 - Sped up SQLite callbacks again.
-- Added 'modal' and 'kiosk' option to app.CreateDialog().
+-.Added 'modal' and 'kiosk' option to app.CreateDialog().
 - Fixed custom dialog sizing issue when using app.SetDensity().
 
 DS 174
 - Changed to darker look and feel for Wifi IDE.
 - Added dark mode in Wifi IDE for Premium users.
-- Added app.SendImage() method.
+-.Added app.SendImage() method.
 - Modified internal _Cbm function slightly to allow use of local scope callback funcs.
 - More docs added (thanks to Symbroson)
 - Added _AddPlugins() function to allow manual inclusion of plugins.
-- Added web.SetTextZoom( zoom ).
+-.Added web.SetTextZoom( zoom ).
 - app.CreateBluetoothList now requests permission "Location" for > Android 8.
-- Changed app.WifiScan now returns list with pipe | instead of comma delimeters.
+-.Changed app.WifiScan now returns list with pipe | instead of comma delimeters.
 - Fixed app.ChooseWifi now removes duplicate ssids.
 - Added gfx.CreateText() method to GameView (allows use of bitmap fonts)
 - Fixed GameView bounce sample.
@@ -1012,5 +1101,3 @@ DS 1.05 May 24, 2014
 - Added JavaScript Beginners guide.
 - Various other bug fixes.
 - More samples added.
-
-
