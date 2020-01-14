@@ -3,3 +3,4 @@ node_modules/
 
 # Generated files
 files/docs
+package-lock.json

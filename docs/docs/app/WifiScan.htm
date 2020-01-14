@@ -37,7 +37,8 @@
 
 		<div class="samp">
 		app.WifiScan(
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -71,8 +72,9 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“detail”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string: pipe “|” separated')">ssids</a>
+		<a href="" onclick="app.ShowPopup('string')">ssids</a>
 	)</div>
 </div>
 </body>
