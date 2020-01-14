@@ -1,4 +1,13 @@
 
+if(!String.prototype.startsWith) {
+	Object.defineProperty(String.prototype, 'startsWith', {
+		value: function(search, pos) {
+			pos = pos | 0;
+			return this.substring(pos, pos + search.length) === search;
+		}
+	});
+}
+
 //Get navigator type.
 var agent = navigator.userAgent;
 var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 );

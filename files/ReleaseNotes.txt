@@ -4,7 +4,7 @@ DS 180b2
 DS 180b1
 - Added Admob support + sample for premium users.
 - Added net.ReceiveVideoStream() for premium users.
-- Added new 'Card' Layout type + sample.
+-.Added new 'Card' Layout type + sample.
 -.Added app.SetNavBarColor/SetStatusBarColor for premium users + sample.
 -.Added 'btn-1' to 'btn-12' to app.GetJoystickState() method.
 - Added __BUILD_TIME__ macro.

@@ -1,1 +1,3 @@
 Creates an AdView
+
+<premium>

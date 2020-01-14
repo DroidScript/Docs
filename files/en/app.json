@@ -3717,7 +3717,7 @@
 				"shortDesc": "Receive text over TCP"
 			},
             "ReceiveVideoStream": {
-				"desc": "Receive video from TCP connection.",
+				"desc": "Receive video from TCP connection.\n\n<premium>",
 				"isfunc": true,
 				"name": "ReceiveVideoStream",
 				"pNames": ["port", "img"],
@@ -9451,7 +9451,7 @@
 		"shortDesc": "Set app menu"
 	},
 	"SetMockLocation": {
-		"desc": "Emulates a GPS location on the device.",
+		"desc": "Emulates a GPS location on the device.\n\n<premium>",
 		"isfunc": true,
 		"name": "SetMockLocation",
 		"pNames": ["lat", "lng", "accuracy"],
@@ -9459,7 +9459,7 @@
 		"shortDesc": "Emulate GPS location"
 	},
     "SetNavBarColor": {
-		"desc": "Change the android NavBar color\n<premium>",
+		"desc": "Change the android NavBar color\n\n<premium>",
 		"isfunc": true,
 		"name": "SetNavBarColor",
 		"pNames": ["color"],
@@ -9636,7 +9636,7 @@
 		"shortDesc": "En/Disable speaker for phone calls"
 	},
     "SetStatusBarColor": {
-		"desc": "Change the android status bar color\n<premium>",
+		"desc": "Change the android status bar color\n\n<premium>",
 		"isfunc": true,
 		"name": "SetStatusBarColor",
 		"pNames": ["color"],

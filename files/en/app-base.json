@@ -4,7 +4,7 @@
 		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["type", "callback", "time"],
-		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|ShakeHorizontal|ShakeVertical|Swing|TaDa|Bounce|FadeIn|FadeOut|Fall|FallRotate|<br><img width='400px' src='../animate.png'></img>", {
+		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|ShakeHorizontal|ShakeVertical|Swing|TaDa|Bounce|FadeIn|FadeOut|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",
