@@ -78,7 +78,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnWizard</span><span class="token punctuation">(</span> <span class="token parameter">lay<span class="token punctuation">,</span> page</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token keyword">switch</span><span class="token punctuation">(</span> page <span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">0</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span></span><br>
 				        <span style="display:inline-block">wizTxt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <span style="display:inline-block">wizTxt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">19</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> wizTxt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
@@ -90,30 +90,30 @@
 				        <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> wizFlag <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">break</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">1</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span></span><br>
 				        <span style="display:inline-block"><span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"This is the first page of your wizard"</span><span class="token punctuation">;</span></span><br>
 				        <span style="display:inline-block">wizTxt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">break</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span></span><br>
 				        <span style="display:inline-block"><span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"You can put any controls you like here, including"</span></span><br>
 				            <span style="display:inline-block"><span class="token operator">+</span> <span class="token string">" a webview and have as many  pages as you like"</span><span class="token punctuation">;</span></span><br>
 				        <span style="display:inline-block">wizTxt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				        <span style="display:inline-block">wizFlag<span class="token punctuation">.</span><span class="token function">Gone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">break</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">3</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span></span><br>
 				    <span style="display:inline-block">   wizTxt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> <span class="token string">"Wizard complete!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">   wizFlag<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">   wiz<span class="token punctuation">.</span><span class="token function">Finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">break</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">4</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span></span><br>
 				    <span style="display:inline-block">   wiz<span class="token punctuation">.</span><span class="token function">Dismiss</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">   app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Wizard finished"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">break</span><span class="token punctuation">;</span></span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">case</span> <span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span></span><br>
 				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Wizard cancelled"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
 				<span class="token punctuation">}</span>
@@ -129,7 +129,7 @@
 		<p>The following methods are available on the <strong>Wizard</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">Dismiss</a>()
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Dismiss</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Finish</a>()

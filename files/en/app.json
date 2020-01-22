@@ -205,6 +205,35 @@
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
 		"shortDesc": "Copies a folder to a given destination"
 	},
+    "CreateAdView": {
+		"abbrev": "adv",
+		"desc": "#CreateAdView.md",
+		"isfunc": true,
+		"name": "CreateAdView",
+		"pNames": ["unitId", "testId", "width", "height", "options"],
+		"pTypes": ["str","str", "num_frc", "num_frc", "str"],
+		"retval": "dso-AdView",
+		"shortDesc": "Returns an AdView object",
+		"subf": {
+            "GetType": {
+				"desc": "Returns the control class name.",
+				"isfunc": true,
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-AdView",
+				"shortDesc": "Returns the control class name"
+			},
+            "Load": {
+				"desc": "Loads an advertising banner.",
+				"isfunc": true,
+				"name": "Load",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Loads an ad"
+			}
+		}
+	},
 	"CreateAudioRecorder": {
 		"abbrev": "rec",
 		"desc": "#CreateAudioRecorder.md",
@@ -274,6 +303,14 @@
 				"pNames": ["frequency"],
 				"pTypes": ["num_int-8000|11025|22050|44100|48000"],
 				"shortDesc": "Define the Recording frequency"
+			},
+			"SetSource": {
+				"desc": "Define the file where the recorder should record to.",
+				"isfunc": true,
+				"name": "SetSource",
+				"pNames": ["src"],
+				"pTypes": ["str-Default|Camcorder|Mic|Unprocessed|Voicecommunication|Voiceperformance|Voicerecognition"],
+				"shortDesc": "Define the recording file"
 			},
 			"Start": {
 				"desc": "Start recording to the specified file.",
@@ -416,6 +453,14 @@
 				"pTypes": [],
 				"shortDesc": "Ask user to enable Bluetooth"
 			},
+			"SetDataMode": {
+				"desc": "Enable sending data in several modes.",
+				"isfunc": true,
+				"name": "SetDataMode",
+				"pNames": ["mode"],
+				"pTypes": ["str-Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:\"UTF-16L/BE\"&gt;"],
+				"shortDesc": "Define data format for outgoing data"
+			},
 			"SetOnConnect": {
 				"desc": "If the device has sent the connection request\n\tname is of type boolean (true if the connection was established successful)\n\tand address is your BluetoothSerial object\n\nif the device has received the connection request\n\tname is a string with the clients bluetooth name\n\tand address includes the bluetooth address.",
 				"isfunc": true,
@@ -491,6 +536,7 @@
 		"shortDesc": "Creates a button control",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -575,11 +621,12 @@
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
 		"retval": "dso-CameraView",
 		"shortDesc": "Returns a new CameraView object to access the device camera",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"AutoCapture": {
 				"desc": "Automatically takes pictures if a motion was detected by cam.MotionMosaic.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
 				"isfunc": true,
@@ -948,6 +995,7 @@
 		"shortDesc": "Returns a new CheckBox object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1039,6 +1087,7 @@
 		"shortDesc": "Returns a new CodeEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
@@ -1384,7 +1433,7 @@
 		"isfunc": true,
 		"name": "CreateDialog",
 		"pNames": ["title", "options"],
-		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
+		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners"],
 		"retval": "dso-Dialog",
 		"shortDesc": "Returns a new Dialog object to display messages",
 		"subf": {
@@ -1441,7 +1490,14 @@
 				"shortDesc": "Removes a content layout"
 			},
 			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
+			"SetBackColor": {
+				"desc": "Changes the background color of the control.",
+				"isfunc": true,
+				"name": "SetBackColor",
+				"pNames": ["color", "radius"],
+				"pTypes": ["str_col", "num_pxl"],
+				"shortDesc": "Change the background color"
+			},
 			"SetBackGradient": "#7112142192",
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
@@ -1499,6 +1555,22 @@
 				"pTypes": ["str_col"],
 				"shortDesc": "Changes the color of the title divider"
 			},
+			"SetTitleDividerColor": {
+				"desc": "Changes the title divider color of the dialog.",
+				"isfunc": true,
+				"name": "SetTitleDividerColor",
+				"pNames": ["color"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Changes the title divider height"
+			},
+			"SetTitleDividerHeight": {
+				"desc": "Changes the divider height of the dialog.",
+				"isfunc": true,
+				"name": "SetTitleDividerHeight",
+				"pNames": ["height"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Changes the divider height"
+			},
 			"SetTitleHeight": {
 				"desc": "Changes the height of the title bar.",
 				"isfunc": true,
@@ -1506,6 +1578,14 @@
 				"pNames": ["height", "options"],
 				"pTypes": ["num_pxl", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Change height of the title bar"
+			},
+			"SetTitleTextSize": {
+				"desc": "Changes the text size of the dialog title.",
+				"isfunc": true,
+				"name": "SetTitleTextSize",
+				"pNames": ["size", "options"],
+				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Changes the title text size"
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -2273,6 +2353,7 @@
 		"shortDesc": "Returns a new Image object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"Clear": {
 				"desc": "Clears everything on the image except the background.",
 				"isfunc": true,
@@ -2644,7 +2725,7 @@
 		"isfunc": true,
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
+		"pTypes": ["str-Linear|Absolute|Frame|Card", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
 		"retval": "dso-Layout",
 		"shortDesc": "Returns a new Layout object",
 		"subf": {
@@ -2657,21 +2738,7 @@
 				"shortDesc": "Add a control to the layout"
 			},
 			"AdjustColor": "#1794786072",
-			"Animate": {
-				"desc": "Animates the layout. Available animations are Fade, Flip, Slide or Scale.",
-				"isfunc": true,
-				"name": "Animate",
-				"pNames": ["type", "callback", "time"],
-				"pTypes": ["str-Flip|FadeIn|FadeOut|CrossFade|SlideFromBottom|SlideFromLeft|SlideFromRight|SlideFromTop|SlideToBottom|SlideToLeft|SlideToRight|SlideToTop|ScaleFromBottom|ScaleFromLeft|ScaleFromRight|ScaleFromTop|ScaleToBottom|ScaleToLeft|ScaleToRight|ScaleToTop", {
-					"desc": "Callback",
-					"isfunc": true,
-					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
-					"shortDesc": "callback"
-				}, "num_mls"],
-				"shortDesc": "Animates the layout"
-			},
+			"Animate": "#8294739481",
 			"ChildToFront": {
 				"desc": "Moves a child in front of all other children.",
 				"isfunc": true,
@@ -2737,6 +2804,22 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+            "SetCorderRadius": {
+				"desc": "Applies a corner radius to linear layouts.",
+				"isfunc": true,
+				"name": "SetCorderRadius",
+				"pNames": ["radius"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Apply corner radius to ll's"
+			},
+            "SetElevation": {
+				"desc": "Applies a shadow to linear layouts.",
+				"isfunc": true,
+				"name": "SetElevation",
+				"pNames": ["elevation"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Apply shadow to ll's"
+			},
 			"SetEnabled": "#1602385882",
 			"SetGravity": {
 				"desc": "Adjust the placing of contained children.",
@@ -2799,7 +2882,7 @@
 		"isfunc": true,
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
 		"retval": "dso-List",
 		"shortDesc": "Returns a new List object",
 		"subf": {
@@ -2812,6 +2895,7 @@
 				"shortDesc": "Adds an entry to the list."
 			},
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -3258,7 +3342,15 @@
 				"retval": "num_sec",
 				"shortDesc": "Get the song length in seconds"
 			},
-			"GetPosition": "#1605064214",
+            "GetPosition": {
+				"desc": "Returns the elapsed playtime in seconds.",
+				"isfunc": true,
+				"name": "GetPosition",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_sec",
+				"shortDesc": "Get  elapsed playtime in seconds"
+			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,
@@ -3623,6 +3715,15 @@
 				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
 				"retval": "str",
 				"shortDesc": "Receive text over TCP"
+			},
+            "ReceiveVideoStream": {
+				"desc": "Receive video from TCP connection.\n\n<premium>",
+				"isfunc": true,
+				"name": "ReceiveVideoStream",
+				"pNames": ["port", "img"],
+				"pTypes": ["num", "dso-Image"],
+				"retval": "str",
+				"shortDesc": "Receive video over UDP"
 			},
 			"SendBytes": {
 				"desc": "Send bytes over TCP connection.",
@@ -4336,6 +4437,7 @@
 				"shortDesc": "Add a layout control"
 			},
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"DestroyChild": {
 				"desc": "Removes and releases a child object.",
@@ -4440,6 +4542,7 @@
 		"shortDesc": "Returns a new SeekBar object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -4711,7 +4814,7 @@
 		"isfunc": true,
 		"name": "CreateShortcut",
 		"pNames": ["name", "iconFile", "file", "options"],
-		"pTypes": ["str", "str_pth", "str_pth", "str_com-Portrait|Landscape,Transparent,NoDom,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
+		"pTypes": ["str", "str_pth", "str_pth", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
 		"shortDesc": "Creates a Home-Screen shortcut to an app"
 	},
 	"CreateSmartWatch": {
@@ -5134,6 +5237,7 @@
 		"shortDesc": "Returns a new Spinner object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -5634,21 +5738,7 @@
 				"shortDesc": "Add a control to the layout"
 			},
 			"AdjustColor": "#1794786072",
-			"Animate": {
-				"desc": "Animates the layout. Available animations are Fade, Flip, Slide or Scale.",
-				"isfunc": true,
-				"name": "Animate",
-				"pNames": ["type", "callback", "time"],
-				"pTypes": ["str-Flip|FadeIn|FadeOut|CrossFade|SlideFromBottom|SlideFromLeft|SlideFromRight|SlideFromTop|SlideToBottom|SlideToLeft|SlideToRight|SlideToTop|ScaleFromBottom|ScaleFromLeft|ScaleFromRight|ScaleFromTop|ScaleToBottom|ScaleToLeft|ScaleToRight|ScaleToTop", {
-					"desc": "Callback",
-					"isfunc": true,
-					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
-					"shortDesc": "callback"
-				}, "num_mls"],
-				"shortDesc": "Animates the layout"
-			},
+			"Animate": "#8294739481",
 			"_ChildToFront": {
 				"desc": "Moves a child in front of all other children.",
 				"isfunc": true,
@@ -5821,6 +5911,7 @@
 		"shortDesc": "Returns a new Text object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -5931,7 +6022,7 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetText": "#8207502354",
-			"SetTextColor": "#1093247031",
+			"SetTextColor": "#0175303923",
 			"SetTextShadow": "#1093247031",
 			"SetTextSize": "#5019790423",
 			"SetTouchable": "#2562918782",
@@ -5951,6 +6042,7 @@
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
@@ -6240,12 +6332,20 @@
 				"shortDesc": "Define dialog button text colors"
 			},
 			"SetDialogColor": {
-				"desc": "Define standard dialog background colors of [dialogs](CreateDialog.htm).",
+				"desc": "Define standard background colors of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
 				"name": "SetDialogColor",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
 				"shortDesc": "Define dialog background colors"
+			},
+			"SetDialogCornerRadius": {
+				"desc": "Define standard corder radius of [dialogs](CreateDialog.htm).",
+				"isfunc": true,
+				"name": "SetDialogCornerRadius",
+				"pNames": ["radius"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Define dialog corner radius"
 			},
 			"SetDimBehind": {
 				"desc": "En/Disables standard dimming of [dialogs](CreateDialog.htm).",
@@ -6311,6 +6411,14 @@
 				"pTypes": ["str_col"],
 				"shortDesc": "Define title divider colors"
 			},
+			"SetTitleDividerHeight": {
+				"desc": "Define standard title divider height of [dialogs](CreateDialog.htm).",
+				"isfunc": true,
+				"name": "SetTitleDividerHeight",
+				"pNames": ["height"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Define title divider height"
+			},
 			"SetTitleHeight": {
 				"desc": "Define standard height of [dialogs](CreateDialog.htm).",
 				"isfunc": true,
@@ -6318,6 +6426,14 @@
 				"pNames": ["height", "options"],
 				"pTypes": ["num_pxl", "str_com-px|dip|sp|mm|pt|pl|ps"],
 				"shortDesc": "Define title height"
+			},
+			"SetTitleTextSize": {
+				"desc": "Define standard title text size of [dialogs](CreateDialog.htm).",
+				"isfunc": true,
+				"name": "SetTitleTextSize",
+				"pNames": ["size", "options"],
+				"pTypes": ["num", "str_com-px|dip|sp|mm|pt|pl|ps"],
+				"shortDesc": "Define title text size"
 			}
 		}
 	},
@@ -6332,6 +6448,7 @@
 		"shortDesc": "Returns a new Toggle object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -6984,6 +7101,7 @@
 		"shortDesc": "Returns a new WebView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
 			"Back": {
 				"desc": "Loads the previous page from history.",
 				"isfunc": true,
@@ -7087,7 +7205,7 @@
 				"isfunc": true,
 				"name": "LoadHtml",
 				"pNames": ["html", "baseFolder", "options"],
-				"pTypes": ["str_htm", "str_pth", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
+				"pTypes": ["str_htm", "str_pth", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
 				"shortDesc": "Load html to WebView"
 			},
 			"LoadUrl": {
@@ -7095,7 +7213,7 @@
 				"isfunc": true,
 				"name": "LoadUrl",
 				"pNames": ["url", "options"],
-				"pTypes": ["str_url", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
+				"pTypes": ["str_url", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
 				"shortDesc": "Load url to WebView"
 			},
 			"Method": "#1023663567",
@@ -7123,6 +7241,14 @@
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
+            "SetTextZoom": {
+				"desc": "Scales the html text by a given factor.",
+				"isfunc": true,
+				"name": "SetTextZoom",
+				"pNames": ["zoom"],
+				"pTypes": ["num_frc"],
+				"shortDesc": "Scales the html text"
+			},
 			"SetOnConsole": {
 				"desc": "Define a callback function which is called when a message was logged to the console.",
 				"isfunc": true,
@@ -7576,8 +7702,8 @@
 		"desc": "ExtractAssets allows to extract folders and files from your compiled APK to the local storage. But it works for local DroidScript projects as well. When override is false, already existant files will be kept and not overridden.",
 		"isfunc": true,
 		"name": "ExtractAssets",
-		"pNames": ["source", "destination", "overwrite"],
-		"pTypes": ["str_pth", "str_pth", "bin"],
+		"pNames": ["source", "destination", "overwrite", "options"],
+		"pTypes": ["str_pth", "str_pth", "bin", "str-DoEvents:extract in background"],
 		"shortDesc": "Extract app assets to a local directory"
 	},
 	"ExtractPlugins": {
@@ -7898,7 +8024,7 @@
 		"isfunc": true,
 		"name": "GetJoystickState",
 		"pNames": ["id", "key"],
-		"pTypes": ["num_int", "str-A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9"],
+		"pTypes": ["num_int", "str-A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12"],
 		"retval": "num",
 		"shortDesc": "GetJoystickState"
 	},
@@ -7908,7 +8034,7 @@
 		"name": "GetKeyboardHeight",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "str_pxl",
+		"retval": "num_pxl",
 		"shortDesc": "Get current keyboard height"
 	},
 	"GetLanguage": {
@@ -8007,7 +8133,7 @@
 		"name": "GetOptions",
 		"pNames": [],
 		"pTypes": [],
-		"retval": "str_com-Portrait,Landscape,NoDom,Game,Remote,Transparent",
+		"retval": "str_com-Portrait,Landscape,<i>NoDom</i>,Game,Remote,Transparent",
 		"shortDesc": "Get app options"
 	},
 	"GetOrientation": {
@@ -8304,7 +8430,7 @@
 		"isfunc": true,
 		"name": "HttpRequest",
 		"pNames": ["type", "baseUrl", "path", "params", "callback", "headers"],
-		"pTypes": ["str-GET|POST", "str_url", "str", "str", {
+		"pTypes": ["str-GET:retrieve data|POST:submit data|JSON:post json data|PUT:replace target resource|DELETE:deletes the resource|HEAD:omit body", "str_url", "str", "str", {
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",
@@ -8456,6 +8582,15 @@
 		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if apk version increased"
+	},
+    "IsPortrait": {
+		"desc": "Checks if the device is in portrait mode.",
+		"isfunc": true,
+		"name": "IsPortrait",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "bin",
+		"shortDesc": "Check if device is in portrait mode"
 	},
 	"IsPremium": {
 		"desc": "Checks if the user has a DroidScript premium subscription inside the IDE.",
@@ -9013,6 +9148,14 @@
 		"pTypes": ["str_pth", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
 		"shortDesc": "Read the content of a local file"
 	},
+    "RedirectAssets": {
+		"desc": "Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.",
+		"isfunc": true,
+		"name": "RedirectAssets",
+		"pNames": ["dir"],
+		"pTypes": ["str_pth"],
+		"shortDesc": "Read assets from given folder"
+	},
 	"RemoveDrawer": {
 		"desc": "Removes a drawer layout from a given side.\n\nSee also: @AddDrawer",
 		"isfunc": true,
@@ -9116,6 +9259,14 @@
 		"pNames": ["file", "subject", "text", "choose"],
 		"pTypes": ["str_pth", "str", "str", "str"],
 		"shortDesc": "Send a file to a remote target"
+	},
+    "SendImage": {
+		"desc": "#SendImage.md",
+		"isfunc": true,
+		"name": "SendImage",
+		"pNames": ["file", "choose"],
+		"pTypes": ["str_pth", "str"],
+		"shortDesc": "Send an image to a remote target"
 	},
 	"SendIntent": {
 		"desc": "#SendIntent.md",
@@ -9280,7 +9431,7 @@
 		"isfunc": true,
 		"name": "SetKioskMode",
 		"pNames": ["mode", "enable", "options"],
-		"pTypes": ["str_com-Power,Status,Nav,NavRight", "bin", "str_com-Black,Tasks:prevents recent tasks button working"],
+		"pTypes": ["str_com-Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning", "bin", "str_com-Black,Tasks:prevents recent tasks button working"],
 		"shortDesc": "Blocks android functionality outside your app"
 	},
 	"SetLanguage": {
@@ -9300,12 +9451,20 @@
 		"shortDesc": "Set app menu"
 	},
 	"SetMockLocation": {
-		"desc": "Emulates a GPS location on the device.",
+		"desc": "Emulates a GPS location on the device.\n\n<premium>",
 		"isfunc": true,
 		"name": "SetMockLocation",
 		"pNames": ["lat", "lng", "accuracy"],
 		"pTypes": ["num", "num", "num"],
 		"shortDesc": "Emulate GPS location"
+	},
+    "SetNavBarColor": {
+		"desc": "Change the android NavBar color\n\n<premium>",
+		"isfunc": true,
+		"name": "SetNavBarColor",
+		"pNames": ["color"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Set NavBar color"
 	},
 	"SetOnBroadcast": {
 		"desc": "Define a callback function for incoming Broadcast messages.\n\nSee also: @Broadcast",
@@ -9475,6 +9634,14 @@
 		"pNames": ["on"],
 		"pTypes": ["bin"],
 		"shortDesc": "En/Disable speaker for phone calls"
+	},
+    "SetStatusBarColor": {
+		"desc": "Change the android status bar color\n\n<premium>",
+		"isfunc": true,
+		"name": "SetStatusBarColor",
+		"pNames": ["color"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Set status bar color"
 	},
 	"SetTheme": {
 		"desc": "Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.\n\n<premium>",
@@ -9658,7 +9825,7 @@
 		"isfunc": true,
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str_com-Portrait|Landscape,Transparent,NoDom,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
+		"pTypes": ["str_pth", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
 		"shortDesc": "Starts an app in a new window"
 	},
 	"StartDebugServer": {
@@ -9856,15 +10023,15 @@
 		"desc": "Scans the surroundings for any available Wifi networks.",
 		"isfunc": true,
 		"name": "WifiScan",
-		"pNames": ["callback"],
+		"pNames": ["callback", "options"],
 		"pTypes": [{
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",
 			"pNames": ["ssids"],
-			"pTypes": ["str_pip"],
+			"pTypes": ["str_pip|lst"],
 			"shortDesc": "callback"
-		}],
+		}, "str-detail"],
 		"shortDesc": "Scan for any available Wifi networks"
 	},
 	"WriteFile": {

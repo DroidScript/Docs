@@ -1,14 +1,23 @@
 
+if(!String.prototype.startsWith) {
+	Object.defineProperty(String.prototype, 'startsWith', {
+		value: function(search, pos) {
+			pos = pos | 0;
+			return this.substring(pos, pos + search.length) === search;
+		}
+	});
+}
+
 //Get navigator type.
 var agent = navigator.userAgent;
-console.log( "agent = " + agent );
-
 var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 );
 var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
 var isAndroid = ( agent.indexOf("Android") > -1 );
 var isDS = ( agent.indexOf("; wv)") > -1 );
 var isApp = isAndroid && !useWebIDE && !isChromeOS;
 var serverAddress = "";
+
+console.log( "agent = " + agent );
 
 // set current theme
 var curTheme = location.href.match(/[^?]*[?&]theme=([^&]*)/);
@@ -19,7 +28,7 @@ setTheme(curTheme ? curTheme[1] : getTheme());
 //Hook into cross frame messaging
 window.addEventListener("message", function(event)
 {
-	console.log("msg: "+event)
+	console.log("msg: " + event)
 	var params = event.data.split("|");
 	var cmd = params[0];
 
@@ -83,7 +92,7 @@ $(document).live( 'pageshow',function(event, ui)
 		//Remove 'Copy' and 'Run' buttons on PC.
 		if( !isAndroid || useWebIDE && !isChromeOS )
 			hidecopy();
-		
+
 		// hide theme switch button inside DS
 		if(isDS) $(".ui-header > .ui-btn-right").hide();
 
@@ -193,14 +202,14 @@ function jumpTo(contains)
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
 		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
-		
+
 		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
 			header.click();
 		else
 			header.delay(100)
 				.animate({opacity: 0.1}, 400)
 				.animate({opacity: 1.0}, 400);
-		
+
 		return false;
 	}
 }
@@ -274,4 +283,3 @@ function switchPopup(old, newId)
 		}
 	}).popup("close");
 }
-

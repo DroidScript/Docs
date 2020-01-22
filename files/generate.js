@@ -197,7 +197,7 @@ function generateDoc( name )
 // reset globals
 function resetGlobals() {
 	popDefs = {};
-	spop = {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0};
+	spop = {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0, gvo:0};
 }
 
 function adjustDoc(html, name)
@@ -521,6 +521,7 @@ function typeDesc( types )
 					case "lst":
 					case "obj": return s[i] + replaceTypes( type[2], false );
 					case "dso":
+					case "gvo":
 						var func = type[2].replace(/[^/]*\/|#.*/g, "");
 						//if(!curDoc.endsWith(func + ".htm") && !scope[func])
 						//	Throw(Error(`link to unexistent file ${type[2]}.htm`))
@@ -598,6 +599,7 @@ function toArgPop( name, types, doSwitch )
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				case "dso":
+				case "gvo":
 					var func = type[2].replace(/[^/]*\/|#.*/g, "");
 					//if(!curDoc.endsWith(func + ".htm") && !scope[func])
 					//	Throw(Error(`link to unexistent file ${type[2]}.htm`))
@@ -682,7 +684,7 @@ function replaceTypes(s, useAppPop)
 				if(desc.endsWith(' ')) space = ' ';
 				desc = desc.slice(desc[0] == '"', space ? -1 : undefined);
 				if(desc[0] == "'") tapop = true, desc = desc.slice(1);
-				if(conf.tname[desc.slice(0, 3)] && !desc[4].match(/[a-z]/i)) type = desc, desc = '';
+				if(conf.tname[desc.slice(0, 3)] && (!desc[4] || !desc[4].match(/[a-z]/i))) type = desc, desc = '';
 			}
 
 			if( type )

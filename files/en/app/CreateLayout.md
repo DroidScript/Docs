@@ -1,4 +1,4 @@
-Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 3 types of layout: _**“Linear”**_, _**“Absolute”**_ and _**“Frame”**_.
+Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 4 types of layouts: _**“Linear”**_, _**“Absolute”**_, _**“Frame”**_ and _**“Card”**_.
 
 Layouts are transparent by default but you can set a background image which can be tiled or stretched to fill the layout. You can also set a background color or background gradient.
 
@@ -21,3 +21,7 @@ Frame Layouts are useful if you wish to do **animated Flips** or **Slides** to r
 
 ### Absolute Layouts
 Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the **SetPosition** and **SetSize** functions of each of the child objects. However, you are encouraged use linear layouts for most of your programs, unless it is _absolute_ly necessary.
+
+### Card Layouts
+Card Layouts are just like linear layouts, but with rounded corners and a shadow by default.
+They may be used to display offers with an image and optional info text.

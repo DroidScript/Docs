@@ -1,4 +1,19 @@
 {
+	"#8294739481": {
+		"desc": "Animates the control.\n\nThere are\n\t“in”-Animations which are used to show objects from hidden state\n\t“out”-animations which are used to hide objects in visible state and\n\t“static”-animations which keep the visible state.",
+		"isfunc": true,
+		"name": "Animate",
+		"pNames": ["type", "callback", "time"],
+		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
+			"desc": "Callback",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": ["type"],
+			"pTypes": ["str"],
+			"shortDesc": "callback"
+		}, "num_mls"],
+		"shortDesc": "Animates a control"
+	},
 	"#1794786072": { "name": "AdjustColor",
 		"desc": "Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.",
 		"isfunc": true,
