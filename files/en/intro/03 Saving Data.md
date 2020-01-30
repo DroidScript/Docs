@@ -41,18 +41,21 @@ Save settings: <js>app.SaveText( "settings", JSON.stringify( conf ));</js>
 <b>// default settings
 var settings = { version: "1.0", startNo: 0 };
 
-function LoadSettings() {
+function LoadSettings()
+{
 	var tmp = JSON.parse(app.LoadText( "settings", "{}" ));
 
 	// update settings object
 	for(var i in tmp) settings[i] = tmp[i];
 }
 
-function SaveSettings() {
+function SaveSettings()
+{
 	app.SaveText( "settings", JSON.stringify(settings) );
 }</b>
 
-function OnStart() {
+function OnStart()
+{
 	LoadSettings();
 	settings.startNo++;
 	app.ShowPopup("Started " + settings.startNo + ". time");

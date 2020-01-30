@@ -48,7 +48,8 @@ function OnStart()
 	app.AddLayout( lay );
 }
 
-function NewButton(name, lay) {
+function NewButton(name, lay)
+{
 	btn = app.CreateButton( name, 0.3, 0.1 );
 	btn.SetMargins( 0, 0, 0, 0.02 );
 	btn.SetTextColor( "red" );
@@ -60,7 +61,8 @@ function NewButton(name, lay) {
 	});
 }
 
-function NewButton2(name, lay) {
+function NewButton2(name, lay)
+{
 	btn = app.CreateButton( name, 0.3, 0.1 );
 	btn.SetTextColor( "green" );
 	btn.SetMargins( 0, 0.02 );
@@ -89,7 +91,8 @@ function OnStart()
 	app.AddLayout( lay );
 }
 
-function NewButton2(name, lay) {
+function NewButton2(name, lay)
+{
 	btn = app.CreateButton( name, 0.3, 0.1 );
 	btn.SetTextColor( "green" );
 	btn.SetMargins( 0, 0.02 );

@@ -2805,20 +2805,20 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
             "SetCorderRadius": {
-				"desc": "Applies a corner radius to linear layouts.",
+				"desc": "Applies a corner radius to card layouts.",
 				"isfunc": true,
 				"name": "SetCorderRadius",
 				"pNames": ["radius"],
 				"pTypes": ["num_pxl"],
-				"shortDesc": "Apply corner radius to ll's"
+				"shortDesc": "Apply corner radius to cl's"
 			},
             "SetElevation": {
-				"desc": "Applies a shadow to linear layouts.",
+				"desc": "Applies a shadow to card layouts.",
 				"isfunc": true,
 				"name": "SetElevation",
 				"pNames": ["elevation"],
 				"pTypes": ["num_pxl"],
-				"shortDesc": "Apply shadow to ll's"
+				"shortDesc": "Apply shadow to cl's"
 			},
 			"SetEnabled": "#1602385882",
 			"SetGravity": {
@@ -6443,7 +6443,7 @@
 		"isfunc": true,
 		"name": "CreateToggle",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Monospace,Custom,NoPad,FillX/Y,NoSound"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
 		"retval": "dso-Toggle",
 		"shortDesc": "Returns a new Toggle object",
 		"subf": {

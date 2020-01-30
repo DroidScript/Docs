@@ -84,18 +84,21 @@
 				<b id="snip1" style="font-size:100%"><span class="token comment">// default settings</span><br>
 				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> version<span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> startNo<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <br>
 				    <span style="display:inline-block"><span class="token comment">// update settings object</span></span><br>
 				    <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> tmp<span class="token punctuation">)</span> settings<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<span class="token keyword">function</span> <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>settings<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">settings<span class="token punctuation">.</span>startNo<span class="token operator">++</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Started "</span> <span class="token operator">+</span> settings<span class="token punctuation">.</span>startNo <span class="token operator">+</span> <span class="token string">". time"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>

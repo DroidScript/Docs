@@ -58,11 +58,13 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token function">setTimeout</span><span class="token punctuation">(</span>OnLoad<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				<b id="snip1" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<b id="snip1" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnStart\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnLoad\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>
 			</div>
@@ -122,11 +124,13 @@
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Press the back button"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">yndExit_OnTouch</span><span class="token punctuation">(</span><span class="token parameter">reply</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<span class="token keyword">function</span> <span class="token function">yndExit_OnTouch</span><span class="token punctuation">(</span><span class="token parameter">reply</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip3" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				<b id="snip3" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">yndExit<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span></b>
 			</div>

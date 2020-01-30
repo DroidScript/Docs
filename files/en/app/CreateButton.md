@@ -2,7 +2,8 @@ Buttons created with the **CreateButton** method are used for interacting with t
 <js>
 btn.SetOnTouch( btn\_OnTouch );
 
-function btn\_OnTouch() {
+function btn\_OnTouch()
+{
 	// your OnTouch code goes here
 }
 </js>

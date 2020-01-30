@@ -8,11 +8,13 @@ When OnStart has returned, the apps '**started**' state will be set to <js nobox
 
 setTimeout(OnLoad);
 
-<b>function OnStart() {
+<b>function OnStart()
+{
 	alert("called OnStart\nApp Started: " + app.IsStarted());
 }</b>
 
-function OnLoad() {
+function OnLoad()
+{
 	alert("called OnLoad\nApp Started: " + app.IsStarted());
 }
 
@@ -60,11 +62,13 @@ function OnStart()
 	app.ShowPopup( "Press the back button" );
 }
 
-function yndExit_OnTouch(reply) {
+function yndExit_OnTouch(reply)
+{
 	if(reply == "Yes") app.Exit();
 }
 
-<b>function OnBack() {
+<b>function OnBack()
+{
 	yndExit.Show();
 }</b>
 
