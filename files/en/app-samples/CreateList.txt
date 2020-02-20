@@ -18,7 +18,7 @@ function lst_OnTouch( title, body, type, index )
 	app.ShowPopup( "Item = " + title + ", Index = " + index, "Short" );
 }
 
-function lst_OnLongTouch()
+function lst_OnLongTouch( title, body, type, index )
 {
 	app.ShowPopup( "Long Touch Item = " + title + ", Index = " + index, "Short" );
 }

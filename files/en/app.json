@@ -9331,15 +9331,15 @@
 		"shortDesc": "Set alarm to open your app at a specific time"
 	},
 	"SetAutoBoot": {
-		"desc": "Causes the current running APK to be started automatically when your device boots.",
+		"desc": "Causes the current running APK or its Service to be started automatically when your device boots.\n\nSee Also: @SetAutoStart",
 		"isfunc": true,
 		"name": "SetAutoBoot",
 		"pNames": ["auto"],
-		"pTypes": ["bin"],
+		"pTypes": ["string-App|Service|None"],
 		"shortDesc": "Autostart APK when device boots"
 	},
 	"SetAutoStart": {
-		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.\n\nSee Also: @SetSharedApp",
+		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.\n\nSee Also: @SetSharedApp, @SetAutoBoot",
 		"isfunc": true,
 		"name": "SetAutoStart",
 		"pNames": ["appName"],
