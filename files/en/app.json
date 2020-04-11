@@ -1,5 +1,50 @@
 {
-	"AddDrawer": {
+    "AddAdView": {
+		"desc": "Creates and adds a AdView to a Layout.\nSee @CreateAdView for full documentation.",
+		"isfunc": true,
+		"name": "AddAdView",
+		"pNames": ["unitId", "testId", "width", "height", "options"],
+		"pTypes": ["str", "str", "num_frc", "num_frc", "str"],
+		"retval": "dso-AdView",
+		"shortDesc": "Create and add AdView to Layout."
+	},
+	"AddButton": {
+		"desc": "Creates and adds a Button to a Layout.\nSee @CreateButton for full documentation.",
+		"isfunc": true,
+		"name": "AddButton",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Button",
+		"shortDesc": "Create and add Button to Layout."
+	},
+	"AddCameraView": {
+		"desc": "Creates and adds a CameraView to a Layout.\nSee @CreateCameraView for full documentation.",
+		"isfunc": true,
+		"name": "AddCameraView",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"retval": "dso-CameraView",
+		"shortDesc": "Create and add CameraView to Layout."
+	},
+	"AddCheckBox": {
+		"desc": "Creates and adds a CheckBox to a Layout.\nSee @CreateCheckBox for full documentation.",
+		"isfunc": true,
+		"name": "AddCheckBox",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y,NoSound"],
+		"retval": "dso-CheckBox",
+		"shortDesc": "Create and add CheckBox to Layout."
+	},
+	"AddCodeEdit": {
+		"desc": "Creates and adds a CodeEdit to a Layout.\nSee @CreateCodeEdit for full documentation.",
+		"isfunc": true,
+		"name": "AddCodeEdit",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FillX/Y"],
+		"retval": "dso-CodeEdit",
+		"shortDesc": "Create and add CodeEdit to Layout."
+	},
+    "AddDrawer": {
 		"desc": "AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.\n\nSee Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer",
 		"isfunc": true,
 		"name": "AddDrawer",
@@ -7,13 +52,103 @@
 		"pTypes": ["dso-CreateLayout", "str-left|right", "num_frc"],
 		"shortDesc": "Adds a slide-able layout on given side"
 	},
-	"AddLayout": {
-		"desc": "AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)\n\nSee Also: @RemoveLayout",
+	"AddImage": {
+		"desc": "Creates and adds a Image to a Layout.\nSee @CreateImage for full documentation.",
+		"isfunc": true,
+		"name": "AddImage",
+		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
+		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+		"retval": "dso-Image",
+		"shortDesc": "Create and add Image to Layout."
+	},
+    "AddLayout": {
+		"desc": "AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)\nWhen @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.\n\nSee Also: @RemoveLayout",
 		"isfunc": true,
 		"name": "AddLayout",
-		"pNames": ["layout"],
-		"pTypes": ["dso-CreateLayout"],
+		"pNames": ["layout", "type", "options"],
+		"pTypes": ["dso-CreateLayout", "str-Linear|Absolute|Frame|Card", "str-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
 		"shortDesc": "Adds a layout to the app"
+	},
+    "AddList": {
+		"desc": "Creates and adds a List to a Layout.\nSee @CreateList for full documentation.",
+		"isfunc": true,
+		"name": "AddList",
+		"pNames": ["list", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"retval": "dso-List",
+		"shortDesc": "Create and add List to Layout."
+	},
+	"AddScroller": {
+		"desc": "Creates and adds a Scroller to a Layout.\nSee @CreateScroller for full documentation.",
+		"isfunc": true,
+		"name": "AddScroller",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num_frc", "num_frc", "str_com-FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade"],
+		"retval": "dso-Scroller",
+		"shortDesc": "Create and add Scroller to Layout."
+	},
+	"AddSeekBar": {
+		"desc": "Creates and adds a SeekBar to a Layout.\nSee @CreateSeekBar for full documentation.",
+		"isfunc": true,
+		"name": "AddSeekBar",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num_frc", "num_frc", "str_com-FillX/Y"],
+		"retval": "dso-SeekBar",
+		"shortDesc": "Create and add SeekBar to Layout."
+	},
+	"AddSpinner": {
+		"desc": "Creates and adds a Spinner to a Layout.\nSee @CreateSpinner for full documentation.",
+		"isfunc": true,
+		"name": "AddSpinner",
+		"pNames": ["list", "width", "height", "options"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-FillX/Y,NoSound"],
+		"retval": "dso-Spinner",
+		"shortDesc": "Create and add Spinner to Layout."
+	},
+	"AddText": {
+		"desc": "Creates and adds a Text to a Layout.\nSee @CreateText for full documentation.",
+		"isfunc": true,
+		"name": "AddText",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right,Html,Bold,Monospace,NoWrap,Log,FillX/Y"],
+		"retval": "dso-Text",
+		"shortDesc": "Create and add Text to Layout."
+	},
+	"AddTextEdit": {
+		"desc": "Creates and adds a TextEdit to a Layout.\nSee @CreateTextEdit for full documentation.",
+		"isfunc": true,
+		"name": "AddTextEdit",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines and change 'Enter' key to 'Done',FillX/Y,Password:displays characters as dots"],
+		"retval": "dso-TextEdit",
+		"shortDesc": "Create and add TextEdit to Layout."
+	},
+	"AddToggle": {
+		"desc": "Creates and adds a Toggle to a Layout.\nSee @CreateToggle for full documentation.",
+		"isfunc": true,
+		"name": "AddToggle",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Toggle",
+		"shortDesc": "Create and add Toggle to Layout."
+	},
+	"AddVideoView": {
+		"desc": "Creates and adds a VideoView to a Layout.\nSee @CreateVideoView for full documentation.",
+		"isfunc": true,
+		"name": "AddVideoView",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num_frc", "num_frc", "str_com"],
+		"retval": "dso-VideoView",
+		"shortDesc": "Create and add VideoView to Layout."
+	},
+	"AddWebView": {
+		"desc": "Creates and adds a WebView to a Layout.\nSee @CreateWebView for full documentation.",
+		"isfunc": true,
+		"name": "AddWebView",
+		"pNames": ["width", "height", "options", "zoom"],
+		"pTypes": ["num_frc", "num_frc", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser", "num_prc"],
+		"retval": "dso-WebView",
+		"shortDesc": "Create and add WebView to Layout."
 	},
 	"Alert": {
 		"desc": "#Alert.md",
@@ -231,7 +366,22 @@
 				"pNames": [],
 				"pTypes": [],
 				"shortDesc": "Loads an ad"
-			}
+			},
+            "SetOnStatus": {
+                "desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
+				"isfunc": true,
+				"name": "SetOnStatus",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["status"],
+					"pTypes": ["str-ALTERNATIVE|..."],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when status changed"
+            }
 		}
 	},
 	"CreateAudioRecorder": {
@@ -1074,6 +1224,58 @@
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
+		}
+	},
+    "CreateCloudStore": {
+		"abbrev": "cld",
+		"desc": "#CreateCloudStore.md",
+		"isfunc": true,
+		"name": "CreateCloudStore",
+		"pNames": ["apiKey"],
+		"pTypes": ["str"],
+		"retval": "dso-CloudStore",
+		"shortDesc": "Returns a new CloudStore object",
+		"subf": {
+			"GetType": {
+				"desc": "Returns the control class name.",
+				"isfunc": true,
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-CloudStore",
+				"shortDesc": "Returns the control class name"
+			},
+            "Load": {
+				"desc": "Loads data from the cloud.",
+				"isfunc": true,
+				"name": "Load",
+				"pNames": ["file", "data", "callback"],
+				"pTypes": ["str_pth", "str", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["success", "result", "status"],
+					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Loads data from the cloud."
+			},
+            "_Method": "#1023663567",
+            "Save": {
+				"desc": "Saves data in the cloud.",
+				"isfunc": true,
+				"name": "Save",
+				"pNames": ["file", "data", "callback"],
+				"pTypes": ["str_pth", "str", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["success", "result", "status"],
+					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Saves data in the cloud."
+			}
 		}
 	},
 	"CreateCodeEdit": {
@@ -3855,6 +4057,14 @@
 				"retval": "str-Notification",
 				"shortDesc": "Returns the control class name"
 			},
+            "Listen":{
+				"desc": "Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.",
+				"isfunc": true,
+				"name": "Listen",
+				"pNames": ["options"],
+				"pTypes": ["str-CheckPerms"],
+				"shortDesc": "Listen for any notifications"
+			},
 			"Notify": {
 				"desc": "Send the notification to the user.",
 				"isfunc": true,
@@ -3883,11 +4093,26 @@
 				"desc": "Set notification texts.",
 				"isfunc": true,
 				"name": "SetMessage",
-				"pNames": ["ticker", "title", "text"],
-				"pTypes": ["str", "str", "str"],
+				"pNames": ["ticker", "title", "text", "extra"],
+				"pTypes": ["str", "str", "str", "str"],
 				"shortDesc": "Set notification texts"
 			},
-			"SetSmallImage": {
+            "SetOnNotify": {
+				"desc": "Called when a notification has been intercepted.",
+				"isfunc": true,
+				"name": "SetOnNotify",
+				"pNames": ["callback"],
+				"pTypes": [{
+    					"desc": "Callback function",
+    					"isfunc": true,
+    					"name": "callback",
+    					"pNames": ["source", "title", "message", "extra", "type"],
+    					"pTypes": ["str", "str", "str", "str", "str-Normal|?"],
+    					"shortDesc": "callback"
+    				}],
+				"shortDesc": "Called when notification intercepted"
+			},
+            "SetSmallImage": {
 				"desc": "Set a small image in your notification.",
 				"isfunc": true,
 				"name": "SetSmallImage",
@@ -8434,8 +8659,8 @@
 			"desc": "Callback",
 			"isfunc": true,
 			"name": "callback",
-			"pNames": ["error", "reply"],
-			"pTypes": ["bin", "str"],
+			"pNames": ["error", "reply", "status"],
+			"pTypes": ["bin", "str", "num_int"],
 			"shortDesc": "callback"
 		}, "str"],
 		"shortDesc": "Send Http request"
@@ -9467,10 +9692,10 @@
 		"shortDesc": "Set NavBar color"
 	},
 	"SetOnBroadcast": {
-		"desc": "Define a callback function for incoming Broadcast messages.\n\nSee also: @Broadcast",
+		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast_actions.txt)\n\n\nSee also: @Broadcast",
 		"isfunc": true,
 		"name": "SetOnBroadcast",
-		"pNames": ["callback"],
+		"pNames": ["callback", "action"],
 		"pTypes": [{
 			"desc": "Callback",
 			"isfunc": true,
@@ -9478,7 +9703,7 @@
 			"pNames": ["type", "msg"],
 			"pTypes": ["str", "str"],
 			"shortDesc": "callback"
-		}],
+		}, "str"],
 		"shortDesc": "Called on incoming Broadcasts"
 	},
 	"SetOnDebug": {

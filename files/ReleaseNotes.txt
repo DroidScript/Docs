@@ -1,3 +1,26 @@
+DS 182b1
+- Moved manifest minSdkVersion to 21 (Android 5.0)
+- Added new app.Add* funcs for all controls.
+- Added new CloudStore component + sample (premium only).
+- Added Listen() and SetOnNotify() methods to Notification component .
+- Added 'Notification Listener' sample.
+- Added 'action' param to SetOnBroadcast (for catching generic Android broadcasts).
+- Prevented OnConfig firing after screen unlock.
+- Fixed DS repeated re-draw after screen unlock.
+- Fixed use of gfx.Script() calls in GameView.
+- Fixed GameView issue with batched sprites not showing.
+- Fixed GameView to wait till all assets are loaded before calling OnReady().
+- Added app.data object for storing user data globally.
+- Added SetOnStatus method to AdView.
+- Enabled the use of #rrggbb colors with gfx.SetBackColor.
+- Fixed "Cannot read property SetAlpha of null error" when using keyboards.
+- Added 'NoIcons' option to settings for screen reader support.
+- Updated Terminal extension to use dark theme.
+- Fixed wrong heading on copy app menu.
+
+DS 181a
+- Fixed GLView failure.
+
 DS 180b2
 - Fixed problem with screen height measurement on phones with hardware buttons.
 

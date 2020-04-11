@@ -1,11 +1,27 @@
 {
 	"adv": {
 		"GetType": "Returns the control class name",
-		"Load": "Loads an ad"
+		"Load": "Loads an ad",
+		"SetOnStatus": "Called when status changed"
 	},
 	"app": {
+		"AddAdView": "Create and add AdView to Layout",
+		"AddButton": "Create and add Button to Layout",
+		"AddCameraView": "Create and add CameraView to Layout",
+		"AddCheckBox": "Create and add CheckBox to Layout",
+		"AddCodeEdit": "Create and add CodeEdit to Layout",
 		"AddDrawer": "Adds a slide-able layout on given side",
+		"AddImage": "Create and add Image to Layout",
 		"AddLayout": "Adds a layout to the app",
+		"AddList": "Create and add List to Layout",
+		"AddScroller": "Create and add Scroller to Layout",
+		"AddSeekBar": "Create and add SeekBar to Layout",
+		"AddSpinner": "Create and add Spinner to Layout",
+		"AddText": "Create and add Text to Layout",
+		"AddTextEdit": "Create and add TextEdit to Layout",
+		"AddToggle": "Create and add Toggle to Layout",
+		"AddVideoView": "Create and add VideoView to Layout",
+		"AddWebView": "Create and add WebView to Layout",
 		"Alert": "Shows a popup message with an 'OK' button to exit",
 		"Animate": "Similar to setInterval",
 		"Broadcast": "Used for broadcasting messages between DroidScript apps",
@@ -31,6 +47,7 @@
 		"CreateButton": "Creates a button control",
 		"CreateCameraView": "Returns a new CameraView object to access the device camera",
 		"CreateCheckBox": "Returns a new CheckBox object",
+		"CreateCloudStore": "Returns a new CloudStore object",
 		"CreateCodeEdit": "Returns a new CodeEdit object",
 		"CreateCrypt": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"CreateDebug": "Shows a debug log overlay",
@@ -576,6 +593,11 @@
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”"
 	},
+	"cld": {
+		"GetType": "Returns the control class name",
+		"Load": "Loads data from the cloud.",
+		"Save": "Saves data in the cloud."
+	},
 	"crp": {
 		"Decrypt": "Decrypt text",
 		"Encrypt": "Encrypt text",
@@ -1105,10 +1127,12 @@
 	"ntf": {
 		"Cancel": "Cancel a notification",
 		"GetType": "Returns the control class name",
+		"Listen": "Listen for any notifications",
 		"Notify": "Send the notification",
 		"SetLargeImage": "Set a large image in the notification",
 		"SetLights": "Activate device notification LEDs",
 		"SetMessage": "Set notification texts",
+		"SetOnNotify": "Called when notification intercepted",
 		"SetSmallImage": "Set a small image icon"
 	},
 	"nxt": {
