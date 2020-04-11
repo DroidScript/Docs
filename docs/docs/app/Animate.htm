@@ -49,7 +49,9 @@
 			<a href="#pop_num_fps" data-transition="pop" data-rel="popup">fps</a> )
 		</div>
 
-		<p>when using <i>cfg.NoDom</i>; to cause a high performance you cannot use SetInterval but Animate.<br>
+		<p>To stop the animation loop you can pass <i>null</i> as first argument.<br>
+		You can not have multiple animation loops at once.<br>
+		When using <i>cfg.NoDom</i>; you cannot use JavaScripts <i>setInterval</i> but only the <i>Animate</i> function.<br>
 		<red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.</red></p>
 		<h3>Comparison</h3>
 		<p><strong>normal</strong>:<br>
@@ -61,8 +63,53 @@
 		<strong>with <docstr>“NoDom”</docstr> option</strong>:<br>
 		<span style="display:inline-block;padding-left:1em;">
 			<i>setInterval</i>: error<br>
-			<i>app.Animate</i>: up to 1000 calls per second<br>
-		</span></p>
+
+		</span><br><i>app.Animate</i>: up to 1000 calls per second</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Multiple Animation loops</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">txt1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>txt1<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">txt2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>txt2<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">// delay between calls: 1000ms / 10fps = 100 ms</span></span><br>
+				    <span style="display:inline-block"><span class="token comment">// for higher precision use higher fps</span></span><br>
+				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span>loop<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">var</span> t1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> t2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> n1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> n2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">function</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token parameter">t<span class="token punctuation">,</span> dt</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span style="display:inline-block"><span class="token comment">// set txt1 every 500 ms</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>t <span class="token operator">-</span> t1 <span class="token operator">>=</span> <span class="token number">500</span><span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">txt1<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span><span class="token operator">++</span>n1 <span class="token operator">+</span> <span class="token string">"\tdt: "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>t <span class="token operator">-</span> t1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">t1 <span class="token operator">=</span> t<span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <br>
+				    <span style="display:inline-block"><span class="token comment">// set txt2 every 300 ms</span></span><br>
+				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>t <span class="token operator">-</span> t2 <span class="token operator">>=</span> <span class="token number">300</span><span class="token punctuation">)</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
+				        <span style="display:inline-block">txt2<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span><span class="token operator">++</span>n2 <span class="token operator">+</span> <span class="token string">"\tdt: "</span> <span class="token operator">+</span> <span class="token punctuation">(</span>t <span class="token operator">-</span> t2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				        <span style="display:inline-block">t2 <span class="token operator">=</span> t<span class="token punctuation">;</span></span><br>
+				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Digital Clock</h3>
 			<div id="examp1" style="font-size:70%">

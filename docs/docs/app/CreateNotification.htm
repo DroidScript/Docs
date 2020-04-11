@@ -95,27 +95,36 @@
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Notification”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Notify</a>(
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Listen</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Notify</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">SetLargeImage</a>(
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetLargeImage</a>(
 			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetLights</a>(
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetLights</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">onMs</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">offMs</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetMessage</a>(
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetMessage</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">ticker</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">extra</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetSmallImage</a>(
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnNotify</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetSmallImage</a>(
 			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
 		</div>
 
@@ -126,13 +135,23 @@
 	<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Ongoing”</docstr>, <docstr>“AutoCancel”</docstr>, <docstr>“FullScreen”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“CheckPerms”</docstr></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('string')">source</a>,
+		<a href="" onclick="app.ShowPopup('string')">title</a>,
+		<a href="" onclick="app.ShowPopup('string')">message</a>,
+		<a href="" onclick="app.ShowPopup('string')">extra</a>,
+		<a href="" onclick="app.ShowPopup('string: “Normal” or “?”')">type</a>
+	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ntf.Cancel</b><br>Cancel a notification with a specific id.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ntf.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ntf.Notify</b><br>Send the notification to the user.</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ntf.SetLargeImage</b><br>Set an image which will be displayed bigger than usual.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ntf.SetLights</b><br>Activate the device notification LEDs.</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ntf.SetMessage</b><br>Set notification texts.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ntf.SetSmallImage</b><br>Set a small image in your notification.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>ntf.Listen</b><br>Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION<i>NOTIFICATION</i>LISTENER_SETTINGS.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>ntf.Notify</b><br>Send the notification to the user.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>ntf.SetLargeImage</b><br>Set an image which will be displayed bigger than usual.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>ntf.SetLights</b><br>Activate the device notification LEDs.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>ntf.SetMessage</b><br>Set notification texts.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>ntf.SetOnNotify</b><br>Called when a notification has been intercepted.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>ntf.SetSmallImage</b><br>Set a small image in your notification.</div>
 </div>
 </body>
 

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>SetOnBroadcast</title>
+	<title>AddText</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>SetOnBroadcast</h1>
+		<h1>AddText</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
 
@@ -33,26 +33,24 @@
 	</div>
 
 	<div data-role="content">
-		<p>Define a callback function for incoming Broadcast messages.</p>
+		<p>Creates and adds a Text to a Layout.</p>
 
 		<div class="samp">
-		app.SetOnBroadcast(
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">action</a> )
+		app.AddText(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>app object:</b> Text
 		</div>
 
-		<p>You can find <a href="https://chromium.googlesource.com/android<i>tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast</i>actions.txt" onclick="return OpenUrl(this.href);">a list of broadcasts available for android SDK ver. 28 here</a><br>
-		<br>
-		<br>
-		See also: <a href="Broadcast.htm" data-ajax="false">Broadcast</a></p>
+		<p>See <a href="CreateText.htm" data-ajax="false">CreateText</a> for full documentation.</p>
 
 	</div>
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">type</a>,
-		<a href="" onclick="app.ShowPopup('string')">msg</a>
-	)</div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“AutoScale”</docstr>, <docstr>“AutoSize”</docstr>, <docstr>“Multiline”</docstr>, <docstr>“Left”</docstr> or <docstr>“Right”</docstr>, <docstr>“Html”</docstr>, <docstr>“Bold”</docstr>, <docstr>“Monospace”</docstr>, <docstr>“NoWrap”</docstr>, <docstr>“Log”</docstr>, <docstr>“FillX/Y”</docstr></div>
 </div>
 </body>
 
