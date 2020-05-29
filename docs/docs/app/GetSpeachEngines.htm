@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>CreateSpriteSheet</title>
+	<title>GetSpeachEngines</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>CreateSpriteSheet</h1>
+		<h1>GetSpeachEngines</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
 	</div>
 
@@ -33,35 +33,18 @@
 	</div>
 
 	<div data-role="content">
-
-		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
-		<b>Content:</b><br>
-		<span style="display:inline-block;padding-left:2em;">
-				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
-			</span><br>
-		</div>
-
-		<p>.</p>
+		<p>Returns a list of installed tts engines.</p>
 
 		<div class="samp">
-		sht = gfx.CreateSpriteSheet(
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>unknown</b>
+		app.GetSpeachEngines() → <b>list:</b> [
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">engines</a> ]
 		</div>
 
-		<h3>Methods</h3>
-		<p>The following methods are available on the <strong>SpriteSheet</strong> object:</p>
-
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>object</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">loaded</a> → <b>boolean</b></div>
+		<p>See Also: <a href="TextToSpeech.htm" data-ajax="false">TextToSpeech</a></p>
 
 	</div>
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content">An object for saving individual extra properties.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"></div>
 </div>
 </body>
 

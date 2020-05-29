@@ -42,8 +42,10 @@
 				- <a href="" onclick="jumpTo('cfg.Portrait/Landscape')">cfg.Portrait/Landscape</a><br>
 				- <a href="" onclick="jumpTo('cfg.NoDom')">cfg.NoDom</a><br>
 				- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a><br>
+				- <a href="" onclick="jumpTo('cfg.Holo cfg.Light cfg.Dark')">cfg.Holo cfg.Light cfg.Dark</a><br>
 				- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a><br>
 			</span><br>
+			• <a href="" onclick="jumpTo('Function Shortcuts DW DH TW')">Function Shortcuts DW DH TW</a><br>
 			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
 			• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a><br>
 		</span><br>
@@ -66,9 +68,17 @@
 		Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.--></p>
 		<h3>cfg.Game</h3>
 		<p>The <i>Game</i> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
+		<h3>cfg.Holo cfg.Light cfg.Dark</h3>
+		<p>These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.<br>
+		Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark.</p>
 		<h3>cfg.Transparent</h3>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
+		<h2>Function Shortcuts DW DH TW</h2>
+		<p>There are shortcuts to certain functions, which are<br>
+		<span class="samp samp-inline"><span class="token constant">DW</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
+		<span class="samp samp-inline"><span class="token constant">DH</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
+		<span class="samp samp-inline"><span class="token constant">TW</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetTextBounds</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width</span></p>
 		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
