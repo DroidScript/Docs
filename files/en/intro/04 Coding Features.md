@@ -20,9 +20,19 @@ Furthermore the use of V8 will increase the execution speed of your app. Specifi
 ### cfg.Game
 The _Game_ configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
 
+### cfg.Holo cfg.Light cfg.Dark
+These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.
+Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark. 
+
 ### cfg.Transparent
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
+
+## Function Shortcuts DW DH TW
+There are shortcuts to certain functions, which are
+<js>DW()</js> for <js>app.GetDisplayWidth()</js>
+<js>DH()</js> for <js>app.GetDisplayHeight()</js>
+<js>TW(txt, size)</js> for <js>app.GetTextBounds(txt, size, 0, null).width</js>
 
 ## Permissions
 These methods can force DroidScript to add or remove specific permissions from your app.

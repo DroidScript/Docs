@@ -82,6 +82,7 @@
 		"SetOnTouchUp": "SetOnTouchUp",
 		"SetOrder": "SetOrder",
 		"SwapOrder": "SwapOrder",
+		"version": "Gfx version number",
 		"Vibrate": "Vibrate",
 		"width": "Width"
 	},

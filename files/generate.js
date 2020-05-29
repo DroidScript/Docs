@@ -437,7 +437,7 @@ function getDocData( f, useAppPop )
 // read and return html converted example snippets file
 function getSamples( name )
 {
-	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", true );
+	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", scope[name].isfunc );
 
 	s.replace(/<sample( (.*?))?>([^]*?)<\/sample\1?>/g,
 		(m, _, t, c) => samples[t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt)
@@ -740,6 +740,8 @@ function addMarkdown(s)
 		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")     // `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
+        // additional notes
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*([a-z]+?))(#\w+)?\b/gi, '$1<a href="$2.htm$5" data-ajax="false">$4</a>') // @DocReference
 		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
 }
@@ -1105,3 +1107,21 @@ if(typeof app == "undefined")
 	}
 
 OnStart();
+
+/*var l = ["AddImage", "AddButton", "AddToggle", "AddCheckBox", "AddSpinner", "AddSeekBar", "AddText", "AddTextEdit", "AddList", "AddWebView", "AddScroller", "AddCameraView", "AddVideoView", "AddCodeEdit", "AddAdView"];
+var o = {}
+var scope = JSON.parse(ReadFile("en/app.json"))
+for(var n of l) {
+	var m = n.replace("Add", "Create")
+	o[n] = {
+					"desc": `Creates and adds a ${n.slice(3)} to a Layout.\nSee @${n} for full documentation.`,
+					"isfunc": true,
+					"name": n,
+					"pNames": scope[m].pNames,
+					"pTypes": scope[m].pTypes,
+					"shortDesc": `Create and add ${n.slice(3)} to Layout.`,
+					"retval": scope[m].retval
+				}
+}
+console.log(tos(o))
+*/

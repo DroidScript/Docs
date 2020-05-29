@@ -1,3 +1,48 @@
+DS 190b1
+- Added new cfg.Dark, cfg.Light, cfg.Holo theming options.
+- New dark theme is used by default (use cfg.holo to go back to old look).
+-.Added app.GetThemeInfo() method (gets main settings of current theme).
+- Added 'Controls Light' and 'Controls Dark' samples.
+- Added new switch control (slider switch).
+- Intermitent obfuscation errors fixed.
+-.Added app.InstallApp(apk,callback) method (callback returns error/success status).
+- Added 'AllProgress' option to WebView (shows progress for all loads).
+- Fixed some issues with 'AutoSize/Scale' mode for text and buttons.
+- Disabled BaselineAligned mode for Linear Layouts (use 'BaseAlign' if needed)
+- Added app.GetTextBounds() to calc size of text for given font size (most params optional)
+- Added TW(txt,size) function to as shorthand way of getting text width (size param optional).
+- Added DW() and DH() convenience funcs (same as app.GetDisplayWidth/Height).
+- Dialog.AdjustColor is now applied before Dialog.SetDividerColor.
+- Added 'dialog' option to button control (picks up dialog button theme).
+- Added web.SetOnUrl() method to intercept url clicks (passes url to callback).
+- Error descriptions in the WebView no longer include "net::" on the front.
+- Spinner bug fixed when using spn.SetList and spn.SelectItem right after creation.
+- Added 'vertical' option to toggle button (makes LED go to bottom).
+- All controls are now automatically dimmed when disabled.
+- app.GetObjects() now removes destroyed child controls before returning.
+- Added 'external' option to app.GetPrivateFolder() method.
+-.Added app.GetAccessibility() to check for screen readers etc (thanks to Jason Custer for Java)
+-.Added app.GetSpeachEngines() to list installed TTS engines (thanks to Jason Custer for Java)
+- Fixed issues with auto-complete on device when using app.Add* methods.
+
+DS 182b2
+-.Added Merge(), List() and Delete() methods to CloudStore component.
+- Added "Network" permission when using app.CreateCloudStore().
+- Updated Obfuscator to ES6.
+-.Added app.SetMargins() to set default margins for controls.
+-.Added app.SetTextSize() to set default text size for controls.
+- Enabled GameView to work in IOS and Android browsers.
+- Enabled GameView touch events to work in mobile browsers.
+- Improved GameView asset loading checks.
+- Fixed app.ShowCheckList button size issues.
+-.Added 'AutoSize' option to button control (Auto-sizes text to fit).
+-.Added 'AutoShrink' option to button and text control (Auto-shrinks text to fit).
+- Fixed GLview (added missing libs).
+-.Added app.SetAppLanguage(), app.GetAppLanguages(), app.GetAppLangCode().
+-.Deprecated app.Language2Code(), app.SetLanguage().
+- Added language translation premium sample.
+- Added initial version of GameView docs (thanks to Symbroson).
+
 DS 182b1
 - Moved manifest minSdkVersion to 21 (Android 5.0)
 - Added new app.Add* funcs for all controls.

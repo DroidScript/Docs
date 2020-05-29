@@ -1,5 +1,5 @@
 {
-    "AddAdView": {
+	"AddAdView": {
 		"desc": "Creates and adds a AdView to a Layout.\nSee @CreateAdView for full documentation.",
 		"isfunc": true,
 		"name": "AddAdView",
@@ -44,7 +44,7 @@
 		"retval": "dso-CodeEdit",
 		"shortDesc": "Create and add CodeEdit to Layout."
 	},
-    "AddDrawer": {
+	"AddDrawer": {
 		"desc": "AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.\n\nSee Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer",
 		"isfunc": true,
 		"name": "AddDrawer",
@@ -61,7 +61,7 @@
 		"retval": "dso-Image",
 		"shortDesc": "Create and add Image to Layout."
 	},
-    "AddLayout": {
+	"AddLayout": {
 		"desc": "AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)\nWhen @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.\n\nSee Also: @RemoveLayout",
 		"isfunc": true,
 		"name": "AddLayout",
@@ -69,7 +69,7 @@
 		"pTypes": ["dso-CreateLayout", "str-Linear|Absolute|Frame|Card", "str-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y"],
 		"shortDesc": "Adds a layout to the app"
 	},
-    "AddList": {
+	"AddList": {
 		"desc": "Creates and adds a List to a Layout.\nSee @CreateList for full documentation.",
 		"isfunc": true,
 		"name": "AddList",
@@ -104,6 +104,15 @@
 		"pTypes": ["dso-CreateLayout", "str_com", "num_frc", "num_frc", "str_com-FillX/Y,NoSound"],
 		"retval": "dso-Spinner",
 		"shortDesc": "Create and add Spinner to Layout."
+	},
+	"AddSwitch": {
+		"desc": "Creates and adds a Switch to a Layout.\nSee @CreateToggle for full documentation.",
+		"isfunc": true,
+		"name": "AddSwitch",
+		"pNames": ["layout", "text", "width", "height", "options"],
+		"pTypes": ["dso-CreateLayout", "str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Switch",
+		"shortDesc": "Create and add Switch to Layout."
 	},
 	"AddText": {
 		"desc": "Creates and adds a Text to a Layout.\nSee @CreateText for full documentation.",
@@ -340,7 +349,7 @@
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
 		"shortDesc": "Copies a folder to a given destination"
 	},
-    "CreateAdView": {
+	"CreateAdView": {
 		"abbrev": "adv",
 		"desc": "#CreateAdView.md",
 		"isfunc": true,
@@ -350,7 +359,7 @@
 		"retval": "dso-AdView",
 		"shortDesc": "Returns an AdView object",
 		"subf": {
-            "GetType": {
+			"GetType": {
 				"desc": "Returns the control class name.",
 				"isfunc": true,
 				"name": "GetType",
@@ -359,7 +368,7 @@
 				"retval": "str-AdView",
 				"shortDesc": "Returns the control class name"
 			},
-            "Load": {
+			"Load": {
 				"desc": "Loads an advertising banner.",
 				"isfunc": true,
 				"name": "Load",
@@ -367,8 +376,8 @@
 				"pTypes": [],
 				"shortDesc": "Loads an ad"
 			},
-            "SetOnStatus": {
-                "desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
+			"SetOnStatus": {
+				"desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
 				"isfunc": true,
 				"name": "SetOnStatus",
 				"pNames": ["callback"],
@@ -381,7 +390,7 @@
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when status changed"
-            }
+			}
 		}
 	},
 	"CreateAudioRecorder": {
@@ -681,7 +690,7 @@
 		"isfunc": true,
 		"name": "CreateButton",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,NoPad,FillX/Y,NoSound"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound"],
 		"retval": "dso-Button",
 		"shortDesc": "Creates a button control",
 		"subf": {
@@ -982,7 +991,7 @@
 				"shortDesc": "En-/Disables the camera flash"
 			},
 			"SetFocusMode": {
-				"desc": "Change the cameras focus mode depending on the purpose.",
+				"desc": "Change the cameras focus mode depending  on the purpose.",
 				"isfunc": true,
 				"name": "SetFocusMode",
 				"pNames": ["mode"],
@@ -1226,7 +1235,7 @@
 			"Tween": "#2114624769"
 		}
 	},
-    "CreateCloudStore": {
+	"CreateCloudStore": {
 		"abbrev": "cld",
 		"desc": "#CreateCloudStore.md",
 		"isfunc": true,
@@ -1245,35 +1254,80 @@
 				"retval": "str-CloudStore",
 				"shortDesc": "Returns the control class name"
 			},
-            "Load": {
+			"Delete": {
+				"desc": "Deletes a file in the cloud.",
+				"isfunc": true,
+				"name": "Delete",
+				"pNames": ["file", "callback"],
+				"pTypes": ["str_pth", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["success", "result", "status"],
+					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Deletes a file in the cloud."
+			},
+			"List": {
+				"desc": "Lists files of the cloud.",
+				"isfunc": true,
+				"name": "List",
+				"pNames": ["filter", "callback"],
+				"pTypes": ["str", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["success", "result", "status"],
+					"pTypes": ["bin", "obj-{data:str_com,error:str}", "num_int"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Lists files of the cloud."
+			},
+			"Load": {
 				"desc": "Loads data from the cloud.",
 				"isfunc": true,
 				"name": "Load",
-				"pNames": ["file", "data", "callback"],
+				"pNames": ["file", "data", "callback", "options"],
 				"pTypes": ["str_pth", "str", {
 					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["success", "result", "status"],
-					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"],
+					"pTypes": ["bin", "obj-{data:all,error:str}", "num_int"],
 					"shortDesc": "callback"
-				}],
+				}, "str"],
 				"shortDesc": "Loads data from the cloud."
 			},
-            "_Method": "#1023663567",
-            "Save": {
+			"Merge": {
+				"desc": "Merges an object with an already existing in the cloud.",
+				"isfunc": true,
+				"name": "Merge",
+				"pNames": ["file", "data", "callback"],
+				"pTypes": ["str_pth", "obj", {
+					"desc": "callback function",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["success", "result", "status"],
+					"pTypes": ["bin", "obj-{data:str-Entry Saved,error:str}", "num_int"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Merges data in the cloud."
+			},
+			"_Method": "#1023663567",
+			"Save": {
 				"desc": "Saves data in the cloud.",
 				"isfunc": true,
 				"name": "Save",
-				"pNames": ["file", "data", "callback"],
-				"pTypes": ["str_pth", "str", {
+				"pNames": ["file", "data", "callback", "options"],
+				"pTypes": ["str_pth", "all", {
 					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
 					"pNames": ["success", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"],
 					"shortDesc": "callback"
-				}],
+				}, "str"],
 				"shortDesc": "Saves data in the cloud."
 			}
 		}
@@ -1665,6 +1719,15 @@
 			"GetLeft": "#1237814406",
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
+			"GetTitleHeight": {
+				"desc": "Returns the height of the title bar.",
+				"isfunc": true,
+				"name": "GetTitleHeight",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_pxl",
+				"shortDesc": "Get title bar height"
+			},
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3006,7 +3069,23 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
-            "SetCorderRadius": {
+			"SetChildMargins": {
+				"desc": "Set margins of top-level children.",
+				"isfunc": true,
+				"name": "SetChildMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode"],
+				"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Set margins of top-level children."
+			},
+			"SetChildTextSize": {
+				"desc": "Change the text size of top-level children.",
+				"isfunc": true,
+				"name": "SetTextSize",
+				"pNames": ["size", "mode"],
+				"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
+				"shortDesc": "Change text size of top-level children."
+			},
+			"SetCorderRadius": {
 				"desc": "Applies a corner radius to card layouts.",
 				"isfunc": true,
 				"name": "SetCorderRadius",
@@ -3014,7 +3093,7 @@
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply corner radius to cl's"
 			},
-            "SetElevation": {
+			"SetElevation": {
 				"desc": "Applies a shadow to card layouts.",
 				"isfunc": true,
 				"name": "SetElevation",
@@ -3544,7 +3623,7 @@
 				"retval": "num_sec",
 				"shortDesc": "Get the song length in seconds"
 			},
-            "GetPosition": {
+			"GetPosition": {
 				"desc": "Returns the elapsed playtime in seconds.",
 				"isfunc": true,
 				"name": "GetPosition",
@@ -3918,7 +3997,7 @@
 				"retval": "str",
 				"shortDesc": "Receive text over TCP"
 			},
-            "ReceiveVideoStream": {
+			"ReceiveVideoStream": {
 				"desc": "Receive video from TCP connection.\n\n<premium>",
 				"isfunc": true,
 				"name": "ReceiveVideoStream",
@@ -4057,7 +4136,7 @@
 				"retval": "str-Notification",
 				"shortDesc": "Returns the control class name"
 			},
-            "Listen":{
+			"Listen":{
 				"desc": "Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.",
 				"isfunc": true,
 				"name": "Listen",
@@ -4097,22 +4176,22 @@
 				"pTypes": ["str", "str", "str", "str"],
 				"shortDesc": "Set notification texts"
 			},
-            "SetOnNotify": {
+			"SetOnNotify": {
 				"desc": "Called when a notification has been intercepted.",
 				"isfunc": true,
 				"name": "SetOnNotify",
 				"pNames": ["callback"],
 				"pTypes": [{
-    					"desc": "Callback function",
-    					"isfunc": true,
-    					"name": "callback",
-    					"pNames": ["source", "title", "message", "extra", "type"],
-    					"pTypes": ["str", "str", "str", "str", "str-Normal|?"],
-    					"shortDesc": "callback"
-    				}],
+						"desc": "Callback function",
+						"isfunc": true,
+						"name": "callback",
+						"pNames": ["source", "title", "message", "extra", "type"],
+						"pTypes": ["str", "str", "str", "str", "str-Normal|?"],
+						"shortDesc": "callback"
+					}],
 				"shortDesc": "Called when notification intercepted"
 			},
-            "SetSmallImage": {
+			"SetSmallImage": {
 				"desc": "Set a small image in your notification.",
 				"isfunc": true,
 				"name": "SetSmallImage",
@@ -4808,7 +4887,13 @@
 			"SetBackGradient": "#7112142192",
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetColorFilter": { "name": "SetColorFilter",
+				"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
+				"isfunc": true,
+				"pNames": ["color", "mode", "options"],
+				"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over", "str"],
+				"shortDesc": "Adjust the visual color effect with different BlendModes"
+			},
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetMaxRate": {
@@ -5566,6 +5651,92 @@
 			"Tween": "#2114624769"
 		}
 	},
+	"CreateSwitch": {
+		"abbrev": "swi",
+		"desc": "#CreateSwitch.md",
+		"isfunc": true,
+		"name": "CreateSwitch",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Button",
+		"shortDesc": "Creates a switch control",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetChecked": {
+				"desc": "Returns whether the switch is currently activated",
+				"isfunc": true,
+				"name": "GetChecked",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "bin",
+				"shortDesc": "Checks if switch is activated"
+			},
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"desc": "Returns the control class name.",
+				"isfunc": true,
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Switch",
+				"shortDesc": "Returns the control class name"
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetChecked": {
+				"desc": "Change the current checked state of the switch.",
+				"isfunc": true,
+				"name": "SetChecked",
+				"pNames": ["checked"],
+				"pTypes": ["bin"],
+				"shortDesc": "Change the checked state"
+			},
+			"SetColorFilter": "#1096996086",
+			"SetEnabled": "#1602385882",
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2088093920",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"desc": "Costomize the look of the toggle.",
+				"isfunc": true,
+				"name": "SetStyle",
+				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
+				"shortDesc": "Customize the button looks"
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
 	"CreateSynth": {
 		"abbrev": "syn",
 		"desc": "#CreateSynth.md",
@@ -6131,7 +6302,7 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right,Html,Bold,Monospace,NoWrap,Log,FillX/Y"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y"],
 		"retval": "dso-Text",
 		"shortDesc": "Returns a new Text object",
 		"subf": {
@@ -6524,6 +6695,14 @@
 				"pTypes": ["str_com-FontAwesome,Html,Monospace,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego"],
 				"shortDesc": "Define button options"
 			},
+			"SetButtonPadding": {
+				"desc": "Define distances that elements within the control are to maintain from the control borders.",
+				"isfunc": true,
+				"name": "SetButtonPadding",
+				"pNames": ["left", "top", "right", "bottom", "mode"],
+				"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+				"shortDesc": "Define button paddings"
+			},
 			"SetButtonStyle": {
 				"desc": "Define standard style of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).",
 				"isfunc": true,
@@ -6580,6 +6759,22 @@
 				"pTypes": ["bin"],
 				"shortDesc": "Define whether to dim dialog background"
 			},
+			"SetHighlightColor": {
+				"desc": "Define standard highlight colors.",
+				"isfunc": true,
+				"name": "SetHighlightColor",
+				"pNames": ["color"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Define highlight colors"
+			},
+			"SetListDividerColor": {
+				"desc": "Define standard divider colors of [lists](CreateList.htm).",
+				"isfunc": true,
+				"name": "SetListDividerColor",
+				"pNames": ["color"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Define list divider colors"
+			},
 			"SetProgressBackColor": {
 				"desc": "Define standard background progress color of [progress indicators](ShowProgress.htm).",
 				"isfunc": true,
@@ -6608,8 +6803,8 @@
 				"desc": "Define standard text color of controls.",
 				"isfunc": true,
 				"name": "SetTextColor",
-				"pNames": ["color"],
-				"pTypes": ["str_col"],
+				"pNames": ["color1", "color2"],
+				"pTypes": ["str_col", "str_col"],
 				"shortDesc": "Define control text color"
 			},
 			"SetTextEditOptions": {
@@ -7465,8 +7660,16 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
+			"SetErrorPage": {
+				"desc": "Define a url loaded when an error occured.",
+				"isfunc": true,
+				"name": "SetErrorPage",
+				"pNames": ["url"],
+				"pTypes": ["str_url"],
+				"shortDesc": "Define error page"
+			},
 			"SetMargins": "#1741900074",
-            "SetTextZoom": {
+			"SetTextZoom": {
 				"desc": "Scales the html text by a given factor.",
 				"isfunc": true,
 				"name": "SetTextZoom",
@@ -7502,7 +7705,22 @@
 					"pTypes": ["str"],
 					"shortDesc": "callback"
 				}],
-				"shortDesc": "Called when an error ocured"
+				"shortDesc": "Called when an error occured"
+			},
+			"SetOnUrl": {
+				"desc": "Define a callback function which is called when the user clicked a link.",
+				"isfunc": true,
+				"name": "SetOnUrl",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "Callback",
+					"isfunc": true,
+					"name": "callback",
+					"pNames": ["url"],
+					"pTypes": ["str_url"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Called when link klicked"
 			},
 			"SetOnProgress": {
 				"desc": "Define a callback function which is called when the webpage loading progress changed",
@@ -7657,7 +7875,14 @@
 			},
 			"Hide": "#5372805812",
 			"Method": "#1023663567",
-			"SetBackColor": "#3857861627",
+			"SetBackColor": {
+				"desc": "Changes the background color of the control.",
+				"isfunc": true,
+				"name": "SetBackColor",
+				"pNames": ["color", "radius"],
+				"pTypes": ["str_col", "num_pxl"],
+				"shortDesc": "Change the background color"
+			},
 			"SetBackground": "#1239127541",
 			"SetButtonText": {
 				"desc": "Changes the texts of the two Yes/No buttons.",
@@ -7965,6 +8190,15 @@
 		"pTypes": ["str-create|send|set|require|provide|remove", "str", "obj"],
 		"shortDesc": "Google Analytics"
 	},
+	"GetAccessibility": {
+		"desc": "Returns information about the availability of several accesibility features on the device.",
+		"isfunc": true,
+		"name": "GetAccessibility",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "obj-{ enabled:bin, exploreByTouch:bin, screenReader:bin }",
+		"shortDesc": "Get accesibility feature availability"
+	},
 	"GetAccounts": {
 		"desc": "Returns a string of all known account names on the device separated with comma ','.\n\nSee Also: @ChooseAccount",
 		"isfunc": true,
@@ -8269,7 +8503,16 @@
 		"pNames": [],
 		"pTypes": [],
 		"retval": "str",
-		"shortDesc": "GetLanguage"
+		"shortDesc": "Get device language"
+	},
+	"GetAppLanguages": {
+		"desc": "Returns the available translation languages specified in your lang.json file.\n\nSee Also: @SetAppLanguage",
+		"isfunc": true,
+		"name": "GetAppLanguages",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "lst-[code:str]",
+		"shortDesc": "Get translation languages"
 	},
 	"GetLanguageCode": {
 		"desc": "GetLanguageCode returns the user language code (ie&period; “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
@@ -8425,8 +8668,8 @@
 		"desc": "Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.\n\nSee Also: @GetAppPath, @GetPath",
 		"isfunc": true,
 		"name": "GetPrivateFolder",
-		"pNames": ["name"],
-		"pTypes": ["str"],
+		"pNames": ["name", "options"],
+		"pTypes": ["str", "str-external"],
 		"retval": "str_pth",
 		"shortDesc": "Get path to a private folder"
 	},
@@ -8529,6 +8772,15 @@
 		"retval": "str",
 		"shortDesc": "Get value of shared text"
 	},
+	"GetSpeachEngines": {
+		"desc": "Returns a list of installed tts engines.\n\nSee Also: @TextToSpeech",
+		"isfunc": true,
+		"name": "GetSpeachEngines",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "lst-[ engines:str ]",
+		"shortDesc": "Get tts engines"
+	},
 	"GetSpeakerPhone": {
 		"desc": "Checks if the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"isfunc": true,
@@ -8555,6 +8807,24 @@
 		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get WiFi network SSID (name)"
+	},
+	"GetTextBounds": {
+		"desc": "Calculates text dimensions based on a specific control or with default settings",
+		"isfunc": true,
+		"name": "GetTextBounds",
+		"pNames": ["txt", "size", "width", "obj"],
+		"pTypes": ["str", "num", "num_frc", "dso"],
+		"retval": "obj-{ width:num_frc, height:num_frc }",
+		"shortDesc": "Calculates text bounds"
+	},
+	"GetThemeInfo": {
+		"desc": "Returns the configuration of the current theme.",
+		"isfunc": true,
+		"name": "GetThemeInfo",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "obj-{ baseTheme:str, holo:bin, dark:bin, titleHeight:num_frc, backColor:str_col, dialogColor:str_col, btnColor:str_col, dialogBtnColor:str_col, textColor1:str_col, textColor2:str_col,btnTextColor:str_col, highlightColor:str_col }",
+		"shortDesc": "Get theme configuration"
 	},
 	"GetThumbnail": {
 		"desc": "Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.\n\nSee Also: @CreateImage",
@@ -8682,6 +8952,22 @@
 		"retval": "bin",
 		"shortDesc": "Install Wallpaper.js as device wallpaper"
 	},
+	"InstallApp": {
+		"desc": "Starts the installation process of an apk file from your local drive.",
+		"isfunc": true,
+		"name": "InstallApp",
+		"pNames": ["apkFile", "callback", "options"],
+		"pTypes": ["str_pth", {
+			"desc": "callback function",
+			"isfunc": true,
+			"name": "callback",
+			"pNames": [],
+			"pTypes": [],
+			"shortDesc": "callback"
+		}, "str"],
+		"retval": "bin",
+		"shortDesc": "Start apk installation process"
+	},
 	"IsAPK": {
 		"desc": "Returns whether current app is an APK or not (case not it's a DroidScript Project).",
 		"isfunc": true,
@@ -8808,7 +9094,7 @@
 		"retval": "bin",
 		"shortDesc": "Check if apk version increased"
 	},
-    "IsPortrait": {
+	"IsPortrait": {
 		"desc": "Checks if the device is in portrait mode.",
 		"isfunc": true,
 		"name": "IsPortrait",
@@ -8897,8 +9183,17 @@
 		"pTypes": ["num_int"],
 		"shortDesc": "Kill an app by its pid"
 	},
-	"Language2Code": {
+	"GetAppLangCode": {
 		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.\n\nSee Also: @GetLanguage",
+		"isfunc": true,
+		"name": "GetAppLangCode",
+		"pNames": ["name"],
+		"pTypes": ["str"],
+		"retval": "str",
+		"shortDesc": "Convert language name to its code or get current language code"
+	},
+	"Language2Code": {
+		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.<deprecated Use @GetAppLangCode instead.>\n\nSee Also: @GetLanguage",
 		"isfunc": true,
 		"name": "Language2Code",
 		"pNames": ["name"],
@@ -9373,7 +9668,7 @@
 		"pTypes": ["str_pth", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
 		"shortDesc": "Read the content of a local file"
 	},
-    "RedirectAssets": {
+	"RedirectAssets": {
 		"desc": "Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.",
 		"isfunc": true,
 		"name": "RedirectAssets",
@@ -9485,7 +9780,7 @@
 		"pTypes": ["str_pth", "str", "str", "str"],
 		"shortDesc": "Send a file to a remote target"
 	},
-    "SendImage": {
+	"SendImage": {
 		"desc": "#SendImage.md",
 		"isfunc": true,
 		"name": "SendImage",
@@ -9659,8 +9954,16 @@
 		"pTypes": ["str_com-Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning", "bin", "str_com-Black,Tasks:prevents recent tasks button working"],
 		"shortDesc": "Blocks android functionality outside your app"
 	},
+	"SetAppLanguage": {
+		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetAppLanguages",
+		"isfunc": true,
+		"name": "SetAppLanguage",
+		"pNames": ["name"],
+		"pTypes": ["str"],
+		"shortDesc": "Load the language code from lang.json"
+	},
 	"SetLanguage": {
-		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetLanguage",
+		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).<deprecated Use @SetAppLanguage instead>\n\nSee Also: @GetLanguage",
 		"isfunc": true,
 		"name": "SetLanguage",
 		"pNames": ["name"],
@@ -9675,6 +9978,14 @@
 		"pTypes": ["str_com", "str_pth"],
 		"shortDesc": "Set app menu"
 	},
+	"SetMargins": {
+		"desc": "Set the default margins settings for controls",
+		"isfunc": true,
+		"name": "SetMargins",
+		"pNames": ["left", "top", "right", "bottom", "mode"],
+		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"shortDesc": "Set default margins"
+	},
 	"SetMockLocation": {
 		"desc": "Emulates a GPS location on the device.\n\n<premium>",
 		"isfunc": true,
@@ -9683,7 +9994,7 @@
 		"pTypes": ["num", "num", "num"],
 		"shortDesc": "Emulate GPS location"
 	},
-    "SetNavBarColor": {
+	"SetNavBarColor": {
 		"desc": "Change the android NavBar color\n\n<premium>",
 		"isfunc": true,
 		"name": "SetNavBarColor",
@@ -9860,13 +10171,21 @@
 		"pTypes": ["bin"],
 		"shortDesc": "En/Disable speaker for phone calls"
 	},
-    "SetStatusBarColor": {
+	"SetStatusBarColor": {
 		"desc": "Change the android status bar color\n\n<premium>",
 		"isfunc": true,
 		"name": "SetStatusBarColor",
 		"pNames": ["color"],
 		"pTypes": ["str_col"],
 		"shortDesc": "Set status bar color"
+	},
+	"SetTextSize": {
+		"desc": "Set the default text size setting for controls",
+		"isfunc": true,
+		"name": "SetTextSize",
+		"pNames": ["size", "mode"],
+		"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
+		"shortDesc": "Set default text size"
 	},
 	"SetTheme": {
 		"desc": "Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.\n\n<premium>",

@@ -196,6 +196,13 @@
 				"pTypes": ["num", "num"],
 				"shortDesc": "Scroll Background"
 			},
+			"loaded": {
+				"desc": "",
+				"isfunc": false,
+				"name": "loaded",
+				"retval": "bin",
+				"shortDesc": ""
+			},
 			"_sprite": {
 				"desc": "",
 				"isfunc": false,
@@ -422,7 +429,7 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-            "GetFrame": {
+			"GetFrame": {
 				"desc": "Returns the current frame",
 				"isfunc": true,
 				"name": "GetFrame",
@@ -643,6 +650,13 @@
 		"shortDesc": "Returns a new spritesheet object",
 		"subf": {
 			"data": "#2865983653",
+			"loaded": {
+				"desc": "",
+				"isfunc": false,
+				"name": "loaded",
+				"retval": "bin",
+				"shortDesc": ""
+			},
 			"_loader": {
 				"desc": "",
 				"isfunc": false,
@@ -1064,6 +1078,15 @@
 		"pTypes": ["obj", "obj"],
 		"retval": "?",
 		"shortDesc": "SwapOrder"
+	},
+	"version": {
+		"desc": "the gfx version number starting from 1.1 in DS182b2",
+		"isfunc": false,
+		"pNames": [],
+		"pTypes": [],
+		"name": "version",
+		"retval": "str",
+		"shortDesc": "gfx version number"
 	},
 	"Vibrate": {
 		"desc": "",
