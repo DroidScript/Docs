@@ -225,7 +225,7 @@ function tglTheme() {
 // set the current theme. ([mo]default, [mo]dark)
 function setTheme( theme, holo )
 {
-    if(holo === false) theme = "mo" + theme;
+    if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
 	if(curTheme == theme) return;
 	curTheme = theme;
 	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
