@@ -214,9 +214,18 @@ function jumpTo(contains)
 	}
 }
 
-// set the current theme. (default, dark)
-function setTheme( theme )
+// toggles between dark and default theme
+function tglTheme() {
+    var thm = getTheme();
+    if(thm.indexOf('dark') > -1)
+         setTheme(thm.replace("dark", "default"));
+    else setTheme(thm.replace("default" , "dark"));
+}
+
+// set the current theme. ([mo]default, [mo]dark)
+function setTheme( theme, holo )
 {
+    if(holo === false) theme = "mo" + theme;
 	if(curTheme == theme) return;
 	curTheme = theme;
 	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");

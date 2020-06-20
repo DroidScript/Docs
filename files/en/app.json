@@ -3,8 +3,8 @@
 		"desc": "Creates and adds a AdView to a Layout.\nSee @CreateAdView for full documentation.",
 		"isfunc": true,
 		"name": "AddAdView",
-		"pNames": ["unitId", "testId", "width", "height", "options"],
-		"pTypes": ["str", "str", "num_frc", "num_frc", "str"],
+		"pNames": ["layout", "unitId", "testId", "width", "height", "options"],
+		"pTypes": ["dso-CreateLayout", "str", "str", "num_frc", "num_frc", "str"],
 		"retval": "dso-AdView",
 		"shortDesc": "Create and add AdView to Layout."
 	},
@@ -12,8 +12,8 @@
 		"desc": "Creates and adds a Button to a Layout.\nSee @CreateButton for full documentation.",
 		"isfunc": true,
 		"name": "AddButton",
-		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,NoPad,FillX/Y,NoSound"],
+		"pNames": ["layout", "text", "width", "height", "options"],
+		"pTypes": ["dso-CreateLayout", "str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,NoPad,FillX/Y,NoSound"],
 		"retval": "dso-Button",
 		"shortDesc": "Create and add Button to Layout."
 	},

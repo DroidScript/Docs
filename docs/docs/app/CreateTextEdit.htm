@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateTextEdit</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -76,7 +76,7 @@
 				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">edt_OnChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><br>
+				<span class="token keyword">function</span> <span class="token function">edt_OnChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> edt<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				<span class="token punctuation">}</span>

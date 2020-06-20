@@ -3,18 +3,18 @@ DS 190b1
 - New dark theme is used by default (use cfg.holo to go back to old look).
 -.Added app.GetThemeInfo() method (gets main settings of current theme).
 - Added 'Controls Light' and 'Controls Dark' samples.
-- Added new switch control (slider switch).
+-.Added new switch control (slider switch).
 - Intermitent obfuscation errors fixed.
 -.Added app.InstallApp(apk,callback) method (callback returns error/success status).
 - Added 'AllProgress' option to WebView (shows progress for all loads).
 - Fixed some issues with 'AutoSize/Scale' mode for text and buttons.
 - Disabled BaselineAligned mode for Linear Layouts (use 'BaseAlign' if needed)
-- Added app.GetTextBounds() to calc size of text for given font size (most params optional)
-- Added TW(txt,size) function to as shorthand way of getting text width (size param optional).
-- Added DW() and DH() convenience funcs (same as app.GetDisplayWidth/Height).
+-.Added app.GetTextBounds() to calc size of text for given font size (most params optional)
+-.Added TW(txt,size) function to as shorthand way of getting text width (size param optional).
+-.Added DW() and DH() convenience funcs (same as app.GetDisplayWidth/Height).
 - Dialog.AdjustColor is now applied before Dialog.SetDividerColor.
 - Added 'dialog' option to button control (picks up dialog button theme).
-- Added web.SetOnUrl() method to intercept url clicks (passes url to callback).
+-.Added web.SetOnUrl() method to intercept url clicks (passes url to callback).
 - Error descriptions in the WebView no longer include "net::" on the front.
 - Spinner bug fixed when using spn.SetList and spn.SelectItem right after creation.
 - Added 'vertical' option to toggle button (makes LED go to bottom).

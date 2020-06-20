@@ -874,7 +874,7 @@ ${getHead(0)}
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 		<h1>%t</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
 
 	<div data-role="content">
@@ -898,7 +898,7 @@ ${getHead(1)}
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>%t</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
