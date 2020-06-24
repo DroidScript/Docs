@@ -1278,7 +1278,7 @@
 					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
-					"pNames": ["success", "result", "status"],
+					"pNames": ["error", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str_com,error:str}", "num_int"],
 					"shortDesc": "callback"
 				}],
@@ -1288,12 +1288,12 @@
 				"desc": "Loads data from the cloud.",
 				"isfunc": true,
 				"name": "Load",
-				"pNames": ["file", "data", "callback", "options"],
+				"pNames": ["file", "callback", "options"],
 				"pTypes": ["str_pth", "str", {
 					"desc": "callback function",
 					"isfunc": true,
 					"name": "callback",
-					"pNames": ["success", "result", "status"],
+					"pNames": ["error", "result", "status"],
 					"pTypes": ["bin", "obj-{data:all,error:str}", "num_int"],
 					"shortDesc": "callback"
 				}, "str"],
