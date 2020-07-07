@@ -9733,7 +9733,7 @@
 		"shortDesc": "Save web cookies"
 	},
 	"SaveNumber": {
-		"desc": "Save a number value to remember varibale values between multiple app starts.\n\nSee also: @LoadNumber.",
+		"desc": "Save a number value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
 		"isfunc": true,
 		"name": "SaveNumber",
 		"pNames": ["name", "value", "file"],
@@ -9741,7 +9741,7 @@
 		"shortDesc": "Save a number value across multiple starts"
 	},
 	"SaveText": {
-		"desc": "Save a text value to remember varibale values between multiple app starts.\n\nSee also: @LoadText.",
+		"desc": "Save a text value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadText.",
 		"isfunc": true,
 		"name": "SaveText",
 		"pNames": ["name", "value", "file"],
