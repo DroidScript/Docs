@@ -8,6 +8,21 @@ They should be placed at the very top of your main source script.
 ### cfg.Portrait/Landscape
 Defines the initial screen orientation your app will launch in
 
+### cfg.Holo cfg.Light cfg.Dark
+These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.
+Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark.
+
+### cfg.MUI
+Enables builtin material component support through the MUI object.
+<premium>
+
+### cfg.Game
+The _Game_ configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
+
+### cfg.Transparent
+This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
+<premium>
+
 ### cfg.NoDom
 <red>Note: The _NoDom_ option is currently not available due to GooglePlays 64bit requirement since August 2019.</red>
 <!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.
@@ -16,17 +31,6 @@ The NoDom config will make use of [googles V8 engine](https://v8.dev) instead wh
 For example setInterval and setTimeout will not be available any more, but you can use the **app.@../app/Animate method instead**.
 
 Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.-->
-
-### cfg.Game
-The _Game_ configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
-
-### cfg.Holo cfg.Light cfg.Dark
-These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.
-Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark. 
-
-### cfg.Transparent
-This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
-<premium>
 
 ## Function Shortcuts DW DH TW
 There are shortcuts to certain functions, which are

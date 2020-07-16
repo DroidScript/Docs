@@ -215,7 +215,7 @@ function adjustDoc(html, name)
 
 	var toc = [];
 	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function(m, i, t) {
-		if( t != "%t" ) toc.push(
+		if( t != "%t" && i < 4 ) toc.push(
 			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
 			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t}</a><br>`);
 	});
