@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Material UI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css"/>
+
+	<script src="js/energize-min.js"></script>
+	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="../app.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/example.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Material UI</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+    	<div style="align-items: center; text-align: center;">
+                <img src="mui/MUI.png" width="264px">
+        </div>
+
+    	<br>
+    	<h2 style="text-align: center;"><b>DroidScript MUI Controls</b></h2>
+
+    	<p>A set of controls you can use to create elegant user interfaces inspired by Google's Material Design.</p>
+
+        <p>To use the MUI controls, you must first configure your app by placing the following line at the top of your main file</p>
+
+        <div class="samp">&nbsp;cfg.MUI, cfg.Light</div>
+
+        <p>Once you have done this, an instance of the <b>MUI</b> object is created and is available globally.</p>
+
+    	<div style="align-items: center; text-align: center;">
+    		<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="run( '/assets/demos/mui/DroidScript_UI_Kit.js' )">Run MUI Demos</a>
+    	</div>
+    	<br>
+
+    	<!-- Complete Example -->
+    	<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="a">
+        	<h3>Example</h3>
+        	<pre class="prettyprint lang-js" style="overflow: auto; overflow-x: auto;" id="examp1">
+cfg.MUI, cfg.Light
+
+function OnStart()
+{
+    app.InitializeUIKit();
+
+	lay = app.CreateLayout("Linear", "VCenter, FillXY");
+	lay.SetBackColor( MUI.colors.white );
+
+	btn = MUI.CreateButtonRaised("BUTTON", 0.4, null, MUI.colors.teal.teal);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonRaisedO("BUTTON", 0.4, null, MUI.colors.teal.teal);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonRound("BUTTON", 0.4, null, MUI.colors.deepPurple.darken1);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonRoundO("BUTTON", 0.4, null, MUI.colors.deepPurple.darken1);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonElegant("BUTTON", 0.4, null, MUI.colors.blue.darken2);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonFlat("BUTTON", 0.4, null, MUI.colors.pink.pink);
+	lay.AddChild(btn);
+
+	btn = MUI.CreateButtonToggle("TOGGLE", 0.4, null, true, OnToggle, MUI.colors.green.darken2);
+	lay.AddChild(btn);
+
+    app.AddLayout(lay);
+}
+
+function OnToggle(val)
+{
+    app.ShowPopup(val);
+}
+</pre>
+            <div name="divCopy" align="right">
+                <a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy</a>
+                <a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
+            </div>
+        </div>
+    </div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

@@ -222,7 +222,7 @@
 		"isfunc": true,
 		"name": "CheckPermission",
 		"pNames": ["type"],
-		"pTypes": ["str-Camera|Storage|ExtSDcard|Network|Location|SMS|Calendar|Body|Contacts|Record|Phone|Accounts|License"],
+		"pTypes": ["str-Camera|Storage|ExtSDcard|Network|Location|SMS|Calendar|Body|Contacts|Record|Biometric|Phone|Accounts|License"],
 		"retval": "bin",
 		"shortDesc": "Checks if permission was granted"
 	},
@@ -6302,7 +6302,7 @@
 		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y"],
 		"retval": "dso-Text",
 		"shortDesc": "Returns a new Text object",
 		"subf": {
@@ -6782,6 +6782,14 @@
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
 				"shortDesc": "Define progress background color"
+			},
+	        "SetProgressOptions": {
+				"desc": "Define standard options of [progress indicators](ShowProgress.htm).",
+				"isfunc": true,
+				"name": "SetProgressOptions",
+				"pNames": ["options"],
+				"pTypes": ["str_com-NoDim,NonModal,Solid"],
+				"shortDesc": "Define progress options"
 			},
 			"SetProgressBarOptions": {
 				"desc": "Define standard options of [progress bars](ShowProgressBar.htm).",
@@ -8654,7 +8662,7 @@
 		"isfunc": true,
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Accounts|License|usb\\:<\"pid:num\">", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<\"pid:num\">", {
 			"desc": "callback function",
 			"isfunc": true,
 			"name": "callback",
@@ -8772,10 +8780,10 @@
 		"retval": "str",
 		"shortDesc": "Get value of shared text"
 	},
-	"GetSpeachEngines": {
+	"GetSpeechEngines": {
 		"desc": "Returns a list of installed tts engines.\n\nSee Also: @TextToSpeech",
 		"isfunc": true,
-		"name": "GetSpeachEngines",
+		"name": "GetSpeechEngines",
 		"pNames": [],
 		"pTypes": [],
 		"retval": "lst-[ engines:str ]",
@@ -8961,8 +8969,8 @@
 			"desc": "callback function",
 			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
+			"pNames": ["packageName", "status"],
+			"pTypes": ["str", "str"],
 			"shortDesc": "callback"
 		}, "str"],
 		"retval": "bin",
@@ -10290,7 +10298,7 @@
 		"isfunc": true,
 		"name": "ShowProgress",
 		"pNames": ["message", "options"],
-		"pTypes": ["str", "str_com-NoDim:Don't darken background,NonModal:allow background touch"],
+		"pTypes": ["str", "str_com-NoDim:Don't darken background,NonModal:allow background touch,Solid:shows solid background behind spinner"],
 		"shortDesc": "Show a progress indicator"
 	},
 	"ShowProgressBar": {

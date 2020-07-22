@@ -48,7 +48,10 @@
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('string')">packageName</a>,
+		<a href="" onclick="app.ShowPopup('string')">status</a>
+	)</div>
 </div>
 </body>
 

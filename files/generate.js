@@ -255,7 +255,7 @@ function adjustDoc(html, name)
 
 		// replace <js> and <bash> tags with sample
 		.replace(
-			/(\s|<br>)*<(js|bash|smp|java)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
+			/(\s|<br>)*<(js|bash|smp|java|json)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 			function(m, w1, lang, options, _, _, code, _, w2, _)
 			{
 				options = options.split(" ");
@@ -669,15 +669,16 @@ function incpop( type, i )
 	return hex(spop[type]);
 }
 
-// accept formats: 'name:"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
+// accept formats: '"name":"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
 // using name:'...' will force app popups
 function replaceTypes(s, useAppPop)
 {
 	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
-	_s.replace(/\b([\w_.#-]+):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\.|[^.|:,”}\]\n])*)?['"]?/g,
-		function(m, name, type, _, desc)
+	_s.replace(/(\b([\w_.#-]+)|"(.*?)"):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\.|[^.|:,”}\]\n])*)?['"]?/g,
+		function(m, _, name, aname, type, _, desc)
 		{
 			var r, space = '', tapop = false;
+            if(!name) name = aname;
 			if( !type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return;
 
 			if(desc) {

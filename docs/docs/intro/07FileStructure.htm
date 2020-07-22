@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>File Structure</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>File Structure</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('File Structure')">File Structure</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('build.json')">build.json</a><br>
+			</span><br>
+		</span><br>
+		</div>
+
+		<h2>File Structure</h2>
+		<p><code>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">/sdcard/DroidScript</a>/<br>
+		├──
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">_nopremium_</a><br>
+		├──
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">_sdk_</a><br>
+		├──
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">APKs</a>/<br>
+		├──
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SPKs</a>/<br>
+		├──
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Plugins</a>/<br>
+		├──
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Extensions</a>/<br>
+		└──
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;</a>/<br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.html</a></span><br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.js</a></span><br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">build.json</a></span><br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">~&lt;FILENAME&gt;</a></span><br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">Html</a>/</span><br>
+		        <span style="display:inline-block">├──
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">Snd</a>/</span><br>
+		        <span style="display:inline-block">└──
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">Img</a>/</span><br>
+		            <span style="display:inline-block">├──
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.jpg</a></span><br>
+		            <span style="display:inline-block">└──
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.png</a></span><br>
+		</code></p>
+		<h3>build.json</h3>
+		<p>Using a build.json file<br>
+		<br>
+		If you create a file called 'build.json' at the top level of your project, then you will be able to control certain aspects of the build process, such as the 'minSdkVersion' setting in the manifest, which sets the minimum version of Android that your app will run on.</p>
+
+		<div class="samp">
+		<span class="token punctuation">{</span>
+		<br><span style="display:inline-block;padding-left:1em;">
+			<span class="token string">"manifest"</span><span class="token operator">:</span><br>
+			<span class="token punctuation">{</span>
+			<br><span style="display:inline-block;padding-left:1em;">
+				<span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				<span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
+				<span class="token string">"debuggable"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				<span class="token string">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE_EXTERNAL_STORAGE"</span><span class="token punctuation">,</span><br>
+				<span class="token string">"homeScreen"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				<span class="token string">"pathPattern"</span><span class="token operator">:</span> <span class="token string">".*\\.png,.*\\.jpg"</span>
+			</span><br>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+			<span class="token string">"autoPermissions"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+		</span><br>
+		<span class="token punctuation">}</span>
+		</div>
+
+		<p><grey>Note: This file is optional and not required for building APKs</grey><br>
+		<br>
+		If you release your app on Google Play, the '<strong>minSdkVersion</strong>' setting will control whether people with older phones can see your app in the store. If your app does not perform well on older versions of Android, then it is usually a good idea to make it unavailable for older phones or you will get lots of negative ratings and people will avoid your app. There may also be features such as Bluetooth 4.0 which are unavailable on older versions of Android.<br>
+		<br>
+		DroidScript uses a simplified permissions model and scans your code looking for the required Android permissions, but you may want more fine-grain control of these permissions, so the '<strong>removePermissions</strong>' setting allows you to explicitly remove Android permissions from your APK.<br>
+		<br>
+		See the <a href="https://developer.android.com/reference/android/Manifest.permission.html" onclick="return OpenUrl(this.href);">Android SDK</a> docs for for a full list of permissions.<br>
+		<br>
+		The '<strong>homeScreen</strong>' setting is only used for creating home screen launchers apps, public kiosks and machine control type apps which totally take over the Android device, so don't use this option unless you know what you are doing!<br>
+		<br>
+		If you want your app to handle certain types of file when the user tries to open them or use the '<strong>Share via</strong>' option, then the '<strong>pathPattern</strong>' setting allows you to specify which file types your app accepts. For example, if you were writing a text editor, then you would use the <b>*\\.txt</b> pattern.<br>
+		<br>
+		See the '<strong>Shared Data</strong>' and '<strong>Receive Intent</strong>' samples in DroidScript for demos of how to handle file and text in your app.<br>
+		<br>
+		The '<strong>debuggable</strong>' setting is intended for advanced users and allows your installed app to be debugged via the Android Debug Bridge. This setting defaults to false and should never be set to true in public releases of your app.<br>
+		<br>
+		Typical build.json file:-</p>
+
+		<div class="samp">
+		<span class="token punctuation">{</span>
+		<br><span style="display:inline-block;padding-left:1em;">
+			<span class="token string">"manifest"</span><span class="token operator">:</span><br>
+			<span class="token punctuation">{</span>
+			<br><span style="display:inline-block;padding-left:1em;">
+				<span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				<span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+			</span><br>
+			<span class="token punctuation">}</span>
+		</span><br>
+		<span class="token punctuation">}</span>
+		</div>
+
+
+	</div>
+
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">DroidScript root folder</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">Temporarily disable premium</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Enable SDK menu for non premium users</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">Generated project apks</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content">Saved project spks</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content">Plugin installation folder</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content">Extension installation folder for web IDE</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content">Project root folder</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content">Main entry for html projects (dominant)</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content">Main entry for javascript projects (recessive)</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content">Controls certain aspects of the build process</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content">Hidden file</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content">html files</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content">sound files</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content">image files</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content">Project icon (dominant)</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content">Project icon (recessive)</div>
+</div>
+</body>
+
+</html>

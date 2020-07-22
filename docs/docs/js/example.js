@@ -1,4 +1,4 @@
-		
+
 
 window.onload = hidecopy;
 
@@ -25,47 +25,46 @@ function hidecopy()
 	}
 }
 
-function copy( div ) 
-{ 
+function copy( div )
+{
 	if( navigator.userAgent.indexOf("Android") > -1 ) //
 	{
 		var txt = div.innerText || div.textContent;
 		app.SetClipboardText( txt.replace( /\xa0/g, " " ) ); //replace nbsp chars
-		app.ShowPopup("Text copied to clipboard"); 
+		app.ShowPopup("Text copied to clipboard");
 	}
 	else
 		copyToClipboard( div.innerText || div.textContent );
 }
 
-function demo( div ) 
-{ 
+function demo( div )
+{
 	if( isAndroid && !useWebIDE )
 	{
 		app.WriteFile( "/sdcard/.DroidScript/Temp/~demo.js", div.innerText || div.textContent );
-		//app.StartApp( "/sdcard/.DroidScript/Temp/~demo.js" );	
-		app.Execute( "try { StartApp('/sdcard/.DroidScript/Temp/~demo.js') } catch(e) { app.ShowPopup('Not running insinde DS'); }" );
+		app.Execute( "RunDemo( '/sdcard/.DroidScript/Temp/~demo.js' );" );
+		//app.Execute( "try { StartApp('/sdcard/.DroidScript/Temp/~demo.js') } catch(e) { app.ShowPopup('Whoops! Something went wrong.'); }" );
 	}
 	else
-	{
 		parent.postMessage( "demo:" + (div.innerText || div.textContent), "*" )
-		
-		/*
-		xmlHttp = new XMLHttpRequest();
-		xmlHttp.open( "get", "http://"+server_ip+":8088/ide?cmd=demo&code=" 
-				+ encodeURIComponent(div.innerText || div.textContent), true );
-		xmlHttp.send();
-		*/
-	}
+}
+
+function run( file )
+{
+	if( isAndroid && !useWebIDE )
+		app.Execute( "RunDemo( \""+file+"\" );" );
+	else
+		parent.postMessage( "run:" + file, "*" )
 }
 
 function copyToClipboard(text)
 {
-	if (window.clipboardData) {  
+	if (window.clipboardData) {
 		window.clipboardData.setData("Text", text);  //IE
 	}
-	else {  
-		unsafeWindow.netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
-		const clipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper;1"].getService(Components.interfaces.nsIClipboardHelper);  
+	else {
+		unsafeWindow.netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+		const clipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper;1"].getService(Components.interfaces.nsIClipboardHelper);
 		clipboardHelper.copyString(text);
 	}
 }

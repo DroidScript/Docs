@@ -90,6 +90,10 @@ function NewButton2(name, lay)
 
 </sample Using I()>
 
+### Custom Contexts: M()
+The M() macro is equivalent to the I() macro, except that it accepts a custom 'this' context as first argument.
+
+### obj.data
 Alternatively you can make use of the controls **data** property and the **this** keyword in callbacks.
 This way you can assign variables to the object they belong to and you still make use of the callback optimization by DroidScript:
 
