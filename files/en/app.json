@@ -22,7 +22,7 @@
 		"isfunc": true,
 		"name": "AddCameraView",
 		"pNames": ["layout", "width", "height", "options"],
-		"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,\"&lt;resolution&gt;\":\"CIF: 352x288\\\\nQQVGA: 160x120\\\\nQVGA: 320x240\\\\nSVGA: 800x600\\\\nVGA: 640x480\\\\nXGA: 1024x768\\\\nUXGA: 1600x1200\""],
 		"retval": "dso-CameraView",
 		"shortDesc": "Create and add CameraView to Layout."
 	},
@@ -780,7 +780,7 @@
 		"isfunc": true,
 		"name": "CreateCameraView",
 		"pNames": ["width", "height", "options"],
-		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,CIF|QVGA|SVGA|VGA|XGA|UXGA"],
+		"pTypes": ["num_frc", "num_frc", "str_com-Front,UseBitmap,UseABGR,NoRotate,\"&lt;resolution&gt;\":\"CIF: 352x288\\\\nQQVGA: 160x120\\\\nQVGA: 320x240\\\\nSVGA: 800x600\\\\nVGA: 640x480\\\\nXGA: 1024x768\\\\nUXGA: 1600x1200\""],
 		"retval": "dso-CameraView",
 		"shortDesc": "Returns a new CameraView object to access the device camera",
 		"subf": {
@@ -878,7 +878,7 @@
 				"isfunc": true,
 				"name": "GetPixelData",
 				"pNames": ["format", "left", "top", "width", "height"],
-				"pTypes": ["str-rawbase64|pngbase64|jpgbase64", "num_frc", "num_frc", "num_frc", "num_frc"],
+				"pTypes": ["str-GrayScale:fastest|JSON:\"slowest&colon; “ARGB&comma;ARGB&comma;...”\"|\"&lt;resolution&gt;\":\"CIF: 352x288\\\\nQQVGA: 160x120\\\\nQVGA: 320x240\\\\nSVGA: 800x600\\\\nVGA: 640x480\\\\nXGA: 1024x768\\\\nUXGA: 1600x1200\"|rawbase64|pngbase64|jpgbase64", "num_frc", "num_frc", "num_frc", "num_frc"],
 				"retval": "str_b64",
 				"shortDesc": "Returns base64 pixel data as raw bitmap, png or jpg format"
 			},
@@ -3425,7 +3425,14 @@
 				"pTypes": ["str_col"],
 				"shortDesc": "Change the default text color of bodies"
 			},
-			"SetTextMargins": "#1741900074",
+			"SetTextMargins": {
+        		"desc": "Define a distance to other controls on each side of the control.",
+        		"isfunc": true,
+                "name": "SetTextMargins",
+        		"pNames": ["left", "top", "right", "bottom", "mode", "options"],
+        		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt", "str-inner:around each individual title and body|outer:around both title and body together"],
+        		"shortDesc": "Define distances to other controls"
+        	},
 			"SetTextShadow": "#1093247031",
 			"SetTextShadow1": {
 				"desc": "Apply text shadows to titles.",

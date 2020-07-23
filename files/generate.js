@@ -217,7 +217,7 @@ function adjustDoc(html, name)
 	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function(m, i, t) {
 		if( t != "%t" && i < 4 ) toc.push(
 			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
-			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t}</a><br>`);
+			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t.replace(/(<sup>|$)/, "</a>$1")}<br>`);
 	});
 	if(toc.length) {
 		toc.unshift("<b>Content:</b><br>");
@@ -732,7 +732,7 @@ function addMarkdown(s)
 			return white + `<a href="" onclick="${script}">${name}</a>`;
 		})
 		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
-			white + `<h${h.length}>${title}</h${h.length}>`)
+			white + `<h${h.length}>${title.replace(/ (\(.+?\))/, "$1".sup())}</h${h.length}>`)
 		.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
