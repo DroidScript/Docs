@@ -1,5 +1,15 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
+#### DS 191b2 (23-Jul-2020)
+
+- DS now offers to install and run your APK after build
+- Added app.LaunchApp() method, launches apps if installed else tries GPlay.
+- Fixed app.ShowProgress can now take null as first parameter.
+- Fixed app background not defaulting to dark mode (grey).
+- Fixed APK installs from DS launching second instance of DS.
+- Fixed scanfile bug in 'Create Shortcut' option.
+- Fixed issue with custom button colors in APKs for holo theme.
+
 #### DS 191b1 (16-Jul-2020)
 - Added new MUI.* material controls for premium users!
 - Added MUI controls demo app to docs.

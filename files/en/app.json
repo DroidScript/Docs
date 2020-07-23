@@ -9216,6 +9216,14 @@
 		"retval": "str",
 		"shortDesc": "Convert language name to its code or get current language code"
 	},
+    "LaunchApp": {
+		"desc": "Launches an app if installed or search for it on GooglePlay otherwise.",
+		"isfunc": true,
+		"name": "LaunchApp",
+		"pNames": ["packageName", "noPlay"],
+		"pTypes": ["str", "bin:dont search"],
+		"shortDesc": "Launch or search an app"
+	},
 	"ListFolder": {
 		"desc": "#ListFolder.md",
 		"isfunc": true,

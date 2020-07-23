@@ -225,6 +225,7 @@
 		"IsWifiEnabled": "Check if WiFi is enabled",
 		"KillApp": "Kill an app by its pid",
 		"Language2Code": "Convert language name to its code or get current language code",
+		"LaunchApp": "Launch or search an app",
 		"ListFolder": "Get a list of files ans folders contained in a specific folder",
 		"LoadBoolean": "Load saved boolean value",
 		"LoadNumber": "Load saved boolean value",

@@ -2,7 +2,6 @@
 
 <code>"/sdcard/DroidScript":"DroidScript root folder"/
 ├── \_nopremium\_:"Temporarily disable premium"
-├── \_sdk\_:"Enable SDK menu for non premium users"
 ├── APKs:"Generated project apks"/
 ├── SPKs:"Saved project spks"/
 ├── Plugins:"Plugin installation folder"/
