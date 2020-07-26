@@ -3,6 +3,7 @@
 <code>"/sdcard/DroidScript":"DroidScript root folder"/
 ├── \_nopremium\_:"Temporarily disable premium"
 ├── APKs:"Generated project apks"/
+│   └── user.keystore:"keystore used for signing apks"/
 ├── SPKs:"Saved project spks"/
 ├── Plugins:"Plugin installation folder"/
 ├── Extensions:"Extension installation folder for web IDE"/
@@ -18,6 +19,10 @@
             ├── "&lt;PROJECT\_NAME&gt;.jpg":"Project icon (dominant)"
             └── "&lt;PROJECT\_NAME&gt;.png":"Project icon (recessive)"
 </code>
+
+### user.keystore
+
+This file is used for signing apks. It is **STRONGLY** recomended that you backup this file. You cannot update your app released using this key on Google Play or on any other device, unless you have the original file (and can also remember the password!)
 
 ### build.json
 
@@ -58,7 +63,7 @@ Typical build.json file:-
     "manifest"&colon;
     {
         "minSdkVersion"&colon; 23,
-        "targetSdkVersion"&colon; 28,
+        "targetSdkVersion"&colon; 28
     }
 }
 </js>

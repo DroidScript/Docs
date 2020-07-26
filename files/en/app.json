@@ -3085,10 +3085,10 @@
 				"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
 				"shortDesc": "Change text size of top-level children."
 			},
-			"SetCorderRadius": {
+			"SetCornerRadius": {
 				"desc": "Applies a corner radius to card layouts.",
 				"isfunc": true,
-				"name": "SetCorderRadius",
+				"name": "SetCornerRadius",
 				"pNames": ["radius"],
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply corner radius to cl's"
@@ -10026,7 +10026,7 @@
 		"shortDesc": "Set NavBar color"
 	},
 	"SetOnBroadcast": {
-		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast_actions.txt)\n\n\nSee also: @Broadcast",
+		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\\_actions.txt)\n\n\nSee also: @Broadcast",
 		"isfunc": true,
 		"name": "SetOnBroadcast",
 		"pNames": ["callback", "action"],

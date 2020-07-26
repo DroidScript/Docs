@@ -39,6 +39,7 @@
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('File Structure')">File Structure</a><br>
 			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('user.keystore')">user.keystore</a><br>
 				- <a href="" onclick="jumpTo('build.json')">build.json</a><br>
 			</span><br>
 		</span><br>
@@ -50,9 +51,9 @@
 		├──
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">_nopremium_</a><br>
 		├──
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">_sdk_</a><br>
-		├──
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">APKs</a>/<br>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">APKs</a>/<br>
+		│   └──
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">user.keystore</a>/<br>
 		├──
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SPKs</a>/<br>
 		├──
@@ -82,6 +83,8 @@
 		            <span style="display:inline-block">└──
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.png</a></span><br>
 		</code></p>
+		<h3>user.keystore</h3>
+		<p>This file is used for signing apks. It is <strong>STRONGLY</strong> recomended that you backup this file. You cannot update your app released using this key on Google Play or on any other device, unless you have the original file (and can also remember the password!)</p>
 		<h3>build.json</h3>
 		<p>If you create a file called 'build.json' at the top level of your project, then you will be able to control certain aspects of the APK build process, such as the 'minSdkVersion' setting in the manifest, which sets the minimum version of Android that your app will run on.</p>
 
@@ -129,7 +132,7 @@
 			<span class="token punctuation">{</span>
 			<br><span style="display:inline-block;padding-left:1em;">
 				<span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
-				<span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+				<span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span>
 			</span><br>
 			<span class="token punctuation">}</span>
 		</span><br>
@@ -141,8 +144,8 @@
 
 	<div data-role="popup" id="pop_dsc_001" class="ui-content">DroidScript root folder</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content">Temporarily disable premium</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content">Enable SDK menu for non premium users</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content">Generated project apks</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Generated project apks</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">keystore used for signing apks</div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content">Saved project spks</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content">Plugin installation folder</div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content">Extension installation folder for web IDE</div>

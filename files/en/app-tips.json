@@ -987,7 +987,7 @@
 		"SetChildMargins": "Set margins of top-level children.",
 		"SetChildTextSize": "Change text size of top-level children.",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
-		"SetCorderRadius": "Apply corner radius to cl's",
+		"SetCornerRadius": "Apply corner radius to cl's",
 		"SetElevation": "Apply shadow to cl's",
 		"SetEnabled": "En/Disable the control",
 		"SetGravity": "Adjust the placing of contained children",
