@@ -40,7 +40,7 @@ function generateScope(name, pattern)
 			// additionally, read /*#obj*/ marked functions from .js file if exists
 			if(!app.FileExists(curScope + ".js")) base.all = keys(base).map(k => base[k].name);
 			else base.all = app.ReadFile(curScope + ".js")
-				.split("/*#obj*/ this.").slice(1)
+				.split("/*#obj*/ self.").slice(1)
 				.map(v => v.slice(0, v.indexOf(" ")))
 
 			// additionally, read Obj.prototype functions from utils.js if exists
@@ -88,11 +88,15 @@ function generateNavigators(navs, name, pfx)
 	}
 	else if(navs instanceof Object)
 	{
-		for(var cat of keys(navs).filter(nothidden).sort(sortAsc))
+		for(var cat of keys(navs).filter(nothidden))
 		{
+            if(typeof navs[cat] == "string" && navs[cat].endsWith(".htm")) {
+                nav += newNaviItem(navs[cat], cat);
+                continue;
+            }
 			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
 			var tdoc = curDoc;
-				generateNavigators(navs[cat], cat, pfx);
+			generateNavigators(navs[cat], cat, pfx);
 			curDoc = tdoc;
 		}
 	} else Throw(Error("Wrong catlist datatype: " + typeof navs));
