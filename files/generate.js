@@ -41,7 +41,7 @@ function generateScope(name, pattern)
 			if(!app.FileExists(curScope + ".js")) base.all = keys(base).map(k => base[k].name);
 			else base.all = app.ReadFile(curScope + ".js")
 				.split("/*#obj*/ self.").slice(1)
-				.map(v => v.slice(0, v.indexOf(" ")))
+				.map(v => v.slice(0, v.indexOf(" ")));
 
 			// additionally, read Obj.prototype functions from utils.js if exists
 			if(curScope == "app" && app.FileExists("util.js"))
@@ -90,16 +90,17 @@ function generateNavigators(navs, name, pfx)
 	{
 		for(var cat of keys(navs).filter(nothidden))
 		{
-            if(typeof navs[cat] == "string" && navs[cat].endsWith(".htm")) {
-                nav += newNaviItem(navs[cat], cat);
-                continue;
-            }
+			if(typeof navs[cat] == "string" && navs[cat].endsWith(".htm")) {
+				nav += newNaviItem(navs[cat], cat);
+				continue;
+			}
 			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
 			var tdoc = curDoc;
 			generateNavigators(navs[cat], cat, pfx);
 			curDoc = tdoc;
 		}
-	} else Throw(Error("Wrong catlist datatype: " + typeof navs));
+	}
+	else Throw(Error("Wrong catlist datatype: " + typeof navs));
 
 	app.WriteFile( curDoc,
 		(keys(navs).length < 15 ? naviBase :
@@ -173,12 +174,12 @@ function generateDoc( name )
 	}
 
 	// get function specific data
-	if((keys(scope[name])+'').match(/isfunc|p(Names|Types)|subf/g))
+	if((keys(scope[name])+'').match(/p(Names|Types)|subf|isval/g))
 	{
 		data = getDocData(scope[name]);
 		// function line with popups
 		if(scope[name].abbrev) funcLine = scope[name].abbrev + " = ";
-		funcLine += `${curScope}.${name}` + (scope[name].isfunc ? `(${data.args})` : '') + data.ret;
+		funcLine += `${curScope}.${name}` + (scope[name].isval ? '' : `(${data.args})`) + data.ret;
 
 		// subfunctions of controls with popups
 		if(isControl(name) && data.mets)
@@ -413,13 +414,13 @@ function getDocData( f, useAppPop )
 
 		//convert function types
 		var mdesc = met.desc;
-		if( met.isfunc ) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
+		if( !met.isval ) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
 
 		var args = [], metpop = newPopup("dsc", curSubf,
 			addMarkdown(replaceTypes(replW(mdesc), true)),
 			getAddClass(met) || (has(base.all, curSubf) ? ' class="baseFunc"' : ""));
 
-		if( met.isfunc )
+		if( !met.isval )
 		{
 			for( i in met.pNames )
 				args.push( toArgPop( met.pNames[i], met.pTypes[i] ) );
@@ -441,7 +442,7 @@ function getDocData( f, useAppPop )
 // read and return html converted example snippets file
 function getSamples( name )
 {
-	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", scope[name].isfunc );
+	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", !scope[name].isval );
 
 	s.replace(/<sample( (.*?))?>([^]*?)<\/sample\1?>/g,
 		(m, _, t, c) => samples[t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt)
@@ -492,8 +493,8 @@ function getAddClass(m)
 function typeDesc( types )
 {
 	types = types.split("||").map(
-		 function(type)
-		 {
+		function(type)
+		{
 			return [type.slice(0, 3)].concat(
 					// custom type desc
 				type.replace(/^(...):([^-]*)/, (m, btype, desc) =>
@@ -548,11 +549,11 @@ function toArgPop( name, types, doSwitch )
 	// function callbacks
 	if( typeof types == "object" )
 	{
-		return newPopup( "fnc", name,
+		var s = newPopup( "fnc", name,
 			("<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
 				{
-					if(types.pTypes[i].isfunc || has("lst,obj", types.pTypes[i].slice(0, 3)))
+					if(types.pTypes[i].isval === false || typeof types.pTypes[i] == "object" || has("lst,obj", types.pTypes[i].slice(0, 3)))
 						// for lists and objects in callback parameters switch popups
 						return toArgPop(n, types.pTypes[i], true);
 					else
@@ -561,12 +562,14 @@ function toArgPop( name, types, doSwitch )
 				}
 			).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
 		);
+		if(doSwitch) s = s.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
+		return s;
 	}
 
 	// multiple types
 	types = types.split("||").map(
-		 function(type)
-		 {
+		function(type)
+		{
 			return [type.slice(0,3)].concat(
 					// custom type desc
 				type.replace(/^(...):([^-]*)/, (m, btype, desc) =>
@@ -651,7 +654,7 @@ function toArgAppPop( name, types )
 			(type) => conf.tname[type[0]] +
 				(conf.tdesc[type[1]] ? ": " + conf.tdesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
-			).join("\n")
+			).join("\\n")
 	);
 }
 
@@ -682,7 +685,7 @@ function replaceTypes(s, useAppPop)
 		function(m, _, name, aname, type, _, desc)
 		{
 			var r, space = '', tapop = false;
-            if(!name) name = aname;
+			if(!name) name = aname;
 			if( !type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return;
 
 			if(desc) {
@@ -735,20 +738,20 @@ function addMarkdown(s)
 			script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
 			return white + `<a href="" onclick="${script}">${name}</a>`;
 		})
-		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>         // ## headline
+		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>		// ## headline
 			white + `<h${h.length}>${title.replace(/ (\(.+?\))/, "$1".sup())}</h${h.length}>`)
 		.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
-		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")            // __underlined__
-		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")       // *italic*
-		.replace(/([^\\]|^)_([^]*?[^\\])_/g, "$1<i>$2</i>")         // _italic_
-		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")     // `monospace`
+		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")			// __underlined__
+		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")		// *italic*
+		.replace(/([^\\]|^)_([^]*?[^\\])_/g, "$1<i>$2</i>")			// _italic_
+		.replace(/([^\\]|^)`([^]*?[^\\])`/g, "$1<kbd>$2</kbd>")		// `monospace`
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
-		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")       // ~~strikethrough~~
-        // additional notes
+		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
+		// additional notes
 		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
 		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*([a-z]+?))(#\w+)?\b/gi, '$1<a href="$2.htm$5" data-ajax="false">$4</a>') // @DocReference
-		.replace(/\\([_*~@])/g, "$1");                              // consume \ escaped markdown
+		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -1043,7 +1046,7 @@ function OnStart()
 OPTIONS:
 	-lang=<LANG-CODE>   2 digit code, ie. en de fr pt es ..
 						defaults to 'en'
-	-help               this help
+	-help			this help
 
 PATTERN:
 	generates a scope in each defined language:
@@ -1051,13 +1054,13 @@ PATTERN:
 	with specified language:
 		<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
 
-MEMBER-PATTERN: 	    RegExp pattern
+MEMBER-PATTERN: 		RegExp pattern
 
 EXAMPLES:
-	generate.js         generate all defined languages (in generate.js)
-	generate.js en      generate all english docs
+	generate.js		generate all defined languages (in generate.js)
+	generate.js en	generate all english docs
 	generate.js en.app  generate english docs of scope 'app'
-	generate.js app     generate docs of scope 'app' in all defined languages
+	generate.js app	generate docs of scope 'app' in all defined languages
 	generate.js app.^C  generate all docs starting with 'C'`
 				); break;
 				default: Throw(Error("Unknown option " + pat[0]))
@@ -1120,7 +1123,6 @@ for(var n of l) {
 	var m = n.replace("Add", "Create")
 	o[n] = {
 					"desc": `Creates and adds a ${n.slice(3)} to a Layout.\nSee @${n} for full documentation.`,
-					"isfunc": true,
 					"name": n,
 					"pNames": scope[m].pNames,
 					"pTypes": scope[m].pTypes,
