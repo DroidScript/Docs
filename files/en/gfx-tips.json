@@ -1,5 +1,8 @@
 {
-	"bck": { "undefined": undefined },
+	"bck": {
+		"loaded": "indicates if ready for use",
+		"Scroll": "Scroll Background"
+	},
 	"cir": {
 		"alpha": "the alpha value",
 		"angle": "The rotation fraction",
@@ -138,21 +141,44 @@
 		"Play": "Play the soundtrack"
 	},
 	"spr": {
+		"added": "incicates if added to game",
 		"alpha": "the alpha value",
 		"angle": "The rotation fraction",
+		"aspect": "sprite aspect ratio",
 		"Contains": "Check if the sprite contains a point",
 		"data": "Extra properties",
+		"Flip": "Flip sprite",
 		"GetFrame": "Get current frame",
+		"Goto": "go to animation frame",
 		"group": "The object's group",
 		"height": "The objects height",
+		"PauseTween": "Pause tween",
 		"pivotX": "Rotation x pivot",
 		"pivotY": "Rotation y pivot",
+		"Play": "play sprite animation",
+		"PlayRange": "play range of animation frames",
+		"PlayTo": "play to animation frame",
+		"PlayTween": "Resume tween",
 		"scaleX": "Horizontal scaling",
 		"scaleY": "Vertical scaling",
+		"SetLoop": "Set animation looping",
 		"SetMatrix": "Set 2d transformation",
+		"SetPlaySpeed": "Set animation speed",
+		"SetRange": "Set animation frame range",
+		"SetSize": "Set sprite size",
+		"SetSpriteSheet": "Change animation",
+		"SetTexture": "Change sprite texture",
+		"SetTween": "Setup tween methods",
+		"StartTween": "Start tween",
+		"StepTween": "Update tween to now",
+		"Stop": "Stop animation",
+		"StopAt": "Stop animation on frame",
+		"Tween": "Animates the control",
 		"Update": "Updates internal properties",
 		"visible": "Visibility state",
-		"width": "Object width"
+		"width": "Object width",
+		"x": "x-Position",
+		"y": "Y-position"
 	},
 	"txt": {
 		"alpha": "the alpha value",

@@ -70,7 +70,7 @@ The generator has a specific file structure you have to use to be able to genera
 	}
 	```
 - \<lang\>/\<scope\>**-base.json**:
-	Put member definitions which are often needed here. The keys are 10 digit hashes starting with a '#' which are used to refer to members in the \<scope\>.json file:
+	Put member definitions which are often needed here. The keys are 10 digit IDs starting with a '#' which are used in the \<scope\>.json file to refer to scope-base members:
 	```js
 	{
 		"#0123456789": { /* <member object> */ }
@@ -142,6 +142,12 @@ Note that some values are not required under certain conditions:
 - `pNames` and `pTypes` if empty
 - `retval` if `undefined`
 - `subfuncs` if `undefined`
+
+When using scope-base you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:
+- when appending an exclamation mark '!' to a subfunction's name this name will be used instead of the one defined in the base object: `"customMemName!": "#id"`
+
+- to use the parameter list of a scope-base entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
+you can also use this method in scope-base
 
 ### Format
 

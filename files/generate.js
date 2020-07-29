@@ -392,12 +392,22 @@ function getDocData( f, useAppPop )
 		curSubf = met.name;
 
 		// load base func
-		if(typeof(met) == "string" && met[0] == '#')
+		if(typeof(met) == "string" && met.startsWith('#'))
 		{
 			if(!base[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = base[met];
+            // force use of entry name
+            if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 			curSubf = met.name;
 		}
+
+        // load params from base
+        while(typeof met.params == "string" && met.params.startsWith('#')) {
+            if(!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
+            met.pNames = base[met.params].pNames;
+            met.pTypes = base[met.params].pTypes;
+            met.params = base[met.params].params;
+        }
 
 		if(hidden(curSubf)) continue;
 

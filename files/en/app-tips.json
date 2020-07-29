@@ -419,7 +419,8 @@
 		"SetTextShadow": "Define a shadow around the control",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"cam": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -491,7 +492,8 @@
 		"Stop": "Stop recording video",
 		"StopPreview": "Stop the camera preview",
 		"Stream": "Streams the camera view to a local ip",
-		"TakePicture": "Save the current camera view to a file"
+		"TakePicture": "Save the current camera view to a file",
+		"Tween": "Animates the control"
 	},
 	"cde": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -560,6 +562,7 @@
 		"SetUseKeyboard": "En/Disable device keyboard",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control",
 		"Undo": "Undo an action"
 	},
 	"chk": {
@@ -604,7 +607,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"cld": {
 		"Delete": "Deletes a file in the cloud.",
@@ -682,7 +686,8 @@
 		"SetTitleHeight": "Change height of the title bar",
 		"SetTitleTextSize": "Changes the title text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"dwn": {
 		"Download": "Download a file",
@@ -754,6 +759,7 @@
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control",
 		"Undo": "Undo an action"
 	},
 	"eml": {
@@ -834,7 +840,8 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"gmv": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -872,7 +879,8 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"img": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -951,6 +959,7 @@
 		"Show": "Set the visibility to “Show”",
 		"Skew": "Skews the content",
 		"Transform": "Applies a transformation matrix to the content",
+		"Tween": "Animates the control",
 		"Update": "Update the view"
 	},
 	"lay": {
@@ -1005,7 +1014,8 @@
 		"SetSize": "Change the size of the control",
 		"SetTouchThrough": "Enable touch event forwarding",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"ldg": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1103,7 +1113,8 @@
 		"SetTextSize1": "Set title text size",
 		"SetTextSize2": "Set body text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"med": {
 		"GetAlbumArt": "Load the album art to an image",
@@ -1283,7 +1294,8 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"skb": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1324,7 +1336,8 @@
 		"SetSize": "Change the size of the control",
 		"SetValue": "Set current seekbar value",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"sms": {
 		"GetType": "Returns the control class name",
@@ -1404,7 +1417,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"spr": {
 		"Cancel": "Stop recognition",
@@ -1469,7 +1483,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"syn": {
 		"GetType": "Returns the control class name",
@@ -1563,7 +1578,8 @@
 		"SetTouchThrough": "Enable touch event forwarding",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
-		"ShowTab": "Switch current tab"
+		"ShowTab": "Switch current tab",
+		"Tween": "Animates the control"
 	},
 	"tgl": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1608,7 +1624,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"thm": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1695,7 +1712,8 @@
 		"SetTextShadow": "Define a shadow around the control",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"usb": {
 		"GetType": "Returns the control class name",
@@ -1760,7 +1778,8 @@
 		"SetVisibility": "Change the visibility mode",
 		"SetVolume": "Change the playback volume",
 		"Show": "Set the visibility to “Show”",
-		"Stop": "Stop video playback."
+		"Stop": "Stop video playback.",
+		"Tween": "Animates the control"
 	},
 	"wbs": {
 		"Close": "Close web socket",
@@ -1828,7 +1847,8 @@
 		"SetUserCreds": "Set authentication/login data",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
-		"SimulateKey": "Simulate key event"
+		"SimulateKey": "Simulate key event",
+		"Tween": "Animates the control"
 	},
 	"wiz": {
 		"Dismiss": "Hides the control and removes it from the screen",

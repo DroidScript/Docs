@@ -371,21 +371,20 @@
 			"alpha": "#2974510528",
 			"angle": "#1034034325",
 			"aspect": {
-				"desc": "",
+				"desc": "The aspect ratio of the sprite",
 				"isval": true,
 				"name": "aspect",
 				"retval": "num",
-				"shortDesc": ""
+				"shortDesc": "sprite aspect ratio"
 			},
 			"Contains": "#9612465132",
 			"data": "#2865983653",
 			"Flip": {
-				"desc": "",
+				"desc": "Flips the sprite on the horizontal and/or the vertical axis.",
 				"name": "Flip",
 				"pNames": ["horiz", "vert"],
-				"pTypes": ["?", "?"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["bin", "bin"],
+				"shortDesc": "Flip sprite"
 			},
 			"GetFrame": {
 				"desc": "Returns the current frame",
@@ -394,12 +393,11 @@
 				"shortDesc": "Get current frame"
 			},
 			"Goto": {
-				"desc": "",
+				"desc": "Displays a specific frame of an animation",
 				"name": "Goto",
 				"pNames": ["frame"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int"],
+				"shortDesc": "go to animation frame"
 			},
 			"group": "#5193861923",
 			"height": "#0162475314",
@@ -417,95 +415,77 @@
 				"retval": "bin",
 				"shortDesc": ""
 			},
+            "PauseTween": "#8798237593",
 			"pivotX": "#2983519836",
 			"pivotY": "#9812693423",
 			"Play": {
-				"desc": "",
+				"desc": "Start playing the sprite animation",
 				"name": "Play",
 				"pNames": ["startFrame", "speed", "loop"],
-				"pTypes": ["num", "num", "num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int", "num_int", "bin"],
+				"shortDesc": "play sprite animation"
 			},
 			"PlayRange": {
-				"desc": "",
+				"desc": "Start playing the sprite animation in a given frame range",
 				"name": "PlayRange",
 				"pNames": ["firstFrame", "lastFrame", "speed", "loop"],
-				"pTypes": ["num", "num", "num", "num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int", "num_int", "num", "bin"],
+				"shortDesc": "play range of animation frames"
 			},
 			"PlayTo": {
-				"desc": "",
+				"desc": "Play the animation until a specific frame is reached",
 				"name": "PlayTo",
 				"pNames": ["frame"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int"],
+				"shortDesc": "play to animation frame"
 			},
+            "PlayTween": "#9832987464",
 			"scaleX": "#1246873531",
 			"scaleY": "#7124535139",
 			"SetLoop": {
-				"desc": "",
+				"desc": "Define if the animation should loop or stop at the end",
 				"name": "SetLoop",
 				"pNames": ["loop"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["bin"],
+				"shortDesc": "Set animation looping"
 			},
 			"SetMatrix": "#1789264812",
 			"SetPlaySpeed": {
-				"desc": "",
+				"desc": "Define at which speed the animation will play. 1 equals to 60 fps",
 				"name": "SetPlaySpeed",
 				"pNames": ["speed"],
 				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Set animation speed"
 			},
 			"SetRange": {
-				"desc": "",
+				"desc": "Define the frame range the animation should show.",
 				"name": "SetRange",
 				"pNames": ["firstFrame", "lastFrame", "loop", "play", "speed"],
-				"pTypes": ["num", "num", "num", "num", "num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int", "num_int", "bin", "bin", "num"],
+				"shortDesc": "Set animation frame range"
 			},
 			"SetSize": {
-				"desc": "",
+				"desc": "Set the sprite size on the screen",
 				"name": "SetSize",
 				"pNames": ["w", "h"],
-				"pTypes": ["?", "?"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_frc", "num_frc"],
+				"shortDesc": "Set sprite size"
 			},
 			"SetSpriteSheet": {
-				"desc": "",
+				"desc": "Change the animation to another.",
 				"name": "SetSpriteSheet",
 				"pNames": ["sheet"],
-				"pTypes": ["obj"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["gvo-SpriteSheet"],
+				"shortDesc": "Change animation"
 			},
 			"SetTexture": {
-				"desc": "",
+				"desc": "Change the sprite texture to another.",
 				"name": "SetTexture",
 				"pNames": ["tx"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["gvo-SpriteTexture"],
+				"shortDesc": "Change sprite texture"
 			},
-			"SetTween": {
-				"desc": "",
-				"name": "SetTween",
-				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
-				"pTypes": ["obj", "num", "str", "num", "num", {
-					"desc": "callback function",
-					"name": "callback",
-					"shortDesc": "callback"
-				}],
-				"retval": "?",
-				"shortDesc": ""
-			},
+			"SetTween": "#8929387454",
 			"_sprite": {
 				"desc": "",
 				"isval": true,
@@ -513,19 +493,19 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-			"Stop": {
-				"desc": "",
+            "StartTween": "#1234231242",
+            "StepTween": "#9872394872",
+            "Stop": {
+				"desc": "Stop playin the animation.",
 				"name": "Stop",
-				"retval": "?",
-				"shortDesc": ""
+				"shortDesc": "Stop animation"
 			},
 			"StopAt": {
-				"desc": "",
+				"desc": "Causes the animation to stop playing at a specific frame",
 				"name": "StopAt",
 				"pNames": ["frame"],
-				"pTypes": ["num"],
-				"retval": "?",
-				"shortDesc": ""
+				"pTypes": ["num_int"],
+				"shortDesc": "Stop animation on frame"
 			},
 			"_texture": {
 				"desc": "",
@@ -534,34 +514,23 @@
 				"retval": "str",
 				"shortDesc": ""
 			},
-			"Tween": {
-				"desc": "",
-				"name": "Tween",
-				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
-				"pTypes": ["obj", "num", "str", "num", "num", {
-					"desc": "callback function",
-					"name": "callback",
-					"shortDesc": "callback"
-				}],
-				"retval": "?",
-				"shortDesc": ""
-			},
+			"Tween": "#2114624769",
 			"Update": "#1274618924",
 			"visible": "#1584619232",
 			"width": "#9182648716",
 			"x": {
-				"desc": "",
+				"desc": "X-position on the screen.",
 				"isval": true,
 				"name": "x",
-				"retval": "num",
-				"shortDesc": ""
+				"retval": "num_frv",
+				"shortDesc": "x-Position"
 			},
 			"y": {
-				"desc": "",
+				"desc": "Y-position on the screen.",
 				"isval": true,
 				"name": "y",
-				"retval": "num",
-				"shortDesc": ""
+				"retval": "num_frc",
+				"shortDesc": "Y-position"
 			}
 		}
 	},
