@@ -1,7 +1,6 @@
 {
 	"AddBackground": {
 		"desc": "Adds a static background to your game.",
-		"isfunc": true,
 		"name": "AddBackground",
 		"pNames": ["obj"],
 		"pTypes": ["gvo-CreateBackground"],
@@ -9,7 +8,6 @@
 	},
 	"_AddBasicSprite": {
 		"desc": "Adds a [Basic Sprite](CreateBasicSprite.htm) to your game.",
-		"isfunc": true,
 		"name": "AddBasicSprite",
 		"pNames": ["sprite"],
 		"pTypes": ["gvo-CreateSprite"],
@@ -17,7 +15,6 @@
 	},
 	"_AddBatch": {
 		"desc": "Adds a sprite batch to the game.",
-		"isfunc": true,
 		"name": "AddBatch",
 		"pNames": ["batch"],
 		"pTypes": ["gvo-CreateBatch"],
@@ -25,7 +22,6 @@
 	},
 	"AddGraphic": {
 		"desc": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
-		"isfunc": true,
 		"name": "AddGraphic",
 		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
 		"pTypes": ["obj", "num_frc", "num_frc", "num_frc", "num_frc", "num_rad", "num_frc"],
@@ -34,7 +30,6 @@
 	"AddPhysics": {
 		"abbrev": "phs",
 		"desc": "Adds the Box2D physics engine to your game. The method list below shows the functions which are added to game objects when using physics.",
-		"isfunc": true,
 		"name": "AddPhysics",
 		"pNames": ["gravity", "accuracy", "sleep"],
 		"pTypes": ["num", "num", "num"],
@@ -42,7 +37,6 @@
 		"subf": {
 			"AddVelocity": {
 				"desc": "Adds linear and angular velocity to the object",
-				"isfunc": true,
 				"name": "AddVelocity",
 				"pNames": ["x", "y", "angular", "bodyRelative"],
 				"pTypes": ["num", "num", "num", "bin"],
@@ -50,7 +44,6 @@
 			},
 			"ApplyImpulse": {
 				"desc": "Applies an impulse (impulse=velocity*mass) to the object",
-				"isfunc": true,
 				"name": "ApplyImpulse",
 				"pNames": ["x", "y", "offsetX", "offsetY"],
 				"pTypes": ["num", "num", "num--1..1", "num--1..1"],
@@ -58,7 +51,6 @@
 			},
 			"Contains": {
 				"desc": "Checks if a given point is in the hitbox",
-				"isfunc": true,
 				"name": "Contains",
 				"pNames": ["x", "y"],
 				"pTypes": ["num_frc", "num_frc"],
@@ -67,7 +59,6 @@
 			},
 			"EnablePhysics": {
 				"desc": "Temporally En/Disables physics for the game object.",
-				"isfunc": true,
 				"name": "EnablePhysics",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
@@ -75,7 +66,6 @@
 			},
 			"GetVelocity": {
 				"desc": "Returns the current total linear velocity or the “x”, “y” or “angular” component.",
-				"isfunc": true,
 				"name": "GetVelocity",
 				"pNames": ["component"],
 				"pTypes": ["str-x|y|angular"],
@@ -84,15 +74,11 @@
 			},
 			"RemovePhysics": {
 				"desc": "Removes physics from the game oblect.",
-				"isfunc": true,
 				"name": "RemovePhysics",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Removes physics"
 			},
 			"SetMatrix": {
 				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
-				"isfunc": true,
 				"name": "SetMatrix",
 				"pNames": ["mtx"],
 				"pTypes": ["gvo-Matrix"],
@@ -100,7 +86,6 @@
 			},
 			"SetPhysics": {
 				"desc": "Set the physics properties for the game object.",
-				"isfunc": true,
 				"name": "SetPhysics",
 				"pNames": ["groupId", "type", "density", "bounce", "friction", "linearDamp", "angularDamp"],
 				"pTypes": ["str", "str-moveable|fixed", "num", "num", "num", "num", "num"],
@@ -108,7 +93,6 @@
 			},
 			"SetShape": {
 				"desc": "Defines the shape for collision detection of the object.",
-				"isfunc": true,
 				"name": "SetShape",
 				"pNames": ["shape", "width", "height"],
 				"pTypes": ["str-rect|round", "num_frc", "num_frc"],
@@ -116,7 +100,6 @@
 			},
 			"SetVelocity": {
 				"desc": "Set the velocity of the game object.",
-				"isfunc": true,
 				"name": "SetVelocity",
 				"pNames": ["x", "y", "angular", "bodyRelative"],
 				"pTypes": ["num", "num", "num", "bin"],
@@ -124,17 +107,13 @@
 			},
 			"UpdatePhysics": {
 				"desc": "Updates the internal position and size properties",
-				"isfunc": true,
 				"name": "UpdatePhysics",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Update internal physics properties"
 			}
 		}
 	},
 	"AddSprite": {
 		"desc": "Adds a [sprite](CreateSprite.htm) object to the game.",
-		"isfunc": true,
 		"name": "AddSprite",
 		"pNames": ["sprite", "x", "y", "w", "h", "angle", "alpha"],
 		"pTypes": ["gvo-CreateSprite", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc"],
@@ -142,7 +121,6 @@
 	},
 	"AddText": {
 		"desc": "Adds a [text](CreateText.htm) object to the game.",
-		"isfunc": true,
 		"name": "AddText",
 		"pNames": ["obj", "x", "y", "angle", "alpha"],
 		"pTypes": ["gvo-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
@@ -150,12 +128,10 @@
 	},
 	"_Animate": {
 		"desc": "Animate repeatedly calls a function with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.",
-		"isfunc": true,
 		"name": "Animate",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
 			"pNames": ["time", "dtime"],
 			"pTypes": ["num_mls", "num_mls"],
@@ -165,7 +141,6 @@
 	},
 	"AppExec": {
 		"desc": "Executes some code in the main app.",
-		"isfunc": true,
 		"name": "AppExec",
 		"pNames": ["js"],
 		"pTypes": ["str_jsc"],
@@ -173,7 +148,7 @@
 	},
 	"aspect": {
 		"desc": "The aspect ratio of the gfx container (display)",
-		"isfunc": false,
+		"isval": true,
 		"name": "aspect",
 		"retval": "num",
 		"shortDesc": "The display aspect ratio"
@@ -181,7 +156,6 @@
 	"CreateBackground": {
 		"abbrev": "bck",
 		"desc": "Creates a background",
-		"isfunc": true,
 		"name": "CreateBackground",
 		"pNames": ["file", "options"],
 		"pTypes": ["str", "str_com-stretch"],
@@ -190,29 +164,28 @@
 		"subf": {
 			"Scroll": {
 				"desc": "Scrolls the background by a given value",
-				"isfunc": true,
 				"name": "Scroll",
 				"pNames": ["x", "y"],
 				"pTypes": ["num", "num"],
 				"shortDesc": "Scroll Background"
 			},
 			"loaded": {
-				"desc": "",
-				"isfunc": false,
+				"desc": "Indicates if the background is ready for use",
+				"isval": true,
 				"name": "loaded",
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "indicates if ready for use"
 			},
 			"_sprite": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "sprite",
 				"retval": "PIXI.Sprite",
 				"shortDesc": ""
 			},
 			"_texture": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "texture",
 				"retval": "PIXI.Texture",
 				"shortDesc": ""
@@ -221,7 +194,6 @@
 	},
 	"_CreateBasicSprite": {
 		"desc": "",
-		"isfunc": true,
 		"name": "CreateBasicSprite",
 		"pNames": ["texture"],
 		"pTypes": ["str"],
@@ -230,7 +202,7 @@
 	},
 	"_CreateBatch": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "CreateBatch",
 		"retval": "?",
 		"shortDesc": ""
@@ -238,7 +210,6 @@
 	"CreateCircle": {
 		"abbrev": "cir",
 		"desc": "Creates a circular game object.",
-		"isfunc": true,
 		"name": "CreateCircle",
 		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
@@ -265,7 +236,6 @@
 	"CreateEllipse": {
 		"abbrev": "elp",
 		"desc": "Creates a elliptical game object.",
-		"isfunc": true,
 		"name": "CreateEllipse",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
@@ -292,7 +262,6 @@
 	"CreatePolygon": {
 		"abbrev": "pol",
 		"desc": "Creates a polygonal game object.",
-		"isfunc": true,
 		"name": "CreatePolygon",
 		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
@@ -319,7 +288,6 @@
 	"CreateRectangle": {
 		"abbrev": "rct",
 		"desc": "Creates a rectangular game object.",
-		"isfunc": true,
 		"name": "CreateRectangle",
 		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
@@ -346,7 +314,6 @@
 	"CreateSound": {
 		"abbrev": "snd",
 		"desc": "Creates a sound object which can play audio files.",
-		"isfunc": true,
 		"name": "CreateSound",
 		"pNames": ["file"],
 		"pTypes": ["str"],
@@ -355,29 +322,25 @@
 		"subf": {
 			"file": {
 				"desc": "Contains the url of the loaded file.",
-				"isfunc": false,
+				"isval": true,
 				"name": "file",
 				"retval": "str",
 				"shortDesc": "The file url"
 			},
 			"_id": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "id",
 				"retval": "str",
 				"shortDesc": ""
 			},
 			"Pause": {
 				"desc": "Pause the playback if the sound is currently palaying.",
-				"isfunc": true,
 				"name": "Pause",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Pause the track"
 			},
 			"Play": {
 				"desc": "Start the playback of the current loaded audio file.",
-				"isfunc": true,
 				"name": "Play",
 				"pNames": ["loop", "delay", "gap"],
 				"pTypes": ["bool", "num_mls-delay before playback start", "num_mls-time gap between two loops"],
@@ -388,32 +351,28 @@
 	"CreateSprite": {
 		"abbrev": "spr",
 		"desc": "#CreateSprite.md",
-		"isfunc": true,
 		"name": "CreateSprite",
 		"pNames": ["file", "group", "callback"],
 		"pTypes": ["str", "str", {
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "gvo-CreateSprite",
 		"shortDesc": "Returns a new sprite object",
 		"subf": {
 			"added": {
-				"desc": "",
-				"isfunc": false,
+				"desc": "Indicates if the sprite has been added to the game",
+				"isval": true,
 				"name": "added",
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "incicates if added to game"
 			},
 			"alpha": "#2974510528",
 			"angle": "#1034034325",
 			"aspect": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "aspect",
 				"retval": "num",
 				"shortDesc": ""
@@ -422,7 +381,6 @@
 			"data": "#2865983653",
 			"Flip": {
 				"desc": "",
-				"isfunc": true,
 				"name": "Flip",
 				"pNames": ["horiz", "vert"],
 				"pTypes": ["?", "?"],
@@ -431,16 +389,12 @@
 			},
 			"GetFrame": {
 				"desc": "Returns the current frame",
-				"isfunc": true,
 				"name": "GetFrame",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get current frame"
 			},
 			"Goto": {
 				"desc": "",
-				"isfunc": true,
 				"name": "Goto",
 				"pNames": ["frame"],
 				"pTypes": ["num"],
@@ -451,14 +405,14 @@
 			"height": "#0162475314",
 			"_isAtlas": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "isAtlas",
 				"retval": "bin",
 				"shortDesc": ""
 			},
 			"_isStrip": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "isStrip",
 				"retval": "bin",
 				"shortDesc": ""
@@ -467,7 +421,6 @@
 			"pivotY": "#9812693423",
 			"Play": {
 				"desc": "",
-				"isfunc": true,
 				"name": "Play",
 				"pNames": ["startFrame", "speed", "loop"],
 				"pTypes": ["num", "num", "num"],
@@ -476,7 +429,6 @@
 			},
 			"PlayRange": {
 				"desc": "",
-				"isfunc": true,
 				"name": "PlayRange",
 				"pNames": ["firstFrame", "lastFrame", "speed", "loop"],
 				"pTypes": ["num", "num", "num", "num"],
@@ -485,7 +437,6 @@
 			},
 			"PlayTo": {
 				"desc": "",
-				"isfunc": true,
 				"name": "PlayTo",
 				"pNames": ["frame"],
 				"pTypes": ["num"],
@@ -496,7 +447,6 @@
 			"scaleY": "#7124535139",
 			"SetLoop": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetLoop",
 				"pNames": ["loop"],
 				"pTypes": ["num"],
@@ -506,7 +456,6 @@
 			"SetMatrix": "#1789264812",
 			"SetPlaySpeed": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetPlaySpeed",
 				"pNames": ["speed"],
 				"pTypes": ["num"],
@@ -515,7 +464,6 @@
 			},
 			"SetRange": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetRange",
 				"pNames": ["firstFrame", "lastFrame", "loop", "play", "speed"],
 				"pTypes": ["num", "num", "num", "num", "num"],
@@ -524,7 +472,6 @@
 			},
 			"SetSize": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetSize",
 				"pNames": ["w", "h"],
 				"pTypes": ["?", "?"],
@@ -533,7 +480,6 @@
 			},
 			"SetSpriteSheet": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetSpriteSheet",
 				"pNames": ["sheet"],
 				"pTypes": ["obj"],
@@ -542,7 +488,6 @@
 			},
 			"SetTexture": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetTexture",
 				"pNames": ["tx"],
 				"pTypes": ["num"],
@@ -551,15 +496,11 @@
 			},
 			"SetTween": {
 				"desc": "",
-				"isfunc": true,
 				"name": "SetTween",
 				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
 				"pTypes": ["obj", "num", "str", "num", "num", {
 					"desc": "callback function",
-					"isfunc": true,
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"retval": "?",
@@ -567,23 +508,19 @@
 			},
 			"_sprite": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "sprite",
 				"retval": "?",
 				"shortDesc": ""
 			},
 			"Stop": {
 				"desc": "",
-				"isfunc": true,
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "?",
 				"shortDesc": ""
 			},
 			"StopAt": {
 				"desc": "",
-				"isfunc": true,
 				"name": "StopAt",
 				"pNames": ["frame"],
 				"pTypes": ["num"],
@@ -592,22 +529,18 @@
 			},
 			"_texture": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "texture",
 				"retval": "str",
 				"shortDesc": ""
 			},
 			"Tween": {
 				"desc": "",
-				"isfunc": true,
 				"name": "Tween",
 				"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
 				"pTypes": ["obj", "num", "str", "num", "num", {
 					"desc": "callback function",
-					"isfunc": true,
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"retval": "?",
@@ -618,14 +551,14 @@
 			"width": "#9182648716",
 			"x": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "x",
 				"retval": "num",
 				"shortDesc": ""
 			},
 			"y": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "y",
 				"retval": "num",
 				"shortDesc": ""
@@ -635,15 +568,11 @@
 	"CreateSpriteSheet": {
 		"abbrev": "sht",
 		"desc": " ",
-		"isfunc": true,
 		"name": "CreateSpriteSheet",
 		"pNames": ["file", "callback"],
 		"pTypes": ["str", {
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -652,21 +581,21 @@
 			"data": "#2865983653",
 			"loaded": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "loaded",
 				"retval": "bin",
 				"shortDesc": ""
 			},
 			"_loader": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "loader",
 				"retval": "obj",
 				"shortDesc": ""
 			},
 			"_sprite": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "sprite",
 				"retval": "?",
 				"shortDesc": ""
@@ -676,15 +605,11 @@
 	"CreateText": {
 		"abbrev": "txt",
 		"desc": "",
-		"isfunc": true,
 		"name": "CreateText",
 		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
 		"pTypes": ["str", "num", "str", "?", {
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -692,7 +617,7 @@
 		"subf": {
 			"align": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "align",
 				"retval": "str",
 				"shortDesc": ""
@@ -702,14 +627,14 @@
 			"Contains": "#9612465132",
 			"file": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "file",
 				"retval": "str",
 				"shortDesc": ""
 			},
 			"fontSize": {
 				"desc": "",
-				"isfunc": false,
+				"isval": true,
 				"name": "fontSize",
 				"retval": "num",
 				"shortDesc": ""
@@ -727,23 +652,20 @@
 	},
 	"CreateTexture": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "CreateTexture",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Returns a new texture object"
 	},
 	"data": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "data",
 		"retval": "obj",
 		"shortDesc": "Data"
 	},
 	"EnablePhysics": {
 		"desc": "",
-		"isfunc": true,
 		"name": "EnablePhysics",
 		"pNames": ["enabled"],
 		"pTypes": ["bin"],
@@ -751,7 +673,6 @@
 	},
 	"Enclose": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Enclose",
 		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
 		"pTypes": ["str", "str", "num", "num", "num", "num"],
@@ -759,7 +680,6 @@
 	},
 	"GenPixiJson": {
 		"desc": "",
-		"isfunc": true,
 		"name": "GenPixiJson",
 		"pNames": ["path"],
 		"pTypes": ["?"],
@@ -768,16 +688,12 @@
 	},
 	"GetContext": {
 		"desc": "",
-		"isfunc": true,
 		"name": "GetContext",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "?",
 		"shortDesc": "GetContext"
 	},
 	"GetOrder": {
 		"desc": "",
-		"isfunc": true,
 		"name": "GetOrder",
 		"pNames": ["object"],
 		"pTypes": ["obj"],
@@ -786,23 +702,19 @@
 	},
 	"GetTime": {
 		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
-		"isfunc": true,
 		"name": "GetTime",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "?",
 		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
 	},
 	"height": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "height",
 		"retval": "num",
 		"shortDesc": "height"
 	},
 	"IsOverlap": {
 		"desc": "",
-		"isfunc": true,
 		"name": "IsOverlap",
 		"pNames": ["obj1", "obj2", "depth"],
 		"pTypes": ["obj", "obj", "?"],
@@ -811,70 +723,57 @@
 	},
 	"IsPaused": {
 		"desc": "Returns whether the game is currently paused.",
-		"isfunc": true,
 		"name": "IsPaused",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Get paused state"
 	},
 	"isReady": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "isReady",
 		"retval": "bin",
 		"shortDesc": "IsReady"
 	},
 	"keyDown": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "keyDown",
 		"retval": "?",
 		"shortDesc": "KeyDown"
 	},
 	"keyState": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "keyState",
 		"retval": "?",
 		"shortDesc": "KeyState"
 	},
 	"objects": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "objects",
 		"retval": "num",
 		"shortDesc": "Objects"
 	},
 	"Pause": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Pause",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "?",
 		"shortDesc": "Pause"
 	},
 	"Play": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Play",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "?",
 		"shortDesc": "Play"
 	},
 	"Reload": {
 		"desc": "Restarts the game from scratch.",
-		"isfunc": true,
 		"name": "Reload",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Restart gmem from scratch"
 	},
 	"RemoveBackground": {
 		"desc": "",
-		"isfunc": true,
 		"name": "RemoveBackground",
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
@@ -883,7 +782,6 @@
 	},
 	"RemoveGraphic": {
 		"desc": "",
-		"isfunc": true,
 		"name": "RemoveGraphic",
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
@@ -892,7 +790,6 @@
 	},
 	"RemoveSprite": {
 		"desc": "",
-		"isfunc": true,
 		"name": "RemoveSprite",
 		"pNames": ["sprite"],
 		"pTypes": ["?"],
@@ -901,7 +798,6 @@
 	},
 	"RemoveText": {
 		"desc": "",
-		"isfunc": true,
 		"name": "RemoveText",
 		"pNames": ["obj"],
 		"pTypes": ["obj"],
@@ -910,31 +806,24 @@
 	},
 	"_Render": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Render",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "?",
 		"shortDesc": ""
 	},
 	"renderer": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "renderer",
 		"retval": "?",
 		"shortDesc": "Renderer"
 	},
 	"Script": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Script",
 		"pNames": ["url", "callback"],
 		"pTypes": ["?", {
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -942,7 +831,6 @@
 	},
 	"SetBackColor": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetBackColor",
 		"pNames": ["col"],
 		"pTypes": ["?"],
@@ -951,15 +839,11 @@
 	},
 	"SetOnCollide": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnCollide",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -967,15 +851,11 @@
 	},
 	"SetOnKeyDown": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnKeyDown",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -983,15 +863,11 @@
 	},
 	"SetOnKeyUp": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnKeyUp",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -999,15 +875,11 @@
 	},
 	"SetOnTouchDown": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnTouchDown",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -1015,15 +887,11 @@
 	},
 	"SetOnTouchMove": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnTouchMove",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -1031,15 +899,11 @@
 	},
 	"SetOnTouchUp": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOnTouchUp",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
-			"isfunc": true,
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
@@ -1047,7 +911,6 @@
 	},
 	"SetOrder": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetOrder",
 		"pNames": ["object", "order"],
 		"pTypes": ["obj", "num"],
@@ -1056,7 +919,6 @@
 	},
 	"_SetPixelMode": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SetPixelMode",
 		"pNames": ["usePixels"],
 		"pTypes": ["?"],
@@ -1065,14 +927,13 @@
 	},
 	"_stage": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "stage",
 		"retval": "?",
 		"shortDesc": "Stage"
 	},
 	"SwapOrder": {
 		"desc": "",
-		"isfunc": true,
 		"name": "SwapOrder",
 		"pNames": ["object1", "object2"],
 		"pTypes": ["obj", "obj"],
@@ -1081,16 +942,13 @@
 	},
 	"version": {
 		"desc": "the gfx version number starting from 1.1 in DS182b2",
-		"isfunc": false,
-		"pNames": [],
-		"pTypes": [],
+		"isval": true,
 		"name": "version",
 		"retval": "str",
 		"shortDesc": "gfx version number"
 	},
 	"Vibrate": {
 		"desc": "",
-		"isfunc": true,
 		"name": "Vibrate",
 		"pNames": ["pattern"],
 		"pTypes": ["?"],
@@ -1099,7 +957,7 @@
 	},
 	"width": {
 		"desc": "",
-		"isfunc": false,
+		"isval": true,
 		"name": "width",
 		"retval": "num",
 		"shortDesc": "Width"

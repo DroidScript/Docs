@@ -1,6 +1,8 @@
 
-/*/ HEAD \*/
+cfg.Holo;
 
+/*/ HEAD \*/
+cfg.MUI;
 /*\ HEAD /*/
 
 var dbg = {app:0,sub:0,fun:1,cre:0};
@@ -13,11 +15,14 @@ var scope, functions = {}, baseFuncs, controlArgs;
 var regHead = /(\/\*\/ HEAD \\\*\/\n)([\s\S]*)(\n\/\*\\ HEAD \/\*\/)/;
 var ctlArgsPth, funcPath, baseFunPth;
 var appPath = app.GetAppPath() + "/";
+var appName = app.GetAppName();
 var confPath = appPath + "conf.json";
 var uconfPath = appPath + "userconf.json";
 
 function OnStart()
 {
+    app.SetAutoStart(null);
+
     app.SetDebug(true);
     
     conf = JSON.parse(app.ReadFile(confPath) || "{}");
@@ -71,22 +76,15 @@ function OnStart()
         app.WriteFile(uconfPath, tos(uconf));
         app.ShowPopup("config saved.");
         
-        var s = app.ReadFile(appPath + app.GetAppName() + ".js");
+        var s = app.ReadFile(appPath + appName + ".js");
         var m = s.match(regHead);
         if(!m) alert("custom header is broken. Fabulous.");
         else if(m[2] != uconf.header)
         {
-            app.WriteFile(appPath + app.GetAppName() + ".js", s.replace(regHead, "$1" + uconf.header + "$3"));
             
+            app.WriteFile(appPath + appName + ".js", s.replace(regHead, "$1" + uconf.header + "$3"));
             var ynd = app.CreateYesNoDialog("Requires restart to apply changes.\nQuit now?");
-            ynd.SetOnTouch(function(res)
-            {
-                if(res == "Yes")
-                {
-        			// app.SetAlarm("Set", cfg.version, null, Date.now() + 500);
-        			app.Exit();
-        		}
-            })
+            ynd.SetOnTouch(function(res) { if(res == "Yes") RestartApp(); })
             ynd.Show();
         } else {
             dlgConf.Hide();
@@ -99,6 +97,23 @@ function OnStart()
     btnX.SetTextColor("red");
     
     dlgConf.Show();
+}
+
+function RestartApp() {
+    app.HttpRequest("GET", "http://localhost:8088", "/ide", "cmd=run|prog=" + appName, function(e,r,s) {
+        if(s != 200) {
+            app.SetAutoStart(appName);
+
+            var apps = app.GetRunningApps().filter(
+                function(v) { return v.name == "com.smartphoneremote.androidscriptfree"; });
+
+            if(apps.length > 0) {
+                app.KillApp(apps[0].pid);
+                app.LaunchApp( "com.smartphoneremote.androidscriptfree", false);
+                // app.Exit();
+            }
+        }
+    });
 }
 
 function onLoad()
@@ -168,8 +183,7 @@ function loadNews()
         	    }
 
                 // add new subfunctions
-                //console.log(functions[i].isFunc, j, functions[i].isFunc?functions[i].subf[j]:0, ctrl[j])
-	            if(functions[i].subf && !functions[i].subf[j] && ctrl[j])
+                if(functions[i].subf && !functions[i].subf[j] && ctrl[j])
 	            {
 			        if(dbg.sub) console.log("+ ".fontcolor("green") + i + "." + j + markFunc(ctrl[j]));
 			        functions[i].subf[j] = getBaseFunc(j) || getBaseFuncObj(j, ctrl[j]);
@@ -318,7 +332,6 @@ function getOptType(name) {
 function getBaseCbObj() {
     return {
     	"desc": "callback function",
-    	"isfunc": true,
     	"name": "callback",
     	"pNames": [],
     	"pTypes": [],
@@ -337,7 +350,7 @@ function getRetval(o, name)
 	    case "String": return "str-" + o;
 	    case "Number": return "num";
         case "Boolean": return "bin";
-        case "Array": return "arr";
+        case "Array": return "lst";
 	    case "Function":
 	        var t = o.toString().trim();
 	        if(t.indexOf("return") == -1) return null;
@@ -358,7 +371,8 @@ function getRetval(o, name)
                 }
                 if(!isNaN(Number(o))) return Number.isInteger(Number(o)) ? "str_int" : "str_num";
 	        }
-		default: return "obj";
+	    case "Object": return "obj";
+		default: return "?";
 	}
 	return s;
 }
@@ -389,8 +403,8 @@ function isControl(name) {
 }
 function markFunc(foo) {
     var len = -1;
-    if(foo && foo.isfunc) len = foo.pNames.length;
-    else if(typeof(foo) == "function") len = getArgs(foo).length;
+    if(typeof(foo) == "function") len = getArgs(foo).length;
+    else if(foo && foo.pNames && !foo.isval) len = foo.pNames.length;
     return len ? len == -1 ? "" : "(" + len + ")" : "()";
 }
 

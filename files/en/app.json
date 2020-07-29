@@ -319,16 +319,12 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-AdView",
 				"shortDesc": "Returns the control class name"
 			},
 			"Load": {
 				"desc": "Loads an advertising banner.",
 				"name": "Load",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Loads an ad"
 			},
 			"SetOnStatus": {
@@ -350,48 +346,36 @@
 		"abbrev": "rec",
 		"desc": "#CreateAudioRecorder.md",
 		"name": "CreateAudioRecorder",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-AudioRecorder",
 		"shortDesc": "Returns an AudioRecorder object",
 		"subf": {
 			"GetData": {
 				"desc": "Returns a list of frequency values. The amount is dependent on the set frequency.",
 				"name": "GetData",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "lst-[ frequencies:num_int ]",
 				"shortDesc": "Returns a new list of frequency values"
 			},
 			"GetPeak": {
 				"desc": "Returns the PMPO value (Peak music power output).",
 				"name": "GetPeak",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_flt",
 				"shortDesc": "Returns the PMPO value"
 			},
 			"GetRMS": {
 				"desc": "Returns the RMS value (Root Mean Square)",
 				"name": "GetRMS",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_flt",
 				"shortDesc": "Returns the RMS value"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-AudioRecorder",
 				"shortDesc": "Returns the control class name"
 			},
 			"Pause": {
 				"desc": "Pauses the recording temporally.",
 				"name": "Pause",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Pause the recording"
 			},
 			"SetFile": {
@@ -418,15 +402,11 @@
 			"Start": {
 				"desc": "Start recording to the specified file.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start recording"
 			},
 			"Stop": {
 				"desc": "Stop the audio recording.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop recording"
 			}
 		}
@@ -443,8 +423,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-BluetoothList",
 				"shortDesc": "Returns the control class name"
 			},
@@ -475,8 +453,6 @@
 			"Clear": {
 				"desc": "Clears the Bluetooth buffer of the serial connection.",
 				"name": "Clear",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Clears the Bluetooth buffer"
 			},
 			"Connect": {
@@ -489,31 +465,23 @@
 			"Disconnect": {
 				"desc": "Disconnect your device from an eventually existant connection. Calls the OnDisconnect callback function on both devices.",
 				"name": "Disconnect",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Disconnect the Bluetooth connection"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-BluetoothSerial",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsBluetoothEnabled": {
 				"desc": "Checks if Bluetooth is enabled or not.",
 				"name": "IsBluetoothEnabled",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if Bluetooth is enabled"
 			},
 			"IsConnected": {
 				"desc": "Checks if a Bluetooth connection exists to another device.",
 				"name": "IsConnected",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if a Bluetooth connection exists"
 			},
@@ -536,8 +504,6 @@
 			"RequestEnable": {
 				"desc": "If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.",
 				"name": "RequestEnable",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Ask user to enable Bluetooth"
 			},
 			"SetDataMode": {
@@ -563,8 +529,6 @@
 			"SetOnDisconnect": {
 				"desc": "SetOnDisconnect will be called on both devices after disconnecting from an existing bluetooth connection.",
 				"name": "SetOnDisconnect",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Called after disconnecting from bluetooth connection"
 			},
 			"SetOnReceive": {
@@ -628,8 +592,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Button",
 				"shortDesc": "Returns the control class name"
 			},
@@ -661,8 +623,6 @@
 					{
 						"desc": "Callback",
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
 						"shortDesc": "callback"
 					}
 				],
@@ -721,16 +681,12 @@
 			"GetCameraCount": {
 				"desc": "Returns the amount of cameras built in to the device.",
 				"name": "GetCameraCount",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Returns the device camera count"
 			},
 			"GetColorEffects": {
 				"desc": "Returns a list of available color effects for the camera.",
 				"name": "GetColorEffects",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
 				"shortDesc": "Returns a new list of available color effects"
 			},
@@ -738,16 +694,12 @@
 			"GetImageHeight": {
 				"desc": "Returns the camera capture height in pixels.",
 				"name": "GetImageHeight",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": "Returns the camera height"
 			},
 			"GetImageWidth": {
 				"desc": "Returns the camera capture width in pixels.",
 				"name": "GetImageWidth",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": "Returns the camera width"
 			},
@@ -755,16 +707,12 @@
 			"GetMaxZoom": {
 				"desc": "Returns the hightst possible zoom value.",
 				"name": "GetMaxZoom",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Returns the hightst possible zoom value"
 			},
 			"GetParameters": {
 				"desc": "Get properties, possible values and settings of the camera as “key=value; pairs.",
 				"name": "GetParameters",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_smc-key1=value1;key2=value2;...",
 				"shortDesc": "Get camera parameters"
 			},
@@ -772,8 +720,6 @@
 			"GetPictureSizes": {
 				"desc": "Returns a list of possible picture dimensions.",
 				"name": "GetPictureSizes",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_com-w1 x h1\\,w2 x h2\\,...",
 				"shortDesc": "Returns a new list of possible picture dimensions"
 			},
@@ -790,8 +736,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-CameraView",
 				"shortDesc": "Returns the control class name"
 			},
@@ -800,8 +744,6 @@
 			"GetZoom": {
 				"desc": "Returns the curent zoom value.",
 				"name": "GetZoom",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Returns the curent zoom value"
 			},
@@ -809,8 +751,6 @@
 			"HasFlash": {
 				"desc": "Checks if the currently used camera has a camera flash.",
 				"name": "HasFlash",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Returns if the current camera supports flashlight"
 			},
@@ -820,8 +760,6 @@
 			"IsRecording": {
 				"desc": "Returns a boolea indicating whether the camera is currently recording a video.",
 				"name": "IsRecording",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Returns if the camera is currently recording"
 			},
@@ -911,8 +849,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called if the camera is ready for use"
@@ -982,22 +918,16 @@
 			"StartPreview": {
 				"desc": "Start the camera preview on the display.",
 				"name": "StartPreview",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start the camera preview"
 			},
 			"Stop": {
 				"desc": "Stop recording a video.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop recording video"
 			},
 			"StopPreview": {
 				"desc": "Stop the camera preview on the display.",
 				"name": "StopPreview",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop the camera preview"
 			},
 			"Stream": {
@@ -1035,8 +965,6 @@
 			"GetChecked": {
 				"desc": "Checks if the checkbox is currently checked or not.",
 				"name": "GetChecked",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Get current checked state"
 			},
@@ -1050,8 +978,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-CheckBox",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1115,8 +1041,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-CloudStore",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1203,22 +1127,16 @@
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
 				"name": "ClearHistory",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Clears the undo/redo history"
 			},
 			"Copy": {
 				"desc": "Copies the selected text to the device clipboard.",
 				"name": "Copy",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Copy selected text to the clipboard"
 			},
 			"Cut": {
 				"desc": "Cut selected text and copies it to the device clipboard.",
 				"name": "Cut",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Cut selected text to the clipboard"
 			},
 			"Focus": "#7324472769",
@@ -1227,16 +1145,12 @@
 			"GetCursorLine": {
 				"desc": "Returns the current line index where the cursor is located.",
 				"name": "GetCursorLine",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get the current cursor line index"
 			},
 			"GetCursorPos": {
 				"desc": "Returns the index of the character where the cursor is currently located.",
 				"name": "GetCursorPos",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get the cursor position in the text"
 			},
@@ -1255,16 +1169,12 @@
 			"GetSelectedText": {
 				"desc": "Returns the currently selected text.",
 				"name": "GetSelectedText",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Get the selected text"
 			},
 			"GetSelectMode": {
 				"desc": "Checks if there is currently some text selected.",
 				"name": "GetSelectMode",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Get current selection state"
 			},
@@ -1273,8 +1183,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-CodeEdit",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1303,15 +1211,11 @@
 			"Paste": {
 				"desc": "Paste text from the clipboard at the current cursor position.",
 				"name": "Paste",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Paste clipboard to the current cursor position"
 			},
 			"Redo": {
 				"desc": "Redo an undone action.",
 				"name": "Redo",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Redo an undone action"
 			},
 			"Replace": {
@@ -1345,8 +1249,6 @@
 			"SelectAll": {
 				"desc": "Selects the whole text.",
 				"name": "SelectAll",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Select the whole text"
 			},
 			"SetBackAlpha": "#1162431318",
@@ -1394,8 +1296,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Define a Yoyo double-tap callback function"
@@ -1447,8 +1347,6 @@
 			"Undo": {
 				"desc": "Undo an action.",
 				"name": "Undo",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Undo an action"
 			}
 		}
@@ -1481,8 +1379,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Crypt",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1498,8 +1394,6 @@
 	"CreateDebug": {
 		"desc": "CreateDebug is used to show the console as overlay above the app in order to see the debug logs.",
 		"name": "CreateDebug",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Shows a debug log overlay"
 	},
 	"CreateDialog": {
@@ -1538,8 +1432,6 @@
 			"GetTitleHeight": {
 				"desc": "Returns the height of the title bar.",
 				"name": "GetTitleHeight",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_pxl",
 				"shortDesc": "Get title bar height"
 			},
@@ -1547,8 +1439,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Dialog",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1588,8 +1478,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when back button was pressed while the dialog was shown"
@@ -1601,8 +1489,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when the dialog is cancelled"
@@ -1678,32 +1564,24 @@
 			"GetProgress": {
 				"desc": "Returns the current download progress.",
 				"name": "GetProgress",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": "Get current download progress"
 			},
 			"GetSize": {
 				"desc": "Returns the target download size in bytes.",
 				"name": "GetSize",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_byt",
 				"shortDesc": "Get target download size in bytes"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Downloader",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsComplete": {
 				"desc": "Checks if the download has compleated or not.",
 				"name": "IsComplete",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Get download completed state"
 			},
@@ -1728,8 +1606,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when the download is finished"
@@ -1774,8 +1650,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Email",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1847,30 +1721,22 @@
 			"Close": {
 				"desc": "Close File",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Close File"
 			},
 			"GetLength": {
 				"desc": "Returns the file size in bytes.",
 				"name": "GetLength",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_byt",
 				"shortDesc": "Get file size in bytes"
 			},
 			"GetPointer": {
 				"desc": "Returns the current pointer position in the file.",
 				"name": "GetPointer",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Get pointer position"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-File",
 				"shortDesc": "Returns the control class name"
 			},
@@ -1966,16 +1832,12 @@
 				"desc": "game",
 				"isval": true,
 				"name": "game",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "game"
 			},
 			"lay": {
 				"desc": "lay",
 				"isval": true,
 				"name": "lay",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "lay"
 			}
 		}
@@ -2008,8 +1870,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "GetType"
 			},
 			"GetVisibility": "#1672373665",
@@ -2058,8 +1918,6 @@
 				"desc": "width/height relation",
 				"isval": true,
 				"name": "aspect",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_flt",
 				"shortDesc": ""
 			},
@@ -2067,8 +1925,6 @@
 				"desc": "[HTMLDivElement]",
 				"isval": true,
 				"name": "canvas",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "obj",
 				"shortDesc": ""
 			},
@@ -2080,8 +1936,6 @@
 				"pTypes": ["str_pth", {
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"retval": "",
 					"shortDesc": "callback"
 				}],
@@ -2125,8 +1979,6 @@
 			"GetContext": {
 				"desc": "Returns the current FastCanvas context",
 				"name": "GetContext",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "obj-ctx",
 				"shortDesc": "returns the glv context"
 			},
@@ -2150,8 +2002,6 @@
 				"desc": "",
 				"isval": true,
 				"name": "ctx._drawCommands",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": ""
 			},
@@ -2167,8 +2017,6 @@
 				"desc": "",
 				"isval": true,
 				"name": "ctx._globalAlpha",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": ""
 			},
@@ -2194,24 +2042,18 @@
 			"GetContext.ctx.render": {
 				"desc": "render the draw commands to the context",
 				"name": "ctx.render",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "",
 				"shortDesc": "render draw commands"
 			},
 			"GetContext.ctx.resetTransform": {
 				"desc": "Reset all transformations to default",
 				"name": "ctx.resetTransform",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "",
 				"shortDesc": "Reset all transformations"
 			},
 			"GetContext.ctx.restore": {
 				"desc": "Restore a previously saved context state",
 				"name": "ctx.restore",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "",
 				"shortDesc": "Restore saved context"
 			},
@@ -2226,8 +2068,6 @@
 			"GetContext.ctx.save": {
 				"desc": "Saves the current context state",
 				"name": "ctx.save",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "",
 				"shortDesc": "Saves current context"
 			},
@@ -2279,8 +2119,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-GLView",
 				"shortDesc": "Returns the control class name"
 			},
@@ -2291,8 +2129,6 @@
 				"desc": "height",
 				"isval": true,
 				"name": "height",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": ""
 			},
@@ -2304,8 +2140,6 @@
 			"Render": {
 				"desc": "Render all draw commands to the canvas",
 				"name": "Render",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "",
 				"shortDesc": "Render draw commands"
 			},
@@ -2331,8 +2165,6 @@
 				"desc": "width",
 				"isval": true,
 				"name": "width",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": ""
 			}
@@ -2352,8 +2184,6 @@
 			"Clear": {
 				"desc": "Clears everything on the image except the background.",
 				"name": "Clear",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Clears the image content"
 			},
 			"ClearFocus": "#1362225380",
@@ -2437,8 +2267,6 @@
 			"Flatten": {
 				"desc": "Applies certain modifications to the image data, such as translate, scale, skew or alpha.",
 				"name": "Flatten",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Applies modifications to the image data"
 			},
 			"Focus": "#7324472769",
@@ -2449,8 +2277,6 @@
 			"GetName": {
 				"desc": "Returns the name set via SetName.",
 				"name": "GetName",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Returns the name set via SetName"
 			},
@@ -2476,8 +2302,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Image",
 				"shortDesc": "Returns the control class name"
 			},
@@ -2507,8 +2331,6 @@
 			"Reset": {
 				"desc": "Resets all transformations.",
 				"name": "Reset",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Reset all transformations"
 			},
 			"Rotate": {
@@ -2668,8 +2490,6 @@
 			"Update": {
 				"desc": "Update the view in disabled AutoUpdate mode.",
 				"name": "Update",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Update the view"
 			}
 		}
@@ -2726,8 +2546,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Layout",
 				"shortDesc": "Returns the control class name"
 			},
@@ -2874,8 +2692,6 @@
 			"GetLength": {
 				"desc": "Returns the amount of items in the lists.",
 				"name": "GetLength",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Returns the list length"
 			},
@@ -2894,8 +2710,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-List",
 				"shortDesc": "Returns the control class name"
 			},
@@ -2917,8 +2731,6 @@
 			"RemoveAll": {
 				"desc": "Removes all entries of the list.",
 				"name": "RemoveAll",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Clears the list"
 			},
 			"RemoveItem": {
@@ -3127,8 +2939,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-ListDialog",
 				"shortDesc": "Returns the control class name"
 			},
@@ -3189,8 +2999,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Locator",
 				"shortDesc": "Returns the control class name"
 			},
@@ -3217,15 +3025,11 @@
 			"Start": {
 				"desc": "Start the locator.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start locator"
 			},
 			"Stop": {
 				"desc": "Stop the locator.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop locator"
 			}
 		}
@@ -3234,68 +3038,50 @@
 		"abbrev": "ply",
 		"desc": "#CreateMediaPlayer.md",
 		"name": "CreateMediaPlayer",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-MediaPlayer",
 		"shortDesc": "Returns a new MediaPlayer object",
 		"subf": {
 			"Close": {
 				"desc": "Close the media player and thus make it unuseable for further use.",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Close the media player."
 			},
 			"GetDuration": {
 				"desc": "Returns the total duration of the currently loaded song in seconds.",
 				"name": "GetDuration",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_sec",
 				"shortDesc": "Get the song length in seconds"
 			},
 			"GetPosition": {
 				"desc": "Returns the elapsed playtime in seconds.",
 				"name": "GetPosition",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_sec",
 				"shortDesc": "Get  elapsed playtime in seconds"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-MediaPlayer",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsLooping": {
 				"desc": "Checks if the media player will replay the song from the begining if it has finished.",
 				"name": "IsLooping",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Returns if the player is looping."
 			},
 			"IsPlaying": {
 				"desc": "Checks if the media player is currently playing.",
 				"name": "IsPlaying",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Get current playing state"
 			},
 			"IsReady": {
 				"desc": "Checks if the media player is ready for use.",
 				"name": "IsReady",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Returns if player is useable yet"
 			},
 			"Pause": {
 				"desc": "Pause the current playing song.",
 				"name": "Pause",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Pause the current playing song"
 			},
 			"Play": {
@@ -3333,8 +3119,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when the player has finished playing a track"
@@ -3346,8 +3130,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when the player is ready for use"
@@ -3359,8 +3141,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when ply.Seek has finished"
@@ -3375,8 +3155,6 @@
 			"Stop": {
 				"desc": "Stop playing a song.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop playing a song"
 			}
 		}
@@ -3385,8 +3163,6 @@
 		"abbrev": "med",
 		"desc": "The MediaStore is used to query audio information from the android provider or from the device in the “/sdcard/Music” folder.",
 		"name": "CreateMediaStore",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-MediaStore",
 		"shortDesc": "Returns a new MediaStore object",
 		"subf": {
@@ -3409,8 +3185,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-MediaStore",
 				"shortDesc": "Returns the control class name"
 			},
@@ -3495,8 +3269,6 @@
 			"Close": {
 				"desc": "Closes the NetClient socket.",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Closes the NetClient socket"
 			},
 			"Connect": {
@@ -3509,8 +3281,6 @@
 			"Disconnect": {
 				"desc": "Disconnect the NetClient from the server.",
 				"name": "Disconnect",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Disconnect from server"
 			},
 			"DownloadFile": {
@@ -3523,24 +3293,18 @@
 			"GetBroadcastAddress": {
 				"desc": "Returns the broadcast address of UDP connections.",
 				"name": "GetBroadcastAddress",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Returns the broadcast address of UDP connections."
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-NetClient",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsConnected": {
 				"desc": "Checks if the NetClient is connected to a server.",
 				"name": "IsConnected",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Get NetClient connected state"
 			},
 			"IsEnabled": "#1744802827",
@@ -3700,8 +3464,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Notification",
 				"shortDesc": "Returns the control class name"
 			},
@@ -3766,8 +3528,6 @@
 		"abbrev": "nxt",
 		"desc": "The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.\n<deprecated Please install and visit the NXT-Docs from the Plugins page>",
 		"name": "CreateNxt",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-Nxt",
 		"shortDesc": "Returns a new Nxt object",
 		"subf": {
@@ -3788,8 +3548,6 @@
 			"CheckConnection": {
 				"desc": "Check whether phone/tablet is connected to the NXT.",
 				"name": "CheckConnection",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Check if device is connected to NXT"
 			},
@@ -3803,8 +3561,6 @@
 			"Disconnect": {
 				"desc": "Disconnect Phone/Tablet from NXT.",
 				"name": "Disconnect",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Disconnect NXT"
 			},
 			"Drive": {
@@ -3833,24 +3589,18 @@
 			"GetBtAddress": {
 				"desc": "Returns Bluetooth address of a connected NXT brick",
 				"name": "GetBtAddress",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Returns NXT Bt address"
 			},
 			"GetBtName": {
 				"desc": "Returns Bluetooth name of a connected NXT brick",
 				"name": "GetBtName",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Returns NXT Bt name"
 			},
 			"GetCurrentProgram": {
 				"desc": "Returns the name of the currently running program.",
 				"name": "GetCurrentProgram",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Returns the current running program name"
 			},
@@ -3865,32 +3615,24 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Nxt",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsBluetoothEnabled": {
 				"desc": "Checks if bluetooth is enabled on the device.",
 				"name": "IsBluetoothEnabled",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if bt is enabled"
 			},
 			"IsConnected": {
 				"desc": "Checks if the device is connected to a NXT.",
 				"name": "IsConnected",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if NXT is connected"
 			},
 			"IsEnabled": {
 				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
 				"name": "IsBluetoothEnabled",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if bt is enabled"
 			},
@@ -3967,8 +3709,6 @@
 			"RequestEnable": {
 				"desc": "Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.",
 				"name": "RequestEnable",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Request enabling bluetooth if it isn't"
 			},
 			"Reset": {
@@ -4019,8 +3759,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when bt connection established"
@@ -4032,8 +3770,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": ""
@@ -4041,8 +3777,6 @@
 			"ShowDevices": {
 				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
 				"name": "ShowDevices",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Shows a list of paired NXT devices to connect to"
 			},
 			"StartProgram": {
@@ -4062,8 +3796,6 @@
 			"StopProgram": {
 				"desc": "Stops a the currently running NXT-G program.",
 				"name": "StopProgram",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stops the current running program"
 			},
 			"ToColorName": {
@@ -4095,8 +3827,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "GetType"
 			},
 			"RemoveLayout": {
@@ -4127,8 +3857,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-PhoneState",
 				"shortDesc": "Returns the control class name"
 			},
@@ -4148,15 +3876,11 @@
 			"Start": {
 				"desc": "Start listening.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start listening"
 			},
 			"Stop": {
 				"desc": "Stop listening.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop listening"
 			}
 		}
@@ -4165,8 +3889,6 @@
 		"abbrev": "pls",
 		"desc": "#CreatePlayStore.md",
 		"name": "CreatePlayStore",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-PlayStore",
 		"shortDesc": "Returns a new PlayStore object",
 		"subf": {
@@ -4202,8 +3924,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-PlayStore",
 				"shortDesc": "Returns the control class name"
 			},
@@ -4258,16 +3978,12 @@
 			"GetScrollX": {
 				"desc": "Returns the horizontal scroll bar position.",
 				"name": "GetScrollX",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": "Get horizontal scroll bar position"
 			},
 			"GetScrollY": {
 				"desc": "Returns the vertical scroll bar position.",
 				"name": "GetScrollY",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_frc",
 				"shortDesc": "Get vertical scroll bar position"
 			},
@@ -4275,8 +3991,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Scroller",
 				"shortDesc": "Returns the control class name"
 			},
@@ -4349,16 +4063,12 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-SeekBar",
 				"shortDesc": "Returns the control class name"
 			},
 			"GetValue": {
 				"desc": "Returns the current value of the seek bar.",
 				"name": "GetValue",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Get current value"
 			},
@@ -4426,48 +4136,36 @@
 			"GetAzimuth": {
 				"desc": "Returns the first/x/azimuth value of a sensor.",
 				"name": "GetAzimuth",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Get first value of a sensor"
 			},
 			"GetNames": {
 				"desc": "Returns a list of builtin sensors in your device.",
 				"name": "GetNames",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_com",
 				"shortDesc": "Returns a list of builtin sensors"
 			},
 			"GetPitch": {
 				"desc": "Returns the second/y/pitch value of a sensor.",
 				"name": "GetPitch",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Get second value of a sensor"
 			},
 			"GetRoll": {
 				"desc": "Returns the third/z/roll value of a sensor.",
 				"name": "GetRoll",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num",
 				"shortDesc": "Get third value of a sensor"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Sensor",
 				"shortDesc": "Returns the control class name"
 			},
 			"GetValues": {
 				"desc": "Returns all values of a sensor.",
 				"name": "GetValues",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "lst-[ first:num, second:num, third:num ]",
 				"shortDesc": "Get all values from sensor"
 			},
@@ -4502,15 +4200,11 @@
 			"Start": {
 				"desc": "Start reading from the sensor.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start the sensor"
 			},
 			"Stop": {
 				"desc": "Stop reading from the sensor.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop the sensor"
 			}
 		}
@@ -4523,8 +4217,6 @@
 		"pTypes": ["str-this|&lt;package&gt;", "str-this|&lt;class&gt;", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "dso-Service",
@@ -4533,8 +4225,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Service",
 				"shortDesc": "Returns the control class name"
 			},
@@ -4548,8 +4238,6 @@
 			"SetInBackground": {
 				"desc": "Run service in background.",
 				"name": "SetInBackground",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Run service in background"
 			},
 			"SetInForeground": {
@@ -4575,8 +4263,6 @@
 			"Stop": {
 				"desc": "Stop the service.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop service"
 			}
 		}
@@ -4639,8 +4325,6 @@
 			"GetVersion": {
 				"desc": "Returns the SmartWatch DS version number.",
 				"name": "GetVersion",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Get SW DS version"
 			},
@@ -4665,8 +4349,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "called when SmartWatch back button was pressed"
@@ -4678,8 +4360,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SmartWatch app is hidden"
@@ -4691,8 +4371,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SmartWatch menu button is touched"
@@ -4704,8 +4382,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SmartWatch app is shown"
@@ -4717,8 +4393,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SmartWatch app has started"
@@ -4730,8 +4404,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SmartWatch app has stopped"
@@ -4786,8 +4458,6 @@
 			"StopApp": {
 				"desc": "Stops the running SmartWatch app.",
 				"name": "StopApp",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop running app"
 			},
 			"Vibrate": {
@@ -4803,16 +4473,12 @@
 		"abbrev": "sms",
 		"desc": "Returns a new SMS object to send and retreive SMS messages.\n<xfeature>",
 		"name": "CreateSMS",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso-SMS",
 		"shortDesc": "Returns a new SMS object",
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-SMS",
 				"shortDesc": "Returns the control class name"
 			},
@@ -4863,31 +4529,23 @@
 			"Cancel": {
 				"desc": "Stop recognizing speech and break other processes.",
 				"name": "Cancel",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop recognition"
 			},
 			"GetRMS": {
 				"desc": "Returns the RMS value (Root Mean Square) from the audio recorder.",
 				"name": "GetRMS",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_flt",
 				"shortDesc": "Returns the RMS value"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-SpeechRec",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsListening": {
 				"desc": "Check whether SpeechRec is currently listening.",
 				"name": "IsListening",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Check whether SpeechRec is listening"
 			},
@@ -4895,8 +4553,6 @@
 			"Recognize": {
 				"desc": "Start recognizing speech.",
 				"name": "Recognize",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start speech recognition"
 			},
 			"SetOnError": {
@@ -4919,8 +4575,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when SpeechRec is ready for use"
@@ -4941,8 +4595,6 @@
 			"Stop": {
 				"desc": "Stop speech recording and start recognizing.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop recording and start recognition"
 			}
 		}
@@ -4972,8 +4624,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Spinner",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5029,8 +4679,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Define a callback function for touch events"
@@ -5071,8 +4719,6 @@
 			"GetChecked": {
 				"desc": "Returns whether the switch is currently activated",
 				"name": "GetChecked",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if switch is activated"
 			},
@@ -5086,8 +4732,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Switch",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5146,8 +4790,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Synth",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5371,15 +5013,11 @@
 			"Start": {
 				"desc": "Start playing",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start playing"
 			},
 			"Stop": {
 				"desc": "Stop playing",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop playing"
 			}
 		}
@@ -5403,8 +5041,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-SysProc",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5526,8 +5162,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Tabs",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5649,8 +5283,6 @@
 			"GetHtml": {
 				"desc": "Returns the html formatted content.",
 				"name": "GetHtml",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_htm",
 				"shortDesc": "Return html formatted text"
 			},
@@ -5658,8 +5290,6 @@
 			"GetLineCount": {
 				"desc": "Returns the amount of lines in the text even with html formatting",
 				"name": "GetLineCount",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get amount of text lines"
 			},
@@ -5682,8 +5312,6 @@
 			"GetMaxLines": {
 				"desc": "Returns the maximum amount of lines the control can hold with the current control and font height",
 				"name": "GetMaxLines",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get amount of lines fitting in the control"
 			},
@@ -5695,8 +5323,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Text",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5767,8 +5393,6 @@
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
 				"name": "ClearHistory",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Clear undo/redo history"
 			},
 			"Focus": "#7324472769",
@@ -5777,16 +5401,12 @@
 			"GetCursorLine": {
 				"desc": "Returns the current line index where the cursor is located.",
 				"name": "GetCursorLine",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get the current cursor line index"
 			},
 			"GetCursorPos": {
 				"desc": "Returns the index of the character where the cursor is currently located.",
 				"name": "GetCursorPos",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get the cursor position in the text"
 			},
@@ -5794,8 +5414,6 @@
 			"GetHtml": {
 				"desc": "Returns the html formatted content.",
 				"name": "GetHtml",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_htm",
 				"shortDesc": "Return html formatted text"
 			},
@@ -5803,8 +5421,6 @@
 			"GetLineCount": {
 				"desc": "Returns the amount of lines in the text even with html formatting",
 				"name": "GetLineCount",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get amount of text lines"
 			},
@@ -5827,8 +5443,6 @@
 			"GetMaxLines": {
 				"desc": "Returns the maximum amount of lines the control can hold with the current control and font height",
 				"name": "GetMaxLines",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get amount of lines fitting in the control"
 			},
@@ -5837,24 +5451,18 @@
 			"GetSelectedText": {
 				"desc": "Returns the currently selected text.",
 				"name": "GetSelectedText",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Get the selected text"
 			},
 			"GetSelectionEnd": {
 				"desc": "Returns the position of where the user selection ends.",
 				"name": "GetSelectionEnd",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get selection end position"
 			},
 			"GetSelectionStart": {
 				"desc": "Returns the position of where the user selection begins.",
 				"name": "GetSelectionStart",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_int",
 				"shortDesc": "Get selection start position"
 			},
@@ -5864,8 +5472,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-TextEdit",
 				"shortDesc": "Returns the control class name"
 			},
@@ -5887,8 +5493,6 @@
 			"Redo": {
 				"desc": "Redo an undone action.",
 				"name": "Redo",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Redo an undone action"
 			},
 			"ReplaceText": {
@@ -5936,8 +5540,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
@@ -5953,8 +5555,6 @@
 			"Undo": {
 				"desc": "Undo an action.",
 				"name": "Undo",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Undo an action"
 			}
 		}
@@ -5972,8 +5572,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Theme",
 				"shortDesc": "Returns the control class name"
 			},
@@ -6161,8 +5759,6 @@
 			"GetChecked": {
 				"desc": "Returns whether the toggle is currently activated",
 				"name": "GetChecked",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if toggle is activated"
 			},
@@ -6176,8 +5772,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Toggle",
 				"shortDesc": "Returns the control class name"
 			},
@@ -6236,16 +5830,12 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-USBSerial",
 				"shortDesc": "Returns the control class name"
 			},
 			"IsConnected": {
 				"desc": "Returns whether a USB serial device is connected.",
 				"name": "IsConnected",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if a USB device is connected"
 			},
@@ -6315,15 +5905,11 @@
 			"Start": {
 				"desc": "Start listening to the USB serial connection.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start listening to serial port"
 			},
 			"Stop": {
 				"desc": "Stop listening on USB serial connection",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop listening to serial port"
 			},
 			"Write": {
@@ -6352,8 +5938,6 @@
 			"GetDuration": {
 				"desc": "Retunrs the video duration in seconds.",
 				"name": "GetDuration",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "num_flt",
 				"shortDesc": "Get video duration in seconds"
 			},
@@ -6365,8 +5949,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-VideoView",
 				"shortDesc": "Returns the control class name"
 			},
@@ -6379,16 +5961,12 @@
 			"IsPlaying": {
 				"desc": "Returns whether the VideoView is currently playing a video",
 				"name": "IsPlaying",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Checks if the view is currently playing"
 			},
 			"IsReady": {
 				"desc": "Returns whether the video is ready for playing.",
 				"name": "IsReady",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Check if the video is ready for playback"
 			},
@@ -6397,15 +5975,11 @@
 			"Pause": {
 				"desc": "Pauses the video.",
 				"name": "Pause",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Pause the video"
 			},
 			"Play": {
 				"desc": "Plays the video.",
 				"name": "Play",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Play video"
 			},
 			"SeekTo": {
@@ -6437,8 +6011,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when playback finished"
@@ -6450,8 +6022,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when an error occured"
@@ -6463,8 +6033,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when video is ready for playback"
@@ -6476,8 +6044,6 @@
 				"pTypes": [{
 					"desc": "callback function",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when subtitle text changed"
@@ -6505,8 +6071,6 @@
 			"Stop": {
 				"desc": "Stop the video playback.",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop video playback."
 			},
 			"Tween": "#2114624769"
@@ -6523,8 +6087,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "GetType"
 			},
 			"IsVisible": "#1814300863",
@@ -6563,16 +6125,12 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-WebServer",
 				"shortDesc": "Returns the control class name"
 			},
 			"GetWebSockClients": {
 				"desc": "Returns a list of connected client [WebSockets](CreateWebSocket.htm).",
 				"name": "GetWebSockClients",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "lst_obj-[{ remoteAddress:str, id:num_int }]",
 				"shortDesc": "Get connected clients"
 			},
@@ -6634,15 +6192,11 @@
 			"Start": {
 				"desc": "Start the server.",
 				"name": "Start",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Start server"
 			},
 			"Stop": {
 				"desc": "Stop server",
 				"name": "Stop",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Stop server"
 			}
 		}
@@ -6659,23 +6213,17 @@
 			"Close": {
 				"desc": "Close the web socket.",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Close web socket"
 			},
 			"GetSocket": {
 				"desc": "Returns the js Socket instance",
 				"name": "GetSocket",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "obj:Javascript Object-Socket",
 				"shortDesc": "Get js Socket instance"
 			},
 			"IsOpen": {
 				"desc": "Check whether WebSocket is open",
 				"name": "IsOpen",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Check if WebSocket is open"
 			},
@@ -6693,8 +6241,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when WebSocket was closed"
@@ -6719,8 +6265,6 @@
 				"pTypes": [{
 					"desc": "Callback",
 					"name": "callback",
-					"pNames": [],
-					"pTypes": [],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Called when WebSocket is open"
@@ -6741,23 +6285,17 @@
 			"Back": {
 				"desc": "Loads the previous page from history.",
 				"name": "Back",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Load previous page"
 			},
 			"CanGoBack": {
 				"desc": "Check whether the user can travel back in history.",
 				"name": "CanGoBack",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "bin",
 				"shortDesc": "Check if history contains a previous page"
 			},
 			"CanGoForward": {
 				"desc": "Check whether the user can travel forward in history.",
 				"name": "CanGoForward",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Check if history has a following page"
 			},
 			"Capture": {
@@ -6771,8 +6309,6 @@
 			"ClearHistory": {
 				"desc": "Clears the page history for Back() and Forward()",
 				"name": "ClearHistory",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": ""
 			},
 			"Execute": {
@@ -6792,8 +6328,6 @@
 			"Forward": {
 				"desc": "Loads the following page from history.",
 				"name": "Forward",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Load following page"
 			},
 			"GetAbsHeight": "#1197564340",
@@ -6806,16 +6340,12 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-WebView",
 				"shortDesc": "Returns the control class name"
 			},
 			"GetUrl": {
 				"desc": "Returns the current website url.",
 				"name": "GetUrl",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str_url",
 				"shortDesc": "Get current url"
 			},
@@ -6844,15 +6374,11 @@
 			"Print": {
 				"desc": "Print current page via the builtin android printer dialog.\n\nNote: Available since Android 4.4 KitKat",
 				"name": "Print",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Print webpage via anddroid printer dialog"
 			},
 			"Reload": {
 				"desc": "Reloads the current page",
 				"name": "Reload",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Reload current page"
 			},
 			"SetBackAlpha": "#1162431318",
@@ -6992,39 +6518,29 @@
 			"Finish": {
 				"desc": "Indicate that the Wizard is going to finish on the next page.",
 				"name": "Finish",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Indicate that wizard finished"
 			},
 			"GetButtons": {
 				"desc": "Returns the list of the three control buttons at the bottom of the wizard.",
 				"name": "GetButtons",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "lst_obj-[ btnCancel:dso-CreateButton, btnPrev:dso-CreateButton, btnNext:dso-CreateButton ]",
 				"shortDesc": "Returns list of wiz control buttons"
 			},
 			"GetDialog": {
 				"desc": "Returns the dialog:dso-\"CreateDialog\" object of the wizard.",
 				"name": "GetDialog",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "dso-CreateDialog",
 				"shortDesc": "Get wiz dialog object"
 			},
 			"GetLayout": {
 				"desc": "Return s the content layout:dso-\"CreateLayout\" object of the wizard.",
 				"name": "GetLayout",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "dso-CreateLayout",
 				"shortDesc": "Get wiz content layout"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "GetType"
 			},
 			"Hide": "#5372805812",
@@ -7046,8 +6562,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-YesNoDialog",
 				"shortDesc": "Returns the control class name"
 			},
@@ -7111,8 +6625,6 @@
 			"Close": {
 				"desc": "Closes the zip util.",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Close ZipUtil"
 			},
 			"Create": {
@@ -7146,8 +6658,6 @@
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-ZipUtil",
 				"shortDesc": "Returns the control class name"
 			},
@@ -7245,8 +6755,6 @@
 		}, {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Search for nearby bluetooth devices"
@@ -7303,8 +6811,6 @@
 	"ExtractPlugins": {
 		"desc": "ExtractPlugins overrides old plugin versions in the app's private folder with newer versions shipped with the APK.\n\nThis function is for debug purposes to forcefully update the plugins of an app even if the APK version did not change.",
 		"name": "ExtractPlugins",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Forcefully update your plugins"
 	},
 	"FileExists": {
@@ -7333,64 +6839,48 @@
 	"GetAccessibility": {
 		"desc": "Returns information about the availability of several accesibility features on the device.",
 		"name": "GetAccessibility",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "obj-{ enabled:bin, exploreByTouch:bin, screenReader:bin }",
 		"shortDesc": "Get accesibility feature availability"
 	},
 	"GetAccounts": {
 		"desc": "Returns a string of all known account names on the device separated with comma ','.\n\nSee Also: @ChooseAccount",
 		"name": "GetAccounts",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_com",
 		"shortDesc": "GetAccounts"
 	},
 	"GetActivities": {
 		"desc": "GetActivities returns a list of object of currently running activities.\n\nSee Also: @GetRunningApps, @GetRunningServices",
 		"name": "GetActivities",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[{ label:str&comma; packageName:str&comma; className:str }]",
 		"shortDesc": "GetActivities"
 	},
 	"GetAppName": {
 		"desc": "Returns the name of the current app.",
 		"name": "GetAppName",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get current app name"
 	},
 	"GetAppPath": {
 		"desc": "Returns the path to the app assets folder. If it's a DroidScript project the path should be “/sdcard/DroidScript/appname” - If it is an apk it is “/Assets”\n\nSee Also: @GetPath, @GetPrivateFolder",
 		"name": "GetAppPath",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_pth",
 		"shortDesc": "Get path to app assets"
 	},
 	"GetBatteryLevel": {
 		"desc": "Returns the current battery level of the device in percent.\n\nSee Also: @GetChargeType, @IsCharging",
 		"name": "GetBatteryLevel",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_prc",
 		"shortDesc": "Get current battery level"
 	},
 	"GetBluetoothAddress": {
 		"desc": "Returns the hexadecimal Bluetooth address of the device, following the pattern “00&colon;00&colon;00&colon;00&colon;00&colon;00”.\n\nSee Also: @CreateBluetoothSerial",
 		"name": "GetBluetoothAddress",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get the bluetooth address"
 	},
 	"GetBluetoothName": {
 		"desc": "Returns the Bluetooth name of the device.\n\nSee Also: @CreateBluetoothSerial",
 		"name": "GetBluetoothName",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get the bluetooth name"
 	},
@@ -7405,40 +6895,30 @@
 	"GetBuildNum": {
 		"desc": "GetBuildNum returns the build number of an APK.",
 		"name": "GetBuildNum",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int",
 		"shortDesc": "Get APK build number"
 	},
 	"GetChargeType": {
 		"desc": "Returns the current charge type. If the device isn't charging the result is “None”.\n\nSee Also: @GetBatteryLevel, @IsCharging",
 		"name": "GetChargeType",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-AC|USB|Wireless|None",
 		"shortDesc": "Get current charge type"
 	},
 	"GetClipboardText": {
 		"desc": "GetClipboardText returns text that was last copied to the clipboard.\n\nSee Also: @SetClipboardText",
 		"name": "GetClipboardText",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get latest clipboard text"
 	},
 	"GetCountry": {
 		"desc": "Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)\n\nSee Also: @GetCountryCode, \n\nSee Also: @GetLanguage",
 		"name": "GetCountry",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get user country name"
 	},
 	"GetCountryCode": {
 		"desc": "Returns the code of the device country (ie. “GB” or “DE”)\n\nSee Also: @GetCountry, GetLanguageCode",
 		"name": "GetCountryCode",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get users country code"
 	},
@@ -7453,40 +6933,30 @@
 	"GetDatabaseFolder": {
 		"desc": "Returns the path to the database folder of the app. An example pattern is “/data/data/packageName/databases”.\n\nSee Also: @OpenDatabase",
 		"name": "GetDatabaseFolder",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_pth",
 		"shortDesc": "Get apps database folder"
 	},
 	"GetDefaultOrientation": {
 		"desc": "Returns the default Orientation of the device. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.\n\nSee Also: @SetOrientation, @GetOrientation",
 		"name": "GetDefaultOrientation",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-Portrait|Landscape",
 		"shortDesc": "Get devces default orientation"
 	},
 	"GetDeviceId": {
 		"desc": "Returns the alphanumeric ID of the device which is different for each device",
 		"name": "GetDeviceId",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get device ID"
 	},
 	"GetDisplayHeight": {
 		"desc": "Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.\n\nSee Also: @GetDisplayWidth, @GetScreenHeight",
 		"name": "GetDisplayHeight",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_pxl",
 		"shortDesc": "Get apps display height"
 	},
 	"GetDisplayWidth": {
 		"desc": "Get the display width of the app in pixels. Therefore virtual buttons won't be included to the value.\n\nSee Also: @GetDisplayHeight, @GetScreenWidth",
 		"name": "GetDisplayWidth",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_pxl",
 		"shortDesc": "Get apps display width"
 	},
@@ -7501,8 +6971,6 @@
 	"GetDSVersion": {
 		"desc": "Returns the current DroidScript version number in the format 0.00.",
 		"name": "GetDSVersion",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_flt",
 		"shortDesc": "Get current DS version"
 	},
@@ -7517,8 +6985,6 @@
 	"GetExternalFolder": {
 		"desc": "GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is smth like “/storage/extsd” or “/storage/extSdCard”\n\nSee Also: @GetInternalFolder",
 		"name": "GetExternalFolder",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_pth",
 		"shortDesc": "Get external sdcard folder"
 	},
@@ -7549,32 +7015,24 @@
 	"GetInstalledApps": {
 		"desc": "Returns a list of objects containing informations about installed apps.\n\nSee Also: @GetRunningApps, @GetRunningServices",
 		"name": "GetInstalledApps",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[{ packageName:str&comma; className:str&comma; uid:num_int&comma; targetSdkVersion:num_int&comma; dataDir:str_pth&comma; sourceDir:str_pth&comma; publicSourceDir:str_pth&comma; nativeLibraryDir:str_pth }]",
 		"shortDesc": "Get data about installed apps"
 	},
 	"GetIntent": {
 		"desc": "Returns an intent object sent to the app.\n\nSee Also: @SendIntent",
 		"name": "GetIntent",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "obj-{ action:str&comma; type:str&comma; data:str&comma; flags:num_int&comma; extras: { app_intent:str&comma; app_file:str_pth&comma; app_options:str } }",
 		"shortDesc": "Get received intent data"
 	},
 	"GetInternalFolder": {
 		"desc": "Get devices internal “/sdcard/” path. Normally it should be “/storage/emulated/legacy”.\n\nSee Also: @GetExternalFolder",
 		"name": "GetInternalFolder",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_pth",
 		"shortDesc": "Get internal storage path"
 	},
 	"GetIPAddress": {
 		"desc": "GetIPAddress returns the current network ip address. It should look like “0.0.0.0” which is the default value for disabled internet connection. The individual numbers can have values between 0 and 255.",
 		"name": "GetIPAddress",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get network IP address"
 	},
@@ -7597,40 +7055,30 @@
 	"GetKeyboardHeight": {
 		"desc": "Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.\n\nSee Also: @ShowKeyboard",
 		"name": "GetKeyboardHeight",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_pxl",
 		"shortDesc": "Get current keyboard height"
 	},
 	"GetLanguage": {
 		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n\nSee Also: @GetLanguageCode, @GetCountry, @SetLanguage",
 		"name": "GetLanguage",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get device language"
 	},
 	"GetAppLanguages": {
 		"desc": "Returns the available translation languages specified in your lang.json file.\n\nSee Also: @SetAppLanguage",
 		"name": "GetAppLanguages",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[code:str]",
 		"shortDesc": "Get translation languages"
 	},
 	"GetLanguageCode": {
 		"desc": "GetLanguageCode returns the user language code (ie&period; “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
 		"name": "GetLanguageCode",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get user language code"
 	},
 	"GetMacAddress": {
 		"desc": "Returns the alphanumeric **M**edia-**A**ccess-**C**ontrol address of the device. Style should be “00&colon;00&colon;00&colon;00&colon;00&colon;00”. The individual numbers can have hexadecimal values between 00 and FF.",
 		"name": "GetMacAddress",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get devices MAC address"
 	},
@@ -7645,8 +7093,6 @@
 	"GetMemoryInfo": {
 		"desc": "Returns an object containing informations about the RAM memory.",
 		"name": "GetMemoryInfo",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "obj-{ avail:num_byt&comma; low:bin&comma; threshold:num_byt&comma; total:num_byt }",
 		"shortDesc": "Get RAM memory information"
 	},
@@ -7661,80 +7107,60 @@
 	"GetModel": {
 		"desc": "Returns the model name of the device.",
 		"name": "GetModel",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get device model name"
 	},
 	"GetName": {
 		"desc": "Returns the name of the APK application. meaning if your app runs in DroidScript, the name will be “DroidScript” as well.",
 		"name": "GetName",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get APK name"
 	},
 	"GetNotifyId": {
 		"desc": "If the app was started by a notification, this function will return the id of that notification.\n\nSee Also: @CreateNotification",
 		"name": "GetNotifyId",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get the caller notification id"
 	},
 	"GetObjects": {
 		"desc": "Returns a map of DroidScript control objects with their id as key.",
 		"name": "GetObjects",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[ id:str_oid: control:dso ]",
 		"shortDesc": "Get map of created DroidScript objects"
 	},
 	"GetOptions": {
 		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value.\n\nSee Also: @SetOptions",
 		"name": "GetOptions",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_com-Portrait,Landscape,<i>NoDom</i>,Game,Remote,Transparent",
 		"shortDesc": "Get app options"
 	},
 	"GetOrientation": {
 		"desc": "Returns the current device orientation. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.\n\nSee Also: @SetOrientation, @GetDefaultOrientation, @GetRotation",
 		"name": "GetOrientation",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-Portrait|Landscape",
 		"shortDesc": "Get current screen orientation"
 	},
 	"GetOSVersion": {
 		"desc": "GetOSVersion returns the API target level  of the android version.",
 		"name": "GetOSVersion",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int",
 		"shortDesc": "Get API target level"
 	},
 	"GetPackageName": {
 		"desc": "Returns the package name of the APK.",
 		"name": "GetPackageName",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get APK package name"
 	},
 	"GetPairedBtDevices": {
 		"desc": "Returns a list of objects containing the name and bluetooth address of paired devices. Note that Bluetooth must be turned on to receive this information.\n\nSee Also: @UnpairBtDevice, @CreateBluetoothSerial, @DiscoverBtDevices",
 		"name": "GetPairedBtDevices",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst_obj-[{ name:str&comma; address:str }]",
 		"shortDesc": "Get list of paired bluetooth devices"
 	},
 	"GetPath": {
 		"desc": "Returns the path to the local storage folder of the APK.\n\nSee Also: @GetAppPath, @GetPrivateFolder",
 		"name": "GetPath",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_pth",
 		"shortDesc": "Get APK's local storage path"
 	},
@@ -7770,48 +7196,36 @@
 	"GetRingerMode": {
 		"desc": "Returns the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.\n\nSee Also: @SetRingerMode",
 		"name": "GetRingerMode",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-Normal|Vibrate|Silent",
 		"shortDesc": "Get current device ringer mode"
 	},
 	"GetRotation": {
 		"desc": "Returns the current rotation of the device around it's Z-Axis in 90 degree steps. The values are relative to the initial orientation of the device on startup.\n\nSee Also: @GetOrientation",
 		"name": "GetRotation",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_deg-0|90|180|270",
 		"shortDesc": "Get device rotation"
 	},
 	"GetRSSI": {
 		"desc": "#GetRSSI.md",
 		"name": "GetRSSI",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int--127..-30",
 		"shortDesc": "Get RSSI in dBm"
 	},
 	"GetRunningApps": {
 		"desc": "Returns a list of objects containing info about all currently running apps in the fore- or background.\n\nSee Also: @GetRunningServices, @GetInstalledApps",
 		"name": "GetRunningApps",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str&comma; foreground:bin }]",
 		"shortDesc": "Get list of running apps"
 	},
 	"GetRunningServices": {
 		"desc": "Returns a list of objects containing info about all currently running services in the background.\n\nSee Also: @GetRunningApps, @GetInstalledApps",
 		"name": "GetRunningServices",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str }]",
 		"shortDesc": "Get list of running services"
 	},
 	"GetScreenDensity": {
 		"desc": "Returns the density of the device's screen.\n\nSee Also: @GetScreenWidth, @GetScreenHeight, @SetDensity",
 		"name": "GetScreenDensity",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int",
 		"shortDesc": "Get the screen density"
 	},
@@ -7834,32 +7248,24 @@
 	"GetSharedFiles": {
 		"desc": "Returns a path list of files shared with the app. If the results were retreived they can't be read an other time, unless they will be shared again.\n\nSee Also: @GetSharedText, @SendFile, @SendText",
 		"name": "GetSharedFiles",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[ path:str_pth ]",
 		"shortDesc": "Get list of shared files"
 	},
 	"GetSharedText": {
 		"desc": "Returns the value of a shared text. If the result is returned, it cannot be read another time unless it is shared again.\n\nSee Also: @GetSharedFiles, @SendFile, @SendText",
 		"name": "GetSharedText",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get value of shared text"
 	},
 	"GetSpeechEngines": {
 		"desc": "Returns a list of installed tts engines.\n\nSee Also: @TextToSpeech",
 		"name": "GetSpeechEngines",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "lst-[ engines:str ]",
 		"shortDesc": "Get tts engines"
 	},
 	"GetSpeakerPhone": {
 		"desc": "Checks if the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"name": "GetSpeakerPhone",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Checks if the speaker is enabled"
 	},
@@ -7874,8 +7280,6 @@
 	"GetSSID": {
 		"desc": "Returns the name (SSID) of the current network the user is connected with. If WiFi is disabled “<unknown ssid>” is returned.\n\nSee Also: @IsWifiEnabled, @SetWifiEnabled, @WifiConnect",
 		"name": "GetSSID",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get WiFi network SSID (name)"
 	},
@@ -7890,8 +7294,6 @@
 	"GetThemeInfo": {
 		"desc": "Returns the configuration of the current theme.",
 		"name": "GetThemeInfo",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "obj-{ baseTheme:str, holo:bin, dark:bin, titleHeight:num_frc, backColor:str_col, dialogColor:str_col, btnColor:str_col, dialogBtnColor:str_col, textColor1:str_col, textColor2:str_col,btnTextColor:str_col, highlightColor:str_col }",
 		"shortDesc": "Get theme configuration"
 	},
@@ -7913,24 +7315,18 @@
 	"GetType": {
 		"desc": "Returns the object class name.",
 		"name": "GetType",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-App",
 		"shortDesc": "Returns the object class name"
 	},
 	"GetUser": {
 		"desc": "Returns the email-address of the currently active user account.\n\nSee Also: @GetAccounts",
 		"name": "GetUser",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str_acc",
 		"shortDesc": "Get current user email"
 	},
 	"GetVersion": {
 		"desc": "Returns the app version number of the currently running apk.",
 		"name": "GetVersion",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Get apk version number"
 	},
@@ -7945,37 +7341,27 @@
 	"GoToSleep": {
 		"desc": "Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)\n\nSee Also: @WakeUp",
 		"name": "GoToSleep",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Puts the phone into sleep mode"
 	},
 	"HasSoftNav": {
 		"desc": "Checks if the device has a soft navigation bar on the screen.",
 		"name": "HasSoftNav",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Checks if device has soft keys"
 	},
 	"HideKeyboard": {
 		"desc": "Hides the device keyboard if it is currently shown.\n\nSee Also: @ShowKeyboard, @SetOnShowKeyboard",
 		"name": "HideKeyboard",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Hide the device keyboard"
 	},
 	"HideProgress": {
 		"desc": "Hides a previously shown progress indicator.\nSee also @ShowProgress.",
 		"name": "HideProgress",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Hide progress indicator"
 	},
 	"HideProgressBar": {
 		"desc": "Hides a previously shown progress bar dialog.\nSee also @ShowProgressBar, @UpdateProgressBar.",
 		"name": "HideProgressBar",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Hide progress bar dialog"
 	},
 	"HttpRequest": {
@@ -7994,8 +7380,6 @@
 	"InIDE": {
 		"desc": "InIDE",
 		"name": "InIDE",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "InIDE"
 	},
 	"InstallWallpaper": {
@@ -8023,8 +7407,6 @@
 	"IsAPK": {
 		"desc": "Returns whether current app is an APK or not (case not it's a DroidScript Project).",
 		"name": "IsAPK",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Returns true if ran from apk"
 	},
@@ -8039,16 +7421,12 @@
 	"IsBluetoothEnabled": {
 		"desc": "Return whether bluetooth was enabled. \n\nSee Also: @SetBluetoothEnabled",
 		"name": "IsBluetoothEnabled",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check bluetooth enabled"
 	},
 	"IsBluetoothOn": {
 		"desc": "Checks if bluetooth is enabled and on.\n\nSee Also: @CreateBluetoothSerial, @DiscoverBtDevices",
 		"name": "IsBluetoothOn",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if bluetooth is on"
 	},
@@ -8063,32 +7441,24 @@
 	"IsCharging": {
 		"desc": "Checks if phone is currently charging or not.\n\nSee Also: @GetBatteryLevel, @GetChargeType",
 		"name": "IsCharging",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check whether device is charging"
 	},
 	"IsChrome": {
 		"desc": "Checks if the device is running on ChromeOS.\n\nSee Also: @IsTablet, @IsThings",
 		"name": "IsChrome",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if device OS is ChromeOS"
 	},
 	"IsConnected": {
 		"desc": "Checks if the device is connected to any network.\n\nSee Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange",
 		"name": "IsConnected",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if device is connected to any network"
 	},
 	"IsDebugging": {
 		"desc": "Checks if the app is currently debugging.\nSee also @SetDebug, @Debug",
 		"name": "IsDebugging",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check whether app is debugging"
 	},
@@ -8103,8 +7473,6 @@
 	"IsKeyboardShown": {
 		"desc": "Checks if the device keyboard is currently visible or not.\n\nSee Also: @ShowKeyboard, @HideKeyboard",
 		"name": "IsKeyboardShown",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check whether device keyboard is shown"
 	},
@@ -8119,88 +7487,66 @@
 	"IsNavBarOnRight": {
 		"desc": "Checks if the Navigation Bar is on the righthand side of the display.",
 		"name": "IsNavBarOnRight",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if NavBar is on righthand side"
 	},
 	"IsNewVersion": {
 		"desc": "Checks if the apk version number increased compared to the last time started.",
 		"name": "IsNewVersion",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if apk version increased"
 	},
 	"IsPortrait": {
 		"desc": "Checks if the device is in portrait mode.",
 		"name": "IsPortrait",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if device is in portrait mode"
 	},
 	"IsPremium": {
 		"desc": "Checks if the user has a DroidScript premium subscription inside the IDE.",
 		"name": "IsPremium",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if user has a DroidScript Premium subscription"
 	},
 	"IsScreenOn": {
 		"desc": "Checks if the device screen is currently on.",
 		"name": "IsScreenOn",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if device screen is on"
 	},
 	"IsService": {
 		"desc": "Checks if the currently running app instance is a service.",
 		"name": "IsService",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check id app is a service"
 	},
 	"IsStarted": {
 		"desc": "Checks if the app has finished loading. It will return true after OnStart has returned.",
 		"name": "IsStarted",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if app has finished loading"
 	},
 	"IsTablet": {
 		"desc": "Checks if the user device is a tablet.\n\nSee Also: @IsThings, @IsChrome",
 		"name": "IsTablet",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if user device is a tablet"
 	},
 	"IsThings": {
 		"desc": "Checks if the OS is AndroidThings.\n\nSee Also: @IsTablet, @IsChrome",
 		"name": "IsThings",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if OS is AndroidThings"
 	},
 	"IsWifiApEnabled": {
 		"desc": "Checks if the mobile Wifi Access Point is enabled on the user device.\n\nSee Also: @SetWifiApEnabled",
 		"name": "IsWifiApEnabled",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if the mobile Wifi Access Point is enabled"
 	},
 	"IsWifiEnabled": {
 		"desc": "Checks if Wifi is enabled on the user device.\n\nSee Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled",
 		"name": "IsWifiEnabled",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Check if WiFi is enabled"
 	},
@@ -8288,8 +7634,6 @@
 	"Lock": {
 		"desc": "Locks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Unlock",
 		"name": "Lock",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Lock the device"
 	},
 	"LockDrawer": {
@@ -8347,31 +7691,23 @@
 			"Close": {
 				"desc": "Close the database",
 				"name": "Close",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Close the database"
 			},
 			"_databaseFeatures": {
 				"desc": "databaseFeatures\n<deprecated>",
 				"isval": true,
 				"name": "databaseFeatures",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "databaseFeatures"
 			},
 			"_dbname": {
 				"desc": "dbname\n<deprecated>",
 				"isval": true,
 				"name": "dbname",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "dbname"
 			},
 			"Delete": {
 				"desc": "Delete the database",
 				"name": "Delete",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "Delete the database"
 			},
 			"executeSql": {
@@ -8415,16 +7751,12 @@
 			"GetName": {
 				"desc": "Returns the database name",
 				"name": "GetName",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "Get database name"
 			},
 			"GetType": {
 				"desc": "Returns the component class name.",
 				"name": "GetType",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str-Database",
 				"shortDesc": "Returns the component class name"
 			},
@@ -8432,8 +7764,6 @@
 				"desc": "The database name\n<deprecated use GetName instead>",
 				"isval": true,
 				"name": "name",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "str",
 				"shortDesc": "database name"
 			},
@@ -8445,8 +7775,6 @@
 					{
 						"desc": "callback function",
 						"name": "callback",
-						"pNames": [],
-						"pTypes": [],
 						"shortDesc": "callback"
 					},
 					{
@@ -8463,16 +7791,12 @@
 				"desc": "openargs\n<deprecated>",
 				"isval": true,
 				"name": "openargs",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "openargs"
 			},
 			"_openDBs": {
 				"desc": "contains DBs\n<deprecated>",
 				"isval": true,
 				"name": "openDBs",
-				"pNames": [],
-				"pTypes": [],
 				"retval": "obj-{ name:obj-Database }",
 				"shortDesc": "open DBs"
 			},
@@ -8486,8 +7810,6 @@
 			"_openSuccess": {
 				"desc": "openSuccess\n<deprecated>",
 				"name": "openSuccess",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "openSuccess"
 			},
 			"readTransaction": {
@@ -8522,8 +7844,6 @@
 			"startNextTransaction": {
 				"desc": "startNextTransaction\n<deprecated Use ExecuteSql instead>",
 				"name": "startNextTransaction",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "startNextTransaction"
 			},
 			"transaction": {
@@ -8594,8 +7914,6 @@
 		"pTypes": ["str", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "PairBtDevice"
@@ -8624,8 +7942,6 @@
 	"PreventWifiSleep": {
 		"desc": "Prevent the device WiFi from powering down.\n\nSee Also: @SetWifiEnabled, @IsWifiEnabled",
 		"name": "PreventWifiSleep",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Prevent Wifi from powering down"
 	},
 	"QueryContent": {
@@ -8701,8 +8017,6 @@
 	"SaveCookies": {
 		"desc": "Saves cookies for webviews or html apps.\n\nSee also: @ClearCookies",
 		"name": "SaveCookies",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Save web cookies"
 	},
 	"SaveNumber": {
@@ -8874,8 +8188,6 @@
 	"SetInBackground": {
 		"desc": "Set the current service to run in the background.\n\nSee Also: @StartSevice, @SetInForeground.",
 		"name": "SetInBackground",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Set services to run in the background"
 	},
 	"SetInForeground": {
@@ -8961,8 +8273,6 @@
 		"pTypes": [{
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Called on app debug messages"
@@ -9033,8 +8343,6 @@
 		"pTypes": ["str-Default|Landscape|ReverseLandscape|Portrait|ReversePortrait", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Fix display orientation"
@@ -9177,8 +8485,6 @@
 	"ShowMenu": {
 		"desc": "Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @SetMenu",
 		"name": "ShowMenu",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Show the in-app menu"
 	},
 	"ShowPopup": {
@@ -9253,8 +8559,6 @@
 	"Start": {
 		"desc": "Starts your DS app in an html project. Call it in the document.onload function in order to initialize DroidScript and execute your OnStart() function.",
 		"name": "Start",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Start your DS app in an html project"
 	},
 	"StartApp": {
@@ -9267,8 +8571,6 @@
 	"StartDebugServer": {
 		"desc": "Starts a debug server which can be used to debug your app on headless devices.\n\nSee Also: @StopDebugServer",
 		"name": "StartDebugServer",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Start remote debug server"
 	},
 	"StartService": {
@@ -9288,15 +8590,11 @@
 	"StopDebugServer": {
 		"desc": "Stops a running debug server.\n\nSee Also: @StartDebugServer",
 		"name": "StopDebugServer",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Stop a running debug server"
 	},
 	"StopService": {
 		"desc": "Stops a service started via @StartService.",
 		"name": "StopService",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Stops a running app service"
 	},
 	"SysExec": {
@@ -9314,8 +8612,6 @@
 		"pTypes": ["str", "num", "num", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}, "str-music", "str", "str"],
 		"shortDesc": "Audiolize text"
@@ -9323,15 +8619,11 @@
 	"ToBack": {
 		"desc": "Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.\n\nSee Also: @ToFront",
 		"name": "ToBack",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Put the app in the background"
 	},
 	"ToFront": {
 		"desc": "Brings the app back to the foreground.\n\nSee Also: @ToBack.",
 		"name": "ToFront",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Bring your app to the foreground"
 	},
 	"Translate": {
@@ -9344,8 +8636,6 @@
 	"Unlock": {
 		"desc": "Unlocks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Lock",
 		"name": "Unlock",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Unlocks the device"
 	},
 	"UnlockDrawer": {
@@ -9362,8 +8652,6 @@
 		"pTypes": ["str", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Unpair a paired Bluetooth device"
@@ -9389,8 +8677,6 @@
 		"pTypes": ["str_url", "str_pth", "str", {
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Uploads a file to a server"
@@ -9420,8 +8706,6 @@
 	"WakeUp": {
 		"desc": "Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)\n\nSee Also: @GoToSleep",
 		"name": "WakeUp",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Wake the screen up"
 	},
 	"WifiConnect": {

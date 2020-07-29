@@ -174,7 +174,7 @@ function generateDoc( name )
 	}
 
 	// get function specific data
-	if((keys(scope[name])+'').match(/p(Names|Types)|subf|isval/g))
+	if((keys(scope[name])+'').match(/p(Names|Types)|subf|isval|shortDesc/g))
 	{
 		data = getDocData(scope[name]);
 		// function line with popups
@@ -359,8 +359,8 @@ function getDocData( f, useAppPop )
 	var i, mArgs = [], type, fretval = "";
 
 	// convert constructor line
-	if(!f.pNames) f.pNames = [];
-	if(!f.pTypes) f.pTypes = [];
+	if(f.pNames == undefined) f.pNames = [];
+	if(f.pTypes == undefined) f.pTypes = [];
 	for( i in f.pNames )
 	{
 		if( useAppPop )
@@ -407,10 +407,12 @@ function getDocData( f, useAppPop )
 			scope[f.name].subf[curSubf].shortDesc = "";
 			met.shortDesc = "";
 		}
+        if(met.pNames == undefined) met.pNames = [];
+        if(met.pTypes == undefined) met.pTypes = [];
 
 		//convert return value
 		if( met.retval )
-			retval = (met.isfunc && met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( met.retval );
+			retval = (!met.isval && met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc( met.retval );
 
 		//convert function types
 		var mdesc = met.desc;
@@ -549,6 +551,7 @@ function toArgPop( name, types, doSwitch )
 	// function callbacks
 	if( typeof types == "object" )
 	{
+        if(types.pNames == undefined) types.pNames = [];
 		var s = newPopup( "fnc", name,
 			("<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
@@ -676,7 +679,7 @@ function incpop( type, i )
 	return hex(spop[type]);
 }
 
-// accept formats: '"name":"desc"' 'name:type' 'name:"types"' 'name:"type-values"'
+// accept formats: "name":"desc" name:type name:"types" name:"type-values"
 // using name:'...' will force app popups
 function replaceTypes(s, useAppPop)
 {
@@ -1046,7 +1049,7 @@ function OnStart()
 OPTIONS:
 	-lang=<LANG-CODE>   2 digit code, ie. en de fr pt es ..
 						defaults to 'en'
-	-help			this help
+	-help				this help
 
 PATTERN:
 	generates a scope in each defined language:

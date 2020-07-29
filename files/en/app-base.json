@@ -20,39 +20,27 @@
 	},
 	"#1362225380": { "name": "ClearFocus",
 		"desc": "Removes the focus of the control so that the user no longer has immediate access to it.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Removes the focus of the control"
 	},
 	"#1924613953": { "name": "Dismiss",
 		"desc": "Hide the control and remove it from the screen.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Hides the control and removes it from the screen"
 	},
 	"#1500174100": { "name": "Explode",
 		"desc": "Destroys the control with an explode animation and sound.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Destroy the control with a huge explosion"
 	},
 	"#7324472769": { "name": "Focus",
 		"desc": "Set the focus to the control so that the user can interact with it immediately.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Set the focus to the control for immediate access"
 	},
 	"#1197564340": { "name": "GetAbsHeight",
 		"desc": "Get the absolute height of the control in pixels.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int",
 		"shortDesc": "Get the control height in pixels"
 	},
 	"#1128215329": { "name": "GetAbsWidth",
 		"desc": "Get the absolute width of the control in pixels.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "num_int",
 		"shortDesc": "Get the control width in pixels"
 	},
@@ -72,8 +60,6 @@
 	},
 	"#3557841648": { "name": "GetParent",
 		"desc": "Returns the parent control object where the object was added to - commonly a layout.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "dso",
 		"shortDesc": "Returns the parent control object"
 	},
@@ -86,8 +72,6 @@
 	},
 	"#2387569276": { "name": "GetText",
 		"desc": "Returns the current displayed text of the control.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str",
 		"shortDesc": "Returns the currently contained text"
 	},
@@ -107,8 +91,6 @@
 	},
 	"#1672373665": { "name": "GetVisibility",
 		"desc": "Returns the current visibility state of the control. The Values are:\n**Show**: visible\n**Hide**: invisible but still consuming space\n**Gone**: invisible and not consuming space",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "str-Show|Hide|Gone",
 		"shortDesc": "Returns the current visibility state"
 	},
@@ -121,20 +103,14 @@
 	},
 	"#5528553362": { "name": "Gone",
 		"desc": "Hides the control without consuming any more layout space as if it were never there.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Make it gone. It was never there!"
 	},
 	"#5372805812": { "name": "Hide",
 		"desc": "Hide the control but keep the layout space free.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Hides the control visually"
 	},
 	"#1744802827": { "name": "IsEnabled",
 		"desc": "Returns whether the control is currently useable by the user.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Checks if the control is useable"
 	},
@@ -147,8 +123,6 @@
 	},
 	"#1814300863": { "name": "IsVisible",
 		"desc": "Returns whether the control is currently visible to the user, ignoring overlaying controls.",
-		"pNames": [],
-		"pTypes": [],
 		"retval": "bin",
 		"shortDesc": "Checks if the control is currently visible"
 	},
@@ -232,8 +206,6 @@
 			{
 				"desc": "Callback",
 				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "callback"
 			}
 		],
@@ -245,8 +217,6 @@
 		"pTypes": [{
 			"desc": "Callback",
 			"name": "callback",
-			"pNames": [],
-			"pTypes": [],
 			"shortDesc": "callback"
 		}],
 		"shortDesc": "Called when the control gets focused"
@@ -272,8 +242,6 @@
 			{
 				"desc": "Callback",
 				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "callback"
 			}
 		],
@@ -397,8 +365,6 @@
 	},
 	"#1243391562": { "name": "Show",
 		"desc": "Set the visibility of the control to “Show”.",
-		"pNames": [],
-		"pTypes": [],
 		"shortDesc": "Set the visibility to “Show”"
 	},
 	"#2114624769": { "name": "Tween",
@@ -413,8 +379,6 @@
 				"abbrev": "",
 				"desc": "callback function",
 				"name": "callback",
-				"pNames": [],
-				"pTypes": [],
 				"shortDesc": "callback"
 			}
 		],

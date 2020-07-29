@@ -58,14 +58,46 @@ The generator has a specific file structure you have to use to be able to genera
 - **conf.json**:
 	general generation info (languages and scopes)
 - **docs-base**:
-	the css/js sources for every language
-- **\<lang\>**:
+	the html/css/js source basis for every language
+- **\<lang\>/**:
 	the generation sources for a specific language
-- **\<lang\>\<scope\>/\<member\>.md**:
+- \<lang\>/**\<scope\>.json**:
+	The main generation source in { [JSON Format](#JSON-Format) }
+	```js
+	{
+		"member1": { /* <member object> */ }
+		/* ... */
+	}
+	```
+- \<lang\>/\<scope\>**-base.json**:
+	Put member definitions which are often needed here. The keys are 10 digit hashes starting with a '#' which are used to refer to members in the \<scope\>.json file:
+	```js
+	{
+		"#0123456789": { /* <member object> */ }
+		/* ... */
+	}
+	```
+- \<lang\>/\<scope\>**-navs.json**:
+	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all members.<br>
+    You can use one level of categorization using `"catname":["subcat"]` or `"catname":"url"` pairs:
+	```js
+	{
+		"category1": {
+			"subcategory1": ["member1", "member2" /* ... */ ],
+			"subcategory2": "<customUrl>"
+		 	/* ... */
+		},
+		"category2": ["member1", "member2" /* ... */ ]
+		/* ... */
+	}
+	```
+
+
+- \<lang\>/\<scope\>/**\<member\>.md**:
 	Put large descriptions of scope members here
-- **\<lang\>\<scope\>-samples/\<member\>.txt**:
+- \<lang\>/\<scope\>**-samples/\<member\>.txt**:
 	A file which includes large example codes
-	```html
+    ```html
 	// an unnamed sample
 	<sample>
 	/* Your sample code> */
@@ -76,35 +108,7 @@ The generator has a specific file structure you have to use to be able to genera
 	/* Your sample code> */
 	</sample>
 	```
-- **\<lang\>\<scope\>.json**:
-	The main generation source in { [JSON Format](#JSON-Format) }
-	```js
-	{
-		"member1": /* <member object> */
-		/* ... */
-	}
-	```
-- **\<lang\>\<scope\>-base.json**:
-	Put member definitions which are often needed here. The keys are 10 digit hashes starting with a '#' which are used to refer to members in the \<scope\>.json file.
-	```js
-	{
-		"#0123456789": /* <member object> */
-		/* ... */
-	}
-	```
-- **\<lang\>\<scope\>-navs.json**:
-	A structure representing navigators to make it easy for users to quickly find a certain member. There will always be a 'All' category added which includes all members.
-	```js
-	{
-		"category1": {
-			"subcategory1": ["member1", "member2" /* ... */ ],
-			"subcategory2": ["member3", "member4" /* ... */ ]
-		 	/* ... */
-		},
-		"category2": ["member1", "member2" /* ... */ ]
-		/* ... */
-	}
-	```
+
 
 Note: in fact, no file is reqired all the times. Following rules apply:
 - If _\<scope\>.json_ is defined, it **can** make use of _\<scope\>/\<member\>.md_ and _\<scope\>-base.json_
@@ -118,21 +122,26 @@ Each member in the \<scope\>.json file has following format
 
 ```js
 {
-	"<membername>" : { 			 // the name used for sorting and filtering
+	"<membername>" : {           // the name used for sorting and filtering
 	    "desc": "<description>", /* or "#<membername>.md" */
-	    "isfunc": true, 		 // boolean indicating if the member is a function (may be removed)
+	    "isval": true,  		 // boolean indicating if the member is a value
 	    "name": "<membername>",  // displayed member name
 	    "pNames": ["<name1>", "<name2>" /* ... */ ], // parameter names
 	    "pTypes": ["<type1>", "<type2>" /* ... */ ], // parameter types
 	    "retval": "<type>",      // the type of the return value
-	    "shortDesc": "<description>", // a short description for \<scope\>-info.json
+	    "shortDesc": "<description>", // a short description for <scope>-info.json
 	    "subfuncs": {            // a member container with submembers of the member (requires a control (dso) as retval)
-	        "<membername1>": { /* another member object */ },
-	        "<membername2>": { /* another member object */ }
+	        "<memName1>": {      /* a member object */ },
+	        "<memName2>": "#id"  /* id from <scope>-base.json */ }
 	    }
 	}
 }
 ```
+Note that some values are not required under certain conditions:
+- `isval` if `false`
+- `pNames` and `pTypes` if empty
+- `retval` if `undefined`
+- `subfuncs` if `undefined`
 
 ### Format
 
@@ -151,16 +160,27 @@ first specify of which type the variable is. This is a 3-character long string o
 - `obj`: object
 - `fnc`: function
 - `dso`: app object
+- `gvo`: GameView object
 
-optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [generate.js](generate.js#L935) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
+optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [cong.json](conf.json#L25) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
 - `num_int`: integer
 - `num_mls`: milliseconds
-- `str_lst`: comma separated
-- `str_url`: url
+- `str_col`: "\<color\>" or "#[aa]rrggbb"
+- `str_pth`: file path
 
-if the subtype you need isn't specified here you can add a `basetype:description` to display a custom description. Example:
-- `num:top left x coordinate`
-In descriptions you have to use `""` (for jquery popups) or `''` (for app popups) to separate the description text from the rest.
+if the subtype you need isn't specified here you can add custom pair any time. Example:
+- `"num_tlx":"top left x coordinate"`
+
+Inside descriptions you can use these types as well. You can use one of the followinf formats:
+```sh
+name:type
+name:"types"       # ".." uses jQuery or app popups
+name:"type-values"
+name:'types'       # '..' forces app popups
+name:'type-values'
+"name":"desc"      # for non-alphanumerical names
+```
+
 
 if there is a fixed set of argument vales available you can add them separated with pipes '`|`' for alternatives or commas '`,`', with a leading '`-`' to begin the list. Example:
 - `str_com-Linear|Frame|Absolute`
@@ -228,7 +248,7 @@ Besides these special formats you also have following standard text formatting f
 - \`\`\````code block```\`\`\`
 - \[[linktext](#)\]\(url\)
 - [linktext]{`js code`}
-- <h3>### header</h3>
+- <h4>### header</h3>
 
 ## Generating
 
@@ -246,9 +266,9 @@ Besides these special formats you also have following standard text formatting f
 Execute following commands to update the GitHub Pages Docs preview:
 ```shell
 # remove old docs from pages
-rm -rdf ../docs/docs/
+rm -r ../docs/docs/
 
 # copy new docs to pages
 cp -r docs/ ../docs/
 ```
-Alternatively update them manually with the atom tree view or a filebrowser of your choice
+Alternatively update them manually with the atom tree view or a file-browser of your choice
