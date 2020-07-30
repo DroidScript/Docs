@@ -1,0 +1,5746 @@
+{
+	"colors": {
+		"desc": "colors",
+		"isval": true,
+		"name": "colors",
+		"retval": "obj",
+		"shortDesc": "colors"
+	},
+	"CreateAlert": {
+		"abbrev": "alr",
+		"desc": "CreateAlert",
+		"name": "CreateAlert",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAlert",
+		"subf": {}
+	},
+	"CreateAlertSimple": {
+		"abbrev": "als",
+		"desc": "CreateAlertSimple",
+		"name": "CreateAlertSimple",
+		"pNames": ["t", "e"],
+		"pTypes": ["?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAlertSimple",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnTouchOK": {
+				"abbrev": "",
+				"desc": "SetOnTouchOK",
+				"name": "SetOnTouchOK",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchOK",
+				"subf": {}
+			}
+		}
+	},
+	"CreateAlertStylish": {
+		"abbrev": "als",
+		"desc": "CreateAlertStylish",
+		"name": "CreateAlertStylish",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAlertStylish",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnTouchOK": {
+				"abbrev": "",
+				"desc": "SetOnTouchOK",
+				"name": "SetOnTouchOK",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchOK",
+				"subf": {}
+			}
+		}
+	},
+	"CreateAppBar": {
+		"abbrev": "apb",
+		"desc": "CreateAppBar",
+		"name": "CreateAppBar",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAppBar",
+		"subf": {
+			"AppBar": {
+				"desc": "AppBar",
+				"isval": true,
+				"name": "AppBar",
+				"retval": "?",
+				"shortDesc": "AppBar"
+			},
+			"SetMenuIcon": {
+				"abbrev": "",
+				"desc": "SetMenuIcon",
+				"name": "SetMenuIcon",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetMenuIcon",
+				"subf": {}
+			},
+			"SetMenuIconColor": {
+				"abbrev": "",
+				"desc": "SetMenuIconColor",
+				"name": "SetMenuIconColor",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetMenuIconColor",
+				"subf": {}
+			},
+			"SetOnControlTouch": {
+				"abbrev": "",
+				"desc": "SetOnControlTouch",
+				"name": "SetOnControlTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnControlTouch",
+				"subf": {}
+			},
+			"SetOnMenuTouch": {
+				"abbrev": "",
+				"desc": "SetOnMenuTouch",
+				"name": "SetOnMenuTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnMenuTouch",
+				"subf": {}
+			},
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetTitleTextColor": {
+				"abbrev": "",
+				"desc": "SetTitleTextColor",
+				"name": "SetTitleTextColor",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTitleTextColor",
+				"subf": {}
+			}
+		}
+	},
+	"CreateAppBarElegant": {
+		"abbrev": "abe",
+		"desc": "CreateAppBarElegant",
+		"name": "CreateAppBarElegant",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAppBarElegant",
+		"subf": {
+			"AppBar": {
+				"desc": "AppBar",
+				"isval": true,
+				"name": "AppBar",
+				"retval": "?",
+				"shortDesc": "AppBar"
+			},
+			"SetMenuIcon": {
+				"abbrev": "",
+				"desc": "SetMenuIcon",
+				"name": "SetMenuIcon",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetMenuIcon",
+				"subf": {}
+			},
+			"SetMenuIconColor": {
+				"abbrev": "",
+				"desc": "SetMenuIconColor",
+				"name": "SetMenuIconColor",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetMenuIconColor",
+				"subf": {}
+			},
+			"SetOnControlTouch": {
+				"abbrev": "",
+				"desc": "SetOnControlTouch",
+				"name": "SetOnControlTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnControlTouch",
+				"subf": {}
+			},
+			"SetOnMenuTouch": {
+				"abbrev": "",
+				"desc": "SetOnMenuTouch",
+				"name": "SetOnMenuTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnMenuTouch",
+				"subf": {}
+			},
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetTitleTextColor": {
+				"abbrev": "",
+				"desc": "SetTitleTextColor",
+				"name": "SetTitleTextColor",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTitleTextColor",
+				"subf": {}
+			}
+		}
+	},
+	"CreateAppBarModern": {
+		"abbrev": "abm",
+		"desc": "CreateAppBarModern",
+		"name": "CreateAppBarModern",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateAppBarModern",
+		"subf": {
+			"AppBar": {
+				"desc": "AppBar",
+				"isval": true,
+				"name": "AppBar",
+				"retval": "?",
+				"shortDesc": "AppBar"
+			},
+			"Search": {
+				"desc": "Search",
+				"isval": true,
+				"name": "Search",
+				"retval": "?",
+				"shortDesc": "Search"
+			},
+			"SetOnControlTouch": {
+				"abbrev": "",
+				"desc": "SetOnControlTouch",
+				"name": "SetOnControlTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnControlTouch",
+				"subf": {}
+			},
+			"SetOnMenuTouch": {
+				"abbrev": "",
+				"desc": "SetOnMenuTouch",
+				"name": "SetOnMenuTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnMenuTouch",
+				"subf": {}
+			}
+		}
+	},
+	"CreateBanner": {
+		"abbrev": "bnr",
+		"desc": "CreateBanner",
+		"name": "CreateBanner",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateBanner",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnTouchOK": {
+				"abbrev": "",
+				"desc": "SetOnTouchOK",
+				"name": "SetOnTouchOK",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchOK",
+				"subf": {}
+			}
+		}
+	},
+	"CreateButtonElegant": {
+		"abbrev": "bte",
+		"desc": "CreateButtonElegant",
+		"name": "CreateButtonElegant",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonElegant",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonFlat": {
+		"abbrev": "btf",
+		"desc": "CreateButtonFlat",
+		"name": "CreateButtonFlat",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonFlat",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonRaised": {
+		"abbrev": "btr",
+		"desc": "CreateButtonRaised",
+		"name": "CreateButtonRaised",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonRaised",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonRaisedO": {
+		"abbrev": "bro",
+		"desc": "CreateButtonRaisedO",
+		"name": "CreateButtonRaisedO",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonRaisedO",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonRound": {
+		"abbrev": "btr",
+		"desc": "CreateButtonRound",
+		"name": "CreateButtonRound",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonRound",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonRoundO": {
+		"abbrev": "bro",
+		"desc": "CreateButtonRoundO",
+		"name": "CreateButtonRoundO",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonRoundO",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateButtonToggle": {
+		"abbrev": "btt",
+		"desc": "CreateButtonToggle",
+		"name": "CreateButtonToggle",
+		"pNames": ["t", "e", "i", "a", "l", "o", "s"],
+		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonToggle",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateCard": {
+		"abbrev": "crd",
+		"desc": "CreateCard",
+		"name": "CreateCard",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "CreateCard",
+		"subf": {
+			"Card": {
+				"desc": "Card",
+				"isval": true,
+				"name": "Card",
+				"retval": "?",
+				"shortDesc": "Card"
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchImage": {
+				"abbrev": "",
+				"desc": "SetOnTouchImage",
+				"name": "SetOnTouchImage",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchImage",
+				"subf": {}
+			},
+			"SetPosition": "#1425862386"
+		}
+	},
+	"CreateCheckbox": {
+		"abbrev": "chc",
+		"desc": "CreateCheckbox",
+		"name": "CreateCheckbox",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateCheckbox",
+		"subf": {
+			"Checkbox": {
+				"desc": "Checkbox",
+				"isval": true,
+				"name": "Checkbox",
+				"retval": "?",
+				"shortDesc": "Checkbox"
+			},
+			"CheckItemByIndex": {
+				"abbrev": "",
+				"desc": "CheckItemByIndex",
+				"name": "CheckItemByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "CheckItemByIndex",
+				"subf": {}
+			},
+			"GetCheckItem": {
+				"abbrev": "",
+				"desc": "GetCheckItem",
+				"name": "GetCheckItem",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCheckItem",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386",
+			"UncheckItemByIndex": {
+				"abbrev": "",
+				"desc": "UncheckItemByIndex",
+				"name": "UncheckItemByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "UncheckItemByIndex",
+				"subf": {}
+			}
+		}
+	},
+	"CreateCheckList": {
+		"abbrev": "chl",
+		"desc": "CreateCheckList",
+		"name": "CreateCheckList",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateCheckList",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnSubmit": {
+				"abbrev": "",
+				"desc": "SetOnSubmit",
+				"name": "SetOnSubmit",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnSubmit",
+				"subf": {}
+			}
+		}
+	},
+	"CreateCustomFAB": {
+		"abbrev": "cfa",
+		"desc": "CreateCustomFAB",
+		"name": "CreateCustomFAB",
+		"pNames": ["t", "e"],
+		"pTypes": ["?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateCustomFAB",
+		"subf": {
+			"FAB": {
+				"desc": "FAB",
+				"isval": true,
+				"name": "FAB",
+				"retval": "?",
+				"shortDesc": "FAB"
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386"
+		}
+	},
+	"CreateDatePicker": {
+		"abbrev": "dtp",
+		"desc": "CreateDatePicker",
+		"name": "CreateDatePicker",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateDatePicker",
+		"subf": { "SetOnSelect": {
+	"abbrev": "",
+	"desc": "SetOnSelect",
+	"name": "SetOnSelect",
+	"pNames": ["t"],
+	"pTypes": ["?"],
+	"shortDesc": "SetOnSelect",
+	"subf": {}
+} }
+	},
+	"CreateDialog": {
+		"abbrev": "dlg",
+		"desc": "CreateDialog",
+		"name": "CreateDialog",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateDialog",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnTouchOK": {
+				"abbrev": "",
+				"desc": "SetOnTouchOK",
+				"name": "SetOnTouchOK",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchOK",
+				"subf": {}
+			}
+		}
+	},
+	"CreateDivider": {
+		"abbrev": "dvd",
+		"desc": "CreateDivider",
+		"name": "CreateDivider",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "CreateDivider",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"Clear": {
+				"abbrev": "",
+				"desc": "Clear",
+				"name": "Clear",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear",
+				"subf": {}
+			},
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"DrawArc": {
+				"abbrev": "",
+				"desc": "DrawArc",
+				"name": "DrawArc",
+				"pNames": ["x1", "y1", "x2", "y2", "start", "sweep"],
+				"pTypes": ["?", "?", "?", "?", "?", "?"],
+				"shortDesc": "DrawArc",
+				"subf": {}
+			},
+			"DrawCircle": {
+				"abbrev": "",
+				"desc": "DrawCircle",
+				"name": "DrawCircle",
+				"pNames": ["x", "y", "radius"],
+				"pTypes": ["num", "num", "num"],
+				"shortDesc": "DrawCircle",
+				"subf": {}
+			},
+			"DrawFrame": {
+				"abbrev": "",
+				"desc": "DrawFrame",
+				"name": "DrawFrame",
+				"pNames": ["ms"],
+				"pTypes": ["num_sec"],
+				"shortDesc": "DrawFrame",
+				"subf": {}
+			},
+			"DrawImage": {
+				"abbrev": "",
+				"desc": "DrawImage",
+				"name": "DrawImage",
+				"pNames": ["image", "x", "y", "w", "h", "angle", "mode"],
+				"pTypes": ["?", "num", "num", "num", "num", "?", "?"],
+				"shortDesc": "DrawImage",
+				"subf": {}
+			},
+			"DrawImageMtx": {
+				"abbrev": "",
+				"desc": "DrawImageMtx",
+				"name": "DrawImageMtx",
+				"pNames": ["image", "matrix"],
+				"pTypes": ["?", "num"],
+				"shortDesc": "DrawImageMtx",
+				"subf": {}
+			},
+			"DrawLine": {
+				"abbrev": "",
+				"desc": "DrawLine",
+				"name": "DrawLine",
+				"pNames": ["x1", "y1", "x2", "y2"],
+				"pTypes": ["?", "?", "?", "?"],
+				"shortDesc": "DrawLine",
+				"subf": {}
+			},
+			"DrawPoint": {
+				"abbrev": "",
+				"desc": "DrawPoint",
+				"name": "DrawPoint",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"shortDesc": "DrawPoint",
+				"subf": {}
+			},
+			"DrawRectangle": {
+				"abbrev": "",
+				"desc": "DrawRectangle",
+				"name": "DrawRectangle",
+				"pNames": ["x1", "y1", "x2", "y2"],
+				"pTypes": ["?", "?", "?", "?"],
+				"shortDesc": "DrawRectangle",
+				"subf": {}
+			},
+			"DrawSamples": {
+				"abbrev": "",
+				"desc": "DrawSamples",
+				"name": "DrawSamples",
+				"pNames": ["data", "range"],
+				"pTypes": ["?", "num"],
+				"shortDesc": "DrawSamples",
+				"subf": {}
+			},
+			"DrawText": {
+				"abbrev": "",
+				"desc": "DrawText",
+				"name": "DrawText",
+				"pNames": ["txt", "x", "y"],
+				"pTypes": ["str", "num", "num"],
+				"shortDesc": "DrawText",
+				"subf": {}
+			},
+			"Flatten": {
+				"abbrev": "",
+				"desc": "Flatten",
+				"name": "Flatten",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Flatten",
+				"subf": {}
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetName": {
+				"abbrev": "",
+				"desc": "GetName",
+				"name": "GetName",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetName",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPixelColor": {
+				"abbrev": "",
+				"desc": "GetPixelColor",
+				"name": "GetPixelColor",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"retval": "obj",
+				"shortDesc": "GetPixelColor",
+				"subf": {}
+			},
+			"GetPixelData": {
+				"abbrev": "",
+				"desc": "GetPixelData",
+				"name": "GetPixelData",
+				"pNames": ["format", "left", "top", "width", "height"],
+				"pTypes": ["?", "?", "?", "num", "num"],
+				"retval": "obj",
+				"shortDesc": "GetPixelData",
+				"subf": {}
+			},
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Image",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"MeasureText": {
+				"abbrev": "",
+				"desc": "MeasureText",
+				"name": "MeasureText",
+				"pNames": ["txt"],
+				"pTypes": ["str"],
+				"retval": "obj",
+				"shortDesc": "MeasureText",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"Move": {
+				"abbrev": "",
+				"desc": "Move",
+				"name": "Move",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"shortDesc": "Move",
+				"subf": {}
+			},
+			"Play": {
+				"abbrev": "",
+				"desc": "Play",
+				"name": "Play",
+				"pNames": ["ms"],
+				"pTypes": ["num_sec"],
+				"shortDesc": "Play",
+				"subf": {}
+			},
+			"Reset": {
+				"abbrev": "",
+				"desc": "Reset",
+				"name": "Reset",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Reset",
+				"subf": {}
+			},
+			"Rotate": {
+				"abbrev": "",
+				"desc": "Rotate",
+				"name": "Rotate",
+				"pNames": ["angle", "pivX", "pivY"],
+				"pTypes": ["?", "?", "?"],
+				"shortDesc": "Rotate",
+				"subf": {}
+			},
+			"Save": {
+				"abbrev": "",
+				"desc": "Save",
+				"name": "Save",
+				"pNames": ["fileName", "quality"],
+				"pTypes": ["str_pth", "num"],
+				"shortDesc": "Save",
+				"subf": {}
+			},
+			"Scale": {
+				"abbrev": "",
+				"desc": "Scale",
+				"name": "Scale",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"shortDesc": "Scale",
+				"subf": {}
+			},
+			"SetAlpha": {
+				"abbrev": "",
+				"desc": "SetAlpha",
+				"name": "SetAlpha",
+				"pNames": ["alpha"],
+				"pTypes": ["?"],
+				"shortDesc": "SetAlpha",
+				"subf": {}
+			},
+			"SetAutoUpdate": {
+				"abbrev": "",
+				"desc": "SetAutoUpdate",
+				"name": "SetAutoUpdate",
+				"pNames": ["onoff"],
+				"pTypes": ["bin"],
+				"shortDesc": "SetAutoUpdate",
+				"subf": {}
+			},
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColor": {
+				"abbrev": "",
+				"desc": "SetColor",
+				"name": "SetColor",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetColor",
+				"subf": {}
+			},
+			"SetColorFilter": "#1096996086",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetImage": {
+				"abbrev": "",
+				"desc": "SetImage",
+				"name": "SetImage",
+				"pNames": ["image", "width", "height", "options"],
+				"pTypes": ["?", "num", "num", "str_com"],
+				"shortDesc": "SetImage",
+				"subf": {}
+			},
+			"SetLineWidth": {
+				"abbrev": "",
+				"desc": "SetLineWidth",
+				"name": "SetLineWidth",
+				"pNames": ["width"],
+				"pTypes": ["num"],
+				"shortDesc": "SetLineWidth",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetMaxRate": {
+				"abbrev": "",
+				"desc": "SetMaxRate",
+				"name": "SetMaxRate",
+				"pNames": ["ms"],
+				"pTypes": ["num_sec"],
+				"shortDesc": "SetMaxRate",
+				"subf": {}
+			},
+			"SetName": {
+				"abbrev": "",
+				"desc": "SetName",
+				"name": "SetName",
+				"pNames": ["name"],
+				"pTypes": ["str"],
+				"shortDesc": "SetName",
+				"subf": {}
+			},
+			"SetOnLoad": {
+				"abbrev": "",
+				"desc": "SetOnLoad",
+				"name": "SetOnLoad",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "SetOnLoad",
+				"subf": {}
+			},
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPaintColor": {
+				"abbrev": "",
+				"desc": "SetPaintColor",
+				"name": "SetPaintColor",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetPaintColor",
+				"subf": {}
+			},
+			"SetPaintStyle": {
+				"abbrev": "",
+				"desc": "SetPaintStyle",
+				"name": "SetPaintStyle",
+				"pNames": ["style"],
+				"pTypes": ["?"],
+				"shortDesc": "SetPaintStyle",
+				"subf": {}
+			},
+			"SetPixelData": {
+				"abbrev": "",
+				"desc": "SetPixelData",
+				"name": "SetPixelData",
+				"pNames": ["data", "width", "height", "options"],
+				"pTypes": ["?", "num", "num", "str_com"],
+				"retval": "obj",
+				"shortDesc": "SetPixelData",
+				"subf": {}
+			},
+			"SetPixelMode": {
+				"abbrev": "",
+				"desc": "SetPixelMode",
+				"name": "SetPixelMode",
+				"pNames": ["onoff"],
+				"pTypes": ["bin"],
+				"shortDesc": "SetPixelMode",
+				"subf": {}
+			},
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Skew": {
+				"abbrev": "",
+				"desc": "Skew",
+				"name": "Skew",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"shortDesc": "Skew",
+				"subf": {}
+			},
+			"Transform": {
+				"abbrev": "",
+				"desc": "Transform",
+				"name": "Transform",
+				"pNames": ["matrix"],
+				"pTypes": ["num"],
+				"shortDesc": "Transform",
+				"subf": {}
+			},
+			"Tween": "#2114624769",
+			"Update": {
+				"abbrev": "",
+				"desc": "Update",
+				"name": "Update",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Update",
+				"subf": {}
+			}
+		}
+	},
+	"CreateFAB": {
+		"abbrev": "fab",
+		"desc": "CreateFAB",
+		"name": "CreateFAB",
+		"pNames": ["t", "e"],
+		"pTypes": ["?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateFAB",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateFABElegant": {
+		"abbrev": "fab",
+		"desc": "CreateFABElegant",
+		"name": "CreateFABElegant",
+		"pNames": ["t", "e"],
+		"pTypes": ["?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateFABElegant",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateFABOutline": {
+		"abbrev": "fab",
+		"desc": "CreateFABOutline",
+		"name": "CreateFABOutline",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateFABOutline",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Button",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"abbrev": "",
+				"desc": "SetStyle",
+				"name": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"shortDesc": "SetStyle",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateID": {
+		"abbrev": "id",
+		"desc": "CreateID",
+		"name": "CreateID",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "obj",
+		"shortDesc": "CreateID",
+		"subf": {}
+	},
+	"CreateLightColor": {
+		"abbrev": "lgc",
+		"desc": "CreateLightColor",
+		"name": "CreateLightColor",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "CreateLightColor",
+		"subf": {
+			"0": {
+				"desc": "0",
+				"isval": true,
+				"name": "0",
+				"retval": "str-'",
+				"shortDesc": "0"
+			},
+			"1": {
+				"desc": "1",
+				"isval": true,
+				"name": "1",
+				"retval": "str-'",
+				"shortDesc": "1"
+			},
+			"toFontName": {
+				"abbrev": "",
+				"desc": "toFontName",
+				"name": "toFontName",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "toFontName",
+				"subf": {}
+			}
+		}
+	},
+	"CreateList": {
+		"abbrev": "lst",
+		"desc": "CreateList",
+		"name": "CreateList",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateList",
+		"subf": {
+			"AddItem": {
+				"abbrev": "",
+				"desc": "AddItem",
+				"name": "AddItem",
+				"pNames": ["title", "body", "image"],
+				"pTypes": ["str", "str", "?"],
+				"shortDesc": "AddItem",
+				"subf": {}
+			},
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetItem": {
+				"abbrev": "",
+				"desc": "GetItem",
+				"name": "GetItem",
+				"pNames": ["title"],
+				"pTypes": ["str"],
+				"retval": "obj",
+				"shortDesc": "GetItem",
+				"subf": {}
+			},
+			"GetItemByIndex": {
+				"abbrev": "",
+				"desc": "GetItemByIndex",
+				"name": "GetItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"retval": "obj",
+				"shortDesc": "GetItemByIndex",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLength": {
+				"abbrev": "",
+				"desc": "GetLength",
+				"name": "GetLength",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLength",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": ["delim"],
+				"pTypes": ["str"],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-List",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"InsertItem": {
+				"abbrev": "",
+				"desc": "InsertItem",
+				"name": "InsertItem",
+				"pNames": ["index", "title", "body", "image"],
+				"pTypes": ["num", "str", "str", "?"],
+				"shortDesc": "InsertItem",
+				"subf": {}
+			},
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"RemoveAll": {
+				"abbrev": "",
+				"desc": "RemoveAll",
+				"name": "RemoveAll",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "RemoveAll",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["title"],
+				"pTypes": ["str"],
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"RemoveItemByIndex": {
+				"abbrev": "",
+				"desc": "RemoveItemByIndex",
+				"name": "RemoveItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"shortDesc": "RemoveItemByIndex",
+				"subf": {}
+			},
+			"ScrollToItem": {
+				"abbrev": "",
+				"desc": "ScrollToItem",
+				"name": "ScrollToItem",
+				"pNames": ["title", "body"],
+				"pTypes": ["str", "str"],
+				"shortDesc": "ScrollToItem",
+				"subf": {}
+			},
+			"ScrollToItemByIndex": {
+				"abbrev": "",
+				"desc": "ScrollToItemByIndex",
+				"name": "ScrollToItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"shortDesc": "ScrollToItemByIndex",
+				"subf": {}
+			},
+			"SelectItem": {
+				"abbrev": "",
+				"desc": "SelectItem",
+				"name": "SelectItem",
+				"pNames": ["title", "body", "scroll"],
+				"pTypes": ["str", "str", "?"],
+				"shortDesc": "SelectItem",
+				"subf": {}
+			},
+			"SelectItemByIndex": {
+				"abbrev": "",
+				"desc": "SelectItemByIndex",
+				"name": "SelectItemByIndex",
+				"pNames": ["index", "scroll"],
+				"pTypes": ["num", "?"],
+				"shortDesc": "SelectItemByIndex",
+				"subf": {}
+			},
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetColumnWidths": {
+				"abbrev": "",
+				"desc": "SetColumnWidths",
+				"name": "SetColumnWidths",
+				"pNames": ["icon", "title", "body", "mode"],
+				"pTypes": ["?", "str", "str", "?"],
+				"shortDesc": "SetColumnWidths",
+				"subf": {}
+			},
+			"SetDivider": {
+				"abbrev": "",
+				"desc": "SetDivider",
+				"name": "SetDivider",
+				"pNames": ["height", "color"],
+				"pTypes": ["num", "str_col"],
+				"shortDesc": "SetDivider",
+				"subf": {}
+			},
+			"SetEllipsize": "#0897234673",
+			"SetEllipsize1": {
+				"abbrev": "",
+				"desc": "SetEllipsize1",
+				"name": "SetEllipsize1",
+				"pNames": ["mode"],
+				"pTypes": ["?"],
+				"shortDesc": "SetEllipsize1",
+				"subf": {}
+			},
+			"SetEllipsize2": {
+				"abbrev": "",
+				"desc": "SetEllipsize2",
+				"name": "SetEllipsize2",
+				"pNames": ["mode"],
+				"pTypes": ["?"],
+				"shortDesc": "SetEllipsize2",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHiTextColor1": {
+				"abbrev": "",
+				"desc": "SetHiTextColor1",
+				"name": "SetHiTextColor1",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetHiTextColor1",
+				"subf": {}
+			},
+			"SetHiTextColor2": {
+				"abbrev": "",
+				"desc": "SetHiTextColor2",
+				"name": "SetHiTextColor2",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetHiTextColor2",
+				"subf": {}
+			},
+			"SetIconMargins": {
+				"abbrev": "",
+				"desc": "SetIconMargins",
+				"name": "SetIconMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode"],
+				"pTypes": ["?", "?", "?", "?", "?"],
+				"shortDesc": "SetIconMargins",
+				"subf": {}
+			},
+			"SetIconSize": {
+				"abbrev": "",
+				"desc": "SetIconSize",
+				"name": "SetIconSize",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetIconSize",
+				"subf": {}
+			},
+			"SetItem": {
+				"abbrev": "",
+				"desc": "SetItem",
+				"name": "SetItem",
+				"pNames": ["title", "newTitle", "newBody", "newImage"],
+				"pTypes": ["str", "?", "num", "?"],
+				"shortDesc": "SetItem",
+				"subf": {}
+			},
+			"SetItemByIndex": {
+				"abbrev": "",
+				"desc": "SetItemByIndex",
+				"name": "SetItemByIndex",
+				"pNames": ["index", "newTitle", "newBody", "newImage"],
+				"pTypes": ["num", "?", "num", "?"],
+				"shortDesc": "SetItemByIndex",
+				"subf": {}
+			},
+			"SetList": {
+				"abbrev": "",
+				"desc": "SetList",
+				"name": "SetList",
+				"pNames": ["list", "delim"],
+				"pTypes": ["?", "str"],
+				"shortDesc": "SetList",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTextColor": "#0175303923",
+			"SetTextColor1": {
+				"abbrev": "",
+				"desc": "SetTextColor1",
+				"name": "SetTextColor1",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTextColor1",
+				"subf": {}
+			},
+			"SetTextColor2": {
+				"abbrev": "",
+				"desc": "SetTextColor2",
+				"name": "SetTextColor2",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTextColor2",
+				"subf": {}
+			},
+			"SetTextMargins": {
+				"abbrev": "",
+				"desc": "SetTextMargins",
+				"name": "SetTextMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
+				"pTypes": ["?", "?", "?", "?", "?", "str_com"],
+				"shortDesc": "SetTextMargins",
+				"subf": {}
+			},
+			"SetTextShadow": "#1093247031",
+			"SetTextShadow1": {
+				"abbrev": "",
+				"desc": "SetTextShadow1",
+				"name": "SetTextShadow1",
+				"pNames": ["radius", "dx", "dy", "color"],
+				"pTypes": ["num", "num", "num", "str_col"],
+				"shortDesc": "SetTextShadow1",
+				"subf": {}
+			},
+			"SetTextShadow2": {
+				"abbrev": "",
+				"desc": "SetTextShadow2",
+				"name": "SetTextShadow2",
+				"pNames": ["radius", "dx", "dy", "color"],
+				"pTypes": ["num", "num", "num", "str_col"],
+				"shortDesc": "SetTextShadow2",
+				"subf": {}
+			},
+			"SetTextSize": "#5019790423",
+			"SetTextSize1": {
+				"abbrev": "",
+				"desc": "SetTextSize1",
+				"name": "SetTextSize1",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTextSize1",
+				"subf": {}
+			},
+			"SetTextSize2": {
+				"abbrev": "",
+				"desc": "SetTextSize2",
+				"name": "SetTextSize2",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTextSize2",
+				"subf": {}
+			},
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateListDialog": {
+		"abbrev": "lsd",
+		"desc": "CreateListDialog",
+		"name": "CreateListDialog",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListDialog",
+		"subf": {
+			"GetVisibility": "#1672373665",
+			"SetOnSelect": {
+				"abbrev": "",
+				"desc": "SetOnSelect",
+				"name": "SetOnSelect",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnSelect",
+				"subf": {}
+			}
+		}
+	},
+	"CreateListInitialIcon": {
+		"abbrev": "lii",
+		"desc": "CreateListInitialIcon",
+		"name": "CreateListInitialIcon",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListInitialIcon",
+		"subf": {
+			"AppendItems": {
+				"abbrev": "",
+				"desc": "AppendItems",
+				"name": "AppendItems",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AppendItems",
+				"subf": {}
+			},
+			"color": {
+				"desc": "color",
+				"isval": true,
+				"name": "color",
+				"retval": "str-#4285F4",
+				"shortDesc": "color"
+			},
+			"created": {
+				"desc": "created",
+				"isval": true,
+				"name": "created",
+				"retval": "bin",
+				"shortDesc": "created"
+			},
+			"CreateIcon": {
+				"abbrev": "icn",
+				"desc": "CreateIcon",
+				"name": "CreateIcon",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "CreateIcon",
+				"subf": {}
+			},
+			"CreateItem": {
+				"abbrev": "itm",
+				"desc": "CreateItem",
+				"name": "CreateItem",
+				"pNames": ["t", "e", "i"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateItem",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"list": {
+				"desc": "list",
+				"isval": true,
+				"name": "list",
+				"retval": "lst",
+				"shortDesc": "list"
+			},
+			"List": {
+				"desc": "List",
+				"isval": true,
+				"name": "List",
+				"retval": "?",
+				"shortDesc": "List"
+			},
+			"listID": {
+				"desc": "listID",
+				"isval": true,
+				"name": "listID",
+				"retval": "num",
+				"shortDesc": "listID"
+			},
+			"PopItem": {
+				"abbrev": "",
+				"desc": "PopItem",
+				"name": "PopItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "PopItem",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"SetBodyText": {
+				"abbrev": "",
+				"desc": "SetBodyText",
+				"name": "SetBodyText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetBodyText",
+				"subf": {}
+			},
+			"SetControlOnTouch": {
+				"abbrev": "",
+				"desc": "SetControlOnTouch",
+				"name": "SetControlOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetControlOnTouch",
+				"subf": {}
+			},
+			"SetIconOnTouch": {
+				"abbrev": "",
+				"desc": "SetIconOnTouch",
+				"name": "SetIconOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetIconOnTouch",
+				"subf": {}
+			},
+			"SetItem": {
+				"abbrev": "",
+				"desc": "SetItem",
+				"name": "SetItem",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetItem",
+				"subf": {}
+			},
+			"SetOnTouch": "#2398750419",
+			"SetRightIcon": {
+				"abbrev": "",
+				"desc": "SetRightIcon",
+				"name": "SetRightIcon",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetRightIcon",
+				"subf": {}
+			},
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetUnread": {
+				"abbrev": "",
+				"desc": "SetUnread",
+				"name": "SetUnread",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetUnread",
+				"subf": {}
+			},
+			"ShiftItem": {
+				"abbrev": "",
+				"desc": "ShiftItem",
+				"name": "ShiftItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShiftItem",
+				"subf": {}
+			},
+			"type": {
+				"desc": "type",
+				"isval": true,
+				"name": "type",
+				"retval": "str-elegant",
+				"shortDesc": "type"
+			}
+		}
+	},
+	"CreateListMaterialIcon": {
+		"abbrev": "lmi",
+		"desc": "CreateListMaterialIcon",
+		"name": "CreateListMaterialIcon",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListMaterialIcon",
+		"subf": {
+			"AppendItems": {
+				"abbrev": "",
+				"desc": "AppendItems",
+				"name": "AppendItems",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AppendItems",
+				"subf": {}
+			},
+			"color": {
+				"desc": "color",
+				"isval": true,
+				"name": "color",
+				"retval": "str-#4285F4",
+				"shortDesc": "color"
+			},
+			"created": {
+				"desc": "created",
+				"isval": true,
+				"name": "created",
+				"retval": "bin",
+				"shortDesc": "created"
+			},
+			"CreateIcon": {
+				"abbrev": "icn",
+				"desc": "CreateIcon",
+				"name": "CreateIcon",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "CreateIcon",
+				"subf": {}
+			},
+			"CreateItem": {
+				"abbrev": "itm",
+				"desc": "CreateItem",
+				"name": "CreateItem",
+				"pNames": ["t", "e", "i"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateItem",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"list": {
+				"desc": "list",
+				"isval": true,
+				"name": "list",
+				"retval": "lst",
+				"shortDesc": "list"
+			},
+			"List": {
+				"desc": "List",
+				"isval": true,
+				"name": "List",
+				"retval": "?",
+				"shortDesc": "List"
+			},
+			"listID": {
+				"desc": "listID",
+				"isval": true,
+				"name": "listID",
+				"retval": "num",
+				"shortDesc": "listID"
+			},
+			"PopItem": {
+				"abbrev": "",
+				"desc": "PopItem",
+				"name": "PopItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "PopItem",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"SetBodyText": {
+				"abbrev": "",
+				"desc": "SetBodyText",
+				"name": "SetBodyText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetBodyText",
+				"subf": {}
+			},
+			"SetControlOnTouch": {
+				"abbrev": "",
+				"desc": "SetControlOnTouch",
+				"name": "SetControlOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetControlOnTouch",
+				"subf": {}
+			},
+			"SetIcon": {
+				"abbrev": "",
+				"desc": "SetIcon",
+				"name": "SetIcon",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetIcon",
+				"subf": {}
+			},
+			"SetIconOnTouch": {
+				"abbrev": "",
+				"desc": "SetIconOnTouch",
+				"name": "SetIconOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetIconOnTouch",
+				"subf": {}
+			},
+			"SetItem": {
+				"abbrev": "",
+				"desc": "SetItem",
+				"name": "SetItem",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetItem",
+				"subf": {}
+			},
+			"SetOnTouch": "#2398750419",
+			"SetRightIcon": {
+				"abbrev": "",
+				"desc": "SetRightIcon",
+				"name": "SetRightIcon",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetRightIcon",
+				"subf": {}
+			},
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetUnread": {
+				"abbrev": "",
+				"desc": "SetUnread",
+				"name": "SetUnread",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetUnread",
+				"subf": {}
+			},
+			"ShiftItem": {
+				"abbrev": "",
+				"desc": "ShiftItem",
+				"name": "ShiftItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShiftItem",
+				"subf": {}
+			},
+			"type": {
+				"desc": "type",
+				"isval": true,
+				"name": "type",
+				"retval": "str-elegant",
+				"shortDesc": "type"
+			}
+		}
+	},
+	"CreateListModern": {
+		"abbrev": "lsm",
+		"desc": "CreateListModern",
+		"name": "CreateListModern",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListModern",
+		"subf": {
+			"AppendItems": {
+				"abbrev": "",
+				"desc": "AppendItems",
+				"name": "AppendItems",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AppendItems",
+				"subf": {}
+			},
+			"color": {
+				"desc": "color",
+				"isval": true,
+				"name": "color",
+				"retval": "str-#4285F4",
+				"shortDesc": "color"
+			},
+			"created": {
+				"desc": "created",
+				"isval": true,
+				"name": "created",
+				"retval": "bin",
+				"shortDesc": "created"
+			},
+			"CreateImage": {
+				"abbrev": "img",
+				"desc": "CreateImage",
+				"name": "CreateImage",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateImage",
+				"subf": {}
+			},
+			"CreateItem": {
+				"abbrev": "itm",
+				"desc": "CreateItem",
+				"name": "CreateItem",
+				"pNames": ["t", "e", "i"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateItem",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"list": {
+				"desc": "list",
+				"isval": true,
+				"name": "list",
+				"retval": "lst",
+				"shortDesc": "list"
+			},
+			"List": {
+				"desc": "List",
+				"isval": true,
+				"name": "List",
+				"retval": "?",
+				"shortDesc": "List"
+			},
+			"listID": {
+				"desc": "listID",
+				"isval": true,
+				"name": "listID",
+				"retval": "num",
+				"shortDesc": "listID"
+			},
+			"PopItem": {
+				"abbrev": "",
+				"desc": "PopItem",
+				"name": "PopItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "PopItem",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"SetBodyText": {
+				"abbrev": "",
+				"desc": "SetBodyText",
+				"name": "SetBodyText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetBodyText",
+				"subf": {}
+			},
+			"SetIconOnTouch": {
+				"abbrev": "",
+				"desc": "SetIconOnTouch",
+				"name": "SetIconOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetIconOnTouch",
+				"subf": {}
+			},
+			"SetImage": {
+				"abbrev": "",
+				"desc": "SetImage",
+				"name": "SetImage",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetImage",
+				"subf": {}
+			},
+			"SetItem": {
+				"abbrev": "",
+				"desc": "SetItem",
+				"name": "SetItem",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetItem",
+				"subf": {}
+			},
+			"SetNoteText": {
+				"abbrev": "",
+				"desc": "SetNoteText",
+				"name": "SetNoteText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetNoteText",
+				"subf": {}
+			},
+			"SetOnTouch": "#2398750419",
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetUnread": {
+				"abbrev": "",
+				"desc": "SetUnread",
+				"name": "SetUnread",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetUnread",
+				"subf": {}
+			},
+			"ShiftItem": {
+				"abbrev": "",
+				"desc": "ShiftItem",
+				"name": "ShiftItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShiftItem",
+				"subf": {}
+			}
+		}
+	},
+	"CreateListSimple": {
+		"abbrev": "lss",
+		"desc": "CreateListSimple",
+		"name": "CreateListSimple",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListSimple",
+		"subf": {
+			"AppendItems": {
+				"abbrev": "",
+				"desc": "AppendItems",
+				"name": "AppendItems",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AppendItems",
+				"subf": {}
+			},
+			"backColor": {
+				"desc": "backColor",
+				"isval": true,
+				"name": "backColor",
+				"retval": "str-#ffffff",
+				"shortDesc": "backColor"
+			},
+			"created": {
+				"desc": "created",
+				"isval": true,
+				"name": "created",
+				"retval": "bin",
+				"shortDesc": "created"
+			},
+			"CreateIcon": {
+				"abbrev": "icn",
+				"desc": "CreateIcon",
+				"name": "CreateIcon",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateIcon",
+				"subf": {}
+			},
+			"CreateItem": {
+				"abbrev": "itm",
+				"desc": "CreateItem",
+				"name": "CreateItem",
+				"pNames": ["t", "i", "a"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateItem",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"list": {
+				"desc": "list",
+				"isval": true,
+				"name": "list",
+				"retval": "lst",
+				"shortDesc": "list"
+			},
+			"List": {
+				"desc": "List",
+				"isval": true,
+				"name": "List",
+				"retval": "?",
+				"shortDesc": "List"
+			},
+			"listID": {
+				"desc": "listID",
+				"isval": true,
+				"name": "listID",
+				"retval": "num",
+				"shortDesc": "listID"
+			},
+			"SetOnTouch": "#2398750419"
+		}
+	},
+	"CreateListWithAvatar": {
+		"abbrev": "lwa",
+		"desc": "CreateListWithAvatar",
+		"name": "CreateListWithAvatar",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateListWithAvatar",
+		"subf": {
+			"AppendItems": {
+				"abbrev": "",
+				"desc": "AppendItems",
+				"name": "AppendItems",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AppendItems",
+				"subf": {}
+			},
+			"created": {
+				"desc": "created",
+				"isval": true,
+				"name": "created",
+				"retval": "bin",
+				"shortDesc": "created"
+			},
+			"CreateImage": {
+				"abbrev": "img",
+				"desc": "CreateImage",
+				"name": "CreateImage",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateImage",
+				"subf": {}
+			},
+			"CreateItem": {
+				"abbrev": "itm",
+				"desc": "CreateItem",
+				"name": "CreateItem",
+				"pNames": ["t", "e", "i"],
+				"pTypes": ["?", "?", "?"],
+				"retval": "obj",
+				"shortDesc": "CreateItem",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"list": {
+				"desc": "list",
+				"isval": true,
+				"name": "list",
+				"retval": "lst",
+				"shortDesc": "list"
+			},
+			"List": {
+				"desc": "List",
+				"isval": true,
+				"name": "List",
+				"retval": "?",
+				"shortDesc": "List"
+			},
+			"listID": {
+				"desc": "listID",
+				"isval": true,
+				"name": "listID",
+				"retval": "num",
+				"shortDesc": "listID"
+			},
+			"PopItem": {
+				"abbrev": "",
+				"desc": "PopItem",
+				"name": "PopItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "PopItem",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"SetBodyText": {
+				"abbrev": "",
+				"desc": "SetBodyText",
+				"name": "SetBodyText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetBodyText",
+				"subf": {}
+			},
+			"SetControlOnTouch": {
+				"abbrev": "",
+				"desc": "SetControlOnTouch",
+				"name": "SetControlOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetControlOnTouch",
+				"subf": {}
+			},
+			"SetIconOnTouch": {
+				"abbrev": "",
+				"desc": "SetIconOnTouch",
+				"name": "SetIconOnTouch",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetIconOnTouch",
+				"subf": {}
+			},
+			"SetImage": {
+				"abbrev": "",
+				"desc": "SetImage",
+				"name": "SetImage",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetImage",
+				"subf": {}
+			},
+			"SetItem": {
+				"abbrev": "",
+				"desc": "SetItem",
+				"name": "SetItem",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetItem",
+				"subf": {}
+			},
+			"SetOnTouch": "#2398750419",
+			"SetRightIcon": {
+				"abbrev": "",
+				"desc": "SetRightIcon",
+				"name": "SetRightIcon",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetRightIcon",
+				"subf": {}
+			},
+			"SetTitleText": {
+				"abbrev": "",
+				"desc": "SetTitleText",
+				"name": "SetTitleText",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetTitleText",
+				"subf": {}
+			},
+			"SetUnread": {
+				"abbrev": "",
+				"desc": "SetUnread",
+				"name": "SetUnread",
+				"pNames": ["t", "e"],
+				"pTypes": ["?", "?"],
+				"retval": "obj",
+				"shortDesc": "SetUnread",
+				"subf": {}
+			},
+			"ShiftItem": {
+				"abbrev": "",
+				"desc": "ShiftItem",
+				"name": "ShiftItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShiftItem",
+				"subf": {}
+			}
+		}
+	},
+	"CreateMenu": {
+		"abbrev": "mn",
+		"desc": "CreateMenu",
+		"name": "CreateMenu",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateMenu",
+		"subf": { "SetOnSelect": {
+	"abbrev": "",
+	"desc": "SetOnSelect",
+	"name": "SetOnSelect",
+	"pNames": ["t"],
+	"pTypes": ["?"],
+	"shortDesc": "SetOnSelect",
+	"subf": {}
+} }
+	},
+	"CreateMenuWithIcon": {
+		"abbrev": "mwi",
+		"desc": "CreateMenuWithIcon",
+		"name": "CreateMenuWithIcon",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateMenuWithIcon",
+		"subf": { "SetOnSelect": {
+	"abbrev": "",
+	"desc": "SetOnSelect",
+	"name": "SetOnSelect",
+	"pNames": ["t"],
+	"pTypes": ["?"],
+	"shortDesc": "SetOnSelect",
+	"subf": {}
+} }
+	},
+	"CreateModal": {
+		"abbrev": "mdl",
+		"desc": "CreateModal",
+		"name": "CreateModal",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateModal",
+		"subf": {
+			"AddChild": {
+				"abbrev": "",
+				"desc": "AddChild",
+				"name": "AddChild",
+				"pNames": ["child", "order"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AddChild",
+				"subf": {}
+			},
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"AnimateLay": {
+				"abbrev": "",
+				"desc": "AnimateLay",
+				"name": "AnimateLay",
+				"pNames": ["type", "callback", "time"],
+				"pTypes": ["?", {
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}, "?"],
+				"shortDesc": "AnimateLay",
+				"subf": {}
+			},
+			"ChildToFront": {
+				"abbrev": "",
+				"desc": "ChildToFront",
+				"name": "ChildToFront",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "ChildToFront",
+				"subf": {}
+			},
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"DestroyChild": {
+				"abbrev": "",
+				"desc": "DestroyChild",
+				"name": "DestroyChild",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "DestroyChild",
+				"subf": {}
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetChildOrder": {
+				"abbrev": "",
+				"desc": "GetChildOrder",
+				"name": "GetChildOrder",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"retval": "num_int",
+				"shortDesc": "GetChildOrder",
+				"subf": {}
+			},
+			"GetHeight": "#2576212953",
+			"GetLayout": {
+				"abbrev": "",
+				"desc": "GetLayout",
+				"name": "GetLayout",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetLayout",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Layout",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"HideLay": {
+				"abbrev": "",
+				"desc": "HideLay",
+				"name": "HideLay",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "HideLay",
+				"subf": {}
+			},
+			"HideModal": {
+				"abbrev": "",
+				"desc": "HideModal",
+				"name": "HideModal",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "HideModal",
+				"subf": {}
+			},
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"ModalLayout": {
+				"desc": "ModalLayout",
+				"isval": true,
+				"name": "ModalLayout",
+				"retval": "?",
+				"shortDesc": "ModalLayout"
+			},
+			"RemoveChild": {
+				"abbrev": "",
+				"desc": "RemoveChild",
+				"name": "RemoveChild",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "RemoveChild",
+				"subf": {}
+			},
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetChildMargins": {
+				"abbrev": "",
+				"desc": "SetChildMargins",
+				"name": "SetChildMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode"],
+				"pTypes": ["?", "?", "?", "?", "?"],
+				"shortDesc": "SetChildMargins",
+				"subf": {}
+			},
+			"SetChildTextSize": {
+				"abbrev": "",
+				"desc": "SetChildTextSize",
+				"name": "SetChildTextSize",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetChildTextSize",
+				"subf": {}
+			},
+			"SetColorFilter": "#1096996086",
+			"SetCornerRadius": {
+				"abbrev": "",
+				"desc": "SetCornerRadius",
+				"name": "SetCornerRadius",
+				"pNames": ["radius"],
+				"pTypes": ["num"],
+				"shortDesc": "SetCornerRadius",
+				"subf": {}
+			},
+			"SetElevation": {
+				"abbrev": "",
+				"desc": "SetElevation",
+				"name": "SetElevation",
+				"pNames": ["elevation"],
+				"pTypes": ["?"],
+				"shortDesc": "SetElevation",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetGravity": {
+				"abbrev": "",
+				"desc": "SetGravity",
+				"name": "SetGravity",
+				"pNames": ["gravity"],
+				"pTypes": ["num"],
+				"shortDesc": "SetGravity",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnChildChange": {
+				"abbrev": "",
+				"desc": "SetOnChildChange",
+				"name": "SetOnChildChange",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "SetOnChildChange",
+				"subf": {}
+			},
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchOK": {
+				"abbrev": "",
+				"desc": "SetOnTouchOK",
+				"name": "SetOnTouchOK",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnTouchOK",
+				"subf": {}
+			},
+			"SetOnTouchUp": "#9861324731",
+			"SetOrientation": {
+				"abbrev": "",
+				"desc": "SetOrientation",
+				"name": "SetOrientation",
+				"pNames": ["orient"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOrientation",
+				"subf": {}
+			},
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTouchable": "#2562918782",
+			"SetTouchThrough": {
+				"abbrev": "",
+				"desc": "SetTouchThrough",
+				"name": "SetTouchThrough",
+				"pNames": ["through"],
+				"pTypes": ["num"],
+				"shortDesc": "SetTouchThrough",
+				"subf": {}
+			},
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"ShowLay": {
+				"abbrev": "",
+				"desc": "ShowLay",
+				"name": "ShowLay",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShowLay",
+				"subf": {}
+			},
+			"ShowModal": {
+				"abbrev": "",
+				"desc": "ShowModal",
+				"name": "ShowModal",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShowModal",
+				"subf": {}
+			},
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateNoteInfo": {
+		"abbrev": "nti",
+		"desc": "CreateNoteInfo",
+		"name": "CreateNoteInfo",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateNoteInfo",
+		"subf": {
+			"AddChild": {
+				"abbrev": "",
+				"desc": "AddChild",
+				"name": "AddChild",
+				"pNames": ["child", "order"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "AddChild",
+				"subf": {}
+			},
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ChildToFront": {
+				"abbrev": "",
+				"desc": "ChildToFront",
+				"name": "ChildToFront",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "ChildToFront",
+				"subf": {}
+			},
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"DestroyChild": {
+				"abbrev": "",
+				"desc": "DestroyChild",
+				"name": "DestroyChild",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "DestroyChild",
+				"subf": {}
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetChildOrder": {
+				"abbrev": "",
+				"desc": "GetChildOrder",
+				"name": "GetChildOrder",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"retval": "num_int",
+				"shortDesc": "GetChildOrder",
+				"subf": {}
+			},
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Layout",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"RemoveChild": {
+				"abbrev": "",
+				"desc": "RemoveChild",
+				"name": "RemoveChild",
+				"pNames": ["child"],
+				"pTypes": ["?"],
+				"shortDesc": "RemoveChild",
+				"subf": {}
+			},
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetChildMargins": {
+				"abbrev": "",
+				"desc": "SetChildMargins",
+				"name": "SetChildMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode"],
+				"pTypes": ["?", "?", "?", "?", "?"],
+				"shortDesc": "SetChildMargins",
+				"subf": {}
+			},
+			"SetChildTextSize": {
+				"abbrev": "",
+				"desc": "SetChildTextSize",
+				"name": "SetChildTextSize",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetChildTextSize",
+				"subf": {}
+			},
+			"SetColorFilter": "#1096996086",
+			"SetCornerRadius": {
+				"abbrev": "",
+				"desc": "SetCornerRadius",
+				"name": "SetCornerRadius",
+				"pNames": ["radius"],
+				"pTypes": ["num"],
+				"shortDesc": "SetCornerRadius",
+				"subf": {}
+			},
+			"SetElevation": {
+				"abbrev": "",
+				"desc": "SetElevation",
+				"name": "SetElevation",
+				"pNames": ["elevation"],
+				"pTypes": ["?"],
+				"shortDesc": "SetElevation",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetGravity": {
+				"abbrev": "",
+				"desc": "SetGravity",
+				"name": "SetGravity",
+				"pNames": ["gravity"],
+				"pTypes": ["num"],
+				"shortDesc": "SetGravity",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnChildChange": {
+				"abbrev": "",
+				"desc": "SetOnChildChange",
+				"name": "SetOnChildChange",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "SetOnChildChange",
+				"subf": {}
+			},
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetOrientation": {
+				"abbrev": "",
+				"desc": "SetOrientation",
+				"name": "SetOrientation",
+				"pNames": ["orient"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOrientation",
+				"subf": {}
+			},
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTouchable": "#2562918782",
+			"SetTouchThrough": {
+				"abbrev": "",
+				"desc": "SetTouchThrough",
+				"name": "SetTouchThrough",
+				"pNames": ["through"],
+				"pTypes": ["num"],
+				"shortDesc": "SetTouchThrough",
+				"subf": {}
+			},
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreatePage": {
+		"abbrev": "pg",
+		"desc": "CreatePage",
+		"name": "CreatePage",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreatePage",
+		"subf": {
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"Page": {
+				"desc": "Page",
+				"isval": true,
+				"name": "Page",
+				"retval": "?",
+				"shortDesc": "Page"
+			},
+			"PageTitle": {
+				"desc": "PageTitle",
+				"isval": true,
+				"name": "PageTitle",
+				"retval": "?",
+				"shortDesc": "PageTitle"
+			}
+		}
+	},
+	"CreateRadio": {
+		"abbrev": "rd",
+		"desc": "CreateRadio",
+		"name": "CreateRadio",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateRadio",
+		"subf": {
+			"CheckItemByIndex": {
+				"abbrev": "",
+				"desc": "CheckItemByIndex",
+				"name": "CheckItemByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "CheckItemByIndex",
+				"subf": {}
+			},
+			"GetCheckItem": {
+				"abbrev": "",
+				"desc": "GetCheckItem",
+				"name": "GetCheckItem",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCheckItem",
+				"subf": {}
+			},
+			"Radio": {
+				"desc": "Radio",
+				"isval": true,
+				"name": "Radio",
+				"retval": "?",
+				"shortDesc": "Radio"
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386"
+		}
+	},
+	"CreateRadioButtons": {
+		"abbrev": "rdb",
+		"desc": "CreateRadioButtons",
+		"name": "CreateRadioButtons",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateRadioButtons",
+		"subf": {
+			"CheckItemByIndex": {
+				"abbrev": "",
+				"desc": "CheckItemByIndex",
+				"name": "CheckItemByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "CheckItemByIndex",
+				"subf": {}
+			},
+			"GetCheckItem": {
+				"abbrev": "",
+				"desc": "GetCheckItem",
+				"name": "GetCheckItem",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCheckItem",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"Hide": "#5372805812",
+			"Radio": {
+				"desc": "Radio",
+				"isval": true,
+				"name": "Radio",
+				"retval": "?",
+				"shortDesc": "Radio"
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386",
+			"Show": "#1243391562",
+			"Toggle": {
+				"abbrev": "",
+				"desc": "Toggle",
+				"name": "Toggle",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Toggle",
+				"subf": {}
+			}
+		}
+	},
+	"CreateRadioMaterial": {
+		"abbrev": "rdm",
+		"desc": "CreateRadioMaterial",
+		"name": "CreateRadioMaterial",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateRadioMaterial",
+		"subf": {
+			"CheckItemByIndex": {
+				"abbrev": "",
+				"desc": "CheckItemByIndex",
+				"name": "CheckItemByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "CheckItemByIndex",
+				"subf": {}
+			},
+			"GetCheckItem": {
+				"abbrev": "",
+				"desc": "GetCheckItem",
+				"name": "GetCheckItem",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCheckItem",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"Hide": "#5372805812",
+			"Radio": {
+				"desc": "Radio",
+				"isval": true,
+				"name": "Radio",
+				"retval": "?",
+				"shortDesc": "Radio"
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386",
+			"Show": "#1243391562",
+			"Toggle": {
+				"abbrev": "",
+				"desc": "Toggle",
+				"name": "Toggle",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Toggle",
+				"subf": {}
+			}
+		}
+	},
+	"CreateSeekBar": {
+		"abbrev": "skb",
+		"desc": "CreateSeekBar",
+		"name": "CreateSeekBar",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateSeekBar",
+		"subf": {
+			"GetValue": {
+				"abbrev": "",
+				"desc": "GetValue",
+				"name": "GetValue",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetValue",
+				"subf": {}
+			},
+			"IsEnabled": "#1744802827",
+			"SeekBar": {
+				"desc": "SeekBar",
+				"isval": true,
+				"name": "SeekBar",
+				"retval": "?",
+				"shortDesc": "SeekBar"
+			},
+			"SetDecimals": {
+				"abbrev": "",
+				"desc": "SetDecimals",
+				"name": "SetDecimals",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetDecimals",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386",
+			"SetValue": {
+				"abbrev": "",
+				"desc": "SetValue",
+				"name": "SetValue",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetValue",
+				"subf": {}
+			}
+		}
+	},
+	"CreateSwitch": {
+		"abbrev": "swt",
+		"desc": "CreateSwitch",
+		"name": "CreateSwitch",
+		"pNames": ["t", "e"],
+		"pTypes": ["?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateSwitch",
+		"subf": {
+			"GetChecked": {
+				"abbrev": "",
+				"desc": "GetChecked",
+				"name": "GetChecked",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetChecked",
+				"subf": {}
+			},
+			"SetChecked": {
+				"abbrev": "",
+				"desc": "SetChecked",
+				"name": "SetChecked",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetChecked",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnTouch": "#2398750419",
+			"SetPosition": "#1425862386",
+			"Switch": {
+				"desc": "Switch",
+				"isval": true,
+				"name": "Switch",
+				"retval": "?",
+				"shortDesc": "Switch"
+			}
+		}
+	},
+	"CreateTabFixed": {
+		"abbrev": "tbf",
+		"desc": "CreateTabFixed",
+		"name": "CreateTabFixed",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTabFixed",
+		"subf": {
+			"GetLayout": {
+				"abbrev": "",
+				"desc": "GetLayout",
+				"name": "GetLayout",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"retval": "obj",
+				"shortDesc": "GetLayout",
+				"subf": {}
+			},
+			"SetActiveTabByIndex": {
+				"abbrev": "",
+				"desc": "SetActiveTabByIndex",
+				"name": "SetActiveTabByIndex",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetActiveTabByIndex",
+				"subf": {}
+			},
+			"SetOnSelect": {
+				"abbrev": "",
+				"desc": "SetOnSelect",
+				"name": "SetOnSelect",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnSelect",
+				"subf": {}
+			},
+			"Tab": {
+				"desc": "Tab",
+				"isval": true,
+				"name": "Tab",
+				"retval": "?",
+				"shortDesc": "Tab"
+			}
+		}
+	},
+	"CreateTEFilledIconLeft": {
+		"abbrev": "tef",
+		"desc": "CreateTEFilledIconLeft",
+		"name": "CreateTEFilledIconLeft",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTEFilledIconLeft",
+		"subf": {
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTEFilledIconRight": {
+		"abbrev": "tef",
+		"desc": "CreateTEFilledIconRight",
+		"name": "CreateTEFilledIconRight",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTEFilledIconRight",
+		"subf": {
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTEOutlineIconLeft": {
+		"abbrev": "teo",
+		"desc": "CreateTEOutlineIconLeft",
+		"name": "CreateTEOutlineIconLeft",
+		"pNames": ["t", "e", "i", "a", "l", "o", "s"],
+		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTEOutlineIconLeft",
+		"subf": {
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTEOutlineIconRight": {
+		"abbrev": "teo",
+		"desc": "CreateTEOutlineIconRight",
+		"name": "CreateTEOutlineIconRight",
+		"pNames": ["t", "e", "i", "a", "l", "o", "s"],
+		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTEOutlineIconRight",
+		"subf": {
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTESearchElegant": {
+		"abbrev": "tes",
+		"desc": "CreateTESearchElegant",
+		"name": "CreateTESearchElegant",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTESearchElegant",
+		"subf": {
+			"GetCursorLine": {
+				"abbrev": "",
+				"desc": "GetCursorLine",
+				"name": "GetCursorLine",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCursorLine",
+				"subf": {}
+			},
+			"GetCursorPos": {
+				"abbrev": "",
+				"desc": "GetCursorPos",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetCursorPos",
+				"subf": {}
+			},
+			"GetSelectedText": {
+				"abbrev": "",
+				"desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+			},
+			"GetSelectionEnd": {
+				"abbrev": "",
+				"desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+			},
+			"GetSelectionStart": {
+				"abbrev": "",
+				"desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+			},
+			"GetText": "#2387569276",
+			"GetVisibility": "#1672373665",
+			"Hide": "#5372805812",
+			"Icon": {
+				"desc": "Icon",
+				"isval": true,
+				"name": "Icon",
+				"retval": "?",
+				"shortDesc": "Icon"
+			},
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"ReplaceText": {
+				"abbrev": "",
+				"desc": "ReplaceText",
+				"name": "ReplaceText",
+				"pNames": ["t", "e", "i"],
+				"pTypes": ["?", "?", "?"],
+				"shortDesc": "ReplaceText",
+				"subf": {}
+			},
+			"SetCursorColor": {
+				"abbrev": "",
+				"desc": "SetCursorColor",
+				"name": "SetCursorColor",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetCursorColor",
+				"subf": {}
+			},
+			"SetCursorPos": {
+				"abbrev": "",
+				"desc": "SetCursorPos",
+				"name": "SetCursorPos",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetCursorPos",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetOnChange": "#2137502353",
+			"SetOnEnter": {
+				"abbrev": "",
+				"desc": "SetOnEnter",
+				"name": "SetOnEnter",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnEnter",
+				"subf": {}
+			},
+			"SetText": "#8207502354",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTESearchUnique": {
+		"abbrev": "tes",
+		"desc": "CreateTESearchUnique",
+		"name": "CreateTESearchUnique",
+		"pNames": ["t", "e", "i", "a"],
+		"pTypes": ["?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTESearchUnique",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextAreaFilled": {
+		"abbrev": "taf",
+		"desc": "CreateTextAreaFilled",
+		"name": "CreateTextAreaFilled",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextAreaFilled",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextAreaFilledA": {
+		"abbrev": "taf",
+		"desc": "CreateTextAreaFilledA",
+		"name": "CreateTextAreaFilledA",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextAreaFilledA",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextAreaOutline": {
+		"abbrev": "tao",
+		"desc": "CreateTextAreaOutline",
+		"name": "CreateTextAreaOutline",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextAreaOutline",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextAreaOutlineA": {
+		"abbrev": "tao",
+		"desc": "CreateTextAreaOutlineA",
+		"name": "CreateTextAreaOutlineA",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextAreaOutlineA",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditFilled": {
+		"abbrev": "tef",
+		"desc": "CreateTextEditFilled",
+		"name": "CreateTextEditFilled",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditFilled",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditFilledA": {
+		"abbrev": "tef",
+		"desc": "CreateTextEditFilledA",
+		"name": "CreateTextEditFilledA",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditFilledA",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditOutline": {
+		"abbrev": "teo",
+		"desc": "CreateTextEditOutline",
+		"name": "CreateTextEditOutline",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditOutline",
+		"subf": {
+			"GetText": "#2387569276",
+			"Hide": "#5372805812",
+			"IsVisible": "#1814300863",
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"SetOnChange": "#2137502353",
+			"SetOnEnter": {
+				"abbrev": "",
+				"desc": "SetOnEnter",
+				"name": "SetOnEnter",
+				"pNames": ["t"],
+				"pTypes": ["?"],
+				"shortDesc": "SetOnEnter",
+				"subf": {}
+			},
+			"SetOnTouch": "#2398750419",
+			"SetText": "#8207502354",
+			"Show": "#1243391562",
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditOutlineA": {
+		"abbrev": "teo",
+		"desc": "CreateTextEditOutlineA",
+		"name": "CreateTextEditOutlineA",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditOutlineA",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditSearch": {
+		"abbrev": "tes",
+		"desc": "CreateTextEditSearch",
+		"name": "CreateTextEditSearch",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditSearch",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextEditUnique": {
+		"abbrev": "teu",
+		"desc": "CreateTextEditUnique",
+		"name": "CreateTextEditUnique",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextEditUnique",
+		"subf": {
+			"Layout": {
+				"desc": "Layout",
+				"isval": true,
+				"name": "Layout",
+				"retval": "?",
+				"shortDesc": "Layout"
+			},
+			"TextEdit": {
+				"desc": "TextEdit",
+				"isval": true,
+				"name": "TextEdit",
+				"retval": "?",
+				"shortDesc": "TextEdit"
+			}
+		}
+	},
+	"CreateTextH1": {
+		"abbrev": "txh",
+		"desc": "CreateTextH1",
+		"name": "CreateTextH1",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH1",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextH2": {
+		"abbrev": "txh",
+		"desc": "CreateTextH2",
+		"name": "CreateTextH2",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH2",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextH3": {
+		"abbrev": "txh",
+		"desc": "CreateTextH3",
+		"name": "CreateTextH3",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH3",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextH4": {
+		"abbrev": "txh",
+		"desc": "CreateTextH4",
+		"name": "CreateTextH4",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH4",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextH5": {
+		"abbrev": "txh",
+		"desc": "CreateTextH5",
+		"name": "CreateTextH5",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH5",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextH6": {
+		"abbrev": "txh",
+		"desc": "CreateTextH6",
+		"name": "CreateTextH6",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextH6",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextJumbo": {
+		"abbrev": "txj",
+		"desc": "CreateTextJumbo",
+		"name": "CreateTextJumbo",
+		"pNames": ["t", "e", "i", "a", "l"],
+		"pTypes": ["?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextJumbo",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextParagraph": {
+		"abbrev": "txp",
+		"desc": "CreateTextParagraph",
+		"name": "CreateTextParagraph",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextParagraph",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTextSecondary": {
+		"abbrev": "txs",
+		"desc": "CreateTextSecondary",
+		"name": "CreateTextSecondary",
+		"pNames": ["t", "e", "i", "a", "l", "o"],
+		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTextSecondary",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"name": "data",
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetHtml": {
+				"abbrev": "",
+				"desc": "GetHtml",
+				"name": "GetHtml",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "obj",
+				"shortDesc": "GetHtml",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLineCount": {
+				"abbrev": "",
+				"desc": "GetLineCount",
+				"name": "GetLineCount",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLineCount",
+				"subf": {}
+			},
+			"GetLineStart": {
+				"abbrev": "",
+				"desc": "GetLineStart",
+				"name": "GetLineStart",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num_int",
+				"shortDesc": "GetLineStart",
+				"subf": {}
+			},
+			"GetLineTop": {
+				"abbrev": "",
+				"desc": "GetLineTop",
+				"name": "GetLineTop",
+				"pNames": ["line"],
+				"pTypes": ["num_int"],
+				"retval": "num",
+				"shortDesc": "GetLineTop",
+				"subf": {}
+			},
+			"GetMaxLines": {
+				"abbrev": "",
+				"desc": "GetMaxLines",
+				"name": "GetMaxLines",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetMaxLines",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Text",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Log": {
+				"abbrev": "",
+				"desc": "Log",
+				"name": "Log",
+				"pNames": ["msg", "options"],
+				"pTypes": ["str", "str_com"],
+				"shortDesc": "Log",
+				"subf": {}
+			},
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetLog": {
+				"abbrev": "",
+				"desc": "SetLog",
+				"name": "SetLog",
+				"pNames": ["maxLines"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetLog",
+				"subf": {}
+			},
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetOnTouchDown": "#2938578932",
+			"SetOnTouchMove": "#2039582034",
+			"SetOnTouchUp": "#9861324731",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetTouchable": "#2562918782",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
+	"CreateTimePicker": {
+		"abbrev": "tmp",
+		"desc": "CreateTimePicker",
+		"name": "CreateTimePicker",
+		"pNames": ["t", "e", "i"],
+		"pTypes": ["?", "?", "?"],
+		"retval": "obj",
+		"shortDesc": "CreateTimePicker",
+		"subf": { "SetOnSelect": {
+	"abbrev": "",
+	"desc": "SetOnSelect",
+	"name": "SetOnSelect",
+	"pNames": ["t"],
+	"pTypes": ["?"],
+	"shortDesc": "SetOnSelect",
+	"subf": {}
+} }
+	},
+	"darkColors": {
+		"desc": "darkColors",
+		"isval": true,
+		"name": "darkColors",
+		"retval": "lst",
+		"shortDesc": "darkColors"
+	},
+	"dp": {
+		"desc": "dp",
+		"isval": true,
+		"name": "dp",
+		"retval": "num",
+		"shortDesc": "dp"
+	},
+	"DpToPx": {
+		"abbrev": "",
+		"desc": "DpToPx",
+		"name": "DpToPx",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "DpToPx",
+		"subf": {}
+	},
+	"fonts": {
+		"desc": "fonts",
+		"isval": true,
+		"name": "fonts",
+		"retval": "obj",
+		"shortDesc": "fonts"
+	},
+	"Fr": {
+		"abbrev": "",
+		"desc": "Fr",
+		"name": "Fr",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "Fr",
+		"subf": {}
+	},
+	"functions": {
+		"desc": "functions",
+		"isval": true,
+		"name": "functions",
+		"retval": "obj",
+		"shortDesc": "functions"
+	},
+	"Fw": {
+		"abbrev": "",
+		"desc": "Fw",
+		"name": "Fw",
+		"pNames": ["t"],
+		"pTypes": ["?"],
+		"retval": "obj",
+		"shortDesc": "Fw",
+		"subf": {}
+	},
+	"GetVersion": {
+		"abbrev": "",
+		"desc": "GetVersion",
+		"name": "GetVersion",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "obj",
+		"shortDesc": "GetVersion",
+		"subf": {}
+	},
+	"RemoveLayout": {
+		"abbrev": "",
+		"desc": "RemoveLayout",
+		"name": "RemoveLayout",
+		"pNames": [],
+		"pTypes": [],
+		"shortDesc": "RemoveLayout",
+		"subf": {}
+	},
+	"sh": {
+		"desc": "sh",
+		"isval": true,
+		"name": "sh",
+		"retval": "num",
+		"shortDesc": "sh"
+	},
+	"shdp": {
+		"desc": "shdp",
+		"isval": true,
+		"name": "shdp",
+		"retval": "num",
+		"shortDesc": "shdp"
+	},
+	"sw": {
+		"desc": "sw",
+		"isval": true,
+		"name": "sw",
+		"retval": "num",
+		"shortDesc": "sw"
+	},
+	"swdp": {
+		"desc": "swdp",
+		"isval": true,
+		"name": "swdp",
+		"retval": "num",
+		"shortDesc": "swdp"
+	},
+	"values": {
+		"desc": "values",
+		"isval": true,
+		"name": "values",
+		"retval": "obj",
+		"shortDesc": "values"
+	},
+	"version": {
+		"desc": "version",
+		"isval": true,
+		"name": "version",
+		"retval": "num",
+		"shortDesc": "version"
+	}
+}

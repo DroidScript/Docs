@@ -1,0 +1,13 @@
+<sample Basic>
+cfg.MUI;
+
+function OnStart() {
+    lay = app.CreateLayout("linear", "FillXY,VCenter");
+
+    btn = MUI.CreateButtonRound("A rounded button");
+    btn.SetPadding(0.05, 0, 0.05, 0);
+    lay.AddChild(btn);
+
+    app.AddLayout(lay);
+}
+</sample>

@@ -1,0 +1,387 @@
+{
+	"#8294739481": {
+		"desc": "Animates the control.\n\nThere are\n\t“in”-Animations which are used to show objects from hidden state\n\t“out”-animations which are used to hide objects in visible state and\n\t“static”-animations which keep the visible state.",
+		"name": "Animate",
+		"pNames": ["type", "callback", "time"],
+		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
+			"desc": "Callback",
+			"name": "callback",
+			"pNames": ["type"],
+			"pTypes": ["str"],
+			"shortDesc": "callback"
+		}, "num_mls"],
+		"shortDesc": "Animates a control"
+	},
+	"#1794786072": { "name": "AdjustColor",
+		"desc": "Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.",
+		"pNames": ["hue", "saturation", "brightness", "contrast"],
+		"pTypes": ["num--180..180", "num--100..100", "num--100..100", "num-0..100"],
+		"shortDesc": "Adjust the visual color effect of the control"
+	},
+	"#1362225380": { "name": "ClearFocus",
+		"desc": "Removes the focus of the control so that the user no longer has immediate access to it.",
+		"shortDesc": "Removes the focus of the control"
+	},
+	"#1924613953": { "name": "Dismiss",
+		"desc": "Hide the control and remove it from the screen.",
+		"shortDesc": "Hides the control and removes it from the screen"
+	},
+	"#1500174100": { "name": "Explode",
+		"desc": "Destroys the control with an explode animation and sound.",
+		"shortDesc": "Destroy the control with a huge explosion"
+	},
+	"#7324472769": { "name": "Focus",
+		"desc": "Set the focus to the control so that the user can interact with it immediately.",
+		"shortDesc": "Set the focus to the control for immediate access"
+	},
+	"#1197564340": { "name": "GetAbsHeight",
+		"desc": "Get the absolute height of the control in pixels.",
+		"retval": "num_int",
+		"shortDesc": "Get the control height in pixels"
+	},
+	"#1128215329": { "name": "GetAbsWidth",
+		"desc": "Get the absolute width of the control in pixels.",
+		"retval": "num_int",
+		"shortDesc": "Get the control width in pixels"
+	},
+	"#2576212953": { "name": "GetHeight",
+		"desc": "Get the height of the control as screen height relative float or in pixels with the **px** option.",
+		"pNames": ["options"],
+		"pTypes": ["str-px"],
+		"retval": "num",
+		"shortDesc": "Get the height of the control"
+	},
+	"#1237814406": { "name": "GetLeft",
+		"desc": "Get the distance from the control to the left parent border as width relative float or in pixels with the **px** option.",
+		"pNames": ["options"],
+		"pTypes": ["str-px"],
+		"retval": "num",
+		"shortDesc": "Get distance to the left parent border"
+	},
+	"#3557841648": { "name": "GetParent",
+		"desc": "Returns the parent control object where the object was added to - commonly a layout.",
+		"retval": "dso",
+		"shortDesc": "Returns the parent control object"
+	},
+	"#1605064214": { "name": "GetPosition",
+		"desc": "Returns data about the position and size of the control.\nIf the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control.\nThe **px** options turns the relative values into pixels.",
+		"pNames": ["options"],
+		"pTypes": ["str-screen,px"],
+		"retval": "obj-{ left:num, top:num, right:num, bottom:num }",
+		"shortDesc": "Returns data about position and size"
+	},
+	"#2387569276": { "name": "GetText",
+		"desc": "Returns the current displayed text of the control.",
+		"retval": "str",
+		"shortDesc": "Returns the currently contained text"
+	},
+	"#2530918945": { "name": "GetTextSize",
+		"desc": "Returns the current size of the contained text. If the **px** option is given the size will be retured in pixels.",
+		"pNames": ["mode"],
+		"pTypes": ["str-px"],
+		"retval": "num",
+		"shortDesc": "Returns the current text size"
+	},
+	"#1981028136": { "name": "GetTop",
+		"desc": "Get the distance from the control to the upper parent border as height relative float or in pixels with the **px** option.",
+		"pNames": ["options"],
+		"pTypes": ["str-px"],
+		"retval": "num",
+		"shortDesc": "Get distance to the upper parent border"
+	},
+	"#1672373665": { "name": "GetVisibility",
+		"desc": "Returns the current visibility state of the control. The Values are:\n**Show**: visible\n**Hide**: invisible but still consuming space\n**Gone**: invisible and not consuming space",
+		"retval": "str-Show|Hide|Gone",
+		"shortDesc": "Returns the current visibility state"
+	},
+	"#1321469131": { "name": "GetWidth",
+		"desc": "Get the width of the control as screen width relative float or in pixels with the **px** option.",
+		"pNames": ["options"],
+		"pTypes": ["str-px"],
+		"retval": "num",
+		"shortDesc": "Get the width of the control"
+	},
+	"#5528553362": { "name": "Gone",
+		"desc": "Hides the control without consuming any more layout space as if it were never there.",
+		"shortDesc": "Make it gone. It was never there!"
+	},
+	"#5372805812": { "name": "Hide",
+		"desc": "Hide the control but keep the layout space free.",
+		"shortDesc": "Hides the control visually"
+	},
+	"#1744802827": { "name": "IsEnabled",
+		"desc": "Returns whether the control is currently useable by the user.",
+		"retval": "bin",
+		"shortDesc": "Checks if the control is useable"
+	},
+	"#1785728721": { "name": "IsOverlap",
+		"desc": "Returns whether the control overlaps with another by a given distance.",
+		"pNames": ["obj", "depth"],
+		"pTypes": ["dso", "num_frc"],
+		"retval": "bin",
+		"shortDesc": "Checks if the control overlaps with another"
+	},
+	"#1814300863": { "name": "IsVisible",
+		"desc": "Returns whether the control is currently visible to the user, ignoring overlaying controls.",
+		"retval": "bin",
+		"shortDesc": "Checks if the control is currently visible"
+	},
+	"#1023663567": { "name": "Method",
+		"desc": "Allows access to other functions defined on the object in Java via reflection.\n\n<premium>",
+		"pNames": ["name", "types", "p1", "p2", "p3", "p4"],
+		"pTypes": ["str", "lst-boolean,char,byte,short,int,long,float,double,String,CharSequence,...", "str", "str", "str", "str"],
+		"retval": "all",
+		"shortDesc": "Access Java object methods via reflection"
+	},
+	"#0197498372": { "name": "SetFontFile",
+		"desc": "Change the font style by defining a font file.",
+		"pNames": ["file"],
+		"pTypes": ["str_pth"],
+		"shortDesc": "Change the used font"
+	},
+	"#1162431318": { "name": "SetBackAlpha",
+		"desc": "Set the transparency of the background by an alpha value between **0** (_no transparency_) and **0.99** (_full transparent_) or **1** (_no transparency_) and **256** (_full transparent_)",
+		"pNames": ["alpha"],
+		"pTypes": ["num-0..0.99|1..256"],
+		"shortDesc": "Set the background transparency by alpha value"
+	},
+	"#3857861627": { "name": "SetBackColor",
+		"desc": "Changes the background color of the control.",
+		"pNames": ["color"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Change the background color"
+	},
+	"#7112142192": { "name": "SetBackGradient",
+		"desc": "Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.",
+		"pNames": ["color1", "color2", "color3", "options"],
+		"pTypes": ["str_col", "str_col", "?", "str-left-right|right-left|top-bottom|bottom-top|bl-tr|br-tl|tl-br|tr-bl"],
+		"shortDesc": "Define the background color of the control with a gradient"
+	},
+	"#1101641465": { "name": "SetBackGradientRadial",
+		"desc": "Define a radial color gradient for the background of control.",
+		"pNames": ["x", "y", "radius", "color1", "color2", "color3", "options"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "str_col", "str_col", "?", "str_com"],
+		"shortDesc": "Define a radial background color gradient"
+	},
+	"#1239127541": { "name": "SetBackground",
+		"desc": "Changes the background to an image which can be repeated using the **repeat** option.\nAn image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!",
+		"pNames": ["file", "options"],
+		"pTypes": ["str_pth", "str-repeat"],
+		"shortDesc": "Change the background to an image"
+	},
+	"#1096996086": { "name": "SetColorFilter",
+		"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
+		"pNames": ["color", "mode"],
+		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
+		"shortDesc": "Adjust the visual color effect with different BlendModes"
+	},
+	"#1602385882": { "name": "SetEnabled",
+		"desc": "En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.",
+		"pNames": ["enable"],
+		"pTypes": ["bin"],
+		"shortDesc": "En/Disable the control"
+	},
+	"#0897234673": { "name": "SetEllipsize",
+		"desc": "Will cause the inner text to be broken with ... at the start or the end if it cannot fit in the control.",
+		"pNames": ["mode"],
+		"pTypes": ["str-start|middle|end"],
+		"shortDesc": "Auto-crop text to fit in control"
+	},
+	"#8753208754": { "name": "SetHtml",
+		"desc": "Change the current text of the control to html-formatted text.",
+		"pNames": ["str"],
+		"pTypes": ["str_htm"],
+		"shortDesc": "Set current text to html-formatted text"
+	},
+	"#1741900074": { "name": "SetMargins",
+		"desc": "Define a distance to other controls on each side of the control.",
+		"pNames": ["left", "top", "right", "bottom", "mode"],
+		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"shortDesc": "Define distances to other controls"
+	},
+	"#2137502353": { "name": "SetOnChange",
+		"desc": "Called when the containing data has been changed by the user.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Called when content was changed by the user"
+	},
+	"#9283752301": { "name": "SetOnFocus",
+		"desc": "Define a callback function called when the user focuses the control.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"desc": "Callback",
+			"name": "callback",
+			"shortDesc": "callback"
+		}],
+		"shortDesc": "Called when the control gets focused"
+	},
+	"#2735982374": { "name": "SetOnLongTouch",
+		"desc": "Define a callback function which is called when the object has been long pressed.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["src"],
+				"pTypes": ["dso"],
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Called when the control was pressed for eons"
+	},
+	"#2398750419": { "name": "SetOnTouch",
+		"desc": "Define a callback function that is called when the user touches the control.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Define a callback function for touch events"
+	},
+	"#2088093920": { "name": "SetOnTouch",
+		"desc": "Define a callback function that is called when the user touches the control. In addition, an **event** object is passed to the callback function to obtain information about the touch **type**, the touch **position(s)**, the **amount** of touches and the **control** that was touched.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["event"],
+				"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Define a callback function for user toches"
+	},
+	"#2938578932": { "name": "SetOnTouchDown",
+		"desc": "Define a callback function which is called when the user started toching the control.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["event"],
+				"pTypes": ["obj-{ source:dso, action:str-Down, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Called when the user starts touching the control"
+	},
+	"#2039582034": { "name": "SetOnTouchMove",
+		"desc": "Define a callback function which is called when the user drags his finger over the screen.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["event"],
+				"pTypes": ["obj-{ source:dso, action:str-Move, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Called when the user drags his finger over the screen"
+	},
+	"#9861324731": { "name": "SetOnTouchUp",
+		"desc": "Define a callback function which is called when the users finger leaves the screen.",
+		"pNames": ["callback"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["event"],
+				"pTypes": ["obj-{ source:dso, action:str-Up, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Called when the user finger leaves te screen"
+	},
+	"#1923105617": { "name": "SetPadding",
+		"desc": "Define distances that elements within the control are to maintain from the control borders.",
+		"pNames": ["left", "top", "right", "bottom", "mode"],
+		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"shortDesc": "Define distances to contained elements"
+	},
+	"#1425862386": { "name": "SetPosition",
+		"desc": "Defines the position and size for the control if the parent is an absolute layout.",
+		"pNames": ["left", "top", "width", "height", "options"],
+		"pTypes": ["num", "num", "num", "num", "str-px"],
+		"shortDesc": "Defines position and size on absolute layouts"
+	},
+	"#1990464376": { "name": "SetScale",
+		"desc": "Scales the control along with its contents by the factors passed to the function.",
+		"pNames": ["x", "y"],
+		"pTypes": ["num_fac", "num_fac"],
+		"shortDesc": "Scale the control by the given factors"
+	},
+	"#1296070870": { "name": "SetSize",
+		"desc": "Change the size of the control in either screen relative values or in pixels if the **px** option was given.",
+		"pNames": ["width", "height", "options"],
+		"pTypes": ["num", "num", "str-px|sp|dip|dp|mm|pt"],
+		"shortDesc": "Change the size of the control"
+	},
+	"#8207502354": { "name": "SetText",
+		"desc": "Change the currently displayed text in the control.",
+		"pNames": ["text"],
+		"pTypes": ["str"],
+		"shortDesc": "Change displayed text"
+	},
+	"#0175303923": { "name": "SetTextColor",
+		"desc": "Change the text color of the contained text.",
+		"pNames": ["color"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Change the text color"
+	},
+	"#1093247031": { "name": "SetTextShadow",
+		"desc": "Define a shadow displayed around the control.\nThe sun is always shining so there has to be one. Always.",
+		"pNames": ["radius", "dx", "dy", "color"],
+		"pTypes": ["num_int", "num_int", "num_int", "str_col"],
+		"shortDesc": "Define a shadow around the control"
+	},
+	"#5019790423": { "name": "SetTextSize",
+		"desc": "Change the size of the contained text.",
+		"pNames": ["size", "mode"],
+		"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
+		"shortDesc": "Change the text size"
+	},
+	"#2562918782": { "name": "SetTouchable",
+		"desc": "En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.",
+		"pNames": ["touchable"],
+		"pTypes": ["bin"],
+		"shortDesc": ""
+	},
+	"#1004824195": { "name": "SetVisibility",
+		"desc": "Change the visibility of the control to one of the available modes:\n**Show:** visible\n**Hide:** invisible but still consuming space\n**Gone:** invisible and not consuming space",
+		"pNames": ["mode"],
+		"pTypes": ["str-Show|Hide|Gone"],
+		"shortDesc": "Change the visibility mode"
+	},
+	"#1243391562": { "name": "Show",
+		"desc": "Set the visibility of the control to “Show”.",
+		"shortDesc": "Set the visibility to “Show”"
+	},
+	"#2114624769": { "name": "Tween",
+		"desc": "Performs an animation on the control.\nThe **target** object is for the position, size and rotation that the control has at the end of the animation.\n\nThe **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.\n\nWith the amount of **repeat**s you can control how many times you want to play the animation.\n\nIf you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.\n\nFinally the **callback** function will be called after the animation has finished. Well, it's about time!",
+		"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
+		"pTypes": [
+			"obj-{ x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }",
+			"num_mls",
+			"str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out",
+			"num_int",
+			"bin", {
+				"abbrev": "",
+				"desc": "callback function",
+				"name": "callback",
+				"shortDesc": "callback"
+			}
+		],
+		"shortDesc": "Animates the control"
+	}
+}
