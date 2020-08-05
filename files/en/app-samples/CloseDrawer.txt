@@ -24,17 +24,17 @@ function OnStart()
 	layDrawer.AddChild( btnClose );
 
 	app.AddDrawer( layDrawer, "left", 0.8 );
-    
+
     app.LockDrawer( "left" );
 }
 
 function btnOpen_OnTouch()
 {
-   app.OpenDrawer( "left" );
+    app.OpenDrawer( "left" );
 }
 
 function btnClose_OnTouch()
 {
-   <b>app.CloseDrawer( "left" );</b>
+    <b>app.CloseDrawer( "left" );</b>
 }
 </sample>

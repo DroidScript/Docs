@@ -1,9 +1,9 @@
 <sample Basic>
 function OnStart()
 {
-   ynd = app.CreateYesNoDialog( "Choose an answer" );
-   ynd.SetOnTouch( Ynd_OnTouch );
-   ynd.Show();
+    ynd = app.CreateYesNoDialog( "Choose an answer" );
+    ynd.SetOnTouch( Ynd_OnTouch );
+    ynd.Show();
 }
 
 function Ynd_OnTouch( result )

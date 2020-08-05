@@ -42,6 +42,9 @@ There are shortcuts to certain functions, which are
 These methods can force DroidScript to add or remove specific permissions from your app.
 See also: @../app/GetPermission, @../app/CheckPermission
 
+## Translations: T()
+Converts a keyword into the translated text using a [lang.json](07FileStructure.htm#lang.json) file.
+
 ## Unique Callbacks: I()
 DroidScript checks if a callback function already exists and uses it instead of creating a new instance.
 This can cause issues when referring to other local variables in private scopes.

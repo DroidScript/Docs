@@ -2589,14 +2589,14 @@
 				"name": "SetCornerRadius",
 				"pNames": ["radius"],
 				"pTypes": ["num_pxl"],
-				"shortDesc": "Apply corner radius to cl's"
+				"shortDesc": "Apply corner radius to card layouts's"
 			},
 			"SetElevation": {
 				"desc": "Applies a shadow to card layouts.",
 				"name": "SetElevation",
 				"pNames": ["elevation"],
 				"pTypes": ["num_pxl"],
-				"shortDesc": "Apply shadow to cl's"
+				"shortDesc": "Apply shadow to card layouts's"
 			},
 			"SetEnabled": "#1602385882",
 			"SetGravity": {
@@ -7059,7 +7059,7 @@
 		"shortDesc": "Get current keyboard height"
 	},
 	"GetLanguage": {
-		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n\nSee Also: @GetLanguageCode, @GetCountry, @SetLanguage",
+		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n%c\n\nSee Also: @GetLanguageCode, @GetCountry, @SetLanguage",
 		"name": "GetLanguage",
 		"retval": "str",
 		"shortDesc": "Get device language"

@@ -36,14 +36,14 @@ function OnWizard( lay, page )
     break;
 
     case 3:
-       wizTxt.SetText( "Wizard complete!" );
-       wizFlag.Show();
-       wiz.Finish();
+        wizTxt.SetText( "Wizard complete!" );
+        wizFlag.Show();
+        wiz.Finish();
     break;
 
     case 4:
-       wiz.Dismiss();
-       app.ShowPopup( "Wizard finished" );
+        wiz.Dismiss();
+        app.ShowPopup( "Wizard finished" );
     break;
 
     case -1:
