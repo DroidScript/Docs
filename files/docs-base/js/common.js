@@ -249,7 +249,7 @@ function getTheme()
 
 function OpenUrl( url, type, choose )
 {
-	if(isAndroid) app.OpenUrl(url, type, choose );
+	if(isDS) app.OpenUrl(url, type, choose );
 	else window.open(url);
 	return false;
 }

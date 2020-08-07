@@ -18,7 +18,7 @@ function OnStart()
 
     <b>var sock = app.CreateWebSocket( "sock1", ip, 8080 );
     sock.SetOnOpen( OnSockOpen );
-    sock.SetOnError( Sock_OnError );</b>
+    sock.SetOnClose( OnSockClose );</b>
 }
 
 function OnSockOpen()

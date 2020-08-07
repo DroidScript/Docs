@@ -687,7 +687,7 @@
 			"GetColorEffects": {
 				"desc": "Returns a list of available color effects for the camera.",
 				"name": "GetColorEffects",
-				"retval": "str-none,mono,negative,solarize,sepia,positionterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
+				"retval": "str-none,mono,negative,solarize,sepia,posterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
 				"shortDesc": "Returns a new list of available color effects"
 			},
 			"GetHeight": "#2576212953",
@@ -801,7 +801,7 @@
 				"desc": "Applies a color effect to the camera.",
 				"name": "SetColorEffect",
 				"pNames": ["effect"],
-				"pTypes": ["str-none|mono|negative|solarize|sepia|positionterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"],
+				"pTypes": ["str-none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"],
 				"shortDesc": "Applies a color effect to the camera"
 			},
 			"SetColorFilter": "#1096996086",
@@ -4085,8 +4085,9 @@
 			"SetBackGradient": "#7112142192",
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
-			"SetColorFilter": { "name": "SetColorFilter",
+			"SetColorFilter": {
 				"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
+				"name": "SetColorFilter",
 				"pNames": ["color", "mode", "options"],
 				"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over", "str"],
 				"shortDesc": "Adjust the visual color effect with different BlendModes"
@@ -6296,6 +6297,7 @@
 			"CanGoForward": {
 				"desc": "Check whether the user can travel forward in history.",
 				"name": "CanGoForward",
+				"retval": "bin",
 				"shortDesc": "Check if history has a following page"
 			},
 			"Capture": {
@@ -7168,7 +7170,7 @@
 		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"name": "GetPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<\"pid:num\">", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:\"<pid:num>\"", {
 			"desc": "callback function",
 			"name": "callback",
 			"pNames": ["ungranted"],
@@ -8457,7 +8459,7 @@
 		"desc": "The check list provides a similar functionality to the “Multi” [ListDiaog](CreateListDialog.htm), although you can adjust its initial check states with an object structure.",
 		"name": "ShowCheckList",
 		"pNames": ["title", "list", "callback", "width", "height", "options"],
-		"pTypes": ["str", "str-title:str\\:checked:bin||obj-{ title:str, check:bin }", {
+		"pTypes": ["str", "str-title:str\\:checked:bin||lst_obj-{ title:str, check:bin }", {
 			"desc": "callback function",
 			"name": "callback",
 			"pNames": ["data"],

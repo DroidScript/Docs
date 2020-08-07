@@ -78,7 +78,7 @@
 				    <br>
 				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> sock <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateWebSocket</span><span class="token punctuation">(</span> <span class="token string">"sock1"</span><span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token number">8080</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
 				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnOpen</span><span class="token punctuation">(</span> OnSockOpen <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> Sock_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <span style="display:inline-block">sock<span class="token punctuation">.</span><span class="token function">SetOnClose</span><span class="token punctuation">(</span> OnSockClose <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnSockOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>

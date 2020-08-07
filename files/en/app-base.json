@@ -1,7 +1,6 @@
 {
-	"#8294739481": {
+	"#8294739481": { "name": "Animate",
 		"desc": "Animates the control.\n\nThere are\n\t“in”-Animations which are used to show objects from hidden state\n\t“out”-animations which are used to hide objects in visible state and\n\t“static”-animations which keep the visible state.",
-		"name": "Animate",
 		"pNames": ["type", "callback", "time"],
 		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
 			"desc": "Callback",
