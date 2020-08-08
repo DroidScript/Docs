@@ -216,16 +216,16 @@ function jumpTo(contains)
 
 // toggles between dark and default theme
 function tglTheme() {
-    var thm = getTheme();
-    if(thm.indexOf('dark') > -1)
-         setTheme(thm.replace("dark", "default"));
-    else setTheme(thm.replace("default" , "dark"));
+	var thm = getTheme();
+	if(thm.indexOf('dark') > -1)
+		 setTheme(thm.replace("dark", "default"));
+	else setTheme(thm.replace("default" , "dark"));
 }
 
 // set the current theme. ([mo]default, [mo]dark)
 function setTheme( theme, holo )
 {
-    if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
+	if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
 	if(curTheme == theme) return;
 	curTheme = theme;
 	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
@@ -244,7 +244,7 @@ function setTheme( theme, holo )
 // get current theme from localStorage
 function getTheme()
 {
-	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
+	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "dark";
 }
 
 function OpenUrl( url, type, choose )
@@ -256,22 +256,30 @@ function OpenUrl( url, type, choose )
 
 function IsApp()
 {
-	if(isApp) return true;
+	if(isDS || useWebIDE) return true;
 	ShowPopup("Not running in DroidScript app.");
 	return false;
 }
 
 function OpenSamples()
 {
-	if(!IsApp()) return;
-	app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+	if(isDS) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+	else {
+		var e = parent.$(".nav-tabs > li > a:contains(Samples)");
+		if(e.length) e.click()
+		else IsApp();
+	}
 }
 
 function OpenSample(name)
 {
-	if(!IsApp()) return;
 	OpenSamples();
-	app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+	if(isDS) app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+	else {
+		var e = parent.$("#samplesContentList > div:contains(" + name + ") > a")
+		if(e.length) e.click();
+		else IsApp();
+	}
 }
 
 // app.ShowPopup equivalent for browsers
