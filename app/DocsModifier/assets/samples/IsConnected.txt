@@ -1,7 +1,0 @@
-<sample Check Connected>
-function OnStart()
-{
-    <b>var isConnected = app.IsConnected();</b>
-    app.Alert( isConnected, "is Connected:" );
-}
-</sample>

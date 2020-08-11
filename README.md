@@ -2,9 +2,9 @@
 
 ## The Official DroidScript Documentation
 
-Preview available at https://alex-symbroson.github.io/Docs
+Preview available at https://symdstools.github.io/Docs
 
-Mobile-sized iframe for desktop browsers: https://alex-symbroson.github.io/Docs/docs
+Mobile-sized iframe for desktop browsers: https://symdstools.github.io/Docs/docs
 
 ### Structure
 

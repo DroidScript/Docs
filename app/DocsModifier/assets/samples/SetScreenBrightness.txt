@@ -1,6 +1,0 @@
-<sample Example>
-function OnStart()
-{
-<b>	app.SetScreenBrightness( 0.25 );
-</b>}</sample>
-

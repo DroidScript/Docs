@@ -1,7 +1,0 @@
-<sample Show Devide ID>
-function OnStart()
-{
-    <b>var id = app.GetDeviceId();</b>
-    app.Alert( id );
-}
-</sample>

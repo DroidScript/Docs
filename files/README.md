@@ -201,11 +201,11 @@ If you want to use popups in a description text or in return values you can add 
 
 #### Cross-Doc References
 You can easily referenciate other docs using the `@funcname` format. This is mostly used for 'See Also: 's
-- See Also: [@WriteFile](https://alex-symbroson.github.io/Docs/docs/app/WriteFile.htm)
+- See Also: [@WriteFile](https://symdstools.github.io/Docs/docs/app/WriteFile.htm)
 You can even point to parent- or subdirectories:
-- Have a look at the [@../app/SaveText](https://alex-symbroson.github.io/Docs/docs/app/SaveText)
+- Have a look at the [@../app/SaveText](https://symdstools.github.io/Docs/docs/app/SaveText.htm)
 And add html anchors:
-- Have a look at the [@../app/CreateImage#Hide](https://alex-symbroson.github.io/Docs/docs/app/CreateImage.htm#Hide)
+- Have a look at the [@../app/CreateImage#Hide](https://symdstools.github.io/Docs/docs/app/CreateImage.htm#Hide)
 
 #### Inline Code Areas
 If you have a short command or code example you want to include without making it a Sample block, you can use the \<smp\> tag or a specific highlighted language: \<js\> \<java\> or \<bash\>. Example:

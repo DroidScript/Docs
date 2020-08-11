@@ -1,7 +1,0 @@
-<sample Check APK>
-function OnStart()
-{
-    <b>var isAPK = app.IsAPK();</b>
-    app.Alert( isAPK, "is APK:" );
-}
-</sample>
