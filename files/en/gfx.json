@@ -81,7 +81,7 @@
 				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
 				"name": "SetMatrix",
 				"pNames": ["mtx"],
-				"pTypes": ["gvo-Matrix"],
+				"pTypes": ["obj-Matrix"],
 				"shortDesc": "Applies a 2d transformation"
 			},
 			"SetPhysics": {
@@ -415,7 +415,7 @@
 				"retval": "bin",
 				"shortDesc": ""
 			},
-            "PauseTween": "#8798237593",
+			"PauseTween": "#8798237593",
 			"pivotX": "#2983519836",
 			"pivotY": "#9812693423",
 			"Play": {
@@ -439,7 +439,7 @@
 				"pTypes": ["num_int"],
 				"shortDesc": "play to animation frame"
 			},
-            "PlayTween": "#9832987464",
+			"PlayTween": "#9832987464",
 			"scaleX": "#1246873531",
 			"scaleY": "#7124535139",
 			"SetLoop": {
@@ -475,14 +475,14 @@
 				"desc": "Change the animation to another.",
 				"name": "SetSpriteSheet",
 				"pNames": ["sheet"],
-				"pTypes": ["gvo-SpriteSheet"],
+				"pTypes": ["gvo-CreateSpriteSheet"],
 				"shortDesc": "Change animation"
 			},
 			"SetTexture": {
 				"desc": "Change the sprite texture to another.",
 				"name": "SetTexture",
 				"pNames": ["tx"],
-				"pTypes": ["gvo-SpriteTexture"],
+				"pTypes": ["gvo-CreateTexture"],
 				"shortDesc": "Change sprite texture"
 			},
 			"SetTween": "#8929387454",
@@ -493,9 +493,9 @@
 				"retval": "?",
 				"shortDesc": ""
 			},
-            "StartTween": "#1234231242",
-            "StepTween": "#9872394872",
-            "Stop": {
+			"StartTween": "#1234231242",
+			"StepTween": "#9872394872",
+			"Stop": {
 				"desc": "Stop playin the animation.",
 				"name": "Stop",
 				"shortDesc": "Stop animation"
@@ -544,7 +544,7 @@
 			"name": "callback",
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
+		"retval": "gvo-Sheet",
 		"shortDesc": "Returns a new spritesheet object",
 		"subf": {
 			"data": "#2865983653",

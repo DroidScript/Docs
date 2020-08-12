@@ -202,7 +202,8 @@ function generateDoc( name )
 // reset globals
 function resetGlobals() {
 	popDefs = {};
-	spop = {str:0, num:0, lst:0, obj:0, fnc:0, dsc:0, mul:0, std:0, dso:0, gvo:0};
+	spop = {fnc:0, dsc:0, mul:0, std:0, ukn:0};
+	keys(conf.tname).map(k => spop[k] = 0);
 }
 
 function adjustDoc(html, name)
@@ -396,18 +397,18 @@ function getDocData( f, useAppPop )
 		{
 			if(!base[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = base[met];
-            // force use of entry name
-            if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
+			// force use of entry name
+			if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 			curSubf = met.name;
 		}
 
-        // load params from base
-        while(typeof met.params == "string" && met.params.startsWith('#')) {
-            if(!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
-            met.pNames = base[met.params].pNames;
-            met.pTypes = base[met.params].pTypes;
-            met.params = base[met.params].params;
-        }
+		// load params from base
+		while(typeof met.params == "string" && met.params.startsWith('#')) {
+			if(!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
+			met.pNames = base[met.params].pNames;
+			met.pTypes = base[met.params].pTypes;
+			met.params = base[met.params].params;
+		}
 
 		if(hidden(curSubf)) continue;
 
@@ -417,8 +418,8 @@ function getDocData( f, useAppPop )
 			scope[f.name].subf[curSubf].shortDesc = "";
 			met.shortDesc = "";
 		}
-        if(met.pNames == undefined) met.pNames = [];
-        if(met.pTypes == undefined) met.pTypes = [];
+		if(met.pNames == undefined) met.pNames = [];
+		if(met.pTypes == undefined) met.pTypes = [];
 
 		//convert return value
 		if( met.retval )
@@ -537,17 +538,15 @@ function typeDesc( types )
 					case "str": return s[i] + rplop( type[2], true );
 					case "lst":
 					case "obj": return s[i] + replaceTypes( type[2], false );
-					case "dso":
-					case "gvo":
-						var func = type[2].replace(/[^/]*\/|#.*/g, "");
-						//if(!curDoc.endsWith(func + ".htm") && !scope[func])
-						//	Throw(Error(`link to unexistent file ${type[2]}.htm`))
-						if(scope[func])
-							return s[i] + newLink(type[2].replace(/(#.*)|$/, "$1.htm"),
-								func.replace(regConPrefix, ""));
-						else
+					default:
+						if(!type[0].endsWith("o"))
+							return Throw(Error("unknown typex " + type[1]));
+						if(curDoc.endsWith(type[2] + ".htm"))
 							return s[i] + type[2];
-					default: Throw(Error("unknown type " + type[1]));
+						if(!type[2].startsWith("@") && !scope[type[2]])
+							return Throw(Error("link required for " + type[2]));
+						return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
+							type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
 				}
 			}
 			else
@@ -561,7 +560,7 @@ function toArgPop( name, types, doSwitch )
 	// function callbacks
 	if( typeof types == "object" )
 	{
-        if(types.pNames == undefined) types.pNames = [];
+		if(types.pNames == undefined) types.pNames = [];
 		var s = newPopup( "fnc", name,
 			("<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
@@ -618,14 +617,15 @@ function toArgPop( name, types, doSwitch )
 					return s[i] + rplop( type[2], type[0] == "str" );
 				case "lst":
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
-				case "dso":
-				case "gvo":
-					var func = type[2].replace(/[^/]*\/|#.*/g, "");
-					//if(!curDoc.endsWith(func + ".htm") && !scope[func])
-					//	Throw(Error(`link to unexistent file ${type[2]}.htm`))
-					return s[i] + newLink(type[2].replace(/(#.*)|$/, "$1.htm"),
-						func.replace(regConPrefix, ""));
-				default: Throw(Error("unknown type " + type[1]));
+				default:
+					if(!type[0].endsWith("o"))
+						return Throw(Error("unknown typex " + type[1]));
+					if(curDoc.endsWith(type[2] + ".htm"))
+						return s[i] + type[2];
+					if(!type[2].startsWith("@") && !scope[type[2]])
+						return Throw(Error("link required for " + type[2]));
+					return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
+						type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
 			}
 		}
 		else return s[i];
@@ -1003,10 +1003,9 @@ function tos(o, intd, m)
 {
 	if(intd == undefined) intd = "";
 	if(m == undefined) m = true;
-	s = m ? intd : "";
+	var s = m ? intd : "";
 
-	if(o === null) return "null";
-	else if(o === undefined) return "undefined";
+	if(o === null || o === undefined) return "null";
 	else switch(o.constructor.name) {
 		case "String": case "Number": case "Boolean":
 			return s + JSON.stringify(o);
@@ -1022,10 +1021,13 @@ function tos(o, intd, m)
 			var okeys = keys(o).sort(sortAsc);
 			switch(okeys.length) {
 	case 0: return "{}";
-				case 1: return s += `{ "${okeys[i]}": ${tos(o[okeys[i]], "", false)} }`;
+				case 1:
+					if(o[okeys[0]] === undefined) return "{}";
+					return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], "", false)} }`;
 				default:
 					s += "{\n";
 					for(var i = 0; i < okeys.length; i++) {
+						if(o[okeys[i]] === undefined) continue;
 						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
 						if(i < okeys.length - 1) s += ",\n";
 					}

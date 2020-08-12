@@ -1,6 +1,6 @@
 {
-    "All": [],
-    "Application Control": [
+	"All": [],
+	"Application Control": [
 		"LoadPlugin",
 		"LoadScript",
 		"Script",
@@ -151,7 +151,7 @@
 		"SaveText",
 		"ClearValue",
 		"",
-        "CreateCloundStore",
+		"CreateCloundStore",
 		"DeleteDatabase",
 		"GetDatabaseFolder",
 		"OpenDatabase",
@@ -168,7 +168,7 @@
 		"Error",
 		"SetOnError"
 	],
-    "Device Control": [
+	"Device Control": [
 		"GetVolume",
 		"SetVolume",
 		"GetClipboardText",
@@ -358,9 +358,9 @@
 		"SaveCookies",
 		"ClearCookies",
 		"",
-        "CreateCloundStore",
-        "CreateEmail",
-        "CreateNetClient",
+		"CreateCloundStore",
+		"CreateEmail",
+		"CreateNetClient",
 		"CreateWebSocket",
 		"CreateWebView",
 		"HttpRequest",

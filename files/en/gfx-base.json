@@ -69,7 +69,7 @@
 	"#1789264812": { "name": "SetMatrix",
 		"desc": "Set the individual 2d transformation",
 		"pNames": ["mtx"],
-		"pTypes": ["dso-Matrix"],
+		"pTypes": ["obj-Matrix"],
 		"shortDesc": "Set 2d transformation"
 	},
 	"#1274618924": { "name": "Update",
@@ -88,29 +88,28 @@
 		"retval": "num",
 		"shortDesc": "Object width"
 	},
-    
-    "#8798237593": { "name": "PauseTween",
-        "desc": "Pause tweening.",
-        "shortDesc": "Pause tween"
-    },
-    "#9832987464": { "name": "PlayTween",
-        "desc": "Resume tweening.",
-        "shortDesc": "Resume tween"
-    },
-    "#8929387454": { "name": "SetTween",
-        "desc": "Sets up tween methods and properties without playing it.",
-        "params": "#2114624769",
-        "shortDesc": "Setup tween methods"
-    },
-    "#1234231242": { "name": "StartTween",
-        "desc": "Start tweening automatically on every rendered frame.",
-        "shortDesc": "Start tween"
-    },
-    "#9872394872": { "name": "StepTween",
-        "desc": "Updates a tween to the current time (if not paused).",
-        "shortDesc": "Update tween to now"
-    },
-    "#2114624769": { "name": "Tween",
+	"#8798237593": { "name": "PauseTween",
+		"desc": "Pause tweening.",
+		"shortDesc": "Pause tween"
+	},
+	"#9832987464": { "name": "PlayTween",
+		"desc": "Resume tweening.",
+		"shortDesc": "Resume tween"
+	},
+	"#8929387454": { "name": "SetTween",
+		"desc": "Sets up tween methods and properties without playing it.",
+		"params": "#2114624769",
+		"shortDesc": "Setup tween methods"
+	},
+	"#1234231242": { "name": "StartTween",
+		"desc": "Start tweening automatically on every rendered frame.",
+		"shortDesc": "Start tween"
+	},
+	"#9872394872": { "name": "StepTween",
+		"desc": "Updates a tween to the current time (if not paused).",
+		"shortDesc": "Update tween to now"
+	},
+	"#2114624769": { "name": "Tween",
 		"desc": "Performs an animation on the control.\nThe **target** object is for the position, size and rotation that the control has at the end of the animation.\n\nThe **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.\n\nWith the amount of **repeat**s you can control how many times you want to play the animation.\n\nIf you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.\n\nFinally the **callback** function will be called after the animation has finished. Well, it's about time!",
 		"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
 		"pTypes": [

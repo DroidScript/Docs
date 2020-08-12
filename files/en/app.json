@@ -1386,7 +1386,7 @@
 				"desc": "Build a hash of a string for one-way encryption.",
 				"name": "Hash",
 				"pNames": ["text", "mode", "options"],
-				"pTypes": ["str", "str-MD5|SHA-1|SHA-256", "str"],
+				"pTypes": ["str", "str-MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512", "str-Wrap"],
 				"shortDesc": "Get a hash from a string"
 			}
 		}
@@ -2387,7 +2387,7 @@
 				"desc": "Set the content to an image:dso-\"CreateImage\" control or specify a path to an image which will then be loaded.",
 				"name": "SetImage",
 				"pNames": ["image", "width", "height", "options"],
-				"pTypes": ["str_pth||dso-CreateImage", "num_frc", "num_frc", "str-rescale"],
+				"pTypes": ["str_pth||dso-Image", "num_frc", "num_frc", "str-rescale"],
 				"shortDesc": "Change the content to an other image"
 			},
 			"SetLineWidth": {
@@ -3351,7 +3351,7 @@
 				"desc": "Receive video from TCP connection.\n\n<premium>",
 				"name": "ReceiveVideoStream",
 				"pNames": ["port", "img"],
-				"pTypes": ["num", "dso-Image"],
+				"pTypes": ["num", "dso-CreateImage"],
 				"retval": "str",
 				"shortDesc": "Receive video over UDP"
 			},
@@ -4708,7 +4708,7 @@
 		"name": "CreateSwitch",
 		"pNames": ["text", "width", "height", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
-		"retval": "dso-Button",
+		"retval": "dso-Switch",
 		"shortDesc": "Creates a switch control",
 		"subf": {
 			"AdjustColor": "#1794786072",
@@ -6995,7 +6995,7 @@
 		"name": "GetFileDate",
 		"pNames": ["file"],
 		"pTypes": ["str_pth"],
-		"retval": "str",
+		"retval": "jso-@../javascript/Global_Objects/Date.html",
 		"shortDesc": "Get last modified date of a file or folder"
 	},
 	"GetFileSize": {

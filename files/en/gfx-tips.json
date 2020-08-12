@@ -134,7 +134,7 @@
 		"visible": "Visibility state",
 		"width": "Object width"
 	},
-	"sht": { "undefined": undefined },
+	"sht": { "data": "Extra properties" },
 	"snd": {
 		"file": "The file url",
 		"Pause": "Pause the track",

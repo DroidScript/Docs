@@ -50,8 +50,8 @@ For this purpose DroidScript provides a **\_CreatePlugin** component:
 <js noinl>plg.Send:"Calls <java nobox>CallPlugin(Bundle)<java>"( name:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string**</js>
 <js noinl>plg.SendObj:"Calls <java nobox>CallPlugin(Bundle, Object)</java>"( name:str, obj:dso, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string**</js>
 <js noinl>plg.CreateObj:"Calls <java nobox>CreateObject(Bundle)</java> with a String on “type”"( type:str, p1:"str||num||bin", p2:"str||num||bin", p3:"str||num||bin", p4:"str||num||bin", p5:"str||num||bin", p6:"str||num||bin", p7:"str||num||bin", p8:"str||num||bin" ) → **string:** _“#id”_</js>
-<js noinl>plg.SendImg:"Calls <java nobox>CallPlugin(Bundle)</java> with a <java nobox>byte[]</java> on “img”"( name:str, img:dso-CreateImage, width:num\_pxl, height:num\_pxl ) → **string**</js>
-<js noinl>plg.SendCam:"Calls <java nobox>CallPlugin(Bundle)</java> with a <java nobox>byte[]</java> on “cam”"( name:str, cam:dso-"../app/CreateCameraView" ) → **string**</js>
+<js noinl>plg.SendImg:"Calls <java nobox>CallPlugin(Bundle)</java> with a <java nobox>byte[]</java> on “img”"( name:str, img:"dso-\@../app/CreateImage", width:num\_pxl, height:num\_pxl ) → **string**</js>
+<js noinl>plg.SendCam:"Calls <java nobox>CallPlugin(Bundle)</java> with a <java nobox>byte[]</java> on “cam”"( name:str, cam:"dso-\@../app/CreateCameraView" ) → **string**</js>
 
 On the Java side following functions in <java nobox>public class MyPlugin { }</java> will get called by DroidScript:
 
