@@ -10,18 +10,19 @@ function OnStart()
 <sample Random Value>
 function OnStart()
 {
-	<b>app.SetData( "number", 100 * Math.random() | 0 );</b>
-
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	btn = app.CreateButton( "Press Me", 0.3, 0.1 );
+	btn = app.AddButton( lay, "Press Me", 0.3, 0.1 );
 	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
 
 	app.AddLayout( lay );
 }
 
-function OnMenu( item )
+function btn_OnTouch()
 {
-	app.GetData( "number" );
+    var data = 100 * Math.random() | 0;
+	</b>app.SetData( "number", data );</b>
+
+	app.ShowPopup( "Data: " + app.GetData( "number" ));
 }
+</sample>

@@ -10,7 +10,7 @@ Then create the view and add it to your app as shown in the [Banner Ads sample]{
 
 When finally publishing the app on GooglePlay remember to 'include ads' in the developer console.
 
-<red>Warning: Don't repeatedly click on your own adds unless you are using a valid testId, or Google may suspend your Admob account!</red>
+<red>Warning: Don't repeatedly click on your own ads unless you are using a valid testId, or Google may suspend your Admob account!</red>
 
 To read general infos about how AdMob works in android visit the [Google Developer Page](https://developers.google.com/admob/android/banner)
 

@@ -186,10 +186,10 @@
 		"shortDesc": "Calls a phone number"
 	},
 	"CheckLicense": {
-		"desc": "CheckLicense checks if the app is licensed with Google Play.",
+		"desc": "will trigger a standard Google Play license check for the running application (if it is a paid App).\nThe key can be found under “Development Tools > Services and API's” in the GooglePlay developer console.\nIf the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.",
 		"name": "CheckLicense",
 		"pNames": ["key"],
-		"pTypes": ["str"],
+		"pTypes": ["str_b64-GPlay license key"],
 		"shortDesc": "Checks if app is licensed with Google Play"
 	},
 	"CheckPermission": {
@@ -6985,7 +6985,7 @@
 		"shortDesc": "Get environment variable"
 	},
 	"GetExternalFolder": {
-		"desc": "GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is smth like “/storage/extsd” or “/storage/extSdCard”\n\nSee Also: @GetInternalFolder",
+		"desc": "GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is something like “/storage/extsd” or “/storage/extSdCard”\n\nSee Also: @GetInternalFolder",
 		"name": "GetExternalFolder",
 		"retval": "str_pth",
 		"shortDesc": "Get external sdcard folder"
@@ -7085,7 +7085,7 @@
 		"shortDesc": "Get devices MAC address"
 	},
 	"GetMediaFile": {
-		"desc": "Returns a path to an unambiguous media file be like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”. The folder to that file will be created automatically.\n\nSee Also: @CreateImage, @CreateCameraView",
+		"desc": "Returns a path to a unique media file like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”. The folder for this file will be created automatically.\n\nSee Also: @CreateImage, @CreateCameraView",
 		"name": "GetMediaFile",
 		"pNames": ["appName", "ext"],
 		"pTypes": ["str", "str"],
