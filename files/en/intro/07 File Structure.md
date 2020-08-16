@@ -8,17 +8,16 @@
 ├── Plugins:"Plugin installation folder"/
 ├── Extensions:"Extension installation folder for web IDE"/
 └── "&lt;PROJECT\_NAME&gt;":"Project root folder"/
-        ├── "&lt;PROJECT\_NAME&gt;.html":"Main entry for html projects (dominant)"
-        ├── "&lt;PROJECT\_NAME&gt;.js":"Main entry for javascript projects (recessive)"
-        ├── "build.json":"Controls certain aspects of the build process"
-        ├── "lang.json":"For easy translating texts"
-        ├── "~&lt;FILENAME&gt;":"Hidden file"
-        ├── Html:"external html files (static, no app.* functions here please)"/
-        ├── Snd:"sound files"/
-        ├── Misc:"miscellaneous files"/
-        └── Img:"image files"/
-            ├── "&lt;PROJECT\_NAME&gt;.jpg":"Project icon (dominant)"
-            └── "&lt;PROJECT\_NAME&gt;.png":"Project icon (recessive)"
+    ├── "&lt;PROJECT\_NAME&gt;.html":"Main entry for html projects (dominant)"
+    ├── "&lt;PROJECT\_NAME&gt;.js":"Main entry for javascript projects (recessive)"
+    ├── "build.json":"Controls certain aspects of the build process"
+    ├── "lang.json":"For easy translating texts"
+    ├── "~&lt;HIDDEN_FILE&gt;":"Hidden file"
+    ├── Html:"external html files (static, no app.* functions here please)"/
+    ├── Snd:"sound files"/
+    ├── Misc:"miscellaneous files"/
+    └── Img:"image files"/
+        └── "&lt;PROJECT\_NAME&gt;.png":"Project icon"
 </code>
 
 ### lang.json

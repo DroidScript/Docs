@@ -176,8 +176,8 @@ function OnPageShow()
 
 $(window).load(function()
 {
-	var anchor = location.href.match(/#([a-z]+)/i);
-	if(anchor) jumpTo(anchor[1]);
+	var anchor = location.href.match(/#([\w%]+)/i);
+	if(anchor) jumpTo(decodeURI(anchor[1]));
 	else if(sessionStorage.scrollPosition)
 		$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
 });
