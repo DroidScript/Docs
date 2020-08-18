@@ -1,13 +1,23 @@
-<sample Basic>
-cfg.MUI;
+<sample Light>
+cfg.Light
+cfg.MUI
 
-function OnStart() {
-    lay = app.CreateLayout("linear", "FillXY,VCenter");
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1, "Light")
 
-    btn = MUI.CreateButtonRound("A rounded button");
-    btn.SetPadding(0.05, 0, 0.05, 0);
-    lay.AddChild(btn);
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonRound("BUTTON", 0.35)
+    	lay.AddChild(btn)
 
-    app.AddLayout(lay);
+    	btn = MUI.CreateButtonRound("[fa-android] ANDROID", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonRound("CUSTOM COLOR", 0.4, 0.1, MUI.colors.blue.blue)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
 }
 </sample>

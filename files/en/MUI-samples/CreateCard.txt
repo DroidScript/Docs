@@ -21,6 +21,8 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
+
+
 <sample With-image, No-Avatar>
 cfg.Light
 cfg.MUI
@@ -45,6 +47,8 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
+
+
 <sample With Image, With Avatar>
 cfg.Light
 cfg.MUI
@@ -70,14 +74,16 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-<sample AvatarOnTop, Divider2, SetOnButtonTouch>
+
+
+<sample Complete>
 cfg.Light
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -89,11 +95,20 @@ function OnStart()
             width: 0.94,
             avatar: "/Sys/Img/Droid1.png",
             avatarOnTop: true,
+            divider1: true,
             divider2: true
         }
-        var card = UI.CreateCard(options)
-        box.AddChild(card)
-        card.SetOnButtonTouch(OnBtnTouch)
+
+        options.name = "my-card1"
+        card1 = UI.CreateCard(options)
+        box.AddChild(card1)
+        card1.SetOnButtonTouch(OnBtnTouch)
+
+        options.name = "my-card2"
+        options.buttonType = "raised"
+        card2 = UI.CreateCard(options)
+        box.AddChild(card2)
+        card2.SetOnButtonTouch(OnBtnTouch)
 
     app.AddLayout(lay)
 }

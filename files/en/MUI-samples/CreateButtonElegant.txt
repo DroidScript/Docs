@@ -1,1 +1,23 @@
- 
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonElegant("BUTTON", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonElegant("[fa-android] ANDROID", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonElegant("CUSTOM COLOR", 0.4, 0.1, MUI.colors.blue.blue)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
+}
+</sample>

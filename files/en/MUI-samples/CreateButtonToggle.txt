@@ -1,1 +1,28 @@
- 
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.darken1, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonToggle("[fa-android] ANDROID", 0.35, 0.1, OnToggle)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonToggle("CUSTOM COLOR", 0.4, 0.1, OnToggle, MUI.colors.blue.blue)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
+}
+
+function OnToggle(v)
+{
+    app.ShowPopup(v)
+}
+</sample>

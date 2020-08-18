@@ -1,1 +1,112 @@
- 
+ <sample Just a title>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+        apb = app.CreateAppBarModern("Search for games", "more_vert")
+        var apbHeight = apb.GetHeight()
+
+        scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
+            pageLay.SetPadding(0, 0, apbHeight, 0)
+                var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
+            scr.AddChild(pageLay)
+        
+        lay.AddChild(scr)
+        lay.AddChild(apb)
+
+    app.AddLayout(lay)
+
+    /*
+    * We add the app bar after the scroller to make sure
+    * that the app bar will stay on top of 
+    * the page layout
+    *
+    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
+    */
+}
+</sample>
+
+
+<sample Sample page>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+        apb = app.CreateAppBarModern("Search for games", "more_vert", "Round")
+        apb.SetOnMenuTouch(OnMenuTouch)
+        apb.SetOnControlTouch(OnCtrlTouch)
+
+        var apbHeight = apb.GetHeight()
+
+        scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
+            pageLay.SetPadding(0, 0, apbHeight, 0)
+                var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
+            scr.AddChild(pageLay)
+        
+        lay.AddChild(scr)
+        lay.AddChild(apb)
+
+    app.AddLayout(lay)
+}
+
+function OnMenuTouch()
+{
+    lay.Animate("SlideToBottom")
+}
+
+function OnCtrlTouch()
+{
+    app.ShowPopup("You click for more options.")
+}
+</sample>
+
+
+<sample Dark mode>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        var apbHeight = apb.GetHeight()
+
+        scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
+            pageLay.SetPadding(0, 0, apbHeight, 0)
+                var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
+            scr.AddChild(pageLay)
+        
+        lay.AddChild(scr)
+        lay.AddChild(apb)
+
+    app.AddLayout(lay)
+}
+</sample>

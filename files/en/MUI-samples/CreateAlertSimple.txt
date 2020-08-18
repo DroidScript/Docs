@@ -23,7 +23,7 @@ function OnStart()
     app.InitializeUIKit(color.teal, "Light")
 
     var text = "This is a sample alert text."
-    als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+    als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
     als.Show()
 
     setTimeout(CloseAlert, 4000)
@@ -49,21 +49,20 @@ function OnStart()
         btnShow.SetOnTouch(ShowOrHideAlert)
         lay.AddChild(btnShow)
 
-        btnHide = MUI.CreateButtonRound("HIDE ALERT")
-        btnHide.SetOnTouch(ShowOrHideAlert)
-        lay.AddChild(btnHide)
-
     app.AddLayout(lay)
 
     var text = "This is a sample alert text."
     als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+    als.SetOnTouch(AlertOnTouch)
 }
 
-function ShowOrHideAlert()
+function ShowAlert()
 {
-    if(this.GetText() == "SHOW ALERT")
-        als.Show()
-    else
-        als.Hide()
+    als.Show()
+}
+
+function AlertOnTouch(val)
+{
+    app.ShowPopup(val)
 }
 </sample>

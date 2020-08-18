@@ -1,6 +1,6 @@
 {
 	"colors": {
-		"desc": "MUI colors are accessible through the <b>colors</b> property of the MUI object.<br><h3>Base color objects<h3><div class='samp'>&nbsp;MUI.colors.red</div><div class='samp'>&nbsp;MUI.colors.pink</div><div class='samp'>&nbsp;MUI.colors.purple</div><div class='samp'>&nbsp;MUI.colors.deepPurple</div><div class='samp'>&nbsp;MUI.colors.indigo</div><div class='samp'>&nbsp;MUI.colors.blue</div><div class='samp'>&nbsp;MUI.colors.lightBlue</div><div class='samp'>&nbsp;MUI.colors.cyan</div><div class='samp'>&nbsp;MUI.colors.green</div><div class='samp'>&nbsp;MUI.colors.lightGreen</div><div class='samp'>&nbsp;MUI.colors.lime</div><div class='samp'>&nbsp;MUI.colors.yellow</div><div class='samp'>&nbsp;MUI.colors.amber</div><div class='samp'>&nbsp;MUI.colors.orange</div> <div class='samp'>&nbsp;MUI.colors.deepOrange</div><div class='samp'>&nbsp;MUI.colors.brown</div><div class='samp'>&nbsp;MUI.colors.gray</div><div class='samp'>&nbsp;MUI.colors.blueGray</div><br><br><i>Tip. To avoid longer lines assign the color set to a variable e.g. example</i><div class='samp'>&nbsp;var gray = MUI.colors.blueGray</div><br><br>To select a color and shading choose the right property of the base color objects: <i>lighten4</i>, <i>lighten3</i>, <i>lighten2</i>, <i>lighten1</i>, <i>darken1</i>, <i>darken2</i>, <i>darken3</i>, <i>darken4</i>.",
+		"desc": "#colors.md",
         "isval": true,
 		"name": "colors",
 		"retval": "obj",

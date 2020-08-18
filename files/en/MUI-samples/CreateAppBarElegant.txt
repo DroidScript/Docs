@@ -13,8 +13,9 @@ function OnStart()
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
             pageLay.SetPadding(0, 0, apbHeight, 0)
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
@@ -34,6 +35,8 @@ function OnStart()
     */
 }
 </sample>
+
+
 <sample Sample page>
 cfg.Light
 cfg.MUI
@@ -51,8 +54,9 @@ function OnStart()
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
             pageLay.SetPadding(0, 0, apbHeight, 0)
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
@@ -62,14 +66,6 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 
 function OnMenuTouch()
@@ -77,6 +73,8 @@ function OnMenuTouch()
     lay.Animate("SlideToBottom")
 }
 </sample>
+
+
 <sample Complete controls>
 cfg.Light
 cfg.MUI
@@ -92,8 +90,9 @@ function OnStart()
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
             pageLay.SetPadding(0, 0, apbHeight, 0)
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
@@ -103,17 +102,11 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 </sample>
-<sample Dark mode with control functions>
+
+
+<sample Dark mode>
 cfg.Light
 cfg.MUI
 
@@ -128,12 +121,12 @@ function OnStart()
         apb.SetOnMenuTouch(OnMenuTouch)
         apb.SetOnControlTouch(OnControlTouch)
         
-
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
             pageLay.SetPadding(0, 0, apbHeight, 0)
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
@@ -143,14 +136,6 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 
 function OnMenuTouch()
@@ -160,6 +145,6 @@ function OnMenuTouch()
 
 function OnControlTouch(text, index)
 {
-    app.ShowPopup("You click " + text + ": Controls index "+index)
+    app.ShowPopup("You click " + text + ": Control index = "+index)
 }
 </sample>

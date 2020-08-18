@@ -1,1 +1,60 @@
- 
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	lst = [
+            {name: "Apple", check: false},
+            {name: "Mango", check: true},
+            {name: "Orange", check: true},
+            {name: "Banana"}
+        ]
+    	chk = MUI.CreateCheckbox("Choose a fruit", lst)
+    	chk.SetOnSubmit(OnSubmit)
+        chk.Show()
+
+    app.AddLayout(lay)
+}
+
+function OnSubmit(lst)
+{
+    app.ShowPopup(JSON.stringify(lst))   
+}
+</sample>
+
+
+<sample Dark, Bottom>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        
+        lst = [
+            {name: "Apple", check: false},
+            {name: "Mango", check: true},
+            {name: "Orange", check: true},
+            {name: "Banana"}
+        ]
+        chk = MUI.CreateCheckbox("Choose a fruit", lst, null, true)
+        chk.SetOnSubmit(OnSubmit)
+        chk.Show()
+
+    app.AddLayout(lay)
+}
+
+function OnSubmit(lst)
+{
+    app.ShowPopup(JSON.stringify(lst))   
+}
+</sample>
