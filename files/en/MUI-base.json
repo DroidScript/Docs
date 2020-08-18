@@ -1,7 +1,6 @@
 {
-	"#8294739481": {
+	"#8294739481": { "name": "Animate",
 		"desc": "Animates the control.\n\nThere are\n\t“in”-Animations which are used to show objects from hidden state\n\t“out”-animations which are used to hide objects in visible state and\n\t“static”-animations which keep the visible state.",
-		"name": "Animate",
 		"pNames": ["type", "callback", "time"],
 		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
 			"desc": "Callback",
@@ -25,7 +24,11 @@
 	"#1924613953": { "name": "Dismiss",
 		"desc": "Hide the control and remove it from the screen.",
 		"shortDesc": "Hides the control and removes it from the screen"
-	},
+    },
+    "#1924613325": { "name": "Destroy",
+        "desc": "Destroys the control completely",
+		"shortDesc": "Destroys the control completely"
+    },
 	"#1500174100": { "name": "Explode",
 		"desc": "Destroys the control with an explode animation and sound.",
 		"shortDesc": "Destroy the control with a huge explosion"
@@ -88,7 +91,7 @@
 		"pTypes": ["str-px"],
 		"retval": "num",
 		"shortDesc": "Get distance to the upper parent border"
-	},
+    },
 	"#1672373665": { "name": "GetVisibility",
 		"desc": "Returns the current visibility state of the control. The Values are:\n**Show**: visible\n**Hide**: invisible but still consuming space\n**Gone**: invisible and not consuming space",
 		"retval": "str-Show|Hide|Gone",
@@ -383,5 +386,5 @@
 			}
 		],
 		"shortDesc": "Animates the control"
-	}
+    }
 }

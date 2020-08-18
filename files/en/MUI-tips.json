@@ -523,9 +523,8 @@
 		"SetImage": "SetImage",
 		"SetItem": "SetItem",
 		"SetNoteText": "SetNoteText",
-		"SetOnTouch": "Define a callback function for touch events",
+		"SetOnTouch": "SetOnTouch",
 		"SetTitleText": "SetTitleText",
-		"SetUnread": "SetUnread",
 		"ShiftItem": "ShiftItem"
 	},
 	"lss": {

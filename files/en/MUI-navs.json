@@ -14,7 +14,11 @@
         "CreateButtonToggle",
         "CreateButtonWithIcons",
         "CreateRadioButton",
-        "CreateRadioButtons"
+        "CreateRadioButtons",
+        "",
+        "CreateFAB",
+        "CreateFABElegant",
+        "CreateFABOutline"
     ],
     "Dialogs": [
         "CreateAlert",
@@ -24,7 +28,7 @@
         "CreateCheckListDialog",
         "CreateDatePicker",
         "CreateDialog",
-        "CreateDialogModal",
+        "CreateModal",
         "CreateListDialog",
         "CreateTimePicker"
     ],
@@ -36,6 +40,11 @@
         "CreateListModern",
         "CreateListSimple",
         "CreateListWithAvatar"
+    ],
+    "Pickers": [
+        "CreateColorPicker",
+        "CreateDatePicker",
+        "CreateTimePicker",
     ],
     "Miscellaneous": [
         "CreateAppBar",
@@ -53,14 +62,15 @@
         "CreateRadioMaterial",
         "CreateSeekBar",
         "CreateSwitch",
-        "CreateTabFixed"
+        "CreateTabFixed",
+        "",
+        "Colors"
     ],
     "Texts": [
         "CreateTextAreaFilled",
         "CreateTextAreaFilledA",
         "CreateTextAreaOutline",
         "CreateTextAreaOutlineA",
-        "Create",
         "CreateTextEditFilled",
         "CreateTextEditFilledA",
         "CreateTextEditFilledIconLeft",
@@ -73,8 +83,13 @@
         "CreateTextEditSearchElegant",
         "CreateTextEditSearchUnique",
         "CreateTextEditUnique",
-        "Create",
+        "",
         "CreateTextH1",
+        "CreateTextH2",
+        "CreateTextH3",
+        "CreateTextH4",
+        "CreateTextH5",
+        "CreateTextH6",
         "CreateTextJumbo",
         "CreateTextParagraph",
         "CreateTextSecondary"

@@ -1,1 +1,36 @@
- 
+<sample No icon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    var text = "This is a sample text for the popup."
+    alr = MUI.CreateAlert(text)
+    alr.Show()
+}
+</sample>
+
+<sample With icon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    var text = "This is a sample text for the popup."
+    alr = MUI.CreateAlert(text, "message", MUI.colors.blue.darken2)
+    alr.Show()
+
+    setTimeout(CloseAlert, 4000)
+}
+
+function CloseAlert()
+{
+    alr.Hide()
+}
+</sample>

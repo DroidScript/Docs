@@ -1,1 +1,105 @@
- 
+<sample No-image, No-Avatar>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        var options = {
+            title: "Card Title",
+            body: "Lorem ipsum dolor set amit consectetur elit",
+            buttonText: "SEE MORE",
+            width: 0.94
+        }
+        var card = UI.CreateCard(options)
+        box.AddChild(card)
+
+    app.AddLayout(lay)
+}
+</sample>
+<sample With-image, No-Avatar>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        var options = {
+            title: "Card Title",
+            body: "Lorem ipsum dolor set amit consectetur elit",
+            buttonText: "LINKS,SEE MORE",
+            image: "/Sys/Img/Droid1.png",
+            width: 0.94
+        }
+        var card = UI.CreateCard(options)
+        box.AddChild(card)
+
+    app.AddLayout(lay)
+}
+</sample>
+<sample With Image, With Avatar>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        var options = {
+            title: "Card Title",
+            body: "Lorem ipsum dolor set amit consectetur elit",
+            buttonText: "LINKS,SEE MORE",
+            image: "/Sys/Img/Droid1.png",
+            width: 0.94,
+            avatar: "/Sys/Img/Droid1.png"
+        }
+        var card = UI.CreateCard(options)
+        box.AddChild(card)
+
+    app.AddLayout(lay)
+}
+</sample>
+<sample AvatarOnTop, Divider2, SetOnButtonTouch>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        var options = {
+            title: "Card Title",
+            body: "Lorem ipsum dolor set amit consectetur elit",
+            buttonText: "LINKS,SEE MORE",
+            image: "/Sys/Img/Droid1.png",
+            width: 0.94,
+            avatar: "/Sys/Img/Droid1.png",
+            avatarOnTop: true,
+            divider2: true
+        }
+        var card = UI.CreateCard(options)
+        box.AddChild(card)
+        card.SetOnButtonTouch(OnBtnTouch)
+
+    app.AddLayout(lay)
+}
+
+function OnBtnTouch(btnText, cardName)
+{
+    app.ShowPopup(btnText + " : " + cardName)
+}
+</sample>
