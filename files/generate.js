@@ -25,18 +25,21 @@ function generateScope(name, pattern)
 	if(!app.FolderExists(lang + `/${curScope}-samples`))
 		app.MakeFolder(lang + `/${curScope}-samples`);
 
-	// read categories
-	navs = JSON.parse(ReadFile(lang + `/${curScope}-navs.json`, "{}"));
+		// read categories
+		curDoc = lang + `/${curScope}-navs.json`;
+		navs = JSON.parse(ReadFile(curDoc, "{}"));
 
-	// read scope members
-	if(scope = JSON.parse(ReadFile(lang + `/${curScope}.json`, "false")))
-	{
-		if(!keys(navs).length) navs = keys(scope);
-		else navs.All = keys(scope);
-
-		// read base functions used in scope
-		if(base = JSON.parse(ReadFile(lang + `/${curScope}-base.json`, "false")))
+		// read scope members
+		curDoc = lang + `/${curScope}.json`;
+		if(scope = JSON.parse(ReadFile(curDoc, "false")))
 		{
+			if(!keys(navs).length) navs = keys(scope);
+			else navs.All = keys(scope);
+
+			// read base functions used in scope
+			curDoc = lang + `/${curScope}-base.json`;
+			if(base = JSON.parse(ReadFile(curDoc, "false")))
+			{
 			// additionally, read /*#obj*/ marked functions from .js file if exists
 			if(!app.FileExists(curScope + ".js")) base.all = keys(base).map(k => base[k].name);
 			else base.all = app.ReadFile(curScope + ".js")
@@ -396,18 +399,18 @@ function getDocData( f, useAppPop )
 		{
 			if(!base[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = base[met];
-            // force use of entry name
-            if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
+			// force use of entry name
+			if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 			curSubf = met.name;
 		}
 
-        // load params from base
-        while(typeof met.params == "string" && met.params.startsWith('#')) {
-            if(!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
-            met.pNames = base[met.params].pNames;
-            met.pTypes = base[met.params].pTypes;
-            met.params = base[met.params].params;
-        }
+		// load params from base
+		while(typeof met.params == "string" && met.params.startsWith('#')) {
+			if(!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
+			met.pNames = base[met.params].pNames;
+			met.pTypes = base[met.params].pTypes;
+			met.params = base[met.params].params;
+		}
 
 		if(hidden(curSubf)) continue;
 
@@ -417,8 +420,8 @@ function getDocData( f, useAppPop )
 			scope[f.name].subf[curSubf].shortDesc = "";
 			met.shortDesc = "";
 		}
-        if(met.pNames == undefined) met.pNames = [];
-        if(met.pTypes == undefined) met.pTypes = [];
+		if(met.pNames == undefined) met.pNames = [];
+		if(met.pTypes == undefined) met.pTypes = [];
 
 		//convert return value
 		if( met.retval )
@@ -561,7 +564,7 @@ function toArgPop( name, types, doSwitch )
 	// function callbacks
 	if( typeof types == "object" )
 	{
-        if(types.pNames == undefined) types.pNames = [];
+		if(types.pNames == undefined) types.pNames = [];
 		var s = newPopup( "fnc", name,
 			("<b>function</b>(\n\t\t" + types.pNames.map(
 				function(n, i)
