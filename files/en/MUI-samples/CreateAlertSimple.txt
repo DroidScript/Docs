@@ -1,1 +1,69 @@
- 
+<sample Simple>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    var text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text)
+    als.Show()
+}
+</sample>
+
+<sample Custom>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    var text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+    als.Show()
+
+    setTimeout(CloseAlert, 4000)
+}
+
+function()
+{
+    als.Hide()
+}
+</sample>
+<sample Dark>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        btnShow = MUI.CreateButtonRound("SHOW ALERT")
+        btnShow.SetOnTouch(ShowOrHideAlert)
+        lay.AddChild(btnShow)
+
+        btnHide = MUI.CreateButtonRound("HIDE ALERT")
+        btnHide.SetOnTouch(ShowOrHideAlert)
+        lay.AddChild(btnHide)
+
+    app.AddLayout(lay)
+
+    var text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+}
+
+function ShowOrHideAlert()
+{
+    if(this.GetText() == "SHOW ALERT")
+        als.Show()
+    else
+        als.Hide()
+}
+</sample>

@@ -1,1 +1,114 @@
- 
+<sample All Colors From Green>
+cfg.Light
+cfg.MUI
+
+function()
+{
+    app.InitializeUIKit("#009688", "Light")
+    color = MUI.colors.green
+
+    lay = MUI.CreateLayout("Linear", "VCenter, FillXY")
+
+        btn1 = MUI.CreateButtonRaised("LIGHTEN4", 0.35, null, color.lighten4)
+        lay.AddChild(btn1)
+
+        btn2 = MUI.CreateButtonRaised("LIGHTEN3", 0.35, null, color.lighten4)
+        lay.AddChild(btn2)
+
+        btn3 = MUI.CreateButtonRaised("LIGHTEN2", 0.35, null, color.lighten4)
+        lay.AddChild(btn3)
+
+        btn4 = MUI.CreateButtonRaised("LIGHTEN1", 0.35, null, color.lighten4)
+        lay.AddChild(btn4)
+
+        btn5 = MUI.CreateButtonRaised("GREEN", 0.35, null, color.green)
+        lay.AddChild(btn5)
+
+        btn6 = MUI.CreateButtonRaised("DARKEN1", 0.35, null, color.darken1)
+        lay.AddChild(btn6)
+
+        btn7 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        lay.AddChild(btn7)
+
+        btn8 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        lay.AddChild(btn8)
+
+        btn9 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        lay.AddChild(btn9)
+
+    app.AddLayout(lay)
+}
+</sample>
+<sample Change Layout Background>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+
+    app.InitializeUIKit("#009688", "Light")
+    color = MUI.colors.teal
+
+    lay = MUI.CreateLayout("linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("Choose Color", 0.4)
+        btn.SetOnTouch(ShowDialog)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+}
+
+function ShowDialog()
+{
+    var choices = [
+        {name: "lighten4"},
+        {name: "lighten3"},
+        {name: "lighten2"},
+        {name: "lighten1"},
+        {name: "teal"},
+        {name: "darken1"},
+        {name: "darken2"},
+        {name: "darken3"},
+        {name: "darken4"}
+    ]
+    lsd = MUI.CreateListDialog("Select shading", choices)
+    lsd.SetOnSelect()
+}
+
+function OnSelect(name)
+{
+    switch(name)
+    {
+        case "lighten4":
+            lay.SetBackColor(color.lighten4)
+            break
+        case "lighten3":
+            lay.SetBackColor(color.lighten3)
+            break
+        case "lighten2":
+            lay.SetBackColor(color.lighten2)
+            break
+        case "lighten4":
+            lay.SetBackColor(color.lighten4)
+            break
+        case "lighten1":
+            lay.SetBackColor(color.lighten1)
+            break
+        case "teal":
+            lay.SetBackColor(color.teal)
+            break
+        case "darken1":
+            lay.SetBackColor(color.darken1)
+            break
+        case "darken2":
+            lay.SetBackColor(color.darken2)
+            break
+        case "darken3":
+            lay.SetBackColor(color.darken3)
+            break
+        case "darken4":
+            lay.SetBackColor(color.darken4)
+            break
+    }
+}
+</sample>
