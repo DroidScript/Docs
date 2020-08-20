@@ -10,20 +10,26 @@ if(!String.prototype.startsWith) {
 
 //Get navigator type.
 var agent = navigator.userAgent;
-var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 );
-var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
-var isAndroid = ( agent.indexOf("Android") > -1 );
-var isDS = ( agent.indexOf("; wv)") > -1 );
-var isApp = isAndroid && !useWebIDE && !isChromeOS;
-var serverAddress = "";
-
 console.log( "agent = " + agent );
 
+var isChromeOS = !!agent.match(/Chrome OS|Chromebook|PixelBook/);
+var useWebIDE = ( has(agent, "Remix") || isChromeOS );
+var isAndroid = ( has(agent, "Android") || has(agent, "ds-docs") ); // TODO: remove ds-docs asap
+var isDS = ( has(agent, "ds-docs") || location.href.match(/\bds=true\b/) != null );
+
+var isWebIDE = isDS && !isAndroid;
+var isMobileIDE = isDS && isAndroid;
+var serverAddress = "";
+
+isDS = isDS || getCookie("isDS") == 'true';
+setCookie("isDS", isDS);
+
 // set current theme
-var curTheme = location.href.match(/[^?]*[?&]theme=([^&]*)/);
+var curTheme = location.href.match(/\btheme=([-\w]*)/);
 if(curTheme && history.replaceState)
 	try { history.replaceState({}, "Documentation", "Docs.htm"); } catch(e) {}
-setTheme(curTheme ? curTheme[1] : getTheme());
+setTheme(curTheme ? curTheme[1] : getCookie("dsDocsTheme", "dark"));
+
 
 //Hook into cross frame messaging
 window.addEventListener("message", function(event)
@@ -60,13 +66,6 @@ $(document).on("mobileinit", function()
 
 	//Ask parent for DS adddress.
 	parent.postMessage( "getaddress:", "*" );
-
-	// check theme in other browsers after history fwd/bck
-	// workaround for pages being loaded from cache
-	if(false && !isDS && !useWebIDE) setInterval(function()
-	{
-		if(curTheme != getTheme()) setTheme(getTheme());
-	}, 200);
 });
 
 $(document).ready(function() {
@@ -90,14 +89,13 @@ $(document).live( 'pageshow',function(event, ui)
 			document.body.className = "bodyPC";
 
 		//Remove 'Copy' and 'Run' buttons on PC.
-		if( !isAndroid || useWebIDE && !isChromeOS )
-			hidecopy();
+		// if(!isDS && !isAndroid) hidecopy();
 
 		// hide theme switch button inside DS
 		if(isDS) $(".ui-header > .ui-btn-right").hide();
 
 		//If on Android, save current page.
-		if( isDS && !useWebIDE ) {
+		if( isMobileIDE ) {
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
 		}
 
@@ -112,35 +110,28 @@ $(document).live( 'pageshow',function(event, ui)
 	//catch( e ) {}
 });
 
-
 //Dynamically create plugins page.
 function OnPageShow()
 {
 	try
 	{
 		//If on device.
-		if( isAndroid && !useWebIDE )
+		if( isMobileIDE )
 		{
-			//Create a list of plugins.
-			var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
-			var fldr = app.GetPrivateFolder( "Plugins" );
-			var list = app.ListFolder( fldr, "");
+			var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">\n";
+			var fldr = "/sdcard/DroidScript/.edit/docs/plugins"; //app.GetPrivateFolder( "Plugins" );
+			var list = app.ListFolder( fldr, null, null, "folders");
+
 			for( var i = 0; i < list.length && list[0] != ""; i++ )
 			{
-				//Filter for folders.
-				var plugName = list[i];
-				if( app.IsFolder( fldr+"/"+plugName ) )
-				{
-					//Get case sensitive title of plugin from inc file.
-					var incFiles = app.ListFolder( fldr + "/" + plugName, ".inc", 1 );
-					if( incFiles.length > 0 ) {
-						var jarName = incFiles[0];
-						var plugTitle = jarName.split(".")[0];
-						var url = "file://" + fldr + "/" + plugName + "/" + plugTitle + ".html";
-						html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
-					}
-				}
+				//Get main docs file
+				var plgdir = list[i];
+				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html?", null, "RegExp" );
+                if(files.length == null) continue;
+				var url = "plugins/" + plgdir + "/" + files[0];
+				html += "<li><a href=\"" + url + "\">" + files[0] + "</a></li>\n";
 			}
+
 			html += "</ul>";
 			$('#divPlugs').html(html);
 			$('#divPlugs').trigger("create");
@@ -203,7 +194,7 @@ function jumpTo(contains)
 	if(header.length) {
 		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
 
-		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
+		if(has(header[0].className, "ui-collapsible-heading-collapsed"))
 			header.click();
 		else
 			header.delay(100)
@@ -216,8 +207,8 @@ function jumpTo(contains)
 
 // toggles between dark and default theme
 function tglTheme() {
-	var thm = getTheme();
-	if(thm.indexOf('dark') > -1)
+	var thm = getCookie("dsDocsTheme", "dark");
+	if(has(thm, 'dark'))
 		 setTheme(thm.replace("dark", "default"));
 	else setTheme(thm.replace("default" , "dark"));
 }
@@ -227,9 +218,9 @@ function setTheme( theme, holo )
 {
 	if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
 	if(curTheme == theme) return;
-	curTheme = theme;
-	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
+
 	console.log("setTheme('" + theme + "')");
+	setCookie("dsDocsTheme", curTheme = theme);
 
 	var lnkJQuery = document.getElementById('themeJQ');
 	if(lnkJQuery) lnkJQuery.href = lnkJQuery.href.replace(/(.*\/).*/, "$1theme-" + theme + ".min.css");
@@ -241,10 +232,19 @@ function setTheme( theme, holo )
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
-// get current theme from localStorage
-function getTheme()
+// shortcut for string.contains
+function has(s, t) { return s.indexOf(t) > -1; }
+
+function setCookie(name, val)
 {
-	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "dark";
+	name = name.replace(/\W+/g, '');
+	window.name = window.name.replace(new RegExp(";"+name+"=[^;]*;|$"), ";"+name+"="+val+";");
+}
+
+function getCookie(name, dflt)
+{
+	name = name.replace(/\W+/g, '');
+	return (window.name.match(new RegExp(";"+name+"=([^;]*);")) || [null, dflt])[1];
 }
 
 function OpenUrl( url, type, choose )
