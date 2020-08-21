@@ -1,8 +1,5 @@
 {
 	"scopes" : {
-		"intro": "Introduction",
-		"app": "Reference",
-		"gfx": "Game Engine",
 		"MUI": "Material UI"
 	},
 	"langs" : {
