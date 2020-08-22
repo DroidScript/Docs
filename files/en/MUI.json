@@ -1126,8 +1126,8 @@
         "desc": "A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>",
         "name": "CreateCard",
 		"pNames": ["options"],
-		"pTypes": ["obj-An MUI card options object."],
-		"retval": "dso",
+		"pTypes": ["obj-{title:String|body:String|image:Path to image|buttonText:Comma separated string for button texts|color:String|width:Number|divider1:Boolean|divider2:Boolean|avatar:Avatar image path|avatarOnTop:Boolean|buttonType:raised or raisedoutline or round or roundoutline or flat}"],
+		"retval": "obj",
 		"shortDesc": "CreateCard",
 		"subf": {
             "SetOnButtonTouch": {
@@ -1366,10 +1366,10 @@
     },
 	"CreateDatePicker": {
 		"abbrev": "dtp",
-		"desc": "CreateDatePicker",
+		"desc": "Creates a materialize date picker dialog.",
 		"name": "CreateDatePicker",
 		"pNames": ["yyyy", "mm", "dd", "color"],
-		"pTypes": ["num_int- Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col"],
+		"pTypes": ["num_int-Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "CreateDatePicker",
 		"subf": {
@@ -1398,12 +1398,12 @@
     },
 	"CreateDialog": {
 		"abbrev": "dlg",
-		"desc": "CreateDialog",
+		"desc": "Creates a customizable materialize dialog.",
 		"name": "CreateDialog",
 		"pNames": ["title", "body", "okText", "cancelText", "divider"],
 		"pTypes": ["str-Title", "str-Body text", "str-Truthy button text", "str-Falsey button text", "bin-Show divider or hide"],
 		"retval": "obj",
-		"shortDesc": "CreateDialog",
+		"shortDesc": "Creates a customizable materialize dialog.",
 		"subf": {
 			"SetOnTouch":{
                 "abbrev": "",
@@ -2082,12 +2082,12 @@
     },
 	"CreateListModern": {
 		"abbrev": "lsm",
-        "desc": "A modern implementation of list using the available controls of DroidScript<br><br><i> Please note that <b>CreateListInitialIcon, CreateListMaterialIcon and CreateListWithAvatar</b> are now deprecated. But still you can achieve these designs by passing appropriate comma-separated options to the <b>options</b> param of <b>CreateListModern</b></i>",
+        "desc": "#CreateListModern.md",
         "name": "CreateListModern",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Can be Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
-		"retval": "dso",
-		"shortDesc": "CreateListModern",
+		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
+		"retval": "obj",
+		"shortDesc": "#CreateListModern.md",
 		"subf": {
             "SetOnTouch": {
                 "abbrev": "",

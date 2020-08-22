@@ -21,7 +21,55 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-<sample Initial,RightNote,Selectable>
+
+<sample Selectable>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        var list = [
+            {title: "Sample Title", "The quick brown fox jumps..."},
+            {title: "Sample Title", "The quick brown fox jumps...", image: "/Sys/Img/Droid1.png"},
+            {title: "Sample Title", "The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 0.96, null, "Selectable")
+        lsm.SetOnTouch()
+        lay.AddChild(lsm)
+
+        btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
+        lay.AddChild(btn)
+        btn.SetOnTouch(GetSelectedItems)
+
+    app.AddLayout(lay)
+
+    app.ShowPopup("Click the icon/avatar to select")
+}
+
+function ListOnTouch(title, body, index)
+{
+    app.ShowPopup("You choose "+title)
+}
+
+function GetSelectedItems()
+{
+    var items = lsm.GetSelectedItems()
+    for(var i = 0; i<items.length; i++)
+    {
+        var item = lsm.GetItem(items[i])
+        app.Alert(item)
+    }
+}
+</sample>
+
+
+<sample CreateListInitialIcon>
 cfg.Light
 cfg.MUI
 
@@ -59,7 +107,9 @@ function GetSelectedItems()
     }
 }
 </sample>
-<sample Material,RightIcon,Selectable>
+
+
+<sample CreateListMaterialIcon>
 cfg.Light
 cfg.MUI
 
@@ -97,7 +147,9 @@ function GetSelectedItems()
     }
 }
 </sample>
-<sample Avatar,RightIcon,Selectable>
+
+
+<sample CreateListWithAvatar>
 cfg.Light
 cfg.MUI
 

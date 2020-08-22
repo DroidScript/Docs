@@ -14,34 +14,40 @@
         "CreateButtonRaisedO",
         "CreateButtonRound",
         "CreateButtonRoundO",
-        "CreateButtonToggle",
-        "CreateButtonWithIcons",
-        "CreateRadioButton",
-        "CreateRadioButtons",
-        "",
-        "CreateFAB",
-        "CreateFABElegant",
-        "CreateFABOutline"
+        "CreateButtonToggle"
+    ],
+    "AppBar": [
+        "CreateAppBar",
+        "CreateAppBarElegant",
+        "CreateAppBarModern"
+    ],
+    "Cards": [
+        "CreateCard"
     ],
     "Dialogs": [
         "CreateAlert",
         "CreateAlertSimple",
         "CreateDialog",
-        "",
-        "CreateModal",
+        "CreateBanner",
+        "CreateModal"
+    ],
+    "ListDialogs": [
         "CreateListDialog",
-        "",
-        "CreateTimePicker",
-        "CreateDatePicker"
+        "CreateChecklist"
+    ],
+    "FABs": [
+        "CreateFAB",
+        "CreateFABElegant",
+        "CreateFABOutline"
     ],
     "Lists": [
         "CreateList",
-        "CreateListDialog",
-        "CreateListInitialIcon",
-        "CreateListMaterialIcon",
         "CreateListModern",
-        "CreateListSimple",
-        "CreateListWithAvatar"
+        "CreateListSimple"
+    ],
+    "Menus": [
+        "CreateMenuSimple",
+        "CreateMenuWithIcon"
     ],
     "Pickers": [
         "CreateColorPicker",
@@ -74,32 +80,34 @@
         "CreateTextEditFilledIconLeft",
         "CreateTextEditFilledIconRight",
         "CreateTextEditOutlineIconLeft",
-        "CreateTextEditOutlineIconRight",
-        "",
+        "CreateTextEditOutlineIconRight"
+    ],
+    "TextAreas": [
         "CreateTextAreaFilled",
         "CreateTextAreaFilledA",
         "CreateTextAreaOutline",
         "CreateTextAreaOutlineA"
     ],
-    "Miscellaneous": [
-        "CreateAppBar",
-        "CreateAppBarElegant",
-        "CreateAppBarModern",
-        "",
-        "CreateCard",
-        "CreateCardAdvance",
-        "",
-        "CreateMenuSimple",
-        "CreateMenuWithIcon",
-        "",
-        "CreateBanner",
-        "CreateCheckbox",
-        "CreateRadioMaterial",
-        "CreateSeekBar",
+    "Checkboxes": [
+        "CreateCheckbox"
+    ],
+    "Radios": [
+        "CreateRadio",
+        "CreateRadioButtons",
+        "CreateRadioMaterial"
+    ],
+    "Seekbars": [
+        "CreateSeekBar"
+    ],
+    "Switches": [
         "CreateSwitch",
-        "CreateSwitchSettings",
-        "CreateTabFixed",
-        "",
-        "Colors"
+        "CreateSwitchSettings"
+    ],
+    "Tabs": [
+        "CreateTabFixed"
+    ],
+    "Miscellaneous": [
+        "Colors",
+        "CreateDivider"
     ]
 }
