@@ -30,10 +30,10 @@ function()
         btn7 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
         lay.AddChild(btn7)
 
-        btn8 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        btn8 = MUI.CreateButtonRaised("DARKEN3", 0.35, null, color.darken2)
         lay.AddChild(btn8)
 
-        btn9 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        btn9 = MUI.CreateButtonRaised("DARKEN4", 0.35, null, color.darken2)
         lay.AddChild(btn9)
 
     app.AddLayout(lay)
@@ -71,7 +71,7 @@ function ShowDialog()
         {name: "darken3"},
         {name: "darken4"}
     ]
-    lsd = MUI.CreateListDialog("Select shading", choices)
+    lsd = MUI.CreateListDialog("Select Color", choices)
     lsd.SetOnSelect()
 }
 

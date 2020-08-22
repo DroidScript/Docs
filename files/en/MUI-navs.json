@@ -1,6 +1,9 @@
 {
     "Full Documentation": "MUIDocs.htm",
     "All":[],
+    "Layout": [
+        "CreateLayout"
+    ],
 	"Buttons": [
         "CreateButtonElegant",
         "CreateButtonFAB",
@@ -23,14 +26,13 @@
     "Dialogs": [
         "CreateAlert",
         "CreateAlertSimple",
-        "CreateAlertStylish",
-        "",
-        "CreateCheckListDialog",
-        "CreateDatePicker",
         "CreateDialog",
+        "",
         "CreateModal",
         "CreateListDialog",
-        "CreateTimePicker"
+        "",
+        "CreateTimePicker",
+        "CreateDatePicker"
     ],
     "Lists": [
         "CreateList",
@@ -44,7 +46,40 @@
     "Pickers": [
         "CreateColorPicker",
         "CreateDatePicker",
-        "CreateTimePicker",
+        "CreateTimePicker"
+    ],
+    "Texts": [
+        "CreateTextH1",
+        "CreateTextH2",
+        "CreateTextH3",
+        "CreateTextH4",
+        "CreateTextH5",
+        "CreateTextH6",
+        "",
+        "CreateTextJumbo",
+        "CreateTextParagraph",
+        "CreateTextSecondary"
+    ],
+    "TextEdits": [
+        "CreateTextEditFilled",
+        "CreateTextEditFilledA",
+        "CreateTextEditOutline",
+        "CreateTextEditOutlineA",
+        "",
+        "CreateTextEditSearch",
+        "CreateTextEditSearchElegant",
+        "CreateTextEditSearchUnique",
+        "CreateTextEditUnique",
+        "",
+        "CreateTextEditFilledIconLeft",
+        "CreateTextEditFilledIconRight",
+        "CreateTextEditOutlineIconLeft",
+        "CreateTextEditOutlineIconRight",
+        "",
+        "CreateTextAreaFilled",
+        "CreateTextAreaFilledA",
+        "CreateTextAreaOutline",
+        "CreateTextAreaOutlineA"
     ],
     "Miscellaneous": [
         "CreateAppBar",
@@ -62,36 +97,9 @@
         "CreateRadioMaterial",
         "CreateSeekBar",
         "CreateSwitch",
+        "CreateSwitchSettings",
         "CreateTabFixed",
         "",
         "Colors"
-    ],
-    "Texts": [
-        "CreateTextAreaFilled",
-        "CreateTextAreaFilledA",
-        "CreateTextAreaOutline",
-        "CreateTextAreaOutlineA",
-        "CreateTextEditFilled",
-        "CreateTextEditFilledA",
-        "CreateTextEditFilledIconLeft",
-        "CreateTextEditFilledIconRight",
-        "CreateTextEditOutline",
-        "CreateTextEditOutlineA",
-        "CreateTextEditOutlineIconLeft",
-        "CreateTextEditOutlineIconRight",
-        "CreateTextEditSearch",
-        "CreateTextEditSearchElegant",
-        "CreateTextEditSearchUnique",
-        "CreateTextEditUnique",
-        "",
-        "CreateTextH1",
-        "CreateTextH2",
-        "CreateTextH3",
-        "CreateTextH4",
-        "CreateTextH5",
-        "CreateTextH6",
-        "CreateTextJumbo",
-        "CreateTextParagraph",
-        "CreateTextSecondary"
     ]
 }

@@ -1,6 +1,6 @@
 MUI colors are accessible through the **colors** property of the MUI object.
 
-_Tip. To avoid longer lines assign the color set to a variable example_
+_Tip. To avoid longer lines assign the color set to a variable_
 <js noinl>var gray = MUI.colors.blueGray</js>
 
 To select a color and shading choose the right property of the base color objects: _lighten4_, _lighten3_, _lighten2_, _lighten1_, _darken1_, _darken2_, _darken3_, _darken4_.

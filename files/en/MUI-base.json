@@ -92,6 +92,13 @@
 		"retval": "num",
 		"shortDesc": "Get distance to the upper parent border"
     },
+    "#2114624701": {  "name": "GetType",
+        "desc": "Get the type of MUI control.",
+		"pNames": [],
+		"pTypes": [],
+		"retval": "str",
+		"shortDesc": "Get the type of MUI control."
+    },
 	"#1672373665": { "name": "GetVisibility",
 		"desc": "Returns the current visibility state of the control. The Values are:\n**Show**: visible\n**Hide**: invisible but still consuming space\n**Gone**: invisible and not consuming space",
 		"retval": "str-Show|Hide|Gone",
