@@ -46,7 +46,7 @@
         "CreateListSimple"
     ],
     "Menus": [
-        "CreateMenuSimple",
+        "CreateMenu",
         "CreateMenuWithIcon"
     ],
     "Pickers": [

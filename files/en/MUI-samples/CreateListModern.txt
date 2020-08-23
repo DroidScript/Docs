@@ -7,7 +7,7 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Light")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
         var list = [
             {title: "Sample Title", "The quick brown fox jumps..."},
@@ -16,9 +16,15 @@ function OnStart()
         ]
 
         lsm = MUI.CreateListModern(list)
+        lsm.SetOnTouch()
         lay.AddChild(lsm)
 
     app.AddLayout(lay)
+}
+
+function OnTouch(title, body, index)
+{
+    app.ShowPopup(title+" : "+body+" : "+index)
 }
 </sample>
 
@@ -31,7 +37,7 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Dark")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
         var list = [
             {title: "Sample Title", "The quick brown fox jumps..."},
@@ -78,7 +84,7 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Dark")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
         var list = [
             {title: "Title 1", "The quick brown fox jumps...", rightNote: "Aug 5"},
@@ -86,25 +92,10 @@ function OnStart()
             {title: "Title 3", "The quick brown fox jumps...", rightNote: "Aug 7"}
         ]
 
-        lsm = MUI.CreateListModern(list, 1, null, "Initial,RightNote,Selectable")
+        lsm = MUI.CreateListModern(list, 1, null, "Initial,RightNote")
         lay.AddChild(lsm)
 
-        btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
-        lay.AddChild(btn)
-        btn.SetOnTouch(GetSelectedItems)
-
     app.AddLayout(lay)
-    app.ShowPopup("Click the icon/avatar to select")
-}
-
-function GetSelectedItems()
-{
-    var items = lsm.GetSelectedItems()
-    for(var i = 0; i<items.length; i++)
-    {
-        var item = lsm.GetItem(items[i])
-        app.Alert(item)
-    }
 }
 </sample>
 
@@ -118,7 +109,7 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Dark")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
         var list = [
             {title: "Folder", "The quick brown fox jumps...", icon: "folder", rightIcon: "more_vert"},
@@ -158,7 +149,7 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Dark")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
         var list = [
             {title: "Someone", "The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"},
