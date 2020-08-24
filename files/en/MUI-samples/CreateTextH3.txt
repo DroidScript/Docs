@@ -9,22 +9,22 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        h = MUI.CreateTexth1("Some Heading")
+        h1 = MUI.CreateTexth1("Some Heading")
         lay.AddChild(h)
 
-        h = MUI.CreateTexth2("Some Heading")
+        h2 = MUI.CreateTexth2("Some Heading")
         lay.AddChild(h)
 
-        h = MUI.CreateTexth3("Some Heading")
+        h3 = MUI.CreateTexth3("Some Heading")
         lay.AddChild(h)
 
-        h = MUI.CreateTexth4("Some Heading")
+        h4 = MUI.CreateTexth4("Some Heading")
         lay.AddChild(h)
 
-        h = MUI.CreateTexth5("Some Heading")
+        h5 = MUI.CreateTexth5("Some Heading")
         lay.AddChild(h)
 
-        h = MUI.CreateTexth6("Some Heading")
+        h6 = MUI.CreateTexth6("Some Heading")
         lay.AddChild(h)
 
     app.AddLayout(lay)
