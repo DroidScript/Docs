@@ -3915,7 +3915,7 @@
 		"desc": "#CreateTESearchElegant.md",
 		"name": "CreateTESearchElegant",
 		"pNames": ["width", "hint", "icon", "iconPos", "color", "option"],
-		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col-Optional", "str-Comma separated string Small|Normal|Border"],
+		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col-Optional", "str-Small|Normal|Border"],
 		"retval": "obj",
 		"shortDesc": "#CreateTESearchElegant.md",
 		"subf": {

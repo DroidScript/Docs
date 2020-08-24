@@ -73,14 +73,14 @@
         "CreateTextEditOutlineA",
         "",
         "CreateTextEditSearch",
-        "CreateTextEditSearchElegant",
-        "CreateTextEditSearchUnique",
+        "CreateTESearchElegant",
+        "CreateTESearchUnique",
         "CreateTextEditUnique",
         "",
-        "CreateTextEditFilledIconLeft",
-        "CreateTextEditFilledIconRight",
-        "CreateTextEditOutlineIconLeft",
-        "CreateTextEditOutlineIconRight"
+        "CreateTEFilledIconLeft",
+        "CreateTEFilledIconRight",
+        "CreateTEOutlineIconLeft",
+        "CreateTEOutlineIconRight"
     ],
     "TextAreas": [
         "CreateTextAreaFilled",
