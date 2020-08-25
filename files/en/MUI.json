@@ -35,7 +35,7 @@
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["isBtnClick"],
-					"pTypes": ["bin"],
+					"pTypes": ["bin-Is the button click or not"],
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "SetOnClose",
