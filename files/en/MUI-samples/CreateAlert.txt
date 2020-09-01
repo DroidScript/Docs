@@ -47,8 +47,6 @@ function OnStart()
     alr = MUI.CreateAlert(text, "message", MUI.colors.blue.darken2)
     alr.SetOnClose(AlertOnClose)
     alr.Show()
-
-    setTimeout(CloseAlert, 4000)
 }
 
 function AlertOnClose(val)

@@ -36,7 +36,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY")
 
-        var list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play"]
+        var list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play]"]
         lst = MUI.CreateList(list, 0.95, 0.4)
         lst.SetOnTouch(OnTouch)
         lay.AddChild(lst)
@@ -65,7 +65,7 @@ function OnStart()
         var list = [
             "Downloads:Some body text:[fa-cloud-download]",
             "Images:Some body text:[fa-image]",
-            "Videos:Some body text:[fa-youtube-play"
+            "Videos:Some body text:[fa-youtube-play]"
         ]
         lst = MUI.CreateList(list, 0.95, 0.4)
         lst.SetOnTouch(OnTouch)

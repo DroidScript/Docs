@@ -2,7 +2,7 @@
 cfg.Light
 cfg.MUI
 
-function()
+function OnStart()
 {
     app.InitializeUIKit("#009688", "Light")
     color = MUI.colors.green
@@ -56,10 +56,7 @@ function OnStart()
         lay.AddChild(btn)
 
     app.AddLayout(lay)
-}
 
-function ShowDialog()
-{
     var choices = [
         {name: "lighten4"},
         {name: "lighten3"},
@@ -72,7 +69,12 @@ function ShowDialog()
         {name: "darken4"}
     ]
     lsd = MUI.CreateListDialog("Select Color", choices)
-    lsd.SetOnSelect()
+    lsd.SetOnSelect(OnSelect)
+}
+
+function ShowDialog()
+{
+    lsd.Show()
 }
 
 function OnSelect(name)

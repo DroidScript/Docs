@@ -16,7 +16,7 @@ function OnStart()
         songsLay.AddChild(btn)
 
         albumsLay = tab.GetLayout("Albums")
-        ted = MUI.CreateTextEditFilled(0.75, null, "Text hint", true)
+        ted = MUI.CreateTextEditFilled(0.75, "", "Text hint", true)
         albumsLay.AddChild(ted)
 
         artistLay = tab.GetLayout("Artists")
@@ -95,6 +95,6 @@ function OnStart()
 
 function OnSelect(name, index)
 {
-    tmp.Show(name+" : "+index)
+    app.ShowPopup(name+" : "+index)
 }
 </sample>

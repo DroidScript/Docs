@@ -1,4 +1,4 @@
- <sample Just a title>
+ <sample Basic>
 cfg.Light
 cfg.MUI
 
@@ -9,7 +9,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBarModern("Search for games", "more_vert")
+        apb = MUI.CreateAppBarModern("Search for games", "more_vert")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
@@ -25,14 +25,6 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 </sample>
 
@@ -48,7 +40,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBarModern("Search for games", "more_vert", "Round")
+        apb = MUI.CreateAppBarModern("Search for games", "more_vert", "Round")
         apb.SetOnMenuTouch(OnMenuTouch)
         apb.SetOnControlTouch(OnCtrlTouch)
 
@@ -92,7 +84,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        apb = MUI.CreateAppBarModern("My Title", "menu", "search,more_vert")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")

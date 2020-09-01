@@ -7,7 +7,7 @@ To select a color and shading choose the right property of the base color object
 <sample All Colors From Green>
 <sample Change Layout Background>
 
-### Base color object
+### Base color objects
 
 <js noinl>MUI.colors.red</js>
 <js noinl>MUI.colors.pink</js>

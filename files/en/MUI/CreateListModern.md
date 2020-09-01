@@ -11,3 +11,7 @@ _Please note that CreateListInitialIcon, CreateListMaterialIcon and CreateListWi
 <sample CreateListInitialIcon>
 <sample CreateListMaterialIcon>
 <sample CreateListWithAvatar>
+
+ListModern has lots of very useful function you can use to manipulate your list. Here's a basic implementation on Removing items from _Selectable_ list.
+
+<sample RemoveItems>

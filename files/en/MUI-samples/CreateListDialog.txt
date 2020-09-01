@@ -9,7 +9,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.4)
+        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
         btn.SetOnTouch(ShowListDialog)
         lay.AddChild(btn)
 
@@ -49,7 +49,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.4)
+        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
         btn.SetOnTouch(ShowListDialog)
         lay.AddChild(btn)
 
@@ -89,7 +89,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.4)
+        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
         btn.SetOnTouch(ShowListDialog)
         lay.AddChild(btn)
 
@@ -118,18 +118,18 @@ function OnTouch(name)
 
 
 
-<sample Bottom>
+<sample Dark Bottom>
 cfg.Light
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.4)
+        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
         btn.SetOnTouch(ShowListDialog)
         lay.AddChild(btn)
 

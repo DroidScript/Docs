@@ -1,10 +1,10 @@
 {
-	"colors": {
-		"desc": "#colors.md",
+	"Colors": {
+		"desc": "#Colors.md",
         "isval": true,
-		"name": "colors",
+		"name": "Colors",
 		"retval": "obj",
-		"shortDesc": "#colors.md"
+		"shortDesc": "#Colors.md"
     },
 	"CreateAlert": {
 		"abbrev": "alr",
@@ -3685,7 +3685,7 @@
 		"desc": "Creates a material outlined text input with icon on the left.",
 		"name": "CreateTEOutlineIconLeft",
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a material outlined text input with icon on the left.",
 		"subf": {
@@ -3812,7 +3812,7 @@
 		"desc": "Creates a material outlined text input with icon on the right.",
 		"name": "CreateTEOutlineIconRight",
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a material outlined text input with icon on the right.",
 		"subf": {
@@ -4969,7 +4969,7 @@
 		"desc": "Creates an outlined material text input.",
 		"name": "CreateTextEditOutline",
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates an outlined material text input.",
 		"subf": {
@@ -5096,7 +5096,7 @@
 		"desc": "Creates an active outlined material text input.",
 		"name": "CreateTextEditOutlineA",
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates an active outlined material text input.",
 		"subf": {

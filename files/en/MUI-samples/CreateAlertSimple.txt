@@ -29,7 +29,7 @@ function OnStart()
     setTimeout(CloseAlert, 4000)
 }
 
-function()
+function CloseAlert()
 {
     als.Hide()
 }
@@ -43,10 +43,10 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Dark")
 
-    lay = MUI.CreateLayout("Linear", "FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
         btnShow = MUI.CreateButtonRound("SHOW ALERT")
-        btnShow.SetOnTouch(ShowOrHideAlert)
+        btnShow.SetOnTouch(ShowAlert)
         lay.AddChild(btnShow)
 
     app.AddLayout(lay)

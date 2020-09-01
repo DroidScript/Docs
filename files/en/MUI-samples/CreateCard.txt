@@ -16,7 +16,7 @@ function OnStart()
             width: 0.94
         }
         var card = UI.CreateCard(options)
-        box.AddChild(card)
+        lay.AddChild(card)
 
     app.AddLayout(lay)
 }
@@ -42,7 +42,7 @@ function OnStart()
             width: 0.94
         }
         var card = UI.CreateCard(options)
-        box.AddChild(card)
+        lay.AddChild(card)
 
     app.AddLayout(lay)
 }
@@ -69,7 +69,7 @@ function OnStart()
             avatar: "/Sys/Img/Droid1.png"
         }
         var card = UI.CreateCard(options)
-        box.AddChild(card)
+        lay.AddChild(card)
 
     app.AddLayout(lay)
 }
@@ -101,13 +101,13 @@ function OnStart()
 
         options.name = "my-card1"
         card1 = UI.CreateCard(options)
-        box.AddChild(card1)
+        lay.AddChild(card1)
         card1.SetOnButtonTouch(OnBtnTouch)
 
         options.name = "my-card2"
         options.buttonType = "raised"
         card2 = UI.CreateCard(options)
-        box.AddChild(card2)
+        lay.AddChild(card2)
         card2.SetOnButtonTouch(OnBtnTouch)
 
     app.AddLayout(lay)

@@ -16,7 +16,7 @@ function OnStart()
     app.AddLayout(lay)
 
     var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    modal = UI.CreateModal("Modal tile", text)
+    modal = UI.CreateModal("Modal title", text)
 }
 
 function ShowModal()
@@ -39,16 +39,16 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW MODAL", 0.35)
+        btn = MUI.CreateButtonRaised("SHOW MODAL", 0.4)
         btn.SetOnTouch(ShowModal)
         lay.AddChild(btn)
 
-        modal = UI.CreateModal("Modal tile", "", "PROCEED", "CANCEL")
+        modal = UI.CreateModal("Modal title", "", "PROCEED", "CANCEL", false)
 
         //Add custom controls to your modal
         modalLay = modal.GetLayout()
 
-        img = app.CreateImage("Img/DroidScript UI Kit.png", 0.5)
+        img = app.CreateImage("/Sys/Img/Droid1.png", 0.5)
         modalLay.AddChild(img)
 
         button = MUI.CreateButtonRound("SOME BUTTON", 0.4)
@@ -83,7 +83,7 @@ function OnStart()
     app.AddLayout(lay)
 
     var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    modal = UI.CreateModal("Modal tile", text)
+    modal = UI.CreateModal("Modal title", text)
     modal.SetOnTouch(OnControlTouch)
 }
 

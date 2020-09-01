@@ -30,7 +30,7 @@
     ],
     "ListDialogs": [
         "CreateListDialog",
-        "CreateChecklist"
+        "CreateCheckList"
     ],
     "FABs": [
         "CreateFAB",

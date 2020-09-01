@@ -9,7 +9,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBarElegant("My Title")
+        apb = MUI.CreateAppBarElegant("My Title")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
@@ -48,7 +48,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "arrow_back", "search")
+        apb = MUI.CreateAppBar("My Title", "arrow_back", "search")
         apb.SetOnMenuTouch(OnMenuTouch)
 
         var apbHeight = apb.GetHeight()
@@ -86,7 +86,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
@@ -117,7 +117,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
         apb.SetOnMenuTouch(OnMenuTouch)
         apb.SetOnControlTouch(OnControlTouch)
         
