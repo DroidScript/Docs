@@ -2104,9 +2104,24 @@
                 "shortDesc": "SetOnTouch",
 				"subf": {}
             },
+            "SetOnSelect": {
+                "abbrev": "",
+				"desc": "Calls a function when an item in the list is select. List must be selectable.",
+				"name": "SetOnSelect",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["index", "isSelected"],
+					"pTypes": ["num_int", "bin"],
+					"shortDesc": "callback"
+				}],
+                "shortDesc": "Calls a function when an item in the list is select.",
+				"subf": {}
+            },
             "SetAvatarOnTouch": {
 				"abbrev": "",
-				"desc": "Calls a function when an icon or avatar is click",
+				"desc": "Calls a function when an icon or avatar is click. The same as SetIconOnTouch.",
 				"name": "SetAvatarOnTouch",
 				"pNames": ["callback"],
 				"pTypes": [{
@@ -2145,11 +2160,20 @@
             },
             "RemoveItem": {
 				"abbrev": "",
-				"desc": "Removes an item in the list.",
+				"desc": "Removes a single item in the list.",
 				"name": "RemoveItem",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
 				"shortDesc": "RemoveItem",
+				"subf": {}
+            },
+            "RemoveItems": {
+				"abbrev": "",
+				"desc": "Removes multiple items in the list.",
+				"name": "RemoveItem",
+				"pNames": ["indexes"],
+				"pTypes": ["lst-An array of indexes."],
+				"shortDesc": "RemoveItems",
 				"subf": {}
             },
             "SetTitleText": {
@@ -2226,14 +2250,14 @@
 				"shortDesc": "GetItem",
 				"subf": {}
             },
-            "GetCheckedItems":{
+            "GetSelectedItems":{
                 "abbrev": "",
 				"desc": "Returns the selected items in the list",
-				"name": "GetCheckedItems",
+				"name": "GetSelectedItems",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "lst-List of indexes for slected items",
-				"shortDesc": "GetCheckedItems",
+				"shortDesc": "GetSelectedItems",
 				"subf": {}
             },
             "Highlight": {
@@ -4023,6 +4047,20 @@
 					"shortDesc": "callback"
 				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetIconOnTouch": {
+                "desc": "Define a callback function which is called when the user pressed the icon.",
+				"name": "SetIconOnTouch",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Define a callback function which is called when the user pressed the icon.",
 				"subf": {}
             },
             "SetPosition":"#1425862386",

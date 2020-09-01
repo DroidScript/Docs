@@ -16,6 +16,7 @@ function OnStart()
     app.AddLayout(lay)
 
     pck = MUI.CreateDatePicker()
+    pck.SetOnSelect(OnSelect)
 }
 
 function ShowDatePicker()
@@ -48,6 +49,7 @@ function OnStart()
 
     //September 1, 2020
     pck = MUI.CreateDatePicker(2020, 8, 1)
+    pck.SetOnSelect(OnSelect)
 }
 
 function ShowDatePicker()

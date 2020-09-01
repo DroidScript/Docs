@@ -17,14 +17,14 @@ function OnStart()
 </sample>
 
 
-<sample With Label>
+<sample Dark With Label>
 cfg.Light
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 

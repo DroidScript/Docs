@@ -6,9 +6,6 @@
     ],
 	"Buttons": [
         "CreateButtonElegant",
-        "CreateButtonFAB",
-        "CreateButtonFABElegant",
-        "CreateButtonFABOutline",
         "CreateButtonFlat",
         "CreateButtonRaised",
         "CreateButtonRaisedO",

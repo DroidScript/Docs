@@ -39,7 +39,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 

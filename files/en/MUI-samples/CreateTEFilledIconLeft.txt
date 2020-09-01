@@ -9,7 +9,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name")
+        tef = MUI.CreateTEFilledIconLeft(0.8, "Left", "person", "Type your name")
         lay.AddChild(tef)
 
     app.AddLayout(lay)
@@ -17,18 +17,18 @@ function OnStart()
 </sample>
 
 
-<sample With Label>
+<sample Dark With Label>
 cfg.Light
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
+        tef = MUI.CreateTEFilledIconLeft(0.8, "Left,Password", "lock", "Type your password", true)
         lay.AddChild(tef)
 
     app.AddLayout(lay)
@@ -47,7 +47,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
+        tef = MUI.CreateTEFilledIconLeft(0.8, "Left,Number", "call", "Type your number", true)
         tef.SetOnEnter(OnEnter)
         lay.AddChild(tef)
 
@@ -58,4 +58,4 @@ function OnEnter()
 {
     app.ShowPopup(this.GetText())
 }
-</sample> 
+</sample>
