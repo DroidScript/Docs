@@ -768,7 +768,7 @@
 		"Show": "Set the visibility to “Show”"
 	},
 	"MUI": {
-		"Colors": "#Colors.md",
+		"colors": "#colors.md",
 		"CreateAlert": "CreateAlert",
 		"CreateAlertSimple": "CreateAlertSimple",
 		"CreateAppBar": "CreateAppBar",

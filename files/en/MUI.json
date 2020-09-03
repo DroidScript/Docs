@@ -1,10 +1,10 @@
 {
-	"Colors": {
-		"desc": "#Colors.md",
+	"colors": {
+		"desc": "#colors.md",
         "isval": true,
-		"name": "Colors",
+		"name": "colors",
 		"retval": "obj",
-		"shortDesc": "#Colors.md"
+		"shortDesc": "#colors.md"
     },
 	"CreateAlert": {
 		"abbrev": "alr",

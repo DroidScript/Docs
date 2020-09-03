@@ -38,7 +38,7 @@ function OnStart()
             title: "Card Title",
             body: "Lorem ipsum dolor set amit consectetur elit",
             buttonText: "LINKS,SEE MORE",
-            image: "/Sys/Img/Droid1.png",
+            image: "/Sys/Img/Sky.jpg",
             width: 0.94
         }
         var card = UI.CreateCard(options)
@@ -64,7 +64,7 @@ function OnStart()
             title: "Card Title",
             body: "Lorem ipsum dolor set amit consectetur elit",
             buttonText: "LINKS,SEE MORE",
-            image: "/Sys/Img/Droid1.png",
+            image: "/Sys/Img/Sky.jpg",
             width: 0.94,
             avatar: "/Sys/Img/Droid1.png"
         }
@@ -86,30 +86,31 @@ function OnStart()
     app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        scrl = app.CreateScroller(1, 1)
+            var options = {
+                title: "Card Title",
+                body: "Lorem ipsum dolor set amit consectetur elit",
+                buttonText: "LINKS,SEE MORE",
+                image: "/Sys/Img/Sky.jpg",
+                width: 0.94,
+                avatar: "/Sys/Img/Droid1.png",
+                avatarOnTop: true,
+                divider1: true,
+                divider2: true
+            }
 
-        var options = {
-            title: "Card Title",
-            body: "Lorem ipsum dolor set amit consectetur elit",
-            buttonText: "LINKS,SEE MORE",
-            image: "/Sys/Img/Droid1.png",
-            width: 0.94,
-            avatar: "/Sys/Img/Droid1.png",
-            avatarOnTop: true,
-            divider1: true,
-            divider2: true
-        }
+            options.name = "my-card1"
+            card1 = UI.CreateCard(options)
+            scrl.AddChild(card1)
+            card1.SetOnButtonTouch(OnBtnTouch)
 
-        options.name = "my-card1"
-        card1 = UI.CreateCard(options)
-        lay.AddChild(card1)
-        card1.SetOnButtonTouch(OnBtnTouch)
-
-        options.name = "my-card2"
-        options.buttonType = "raised"
-        card2 = UI.CreateCard(options)
-        lay.AddChild(card2)
-        card2.SetOnButtonTouch(OnBtnTouch)
-
+            options.name = "my-card2"
+            options.buttonType = "raised"
+            card2 = UI.CreateCard(options)
+            card2.SetMargins(0, 0.02, 0, 0)
+            scrl.AddChild(card2)
+            card2.SetOnButtonTouch(OnBtnTouch)
+        lay.AddChild(scrl)
     app.AddLayout(lay)
 }
 
