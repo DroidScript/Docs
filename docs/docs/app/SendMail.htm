@@ -33,7 +33,15 @@
 	</div>
 
 	<div data-role="content">
-		<p>Send an EMail to someune using the default mail application. The passed argumets will be auto-filled.</p>
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Using Gmail')">Using Gmail</a><br>
+			</span><br>
+		</div>
+
+		<p>Send an EMail to someone using the default mail application. The passed argumets will be auto-filled.</p>
 
 		<div class="samp">
 		app.SendMail(
@@ -45,7 +53,16 @@
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
-		<p>See Also: <a href="SendSMS.htm" data-ajax="false">SendSMS</a>, <a href="SendFile.htm" data-ajax="false">SendFile</a></p>
+		<p>GMail will not work due to privacy restrictions. Read more about this in <a href="https://groups.google.com/d/msg/androidscript/o0863h9A-pE/9RfbaZ9uBQAJ" onclick="return OpenUrl(this.href);">this post by DaveSmart</a>:</p>
+		<h3>Using Gmail</h3>
+		<p><i>”Even though Gmail is the fastest way to get started with sending emails, it is by no means a preferable solution unless you are using OAuth2 authentication. Gmail expects the user to be an actual user not a robot so it runs a lot of heuristics for every login attempt and blocks anything that looks suspicious to defend the user from account hijacking attempts. For example you might run into trouble if your server is in another geographical location – everything works in your dev machine but messages are blocked in production.<br>
+		<br>
+		Additionally Gmail has came up with the concept of 'less secure' apps which is basically anyone who uses plain password to login to Gmail, so you might end up in a situation where one username can send (support for 'less secure' apps is enabled) but other is blocked (support for '<a href="https://support.google.com/accounts/answer/6010255?hl=en" onclick="return OpenUrl(this.href);">less secure</a>' apps is disabled). When using this method make sure to enable the required functionality by completing the <docstr>“<a href="https://accounts.google.com/b/0/displayunlockcaptcha" onclick="return OpenUrl(this.href);">captcha enable</a>”</docstr>. Without this, less secure connections won't work.<br>
+		<red><strong>Note: These changes are not recommended to make to your main email account!</strong></red><br>
+		<br>
+		To prevent having login issues you should either use XOAUTH2 (see details <a href="https://nodemailer.com/smtp/#authentication" onclick="return OpenUrl(this.href);">here</a>) or use another provider and preferably a dedicated one like <a href="https://www.mailgun.com/" onclick="return OpenUrl(this.href);">Mailgun</a> or <a href="https://sendgrid.com" onclick="return OpenUrl(this.href);">SendGrid</a> or any other. Usually these providers have free plans available that are comparable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one To and one Cc address counts as two messages since it has two recipients) for <a href="gmail.htm" data-ajax="false">gmail</a>.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.“</i><br>
+		<br>
+		See Also: <a href="SendSMS.htm" data-ajax="false">SendSMS</a>, <a href="SendFile.htm" data-ajax="false">SendFile</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Example</h3>
 			<div id="examp1" style="font-size:70%">
@@ -66,10 +83,10 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_mim" class="ui-content"><b>string:</b> <i>mimetype</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“SendTo”</docstr></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_mim" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>mimetype</i></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“SendTo”</docstr></div>
 </div>
 </body>
 
