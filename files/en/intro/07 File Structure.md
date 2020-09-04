@@ -36,7 +36,7 @@ file called 'lang.json' in your app that looks like this:-
 		"SelectLang" : {
 			"en":"Please select your prefered language from the 'Settings' menu",
 			"de":"Bitte wähle deine Sprache in den 'Einstellungen' aus",
-			"es":"Selecciona tu idioma preferido en el menú 'Settings'",
+			"es":"Selecciona tu idioma preferido en el menú 'Settings'"
 		},
 
 		"PrivacyPolicy" : {

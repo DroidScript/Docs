@@ -2696,11 +2696,11 @@
 				"shortDesc": "Returns the list length"
 			},
 			"GetList": {
-				"desc": "Returns the full list data as an object.",
+				"desc": "When passing no argument it returns the full list data as a list of objects. Otherwise it will return a string list instead.",
 				"name": "GetList",
 				"pNames": ["delim"],
 				"pTypes": ["str"],
-				"retval": "lst-[{ title:str&comma; body:str&comma; image:str_pth }]",
+				"retval": "lst_obj-[{ title:str&comma; body:str&comma; image:str_pth }]||str-title1[DELIM]title2[DELIM]...",
 				"shortDesc": "Returns the whole list as object"
 			},
 			"GetParent": "#3557841648",
@@ -6219,7 +6219,7 @@
 			"GetSocket": {
 				"desc": "Returns the js Socket instance",
 				"name": "GetSocket",
-				"retval": "obj:Javascript Object-Socket",
+				"retval": "jso-WebSocket",
 				"shortDesc": "Get js Socket instance"
 			},
 			"IsOpen": {
@@ -8084,7 +8084,7 @@
 		"shortDesc": "SendIntent"
 	},
 	"SendMail": {
-		"desc": "Send an EMail to someune using the default mail application. The passed argumets will be auto-filled. %c\n\nSee Also: @SendSMS, @SendFile",
+		"desc": "#SendMail.md",
 		"name": "SendMail",
 		"pNames": ["address", "subject", "body", "attach", "type", "options"],
 		"pTypes": ["str", "str", "str", "str_pth", "str_mim", "str_com-SendTo"],

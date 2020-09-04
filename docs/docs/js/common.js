@@ -12,10 +12,10 @@ if(!String.prototype.startsWith) {
 var agent = navigator.userAgent;
 console.log( "agent = " + agent );
 
-var isChromeOS = !!agent.match(/Chrome OS|Chromebook|PixelBook/);
-var useWebIDE = ( has(agent, "Remix") || isChromeOS );
-var isAndroid = ( has(agent, "Android") || has(agent, "ds-docs") ); // TODO: remove ds-docs asap
-var isDS = ( has(agent, "ds-docs") || location.href.match(/\bds=true\b/) != null );
+var isChromeOS = ( !!agent.match(/Chrome OS|Chromebook|PixelBook/) );
+var useWebIDE  = ( has(agent, "Remix") || isChromeOS );
+var isAndroid  = ( has(agent, "Android") );
+var isDS       = ( location.href.match(/\bds=true\b/) != null );
 
 var isWebIDE = isDS && !isAndroid;
 var isMobileIDE = isDS && isAndroid;
@@ -90,9 +90,10 @@ $(document).live( 'pageshow',function(event, ui)
 
 		//Remove 'Copy' and 'Run' buttons on PC.
 		// if(!isDS && !isAndroid) hidecopy();
+		if( !isDS ) $("div[name=divCopy] > a:contains(Run)").hide();
 
 		// hide theme switch button inside DS
-		if(isDS) $(".ui-header > .ui-btn-right").hide();
+		if( isDS ) $(".ui-header > .ui-btn-right").hide();
 
 		//If on Android, save current page.
 		if( isMobileIDE ) {
@@ -126,7 +127,7 @@ function OnPageShow()
 			{
 				//Get main docs file
 				var plgdir = list[i];
-				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html?", null, "RegExp" );
+				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html", null, "RegExp" );
                 if(files.length == null) continue;
 				var url = "plugins/" + plgdir + "/" + files[0];
 				html += "<li><a href=\"" + url + "\">" + files[0] + "</a></li>\n";
@@ -167,6 +168,7 @@ function OnPageShow()
 
 $(window).load(function()
 {
+	//Jump to html anchors from url
 	var anchor = location.href.match(/#([\w%]+)/i);
 	if(anchor) jumpTo(decodeURI(anchor[1]));
 	else if(sessionStorage.scrollPosition)
@@ -175,13 +177,14 @@ $(window).load(function()
 
 $(window).unload(function()
 {
+	//Scroll to last page y position
 	var scrollPosition = $(document).scrollTop();
 	sessionStorage.scrollPosition = scrollPosition;
 });
 
 function jumpTo(contains)
 {
-	// control popup
+	//Control popup
 	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if(popup.length) {
 		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
@@ -189,7 +192,7 @@ function jumpTo(contains)
 		return false;
 	}
 
-	// header
+	//Header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
 		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
@@ -205,7 +208,7 @@ function jumpTo(contains)
 	}
 }
 
-// toggles between dark and default theme
+//Toggles between dark and default theme
 function tglTheme() {
 	var thm = getCookie("dsDocsTheme", "dark");
 	if(has(thm, 'dark'))
@@ -213,7 +216,7 @@ function tglTheme() {
 	else setTheme(thm.replace("default" , "dark"));
 }
 
-// set the current theme. ([mo]default, [mo]dark)
+//Set the current theme. ([mo]default, [mo]dark)
 function setTheme( theme, holo )
 {
 	if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
@@ -232,7 +235,7 @@ function setTheme( theme, holo )
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
-// shortcut for string.contains
+//Shortcut for string.contains
 function has(s, t) { return s.indexOf(t) > -1; }
 
 function setCookie(name, val)

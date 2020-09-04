@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+//TODO:WebServer,WebSocket,WebSocket conn.Ex.,Email auth ("Email, Text"),gfx
 var curDoc, curSubf, curScope, lang;
 var warnEnbl = false, Globals, conf;
 var scope, base, navs, regGen, regHide, regControl;
@@ -25,18 +26,21 @@ function generateScope(name, pattern)
 	if(!app.FolderExists(lang + `/${curScope}-samples`))
 		app.MakeFolder(lang + `/${curScope}-samples`);
 
-	// read categories
-	navs = JSON.parse(ReadFile(lang + `/${curScope}-navs.json`, "{}"));
+		// read categories
+		curDoc = lang + `/${curScope}-navs.json`;
+		navs = JSON.parse(ReadFile(curDoc, "{}"));
 
-	// read scope members
-	if(scope = JSON.parse(ReadFile(lang + `/${curScope}.json`, "false")))
-	{
-		if(!keys(navs).length) navs = keys(scope);
-		else navs.All = keys(scope);
-
-		// read base functions used in scope
-		if(base = JSON.parse(ReadFile(lang + `/${curScope}-base.json`, "false")))
+		// read scope members
+		curDoc = lang + `/${curScope}.json`;
+		if(scope = JSON.parse(ReadFile(curDoc, "false")))
 		{
+			if(!keys(navs).length) navs = keys(scope);
+			else navs.All = keys(scope);
+
+			// read base functions used in scope
+			curDoc = lang + `/${curScope}-base.json`;
+			if(base = JSON.parse(ReadFile(curDoc, "false")))
+			{
 			// additionally, read /*#obj*/ marked functions from .js file if exists
 			if(!app.FileExists(curScope + ".js")) base.all = keys(base).map(k => base[k].name);
 			else base.all = app.ReadFile(curScope + ".js")
@@ -518,15 +522,15 @@ function typeDesc( types )
 		}
 	);
 
-	var last = "</b>";
+	var last;
 	var s = types.map(
-		(type, i) => conf.tname[type[0]] ?
+		(type, i) => (last = "</b>", conf.tname[type[0]]) ?
 			"<b>" + conf.tname[type[0]] + (conf.tdesc[type[1]] ?
 				(last = "</i>", ":</b> <i>" + conf.tdesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last) : undefined
 	);
 
-	return types.map(
+	s = types.map(
 		function(type, i)
 		{
 			if( s[i] && type.length == 3 )
@@ -551,7 +555,10 @@ function typeDesc( types )
 			}
 			else
 				return s[i] || Throw(Error("unknown type " + type[1]));
-		}).join("\n").replace( /(“.*?”)/g, "<docstr>$1</docstr>");
+		}).join("<br>\n\t\t\t").replace( /(“.*?”)/g, "<docstr>$1</docstr>");
+
+	if(types.length > 1) s = '<span style="display:inline-block;vertical-align: middle;">' + s + "</span>";
+	return s;
 }
 
 	//nearly equal to typeDesc, but returns an app.popup for arguments

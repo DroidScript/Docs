@@ -1,5 +1,5 @@
 <sample Example>
 function OnStart()
 {
-	 <b>app.OpenUrl( "droidscript.org" );</b>
+	 <b>app.OpenUrl( "http://droidscript.org" );</b>
 }</sample>

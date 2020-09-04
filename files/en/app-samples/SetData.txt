@@ -21,7 +21,7 @@ function OnStart()
 function btn_OnTouch()
 {
     var data = 100 * Math.random() | 0;
-	</b>app.SetData( "number", data );</b>
+	<b>app.SetData( "number", data );</b>
 
 	app.ShowPopup( "Data: " + app.GetData( "number" ));
 }

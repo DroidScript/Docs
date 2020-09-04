@@ -4,18 +4,7 @@
 // Remove 'Copy' buttons on PC.
 function hidecopy()
 {
-	var divs = document.getElementsByName("divCopy");
-	for(var i = 0; i < divs.length; ++i)
-	{
-		// For each button....
-		for(var j = 0; j < divs[i].children.length; ++j)
-		{
-			// .... if it is a Copy button (i.e. onclick="copy(..)"), then hide it
-			var child = divs[i].children[j];
-			if(child.getAttribute("onclick").indexOf("copy") == 0)
-				child.style.display = "none";
-		}
-	}
+	$("div[name=divCopy] > a:contains(Copy)").hide();
 }
 
 function copy( div )
