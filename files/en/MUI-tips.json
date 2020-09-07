@@ -549,7 +549,6 @@
 		"Show": "Set the visibility to “Show”",
 		"Tween": "Animates the control"
 	},
-	"lay": {},
 	"lsd": {
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
