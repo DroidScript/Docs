@@ -72,7 +72,7 @@
 		    ├──
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">lang.json</a><br>
 		    ├──
-			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">~&lt;HIDDEN<i>FILE&gt;</a><br>
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">~&lt;HIDDEN_FILE&gt;</a><br>
 		    ├──
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">Html</a>/<br>
 		    ├──
@@ -86,7 +86,7 @@
 		</code></p>
 		<h3>lang.json</h3>
 		<p>If you want to allow users to switch languages, you can use the<br>
-		app.SetAppLanguage() method and the T() function combined with a special JSON<br>
+		app.<a href="../app/SetLanguage.htm#Example" data-ajax="false">SetAppLanguage</a> method and the T() function combined with a special JSON<br>
 		file called 'lang.json' in your app that looks like this:-</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
@@ -115,13 +115,12 @@
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 			</div>
 		</div>
 
-		<p>See also: <a href="04CodingFeatures.htm#Translations" data-ajax="false">T()</a>, <a href="../app/GetLanguage.htm" data-ajax="false">GetLanguage</a>, <a href="../app/GetLanguageCode.htm" data-ajax="false">GetLanguageCode</a>, <a href="../app/GetAppLanguages.htm" data-ajax="false">GetAppLanguages</a>, <a href="../app/GetAppLangCode.htm" data-ajax="false">GetAppLangCode</a>, <a href="../app/SetAppLanguage.htm" data-ajax="false">SetAppLanguage</a><br>
+		<p>Also make sure you use the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" onclick="return OpenUrl(this.href);">standard 2 letter language codes</a><br>
 		<br>
-		Make sure you use the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" onclick="return OpenUrl(this.href);">standard 2 letter language codes</a></p>
+		See also: <a href="04CodingFeatures.htm#Translations" data-ajax="false">T()</a>, <a href="../app/GetLanguage.htm" data-ajax="false">GetLanguage</a>, <a href="../app/GetLanguageCode.htm" data-ajax="false">GetLanguageCode</a>, <a href="../app/GetAppLanguages.htm" data-ajax="false">GetAppLanguages</a>, <a href="../app/GetAppLangCode.htm" data-ajax="false">GetAppLangCode</a>, <a href="../app/SetAppLanguage.htm" data-ajax="false">SetAppLanguage</a></p>
 		<h3>user.keystore</h3>
 		<p>This file is used for signing apks. It is <strong>STRONGLY</strong> recomended that you backup this file. You cannot update your app released using this key on Google Play or on any other device, unless you have the original file (and can also remember the password!)</p>
 		<h3>build.json</h3>
@@ -136,7 +135,7 @@
 				        <span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"debuggable"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE_EXTERNAL_STORAGE"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE\_EXTERNAL\_STORAGE"</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"homeScreen"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"pathPattern"</span><span class="token operator">:</span> <span class="token string">".*\.png,.*\.jpg"</span><br>
 				    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
@@ -149,7 +148,7 @@
 			</div>
 		</div>
 
-		<p></i>Note: This file is optional and not required for building APKs_<br>
+		<p><i>Note: This file is optional and not required for building APKs</i><br>
 		<br>
 		If you release your app on Google Play, the '<strong>minSdkVersion</strong>' setting will control whether people with older phones can see your app in the store. If your app does not perform well on older versions of Android, then it is usually a good idea to make it unavailable for older phones or you will get lots of negative ratings and people will avoid your app. There may also be features such as Bluetooth 4.0 which are unavailable on older versions of Android.<br>
 		<br>

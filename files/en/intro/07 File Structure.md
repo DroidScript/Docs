@@ -12,7 +12,7 @@
     ├── "&lt;PROJECT\_NAME&gt;.js":"Main entry for javascript projects (recessive)"
     ├── "build.json":"Controls certain aspects of the build process"
     ├── "lang.json":"For easy translating texts"
-    ├── "~&lt;HIDDEN_FILE&gt;":"Hidden file"
+    ├── "~&lt;HIDDEN\_FILE&gt;":"Hidden file"
     ├── Html:"external html files (static, no app.* functions here please)"/
     ├── Snd:"sound files"/
     ├── Misc:"miscellaneous files"/
@@ -23,9 +23,9 @@
 ### lang.json
 
 If you want to allow users to switch languages, you can use the
-app.SetAppLanguage() method and the T() function combined with a special JSON
+app.[SetAppLanguage](../app/SetLanguage.htm#Example) method and the T() function combined with a special JSON
 file called 'lang.json' in your app that looks like this:-
-<sample lang.json>
+<sample lang.json norun>
 {
 	"langs": [ "English", "Deutsch", "Español" ],
 
@@ -48,9 +48,9 @@ file called 'lang.json' in your app that looks like this:-
 }
 </sample lang.json>
 
-See also: [T()](04CodingFeatures.htm#Translations), @../app/GetLanguage, @../app/GetLanguageCode, @../app/GetAppLanguages, @../app/GetAppLangCode, @../app/SetAppLanguage
+Also make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code\_list.php)
 
-Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code\_list.php)
+See also: [T()](04CodingFeatures.htm#Translations), @../app/GetLanguage, @../app/GetLanguageCode, @../app/GetAppLanguages, @../app/GetAppLangCode, @../app/SetAppLanguage
 
 ### user.keystore
 
@@ -66,7 +66,7 @@ If you create a file called 'build.json' at the top level of your project, then 
 		"minSdkVersion": 23,
 		"targetSdkVersion": 28,
 		"debuggable": false,
-		"removePermissions": "WRITE_EXTERNAL_STORAGE",
+		"removePermissions": "WRITE\_EXTERNAL\_STORAGE",
 		"homeScreen": false,
 		"pathPattern": ".*\.png,.*\.jpg"
 	},

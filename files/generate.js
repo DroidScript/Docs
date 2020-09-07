@@ -325,10 +325,10 @@ function formatDesc(desc, name, hasData)
 	var sampcnt = keys(samples).length;
 	if(!has(desc, '.')) desc += '.';
 
-	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?>([^]*?)<\/sample\2?>/g,
-		function(m, _, _, t, c)
+	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\2?>/g,
+		function(m, _, _1, t, opt, _2, c)
 		{
-			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt);
+			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt, opt);
 			return `<sample ${_}>`;
 		});
 
@@ -349,7 +349,7 @@ function formatDesc(desc, name, hasData)
 		// expandable samples (per <sample name> tag or add to desc)
 		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
 			(delete samples[t], `</p>\n\t\t${s}<p>`) :
-			Throw(Error(`sample ${t} not found for ${name}`)))
+			Throw(Error(`sample ${t} not found for ${name}. Have ${keys(samples)+"" || "none"}.`)))
 		.replace( /(“.*?”)/g, "<docstr>$1</docstr>")
 		+ values(samples).concat("").reduce((a, b) => a + b);
 }
@@ -472,39 +472,40 @@ function getSamples( name )
 {
 	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", !scope[name].isval );
 
-	s.replace(/<sample( (.*?))?>([^]*?)<\/sample\1?>/g,
-		(m, _, t, c) => samples[t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt)
+	s.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
+		(m, _, name, opt, _1, c) => samples[name || sampcnt + 1] = toHtmlSamp(c, name, ++sampcnt, opt)
 	);
 
 	return samples;
 }
 
 // convert a sample to html code
-function toHtmlSamp( c, t, n )
+function toHtmlSamp( code, name, index, options )
 {
-	var hasBold = has(c, "<b>") && c.indexOf("</b>") > c.indexOf("<b>");
-	if(!hasBold) Warn(`${curDoc} sample "${t||''}" has no bold area\n`);
+	var hasBold = has(code, "<b>") && code.indexOf("</b>") > code.indexOf("<b>");
+	if(!hasBold) Warn(`${curDoc} sample "${name||''}" has no bold area\n`);
 
-	c = c.trim().replace( /<\/?b>/g, "§b§");
-	c = Prism.highlight(c, Prism.languages.javascript, 'javascript')
+	code = code.trim().replace( /<\/?b>/g, "§b§");
+	code = Prism.highlight(code, Prism.languages.javascript, 'javascript')
 		.replace( /\t/g, "    " )
 		.replace( /    /g, "&#160;&#160;&#160;&#160;" )
 		.replace( /\n/g, "<br>\n\t\t\t\t" )
 
 	if(hasBold)
 	{
-		c = sampBase
-			.replace( "%b", c )
+		code = sampBase
+			.replace( "%b", code )
 			.replace( /§b§([^]+?)§b§/g, "<b id=\"snip%i\" style=\"font-size:100%\">$1</b>" );
 	}
 	else
 	{
-		c = sampBase
+		code = sampBase
 			.replace( /.*<a.*onclick="copy\( snip%i \)">.*<\/a>\n/, "" )
-			.replace( "%b", c );
+			.replace( "%b", code );
 	}
+	if(has(options, "norun")) code = code.replace(/\s*<a .*? onclick="demo\( examp.*?<\/a>/, "");
 
-	return c.replace( /%i/g, n ).replace( /%t/g, t ? " - " + t : '' );
+	return code.replace( /%i/g, index ).replace( /%t/g, name ? " - " + name : '' );
 }
 
 
@@ -978,7 +979,7 @@ function l(s) { console.log(`-----${s}-----`); return s; }
 function hidden(name) { return !!name.match(regHide); }
 function nothidden(name) { return !name.match(regHide); }
 function isnum(c) { return c >= '0' && c <= '9'; }
-function has(l, v) { return l.indexOf(v) > -1; }
+function has(l, v) { return !!l && l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
 function keys(o) { return Object.keys(o); }
 function d(v) { console.log(v); return v; }
