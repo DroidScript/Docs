@@ -1,4 +1,4 @@
-<sample Light>
+<sample Just Layout>
 cfg.Light
 cfg.MUI
 
@@ -8,16 +8,16 @@ function OnStart()
     app.InitializeUIKit(color.teal, "Light")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
-    	lst = "Apple,Mango,Orange,Banana"
-    	chk = MUI.CreateCheckbox(lst, 0.7)
-    	lay.AddChild(chk)
+
+        txt = MUI.CreateTextParagraph("DroidScript is awesome!")
+        lay.AddChild(txt)
 
     app.AddLayout(lay)
 }
 </sample>
 
-<sample Dark>
+
+<sample Dark Layout with Card>
 cfg.Light
 cfg.MUI
 
@@ -27,17 +27,11 @@ function OnStart()
     app.InitializeUIKit(color.teal, "Dark")
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
-    	lst = "Apple,Mango,Orange,Banana"
-    	chk = MUI.CreateCheckbox(lst, 0.7)
-    	chk.SetOnTouch(OnCheckBox)
-    	lay.AddChild(chk)
+
+        cardLay = MUI.CreateLayout("Card")
+        cardLay.SetSize(0.85, 0.25)
+        lay.AddChild(cardLay)
 
     app.AddLayout(lay)
-}
-
-function OnCheckBox(index, value)
-{
-	app.ShowPopup(lst[index] + " is "+value)
 }
 </sample>

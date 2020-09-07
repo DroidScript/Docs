@@ -9,10 +9,11 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title")
+        apb = MUI.CreateAppBar("My Title")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
+
             pageLay = MUI.CreateLayout("Linear")
             pageLay.SetSize(1, 1.5)
             pageLay.SetPadding(0, 0, apbHeight, 0)
@@ -34,6 +35,8 @@ function OnStart()
     */
 }
 </sample>
+
+
 <sample Sample page>
 cfg.Light
 cfg.MUI
@@ -43,9 +46,16 @@ function OnStart()
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Light")
 
-    lay = MUI.CreateLayout("Absolute", "FillXY")
+    layHome = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        btn = MUI.CreateButtonRaised("SHOW PAGE", 0.5)
+        btn.SetOnTouch(ShowPage)
+        layHome.AddChild(btn)
+    app.AddLayout(layHome)
 
-        apb = app.CreateAppBar("My Title", "arrow_back", "search")
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+    lay.Hide()
+
+        apb = MUI.CreateAppBar("My Title", "arrow_back", "search")
         apb.SetOnMenuTouch(OnMenuTouch)
 
         var apbHeight = apb.GetHeight()
@@ -57,19 +67,16 @@ function OnStart()
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
             scr.AddChild(pageLay)
-        
         lay.AddChild(scr)
+        
         lay.AddChild(apb)
 
     app.AddLayout(lay)
+}
 
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
+function ShowPage()
+{
+    lay.Animate("SlideFromBottom")
 }
 
 function OnMenuTouch()
@@ -77,6 +84,9 @@ function OnMenuTouch()
     lay.Animate("SlideToBottom")
 }
 </sample>
+
+
+
 <sample Complete controls>
 cfg.Light
 cfg.MUI
@@ -88,12 +98,13 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
         var apbHeight = apb.GetHeight()
 
         scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
+
+            pageLay = MUI.CreateLayout("Linear", "VCenter")
+            pageLay.SetSize(1, 1.2)
             pageLay.SetPadding(0, 0, apbHeight, 0)
                 var txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
                 pageLay.AddChild( MUI.CreateTextParagraph(txt) )
@@ -103,17 +114,11 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 </sample>
-<sample Dark mode with control functions>
+
+
+<sample Dark mode>
 cfg.Light
 cfg.MUI
 
@@ -124,7 +129,7 @@ function OnStart()
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = app.CreateAppBar("My Title", "menu", "search,more_vert")
+        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
         apb.SetOnMenuTouch(OnMenuTouch)
         apb.SetOnControlTouch(OnControlTouch)
         
@@ -143,14 +148,6 @@ function OnStart()
         lay.AddChild(apb)
 
     app.AddLayout(lay)
-
-    /*
-    * We add the app bar after the scroller to make sure
-    * that the app bar will stay on top of 
-    * the page layout
-    *
-    * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
 }
 
 function OnMenuTouch()
@@ -160,6 +157,6 @@ function OnMenuTouch()
 
 function OnControlTouch(text, index)
 {
-    app.ShowPopup("You click " + text + ": Controls index "+index)
+    app.ShowPopup("You click " + text + ": Control index = "+index)
 }
 </sample>

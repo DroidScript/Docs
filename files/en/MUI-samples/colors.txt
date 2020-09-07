@@ -2,7 +2,7 @@
 cfg.Light
 cfg.MUI
 
-function()
+function OnStart()
 {
     app.InitializeUIKit("#009688", "Light")
     color = MUI.colors.green
@@ -12,13 +12,13 @@ function()
         btn1 = MUI.CreateButtonRaised("LIGHTEN4", 0.35, null, color.lighten4)
         lay.AddChild(btn1)
 
-        btn2 = MUI.CreateButtonRaised("LIGHTEN3", 0.35, null, color.lighten4)
+        btn2 = MUI.CreateButtonRaised("LIGHTEN3", 0.35, null, color.lighten3)
         lay.AddChild(btn2)
 
-        btn3 = MUI.CreateButtonRaised("LIGHTEN2", 0.35, null, color.lighten4)
+        btn3 = MUI.CreateButtonRaised("LIGHTEN2", 0.35, null, color.lighten2)
         lay.AddChild(btn3)
 
-        btn4 = MUI.CreateButtonRaised("LIGHTEN1", 0.35, null, color.lighten4)
+        btn4 = MUI.CreateButtonRaised("LIGHTEN1", 0.35, null, color.lighten1)
         lay.AddChild(btn4)
 
         btn5 = MUI.CreateButtonRaised("GREEN", 0.35, null, color.green)
@@ -30,10 +30,10 @@ function()
         btn7 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
         lay.AddChild(btn7)
 
-        btn8 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        btn8 = MUI.CreateButtonRaised("DARKEN3", 0.35, null, color.darken3)
         lay.AddChild(btn8)
 
-        btn9 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
+        btn9 = MUI.CreateButtonRaised("DARKEN4", 0.35, null, color.darken4)
         lay.AddChild(btn9)
 
     app.AddLayout(lay)
@@ -56,10 +56,7 @@ function OnStart()
         lay.AddChild(btn)
 
     app.AddLayout(lay)
-}
 
-function ShowDialog()
-{
     var choices = [
         {name: "lighten4"},
         {name: "lighten3"},
@@ -71,8 +68,13 @@ function ShowDialog()
         {name: "darken3"},
         {name: "darken4"}
     ]
-    lsd = MUI.CreateListDialog("Select shading", choices)
-    lsd.SetOnSelect()
+    lsd = MUI.CreateListDialog("Select Color", choices)
+    lsd.SetOnSelect(OnSelect)
+}
+
+function ShowDialog()
+{
+    lsd.Show()
 }
 
 function OnSelect(name)

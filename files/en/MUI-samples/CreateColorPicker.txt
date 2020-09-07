@@ -1,4 +1,4 @@
-<sample Default Time>
+<sample Light>
 cfg.Light
 cfg.MUI
 
@@ -9,30 +9,28 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER")
+        btn = MUI.CreateButtonRaised("PICKER", 0.35)
         btn.SetOnTouch(ShowPicker)
         lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    tmp = MUI.CreateTimePicker()
-    tmp.SetOnSelect(OnSelect)
+    clr = MUI.CreateColorPicker("Choose Color")
+    clr.SetOnSelect(OnSelect)
 }
 
 function ShowPicker()
 {
-    tmp.Show()
+    clr.Show()
 }
 
-function OnSelect(time, hh, mm, pos) 
+function OnSelect(color)
 {
-    app.ShowPopup(hh+":"+mm+":"+pos)
+    app.ShowPopup(color)
 }
 </sample>
 
-
-
-<sample Custom Time>
+<sample Dark>
 cfg.Light
 cfg.MUI
 
@@ -43,23 +41,23 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER")
+        btn = MUI.CreateButtonRaised("PICKER", 0.35)
         btn.SetOnTouch(ShowPicker)
         lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    tmp = MUI.CreateTimePicker(13, 24, MUI.colors.deepOrange.deepOrange)
-    tmp.SetOnSelect(OnSelect)
+    clr = MUI.CreateColorPicker("Choose Color")
+    clr.SetOnSelect(OnSelect)
 }
 
 function ShowPicker()
 {
-    tmp.Show()
+    clr.Show()
 }
 
-function OnSelect(time, hh, mm, pos) 
+function OnSelect(color)
 {
-    app.ShowPopup(hh+":"+mm+":"+pos)
+    app.ShowPopup(color)
 }
 </sample>

@@ -1,10 +1,10 @@
 {
 	"colors": {
-		"desc": "MUI colors are accessible through the <b>colors</b> property of the MUI object.<br><h3>Base color objects<h3><div class='samp'>&nbsp;MUI.colors.red</div><div class='samp'>&nbsp;MUI.colors.pink</div><div class='samp'>&nbsp;MUI.colors.purple</div><div class='samp'>&nbsp;MUI.colors.deepPurple</div><div class='samp'>&nbsp;MUI.colors.indigo</div><div class='samp'>&nbsp;MUI.colors.blue</div><div class='samp'>&nbsp;MUI.colors.lightBlue</div><div class='samp'>&nbsp;MUI.colors.cyan</div><div class='samp'>&nbsp;MUI.colors.green</div><div class='samp'>&nbsp;MUI.colors.lightGreen</div><div class='samp'>&nbsp;MUI.colors.lime</div><div class='samp'>&nbsp;MUI.colors.yellow</div><div class='samp'>&nbsp;MUI.colors.amber</div><div class='samp'>&nbsp;MUI.colors.orange</div> <div class='samp'>&nbsp;MUI.colors.deepOrange</div><div class='samp'>&nbsp;MUI.colors.brown</div><div class='samp'>&nbsp;MUI.colors.gray</div><div class='samp'>&nbsp;MUI.colors.blueGray</div><br><br><i>Tip. To avoid longer lines assign the color set to a variable e.g. example</i><div class='samp'>&nbsp;var gray = MUI.colors.blueGray</div><br><br>To select a color and shading choose the right property of the base color objects: <i>lighten4</i>, <i>lighten3</i>, <i>lighten2</i>, <i>lighten1</i>, <i>darken1</i>, <i>darken2</i>, <i>darken3</i>, <i>darken4</i>.",
+		"desc": "#colors.md",
         "isval": true,
 		"name": "colors",
 		"retval": "obj",
-		"shortDesc": "colors"
+		"shortDesc": "#colors.md"
     },
 	"CreateAlert": {
 		"abbrev": "alr",
@@ -31,12 +31,32 @@
 				"desc": "Calls a function when alert is close",
 				"name": "SetOnClose",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (boolean) if x-button is click."],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["isBtnClick"],
+					"pTypes": ["bin-Is the button click or not"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnClose",
 				"subf": {}
             },
             "SetText":"#8207502354",
-            "Show":"#1243391562"
+            "Show":"#1243391562",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863"
         }
 	},
 	"CreateAlertSimple": {
@@ -64,12 +84,34 @@
 				"desc": "Calls a function when button is click",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (boolean) if button is click."],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["isBtnClick"],
+					"pTypes": ["bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnTouch",
 				"subf": {}
             },
             "SetText":"#8207502354",
-            "Show":"#1243391562"
+            "Show":"#1243391562",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetVisibility":"#1004824195"
 		}
     },
 	"CreateAppBar": {
@@ -104,7 +146,13 @@
 				"desc": "Calls a function when the right controls are click",
 				"name": "SetOnControlTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Pasess (btnTxt, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["btnTxt", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
@@ -113,7 +161,13 @@
 				"desc": "Calls a function when the heading icon is click",
 				"name": "SetOnMenuTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function."],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
             },
@@ -190,7 +244,13 @@
 				"desc": "Calls a function when the right controls are click",
 				"name": "SetOnControlTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Pasess (btnTxt, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["btnTxt", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
@@ -199,7 +259,13 @@
 				"desc": "Calls a function when the heading icon is click",
 				"name": "SetOnMenuTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function."],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
             },
@@ -259,7 +325,13 @@
 				"desc": "Calls a function when right control is touch",
 				"name": "SetOnControlTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
@@ -268,7 +340,13 @@
 				"desc": "Call a function when the menu icon is touch",
 				"name": "SetOnMenuTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
             },
@@ -371,7 +449,13 @@
 				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnEnter",
 				"subf": {}
             },
@@ -380,7 +464,13 @@
 				"desc": "Define a callback function called when the user focuses the control.",
 				"name": "SetOnFocus",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnFocus",
 				"subf": {}
             },
@@ -411,7 +501,13 @@
 				"desc": "Calls a function when buttons are click (prev. SetOnTouchOK)",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (boolean, buttonText)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["isOkBtnClick", "btnText"],
+					"pTypes": ["bin", "str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnTouch",
 				"subf": {}
             },
@@ -942,7 +1038,14 @@
 		"desc": "CreateButtonToggle",
 		"name": "CreateButtonToggle",
 		"pNames": ["text", "width", "height", "value", "callback", "color", "backColor"],
-		"pTypes": ["str", "num-Fraction of the screen width", "num-Fraction of the screen height", "bin", "fnc-Callback function when toggle is click", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["str", "num-Fraction of the screen width", "num-Fraction of the screen height", "bin",
+				{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}, "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "CreateButtonToggle",
 		"subf": {
@@ -1023,8 +1126,8 @@
         "desc": "A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>",
         "name": "CreateCard",
 		"pNames": ["options"],
-		"pTypes": ["obj-An MUI card options object."],
-		"retval": "dso",
+		"pTypes": ["obj-{title:String|body:String|image:Path to image|buttonText:Comma separated string for button texts|color:String|width:Number|divider1:Boolean|divider2:Boolean|avatar:Avatar image path|avatarOnTop:Boolean|buttonType:raised or raisedoutline or round or roundoutline or flat}"],
+		"retval": "obj",
 		"shortDesc": "CreateCard",
 		"subf": {
             "SetOnButtonTouch": {
@@ -1032,7 +1135,13 @@
 				"desc": "Calls a function when buttons are click.",
 				"name": "SetOnButtonTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (buttontext, card-name)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["btnText", "cardName"],
+					"pTypes": ["str", "str"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnButtonTouch",
 				"subf": {}
             },
@@ -1041,7 +1150,13 @@
 				"desc": "Calls a function when the image is click.",
 				"name": "SetOnImageTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (card-name)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["cardName"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnImageTouch",
 				"subf": {}
             },
@@ -1050,7 +1165,13 @@
 				"desc": "Calls a function when avatar is click.",
 				"name": "SetOnAvatarTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (card-name)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["cardName"],
+					"pTypes": ["str"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnAvatarTouch",
 				"subf": {}
             },
@@ -1059,7 +1180,13 @@
 				"desc": "Calls a function when title item is click.",
 				"name": "SetOnTitleTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (title, card-name)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["title", "cardName"],
+					"pTypes": ["str", "str"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnTitleTouch",
 				"subf": {}
             },
@@ -1072,7 +1199,6 @@
             "GetParent":"#3557841648",
             "GetPosition":"#1605064214",
             "GetTop":"#1981028136",
-            "GetType": "#2114624701",
             "GetVisibility":"#1672373665",
             "GetWidth":"#1321469131",
             "Gone":"#5528553362",
@@ -1088,6 +1214,47 @@
             "Tween":"#2114624769"
 		}
     },
+    "CreateColorPicker": {
+		"abbrev": "clp",
+		"desc": "Creates a color picker dialog where you can select a range of MUI predefined colors.",
+		"name": "CreateColorPicker",
+		"pNames": ["title"],
+		"pTypes": ["str"],
+		"retval": "obj",
+		"shortDesc": "Creates a color picker dialog where you can select a range of MUI predefined colors.",
+		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+                "desc": "Calls a function when a user click the OK button",
+                "name": "SetOnSelect",
+                "pNames": ["callback"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["color"],
+					"pTypes": ["str_col-The selected color"],
+					"shortDesc": "callback"
+				}],
+                "shortDesc": "SetOnSelect",
+                "subf": {}
+            },
+            "Show":"#1243391562",
+            "Hide":"#5372805812",
+            "Destroy": "#1924613325",
+            "GetVisibility":"#1672373665",
+            "IsVisible":"#1814300863",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721"
+        }
+    },
 	"CreateCheckbox": {
 		"abbrev": "chc",
 		"desc": "Checkbox is a powerful control when you want the user to select multiple items in a group",
@@ -1102,7 +1269,13 @@
 				"desc": "Calls a function when the checkbox is click",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (index, boolean)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["index", "checked"],
+					"pTypes": ["num_int", "bin"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnTouch",
 				"subf": {}
             },
@@ -1173,7 +1346,13 @@
 				"desc": "Calls a function when the checklist is submitted",
 				"name": "SetOnSubmit",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes the list object"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["list"],
+					"pTypes": ["lst"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnSubmit",
 				"subf": {}
             },
@@ -1187,10 +1366,10 @@
     },
 	"CreateDatePicker": {
 		"abbrev": "dtp",
-		"desc": "CreateDatePicker",
+		"desc": "Creates a materialize date picker dialog.",
 		"name": "CreateDatePicker",
 		"pNames": ["yyyy", "mm", "dd", "color"],
-		"pTypes": ["num_int- Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col"],
+		"pTypes": ["num_int-Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "CreateDatePicker",
 		"subf": {
@@ -1199,7 +1378,13 @@
                 "desc": "Calls a function when a user click the OK button",
                 "name": "SetOnSelect",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Call function. Passes ('yyyy-mm-dd', yyyy, mm, dd)"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["yyyy-mm-dd", "yyyy", "mm", "dd"],
+					"pTypes": ["str", "num_int", "num_int", "num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnSelect",
                 "subf": {}
             },
@@ -1213,19 +1398,25 @@
     },
 	"CreateDialog": {
 		"abbrev": "dlg",
-		"desc": "CreateDialog",
+		"desc": "Creates a customizable materialize dialog.",
 		"name": "CreateDialog",
 		"pNames": ["title", "body", "okText", "cancelText", "divider"],
 		"pTypes": ["str-Title", "str-Body text", "str-Truthy button text", "str-Falsey button text", "bin-Show divider or hide"],
 		"retval": "obj",
-		"shortDesc": "CreateDialog",
+		"shortDesc": "Creates a customizable materialize dialog.",
 		"subf": {
 			"SetOnTouch":{
                 "abbrev": "",
 				"desc": "Calls a function when buttons are click (prev. SetOnTouchOK)",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (boolean, buttonText)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["isOkBtnClick", "btnText"],
+					"pTypes": ["bin", "str"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "SetOnTouch",
 				"subf": {}
             },
@@ -1253,15 +1444,20 @@
     },
 	"CreateDivider": {
 		"abbrev": "dvd",
-		"desc": "Creates a divider on your layout",
+		"desc": "Creates a divider which you can add to your layout",
 		"name": "CreateDivider",
 		"pNames": ["height"],
-		"pTypes": ["num_int-Pixels"],
+		"pTypes": ["num_px-Optional"],
 		"retval": "obj",
 		"shortDesc": "CreateDivider",
 		"subf": {
 			"Show":"#1243391562",
-            "Hide":"#5372805812"
+            "Hide":"#5372805812",
+            "GetVisibility":"#1672373665",
+            "IsEnabled":"#1744802827",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetVisibility":"#1004824195"
 		}
     },
 	"CreateFAB": {
@@ -1330,7 +1526,6 @@
 			"IsVisible": "#1814300863",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
-			
 			"SetPosition": "#1425862386",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -1485,12 +1680,12 @@
     },
     "CreateLayout": {
         "abbrev": "lay",
-		"desc": "It is just the CreateLayout method of DroidScript with predefined values on background color just to be consistent on MUI theming. It is highly recommended to use this method instead of directly calling CreateLayout from the app object. Since it returns a DroidScript layout, you can use all the layout methods you know.",
+		"desc": "#CreateLayout.md",
 		"name": "CreateLayout",
 		"pNames": ["type", "options"],
-		"pTypes": ["str-DroidScript Layout type", "str-Comma separated DroidScript layout options"],
+		"pTypes": ["str-Linear|Absolute|Frame|Card", "str-Comma separated DroidScript layout options"],
 		"retval": "obj",
-		"shortDesc": "It is just the CreateLayout method of DroidScript with predefined values on background color.",
+		"shortDesc": "#CreateLayout.md",
 		"subf": {}
     },
 	"CreateList": {
@@ -1850,10 +2045,16 @@
 		"subf": {
 			"SetOnSelect": {
                 "abbrev": "",
-				"desc": "Calls a function selects an item in the list",
+				"desc": "Calls a function when a user selects an item in the list",
 				"name": "SetOnSelect",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (name, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["name", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function selects an item in the list",
 				"subf": {}
             },
@@ -1862,33 +2063,74 @@
             "Destroy": "#1924613325",
             "GetVisibility":"#1672373665",
             "IsVisible":"#1814300863",
-            "SetEnabled":"#1602385882"
+            "SetEnabled":"#1602385882",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "SetVisibility":"#1004824195"
 		}
     },
 	"CreateListModern": {
 		"abbrev": "lsm",
-        "desc": "A modern implementation of list using the available controls of DroidScript<br><br><i> Please note that <b>CreateListInitialIcon, CreateListMaterialIcon and CreateListWithAvatar</b> are now deprecated. But still you can achieve these designs by passing appropriate comma-separated options to the <b>options</b> param of <b>CreateListModern</b></i>",
+        "desc": "#CreateListModern.md",
         "name": "CreateListModern",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Can be Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
-		"retval": "dso",
-		"shortDesc": "CreateListModern",
+		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
+		"retval": "obj",
+		"shortDesc": "#CreateListModern.md",
 		"subf": {
             "SetOnTouch": {
                 "abbrev": "",
 				"desc": "Calls a function when an item is click.",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes title,body,index"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["title", "body", "index"],
+					"pTypes": ["str", "str", "num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnTouch",
+				"subf": {}
+            },
+            "SetOnSelect": {
+                "abbrev": "",
+				"desc": "Calls a function when an item in the list is select. List must be selectable.",
+				"name": "SetOnSelect",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["index", "isSelected"],
+					"pTypes": ["num_int", "bin"],
+					"shortDesc": "callback"
+				}],
+                "shortDesc": "Calls a function when an item in the list is select.",
 				"subf": {}
             },
             "SetAvatarOnTouch": {
 				"abbrev": "",
-				"desc": "Calls a function when an icon or avatar is click",
+				"desc": "Calls a function when an icon or avatar is click. The same as SetIconOnTouch.",
 				"name": "SetAvatarOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes index"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["index"],
+					"pTypes": ["num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetAvatarOnTouch",
 				"subf": {}
             },
@@ -1897,7 +2139,13 @@
 				"desc": "Calls a function when a right icon is click",
 				"name": "SetControlOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes index"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["index"],
+					"pTypes": ["num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetControlOnTouch",
 				"subf": {}
             },
@@ -1912,11 +2160,20 @@
             },
             "RemoveItem": {
 				"abbrev": "",
-				"desc": "Removes an item in the list.",
+				"desc": "Removes a single item in the list.",
 				"name": "RemoveItem",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
 				"shortDesc": "RemoveItem",
+				"subf": {}
+            },
+            "RemoveItems": {
+				"abbrev": "",
+				"desc": "Removes multiple items in the list.",
+				"name": "RemoveItem",
+				"pNames": ["indexes"],
+				"pTypes": ["lst-An array of indexes."],
+				"shortDesc": "RemoveItems",
 				"subf": {}
             },
             "SetTitleText": {
@@ -1993,14 +2250,14 @@
 				"shortDesc": "GetItem",
 				"subf": {}
             },
-            "GetCheckedItems":{
+            "GetSelectedItems":{
                 "abbrev": "",
 				"desc": "Returns the selected items in the list",
-				"name": "GetCheckedItems",
+				"name": "GetSelectedItems",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "lst-List of indexes for slected items",
-				"shortDesc": "GetCheckedItems",
+				"shortDesc": "GetSelectedItems",
 				"subf": {}
             },
             "Highlight": {
@@ -2065,19 +2322,25 @@
     },
 	"CreateListSimple": {
 		"abbrev": "lss",
-		"desc": "CreateListSimple",
+		"desc": "Creates a simple list that has an optional badge and icon with no body text.",
 		"name": "CreateListSimple",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["lst-An MUI simple list option", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Divider"],
+		"pTypes": ["lst-{title:str|icon:str-Material icon|color:str_col|badge:num}", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Divider"],
 		"retval": "dso",
-		"shortDesc": "CreateListSimple",
+		"shortDesc": "Creates a simple list that has an optional badge and icon with no body text.",
 		"subf": {
             "SetOnTouch": {
                 "abbrev": "",
 				"desc": "Calls a function when an item is click.",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes index,title,icon,badge"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["title", "index", "icon", "badge"],
+					"pTypes": ["str", "num_int", "str-Material icon", "num"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnTouch",
 				"subf": {}
             },
@@ -2156,7 +2419,7 @@
 		"desc": "A simple MUI implementation of material design menu.",
 		"name": "CreateMenu",
 		"pNames": ["list", "width", "height", "position"],
-		"pTypes": ["str-A comma separated list", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Can be <span style='color:green;'>Top,Left|Top,Right|Bottom,Left|Bottom,Right</span>"],
+		"pTypes": ["str-A comma separated list", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"],
 		"retval": "obj",
 		"shortDesc": "Creates a simple menu",
 		"subf": {
@@ -2165,7 +2428,13 @@
                 "desc": "Calls a function when item is click",
                 "name": "SetOnSelect",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Callback function. Passes (text, index)"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["title", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnSelect",
                 "subf": {}
             },
@@ -2174,29 +2443,49 @@
             "Destroy": "#1924613325",
             "GetVisibility":"#1672373665",
             "IsVisible":"#1814300863",
-            "SetEnabled":"#1602385882"
+            "SetEnabled":"#1602385882",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "SetVisibility":"#1004824195"
         }
     },
 	"CreateMenuWithIcon": {
 		"abbrev": "mwi",
-		"desc": "Advance MUI implementation of material design menu with additional icon using material icon font",
+		"desc": "Advance MUI implementation of material design menu with additional icon using material icon font.",
 		"name": "CreateMenuWithIcon",
 		"pNames": ["list", "width", "height", "position"],
 		"pTypes": [
-            "lst-A string list with the ff format 'Title:material_icon'",
+            "lst-str",
             "num-Fraction of the screen width",
             "num-Fraction of the screen height",
-            "str-Can be <span style='color:green;'>Top,Left|Top,Right|Bottom,Left|Bottom,Right</span>"
+            "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"
         ],
 		"retval": "obj",
-		"shortDesc": "Advance MUI menu",
+		"shortDesc": "Advance MUI implementation of material design menu with additional icon using material icon font.",
 		"subf": {
             "SetOnSelect": {
                 "abbrev": "",
                 "desc": "Calls a function when item is click",
                 "name": "SetOnSelect",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Callback function. Passes (text, index)"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["text", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "SetOnSelect",
                 "subf": {}
             },
@@ -2205,24 +2494,44 @@
             "Destroy":"#1924613325",
             "GetVisibility":"#1672373665",
             "IsVisible":"#1814300863",
-            "SetEnabled":"#1602385882"
+            "SetEnabled":"#1602385882",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "SetVisibility":"#1004824195"
         }
     },
 	"CreateModal": {
 		"abbrev": "mdl",
-		"desc": "A modal is a popup with more controls that can be added.",
+		"desc": "#CreateModal.md",
 		"name": "CreateModal",
 		"pNames": ["title", "body", "okTxt", "cancelTxt", "show"],
 		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin"],
 		"retval": "obj",
-		"shortDesc": "A modal is a popup with more controls that can be added.",
+		"shortDesc": "#CreateModal.md",
 		"subf": {
             "SetOnTouch": {
                 "abbrev": "",
                 "desc": "Calls a function when control buttons are click",
                 "name": "SetOnTouch",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Callback function. Passes (boolean, buttonText)"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["isOkBtnClick", "btnText"],
+					"pTypes": ["bin", "str"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "Calls a function when control buttons are click",
                 "subf": {}
             },
@@ -2241,7 +2550,21 @@
             "Hide":"#5372805812",
             "GetVisibility":"#1672373665",
             "IsVisible":"#1814300863",
-            "SetEnabled":"#1602385882"
+            "SetEnabled":"#1602385882",
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "SetVisibility":"#1004824195"
 		}
     },
 	"CreateRadio": {
@@ -2258,7 +2581,13 @@
 				"desc": "Calls a function when the user selects an item in the list",
 				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["name", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when the user selects an item in the list",
 				"subf": {}
             },
@@ -2575,8 +2904,8 @@
 		"abbrev": "rdb",
 		"desc": "Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
 		"name": "CreateRadioButtons",
-		"pNames": ["list", "width", "height", "color", "backColor", "orientation"],
-		"pTypes": ["lst-A comma separated strings", "num", "num", "str_col-Optional", "str_col-Optional", "str-Can be Vertical|Horizontal"],
+		"pNames": ["list", "width", "height", "orientation", "color", "backColor"],
+		"pTypes": ["lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a radio button control.",
 		"subf": {
@@ -2585,7 +2914,13 @@
 				"desc": "Calls a function when the user selects an item in the list",
 				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["name", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when the user selects an item in the list",
 				"subf": {}
             },
@@ -2679,8 +3014,8 @@
 		"abbrev": "rdm",
 		"desc": "Creates a material radio control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
 		"name": "CreateRadioMaterial",
-		"pNames": ["list", "width", "height", "color", "backColor", "orientation"],
-		"pTypes": ["lst-A comma separated strings", "num", "num", "str_col-Optional", "str_col-Optional", "str-Can be Vertical|Horizontal"],
+		"pNames": ["list", "width", "height", "orientation", "color", "backColor"],
+		"pTypes": ["lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a material radio control.",
 		"subf": {
@@ -2689,7 +3024,13 @@
 				"desc": "Calls a function when the user selects an item in the list",
 				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["name", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when the user selects an item in the list",
 				"subf": {}
             },
@@ -2812,7 +3153,13 @@
 				"desc": "Calls a function when the seekbar is touch. Returns the value to the callback.",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (value) to the callback."],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["value"],
+					"pTypes": ["num"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when the seekbar is touch",
 				"subf": {}
             },
@@ -2881,7 +3228,87 @@
 				"desc": "Calls a function when switch is click",
 				"name": "SetOnTouch",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes boolean"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["value"],
+					"pTypes": ["bin"],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Calls a function when switch is click",
+				"subf": {}
+            },
+            "SetValue":{
+                "abbrev": "",
+				"desc": "Sets the value of the switch",
+				"name": "SetValue",
+				"pNames": ["value"],
+				"pTypes": ["bin"],
+				"shortDesc": "Sets the value of the switch",
+				"subf": {}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Seekbar",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+            "SetEnabled": "#1602385882",
+            "SetPosition":"#1425862386",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
+		}
+    },
+    "CreateSwitchSettings": {
+        "abbrev": "sws",
+		"desc": "Creates a switchable settings that can be toggled on and off.",
+		"name": "CreateSwitchSettings",
+		"pNames": ["text", "width", "height", "value", "color", "backColor"],
+		"pTypes": ["str", "num-Fraction of the screen width", "num-Fraction of the screen height", "bin", "str_col-Optional", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates a switchable settings that can be toggled on and off.",
+		"subf": {
+			"GetValue": {
+				"abbrev": "",
+				"desc": "Get the current value of the switch",
+				"name": "GetValue",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "bin",
+				"shortDesc": "GetValue",
+				"subf": {}
+            },
+            "SetOnTouch":{
+                "abbrev": "",
+				"desc": "Calls a function when switch is click",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["text", "value"],
+					"pTypes": ["str-Settings text", "bin-Settings value"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when switch is click",
 				"subf": {}
             },
@@ -2927,12 +3354,12 @@
     },
 	"CreateTabFixed": {
 		"abbrev": "tbf",
-		"desc": "Creates a simple fixed tab.",
+		"desc": "#CreateTabFixed.md",
 		"name": "CreateTabFixed",
 		"pNames": ["title", "width", "height", "options", "color", "animation"],
-		"pTypes": ["str", "num", "num", "str-A comma separated DS layout options", "str_col-Optional", "bin"],
+		"pTypes": ["str-A comma separated list of titles", "num", "num", "str-A comma separated DS layout options", "str_col-Optional", "bin"],
 		"retval": "obj",
-		"shortDesc": "Creates a simple fixed tab.",
+		"shortDesc": "#CreateTabFixed.md",
 		"subf": {
 			"GetLayout": {
 				"abbrev": "",
@@ -2958,7 +3385,13 @@
 				"desc": "Calls a function when the tab is click.",
 				"name": "SetOnSelect",
 				"pNames": ["callback"],
-				"pTypes": ["fnc-Callback function. Passes (name, index)"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["name", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Calls a function when the tab is click.",
 				"subf": {}
             },
@@ -3098,13 +3531,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
 	},
 	"CreateTEFilledIconRight": {
@@ -3212,13 +3658,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTEOutlineIconLeft": {
@@ -3226,7 +3685,7 @@
 		"desc": "Creates a material outlined text input with icon on the left.",
 		"name": "CreateTEOutlineIconLeft",
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a material outlined text input with icon on the left.",
 		"subf": {
@@ -3326,13 +3785,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTEOutlineIconRight": {
@@ -3340,7 +3812,7 @@
 		"desc": "Creates a material outlined text input with icon on the right.",
 		"name": "CreateTEOutlineIconRight",
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates a material outlined text input with icon on the right.",
 		"subf": {
@@ -3440,23 +3912,36 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTESearchElegant": {
 		"abbrev": "tes",
-		"desc": "Creates an elegant text input",
+		"desc": "#CreateTESearchElegant.md",
 		"name": "CreateTESearchElegant",
 		"pNames": ["width", "hint", "icon", "iconPos", "color", "option"],
-		"pTypes": ["num", "str-Hint text", "str-Materila icon font", "str-Icon position Right|Left", "str_col-Optional", "str-Comma separated string Small|Normal|Border"],
+		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col-Optional", "str-Small|Normal|Border"],
 		"retval": "obj",
-		"shortDesc": "Creates an elegant text input",
+		"shortDesc": "#CreateTESearchElegant.md",
 		"subf": {
 			"ClearFocus":"#1362225380",
             "ClearHistory":{
@@ -3554,13 +4039,40 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetIconOnTouch": {
+                "desc": "Define a callback function which is called when the user pressed the icon.",
+				"name": "SetIconOnTouch",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
+				"shortDesc": "Define a callback function which is called when the user pressed the icon.",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTESearchUnique": {
@@ -3668,13 +4180,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextAreaFilled": {
@@ -3782,13 +4307,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextAreaFilledA": {
@@ -3896,13 +4434,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextAreaOutline": {
@@ -4010,13 +4561,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextAreaOutlineA": {
@@ -4124,13 +4688,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextEditFilled": {
@@ -4238,13 +4815,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
 	},
 	"CreateTextEditFilledA": {
@@ -4352,13 +4942,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextEditOutline": {
@@ -4366,7 +4969,7 @@
 		"desc": "Creates an outlined material text input.",
 		"name": "CreateTextEditOutline",
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates an outlined material text input.",
 		"subf": {
@@ -4466,13 +5069,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextEditOutlineA": {
@@ -4480,7 +5096,7 @@
 		"desc": "Creates an active outlined material text input.",
 		"name": "CreateTextEditOutlineA",
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
-		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "Creates an active outlined material text input.",
 		"subf": {
@@ -4580,13 +5196,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextEditSearch": {
@@ -4694,13 +5323,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextEditUnique": {
@@ -4808,13 +5450,26 @@
                 "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
 				"pNames": ["callback"],
-				"pTypes": ["fnc"],
+				"pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": [],
+					"pTypes": [],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
             },
             "SetPosition":"#1425862386",
             "SetText":"#8207502354",
-            "Undo":{}
+            "Undo":{
+                "desc": "Undo an action",
+                "name": "callback",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Undo an action",
+                "subf": {}
+            }
 		}
     },
 	"CreateTextH1": {
@@ -6136,7 +6791,13 @@
                 "desc": "Calls a function when the user selects a time.",
                 "name": "SetOnSelect",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Callback function. Passes ('hh:mm AM|PM', hour, minute, pos)"],
+                "pTypes": [{
+					"desc": "callback function",
+					"name": "callback",
+					"pNames": ["hh:mm AM|PM", "hour", "minute", "pos"],
+					"pTypes": ["str", "num_int-[0 to 24]", "num_int-[0 to 59]", "str-AM|PM"],
+					"shortDesc": "callback"
+				}],
                 "shortDesc": "Calls a function when the user selects a time.",
                 "subf": {}
             },
