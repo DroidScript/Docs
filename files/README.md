@@ -29,9 +29,9 @@ Open a plain text editor of your choice on your desktop PC.<br>
 Personally I use the [Atom editor](https://atom.io) available for Linux, Windows or OS X, because it has any feature you'll need to comfortably edit the docs. This guide will focus on Atom as well.
 
 - Open the 'Docs' Project folder
-- Open all **files/*.json** files by double-clicking on them in the file tree view
-    - for functions.json click **Edit/Folding/Fold Level 2** in the toolbar to get a comfortable overview over all functions
-    - Optionally split your view vertically - on the right side you can open temporary needed files like **files/samples/***
+- Open all **files/\<lang\>/\<scope\>/*.json** files of the scope you want to edit to by double-clicking on them in the file tree view
+    - for obj.json click **Edit/Folding/Fold Level 2** in the toolbar to get a comfortable overview over all functions
+    - Optionally split your view vertically - on the right side you can open temporary needed files like **files/\<lang\>/\<scope\>/samples/\***
 - Enable _'Soft Wrap'_ in the Settings/Editor tab
 
 
@@ -61,7 +61,9 @@ The generator has a specific file structure you have to use to be able to genera
 	the html/css/js source basis for every language
 - **\<lang\>/**:
 	the generation sources for a specific language
-- \<lang\>/**\<scope\>.json**:
+- \<lang\>/**\<scope\>**:
+	the generation sources for a specific scope
+- \<lang\>/\<scope\>/**obj.json**:
 	The main generation source in { [JSON Format](#JSON-Format) }
 	```js
 	{
@@ -69,7 +71,7 @@ The generator has a specific file structure you have to use to be able to genera
 		/* ... */
 	}
 	```
-- \<lang\>/\<scope\>**-base.json**:
+- \<lang\>/\<scope\>/**base.json**:
 	Put member definitions which are often needed here. The keys are 10 digit IDs starting with a '#' which are used in the \<scope\>.json file to refer to scope-base members:
 	```js
 	{
@@ -77,7 +79,7 @@ The generator has a specific file structure you have to use to be able to genera
 		/* ... */
 	}
 	```
-- \<lang\>/\<scope\>**-navs.json**:
+- \<lang\>/\<scope\>/**navs.json**:
 	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all members.<br>
     You can use one level of categorization using `"catname":["subcat"]` or `"catname":"url"` pairs:
 	```js
@@ -93,9 +95,9 @@ The generator has a specific file structure you have to use to be able to genera
 	```
 
 
-- \<lang\>/\<scope\>/**\<member\>.md**:
+- \<lang\>/\<scope\>/**desc/\<member\>.md**:
 	Put large descriptions of scope members here
-- \<lang\>/\<scope\>**-samples/\<member\>.txt**:
+- \<lang\>/\<scope\>/**samples/\<member\>.txt**:
 	A file which includes large example codes
     ```html
 	// an unnamed sample
@@ -111,14 +113,14 @@ The generator has a specific file structure you have to use to be able to genera
 
 
 Note: in fact, no file is reqired all the times. Following rules apply:
-- If _\<scope\>.json_ is defined, it **can** make use of _\<scope\>/\<member\>.md_ and _\<scope\>-base.json_
-- If _\<scope\>.json_ is not defined, the content of the _\<scope\>/\<member\>.md_ directory will be used to generate plain description docs
-- If _\<scope\>-navs.json_ is not defined, the _\<scope\>.json_ members (or _\<scope\>/\<member\>.md_ if rule #2 applies) will be listed (similar to the 'All' category)
+- If _obj.json_ is defined, it can make use of _desc/\<member\>.md_ **and** _base.json_
+- If _obj.json_ is **not** defined, the content of the _desc/\<member\>.md_ directory will be used to generate plain description docs
+- If _navs.json_ is not defined, the _obj.json_ members (or _desc/\<member\>.md_ if rule #2 applies) will be listed (similar to the 'All' category)
 
 
 ## JSON Format
 
-Each member in the \<scope\>.json file has following format
+Each member in the obj.json file has following format
 
 ```js
 {
@@ -132,7 +134,7 @@ Each member in the \<scope\>.json file has following format
 	    "shortDesc": "<description>", // a short description for <scope>-info.json
 	    "subfuncs": {            // a member container with submembers of the member (requires a control (dso) as retval)
 	        "<memName1>": {      /* a member object */ },
-	        "<memName2>": "#id"  /* id from <scope>-base.json */ }
+	        "<memName2>": "#id"  /* id from base.json */ }
 	    }
 	}
 }
@@ -143,11 +145,11 @@ Note that some values are not required under certain conditions:
 - `retval` if `undefined`
 - `subfuncs` if `undefined`
 
-When using scope-base you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:
+When using base.json you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:
 - when appending an exclamation mark '!' to a subfunction's name this name will be used instead of the one defined in the base object: `"customMemName!": "#id"`
 
-- to use the parameter list of a scope-base entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
-you can also use this method in scope-base
+- to use the parameter list of a base.json entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
+you can also use this method in base.json
 
 ### Format
 
@@ -221,7 +223,7 @@ By Default the constructor line of a DroidScript object will be inserted after t
 #### Examples
 A good documentation should provide examples of the described method. They can be copied and executed directly from the docs.<br>
 Each sample should have a highlighted area which shows the snipped where the method was used. Use the &lt;b&gt; tag for that.<br>
-You can define samples by using the <sample> tag, either in the description itself or in a member.txt file in the [\<scope\>-samples/](app/samples) folder, where each scope member has its own \<member\>.txt file.<br>
+You can define samples by using the <sample> tag, either in the description itself or in a member.txt file in the [samples/](en/app/samples) folder, where each scope member has its own \<member\>.txt file.<br>
 Use following format for each sample:
 ```Html
 <sample MyExample>
@@ -266,6 +268,7 @@ Besides these special formats you also have following standard text formatting f
 - execute `$ ./generate.js \<scope\>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
 - execute `$ ./generate.js \<lang\>.\<scope\> [..]` to generate a specific scope of a language
 
+Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option. 
 
 ## Update Github Pages
 

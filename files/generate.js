@@ -1,57 +1,57 @@
 #!/usr/bin/env node
 
-//TODO:WebServer,WebSocket,WebSocket conn.Ex.,Email auth ("Email, Text"),gfx
-var curDoc, curSubf, curScope, lang, dbg = false;
-var warnEnbl = false, Globals, conf, genprog;
-var scope, base, navs, regGen, regHide, regControl;
+//TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
+var curDoc, curSubf, curScope, lang;
+var warnEnbl = false, conf, dbg = false, clean = false;
+var scope, base, navs, regGen, regHide, regControl, progress;
 
 function generateScope(name, pattern)
 {
 	curScope = name;
+	scopeDir = lang + `/${curScope}/`;
 	regGen = RegExp(pattern || ".*");
 
 	if(!app.FolderExists(lang)) Throw(Error(`Language '${lang}' doesn't exist.`));
 
-	if(!app.FolderExists("docs" + getl())) app.CopyFolder("docs-base", "docs" + getl());
-	else app.ListFolder("docs" + getl()).map(f =>
-		f.startsWith(curScope + "_") && app.DeleteFile(`docs${getl()}/` + f));
-
-	if(!app.FileExists(lang + `/${name}.json`) && !app.FolderExists(lang + "/" + name))
+	if(!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
 		Throw(Error(`Scope '${name}' doesn't exist.`));
 
-	if(!pattern) {
-		app.DeleteFolder(`docs${getl()}/` + curScope);
-		app.MakeFolder(`docs${getl()}/` + curScope);
-	}
-	if(!app.FolderExists(lang + `/${curScope}-samples`))
-		app.MakeFolder(lang + `/${curScope}-samples`);
+	if(!app.FolderExists(scopeDir + "samples"))
+		app.MakeFolder(scopeDir + "samples");
 
 		// read categories
-		curDoc = lang + `/${curScope}-navs.json`;
+		curDoc = scopeDir + "navs.json";
 		navs = JSON.parse(ReadFile(curDoc, "{}"));
 
+		// check file dates for update
+		if(!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir))
+			return;
+
 		// read scope members
-		curDoc = lang + `/${curScope}.json`;
-		if(scope = JSON.parse(ReadFile(curDoc, "false")))
+		curDoc = scopeDir + "obj.json";
+		if(app.FileExists(curDoc))
 		{
+			scope = JSON.parse(ReadFile(curDoc, "false"));
 			if(!keys(navs).length) navs = keys(scope);
 			else navs.All = keys(scope);
 
 			// read base functions used in scope
-			curDoc = lang + `/${curScope}-base.json`;
+			curDoc = scopeDir + "base.json";
 			if(base = JSON.parse(ReadFile(curDoc, "false")))
 			{
-			// additionally, read /*#obj*/ marked functions from .js file if exists
-			if(!app.FileExists(curScope + ".js")) base.all = keys(base).map(k => base[k].name);
-			else base.all = app.ReadFile(curScope + ".js")
-				.split("/*#obj*/ self.").slice(1)
-				.map(v => v.slice(0, v.indexOf(" ")));
+				// additionally, read /*#obj*/ marked functions from .js file if exists
+				if(!app.FileExists(scopeDir + curScope + ".js"))
+					base.all = keys(base).map(k => base[k].name);
+				else
+					base.all = app.ReadFile(scopeDir + curScope + ".js")
+						.split("/*#obj*/ self.").slice(1)
+						.map(v => v.slice(0, v.indexOf(" ")));
 
-			// additionally, read Obj.prototype functions from utils.js if exists
-			if(curScope == "app" && app.FileExists("util.js"))
-				base.all.concat(app.ReadFile("util.js")
-					.split("Obj.prototype.").slice(1)
-					.map(v => v.slice(0, v.indexOf(" "))))
+				// additionally, read Obj.prototype functions from utils.js if exists
+				if(curScope == "app" && app.FileExists(scopeDir + "util.js"))
+					base.all.concat(app.ReadFile(scopeDir + "util.js")
+						.split("Obj.prototype.").slice(1)
+						.map(v => v.slice(0, v.indexOf(" "))))
 		} else base = {all:[]}
 	}
 	else // no json file available
@@ -59,12 +59,26 @@ function generateScope(name, pattern)
 		regGen = RegExp("(?=^tips$)[]|(?!^tips$)^.*" + regGen.source);
 		// add files from scope folder to be generated
 		scope = {}; base = false; navs = [];
-		for(var n of app.ListFolder(lang + "/" + curScope))
+
+		for(var n of app.ListFolder(scopeDir + "desc"))
 		{
 			n = n.slice(0, n.lastIndexOf("."));
 			navs.push(n.replace(/^\s+/, ""));
 			scope[n] = { desc: `#${n}.md`, name: navs[navs.length - 1] };
 		}
+	}
+
+	// delete old generated files
+	if(!app.FolderExists("docs" + getl()))
+		app.CopyFolder("docs-base", "docs" + getl());
+	else if("navs".match(regGen))
+		app.ListFolder("docs" + getl()).map(f =>
+			f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
+
+	if(!pattern)
+	{
+		app.DeleteFolder(`docs${getl()}/` + name);
+		app.MakeFolder(`docs${getl()}/` + name);
 	}
 
 	// start generating
@@ -122,8 +136,8 @@ function generateDocs(scope)
 
 	for( var i = 0; i < lst.length; i++ )
 	{
-		genprog = Math.floor( 100*i / lst.length );
-		app.UpdateProgressBar( genprog, curScope + '.' + lst[i] );
+		progress = Math.floor( 100*i / lst.length );
+		app.UpdateProgressBar( progress, curScope + '.' + lst[i] );
 		generateDoc(lst[i]);
 	}
 
@@ -174,14 +188,14 @@ function generateDoc( name )
 	// get description from external file
 	if(desc[0] == '#')
 	{
-		desc = ReadFile(lang + `/${curScope}/${desc.slice(1)}`, false);
+		desc = ReadFile(scopeDir + `desc/${desc.slice(1)}`, false);
 		if(!desc) Throw(Error(`description file ${scope[name].desc.slice(1)} linked but doesn't exist.`));
 	}
 
 	// get function specific data
 	if((keys(scope[name])+'').match(/p(Names|Types)|subf|isval|shortDesc/g))
 	{
-		if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " get data" );
+		if(dbg) app.UpdateProgressBar( progress, curScope + '.' + name + " get data" );
 		data = getDocData(scope[name]);
 		// function line with popups
 		if(scope[name].abbrev) funcLine = scope[name].abbrev + " = ";
@@ -195,15 +209,15 @@ function generateDoc( name )
 	}
 
 	// insert data to html base
-	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " generate description" );
+	if(dbg) app.UpdateProgressBar( progress, curScope + '.' + name + " generate description" );
 	var html = htmlBase
 		.replace("%b", subfuncs)
 		.replace("%d", formatDesc(desc, name, !!data))
 		.replace("%c", funcLine);
 
-	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " adjusting" );
+	if(dbg) app.UpdateProgressBar( progress, curScope + '.' + name + " adjusting" );
 	app.WriteFile( curDoc, adjustDoc(html, name) );
-	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " done" );
+	if(dbg) app.UpdateProgressBar( progress, curScope + '.' + name + " done" );
 }
 
 /*----------------------------------------------------------------------------*/
@@ -312,7 +326,7 @@ function adjustDoc(html, name)
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
 
-	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " write changes" );
+	if(dbg) app.UpdateProgressBar( progress, curScope + '.' + name + " write changes" );
 	return html;
 }
 
@@ -401,7 +415,7 @@ function getDocData( f, useAppPop )
 		// function list
 		mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
-	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + f.name + " generate subfunctions" );
+	if(dbg) app.UpdateProgressBar( progress, curScope + '.' + f.name + " generate subfunctions" );
 	for( k = 0; k < mkeys.length; k++ )
 	{
 		var met = f.subf[mkeys[k]], retval = "", type;
@@ -470,7 +484,7 @@ function getDocData( f, useAppPop )
 // read and return html converted example snippets file
 function getSamples( name )
 {
-	var sampcnt = 0, samples = {}, s = ReadFile(lang + `/${curScope}-samples/${name}.txt`, " ", !scope[name].isval );
+	var sampcnt = 0, samples = {}, s = ReadFile(scopeDir + `samples/${name}.txt`, " ", !scope[name].isval );
 
 	s.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
 		(m, _, name, opt, _1, c) => samples[name || sampcnt + 1] = toHtmlSamp(c, name, ++sampcnt, opt)
@@ -959,9 +973,7 @@ ${getHead(1)}
 // ---------------------------- top globs --------------------------------------
 
 	//global variables
-var 	//globals for one doc
-	Globals,
-		// app object constructor name prefixes
+var		// app object constructor name prefixes
 	regConPrefix = /^(Create|Open)/;
 
 
@@ -983,7 +995,7 @@ function has(l, v) { return !!l && l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
 function keys(o) { return Object.keys(o); }
 function d(v) { console.log(v); return v; }
-function saveScope() { app.WriteFile(lang + `/${curScope.json}`, tos(scope)); }
+function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope)); }
 function sortAsc(a, b) {
 	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
 	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
@@ -1056,17 +1068,48 @@ function tos(o, intd, m)
 	return s;
 }
 
+function newestFileDate(p) {
+	var files;
+	if(arguments.length > 1) files = [...arguments];
+	else if(!p.endsWith('/') && app.FileExists(p)) return app.GetFileDate(p);
+	else if(!app.FolderExists(p)) return null;
+    else files = app.ListFolder(p).map(f => p + (p.endsWith('/') ? '' : '/') + f);
+    return files.length ? Math.max.apply(null, files.map(f => newestFileDate(f))) : null;
+}
 
 // ---------------------------- nodejs app wrapper -----------------------------
 
+
+help = `${process.argv.slice(0,2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
+OPTIONS:
+-l -lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
+                    	  defaults to 'en'
+-v -verbose         	print more debug logs
+-c -clean            	regenerate the docs completely
+-h -help            	this help
+
+PATTERN:
+generates a scope in each defined language:
+<SCOPE>[.<MEMBER-PATTERN>]
+with specified language:
+<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
+
+MEMBER-PATTERN: 		RegExp pattern
+
+EXAMPLES:
+generate.js		generate all defined languages (in generate.js)
+generate.js en	generate all english docs
+generate.js en.app  generate english docs of scope 'app'
+generate.js app	generate docs of scope 'app' in all defined languages
+generate.js app.^C  generate all docs starting with 'C'`;
 
 function OnStart()
 {
 	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
+	var patLang = "", patScope = "", patFunc = "";
 
-	if(process.argv.length == 2) process.argv.push("");
 	for(var pat of process.argv.slice(2))
 	{
 		if(pat.startsWith("-"))
@@ -1074,31 +1117,10 @@ function OnStart()
 			pat = pat.split("=");
 			switch(pat[0])
 			{
-				case "-lang": lang = pat[1]; break;
-				case "-verbose": dbg = true; break;
-				case "-help": console.log(
-					`${process.argv.slice(0,2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
-OPTIONS:
-	-lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
-	                 	defaults to 'en'
-	-verbose         	print more debug logs
-	-help            	this help
-
-PATTERN:
-	generates a scope in each defined language:
-		<SCOPE>[.<MEMBER-PATTERN>]
-	with specified language:
-		<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
-
-MEMBER-PATTERN: 		RegExp pattern
-
-EXAMPLES:
-	generate.js		generate all defined languages (in generate.js)
-	generate.js en	generate all english docs
-	generate.js en.app  generate english docs of scope 'app'
-	generate.js app	generate docs of scope 'app' in all defined languages
-	generate.js app.^C  generate all docs starting with 'C'`
-				); break;
+				case "-l": case "-lang": lang = pat[1]; break;
+				case "-v": case "-verbose": dbg = true; break;
+				case "-c": case "-clean": clean = true; break;
+				case "-h": case "-help": console.log(help); return;
 				default: Throw(Error("Unknown option " + pat[0]))
 			}
 		}
@@ -1107,21 +1129,22 @@ EXAMPLES:
 			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
 			if(!p) Throw(Error("invalid pattern " + pat));
 
-			if(p[1] && !conf.langs[p[1]]) conf.langs[p[1]] = "";
-			if(p[3] && !conf.scopes[p[3]]) conf.scopes[p[3]] = "";
-
-			for(var l in conf.langs)  if(l.match(p[1]) != null)
-			for(var s in conf.scopes) if(s.match(p[3]) != null)
-			try {
-				lang = l;
-				app.ShowProgressBar(`Generating ${l}.${s}.${p[5]||'*'}`);
-				generateScope(s, p[5]);
-				app.HideProgressBar();
-			} catch(e) {
-				console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
-				throw e;
-			}
+			if(p[1] && !conf.langs[patLang = p[1]]) conf.langs[p[1]] = "";
+			if(p[3] && !conf.scopes[patScope = p[3]]) conf.scopes[p[3]] = "";
+			patFunc = p[5];
 		}
+	}
+
+	for(var l in conf.langs)  if(l.match(patLang) != null)
+	for(var s in conf.scopes) if(s.match(patScope) != null)
+	try {
+		lang = l;
+		app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
+		generateScope(s, patFunc);
+		app.HideProgressBar();
+	} catch(e) {
+		console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
+		throw e;
 	}
 }
 
@@ -1135,15 +1158,18 @@ function absPth(p) { return p.startsWith("/") ? p : path + p; }
 if(typeof app == "undefined")
 	var app = {
 		ReadFile: (p) => fs.readFileSync(absPth(p), "utf8"),
-		WriteFile: (p, s) => fs.writeFile(absPth(p), s),
+		WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
 		DeleteFile: (p) => fs.unlinkSync(absPth(p)),
 		ListFolder: (p) => fs.readdirSync(absPth(p)),
 		MakeFolder: (p) => fs.mkdirSync(absPth(p)),
 		CopyFolder: (a, b) => fs.copySync(absPth(a), absPth(b)),
 		DeleteFolder: (p) => rimraf.sync(absPth(p)),
-		FileExists: (p) => fs.existsSync(absPth(p)),
-		FolderExists: (p) => fs.existsSync(absPth(p)),
-		SetDebug: () => 0,
+		IsFile: (p) => fs.lstatSync(absPth(p)).isFile(),
+		IsFolder: (p) => fs.lstatSync(absPth(p)).isDirectory(),
+		FileExists: (p) => fs.existsSync(absPth(p)) && fs.lstatSync(absPth(p)).isFile(),
+		FolderExists: (p) => fs.existsSync(absPth(p)) && fs.lstatSync(absPth(p)).isDirectory(),
+		GetFileDate: (p) => new Date(fs.statSync(absPth(p)).ctime),
+		SetDebug: (d) => dbg = d,
 		ShowProgressBar: (t) => console.log(t + "\n"),
 		UpdateProgressBar: (i,t) => console.log("\033[1A\033[K" + `${i}% ${t||'Initializing'}`),
 		HideProgressBar: () => console.log("\033[1A\033[K100% done."),
