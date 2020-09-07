@@ -24,7 +24,7 @@ function generateScope(name, pattern)
 		navs = JSON.parse(ReadFile(curDoc, "{}"));
 
 		// check file dates for update
-		if(!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir))
+		if(!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
 			return;
 
 		// read scope members
@@ -78,7 +78,8 @@ function generateScope(name, pattern)
 		app.DeleteFolder(`docs${getl()}/` + name);
 	}
 
-	app.MakeFolder(`docs${getl()}/` + name);
+	if(!app.FolderExists(`docs${getl()}/` + name))
+		app.MakeFolder(`docs${getl()}/` + name);
 
 	// start generating
 	if("navs".match(regGen))
@@ -696,7 +697,7 @@ function toArgAppPop( name, types )
 
 	return newAppPopup(
 		name, types.map(
-			(type) => conf.tname[type[0]] +
+			(type) => conf.tname[type[0]].replace(/<[^>]*>/g, '') +
 				(conf.tdesc[type[1]] ? ": " + conf.tdesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
 			).join("\\n")
