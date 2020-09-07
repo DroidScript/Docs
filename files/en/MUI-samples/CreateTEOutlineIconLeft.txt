@@ -1,0 +1,79 @@
+<sample No Label>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left", "person", "Type your name")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Dark With Label>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Password", "lock", "Type your password", true)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+<sample Round>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Number,Round", "call", "Type your number", true)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample SetOnEnter Callback>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Number", "call", "Type your number", true)
+        tef.SetOnEnter(OnEnter)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+
+function OnEnter()
+{
+    app.ShowPopup(this.GetText())
+}
+</sample>

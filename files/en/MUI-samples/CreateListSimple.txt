@@ -1,0 +1,106 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Downloads"},
+            {title: "Folders"},
+            {title: "Images"},
+            {title: "Videos"}
+        ]
+        lst = MUI.CreateListSimple(list, 1)
+        lst.SetOnTouch()
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title, index, icon, badge)
+{
+    app.ShowPopup(title+" : "+index)
+}
+</sample>
+
+
+
+<sample With Icon & Color>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Downloads", icon: "play_for_work", color:"#673ab7"},
+            {title: "Folders", icon: "folder", color:"#009688"},
+            {title: "Images", icon: "photo", color:"#1e88e5"},
+            {title: "Videos", icon: "subscriptions", color:"#e53935"}
+        ]
+        lst = MUI.CreateListSimple(list, 1)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+
+<sample With Icon, Color & Badge>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+            {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+            {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+            {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+        ]
+        lst = MUI.CreateListSimple(list, 1)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Dark With Divider>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+            {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+            {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+            {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+        ]
+        lst = MUI.CreateListSimple(list, 1, null, "Divider")
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+</sample>

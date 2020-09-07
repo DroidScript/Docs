@@ -1,0 +1,75 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+
+<sample RightIcon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Small>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", "#673ab7", "Small")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Border>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", null, "Small,Border")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>

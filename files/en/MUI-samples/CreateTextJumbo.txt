@@ -1,0 +1,17 @@
+<sample All Headings>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        h = MUI.CreateTextJumbo("Some jumbo text here")
+        lay.AddChild(h)
+
+    app.AddLayout(lay)
+}
+</sample>

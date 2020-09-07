@@ -1,0 +1,17 @@
+<sample Search>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTESearchUnique(0.8, "Search for music", "search")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>

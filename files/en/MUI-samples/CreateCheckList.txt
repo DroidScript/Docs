@@ -1,0 +1,76 @@
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn = MUI.CreateButtonRaised("SHOW CHECKLIST", 0.6)
+        btn.SetOnTouch(ShowCheckList)
+        lay.AddChild(btn)
+    
+    app.AddLayout(lay)
+
+    lst = [
+        {name: "Apple", check: false},
+        {name: "Mango", check: true},
+        {name: "Orange", check: true},
+        {name: "Banana"}
+    ]
+    chk = MUI.CreateCheckList("Choose a fruit", lst)
+    chk.SetOnSubmit(OnSubmit)
+}
+
+function ShowCheckList()
+{
+    chk.Show()
+}
+
+function OnSubmit(lst)
+{
+    app.ShowPopup(JSON.stringify(lst))   
+}
+</sample>
+
+
+<sample Dark, Bottom>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        
+        btn = MUI.CreateButtonRaised("SHOW CHECKLIST", 0.6)
+        btn.SetOnTouch(ShowCheckList)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    lst = [
+        {name: "Apple", check: false},
+        {name: "Mango", check: true},
+        {name: "Orange", check: true},
+        {name: "Banana"}
+    ]
+    chk = MUI.CreateCheckList("Choose a fruit", lst, null, true)
+    chk.SetOnSubmit(OnSubmit)
+}
+
+function ShowCheckList()
+{
+    chk.Show()
+}
+
+function OnSubmit(lst)
+{
+    app.ShowPopup(JSON.stringify(lst))   
+}
+</sample>

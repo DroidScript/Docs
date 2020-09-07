@@ -1,0 +1,62 @@
+<sample Basic & Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+        btn.SetOnTouch(ShowDialog)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    var text = "You can undone this process."
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
+}
+
+function ShowDialog()
+{
+    dlg.Show()
+}
+</sample>
+
+<sample Customize & Dark>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+        btn.SetOnTouch(ShowDialog)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    var text = "You can undone this process."
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE", "CLOSE", true)
+    dlg.SetOnTouch(OnTouch)
+}
+
+function ShowDialog()
+{
+    dlg.Show()
+}
+
+function OnTouch(val, btnTxt)
+{
+    if(val && btnTxt == "REMOVE")
+        app.ShowPopup("Confirmed. Proceed an action")
+    else
+        app.ShowPopup("You decline the confirmation.")
+}
+</sample>

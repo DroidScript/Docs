@@ -1,0 +1,37 @@
+<sample Just Layout>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        txt = MUI.CreateTextParagraph("DroidScript is awesome!")
+        lay.AddChild(txt)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Dark Layout with Card>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        cardLay = MUI.CreateLayout("Card")
+        cardLay.SetSize(0.85, 0.25)
+        lay.AddChild(cardLay)
+
+    app.AddLayout(lay)
+}
+</sample>

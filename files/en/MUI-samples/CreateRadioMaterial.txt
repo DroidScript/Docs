@@ -1,0 +1,71 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list  = "Apps, Games, Movies, Books"
+        rad = MUI.CreateRadioMaterial(list)
+        lay.AddChild(rad)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+
+<sample With callback>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list  = "Apps, Games, Movies, Books"
+        rad = MUI.CreateRadioMaterial(list, 1, null, "Vertical")
+        rad.SetOnTouch(OnTouch)
+        lay.AddChild(rad)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(name, index)
+{
+    app.ShowPopup(name+" : "+index)
+}
+</sample>
+
+
+<sample Horizontal>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list  = "Apps, Games, Movies, Books"
+        rad = MUI.CreateRadioMaterial(list, 1, null, "Horizontal")
+        rad.SetOnTouch(OnTouch)
+        lay.AddChild(rad)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(name, index)
+{
+    app.ShowPopup(name+" : "+index)
+}
+</sample>

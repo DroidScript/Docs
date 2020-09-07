@@ -1,0 +1,47 @@
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonRoundO("BUTTON", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonRoundO("[fa-android] ANDROID", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonRoundO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+<sample Dark>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonRoundO("BUTTON", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonRoundO("[fa-android] ANDROID", 0.35)
+    	lay.AddChild(btn)
+
+    	btn = MUI.CreateButtonRoundO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
+}
+</sample>

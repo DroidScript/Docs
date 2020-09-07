@@ -1,0 +1,100 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        tab = MUI.CreateTabFixed("Songs,Albums,Artists", 1, 1, "VCenter,FillXY")
+
+        songsLay = tab.GetLayout("Songs")
+        btn = MUI.CreateButtonRaisedO("BUTTON")
+        songsLay.AddChild(btn)
+
+        albumsLay = tab.GetLayout("Albums")
+        ted = MUI.CreateTextEditFilled(0.75, "", "Text hint", true)
+        albumsLay.AddChild(ted)
+
+        artistLay = tab.GetLayout("Artists")
+        img = app.CreateImage("/Sys/Img/Droid1.png", 0.3)
+        artistLay.AddChild(img)
+
+        lay.AddChild(tab)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample With Slide Animation>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        tab = MUI.CreateTabFixed("Songs,Albums,Artists", 1, 1, "VCenter,FillXY", "#673ab7", true)
+
+        songsLay = tab.GetLayout("Songs")
+        btn = MUI.CreateButtonRaisedO("BUTTON")
+        songsLay.AddChild(btn)
+
+        albumsLay = tab.GetLayout("Albums")
+        ted = MUI.CreateTextEditFilled(0.75, null, "Text hint", true)
+        albumsLay.AddChild(ted)
+
+        artistLay = tab.GetLayout("Artists")
+        img = app.CreateImage("/Sys/Img/Droid1.png", 0.3)
+        artistLay.AddChild(img)
+
+        lay.AddChild(tab)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample With Callback>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        tab = MUI.CreateTabFixed("Songs,Albums,Artists", 1, 1, "VCenter,FillXY", "#673ab7", true)
+        tab.SetOnSelect(OnSelect)
+
+        songsLay = tab.GetLayout("Songs")
+        btn = MUI.CreateButtonRaisedO("BUTTON")
+        songsLay.AddChild(btn)
+
+        albumsLay = tab.GetLayout("Albums")
+        ted = MUI.CreateTextEditFilled(0.75, null, "Text hint", true)
+        albumsLay.AddChild(ted)
+
+        artistLay = tab.GetLayout("Artists")
+        img = app.CreateImage("/Sys/Img/Droid1.png", 0.3)
+        artistLay.AddChild(img)
+
+        lay.AddChild(tab)
+
+    app.AddLayout(lay)
+}
+
+function OnSelect(name, index)
+{
+    app.ShowPopup(name+" : "+index)
+}
+</sample>

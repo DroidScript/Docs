@@ -1,0 +1,64 @@
+<sample Default>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
+        btn.SetOnTouch(ShowDatePicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    pck = MUI.CreateDatePicker()
+    pck.SetOnSelect(OnSelect)
+}
+
+function ShowDatePicker()
+{
+    pck.Show()
+}
+
+function OnSelect(date, yyyy, mm, dd)
+{
+    app.ShowPopup(date)
+}
+</sample>
+
+<sample With Custom Date>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
+        btn.SetOnTouch(ShowDatePicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    //September 1, 2020
+    pck = MUI.CreateDatePicker(2020, 8, 1)
+    pck.SetOnSelect(OnSelect)
+}
+
+function ShowDatePicker()
+{
+    pck.Show()
+}
+
+function OnSelect(date, yyyy, mm, dd)
+{
+    app.ShowPopup(date)
+}
+</sample>

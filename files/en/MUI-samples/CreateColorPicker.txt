@@ -1,0 +1,63 @@
+<sample Light>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("PICKER", 0.35)
+        btn.SetOnTouch(ShowPicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    clr = MUI.CreateColorPicker("Choose Color")
+    clr.SetOnSelect(OnSelect)
+}
+
+function ShowPicker()
+{
+    clr.Show()
+}
+
+function OnSelect(color)
+{
+    app.ShowPopup(color)
+}
+</sample>
+
+<sample Dark>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("PICKER", 0.35)
+        btn.SetOnTouch(ShowPicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    clr = MUI.CreateColorPicker("Choose Color")
+    clr.SetOnSelect(OnSelect)
+}
+
+function ShowPicker()
+{
+    clr.Show()
+}
+
+function OnSelect(color)
+{
+    app.ShowPopup(color)
+}
+</sample>

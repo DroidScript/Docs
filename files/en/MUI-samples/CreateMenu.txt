@@ -1,0 +1,67 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+        btn.SetOnTouch(ShowMenu)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    var list = "Find, Edit, Share, Settings, About"
+    lst = MUI.CreateMenu(list, null, null, "Top, Right")
+    lst.SetOnSelect(OnSelect)
+}
+
+function ShowMenu()
+{
+    lst.Show()
+}
+
+function OnSelect(choice)
+{
+    app.ShowPopup(choice)
+}
+</sample>
+
+
+
+<sample Dark & Bottom,Right>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+        btn.SetOnTouch(ShowMenu)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    var list = "Find, Edit, Share, Settings, About"
+    lst = MUI.CreateMenu(list, null, null, "Bottom, Right")
+    lst.SetOnSelect(OnSelect)
+}
+
+function ShowMenu()
+{
+    lst.Show()
+}
+
+function OnSelect(choice)
+{
+    app.ShowPopup(choice)
+}
+</sample> 

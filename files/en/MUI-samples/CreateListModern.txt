@@ -1,0 +1,234 @@
+<sample No-options>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Sample Title", body:"The quick brown fox jumps..."},
+            {title: "Sample Title", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png"},
+            {title: "Sample Title", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list)
+        lsm.SetOnTouch(OnTouch)
+        lay.AddChild(lsm)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title, body, index)
+{
+    app.ShowPopup(title+" : "+body+" : "+index)
+}
+</sample>
+
+<sample Selectable>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Sample Title", body:"The quick brown fox jumps..."},
+            {title: "Sample Title", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png"},
+            {title: "Sample Title", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 0.96, null, "Selectable")
+        lsm.SetOnTouch(ListOnTouch)
+        lay.AddChild(lsm)
+
+        btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
+        btn.SetMargins(0, 0.075, 0, 0)
+        lay.AddChild(btn)
+        btn.SetOnTouch(GetSelectedItems)
+
+    app.AddLayout(lay)
+
+    app.ShowPopup("Click the icon/avatar to select")
+}
+
+function ListOnTouch(title, body, index)
+{
+    app.ShowPopup("You choose "+title)
+}
+
+function GetSelectedItems()
+{
+    var items = lsm.GetSelectedItems()
+    for(var i = 0; i<items.length; i++)
+    {
+        var item = lsm.GetItem(items[i])
+        app.Alert(JSON.stringify(item))
+    }
+}
+</sample>
+
+
+<sample CreateListInitialIcon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Title 1", body:"The quick brown fox jumps...", rightNote: "Aug 5"},
+            {title: "Title 2", body:"The quick brown fox jumps...", rightNote: "Aug 6"},
+            {title: "Title 3", body:"The quick brown fox jumps...", rightNote: "Aug 7"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 1, null, "Initial,RightNote")
+        lay.AddChild(lsm)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample CreateListMaterialIcon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Folder", body:"The quick brown fox jumps...", icon: "folder", rightIcon: "more_vert"},
+            {title: "Favorites", body:"The quick brown fox jumps...", icon: "favorite", rightIcon: "more_vert"},
+            {title: "Music", body:"The quick brown fox jumps...", icon: "music_note", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 1, null, "Material,RightNote,Selectable")
+        lay.AddChild(lsm)
+
+        btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
+        btn.SetMargins(0, 0.075, 0, 0)
+        lay.AddChild(btn)
+        btn.SetOnTouch(GetSelectedItems)
+
+    app.AddLayout(lay)
+    app.ShowPopup("Click the icon/avatar to select")
+}
+
+function GetSelectedItems()
+{
+    var items = lsm.GetSelectedItems()
+    for(var i = 0; i<items.length; i++)
+    {
+        var item = lsm.GetItem(items[i])
+        app.Alert(JSON.stringify(item))
+    }
+}
+</sample>
+
+
+<sample CreateListWithAvatar>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Someone", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"},
+            {title: "Anybody", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"},
+            {title: "Everyone", body:"The quick brown fox jumps...", image: "/Sys/Img/Droid1.png", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 1, null, "Avatar,RightNote,Selectable")
+        lay.AddChild(lsm)
+
+        btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
+        btn.SetMargins(0, 0.075, 0, 0)
+        lay.AddChild(btn)
+        btn.SetOnTouch(GetSelectedItems)
+
+    app.AddLayout(lay)
+    app.ShowPopup("Click the icon/avatar to select")
+}
+
+function GetSelectedItems()
+{
+    var items = lsm.GetSelectedItems()
+    for(var i = 0; i<items.length; i++)
+    {
+        var item = lsm.GetItem(items[i])
+        app.Alert(JSON.stringify(item))
+    }
+}
+</sample>
+
+
+
+
+<sample RemoveItems>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Folder", body:"The quick brown fox jumps...", icon: "folder", rightIcon: "more_vert"},
+            {title: "Downloads", body:"The quick brown fox jumps...", icon: "play_for_work", rightIcon: "more_vert"},
+            {title: "Music", body:"The quick brown fox jumps...", icon: "music_note", rightIcon: "more_vert"},
+            {title: "Account", body:"The quick brown fox jumps...", icon: "person", rightIcon: "more_vert"},
+            {title: "Password", body:"The quick brown fox jumps...", icon: "lock", rightIcon: "more_vert"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 1, null, "Material,RightNote,Selectable")
+        lsm.SetOnSelect(OnSelect)
+        lay.AddChild(lsm)
+
+        btn = MUI.CreateButtonRaised("REMOVE SELECTED", 0.75)
+        btn.SetMargins(0, 0.075, 0, 0)
+        btn.SetOnTouch(RemoveSelected)
+        btn.Hide()
+        lay.AddChild(btn)
+    
+    app.AddLayout(lay)
+    app.ShowPopup("Click the icon/avatar to select")
+}
+
+function OnSelect()
+{
+    var items = lsm.GetSelectedItems()
+    btn.SetText(items.length+" REMOVE SELECTED")
+    if(items.length) btn.Show()
+    else btn.Hide()
+}
+
+function RemoveSelected()
+{
+    var items = lsm.GetSelectedItems()
+    lsm.RemoveItems(items)
+}
+</sample>

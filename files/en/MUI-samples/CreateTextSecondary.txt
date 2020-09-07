@@ -1,0 +1,18 @@
+<sample All Headings>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        s = MUI.CreateTextSecondary(text)
+        lay.AddChild(s)
+
+    app.AddLayout(lay)
+}
+</sample>

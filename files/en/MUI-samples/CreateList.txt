@@ -1,0 +1,81 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = ["Downloads", "Images", "Videos"]
+        lst = MUI.CreateList(list, 0.95, 0.4)
+        lst.SetOnTouch(OnTouch)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title)
+{
+    app.ShowPopup(title)
+}
+</sample>
+
+
+
+<sample With-Icon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+        var list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play]"]
+        lst = MUI.CreateList(list, 0.95, 0.4)
+        lst.SetOnTouch(OnTouch)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title)
+{
+    app.ShowPopup(title)
+}
+</sample>
+
+
+<sample Dark With Body & Icon>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            "Downloads:Some body text:[fa-cloud-download]",
+            "Images:Some body text:[fa-image]",
+            "Videos:Some body text:[fa-youtube-play]"
+        ]
+        lst = MUI.CreateList(list, 0.95, 0.4)
+        lst.SetOnTouch(OnTouch)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title, body)
+{
+    app.ShowPopup(title+" : "+body)
+}
+</sample>

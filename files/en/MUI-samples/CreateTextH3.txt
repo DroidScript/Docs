@@ -1,0 +1,32 @@
+<sample All Headings>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        h1 = MUI.CreateTexth1("Some Heading")
+        lay.AddChild(h)
+
+        h2 = MUI.CreateTexth2("Some Heading")
+        lay.AddChild(h)
+
+        h3 = MUI.CreateTexth3("Some Heading")
+        lay.AddChild(h)
+
+        h4 = MUI.CreateTexth4("Some Heading")
+        lay.AddChild(h)
+
+        h5 = MUI.CreateTexth5("Some Heading")
+        lay.AddChild(h)
+
+        h6 = MUI.CreateTexth6("Some Heading")
+        lay.AddChild(h)
+
+    app.AddLayout(lay)
+}
+</sample>

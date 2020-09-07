@@ -1,0 +1,65 @@
+<sample Default Time>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW PICKER")
+        btn.SetOnTouch(ShowPicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    tmp = MUI.CreateTimePicker()
+    tmp.SetOnSelect(OnSelect)
+}
+
+function ShowPicker()
+{
+    tmp.Show()
+}
+
+function OnSelect(time, hh, mm, pos) 
+{
+    app.ShowPopup(hh+":"+mm+":"+pos)
+}
+</sample>
+
+
+
+<sample Custom Time>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Dark")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.CreateButtonRaised("SHOW PICKER")
+        btn.SetOnTouch(ShowPicker)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    tmp = MUI.CreateTimePicker(13, 24, MUI.colors.deepOrange.deepOrange)
+    tmp.SetOnSelect(OnSelect)
+}
+
+function ShowPicker()
+{
+    tmp.Show()
+}
+
+function OnSelect(time, hh, mm, pos) 
+{
+    app.ShowPopup(hh+":"+mm+":"+pos)
+}
+</sample>

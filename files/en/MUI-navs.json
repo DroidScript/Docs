@@ -1,0 +1,110 @@
+{
+    "Overview": "MUIDocs.htm",
+    "All":[],
+    "Layout": [
+        "CreateLayout"
+    ],
+	"Buttons": [
+        "CreateButtonElegant",
+        "CreateButtonFlat",
+        "CreateButtonRaised",
+        "CreateButtonRaisedO",
+        "CreateButtonRound",
+        "CreateButtonRoundO",
+        "CreateButtonToggle"
+    ],
+    "AppBar": [
+        "CreateAppBar",
+        "CreateAppBarElegant",
+        "CreateAppBarModern"
+    ],
+    "Cards": [
+        "CreateCard"
+    ],
+    "Dialogs": [
+        "CreateAlert",
+        "CreateAlertSimple",
+        "CreateDialog",
+        "CreateBanner",
+        "CreateModal"
+    ],
+    "ListDialogs": [
+        "CreateListDialog",
+        "CreateCheckList"
+    ],
+    "FABs": [
+        "CreateFAB",
+        "CreateFABElegant",
+        "CreateFABOutline"
+    ],
+    "Lists": [
+        "CreateList",
+        "CreateListModern",
+        "CreateListSimple"
+    ],
+    "Menus": [
+        "CreateMenu",
+        "CreateMenuWithIcon"
+    ],
+    "Pickers": [
+        "CreateColorPicker",
+        "CreateDatePicker",
+        "CreateTimePicker"
+    ],
+    "Texts": [
+        "CreateTextH1",
+        "CreateTextH2",
+        "CreateTextH3",
+        "CreateTextH4",
+        "CreateTextH5",
+        "CreateTextH6",
+        "",
+        "CreateTextJumbo",
+        "CreateTextParagraph",
+        "CreateTextSecondary"
+    ],
+    "TextEdits": [
+        "CreateTextEditFilled",
+        "CreateTextEditFilledA",
+        "CreateTextEditOutline",
+        "CreateTextEditOutlineA",
+        "",
+        "CreateTextEditSearch",
+        "CreateTESearchElegant",
+        "CreateTESearchUnique",
+        "CreateTextEditUnique",
+        "",
+        "CreateTEFilledIconLeft",
+        "CreateTEFilledIconRight",
+        "CreateTEOutlineIconLeft",
+        "CreateTEOutlineIconRight"
+    ],
+    "TextAreas": [
+        "CreateTextAreaFilled",
+        "CreateTextAreaFilledA",
+        "CreateTextAreaOutline",
+        "CreateTextAreaOutlineA"
+    ],
+    "Checkboxes": [
+        "CreateCheckbox"
+    ],
+    "Radios": [
+        "CreateRadio",
+        "CreateRadioButtons",
+        "CreateRadioMaterial"
+    ],
+    "Seekbars": [
+        "CreateSeekBar"
+    ],
+    "Switches": [
+        "CreateSwitch",
+        "CreateSwitchSettings"
+    ],
+    "Tabs": [
+        "CreateTabFixed"
+    ],
+    "Miscellaneous": [
+        "colors",
+        "CreateDivider"
+    ]
+}
