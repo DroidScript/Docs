@@ -68,18 +68,17 @@ function generateScope(name, pattern)
 		}
 	}
 
-	// delete old generated files
-	if(!app.FolderExists("docs" + getl()))
-		app.CopyFolder("docs-base", "docs" + getl());
-	else if("navs".match(regGen))
-		app.ListFolder("docs" + getl()).map(f =>
-			f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
-
-	if(!pattern)
+	if(!clean)
 	{
+		// delete navs
+		if("navs".match(regGen))
+			app.ListFolder("docs" + getl()).map(f =>
+				f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
+		// delete docs
 		app.DeleteFolder(`docs${getl()}/` + name);
-		app.MakeFolder(`docs${getl()}/` + name);
 	}
+
+	app.MakeFolder(`docs${getl()}/` + name);
 
 	// start generating
 	if("navs".match(regGen))
@@ -1135,16 +1134,27 @@ function OnStart()
 		}
 	}
 
-	for(var l in conf.langs)  if(l.match(patLang) != null)
-	for(var s in conf.scopes) if(s.match(patScope) != null)
-	try {
+	for(var l in conf.langs)  if(l.match(patLang) != null) {
 		lang = l;
-		app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
-		generateScope(s, patFunc);
-		app.HideProgressBar();
-	} catch(e) {
-		console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
-		throw e;
+
+		if(patScope + patFunc == "")
+		{
+			// delete old generated files
+			if(clean) app.DeleteFolder("docs" + getl());
+			if(clean || !app.FolderExists("docs" + getl()))
+				app.CopyFolder("docs-base", "docs" + getl());
+		}
+
+		for(var s in conf.scopes) if(s.match(patScope) != null)
+		try
+		{
+			app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
+			generateScope(s, patFunc);
+			app.HideProgressBar();
+		} catch(e) {
+			console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
+			throw e;
+		}
 	}
 }
 

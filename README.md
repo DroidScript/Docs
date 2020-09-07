@@ -6,11 +6,14 @@ Preview available at https://symdstools.github.io/Docs
 
 Mobile-sized iframe for desktop browsers: https://symdstools.github.io/Docs/docs
 
+DocsPreview app for downloading the latest docs: https://github.com/SymDSTools/DocsPreview
+
+More DS tools [here](https://github.com/SymDSTools)
+
 ### Structure
 
-- **app/DocsModifier:** the DroidScript application for editing the docs easily
-- **docs/docs:** The generated documentation for the GithubPages preview
-- **files:** all generation relevant files
+- **docs:** The generated documentation for the GithubPages preview
+- **files:** all relevant generation files
 
 ### For Contributors:
 

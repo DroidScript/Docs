@@ -4,16 +4,14 @@ node_modules/
 # Generated files
 package-lock.json
 
-files/css
-files/font-awesome
+/files/css
+/files/font-awesome
 
-files/app.js
-files/util.js
-files/docs*
-files/*.sh
-files/ide.*js
-files/version.txt
-app/DocsScopeBaseGen/Docs
+/files/docs*
+/files/*.sh
+/files/ide.*js
+/files/version.txt
+/app/
 
 _*.htm
 ~*
