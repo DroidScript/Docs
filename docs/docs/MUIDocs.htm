@@ -51,52 +51,52 @@
     	<br>
 
     	<!-- Complete Example -->
-    	<div data-role="collapsible" data-collapsed="true"  data-mini="true" data-theme="a" data-content-theme="a">
-        	<h3>Example</h3>
-        	<pre class="prettyprint lang-js" style="overflow: auto; overflow-x: auto;" id="examp1">
-cfg.MUI, cfg.Light
-
-function OnStart()
-{
-    app.InitializeUIKit();
-
-	lay = app.CreateLayout("Linear", "VCenter, FillXY");
-	lay.SetBackColor( MUI.colors.white );
-
-	btn = MUI.CreateButtonRaised("BUTTON", 0.4, null, MUI.colors.teal.teal);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonRaisedO("BUTTON", 0.4, null, MUI.colors.teal.teal);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonRound("BUTTON", 0.4, null, MUI.colors.deepPurple.darken1);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonRoundO("BUTTON", 0.4, null, MUI.colors.deepPurple.darken1);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonElegant("BUTTON", 0.4, null, MUI.colors.blue.darken2);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonFlat("BUTTON", 0.4, null, MUI.colors.pink.pink);
-	lay.AddChild(btn);
-
-	btn = MUI.CreateButtonToggle("TOGGLE", 0.4, null, true, OnToggle, MUI.colors.green.darken2);
-	lay.AddChild(btn);
-
-    app.AddLayout(lay);
-}
-
-function OnToggle(val)
-{
-    app.ShowPopup(val);
-}
-</pre>
-            <div name="divCopy" align="right">
-                <a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy(examp1)">Copy</a>
-                <a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo(examp1)">&nbsp;&nbsp;&nbsp;Run&nbsp;&nbsp;&nbsp;</a>
-            </div>
-        </div>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Example</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Light<br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter, FillXY"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">SetBackColor</span><span class="token punctuation">(</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>white <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaised</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaisedO</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRound</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>deepPurple<span class="token punctuation">.</span>darken1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRoundO</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>deepPurple<span class="token punctuation">.</span>darken1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonElegant</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonFlat</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>pink<span class="token punctuation">.</span>pink<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonToggle</span><span class="token punctuation">(</span><span class="token string">"TOGGLE"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> OnToggle<span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>green<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+					<br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnToggle</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
     </div><!-- /content -->
 </div><!-- /page -->
 </body>

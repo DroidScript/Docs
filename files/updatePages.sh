@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE=~/Projects/DroidScript/work/Docs
+BASE=`dirname "$0"`/..
 
 echo removing old docs
 rm -rdf $BASE/docs/docs

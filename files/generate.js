@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,Email auth ("Email, Text"),gfx
-var curDoc, curSubf, curScope, lang;
-var warnEnbl = false, Globals, conf;
+var curDoc, curSubf, curScope, lang, dbg = false;
+var warnEnbl = false, Globals, conf, genprog;
 var scope, base, navs, regGen, regHide, regControl;
 
 function generateScope(name, pattern)
@@ -122,8 +122,9 @@ function generateDocs(scope)
 
 	for( var i = 0; i < lst.length; i++ )
 	{
+		genprog = Math.floor( 100*i / lst.length );
+		app.UpdateProgressBar( genprog, curScope + '.' + lst[i] );
 		generateDoc(lst[i]);
-		app.UpdateProgressBar( Math.floor( 100*i / lst.length ), curScope + '.' + lst[i] );
 	}
 
 	if(!"tips".match(regGen)) return;
@@ -180,6 +181,7 @@ function generateDoc( name )
 	// get function specific data
 	if((keys(scope[name])+'').match(/p(Names|Types)|subf|isval|shortDesc/g))
 	{
+		if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " get data" );
 		data = getDocData(scope[name]);
 		// function line with popups
 		if(scope[name].abbrev) funcLine = scope[name].abbrev + " = ";
@@ -193,12 +195,15 @@ function generateDoc( name )
 	}
 
 	// insert data to html base
+	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " generate description" );
 	var html = htmlBase
 		.replace("%b", subfuncs)
 		.replace("%d", formatDesc(desc, name, !!data))
 		.replace("%c", funcLine);
 
+	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " adjusting" );
 	app.WriteFile( curDoc, adjustDoc(html, name) );
+	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " done" );
 }
 
 /*----------------------------------------------------------------------------*/
@@ -235,7 +240,7 @@ function adjustDoc(html, name)
 		toc.push("</div>\n\n\t\t");
 	};
 
-	return html
+	html = html
 		// table of contents
 		.replace(/("content">\n\t\t)/, `$1${toc.join("\n\t\t")}`)
 		// title occurances
@@ -261,10 +266,10 @@ function adjustDoc(html, name)
 			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
 		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) =>
 			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length-1}em;">` +
-			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`)
+			`${c.replace(RegExp(w+"|^|$",'g'),w.replace(/    /g,'\t')).slice(0,-1)}</span><br>`);
 
 		// replace <js> and <bash> tags with sample
-		.replace(
+		html = html.replace(
 			/(\s|<br>)*<(js|bash|smp|java|json)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 			function(m, w1, lang, options, _, _, code, _, w2, _)
 			{
@@ -287,13 +292,15 @@ function adjustDoc(html, name)
 				if(has(options, "nobox")) return `${w1||''}${code}${w2||''}`;
 				else if(has(code, "<br>") || has(options, "noinl")) return `</p>\n${newCode(code)}\t\t<p>`
 				else return `${w1||''}<span class="samp samp-inline">${code}</span>${w2||''}`;
-			})
-		.replace(/(\n\t+(    )+)(<b .*?>)?([^]*?)(<\/b>)?<br>/g, (m, w, _, b1, t, b2) =>
-			w + `${b1||''}<span style="display:inline-block">${t}</span>${b2||''}<br>`)
+			});
+
+		//.replace(/(\n\t+(    )+)(<b .*?>)?([^]*?)(<\/b>)?<br>/g, (m, w, _, b1, t, b2) =>
+		//	w + `${b1||''}<span style="display:inline-block">${t}</span>${b2||''}<br>`)
 		// remove leading whitespace in <p> tag
+		html = html
 		.replace(/<p>(<br>|\s+)+/g, "<p>")
 		// remove trailing whitespace in <p> tag
-		.replace(/(<br>|\s+)+<\/p>/g, "</p>")
+		.replace(/(<br>|\s)+<\/p>/g, "</p>")
 		// remove empty <p> tags
 		.replace(/\n?\t*<p><\/p>/g, "")
 		// remove escaped linebreaks
@@ -304,6 +311,9 @@ function adjustDoc(html, name)
 		.replace(/\n\s*<br>\n(\s+)/g, (m, w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
+
+	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + name + " write changes" );
+	return html;
 }
 
 // returns an html formatted description of a function
@@ -391,6 +401,7 @@ function getDocData( f, useAppPop )
 		// function list
 		mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
+	if(dbg) app.UpdateProgressBar( genprog, curScope + '.' + f.name + " generate subfunctions" );
 	for( k = 0; k < mkeys.length; k++ )
 	{
 		var met = f.subf[mkeys[k]], retval = "", type;
@@ -1063,12 +1074,14 @@ function OnStart()
 			switch(pat[0])
 			{
 				case "-lang": lang = pat[1]; break;
+				case "-verbose": dbg = true; break;
 				case "-help": console.log(
 					`${process.argv.slice(0,2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
-	-lang=<LANG-CODE>   2 digit code, ie. en de fr pt es ..
-						defaults to 'en'
-	-help				this help
+	-lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
+	                 	defaults to 'en'
+	-verbose         	print more debug logs
+	-help            	this help
 
 PATTERN:
 	generates a scope in each defined language:
@@ -1090,7 +1103,7 @@ EXAMPLES:
 		}
 		else
 		{
-			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-z]{3,})?(\.|$)(.*)?/);
+			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
 			if(!p) Throw(Error("invalid pattern " + pat));
 
 			if(p[1] && !conf.langs[p[1]]) conf.langs[p[1]] = "";
@@ -1121,7 +1134,7 @@ function absPth(p) { return p.startsWith("/") ? p : path + p; }
 if(typeof app == "undefined")
 	var app = {
 		ReadFile: (p) => fs.readFileSync(absPth(p), "utf8"),
-		WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
+		WriteFile: (p, s) => fs.writeFile(absPth(p), s),
 		DeleteFile: (p) => fs.unlinkSync(absPth(p)),
 		ListFolder: (p) => fs.readdirSync(absPth(p)),
 		MakeFolder: (p) => fs.mkdirSync(absPth(p)),
