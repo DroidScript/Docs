@@ -772,11 +772,13 @@ function addMarkdown(s)
 		// links
 		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function(match, white, name, url)
 		{
+			if(name && !url) url = name;
+			if(!name && url) name = url;
 			// web link ? external : internal
 			return white + (url.startsWith("http") ?
 				`<a href="${url}" onclick="return OpenUrl(this.href);">` :
 				`<a href="${url}" data-ajax="false">`)
-				+ `${name||url}</a>`;
+				+ `${name}</a>`;
 		})
 		// link + onclick
 		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function(match, white, name, script)
