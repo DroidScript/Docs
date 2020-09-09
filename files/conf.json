@@ -19,7 +19,7 @@
 		"fnc":"<a href=\"../javascript/Global_Objects/Function.html\" data-ajax=\"false\" class=\"no-ui-link\">Function</a>",
 		"lst":"<a href=\"../javascript/Global_Objects/List.html\" data-ajax=\"false\" class=\"no-ui-link\">List</a>",
 		"num":"<a href=\"../javascript/Global_Objects/Number.html\" data-ajax=\"false\" class=\"no-ui-link\">Number</a>",
-		"obj":"<a href=\"../javascript/Global_Objects/Object.html\" data-ajax=\"false\" class=\"no-ui-link\">Object</a>",
+		"obj":"Object",
 		"str":"<a href=\"../javascript/Global_Objects/String.html\" data-ajax=\"false\" class=\"no-ui-link\">String</a>",
 		"?":"unknown"
 	},
