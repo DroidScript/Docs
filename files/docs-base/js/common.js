@@ -62,7 +62,7 @@ $(document).on("mobileinit", function()
 	if( navigator.userAgent.indexOf("Android")==-1 )
 		$.mobile.ignoreContentEnabled = true;
 
-	if(!isDS) app.ShowPopup = ShowPopup;
+	if(!isMobileIDE) app.ShowPopup = ShowPopup;
 
 	//Ask parent for DS adddress.
 	parent.postMessage( "getaddress:", "*" );
