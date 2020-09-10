@@ -22,7 +22,7 @@ function btn_OnTouch()
 {
 	app.SetData( "number", 100 * Math.random() | 0 );
 
-    </b>var data = app.GetData( "number" );<b>
+    <b>var data = app.GetData( "number" );</b>
 	app.ShowPopup( "Data: " + data);
 }
 </sample>
