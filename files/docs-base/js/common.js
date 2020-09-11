@@ -171,15 +171,20 @@ $(window).load(function()
 	//Jump to html anchors from url
 	var anchor = location.href.match(/#([\w%]+)/i);
 	if(anchor) jumpTo(decodeURI(anchor[1]));
-	else if(sessionStorage.scrollPosition)
-		$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+	else if(!isAndroid) {
+		if(sessionStorage.scrollPosition)
+			$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
+		if(sessionStorage.searchText)
+			$("form input").val(sessionStorage.searchText).change();
+	}
 });
 
 $(window).unload(function()
 {
 	//Scroll to last page y position
-	var scrollPosition = $(document).scrollTop();
-	sessionStorage.scrollPosition = scrollPosition;
+	if(isAndroid) return;
+	sessionStorage.scrollPosition = $(document).scrollTop();
+	sessionStorage.searchText = $("form input").val();
 });
 
 function jumpTo(contains)

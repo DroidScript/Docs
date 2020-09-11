@@ -7085,10 +7085,10 @@
 		"shortDesc": "Get devices MAC address"
 	},
 	"GetMediaFile": {
-		"desc": "Returns a path to a unique media file like “/storage/emulated/0/Pictures/appName/YYYYMMDD_hhmmSSsss[ext]”. The folder for this file will be created automatically.\n\nSee Also: @CreateImage, @CreateCameraView",
+		"desc": "Returns a file path to a unique media file matching the format “/storage/emulated/0/Pictures/[**folder**]/**YYYYMMDD**_**hhmmSSsss**[**ext**]”. The folder for this file will be created automatically.\n\nSee Also: @CreateImage, @CreateCameraView",
 		"name": "GetMediaFile",
-		"pNames": ["appName", "ext"],
-		"pTypes": ["str", "str"],
+		"pNames": ["folder", "ext"],
+		"pTypes": ["str:app name", "str"],
 		"retval": "str_pth",
 		"shortDesc": "Get a path to an unambiguous media file"
 	},
