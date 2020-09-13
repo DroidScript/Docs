@@ -75,7 +75,7 @@ function generateScope(name, pattern)
 			app.ListFolder("docs" + getl()).map(f =>
 				f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
 		// delete docs
-		app.DeleteFolder(`docs${getl()}/` + name);
+		else app.DeleteFolder(`docs${getl()}/` + name);
 	}
 
 	if(!app.FolderExists(`docs${getl()}/` + name))
@@ -108,8 +108,11 @@ function generateNavigators(navs, name, pfx)
 	{
 		for(var cat of keys(navs).filter(nothidden))
 		{
-			if(typeof navs[cat] == "string" && navs[cat].endsWith(".htm")) {
-				nav += newNaviItem(navs[cat], cat);
+			if(typeof navs[cat] == "string")
+			{
+				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
+				var f = m && scope[m[1]] ? m[3] ? scope[m[1]].subf[m[3]] : scope[m[1]] : null;
+				nav += newNaviItem(navs[cat], cat, f ? getAddClass(f) : null);
 				continue;
 			}
 			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
@@ -526,6 +529,7 @@ function toHtmlSamp( code, name, index, options )
 function getAddClass(m)
 {
 	if(!m || !m.desc) return '';
+
 	if(has(m.desc, "<deprecated") ) return ' class="deprHint"';
 	if(has(m.desc, "<xfeature")) return ' class="xfeatHint"';
 	if(has(m.desc, "<premium")) return ' class="premHint"';

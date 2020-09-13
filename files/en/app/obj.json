@@ -8249,7 +8249,7 @@
 		"shortDesc": "Emulate GPS location"
 	},
 	"SetNavBarColor": {
-		"desc": "Change the android NavBar color\n\n<premium>",
+		"desc": "Change the android NavBar color.\n\n<premium>",
 		"name": "SetNavBarColor",
 		"pNames": ["color"],
 		"pTypes": ["str_col"],
@@ -8399,7 +8399,7 @@
 		"shortDesc": "En/Disable speaker for phone calls"
 	},
 	"SetStatusBarColor": {
-		"desc": "Change the android status bar color\n\n<premium>",
+		"desc": "Change the android status bar color.\n\n<premium>",
 		"name": "SetStatusBarColor",
 		"pNames": ["color"],
 		"pTypes": ["str_col"],

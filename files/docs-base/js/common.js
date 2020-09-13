@@ -169,22 +169,8 @@ function OnPageShow()
 $(window).load(function()
 {
 	//Jump to html anchors from url
-	var anchor = location.href.match(/#([\w%]+)/i);
-	if(anchor) jumpTo(decodeURI(anchor[1]));
-	else if(!isAndroid) {
-		if(sessionStorage.scrollPosition)
-			$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
-		if(sessionStorage.searchText)
-			$("form input").val(sessionStorage.searchText).change();
-	}
-});
-
-$(window).unload(function()
-{
-	//Scroll to last page y position
-	if(isAndroid) return;
-	sessionStorage.scrollPosition = $(document).scrollTop();
-	sessionStorage.searchText = $("form input").val();
+	var anchor = location.href.match(/(#|\ba=)([\w%]+)/i);
+	if(anchor) jumpTo(decodeURI(anchor[2]));
 });
 
 function jumpTo(contains)
