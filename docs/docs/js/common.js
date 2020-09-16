@@ -85,8 +85,7 @@ $(document).live( 'pageshow',function(event, ui)
 		//}
 
 		//Set appropriate body style.
-		if( !isAndroid || useWebIDE )
-			document.body.className = "bodyPC";
+		if( !isAndroid || useWebIDE ) document.body.className = "bodyPC";
 
 		//Remove 'Copy' and 'Run' buttons on PC.
 		// if(!isDS && !isAndroid) hidecopy();
@@ -96,9 +95,8 @@ $(document).live( 'pageshow',function(event, ui)
 		if( isDS ) $(".ui-header > .ui-btn-right").hide();
 
 		//If on Android, save current page.
-		if( isMobileIDE ) {
+		if( isMobileIDE )
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
-		}
 
 		//Get current page id.
 		var curPage = $.mobile.activePage.attr('id');
@@ -107,6 +105,10 @@ $(document).live( 'pageshow',function(event, ui)
 		if( curPage == "plugins" ) {
 			OnPageShow();
 		}
+
+		//Append popup div in plugin docs if not exists
+		if(!$(".androidPopup").parent().is(":visible"))
+			$(".ui-content").append($(".androidPopup:first").parent().clone());
 	}
 	//catch( e ) {}
 });
@@ -128,9 +130,9 @@ function OnPageShow()
 				//Get main docs file
 				var plgdir = list[i];
 				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html", null, "RegExp" );
-                if(files.length == null) continue;
+				if(files.length == null) continue;
 				var url = "plugins/" + plgdir + "/" + files[0];
-				html += "<li><a href=\"" + url + "\">" + files[0] + "</a></li>\n";
+				html += "<li><a href=\"" + url + "\">" + files[0].replace(".html", "") + "</a></li>\n";
 			}
 
 			html += "</ul>";
@@ -145,7 +147,9 @@ function OnPageShow()
 			xmlHttp.onload = function()
 			{
 				//Extract plugins list.
-				var list = JSON.parse(xmlHttp.responseText).plugins.split(",");
+				var data = JSON.parse(xmlHttp.responseText);
+				if(!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
+				var list = data.plugins.split(",");
 
 				//Build html list.
 				var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
@@ -279,7 +283,7 @@ function OpenSample(name)
 // app.ShowPopup equivalent for browsers
 function ShowPopup(msg)
 {
-	var apop = $("#appPopup");
+	var apop = $(".androidPopup");
 	// .animate() works as cancelable delay
 	apop.stop(true).fadeOut(100, function() { apop.text(msg); })
 		.fadeIn(200).animate({opacity:1}, 1500).fadeOut(400);
