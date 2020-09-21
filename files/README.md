@@ -170,7 +170,7 @@ first specify of which type the variable is. This is a 3-character long string o
 - `dso`: app object
 - `gvo`: GameView object
 
-optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [cong.json](conf.json#L25) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
+optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [conf.json](conf.json#L25) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
 - `num_int`: integer
 - `num_mls`: milliseconds
 - `str_col`: "\<color\>" or "#[aa]rrggbb"
@@ -179,7 +179,7 @@ optionally you can specify a subtype of your type separated with an underscore. 
 if the subtype you need isn't specified here you can add custom pair any time. Example:
 - `"num_tlx":"top left x coordinate"`
 
-Inside descriptions you can use these types as well. You can use one of the followinf formats:
+Inside descriptions you can use these types as well. You can use one of the following formats:
 ```sh
 name:type
 name:"types"       # ".." uses jQuery or app popups
@@ -268,7 +268,7 @@ Besides these special formats you also have following standard text formatting f
 - execute `$ ./generate.js \<scope\>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
 - execute `$ ./generate.js \<lang\>.\<scope\> [..]` to generate a specific scope of a language
 
-Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option. 
+Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option.
 
 ## Update Github Pages
 

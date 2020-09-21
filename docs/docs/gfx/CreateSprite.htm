@@ -58,8 +58,8 @@
 		<strong>Spritesheets</strong> can be loaded in two ways:<br>
 		<br>
 		The simple one is a specific file pattern<br>
-		<docstr>“Img/Sheetname_<strong><a href="" onclick="app.ShowPopup('Number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">spritesy</a></strong>”</docstr> or<br>
-		<docstr>“Img/Sheetname_strip<strong><a href="" onclick="app.ShowPopup('Number')">total</a></strong>_<strong><a href="" onclick="app.ShowPopup('Number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">spritesy</a></strong>”</docstr><br>
+		<docstr>“Img/Sheetname_<strong><a href="" onclick="app.ShowPopup('Number')">WIDTH</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">HEIGHT</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SX</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SY</a></strong>”</docstr> or<br>
+		<docstr>“Img/Sheetname_strip<strong><a href="" onclick="app.ShowPopup('Number')">TOTAL</a></strong>_<strong><a href="" onclick="app.ShowPopup('Number')">WIDTH</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">HEIGHT</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SX</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SY</a></strong>”</docstr><br>
 		if you have a different amount of sprites than the rectangle of <i>spritesx * spritesy</i> sprites.<br>
 		<br>
 		Example from the downloadable demo <a href="https://droidscript.org" onclick="return OpenUrl(this.href);">Grannies and Zombies</a>:</p>
@@ -69,7 +69,7 @@
 		zombie <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"Img/Zombie_strip35_1400x1000x7x5"</span><span class="token punctuation">,</span> <span class="token string">"zombie"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 		</div>
 
-		<p>The second way is to create a SpriteSheet using the</p>
+		<p>The second way is to create a SpriteSheet using the <a href="CreateSpriteSheet.htm" data-ajax="false">CreateSpriteSheet</a> method which might come handy if a single sprite has multiple animations or if a sprite is reused but using a different sprite sheet.</p>
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Sprite</strong> object:</p>
 

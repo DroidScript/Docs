@@ -5,6 +5,45 @@ var curDoc, curSubf, curScope, lang;
 var warnEnbl = false, conf, dbg = false, clean = false;
 var scope, base, navs, regGen, regHide, regControl, progress;
 
+if(typeof OnStart == 'undefined') OnStart = g_OnStart;
+
+function g_OnStart() {}
+
+/**
+ * @param patLang {string} optional RegEx pattern
+ * @param patScope {string} optional RegEx pattern
+ * @param patFunc {string} optional RegEx pattern
+ */
+function Generate(patFunc, patScope, patLang)
+{
+	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
+	regHide = RegExp(conf.regHide);
+	regControl = RegExp(conf.regControl);
+
+	for(var l in conf.langs)  if(l.match(patLang) != null) {
+		lang = l;
+
+		if(patScope + patFunc == "")
+		{
+			// delete old generated files
+			if(clean) app.DeleteFolder("docs" + getl());
+			if(clean || !app.FolderExists("docs" + getl()))
+				app.CopyFolder("docs-base", "docs" + getl());
+		}
+
+		for(var s in conf.scopes) if(s.match(patScope) != null)
+		try
+		{
+			app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
+			generateScope(s, patFunc);
+			app.HideProgressBar();
+		} catch(e) {
+			console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
+			throw e;
+		}
+	}
+}
+
 function generateScope(name, pattern)
 {
 	curScope = name;
@@ -979,8 +1018,8 @@ ${getHead(1)}
 // ---------------------------- top globs --------------------------------------
 
 	//global variables
-var		// app object constructor name prefixes
-	regConPrefix = /^(Create|Open)/;
+var		// constructor name prefixes
+	regConPrefix = /^(Create|Open|Add)/i;
 
 
 // ---------------------------- DocsModifier.js globs --------------------------
@@ -1109,71 +1148,16 @@ generate.js en.app  generate english docs of scope 'app'
 generate.js app	generate docs of scope 'app' in all defined languages
 generate.js app.^C  generate all docs starting with 'C'`;
 
-function OnStart()
-{
-	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
-	regHide = RegExp(conf.regHide);
-	regControl = RegExp(conf.regControl);
-	var patLang = "", patScope = "", patFunc = "";
-
-	for(var pat of process.argv.slice(2))
-	{
-		if(pat.startsWith("-"))
-		{
-			pat = pat.split("=");
-			switch(pat[0])
-			{
-				case "-l": case "-lang": lang = pat[1]; break;
-				case "-v": case "-verbose": dbg = true; break;
-				case "-c": case "-clean": clean = true; break;
-				case "-h": case "-help": console.log(help); return;
-				default: Throw(Error("Unknown option " + pat[0]))
-			}
-		}
-		else
-		{
-			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
-			if(!p) Throw(Error("invalid pattern " + pat));
-
-			if(p[1] && !conf.langs[patLang = p[1]]) conf.langs[p[1]] = "";
-			if(p[3] && !conf.scopes[patScope = p[3]]) conf.scopes[p[3]] = "";
-			patFunc = p[5];
-		}
-	}
-
-	for(var l in conf.langs)  if(l.match(patLang) != null) {
-		lang = l;
-
-		if(patScope + patFunc == "")
-		{
-			// delete old generated files
-			if(clean) app.DeleteFolder("docs" + getl());
-			if(clean || !app.FolderExists("docs" + getl()))
-				app.CopyFolder("docs-base", "docs" + getl());
-		}
-
-		for(var s in conf.scopes) if(s.match(patScope) != null)
-		try
-		{
-			app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
-			generateScope(s, patFunc);
-			app.HideProgressBar();
-		} catch(e) {
-			console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
-			throw e;
-		}
-	}
-}
-
-var fs = require("fs-extra");
-var rimraf = require("rimraf");
-var Prism = require('prismjs');
-require('prismjs/components/prism-java.min.js');
-
-function absPth(p) { return p.startsWith("/") ? p : path + p; }
-
 if(typeof app == "undefined")
-	var app = {
+{
+	var fs = require("fs-extra");
+	var rimraf = require("rimraf");
+	var Prism = require('prismjs');
+	require('prismjs/components/prism-java.min.js');
+
+	function absPth(p) { return p.startsWith("/") ? p : path + p; }
+
+	app = {
 		ReadFile: (p) => fs.readFileSync(absPth(p), "utf8"),
 		WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
 		DeleteFile: (p) => fs.unlinkSync(absPth(p)),
@@ -1190,24 +1174,36 @@ if(typeof app == "undefined")
 		ShowProgressBar: (t) => console.log(t + "\n"),
 		UpdateProgressBar: (i,t) => console.log("\033[1A\033[K" + `${i}% ${t||'Initializing'}`),
 		HideProgressBar: () => console.log("\033[1A\033[K100% done."),
-		ShowPopup: console.log
+		ShowPopup: console.log,
+		Alert: console.log
 	}
 
-OnStart();
+	var patLang = "", patScope = "", patFunc = "";
 
-/*var l = ["AddImage", "AddButton", "AddToggle", "AddCheckBox", "AddSpinner", "AddSeekBar", "AddText", "AddTextEdit", "AddList", "AddWebView", "AddScroller", "AddCameraView", "AddVideoView", "AddCodeEdit", "AddAdView"];
-var o = {}
-var scope = JSON.parse(ReadFile("en/app.json"))
-for(var n of l) {
-	var m = n.replace("Add", "Create")
-	o[n] = {
-					"desc": `Creates and adds a ${n.slice(3)} to a Layout.\nSee @${n} for full documentation.`,
-					"name": n,
-					"pNames": scope[m].pNames,
-					"pTypes": scope[m].pTypes,
-					"shortDesc": `Create and add ${n.slice(3)} to Layout.`,
-					"retval": scope[m].retval
-				}
+	for(var pat of process.argv.slice(2))
+	{
+		if(pat.startsWith("-"))
+		{
+			pat = pat.split("=");
+			switch(pat[0])
+			{
+				case "-l": case "-lang": lang = pat[1]; break;
+				case "-v": case "-verbose": dbg = true; break;
+				case "-c": case "-clean": clean = true; break;
+				case "-h": case "-help": app.Alert(help); return;
+				default: Throw(Error("Unknown option " + pat[0]))
+			}
+		}
+		else
+		{
+			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
+			if(!p) Throw(Error("invalid pattern " + pat));
+
+			if(p[1] && !conf.langs[patLang = p[1]]) conf.langs[p[1]] = "";
+			if(p[3] && !conf.scopes[patScope = p[3]]) conf.scopes[p[3]] = "";
+			patFunc = p[5];
+		}
+	}
+
+	Generate(patFunc, patScope, patLang);
 }
-console.log(tos(o))
-*/

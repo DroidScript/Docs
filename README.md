@@ -15,6 +15,8 @@ More DS tools [here](https://github.com/SymDSTools)
 - **docs:** The generated documentation for the GithubPages preview
 - **files:** all relevant generation files
 
+Check out [files/README.md](files/README.md) for a brief documentation of the generation setup, execution and the file format.
+
 ### For Contributors:
 
 Please fork this repository to your github account to make any changes and create a pull request to submit them

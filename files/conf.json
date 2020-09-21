@@ -57,6 +57,7 @@
 		"str_hex":"hexadecimal “00”..“FF”",
 		"str_int":"integer",
 		"str_jsc":"javascript code",
+		"str_jsn":"JSON object",
 		"str_lst":"separated",
 		"str_mim":"mimetype",
 		"str_mod":"mode",

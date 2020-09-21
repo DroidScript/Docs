@@ -182,20 +182,22 @@ function jumpTo(contains)
 	//Control popup
 	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if(popup.length) {
-		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
-			.delay(350).queue(function(){ popup.click(); });
+		$("html").clearQueue()
+			.animate({ scrollTop: popup.offset().top - 100 }, 300)
+			.delay(350).queue(_ => popup.click());
 		return false;
 	}
 
 	//Header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
-		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
+		$("html").clearQueue()
+			.animate({ scrollTop: header.offset().top - 50 }, 300);
 
 		if(has(header[0].className, "ui-collapsible-heading-collapsed"))
 			header.click();
 		else
-			header.delay(100)
+			header.clearQueue().delay(100)
 				.animate({opacity: 0.1}, 400)
 				.animate({opacity: 1.0}, 400);
 
@@ -294,7 +296,9 @@ function switchPopup(old, newId)
 	$(old.parentNode).one({
 		popupafterclose: function()
 		{
-			$(newId).popup("open", {transition: "pop"});
+			var o = $(newId);
+			if(!o.length) return jumpTo(newId);
+			o.popup("open", {transition: "pop"});
 		}
 	}).popup("close");
 }

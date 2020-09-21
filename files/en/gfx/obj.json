@@ -536,7 +536,7 @@
 	},
 	"CreateSpriteSheet": {
 		"abbrev": "sht",
-		"desc": " ",
+		"desc": "Creates a SpriteSheet for an animation for instance.\n\nSee Also: @CreateSprite",
 		"name": "CreateSpriteSheet",
 		"pNames": ["file", "callback"],
 		"pTypes": ["str", {
@@ -544,16 +544,16 @@
 			"name": "callback",
 			"shortDesc": "callback"
 		}],
-		"retval": "gvo-Sheet",
-		"shortDesc": "Returns a new spritesheet object",
+		"retval": "gvo-SpriteSheet",
+		"shortDesc": "Returns a new SpriteSheet object",
 		"subf": {
 			"data": "#2865983653",
 			"loaded": {
-				"desc": "",
+				"desc": "indicates if the sheet is already loaded.",
 				"isval": true,
 				"name": "loaded",
 				"retval": "bin",
-				"shortDesc": ""
+				"shortDesc": "loaded indicator"
 			},
 			"_loader": {
 				"desc": "",
@@ -573,40 +573,40 @@
 	},
 	"CreateText": {
 		"abbrev": "txt",
-		"desc": "",
+		"desc": "Creates a text label which is used to display texts in your game.",
 		"name": "CreateText",
 		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
-		"pTypes": ["str", "num", "str", "?", {
+		"pTypes": ["str", "num", "str", "str-left|center|right", {
 			"desc": "callback function",
 			"name": "callback",
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
+		"retval": "gvo-Text",
 		"shortDesc": "Returns a new text object",
 		"subf": {
 			"align": {
-				"desc": "",
+				"desc": "Alignment for multiline text. does not affect single line text.",
 				"isval": true,
 				"name": "align",
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str-left|center|right",
+				"shortDesc": "Multiline text alignment"
 			},
 			"alpha": "#2974510528",
 			"angle": "#1034034325",
 			"Contains": "#9612465132",
 			"file": {
-				"desc": "",
+				"desc": "Path to the source file.",
 				"isval": true,
 				"name": "file",
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str_pth",
+				"shortDesc": "Source file"
 			},
 			"fontSize": {
-				"desc": "",
+				"desc": "text font size in pixels",
 				"isval": true,
 				"name": "fontSize",
-				"retval": "num",
-				"shortDesc": ""
+				"retval": "num_pxl",
+				"shortDesc": "pixel font size"
 			},
 			"height": "#0162475314",
 			"pivotX": "#2983519836",
@@ -620,75 +620,75 @@
 		}
 	},
 	"CreateTexture": {
-		"desc": "",
+		"desc": "Creates a base texture for Sprites. Using textures is recommended if mand sprites use the same texture and is supposed to be faster because the texture needs to be loaded only once and is then shared across the sprites.",
 		"isval": true,
 		"name": "CreateTexture",
-		"retval": "str",
+		"retval": "gvo-Texture",
 		"shortDesc": "Returns a new texture object"
 	},
 	"data": {
-		"desc": "",
+		"desc": "GameView custom data",
 		"isval": true,
 		"name": "data",
 		"retval": "obj",
 		"shortDesc": "Data"
 	},
 	"EnablePhysics": {
-		"desc": "",
+		"desc": "En/Disables the added Box2D physics engine in your game. The methods added to your GameView objects are described in @AddPhysics.",
 		"name": "EnablePhysics",
 		"pNames": ["enabled"],
 		"pTypes": ["bin"],
-		"shortDesc": "EnablePhysics"
+		"shortDesc": "En/Disables the physics engine"
 	},
 	"Enclose": {
-		"desc": "",
+		"desc": "Enclose an area with a physics fence.",
 		"name": "Enclose",
 		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
-		"pTypes": ["str", "str", "num", "num", "num", "num"],
-		"shortDesc": "Enclose"
+		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"],
+		"shortDesc": "Enclose an area with a physics fence."
 	},
 	"GenPixiJson": {
-		"desc": "",
+		"desc": "Generate pixi texture atlas from info in a file name.",
 		"name": "GenPixiJson",
 		"pNames": ["path"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": "GenPixiJson"
+		"pTypes": ["str_pth"],
+		"retval": "str_jsn",
+		"shortDesc": "Generate texture json from path"
 	},
-	"GetContext": {
+	"_GetContext": {
 		"desc": "",
 		"name": "GetContext",
 		"retval": "?",
 		"shortDesc": "GetContext"
 	},
 	"GetOrder": {
-		"desc": "",
+		"desc": "Returns the order index of a specific GameView object.",
 		"name": "GetOrder",
 		"pNames": ["object"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": "GetOrder"
+		"pTypes": ["gvo"],
+		"retval": "num_int",
+		"shortDesc": "get object's order index"
 	},
 	"GetTime": {
 		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
 		"name": "GetTime",
-		"retval": "?",
+		"retval": "jso-@../javascript/Global_Objects/Date",
 		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
 	},
 	"height": {
-		"desc": "",
+		"desc": "Display height in pixels",
 		"isval": true,
 		"name": "height",
-		"retval": "num",
-		"shortDesc": "height"
+		"retval": "num_pxl",
+		"shortDesc": "display height"
 	},
 	"IsOverlap": {
-		"desc": "",
+		"desc": "Tests if two GameView objects are overlapping.",
 		"name": "IsOverlap",
 		"pNames": ["obj1", "obj2", "depth"],
-		"pTypes": ["obj", "obj", "?"],
-		"retval": "?",
-		"shortDesc": "IsOverlap"
+		"pTypes": ["gvo", "gvo", "num"],
+		"retval": "bin",
+		"shortDesc": "Tests if two objects overlap"
 	},
 	"IsPaused": {
 		"desc": "Returns whether the game is currently paused.",
@@ -697,81 +697,75 @@
 		"shortDesc": "Get paused state"
 	},
 	"isReady": {
-		"desc": "",
+		"desc": "Indicates if the game is ready. This is set to true after OnReady was called.",
 		"isval": true,
 		"name": "isReady",
 		"retval": "bin",
-		"shortDesc": "IsReady"
+		"shortDesc": "True when game is ready"
 	},
 	"keyDown": {
-		"desc": "",
+		"desc": "Currently pressed key",
 		"isval": true,
 		"name": "keyDown",
-		"retval": "?",
-		"shortDesc": "KeyDown"
+		"retval": "str",
+		"shortDesc": "Currently pressed key"
 	},
 	"keyState": {
-		"desc": "",
+		"desc": "Current pressed key state",
 		"isval": true,
 		"name": "keyState",
-		"retval": "?",
-		"shortDesc": "KeyState"
+		"retval": "str-Down|Up",
+		"shortDesc": "Current key state"
 	},
 	"objects": {
-		"desc": "",
+		"desc": "List of all active GameView objects",
 		"isval": true,
 		"name": "objects",
-		"retval": "num",
-		"shortDesc": "Objects"
+		"retval": "lst_obj",
+		"shortDesc": "List of active objects"
 	},
 	"Pause": {
-		"desc": "",
+		"desc": "Pauses the game",
 		"name": "Pause",
-		"retval": "?",
-		"shortDesc": "Pause"
+		"shortDesc": "Pause game"
 	},
 	"Play": {
-		"desc": "",
+		"desc": "Start or resume the game",
 		"name": "Play",
-		"retval": "?",
-		"shortDesc": "Play"
+		"shortDesc": "Start or resume game"
 	},
 	"Reload": {
 		"desc": "Restarts the game from scratch.",
 		"name": "Reload",
-		"shortDesc": "Restart gmem from scratch"
+		"shortDesc": "Restart game from scratch"
 	},
 	"RemoveBackground": {
-		"desc": "",
+		"desc": "Removes the background from the game",
 		"name": "RemoveBackground",
-		"pNames": ["obj"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": "RemoveBackground"
+		"pNames": ["gvo-CreateBackground"],
+		"pTypes": ["gvo-CreateBackground"],
+		"shortDesc": "Remove background from game"
 	},
 	"RemoveGraphic": {
-		"desc": "",
+		"desc": "Removes a graphic from the game",
 		"name": "RemoveGraphic",
 		"pNames": ["obj"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": "RemoveGraphic"
+		"pTypes": ["gvo-AddGraphic"],
+		"shortDesc": "Remove graphic from game"
 	},
 	"RemoveSprite": {
-		"desc": "",
+		"desc": "Removes a sprite from the game",
 		"name": "RemoveSprite",
 		"pNames": ["sprite"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": "RemoveSprite"
+		"pTypes": ["gvo-CreateSprite"],
+		"shortDesc": "Remove sprite from game"
 	},
 	"RemoveText": {
-		"desc": "",
+		"desc": "Removes the text from the game",
 		"name": "RemoveText",
 		"pNames": ["obj"],
-		"pTypes": ["obj"],
-		"retval": "?",
-		"shortDesc": "RemoveText"
+		"pTypes": ["gvo-CreateText"],
+		"shortDesc": "Remove text from game"
 	},
 	"_Render": {
 		"desc": "",
@@ -779,104 +773,111 @@
 		"retval": "?",
 		"shortDesc": ""
 	},
-	"renderer": {
-		"desc": "",
+	"_renderer": {
+		"desc": "PIXI renderer",
 		"isval": true,
 		"name": "renderer",
-		"retval": "?",
+		"retval": "obj-PIXI.Renderer",
 		"shortDesc": "Renderer"
 	},
 	"Script": {
-		"desc": "",
+		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your game.",
 		"name": "Script",
-		"pNames": ["url", "callback"],
-		"pTypes": ["?", {
+		"pNames": ["uri", "callback"],
+		"pTypes": ["str_uri", {
 			"desc": "callback function",
 			"name": "callback",
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
-		"shortDesc": "Script"
+		"shortDesc": "synchronously import a .js file"
 	},
 	"SetBackColor": {
-		"desc": "",
+		"desc": "Sets a solid background color for your game",
 		"name": "SetBackColor",
 		"pNames": ["col"],
-		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": "SetBackColor"
+		"pTypes": ["str_col"],
+		"shortDesc": "Set solid background color"
 	},
 	"SetOnCollide": {
-		"desc": "",
+		"desc": "Define a callback which is called when two [Physics objects](AddPhysics.htm) collide.",
 		"name": "SetOnCollide",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["a", "b"],
+			"pTypes": ["gvo", "gvo"],
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
 		"shortDesc": "SetOnCollide"
 	},
 	"SetOnKeyDown": {
-		"desc": "",
+		"desc": "Define a callback function which is called when the user started pressing a key.",
 		"name": "SetOnKeyDown",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["key"],
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."],
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
-		"shortDesc": "SetOnKeyDown"
+		"shortDesc": "Define a KeyDown callback"
 	},
 	"SetOnKeyUp": {
-		"desc": "",
+		"desc": "Define a callback function which is called when the user released a key.",
 		"name": "SetOnKeyUp",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["key"],
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."],
 			"shortDesc": "callback"
 		}],
-		"retval": "?",
-		"shortDesc": "SetOnKeyUp"
+		"shortDesc": "Define a KeyUp callback"
 	},
 	"SetOnTouchDown": {
-		"desc": "",
+		"desc": "Define a callback which is called when the user touches the screen.",
 		"name": "SetOnTouchDown",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": "SetOnTouchDown"
+		"shortDesc": "Set callback for touch down"
 	},
 	"SetOnTouchMove": {
-		"desc": "",
+		"desc": "Define a callback which is called when the user drags te finger over the screen.",
 		"name": "SetOnTouchMove",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": "SetOnTouchMove"
+		"shortDesc": "Set callback for touch move"
 	},
 	"SetOnTouchUp": {
-		"desc": "",
+		"desc": "Define a callback which is called when the user releases the finger the screen.",
 		"name": "SetOnTouchUp",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"desc": "callback function",
 			"name": "callback",
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"],
 			"shortDesc": "callback"
 		}],
 		"retval": "?",
-		"shortDesc": "SetOnTouchUp"
+		"shortDesc": "Set callback for touch up"
 	},
 	"SetOrder": {
 		"desc": "",
@@ -902,33 +903,31 @@
 		"shortDesc": "Stage"
 	},
 	"SwapOrder": {
-		"desc": "",
+		"desc": "Swap the drawing order of two GameView objects.",
 		"name": "SwapOrder",
 		"pNames": ["object1", "object2"],
-		"pTypes": ["obj", "obj"],
-		"retval": "?",
-		"shortDesc": "SwapOrder"
+		"pTypes": ["gvo", "gvo"],
+		"shortDesc": "Swap drawing order of two objects"
 	},
 	"version": {
 		"desc": "the gfx version number starting from 1.1 in DS182b2",
 		"isval": true,
 		"name": "version",
-		"retval": "str",
+		"retval": "str-1.1",
 		"shortDesc": "gfx version number"
 	},
 	"Vibrate": {
-		"desc": "",
+		"desc": "Shortcut to app.@../app/Vibrate)",
 		"name": "Vibrate",
 		"pNames": ["pattern"],
-		"pTypes": ["?"],
-		"retval": "?",
+		"pTypes": ["str"],
 		"shortDesc": "Vibrate"
 	},
 	"width": {
-		"desc": "",
+		"desc": "display width",
 		"isval": true,
 		"name": "width",
-		"retval": "num",
-		"shortDesc": "Width"
+		"retval": "num_pxl",
+		"shortDesc": "display Width"
 	}
 }

@@ -230,7 +230,7 @@
 		"LoadBoolean": "Load saved boolean value",
 		"LoadNumber": "Load saved boolean value",
 		"LoadPlugin": "Load an installed plugin to your app",
-		"LoadScript": "Asynchronously import an external JavaScript file.\nSee Also: @Script",
+		"LoadScript": "Asynchronously import a .js file",
 		"LoadText": "Load saved text value",
 		"Lock": "Lock the device",
 		"LockDrawer": "Hide and lock a drawer",

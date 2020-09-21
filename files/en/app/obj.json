@@ -660,7 +660,7 @@
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"AutoCapture": {
-				"desc": "Automatically takes pictures if a motion was detected by cam.MotionMosaic.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
+				"desc": "Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
 				"name": "AutoCapture",
 				"pNames": ["path", "file", "maxCount"],
 				"pTypes": ["str_pth", "str-File_n#_motion", "num_int"],
@@ -3113,7 +3113,7 @@
 				"shortDesc": "Set looping mode"
 			},
 			"SetOnComplete": {
-				"desc": "Define a callback function which is called when a playing sound file has finished playing.",
+				"desc": "Define a callback function which is called when a sound file has finished playing.",
 				"name": "SetOnComplete",
 				"pNames": ["callback"],
 				"pTypes": [{
@@ -7624,7 +7624,7 @@
 			"pTypes": ["obj-{ isTrusted:bin }"],
 			"shortDesc": "callback"
 		}],
-		"shortDesc": "Asynchronously import an external JavaScript file.\nSee Also: @Script"
+		"shortDesc": "Asynchronously import a .js file"
 	},
 	"LoadText": {
 		"desc": "Load saved text value to remember varibale values between multiple app starts.\n\nSee also: @SaveText.",

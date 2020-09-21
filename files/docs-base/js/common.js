@@ -148,6 +148,7 @@ function OnPageShow()
 			{
 				//Extract plugins list.
 				var data = JSON.parse(xmlHttp.responseText);
+				if(data.status == "access denied") data.status = "IDE not connected";
 				if(!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
 				var list = data.plugins.split(",");
 
