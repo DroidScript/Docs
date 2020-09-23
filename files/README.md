@@ -1,7 +1,7 @@
 
 # Editing Docs using raw JSON files
 
-- [Table of contents](#Table-of-contents)
+- [Table of contents](#Editing-Docs-using-raw-JSON-files)
     - [Setup](#Setup)
     - [Additional Views](#Additional-Views)
         - [Git](#Git)
@@ -9,16 +9,17 @@
     - [Resulting view](#Resulting-view)
     - [File Structure](#File-Structure)
     - [JSON Format](#JSON-Format)
-        - [Format](#Format)
-            - [Type](#Type)
-            - [Type Popups](#Type-Popups)
-            - [Cross- Doc References](#Cross-Doc-References)
-            - [Inline Code Areas](#Inline-Code-Areas)
-            - [Custom Constructor positions](#Custom-Constructor-positions)
-            - [Custom Sample positions](#Custom-Sample-positions)
-            - [Examples](#Examples)
-            - [HTML Tags](#HTML-Tags)
-            - [Markdown](#Markdown)
+        - [JSON Examples](#JSON-Examples)
+    - [Markdown Format](#Markdown-Format)
+        - [Type](#Type)
+        - [Type Popups](#Type-Popups)
+        - [Cross- Doc References](#Cross-Doc-References)
+        - [Inline Code Areas](#Inline-Code-Areas)
+        - [Custom Constructor positions](#Custom-Constructor-positions)
+        - [Custom Sample positions](#Custom-Sample-positions)
+            - [Sample Examples](#Sample-Examples)
+        - [HTML Tags](#HTML-Tags)
+        - [Markdown](#Markdown)
     - [Generating](#Generating)
     - [Update Github Pages](#Update-Github-Pages)
 
@@ -154,7 +155,7 @@ When using base.json you still might want to only use parts of it without having
 - to use the parameter list of a base.json entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
 you can also use this method in base.json
 
-### Examples
+### JSON Examples
 
 <details>
 <summary>Description only</summary>
@@ -245,11 +246,11 @@ from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 </details>
 
 
-### Format
+## Markdown Format
 
 You can use following methods to format the documentation
 
-#### Type
+### Type
 types have following format:
 
 first specify of which type the variable is. This is a 3-character long string of
@@ -290,12 +291,12 @@ if there is a fixed set of argument vales available you can add them separated w
 To describe a possible argument value more you can add a description text separated with '`:`'. Example:
 - `str_com-Linear:linear ordered objects|Frame|Absolute`
 
-#### Type Popups
+### Type Popups
 If you want to use popups in a description text or in return values you can add the type separated with a '`:`', specifically `name:type`. Example:
 - `"retval": "lst-[ values:num_int ]"`
 - `"retval": "obj-{ width:num_orw, height:num_orh }"`
 
-#### Cross-Doc References
+### Cross-Doc References
 You can easily referenciate other docs using the `@funcname` format. This is mostly used for 'See Also: 's
 - See Also: [@WriteFile](https://symdstools.github.io/Docs/docs/app/WriteFile.htm)
 You can even point to parent- or subdirectories:
@@ -303,18 +304,22 @@ You can even point to parent- or subdirectories:
 And add html anchors:
 - Have a look at the [@../app/CreateImage#Hide](https://symdstools.github.io/Docs/docs/app/CreateImage.htm#Hide)
 
-#### Inline Code Areas
+### Inline Code Areas
 If you have a short command or code example you want to include without making it a Sample block, you can use the \<smp\> tag or a specific highlighted language: \<js\> \<java\> or \<bash\>. Example:
 - `<js>img.DrawLine( 0, 0, 1, 1 );</js>`
 Additionally you can add some modifiers to the start tag to change the look. Ie:
 - `<js noinl>` will make the code inline instead of full-width
 - `<js nobox>` will remove the grey box around the code
 
-#### Custom Constructor positions
+### Custom Constructor positions
 By Default the constructor line of a DroidScript object will be inserted after the first sentence (marked with a dor '`.`'). But you can customize that position with the `%c` flag:
 - `This is a description. Followed by more description. %c`
 
-#### Examples
+### Custom Sample positions
+If you want to put a sample of a sample.txt file to a specified position in your description, you can use the <sample> tag, where sample is followed by the sample name. Example:
+- `<sample Sample Name>`
+
+#### Sample Examples
 A good documentation should provide examples of the described method. They can be copied and executed directly from the docs.<br>
 Each sample should have a highlighted area which shows the snipped where the method was used. Use the &lt;b&gt; tag for that.<br>
 You can define samples by using the <sample> tag, either in the description itself or in a member.txt file in the [samples/](en/app/samples) folder, where each scope member has its own \<member\>.txt file.<br>
@@ -338,9 +343,10 @@ You can disable an example using standard html comments like
 
 Besides these special formats you also have following standard text formatting features available:
 
-#### HTML Tags
+### HTML Tags
 
-#### Markdown
+
+### Markdown
 - \*\***bold**\*\*
 - \__italic_\_
 - \**italic*\*
