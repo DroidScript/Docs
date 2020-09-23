@@ -301,7 +301,7 @@
 		"shortDesc": "Copies a file to a given destination"
 	},
 	"CopyFolder": {
-		"desc": "CopyFolder copies a folder to a given destination. If override is false and the folder already exists in the destination, it will not be copied.\n\nSee Also: @RenameFolder, @DeleteFolder, @FolderExists",
+		"desc": "CopyFolder copies a folder and its contents to a given destination. If an item already exists in the destination it will not be overwritten unless overwrite is true.\n\n**Note:** <js nobox>CopyFolder(fld1, fld2)</js> will copy the **contents** of _fld1_ to _fld2_.\n\nSee Also: @RenameFolder, @DeleteFolder, @FolderExists",
 		"name": "CopyFolder",
 		"pNames": ["source", "destination", "overwrite", "filter"],
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
@@ -5194,6 +5194,13 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetCornerRadius": {
+				"desc": "Applies a corner radius to card layouts.",
+				"name": "SetCornerRadius",
+				"pNames": ["radius"],
+				"pTypes": ["num_pxl"],
+				"shortDesc": "Apply corner radius to card layouts's"
+			},
 			"SetEnabled": "#1602385882",
 			"_SetGravity": {
 				"desc": "Adjust the placing of contained children.",
@@ -7646,7 +7653,7 @@
 		"shortDesc": "Hide and lock a drawer"
 	},
 	"MakeFolder": {
-		"desc": "Creates a new folder in the local filesystem.\n\nSee Also: @FolderExists",
+		"desc": "Creates a new folder in the local filesystem recursively.\n\nSee Also: @FolderExists",
 		"name": "MakeFolder",
 		"pNames": ["folder"],
 		"pTypes": ["str_pth"],

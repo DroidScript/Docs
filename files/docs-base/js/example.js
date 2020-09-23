@@ -21,11 +21,13 @@ function copy( div )
 
 function demo( div )
 {
+	var fld = "/sdcard/DroidScript/~DocSamp/";
 	if( isMobileIDE )
 	{
-		app.WriteFile( "/sdcard/.DroidScript/Temp/~demo.js", div.innerText || div.textContent );
-		app.Execute( "RunDemo( '/sdcard/.DroidScript/Temp/~demo.js' );" );
-		//app.Execute( "try { StartApp('/sdcard/.DroidScript/Temp/~demo.js') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
+		if( !app.FolderExists( fld )) app.MakeFolder( fld );
+		app.WriteFile( fld + "~DocSamp.js", div.innerText || div.textContent );
+		app.Execute( "RunDemo( '" + fld + "/~DocSamp.js' );" );
+		//app.Execute( "try { StartApp('" + fld + "/~DocSamp.js') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
 	}
 	else
 		parent.postMessage( "demo:" + (div.innerText || div.textContent), "*" )

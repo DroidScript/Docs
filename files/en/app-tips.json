@@ -1562,6 +1562,7 @@
 		"SetBackGradientRadial": "Define a radial background color gradient",
 		"SetBackground": "Change the background to an image",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
+		"SetCornerRadius": "Apply corner radius to card layouts's",
 		"SetEnabled": "En/Disable the control",
 		"SetMargins": "Define distances to other controls",
 		"SetOnChange": "Called when current tab changed",

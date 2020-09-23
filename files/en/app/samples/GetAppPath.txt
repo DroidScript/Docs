@@ -1,4 +1,4 @@
->sample Show app path>
+<sample Show app path>
 function OnStart()
 {
     <b>var path = app.GetAppPath();</b>
