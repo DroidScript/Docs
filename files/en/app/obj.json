@@ -212,7 +212,6 @@
 		"desc": "#ChooseWifi.md",
 		"pNames": ["title1", "title2", "callback", "options", "extra"],
 		"pTypes": ["str", "str", {
-			"desc": "callback function",
 			"pNames": ["ssid"],
 			"pTypes": ["str"]
 		}, "str_com-force|large", "str_com-ssids"],
@@ -275,7 +274,6 @@
 				"desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["status"],
 					"pTypes": ["str-ALTERNATIVE|..."]
 				}],
@@ -432,8 +430,7 @@
 				"pTypes": [{
 					"pNames": ["name", "address"],
 					"pTypes": ["str", "str"]
-				}],
-				"shortDesc": ""
+				}]
 			},
 			"SetOnDisconnect": {
 				"desc": "SetOnDisconnect will be called on both devices after disconnecting from an existing bluetooth connection.",
@@ -517,9 +514,7 @@
 			"SetOnLongTouch": {
 				"desc": "Define a callback function which is called when the button has been long pressed.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when the button was long pressed"
 			},
 			"SetPadding": "#1923105617",
@@ -709,9 +704,7 @@
 			"SetOnReady": {
 				"desc": "Defines a callback function which is called when the camera is ready for use.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called if the camera is ready for use"
 			},
 			"SetOrientation": {
@@ -852,7 +845,6 @@
 				"desc": "Define a callback function that is called when the user touches the CheckBox.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["isChecked"],
 					"pTypes": ["bin"]
 				}],
@@ -887,7 +879,6 @@
 				"desc": "Deletes a file in the cloud.",
 				"pNames": ["file", "callback"],
 				"pTypes": ["str_ptf", {
-					"desc": "callback function",
 					"pNames": ["success", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"]
 				}],
@@ -897,7 +888,6 @@
 				"desc": "Lists files of the cloud.",
 				"pNames": ["filter", "callback"],
 				"pTypes": ["str", {
-					"desc": "callback function",
 					"pNames": ["error", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str_com,error:str}", "num_int"]
 				}],
@@ -907,7 +897,6 @@
 				"desc": "Loads data from the cloud.",
 				"pNames": ["file", "callback", "options"],
 				"pTypes": ["str_ptf", "str", {
-					"desc": "callback function",
 					"pNames": ["error", "result", "status"],
 					"pTypes": ["bin", "obj-{data:all,error:str}", "num_int"]
 				}, "str"],
@@ -917,7 +906,6 @@
 				"desc": "Merges an object with an already existing in the cloud.",
 				"pNames": ["file", "data", "callback"],
 				"pTypes": ["str_ptf", "obj", {
-					"desc": "callback function",
 					"pNames": ["success", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str-Entry Saved,error:str}", "num_int"]
 				}],
@@ -928,7 +916,6 @@
 				"desc": "Saves data in the cloud.",
 				"pNames": ["file", "data", "callback", "options"],
 				"pTypes": ["str_ptf", "all", {
-					"desc": "callback function",
 					"pNames": ["success", "result", "status"],
 					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"]
 				}, "str"],
@@ -1093,9 +1080,7 @@
 			"SetOnDoubleTap": {
 				"desc": "Defines a callback function which is called when the user double-taps the Yoyo.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Define a Yoyo double-tap callback function"
 			},
 			"SetOnKey": {
@@ -1251,17 +1236,13 @@
 			"SetOnBack": {
 				"desc": "Define a callback function which is called when the device's back button was pressed while the dialog was on front.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when back button was pressed while the dialog was shown"
 			},
 			"SetOnCancel": {
 				"desc": "Define a callback function which is called when the dialog is cancelled.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when the dialog is cancelled"
 			},
 			"SetOnTouch": "#2088093920",
@@ -1357,9 +1338,7 @@
 			"SetOnComplete": {
 				"desc": "Define a callback function which is called when the download is finished.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when the download is finished"
 			},
 			"SetOnDownload": {
@@ -1489,7 +1468,6 @@
 				"desc": "Asynchronously reads a single character or a line as text.",
 				"pNames": ["type", "callback"],
 				"pTypes": ["str-Line:\"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n\"|Char:read big-endian 16-bit character", {
-					"desc": "callback function",
 					"pNames": ["data"],
 					"pTypes": ["str"]
 				}],
@@ -1528,8 +1506,7 @@
 			"WriteText": {
 				"desc": "writes text to file",
 				"pNames": ["data", "type"],
-				"pTypes": ["num_int", "str-UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters"],
-				"shortDesc": ""
+				"pTypes": ["num_int", "str-UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters"]
 			}
 		}
 	},
@@ -1622,52 +1599,43 @@
 			"aspect": {
 				"desc": "width/height relation",
 				"isval": true,
-				"retval": "num_flt",
-				"shortDesc": ""
+				"retval": "num_flt"
 			},
 			"canvas": {
 				"desc": "[HTMLDivElement]",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": ""
+				"retval": "obj"
 			},
 			"ClearFocus": "#1362225380",
 			"CreateImage": {
 				"desc": "Create a sprite object which can be drawn on the GLView",
 				"pNames": ["file", "callback"],
-				"pTypes": ["str_ptf", {
-					"retval": ""
-				}],
-				"retval": "dso_glv",
-				"shortDesc": ""
+				"pTypes": ["str_ptf", {}],
+				"retval": "dso_glv"
 			},
 			"DrawImage": {
 				"desc": "Draws an image to the canvas",
 				"pNames": ["image", "x", "y", "w", "h", "angle"],
 				"pTypes": ["obj-glv Image", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
-				"retval": "",
 				"shortDesc": "Draw image to canvas"
 			},
 			"DrawSprite": {
 				"desc": "Draws a part of an image to the canvas.",
 				"pNames": ["sheet", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh", "angle"],
 				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
-				"retval": "",
 				"shortDesc": "Draw part of a sprite to the canvas"
 			},
 			"_Exec": {
 				"desc": "calls _gfx.Exec()",
 				"name": "Exec",
 				"pNames": ["p1", "p2", "p3", "p4"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["?", "?", "?", "?"]
 			},
 			"_Execute": {
 				"desc": "",
 				"name": "Execute",
 				"pNames": ["p1", "p2", "p3", "p4"],
-				"pTypes": ["?", "?", "?", "?"],
-				"shortDesc": ""
+				"pTypes": ["?", "?", "?", "?"]
 			},
 			"Explode": "#1500174100",
 			"Focus": "#7324472769",
@@ -1683,7 +1651,6 @@
 				"name": "ctx.capture",
 				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:path relative to “/sdcard”", "fnc", "fnc"],
-				"retval": "",
 				"shortDesc": "Captures the canvas to a png image"
 			},
 			"GetContext.ctx.clearRect": {
@@ -1691,62 +1658,52 @@
 				"name": "ctx.clearRect",
 				"pNames": ["x", "y", "width", "height"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-				"retval": "",
 				"shortDesc": "deprecated"
 			},
 			"GetContext.ctx._drawCommands": {
 				"desc": "",
 				"isval": true,
 				"name": "ctx._drawCommands",
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str"
 			},
 			"GetContext.ctx.drawImage": {
 				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
 				"name": "ctx.drawImage",
 				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
 				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-				"retval": "",
 				"shortDesc": "Draws part of a sprite to the context"
 			},
 			"GetContext.ctx._globalAlpha": {
 				"desc": "",
 				"isval": true,
 				"name": "ctx._globalAlpha",
-				"retval": "num_frc",
-				"shortDesc": ""
+				"retval": "num_frc"
 			},
 			"GetContext.ctx.loadTexture": {
 				"desc": "",
 				"name": "ctx.loadTexture",
 				"pNames": ["image", "successCallback", "errorCallback"],
 				"pTypes": ["str_ptf", {
-					"desc": "callback function",
 					"pNames": ["metrics"],
 					"pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"]
 				}, {
-					"desc": "callback function",
 					"pNames": ["msg"],
 					"pTypes": ["str"]
-				}],
-				"shortDesc": ""
+				}]
 			},
 			"GetContext.ctx.render": {
 				"desc": "render the draw commands to the context",
 				"name": "ctx.render",
-				"retval": "",
 				"shortDesc": "render draw commands"
 			},
 			"GetContext.ctx.resetTransform": {
 				"desc": "Reset all transformations to default",
 				"name": "ctx.resetTransform",
-				"retval": "",
 				"shortDesc": "Reset all transformations"
 			},
 			"GetContext.ctx.restore": {
 				"desc": "Restore a previously saved context state",
 				"name": "ctx.restore",
-				"retval": "",
 				"shortDesc": "Restore saved context"
 			},
 			"GetContext.ctx.rotate": {
@@ -1754,13 +1711,11 @@
 				"name": "ctx.rotate",
 				"pNames": ["angle"],
 				"pTypes": ["num_rad"],
-				"retval": "",
 				"shortDesc": "Rotates the transformation matrix"
 			},
 			"GetContext.ctx.save": {
 				"desc": "Saves the current context state",
 				"name": "ctx.save",
-				"retval": "",
 				"shortDesc": "Saves current context"
 			},
 			"GetContext.ctx.scale": {
@@ -1768,7 +1723,6 @@
 				"name": "ctx.scale",
 				"pNames": ["a", "d"],
 				"pTypes": ["num_frc", "num_frc"],
-				"retval": "",
 				"shortDesc": "Scale the transformation matrix"
 			},
 			"GetContext.ctx.setTransform": {
@@ -1776,7 +1730,6 @@
 				"name": "ctx.setTransform",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
-				"retval": "",
 				"shortDesc": "Set current matrix"
 			},
 			"GetContext.ctx.transform": {
@@ -1784,7 +1737,6 @@
 				"name": "ctx.transform",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
-				"retval": "",
 				"shortDesc": "Transform the current matrix"
 			},
 			"GetContext.ctx.translate": {
@@ -1792,16 +1744,13 @@
 				"name": "ctx.translate",
 				"pNames": ["tx", "ty"],
 				"pTypes": ["num_pxl", "num_pxl"],
-				"retval": "",
 				"shortDesc": "'Move' the transformation matrix"
 			},
 			"GetContext.ctx.unloadTexture": {
 				"desc": "",
 				"name": "ctx.unloadTexture",
 				"pNames": ["image"],
-				"pTypes": ["str_ptf"],
-				"retval": "",
-				"shortDesc": ""
+				"pTypes": ["str_ptf"]
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -1819,8 +1768,7 @@
 			"height": {
 				"desc": "height",
 				"isval": true,
-				"retval": "num_int",
-				"shortDesc": ""
+				"retval": "num_int"
 			},
 			"Hide": "#5372805812",
 			"IsEnabled": "#1744802827",
@@ -1829,7 +1777,6 @@
 			"Method": "#1023663567",
 			"Render": {
 				"desc": "Render all draw commands to the canvas",
-				"retval": "",
 				"shortDesc": "Render draw commands"
 			},
 			"SetBackColor": "#3857861627",
@@ -1853,8 +1800,7 @@
 			"width": {
 				"desc": "width",
 				"isval": true,
-				"retval": "num_int",
-				"shortDesc": ""
+				"retval": "num_int"
 			}
 		}
 	},
@@ -2680,25 +2626,19 @@
 			"SetOnComplete": {
 				"desc": "Define a callback function which is called when a sound file has finished playing.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when the player has finished playing a track"
 			},
 			"SetOnReady": {
 				"desc": "Define a callback function which is called when the player is ready for use.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when the player is ready for use"
 			},
 			"SetOnSeekDone": {
 				"desc": "Define a callback function which is called when a seeking process is done.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when ply.Seek has finished"
 			},
 			"SetVolume": {
@@ -2999,7 +2939,6 @@
 				"desc": "Called when a notification has been intercepted.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "Callback function",
 					"pNames": ["source", "title", "message", "extra", "type"],
 					"pTypes": ["str", "str", "str", "str", "str-Normal|?"]
 				}],
@@ -3049,8 +2988,7 @@
 			"Drive": {
 				"desc": "commands NXT to drive motors",
 				"pNames": ["motors", "power", "rotations", "options"],
-				"pTypes": ["str-A,B,C|ABC", "num_prc", "num_prc--100..100", "num_flt-0|rotations"],
-				"shortDesc": ""
+				"pTypes": ["str-A,B,C|ABC", "num_prc", "num_prc--100..100", "num_flt-0|rotations"]
 			},
 			"FileFindFirst": {
 				"desc": "Find the first program file of the NXT.",
@@ -3210,18 +3148,13 @@
 			"SetOnConnected": {
 				"desc": "Define a callback function which is called when the NXT has been successfully connected via Bluetooth",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when bt connection established"
 			},
 			"SetOnConnectEx": {
 				"desc": "called when NXT has successfully connected via Bluetooth",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
-				"shortDesc": ""
+				"pTypes": [{}]
 			},
 			"ShowDevices": {
 				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
@@ -3326,7 +3259,6 @@
 				"desc": "Get product info of paid items from Google Play.",
 				"pNames": ["prodIDs", "callback", "options"],
 				"pTypes": ["str", {
-					"desc": "callback function",
 					"pNames": ["items"],
 					"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]
 				}, "str-IAP:In-App purchases|SUBS:subscriptions"],
@@ -3337,7 +3269,6 @@
 				"pNames": ["callback", "options"],
 				"pTypes": [
 					{
-						"desc": "callback function",
 						"pNames": ["items"],
 						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]
 					},
@@ -3354,7 +3285,6 @@
 				"desc": "Purchase an item on Google Play.",
 				"pNames": ["prodID", "token", "callback", "options"],
 				"pTypes": ["str", "str", {
-					"desc": "callback function",
 					"pNames": ["prodId", "orderId", "purchToken", "devToken", "packageName"],
 					"pTypes": ["str", "str", "str", "str", "str"]
 				}, "str-SUBS"],
@@ -3603,9 +3533,7 @@
 		"abbrev": "srv",
 		"desc": "#CreateService.md",
 		"pNames": ["packageName", "className", "callback", "options"],
-		"pTypes": ["str-this|&lt;package&gt;", "str-this|&lt;class&gt;", {
-			"shortDesc": "callback"
-		}, "str_com-Persist:attempts to force restart if service killed"],
+		"pTypes": ["str-this|&lt;package&gt;", "str-this|&lt;class&gt;", {}, "str_com-Persist:attempts to force restart if service killed"],
 		"retval": "dso-Service",
 		"shortDesc": "Returns a new Service object",
 		"subf": {
@@ -3713,49 +3641,37 @@
 			"SetOnBack": {
 				"desc": "Define a callback function which is called when the SmartWatch back button was pressed.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "called when SmartWatch back button was pressed"
 			},
 			"SetOnHide": {
 				"desc": "Define a callback function which is called when the SmartWatch app is hidden.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app is hidden"
 			},
 			"SetOnMenu": {
 				"desc": "Define a callback function which is called when the SmartWatch menu button is touched.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch menu button is touched"
 			},
 			"SetOnShow": {
 				"desc": "Define a callback function which is called when the SmartWatch app is shown.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app is shown"
 			},
 			"SetOnStart": {
 				"desc": "Define a callback function which is called when the SmartWatch app has started.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app has started"
 			},
 			"SetOnStop": {
 				"desc": "Define a callback function which is called when the SmartWatch app has stopped.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app has stopped"
 			},
 			"SetOnSwipe": {
@@ -3887,9 +3803,7 @@
 			"SetOnReady": {
 				"desc": "Define a callback function which is called when the SpeechRec object is ready for use.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when SpeechRec is ready for use"
 			},
 			"SetOnResult": {
@@ -3973,9 +3887,7 @@
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches the control.\n<deprecated Use SetOnChange instead>",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Define a callback function for touch events"
 			},
 			"SetPadding": "#1923105617",
@@ -4320,7 +4232,6 @@
 				"desc": "Define a callback function which is called when something was written to stderr",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["data"],
 					"pTypes": ["str"]
 				}],
@@ -4330,7 +4241,6 @@
 				"desc": "Define a callback function which is called when something was written to stdout",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["data"],
 					"pTypes": ["str"]
 				}],
@@ -4450,7 +4360,6 @@
 				"desc": "Define a callback function which is called when the tab has been changed by the user.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["name"],
 					"pTypes": ["str"]
 				}],
@@ -4743,9 +4652,7 @@
 			"SetOnEnter": {
 				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)\nAlong with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
 			"SetOnFocus": "#9283752301",
@@ -5154,33 +5061,25 @@
 			"SetOnComplete": {
 				"desc": "Define a callback function which is called when the playback has finished playing",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when playback finished"
 			},
 			"SetOnError": {
 				"desc": "Define a callback function which is called when an error occured.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when an error occured"
 			},
 			"SetOnReady": {
 				"desc": "Define a callback function which is called when the video is ready for playback.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when video is ready for playback"
 			},
 			"SetOnSubtitle": {
 				"desc": "Define a callback function which is called when the subtitle text changed.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"desc": "callback function"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when subtitle text changed"
 			},
 			"SetPadding": "#1923105617",
@@ -5241,7 +5140,6 @@
 				"desc": "Define a callback function which is called when a HTTP GET request on a given servlet name was recieved.",
 				"pNames": ["path", "callback"],
 				"pTypes": ["str:url path-/name", {
-					"desc": "callback function",
 					"pNames": ["args", "info"],
 					"pTypes": ["obj-{ parameter: argument }", "obj-{ remoteAddress:str }"]
 				}],
@@ -5274,7 +5172,6 @@
 				"desc": "Define a callback function which is called when the server received a message from a client.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["msg", "ip", "id"],
 					"pTypes": ["str", "str", "num_int"]
 				}],
@@ -5284,7 +5181,6 @@
 				"desc": "Define a callback function which is called when a file was uploaded to the server.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["filename", "ip"],
 					"pTypes": ["str", "str"]
 				}],
@@ -5343,9 +5239,7 @@
 			"SetOnClose": {
 				"desc": "Define a callback function which is called when the WebSocket has been closed.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when WebSocket was closed"
 			},
 			"SetOnMessage": {
@@ -5360,9 +5254,7 @@
 			"SetOnOpen": {
 				"desc": "Define a callback function which is called when the WebSocket has been opened.",
 				"pNames": ["callback"],
-				"pTypes": [{
-					"shortDesc": "callback"
-				}],
+				"pTypes": [{}],
 				"shortDesc": "Called when WebSocket is open"
 			}
 		}
@@ -5398,15 +5290,11 @@
 				"shortDesc": "Capture WebView as png"
 			},
 			"ClearFocus": "#1362225380",
-			"ClearHistory": {
-				"desc": "Clears the page history for Back() and Forward()",
-				"shortDesc": ""
-			},
+			"ClearHistory": { "desc": "Clears the page history for Back() and Forward()" },
 			"Execute": {
 				"desc": "Executes JavaScript code inside the WebView and passes the result to the callback",
 				"pNames": ["code", "callback"],
 				"pTypes": ["str_jsc", {
-					"desc": "callback function",
 					"pNames": ["result"],
 					"pTypes": ["all"]
 				}],
@@ -5486,7 +5374,6 @@
 				"desc": "Define a callback function which is called when a message was logged to the console.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"desc": "callback function",
 					"pNames": ["msg"],
 					"pTypes": ["str"]
 				}],
@@ -5564,7 +5451,6 @@
 		"desc": "#CreateWizard.md",
 		"pNames": ["title", "width", "height", "callback", "options"],
 		"pTypes": ["str", "num_frc", "num_frc", {
-			"desc": "callback function",
 			"pNames": ["layout", "page"],
 			"pTypes": ["dso-CreateLayout", "num_int"]
 		}, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
@@ -5771,9 +5657,7 @@
 		"pTypes": ["str", {
 			"pNames": ["name", "address"],
 			"pTypes": ["str", "str"]
-		}, {
-			"shortDesc": "callback"
-		}],
+		}, {}],
 		"shortDesc": "Search for nearby bluetooth devices"
 	},
 	"DownloadFile": {
@@ -6123,7 +6007,6 @@
 		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"pNames": ["type", "callback"],
 		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:\"<pid:num>\"", {
-			"desc": "callback function",
 			"pNames": ["ungranted"],
 			"pTypes": ["str_com||str_uri"]
 		}],
@@ -6311,7 +6194,6 @@
 		"desc": "Starts the installation process of an apk file from your local drive.",
 		"pNames": ["apkFile", "callback", "options"],
 		"pTypes": ["str_ptf", {
-			"desc": "callback function",
 			"pNames": ["packageName", "status"],
 			"pTypes": ["str", "str"]
 		}, "str"],
@@ -6544,12 +6426,10 @@
 				"pNames": ["success", "error"],
 				"pTypes": [
 					{
-						"desc": "callback function",
 						"pNames": ["msg"],
 						"pTypes": ["str"]
 					},
 					{
-						"desc": "callback function",
 						"pNames": ["msg"],
 						"pTypes": ["str"]
 					}
@@ -6580,11 +6460,9 @@
 				"desc": "Executes a SQL query\n<deprecated Use ExecuteSql instead>",
 				"pNames": ["statement", "params", "success", "error"],
 				"pTypes": ["str_sql", "lst", {
-					"desc": "callback function",
 					"pNames": ["tx", "res"],
 					"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }", "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]
 				}, {
-					"desc": "callback function",
 					"pNames": ["t", "err"],
 					"pTypes": ["?", "obj-{ message:str }"]
 				}],
@@ -6594,11 +6472,9 @@
 				"desc": "Executes a SQL query",
 				"pNames": ["sql", "params", "success", "error"],
 				"pTypes": ["str_sql", "lst", {
-					"desc": "callback function",
 					"pNames": ["res"],
 					"pTypes": ["obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]
 				}, {
-					"desc": "callback function",
 					"pNames": ["err"],
 					"pTypes": ["str"]
 				}],
@@ -6624,11 +6500,8 @@
 				"desc": "Opens the database\n<deprecated>",
 				"pNames": ["success", "error"],
 				"pTypes": [
+{},
 					{
-						"desc": "callback function"
-					},
-					{
-						"desc": "callback function",
 						"pNames": ["msg"],
 						"pTypes": ["str"]
 					}
@@ -6665,17 +6538,14 @@
 				"pNames": ["fn", "error", "success"],
 				"pTypes": [
 					{
-						"desc": "callback function",
 						"pNames": ["tx"],
 						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
 					},
 					{
-						"desc": "callback function",
 						"pNames": ["err"],
 						"pTypes": ["str"]
 					},
 					{
-						"desc": "callback function",
 						"pNames": ["tx", "res"],
 						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"]
 					}
@@ -6691,21 +6561,17 @@
 				"pNames": ["fn", "error", "success"],
 				"pTypes": [
 					{
-						"desc": "callback function",
 						"pNames": ["tx"],
 						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
 					},
 					{
-						"desc": "callback function",
 						"pNames": ["err"],
 						"pTypes": ["str"]
 					},
 					{
-						"desc": "callback function",
 						"pNames": ["fnc", "res"],
 						"pTypes": [
 							{
-								"desc": "callback function",
 								"pNames": ["tx"],
 								"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
 							},
@@ -6738,9 +6604,7 @@
 	"PairBtDevice": {
 		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
 		"pNames": ["address", "callback"],
-		"pTypes": ["str", {
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str", {}],
 		"shortDesc": "PairBtDevice"
 	},
 	"PlayRingtone": {
@@ -7040,9 +6904,7 @@
 	"SetOnDebug": {
 		"desc": "Define a callback function for debug messages.\n\nSee also: @Debug, @SetDebug",
 		"pNames": ["callback"],
-		"pTypes": [{
-			"shortDesc": "callback"
-		}],
+		"pTypes": [{}],
 		"shortDesc": "Called on app debug messages"
 	},
 	"SetOnError": {
@@ -7090,9 +6952,7 @@
 	"SetOrientation": {
 		"desc": "Set the display orientation to a fixed value. You can unlock it again passing “Default” as **orientation**.\n\nSee Also: @GetOrientation",
 		"pNames": ["orient", "callback"],
-		"pTypes": ["str-Default|Landscape|ReverseLandscape|Portrait|ReversePortrait", {
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str-Default|Landscape|ReverseLandscape|Portrait|ReversePortrait", {}],
 		"shortDesc": "Fix display orientation"
 	},
 	"SetPosition": {
@@ -7190,7 +7050,6 @@
 		"desc": "The check list provides a similar functionality to the “Multi” [ListDiaog](CreateListDialog.htm), although you can adjust its initial check states with an object structure.",
 		"pNames": ["title", "list", "callback", "width", "height", "options"],
 		"pTypes": ["str", "str-title:str\\:checked:bin||lst_obj-{ title:str, check:bin }", {
-			"desc": "callback function",
 			"pNames": ["data"],
 			"pTypes": ["obj-{ title:str, checked:bin }"]
 		}, "num_frc", "num_frc", "str-sun-moon"],
@@ -7315,9 +7174,7 @@
 	"TextToSpeech": {
 		"desc": "#TextToSpeech.md",
 		"pNames": ["text", "pitch", "rate", "callback", "stream", "locale", "engine"],
-		"pTypes": ["str", "num", "num", {
-			"shortDesc": "callback"
-		}, "str-music", "str", "str"],
+		"pTypes": ["str", "num", "num", {}, "str-music", "str", "str"],
 		"shortDesc": "Audiolize text"
 	},
 	"ToBack": {
@@ -7347,9 +7204,7 @@
 	"UnpairBtDevice": {
 		"desc": "Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.\n\nSee Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial",
 		"pNames": ["address", "callback"],
-		"pTypes": ["str", {
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str", {}],
 		"shortDesc": "Unpair a paired Bluetooth device"
 	},
 	"UnzipFile": {
@@ -7367,9 +7222,7 @@
 	"UploadFile": {
 		"desc": "Uploads a file to a server.",
 		"pNames": ["url", "file", "name", "callback"],
-		"pTypes": ["str_url", "str_ptf", "str", {
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str_url", "str_ptf", "str", {}],
 		"shortDesc": "Uploads a file to a server"
 	},
 	"Uri2Path": {

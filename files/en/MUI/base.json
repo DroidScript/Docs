@@ -3,11 +3,8 @@
 		"desc": "Animates the control.\n\nThere are\n\t“in”-Animations which are used to show objects from hidden state\n\t“out”-animations which are used to hide objects in visible state and\n\t“static”-animations which keep the visible state.",
 		"pNames": ["type", "callback", "time"],
 		"pTypes": ["str-NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>", {
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["type"],
-			"pTypes": ["str"],
-			"shortDesc": "callback"
+			"pTypes": ["str"]
 		}, "num_mls"],
 		"shortDesc": "Animates a control"
 	},
@@ -212,54 +209,36 @@
 	"#2137502353": { "name": "SetOnChange",
 		"desc": "Called when the containing data has been changed by the user.",
 		"pNames": ["callback"],
-		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": [{}],
 		"shortDesc": "Called when content was changed by the user"
 	},
 	"#9283752301": { "name": "SetOnFocus",
 		"desc": "Define a callback function called when the user focuses the control.",
 		"pNames": ["callback"],
-		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": [{}],
 		"shortDesc": "Called when the control gets focused"
 	},
 	"#2735982374": { "name": "SetOnLongTouch",
 		"desc": "Define a callback function which is called when the object has been long pressed.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["src"],
-			"pTypes": ["dso"],
-			"shortDesc": "callback"
+			"pTypes": ["dso"]
 		}],
 		"shortDesc": "Called when the control was pressed for eons"
 	},
 	"#2398750419": { "name": "SetOnTouch",
 		"desc": "Define a callback function that is called when the user touches the control.",
 		"pNames": ["callback"],
-		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": [{}],
 		"shortDesc": "Define a callback function for touch events"
 	},
 	"#2088093920": { "name": "SetOnTouch",
 		"desc": "Define a callback function that is called when the user touches the control. In addition, an **event** object is passed to the callback function to obtain information about the touch **type**, the touch **position(s)**, the **amount** of touches and the **control** that was touched.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["event"],
-			"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
-			"shortDesc": "callback"
+			"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
 		"shortDesc": "Define a callback function for user toches"
 	},
@@ -267,11 +246,8 @@
 		"desc": "Define a callback function which is called when the user started toching the control.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["event"],
-			"pTypes": ["obj-{ source:dso, action:str-Down, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
-			"shortDesc": "callback"
+			"pTypes": ["obj-{ source:dso, action:str-Down, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
 		"shortDesc": "Called when the user starts touching the control"
 	},
@@ -279,11 +255,8 @@
 		"desc": "Define a callback function which is called when the user drags his finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["event"],
-			"pTypes": ["obj-{ source:dso, action:str-Move, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
-			"shortDesc": "callback"
+			"pTypes": ["obj-{ source:dso, action:str-Move, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
 		"shortDesc": "Called when the user drags his finger over the screen"
 	},
@@ -291,11 +264,8 @@
 		"desc": "Define a callback function which is called when the users finger leaves the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
 			"pNames": ["event"],
-			"pTypes": ["obj-{ source:dso, action:str-Up, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"],
-			"shortDesc": "callback"
+			"pTypes": ["obj-{ source:dso, action:str-Up, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
 		"shortDesc": "Called when the user finger leaves te screen"
 	},
@@ -350,8 +320,7 @@
 	"#2562918782": { "name": "SetTouchable",
 		"desc": "En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.",
 		"pNames": ["touchable"],
-		"pTypes": ["bin"],
-		"shortDesc": ""
+		"pTypes": ["bin"]
 	},
 	"#1004824195": { "name": "SetVisibility",
 		"desc": "Change the visibility of the control to one of the available modes:\n**Show:** visible\n**Hide:** invisible but still consuming space\n**Gone:** invisible and not consuming space",
@@ -366,12 +335,7 @@
 	"#2114624769": { "name": "Tween",
 		"desc": "Performs an animation on the control.\nThe **target** object is for the position, size and rotation that the control has at the end of the animation.\n\nThe **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.\n\nWith the amount of **repeat**s you can control how many times you want to play the animation.\n\nIf you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.\n\nFinally the **callback** function will be called after the animation has finished. Well, it's about time!",
 		"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
-		"pTypes": ["obj-{ x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }", "num_mls", "str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out", "num_int", "bin", {
-			"abbrev": "",
-			"desc": "callback function",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["obj-{ x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }", "num_mls", "str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out", "num_int", "bin", {}],
 		"shortDesc": "Animates the control"
 	}
 }

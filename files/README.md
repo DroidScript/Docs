@@ -81,7 +81,7 @@ The generator has a specific file structure you have to use to be able to genera
 	```
 - \<lang\>/\<scope\>/**navs.json**:
 	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all members.<br>
-    You can use one level of categorization using `"catname":["subcat"]` or `"catname":"url"` pairs:
+    You can use one level of categorization using `"catname": ["subcat"]` or `"catname":"url"` pairs:
 	```js
 	{
 		"category1": {
@@ -90,6 +90,7 @@ The generator has a specific file structure you have to use to be able to genera
 		 	/* ... */
 		},
 		"category2": ["member1", "member2" /* ... */ ]
+        "category3": "customfile.htm"
 		/* ... */
 	}
 	```
@@ -120,7 +121,7 @@ Note: in fact, no file is reqired all the times. Following rules apply:
 
 ## JSON Format
 
-Each member in the obj.json file has following format
+Each member in the obj.json file can have following properties:
 
 ```js
 {
@@ -144,12 +145,105 @@ Note that some values are not required under certain conditions:
 - `pNames` and `pTypes` if empty
 - `retval` if `undefined`
 - `subfuncs` if `undefined`
+- `name` unless a custom name is used
+- the whole object if only a description is added, ie `{ "Method": "desc" }`
 
 When using base.json you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:
 - when appending an exclamation mark '!' to a subfunction's name this name will be used instead of the one defined in the base object: `"customMemName!": "#id"`
 
 - to use the parameter list of a base.json entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
 you can also use this method in base.json
+
+### Examples
+
+<details>
+<summary>Description only</summary>
+
+When only adding a description only a string is needed
+```json
+{
+    "Method": "#Method.md"
+}
+```
+</details>
+
+
+<details>
+<summary>Basic value</summary>
+
+from [gfx/obj.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/gfx/obj.json#L132)
+```json
+{
+    "aspect": {
+		"desc": "The aspect ratio of the gfx container (display)",
+		"isval": true,
+		"retval": "num",
+		"shortDesc": "The display aspect ratio"
+	}
+}
+```
+</details>
+
+<details>
+<summary>Basic base method using a parameter reference</summary>
+
+from [gfx/base.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/gfx/base.json#L101)
+```json
+{
+    "#8929387454": { "name": "SetTween",
+        "desc": "Sets up tween methods and properties without playing it.",
+        "params": "#2114624769",
+        "shortDesc": "Setup tween methods"
+    }
+}
+```
+</details>
+
+<details>
+<summary>Basic Control using external markdown, base subf refs, callbacks and more</summary>
+
+from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/app/obj.json#L471)
+```json
+{
+    "CreateButton": {
+		"abbrev": "btn",
+		"desc": "#CreateButton.md",
+		"pNames": ["text", "width", "height", "options"],
+		"pTypes": ["str", "num_frc", "num_frc", "str_com-FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound"],
+		"retval": "dso-Button",
+		"shortDesc": "Creates a button control",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+            [ ... ]
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"desc": "Returns the control class name.",
+				"retval": "str-Button",
+				"shortDesc": "Returns the control class name"
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+            [ ... ]
+			"SetOnTouch": "#2398750419",
+			"SetOnLongTouch": {
+				"desc": "Define a callback function which is called when the button has been long pressed.",
+				"pNames": ["callback"],
+				"pTypes": [{}],
+				"shortDesc": "Called when the button was long pressed"
+			},
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+            [ ... ]
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	}
+}
+```
+</details>
+
 
 ### Format
 
@@ -269,6 +363,33 @@ Besides these special formats you also have following standard text formatting f
 - execute `$ ./generate.js \<lang\>.\<scope\> [..]` to generate a specific scope of a language
 
 Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option.
+
+<details>
+<summary><b>Full generate.js help</b></summary>
+
+```
+[OPTIONS] [PATTERN ...]
+OPTIONS:
+	-l  --lang=<LANG-CODE>  2 digit code, ie. en de fr pt es ..
+                            defaults to 'en'
+	-al --addlang=<LANG-CODE>=<LANG-NAME>
+                            adds a language to conf.json
+	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
+                            adds a scope to conf.json
+	-c  --clean             regenerate the docs completely
+	-n  --nogen             don't generate
+	-v  --verbose           print more debug logs
+	-h  --help              this help
+
+PATTERN:
+	generates a scope in each defined language:
+	<SCOPE>[.<MEMBER-PATTERN>]
+	with specified language:
+	<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
+
+MEMBER-PATTERN:             RegEx pattern
+```
+</details>
 
 ## Update Github Pages
 

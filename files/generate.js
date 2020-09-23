@@ -1154,7 +1154,8 @@ PATTERN:
 	with specified language:
 	<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
 
-MEMBER-PATTERN:       	RegExp pattern
+MEMBER-PATTERN:
+	                  	RegEx pattern
 
 EXAMPLES:
 	generate.js	      	generate all defined languages (in generate.js)

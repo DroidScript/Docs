@@ -115,11 +115,8 @@
 		"name": "Animate",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["time", "dtime"],
-			"pTypes": ["num_mls", "num_mls"],
-			"shortDesc": "callback"
+			"pTypes": ["num_mls", "num_mls"]
 		}],
 		"shortDesc": "Similar to setInterval"
 	},
@@ -159,15 +156,13 @@
 				"desc": "",
 				"isval": true,
 				"name": "sprite",
-				"retval": "PIXI.Sprite",
-				"shortDesc": ""
+				"retval": "PIXI.Sprite"
 			},
 			"_texture": {
 				"desc": "",
 				"isval": true,
 				"name": "texture",
-				"retval": "PIXI.Texture",
-				"shortDesc": ""
+				"retval": "PIXI.Texture"
 			}
 		}
 	},
@@ -176,15 +171,13 @@
 		"name": "CreateBasicSprite",
 		"pNames": ["texture"],
 		"pTypes": ["str"],
-		"retval": "?",
-		"shortDesc": ""
+		"retval": "?"
 	},
 	"_CreateBatch": {
 		"desc": "",
 		"isval": true,
 		"name": "CreateBatch",
-		"retval": "?",
-		"shortDesc": ""
+		"retval": "?"
 	},
 	"CreateCircle": {
 		"abbrev": "cir",
@@ -304,8 +297,7 @@
 				"desc": "",
 				"isval": true,
 				"name": "id",
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str"
 			},
 			"Pause": {
 				"desc": "Pause the playback if the sound is currently palaying.",
@@ -323,11 +315,7 @@
 		"abbrev": "spr",
 		"desc": "#CreateSprite.md",
 		"pNames": ["file", "group", "callback"],
-		"pTypes": ["str_ptf", "str", {
-			"desc": "callback function",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str_ptf", "str", {}],
 		"retval": "gvo-CreateSprite",
 		"shortDesc": "Returns a new sprite object",
 		"subf": {
@@ -370,15 +358,13 @@
 				"desc": "",
 				"isval": true,
 				"name": "isAtlas",
-				"retval": "bin",
-				"shortDesc": ""
+				"retval": "bin"
 			},
 			"_isStrip": {
 				"desc": "",
 				"isval": true,
 				"name": "isStrip",
-				"retval": "bin",
-				"shortDesc": ""
+				"retval": "bin"
 			},
 			"PauseTween": "#8798237593",
 			"pivotX": "#2983519836",
@@ -446,8 +432,7 @@
 				"desc": "",
 				"isval": true,
 				"name": "sprite",
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "?"
 			},
 			"StartTween": "#1234231242",
 			"StepTween": "#9872394872",
@@ -465,8 +450,7 @@
 				"desc": "",
 				"isval": true,
 				"name": "texture",
-				"retval": "str",
-				"shortDesc": ""
+				"retval": "str"
 			},
 			"Tween": "#2114624769",
 			"Update": "#1274618924",
@@ -490,11 +474,7 @@
 		"abbrev": "sht",
 		"desc": "Creates a SpriteSheet for an animation for instance.\n\nSee Also: @CreateSprite",
 		"pNames": ["file", "callback"],
-		"pTypes": ["str_ptf", {
-			"desc": "callback function",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str_ptf", {}],
 		"retval": "gvo-SpriteSheet",
 		"shortDesc": "Returns a new SpriteSheet object",
 		"subf": {
@@ -509,15 +489,13 @@
 				"desc": "",
 				"isval": true,
 				"name": "loader",
-				"retval": "obj",
-				"shortDesc": ""
+				"retval": "obj"
 			},
 			"_sprite": {
 				"desc": "",
 				"isval": true,
 				"name": "sprite",
-				"retval": "?",
-				"shortDesc": ""
+				"retval": "?"
 			}
 		}
 	},
@@ -525,11 +503,7 @@
 		"abbrev": "txt",
 		"desc": "Creates a text label which is used to display texts in your game.",
 		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
-		"pTypes": ["str", "num", "str_ptf", "str-left|center|right", {
-			"desc": "callback function",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str", "num", "str_ptf", "str-left|center|right", {}],
 		"retval": "gvo-Text",
 		"shortDesc": "Returns a new text object",
 		"subf": {
@@ -695,8 +669,7 @@
 	"_Render": {
 		"desc": "",
 		"name": "Render",
-		"retval": "?",
-		"shortDesc": ""
+		"retval": "?"
 	},
 	"_renderer": {
 		"desc": "PIXI renderer",
@@ -708,11 +681,7 @@
 	"Script": {
 		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your game.",
 		"pNames": ["uri", "callback"],
-		"pTypes": ["str_uri", {
-			"desc": "callback function",
-			"name": "callback",
-			"shortDesc": "callback"
-		}],
+		"pTypes": ["str_uri", {}],
 		"shortDesc": "synchronously import a .js file"
 	},
 	"SetBackColor": {
@@ -725,11 +694,8 @@
 		"desc": "Define a callback which is called when two [Physics objects](AddPhysics.htm) collide.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["a", "b"],
-			"pTypes": ["gvo", "gvo"],
-			"shortDesc": "callback"
+			"pTypes": ["gvo", "gvo"]
 		}],
 		"shortDesc": "SetOnCollide"
 	},
@@ -737,11 +703,8 @@
 		"desc": "Define a callback function which is called when the user started pressing a key.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["key"],
-			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."],
-			"shortDesc": "callback"
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."]
 		}],
 		"shortDesc": "Define a KeyDown callback"
 	},
@@ -749,11 +712,8 @@
 		"desc": "Define a callback function which is called when the user released a key.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["key"],
-			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."],
-			"shortDesc": "callback"
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."]
 		}],
 		"shortDesc": "Define a KeyUp callback"
 	},
@@ -761,11 +721,8 @@
 		"desc": "Define a callback which is called when the user touches the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"],
-			"shortDesc": "callback"
+			"pTypes": ["num_frc", "num_frc"]
 		}],
 		"retval": "?",
 		"shortDesc": "Set callback for touch down"
@@ -774,11 +731,8 @@
 		"desc": "Define a callback which is called when the user drags te finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"],
-			"shortDesc": "callback"
+			"pTypes": ["num_frc", "num_frc"]
 		}],
 		"retval": "?",
 		"shortDesc": "Set callback for touch move"
@@ -787,11 +741,8 @@
 		"desc": "Define a callback which is called when the user releases the finger the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
-			"desc": "callback function",
-			"name": "callback",
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"],
-			"shortDesc": "callback"
+			"pTypes": ["num_frc", "num_frc"]
 		}],
 		"retval": "?",
 		"shortDesc": "Set callback for touch up"
@@ -808,8 +759,7 @@
 		"name": "SetPixelMode",
 		"pNames": ["usePixels"],
 		"pTypes": ["?"],
-		"retval": "?",
-		"shortDesc": ""
+		"retval": "?"
 	},
 	"_stage": {
 		"desc": "",

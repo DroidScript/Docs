@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const opt = {save:false,pathtypes:false,scopes:[],base:false,lang:"en",names:false};
 const ts = JSON.stringify;
 
@@ -15,13 +17,13 @@ function checkObj(p)
 {
 	curp = p;
 	var o = JSON.parse(fs.readFileSync(p))
-	
+
 	for(var fn in o)
 	{
 		var f = o[fn];
 		curf = f.name; curm = "";
 		handle(f, fn);
-		
+
 		if(!f.subf) continue;
 		for(var mn in f.subf)
 		{
@@ -30,7 +32,7 @@ function checkObj(p)
 			handle(m, mn);
 		}
 	}
-	
+
 	var s = tos(o);
 	if(p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
 	if(opt.save) fs.writeFileSync(p, s);
@@ -52,7 +54,7 @@ function checkType(f, i)
 	const c = v => v ? '\033[1;3'+oc[v]+'m'+v+'\033[0;37m' : v;
 	const sc = a => console.log(curp.replace(".json",''),c(a||''),curf,curm, f.pNames[i]+": "+f.pTypes[i]);
 	//if((f.pNames[i] == "file") && f.pTypes[i] != "str_ptf") sc();
-	
+
 	if(f.pTypes[i].match(/^str_p[art][fd]/)) sc('.');
 	else if( f.pTypes[i].startsWith("str") && f.pNames[i].match(/^(.*[Ff]ile|img([A-Z].*)?|image)$/) ||
 		f.pTypes[i].startsWith("str_pth") && f.pNames[i].match(/(file|img|image|icon)/i))
@@ -149,4 +151,3 @@ for(var pat of process.argv.slice(2))
 }
 
 OnStart();
-
