@@ -1199,8 +1199,13 @@ if(typeof app == "undefined")
 			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
 			if(!p) Throw(Error("invalid pattern " + pat));
 
-			if(p[1] && !conf.langs[patLang = p[1]]) conf.langs[p[1]] = "";
-			if(p[3] && !conf.scopes[patScope = p[3]]) conf.scopes[p[3]] = "";
+			if(p[1] && !conf.langs[patLang = p[1]])
+				throw new Error(`language ${p[1]} not specified in conf.json`);
+			if(p[3] && !conf.scopes[patScope = p[3]])
+				throw new Error(`scope ${p[3]} not specified in conf.json`);
+
+			patLang = p[1];
+			patScope = p[3];
 			patFunc = p[5];
 		}
 	}

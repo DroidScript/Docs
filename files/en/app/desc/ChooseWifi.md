@@ -1,4 +1,4 @@
-ChooseWifi lets the user select a WiFi network in his range.
+ChooseWifi lets the user select a WiFi network in range.
 
 **title1** and **title2** are the titles for the scanning and the selection process. They default to “Scanning” and “Select WiFi”.
 

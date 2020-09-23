@@ -275,7 +275,7 @@
 		"shortDesc": "Called when the user starts touching the control"
 	},
 	"#2039582034": { "name": "SetOnTouchMove",
-		"desc": "Define a callback function which is called when the user drags his finger over the screen.",
+		"desc": "Define a callback function which is called when the user drags a finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [
 			{
@@ -286,7 +286,7 @@
 				"shortDesc": "callback"
 			}
 		],
-		"shortDesc": "Called when the user drags his finger over the screen"
+		"shortDesc": "Called when the user drags a finger over the screen"
 	},
 	"#9861324731": { "name": "SetOnTouchUp",
 		"desc": "Define a callback function which is called when the users finger leaves the screen.",

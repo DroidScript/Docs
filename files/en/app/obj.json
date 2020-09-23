@@ -201,7 +201,7 @@
 		"shortDesc": "Checks if permission was granted"
 	},
 	"ChooseAccount": {
-		"desc": "Opens an Android dialog and allows the user to select one of his registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.\n\nSee Also: @GetAccounts",
+		"desc": "Opens an Android dialog and allows the user to select one of the registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.\n\nSee Also: @GetAccounts",
 		"name": "ChooseAccount",
 		"pNames": ["callback"],
 		"pTypes": [{
