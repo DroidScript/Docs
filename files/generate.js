@@ -20,6 +20,11 @@ function Generate(patFunc, patScope, patLang)
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
 
+	if(patLang && !conf.langs[patLang])
+		Throw(new Error(`language ${patLang} not specified in conf.json`));
+	if(patScope && !conf.scopes[patScope])
+		Throw(new Error(`scope ${patScope} not specified in conf.json`));
+
 	for(var l in conf.langs) if(l.match(patLang) != null) {
 		lang = l;
 
@@ -32,14 +37,10 @@ function Generate(patFunc, patScope, patLang)
 		}
 
 		for(var s in conf.scopes) if(s.match(patScope) != null)
-		try
-		{
-			app.ShowProgressBar(`Generating ${l}.${s}.${patFunc||'*'}`);
-			generateScope(s, patFunc);
-			app.HideProgressBar();
-		} catch(e) {
+		try { generateScope(s, patFunc); }
+		catch(e) {
 			console.error( /*\x1b[31m*/ `while generating ${curScope} ${curDoc||''}: ${curSubf||''}` );
-			throw e;
+			Throw(e);
 		}
 	}
 }
@@ -53,44 +54,46 @@ function generateScope(name, pattern)
 	if(!app.FolderExists(lang)) Throw(Error(`Language '${lang}' doesn't exist.`));
 
 	if(!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
-		Throw(Error(`Scope '${name}' doesn't exist.`));
+		Throw(Error(`Scope '${lang}.${name}' doesn't exist.`));
 
 	if(!app.FolderExists(scopeDir + "samples"))
 		app.MakeFolder(scopeDir + "samples");
 
-		// read categories
-		curDoc = scopeDir + "navs.json";
-		navs = JSON.parse(ReadFile(curDoc, "{}"));
+	// read categories
+	curDoc = scopeDir + "navs.json";
+	navs = JSON.parse(ReadFile(curDoc, "{}"));
 
-		// check file dates for update
-		if(!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
-			return;
+	// check file dates for update
+	if(!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
+		return console.log(`Skipped ${lang}.${name}.${pattern||'*'}`);
 
-		// read scope members
-		curDoc = scopeDir + "obj.json";
-		if(app.FileExists(curDoc))
+	app.ShowProgressBar(`Generating ${lang}.${name}.${pattern||'*'}`);
+
+	// read scope members
+	curDoc = scopeDir + "obj.json";
+	if(app.FileExists(curDoc))
+	{
+		scope = JSON.parse(ReadFile(curDoc, "false"));
+		if(!keys(navs).length) navs = keys(scope);
+		else navs.All = keys(scope);
+
+		// read base functions used in scope
+		curDoc = scopeDir + "base.json";
+		if(base = JSON.parse(ReadFile(curDoc, "false")))
 		{
-			scope = JSON.parse(ReadFile(curDoc, "false"));
-			if(!keys(navs).length) navs = keys(scope);
-			else navs.All = keys(scope);
+			// additionally, read /*#obj*/ marked functions from .js file if exists
+			if(!app.FileExists(scopeDir + curScope + ".js"))
+				base.all = keys(base).map(k => base[k].name || k);
+			else
+				base.all = app.ReadFile(scopeDir + curScope + ".js")
+					.split("/*#obj*/ self.").slice(1)
+					.map(v => v.slice(0, v.indexOf(" ")));
 
-			// read base functions used in scope
-			curDoc = scopeDir + "base.json";
-			if(base = JSON.parse(ReadFile(curDoc, "false")))
-			{
-				// additionally, read /*#obj*/ marked functions from .js file if exists
-				if(!app.FileExists(scopeDir + curScope + ".js"))
-					base.all = keys(base).map(k => base[k].name);
-				else
-					base.all = app.ReadFile(scopeDir + curScope + ".js")
-						.split("/*#obj*/ self.").slice(1)
-						.map(v => v.slice(0, v.indexOf(" ")));
-
-				// additionally, read Obj.prototype functions from utils.js if exists
-				if(curScope == "app" && app.FileExists(scopeDir + "util.js"))
-					base.all.concat(app.ReadFile(scopeDir + "util.js")
-						.split("Obj.prototype.").slice(1)
-						.map(v => v.slice(0, v.indexOf(" "))))
+			// additionally, read Obj.prototype functions from utils.js if exists
+			if(curScope == "app" && app.FileExists(scopeDir + "util.js"))
+				base.all.concat(app.ReadFile(scopeDir + "util.js")
+					.split("Obj.prototype.").slice(1)
+					.map(v => v.slice(0, v.indexOf(" "))))
 		} else base = {all:[]}
 	}
 	else // no json file available
@@ -103,7 +106,7 @@ function generateScope(name, pattern)
 		{
 			n = n.slice(0, n.lastIndexOf("."));
 			navs.push(n.replace(/^\s+/, ""));
-			scope[n] = { desc: `#${n}.md`, name: navs[navs.length - 1] };
+			scope[n] = `#${n}.md`;
 		}
 	}
 
@@ -129,6 +132,7 @@ function generateScope(name, pattern)
 	var v = 1000 * (Date.now() / 864e5 | 0);
 	var vn = Number(app.ReadFile("../docs/version.txt", 0)) % 1000 + 1;
 	app.WriteFile("version.txt", v + vn);
+	app.HideProgressBar();
 }
 
 function generateNavigators(navs, name, pfx)
@@ -222,7 +226,11 @@ function generateDocs(scope)
 // generates one document by function name
 function generateDoc( name )
 {
-	curDoc = `docs${getl()}/${curScope}/${scope[name].name.replace(/\s+/g,'')}.htm`;
+	if(typeof scope[name] == "string")
+		scope[name] = { name: name, desc: scope[name] };
+	else if(!scope[name].name) scope[name].name = name;
+
+	curDoc = `docs${getl()}/${curScope}/${(scope[name].name).replace(/\s+/g,'')}.htm`;
 	resetGlobals();
 
 	var data, funcLine = "", subfuncs = "", desc = scope[name].desc;
@@ -461,13 +469,14 @@ function getDocData( f, useAppPop )
 	for( k = 0; k < mkeys.length; k++ )
 	{
 		var met = f.subf[mkeys[k]], retval = "", type;
-		curSubf = met.name;
+		curSubf = met.name = met.name || mkeys[k];
 
 		// load base func
 		if(typeof(met) == "string" && met.startsWith('#'))
 		{
 			if(!base[met]) Throw(Error("basefunc " + met + " not found!"));
 			met = base[met];
+			if(!met.name) met.name = mkeys[k];
 			// force use of entry name
 			if(mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 			curSubf = met.name;
@@ -613,11 +622,11 @@ function typeDesc( types )
 					case "obj": return s[i] + replaceTypes( type[2], false );
 					default:
 						if(!type[0].endsWith("o"))
-							return Throw(Error("unknown typex " + type[1]));
+							Throw(Error("unknown typex " + type[1]));
 						if(curDoc.endsWith(type[2] + ".htm"))
 							return s[i] + type[2];
 						if(!type[2].startsWith("@") && !scope[type[2]])
-							return Throw(Error("link required for " + type[2]));
+							Throw(Error("link required for " + type[2]));
 						return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
 							type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
 				}
@@ -695,11 +704,11 @@ function toArgPop( name, types, doSwitch )
 				case "obj": return s[i] + replaceTypes( replW(type[2]), true );
 				default:
 					if(!type[0].endsWith("o"))
-						return Throw(Error("unknown typex " + type[1]));
+						Throw(Error("unknown typex " + type[1]));
 					if(curDoc.endsWith(type[2] + ".htm"))
 						return s[i] + type[2];
 					if(!type[2].startsWith("@") && !scope[type[2]])
-						return Throw(Error("link required for " + type[2]));
+						Throw(Error("link required for " + type[2]));
 					return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
 						type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
 			}
@@ -863,7 +872,7 @@ function rplop( s, n )
 		.replace( /§(\d+)§/g, (m, c) => `${String.fromCharCode(c)}` )
 	);
 }
-function Throw(err) { throw err; }
+function Throw(e) { throw e; }
 function Warn(msg) { if(warnEnbl) console.error("Warning: " + msg); }
 function newNaviItem(link, text, add) { return naviItem.replace("%s", link).replace("%s", add || "").replace("%s", text); }
 function newTxtPopup(  id, text, add) { return txtPopup.replace("%s",   id).replace("%s", add || "").replace("%s", text); }
@@ -1040,7 +1049,7 @@ function has(l, v) { return !!l && l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
 function keys(o) { return Object.keys(o); }
 function d(v) { console.log(v); return v; }
-function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope)); }
+function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope, true)); }
 function sortAsc(a, b) {
 	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
 	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
@@ -1075,7 +1084,7 @@ function ReadFile(file, dflt, write)
 
 	// converts a variable to indented string
 	// supports Boolean, Number, String, Array and Object
-function tos(o, intd, m)
+function tos(o, nosort, intd, m)
 {
 	if(intd == undefined) intd = "";
 	if(m == undefined) m = true;
@@ -1089,22 +1098,23 @@ function tos(o, intd, m)
 			var n = o.length < 2 || (typeof o[0] != "object");
 			s += n ? "[" : "[\n";
 			for(var i = 0; i < o.length; i++) {
-				s += tos(o[i], intd + (n ? "" : "\t"), !n);
+				s += tos(o[i], nosort, intd + (n ? "" : "\t"), !n);
 				if(i < o.length - 1) s += n ? ", " : ",\n";
 			}
 			return s + (n ? "" : "\n" + intd) + "]";
 		default:
-			var okeys = keys(o).sort(sortAsc);
+			var okeys = keys(o);
+			if(!nosort) okeys = okeys.sort(sortAsc);
 			switch(okeys.length) {
 	case 0: return "{}";
 				case 1:
 					if(o[okeys[0]] === undefined) return "{}";
-					return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], "", false)} }`;
+					return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], nosort, "", false)} }`;
 				default:
 					s += "{\n";
 					for(var i = 0; i < okeys.length; i++) {
 						if(o[okeys[i]] === undefined) continue;
-						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
+						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], nosort, intd + "\t", false)}`;
 						if(i < okeys.length - 1) s += ",\n";
 					}
 				return s + `\n${intd}}`;
@@ -1127,26 +1137,31 @@ function newestFileDate(p) {
 
 help = `${process.argv.slice(0,2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
--l -lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
-                    	  defaults to 'en'
--v -verbose         	print more debug logs
--c -clean            	regenerate the docs completely
--h -help            	this help
+	-l  --lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
+                         	defaults to 'en'
+	-al --addlang=<LANG-CODE>=<LANG-NAME>
+                         	adds a language to conf.json
+	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
+                         	adds a scope to conf.json
+	-c  --clean            	regenerate the docs completely
+	-n  --nogen           	don't generate
+	-v  --verbose         	print more debug logs
+	-h  --help            	this help
 
 PATTERN:
-generates a scope in each defined language:
-<SCOPE>[.<MEMBER-PATTERN>]
-with specified language:
-<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
+	generates a scope in each defined language:
+	<SCOPE>[.<MEMBER-PATTERN>]
+	with specified language:
+	<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
 
-MEMBER-PATTERN: 		RegExp pattern
+MEMBER-PATTERN:       	RegExp pattern
 
 EXAMPLES:
-generate.js		generate all defined languages (in generate.js)
-generate.js en	generate all english docs
-generate.js en.app  generate english docs of scope 'app'
-generate.js app	generate docs of scope 'app' in all defined languages
-generate.js app.^C  generate all docs starting with 'C'`;
+	generate.js	      	generate all defined languages (in generate.js)
+	generate.js en    	generate all english docs
+	generate.js en.app	generate english docs of scope 'app'
+	generate.js app   	generate docs of scope 'app' in all defined languages
+	generate.js app.^C	generate all docs starting with 'C'`;
 
 if(typeof app == "undefined")
 {
@@ -1179,6 +1194,8 @@ if(typeof app == "undefined")
 	}
 
 	var patLang = "", patScope = "", patFunc = "";
+	var addcfg = {add:false, langs:{}, scopes:{}};
+	var nogen = false;
 
 	for(var pat of process.argv.slice(2))
 	{
@@ -1187,11 +1204,22 @@ if(typeof app == "undefined")
 			pat = pat.split("=");
 			switch(pat[0])
 			{
-				case "-l": case "-lang": lang = pat[1]; break;
-				case "-v": case "-verbose": dbg = true; break;
-				case "-c": case "-clean": clean = true; break;
-				case "-h": case "-help": app.Alert(help); return;
-				default: Throw(Error("Unknown option " + pat[0]))
+				case "-l": case "--lang": lang = pat[1]; break;
+				case "-n": case "--nogen": nogen = true; break;
+				case "-v": case "--verbose": dbg = true; break;
+				case "-c": case "--clean": clean = true; break;
+				case "-h": case "--help": app.Alert(help); return;
+				case "-al": case "--addlang":
+					if(pat.length < 3) Throw(Error("missing option args. expected 2"));
+					addcfg.add = true;
+					addcfg.langs[pat[1]] = pat[2];
+				break;
+				case "-as": case "--addscope":
+					if(pat.length < 3) Throw(Error("missing option args. expected 2"));
+					addcfg.add = true;
+					addcfg.scopes[pat[1]] = pat[2];
+				break;
+				default: Throw(Error("Unknown option " + pat[0]));
 			}
 		}
 		else
@@ -1199,16 +1227,22 @@ if(typeof app == "undefined")
 			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
 			if(!p) Throw(Error("invalid pattern " + pat));
 
-			if(p[1] && !conf.langs[patLang = p[1]])
-				throw new Error(`language ${p[1]} not specified in conf.json`);
-			if(p[3] && !conf.scopes[patScope = p[3]])
-				throw new Error(`scope ${p[3]} not specified in conf.json`);
-
 			patLang = p[1];
 			patScope = p[3];
 			patFunc = p[5];
 		}
 	}
 
-	Generate(patFunc, patScope, patLang);
+	if(addcfg.add)
+	{
+		var conf = JSON.parse(app.ReadFile("conf.json", false, false));
+		if(!conf) Throw(Error("conf.json not readable."));
+
+		Object.assign(conf.langs, addcfg.langs);
+		Object.assign(conf.scopes, addcfg.scopes);
+
+		app.WriteFile("conf.json", tos(conf, true));
+	}
+
+	if(!nogen) Generate(patFunc, patScope, patLang);
 }

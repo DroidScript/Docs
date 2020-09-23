@@ -1,13 +1,16 @@
-var fs = require("fs")
-var curp='',curf='',curm='';
-var ts = JSON.stringify;
+const opt = {save:false,pathtypes:false,scopes:[],base:false,lang:"en",names:false};
+const ts = JSON.stringify;
 
-for(var s of "app,gfx,MUI".split(","))
+function OnStart()
 {
-	checkObj("en/"+s+"/obj.json");
-	checkObj("en/"+s+"/base.json");
+	for(var s of opt.scopes)
+	{
+		checkObj(opt.lang+"/"+s+"/obj.json");
+		if(opt.base) checkObj(opt.lang+"/"+s+"/base.json");
+	}
 }
 
+var curp='',curf='',curm='';
 function checkObj(p)
 {
 	curp = p;
@@ -17,21 +20,27 @@ function checkObj(p)
 	{
 		var f = o[fn];
 		curf = f.name; curm = "";
-		for(var i in f.pTypes || []) checkType(f, i);
-
+		handle(f, fn);
 		
 		if(!f.subf) continue;
 		for(var mn in f.subf)
 		{
 			var m = f.subf[mn];
 			curm = m.name;
-			for(var i in m.pTypes || []) checkType(m, i);
+			handle(m, mn);
 		}
 	}
 	
-	// var s = tos(o);
-	// if(p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
-	// fs.writeFileSync(p, s);
+	var s = tos(o);
+	if(p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
+	if(opt.save) fs.writeFileSync(p, s);
+	else console.log(s);
+}
+
+function handle(f, name)
+{
+	if(opt.pathtypes) for(var i in f.pTypes || []) checkType(f, i);
+	if(opt.names) if(f.name == name) delete f.name;
 }
 
 function checkType(f, i)
@@ -116,4 +125,28 @@ function tos(o, intd, m)
 	return s;
 }
 
+///////////////// arg parsing /////////////////////
+
+const fs = require("fs")
+for(var pat of process.argv.slice(2))
+{
+	if(pat.startsWith("-"))
+	{
+		pat = pat.split("=");
+		switch(pat[0])
+		{
+			case "-l": case "--lang": opt.lang = pat[1]; break;
+			//case "-v": case "-verbose": dbg = true; break;
+			case "-h": case "--help": return;
+			case "-b": case "--base": opt.base = true; break;
+			case "-s": case "--save": opt.save = true; break;
+			case "-pt": case "--pathtypes": opt.pathtypes = true; break;
+			case "-nm": case "--names": opt.names = true; break;
+			default: Throw(Error("Unknown option " + pat[0]))
+		}
+	}
+	else opt.scopes.push(pat);
+}
+
+OnStart();
 
