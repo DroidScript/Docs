@@ -20,7 +20,7 @@ function Generate(patFunc, patScope, patLang)
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
 
-	for(var l in conf.langs)  if(l.match(patLang) != null) {
+	for(var l in conf.langs) if(l.match(patLang) != null) {
 		lang = l;
 
 		if(patScope + patFunc == "")

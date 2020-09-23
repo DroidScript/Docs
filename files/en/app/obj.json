@@ -312,7 +312,7 @@
 		"desc": "#CreateAdView.md",
 		"name": "CreateAdView",
 		"pNames": ["unitId", "testId", "width", "height", "options"],
-		"pTypes": ["str","str", "num_frc", "num_frc", "str"],
+		"pTypes": ["str", "str", "num_frc", "num_frc", "str"],
 		"retval": "dso-AdView",
 		"shortDesc": "Returns an AdView object",
 		"subf": {
@@ -619,13 +619,11 @@
 				"desc": "Define a callback function which is called when the button has been long pressed.",
 				"name": "SetOnLongTouch",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"name": "callback",
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"name": "callback",
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when the button was long pressed"
 			},
 			"SetPadding": "#1923105617",
@@ -3467,7 +3465,7 @@
 				"retval": "str-Notification",
 				"shortDesc": "Returns the control class name"
 			},
-			"Listen":{
+			"Listen": {
 				"desc": "Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.",
 				"name": "Listen",
 				"pNames": ["options"],
@@ -3507,12 +3505,12 @@
 				"name": "SetOnNotify",
 				"pNames": ["callback"],
 				"pTypes": [{
-						"desc": "Callback function",
-						"name": "callback",
-						"pNames": ["source", "title", "message", "extra", "type"],
-						"pTypes": ["str", "str", "str", "str", "str-Normal|?"],
-						"shortDesc": "callback"
-					}],
+					"desc": "Callback function",
+					"name": "callback",
+					"pNames": ["source", "title", "message", "extra", "type"],
+					"pTypes": ["str", "str", "str", "str", "str-Normal|?"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when notification intercepted"
 			},
 			"SetSmallImage": {
@@ -4662,15 +4660,13 @@
 				"desc": "Called when the spinner value has been changed by the user.",
 				"name": "SetOnChange",
 				"pNames": ["callback"],
-				"pTypes": [
-					{
-						"desc": "Callback",
-						"name": "callback",
-						"pNames": ["item", "index"],
-						"pTypes": ["str", "num_int"],
-						"shortDesc": "callback"
-					}
-				],
+				"pTypes": [{
+					"desc": "Callback",
+					"name": "callback",
+					"pNames": ["item", "index"],
+					"pTypes": ["str", "num_int"],
+					"shortDesc": "callback"
+				}],
 				"shortDesc": "Called when value changed by the user"
 			},
 			"SetOnTouch": {
@@ -8266,13 +8262,16 @@
 		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\\_actions.txt)\n\n\nSee also: @Broadcast",
 		"name": "SetOnBroadcast",
 		"pNames": ["callback", "action"],
-		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
-			"pNames": ["type", "msg"],
-			"pTypes": ["str", "str"],
-			"shortDesc": "callback"
-		}, "str"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["type", "msg"],
+				"pTypes": ["str", "str"],
+				"shortDesc": "callback"
+			},
+			"str"
+		],
 		"shortDesc": "Called on incoming Broadcasts"
 	},
 	"SetOnDebug": {
@@ -8728,13 +8727,16 @@
 		"desc": "Scans the surroundings for any available Wifi networks.",
 		"name": "WifiScan",
 		"pNames": ["callback", "options"],
-		"pTypes": [{
-			"desc": "Callback",
-			"name": "callback",
-			"pNames": ["ssids"],
-			"pTypes": ["str_pip||lst"],
-			"shortDesc": "callback"
-		}, "str-detail"],
+		"pTypes": [
+			{
+				"desc": "Callback",
+				"name": "callback",
+				"pNames": ["ssids"],
+				"pTypes": ["str_pip||lst"],
+				"shortDesc": "callback"
+			},
+			"str-detail"
+		],
 		"shortDesc": "Scan for any available Wifi networks"
 	},
 	"WriteFile": {
