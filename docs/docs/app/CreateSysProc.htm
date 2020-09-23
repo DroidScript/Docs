@@ -47,7 +47,7 @@
 		sys = app.CreateSysProc(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">cmd</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">env</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">dir</a>,
+			<a href="#pop_str_ptd" data-transition="pop" data-rel="popup">dir</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>app object:</b> SysProc
 		</div>
@@ -174,7 +174,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">ReadFileAsByte</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>bytes</i>
 		</div>
 		<div class="samp">
@@ -187,7 +187,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">WriteToFile</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a> )
 		</div>
 
@@ -195,7 +195,8 @@
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_ptd" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>program name:</i> <docstr>“sh”</docstr> or <docstr>“su”</docstr> or <docstr>“busybox”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('combines stdout and stderr')">combine</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('force use of proc builder')">builder</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('dont wait for input')">nowait</a>”</docstr></div>

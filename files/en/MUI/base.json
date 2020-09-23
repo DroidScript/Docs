@@ -146,7 +146,7 @@
 	"#0197498372": { "name": "SetFontFile",
 		"desc": "Change the font style by defining a font file.",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"shortDesc": "Change the used font"
 	},
 	"#1162431318": { "name": "SetBackAlpha",
@@ -176,7 +176,7 @@
 	"#1239127541": { "name": "SetBackground",
 		"desc": "Changes the background to an image which can be repeated using the **repeat** option.\nAn image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!",
 		"pNames": ["file", "options"],
-		"pTypes": ["str_pth", "str-repeat"],
+		"pTypes": ["str_ptf", "str-repeat"],
 		"shortDesc": "Change the background to an image"
 	},
 	"#1096996086": { "name": "SetColorFilter",

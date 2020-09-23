@@ -158,7 +158,7 @@
 		"desc": "Creates a background",
 		"name": "CreateBackground",
 		"pNames": ["file", "options"],
-		"pTypes": ["str", "str_com-stretch"],
+		"pTypes": ["str_ptf", "str_com-stretch"],
 		"retval": "gvo-Background",
 		"shortDesc": "Returns a new background",
 		"subf": {
@@ -316,7 +316,7 @@
 		"desc": "Creates a sound object which can play audio files.",
 		"name": "CreateSound",
 		"pNames": ["file"],
-		"pTypes": ["str"],
+		"pTypes": ["str_ptf"],
 		"retval": "gvo-Sound",
 		"shortDesc": "Returns a new sound object",
 		"subf": {
@@ -353,7 +353,7 @@
 		"desc": "#CreateSprite.md",
 		"name": "CreateSprite",
 		"pNames": ["file", "group", "callback"],
-		"pTypes": ["str", "str", {
+		"pTypes": ["str_ptf", "str", {
 			"desc": "callback function",
 			"name": "callback",
 			"shortDesc": "callback"
@@ -539,7 +539,7 @@
 		"desc": "Creates a SpriteSheet for an animation for instance.\n\nSee Also: @CreateSprite",
 		"name": "CreateSpriteSheet",
 		"pNames": ["file", "callback"],
-		"pTypes": ["str", {
+		"pTypes": ["str_ptf", {
 			"desc": "callback function",
 			"name": "callback",
 			"shortDesc": "callback"
@@ -576,7 +576,7 @@
 		"desc": "Creates a text label which is used to display texts in your game.",
 		"name": "CreateText",
 		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
-		"pTypes": ["str", "num", "str", "str-left|center|right", {
+		"pTypes": ["str", "num", "str_ptf", "str-left|center|right", {
 			"desc": "callback function",
 			"name": "callback",
 			"shortDesc": "callback"

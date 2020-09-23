@@ -505,7 +505,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -581,7 +581,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -657,7 +657,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -733,7 +733,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -809,7 +809,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -885,7 +885,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -964,7 +964,7 @@
 				"desc": "SetStyle",
 				"name": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["?", "?", "num", "?", "num", "num"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
 				"shortDesc": "SetStyle"
 			},
 			"SetText": "#8207502354",
@@ -981,7 +981,7 @@
 		"desc": "A material implementation of a card. It is fully customizable to suit your likings.",
 		"name": "CreateCard",
 		"pNames": ["options"],
-		"pTypes": ["obj-{title:str, body:str, image:str_pth, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
+		"pTypes": ["obj-{title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
 		"retval": "obj",
 		"shortDesc": "CreateCard",
 		"subf": {
@@ -1503,7 +1503,7 @@
 				"desc": "AddItem",
 				"name": "AddItem",
 				"pNames": ["title", "body", "image"],
-				"pTypes": ["str", "str", "?"],
+				"pTypes": ["str", "str", "str_ptf"],
 				"shortDesc": "AddItem"
 			},
 			"AdjustColor": "#1794786072",
@@ -1562,7 +1562,7 @@
 				"desc": "InsertItem",
 				"name": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
-				"pTypes": ["num", "str", "str", "?"],
+				"pTypes": ["num", "str", "str", "str_ptf"],
 				"shortDesc": "InsertItem"
 			},
 			"IsEnabled": "#1744802827",
@@ -1606,14 +1606,14 @@
 				"desc": "SelectItem",
 				"name": "SelectItem",
 				"pNames": ["title", "body", "scroll"],
-				"pTypes": ["str", "str", "?"],
+				"pTypes": ["str", "str", "bin"],
 				"shortDesc": "SelectItem"
 			},
 			"SelectItemByIndex": {
 				"desc": "SelectItemByIndex",
 				"name": "SelectItemByIndex",
 				"pNames": ["index", "scroll"],
-				"pTypes": ["num", "?"],
+				"pTypes": ["num", "bin"],
 				"shortDesc": "SelectItemByIndex"
 			},
 			"SetBackAlpha": "#1162431318",
@@ -1714,14 +1714,14 @@
 				"desc": "SetTextColor1",
 				"name": "SetTextColor1",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
+				"pTypes": ["str_col"],
 				"shortDesc": "SetTextColor1"
 			},
 			"SetTextColor2": {
 				"desc": "SetTextColor2",
 				"name": "SetTextColor2",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
+				"pTypes": ["str_col"],
 				"shortDesc": "SetTextColor2"
 			},
 			"SetTextMargins": {
@@ -1968,7 +1968,7 @@
 				"desc": "Set a new image to a respective item in the list",
 				"name": "SetImage",
 				"pNames": ["newImagePath", "index"],
-				"pTypes": ["str_pth-Path to the new image", "num_int"],
+				"pTypes": ["str_ptf-Path to the new image", "num_int"],
 				"shortDesc": "SetImage"
 			},
 			"SetItem": {
@@ -2310,7 +2310,7 @@
 				"desc": "InsertItem",
 				"name": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
-				"pTypes": ["num", "str", "str", "?"],
+				"pTypes": ["num", "str", "str", "str_ptf"],
 				"shortDesc": "InsertItem"
 			},
 			"IsEnabled": "#1744802827",

@@ -12,7 +12,7 @@ function checkObj(p)
 {
 	curp = p;
 	var o = JSON.parse(fs.readFileSync(p))
-	if(false)
+	
 	for(var fn in o)
 	{
 		var f = o[fn];
@@ -29,24 +29,31 @@ function checkObj(p)
 		}
 	}
 	
-	var s = tos(o);
-	if(p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
-	fs.writeFileSync(p, s);
+	// var s = tos(o);
+	// if(p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
+	// fs.writeFileSync(p, s);
 }
 
 function checkType(f, i)
 {
-	if(typeof f.pNames[i] != "string" || typeof f.pTypes[i] != "string" || !f.pTypes[i].match(/^(str_pth|str)(-|$)/)) return;
-	//if((f.pNames[i] == "file") && f.pTypes[i] != "str_ptf")
-	//	console.log(curp,curf,curm,i, ts(f.pNames), ts(f.pTypes));
+	if(typeof f.pNames[i] != "string" || typeof f.pTypes[i] != "string" )//|| !f.pTypes[i].match(/^(str_pth|str)(-|$)/))
+		return;
+
+	const oc = {'.':3,d:6,f:2,'-':1}
+	const c = v => v ? '\033[1;3'+oc[v]+'m'+v+'\033[0;37m' : v;
+	const sc = a => console.log(curp.replace(".json",''),c(a||''),curf,curm, f.pNames[i]+": "+f.pTypes[i]);
+	//if((f.pNames[i] == "file") && f.pTypes[i] != "str_ptf") sc();
 	
-	if( f.pNames[i].match(/^(.*[Ff]ile|img([A-Z].*)?|image)$/) ||
-		f.pTypes[i].startsWith("str_pth") && f.pNames[i].match(/(file|img|image|icon)/i));
-	//	f.pTypes[i] = f.pTypes[i].replace(/^(str_pth|str)(-|$)/, "str_ptf$2");
-	else if(f.pNames[i].match(/^(.*[Ff]older|dir(ectory)?)$/));
-	//	f.pTypes[i] = f.pTypes[i].replace(/^(str_pth|str)(-|$)/, "str_ptd$2");
+	if(f.pTypes[i].match(/^str_p[art][fd]/)) sc('.');
+	else if( f.pTypes[i].startsWith("str") && f.pNames[i].match(/^(.*[Ff]ile|img([A-Z].*)?|image)$/) ||
+		f.pTypes[i].startsWith("str_pth") && f.pNames[i].match(/(file|img|image|icon)/i))
+		// f.pTypes[i] = f.pTypes[i].replace(/^(str_pth|str)(-|$)/, "str_ptf$2");
+		sc('f');
+	else if(f.pTypes[i].startsWith("str") && f.pNames[i].match(/^(.*[Ff]older|dir(ectory)?)$/))
+		// f.pTypes[i] = f.pTypes[i].replace(/^(str_pth|str)(-|$)/, "str_ptd$2");
+		 sc('d');
 	else if(!f.pNames[i].match(/(file|fold|dir|im(g|age))/i));
-	else console.log(f.pNames[i] + ": " + f.pTypes[i]);
+	else sc('-');
 }
 
 

@@ -50,7 +50,7 @@
 		"desc": "Creates and adds a Image to a Layout.\nSee @CreateImage for full documentation.",
 		"name": "AddImage",
 		"pNames": ["layout", "file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["dso-CreateLayout", "str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+		"pTypes": ["dso-CreateLayout", "str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-Image",
 		"shortDesc": "Create and add Image to Layout."
 	},
@@ -276,14 +276,14 @@
 		"desc": "ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SetData, \n\nSee Also: @GetData",
 		"name": "ClearData",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"shortDesc": "Deletes app.Save*() storage"
 	},
 	"ClearValue": {
 		"desc": "ClearValue deletes a variable saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SaveText, @SaveNumber, @SaveBoolean",
 		"name": "ClearValue",
 		"pNames": ["name", "file"],
-		"pTypes": ["string", "str_pth"],
+		"pTypes": ["string", "str_ptf"],
 		"shortDesc": "Deletes a variable saved via app.Save*()"
 	},
 	"CloseDrawer": {
@@ -382,7 +382,7 @@
 				"desc": "Define the file where the recorder should record to.",
 				"name": "SetFile",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Define the recording file"
 			},
 			"SetFrequency": {
@@ -660,8 +660,8 @@
 			"AutoCapture": {
 				"desc": "Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
 				"name": "AutoCapture",
-				"pNames": ["path", "file", "maxCount"],
-				"pTypes": ["str_pth", "str-File_n#_motion", "num_int"],
+				"pNames": ["path", "fileName", "maxCount"],
+				"pTypes": ["str_ptd", "str-File_n#_motion", "num_int"],
 				"shortDesc": "Takes a picture if a motion was detected"
 			},
 			"ClearFocus": "#1362225380",
@@ -774,7 +774,7 @@
 				"desc": "Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().",
 				"name": "Record",
 				"pNames": ["file", "seconds"],
-				"pTypes": ["str_pth", "num_sec"],
+				"pTypes": ["str_ptf", "num_sec"],
 				"shortDesc": "Start recording video"
 			},
 			"ReportColors": {
@@ -939,7 +939,7 @@
 				"desc": "Takes a picture of the current view and saves it to a file.",
 				"name": "TakePicture",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Save the current camera view to a file"
 			},
 			"Tween": "#2114624769"
@@ -1046,7 +1046,7 @@
 				"desc": "Deletes a file in the cloud.",
 				"name": "Delete",
 				"pNames": ["file", "callback"],
-				"pTypes": ["str_pth", {
+				"pTypes": ["str_ptf", {
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["success", "result", "status"],
@@ -1072,7 +1072,7 @@
 				"desc": "Loads data from the cloud.",
 				"name": "Load",
 				"pNames": ["file", "callback", "options"],
-				"pTypes": ["str_pth", "str", {
+				"pTypes": ["str_ptf", "str", {
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["error", "result", "status"],
@@ -1085,7 +1085,7 @@
 				"desc": "Merges an object with an already existing in the cloud.",
 				"name": "Merge",
 				"pNames": ["file", "data", "callback"],
-				"pTypes": ["str_pth", "obj", {
+				"pTypes": ["str_ptf", "obj", {
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["success", "result", "status"],
@@ -1099,7 +1099,7 @@
 				"desc": "Saves data in the cloud.",
 				"name": "Save",
 				"pNames": ["file", "data", "callback", "options"],
-				"pTypes": ["str_pth", "all", {
+				"pTypes": ["str_ptf", "all", {
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["success", "result", "status"],
@@ -1655,7 +1655,7 @@
 				"desc": "Start receiving emails from a given folder.",
 				"name": "Receive",
 				"pNames": ["folder", "maxCount", "filter"],
-				"pTypes": ["str_pth", "num_int", "str"],
+				"pTypes": ["str", "num_int", "str"],
 				"shortDesc": "Start receiving emails"
 			},
 			"Send": {
@@ -1712,7 +1712,7 @@
 		"desc": "Returns a File object.",
 		"name": "CreateFile",
 		"pNames": ["file", "mode"],
-		"pTypes": ["str_pth", "str-r|w|rw"],
+		"pTypes": ["str_ptf", "str-r|w|rw"],
 		"retval": "dso-File",
 		"shortDesc": "Returns a new File object",
 		"subf": {
@@ -1823,7 +1823,7 @@
 		"desc": "#CreateGame.md",
 		"name": "CreateGame",
 		"pNames": ["file", "orient"],
-		"pTypes": ["str_pth", "str-Portrait|Landscape"],
+		"pTypes": ["str_ptf", "str-Portrait|Landscape"],
 		"shortDesc": "CreateGame",
 		"subf": {
 			"game": {
@@ -1931,7 +1931,7 @@
 				"desc": "Create a sprite object which can be drawn on the GLView",
 				"name": "CreateImage",
 				"pNames": ["file", "callback"],
-				"pTypes": ["str_pth", {
+				"pTypes": ["str_ptf", {
 					"desc": "Callback",
 					"name": "callback",
 					"retval": "",
@@ -1984,7 +1984,7 @@
 				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
 				"name": "ctx.capture",
 				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
-				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:“/sdcard_relative”", "fnc", "fnc"],
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:path relative to “/sdcard”", "fnc", "fnc"],
 				"retval": "",
 				"shortDesc": "Captures the canvas to a png image"
 			},
@@ -2022,7 +2022,7 @@
 				"desc": "",
 				"name": "ctx.loadTexture",
 				"pNames": ["image", "successCallback", "errorCallback"],
-				"pTypes": ["str_pth", {
+				"pTypes": ["str_ptf", {
 					"desc": "callback function",
 					"name": "callback",
 					"pNames": ["metrics"],
@@ -2105,7 +2105,7 @@
 				"desc": "",
 				"name": "ctx.unloadTexture",
 				"pNames": ["image"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"retval": "",
 				"shortDesc": ""
 			},
@@ -2173,7 +2173,7 @@
 		"desc": "#CreateImage.md",
 		"name": "CreateImage",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+		"pTypes": ["str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-Image",
 		"shortDesc": "Returns a new Image object",
 		"subf": {
@@ -2342,7 +2342,7 @@
 				"desc": "Saves the image to a file on the local filesystem.",
 				"name": "Save",
 				"pNames": ["fileName", "quality"],
-				"pTypes": ["str_pth", "num_prc-for jpg files"],
+				"pTypes": ["str_ptf", "num_prc-for jpg files"],
 				"shortDesc": "Saves the image to a file"
 			},
 			"Scale": {
@@ -2660,7 +2660,7 @@
 				"desc": "Adds an entry to the list.",
 				"name": "AddItem",
 				"pNames": ["title", "body", "image"],
-				"pTypes": ["str", "str", "str_pth"],
+				"pTypes": ["str", "str", "str||str_ptf"],
 				"shortDesc": "Adds an entry to the list."
 			},
 			"AdjustColor": "#1794786072",
@@ -2719,7 +2719,7 @@
 				"desc": "Inserts an item at s specific index in the list.",
 				"name": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
-				"pTypes": ["num_int", "str", "str", "str_pth"],
+				"pTypes": ["num_int", "str", "str", "str||str_ptf"],
 				"shortDesc": "Inserts an item into the list"
 			},
 			"IsEnabled": "#1744802827",
@@ -2842,14 +2842,14 @@
 				"desc": "Change the content of an element with a specific title.",
 				"name": "SetItem",
 				"pNames": ["title", "newTitle", "newBody", "newImage"],
-				"pTypes": ["str", "str", "str", "str_pth"],
+				"pTypes": ["str", "str", "str", "str_ptf"],
 				"shortDesc": "Change the content of an element by its title"
 			},
 			"SetItemByIndex": {
 				"desc": "Change the content of an element on a specific index.",
 				"name": "SetItemByIndex",
 				"pNames": ["index", "newTitle", "newBody", "newImage"],
-				"pTypes": ["num_int", "str", "str", "str_pth"],
+				"pTypes": ["num_int", "str", "str", "str_ptf"],
 				"shortDesc": "Change the content of an element by its index"
 			},
 			"SetList": {
@@ -3100,7 +3100,7 @@
 				"desc": "Load a sound file to the media player.",
 				"name": "SetFile",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Load a sound file to the player"
 			},
 			"SetLooping": {
@@ -3285,7 +3285,7 @@
 				"desc": "Downloads a file via TCP from the server.",
 				"name": "DownloadFile",
 				"pNames": ["file"],
-				"pTypes": ["str-url"],
+				"pTypes": ["str_url"],
 				"shortDesc": "Downloads a file via TCP from the server"
 			},
 			"GetBroadcastAddress": {
@@ -3483,7 +3483,7 @@
 				"desc": "Set an image which will be displayed bigger than usual.",
 				"name": "SetLargeImage",
 				"pNames": ["image"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Set a large image in the notification"
 			},
 			"SetLights": {
@@ -3517,7 +3517,7 @@
 				"desc": "Set a small image in your notification.",
 				"name": "SetSmallImage",
 				"pNames": ["image"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Set a small image icon"
 			}
 		}
@@ -3653,7 +3653,7 @@
 				"desc": "Play a sound file for a given amount of times.",
 				"name": "PlaySoundFile",
 				"pNames": ["file", "repeat"],
-				"pTypes": ["str_pth", "num_int"],
+				"pTypes": ["str_ptf", "num_int"],
 				"shortDesc": "Play a sound file"
 			},
 			"ReadColorSensor": {
@@ -4243,7 +4243,7 @@
 				"desc": "Run service in foreground.",
 				"name": "SetInForeground",
 				"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-				"pTypes": ["str", "str", "str_pth", "str_pth", "str-none|min|low|high"],
+				"pTypes": ["str", "str", "str_ptf", "str_ptf", "str-none|min|low|high"],
 				"shortDesc": "Run service in foreground"
 			},
 			"SetOnMessage": {
@@ -4270,7 +4270,7 @@
 		"desc": "This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.\nNote: since Android 9 this method prompts a system dialog",
 		"name": "CreateShortcut",
 		"pNames": ["name", "iconFile", "file", "options"],
-		"pTypes": ["str", "str_pth", "str_pth", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
+		"pTypes": ["str", "str_ptf", "str_ptf", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
 		"shortDesc": "Creates a Home-Screen shortcut to an app"
 	},
 	"CreateSmartWatch": {
@@ -4293,7 +4293,7 @@
 				"desc": "Creates a SmartWatch Image. See also: @CreateImage",
 				"name": "CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
-				"pTypes": ["str_pth", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+				"pTypes": ["str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 				"retval": "swo-Image",
 				"shortDesc": "Returns a new SmartWatch Image"
 			},
@@ -4338,7 +4338,7 @@
 				"desc": "Set the SmartWatch menu fields",
 				"name": "SetMenu",
 				"pNames": ["list", "iconPath"],
-				"pTypes": ["str_com", "str_pth"],
+				"pTypes": ["str_com", "str_ptf"],
 				"shortDesc": "Set SmartWatch menu."
 			},
 			"SetOnBack": {
@@ -5024,7 +5024,7 @@
 		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.",
 		"name": "CreateSysProc",
 		"pNames": ["cmd", "env", "dir", "options"],
-		"pTypes": ["str:program name-sh|su|busybox", "str", "str_pth", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
+		"pTypes": ["str:program name-sh|su|busybox", "str", "str_ptd", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "dso-SysProc",
 		"shortDesc": "Returns a new SysProc object",
 		"subf": {
@@ -5060,7 +5060,7 @@
 				"desc": "Returns the first byte of a file.",
 				"name": "ReadFileAsByte",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"retval": "num_byt",
 				"shortDesc": "Read first byte of a file"
 			},
@@ -5094,7 +5094,7 @@
 				"desc": "Write a binary string to a file.",
 				"name": "WriteToFile",
 				"pNames": ["file", "data"],
-				"pTypes": ["str_pth", "str"],
+				"pTypes": ["str_ptf", "str"],
 				"shortDesc": "Write binary data to file"
 			}
 		}
@@ -6004,7 +6004,7 @@
 				"desc": "Set the video file path or url",
 				"name": "SetFile",
 				"pNames": ["file"],
-				"pTypes": ["str_pth||str_url-http://url|https://url"],
+				"pTypes": ["str_pth||str_url-http(s)://url"],
 				"shortDesc": "Set video source"
 			},
 			"SetMargins": "#1741900074",
@@ -6060,7 +6060,7 @@
 				"desc": "Set a subtitle file where to retreive the video subtitles from.",
 				"name": "SetSubtitles",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Set a subtitle source"
 			},
 			"SetVisibility": "#1004824195",
@@ -6150,7 +6150,7 @@
 				"desc": "Specifies the root folder of the server.",
 				"name": "SetFolder",
 				"pNames": ["folder"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptd"],
 				"shortDesc": "Set server root folder"
 			},
 			"SetOnReceive": {
@@ -6190,7 +6190,7 @@
 				"desc": "Set a folder where uploaded files are to be placed.",
 				"name": "SetUploadFolder",
 				"pNames": ["folder"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptd"],
 				"shortDesc": "Defile file upload destination"
 			},
 			"Start": {
@@ -6307,7 +6307,7 @@
 				"desc": "Captures the visible area of the web view to a file.",
 				"name": "Capture",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Capture WebView as png"
 			},
 			"ClearFocus": "#1362225380",
@@ -6365,7 +6365,7 @@
 				"desc": "Loads html code to the WebView.",
 				"name": "LoadHtml",
 				"pNames": ["html", "baseFolder", "options"],
-				"pTypes": ["str_htm", "str_pth", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
+				"pTypes": ["str_htm", "str_ptd", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
 				"shortDesc": "Load html to WebView"
 			},
 			"LoadUrl": {
@@ -6617,7 +6617,7 @@
 				"desc": "Adds a file to the zip relative to the zip root.",
 				"name": "AddFile",
 				"pNames": ["name", "file"],
-				"pTypes": ["str:zip path", "str_pth"],
+				"pTypes": ["str:zip path", "str_ptf"],
 				"shortDesc": "Add file to zip"
 			},
 			"AddText": {
@@ -6636,28 +6636,28 @@
 				"desc": "Creates a new zip file.",
 				"name": "Create",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Create zip file"
 			},
 			"CreateDebugKey": {
 				"desc": "Creates a Debuk keystore file",
 				"name": "CreateDebugKey",
 				"pNames": ["file"],
-				"pTypes": ["str_pth-debug.keystore"],
+				"pTypes": ["str_ptf-debug.keystore"],
 				"shortDesc": "Create debug keystore file"
 			},
 			"CreateKey": {
 				"desc": "Creates a user keystore file",
 				"name": "CreateKey",
 				"pNames": ["file", "password", "name", "organization"],
-				"pTypes": ["str_pth-user.keystore", "str", "str", "str"],
+				"pTypes": ["str_ptf-user.keystore", "str", "str", "str"],
 				"shortDesc": "Create a user keystore file"
 			},
 			"Extract": {
 				"desc": "Extract a single file from the zip to a gived destination.",
 				"name": "Extract",
 				"pNames": ["name", "file"],
-				"pTypes": ["str:zip path", "str_pth"],
+				"pTypes": ["str:zip path", "str_ptf"],
 				"shortDesc": "Extract file from zip"
 			},
 			"GetType": {
@@ -6678,14 +6678,14 @@
 				"desc": "Opens an already existing zip file.",
 				"name": "Open",
 				"pNames": ["file"],
-				"pTypes": ["str_pth"],
+				"pTypes": ["str_ptf"],
 				"shortDesc": "Open existing zip"
 			},
 			"Sign": {
 				"desc": "Signs and checks the zip against the keystore file and returns if it is ok.",
 				"name": "Sign",
 				"pNames": ["fileIn", "fileOut", "keyStore", "password"],
-				"pTypes": ["str_pth", "str_pth", "str_pth", "str"],
+				"pTypes": ["str_ptf", "str_ptf", "str_pth", "str"],
 				"retval": "bin",
 				"shortDesc": "Sign and check zip against keystore file"
 			},
@@ -6693,7 +6693,7 @@
 				"desc": "Updates the zip manifest",
 				"name": "UpdateManifest",
 				"pNames": ["fileIn", "fileOut", "packageName", "appName", "permissions", "options"],
-				"pTypes": ["str_pth", "str_pth", "str", "str", "str_com", "str_com-Launch,Debug"],
+				"pTypes": ["str_ptf", "str_ptf", "str", "str", "str_com", "str_com-Launch,Debug"],
 				"shortDesc": "Update zip manifest"
 			}
 		}
@@ -6716,14 +6716,14 @@
 		"desc": "DeleteFile deletes a given file from the filesystem. This makes it hard to restore it!\n\nSee Also: @WriteFile, @RenameFile, @FileExists",
 		"name": "DeleteFile",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"shortDesc": "Deletes a file"
 	},
 	"DeleteFolder": {
 		"desc": "DeleteFolder does the same as DeleteFile but with folders. It recursively removes all files and folders of the given folder and finally deletes it.\n\nSee Also: @MakeFolder, @RenameFolder, @FolderExists",
 		"name": "DeleteFolder",
 		"pNames": ["folder"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptd"],
 		"shortDesc": "Delete a folder"
 	},
 	"DestroyLayout": {
@@ -6782,7 +6782,7 @@
 		"desc": "Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.\n\nSee Also: @Alert",
 		"name": "Error",
 		"pNames": ["message", "line", "file", "quit"],
-		"pTypes": ["str", "num_int", "str_pth", "bin"],
+		"pTypes": ["str", "num_int", "str_ptf", "bin"],
 		"shortDesc": "Show an error message"
 	},
 	"Execute": {
@@ -6803,7 +6803,7 @@
 		"desc": "#ExtExec.md",
 		"name": "ExtExec",
 		"pNames": ["name", "file", "args", "options"],
-		"pTypes": ["str-termux", "str_pth", "str", "str_com-hide"],
+		"pTypes": ["str-termux", "str_ptf", "str", "str_com-hide"],
 		"shortDesc": "Execute a bash script using Termux"
 	},
 	"ExtractAssets": {
@@ -6822,7 +6822,7 @@
 		"desc": "FileExists Checks if a given file exists in your filesystem or not.\n\nSee Also: @WriteFile, @CopyFile, @RenameFile",
 		"name": "FileExists",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"retval": "bin",
 		"shortDesc": "Checks if the file exists"
 	},
@@ -6830,7 +6830,7 @@
 		"desc": "Checks if a given folder exits or not.\n\nSee Also: @MakeFolder, @CopyFolder, @RenameFolder",
 		"name": "FolderExists",
 		"pNames": ["folder"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptd"],
 		"retval": "bin",
 		"shortDesc": "Checks if the folder exists"
 	},
@@ -6997,7 +6997,7 @@
 		"desc": "GetFileDate returns a Date object containing the last modified date of a file or folder.",
 		"name": "GetFileDate",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"retval": "jso-@../javascript/Global_Objects/Date.html",
 		"shortDesc": "Get last modified date of a file or folder"
 	},
@@ -7005,7 +7005,7 @@
 		"desc": "GetFileSize returns the size of a file or folder in bytes",
 		"name": "GetFileSize",
 		"pNames": ["file"],
-		"pTypes": ["str"],
+		"pTypes": ["str_ptf"],
 		"retval": "num_flt",
 		"shortDesc": "Get the size of a file or folder"
 	},
@@ -7105,7 +7105,7 @@
 		"desc": "Returns a string list of metadata values contained in an audio file.\n\nSee Also: @CreateMediaPlayer",
 		"name": "GetMetadata",
 		"pNames": ["file", "keys"],
-		"pTypes": ["str_pth", "str_com-album,artist,genre,title,composer,author,duration,bitrate,width,height"],
+		"pTypes": ["str_ptf", "str_com-album,artist,genre,title,composer,author,duration,bitrate,width,height"],
 		"retval": "str_com",
 		"shortDesc": "GetMetadata"
 	},
@@ -7399,7 +7399,7 @@
 		"desc": "Starts the installation process of an apk file from your local drive.",
 		"name": "InstallApp",
 		"pNames": ["apkFile", "callback", "options"],
-		"pTypes": ["str_pth", {
+		"pTypes": ["str_ptf", {
 			"desc": "callback function",
 			"name": "callback",
 			"pNames": ["packageName", "status"],
@@ -7471,7 +7471,7 @@
 		"desc": "Checks if the passed fs path leads to a folder.\n\nSee Also: @FolderExists, @FileExists",
 		"name": "IsFolder",
 		"pNames": ["folder"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptd"],
 		"retval": "bin",
 		"shortDesc": "Check if path leads to a folder"
 	},
@@ -7597,7 +7597,7 @@
 		"desc": "Load a saved boolean value to remember varibale values between multiple app starts.\n\nSee also: @SaveBoolean.",
 		"name": "LoadBoolean",
 		"pNames": ["name", "default", "file"],
-		"pTypes": ["str", "bin", "str_pth"],
+		"pTypes": ["str", "bin", "str_ptf"],
 		"retval": "bin",
 		"shortDesc": "Load saved boolean value"
 	},
@@ -7605,7 +7605,7 @@
 		"desc": "Load a saved number value to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
 		"name": "LoadNumber",
 		"pNames": ["name", "default", "file"],
-		"pTypes": ["str", "num", "str_pth"],
+		"pTypes": ["str", "num", "str_ptf"],
 		"retval": "num",
 		"shortDesc": "Load saved boolean value"
 	},
@@ -7633,7 +7633,7 @@
 		"desc": "Load saved text value to remember varibale values between multiple app starts.\n\nSee also: @SaveText.",
 		"name": "LoadText",
 		"pNames": ["name", "default", "file"],
-		"pTypes": ["str", "str", "str_pth"],
+		"pTypes": ["str", "str", "str_ptf"],
 		"shortDesc": "Load saved text value"
 	},
 	"Lock": {
@@ -7652,7 +7652,7 @@
 		"desc": "Creates a new folder in the local filesystem recursively.\n\nSee Also: @FolderExists",
 		"name": "MakeFolder",
 		"pNames": ["folder"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptd"],
 		"shortDesc": "Create new folder in the local fs"
 	},
 	"OpenDatabase": {
@@ -7902,7 +7902,7 @@
 		"desc": "Allows the user to open a file with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.\n\nSee also: @SendFile.",
 		"name": "OpenFile",
 		"pNames": ["file", "type", "choose"],
-		"pTypes": ["str_pth", "str_mim", "str"],
+		"pTypes": ["str_ptf", "str_mim", "str"],
 		"shortDesc": "Allow user to open a file with an external app"
 	},
 	"OpenUrl": {
@@ -7934,7 +7934,7 @@
 		"desc": "Plays a sound file stored remotely or on the local filesystem.\n\nSee Also: @CreateMediaPlayer",
 		"name": "PlaySound",
 		"pNames": ["file"],
-		"pTypes": ["str_pth||str_url"],
+		"pTypes": ["str_ptf||str_url"],
 		"shortDesc": "Plays a local or remote sound file"
 	},
 	"PreventScreenLock": {
@@ -7967,14 +7967,14 @@
 		"desc": "Reads a file from the local filesystem and returns its contents.\n\nSee also: @WriteFile",
 		"name": "ReadFile",
 		"pNames": ["file", "encoding"],
-		"pTypes": ["str_pth", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
+		"pTypes": ["str_ptf", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
 		"shortDesc": "Read the content of a local file"
 	},
 	"RedirectAssets": {
 		"desc": "Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.",
 		"name": "RedirectAssets",
 		"pNames": ["dir"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptd"],
 		"shortDesc": "Read assets from given folder"
 	},
 	"RemoveDrawer": {
@@ -8009,14 +8009,14 @@
 		"desc": "Replaces all occurances of some text or a regex pattern in a local file with some other text.",
 		"name": "ReplaceInFile",
 		"pNames": ["file", "txt", "rep", "options"],
-		"pTypes": ["str_pth", "str", "str", "str_com"],
+		"pTypes": ["str_ptf", "str", "str", "str_com"],
 		"shortDesc": "Replace text in a local file"
 	},
 	"SaveBoolean": {
 		"desc": "Save a boolean value to remember varibale values between multiple app starts.\n\nSee also: @LoadBoolean.",
 		"name": "SaveBoolean",
 		"pNames": ["name", "value", "file"],
-		"pTypes": ["str", "bin", "str_pth"],
+		"pTypes": ["str", "bin", "str_ptf"],
 		"shortDesc": "Save a boolean value across multiple starts"
 	},
 	"SaveCookies": {
@@ -8028,49 +8028,49 @@
 		"desc": "Save a number value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
 		"name": "SaveNumber",
 		"pNames": ["name", "value", "file"],
-		"pTypes": ["str", "num", "str_pth"],
+		"pTypes": ["str", "num", "str_ptf"],
 		"shortDesc": "Save a number value across multiple starts"
 	},
 	"SaveText": {
 		"desc": "Save a text value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadText.",
 		"name": "SaveText",
 		"pNames": ["name", "value", "file"],
-		"pTypes": ["str", "str", "str_pth"],
+		"pTypes": ["str", "str", "str_ptf"],
 		"shortDesc": "Save a text value across multiple starts"
 	},
 	"ScanFile": {
 		"desc": "Forces android to scan an image file to appear in the phone's gallery.\n\nSee also: @CreateImage, @CreateCameraView, @ScreenShot.",
 		"name": "ScanFile",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"shortDesc": "Adds media files to phone gallery"
 	},
 	"ScreenShot": {
 		"desc": "Takes a screen shot of your app and saves it to the specified path. Quality is an **option**al percentage value for jpg files defaulting to 95.\n\nSee also: @GetMediaFile",
 		"name": "ScreenShot",
 		"pNames": ["fileName", "quality"],
-		"pTypes": ["str_pth", "num_prc"],
+		"pTypes": ["str_ptf", "num_prc"],
 		"shortDesc": "Take a screen shot of your app"
 	},
 	"Script": {
 		"desc": "Loads a local JavaScript file synchronously to your app to make its functionality available in your app.\n\nSee Also: @LoadScript",
 		"name": "Script",
 		"pNames": ["file"],
-		"pTypes": ["str_pth"],
+		"pTypes": ["str_ptf"],
 		"shortDesc": "Synchronously import an external JavaScript file"
 	},
 	"SendFile": {
 		"desc": "#SendFile.md",
 		"name": "SendFile",
 		"pNames": ["file", "subject", "text", "choose"],
-		"pTypes": ["str_pth", "str", "str", "str"],
+		"pTypes": ["str_pfa", "str", "str", "str"],
 		"shortDesc": "Send a file to a remote target"
 	},
 	"SendImage": {
 		"desc": "#SendImage.md",
 		"name": "SendImage",
 		"pNames": ["file", "choose"],
-		"pTypes": ["str_pth", "str"],
+		"pTypes": ["str_pfa", "str"],
 		"shortDesc": "Send an image to a remote target"
 	},
 	"SendIntent": {
@@ -8199,7 +8199,7 @@
 		"desc": "Set the current service to run in the foreground.\n\nSee Also: @StartSevice, SetInBackground",
 		"name": "SetInForeground",
 		"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-		"pTypes": ["str", "str", "str_pth", "str_pth", "str-min|low|default|high|none"],
+		"pTypes": ["str", "str", "str_ptf", "str_ptf", "str-min|low|default|high|none"],
 		"shortDesc": "Set services to run in the foreground"
 	},
 	"SetJoystickOptions": {
@@ -8234,7 +8234,7 @@
 		"desc": "Set the app menu fields. When a menu entry is touched, the global _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
 		"name": "SetMenu",
 		"pNames": ["list", "iconPath"],
-		"pTypes": ["str_com", "str_pth"],
+		"pTypes": ["str_com", "str_ptf"],
 		"shortDesc": "Set app menu"
 	},
 	"SetMargins": {
@@ -8573,7 +8573,7 @@
 		"desc": "Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.\n\nSee Also: @StopApp",
 		"name": "StartApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_pth", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
+		"pTypes": ["str_ptf", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
 		"shortDesc": "Starts an app in a new window"
 	},
 	"StartDebugServer": {
@@ -8682,7 +8682,7 @@
 		"desc": "Uploads a file to a server.",
 		"name": "UploadFile",
 		"pNames": ["url", "file", "name", "callback"],
-		"pTypes": ["str_url", "str_pth", "str", {
+		"pTypes": ["str_url", "str_ptf", "str", {
 			"desc": "Callback",
 			"name": "callback",
 			"shortDesc": "callback"
@@ -8743,7 +8743,7 @@
 		"desc": "Writes text to a local file.\n\nSee Also: @ReadFile.",
 		"name": "WriteFile",
 		"pNames": ["file", "text", "mode", "encoding"],
-		"pTypes": ["str_pth", "str", "str-Append|ASCII", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1"],
+		"pTypes": ["str_ptf", "str", "str-Append|ASCII", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1"],
 		"shortDesc": "Write text to a local file"
 	},
 	"ZipFile": {

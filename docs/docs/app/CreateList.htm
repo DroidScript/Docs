@@ -258,7 +258,7 @@
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AddItem</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">image</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">AdjustColor</a>(
@@ -367,7 +367,7 @@
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">index</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">image</a> )
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">image</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
@@ -449,7 +449,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
@@ -487,7 +487,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">SetFontFile</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetHiTextColor1</a>(
@@ -515,14 +515,14 @@
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">newTitle</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">newBody</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">newImage</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">newImage</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup">SetItemByIndex</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">index</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">newTitle</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">newBody</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">newImage</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">newImage</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetList</a>(
@@ -664,6 +664,7 @@
 	<div data-role="popup" id="pop_num_005" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..0.99 or 1..256</div>
 	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('bold item titles')">bold</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Expand list to full height inside scrollers')">Expand</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('applies various settings to make the list appear like an in-app menu')">Menu</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('makes title and body text flow horizontally')">Horiz</a>”</docstr>, <docstr>“html”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“monospace”</docstr>, <docstr>“Normal”</docstr>, <docstr>“WhiteGrad”</docstr> or <docstr>“BlackGrad”</docstr> or <docstr>“AlumButton”</docstr> or <docstr>“GreenButton”</docstr> or <docstr>“OrangeButton”</docstr>, <docstr>“NoSound”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
@@ -681,6 +682,7 @@
 	<div data-role="popup" id="pop_str_019" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_01c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
 	<div data-role="popup" id="pop_str_01d" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b><br><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
