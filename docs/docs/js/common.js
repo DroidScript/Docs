@@ -109,6 +109,9 @@ $(document).live( 'pageshow',function(event, ui)
 		//Append popup div in plugin docs if not exists
 		if(!$(".androidPopup").parent().is(":visible"))
 			$(".ui-content").append($(".androidPopup:first").parent().clone());
+
+		$('.onlyinclude a:not(data-ajax)').attr("data-ajax", "false");
+		$("a#extLink").attr("onclick", "return OpenUrl(this.href);");
 	}
 	//catch( e ) {}
 });
