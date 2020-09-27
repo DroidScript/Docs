@@ -9,14 +9,15 @@ function hidecopy()
 
 function copy( div )
 {
+	var txt = div.innerText || div.textContent;
+	txt = txt.replace( /\xa0/g, " " );
 	if( navigator.userAgent.indexOf("Android") > -1 ) //
 	{
-		var txt = div.innerText || div.textContent;
-		app.SetClipboardText( txt.replace( /\xa0/g, " " ) ); //replace nbsp chars
+		app.SetClipboardText( txt ); //replace nbsp chars
 		ShowPopup("Text copied to clipboard");
 	}
 	else
-		copyToClipboard( div.innerText || div.textContent );
+		copyToClipboard( txt );
 }
 
 function demo( div )
