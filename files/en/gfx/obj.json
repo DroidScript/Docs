@@ -27,7 +27,7 @@
 	},
 	"AddPhysics": {
 		"abbrev": "phs",
-		"desc": "Adds the Box2D physics engine to your game. The method list below shows the functions which are added to game objects when using physics.",
+		"desc": "Adds the Box2D physics engine to your game.\n<sample Billiard>\n<sample Collision>\n\n_The method list below shows the __functions which are added to game objects__ when using physics._",
 		"pNames": ["gravity", "accuracy", "sleep"],
 		"pTypes": ["num", "num", "num"],
 		"shortDesc": "Adds physics to the game",
@@ -563,7 +563,7 @@
 		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"],
 		"shortDesc": "Enclose an area with a physics fence."
 	},
-	"GenPixiJson": {
+	"_GenPixiJson": {
 		"desc": "Generate pixi texture atlas from info in a file name.",
 		"pNames": ["path"],
 		"pTypes": ["str_pth"],
