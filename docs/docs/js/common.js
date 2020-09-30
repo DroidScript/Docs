@@ -133,7 +133,7 @@ function OnPageShow()
 				//Get main docs file
 				var plgdir = list[i];
 				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html", null, "RegExp" );
-				if(files.length == null) continue;
+				if(files.length == 0) continue;
 				var url = "plugins/" + plgdir + "/" + files[0];
 				html += "<li><a href=\"" + url + "\">" + files[0].replace(".html", "") + "</a></li>\n";
 			}

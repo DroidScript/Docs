@@ -1,6 +1,23 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
-#### DS 191b2 (23-Jul-2020)
+## DS 2.00
+
+#### DS 1.92b1 (28-Sep-2020)
+- Added latest docs with MUI and GameView updates.
+- Add new 'Store' tab along side standard samples (soon to show DroidStore).
+- Speeded up/improved app launcher page.
+- Added new 'ScratchPad' extension.
+- Added auto-translation to Language extension.
+- Added extension.js to DS internal assets.
+- Added ext.Log() function to extension.js
+- Added missing app.AddTabs() method.
+- Tabs: increased layTop height to 0.06.
+- Tabs: setting tab text widths based on dynamic width if unspecified.
+- Tabs: added "fade" option to Tabs.
+- Tabs: showing new tab first before hiding others to prevent flicker.
+- added \_SetTmpDebug() and \_RestoreDebug() for use in pure JS plugins/Libs.
+
+#### DS 1.91b2 (23-Jul-2020)
 
 - DS now offers to install and run your APK after build
 - Added app.LaunchApp() method, launches apps if installed else tries GPlay.
@@ -10,7 +27,7 @@
 - Fixed scanfile bug in 'Create Shortcut' option.
 - Fixed issue with custom button colors in APKs for holo theme.
 
-#### DS 191b1 (16-Jul-2020)
+#### DS 1.91b1 (16-Jul-2020)
 - Added new MUI.* material controls for premium users!
 - Added MUI controls demo app to docs.
 - Added new 'Class' file/template.
