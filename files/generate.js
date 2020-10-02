@@ -151,6 +151,7 @@ function generateNavigators(navs, name, pfx)
 	{
 		for(var cat of keys(navs).filter(nothidden))
 		{
+			if(!navs[cat]) navs[cat] = curScope + "/" + cat + ".htm";
 			if(typeof navs[cat] == "string")
 			{
 				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
@@ -205,7 +206,7 @@ function generateDocs(scope)
 
 			for(var j of keys(tsubf).filter(nothidden))
 			{
-				if(typeof tsubf[j] == "string" && tsubf[j][0] == '#')
+				if(typeof tsubf[j] == "string" && tsubf[j].startsWith('#'))
 				{
 					if(base && base[tsubf[j]])
 					{
@@ -236,7 +237,7 @@ function generateDoc( name )
 	var data, funcLine = "", subfuncs = "", desc = scope[name].desc;
 
 	// get description from external file
-	if(desc[0] == '#')
+	if(desc.startsWith('#'))
 	{
 		desc = ReadFile(scopeDir + `desc/${desc.slice(1)}`, false);
 		if(!desc) Throw(Error(`description file ${scope[name].desc.slice(1)} linked but doesn't exist.`));
@@ -576,7 +577,12 @@ function toHtmlSamp( code, name, index, options )
 
 function getAddClass(m)
 {
-	if(!m || !m.desc) return '';
+	if(!m || typeof m.desc != "string") return '';
+	if(m.desc.startsWith('#'))
+	{
+		m.desc = ReadFile(scopeDir + `desc/${m.desc.slice(1)}`, false);
+		if(!m.desc) return '';
+	}
 
 	if(has(m.desc, "<deprecated") ) return ' class="deprHint"';
 	if(has(m.desc, "<xfeature")) return ' class="xfeatHint"';

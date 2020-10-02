@@ -1,14 +1,15 @@
 {
 	"All": [],
 	"Premium": {
-		"CreateCodeEdit": "app/CreateCodeEdit.htm",
-		"CreateOverlay": "app/CreateOverlay.htm",
-		"CreateTheme": "app/CreateTheme.htm",
-		"SetKioskMode": "app/SetKioskMode.htm",
-		"SetMockLocation": "app/SetMockLocation.htm",
-		"SetNavBarColor": "app/SetNavBarColor.htm",
-		"SetStatusBarColor": "app/SetStatusBarColor.htm",
-		"SetTheme": "app/SetTheme.htm",
+		"CreateCodeEdit": "",
+		"CreateOverlay": "",
+		"CreateTheme": "",
+		"QueryContent": "",
+		"SetKioskMode": "",
+		"SetMockLocation": "",
+		"SetNavBarColor": "",
+		"SetStatusBarColor": "",
+		"SetTheme": "",
 		"net.ReceiveVideoStream": "app/CreateNetClient.htm?a=ReceiveVideoStream",
 		"net.WakeOnLan": "app/CreateNetClient.htm?a=WakeOnLan",
 		"obj.Method": "app/CreateLayout.htm?a=Method"
