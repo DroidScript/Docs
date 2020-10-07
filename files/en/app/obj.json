@@ -82,11 +82,11 @@
 		"shortDesc": "Create and add Spinner to Layout."
 	},
 	"AddSwitch": {
-		"desc": "Creates and adds a Switch to a Layout.\nSee @CreateToggle for full documentation.",
+		"desc": "Creates and adds a Switch toggle to a Layout.\nSee @CreateSwitch for full documentation.",
 		"pNames": ["layout", "text", "width", "height", "options"],
 		"pTypes": ["dso-CreateLayout", "str", "num_frc", "num_frc", "str_com-Monospace,Custom,NoPad,FillX/Y,NoSound"],
 		"retval": "dso-Switch",
-		"shortDesc": "Create and add Switch to Layout."
+		"shortDesc": "Create and add Switch toggle to Layout."
 	},
 	"AddText": {
 		"desc": "Creates and adds a Text to a Layout.\nSee @CreateText for full documentation.",

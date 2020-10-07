@@ -17,7 +17,7 @@
 		"AddScroller": "Create and add Scroller to Layout",
 		"AddSeekBar": "Create and add SeekBar to Layout",
 		"AddSpinner": "Create and add Spinner to Layout",
-		"AddSwitch": "Create and add Switch to Layout",
+		"AddSwitch": "Create and add Switch toggle to Layout",
 		"AddText": "Create and add Text to Layout",
 		"AddTextEdit": "Create and add TextEdit to Layout",
 		"AddToggle": "Create and add Toggle to Layout",

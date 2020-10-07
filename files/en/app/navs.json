@@ -132,6 +132,7 @@
 		"CreateScroller",
 		"CreateSeekBar",
 		"CreateSpinner",
+		"CreateSwitch",
 		"CreateTabs",
 		"CreateText",
 		"CreateTextEdit",
