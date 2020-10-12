@@ -1,4 +1,4 @@
-Returns a Synth object which ca produces a variety of sounds, sound effects and music.
+Returns a Synth object which can produces a variety of sounds, sound effects and music.
 %c
 
 ### Some descriptions
