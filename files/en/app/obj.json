@@ -5974,7 +5974,7 @@
 		"shortDesc": "Get map of created DroidScript objects"
 	},
 	"GetOptions": {
-		"desc": "Returns all current app objects. If ran from inside DroidScript, “remote” is the default value.\n\nSee Also: @SetOptions",
+		"desc": "Returns all current app settings. If ran from inside DroidScript, “remote” is the default value.\n\nSee Also: @SetOptions",
 		"retval": "str_com-Portrait,Landscape,<i>NoDom</i>,Game,Remote,Transparent",
 		"shortDesc": "Get app options"
 	},
@@ -6832,11 +6832,11 @@
 		"shortDesc": "Changes the dpi value for any control creatred afterwards"
 	},
 	"SetInBackground": {
-		"desc": "Set the current service to run in the background.\n\nSee Also: @StartSevice, @SetInForeground.",
+		"desc": "Set the current service to run in the background.\n\nSee Also: @StartService, @SetInForeground.",
 		"shortDesc": "Set services to run in the background"
 	},
 	"SetInForeground": {
-		"desc": "Set the current service to run in the foreground.\n\nSee Also: @StartSevice, SetInBackground",
+		"desc": "Set the current service to run in the foreground.\n\nSee Also: @StartService, @SetInBackground",
 		"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
 		"pTypes": ["str", "str", "str_ptf", "str_ptf", "str-min|low|default|high|none"],
 		"shortDesc": "Set services to run in the foreground"
