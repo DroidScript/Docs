@@ -135,7 +135,7 @@ function OnPageShow()
 				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html", null, "RegExp" );
 				if(files.length == 0) continue;
 				var url = "plugins/" + plgdir + "/" + files[0];
-				html += "<li><a href=\"" + url + "\">" + files[0].replace(".html", "") + "</a></li>\n";
+				html += "<li><a href=\"" + url + "\">" + files[0].slice(0, -5) + "</a></li>\n";
 			}
 
 			html += "</ul>";
@@ -253,7 +253,7 @@ function getCookie(name, dflt)
 
 function OpenUrl( url, type, choose )
 {
-	if(isDS) app.OpenUrl(url, type, choose );
+	if(isMobileIDE) app.OpenUrl(url, type, choose );
 	else window.open(url);
 	return false;
 }

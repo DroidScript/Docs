@@ -10,7 +10,7 @@ A basic JS plugin consists of 2 parts:
 However you can add as many resources to it as you want.
 
 There is a generator available which can create, debug and install plugins on the fly. you can even debug your plugin directly from that app.
-[Download it from the dspk store](https://dspk.justplayer.de/browse/view/67)
+[Download it from the dspk store](https://ds.justplayer.de/uploads/11)
 
 
 ## Java Plugins
