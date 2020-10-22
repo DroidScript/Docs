@@ -1506,7 +1506,7 @@
 			"WriteText": {
 				"desc": "writes text to file",
 				"pNames": ["data", "type"],
-				"pTypes": ["num_int", "str-UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters"]
+				"pTypes": ["str||lst-[ bytes:num_int ]", "str-UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters"]
 			}
 		}
 	},

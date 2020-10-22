@@ -192,7 +192,7 @@
 	"#1741900074": { "name": "SetMargins",
 		"desc": "Define a distance to other controls on each side of the control.",
 		"pNames": ["left", "top", "right", "bottom", "mode"],
-		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
 		"shortDesc": "Define distances to other controls"
 	},
 	"#2137502353": { "name": "SetOnChange",
@@ -261,7 +261,7 @@
 	"#1923105617": { "name": "SetPadding",
 		"desc": "Define distances that elements within the control are to maintain from the control borders.",
 		"pNames": ["left", "top", "right", "bottom", "mode"],
-		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str-px|sp|dip|mm|pt"],
 		"shortDesc": "Define distances to contained elements"
 	},
 	"#1425862386": { "name": "SetPosition",
@@ -324,7 +324,7 @@
 	"#2114624769": { "name": "Tween",
 		"desc": "Performs an animation on the control.\nThe **target** object is for the position, size and rotation that the control has at the end of the animation.\n\nThe **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.\n\nWith the amount of **repeat**s you can control how many times you want to play the animation.\n\nIf you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.\n\nFinally the **callback** function will be called after the animation has finished. Well, it's about time!",
 		"pNames": ["target", "duration", "type", "repeat", "yoyo", "callback"],
-		"pTypes": ["obj-{ x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }", "num_mls", "str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out", "num_int", "bin", {}],
+		"pTypes": ["obj-{ x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }", "num_mls", "str-Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out", "num_int", "bin", {}],
 		"shortDesc": "Animates the control"
 	}
 }
