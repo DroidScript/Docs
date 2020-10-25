@@ -121,26 +121,41 @@ function OnPageShow()
 {
 	try
 	{
-		//If on device.
-		if( isMobileIDE )
+		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
+		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
+		var link = '<a href="$1">$2</a>';
+
+		var addLink = function(name)
 		{
-			var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">\n";
-			var fldr = "/sdcard/DroidScript/.edit/docs/plugins"; //app.GetPrivateFolder( "Plugins" );
-			var list = app.ListFolder( fldr, null, null, "folders");
+			html += "<li>" + link.replace("$2", name)
+				.replace("$1", "plugins/" + name.toLowerCase() + "/" + name + ".html") +
+				btnRem.replace("$1", name) + "</li>\n";
+		};
 
-			for( var i = 0; i < list.length && list[0] != ""; i++ )
-			{
-				//Get main docs file
-				var plgdir = list[i];
-				var files = app.ListFolder( fldr + "/" + plgdir, "(?i)" + plgdir + "\\.html", null, "RegExp" );
-				if(files.length == 0) continue;
-				var url = "plugins/" + plgdir + "/" + files[0];
-				html += "<li><a href=\"" + url + "\">" + files[0].slice(0, -5) + "</a></li>\n";
-			}
-
+		var finishList = function()
+		{
 			html += "</ul>";
 			$('#divPlugs').html(html);
 			$('#divPlugs').trigger("create");
+		};
+
+		//If on device.
+		if( isMobileIDE )
+		{
+			var fldr = "/sdcard/DroidScript/.edit/docs/plugins";
+			//app.GetPrivateFolder( "Plugins" );
+			var list = app.ListFolder( fldr, null, null, "folders");
+
+			for( var i in list )
+			{
+				//Get main docs file
+				var files = app.ListFolder( fldr + "/" + list[i],
+					"(?i)" + list[i] + "\\.html", null, "RegExp" );
+
+				if(list[i] && files.length > 0)
+					addLink( files[0].slice(0, -5) );
+			}
+			finishList();
 		}
 		//If on PC.
 		else
@@ -156,16 +171,9 @@ function OnPageShow()
 				var list = data.plugins.split(",");
 
 				//Build html list.
-				var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
-				for( var i = 0; i < list.length && list[0] != ""; i++ )
-				{
-					var plugTitle = list[i];
-					var url = "plugins/" + plugTitle.toLowerCase() + "/" + plugTitle + ".html";
-					html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
-				}
-				html += "</ul>";
-				$('#divPlugs').html(html);
-				$('#divPlugs').trigger("create");
+				for( var i in list )
+					if(list[i]) addLink( list[i] );
+				finishList();
 			};
 			xmlHttp.open( "get", "/ide?cmd=getplugins", true );
 			xmlHttp.send();
@@ -278,11 +286,28 @@ function OpenSamples()
 function OpenSample(name)
 {
 	OpenSamples();
-	if(isDS) app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
-	else {
+	if(isMobileIDE)
+		app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+	else if(isWebIDE)
+	{
 		var e = parent.$("#samplesContentList > div:contains(" + name + ") > a")
 		if(e.length) e.click();
-		else IsApp();
+	}
+	else IsApp();
+}
+
+function RemovePlugin(plugName)
+{
+	if(isMobileIDE)
+	{
+		app.Execute("if(typeof AskRemovePlugin == 'function') AskRemovePlugin('" + plugName + "');" +
+			"else if(typeof RemovePlugin == 'function') RemovePlugin('" + plugName + "');");
+	}
+	else if(isWebIDE)
+	{
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "get", "ide?cmd=exec&code=" + encodeURIComponent("!remplugin " + plugName) );
+		xmlHttp.send();
 	}
 }
 
