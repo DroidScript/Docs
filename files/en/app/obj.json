@@ -2404,6 +2404,18 @@
 				"pTypes": ["num_int", "str", "str", "str_ptf"],
 				"shortDesc": "Change the content of an element by its index"
 			},
+			"SetItemColor": {
+				"desc": "Set the color of a list item.",
+				"pNames": ["title", "newColor"],
+				"pTypes": ["str", "str_col"],
+				"shortDesc": "Set item color"
+			},
+			"SetItemColorByIndex": {
+				"desc": "Set the color of a list item by its index.",
+				"pNames": ["index", "color"],
+				"pTypes": ["num_int", "str_col"],
+				"shortDesc": "Set item color by index"
+			},
 			"SetList": {
 				"desc": "Set the content of the whole list.",
 				"pNames": ["list", "delim"],

@@ -1094,6 +1094,8 @@
 		"SetIconSize": "Change the icon size",
 		"SetItem": "Change the content of an element by its title",
 		"SetItemByIndex": "Change the content of an element by its index",
+		"SetItemColor": "Set item color",
+		"SetItemColorByIndex": "Set item color by index",
 		"SetList": "Set the content of the whole list",
 		"SetMargins": "Define distances to other controls",
 		"SetOnLongTouch": "Called when the control was pressed for eons",

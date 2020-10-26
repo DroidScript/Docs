@@ -2,6 +2,23 @@
 
 ## DS 2.00
 
+#### DS 193b1
+- Callbacks from BT,USB and Plugins now return source webview.
+- Wifi IDE now starts with code window expanded.
+- Added basic intellisense for MUI controls.
+- Added intellisense for plugins to Wifi IDE.
+- Added SetItemColor() and SetItemColorByIndex() methods to List control.
+- Added list headers demo.
+- List control can now cope with missing values between semi-colons in list.
+- Switched to use of scoped storage for user scripts in Android 10/11.
+- Added new (premium) search in files extension to Wifi IDE (from Cemal).
+- Added ide command !addepk &lt;file&gt; and !addppk &lt;file&gt;.
+- Plugins with version number after \_underscore now installed correctly.
+- Plugins can be uninstalled in the docs.
+- Refactored code suggestions (thanks to Symbroson).
+- Clicking the method preview in mobile ide now opens the corresponding docs page.
+- Added DroidStore tab to samples drawer.
+
 #### DS 1.92b1 (28-Sep-2020)
 - Added latest docs with MUI and GameView updates.
 - Add new 'Store' tab along side standard samples (soon to show DroidStore).
