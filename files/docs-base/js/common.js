@@ -16,13 +16,12 @@ var isChromeOS = ( !!agent.match(/Chrome OS|Chromebook|PixelBook/) );
 var useWebIDE  = ( has(agent, "Remix") || isChromeOS );
 var isAndroid  = ( has(agent, "Android") );
 var isDS       = ( location.href.match(/\bds=true\b/) != null );
+isDS = isDS || getCookie("isDS") == 'true';
+setCookie("isDS", isDS);
 
 var isWebIDE = isDS && !isAndroid;
 var isMobileIDE = isDS && isAndroid;
 var serverAddress = "";
-
-isDS = isDS || getCookie("isDS") == 'true';
-setCookie("isDS", isDS);
 
 // set current theme
 var curTheme = location.href.match(/\btheme=([-\w]*)/);
