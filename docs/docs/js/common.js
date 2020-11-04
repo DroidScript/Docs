@@ -15,12 +15,14 @@ console.log( "agent = " + agent );
 var isChromeOS = ( !!agent.match(/Chrome OS|Chromebook|PixelBook/) );
 var useWebIDE  = ( has(agent, "Remix") || isChromeOS );
 var isAndroid  = ( has(agent, "Android") );
-var isDS       = ( location.href.match(/\bds=true\b/) != null );
+
+var isDS = ( location.href.match(/\bds=true\b/) != null );
 isDS = isDS || getCookie("isDS") == 'true';
 setCookie("isDS", isDS);
 
 var isWebIDE = isDS && !isAndroid;
 var isMobileIDE = isDS && isAndroid;
+var curPage = "";
 var serverAddress = "";
 
 // set current theme
@@ -36,9 +38,12 @@ window.addEventListener("message", function(event)
 	console.log("msg: " + event)
 	var params = event.data.split("|");
 	var cmd = params[0];
+	console.log( "cmd: " + cmd )
 
-	if( cmd == "address" )
+	if( cmd == "address" ) {
 		serverAddress = params[1];
+		OnAddress()
+	}
 	else if( cmd == "setTheme" )
 		setTheme(params[1]);
 } );
@@ -62,12 +67,10 @@ $(document).on("mobileinit", function()
 		$.mobile.ignoreContentEnabled = true;
 
 	if(!isMobileIDE) app.ShowPopup = ShowPopup;
-
-	//Ask parent for DS adddress.
-	parent.postMessage( "getaddress:", "*" );
 });
 
-$(document).ready(function() {
+$(document).ready(function()
+{
 });
 
 $(document).live( 'pageshow',function(event, ui)
@@ -98,12 +101,11 @@ $(document).live( 'pageshow',function(event, ui)
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
 
 		//Get current page id.
-		var curPage = $.mobile.activePage.attr('id');
+		curPage = $.mobile.activePage.attr('id');
 
 		//Show plugins list if 'plugins' page is loading.
-		if( curPage == "plugins" ) {
-			OnPageShow();
-		}
+		if( curPage == "plugins" ) ShowPluginsPage()
+		else if( curPage == "extensions" ) ShowExtensionsPage()
 
 		//Append popup div in plugin docs if not exists
 		if(!$(".androidPopup").parent().is(":visible"))
@@ -111,12 +113,37 @@ $(document).live( 'pageshow',function(event, ui)
 
 		$('.onlyinclude a:not(data-ajax)').attr("data-ajax", "false");
 		$("a#extLink").attr("onclick", "return OpenUrl(this.href);");
+
+		//Ask parent for DS adddress
+		if( !isMobileIDE ) {
+			parent.postMessage( "getaddress:", "*" )
+			setTimeout( function() { parent.postMessage( "getaddress:", "*" ) }, 3000 ) //<-- needed for first time load.
+		}
 	}
 	//catch( e ) {}
 });
 
+//Handle address message (Wifi ide)
+function OnAddress()
+{
+	console.log( "address: " + serverAddress )
+
+	//Timeout required to allow time for page to fully rendeder.
+	//setTimeout( function()
+	//{
+		if( curPage == "main" )
+		{
+			var link = document.querySelector("#docsLink")
+			if( link ) link.setAttribute( "href", serverAddress+"/.edit/docs/Plugins.htm" )
+
+			link = document.querySelector("#extsLink")
+			if( link ) link.setAttribute( "href", serverAddress+"/.edit/docs/Extensions.htm" )
+		}
+	//}, 3000 )
+}
+
 //Dynamically create plugins page.
-function OnPageShow()
+function ShowPluginsPage()
 {
 	try
 	{
@@ -124,7 +151,7 @@ function OnPageShow()
 		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
 		var link = '<a href="$1">$2</a>';
 
-		var addLink = function(name)
+		var addLink = function( name )
 		{
 			html += "<li>" + link.replace("$2", name)
 				.replace("$1", "plugins/" + name.toLowerCase() + "/" + name + ".html") +
@@ -180,6 +207,63 @@ function OnPageShow()
 	}
 	catch( e ) {}
 }
+
+
+//Dynamically create extensions page.
+function ShowExtensionsPage()
+{
+	try
+	{
+		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
+		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemoveExtension(\'$1\')"></a>';
+		var link = '<a href="$1">$2</a>';
+
+		var addLink = function( name ) {
+			html += "<li>" + link.replace("$2", name)
+				.replace("$1", (isMobileIDE?"/sdcard/DroidScript":"") + "/Extensions/" + name + "/Docs.html") +
+				btnRem.replace("$1", name) + "</li>\n";
+		};
+
+		var finishList = function() {
+			html += "</ul>";
+			$('#divExts').html(html);
+			$('#divExts').trigger("create");
+		};
+
+		//If on device.
+		if( isMobileIDE )
+		{
+			var fldr = "/sdcard/DroidScript/Extensions";
+			var list = app.ListFolder( fldr, null, null, "folders");
+			for( var i in list ) addLink( list[i] );
+			finishList();
+		}
+		//If on PC.
+		else
+		{
+			//Get list from device.
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.onload = function()
+			{
+				//Extract extensions list.
+				var data = JSON.parse(xmlHttp.responseText);
+				if(data.status == "access denied") data.status = "IDE not connected";
+				if(!data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
+				var list = data.extensions.split(",");
+
+				//Build html list.
+				for( var i in list )
+					if(list[i]) addLink( list[i] );
+				finishList();
+			};
+			xmlHttp.open( "get", "/ide?cmd=getextensions", true );
+			xmlHttp.send();
+		}
+
+	}
+	catch( e ) {}
+}
+
 
 $(window).load(function()
 {
@@ -303,11 +387,31 @@ function RemovePlugin(plugName)
 			"else if(typeof RemovePlugin == 'function') RemovePlugin('" + plugName + "');");
 	}
 	else if(isWebIDE)
-	{
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open( "get", "ide?cmd=exec&code=" + encodeURIComponent("!remplugin " + plugName) );
-		xmlHttp.send();
-	}
+		RemoteExec( 'ide', "RemovePlugin('"+plugName+"')" )
+
+	setTimeout( function(){ location.reload() }, 1000 )
+}
+
+function RemoveExtension( extName )
+{
+	if(isMobileIDE)
+		app.Execute("AskRemoveExtension('"+extName+"');");
+	else if(isWebIDE)
+		RemoteExec( 'ide', "RemoveExtension('"+extName+"')" )
+
+	setTimeout( function(){ location.reload() }, 1000 )
+}
+
+//Execute code on the connected device.
+//'app' mode runs as a stand-alone app.
+//'ide' mode runs inside ide.
+//'usr' mode runs inside current user app.
+//'file' mode runs as a stand-alone app from a file.
+function RemoteExec( mode, code )
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open( "get", serverAddress+"/ide?cmd=execute&mode="+mode+"&code="+encodeURIComponent(btoa(code)), true );
+	xhr.send();
 }
 
 // app.ShowPopup equivalent for browsers

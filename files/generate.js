@@ -159,7 +159,7 @@ function generateNavigators(navs, name, pfx)
 				nav += newNaviItem(navs[cat], cat, f ? getAddClass(f) : null);
 				continue;
 			}
-			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat );
+			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat, cat == "Premium" ? getAddClass({desc: "<premium>"}) : null);
 			var tdoc = curDoc;
 			generateNavigators(navs[cat], cat, pfx);
 			curDoc = tdoc;

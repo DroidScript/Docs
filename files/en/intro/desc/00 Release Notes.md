@@ -3,21 +3,29 @@
 ## DS 2.00
 
 #### DS 193b1
-- Callbacks from BT,USB and Plugins now return source webview.
-- Wifi IDE now starts with code window expanded.
+- Switched to use scoped storage for user scripts in Android 10/11.
+- The 'Store' tab now shows a stripped down version of the DroidStore.
+- Added new 'Search' extension to wifi ide (thanks to Cemal)
+- Plugins can be uninstalled in the docs.
+- Extensions now show up in the docs too.
+- Added 'List Colors' sample.
+- List control can now cope with missing values between semi-colons in list.
 - Added basic intellisense for MUI controls.
 - Added intellisense for plugins to Wifi IDE.
+- Callbacks from BT,USB and Plugins now return source webview.
+- Wifi IDE now starts with code window expanded.
+- Added Alt-Enter key combo for forward search on highlighted word.
+- Wifi IDE code window now defaults to wide.
 - Added SetItemColor() and SetItemColorByIndex() methods to List control.
-- Added list headers demo.
-- List control can now cope with missing values between semi-colons in list.
-- Switched to use of scoped storage for user scripts in Android 10/11.
-- Added new (premium) search in files extension to Wifi IDE (from Cemal).
-- Added ide command !addepk &lt;file&gt; and !addppk &lt;file&gt;.
+- Added hidden option cfg.NoSwapify (prevents func name swapping during obfuscation)
+- app.Execute() is no longer obfuscated (now works from webviews inside APKs)
+- Added new ide command !addpackage
 - Plugins with version number after \_underscore now installed correctly.
-- Plugins can be uninstalled in the docs.
 - Refactored code suggestions (thanks to Symbroson).
 - Clicking the method preview in mobile ide now opens the corresponding docs page.
-- Added DroidStore tab to samples drawer.
+- !addplugin behaves better when given bad plugin names.
+- Added Disconnect() method to WebServer (disconnects websock clients)
+- Added websocket buffer size options to WebServer (ws\_64k,ws\_128k,ws\_512k,ws\_1M,ws\_5M,ws\_10M)
 
 #### DS 1.92b1 (28-Sep-2020)
 - Added latest docs with MUI and GameView updates.

@@ -120,6 +120,7 @@
 		"StartService"
 	],
 	"Controls": [
+		"CreateAdView",
 		"CreateButton",
 		"CreateCameraView",
 		"CreateCheckBox",
@@ -139,7 +140,29 @@
 		"CreateTextEdit",
 		"CreateToggle",
 		"CreateVideoView",
-		"CreateWebView"
+		"CreateWebView",
+		"",
+		"AddAdView",
+		"AddButton",
+		"AddCameraView",
+		"AddCheckBox",
+		"AddCodeEdit",
+		"AddGLView",
+		"AddImage",
+		"AddLayout",
+		"AddList",
+		"AddListView",
+		"AddNotification",
+		"AddScroller",
+		"AddSeekBar",
+		"AddSpinner",
+		"AddSwitch",
+		"AddTabs",
+		"AddText",
+		"AddTextEdit",
+		"AddToggle",
+		"AddVideoView",
+		"AddWebView"
 	],
 	"Cross-Application": [
 		"Broadcast",

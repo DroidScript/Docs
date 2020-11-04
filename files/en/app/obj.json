@@ -1,6 +1,6 @@
 {
 	"AddAdView": {
-		"desc": "Creates and adds a AdView to a Layout.\nSee @CreateAdView for full documentation.",
+		"desc": "Creates and adds a AdView to a Layout.\n<premium>\nSee @CreateAdView for full documentation.",
 		"pNames": ["layout", "unitId", "testId", "width", "height", "options"],
 		"pTypes": ["dso-CreateLayout", "str", "str", "num_frc", "num_frc", "str"],
 		"retval": "dso-AdView",
@@ -28,7 +28,7 @@
 		"shortDesc": "Create and add CheckBox to Layout."
 	},
 	"AddCodeEdit": {
-		"desc": "Creates and adds a CodeEdit to a Layout.\nSee @CreateCodeEdit for full documentation.",
+		"desc": "Creates and adds a CodeEdit to a Layout.\n<premium>\nSee @CreateCodeEdit for full documentation.",
 		"pNames": ["layout", "text", "width", "height", "options"],
 		"pTypes": ["dso-CreateLayout", "str", "num_frc", "num_frc", "str_com-FillX/Y"],
 		"retval": "dso-CodeEdit",
@@ -5138,7 +5138,7 @@
 		"abbrev": "sock",
 		"desc": "#CreateWebServer.md",
 		"pNames": ["port", "options"],
-		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients"],
+		"pTypes": ["num_int", "str_com-ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,\"&lt;BUFSIZE&gt;\":\"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”\""],
 		"retval": "dso-WebServer",
 		"shortDesc": "Returns a new WebServer object",
 		"subf": {
