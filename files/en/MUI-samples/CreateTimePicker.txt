@@ -1,11 +1,11 @@
 <sample Default Time>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -33,13 +33,13 @@ function OnSelect(time, hh, mm, pos)
 
 
 <sample Custom Time>
-cfg.Light
-cfg.MUI
+cfg.Dark
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 

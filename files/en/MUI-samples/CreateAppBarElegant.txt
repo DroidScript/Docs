@@ -1,11 +1,11 @@
  <sample Just a title>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
@@ -39,12 +39,12 @@ function OnStart()
 
 <sample Sample page>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
@@ -77,12 +77,12 @@ function OnMenuTouch()
 
 <sample Complete controls>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
@@ -107,13 +107,13 @@ function OnStart()
 
 
 <sample Dark mode>
-cfg.Light
-cfg.MUI
+cfg.Dark
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 

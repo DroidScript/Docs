@@ -1,12 +1,9 @@
 <sample Light>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
-    color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
-
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
     	lst = "Apple,Mango,Orange,Banana"
@@ -18,14 +15,11 @@ function OnStart()
 </sample>
 
 <sample Dark>
-cfg.Light
-cfg.MUI
+cfg.Dark
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
-    color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
-
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
     	lst = "Apple,Mango,Orange,Banana"

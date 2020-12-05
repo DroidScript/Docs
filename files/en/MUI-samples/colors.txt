@@ -1,10 +1,9 @@
 <sample All Colors From Green>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
-    app.InitializeUIKit("#009688", "Light")
     color = MUI.colors.green
 
     lay = MUI.CreateLayout("Linear", "VCenter, FillXY")
@@ -41,12 +40,10 @@ function OnStart()
 </sample>
 <sample Change Layout Background>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
-
-    app.InitializeUIKit("#009688", "Light")
     color = MUI.colors.teal
 
     lay = MUI.CreateLayout("linear", "FillXY,VCenter")
@@ -79,38 +76,6 @@ function ShowDialog()
 
 function OnSelect(name)
 {
-    switch(name)
-    {
-        case "lighten4":
-            lay.SetBackColor(color.lighten4)
-            break
-        case "lighten3":
-            lay.SetBackColor(color.lighten3)
-            break
-        case "lighten2":
-            lay.SetBackColor(color.lighten2)
-            break
-        case "lighten4":
-            lay.SetBackColor(color.lighten4)
-            break
-        case "lighten1":
-            lay.SetBackColor(color.lighten1)
-            break
-        case "teal":
-            lay.SetBackColor(color.teal)
-            break
-        case "darken1":
-            lay.SetBackColor(color.darken1)
-            break
-        case "darken2":
-            lay.SetBackColor(color.darken2)
-            break
-        case "darken3":
-            lay.SetBackColor(color.darken3)
-            break
-        case "darken4":
-            lay.SetBackColor(color.darken4)
-            break
-    }
+    lay.SetBackColor(color[name])
 }
 </sample>

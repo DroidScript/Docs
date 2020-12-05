@@ -13,6 +13,7 @@ files/docs*
 files/*.sh
 files/ide.*js
 files/version.txt
+files/generate_dsuikit.js
 app/DocsScopeBaseGen/Docs
 
 _*.htm

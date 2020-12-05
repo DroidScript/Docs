@@ -393,5 +393,23 @@
 			}
 		],
 		"shortDesc": "Animates the control"
+    },
+    "#2114625769": { "name": "SetTitle",
+        "desc": "Sets a new title text",
+        "pNames": ["newTitle"],
+		"pTypes": ["str-New title text"],
+		"shortDesc": "Sets a new title text"
+    },
+    "#2114625709": { "name": "SetTitleColor",
+        "desc": "Change the color of the title text",
+        "pNames": ["color"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Change the color of the title text"
+    },
+    "#2114625707": { "name": "SetHeight",
+        "desc": "Change the height of the control",
+        "pNames": ["height"],
+		"pTypes": ["num-Fraction of the screen height"],
+		"shortDesc": "Change the height of the control"
     }
 }

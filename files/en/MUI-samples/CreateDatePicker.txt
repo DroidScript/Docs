@@ -1,11 +1,11 @@
 <sample Default>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     colors = MUI.colors.teal
-    app.InitializeUIKit(colors.teal, "Light")
+    app.InitializeUIKit(colors.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -31,13 +31,13 @@ function OnSelect(date, yyyy, mm, dd)
 </sample>
 
 <sample With Custom Date>
-cfg.Light
-cfg.MUI
+cfg.Dark
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     colors = MUI.colors.teal
-    app.InitializeUIKit(colors.teal, "Dark")
+    app.InitializeUIKit(colors.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 

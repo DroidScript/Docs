@@ -1,11 +1,11 @@
 <sample Simple>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample alert text."
     als = MUI.CreateAlertSimple(text)
@@ -15,12 +15,12 @@ function OnStart()
 
 <sample Custom>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample alert text."
     als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
@@ -35,13 +35,13 @@ function CloseAlert()
 }
 </sample>
 <sample Dark>
-cfg.Light
-cfg.MUI
+cfg.Dark
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
