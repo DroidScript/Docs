@@ -1,6 +1,6 @@
 <sample No Label>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -19,7 +19,7 @@ function OnStart()
 
 <sample Dark With Label>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -37,7 +37,7 @@ function OnStart()
 
 <sample Round>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -56,7 +56,7 @@ function OnStart()
 
 <sample SetOnEnter Callback>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

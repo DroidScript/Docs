@@ -1,6 +1,6 @@
 <sample No-options>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -30,7 +30,7 @@ function OnTouch(title, body, index)
 
 <sample Selectable>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -78,7 +78,7 @@ function GetSelectedItems()
 
 <sample CreateListInitialIcon>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -103,7 +103,7 @@ function OnStart()
 
 <sample CreateListMaterialIcon>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -144,7 +144,7 @@ function GetSelectedItems()
 
 <sample CreateListWithAvatar>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -187,7 +187,7 @@ function GetSelectedItems()
 
 <sample RemoveItems>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

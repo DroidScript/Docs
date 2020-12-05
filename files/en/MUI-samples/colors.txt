@@ -1,6 +1,6 @@
 <sample All Colors From Green>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -40,7 +40,7 @@ function OnStart()
 </sample>
 <sample Change Layout Background>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

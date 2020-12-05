@@ -1,6 +1,6 @@
 <sample Basic>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -21,7 +21,7 @@ function OnStart()
 
 <sample With callback>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
