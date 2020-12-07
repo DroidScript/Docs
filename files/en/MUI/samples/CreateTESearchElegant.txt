@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -19,13 +19,13 @@ function OnStart()
 
 
 <sample RightIcon>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -44,7 +44,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -57,13 +57,13 @@ function OnStart()
 
 
 <sample Border>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 

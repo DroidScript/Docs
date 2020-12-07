@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -45,7 +45,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -85,7 +85,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -119,13 +119,13 @@ function OnTouch(name)
 
 
 <sample Dark Bottom>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 

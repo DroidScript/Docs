@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     colors = MUI.colors.teal
-    app.InitializeUIKit(colors.teal, "Light")
+    app.InitializeUIKit(colors.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -26,13 +26,13 @@ function ShowDialog()
 </sample>
 
 <sample Customize & Dark>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     colors = MUI.colors.teal
-    app.InitializeUIKit(colors.teal, "Dark")
+    app.InitializeUIKit(colors.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 

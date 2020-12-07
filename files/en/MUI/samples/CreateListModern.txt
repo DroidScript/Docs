@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -29,13 +29,13 @@ function OnTouch(title, body, index)
 </sample>
 
 <sample Selectable>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -77,13 +77,13 @@ function GetSelectedItems()
 
 
 <sample CreateListInitialIcon>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -102,13 +102,13 @@ function OnStart()
 
 
 <sample CreateListMaterialIcon>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -149,7 +149,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -186,13 +186,13 @@ function GetSelectedItems()
 
 
 <sample RemoveItems>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
