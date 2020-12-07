@@ -50,6 +50,8 @@
 		</div>
 
 		<p>It is fully customizable to suit your likings.</p>
+		<h5>options properties<i style='font-size: 75%;'>definitions</i></h5>
+		<p><b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p><b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p><b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p><b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p><b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p><b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p><b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p><b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p><b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p><b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image</p><p><b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p><b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - No-image, No-Avatar</h3>
 			<div id="examp1" style="font-size:70%">
@@ -91,7 +93,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
@@ -124,7 +126,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
@@ -152,39 +154,40 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Complete</h3>
 			<div id="examp4" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>Dark<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Dark"</span><span class="token punctuation">)</span><br>
-				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        scrl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateScroller</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				            <span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>
-				                title<span class="token operator">:</span> <span class="token string">"Card Title"</span><span class="token punctuation">,</span><br>
-				                body<span class="token operator">:</span> <span class="token string">"Lorem ipsum dolor set amit consectetur elit"</span><span class="token punctuation">,</span><br>
-				                buttonText<span class="token operator">:</span> <span class="token string">"LINKS,SEE MORE"</span><span class="token punctuation">,</span><br>
-				                image<span class="token operator">:</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span><br>
-				                width<span class="token operator">:</span> <span class="token number">0.94</span><span class="token punctuation">,</span><br>
-				                avatar<span class="token operator">:</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span><br>
-				                avatarOnTop<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>
-				                divider1<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>
-				                divider2<span class="token operator">:</span> <span class="token boolean">true</span><br>
-				            <span class="token punctuation">}</span><br>
-				            <br>
-				            options<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"my-card1"</span><br>
-				            card1 <span class="token operator">=</span> <span class="token constant">UI</span><span class="token punctuation">.</span><span class="token function">CreateCard</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><br>
-				            scrl<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>card1<span class="token punctuation">)</span><br>
-				            card1<span class="token punctuation">.</span><span class="token function">SetOnButtonTouch</span><span class="token punctuation">(</span>OnBtnTouch<span class="token punctuation">)</span><br>
-				            <br>
-				            options<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"my-card2"</span><br>
-				            options<span class="token punctuation">.</span>buttonType <span class="token operator">=</span> <span class="token string">"raised"</span><br>
-				            card2 <span class="token operator">=</span> <span class="token constant">UI</span><span class="token punctuation">.</span><span class="token function">CreateCard</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><br>
-				            card2<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
-				            scrl<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>card2<span class="token punctuation">)</span><br>
-				            card2<span class="token punctuation">.</span><span class="token function">SetOnButtonTouch</span><span class="token punctuation">(</span>OnBtnTouch<span class="token punctuation">)</span><br>
+				        scrl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateScroller</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
+				            lay2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
+				            lay2<span class="token punctuation">.</span><span class="token function">SetPadding</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">)</span><br>
+				            lay2<span class="token punctuation">.</span><span class="token function">SetSize</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
+				                <span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>
+				                    title<span class="token operator">:</span> <span class="token string">"Card Title"</span><span class="token punctuation">,</span><br>
+				                    body<span class="token operator">:</span> <span class="token string">"Lorem ipsum dolor set amit consectetur elit"</span><span class="token punctuation">,</span><br>
+				                    buttonText<span class="token operator">:</span> <span class="token string">"LINKS,SEE MORE"</span><span class="token punctuation">,</span><br>
+				                    image<span class="token operator">:</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span><br>
+				                    width<span class="token operator">:</span> <span class="token number">0.94</span><span class="token punctuation">,</span><br>
+				                    avatar<span class="token operator">:</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span><br>
+				                    avatarOnTop<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>
+				                    divider1<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>
+				                    divider2<span class="token operator">:</span> <span class="token boolean">true</span><br>
+				                <span class="token punctuation">}</span><br>
+				                <br>
+				                options<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"my-card1"</span><br>
+				                card1 <span class="token operator">=</span> <span class="token constant">UI</span><span class="token punctuation">.</span><span class="token function">CreateCard</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><br>
+				                lay2<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>card1<span class="token punctuation">)</span><br>
+				                card1<span class="token punctuation">.</span><span class="token function">SetOnButtonTouch</span><span class="token punctuation">(</span>OnBtnTouch<span class="token punctuation">)</span><br>
+				                <br>
+				                options<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"my-card2"</span><br>
+				                options<span class="token punctuation">.</span>buttonType <span class="token operator">=</span> <span class="token string">"raised"</span><br>
+				                card2 <span class="token operator">=</span> <span class="token constant">UI</span><span class="token punctuation">.</span><span class="token function">CreateCard</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><br>
+				                card2<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				                lay2<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>card2<span class="token punctuation">)</span><br>
+				                card2<span class="token punctuation">.</span><span class="token function">SetOnButtonTouch</span><span class="token punctuation">(</span>OnBtnTouch<span class="token punctuation">)</span><br>
+				            scrl<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>lay2<span class="token punctuation">)</span><br>
 				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>scrl<span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span><br>

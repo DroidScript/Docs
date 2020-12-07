@@ -64,7 +64,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
 				        <br>
@@ -101,7 +101,7 @@
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
 				        <br>
@@ -139,13 +139,13 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - With Callback</h3>
 			<div id="examp3" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>Dark<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
 				        <br>
@@ -252,15 +252,31 @@
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">SetOnTouch</a>(
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetHeaderColor</a>(
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetOnTouch</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">SetTextColor</a>(
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">SetTitle</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
 			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 
 	</div>
@@ -270,6 +286,7 @@
 	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Body text. If you want to customize the modal layout pass an empty string.”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Truthy button text”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Falsy button text”</docstr></div>
@@ -298,9 +315,13 @@
 	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>mdl.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>mdl.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>mdl.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>mdl.SetOnTouch</b><br>Calls a function when control buttons are click</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>mdl.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>mdl.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>mdl.SetHeaderColor</b><br>Change the background color of the header</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>mdl.SetOnTouch</b><br>Calls a function when control buttons are click</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>mdl.SetText</b><br>Change the currently displayed text in the control.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>mdl.SetTextColor</b><br>Change the text color of the contained text.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>mdl.SetTitle</b><br>Sets a new title to the modal</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>mdl.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>mdl.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 </div>
 </body>
 
