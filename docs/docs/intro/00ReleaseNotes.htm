@@ -37,6 +37,7 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DS 2.00')">DS 2.00</a><br>
 			• <a href="" onclick="jumpTo('DS 1.80(20-Jan-2020)')">DS 1.80</a><sup>(20-Jan-2020)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.78(27-Oct-2019)')">DS 1.78</a><sup>(27-Oct-2019)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.76(27-Aug-2019)')">DS 1.76</a><sup>(27-Aug-2019)</sup><br>
@@ -68,7 +69,46 @@
 		</div>
 
 		<p><!-- /<a href="[_<i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
-		<h4>DS 191b2<sup>(23-Jul-2020)</sup></h4>
+		<h2>DS 2.00</h2>
+		<h4>DS 193b1</h4>
+		<p>- Switched to use scoped storage for user scripts in Android 10/11.<br>
+		- The 'Store' tab now shows a stripped down version of the DroidStore.<br>
+		- Added new 'Search' extension to wifi ide (thanks to Cemal)<br>
+		- Plugins can be uninstalled in the docs.<br>
+		- Extensions now show up in the docs too.<br>
+		- Added 'List Colors' sample.<br>
+		- List control can now cope with missing values between semi-colons in list.<br>
+		- Added basic intellisense for MUI controls.<br>
+		- Added intellisense for plugins to Wifi IDE.<br>
+		- Callbacks from BT,USB and Plugins now return source webview.<br>
+		- Wifi IDE now starts with code window expanded.<br>
+		- Added Alt-Enter key combo for forward search on highlighted word.<br>
+		- Wifi IDE code window now defaults to wide.<br>
+		- Added SetItemColor() and SetItemColorByIndex() methods to List control.<br>
+		- Added hidden option cfg.NoSwapify (prevents func name swapping during obfuscation)<br>
+		- app.Execute() is no longer obfuscated (now works from webviews inside APKs)<br>
+		- Added new ide command !addpackage<br>
+		- Plugins with version number after _underscore now installed correctly.<br>
+		- Refactored code suggestions (thanks to Symbroson).<br>
+		- Clicking the method preview in mobile ide now opens the corresponding docs page.<br>
+		- !addplugin behaves better when given bad plugin names.<br>
+		- Added Disconnect() method to WebServer (disconnects websock clients)<br>
+		- Added websocket buffer size options to WebServer (ws_64k,ws_128k,ws_512k,ws_1M,ws_5M,ws_10M)</p>
+		<h4>DS 1.92b1<sup>(28-Sep-2020)</sup></h4>
+		<p>- Added latest docs with MUI and GameView updates.<br>
+		- Add new 'Store' tab along side standard samples (soon to show DroidStore).<br>
+		- Speeded up/improved app launcher page.<br>
+		- Added new 'ScratchPad' extension.<br>
+		- Added auto-translation to Language extension.<br>
+		- Added extension.js to DS internal assets.<br>
+		- Added ext.Log() function to extension.js<br>
+		- Added missing app.AddTabs() method.<br>
+		- Tabs: increased layTop height to 0.06.<br>
+		- Tabs: setting tab text widths based on dynamic width if unspecified.<br>
+		- Tabs: added "fade" option to Tabs.<br>
+		- Tabs: showing new tab first before hiding others to prevent flicker.<br>
+		- added _SetTmpDebug() and _RestoreDebug() for use in pure JS plugins/Libs.</p>
+		<h4>DS 1.91b2<sup>(23-Jul-2020)</sup></h4>
 		<p>- DS now offers to install and run your APK after build<br>
 		- Added app.LaunchApp() method, launches apps if installed else tries GPlay.<br>
 		- Fixed app.ShowProgress can now take null as first parameter.<br>
@@ -76,7 +116,7 @@
 		- Fixed APK installs from DS launching second instance of DS.<br>
 		- Fixed scanfile bug in 'Create Shortcut' option.<br>
 		- Fixed issue with custom button colors in APKs for holo theme.</p>
-		<h4>DS 191b1<sup>(16-Jul-2020)</sup></h4>
+		<h4>DS 1.91b1<sup>(16-Jul-2020)</sup></h4>
 		<p>- Added new MUI.</i> material controls for premium users!<br>
 		- Added MUI controls demo app to docs.<br>
 		- Added new 'Class' file/template.<br>

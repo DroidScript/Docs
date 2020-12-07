@@ -41,30 +41,243 @@
 			</span><br>
 		</div>
 
-		<p>CreateTextEditOutlineA.</p>
+		<p>Creates an active outlined material text input.</p>
 
 		<div class="samp">
 		teo = MUI.CreateTextEditOutlineA(
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">t</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">e</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">i</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">a</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">l</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">o</a> )
-			→ <b>object</b>
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">hint</a>,
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">label</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">backColor</a> )
+			→ <b>Object</b>
 		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - No Label</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tef <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextEditOutlineA</span><span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token string">"Type your name"</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>tef<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - With Label</h3>
+			<div id="examp2" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tef <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextEditOutlineA</span><span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token string">"Username"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>tef<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - SetOnEnter Callback</h3>
+			<div id="examp3" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Dark<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tef <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextEditOutlineA</span><span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token string">"Type your name"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><br>
+				        tef<span class="token punctuation">.</span><span class="token function">SetOnEnter</span><span class="token punctuation">(</span>OnEnter<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>tef<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnEnter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
 
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>TextEditOutlineA</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Layout</a> → <b>unknown</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">TextEdit</a> → <b>unknown</b></div>
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">ClearFocus</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">ClearHistory</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetCursorLine</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">GetCursorPos</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetSelectedText</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetSelectionEnd</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">GetSelectionStart</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetText</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">InsertText</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">start</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
+			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">Redo</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">ReplaceText</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">start</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">end</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetCursorPos</a>(
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">position</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">SetOnChange</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">SetOnEnter</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">Undo</a>()
+		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content">Layout</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content">TextEdit</div>
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a>:</b> Show or hide label</div>
+	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Comma separated DS TextEdit options with additional 'Round' option.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Hint”</docstr> or <docstr>“Label text”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>teo.ClearFocus</b><br>Removes the focus of the control so that the user no longer has immediate access to it.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>teo.ClearHistory</b><br>Clear input history</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>teo.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>teo.GetCursorLine</b><br>Get cursor line</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>teo.GetCursorPos</b><br>Get cursor position</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>teo.GetSelectedText</b><br>GetSelectedText</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>teo.GetSelectionEnd</b><br>GetSelectionEnd</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>teo.GetSelectionStart</b><br>GetSelectionStart</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>teo.GetText</b><br>Returns the current displayed text of the control.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>teo.GetType</b><br>Get the type of MUI control.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>teo.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>teo.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>teo.InsertText</b><br>Inserts a string at a given position.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>teo.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>teo.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>teo.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>teo.Redo</b><br>Redo an undone action.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>teo.ReplaceText</b><br>Replaces a given range in the text with some string.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>teo.SetCursorPos</b><br>Change the curernt cursor position.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>teo.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>teo.SetOnChange</b><br>Called when the containing data has been changed by the user.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>teo.SetOnEnter</b><br>Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>teo.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>teo.SetText</b><br>Change the currently displayed text in the control.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>teo.Undo</b><br>Undo an action</div>
 </div>
 </body>
 

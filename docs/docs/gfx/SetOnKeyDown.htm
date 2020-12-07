@@ -33,18 +33,19 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Define a callback function which is called when the user started pressing a key.</p>
 
 		<div class="samp">
 		gfx.SetOnKeyDown(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>unknown</b>
 		</div>
 
 
 	</div>
 
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “LETTER” or “Shift” or “Ctrl” or “Alt” or “Meta” or “...”')">key</a>
+	)</div>
 </div>
 </body>
 

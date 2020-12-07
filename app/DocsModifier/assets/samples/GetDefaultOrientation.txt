@@ -1,7 +1,0 @@
-<sample Show Default Orientation>
-function OnStart()
-{
-    <b>var orient = app.GetDefaultOrientation();</b>
-    app.Alert( orient );
-}
-</sample>

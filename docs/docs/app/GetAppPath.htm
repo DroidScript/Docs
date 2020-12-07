@@ -36,12 +36,29 @@
 		<p>Returns the path to the app assets folder.</p>
 
 		<div class="samp">
-		app.GetAppPath() → <b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
+		app.GetAppPath() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
 		</div>
 
 		<p>If it's a DroidScript project the path should be <docstr>“/sdcard/DroidScript/appname”</docstr> - If it is an apk it is <docstr>“/Assets”</docstr><br>
 		<br>
 		See Also: <a href="GetPath.htm" data-ajax="false">GetPath</a>, <a href="GetPrivateFolder.htm" data-ajax="false">GetPrivateFolder</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Show app path</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAppPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 

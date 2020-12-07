@@ -1,0 +1,795 @@
+{
+	"AddBackground": {
+		"desc": "Adds a static background to your game.",
+		"pNames": ["obj"],
+		"pTypes": ["gvo-CreateBackground"],
+		"shortDesc": "Adds a background to the game"
+	},
+	"_AddBasicSprite": {
+		"desc": "Adds a [Basic Sprite](CreateBasicSprite.htm) to your game.",
+		"name": "AddBasicSprite",
+		"pNames": ["sprite"],
+		"pTypes": ["gvo-CreateSprite"],
+		"shortDesc": "Adds a BasicSprite to the game"
+	},
+	"_AddBatch": {
+		"desc": "Adds a sprite batch to the game.",
+		"name": "AddBatch",
+		"pNames": ["batch"],
+		"pTypes": ["gvo-CreateBatch"],
+		"shortDesc": "Adds a sprite batch to the game"
+	},
+	"AddGraphic": {
+		"desc": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
+		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
+		"pTypes": ["obj", "num_frc", "num_frc", "num_frc", "num_frc", "num_rad", "num_frc"],
+		"shortDesc": "Adds a basic shape object to the game"
+	},
+	"AddPhysics": {
+		"abbrev": "phs",
+		"desc": "Adds the Box2D physics engine to your game.\n<sample Billiard>\n<sample Collision>\n\n_The method list below shows the __functions which are added to game objects__ when using physics._",
+		"pNames": ["gravity", "accuracy", "sleep"],
+		"pTypes": ["num", "num", "num"],
+		"shortDesc": "Adds physics to the game",
+		"subf": {
+			"AddVelocity": {
+				"desc": "Adds linear and angular velocity to the object",
+				"pNames": ["x", "y", "angular", "bodyRelative"],
+				"pTypes": ["num", "num", "num", "bin"],
+				"shortDesc": "Adds velocity to the object"
+			},
+			"ApplyImpulse": {
+				"desc": "Applies an impulse (impulse=velocity*mass) to the object",
+				"pNames": ["x", "y", "offsetX", "offsetY"],
+				"pTypes": ["num", "num", "num--1..1", "num--1..1"],
+				"shortDesc": "Applies an impulse p=m*v to the object"
+			},
+			"Contains": {
+				"desc": "Checks if a given point is in the hitbox",
+				"pNames": ["x", "y"],
+				"pTypes": ["num_frc", "num_frc"],
+				"retval": "bin",
+				"shortDesc": "Checks if a point is in the hitbox"
+			},
+			"EnablePhysics": {
+				"desc": "Temporally En/Disables physics for the game object.",
+				"pNames": ["enable"],
+				"pTypes": ["bin"],
+				"shortDesc": "Temporally En/Disables physics"
+			},
+			"GetVelocity": {
+				"desc": "Returns the current total linear velocity or the “x”, “y” or “angular” component.",
+				"pNames": ["component"],
+				"pTypes": ["str-x|y|angular"],
+				"retval": "number",
+				"shortDesc": "Returns the total velocity or a component of it"
+			},
+			"RemovePhysics": {
+				"desc": "Removes physics from the game oblect.",
+				"shortDesc": "Removes physics"
+			},
+			"SetMatrix": {
+				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
+				"pNames": ["mtx"],
+				"pTypes": ["obj-Matrix"],
+				"shortDesc": "Applies a 2d transformation"
+			},
+			"SetPhysics": {
+				"desc": "Set the physics properties for the game object.",
+				"pNames": ["groupId", "type", "density", "bounce", "friction", "linearDamp", "angularDamp"],
+				"pTypes": ["str", "str-moveable|fixed", "num", "num", "num", "num", "num"],
+				"shortDesc": "Set physics properties"
+			},
+			"SetShape": {
+				"desc": "Defines the shape for collision detection of the object.",
+				"pNames": ["shape", "width", "height"],
+				"pTypes": ["str-rect|round", "num_frc", "num_frc"],
+				"shortDesc": "Define the collision shape"
+			},
+			"SetVelocity": {
+				"desc": "Set the velocity of the game object.",
+				"pNames": ["x", "y", "angular", "bodyRelative"],
+				"pTypes": ["num", "num", "num", "bin"],
+				"shortDesc": "Set the object velocity"
+			},
+			"UpdatePhysics": {
+				"desc": "Updates the internal position and size properties",
+				"shortDesc": "Update internal physics properties"
+			}
+		}
+	},
+	"AddSprite": {
+		"desc": "Adds a [sprite](CreateSprite.htm) object to the game.",
+		"pNames": ["sprite", "x", "y", "w", "h", "angle", "alpha"],
+		"pTypes": ["gvo-CreateSprite", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"shortDesc": "Adds a sprite object"
+	},
+	"AddText": {
+		"desc": "Adds a [text](CreateText.htm) object to the game.",
+		"pNames": ["obj", "x", "y", "angle", "alpha"],
+		"pTypes": ["gvo-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
+		"shortDesc": "Adds a text object"
+	},
+	"_Animate": {
+		"desc": "Animate repeatedly calls a function with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.",
+		"name": "Animate",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["time", "dtime"],
+			"pTypes": ["num_mls", "num_mls"]
+		}],
+		"shortDesc": "Similar to setInterval"
+	},
+	"AppExec": {
+		"desc": "Executes some code in the main app.",
+		"pNames": ["js"],
+		"pTypes": ["str_jsc"],
+		"shortDesc": "Executes code in the main app"
+	},
+	"aspect": {
+		"desc": "The aspect ratio of the gfx container (display)",
+		"isval": true,
+		"retval": "num",
+		"shortDesc": "The display aspect ratio"
+	},
+	"CreateBackground": {
+		"abbrev": "bck",
+		"desc": "Creates a background",
+		"pNames": ["file", "options"],
+		"pTypes": ["str_ptf", "str_com-stretch"],
+		"retval": "gvo-Background",
+		"shortDesc": "Returns a new background",
+		"subf": {
+			"Scroll": {
+				"desc": "Scrolls the background by a given value",
+				"pNames": ["x", "y"],
+				"pTypes": ["num", "num"],
+				"shortDesc": "Scroll Background"
+			},
+			"loaded": {
+				"desc": "Indicates if the background is ready for use",
+				"isval": true,
+				"retval": "bin",
+				"shortDesc": "indicates if ready for use"
+			},
+			"_sprite": {
+				"desc": "",
+				"isval": true,
+				"name": "sprite",
+				"retval": "PIXI.Sprite"
+			},
+			"_texture": {
+				"desc": "",
+				"isval": true,
+				"name": "texture",
+				"retval": "PIXI.Texture"
+			}
+		}
+	},
+	"_CreateBasicSprite": {
+		"desc": "",
+		"name": "CreateBasicSprite",
+		"pNames": ["texture"],
+		"pTypes": ["str"],
+		"retval": "?"
+	},
+	"_CreateBatch": {
+		"desc": "",
+		"isval": true,
+		"name": "CreateBatch",
+		"retval": "?"
+	},
+	"CreateCircle": {
+		"abbrev": "cir",
+		"desc": "Creates a circular game object.",
+		"pNames": ["width", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "gvo-Circle",
+		"shortDesc": "Creates a circle",
+		"subf": {
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
+		}
+	},
+	"CreateEllipse": {
+		"abbrev": "elp",
+		"desc": "Creates a elliptical game object.",
+		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "gvo-Ellipse",
+		"shortDesc": "Creates an ellipse",
+		"subf": {
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
+		}
+	},
+	"CreatePolygon": {
+		"abbrev": "pol",
+		"desc": "Creates a polygonal game object.",
+		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "gvo-Polygon",
+		"shortDesc": "Creates a polygon",
+		"subf": {
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
+		}
+	},
+	"CreateRectangle": {
+		"abbrev": "rct",
+		"desc": "Creates a rectangular game object.",
+		"pNames": ["width", "height", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
+		"pTypes": ["num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
+		"retval": "gvo-Rectangle",
+		"shortDesc": "Creates a rectangle",
+		"subf": {
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"graphic": "#5017981624",
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
+		}
+	},
+	"CreateSound": {
+		"abbrev": "snd",
+		"desc": "Creates a sound object which can play audio files.",
+		"pNames": ["file"],
+		"pTypes": ["str_ptf"],
+		"retval": "gvo-Sound",
+		"shortDesc": "Returns a new sound object",
+		"subf": {
+			"file": {
+				"desc": "Contains the url of the loaded file.",
+				"isval": true,
+				"retval": "str",
+				"shortDesc": "The file url"
+			},
+			"_id": {
+				"desc": "",
+				"isval": true,
+				"name": "id",
+				"retval": "str"
+			},
+			"Pause": {
+				"desc": "Pause the playback if the sound is currently palaying.",
+				"shortDesc": "Pause the track"
+			},
+			"Play": {
+				"desc": "Start the playback of the current loaded audio file.",
+				"pNames": ["loop", "delay", "gap"],
+				"pTypes": ["bool", "num_mls-delay before playback start", "num_mls-time gap between two loops"],
+				"shortDesc": "Play the soundtrack"
+			}
+		}
+	},
+	"CreateSprite": {
+		"abbrev": "spr",
+		"desc": "#CreateSprite.md",
+		"pNames": ["file", "group", "callback"],
+		"pTypes": ["str_ptf", "str", {}],
+		"retval": "gvo-CreateSprite",
+		"shortDesc": "Returns a new sprite object",
+		"subf": {
+			"added": {
+				"desc": "Indicates if the sprite has been added to the game",
+				"isval": true,
+				"retval": "bin",
+				"shortDesc": "incicates if added to game"
+			},
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"aspect": {
+				"desc": "The aspect ratio of the sprite",
+				"isval": true,
+				"retval": "num",
+				"shortDesc": "sprite aspect ratio"
+			},
+			"Contains": "#9612465132",
+			"data": "#2865983653",
+			"Flip": {
+				"desc": "Flips the sprite on the horizontal and/or the vertical axis.",
+				"pNames": ["horiz", "vert"],
+				"pTypes": ["bin", "bin"],
+				"shortDesc": "Flip sprite"
+			},
+			"GetFrame": {
+				"desc": "Returns the current frame",
+				"retval": "num_int",
+				"shortDesc": "Get current frame"
+			},
+			"Goto": {
+				"desc": "Displays a specific frame of an animation",
+				"pNames": ["frame"],
+				"pTypes": ["num_int"],
+				"shortDesc": "go to animation frame"
+			},
+			"group": "#5193861923",
+			"height": "#0162475314",
+			"_isAtlas": {
+				"desc": "",
+				"isval": true,
+				"name": "isAtlas",
+				"retval": "bin"
+			},
+			"_isStrip": {
+				"desc": "",
+				"isval": true,
+				"name": "isStrip",
+				"retval": "bin"
+			},
+			"PauseTween": "#8798237593",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"Play": {
+				"desc": "Start playing the sprite animation",
+				"pNames": ["startFrame", "speed", "loop"],
+				"pTypes": ["num_int", "num_int", "bin"],
+				"shortDesc": "play sprite animation"
+			},
+			"PlayRange": {
+				"desc": "Start playing the sprite animation in a given frame range",
+				"pNames": ["firstFrame", "lastFrame", "speed", "loop"],
+				"pTypes": ["num_int", "num_int", "num", "bin"],
+				"shortDesc": "play range of animation frames"
+			},
+			"PlayTo": {
+				"desc": "Play the animation until a specific frame is reached",
+				"pNames": ["frame"],
+				"pTypes": ["num_int"],
+				"shortDesc": "play to animation frame"
+			},
+			"PlayTween": "#9832987464",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetLoop": {
+				"desc": "Define if the animation should loop or stop at the end",
+				"pNames": ["loop"],
+				"pTypes": ["bin"],
+				"shortDesc": "Set animation looping"
+			},
+			"SetMatrix": "#1789264812",
+			"SetPlaySpeed": {
+				"desc": "Define at which speed the animation will play. 1 equals to 60 fps",
+				"pNames": ["speed"],
+				"pTypes": ["num"],
+				"shortDesc": "Set animation speed"
+			},
+			"SetRange": {
+				"desc": "Define the frame range the animation should show.",
+				"pNames": ["firstFrame", "lastFrame", "loop", "play", "speed"],
+				"pTypes": ["num_int", "num_int", "bin", "bin", "num"],
+				"shortDesc": "Set animation frame range"
+			},
+			"SetSize": {
+				"desc": "Set the sprite size on the screen",
+				"pNames": ["w", "h"],
+				"pTypes": ["num_frc", "num_frc"],
+				"shortDesc": "Set sprite size"
+			},
+			"SetSpriteSheet": {
+				"desc": "Change the animation to another.",
+				"pNames": ["sheet"],
+				"pTypes": ["gvo-CreateSpriteSheet"],
+				"shortDesc": "Change animation"
+			},
+			"SetTexture": {
+				"desc": "Change the sprite texture to another.",
+				"pNames": ["tx"],
+				"pTypes": ["gvo-CreateTexture"],
+				"shortDesc": "Change sprite texture"
+			},
+			"SetTween": "#8929387454",
+			"_sprite": {
+				"desc": "",
+				"isval": true,
+				"name": "sprite",
+				"retval": "?"
+			},
+			"StartTween": "#1234231242",
+			"StepTween": "#9872394872",
+			"Stop": {
+				"desc": "Stop playin the animation.",
+				"shortDesc": "Stop animation"
+			},
+			"StopAt": {
+				"desc": "Causes the animation to stop playing at a specific frame",
+				"pNames": ["frame"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Stop animation on frame"
+			},
+			"_texture": {
+				"desc": "",
+				"isval": true,
+				"name": "texture",
+				"retval": "str"
+			},
+			"Tween": "#2114624769",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716",
+			"x": {
+				"desc": "X-position on the screen.",
+				"isval": true,
+				"retval": "num_frv",
+				"shortDesc": "x-Position"
+			},
+			"y": {
+				"desc": "Y-position on the screen.",
+				"isval": true,
+				"retval": "num_frc",
+				"shortDesc": "Y-position"
+			}
+		}
+	},
+	"CreateSpriteSheet": {
+		"abbrev": "sht",
+		"desc": "Creates a SpriteSheet for an animation for instance.\n\nSee Also: @CreateSprite",
+		"pNames": ["file", "callback"],
+		"pTypes": ["str_ptf", {}],
+		"retval": "gvo-SpriteSheet",
+		"shortDesc": "Returns a new SpriteSheet object",
+		"subf": {
+			"data": "#2865983653",
+			"loaded": {
+				"desc": "indicates if the sheet is already loaded.",
+				"isval": true,
+				"retval": "bin",
+				"shortDesc": "loaded indicator"
+			},
+			"_loader": {
+				"desc": "",
+				"isval": true,
+				"name": "loader",
+				"retval": "obj"
+			},
+			"_sprite": {
+				"desc": "",
+				"isval": true,
+				"name": "sprite",
+				"retval": "?"
+			}
+		}
+	},
+	"CreateText": {
+		"abbrev": "txt",
+		"desc": "Creates a text label which is used to display texts in your game.",
+		"pNames": ["text", "fontSize", "fontFile", "align", "callback"],
+		"pTypes": ["str", "num", "str_ptf", "str-left|center|right", {}],
+		"retval": "gvo-Text",
+		"shortDesc": "Returns a new text object",
+		"subf": {
+			"align": {
+				"desc": "Alignment for multiline text. does not affect single line text.",
+				"isval": true,
+				"retval": "str-left|center|right",
+				"shortDesc": "Multiline text alignment"
+			},
+			"alpha": "#2974510528",
+			"angle": "#1034034325",
+			"Contains": "#9612465132",
+			"file": {
+				"desc": "Path to the source file.",
+				"isval": true,
+				"retval": "str_pth",
+				"shortDesc": "Source file"
+			},
+			"fontSize": {
+				"desc": "text font size in pixels",
+				"isval": true,
+				"retval": "num_pxl",
+				"shortDesc": "pixel font size"
+			},
+			"height": "#0162475314",
+			"pivotX": "#2983519836",
+			"pivotY": "#9812693423",
+			"scaleX": "#1246873531",
+			"scaleY": "#7124535139",
+			"SetMatrix": "#1789264812",
+			"Update": "#1274618924",
+			"visible": "#1584619232",
+			"width": "#9182648716"
+		}
+	},
+	"CreateTexture": {
+		"desc": "Creates a base texture for Sprites. Using textures is recommended if mand sprites use the same texture and is supposed to be faster because the texture needs to be loaded only once and is then shared across the sprites.",
+		"isval": true,
+		"retval": "gvo-Texture",
+		"shortDesc": "Returns a new texture object"
+	},
+	"data": {
+		"desc": "GameView custom data",
+		"isval": true,
+		"retval": "obj",
+		"shortDesc": "Data"
+	},
+	"EnablePhysics": {
+		"desc": "En/Disables the added Box2D physics engine in your game. The methods added to your GameView objects are described in @AddPhysics.",
+		"pNames": ["enabled"],
+		"pTypes": ["bin"],
+		"shortDesc": "En/Disables the physics engine"
+	},
+	"Enclose": {
+		"desc": "Enclose an area with a physics fence.",
+		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
+		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"],
+		"shortDesc": "Enclose an area with a physics fence."
+	},
+	"_GenPixiJson": {
+		"desc": "Generate pixi texture atlas from info in a file name.",
+		"pNames": ["path"],
+		"pTypes": ["str_pth"],
+		"retval": "str_jsn",
+		"shortDesc": "Generate texture json from path"
+	},
+	"_GetContext": {
+		"desc": "",
+		"name": "GetContext",
+		"retval": "?",
+		"shortDesc": "GetContext"
+	},
+	"GetOrder": {
+		"desc": "Returns the order index of a specific GameView object.",
+		"pNames": ["object"],
+		"pTypes": ["gvo"],
+		"retval": "num_int",
+		"shortDesc": "get object's order index"
+	},
+	"GetTime": {
+		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
+		"retval": "jso-@../javascript/Global_Objects/Date",
+		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
+	},
+	"height": {
+		"desc": "Display height in pixels",
+		"isval": true,
+		"retval": "num_pxl",
+		"shortDesc": "display height"
+	},
+	"IsOverlap": {
+		"desc": "Tests if two GameView objects are overlapping.",
+		"pNames": ["obj1", "obj2", "depth"],
+		"pTypes": ["gvo", "gvo", "num"],
+		"retval": "bin",
+		"shortDesc": "Tests if two objects overlap"
+	},
+	"IsPaused": {
+		"desc": "Returns whether the game is currently paused.",
+		"retval": "bin",
+		"shortDesc": "Get paused state"
+	},
+	"isReady": {
+		"desc": "Indicates if the game is ready. This is set to true after OnReady was called.",
+		"isval": true,
+		"retval": "bin",
+		"shortDesc": "True when game is ready"
+	},
+	"keyDown": {
+		"desc": "Currently pressed key",
+		"isval": true,
+		"retval": "str",
+		"shortDesc": "Currently pressed key"
+	},
+	"keyState": {
+		"desc": "Current pressed key state",
+		"isval": true,
+		"retval": "str-Down|Up",
+		"shortDesc": "Current key state"
+	},
+	"objects": {
+		"desc": "List of all active GameView objects",
+		"isval": true,
+		"retval": "lst_obj",
+		"shortDesc": "List of active objects"
+	},
+	"Pause": {
+		"desc": "Pauses the game",
+		"shortDesc": "Pause game"
+	},
+	"Play": {
+		"desc": "Start or resume the game",
+		"shortDesc": "Start or resume game"
+	},
+	"Reload": {
+		"desc": "Restarts the game from scratch.",
+		"shortDesc": "Restart game from scratch"
+	},
+	"RemoveBackground": {
+		"desc": "Removes the background from the game",
+		"pNames": ["gvo-CreateBackground"],
+		"pTypes": ["gvo-CreateBackground"],
+		"shortDesc": "Remove background from game"
+	},
+	"RemoveGraphic": {
+		"desc": "Removes a graphic from the game",
+		"pNames": ["obj"],
+		"pTypes": ["gvo-AddGraphic"],
+		"shortDesc": "Remove graphic from game"
+	},
+	"RemoveSprite": {
+		"desc": "Removes a sprite from the game",
+		"pNames": ["sprite"],
+		"pTypes": ["gvo-CreateSprite"],
+		"shortDesc": "Remove sprite from game"
+	},
+	"RemoveText": {
+		"desc": "Removes the text from the game",
+		"pNames": ["obj"],
+		"pTypes": ["gvo-CreateText"],
+		"shortDesc": "Remove text from game"
+	},
+	"_Render": {
+		"desc": "",
+		"name": "Render",
+		"retval": "?"
+	},
+	"_renderer": {
+		"desc": "PIXI renderer",
+		"isval": true,
+		"name": "renderer",
+		"retval": "obj-PIXI.Renderer",
+		"shortDesc": "Renderer"
+	},
+	"Script": {
+		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your game.",
+		"pNames": ["uri", "callback"],
+		"pTypes": ["str_uri", {}],
+		"shortDesc": "synchronously import a .js file"
+	},
+	"SetBackColor": {
+		"desc": "Sets a solid background color for your game",
+		"pNames": ["col"],
+		"pTypes": ["str_col"],
+		"shortDesc": "Set solid background color"
+	},
+	"SetOnCollide": {
+		"desc": "Define a callback which is called when two [Physics objects](AddPhysics.htm) collide.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["a", "b"],
+			"pTypes": ["gvo", "gvo"]
+		}],
+		"shortDesc": "SetOnCollide"
+	},
+	"SetOnKeyDown": {
+		"desc": "Define a callback function which is called when the user started pressing a key.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["key"],
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."]
+		}],
+		"shortDesc": "Define a KeyDown callback"
+	},
+	"SetOnKeyUp": {
+		"desc": "Define a callback function which is called when the user released a key.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["key"],
+			"pTypes": ["str-LETTER|Shift|Ctrl|Alt|Meta|..."]
+		}],
+		"shortDesc": "Define a KeyUp callback"
+	},
+	"SetOnTouchDown": {
+		"desc": "Define a callback which is called when the user touches the screen.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"]
+		}],
+		"retval": "?",
+		"shortDesc": "Set callback for touch down"
+	},
+	"SetOnTouchMove": {
+		"desc": "Define a callback which is called when the user drags te finger over the screen.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"]
+		}],
+		"retval": "?",
+		"shortDesc": "Set callback for touch move"
+	},
+	"SetOnTouchUp": {
+		"desc": "Define a callback which is called when the user releases the finger the screen.",
+		"pNames": ["callback"],
+		"pTypes": [{
+			"pNames": ["x", "y"],
+			"pTypes": ["num_frc", "num_frc"]
+		}],
+		"retval": "?",
+		"shortDesc": "Set callback for touch up"
+	},
+	"SetOrder": {
+		"desc": "",
+		"pNames": ["object", "order"],
+		"pTypes": ["obj", "num"],
+		"retval": "?",
+		"shortDesc": "SetOrder"
+	},
+	"_SetPixelMode": {
+		"desc": "",
+		"name": "SetPixelMode",
+		"pNames": ["usePixels"],
+		"pTypes": ["?"],
+		"retval": "?"
+	},
+	"_stage": {
+		"desc": "",
+		"isval": true,
+		"name": "stage",
+		"retval": "?",
+		"shortDesc": "Stage"
+	},
+	"SwapOrder": {
+		"desc": "Swap the drawing order of two GameView objects.",
+		"pNames": ["object1", "object2"],
+		"pTypes": ["gvo", "gvo"],
+		"shortDesc": "Swap drawing order of two objects"
+	},
+	"version": {
+		"desc": "the gfx version number starting from 1.1 in DS182b2",
+		"isval": true,
+		"retval": "str-1.1",
+		"shortDesc": "gfx version number"
+	},
+	"Vibrate": {
+		"desc": "Shortcut to app.@../app/Vibrate)",
+		"pNames": ["pattern"],
+		"pTypes": ["str"],
+		"shortDesc": "Vibrate"
+	},
+	"width": {
+		"desc": "display width",
+		"isval": true,
+		"retval": "num_pxl",
+		"shortDesc": "display Width"
+	}
+}

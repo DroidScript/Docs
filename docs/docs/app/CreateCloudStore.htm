@@ -82,11 +82,11 @@
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Delete</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“CloudStore”</docstr>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“CloudStore”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">List</a>(
@@ -95,19 +95,19 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Load</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Merge</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Save</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_all" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
@@ -116,32 +116,32 @@
 	</div>
 
 	<div data-role="popup" id="pop_std_all" class="ui-content"><b>all types</b></div>
-	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>object</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> {<a href="" onclick="app.ShowPopup('string')">data</a>,<a href="" onclick="app.ShowPopup('string')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> {<a href="" onclick="app.ShowPopup('string: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('string')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('string')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>object:</b> {<a href="" onclick="app.ShowPopup('string: “Entry Saved”')">data</a>,<a href="" onclick="app.ShowPopup('string')">error</a>}</div>
+	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>Object</b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: “Entry Saved”')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('boolean')">success</a>,
+		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">result</a>,
-		<a href="" onclick="app.ShowPopup('number: integer')">status</a>
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('boolean')">error</a>,
+		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">result</a>,
-		<a href="" onclick="app.ShowPopup('number: integer')">status</a>
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('boolean')">error</a>,
+		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">result</a>,
-		<a href="" onclick="app.ShowPopup('number: integer')">status</a>
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('boolean')">success</a>,
+		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">result</a>,
-		<a href="" onclick="app.ShowPopup('number: integer')">status</a>
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>cld.Delete</b><br>Deletes a file in the cloud.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>cld.GetType</b><br>Returns the control class name.</div>

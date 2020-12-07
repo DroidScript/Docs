@@ -45,7 +45,7 @@
 
 		<div class="samp">
 		gam = app.CreateGame(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">orient</a> )
 		</div>
 
@@ -58,8 +58,8 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">CreateGame</span><span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">CreateGame</span><span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -77,8 +77,8 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Portrait”</docstr> or <docstr>“Landscape”</docstr></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Portrait”</docstr> or <docstr>“Landscape”</docstr></div>
 	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateGameView.htm" data-ajax="false">GameView</a></div>
 	<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content">game</div>

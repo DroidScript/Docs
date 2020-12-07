@@ -1,0 +1,7 @@
+<sample Show app path>
+function OnStart()
+{
+    <b>var path = app.GetAppPath();</b>
+    app.Alert( path );
+}
+</sample>

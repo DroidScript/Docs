@@ -47,7 +47,7 @@
 		sys = app.CreateSysProc(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">cmd</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">env</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">dir</a>,
+			<a href="#pop_str_ptd" data-transition="pop" data-rel="popup">dir</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>app object:</b> SysProc
 		</div>
@@ -57,28 +57,28 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Log,Monospace,autoscale"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Log,Monospace,autoscale"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">sys <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSysProc</span><span class="token punctuation">(</span> <span class="token string">"sh"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> <span class="token string">"netstat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">SetOnInput</span><span class="token punctuation">(</span> sys_OnInput <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> sys_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> <span class="token string">"netstoat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    sys <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSysProc</span><span class="token punctuation">(</span> <span class="token string">"sh"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> <span class="token string">"netstat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">SetOnInput</span><span class="token punctuation">(</span> sys_OnInput <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> sys_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> <span class="token string">"netstoat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">sys_OnInput</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">sys_OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -93,46 +93,46 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">scr <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateScroller</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> scr <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    scr <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateScroller</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> scr <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetLog</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">scr<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetLog</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    scr<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">sys <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSysProc</span><span class="token punctuation">(</span> <span class="token string">"sh"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">SetOnInput</span><span class="token punctuation">(</span> sys_OnInput <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> sys_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    sys <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSysProc</span><span class="token punctuation">(</span> <span class="token string">"sh"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">SetOnInput</span><span class="token punctuation">(</span> sys_OnInput <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span> sys_OnError <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">Exec</span><span class="token punctuation">(</span> <span class="token string">"netstat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">Exec</span><span class="token punctuation">(</span> <span class="token string">"netstat\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// filter files containing 'D' in /sdcard/ and forward to stderr</span></span><br>
-				    <span style="display:inline-block"><span class="token function">Exec</span><span class="token punctuation">(</span> <span class="token string">"ls -al /sdcard/ | grep D >&amp;2\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// filter files containing 'D' in /sdcard/ and forward to stderr</span><br>
+				    <span class="token function">Exec</span><span class="token punctuation">(</span> <span class="token string">"ls -al /sdcard/ | grep D >&amp;2\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">Exec</span><span class="token punctuation">(</span> <span class="token parameter">cmd</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> cmd <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> cmd<span class="token punctuation">,</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    sys<span class="token punctuation">.</span><span class="token function">Out</span><span class="token punctuation">(</span> cmd <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> cmd<span class="token punctuation">,</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">sys_OnInput</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">sys_OnError</span><span class="token punctuation">(</span> <span class="token parameter">msg</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg<span class="token punctuation">,</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span> msg<span class="token punctuation">,</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    scr<span class="token punctuation">.</span><span class="token function">ScrollTo</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> txt<span class="token punctuation">.</span><span class="token function">GetHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -151,7 +151,7 @@
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“SysProc”</docstr>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“SysProc”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">In</a>(
@@ -174,8 +174,8 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">ReadFileAsByte</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
-			→ <b>number:</b> <i>Bytes</i>
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>bytes</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnError</a>(
@@ -187,21 +187,22 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">WriteToFile</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>program name:</i> <docstr>“sh”</docstr> or <docstr>“su”</docstr> or <docstr>“busybox”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('combines stdout and stderr')">combine</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('force use of proc builder')">builder</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('dont wait for input')">nowait</a>”</docstr></div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_ptd" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>program name:</i> <docstr>“sh”</docstr> or <docstr>“su”</docstr> or <docstr>“busybox”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('combines stdout and stderr')">combine</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('force use of proc builder')">builder</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('dont wait for input')">nowait</a>”</docstr></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">data</a>
+		<a href="" onclick="app.ShowPopup('String')">data</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>sys.Err</b><br>Read data from stderr</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>sys.GetType</b><br>Returns the control class name.</div>

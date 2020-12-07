@@ -68,18 +68,18 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -95,18 +95,18 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip2" style="font-size:100%">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnB <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -123,25 +123,25 @@
 			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">layVert <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    layVert <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnA <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnA <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip3" style="font-size:100%"><span style="display:inline-block">layHoriz <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layHoriz <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip3" style="font-size:100%">layHoriz <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layHoriz <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">btnB1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B1"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB1 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btnB2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B2"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB2 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btnB3 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B3"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB3 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnB1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B1"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB1 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btnB2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B2"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB2 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btnB3 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"B3"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layHoriz<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnB3 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btnC <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layVert<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnC <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> layVert <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> layVert <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -161,31 +161,31 @@
 			<div id="examp4" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip4" style="font-size:100%"><span style="display:inline-block">layFrm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Frame"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block">img1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layFrm<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img1 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip4" style="font-size:100%">layFrm <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Frame"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    img1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layFrm<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img1 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">img2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">layFrm<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img2 <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layFrm <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    img2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    layFrm<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img2 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> layFrm <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Press Me"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Press Me"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> img2<span class="token punctuation">.</span><span class="token function">GetVisibility</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Show"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">else</span></span><br>
-				    <span style="display:inline-block">   img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> img2<span class="token punctuation">.</span><span class="token function">GetVisibility</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span><br>
+				        img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Show"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span><br>
+				       img2<span class="token punctuation">.</span><span class="token function">SetVisibility</span><span class="token punctuation">(</span> <span class="token string">"Hide"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -236,25 +236,25 @@
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">GetChildOrder</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">child</a> )
-			→ <b>number:</b> <i>integer</i>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
@@ -262,7 +262,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>object:</b> {
+			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
@@ -271,18 +271,18 @@
 		<div class="samp">
 			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Layout”</docstr>
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Layout”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
@@ -291,16 +291,16 @@
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>boolean</b>
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
-			→ <b>boolean</b>
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>boolean</b>
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
@@ -343,7 +343,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
@@ -382,9 +382,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
@@ -418,9 +418,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
@@ -470,46 +470,46 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-	<div data-role="popup" id="pop_num_fac" class="ui-content"><b>number:</b> <i>factor</i></div>
-	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
-	<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> 0..100</div>
-	<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
-	<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Linear”</docstr> or <docstr>“Absolute”</docstr> or <docstr>“Frame”</docstr> or <docstr>“Card”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('forwards touch events to underlying children')">TouchThrough</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('spies for touch events on all children')">TouchSpy</a>”</docstr>, <docstr>“Left”</docstr> or <docstr>“Top”</docstr> or <docstr>“Right”</docstr> or <docstr>“Bottom”</docstr> or <docstr>“Center”</docstr> or <docstr>“H/VCenter”</docstr>, <docstr>“Wrap”</docstr>, <docstr>“Horizontal”</docstr> or <docstr>“Vertical”</docstr>, <docstr>“FillX/Y”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <docstr>“repeat”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>string:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
-	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> <docstr>“Left”</docstr>, <docstr>“Top”</docstr>, <docstr>“Right”</docstr>, <docstr>“Bottom”</docstr>, <docstr>“VCenter”</docstr>, <docstr>“HCenter”</docstr>, <docstr>“FillX”</docstr>, <docstr>“FillY”</docstr>, <docstr>“FillXY”</docstr></div>
-	<div data-role="popup" id="pop_str_010" class="ui-content"><b>string:</b> <docstr>“Horizontal”</docstr> or <docstr>“Vertical”</docstr></div>
-	<div data-role="popup" id="pop_str_013" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_014" class="ui-content"><b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_str_015" class="ui-content"><b>string:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_num_fac" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>factor</i></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
+	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>pixel</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -180..180</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -100..100</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..100</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..0.99 or 1..256</div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear”</docstr> or <docstr>“Absolute”</docstr> or <docstr>“Frame”</docstr> or <docstr>“Card”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('forwards touch events to underlying children')">TouchThrough</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('spies for touch events on all children')">TouchSpy</a>”</docstr>, <docstr>“Left”</docstr> or <docstr>“Top”</docstr> or <docstr>“Right”</docstr> or <docstr>“Bottom”</docstr> or <docstr>“Center”</docstr> or <docstr>“H/VCenter”</docstr>, <docstr>“Wrap”</docstr>, <docstr>“Horizontal”</docstr> or <docstr>“Vertical”</docstr>, <docstr>“FillX/Y”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“repeat”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Left”</docstr>, <docstr>“Top”</docstr>, <docstr>“Right”</docstr>, <docstr>“Bottom”</docstr>, <docstr>“VCenter”</docstr>, <docstr>“HCenter”</docstr>, <docstr>“FillX”</docstr>, <docstr>“FillY”</docstr>, <docstr>“FillXY”</docstr></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Horizontal”</docstr> or <docstr>“Vertical”</docstr></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">h</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">type</a>
+		<a href="" onclick="app.ShowPopup('String')">type</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('app object')">src</a>
@@ -569,7 +569,7 @@
 	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>lay.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
 	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>lay.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <strong>position(s)</strong>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
 	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>lay.SetOnTouchDown</b><br>Define a callback function which is called when the user started toching the control.</div>
-	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>lay.SetOnTouchMove</b><br>Define a callback function which is called when the user drags his finger over the screen.</div>
+	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>lay.SetOnTouchMove</b><br>Define a callback function which is called when the user drags a finger over the screen.</div>
 	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>lay.SetOnTouchUp</b><br>Define a callback function which is called when the users finger leaves the screen.</div>
 	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>lay.SetOrientation</b><br>Change the children orientation.</div>
 	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>lay.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>

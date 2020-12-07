@@ -33,22 +33,20 @@
 	</div>
 
 	<div data-role="content">
-		<p>GetLanguage returns the name of the devices language (ie.</p>
+		<p>GetLanguage returns the name of the devices language (ie. <docstr>“English”</docstr> or <docstr>“Deutsch”</docstr>).</p>
 
 		<div class="samp">
-		app.GetLanguage() → <b>string</b>
+		app.GetLanguage() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 
-		<p><docstr>“English”</docstr> or <docstr>“Deutsch”</docstr>).<br>
-		<br>
-		See Also: <a href="GetLanguageCode.htm" data-ajax="false">GetLanguageCode</a>, <a href="GetCountry.htm" data-ajax="false">GetCountry</a>, <a href="SetLanguage.htm" data-ajax="false">SetLanguage</a></p>
+		<p>See Also: <a href="GetLanguageCode.htm" data-ajax="false">GetLanguageCode</a>, <a href="GetCountry.htm" data-ajax="false">GetCountry</a>, <a href="SetLanguage.htm" data-ajax="false">SetLanguage</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Show User Language</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> lang <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> lang <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> lang <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> lang <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

@@ -1,7 +1,0 @@
-<sample Show Country Code>
-function OnStart()
-{
-    <b>var code = app.GetCountryCode();</b>
-    app.Alert( code );
-}
-</sample>

@@ -37,7 +37,7 @@
 
 		<div class="samp">
 		app.DeleteFile(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 		</div>
 
 		<p>This makes it hard to restore it!<br>
@@ -48,14 +48,14 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"Bye World!\n"</span><span class="token punctuation">,</span> <span class="token string">"Append"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"Bye World!\n"</span><span class="token punctuation">,</span> <span class="token string">"Append"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">DeleteFile</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">DeleteFile</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FileExists</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFile was not deleted!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">else</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFile was deleted!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FileExists</span><span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFile was not deleted!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFile was deleted!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -69,7 +69,7 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 </div>
 </body>
 

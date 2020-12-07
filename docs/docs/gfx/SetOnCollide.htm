@@ -33,18 +33,20 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Define a callback which is called when two <a href="AddPhysics.htm" data-ajax="false">Physics objects</a> collide.</p>
 
 		<div class="samp">
 		gfx.SetOnCollide(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>unknown</b>
 		</div>
 
 
 	</div>
 
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('game object')">a</a>,
+		<a href="" onclick="app.ShowPopup('game object')">b</a>
+	)</div>
 </div>
 </body>
 

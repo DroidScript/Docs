@@ -1,7 +1,0 @@
-<sample Show display height>
-function OnStart()
-{
-    var height = app.GetDisplayHeight();
-    app.Alert( height );
-}
-</sample>

@@ -48,6 +48,7 @@
 			</span><br>
 			• <a href="" onclick="jumpTo('Function Shortcuts DW DH TW')">Function Shortcuts DW DH TW</a><br>
 			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
+			• <a href="" onclick="jumpTo('Translations: T()')">Translations: T()</a><br>
 			• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a><br>
 			<span style="display:inline-block;padding-left:1em;">
 				- <a href="" onclick="jumpTo('Custom Contexts: M()')">Custom Contexts: M()</a><br>
@@ -90,6 +91,8 @@
 		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
+		<h2>Translations: T()</h2>
+		<p>Converts a keyword into the translated text using a <a href="07FileStructure.htm#lang.json" data-ajax="false">lang.json</a> file.</p>
 		<h2>Unique Callbacks: I()</h2>
 		<p>DroidScript checks if a callback function already exists and uses it instead of creating a new instance.<br>
 		This can cause issues when referring to other local variables in private scopes.<br>
@@ -100,41 +103,41 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -155,27 +158,27 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 1"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token string">"Button 2"</span><span class="token punctuation">,</span> lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span></span><br>
+				    <b id="snip2" style="font-size:100%">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

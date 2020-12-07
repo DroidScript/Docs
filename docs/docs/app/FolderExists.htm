@@ -37,8 +37,8 @@
 
 		<div class="samp">
 		app.FolderExists(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">folder</a> )
-			→ <b>boolean</b>
+			<a href="#pop_str_ptd" data-transition="pop" data-rel="popup">folder</a> )
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 
 		<p>See Also: <a href="MakeFolder.htm" data-ajax="false">MakeFolder</a>, <a href="CopyFolder.htm" data-ajax="false">CopyFolder</a>, <a href="RenameFolder.htm" data-ajax="false">RenameFolder</a></p>
@@ -47,10 +47,10 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FolderExists</span><span class="token punctuation">(</span><span class="token string">"myFolder"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder exists!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">else</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder does not exist!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FolderExists</span><span class="token punctuation">(</span><span class="token string">"myFolder"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder exists!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder does not exist!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -64,7 +64,7 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_ptd" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 </div>
 </body>
 

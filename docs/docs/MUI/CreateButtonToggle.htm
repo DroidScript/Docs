@@ -45,15 +45,46 @@
 
 		<div class="samp">
 		btt = MUI.CreateButtonToggle(
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">t</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">e</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">i</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">a</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">l</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">o</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">s</a> )
-			→ <b>object</b>
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">value</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">backColor</a> )
+			→ <b>Object</b>
 		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Light</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>darken1<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonToggle</span><span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> OnToggle<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnToggle</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
 
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>ButtonToggle</strong> object:</p>
@@ -68,31 +99,31 @@
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Animate</a>(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">ClearFocus</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">data</a> → <b>object</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">data</a> → <b>Object</b></div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
@@ -100,35 +131,35 @@
 		<div class="samp">
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>object:</b> {
+			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">GetText</a>() → <b>string</b>
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">GetText</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">GetTextSize</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Button”</docstr>
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Button”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
@@ -137,16 +168,16 @@
 			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>boolean</b>
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
-			→ <b>boolean</b>
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>boolean</b>
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
@@ -185,7 +216,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_009" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
@@ -203,7 +234,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">SetFontFile</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">SetHtml</a>(
@@ -219,14 +250,10 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">SetOnLongTouch</a>(
-			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">SetOnTouch</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
+			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
@@ -234,7 +261,7 @@
 			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
+			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
@@ -242,102 +269,102 @@
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">SetScale</a>(
+			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">SetScale</a>(
 			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
+			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
 			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup">SetStyle</a>(
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">clr1</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">clr2</a>,
+			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup">SetStyle</a>(
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">clr1</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">clr2</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">radius</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">strokeClr</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">strokeClr</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">strokeWidth</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">shadow</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02a" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
+			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup" class="baseFunc">SetTextColor</a>(
+			<a href="#pop_dsc_02a" data-transition="pop" data-rel="popup" class="baseFunc">SetTextColor</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup" class="baseFunc">SetTextShadow</a>(
+			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup" class="baseFunc">SetTextShadow</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">radius</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">dx</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">dy</a>,
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup" class="baseFunc">SetTextSize</a>(
+			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup" class="baseFunc">SetTextSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">size</a>,
 			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
 			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
+			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
 			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">target</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
 			<a href="#pop_str_012" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>,
-			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-	<div data-role="popup" id="pop_num_fac" class="ui-content"><b>number:</b> <i>factor</i></div>
-	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
-	<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> 0..100</div>
-	<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
-	<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_htm" class="ui-content"><b>string:</b> <i>html code</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_008" class="ui-content"><b>string:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <docstr>“repeat”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <docstr>“start”</docstr> or <docstr>“middle”</docstr> or <docstr>“end”</docstr></div>
-	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_010" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_str_012" class="ui-content"><b>string:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">type</a>
-	)</div>
+	<div data-role="popup" id="pop_num_fac" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>factor</i></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -180..180</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -100..100</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..100</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..0.99 or 1..256</div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_htm" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>html code</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“repeat”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“start”</docstr> or <docstr>“middle”</docstr> or <docstr>“end”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String')">type</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('app object')">src</a>
 	)</div>
-	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>btt.AdjustColor</b><br>Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>btt.Animate</b><br>Animates the control.<br><br>There are<br>    <docstr>“in”</docstr>-Animations which are used to show objects from hidden state<br>    <docstr>“out”</docstr>-animations which are used to hide objects in visible state and<br>    <docstr>“static”</docstr>-animations which keep the visible state.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>btt.ClearFocus</b><br>Removes the focus of the control so that the user no longer has immediate access to it.</div>
@@ -373,19 +400,18 @@
 	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>btt.SetHtml</b><br>Change the current text of the control to html-formatted text.</div>
 	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>btt.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
 	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>btt.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
-	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>btt.SetOnTouch</b><br>Define a callback function that is called when the user touches the control.</div>
-	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>btt.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
-	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>btt.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
-	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>btt.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
-	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>btt.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <strong>px</strong> option was given.</div>
-	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>btt.SetStyle</b><br>SetStyle</div>
-	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>btt.SetText</b><br>Change the currently displayed text in the control.</div>
-	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>btt.SetTextColor</b><br>Change the text color of the contained text.</div>
-	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>btt.SetTextShadow</b><br>Define a shadow displayed around the control.<br>The sun is always shining so there has to be one. Always.</div>
-	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>btt.SetTextSize</b><br>Change the size of the contained text.</div>
-	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>btt.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>btt.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
-	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>btt.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>
+	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>btt.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
+	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>btt.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
+	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>btt.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
+	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>btt.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <strong>px</strong> option was given.</div>
+	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>btt.SetStyle</b><br>SetStyle</div>
+	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>btt.SetText</b><br>Change the currently displayed text in the control.</div>
+	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>btt.SetTextColor</b><br>Change the text color of the contained text.</div>
+	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>btt.SetTextShadow</b><br>Define a shadow displayed around the control.<br>The sun is always shining so there has to be one. Always.</div>
+	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>btt.SetTextSize</b><br>Change the size of the contained text.</div>
+	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>btt.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>btt.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>btt.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>
 </div>
 </body>
 

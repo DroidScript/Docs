@@ -562,7 +562,6 @@
 		"Show": "Set the visibility to “Show”",
 		"Tween": "Animates the control"
 	},
-	"lay": {},
 	"lsd": {
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
@@ -804,7 +803,7 @@
 		"CreateCheckbox": "CreateCheckbox",
 		"CreateCheckList": "CreateCheckList",
 		"CreateColorPicker": "Creates a color picker dialog where you can select a range of MUI predefined colors",
-		"CreateDataTable": "#CreateDataTable.md",
+		"CreateDataTable": "Creates a new DataTable Control",
 		"CreateDatePicker": "CreateDatePicker",
 		"CreateDialog": "Creates a customizable materialize dialog",
 		"CreateDivider": "CreateDivider",

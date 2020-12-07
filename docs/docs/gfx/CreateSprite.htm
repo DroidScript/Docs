@@ -45,10 +45,10 @@
 
 		<div class="samp">
 		spr = gfx.CreateSprite(
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">group</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>game object:</b> <a href="CreateSprite.htm" data-ajax="false">Sprite</a>
+			→ <b>game object:</b> CreateSprite
 		</div>
 
 		<p>To create a new Sprite just pass the image name as first parameter:<br>
@@ -58,8 +58,8 @@
 		<strong>Spritesheets</strong> can be loaded in two ways:<br>
 		<br>
 		The simple one is a specific file pattern<br>
-		<docstr>“Img/Sheetname_<strong><a href="" onclick="app.ShowPopup('number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesy</a></strong>”</docstr> or<br>
-		<docstr>“Img/Sheetname_strip<strong><a href="" onclick="app.ShowPopup('number')">total</a></strong>_<strong><a href="" onclick="app.ShowPopup('number')">width</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">height</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesx</a></strong>x<strong><a href="" onclick="app.ShowPopup('number')">spritesy</a></strong>”</docstr><br>
+		<docstr>“Img/Sheetname_<strong><a href="" onclick="app.ShowPopup('Number')">WIDTH</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">HEIGHT</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SX</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SY</a></strong>”</docstr> or<br>
+		<docstr>“Img/Sheetname_strip<strong><a href="" onclick="app.ShowPopup('Number')">TOTAL</a></strong>_<strong><a href="" onclick="app.ShowPopup('Number')">WIDTH</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">HEIGHT</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SX</a></strong>x<strong><a href="" onclick="app.ShowPopup('Number')">SPRITE_SY</a></strong>”</docstr><br>
 		if you have a different amount of sprites than the rectangle of <i>spritesx * spritesy</i> sprites.<br>
 		<br>
 		Example from the downloadable demo <a href="https://droidscript.org" onclick="return OpenUrl(this.href);">Grannies and Zombies</a>:</p>
@@ -69,40 +69,40 @@
 		zombie <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"Img/Zombie_strip35_1400x1000x7x5"</span><span class="token punctuation">,</span> <span class="token string">"zombie"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 		</div>
 
-		<p>The second way is to create a SpriteSheet using the</p>
+		<p>The second way is to create a SpriteSheet using the <a href="CreateSpriteSheet.htm" data-ajax="false">CreateSpriteSheet</a> method which might come handy if a single sprite has multiple animations or if a sprite is reused but using a different sprite sheet.</p>
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Sprite</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">added</a> → <b>boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">alpha</a> → <b>number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">angle</a> → <b>number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">aspect</a> → <b>number</b></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">added</a> → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">alpha</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">angle</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">aspect</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">Contains</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a> )
-			→ <b>boolean</b>
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
-		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>object</b></div>
+		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>Object</b></div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Flip</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">horiz</a>,
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">vert</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">GetFrame</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">GetFrame</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Goto</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">frame</a> )
 		</div>
-		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">group</a> → <b>string</b></div>
-		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">height</a> → <b>number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">group</a> → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">height</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">PauseTween</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">pivotX</a> → <b>number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">pivotY</a> → <b>number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">pivotX</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">pivotY</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">Play</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">startFrame</a>,
@@ -123,15 +123,15 @@
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">PlayTween</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">scaleX</a> → <b>number:</b> <i>factor</i></div>
-		<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">scaleY</a> → <b>number:</b> <i>factor</i></div>
+		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">scaleX</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>factor</i></div>
+		<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">scaleY</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>factor</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetLoop</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">loop</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">SetMatrix</a>(
-			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">mtx</a> )
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">mtx</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">SetPlaySpeed</a>(
@@ -160,7 +160,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">SetTween</a>(
-			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">target</a>,
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">target</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
@@ -182,7 +182,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
-			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">target</a>,
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">target</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
@@ -192,24 +192,25 @@
 		<div class="samp">
 			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">Update</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">visible</a> → <b>boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">width</a> → <b>number</b></div>
-		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">x</a> → <b>number</b></div>
-		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">y</a> → <b>number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">visible</a> → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">width</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">x</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">y</a> → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
 
 	</div>
 
-	<div data-role="popup" id="pop_gvo_001" class="ui-content"><b>game object:</b> <a href="SpriteSheet.htm" data-ajax="false">SpriteSheet</a></div>
-	<div data-role="popup" id="pop_gvo_002" class="ui-content"><b>game object:</b> <a href="SpriteTexture.htm" data-ajax="false">SpriteTexture</a></div>
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
-	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="Matrix.htm" data-ajax="false">Matrix</a></div>
+	<div data-role="popup" id="pop_gvo_001" class="ui-content"><b>game object:</b> <a href="CreateSpriteSheet.htm" data-ajax="false">SpriteSheet</a></div>
+	<div data-role="popup" id="pop_gvo_002" class="ui-content"><b>game object:</b> <a href="CreateTexture.htm" data-ajax="false">Texture</a></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> Matrix</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content">Indicates if the sprite has been added to the game</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content">The objects alpha value</div>
