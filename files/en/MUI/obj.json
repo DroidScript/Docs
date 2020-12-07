@@ -70,6 +70,8 @@
 				"shortDesc": "SetOnTouch"
 			},
 			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetHtml": "#8753208754",
 			"Show": "#1243391562",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -338,6 +340,10 @@
 				"shortDesc": "SetOnTouch"
 			},
 			"Show": "#1243391562",
+			"SetText": "#8207502354",
+			"SetHtml": "#8753208754",
+			"SetTextColor": "#0175303923",
+			"SetTextSize": "#5019790423",
 			"Hide": "#5372805812",
 			"Destroy": {
 				"desc": "Destroys the banner object",
@@ -867,7 +873,7 @@
 	},
 	"CreateCard": {
 		"abbrev": "crd",
-		"desc": "A material implementation of a card. It is fully customizable to suit your likings.",
+		"desc": "A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>",
 		"pNames": ["options"],
 		"pTypes": ["obj-{title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
 		"retval": "obj",
@@ -991,18 +997,17 @@
 			},
 			"CheckItemByIndex": {
 				"desc": "Checks the corresponding item/items in the checkbox list",
-				"name": "GetCheckItem",
 				"pNames": ["index"],
 				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"],
 				"shortDesc": "GetCheckItem"
 			},
 			"UncheckItemByIndex": {
 				"desc": "Unchecks the corresponding item/items in the checkbox list",
-				"name": "GetCheckItem",
 				"pNames": ["index"],
 				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"],
 				"shortDesc": "GetCheckItem"
 			},
+			"SetHeight": "#2114625707",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1053,6 +1058,90 @@
 			"SetEnabled": "#1602385882"
 		}
 	},
+	"CreateDataTable": {
+		"abbrev": "tbl",
+		"desc": "#CreateDataTable.md",
+		"pNames": ["columns", "values", "width", "height", "options"],
+		"pTypes": ["lst-An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'", "lst-An array of strings of the form Val1:Val2:Val3...", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-A comma separated options. Can be Selectable"],
+		"retval": "obj",
+		"shortDesc": "Creates a new DataTable Control.",
+		"subf": {
+			"AppendRow": {
+				"desc": "Add a row at the end of the table. The same as AddRow",
+				"pNames": ["row"],
+				"pTypes": ["str-A colon ':' separated entries for the new row."],
+				"shortDesc": "Append a row to the table."
+			},
+			"PrependRow": {
+				"desc": "Add a row at the beginning of the table.",
+				"pNames": ["row"],
+				"pTypes": ["str-A colon ':' separated entries for the new row."],
+				"shortDesc": "Prepend a row to the table."
+			},
+			"RemoveRows": {
+				"desc": "Remove a row at a given index or indexes",
+				"pNames": ["index"],
+				"pTypes": ["lst-An array of indexes you want to remove. It can also be just a number for a single index."],
+				"shortDesc": "RemoveRows"
+			},
+			"GetSelectedRows": {
+				"desc": "Get the selected rows. This function is synchronous. You need to pass a callback.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["indexes"],
+					"pTypes": ["lst-An array of indexes."]
+				}],
+				"shortDesc": "GetSelectedRows"
+			},
+			"SetSelectionStatus": {
+				"desc": "Calls a function when the selection status of the table change.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["isActive"],
+					"pTypes": ["bin-True if there's an active selection, false otherwise."]
+				}],
+				"shortDesc": "SetSelectionStatus"
+			},
+			"SetRows": {
+				"desc": "Set the rows of the table to a new values of data.",
+				"pNames": ["values"],
+				"pTypes": ["lst-A comma separated strings of the form \"Val1:Val2:Val3:...\""],
+				"shortDesc": "SetRows"
+			},
+			"AddFooter": {
+				"desc": "Add a footer layout to the table where you can add controls.",
+				"pNames": ["type", "options", "height"],
+				"pTypes": [
+					"str-Type of layout. Can be Linear, Absolute or Frame. Default to Linear",
+					"str-A comma separated layout options. Default to Horizontal,Right,VCenter",
+					"num-A fraction of the screen height."
+				],
+				"shortDesc": "Add a footer layout to the table"
+			},
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"SetEnabled": "#1602385882",
+			"SetMargins": "#1741900074",
+			"SetPosition": "#1425862386",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+	},
 	"CreateDatePicker": {
 		"abbrev": "dtp",
 		"desc": "Creates a materialize date picker dialog.",
@@ -1096,6 +1185,12 @@
 				"shortDesc": "SetOnTouch"
 			},
 			"Show": "#1243391562",
+			"SetText": "#8207502354",
+			"SetHtml": "#8753208754",
+			"SetTextColor": "#0175303923",
+			"SetTextSize": "#5019790423",
+			"SetTitle": "#2114625769",
+			"SetTitleColor": "#2114625709",
 			"Hide": "#5372805812",
 			"Destroy": "#1924613325",
 			"ClearFocus": "#1362225380",
@@ -1580,6 +1675,7 @@
 				"shortDesc": "Calls a function selects an item in the list"
 			},
 			"Show": "#1243391562",
+			"SetHeight": "#2114625707",
 			"Hide": "#5372805812",
 			"Destroy": "#1924613325",
 			"GetVisibility": "#1672373665",
@@ -1659,7 +1755,6 @@
 			},
 			"RemoveItems": {
 				"desc": "Removes multiple items in the list.",
-				"name": "RemoveItem",
 				"pNames": ["indexes"],
 				"pTypes": ["lst-An array of indexes."],
 				"shortDesc": "RemoveItems"
@@ -1932,6 +2027,22 @@
 				"shortDesc": "Get the layout of the modal where you can add your controls."
 			},
 			"Destroy": "#1924613325",
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTitle": {
+				"desc": "Sets a new title to the modal",
+				"pNames": ["title"],
+				"pTypes": ["str"],
+				"retval": "",
+				"shortDesc": "Sets a new title to the modal"
+			},
+			"SetHeaderColor": {
+				"desc": "Change the background color of the header",
+				"pNames": ["color"],
+				"pTypes": ["str_col"],
+				"retval": "",
+				"shortDesc": "Sets a new title to the modal"
+			},
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
 			"GetVisibility": "#1672373665",
@@ -1963,7 +2074,6 @@
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item in the list",
-				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["name", "index"],
@@ -2195,7 +2305,6 @@
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item in the list",
-				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["name", "index"],
@@ -2273,7 +2382,6 @@
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item in the list",
-				"name": "CheckItemByIndex",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["name", "index"],

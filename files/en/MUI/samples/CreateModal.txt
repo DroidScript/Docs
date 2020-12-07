@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -35,7 +35,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -66,13 +66,13 @@ function ShowModal()
 
 
 <sample With Callback>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 

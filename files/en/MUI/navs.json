@@ -51,6 +51,9 @@
         "CreateDatePicker",
         "CreateTimePicker"
     ],
+    "Table": [
+        "CreateDataTable"
+    ],
     "Texts": [
         "CreateTextH1",
         "CreateTextH2",

@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample alert text."
     als = MUI.CreateAlertSimple(text)
@@ -20,7 +20,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample alert text."
     als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
@@ -35,13 +35,13 @@ function CloseAlert()
 }
 </sample>
 <sample Dark>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 

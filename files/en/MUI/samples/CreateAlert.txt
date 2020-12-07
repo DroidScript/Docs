@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample text for the popup."
     alr = MUI.CreateAlert(text)
@@ -20,7 +20,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample text for the popup."
     alr = MUI.CreateAlert(text, "message")
@@ -35,13 +35,13 @@ function CloseAlert()
 }
 </sample>
 <sample On close function>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     var text = "This is a sample text for the popup."
     alr = MUI.CreateAlert(text, "message", MUI.colors.blue.darken2)

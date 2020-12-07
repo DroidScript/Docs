@@ -5,7 +5,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -26,7 +26,7 @@ cfg.MUI
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -46,13 +46,13 @@ function OnTouch(name, index)
 
 
 <sample Horizontal>
-cfg.Light
+cfg.Dark
 cfg.MUI
 
 function OnStart()
 {
     color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Dark")
+    app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
