@@ -100,7 +100,7 @@ function OnStart()
                 table.RemoveRows(x)
             })
         })
-        table.SetSelectionStatus(function(c) {
+        table.SetOnSelectionStatus(function(c) {
             if(c) fBtn.SetEnabled(true)
             else fBtn.SetEnabled(false)
         })

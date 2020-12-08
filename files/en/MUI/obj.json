@@ -1093,14 +1093,14 @@
 				}],
 				"shortDesc": "GetSelectedRows"
 			},
-			"SetSelectionStatus": {
-				"desc": "Calls a function when the selection status of the table change.",
+			"SetOnSelectionStatus": {
+				"desc": "Calls a function when the selection status of the table changes.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"pNames": ["isActive"],
+					"pNames": ["isTrue"],
 					"pTypes": ["bin-True if there's an active selection, false otherwise."]
 				}],
-				"shortDesc": "SetSelectionStatus"
+				"shortDesc": "SetOnSelectionStatus"
 			},
 			"SetRows": {
 				"desc": "Set the rows of the table to a new values of data.",
