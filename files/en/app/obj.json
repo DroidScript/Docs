@@ -3908,7 +3908,7 @@
 			"SetSize": "#1296070870",
 			"SetText": {
 				"desc": "Change the current shown item",
-				"name": "SelectItem",
+				"name": "SetText",
 				"pNames": ["item"],
 				"pTypes": ["str"],
 				"shortDesc": "Change current shown item"
