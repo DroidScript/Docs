@@ -1197,9 +1197,9 @@
 		"RemoveRows": "RemoveRows",
 		"SetEnabled": "En/Disable the control",
 		"SetMargins": "Define distances to other controls",
+		"SetOnSelectionStatus": "SetOnSelectionStatus",
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetRows": "SetRows",
-		"SetSelectionStatus": "SetSelectionStatus",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
 		"Tween": "Animates the control"
