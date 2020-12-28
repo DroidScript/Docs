@@ -186,7 +186,7 @@
 				                table<span class="token punctuation">.</span><span class="token function">RemoveRows</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><br>
 				            <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
 				        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
-				        table<span class="token punctuation">.</span><span class="token function">SetSelectionStatus</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        table<span class="token punctuation">.</span><span class="token function">SetOnSelectionStatus</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
 				            <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> fBtn<span class="token punctuation">.</span><span class="token function">SetEnabled</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><br>
 				            <span class="token keyword">else</span> fBtn<span class="token punctuation">.</span><span class="token function">SetEnabled</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><br>
 				        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
@@ -303,7 +303,11 @@
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">SetOnSelectionStatus</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
@@ -311,12 +315,8 @@
 			<a href="#pop_str_005" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">SetRows</a>(
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">SetRows</a>(
 			<a href="#pop_lst_005" data-transition="pop" data-rel="popup">values</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">SetSelectionStatus</a>(
-			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
@@ -347,8 +347,8 @@
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> Fraction of the screen height</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> A fraction of the screen height.</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“A comma separated options. Can be Selectable”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Type of layout. Can be Linear”</docstr>, <docstr>“ Absolute or Frame. Default to Linear”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“A comma separated layout options. Default to Horizontal”</docstr>, <docstr>“Right”</docstr>, <docstr>“VCenter”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Type of layout. Can be Linear”</docstr> or <docstr>“Absolute”</docstr> or <docstr>“Frame. Default to Linear”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“A comma separated layout options. Default to Horizontal”</docstr> or <docstr>“Right”</docstr> or <docstr>“VCenter”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“A colon ':' separated entries for the new row.”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
@@ -365,7 +365,7 @@
 		<a href="" onclick="switchPopup(this, '#pop_lst_003')" data-transition="pop" data-rel="popup">indexes</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('Boolean: True if there's an active selection,  false otherwise.')">isActive</a>
+		<a href="" onclick="app.ShowPopup('Boolean: True if there's an active selection,  false otherwise.')">isTrue</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>tbl.AddFooter</b><br>Add a footer layout to the table where you can add controls.</div>
@@ -391,9 +391,9 @@
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>tbl.RemoveRows</b><br>Remove a row at a given index or indexes</div>
 	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>tbl.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
 	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>tbl.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>tbl.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>tbl.SetRows</b><br>Set the rows of the table to a new values of data.</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>tbl.SetSelectionStatus</b><br>Calls a function when the selection status of the table change.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>tbl.SetOnSelectionStatus</b><br>Calls a function when the selection status of the table changes.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>tbl.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>tbl.SetRows</b><br>Set the rows of the table to a new values of data.</div>
 	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>tbl.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
 	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>tbl.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>tbl.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>

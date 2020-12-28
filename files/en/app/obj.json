@@ -2428,7 +2428,7 @@
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["title", "body", "icon", "index"],
-					"pTypes": ["str", "str", "str", "num"]
+					"pTypes": ["str", "str", "str", "num_int"]
 				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
@@ -2437,7 +2437,7 @@
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["title", "body", "icon", "index"],
-					"pTypes": ["str", "str", "str", "num"]
+					"pTypes": ["str", "str", "str", "num_int"]
 				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
