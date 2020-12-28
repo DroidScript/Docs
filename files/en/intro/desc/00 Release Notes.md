@@ -1,6 +1,49 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
-## DS 2.00
+## DS 202
+- Fixed bad link in documentation to CloudStore component.
+- Update CloudStore documentation.
+
+#### DS 201b1
+- Fixed imagegrid showing black squares after 200b1 scoped storage changes.
+- Added new app.Path2Uri method (gets a 'content://*' path for images and videos).
+- MUI: Fixed MenuWithIcon error.
+- MUI: Fixed DataTable selectable icons.
+
+#### DS 200b1
+- Fixed many file access issues on Android 10/11 with fresh DS installs.
+- Added '/Storage' keyword as new alternative to '/sdcard'.
+- Added '/External' keyword as new alternative to '/extsdcard'.
+- Added support for 'content:' paths on app.ReadFile() and for Image Controls.
+- APKBuilder now uses private storage for its temp files.
+- Fixed bug in plugin docs extraction (non-doc file deletion code failed).
+- app.ChooseFile() method now returns a second 'name' parameter in callback.
+
+#### DS 195b1
+- Fixed bug with APK builder corrupting user assets.
+- Fixed issue with scoped storage re-directs.
+- Updated new improved search extension (thanks to Cemal)
+- Added new premium file differencing extension (thanks to Cemal)
+- Fixed assets not being added from phone Downloads folder.
+- Fixed issue with app.Execute obfuscation.
+- MUI: app.InitializeUIKit(color) to change color.
+- MUI: app.InitializeUIKit(color, theme) to force change the theme to dark or light.
+- MUI: Added new DataTable control.
+- MUI: Dialogs and pickers displayed on the center will now close when back key is click.
+- MUI: Added SetText,SetHtml,SetTextColor, SetTextSize method to banner.
+- MUI: Added SetTitle, SetTitleColor, SetText, SetHtml, SetTextColor, SetTextSize method to dialogs.
+- MUI: Added SetTitle, SetText, SetTextColor, SetHeaderColor to modal.
+- MUI: Added SetText, SetHtml, SetTextColor to AlertSimple.
+- MUI: Added SetHeight method to ListDialog and CheckList dialogs for long list.
+
+#### DS 194b1
+- Allowed 'app' query parameter on wifi IDE urls.
+- Added 'Launch in new tab' option to wifi IDE app icons.
+- Obfuscated MUI APKs now work.
+- Added new built-in Music Engine (thanks to Cemal)
+- Updated CloudStore component to use enjine.io
+- Fixed bug with installing spks over existing ones.
+- Added SetDescription method to all controls (for accessibility)
 
 #### DS 193b1
 - Switched to use scoped storage for user scripts in Android 10/11.

@@ -37,7 +37,7 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
-			• <a href="" onclick="jumpTo('DS 2.00')">DS 2.00</a><br>
+			• <a href="" onclick="jumpTo('DS 202')">DS 202</a><br>
 			• <a href="" onclick="jumpTo('DS 1.80(20-Jan-2020)')">DS 1.80</a><sup>(20-Jan-2020)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.78(27-Oct-2019)')">DS 1.78</a><sup>(27-Oct-2019)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.76(27-Aug-2019)')">DS 1.76</a><sup>(27-Aug-2019)</sup><br>
@@ -69,7 +69,46 @@
 		</div>
 
 		<p><!-- /<a href="[_<i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
-		<h2>DS 2.00</h2>
+		<h2>DS 202</h2>
+		<p>- Fixed bad link in documentation to CloudStore component.<br>
+		- Update CloudStore documentation.</p>
+		<h4>DS 201b1</h4>
+		<p>- Fixed imagegrid showing black squares after 200b1 scoped storage changes.<br>
+		- Added new app.Path2Uri method (gets a 'content://</i>' path for images and videos).<br>
+		- MUI: Fixed MenuWithIcon error.<br>
+		- MUI: Fixed DataTable selectable icons.</p>
+		<h4>DS 200b1</h4>
+		<p>- Fixed many file access issues on Android 10/11 with fresh DS installs.<br>
+		- Added '/Storage' keyword as new alternative to '/sdcard'.<br>
+		- Added '/External' keyword as new alternative to '/extsdcard'.<br>
+		- Added support for '<a href="" onclick="app.ShowPopup(' paths on app.ReadFile() and for Image Controls.<br>
+		- APKBuilder now uses private storage for its temp files.<br>
+		- Fixed bug in plugin docs extraction (non-doc file deletion code failed).<br>
+		- app.ChooseFile() method now returns a second')">content</a> name' parameter in callback.</p>
+		<h4>DS 195b1</h4>
+		<p>- Fixed bug with APK builder corrupting user assets.<br>
+		- Fixed issue with scoped storage re-directs.<br>
+		- Updated new improved search extension (thanks to Cemal)<br>
+		- Added new premium file differencing extension (thanks to Cemal)<br>
+		- Fixed assets not being added from phone Downloads folder.<br>
+		- Fixed issue with app.Execute obfuscation.<br>
+		- MUI: app.InitializeUIKit(color) to change color.<br>
+		- MUI: app.InitializeUIKit(color, theme) to force change the theme to dark or light.<br>
+		- MUI: Added new DataTable control.<br>
+		- MUI: Dialogs and pickers displayed on the center will now close when back key is click.<br>
+		- MUI: Added SetText,SetHtml,SetTextColor, SetTextSize method to banner.<br>
+		- MUI: Added SetTitle, SetTitleColor, SetText, SetHtml, SetTextColor, SetTextSize method to dialogs.<br>
+		- MUI: Added SetTitle, SetText, SetTextColor, SetHeaderColor to modal.<br>
+		- MUI: Added SetText, SetHtml, SetTextColor to AlertSimple.<br>
+		- MUI: Added SetHeight method to ListDialog and CheckList dialogs for long list.</p>
+		<h4>DS 194b1</h4>
+		<p>- Allowed 'app' query parameter on wifi IDE urls.<br>
+		- Added 'Launch in new tab' option to wifi IDE app icons.<br>
+		- Obfuscated MUI APKs now work.<br>
+		- Added new built-in Music Engine (thanks to Cemal)<br>
+		- Updated CloudStore component to use enjine.io<br>
+		- Fixed bug with installing spks over existing ones.<br>
+		- Added SetDescription method to all controls (for accessibility)</p>
 		<h4>DS 193b1</h4>
 		<p>- Switched to use scoped storage for user scripts in Android 10/11.<br>
 		- The 'Store' tab now shows a stripped down version of the DroidStore.<br>
@@ -117,7 +156,7 @@
 		- Fixed scanfile bug in 'Create Shortcut' option.<br>
 		- Fixed issue with custom button colors in APKs for holo theme.</p>
 		<h4>DS 1.91b1<sup>(16-Jul-2020)</sup></h4>
-		<p>- Added new MUI.</i> material controls for premium users!<br>
+		<p>- Added new MUI.<i> material controls for premium users!<br>
 		- Added MUI controls demo app to docs.<br>
 		- Added new 'Class' file/template.<br>
 		- Upgraded obfuscator to support ES6 classes properly.<br>
@@ -137,7 +176,7 @@
 		- SPKs now contain a new hidden file '~package.json' with the DS version used.<br>
 		- Older SPKs and DS projects now default to Holo theme.<br>
 		- Added "Biometric" permission option.<br>
-		- Fixed problem with the word Add being incorrectly replaced when using Add* methods.<br>
+		- Fixed problem with the word Add being incorrectly replaced when using Add</i> methods.<br>
 		- NoIcons now defaults to true if a screen reader is detected.<br>
 		- Fixed app.GetThemeInfo() unset colours. Now returns null.<br>
 		- app.Install() now returns (packageName,status) params in callback.<br>

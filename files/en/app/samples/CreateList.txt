@@ -13,12 +13,12 @@ function OnStart()
 	app.AddLayout( lay );
 }
 
-function lst_OnTouch( title, body, type, index )
+function lst_OnTouch( title, body, icon, index )
 {
 	app.ShowPopup( "Item = " + title + ", Index = " + index, "Short" );
 }
 
-function lst_OnLongTouch( title, body, type, index )
+function lst_OnLongTouch( title, body, icon, index )
 {
 	app.ShowPopup( "Long Touch Item = " + title + ", Index = " + index, "Short" );
 }

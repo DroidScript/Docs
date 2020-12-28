@@ -194,8 +194,8 @@
 		"desc": "ChooseFile opens a file picker for user to select a file.\n\nSee Also: @ReadFile",
 		"pNames": ["message", "type", "callback", "fldr"],
 		"pTypes": ["str", "str-mimetype", {
-			"pNames": ["path"],
-			"pTypes": ["str_pth"]
+			"pNames": ["path", "name"],
+			"pTypes": ["str_pth", "str"]
 		}, "str_pth"],
 		"shortDesc": "Let the user choose a file"
 	},
@@ -1808,7 +1808,7 @@
 		"abbrev": "img",
 		"desc": "#CreateImage.md",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+		"pTypes": ["str_ptc", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-Image",
 		"shortDesc": "Returns a new Image object",
 		"subf": {
@@ -2423,8 +2423,24 @@
 				"shortDesc": "Set the content of the whole list"
 			},
 			"SetMargins": "#1741900074",
-			"SetOnLongTouch": "#2735982374",
-			"SetOnTouch": "#2398750419",
+			"SetOnLongTouch": {
+				"desc": "Define a callback function that is called when the user touches a list item.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["title", "body", "icon", "index"],
+					"pTypes": ["str", "str", "str", "num"]
+				}],
+				"shortDesc": "Define a callback function for touch events"
+			},
+			"SetOnTouch": {
+				"desc": "Define a callback function that is called when the user touches a list item.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["title", "body", "icon", "index"],
+					"pTypes": ["str", "str", "str", "num"]
+				}],
+				"shortDesc": "Define a callback function for touch events"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
@@ -6613,6 +6629,13 @@
 		"pTypes": ["str_url", "str_mim", "str"],
 		"shortDesc": "Allow user to open an url with an external app"
 	},
+	"Path2Uri": {
+		"desc": "Returns a content:// path for images and videos",
+		"pNames": ["path"],
+		"pTypes": ["str_pth"],
+		"retval": "str_ptc-content://[uri]",
+		"shortDesc": "Convert file path to content uri"
+	},
 	"PairBtDevice": {
 		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
 		"pNames": ["address", "callback"],
@@ -6656,7 +6679,7 @@
 	"ReadFile": {
 		"desc": "Reads a file from the local filesystem and returns its contents.\n\nSee also: @WriteFile",
 		"pNames": ["file", "encoding"],
-		"pTypes": ["str_ptf", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
+		"pTypes": ["str_ptc", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
 		"shortDesc": "Read the content of a local file"
 	},
 	"RedirectAssets": {

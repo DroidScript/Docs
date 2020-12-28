@@ -63,6 +63,7 @@
 		"str_oid": "object id “#id”",
 		"str_ort": "“Default”, “Portrait”, “Landscape”",
 		"str_pip": "pipe “|” separated",
+		"str_ptc": "file path or content:// uri",
 		"str_pth": "path to file or folder ( “/absolute/...” or “relative/...” )",
 		"str_ptf": "path to file ( “/absolute/...” or “relative/...” )",
 		"str_ptd": "path to folder ( “/absolute/...” or “relative/...” )",
