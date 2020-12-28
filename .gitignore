@@ -11,6 +11,7 @@ package-lock.json
 /files/*.sh
 /files/ide.*js
 /files/version.txt
+/files/generate_dsuikit.js
 /app/
 
 _*.htm

@@ -1093,14 +1093,14 @@
 				}],
 				"shortDesc": "GetSelectedRows"
 			},
-			"SetSelectionStatus": {
-				"desc": "Calls a function when the selection status of the table change.",
+			"SetOnSelectionStatus": {
+				"desc": "Calls a function when the selection status of the table changes.",
 				"pNames": ["callback"],
 				"pTypes": [{
-					"pNames": ["isActive"],
+					"pNames": ["isTrue"],
 					"pTypes": ["bin-True if there's an active selection, false otherwise."]
 				}],
-				"shortDesc": "SetSelectionStatus"
+				"shortDesc": "SetOnSelectionStatus"
 			},
 			"SetRows": {
 				"desc": "Set the rows of the table to a new values of data.",
@@ -1112,8 +1112,8 @@
 				"desc": "Add a footer layout to the table where you can add controls.",
 				"pNames": ["type", "options", "height"],
 				"pTypes": [
-					"str-Type of layout. Can be Linear, Absolute or Frame. Default to Linear",
-					"str-A comma separated layout options. Default to Horizontal,Right,VCenter",
+					"str-Type of layout. Can be Linear|Absolute|Frame. Default to Linear",
+					"str-A comma separated layout options. Default to Horizontal|Right|VCenter",
 					"num-A fraction of the screen height."
 				],
 				"shortDesc": "Add a footer layout to the table"
