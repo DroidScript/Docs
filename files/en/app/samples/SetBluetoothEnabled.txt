@@ -5,7 +5,8 @@ function OnStart()
     <b>if( !app.IsBluetoothEnabled() )
         app.SetBluetoothEnabled( true );</b>
 
-    while( !app.IsBluetoothOn() ) app.Wait( 0.3 );
+    var cnt = 0;
+    while( !app.IsBluetoothOn() && ++cnt < 10 ) app.Wait( 0.3 );
     app.HideProgress();
 }
 </sample>
@@ -53,7 +54,7 @@ function btn_OnTouch()
 	}
 }
 
-function CheckBtOn()
+function checkBtOn()
 {
     if( app.IsBluetoothOn() )
     {
@@ -65,7 +66,7 @@ function CheckBtOn()
 }
 
 
-function CheckBtOff()
+function checkBtOff()
 {
     if( !app.IsBluetoothOn() )
     {
