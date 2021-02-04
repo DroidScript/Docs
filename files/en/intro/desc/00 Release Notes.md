@@ -1,5 +1,24 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
+### DS 203b1
+- Fixed bug with SendDataGrams showing EADDRINUSE error.
+- Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)
+- Added new app.GetJoystickStates() method, returns single object with all states.
+- Removed semi-colons from device code completion.
+- Download component and WebView/Html Apps now support 'content-disposition' header.
+- Added USE_FULL_SCREEN_INTENT permission if required.
+- Removed deprecated funcs SetLanguage, Language2Code.
+- Fixed obfuscation issues related to SetAppLanguage and GetAppLangCode.
+- Added app.CreateCanvas() method, creates blank image with auto-update turned off.
+- Fixed SET_ALARM permission having wrong path.
+- Added new ide.MakePlugin method (turns current project into a plugin and installs it).
+- Updated Wifi IDE toolbar and button styles.
+- Scoped storage state remembered from first run (safe to install your APKs on Android 10)
+- Added app.IsScoped() method to indicate 'scoped storage' on Android 10+.
+- Added SetOnRequest() to detect all WebView requests (params: url,method,isMain,isRedirect).
+- Added Stop() method to WebView, cancels current page load.
+- Added SetBlockedUrls() to WebView, comma seperated list of urls to block.
+
 ## DS 202
 - Fixed bad link in documentation to CloudStore component.
 - Update CloudStore documentation.

@@ -36,6 +36,9 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 203b1')">DS 203b1</a><br>
+			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 202')">DS 202</a><br>
 			• <a href="" onclick="jumpTo('DS 1.80(20-Jan-2020)')">DS 1.80</a><sup>(20-Jan-2020)</sup><br>
@@ -68,7 +71,25 @@
 		</span><br>
 		</div>
 
-		<p><!-- /<a href="[_<i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
+		<p><!-- /<a href="[<i><i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
+		<h3>DS 203b1</h3>
+		<p>- Fixed bug with SendDataGrams showing EADDRINUSE error.<br>
+		- Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)<br>
+		- Added new app.GetJoystickStates() method, returns single object with all states.<br>
+		- Removed semi-colons from device code completion.<br>
+		- Download component and WebView/Html Apps now support 'content-disposition' header.<br>
+		- Added USE</i>FULL<i>SCREEN</i>INTENT permission if required.<br>
+		- Removed deprecated funcs SetLanguage, Language2Code.<br>
+		- Fixed obfuscation issues related to SetAppLanguage and GetAppLangCode.<br>
+		- Added app.CreateCanvas() method, creates blank image with auto-update turned off.<br>
+		- Fixed SET_ALARM permission having wrong path.<br>
+		- Added new ide.MakePlugin method (turns current project into a plugin and installs it).<br>
+		- Updated Wifi IDE toolbar and button styles.<br>
+		- Scoped storage state remembered from first run (safe to install your APKs on Android 10)<br>
+		- Added app.IsScoped() method to indicate 'scoped storage' on Android 10+.<br>
+		- Added SetOnRequest() to detect all WebView requests (params: url,method,isMain,isRedirect).<br>
+		- Added Stop() method to WebView, cancels current page load.<br>
+		- Added SetBlockedUrls() to WebView, comma seperated list of urls to block.</p>
 		<h2>DS 202</h2>
 		<p>- Fixed bad link in documentation to CloudStore component.<br>
 		- Update CloudStore documentation.</p>

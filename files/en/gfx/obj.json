@@ -576,6 +576,13 @@
 		"retval": "?",
 		"shortDesc": "GetContext"
 	},
+	"GetJoystick": {
+		"desc": "?",
+		"pNames": ["id"],
+		"pTypes": ["str"],
+		"retval": "?",
+		"shortDesc": "?"
+	},
 	"GetOrder": {
 		"desc": "Returns the order index of a specific GameView object.",
 		"pNames": ["object"],

@@ -249,13 +249,15 @@
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">ReceiveDatagram</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a> )
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">timeout</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">options</a> )
 			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">ReceiveDatagrams</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">ReceiveFile</a>(
@@ -285,7 +287,7 @@
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a>,
 			<a href="#pop_str_url" data-transition="pop" data-rel="popup">address</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SendText</a>(
@@ -294,7 +296,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetDataMode</a>(
-			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">SetOnConnect</a>(
@@ -310,7 +312,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">SetSplitMode</a>(
-			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a>,
+			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a>,
 			<a href="#pop_mul_002" data-transition="pop" data-rel="popup">p2</a>,
 			<a href="#pop_mul_002" data-transition="pop" data-rel="popup">p3</a> )
 		</div>
@@ -335,9 +337,10 @@
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('fast but does not guarantee data correctness')">UDP</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('slow but guarantees data correctness')">TCP</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('drop 4 Byte header before every message')">Raw</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“US-ASCII”</docstr> or <docstr>“UTF-8”</docstr> or <docstr>“UTF-16LE”</docstr> or <docstr>“UTF-16BE”</docstr> or <docstr>“UTF-16”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Int”</docstr> or <docstr>“Hex”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Text”</docstr> or <docstr>“Hex”</docstr> or <docstr>“Bytes”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
-	<div data-role="popup" id="pop_str_00c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“&lt;<a href="" onclick="app.ShowPopup('“1k”, “2k”, “4k”, “8k”, “16k”, “32k”, “64k”')">BUFSIZ</a>&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Text”</docstr> or <docstr>“Hex”</docstr> or <docstr>“Bytes”</docstr></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [ <a href="" onclick="app.ShowPopup('Number: bytes')">bytes</a> ]<br><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('hexadecimal 00..FF')">bytes</a>”</docstr></div>
 	<div data-role="popup" id="pop_mul_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b><br><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
 	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>

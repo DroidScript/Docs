@@ -20,6 +20,11 @@
 		"retval": "dso-CameraView",
 		"shortDesc": "Create and add CameraView to Layout."
 	},
+	"AddCanvas": {
+		"desc": "Creates and adds a blank white [Image](CreateImage.htm) with the AutoUpdate feature turned off to a Layout.",
+		"retval": "dso-CreateImage",
+		"shortDesc": "Create and add Button to Layout."
+	},
 	"AddCheckBox": {
 		"desc": "Creates and adds a CheckBox to a Layout.\nSee @CreateCheckBox for full documentation.",
 		"pNames": ["layout", "text", "width", "height", "options"],
@@ -788,6 +793,11 @@
 			"Tween": "#2114624769"
 		}
 	},
+	"CreateCanvas": {
+		"desc": "Creates and adds a blank white Image with the Auto-Update feature turned off.\nSee @CreateButton for full documentation.",
+		"retval": "dso-CreateImage",
+		"shortDesc": "Create a blank white Image object."
+	},
 	"CreateCheckBox": {
 		"abbrev": "chk",
 		"desc": "#CreateCheckBox.md",
@@ -974,6 +984,16 @@
 				"desc": "Returns the currently selected text.",
 				"retval": "str",
 				"shortDesc": "Get the selected text"
+			},
+			"GetSelectionEnd": {
+				"desc": "Returns the position of where the user selection ends.",
+				"retval": "num_int",
+				"shortDesc": "Get selection end position"
+			},
+			"GetSelectionStart": {
+				"desc": "Returns the position of where the user selection begins.",
+				"retval": "num_int",
+				"shortDesc": "Get selection start position"
 			},
 			"GetSelectMode": {
 				"desc": "Checks if there is currently some text selected.",
@@ -2406,14 +2426,14 @@
 			},
 			"SetItemColor": {
 				"desc": "Set the color of a list item.",
-				"pNames": ["title", "newColor"],
-				"pTypes": ["str", "str_col"],
+				"pNames": ["name", "textClr", "backClr"],
+				"pTypes": ["str", "str_col", "str_col"],
 				"shortDesc": "Set item color"
 			},
 			"SetItemColorByIndex": {
 				"desc": "Set the color of a list item by its index.",
-				"pNames": ["index", "color"],
-				"pTypes": ["num_int", "str_col"],
+				"pNames": ["index", "textClr", "backClr"],
+				"pTypes": ["num_int", "str_col", "str_col"],
 				"shortDesc": "Set item color by index"
 			},
 			"SetList": {
@@ -2753,6 +2773,15 @@
 			}
 		}
 	},
+	"CreateMusic": {
+		"desc": "?",
+		"abbrev": "mus",
+		"retval": "?",
+		"shortDesc": "?",
+		"subfuncs": {
+
+		}
+	},
 	"CreateNetClient": {
 		"abbrev": "net",
 		"desc": "#CreateNetClient.md",
@@ -2811,15 +2840,15 @@
 			},
 			"ReceiveDatagram": {
 				"desc": "Receive an UDP Datagram.",
-				"pNames": ["mode", "port", "timeout"],
-				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "num_int", "num"],
+				"pNames": ["mode", "port", "timeout", "options"],
+				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "num_int", "num", "str-&lt;BUFSIZ:\"“1k,2k,4k,8k,16k,32k,64k”\"&gt;"],
 				"retval": "str",
 				"shortDesc": "Receive an UDP Datagram"
 			},
 			"ReceiveDatagrams": {
 				"desc": "Receive datagrams over UDP and calls the OnReceive callback for each one.",
-				"pNames": ["port", "mode"],
-				"pTypes": ["num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
+				"pNames": ["port", "mode", "options"],
+				"pTypes": ["num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "str-&lt;BUFSIZ:\"“1k,2k,4k,8k,16k,32k,64k”\"&gt;"],
 				"shortDesc": "Receive UDP datagrams"
 			},
 			"ReceiveFile": {
@@ -5173,6 +5202,12 @@
 				}],
 				"shortDesc": "Called when servlet received a message"
 			},
+			"Disconnect": {
+				"desc": "Disconnects a client from the WebServer.",
+				"pNames": ["ip", "id"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Disconnect Client from WebServer"
+			},
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-WebServer",
@@ -5383,6 +5418,12 @@
 			"SetBackGradient": "#7112142192",
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
+			"SetBlockedUrls": {
+				"desc": "Define a list of urls that are blocked for loading.",
+				"pNames": ["urls"],
+				"pTypes": ["lst-[ urls:str ]||str_com-urls"],
+				"shortDesc": "Block urls from loading"
+			},
 			"SetColorFilter": "#1096996086",
 			"SetEnabled": "#1602385882",
 			"SetErrorPage": {
@@ -5416,15 +5457,6 @@
 				}],
 				"shortDesc": "Called when an error occured"
 			},
-			"SetOnUrl": {
-				"desc": "Define a callback function which is called when the user clicked a link.",
-				"pNames": ["callback"],
-				"pTypes": [{
-					"pNames": ["url"],
-					"pTypes": ["str_url"]
-				}],
-				"shortDesc": "Called when link klicked"
-			},
 			"SetOnProgress": {
 				"desc": "Define a callback function which is called when the webpage loading progress changed",
 				"pNames": ["callback"],
@@ -5434,7 +5466,25 @@
 				}],
 				"shortDesc": "Called when loading progress changed"
 			},
+			"SetOnRequest": {
+				"desc": "Called when a HTTP Request was made in the webview.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["url", "method", "isMain", "isRedirect"],
+					"pTypes": ["str", "str", "bin", "bin"]
+				}],
+				"shortDesc": "Traps HTTP Requests"
+			},
 			"SetOnTouch": "#2088093920",
+			"SetOnUrl": {
+				"desc": "Define a callback function which is called when the user clicked a link.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["url"],
+					"pTypes": ["str_url"]
+				}],
+				"shortDesc": "Called when link klicked"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetRedirect": {
@@ -5470,6 +5520,10 @@
 				"pNames": ["keyName", "modifiers", "pause"],
 				"pTypes": ["str", "str-META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON", "num"],
 				"shortDesc": "Simulate key event"
+			},
+			"Stop": {
+				"desc": "Stops any web loading.",
+				"shortDesc": "Stop loading processes"
 			},
 			"Tween": "#2114624769"
 		}
@@ -5937,13 +5991,20 @@
 		"retval": "num",
 		"shortDesc": "GetJoystickState"
 	},
+	"GetJoystickStates": {
+		"desc": "Returns an object with all keystates.\n\nSee Also: @GetJoystickState",
+		"pNames": ["id"],
+		"pTypes": ["num_int"],
+		"retval": "obj-{ key:str: value:num }",
+		"shortDesc": "Get joystick key states object"
+	},
 	"GetKeyboardHeight": {
 		"desc": "Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.\n\nSee Also: @ShowKeyboard",
 		"retval": "num_pxl",
 		"shortDesc": "Get current keyboard height"
 	},
 	"GetLanguage": {
-		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n%c\n\nSee Also: @GetLanguageCode, @GetCountry, @SetLanguage",
+		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n%c\n\nSee Also: @GetLanguageCode, @GetCountry",
 		"retval": "str",
 		"shortDesc": "Get device language"
 	},
@@ -6316,6 +6377,11 @@
 		"retval": "bin",
 		"shortDesc": "Check if user has a DroidScript Premium subscription"
 	},
+	"IsScoped": {
+		"desc": "Indicates 'scoped storage' on Android 10+",
+		"retval": "bin",
+		"shortDesc": "Indicates 'scoped storage'"
+	},
 	"IsScreenOn": {
 		"desc": "Checks if the device screen is currently on.",
 		"retval": "bin",
@@ -6336,7 +6402,7 @@
 		"retval": "bin",
 		"shortDesc": "Check if user device is a tablet"
 	},
-	"IsThings": {
+	"IsTV": {
 		"desc": "Checks if the OS is AndroidThings.\n\nSee Also: @IsTablet, @IsChrome",
 		"retval": "bin",
 		"shortDesc": "Check if OS is AndroidThings"
@@ -6359,13 +6425,6 @@
 	},
 	"GetAppLangCode": {
 		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.\n\nSee Also: @GetLanguage",
-		"pNames": ["name"],
-		"pTypes": ["str"],
-		"retval": "str",
-		"shortDesc": "Convert language name to its code or get current language code"
-	},
-	"Language2Code": {
-		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.<deprecated Use @GetAppLangCode instead.>\n\nSee Also: @GetLanguage",
 		"pNames": ["name"],
 		"pTypes": ["str"],
 		"retval": "str",
@@ -6866,6 +6925,12 @@
 		"pTypes": ["num_int"],
 		"shortDesc": "Changes the dpi value for any control creatred afterwards"
 	},
+	"SetDescription": {
+		"desc": "?",
+		"pNames": ["text"],
+		"pTypes": ["str"],
+		"shortDesc": "?"
+	},
 	"SetInBackground": {
 		"desc": "Set the current service to run in the background.\n\nSee Also: @StartService, @SetInForeground.",
 		"shortDesc": "Set services to run in the background"
@@ -6890,12 +6955,6 @@
 	},
 	"SetAppLanguage": {
 		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetAppLanguages",
-		"pNames": ["name"],
-		"pTypes": ["str"],
-		"shortDesc": "Load the language code from lang.json"
-	},
-	"SetLanguage": {
-		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).<deprecated Use @SetAppLanguage instead>\n\nSee Also: @GetLanguage",
 		"pNames": ["name"],
 		"pTypes": ["str"],
 		"shortDesc": "Load the language code from lang.json"
