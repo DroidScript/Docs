@@ -37,10 +37,16 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
-				- <a href="" onclick="jumpTo('DS 203b1')">DS 203b1</a><br>
+				- <a href="" onclick="jumpTo('DS 207b1(18-Mar-2021)')">DS 207b1</a><sup>(18-Mar-2021)</sup><br>
 			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
-			• <a href="" onclick="jumpTo('DS 202')">DS 202</a><br>
+			• <a href="" onclick="jumpTo('DS 206(04-Mar-2021)')">DS 206</a><sup>(04-Mar-2021)</sup><br>
+			• <a href="" onclick="jumpTo('DS 205(03-Mar-2021)')">DS 205</a><sup>(03-Mar-2021)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 204b1(18-Feb-2021)')">DS 204b1</a><sup>(18-Feb-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 203b1(08-Feb-2021)')">DS 203b1</a><sup>(08-Feb-2021)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 202(08-Feb-2021)')">DS 202</a><sup>(08-Feb-2021)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.80(20-Jan-2020)')">DS 1.80</a><sup>(20-Jan-2020)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.78(27-Oct-2019)')">DS 1.78</a><sup>(27-Oct-2019)</sup><br>
 			• <a href="" onclick="jumpTo('DS 1.76(27-Aug-2019)')">DS 1.76</a><sup>(27-Aug-2019)</sup><br>
@@ -72,7 +78,35 @@
 		</div>
 
 		<p><!-- /<a href="[<i><i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
-		<h3>DS 203b1</h3>
+		<h3>DS 207b1<sup>(18-Mar-2021)</sup></h3>
+		<p>- Added new 'cleartask' option to app.SendIntent().<br>
+		- Fixed issue with i-frames opening separate window in html apps.<br>
+		- Fixed issue with IDE hiding after running app on Android10+.</p>
+		<h2>DS 206<sup>(04-Mar-2021)</sup></h2>
+		<p>- Fix for new projects created in Wifi IDE having old 'holo' look.<br>
+		- mui: Fix for DataTable column sorting with duplicate vals.<br>
+		- Chat extension moved to 'experiments' mode.</p>
+		<h2>DS 205<sup>(03-Mar-2021)</sup></h2>
+		<p>- Default theme for wifi ide is now dark.<br>
+		- mui: SetOnSelectionStatus bug in CreateDataTable docs fixed.<br>
+		- mui: Icons in CreateDataTable headers now showing properly.<br>
+		- Fixed banner add clicks always going to Premium dialog.<br>
+		- Improved reliability of language extension.</p>
+		<h3>DS 204b1<sup>(18-Feb-2021)</sup></h3>
+		<p>- Added new "/Plugins" keyword to get path to plugins.<br>
+		- Added gfx.GetJoystick() gets object containing joystick states.<br>
+		- Added new gfx.multiTouch=true option to GameView (x/y vals will be arrays).<br>
+		- Wifi IDE app icons is now refreshed after spk installs.<br>
+		- GameView: Fixed gfx.Reload() not working on some devices.<br>
+		- Enabled the download and install of .ppk files from the DroidStore.<br>
+		- Fixed bug preventing multiple plugin installs at once.<br>
+		- app.AutoWifi and app.AutoStart now deprecated in favour of ide.AutoWifi, ide.AutoStart.<br>
+		- app.AutoBoot() can now contain both 'app' and 'service' keywords at same time.<br>
+		- Fixed app.IsStarted() to work for multi-page html apps.<br>
+		- Added app.ScheduleJob() method to schedule background jobs (using Job.js file).<br>
+		- Added 'Background Job' app template for premium users.<br>
+		- Added app.PinScreen() method (screen pinning must be enabled in settings).</p>
+		<h3>DS 203b1<sup>(08-Feb-2021)</sup></h3>
 		<p>- Fixed bug with SendDataGrams showing EADDRINUSE error.<br>
 		- Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)<br>
 		- Added new app.GetJoystickStates() method, returns single object with all states.<br>
@@ -90,7 +124,7 @@
 		- Added SetOnRequest() to detect all WebView requests (params: url,method,isMain,isRedirect).<br>
 		- Added Stop() method to WebView, cancels current page load.<br>
 		- Added SetBlockedUrls() to WebView, comma seperated list of urls to block.</p>
-		<h2>DS 202</h2>
+		<h2>DS 202<sup>(08-Feb-2021)</sup></h2>
 		<p>- Fixed bad link in documentation to CloudStore component.<br>
 		- Update CloudStore documentation.</p>
 		<h4>DS 201b1</h4>

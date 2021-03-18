@@ -1,6 +1,38 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
-### DS 203b1
+### DS 207b1 (18-Mar-2021)
+- Added new 'cleartask' option to app.SendIntent().
+- Fixed issue with i-frames opening separate window in html apps.
+- Fixed issue with IDE hiding after running app on Android10+.
+
+## DS 206 (04-Mar-2021)
+- Fix for new projects created in Wifi IDE having old 'holo' look.
+- mui: Fix for DataTable column sorting with duplicate vals.
+- Chat extension moved to 'experiments' mode.
+
+## DS 205 (03-Mar-2021)
+- Default theme for wifi ide is now dark.
+- mui: SetOnSelectionStatus bug in CreateDataTable docs fixed.
+- mui: Icons in CreateDataTable headers now showing properly.
+- Fixed banner add clicks always going to Premium dialog.
+- Improved reliability of language extension.
+
+### DS 204b1 (18-Feb-2021)
+- Added new "/Plugins" keyword to get path to plugins.
+- Added gfx.GetJoystick() gets object containing joystick states.
+- Added new gfx.multiTouch=true option to GameView (x/y vals will be arrays).
+- Wifi IDE app icons is now refreshed after spk installs.
+- GameView: Fixed gfx.Reload() not working on some devices.
+- Enabled the download and install of .ppk files from the DroidStore.
+- Fixed bug preventing multiple plugin installs at once.
+- app.AutoWifi and app.AutoStart now deprecated in favour of ide.AutoWifi, ide.AutoStart.
+- app.AutoBoot() can now contain both 'app' and 'service' keywords at same time.
+- Fixed app.IsStarted() to work for multi-page html apps.
+- Added app.ScheduleJob() method to schedule background jobs (using Job.js file).
+- Added 'Background Job' app template for premium users.
+- Added app.PinScreen() method (screen pinning must be enabled in settings).
+
+### DS 203b1 (08-Feb-2021)
 - Fixed bug with SendDataGrams showing EADDRINUSE error.
 - Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)
 - Added new app.GetJoystickStates() method, returns single object with all states.
@@ -19,7 +51,7 @@
 - Added Stop() method to WebView, cancels current page load.
 - Added SetBlockedUrls() to WebView, comma seperated list of urls to block.
 
-## DS 202
+## DS 202 (08-Feb-2021)
 - Fixed bad link in documentation to CloudStore component.
 - Update CloudStore documentation.
 

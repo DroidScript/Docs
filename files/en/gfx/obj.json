@@ -577,11 +577,11 @@
 		"shortDesc": "GetContext"
 	},
 	"GetJoystick": {
-		"desc": "?",
+		"desc": "Gets object containing joystick states",
 		"pNames": ["id"],
 		"pTypes": ["str"],
-		"retval": "?",
-		"shortDesc": "?"
+		"retval": "obj",
+		"shortDesc": "Get joystick states"
 	},
 	"GetOrder": {
 		"desc": "Returns the order index of a specific GameView object.",
@@ -630,6 +630,12 @@
 		"isval": true,
 		"retval": "str-Down|Up",
 		"shortDesc": "Current key state"
+	},
+	"multiTouch": {
+		"desc": "Enables multiple touch inputs.",
+		"isval": true,
+		"retval": "bin",
+		"shortDesc": "Enables multitouch"
 	},
 	"objects": {
 		"desc": "List of all active GameView objects",
@@ -729,9 +735,8 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch down"
 	},
 	"SetOnTouchMove": {
@@ -739,9 +744,8 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch move"
 	},
 	"SetOnTouchUp": {
@@ -749,24 +753,21 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch up"
 	},
 	"SetOrder": {
 		"desc": "",
 		"pNames": ["object", "order"],
 		"pTypes": ["obj", "num"],
-		"retval": "?",
 		"shortDesc": "SetOrder"
 	},
 	"_SetPixelMode": {
 		"desc": "",
 		"name": "SetPixelMode",
 		"pNames": ["usePixels"],
-		"pTypes": ["?"],
-		"retval": "?"
+		"pTypes": ["bin"]
 	},
 	"_stage": {
 		"desc": "",

@@ -164,6 +164,10 @@
 		"pTypes": ["str-number"],
 		"shortDesc": "Calls a phone number"
 	},
+	"ScheduleJob": {
+		"desc": "Cancels scheduled background jobs\n\nSee Also: @ScheduleJob",
+		"shortDesc": "Cancels a scheduled background job"
+	},
 	"CheckLicense": {
 		"desc": "will trigger a standard Google Play license check for the running application (if it is a paid App).\nThe key can be found under “Development Tools > Services and API's” in the GooglePlay developer console.\nIf the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.",
 		"pNames": ["key"],
@@ -6701,6 +6705,12 @@
 		"pTypes": ["str", {}],
 		"shortDesc": "PairBtDevice"
 	},
+	"PinScreen": {
+		"desc": "Pins the app on the screen",
+		"pNames": ["enable"],
+		"pTypes": ["bin"],
+		"shortDesc": "Pin app on screen"
+	},
 	"PlayRingtone": {
 		"desc": "Play a specific ringtone type based on the users device settings for ringtones. _Type_ can be “Alarm”, “Notification” or “Ringtone”.",
 		"pNames": ["type"],
@@ -6811,6 +6821,12 @@
 		"pTypes": ["str_ptf", "num_prc"],
 		"shortDesc": "Take a screen shot of your app"
 	},
+	"ScheduleJob": {
+		"desc": "Schedules background jobs defined in a Job.js file\n\nSee Also: @CancelJob",
+		"pNames": ["delay", "options"],
+		"pTypes": ["num_mls", "str"],
+		"shortDesc": "Schedules background jobs"
+	},
 	"Script": {
 		"desc": "Loads a local JavaScript file synchronously to your app to make its functionality available in your app.\n\nSee Also: @LoadScript",
 		"pNames": ["file"],
@@ -6832,9 +6848,9 @@
 	"SendIntent": {
 		"desc": "#SendIntent.md",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
-		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str&comma; value:str }]", "str_com-result", {
+		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
 			"pNames": ["resultCode", "data"],
-			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:string, data:string, flags:integer, extras:object }"]
+			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]
 		}],
 		"shortDesc": "SendIntent"
 	},
@@ -6878,13 +6894,13 @@
 		"shortDesc": "Autostart APK when device boots"
 	},
 	"SetAutoStart": {
-		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.\n\nSee Also: @SetSharedApp, @SetAutoBoot",
+		"desc": "Set a DroidScript project name which will be launched automatically when DroidScript starts.\n\n<deprecated in favour of ide.AutoStart>\n\nSee Also: @SetSharedApp, @SetAutoBoot",
 		"pNames": ["appName"],
 		"pTypes": ["str"],
 		"shortDesc": "Autostart DroidScript Project on DS restart"
 	},
 	"SetAutoWifi": {
-		"desc": "Automatically enables the use of the WiFi editor. This method is mainly useful for headless devices like AndroidTV which don't have a DroidScript UI.",
+		"desc": "Automatically enables the use of the WiFi editor. This method is mainly useful for headless devices like AndroidTV which don't have a DroidScript UI.\n\n<deprecated in favour of ide.AutoWifi>",
 		"pNames": ["auto"],
 		"pTypes": ["bin"],
 		"shortDesc": "Automatically enable the WiFi editor"

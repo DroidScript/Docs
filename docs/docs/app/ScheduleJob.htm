@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>SetOnTouchDown</title>
+	<title>ScheduleJob</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>SetOnTouchDown</h1>
+		<h1>ScheduleJob</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -33,20 +33,14 @@
 	</div>
 
 	<div data-role="content">
-		<p>Define a callback which is called when the user touches the screen.</p>
-
-		<div class="samp">
-		gfx.SetOnTouchDown(
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-		</div>
-
+		<p>Schedules background jobs defined in a Job.js file<br>
+		<br>
+		See Also: <a href="CancelJob.htm" data-ajax="false">CancelJob</a></p>
 
 	</div>
 
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('Number: fraction (0..1)\nList: of numbers: fractions')">x</a>,
-		<a href="" onclick="app.ShowPopup('Number: fraction (0..1)\nList: of numbers: fractions')">y</a>
-	)</div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
 </div>
 </body>
 

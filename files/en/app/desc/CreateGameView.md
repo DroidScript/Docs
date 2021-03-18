@@ -1,5 +1,7 @@
 The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics. The GameView runs a standalone script which can communicate with the main app via gfx.Execute or gmv.Execute vice versa.
 
+Starting from DS 2.05 the GameView support the same options as @CreateGameView.
+
 You can find references of GameView scripting here:
 	- official [DS GameView tutorials](https://dsgameview.wixsite.com/gameview) (Start with [lesson 1](https://dsgameview.wixsite.com/gameview/tutorial-1))
 	- [unofficial blog](https://dsgameengine.blogspot.com) from csnakes xXXx

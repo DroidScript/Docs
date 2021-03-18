@@ -139,7 +139,7 @@ function generateNavigators(navs, name, pfx)
 {
 	curDoc = `docs${getl()}/${pfx||''}${name.replace(/\s+/g,'')}.htm`;
 	pfx = `${pfx||curScope}_`;
-	var nav = '';
+	var nav = '', addcontent = '';
 
 	if(navs instanceof Array)
 	{
@@ -151,6 +151,11 @@ function generateNavigators(navs, name, pfx)
 	{
 		for(var cat of keys(navs).filter(nothidden))
 		{
+			if(cat.startsWith("+html"))
+			{
+				addcontent += navs[cat];
+				continue;
+			}
 			if(!navs[cat]) navs[cat] = curScope + "/" + cat + ".htm";
 			if(typeof navs[cat] == "string")
 			{
@@ -170,6 +175,7 @@ function generateNavigators(navs, name, pfx)
 	app.WriteFile( curDoc,
 		(keys(navs).length < 15 ? naviBase :
 			naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
+		.replace( "%c", addcontent )
 		.replace( "%l", nav )
 		.replace( /%t/g, name )
 	);
@@ -990,6 +996,8 @@ ${getHead(0)}
 		<h1>%t</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
+
+	%c
 
 	<div data-role="content">
 		<ul data-role="listview" data-inset="true" data-filter="false">

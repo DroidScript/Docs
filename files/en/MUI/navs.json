@@ -1,6 +1,7 @@
 {
+    "+html": "<br>\n\t<div style='align-items: center; text-align: center;'>\n\t\t<a href='#' data-role='button' data-mini='false' data-inline='true'  onclick='run( \"/assets/demos/mui/DroidScript_UI_Kit.js\" )'> Run Demos </a>\n\t</div>\n\t<br>\n",
+    "All": [],
     "Overview": "MUIDocs.htm",
-    "All":[],
     "Layout": [
         "CreateLayout"
     ],
