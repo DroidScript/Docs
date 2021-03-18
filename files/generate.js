@@ -1156,11 +1156,12 @@ OPTIONS:
 	-al --addlang=<LANG-CODE>=<LANG-NAME>
                          	adds a language to conf.json
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
-                         	adds a scope to conf.json
+                                adds a scope to conf.json
 	-c  --clean            	regenerate the docs completely
-	-n  --nogen           	don't generate
-	-v  --verbose         	print more debug logs
-	-h  --help            	this help
+	-n  --nogen             don't generate
+	-s  --server            start webserver after generating
+	-v  --verbose           print more debug logs
+	-h  --help              this help
 
 PATTERN:
 	generates a scope in each defined language:
@@ -1265,7 +1266,7 @@ if(typeof app == "undefined")
 		var express = require('express');
 		var server = express();
 		server.use("/", express.static("."));
-		server.listen(8080);
-		console.log("started on localhost:8080");
+		server.listen(8081);
+		console.log("started on http://localhost:8081/docs");
 	}
 }
