@@ -1,7 +1,7 @@
 #!/bin/sh
 
 BASE=`dirname "$0"`/..
-sed -i s/Docs\ version:\ [0-9]*/"Docs version: $(tail -c3 version.txt)"/ "$BASE/files/docs/Docs.htm"
+sed -i s/Docs\ version:\ [0-9]*/"Docs version: $(grep -oP '\d{3}$' version.txt)"/ "$BASE/files/docs/Docs.htm"
 
 echo removing old docs
 rm -rdf "$BASE/docs/docs"

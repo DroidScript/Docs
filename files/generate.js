@@ -1210,7 +1210,7 @@ if(typeof app == "undefined")
 
 	var patLang = "", patScope = "", patFunc = "";
 	var addcfg = {add:false, langs:{}, scopes:{}};
-	var nogen = false;
+	var nogen = false, startServer = false;
 
 	for(var pat of process.argv.slice(2))
 	{
@@ -1224,6 +1224,7 @@ if(typeof app == "undefined")
 				case "-v": case "--verbose": dbg = true; break;
 				case "-c": case "--clean": clean = true; break;
 				case "-h": case "--help": app.Alert(help); return;
+				case "-s": startServer = true; break;
 				case "-al": case "--addlang":
 					if(pat.length < 3) Throw(Error("missing option args. expected 2"));
 					addcfg.add = true;
@@ -1260,4 +1261,11 @@ if(typeof app == "undefined")
 	}
 
 	if(!nogen) Generate(patFunc, patScope, patLang);
+	if(startServer) {
+		var express = require('express');
+		var server = express();
+		server.use("/", express.static("."));
+		server.listen(8080);
+		console.log("started on localhost:8080");
+	}
 }
