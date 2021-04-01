@@ -1101,7 +1101,19 @@
 					"pTypes": ["bin-True if there's an active selection, false otherwise."]
 				}],
 				"shortDesc": "SetOnSelectionStatus"
-			},
+            },
+            "SetOnTouch": {
+                "desc": "Calls a function when a row in the table is click.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["row", "index"],
+					"pTypes": [
+                        "str-The row data separated by colon (:)",
+                        "num_int-The index of row being click."
+                    ]
+				}],
+				"shortDesc": "SetOnTouch"
+            },
 			"SetRows": {
 				"desc": "Set the rows of the table to a new values of data.",
 				"pNames": ["values"],
@@ -1722,7 +1734,7 @@
 					"pTypes": ["num_int", "bin"]
 				}],
 				"shortDesc": "Calls a function when an item in the list is select."
-			},
+            },
 			"SetAvatarOnTouch": {
 				"desc": "Calls a function when an icon or avatar is click. The same as SetIconOnTouch.",
 				"pNames": ["callback"],
@@ -1731,6 +1743,12 @@
 					"pTypes": ["num_int"]
 				}],
 				"shortDesc": "SetAvatarOnTouch"
+            },
+            "SetSelectable": {
+				"desc": "Enable or disable selectable option.",
+				"pNames": ["selectable"],
+				"pTypes": ["bin"],
+				"shortDesc": "SetSelectable"
 			},
 			"SetControlOnTouch": {
 				"desc": "Calls a function when a right icon is click",
@@ -1855,7 +1873,61 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
+    "CreateSpinner": {
+        "abbrev": "spn",
+		"desc": "Creates a material designed dropdown or spinner. Let the user select from a predefined options.",
+		"pNames": ["list", "width", "height"],
+		"pTypes": ["lst-String. A comma separated options", "num_frc", "num_frc"],
+		"retval": "dso",
+		"shortDesc": "Creates a material designed dropdown or spinner.",
+		"subf": {
+			"SetOnChange": {
+                "desc": "Calls a function when value changes",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value", "index"],
+					"pTypes": ["str-Value of the spinner", "num_int-The index of the value"]
+				}],
+				"shortDesc": "SetOnChange"
+            },
+            "SelectItem" :{
+                "desc": "Select an option",
+				"pNames": ["value"],
+				"pTypes": ["str-Must be one of the provided values"],
+				"shortDesc": "SelectItem"
+            },
+            "SelectItemByIndex": {
+                "desc": "Select an option with a given index.",
+				"pNames": ["index"],
+				"pTypes": ["num_int-The index of the option in the given values"],
+				"shortDesc": "SelectItemByIndex"
+            },
+            "GetText": "#2387569276",
+            "SetTextSize": "#5019790423",
+            "SetTextColor": "#0175303923",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"SetEnabled": "#1602385882",
+			"SetMargins": "#1741900074",
+			"SetPosition": "#1425862386",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
+		}
+    },
 	"CreateListSimple": {
 		"abbrev": "lss",
 		"desc": "Creates a simple list that has an optional badge and icon with no body text.",

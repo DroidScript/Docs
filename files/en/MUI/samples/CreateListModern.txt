@@ -28,6 +28,36 @@ function OnTouch(title, body, index)
 }
 </sample>
 
+<sample With-Color No Options>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Sample Title", body:"The quick brown fox jumps...", rightIcon: "more_vert", color: "#673ab7"},
+            {title: "Sample Title", body:"The quick brown fox jumps...", rightIcon: "more_vert", color: "#673ab7"},
+            {title: "Sample Title", body:"The quick brown fox jumps...", rightIcon: "more_vert", color: "#673ab7"}
+        ]
+
+        lsm = MUI.CreateListModern(list, 0.96)
+        lsm.SetOnTouch(OnTouch)
+        lay.AddChild(lsm)
+
+    app.AddLayout(lay)
+}
+
+function OnTouch(title, body, index)
+{
+    app.ShowPopup(title+" : "+body+" : "+index)
+}
+</sample>
+
 <sample Selectable>
 cfg.Dark
 cfg.MUI

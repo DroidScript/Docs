@@ -40,7 +40,8 @@
     "Lists": [
         "CreateList",
         "CreateListModern",
-        "CreateListSimple"
+        "CreateListSimple",
+        "CreateDataTable"
     ],
     "Menus": [
         "CreateMenu",
@@ -49,7 +50,8 @@
     "Pickers": [
         "CreateColorPicker",
         "CreateDatePicker",
-        "CreateTimePicker"
+        "CreateTimePicker",
+        "CreateSpinner"
     ],
     "Table": [
         "CreateDataTable"
