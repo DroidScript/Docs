@@ -80,6 +80,30 @@ function OnStart()
 }
 </sample>
 
+<sample Badge Color>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    MUI.theme.badgeColor = "#ec407a"
+    app.InitializeUIKit()
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        var list = [
+            {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+            {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+            {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+            {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+        ]
+        lst = MUI.CreateListSimple(list, 1)
+        lay.AddChild(lst)
+
+    app.AddLayout(lay)
+}
+</sample>
+
 
 <sample Dark With Divider>
 cfg.Dark
