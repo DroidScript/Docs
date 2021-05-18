@@ -178,7 +178,7 @@
 		"desc": "CheckPermission checks whether the permission of a particular component has been granted.\n\nSee Also: @GetPermission",
 		"pNames": ["type"],
 		"pTypes": ["str-Camera|Storage|ExtSDcard|Network|Location|SMS|Calendar|Body|Contacts|Record|Biometric|Phone|Accounts|License"],
-		"retval": "bin",
+		"retval": "lst-[\"“Permissions”\":str-not granted permissions ]",
 		"shortDesc": "Checks if permission was granted"
 	},
 	"ChooseAccount": {

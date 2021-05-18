@@ -103,7 +103,7 @@ function OnStart()
 
 function btn_OnTouch()
 {
-    var packet = mid + "|Hello";
+    var packet = id + "|Hello";
     net.SendDatagram( packet, "UTF-8", address, port );
 }
 

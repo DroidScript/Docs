@@ -173,7 +173,7 @@ function generateNavigators(navs, name, pfx)
 	else Throw(Error("Wrong catlist datatype: " + typeof navs));
 
 	app.WriteFile( curDoc,
-		(keys(navs).length < 15 ? naviBase :
+		(keys(navs).length < 15 || navs instanceof Object ? naviBase :
 			naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
 		.replace( "%c", addcontent )
 		.replace( "%l", nav )
@@ -852,7 +852,8 @@ function addMarkdown(s)
 		})
 		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>		// ## headline
 			white + `<h${h.length}>${title.replace(/ (\(.+?\))/, "$1".sup())}</h${h.length}>`)
-		.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
+		//.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
+		.replace(/([^\\]|^)\*\*([a-z]{3,}?[^\\])\*\*/gi, "$1<strong>$2</strong>")   // **bold**
 		.replace(/([^\\]|^)\*\*([^]*?[^\\])\*\*/g, "$1<b>$2</b>")   // **bold**
 		.replace(/([^\\]|^)__([^]*?)__/g, "$1<u>$2</u>")			// __underlined__
 		.replace(/([^\\]|^)\*([^]*?[^\\])\*/g, "$1<i>$2</i>")		// *italic*

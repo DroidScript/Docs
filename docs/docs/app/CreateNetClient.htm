@@ -51,8 +51,8 @@
 
 		<p>You can choose between two different protocols:<br>
 		<span style="display:inline-block;padding-left:1em;">
-			The connection based <i><strong>T<b>ransmission</strong>C<strong>ontrol</strong>P<strong>rotocol</i> which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.<br>
-			The connectionless <i></strong>U<strong>ser</strong>D<strong>atagram</strong>P</b>rotocol</i> which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.<br>
+			The connection based <i><b>T<strong>ransmission</strong>C<strong>ontrol</strong>P</b>rotocol</i> which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.<br>
+			The connectionless <i><b>U</b>ser<b>D<strong>atagram</strong>P</b>rotocol</i> which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.<br>
 		</span><br>
 		<br>
 		Note: A few routers block fast UDP messages by default</p>
@@ -180,7 +180,7 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> packet <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token string">"|Hello"</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> packet <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token string">"|Hello"</span><span class="token punctuation">;</span><br>
 				    net<span class="token punctuation">.</span><span class="token function">SendDatagram</span><span class="token punctuation">(</span> packet<span class="token punctuation">,</span> <span class="token string">"UTF-8"</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> port <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>

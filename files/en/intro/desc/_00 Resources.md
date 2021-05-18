@@ -22,7 +22,7 @@
 	Provides tutorials for the DroidScript GameView. Start with [lesson 1](https://dsgameview.wixsite.com/gameview/tutorial-1)
 
 ### Unofficial Websites
-- [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php)
+- [DroidScript Wiki](https://droidscript.org/wiki/doku.php)
 	A community-driven DroidScript wiki
 - [Justin's SPK Store](https://dspk.justplayer.de)
 	Sharing platform for DroidScript Projects (SPKs) and Plugins
