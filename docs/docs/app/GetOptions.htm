@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetOptions</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -33,10 +33,10 @@
 	</div>
 
 	<div data-role="content">
-		<p>Returns all current app objects.</p>
+		<p>Returns all current app settings.</p>
 
 		<div class="samp">
-		app.GetOptions() → <b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Portrait”</docstr>, <docstr>“Landscape”</docstr>, <docstr>“<i>NoDom</i>”</docstr>, <docstr>“Game”</docstr>, <docstr>“Remote”</docstr>, <docstr>“Transparent”</docstr>
+		app.GetOptions() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Portrait”</docstr>, <docstr>“Landscape”</docstr>, <docstr>“<i>NoDom</i>”</docstr>, <docstr>“Game”</docstr>, <docstr>“Remote”</docstr>, <docstr>“Transparent”</docstr>
 		</div>
 
 		<p>If ran from inside DroidScript, <docstr>“remote”</docstr> is the default value.<br>
@@ -49,8 +49,8 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> opt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> opt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> opt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> opt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateCrypt</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -54,19 +54,19 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">text <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span></span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">crpt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCrypt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> encr <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Encrypt</span><span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> decr <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Decrypt</span><span class="token punctuation">(</span>encr<span class="token punctuation">,</span> <span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> hash <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Hash</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    text <span class="token operator">=</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" style="font-size:100%">crpt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCrypt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> encr <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Encrypt</span><span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> decr <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Decrypt</span><span class="token punctuation">(</span>encr<span class="token punctuation">,</span> <span class="token string">"key"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> hash <span class="token operator">=</span> crpt<span class="token punctuation">.</span><span class="token function">Hash</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span></span><br>
-				        <span style="display:inline-block"><span class="token string">'text: "'</span> <span class="token operator">+</span> text <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">'encr: "'</span> <span class="token operator">+</span> encr <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">'decr: "'</span> <span class="token operator">+</span> decr <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">'hash: "'</span> <span class="token operator">+</span> hash <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token punctuation">,</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"Data"</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span><br>
+				        <span class="token string">'text: "'</span> <span class="token operator">+</span> text <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'encr: "'</span> <span class="token operator">+</span> encr <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'decr: "'</span> <span class="token operator">+</span> decr <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'hash: "'</span> <span class="token operator">+</span> hash <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token punctuation">,</span><br>
+				        <span class="token string">"Data"</span><br>
+				    <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -82,36 +82,36 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">crp <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCrypt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">ShowDialog</span><span class="token punctuation">(</span> <span class="token string">"Hello World"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    crp <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCrypt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">ShowDialog</span><span class="token punctuation">(</span> <span class="token string">"Hello World"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">ShowDialog</span><span class="token punctuation">(</span> <span class="token parameter">data</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowTextDialog</span><span class="token punctuation">(</span><span class="token string">"input text"</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> OnText<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowTextDialog</span><span class="token punctuation">(</span><span class="token string">"input text"</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> OnText<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnText</span><span class="token punctuation">(</span> <span class="token parameter">text</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span> <span class="token string">"Choose option"</span><span class="token punctuation">,</span> <span class="token string">"NoCancel"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> OnAction <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">dlg<span class="token punctuation">.</span>data<span class="token punctuation">.</span>text <span class="token operator">=</span> text<span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">dlg<span class="token punctuation">.</span><span class="token function">SetButtonText</span><span class="token punctuation">(</span> <span class="token string">"Encrypt"</span><span class="token punctuation">,</span> <span class="token string">"Decrypt"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> dlg <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateYesNoDialog</span><span class="token punctuation">(</span> <span class="token string">"Choose option"</span><span class="token punctuation">,</span> <span class="token string">"NoCancel"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    dlg<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> OnAction <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    dlg<span class="token punctuation">.</span>data<span class="token punctuation">.</span>text <span class="token operator">=</span> text<span class="token punctuation">;</span><br>
+				    dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    dlg<span class="token punctuation">.</span><span class="token function">SetButtonText</span><span class="token punctuation">(</span> <span class="token string">"Encrypt"</span><span class="token punctuation">,</span> <span class="token string">"Decrypt"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAction</span><span class="token punctuation">(</span> <span class="token parameter">result</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> result <span class="token operator">==</span> <span class="token string">"Yes"</span> <span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <span style="display:inline-block">result <span class="token operator">=</span> crp<span class="token punctuation">.</span><span class="token function">Encrypt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>text<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">GetDeviceId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				        <span style="display:inline-block"><span class="token function">ShowDialog</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span> result <span class="token operator">==</span> <span class="token string">"No"</span> <span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <span style="display:inline-block">result <span class="token operator">=</span> crp<span class="token punctuation">.</span><span class="token function">Decrypt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>text<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">GetDeviceId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				        <span style="display:inline-block"><span class="token function">ShowDialog</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> result <span class="token operator">==</span> <span class="token string">"Yes"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        result <span class="token operator">=</span> crp<span class="token punctuation">.</span><span class="token function">Encrypt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>text<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">GetDeviceId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token function">ShowDialog</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span> result <span class="token operator">==</span> <span class="token string">"No"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        result <span class="token operator">=</span> crp<span class="token punctuation">.</span><span class="token function">Decrypt</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>text<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">GetDeviceId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token function">ShowDialog</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -128,29 +128,30 @@
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Decrypt</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">password</a> )
-			→ <b>string</b>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Encrypt</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">password</a> )
-			→ <b>string</b>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Crypt”</docstr>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Crypt”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Hash</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“MD5”</docstr> or <docstr>“SHA-1”</docstr> or <docstr>“SHA-256”</docstr></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“MD5”</docstr> or <docstr>“SHA”</docstr> or <docstr>“SHA-1”</docstr> or <docstr>“SHA-224”</docstr> or <docstr>“SHA-256”</docstr> or <docstr>“SHA-384”</docstr> or <docstr>“SHA-512”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Wrap”</docstr></div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>crp.Decrypt</b><br>Decrypt text with a key.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>crp.Encrypt</b><br>Encrypt text with a key.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>crp.GetType</b><br>Returns the control class name.</div>

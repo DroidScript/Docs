@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SetData</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,9 +47,9 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetData</span><span class="token punctuation">(</span> <span class="token string">"myvar"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> data <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetData</span><span class="token punctuation">(</span><span class="token string">"myvar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token string">"Saved Data:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetData</span><span class="token punctuation">(</span> <span class="token string">"myvar"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span class="token keyword">var</span> data <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetData</span><span class="token punctuation">(</span><span class="token string">"myvar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token string">"Saved Data:"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -60,10 +60,39 @@
 		</div>
 
 
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Random Value</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Press Me"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token number">100</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><span class="token punctuation">;</span><br>
+				    <b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetData</span><span class="token punctuation">(</span> <span class="token string">"number"</span><span class="token punctuation">,</span> data <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Data: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetData</span><span class="token punctuation">(</span> <span class="token string">"number"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 </div>
 </body>
 

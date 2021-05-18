@@ -1,3 +1,98 @@
+DS 191b1
+-.Added new MUI.* material controls for premium users!
+-.Added MUI controls demo app to docs.
+- Added new 'Class' file/template.
+- Upgraded obfuscator to support ES6 classes properly.
+- Added M(ctx,func) macro for using class methods as callbacks (maintains 'this' context)
+- Fixed issue with Text control autoshrink mode on first draw.
+- Added Work-a-round for recent Android Speech recognition double results bug.
+-.Fixed spelling of app.GetSpeechEngines().
+-.Added SetProgressOptions method to theme component.
+-.Added 'Solid' option to app.ShowProgress (shows solid background behind spinner).
+- DS now uses app.InstallApp() to install APKs (needed for Android 10).
+- Fixed "Install" permission automatically added when using app.InstallApp().
+- Enabled DS method auto debugging/tracing in APKs (disabled by default).
+-.Added 'VCenter' and 'Bottom' options to text controls.
+- Improved extension support in Wifi IDE.
+- Created demo Wifi IDE extension.
+- You can hide your projects and files from DS by putting a ~ at front of folder/file name.
+- SPKs now contain a new hidden file '~package.json' with the DS version used.
+- Older SPKs and DS projects now default to Holo theme.
+-.Added "Biometric" permission option.
+- Fixed problem with the word Add being incorrectly replaced when using Add* methods.
+- NoIcons now defaults to true if a screen reader is detected.
+- Fixed app.GetThemeInfo() unset colours. Now returns null.
+-.app.Install() now returns (packageName,status) params in callback.
+- Added new !plugindocs IDE command to fix docs for a plugin after deleting .edit folder.
+
+DS 190b1
+- Added new cfg.Dark, cfg.Light, cfg.Holo theming options.
+- New dark theme is used by default (use cfg.holo to go back to old look).
+-.Added app.GetThemeInfo() method (gets main settings of current theme).
+- Added 'Controls Light' and 'Controls Dark' samples.
+-.Added new switch control (slider switch).
+- Intermitent obfuscation errors fixed.
+-.Added app.InstallApp(apk,callback) method (callback returns error/success status).
+- Added 'AllProgress' option to WebView (shows progress for all loads).
+- Fixed some issues with 'AutoSize/Scale' mode for text and buttons.
+- Disabled BaselineAligned mode for Linear Layouts (use 'BaseAlign' if needed)
+-.Added app.GetTextBounds() to calc size of text for given font size (most params optional)
+-.Added TW(txt,size) function to as shorthand way of getting text width (size param optional).
+-.Added DW() and DH() convenience funcs (same as app.GetDisplayWidth/Height).
+- Dialog.AdjustColor is now applied before Dialog.SetDividerColor.
+- Added 'dialog' option to button control (picks up dialog button theme).
+-.Added web.SetOnUrl() method to intercept url clicks (passes url to callback).
+- Error descriptions in the WebView no longer include "net::" on the front.
+- Spinner bug fixed when using spn.SetList and spn.SelectItem right after creation.
+- Added 'vertical' option to toggle button (makes LED go to bottom).
+- All controls are now automatically dimmed when disabled.
+- app.GetObjects() now removes destroyed child controls before returning.
+- Added 'external' option to app.GetPrivateFolder() method.
+-.Added app.GetAccessibility() to check for screen readers etc (thanks to Jason Custer for Java)
+-.Added app.GetSpeachEngines() to list installed TTS engines (thanks to Jason Custer for Java)
+- Fixed issues with auto-complete on device when using app.Add* methods.
+
+DS 182b2
+-.Added Merge(), List() and Delete() methods to CloudStore component.
+- Added "Network" permission when using app.CreateCloudStore().
+- Updated Obfuscator to ES6.
+-.Added app.SetMargins() to set default margins for controls.
+-.Added app.SetTextSize() to set default text size for controls.
+- Enabled GameView to work in IOS and Android browsers.
+- Enabled GameView touch events to work in mobile browsers.
+- Improved GameView asset loading checks.
+- Fixed app.ShowCheckList button size issues.
+-.Added 'AutoSize' option to button control (Auto-sizes text to fit).
+-.Added 'AutoShrink' option to button and text control (Auto-shrinks text to fit).
+- Fixed GLview (added missing libs).
+-.Added app.SetAppLanguage(), app.GetAppLanguages(), app.GetAppLangCode().
+-.Deprecated app.Language2Code(), app.SetLanguage().
+- Added language translation premium sample.
+- Added initial version of GameView docs (thanks to Symbroson).
+
+DS 182b1
+- Moved manifest minSdkVersion to 21 (Android 5.0)
+- Added new app.Add* funcs for all controls.
+- Added new CloudStore component + sample (premium only).
+- Added Listen() and SetOnNotify() methods to Notification component .
+- Added 'Notification Listener' sample.
+- Added 'action' param to SetOnBroadcast (for catching generic Android broadcasts).
+- Prevented OnConfig firing after screen unlock.
+- Fixed DS repeated re-draw after screen unlock.
+- Fixed use of gfx.Script() calls in GameView.
+- Fixed GameView issue with batched sprites not showing.
+- Fixed GameView to wait till all assets are loaded before calling OnReady().
+- Added app.data object for storing user data globally.
+- Added SetOnStatus method to AdView.
+- Enabled the use of #rrggbb colors with gfx.SetBackColor.
+- Fixed "Cannot read property SetAlpha of null error" when using keyboards.
+- Added 'NoIcons' option to settings for screen reader support.
+- Updated Terminal extension to use dark theme.
+- Fixed wrong heading on copy app menu.
+
+DS 181a
+- Fixed GLView failure.
+
 DS 180b2
 - Fixed problem with screen height measurement on phones with hardware buttons.
 

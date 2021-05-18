@@ -17,7 +17,7 @@
 	<script src="js/example.js"></script>
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
 
-	<link href="javascript/css/mathml.css" rel="stylesheet" type="text/css"/>
+	<!--link href="javascript/css/mathml.css" rel="stylesheet" type="text/css"/-->
 	<link rel="stylesheet"  href="../font-awesome/css/font-awesome.min.css"/>
 </head>
 
@@ -27,26 +27,64 @@
 
 	<div data-role="header">
 		<h1>Documentation</h1>
-		<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
 	</div>
 
 	<div data-role="content">
 		<div align="center">
 			<div style="display:inline-block; text-align:center">
 				<a target="_blank" onclick="return OpenUrl(this.href)" href="https://youtu.be/v2HVARMz6B0">
-					<i class="fa fa-youtube-play" style="font-size:4em;"></i></a>
+					<i class="fa fa-youtube-play" style="font-size:3.5em; color:#4296d8"></i></a>
 				<div><b>Video Tutorial</b></div>
 			</div>
+			&emsp;
+			<div style="display:inline-block; text-align:center">
+				<a target="_blank" onclick="return OpenUrl(this.href)" href="https://groups.google.com/forum/#!forum/androidscript">
+					<i class="fa fa-group" style="font-size:3.5em; color:#4296d8"></i></a>
+				<div><b>Forum</b></div>
+			</div>
+			&emsp;
+			<div style="display:inline-block; text-align:center">
+				<a href="intro/00ReleaseNotes.htm" data-ajax="false">
+					<i class="fa fa-list" style="font-size:3.5em; color:#4296d8"></i></a>
+				<div><b>Release Notes</b></div>
+			</div>
+			&emsp;
+			<div style="display:inline-block; text-align:center">
+				<a target="_blank" onclick="return OpenUrl(this.href)" href="http://droidscript.org">
+					<i class="fa fa-android" style="font-size:3.5em; color:#4296d8"></i></a>
+				<div><b>Website</b></div>
+			</div>
+			&emsp;
+			<div style="display:inline-block; text-align:center">
+				<a target="_blank" onclick="return OpenUrl(this.href)" href="http://androidscript.org/droidscript/tutorials">
+					<i class="fa fa-graduation-cap" style="font-size:3.5em; color:#4296d8"></i></a>
+				<div><b>Tutorials</b></div>
+			</div>
+
 		</div>
 		<br>
-		<ul data-role="listview" data-inset="true" data-theme="a" >
+		<ul data-role="listview" data-inset="true" data-theme="a">
 			<li><a href="Introduction.htm">Introduction</a></li>
 			<li><a href="Reference.htm">Reference</a></li>
 			<li><a href="Resources.htm">Resources</a></li>
-			<!--li><a href="GameEngine.htm">Game Engine</a></li-->
-			<li><a href="javascript/index.html" data-ajax="false">JavaScript</a></li>
-			<li><a href="Plugins.htm">Plugins</a></li>
+			<li><a href="MaterialUI.htm" class="premHint">Material UI (Premium)</a></li>
+			<li><a href="GameEngine.htm">Game Engine</a></li>
+			<li><a href="Music/Music.html">Music</a></li>
+			<li><a id="docsLink" href="Plugins.htm">Plugins</a></li>
+			<li><a id="extsLink" href="Extensions.htm">Extensions</a></li>
 		</ul>
+
+		<p style="width:100%;text-align:right">
+			<small>
+				Docs version: 219<br>
+				by <a class="no-ui-link normal-link" target="_blank" onclick="return OpenUrl(this.href)" href="https://github.com/alex-Symbroson">Symbroson</a>, <a class="no-ui-link normal-link" target="_blank" onclick="return OpenUrl(this.href)" href="https://github.com/DroidScript">DroidScript</a> and <a class="no-ui-link normal-link" target="_blank" onclick="return OpenUrl(this.href)" href="https://github.com/hamacjumar">Hamac Jumar</a>,
+			</small>
+		</p>
 
 	</div><!-- /content -->
 

@@ -1,7 +1,0 @@
-<sample Show MAC Address>
-function OnStart()
-{
-	<b>var mac = app.GetMacAddress();</b>
-	app.ShowPopup( mac );
-}
-</sample>

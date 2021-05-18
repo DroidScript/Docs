@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetJoystickState</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -39,7 +39,7 @@
 		app.GetJoystickState(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">key</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 
 		<p>The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.<br>
@@ -50,32 +50,32 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,left,multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,left,multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowStates<span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowStates<span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">ShowStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> keys <span class="token operator">=</span> <span class="token string">"A|B|C|X|Y|Z|R1|L1|Up|Down|Left|Right|Start|ThumbLeft|ThumbRight|"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"axis-0|axis-1|axis-2|axis-3|axis-4|axis-5|axis-6|axis-7|axis-8|axis-9"</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> keys <span class="token operator">=</span> <span class="token string">"A|B|C|X|Y|Z|R1|L1|Up|Down|Left|Right|Start|ThumbLeft|ThumbRight|"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"axis-0|axis-1|axis-2|axis-3|axis-4|axis-5|axis-6|axis-7|axis-8|axis-9"</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">keys <span class="token operator">=</span> keys<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"|"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    keys <span class="token operator">=</span> keys<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"|"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> keys<span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">{</span></span><br>
-				        <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetJoystickState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				        <span style="display:inline-block">lst<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">}</span></span><br>
+				    <span class="token keyword">var</span> lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> keys<span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetJoystickState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				        lst<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> lst<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> lst<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -89,8 +89,8 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“A”</docstr> or <docstr>“B”</docstr> or <docstr>“C”</docstr> or <docstr>“X”</docstr> or <docstr>“Y”</docstr> or <docstr>“Z”</docstr> or <docstr>“R1”</docstr> or <docstr>“L1”</docstr> or <docstr>“Left”</docstr> or <docstr>“Right”</docstr> or <docstr>“Up”</docstr> or <docstr>“Down”</docstr> or <docstr>“Start”</docstr> or <docstr>“ThumbLeft”</docstr> or <docstr>“ThumbRight”</docstr> or <docstr>“axis-0..9”</docstr> or <docstr>“btn-1..12”</docstr></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“A”</docstr> or <docstr>“B”</docstr> or <docstr>“C”</docstr> or <docstr>“X”</docstr> or <docstr>“Y”</docstr> or <docstr>“Z”</docstr> or <docstr>“R1”</docstr> or <docstr>“L1”</docstr> or <docstr>“Left”</docstr> or <docstr>“Right”</docstr> or <docstr>“Up”</docstr> or <docstr>“Down”</docstr> or <docstr>“Start”</docstr> or <docstr>“ThumbLeft”</docstr> or <docstr>“ThumbRight”</docstr> or <docstr>“axis-0..9”</docstr> or <docstr>“btn-1..12”</docstr></div>
 </div>
 </body>
 

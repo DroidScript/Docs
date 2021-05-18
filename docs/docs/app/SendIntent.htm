@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SendIntent</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -50,9 +50,9 @@
 
 		<p><i>It is basically a passive data structure holding an abstract description of an action to be performed</i>.<br>
 		<br>
-		<strong>package name</strong> and <strong>class name</strong> can specify the intent target, but you can also leave them null and define a <strong>category</strong> instead to let the user choose an application of that categoy.<br>
+		<b>package name</b> and <b>class name</b> can specify the intent target, but you can also leave them null and define a <strong>category</strong> instead to let the user choose an application of that categoy.<br>
 		<br>
-		If you expect a <strong>callback</strong> you have to pass the <docstr>“result”</docstr> <strong>option</strong>. The <strong>result code</strong> can be<br>
+		If you expect a <strong>callback</strong> you have to pass the <docstr>“result”</docstr> <strong>option</strong>. The <b>result code</b> can be<br>
 		<span style="display:inline-block;padding-left:1em;">
 			-1: <i>operation succeeded</i><br>
 			1: <i>user-defined activity results</i><br>
@@ -66,15 +66,15 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_mim" class="ui-content"><b>string:</b> <i>mimetype</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“android.intent.action.*”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“android.intent.category.*”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“result”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">action</a>, <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('string')">data</a>, <a href="" onclick="app.ShowPopup('integer')">flags</a>, <a href="" onclick="app.ShowPopup('object')">extras</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [{ <a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('string')">value</a> }]</div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_mim" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>mimetype</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“android.intent.action.*”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“android.intent.category.*”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“result”</docstr>, <docstr>“cleartask”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('string')">action</a>, <a href="" onclick="app.ShowPopup('String')">type</a>, <a href="" onclick="app.ShowPopup('string')">data</a>, <a href="" onclick="app.ShowPopup('integer')">flags</a>, <a href="" onclick="app.ShowPopup('object')">extras</a> }</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [{ <a href="" onclick="app.ShowPopup('String')">name</a>, <a href="" onclick="app.ShowPopup('String: “string” or “float” or “int” or “long” or “bool” or “list” or “file” or “keydown” or “keyup”')">type</a>, <a href="" onclick="app.ShowPopup('String')">value</a> }]</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('number: integer: -1 or 0 or 1')">resultCode</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer: -1 or 0 or 1')">resultCode</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">data</a>
 	)</div>
 </div>

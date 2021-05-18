@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>TextToSpeech</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -33,7 +33,7 @@
 	</div>
 
 	<div data-role="content">
-		<p>Uses the android TextToSpeech engine to audiolize text.</p>
+		<p>Uses the android TextToSpeech engine to play text acoustically.</p>
 
 		<div class="samp">
 		app.TextToSpeech(
@@ -52,7 +52,7 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">TextToSpeech</span><span class="token punctuation">(</span> <span class="token string">"DroidScript is awesome!"</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">TextToSpeech</span><span class="token punctuation">(</span> <span class="token string">"DroidScript is awesome!"</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -66,9 +66,9 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“music”</docstr></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“music”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 </div>
 </body>

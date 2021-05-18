@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>AddLayout</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -34,26 +34,28 @@
 
 	<div data-role="content">
 		<p>AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)<br>
-		<br>
-		See Also: <a href="RemoveLayout.htm" data-ajax="false">RemoveLayout</a>.</p>
+		When <a href="CreateLayout.htm" data-ajax="false">CreateLayout</a> arguments are passed it will create the layout just like app.CreateLayout and also add it.</p>
 
 		<div class="samp">
 		app.AddLayout(
-			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a> )
+			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
+		<p>See Also: <a href="RemoveLayout.htm" data-ajax="false">RemoveLayout</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Vertical</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">"Hello"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">50</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">"Hello"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">50</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -67,6 +69,8 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear”</docstr> or <docstr>“Absolute”</docstr> or <docstr>“Frame”</docstr> or <docstr>“Card”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('forwards touch events to underlying children')">TouchThrough</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('spies for touch events on all children')">TouchSpy</a>”</docstr>, <docstr>“Left”</docstr> or <docstr>“Top”</docstr> or <docstr>“Right”</docstr> or <docstr>“Bottom”</docstr> or <docstr>“Center”</docstr> or <docstr>“H/VCenter”</docstr>, <docstr>“Wrap”</docstr>, <docstr>“Horizontal”</docstr> or <docstr>“Vertical”</docstr>, <docstr>“FillX/Y”</docstr></div>
 	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
 </div>
 </body>

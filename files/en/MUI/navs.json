@@ -1,0 +1,119 @@
+{
+    "+html": "<br>\n\t<div style='align-items: center; text-align: center;'>\n\t\t<a href='#' data-role='button' data-mini='false' data-inline='true'  onclick='run( \"/assets/demos/mui/DroidScript_UI_Kit.js\" )'> Run Demos </a>\n\t</div>\n\t<br>\n",
+    "All": [],
+    "Overview": "MUIDocs.htm",
+    "Layout": [
+        "CreateLayout"
+    ],
+	"Buttons": [
+        "CreateButtonElegant",
+        "CreateButtonFlat",
+        "CreateButtonRaised",
+        "CreateButtonRaisedO",
+        "CreateButtonRound",
+        "CreateButtonRoundO",
+        "CreateButtonToggle"
+    ],
+    "AppBar": [
+        "CreateAppBar",
+        "CreateAppBarElegant",
+        "CreateAppBarModern"
+    ],
+    "Cards": [
+        "CreateCard"
+    ],
+    "Dialogs": [
+        "CreateAlert",
+        "CreateAlertSimple",
+        "CreateDialog",
+        "CreateBanner",
+        "CreateModal"
+    ],
+    "ListDialogs": [
+        "CreateListDialog",
+        "CreateCheckList"
+    ],
+    "FABs": [
+        "CreateFAB",
+        "CreateFABElegant",
+        "CreateFABOutline"
+    ],
+    "Lists": [
+        "CreateList",
+        "CreateListModern",
+        "CreateListSimple",
+        "CreateDataTable"
+    ],
+    "Menus": [
+        "CreateMenu",
+        "CreateMenuWithIcon"
+    ],
+    "Pickers": [
+        "CreateColorPicker",
+        "CreateDatePicker",
+        "CreateTimePicker",
+        "CreateSpinner"
+    ],
+    "Table": [
+        "CreateDataTable"
+    ],
+    "Texts": [
+        "CreateTextH1",
+        "CreateTextH2",
+        "CreateTextH3",
+        "CreateTextH4",
+        "CreateTextH5",
+        "CreateTextH6",
+        "",
+        "CreateTextJumbo",
+        "CreateTextParagraph",
+        "CreateTextSecondary"
+    ],
+    "TextEdits": [
+        "CreateTextEditFilled",
+        "CreateTextEditFilledA",
+        "CreateTextEditOutline",
+        "CreateTextEditOutlineA",
+        "",
+        "CreateTextEditSearch",
+        "CreateTESearchElegant",
+        "CreateTESearchUnique",
+        "CreateTextEditUnique",
+        "",
+        "CreateTEFilledIconLeft",
+        "CreateTEFilledIconRight",
+        "CreateTEOutlineIconLeft",
+        "CreateTEOutlineIconRight"
+    ],
+    "TextAreas": [
+        "CreateTextAreaFilled",
+        "CreateTextAreaFilledA",
+        "CreateTextAreaOutline",
+        "CreateTextAreaOutlineA"
+    ],
+    "Checkboxes": [
+        "CreateCheckbox"
+    ],
+    "Radios": [
+        "CreateRadio",
+        "CreateRadioButtons",
+        "CreateRadioMaterial"
+    ],
+    "Seekbars": [
+        "CreateSeekBar"
+    ],
+    "Spinner": [
+        "CreateSpinner"
+    ],
+    "Switches": [
+        "CreateSwitch",
+        "CreateSwitchSettings"
+    ],
+    "Tabs": [
+        "CreateTabFixed"
+    ],
+    "Miscellaneous": [
+        "colors",
+        "CreateDivider"
+    ]
+}

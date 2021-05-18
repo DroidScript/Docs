@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetDrawerState</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -38,14 +38,14 @@
 		<div class="samp">
 		app.GetDrawerState(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">side</a> )
-			→ <b>string:</b> <docstr>“Open”</docstr> or <docstr>“Closed”</docstr>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Open”</docstr> or <docstr>“Closed”</docstr>
 		</div>
 
 		<p>See Also: <a href="OpenDrawer.htm" data-ajax="false">OpenDrawer</a>, <a href="CloseDrawer.htm" data-ajax="false">CloseDrawer</a>, <a href="AddDrawer.htm" data-ajax="false">AddDrawer</a></p>
 
 	</div>
 
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“left”</docstr> or <docstr>“right”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“left”</docstr> or <docstr>“right”</docstr></div>
 </div>
 </body>
 

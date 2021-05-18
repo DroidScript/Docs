@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreatePlayStore</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -66,7 +66,7 @@
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“PlayStore”</docstr>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“PlayStore”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Purchase</a>(
@@ -78,19 +78,19 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('In-App purchases')">IAP</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('subscriptions')">SUBS</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“SUBS”</docstr></div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> <i>of objects:</i> [{ <a href="" onclick="app.ShowPopup('string')">skuDetailsToken</a>, <a href="" onclick="app.ShowPopup('string')">productId</a>, <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('string')">price</a>, <a href="" onclick="app.ShowPopup('number: integer')">price_amount_micros</a>, <a href="" onclick="app.ShowPopup('string')">price_currency_code</a>, <a href="" onclick="app.ShowPopup('string')">title</a>, <a href="" onclick="app.ShowPopup('string')">description</a> }]</div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('In-App purchases')">IAP</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('subscriptions')">SUBS</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“SUBS”</docstr></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> <i>of objects:</i> [{ <a href="" onclick="app.ShowPopup('String')">skuDetailsToken</a>, <a href="" onclick="app.ShowPopup('String')">productId</a>, <a href="" onclick="app.ShowPopup('String')">type</a>, <a href="" onclick="app.ShowPopup('String')">price</a>, <a href="" onclick="app.ShowPopup('Number: integer')">price_amount_micros</a>, <a href="" onclick="app.ShowPopup('String')">price_currency_code</a>, <a href="" onclick="app.ShowPopup('String')">title</a>, <a href="" onclick="app.ShowPopup('String')">description</a> }]</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_lst_001')" data-transition="pop" data-rel="popup">items</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">prodId</a>,
-		<a href="" onclick="app.ShowPopup('string')">orderId</a>,
-		<a href="" onclick="app.ShowPopup('string')">purchToken</a>,
-		<a href="" onclick="app.ShowPopup('string')">devToken</a>,
-		<a href="" onclick="app.ShowPopup('string')">packageName</a>
+		<a href="" onclick="app.ShowPopup('String')">prodId</a>,
+		<a href="" onclick="app.ShowPopup('String')">orderId</a>,
+		<a href="" onclick="app.ShowPopup('String')">purchToken</a>,
+		<a href="" onclick="app.ShowPopup('String')">devToken</a>,
+		<a href="" onclick="app.ShowPopup('String')">packageName</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pls.GetBillingInfo</b><br>Get product info of paid items from Google Play.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pls.GetPurchases</b><br>Get product info of purchased items from Google Play.</div>

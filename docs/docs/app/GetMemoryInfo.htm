@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetMemoryInfo</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -36,7 +36,7 @@
 		<p>Returns an object containing informations about the RAM memory.</p>
 
 		<div class="samp">
-		app.GetMemoryInfo() → <b>object:</b> {
+		app.GetMemoryInfo() → <b>Object:</b> {
 			<a href="#pop_num_byt" data-transition="pop" data-rel="popup">avail</a>,
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">low</a>,
 			<a href="#pop_num_byt" data-transition="pop" data-rel="popup">threshold</a>,
@@ -48,9 +48,9 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> mem <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex">/,/g</span><span class="token punctuation">,</span> <span class="token string">",\n "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> mem <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> s<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">,</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">",\n "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -66,30 +66,30 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,vcenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">25</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"monospace,multiline"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">25</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowMemory<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> ShowMemory<span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">ShowMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">text <span class="token operator">=</span></span><br>
-				        <span style="display:inline-block">Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>avail <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block">Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>total <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" MB&lt;br>&lt;br>"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block">Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> <span class="token number">100</span> <span class="token operator">*</span> mem<span class="token punctuation">.</span>avail <span class="token operator">/</span> mem<span class="token punctuation">.</span>total <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span></span><br>
+				    text <span class="token operator">=</span><br>
+				        Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>avail <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span><br>
+				        Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>total <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" MB&lt;br>&lt;br>"</span> <span class="token operator">+</span><br>
+				        Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span> <span class="token number">100</span> <span class="token operator">*</span> mem<span class="token punctuation">.</span>avail <span class="token operator">/</span> mem<span class="token punctuation">.</span>total <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"%"</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>low <span class="token punctuation">)</span> color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">else</span> color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> mem<span class="token punctuation">.</span>low <span class="token punctuation">)</span> color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span> color <span class="token operator">=</span> <span class="token string">"white"</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> text<span class="token punctuation">.</span><span class="token function">fontcolor</span><span class="token punctuation">(</span> color <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> text<span class="token punctuation">.</span><span class="token function">fontcolor</span><span class="token punctuation">(</span> color <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -102,8 +102,8 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-	<div data-role="popup" id="pop_num_byt" class="ui-content"><b>number:</b> <i>Bytes</i></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+	<div data-role="popup" id="pop_num_byt" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>bytes</i></div>
 </div>
 </body>
 

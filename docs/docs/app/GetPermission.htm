@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetPermission</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,12 +47,12 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnPermission</span><span class="token punctuation">(</span> <span class="token parameter">pathURI</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> pathURI <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> pathURI <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -66,9 +66,9 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Camera”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“Network”</docstr> or <docstr>“Storage”</docstr> or <docstr>“Overlay”</docstr> or <docstr>“SMS”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“Location”</docstr> or <docstr>“Calendar”</docstr> or <docstr>“Body”</docstr> or <docstr>“Contacts”</docstr> or <docstr>“Record”</docstr> or <docstr>“Phone”</docstr> or <docstr>“Accounts”</docstr> or <docstr>“License”</docstr> or <docstr>“usb:<"<a href="" onclick="app.ShowPopup('number: >')">pid</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Camera”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“Network”</docstr> or <docstr>“Storage”</docstr> or <docstr>“Overlay”</docstr> or <docstr>“SMS”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“Location”</docstr> or <docstr>“Calendar”</docstr> or <docstr>“Body”</docstr> or <docstr>“Contacts”</docstr> or <docstr>“Record”</docstr> or <docstr>“Phone”</docstr> or <docstr>“Biometric”</docstr> or <docstr>“Accounts”</docstr> or <docstr>“License”</docstr> or <docstr>“usb:"<<a href="" onclick="app.ShowPopup('Number')">pid</a>>"”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">ungranted</a>
+		<a href="" onclick="app.ShowPopup('String: comma “,” separated\nString: URI encoded')">ungranted</a>
 	)</div>
 </div>
 </body>

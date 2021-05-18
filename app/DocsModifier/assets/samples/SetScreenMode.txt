@@ -1,6 +1,0 @@
-<sample Example>
-function OnStart()
-{
-<b>	app.SetScreenMode( "Full" );
-</b>}</sample>
-

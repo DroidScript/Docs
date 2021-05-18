@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>AddBackground</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,13 +47,13 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateBackground</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateBackground</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">gfx<span class="token punctuation">.</span><span class="token function">AddBackground</span><span class="token punctuation">(</span> sky <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block">gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%">gfx<span class="token punctuation">.</span><span class="token function">AddBackground</span><span class="token punctuation">(</span> sky <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

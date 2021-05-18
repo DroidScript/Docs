@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreatePhoneState</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -70,27 +70,27 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span></span><br>
-				        <span style="display:inline-block"><span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span><br>
+				        <span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreatePhoneState</span><span class="token punctuation">(</span> types <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">state<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">state<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreatePhoneState</span><span class="token punctuation">(</span> types <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    state<span class="token punctuation">.</span><span class="token function">SetOnChange</span><span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    state<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">var</span> log <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 				<span class="token keyword">function</span> <span class="token function">state_OnChange</span><span class="token punctuation">(</span> <span class="token parameter">type<span class="token punctuation">,</span> data</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">log<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> type<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    log<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span> type<span class="token punctuation">.</span><span class="token function">bold</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -104,7 +104,7 @@
 		<p>The following methods are available on the <strong>PhoneState</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“PhoneState”</docstr>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“PhoneState”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">SetOnChange</a>(
@@ -119,14 +119,14 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_num" class="ui-content"><b>string:</b> <i>number</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“CellLocation”</docstr>, <docstr>“DataConnection”</docstr>, <docstr>“DataActivity”</docstr>, <docstr>“CallState”</docstr>, <docstr>“ServiceState”</docstr>, <docstr>“SignalStrength”</docstr>, <docstr>“CallForwarding”</docstr>, <docstr>“MessageWaiting”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“Connected”</docstr> or <docstr>“Disconnected”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“Unknown”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“Idle”</docstr></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_num" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>number</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“CellLocation”</docstr>, <docstr>“DataConnection”</docstr>, <docstr>“DataActivity”</docstr>, <docstr>“CallState”</docstr>, <docstr>“ServiceState”</docstr>, <docstr>“SignalStrength”</docstr>, <docstr>“CallForwarding”</docstr>, <docstr>“MessageWaiting”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Connected”</docstr> or <docstr>“Disconnected”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Unknown”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Idle”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string: “CellLocation” or “DataConnection” or “DataActivity” or “CallState” or “ServiceState” or “SignalStrength” or “CallForwarding” or “MessageWaiting”')">type</a>,
+		<a href="" onclick="app.ShowPopup('String: “CellLocation” or “DataConnection” or “DataActivity” or “CallState” or “ServiceState” or “SignalStrength” or “CallForwarding” or “MessageWaiting”')">type</a>,
 		<a href="" onclick="app.ShowPopup('all types')">data</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pst.GetType</b><br>Returns the control class name.</div>

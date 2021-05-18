@@ -1,11 +1,29 @@
 {
 	"adv": {
 		"GetType": "Returns the control class name",
-		"Load": "Loads an ad"
+		"Load": "Loads an ad",
+		"SetOnStatus": "Called when status changed"
 	},
 	"app": {
+		"AddAdView": "Create and add AdView to Layout",
+		"AddButton": "Create and add Button to Layout",
+		"AddCameraView": "Create and add CameraView to Layout",
+		"AddCanvas": "Create and add Button to Layout",
+		"AddCheckBox": "Create and add CheckBox to Layout",
+		"AddCodeEdit": "Create and add CodeEdit to Layout",
 		"AddDrawer": "Adds a slide-able layout on given side",
+		"AddImage": "Create and add Image to Layout",
 		"AddLayout": "Adds a layout to the app",
+		"AddList": "Create and add List to Layout",
+		"AddScroller": "Create and add Scroller to Layout",
+		"AddSeekBar": "Create and add SeekBar to Layout",
+		"AddSpinner": "Create and add Spinner to Layout",
+		"AddSwitch": "Create and add Switch toggle to Layout",
+		"AddText": "Create and add Text to Layout",
+		"AddTextEdit": "Create and add TextEdit to Layout",
+		"AddToggle": "Create and add Toggle to Layout",
+		"AddVideoView": "Create and add VideoView to Layout",
+		"AddWebView": "Create and add WebView to Layout",
 		"Alert": "Shows a popup message with an 'OK' button to exit",
 		"Animate": "Similar to setInterval",
 		"Broadcast": "Used for broadcasting messages between DroidScript apps",
@@ -30,7 +48,9 @@
 		"CreateBluetoothSerial": "Communicate with other Bluetooth devices",
 		"CreateButton": "Creates a button control",
 		"CreateCameraView": "Returns a new CameraView object to access the device camera",
+		"CreateCanvas": "Create a blank white Image object",
 		"CreateCheckBox": "Returns a new CheckBox object",
+		"CreateCloudStore": "Returns a new CloudStore object",
 		"CreateCodeEdit": "Returns a new CodeEdit object",
 		"CreateCrypt": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"CreateDebug": "Shows a debug log overlay",
@@ -48,6 +68,7 @@
 		"CreateLocator": "Returns a new Locator object",
 		"CreateMediaPlayer": "Returns a new MediaPlayer object",
 		"CreateMediaStore": "Returns a new MediaStore object",
+		"CreateMusic": "?",
 		"CreateNetClient": "Returns a new NetClient object",
 		"CreateNotification": "Returns a new Notification object",
 		"CreateNxt": "Returns a new Nxt object",
@@ -62,6 +83,7 @@
 		"CreateSMS": "Returns a new SMS object",
 		"CreateSpeechRec": "Returns a new SpeechRec object",
 		"CreateSpinner": "Returns a new Spinner object",
+		"CreateSwitch": "Creates a switch control",
 		"CreateSynth": "Returns a new Synth object",
 		"CreateSysProc": "Returns a new SysProc object",
 		"CreateTabs": "Returns a new Tabs object",
@@ -96,8 +118,11 @@
 		"FileExists": "Checks if the file exists",
 		"FolderExists": "Checks if the folder exists",
 		"GA": "Google Analytics",
+		"GetAccessibility": "Get accesibility feature availability",
 		"GetAccounts": "GetAccounts",
 		"GetActivities": "GetActivities",
+		"GetAppLangCode": "Convert language name to its code or get current language code",
+		"GetAppLanguages": "Get translation languages",
 		"GetAppName": "Get current app name",
 		"GetAppPath": "Get path to app assets",
 		"GetBatteryLevel": "Get current battery level",
@@ -128,8 +153,9 @@
 		"GetIPAddress": "Get network IP address",
 		"GetJoystickName": "GetJoystickName",
 		"GetJoystickState": "GetJoystickState",
+		"GetJoystickStates": "Get joystick key states object",
 		"GetKeyboardHeight": "Get current keyboard height",
-		"GetLanguage": "GetLanguage",
+		"GetLanguage": "Get device language",
 		"GetLanguageCode": "Get user language code",
 		"GetMacAddress": "Get devices MAC address",
 		"GetMediaFile": "Get a path to an unambiguous media file",
@@ -160,7 +186,10 @@
 		"GetSharedText": "Get value of shared text",
 		"GetSpeakerPhone": "Checks if the speaker is enabled",
 		"GetSpecialFolder": "Get full path to a special media folder",
+		"GetSpeechEngines": "Get tts engines",
 		"GetSSID": "Get WiFi network SSID (name)",
+		"GetTextBounds": "Calculates text bounds",
+		"GetThemeInfo": "Get theme configuration",
 		"GetThumbnail": "Create downscaled copy of an image",
 		"GetTop": "GetTop",
 		"GetType": "Returns the object class name",
@@ -174,6 +203,7 @@
 		"HideProgressBar": "Hide progress bar dialog",
 		"HttpRequest": "Send Http request",
 		"InIDE": "InIDE",
+		"InstallApp": "Start apk installation process",
 		"IsAPK": "Returns true if ran from apk",
 		"IsAppInstalled": "Check if package is installed",
 		"IsBluetoothEnabled": "Check bluetooth enabled",
@@ -190,20 +220,21 @@
 		"IsNewVersion": "Check if apk version increased",
 		"IsPortrait": "Check if device is in portrait mode",
 		"IsPremium": "Check if user has a DroidScript Premium subscription",
+		"IsScoped": "Indicates 'scoped storage'",
 		"IsScreenOn": "Check if device screen is on",
 		"IsService": "Check id app is a service",
 		"IsStarted": "Check if app has finished loading",
 		"IsTablet": "Check if user device is a tablet",
-		"IsThings": "Check if OS is AndroidThings",
+		"IsTV": "Check if OS is AndroidThings",
 		"IsWifiApEnabled": "Check if the mobile Wifi Access Point is enabled",
 		"IsWifiEnabled": "Check if WiFi is enabled",
 		"KillApp": "Kill an app by its pid",
-		"Language2Code": "Convert language name to its code or get current language code",
+		"LaunchApp": "Launch or search an app",
 		"ListFolder": "Get a list of files ans folders contained in a specific folder",
 		"LoadBoolean": "Load saved boolean value",
 		"LoadNumber": "Load saved boolean value",
 		"LoadPlugin": "Load an installed plugin to your app",
-		"LoadScript": "Asynchronously import an external JavaScript file.\nSee Also: @Script",
+		"LoadScript": "Asynchronously import a .js file",
 		"LoadText": "Load saved text value",
 		"Lock": "Lock the device",
 		"LockDrawer": "Hide and lock a drawer",
@@ -213,6 +244,8 @@
 		"OpenFile": "Allow user to open a file with an external app",
 		"OpenUrl": "Allow user to open an url with an external app",
 		"PairBtDevice": "PairBtDevice",
+		"Path2Uri": "Convert file path to content uri",
+		"PinScreen": "Pin app on screen",
 		"PlayRingtone": "Play specific ringtone type",
 		"PlaySound": "Plays a local or remote sound file",
 		"PreventScreenLock": "Prevent screen from locking after some time",
@@ -231,6 +264,7 @@
 		"SaveNumber": "Save a number value across multiple starts",
 		"SaveText": "Save a text value across multiple starts",
 		"ScanFile": "Adds media files to phone gallery",
+		"ScheduleJob": "Schedules background jobs",
 		"ScreenShot": "Take a screen shot of your app",
 		"Script": "Synchronously import an external JavaScript file",
 		"SendFile": "Send a file to a remote target",
@@ -241,6 +275,7 @@
 		"SendSMS": "Open the SMS app and autofill fields",
 		"SendText": "Share text between apps",
 		"SetAlarm": "Set alarm to open your app at a specific time",
+		"SetAppLanguage": "Load the language code from lang.json",
 		"SetAutoBoot": "Autostart APK when device boots",
 		"SetAutoStart": "Autostart DroidScript Project on DS restart",
 		"SetAutoWifi": "Automatically enable the WiFi editor",
@@ -250,11 +285,12 @@
 		"SetData": "Save data while app is running",
 		"SetDebug": "Control the debug level of the program",
 		"SetDensity": "Changes the dpi value for any control creatred afterwards",
+		"SetDescription": "?",
 		"SetInBackground": "Set services to run in the background",
 		"SetInForeground": "Set services to run in the foreground",
 		"SetJoystickOptions": "Set options for the connected joystick",
 		"SetKioskMode": "Blocks android functionality outside your app",
-		"SetLanguage": "Load the language code from lang.json",
+		"SetMargins": "Set default margins",
 		"SetMenu": "Set app menu",
 		"SetMockLocation": "Emulate GPS location",
 		"SetNavBarColor": "Set NavBar color",
@@ -274,6 +310,7 @@
 		"SetSharedApp": "Auto-Launch Project when shared data received",
 		"SetSpeakerPhone": "En/Disable speaker for phone calls",
 		"SetStatusBarColor": "Set status bar color",
+		"SetTextSize": "Set default text size",
 		"SetTheme": "Change the theme of your app",
 		"SetUserAgent": "Change the user agent",
 		"SetUserCreds": "Set user credentials",
@@ -389,7 +426,8 @@
 		"SetTextShadow": "Define a shadow around the control",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"cam": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -461,7 +499,8 @@
 		"Stop": "Stop recording video",
 		"StopPreview": "Stop the camera preview",
 		"Stream": "Streams the camera view to a local ip",
-		"TakePicture": "Save the current camera view to a file"
+		"TakePicture": "Save the current camera view to a file",
+		"Tween": "Animates the control"
 	},
 	"cde": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -481,6 +520,8 @@
 		"GetParent": "Returns the parent control object",
 		"GetPosition": "Returns data about position and size",
 		"GetSelectedText": "Get the selected text",
+		"GetSelectionEnd": "Get selection end position",
+		"GetSelectionStart": "Get selection start position",
 		"GetSelectMode": "Get current selection state",
 		"GetText": "Returns the currently contained text",
 		"GetTop": "Get distance to the upper parent border",
@@ -530,6 +571,7 @@
 		"SetUseKeyboard": "En/Disable device keyboard",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control",
 		"Undo": "Undo an action"
 	},
 	"chk": {
@@ -574,7 +616,16 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
+	},
+	"cld": {
+		"Delete": "Deletes a file in the cloud.",
+		"GetType": "Returns the control class name",
+		"List": "Lists files of the cloud.",
+		"Load": "Loads data from the cloud.",
+		"Merge": "Merges data in the cloud.",
+		"Save": "Saves data in the cloud."
 	},
 	"crp": {
 		"Decrypt": "Decrypt text",
@@ -610,6 +661,7 @@
 		"GetLeft": "Get distance to the left parent border",
 		"GetParent": "Returns the parent control object",
 		"GetPosition": "Returns data about position and size",
+		"GetTitleHeight": "Get title bar height",
 		"GetTop": "Get distance to the upper parent border",
 		"GetType": "Returns the control class name",
 		"GetVisibility": "Returns the current visibility state",
@@ -643,7 +695,8 @@
 		"SetTitleHeight": "Change height of the title bar",
 		"SetTitleTextSize": "Changes the title text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"dwn": {
 		"Download": "Download a file",
@@ -715,6 +768,7 @@
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control",
 		"Undo": "Undo an action"
 	},
 	"eml": {
@@ -788,14 +842,15 @@
 		"SetMargins": "Define distances to other controls",
 		"SetOnTouch": "Define a callback function for user toches",
 		"SetOnTouchDown": "Called when the user starts touching the control",
-		"SetOnTouchMove": "Called when the user drags his finger over the screen",
+		"SetOnTouchMove": "Called when the user drags a finger over the screen",
 		"SetOnTouchUp": "Called when the user finger leaves te screen",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"gmv": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -833,7 +888,8 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"img": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -897,7 +953,7 @@
 		"SetOnLongTouch": "Called when the control was pressed for eons",
 		"SetOnTouch": "Define a callback function for user toches",
 		"SetOnTouchDown": "Called when the user starts touching the control",
-		"SetOnTouchMove": "Called when the user drags his finger over the screen",
+		"SetOnTouchMove": "Called when the user drags a finger over the screen",
 		"SetOnTouchUp": "Called when the user finger leaves te screen",
 		"SetPadding": "Define distances to contained elements",
 		"SetPaintColor": "Change the paint color",
@@ -912,6 +968,7 @@
 		"Show": "Set the visibility to “Show”",
 		"Skew": "Skews the content",
 		"Transform": "Applies a transformation matrix to the content",
+		"Tween": "Animates the control",
 		"Update": "Update the view"
 	},
 	"lay": {
@@ -945,9 +1002,11 @@
 		"SetBackGradient": "Define the background color of the control with a gradient",
 		"SetBackGradientRadial": "Define a radial background color gradient",
 		"SetBackground": "Change the background to an image",
+		"SetChildMargins": "Set margins of top-level children.",
+		"SetChildTextSize": "Change text size of top-level children.",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
-		"SetCorderRadius": "Apply corner radius to ll's",
-		"SetElevation": "Apply shadow to ll's",
+		"SetCornerRadius": "Apply corner radius to card layouts's",
+		"SetElevation": "Apply shadow to card layouts's",
 		"SetEnabled": "En/Disable the control",
 		"SetGravity": "Adjust the placing of contained children",
 		"SetMargins": "Define distances to other controls",
@@ -955,7 +1014,7 @@
 		"SetOnLongTouch": "Called when the control was pressed for eons",
 		"SetOnTouch": "Define a callback function for user toches",
 		"SetOnTouchDown": "Called when the user starts touching the control",
-		"SetOnTouchMove": "Called when the user drags his finger over the screen",
+		"SetOnTouchMove": "Called when the user drags a finger over the screen",
 		"SetOnTouchUp": "Called when the user finger leaves te screen",
 		"SetOrientation": "Change the children orientation",
 		"SetPadding": "Define distances to contained elements",
@@ -964,7 +1023,8 @@
 		"SetSize": "Change the size of the control",
 		"SetTouchThrough": "Enable touch event forwarding",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"ldg": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1043,9 +1103,11 @@
 		"SetIconSize": "Change the icon size",
 		"SetItem": "Change the content of an element by its title",
 		"SetItemByIndex": "Change the content of an element by its index",
+		"SetItemColor": "Set item color",
+		"SetItemColorByIndex": "Set item color by index",
 		"SetList": "Set the content of the whole list",
 		"SetMargins": "Define distances to other controls",
-		"SetOnLongTouch": "Called when the control was pressed for eons",
+		"SetOnLongTouch": "Define a callback function for touch events",
 		"SetOnTouch": "Define a callback function for touch events",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
@@ -1062,7 +1124,8 @@
 		"SetTextSize1": "Set title text size",
 		"SetTextSize2": "Set body text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"med": {
 		"GetAlbumArt": "Load the album art to an image",
@@ -1105,10 +1168,12 @@
 	"ntf": {
 		"Cancel": "Cancel a notification",
 		"GetType": "Returns the control class name",
+		"Listen": "Listen for any notifications",
 		"Notify": "Send the notification",
 		"SetLargeImage": "Set a large image in the notification",
 		"SetLights": "Activate device notification LEDs",
 		"SetMessage": "Set notification texts",
+		"SetOnNotify": "Called when notification intercepted",
 		"SetSmallImage": "Set a small image icon"
 	},
 	"nxt": {
@@ -1240,7 +1305,8 @@
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"skb": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1281,7 +1347,8 @@
 		"SetSize": "Change the size of the control",
 		"SetValue": "Set current seekbar value",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"sms": {
 		"GetType": "Returns the control class name",
@@ -1306,6 +1373,7 @@
 	"sock": {
 		"AddRedirect": "Redirect urls",
 		"AddServlet": "Called when servlet received a message",
+		"Disconnect": "Disconnect Client from WebServer",
 		"GetType": "Returns the control class name",
 		"GetWebSockClients": "Get connected clients",
 		"Method": "Access Java object methods via reflection",
@@ -1361,7 +1429,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"spr": {
 		"Cancel": "Stop recognition",
@@ -1382,6 +1451,52 @@
 		"SetInForeground": "Run service in foreground",
 		"SetOnMessage": "Called when service sent a message",
 		"Stop": "Stop service"
+	},
+	"swi": {
+		"AdjustColor": "Adjust the visual color effect of the control",
+		"Animate": "Animates a control",
+		"ClearFocus": "Removes the focus of the control",
+		"Focus": "Set the focus to the control for immediate access",
+		"GetAbsHeight": "Get the control height in pixels",
+		"GetAbsWidth": "Get the control width in pixels",
+		"GetChecked": "Checks if switch is activated",
+		"GetHeight": "Get the height of the control",
+		"GetLeft": "Get distance to the left parent border",
+		"GetParent": "Returns the parent control object",
+		"GetPosition": "Returns data about position and size",
+		"GetText": "Returns the currently contained text",
+		"GetTextSize": "Returns the current text size",
+		"GetTop": "Get distance to the upper parent border",
+		"GetType": "Returns the control class name",
+		"GetVisibility": "Returns the current visibility state",
+		"GetWidth": "Get the width of the control",
+		"Gone": "Make it gone. It was never there!",
+		"Hide": "Hides the control visually",
+		"IsEnabled": "Checks if the control is useable",
+		"IsOverlap": "Checks if the control overlaps with another",
+		"IsVisible": "Checks if the control is currently visible",
+		"Method": "Access Java object methods via reflection",
+		"SetBackAlpha": "Set the background transparency by alpha value",
+		"SetBackColor": "Change the background color",
+		"SetBackGradient": "Define the background color of the control with a gradient",
+		"SetBackGradientRadial": "Define a radial background color gradient",
+		"SetBackground": "Change the background to an image",
+		"SetChecked": "Change the checked state",
+		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
+		"SetEnabled": "En/Disable the control",
+		"SetMargins": "Define distances to other controls",
+		"SetOnTouch": "Define a callback function for user toches",
+		"SetPadding": "Define distances to contained elements",
+		"SetPosition": "Defines position and size on absolute layouts",
+		"SetScale": "Scale the control by the given factors",
+		"SetSize": "Change the size of the control",
+		"SetStyle": "Customize the button looks",
+		"SetText": "Change displayed text",
+		"SetTextColor": "Change the text color",
+		"SetTextSize": "Change the text size",
+		"SetVisibility": "Change the visibility mode",
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"syn": {
 		"GetType": "Returns the control class name",
@@ -1459,6 +1574,7 @@
 		"SetBackGradientRadial": "Define a radial background color gradient",
 		"SetBackground": "Change the background to an image",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
+		"SetCornerRadius": "Apply corner radius to card layouts's",
 		"SetEnabled": "En/Disable the control",
 		"SetMargins": "Define distances to other controls",
 		"SetOnChange": "Called when current tab changed",
@@ -1466,7 +1582,7 @@
 		"SetOnLongTouch": "Called when the control was pressed for eons",
 		"SetOnTouch": "Define a callback function for user toches",
 		"SetOnTouchDown": "Called when the user starts touching the control",
-		"SetOnTouchMove": "Called when the user drags his finger over the screen",
+		"SetOnTouchMove": "Called when the user drags a finger over the screen",
 		"SetOnTouchUp": "Called when the user finger leaves te screen",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
@@ -1475,7 +1591,8 @@
 		"SetTouchThrough": "Enable touch event forwarding",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
-		"ShowTab": "Switch current tab"
+		"ShowTab": "Switch current tab",
+		"Tween": "Animates the control"
 	},
 	"tgl": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1520,7 +1637,8 @@
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"thm": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1530,6 +1648,7 @@
 		"SetBackground": "Change the background to an image",
 		"SetBtnTextColor": "Define button text color",
 		"SetButtonOptions": "Define button options",
+		"SetButtonPadding": "Define button paddings",
 		"SetButtonStyle": "Define button style",
 		"SetCheckBoxOptions": "Define check box options",
 		"SetDialogBtnColor": "Define dialog button colors",
@@ -1537,8 +1656,11 @@
 		"SetDialogColor": "Define dialog background colors",
 		"SetDialogCornerRadius": "Define dialog corner radius",
 		"SetDimBehind": "Define whether to dim dialog background",
+		"SetHighlightColor": "Define highlight colors",
+		"SetListDividerColor": "Define list divider colors",
 		"SetProgressBackColor": "Define progress background color",
 		"SetProgressBarOptions": "Define progress bar options",
+		"SetProgressOptions": "Define progress options",
 		"SetProgressTextColor": "Define progress text color",
 		"SetTextColor": "Define control text color",
 		"SetTextEditOptions": "Define text edit options",
@@ -1592,7 +1714,7 @@
 		"SetOnLongTouch": "Called when the control was pressed for eons",
 		"SetOnTouch": "Define a callback function for user toches",
 		"SetOnTouchDown": "Called when the user starts touching the control",
-		"SetOnTouchMove": "Called when the user drags his finger over the screen",
+		"SetOnTouchMove": "Called when the user drags a finger over the screen",
 		"SetOnTouchUp": "Called when the user finger leaves te screen",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
@@ -1603,7 +1725,8 @@
 		"SetTextShadow": "Define a shadow around the control",
 		"SetTextSize": "Change the text size",
 		"SetVisibility": "Change the visibility mode",
-		"Show": "Set the visibility to “Show”"
+		"Show": "Set the visibility to “Show”",
+		"Tween": "Animates the control"
 	},
 	"usb": {
 		"GetType": "Returns the control class name",
@@ -1668,7 +1791,8 @@
 		"SetVisibility": "Change the visibility mode",
 		"SetVolume": "Change the playback volume",
 		"Show": "Set the visibility to “Show”",
-		"Stop": "Stop video playback."
+		"Stop": "Stop video playback.",
+		"Tween": "Animates the control"
 	},
 	"wbs": {
 		"Close": "Close web socket",
@@ -1716,13 +1840,17 @@
 		"SetBackGradient": "Define the background color of the control with a gradient",
 		"SetBackGradientRadial": "Define a radial background color gradient",
 		"SetBackground": "Change the background to an image",
+		"SetBlockedUrls": "Block urls from loading",
 		"SetColorFilter": "Adjust the visual color effect with different BlendModes",
 		"SetEnabled": "En/Disable the control",
+		"SetErrorPage": "Define error page",
 		"SetMargins": "Define distances to other controls",
 		"SetOnConsole": "Called when message logged to console",
-		"SetOnError": "Called when an error ocured",
+		"SetOnError": "Called when an error occured",
 		"SetOnProgress": "Called when loading progress changed",
+		"SetOnRequest": "Traps HTTP Requests",
 		"SetOnTouch": "Define a callback function for user toches",
+		"SetOnUrl": "Called when link klicked",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetRedirect": "Add url redirection rule",
@@ -1734,7 +1862,9 @@
 		"SetUserCreds": "Set authentication/login data",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
-		"SimulateKey": "Simulate key event"
+		"SimulateKey": "Simulate key event",
+		"Stop": "Stop loading processes",
+		"Tween": "Animates the control"
 	},
 	"wiz": {
 		"Dismiss": "Hides the control and removes it from the screen",

@@ -25,11 +25,13 @@
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 		<h1>Database</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
 
+	
+
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="true">
+		<ul data-role="listview" data-inset="true" data-filter="false">
 		
 			<li><a href="app/GetData.htm">GetData</a></li>
 			<li><a href="app/SetData.htm">SetData</a></li>
@@ -41,10 +43,11 @@
 			<li><a href="app/SaveNumber.htm">SaveNumber</a></li>
 			<li><a href="app/SaveText.htm">SaveText</a></li>
 			<li><a href="app/ClearValue.htm">ClearValue</a></li><li></li>
+			<li><a href="app/CreateCloundStore.htm">CreateCloundStore</a></li>
 			<li><a href="app/DeleteDatabase.htm">DeleteDatabase</a></li>
 			<li><a href="app/GetDatabaseFolder.htm">GetDatabaseFolder</a></li>
 			<li><a href="app/OpenDatabase.htm">OpenDatabase</a></li>
-			<li><a href="app/QueryContent.htm">QueryContent</a></li>
+			<li><a href="app/QueryContent.htm" class="premHint">QueryContent</a></li>
 		</ul>
 	</div><!-- /content -->
 </div><!-- /page -->

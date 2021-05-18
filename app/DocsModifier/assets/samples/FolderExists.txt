@@ -1,9 +1,0 @@
-<sample Example>
-function OnStart()
-{
-	<b>if(app.FolderExists("myFolder"))
-	    app.ShowPopup("myFolder exists!");
-    else
-	    app.ShowPopup("myFolder does not exist!");</b>
-}
-</sample>

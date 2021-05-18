@@ -1,7 +1,0 @@
-<sample Show Screen Density>
-function OnStart()
-{
-    <b>var dens = app.GetScreenDensity();</b>
-    app.Alert( dens );
-}
-</sample>

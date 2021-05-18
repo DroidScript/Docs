@@ -25,26 +25,28 @@
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 		<h1>Application Control</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
 
+	
+
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="true">
+		<ul data-role="listview" data-inset="true" data-filter="false">
 		
 			<li><a href="app/LoadPlugin.htm">LoadPlugin</a></li>
 			<li><a href="app/LoadScript.htm">LoadScript</a></li>
 			<li><a href="app/Script.htm">Script</a></li>
 			<li><a href="app/Start.htm">Start</a></li><li></li>
 			<li><a href="app/Execute.htm">Execute</a></li>
-			<li><a href="app/ExtExec.htm">ExtExec</a></li><li></li>
+			<li><a href="app/ExtExec.htm" class="premHint">ExtExec</a></li><li></li>
 			<li><a href="app/ChooseFile.htm">ChooseFile</a></li>
 			<li><a href="app/OpenFile.htm">OpenFile</a></li>
 			<li><a href="app/OpenUrl.htm">OpenUrl</a></li>
 			<li><a href="app/SendFile.htm">SendFile</a></li>
 			<li><a href="app/PlaySound.htm">PlaySound</a></li>
 			<li><a href="app/SetAlarm.htm">SetAlarm</a></li>
-			<li><a href="app/SetAutoStart.htm">SetAutoStart</a></li>
-			<li><a href="app/SetAutoWifi.htm">SetAutoWifi</a></li>
+			<li><a href="app/SetAutoStart.htm" class="deprHint">SetAutoStart</a></li>
+			<li><a href="app/SetAutoWifi.htm" class="deprHint">SetAutoWifi</a></li>
 			<li><a href="app/SetKioskMode.htm" class="xfeatHint">SetKioskMode</a></li>
 			<li><a href="app/SetLanguage.htm">SetLanguage</a></li>
 			<li><a href="app/SetOptions.htm">SetOptions</a></li>

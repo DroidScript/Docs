@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SetOnTouchUp</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -33,18 +33,20 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Define a callback which is called when the user releases the finger the screen.</p>
 
 		<div class="samp">
 		gfx.SetOnTouchUp(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
-			→ <b>unknown</b>
 		</div>
 
 
 	</div>
 
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Number: fraction (0..1)\nList: of numbers: fractions')">x</a>,
+		<a href="" onclick="app.ShowPopup('Number: fraction (0..1)\nList: of numbers: fractions')">y</a>
+	)</div>
 </div>
 </body>
 

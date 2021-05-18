@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddWebView</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddWebView</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Creates and adds a WebView to a Layout.</p>
+
+		<div class="samp">
+		app.AddWebView(
+			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">layout</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_prc" data-transition="pop" data-rel="popup">zoom</a> )
+			→ <b>app object:</b> WebView
+		</div>
+
+		<p>See <a href="CreateWebView.htm" data-ajax="false">CreateWebView</a> for full documentation.</p>
+
+	</div>
+
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_prc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>percent</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('Allows the user to zoom the page')">AllowZoom</a>”</docstr>, <docstr>“AutoZoom”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('force page using “wide” viewport')">Wide</a>”</docstr>, <docstr>“FillX/Y”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevents copy/paste popup')">NoActionBar</a>”</docstr>, <docstr>“IgnoreErrors”</docstr>, <docstr>“IgnoreSSLErrors”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevent app.* calls')">NoApp</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Disable camera')">NoCapture</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Disable location sensor')">NoLocate</a>”</docstr>, <docstr>“NoLongTouch”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Dont pause WebView when app in background')">NoPause</a>”</docstr>, <docstr>“NoScrollBars”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Zoom to full width of page')">Overview</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Shows a progress indicator when loading')">Progress</a>”</docstr>, <docstr>“ScrollFade”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('makes softkeyboard useful for html code editors')">UseBasicInput</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Open links in external browser')">UseBrowser</a>”</docstr></div>
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+</div>
+</body>
+
+</html>

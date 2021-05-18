@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateCheckList</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateCheckList</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Check list is a dialog type checkbox list.</p>
+
+		<div class="samp">
+		chl = MUI.CreateCheckList(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">bottom</a> )
+			→ <b>Object</b>
+		</div>
+
+		<p>Let the user select items in a nice popup</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Light</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaised</span><span class="token punctuation">(</span><span class="token string">"SHOW CHECKLIST"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>ShowCheckList<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Mango"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Banana"</span><span class="token punctuation">}</span><br>
+				    <span class="token punctuation">]</span><br>
+				    chk <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateCheckList</span><span class="token punctuation">(</span><span class="token string">"Choose a fruit"</span><span class="token punctuation">,</span> lst<span class="token punctuation">)</span><br>
+				    chk<span class="token punctuation">.</span><span class="token function">SetOnSubmit</span><span class="token punctuation">(</span>OnSubmit<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowCheckList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    chk<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSubmit</span><span class="token punctuation">(</span><span class="token parameter">lst</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">)</span>   <br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Dark, Bottom</h3>
+			<div id="examp2" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Dark<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaised</span><span class="token punctuation">(</span><span class="token string">"SHOW CHECKLIST"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>ShowCheckList<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Mango"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> check<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">{</span>name<span class="token operator">:</span> <span class="token string">"Banana"</span><span class="token punctuation">}</span><br>
+				    <span class="token punctuation">]</span><br>
+				    chk <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateCheckList</span><span class="token punctuation">(</span><span class="token string">"Choose a fruit"</span><span class="token punctuation">,</span> lst<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><br>
+				    chk<span class="token punctuation">.</span><span class="token function">SetOnSubmit</span><span class="token punctuation">(</span>OnSubmit<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowCheckList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    chk<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSubmit</span><span class="token punctuation">(</span><span class="token parameter">lst</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">)</span>   <br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>CheckList</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">SetEnabled</a>(
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnSubmit</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+	<div data-role="popup" id="pop_std_lst" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> An array of objects of the form {name: string, check: boolean}</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_std_lst')" data-transition="pop" data-rel="popup">list</a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>chl.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>chl.Hide</b><br>Hide the control but keep the layout space free.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>chl.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>chl.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>chl.SetOnSubmit</b><br>Calls a function when the checklist is submitted</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>chl.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+</div>
+</body>
+
+</html>

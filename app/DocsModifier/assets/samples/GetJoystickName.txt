@@ -1,7 +1,0 @@
-<sample Show Joystick name on id 0>
-function OnStart()
-{
-	<b>name = app.GetJoystickName( 0 );</b>
-	app.Alert( name );
-}
-</sample>

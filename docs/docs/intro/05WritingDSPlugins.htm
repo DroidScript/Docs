@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>Writing DS Plugins</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -60,7 +60,7 @@
 		However you can add as many resources to it as you want.<br>
 		<br>
 		There is a generator available which can create, debug and install plugins on the fly. you can even debug your plugin directly from that app.<br>
-		<a href="https://dspk.justplayer.de/browse/view/67" onclick="return OpenUrl(this.href);">Download it from the dspk store</a></p>
+		<a href="https://ds.justplayer.de/uploads/11" onclick="return OpenUrl(this.href);">Download it from the dspk store</a></p>
 		<h2>Java Plugins</h2>
 		<p>Writing java plugins is a bit tricky but once you get used to it you can get almost everything working.</p>
 		<h3>Structure</h3>
@@ -95,7 +95,7 @@
 		It may be possible with other IDE's as well (ie. IntelliJ even has a AndroidSDK Plugin), but this has not been tested before or just couldn't be made to work.</p>
 		<h3>Communicate with your Java code</h3>
 		<p>In order to use the defined Java functions you have to call them from the JS part somehow.<br>
-		For this purpose DroidScript provides a <b>_CreatePlugin<strong> component:</p>
+		For this purpose DroidScript provides a <b>_CreatePlugin</b> component:</p>
 
 		<div class="samp">
 		<span class="token keyword">var</span> plg <span class="token operator">=</span> <span class="token function">_CreatePlugin</span><span class="token punctuation">(</span>
@@ -110,7 +110,7 @@
 
 
 		<div class="samp">
-		<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">GetType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span> → </strong>string<span class="token operator">:</span></b> <i><docstr>“Plugin”</docstr></i>
+		<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">plg<span class="token punctuation">.</span><span class="token function">GetType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span> → <strong>string<span class="token operator">:</span></strong> <i><docstr>“Plugin”</docstr></i>
 		</div>
 
 
@@ -217,15 +217,15 @@
 	</div>
 
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“com.mycompany.plugins.user”</docstr></div>
-	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string</b><br><b>number</b><br><b>boolean</b></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">cmd</a>, <a href="" onclick="app.ShowPopup('byte[\]')">img</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">cmd</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">type</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
-	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>pixel</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“com.mycompany.plugins.user”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b><br><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b><br><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">cmd</a>, <a href="" onclick="app.ShowPopup('byte[\]')">img</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">cmd</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">type</a>, <a href="" onclick="app.ShowPopup('any')">p1</a>, <a href="" onclick="app.ShowPopup('any')">p2</a>, <a href="" onclick="app.ShowPopup('any')">p3</a>, <a href="" onclick="app.ShowPopup('any')">p4</a>, <a href="" onclick="app.ShowPopup('any')">p5</a>, <a href="" onclick="app.ShowPopup('any')">p6</a>, <a href="" onclick="app.ShowPopup('any')">p7</a>, <a href="" onclick="app.ShowPopup('any')">p8</a> }</div>
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="../app/CreateImage.htm" data-ajax="false">Image</a></div>
 	<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="../app/CreateCameraView.htm" data-ajax="false">CameraView</a></div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content">Calls Release()</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns the component class name</div>

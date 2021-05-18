@@ -1,0 +1,21 @@
+<sample>
+cfg.Game;
+
+function OnLoad()
+{
+    texHello = gfx.CreateTexture( "/Sys/Img/Hello.png" );
+    img = gfx.CreateBasicSprite( texHello );
+
+    img.anchor.set(0.5, 0.5);
+    img.x = 0.5;
+    img.y = 0.5;
+    img.width = 0.3;
+    img.height = 0.3 * gfx.aspect;
+}
+
+function OnReady()
+{
+    <b>gfx.AddBasicSprite( img );</b>
+    gfx.Play();
+}
+</sample>

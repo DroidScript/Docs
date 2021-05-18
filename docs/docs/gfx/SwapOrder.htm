@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SwapOrder</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -33,19 +33,18 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Swap the drawing order of two GameView objects.</p>
 
 		<div class="samp">
 		gfx.SwapOrder(
-			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">object1</a>,
-			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">object2</a> )
-			→ <b>unknown</b>
+			<a href="#pop_std_gvo" data-transition="pop" data-rel="popup">object1</a>,
+			<a href="#pop_std_gvo" data-transition="pop" data-rel="popup">object2</a> )
 		</div>
 
 
 	</div>
 
-	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>object</b></div>
+	<div data-role="popup" id="pop_std_gvo" class="ui-content"><b>game object</b></div>
 </div>
 </body>
 

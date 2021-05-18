@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateFile</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -45,7 +45,7 @@
 
 		<div class="samp">
 		fil = app.CreateFile(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
 			→ <b>app object:</b> File
 		</div>
@@ -55,24 +55,24 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> file <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/test.txt"</span><span class="token punctuation">,</span> <span class="token string">"rw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">var</span> file <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateFile</span><span class="token punctuation">(</span> <span class="token string">"/sdcard/test.txt"</span><span class="token punctuation">,</span> <span class="token string">"rw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">WriteText</span><span class="token punctuation">(</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Chars"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> len <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">GetLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">"file len: "</span> <span class="token operator">+</span> len <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    file<span class="token punctuation">.</span><span class="token function">WriteText</span><span class="token punctuation">(</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Chars"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> len <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">GetLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">"file len: "</span> <span class="token operator">+</span> len <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> len <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">WriteNumber</span><span class="token punctuation">(</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token string">"Byte"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">WriteData</span><span class="token punctuation">(</span> <span class="token string">"66,121,101"</span><span class="token punctuation">,</span> <span class="token string">"Int"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> len <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    file<span class="token punctuation">.</span><span class="token function">WriteNumber</span><span class="token punctuation">(</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token string">"Byte"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    file<span class="token punctuation">.</span><span class="token function">WriteData</span><span class="token punctuation">(</span> <span class="token string">"66,121,101"</span><span class="token punctuation">,</span> <span class="token string">"Int"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> data <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">ReadData</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">"first two bytes:"</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> data <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">ReadData</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">"first two bytes:"</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">alert</span><span class="token punctuation">(</span> file<span class="token punctuation">.</span><span class="token function">ReadText</span><span class="token punctuation">(</span> <span class="token string">"Line"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    file<span class="token punctuation">.</span><span class="token function">Seek</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">alert</span><span class="token punctuation">(</span> file<span class="token punctuation">.</span><span class="token function">ReadText</span><span class="token punctuation">(</span> <span class="token string">"Line"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -89,13 +89,13 @@
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetLength</a>() → <b>number:</b> <i>Bytes</i>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetLength</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>bytes</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetPointer</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“File”</docstr>
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“File”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">ReadData</a>(
@@ -105,12 +105,12 @@
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">ReadNumber</a>(
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">ReadText</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">type</a> )
-			→ <b>string</b>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">ReadTextAsync</a>(
@@ -141,25 +141,26 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">WriteText</a>(
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">data</a>,
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“r”</docstr> or <docstr>“w”</docstr> or <docstr>“rw”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“Int”</docstr> or <docstr>“Text”</docstr> or <docstr>“Hex”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“Byte”</docstr> or <docstr>“UByte”</docstr> or <docstr>“Bool”</docstr> or <docstr>“Float”</docstr> or <docstr>“FloatLE”</docstr> or <docstr>“Long”</docstr> or <docstr>“LongLE”</docstr> or <docstr>“Short”</docstr> or <docstr>“UShort”</docstr> or <docstr>“ShortLE”</docstr> or <docstr>“UShortLE”</docstr> or <docstr>“Int”</docstr> or <docstr>“UInt”</docstr> or <docstr>“IntLE”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('read UTF-8 string with 2 byte header')">UTF</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_005" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <docstr>“FA,FB,FC”</docstr> or <docstr>“250,251,252”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('low order 8-bit bytes')">abc46</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <docstr>“Hex”</docstr> or <docstr>“Int”</docstr> or <docstr>“Text”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('write UTF-8 encoded text')">UTF</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('8-bit bytes')">Bytes</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Write big-endian 16-bit characters')">Char</a>”</docstr></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“r”</docstr> or <docstr>“w”</docstr> or <docstr>“rw”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Int”</docstr> or <docstr>“Text”</docstr> or <docstr>“Hex”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Byte”</docstr> or <docstr>“UByte”</docstr> or <docstr>“Bool”</docstr> or <docstr>“Float”</docstr> or <docstr>“FloatLE”</docstr> or <docstr>“Long”</docstr> or <docstr>“LongLE”</docstr> or <docstr>“Short”</docstr> or <docstr>“UShort”</docstr> or <docstr>“ShortLE”</docstr> or <docstr>“UShortLE”</docstr> or <docstr>“Int”</docstr> or <docstr>“UInt”</docstr> or <docstr>“IntLE”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('read UTF-8 string with 2 byte header')">UTF</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('read one line terminated by \\n, \\r or \\r\\n')">Line</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('read big-endian 16-bit character')">Char</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“FA,FB,FC”</docstr> or <docstr>“250,251,252”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('low order 8-bit bytes')">abc46</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Hex”</docstr> or <docstr>“Int”</docstr> or <docstr>“Text”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('write UTF-8 encoded text')">UTF</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('8-bit bytes')">Bytes</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Write big-endian 16-bit characters')">Char</a>”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b><br><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [ <a href="" onclick="app.ShowPopup('Number: integer')">bytes</a> ]</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">data</a>
+		<a href="" onclick="app.ShowPopup('String')">data</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>fil.Close</b><br>Close File</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>fil.GetLength</b><br>Returns the file size in bytes.</div>

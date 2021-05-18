@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>OpenDatabase</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -82,12 +82,12 @@
 			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">error</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetName</a>() → <b>string</b>
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">GetName</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Database”</docstr>
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Database”</docstr>
 		</div>
-		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="deprHint">name</a> → <b>string</b></div>
+		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="deprHint">name</a> → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="deprHint">open</a>(
 			<a href="#pop_fnc_006" data-transition="pop" data-rel="popup">success</a>,
@@ -111,16 +111,16 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_lst" class="ui-content"><b>list</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_str_sql" class="ui-content"><b>string:</b> <i>sql code</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> <i>JS SQLitePluginTransaction</i></div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { db: { openargs: { <a href="" onclick="app.ShowPopup('string')">name</a>, <a href="" onclick="app.ShowPopup('string')">dblocation</a> }, <a href="" onclick="app.ShowPopup('string')">dbname</a>, <a href="" onclick="app.ShowPopup('string')">name</a> }, <a href="" onclick="app.ShowPopup('boolean')">txlock</a>, <a href="" onclick="app.ShowPopup('boolean')">readOnly</a>, executes: [{ <a href="" onclick="app.ShowPopup('string')">success</a>, <a href="" onclick="app.ShowPopup('number: integer')">qid</a>, <a href="" onclick="app.ShowPopup('string: sql code')">sql</a>, <a href="" onclick="app.ShowPopup('list')">params</a> }] }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { rows.item(i): { <a href="" onclick="app.ShowPopup('number')">id</a>, <a href="" onclick="app.ShowPopup('all types')">data</a>, <a href="" onclick="app.ShowPopup('number')">data_num</a> } }</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('string')">message</a> }</div>
-	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: integer')">length</a>, <a href="" onclick="app.ShowPopup('number: integer')">rowsAffected</a>, rows.item(i): { <a href="" onclick="app.ShowPopup('number')">id</a>, <a href="" onclick="app.ShowPopup('all types')">data</a>, <a href="" onclick="app.ShowPopup('number')">data_num</a> } }</div>
+	<div data-role="popup" id="pop_std_lst" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_str_sql" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>sql code</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> <i>JS SQLitePluginTransaction</i></div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { db: { openargs: { <a href="" onclick="app.ShowPopup('String')">name</a>, <a href="" onclick="app.ShowPopup('String')">dblocation</a> }, <a href="" onclick="app.ShowPopup('String')">dbname</a>, <a href="" onclick="app.ShowPopup('String')">name</a> }, <a href="" onclick="app.ShowPopup('Boolean')">txlock</a>, <a href="" onclick="app.ShowPopup('Boolean')">readOnly</a>, executes: [{ <a href="" onclick="app.ShowPopup('String')">success</a>, <a href="" onclick="app.ShowPopup('Number: integer')">qid</a>, <a href="" onclick="app.ShowPopup('String: sql code')">sql</a>, <a href="" onclick="app.ShowPopup('List')">params</a> }] }</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { rows.item(i): { <a href="" onclick="app.ShowPopup('Number')">id</a>, <a href="" onclick="app.ShowPopup('all types')">data</a>, <a href="" onclick="app.ShowPopup('Number')">data_num</a> } }</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">message</a> }</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: integer')">length</a>, <a href="" onclick="app.ShowPopup('Number: integer')">rowsAffected</a>, rows.item(i): { <a href="" onclick="app.ShowPopup('Number')">id</a>, <a href="" onclick="app.ShowPopup('all types')">data</a>, <a href="" onclick="app.ShowPopup('Number')">data_num</a> } }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">msg</a>
+		<a href="" onclick="app.ShowPopup('String')">msg</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">tx</a>,
@@ -134,15 +134,14 @@
 		<a href="" onclick="switchPopup(this, '#pop_obj_005')" data-transition="pop" data-rel="popup">res</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">err</a>
+		<a href="" onclick="app.ShowPopup('String')">err</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_006" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_007" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">tx</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_008" class="ui-content"><b>function</b>(
-
-			<a href="#pop_fnc_007" data-transition="pop" data-rel="popup">fnc</a>,
+		<a href="" onclick="switchPopup(this, '#pop_fnc_007')" data-transition="pop" data-rel="popup">fnc</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_005')" data-transition="pop" data-rel="popup">res</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>db.addTransaction</b><br>addTransaction<br><div class='deprHint'><strong>Note: This function is deprecated. Use ExecuteSQL instead</strong></div></div>

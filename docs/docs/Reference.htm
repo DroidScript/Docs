@@ -25,13 +25,16 @@
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 		<h1>Reference</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
 
+	
+
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="true">
+		<ul data-role="listview" data-inset="true" data-filter="false">
 		
 			<li><a href="app_All.htm">All</a></li>
+			<li><a href="app_Premium.htm" class="premHint">Premium</a></li>
 			<li><a href="app_ApplicationControl.htm">Application Control</a></li>
 			<li><a href="app_ApplicationInformation.htm">Application Information</a></li>
 			<li><a href="app_Bluetooth.htm">Bluetooth</a></li>

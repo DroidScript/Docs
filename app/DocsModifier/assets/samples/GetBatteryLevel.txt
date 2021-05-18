@@ -1,7 +1,0 @@
-<sample Show Battery Level>
-function OnStart()
-{
-    <b>var lvl = app.GetBatteryLevel();</b>
-    app.Alert( lvl );
-}
-</sample>

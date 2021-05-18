@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>GetIntent</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -36,7 +36,7 @@
 		<p>Returns an intent object sent to the app.</p>
 
 		<div class="samp">
-		app.GetIntent() → <b>object:</b> {
+		app.GetIntent() → <b>Object:</b> {
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">action</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>,
@@ -52,8 +52,8 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> int <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIntent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> int <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> int <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetIntent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> int <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -67,9 +67,9 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 </div>
 </body>
 

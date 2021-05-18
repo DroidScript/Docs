@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateImage</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -44,11 +44,11 @@
 		</div>
 
 		<p>Image controls can be used to display images such like png, jpg or gif.<br>
-		Just pass the file path and your're done.</p>
+		Just pass the file path and you're done.</p>
 
 		<div class="samp">
 		img = app.CreateImage(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptc" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
@@ -64,19 +64,19 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">ev</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Ouch!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Ouch!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -93,19 +93,19 @@
 			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip3" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip3" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">ev</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> ev<span class="token punctuation">.</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> ev<span class="token punctuation">.</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -122,19 +122,19 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip2" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip2" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">ev</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block"><span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span></span><br>
-				        <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Aaaargh!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Aaaargh!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -151,19 +151,19 @@
 			<div id="examp6" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"button"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">btn<span class="token punctuation">.</span><span class="token function">SetOnTouchUp</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"button"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouchUp</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Vibrate</span><span class="token punctuation">(</span> <span class="token string">"0,100,30,100,50,300"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Vibrate</span><span class="token punctuation">(</span> <span class="token string">"0,100,30,100,50,300"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -175,7 +175,7 @@
 		<h3>Drawing on Images</h3>
 		<p>Images are also useful for drawing basic shapes and other images on it and therefore for creating dynamic animations or even basic games. To create an empty image you can pass <i>null</i> as file parameter.<br>
 		<br>
-		This way you can also specify a fixed pixel size to the image you can use the <docstr>“fix”</docstr> <strong>option</strong> and pass values for the <strong>pxw</strong> and <strong>pxh</strong> parameters.</p>
+		This way you can also specify a fixed pixel size to the image you can use the <docstr>“fix”</docstr> <strong>option</strong> and pass values for the <b>pxw</b> and <b>pxh</b> parameters.</p>
 
 		<div class="samp">
 		img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token string">"fix"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -189,24 +189,24 @@
 		img2<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> img<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 		</div>
 
-		<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="https://docs.rainmeter.net/tips/transformation-matrix-guide" onclick="return OpenUrl(this.href);">transformation matrix</a>. Check out the <strong>Draw*</strong> methods in the method list below to get more details about all drawing functions.</p>
+		<p>There are a whole bunch of drawing methods defined here. Some of the were already used above. You can draw lines, rectangles, circles and other images, just to name a few. You can even draw a transformed image using an <a href="https://docs.rainmeter.net/tips/transformation-matrix-guide" onclick="return OpenUrl(this.href);">transformation matrix</a>. Check out the <b>Draw*</b> methods in the method list below to get more details about all drawing functions.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Draw Shapes</h3>
 			<div id="examp4" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip4" style="font-size:100%"><span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip4" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetColor</span><span class="token punctuation">(</span> <span class="token string">"#8888ff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"#ff0000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.75</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetColor</span><span class="token punctuation">(</span> <span class="token string">"#8888ff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"#ff0000"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">DrawRectangle</span><span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.75</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -231,61 +231,61 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// clock pointer</span></span><br>
-				    <span style="display:inline-block">ptr <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token string">"fix,alias"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">4.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// clock pointer</span><br>
+				    ptr <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token string">"fix,alias"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">4.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// image aspect ratio for drawing square images</span></span><br>
-				    <span style="display:inline-block">wh <span class="token operator">=</span> ptr<span class="token punctuation">.</span><span class="token function">GetAbsWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> ptr<span class="token punctuation">.</span><span class="token function">GetAbsHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// image aspect ratio for drawing square images</span><br>
+				    wh <span class="token operator">=</span> ptr<span class="token punctuation">.</span><span class="token function">GetAbsWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> ptr<span class="token punctuation">.</span><span class="token function">GetAbsHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// main canvas</span></span><br>
-				    <span style="display:inline-block">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"alias"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetPaintStyle</span><span class="token punctuation">(</span> <span class="token string">"line"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetAutoUpdate</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">SetLineWidth</span><span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// main canvas</span><br>
+				    img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"alias"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetPaintStyle</span><span class="token punctuation">(</span> <span class="token string">"line"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetAutoUpdate</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">SetLineWidth</span><span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">40</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SetDebug</span><span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Animate</span><span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">40</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> <span class="token parameter">time<span class="token punctuation">,</span> dtime</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">time <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    time <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// calculate pointer position from current time</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> secs <span class="token operator">=</span> time <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> angle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> px <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span> angle <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> py <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span> angle <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// calculate pointer position from current time</span><br>
+				    <span class="token keyword">var</span> secs <span class="token operator">=</span> time <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> angle <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> secs <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> px <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">cos</span><span class="token punctuation">(</span> angle <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> py <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span> angle <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// get current datetime</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> hrs <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> sec <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> time <span class="token operator">=</span> min <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> sec<span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// get current datetime</span><br>
+				    <span class="token keyword">var</span> hrs <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> sec <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> secs <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> time <span class="token operator">=</span> min <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> sec<span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// measure text dimensions for centering</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> tsize <span class="token operator">=</span> ptr<span class="token punctuation">.</span><span class="token function">MeasureText</span><span class="token punctuation">(</span> time <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> tx <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> tsize<span class="token punctuation">.</span>width <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> ty <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> tsize<span class="token punctuation">.</span>height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// measure text dimensions for centering</span><br>
+				    <span class="token keyword">var</span> tsize <span class="token operator">=</span> ptr<span class="token punctuation">.</span><span class="token function">MeasureText</span><span class="token punctuation">(</span> time <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> tx <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> tsize<span class="token punctuation">.</span>width <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> ty <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> tsize<span class="token punctuation">.</span>height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// draw pointer and datetime text</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">DrawLine</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> px<span class="token punctuation">,</span> py <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"white"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">ptr<span class="token punctuation">.</span><span class="token function">DrawText</span><span class="token punctuation">(</span> time<span class="token punctuation">,</span> tx<span class="token punctuation">,</span> ty <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// draw pointer and datetime text</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">DrawLine</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> px<span class="token punctuation">,</span> py <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">SetPaintColor</span><span class="token punctuation">(</span> <span class="token string">"white"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ptr<span class="token punctuation">.</span><span class="token function">DrawText</span><span class="token punctuation">(</span> time<span class="token punctuation">,</span> tx<span class="token punctuation">,</span> ty <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token comment">// render</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.48</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> ptr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> wh<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> wh <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">img<span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token comment">// render</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">DrawCircle</span><span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.48</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">DrawImage</span><span class="token punctuation">(</span> ptr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> wh<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> wh <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    img<span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -305,7 +305,7 @@
 			<a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Animate</a>(
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Animate</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time</a> )
@@ -387,23 +387,23 @@
 			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>number:</b> <i>integer</i>
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">GetName</a>() → <b>string</b>
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">GetName</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
@@ -412,7 +412,7 @@
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">GetPixelColor</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a> )
-			→ <b>list:</b> [
+			→ <b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [
 			<a href="#pop_num_dhx" data-transition="pop" data-rel="popup">red</a>,
 			<a href="#pop_num_dhx" data-transition="pop" data-rel="popup">green</a>,
 			<a href="#pop_num_dhx" data-transition="pop" data-rel="popup">blue</a> ]
@@ -424,12 +424,12 @@
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">height</a> )
-			→ <b>string:</b> <i>base64 encoded</i>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>base64 encoded</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
 			<a href="#pop_str_007" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>object:</b> {
+			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
@@ -438,18 +438,18 @@
 		<div class="samp">
 			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Image”</docstr>
+			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Image”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>number</b>
+			→ <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
@@ -458,21 +458,21 @@
 			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>boolean</b>
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
-			→ <b>boolean</b>
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>boolean</b>
+			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">MeasureText</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a> )
-			→ <b>object:</b> {
+			→ <b>Object:</b> {
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a> }
 		</div>
@@ -502,7 +502,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup">Save</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fileName</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">fileName</a>,
 			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">quality</a> )
 		</div>
 		<div class="samp">
@@ -545,7 +545,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
@@ -563,7 +563,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup">SetFontFile</a>(
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup">SetImage</a>(
@@ -578,9 +578,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_037" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
 			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
@@ -618,9 +618,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_040" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
 			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
@@ -701,59 +701,60 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
-	<div data-role="popup" id="pop_std_lst" class="ui-content"><b>list</b></div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_std_lst" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a></b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
-	<div data-role="popup" id="pop_num_deg" class="ui-content"><b>number:</b> <i>angle in degrees (0..360)</i></div>
-	<div data-role="popup" id="pop_num_dhx" class="ui-content"><b>number:</b> <i>0-255</i></div>
-	<div data-role="popup" id="pop_num_fac" class="ui-content"><b>number:</b> <i>factor</i></div>
-	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b>number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>number:</b> <i>pixel</i></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> -180..180</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> -100..100</div>
-	<div data-role="popup" id="pop_num_004" class="ui-content"><b>number:</b> 0..100</div>
-	<div data-role="popup" id="pop_num_005" class="ui-content"><b>number:</b> <i>corner 1</i></div>
-	<div data-role="popup" id="pop_num_007" class="ui-content"><b>number:</b> <i>corner 2</i></div>
-	<div data-role="popup" id="pop_num_009" class="ui-content"><b>number:</b> <i>width relative</i></div>
-	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>number:</b> <i>percent:</i> for jpg files</div>
-	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>number:</b> 0..0.99 or 1..256</div>
-	<div data-role="popup" id="pop_str_col" class="ui-content"><b>string:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“fix”</docstr>, <docstr>“alias”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</docstr>, <docstr>“ScaleCenter”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('loads the image asynchronously')">async</a>”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“Resize”</docstr>, <docstr>“TouchThrough”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</docstr>, <docstr>“wallpaper”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“ADD”</docstr> or <docstr>“CLEAR”</docstr> or <docstr>“DARKEN”</docstr> or <docstr>“DST”</docstr> or <docstr>“DST_ATOP”</docstr> or <docstr>“DST_IN”</docstr> or <docstr>“DST_OUT”</docstr> or <docstr>“DST_OVER”</docstr> or <docstr>“LIGHTEN”</docstr> or <docstr>“MULTIPLY”</docstr> or <docstr>“OVERLAY”</docstr> or <docstr>“SCREEN”</docstr> or <docstr>“SRC”</docstr> or <docstr>“SRC_ATOP”</docstr> or <docstr>“SRC_IN”</docstr> or <docstr>“SRC_OUT”</docstr> or <docstr>“SRC_OVER”</docstr> or <docstr>“XOR”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>string:</b> <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>string:</b> <docstr>“rawbase64”</docstr> or <docstr>“pngbase64”</docstr> or <docstr>“jpgbase64”</docstr></div>
-	<div data-role="popup" id="pop_str_007" class="ui-content"><b>string:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>string:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>string:</b> <docstr>“repeat”</docstr></div>
-	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>string:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
-	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>string:</b> <docstr>“rescale”</docstr></div>
-	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_010" class="ui-content"><b>string:</b> <docstr>“Fill”</docstr> or <docstr>“Line”</docstr></div>
-	<div data-role="popup" id="pop_str_011" class="ui-content"><b>string:</b> <i>base64 encoded:</i> <docstr>“&lt;rawbase64&gt;”</docstr> or <docstr>“data:image/jpg;base64,&lt;jpgbase64&gt;”</docstr>, <docstr>“data:image/png;base64,&lt;pngbase64&gt;”</docstr></div>
-	<div data-role="popup" id="pop_str_012" class="ui-content"><b>string:</b> <docstr>“px”</docstr>, <docstr>“icon”</docstr>, <docstr>“resize”</docstr> or <docstr>“rescale”</docstr> or <docstr>“square”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('set bitmap size')">fix</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_014" class="ui-content"><b>string:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_015" class="ui-content"><b>string:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_str_016" class="ui-content"><b>string:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>string:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i><br><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('string: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>object:</b> { <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('number: angle in degrees (0..360)')">rot</a> }</div>
-	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a></div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>list:</b> [a, b, c, d, tx, ty]</div>
-	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>list:</b> [ <a href="" onclick="app.ShowPopup('number: integer')">data</a> ]</div>
-	<div data-role="popup" id="pop_lst_003" class="ui-content"><b>list:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_num_deg" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>angle in degrees (0..360)</i></div>
+	<div data-role="popup" id="pop_num_dhx" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>0-255</i></div>
+	<div data-role="popup" id="pop_num_fac" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>factor</i></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
+	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>pixel</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -180..180</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> -100..100</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..100</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>corner 1</i></div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>corner 2</i></div>
+	<div data-role="popup" id="pop_num_009" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>width relative</i></div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>percent:</i> for jpg files</div>
+	<div data-role="popup" id="pop_num_00b" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> 0..0.99 or 1..256</div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_ptc" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>file path or content:// uri</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“fix”</docstr>, <docstr>“alias”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</docstr>, <docstr>“ScaleCenter”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('loads the image asynchronously')">async</a>”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“Resize”</docstr>, <docstr>“TouchThrough”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</docstr>, <docstr>“wallpaper”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“NewsPaper”</docstr> or <docstr>“Jelly”</docstr> or <docstr>“Flash”</docstr> or <docstr>“RubberBand”</docstr> or <docstr>“Swing”</docstr> or <docstr>“TaDa”</docstr> or <docstr>“Bounce”</docstr> or <docstr>“Fall”</docstr> or <docstr>“FallRotate”</docstr> or <docstr>“<br><img width='300px' src='../animate.png'></img>”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“ADD”</docstr> or <docstr>“CLEAR”</docstr> or <docstr>“DARKEN”</docstr> or <docstr>“DST”</docstr> or <docstr>“DST_ATOP”</docstr> or <docstr>“DST_IN”</docstr> or <docstr>“DST_OUT”</docstr> or <docstr>“DST_OVER”</docstr> or <docstr>“LIGHTEN”</docstr> or <docstr>“MULTIPLY”</docstr> or <docstr>“OVERLAY”</docstr> or <docstr>“SCREEN”</docstr> or <docstr>“SRC”</docstr> or <docstr>“SRC_ATOP”</docstr> or <docstr>“SRC_IN”</docstr> or <docstr>“SRC_OUT”</docstr> or <docstr>“SRC_OVER”</docstr> or <docstr>“XOR”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“rawbase64”</docstr> or <docstr>“pngbase64”</docstr> or <docstr>“jpgbase64”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“repeat”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“rescale”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Fill”</docstr> or <docstr>“Line”</docstr></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>base64 encoded:</i> <docstr>“&lt;rawbase64&gt;”</docstr> or <docstr>“data:image/jpg;base64,&lt;jpgbase64&gt;”</docstr>, <docstr>“data:image/png;base64,&lt;pngbase64&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr>, <docstr>“icon”</docstr>, <docstr>“resize”</docstr> or <docstr>“rescale”</docstr> or <docstr>“square”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('set bitmap size')">fix</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_str_016" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i><br><b>app object:</b> Image</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">h</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> CreateImage</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [a, b, c, d, tx, ty]</div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> [ <a href="" onclick="app.ShowPopup('Number: integer')">data</a> ]</div>
+	<div data-role="popup" id="pop_lst_003" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">type</a>
+		<a href="" onclick="app.ShowPopup('String')">type</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('app object: CreateImage')">img</a>
@@ -792,17 +793,17 @@
 	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>img.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>img.GetAbsHeight</b><br>Get the absolute height of the control in pixels.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>img.GetAbsWidth</b><br>Get the absolute width of the control in pixels.</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <strong>px</strong> option.</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>img.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <strong>px</strong> option.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>img.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>img.GetName</b><br>Returns the name set via SetName.</div>
 	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>img.GetParent</b><br>Returns the parent control object where the object was added to - commonly a layout.</div>
 	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>img.GetPixelColor</b><br>Returns the [r,g,b] values from a pixel on the image.</div>
 	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>img.GetPixelData</b><br>Returns the raw, png or jpg image data encoded as base64.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <strong>px</strong> options turns the relative values into pixels.</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>img.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <strong>px</strong> option.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>img.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
 	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>img.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>img.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>img.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <strong>px</strong> option.</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>img.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.</div>
 	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>img.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
 	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>img.Hide</b><br>Hide the control but keep the layout space free.</div>
 	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>img.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
@@ -833,9 +834,9 @@
 	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>img.SetName</b><br>Change the name of the image.</div>
 	<div data-role="popup" id="pop_dsc_03a" class="ui-content"><b>img.SetOnLoad</b><br>Define a callback function which is called when the image has loaded in <docstr>“async”</docstr> mode.</div>
 	<div data-role="popup" id="pop_dsc_03b" class="ui-content"><b>img.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
-	<div data-role="popup" id="pop_dsc_03c" class="ui-content"><b>img.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <strong>position(s)</strong>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
+	<div data-role="popup" id="pop_dsc_03c" class="ui-content"><b>img.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <b>position(s)</b>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
 	<div data-role="popup" id="pop_dsc_03d" class="ui-content"><b>img.SetOnTouchDown</b><br>Define a callback function which is called when the user started toching the control.</div>
-	<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>img.SetOnTouchMove</b><br>Define a callback function which is called when the user drags his finger over the screen.</div>
+	<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>img.SetOnTouchMove</b><br>Define a callback function which is called when the user drags a finger over the screen.</div>
 	<div data-role="popup" id="pop_dsc_03f" class="ui-content"><b>img.SetOnTouchUp</b><br>Define a callback function which is called when the users finger leaves the screen.</div>
 	<div data-role="popup" id="pop_dsc_040" class="ui-content"><b>img.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
 	<div data-role="popup" id="pop_dsc_041" class="ui-content"><b>img.SetPaintColor</b><br>Change the current paint color for drawing methods.</div>
@@ -844,7 +845,7 @@
 	<div data-role="popup" id="pop_dsc_044" class="ui-content"><b>img.SetPixelMode</b><br>En-/Disable pixel mode for the image so that all drawing methods use either control relative or pixel values.</div>
 	<div data-role="popup" id="pop_dsc_045" class="ui-content"><b>img.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
 	<div data-role="popup" id="pop_dsc_046" class="ui-content"><b>img.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
-	<div data-role="popup" id="pop_dsc_047" class="ui-content"><b>img.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <strong>px</strong> option was given.</div>
+	<div data-role="popup" id="pop_dsc_047" class="ui-content"><b>img.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
 	<div data-role="popup" id="pop_dsc_048" class="ui-content"><b>img.SetTextSize</b><br>Change the size of drawn text.</div>
 	<div data-role="popup" id="pop_dsc_049" class="ui-content"><b>img.SetTouchable</b><br>En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.</div>
 	<div data-role="popup" id="pop_dsc_04a" class="ui-content"><b>img.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>

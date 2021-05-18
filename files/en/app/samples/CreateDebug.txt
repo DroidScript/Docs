@@ -1,0 +1,8 @@
+<sample Demonstration>
+function OnStart()
+{
+    <b>app.CreateDebug();</b>
+
+	app.Debug("Hello World!");
+}
+</sample>

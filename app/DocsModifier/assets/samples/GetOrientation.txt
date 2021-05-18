@@ -1,7 +1,0 @@
-<sample Example>
-function OnStart()
-{
-	<b>orient = app.GetOrientation();
-	app.Alert( orient );</b>
-}
-</sample>

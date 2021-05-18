@@ -1,7 +1,0 @@
-<sample Show App Version>
-function OnStart()
-{
-    <b>var version = app.GetVersion();</b>
-    app.Alert( version, "App Version:" );
-}
-</sample>

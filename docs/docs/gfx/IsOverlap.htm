@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>IsOverlap</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -33,21 +33,21 @@
 	</div>
 
 	<div data-role="content">
-		<p>.</p>
+		<p>Tests if two GameView objects are overlapping.</p>
 
 		<div class="samp">
 		gfx.IsOverlap(
-			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">obj1</a>,
-			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">obj2</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">depth</a> )
-			→ <b>unknown</b>
+			<a href="#pop_std_gvo" data-transition="pop" data-rel="popup">obj1</a>,
+			<a href="#pop_std_gvo" data-transition="pop" data-rel="popup">obj2</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">depth</a> )
+			→ <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 
 
 	</div>
 
-	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>object</b></div>
-	<div data-role="popup" id="pop_std_ukn" class="ui-content"><b>unknown</b></div>
+	<div data-role="popup" id="pop_std_gvo" class="ui-content"><b>game object</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
 </div>
 </body>
 

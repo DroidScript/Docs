@@ -1,30 +1,49 @@
 
+if(!String.prototype.startsWith) {
+	Object.defineProperty(String.prototype, 'startsWith', {
+		value: function(search, pos) {
+			pos = pos | 0;
+			return this.substring(pos, pos + search.length) === search;
+		}
+	});
+}
+
 //Get navigator type.
 var agent = navigator.userAgent;
 console.log( "agent = " + agent );
 
-var isChromeOS = ( agent.indexOf("Chrome OS") > -1 || agent.indexOf("Chromebook") > -1 || agent.indexOf("PixelBook") > -1 );
-var useWebIDE = ( agent.indexOf("Remix") > -1 || isChromeOS );
-var isAndroid = ( agent.indexOf("Android") > -1 );
-var isDS = ( agent.indexOf("; wv)") > -1 );
-var isApp = isAndroid && !useWebIDE && !isChromeOS;
+var isChromeOS = ( !!agent.match(/Chrome OS|Chromebook|PixelBook/) );
+var useWebIDE  = ( has(agent, "Remix") || isChromeOS );
+var isAndroid  = ( has(agent, "Android") );
+
+var isDS = ( location.href.match(/\bds=true\b/) != null );
+isDS = isDS || getCookie("isDS") == 'true';
+setCookie("isDS", isDS);
+
+var isWebIDE = isDS && !isAndroid;
+var isMobileIDE = isDS && isAndroid;
+var curPage = "";
 var serverAddress = "";
 
 // set current theme
-var curTheme = location.href.match(/[^?]*[?&]theme=([^&]*)/);
+var curTheme = location.href.match(/\btheme=([-\w]*)/);
 if(curTheme && history.replaceState)
 	try { history.replaceState({}, "Documentation", "Docs.htm"); } catch(e) {}
-setTheme(curTheme ? curTheme[1] : getTheme());
+setTheme(curTheme ? curTheme[1] : getCookie("dsDocsTheme", "dark"));
+
 
 //Hook into cross frame messaging
 window.addEventListener("message", function(event)
 {
-	console.log("msg: "+event)
+	console.log("msg: " + event)
 	var params = event.data.split("|");
 	var cmd = params[0];
+	console.log( "cmd: " + cmd )
 
-	if( cmd == "address" )
+	if( cmd == "address" ) {
 		serverAddress = params[1];
+		OnAddress()
+	}
 	else if( cmd == "setTheme" )
 		setTheme(params[1]);
 } );
@@ -47,20 +66,11 @@ $(document).on("mobileinit", function()
 	if( navigator.userAgent.indexOf("Android")==-1 )
 		$.mobile.ignoreContentEnabled = true;
 
-	if(!isDS) app.ShowPopup = ShowPopup;
-
-	//Ask parent for DS adddress.
-	parent.postMessage( "getaddress:", "*" );
-
-	// check theme in other browsers after history fwd/bck
-	// workaround for pages being loaded from cache
-	if(false && !isDS && !useWebIDE) setInterval(function()
-	{
-		if(curTheme != getTheme()) setTheme(getTheme());
-	}, 200);
+	if(!isMobileIDE) app.ShowPopup = ShowPopup;
 });
 
-$(document).ready(function() {
+$(document).ready(function()
+{
 });
 
 $(document).live( 'pageshow',function(event, ui)
@@ -77,64 +87,101 @@ $(document).live( 'pageshow',function(event, ui)
 		//}
 
 		//Set appropriate body style.
-		if( !isAndroid || useWebIDE )
-			document.body.className = "bodyPC";
+		if( !isAndroid || useWebIDE ) document.body.className = "bodyPC";
 
 		//Remove 'Copy' and 'Run' buttons on PC.
-		if( !isAndroid || useWebIDE && !isChromeOS )
-			hidecopy();
-		
+		// if(!isDS && !isAndroid) hidecopy();
+		if( !isDS ) $("div[name=divCopy] > a:contains(Run)").hide();
+
 		// hide theme switch button inside DS
-		if(isDS) $(".ui-header > .ui-btn-right").hide();
+		if( isDS ) $(".ui-header > .ui-btn-right").hide();
 
 		//If on Android, save current page.
-		if( isDS && !useWebIDE ) {
+		if( isMobileIDE )
 			setTimeout( "app.SetData( 'CurWebDoc', document.title )", 1 ); //<-- to stop HTC crash.
-		}
 
 		//Get current page id.
-		var curPage = $.mobile.activePage.attr('id');
+		curPage = $.mobile.activePage.attr('id');
 
 		//Show plugins list if 'plugins' page is loading.
-		if( curPage == "plugins" ) {
-			OnPageShow();
+		if( curPage == "plugins" ) ShowPluginsPage()
+		else if( curPage == "extensions" ) ShowExtensionsPage()
+
+		//Append popup div in plugin docs if not exists
+		if(!$(".androidPopup").parent().is(":visible"))
+			$(".ui-content").append($(".androidPopup:first").parent().clone());
+
+		$('.onlyinclude a:not(data-ajax)').attr("data-ajax", "false");
+		$("a#extLink").attr("onclick", "return OpenUrl(this.href);");
+
+		//Ask parent for DS adddress
+		if( !isMobileIDE ) {
+			parent.postMessage( "getaddress:", "*" )
+			setTimeout( function() { parent.postMessage( "getaddress:", "*" ) }, 3000 ) //<-- needed for first time load.
 		}
 	}
 	//catch( e ) {}
 });
 
+//Handle address message (Wifi ide)
+function OnAddress()
+{
+	console.log( "address: " + serverAddress )
+
+	//Timeout required to allow time for page to fully rendeder.
+	//setTimeout( function()
+	//{
+		if( curPage == "main" )
+		{
+			var link = document.querySelector("#docsLink")
+			if( link ) link.setAttribute( "href", serverAddress+"/.edit/docs/Plugins.htm" )
+
+			link = document.querySelector("#extsLink")
+			if( link ) link.setAttribute( "href", serverAddress+"/.edit/docs/Extensions.htm" )
+		}
+	//}, 3000 )
+}
 
 //Dynamically create plugins page.
-function OnPageShow()
+function ShowPluginsPage()
 {
 	try
 	{
-		//If on device.
-		if( isAndroid && !useWebIDE )
+		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
+		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
+		var link = '<a href="$1">$2</a>';
+
+		var addLink = function( name )
 		{
-			//Create a list of plugins.
-			var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
-			var fldr = app.GetPrivateFolder( "Plugins" );
-			var list = app.ListFolder( fldr, "");
-			for( var i = 0; i < list.length && list[0] != ""; i++ )
-			{
-				//Filter for folders.
-				var plugName = list[i];
-				if( app.IsFolder( fldr+"/"+plugName ) )
-				{
-					//Get case sensitive title of plugin from inc file.
-					var incFiles = app.ListFolder( fldr + "/" + plugName, ".inc", 1 );
-					if( incFiles.length > 0 ) {
-						var jarName = incFiles[0];
-						var plugTitle = jarName.split(".")[0];
-						var url = "file://" + fldr + "/" + plugName + "/" + plugTitle + ".html";
-						html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
-					}
-				}
-			}
+			html += "<li>" + link.replace("$2", name)
+				.replace("$1", "plugins/" + name.toLowerCase() + "/" + name + ".html") +
+				btnRem.replace("$1", name) + "</li>\n";
+		};
+
+		var finishList = function()
+		{
 			html += "</ul>";
 			$('#divPlugs').html(html);
 			$('#divPlugs').trigger("create");
+		};
+
+		//If on device.
+		if( isMobileIDE )
+		{
+			var fldr = "/sdcard/DroidScript/.edit/docs/plugins";
+			//app.GetPrivateFolder( "Plugins" );
+			var list = app.ListFolder( fldr, null, null, "folders");
+
+			for( var i in list )
+			{
+				//Get main docs file
+				var files = app.ListFolder( fldr + "/" + list[i],
+					"(?i)" + list[i] + "\\.html", null, "RegExp" );
+
+				if(list[i] && files.length > 0)
+					addLink( files[0].slice(0, -5) );
+			}
+			finishList();
 		}
 		//If on PC.
 		else
@@ -144,19 +191,15 @@ function OnPageShow()
 			xmlHttp.onload = function()
 			{
 				//Extract plugins list.
-				var list = JSON.parse(xmlHttp.responseText).plugins.split(",");
+				var data = JSON.parse(xmlHttp.responseText);
+				if(data.status == "access denied") data.status = "IDE not connected";
+				if(!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
+				var list = data.plugins.split(",");
 
 				//Build html list.
-				var html = "<ul data-role=\"listview\" data-inset=\"true\" data-filter=\"false\">";
-				for( var i = 0; i < list.length && list[0] != ""; i++ )
-				{
-					var plugTitle = list[i];
-					var url = "plugins/" + plugTitle.toLowerCase() + "/" + plugTitle + ".html";
-					html += "<li><a href=\"" + url + "\">" + plugTitle + "</a></li>";
-				}
-				html += "</ul>";
-				$('#divPlugs').html(html);
-				$('#divPlugs').trigger("create");
+				for( var i in list )
+					if(list[i]) addLink( list[i] );
+				finishList();
 			};
 			xmlHttp.open( "get", "/ide?cmd=getplugins", true );
 			xmlHttp.send();
@@ -165,53 +208,114 @@ function OnPageShow()
 	catch( e ) {}
 }
 
+
+//Dynamically create extensions page.
+function ShowExtensionsPage()
+{
+	try
+	{
+		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
+		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemoveExtension(\'$1\')"></a>';
+		var link = '<a href="$1">$2</a>';
+
+		var addLink = function( name ) {
+			html += "<li>" + link.replace("$2", name)
+				.replace("$1", (isMobileIDE?"/sdcard/DroidScript":"") + "/Extensions/" + name + "/Docs.html") +
+				btnRem.replace("$1", name) + "</li>\n";
+		};
+
+		var finishList = function() {
+			html += "</ul>";
+			$('#divExts').html(html);
+			$('#divExts').trigger("create");
+		};
+
+		//If on device.
+		if( isMobileIDE )
+		{
+			var fldr = "/sdcard/DroidScript/Extensions";
+			var list = app.ListFolder( fldr, null, null, "folders");
+			for( var i in list ) addLink( list[i] );
+			finishList();
+		}
+		//If on PC.
+		else
+		{
+			//Get list from device.
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.onload = function()
+			{
+				//Extract extensions list.
+				var data = JSON.parse(xmlHttp.responseText);
+				if(data.status == "access denied") data.status = "IDE not connected";
+				if(!data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
+				var list = data.extensions.split(",");
+
+				//Build html list.
+				for( var i in list )
+					if(list[i]) addLink( list[i] );
+				finishList();
+			};
+			xmlHttp.open( "get", "/ide?cmd=getextensions", true );
+			xmlHttp.send();
+		}
+
+	}
+	catch( e ) {}
+}
+
+
 $(window).load(function()
 {
-	var anchor = location.href.match(/#([a-z]+)/i);
-	if(anchor) jumpTo(anchor[1]);
-	else if(sessionStorage.scrollPosition)
-		$("html").animate({scrollTop: sessionStorage.scrollPosition}, 300);
-});
-
-$(window).unload(function()
-{
-	var scrollPosition = $(document).scrollTop();
-	sessionStorage.scrollPosition = scrollPosition;
+	//Jump to html anchors from url
+	var anchor = location.href.match(/(#|\ba=)([\w%]+)/i);
+	if(anchor) jumpTo(decodeURI(anchor[2]));
 });
 
 function jumpTo(contains)
 {
-	// control popup
+	//Control popup
 	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if(popup.length) {
-		$("html").animate({ scrollTop: popup.offset().top - 100 }, 300)
-			.delay(350).queue(function(){ popup.click(); });
+		$("html").clearQueue()
+			.animate({ scrollTop: popup.offset().top - 100 }, 300)
+			.delay(350).queue(_ => popup.click());
 		return false;
 	}
 
-	// header
+	//Header
 	var header = $(":header:contains(" + contains + ")");
 	if(header.length) {
-		$("html").animate({ scrollTop: header.offset().top - 50 }, 300);
-		
-		if(header[0].className.indexOf("ui-collapsible-heading-collapsed") > -1)
+		$("html").clearQueue()
+			.animate({ scrollTop: header.offset().top - 50 }, 300);
+
+		if(has(header[0].className, "ui-collapsible-heading-collapsed"))
 			header.click();
 		else
-			header.delay(100)
+			header.clearQueue().delay(100)
 				.animate({opacity: 0.1}, 400)
 				.animate({opacity: 1.0}, 400);
-		
+
 		return false;
 	}
 }
 
-// set the current theme. (default, dark)
-function setTheme( theme )
+//Toggles between dark and default theme
+function tglTheme() {
+	var thm = getCookie("dsDocsTheme", "dark");
+	if(has(thm, 'dark'))
+		 setTheme(thm.replace("dark", "default"));
+	else setTheme(thm.replace("default" , "dark"));
+}
+
+//Set the current theme. ([mo]default, [mo]dark)
+function setTheme( theme, holo )
 {
+	if(holo == true && !theme.startsWith("holo")) theme = "holo" + theme;
 	if(curTheme == theme) return;
-	curTheme = theme;
-	window.name = window.name.replace(/\bdsDocsTheme=.*?;|^/, "dsDocsTheme=" + theme + ";");
+
 	console.log("setTheme('" + theme + "')");
+	setCookie("dsDocsTheme", curTheme = theme);
 
 	var lnkJQuery = document.getElementById('themeJQ');
 	if(lnkJQuery) lnkJQuery.href = lnkJQuery.href.replace(/(.*\/).*/, "$1theme-" + theme + ".min.css");
@@ -223,43 +327,97 @@ function setTheme( theme )
 	if(lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
 }
 
-// get current theme from localStorage
-function getTheme()
+//Shortcut for string.contains
+function has(s, t) { return s.indexOf(t) > -1; }
+
+function setCookie(name, val)
 {
-	return window.name.replace(/\bdsDocsTheme=(.*?);/, "$1") || "default";
+	name = name.replace(/\W+/g, '');
+	window.name = window.name.replace(new RegExp(";"+name+"=[^;]*;|$"), ";"+name+"="+val+";");
+}
+
+function getCookie(name, dflt)
+{
+	name = name.replace(/\W+/g, '');
+	return (window.name.match(new RegExp(";"+name+"=([^;]*);")) || [null, dflt])[1];
 }
 
 function OpenUrl( url, type, choose )
 {
-	if(isAndroid) app.OpenUrl(url, type, choose );
+	if(isMobileIDE) app.OpenUrl(url, type, choose );
 	else window.open(url);
 	return false;
 }
 
 function IsApp()
 {
-	if(isApp) return true;
+	if(isDS || useWebIDE) return true;
 	ShowPopup("Not running in DroidScript app.");
 	return false;
 }
 
 function OpenSamples()
 {
-	if(!IsApp()) return;
-	app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+	if(isDS) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+	else {
+		var e = parent.$(".nav-tabs > li > a:contains(Samples)");
+		if(e.length) e.click()
+		else IsApp();
+	}
 }
 
 function OpenSample(name)
 {
-	if(!IsApp()) return;
 	OpenSamples();
-	app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+	if(isMobileIDE)
+		app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
+	else if(isWebIDE)
+	{
+		var e = parent.$("#samplesContentList > div:contains(" + name + ") > a")
+		if(e.length) e.click();
+	}
+	else IsApp();
+}
+
+function RemovePlugin(plugName)
+{
+	if(isMobileIDE)
+	{
+		app.Execute("if(typeof AskRemovePlugin == 'function') AskRemovePlugin('" + plugName + "');" +
+			"else if(typeof RemovePlugin == 'function') RemovePlugin('" + plugName + "');");
+	}
+	else if(isWebIDE)
+		RemoteExec( 'ide', "RemovePlugin('"+plugName+"')" )
+
+	setTimeout( function(){ location.reload() }, 1000 )
+}
+
+function RemoveExtension( extName )
+{
+	if(isMobileIDE)
+		app.Execute("AskRemoveExtension('"+extName+"');");
+	else if(isWebIDE)
+		RemoteExec( 'ide', "RemoveExtension('"+extName+"')" )
+
+	setTimeout( function(){ location.reload() }, 1000 )
+}
+
+//Execute code on the connected device.
+//'app' mode runs as a stand-alone app.
+//'ide' mode runs inside ide.
+//'usr' mode runs inside current user app.
+//'file' mode runs as a stand-alone app from a file.
+function RemoteExec( mode, code )
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open( "get", serverAddress+"/ide?cmd=execute&mode="+mode+"&code="+encodeURIComponent(btoa(code)), true );
+	xhr.send();
 }
 
 // app.ShowPopup equivalent for browsers
 function ShowPopup(msg)
 {
-	var apop = $("#appPopup");
+	var apop = $(".androidPopup");
 	// .animate() works as cancelable delay
 	apop.stop(true).fadeOut(100, function() { apop.text(msg); })
 		.fadeIn(200).animate({opacity:1}, 1500).fadeOut(400);
@@ -270,8 +428,9 @@ function switchPopup(old, newId)
 	$(old.parentNode).one({
 		popupafterclose: function()
 		{
-			$(newId).popup("open", {transition: "pop"});
+			var o = $(newId);
+			if(!o.length) return jumpTo(newId);
+			o.popup("open", {transition: "pop"});
 		}
 	}).popup("close");
 }
-

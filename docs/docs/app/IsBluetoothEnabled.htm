@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>IsBluetoothEnabled</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -36,7 +36,7 @@
 		<p>Return whether bluetooth was enabled.</p>
 
 		<div class="samp">
-		app.IsBluetoothEnabled() → <b>boolean</b>
+		app.IsBluetoothEnabled() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
 		</div>
 
 		<p>See Also: <a href="SetBluetoothEnabled.htm" data-ajax="false">SetBluetoothEnabled</a></p>
@@ -45,15 +45,15 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> status <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span></b><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> status <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span></b><br>
+				    <span class="token keyword">var</span> state <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"Bluetooth is "</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token punctuation">(</span>status <span class="token operator">?</span> <span class="token string">"enabled"</span> <span class="token operator">:</span> <span class="token string">"disabled"</span><span class="token punctuation">)</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token punctuation">(</span>status <span class="token operator">==</span> state <span class="token operator">?</span> <span class="token string">" and "</span> <span class="token operator">:</span> <span class="token string">" but "</span><span class="token punctuation">)</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token punctuation">(</span>state <span class="token operator">?</span> <span class="token string">"on"</span> <span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">)</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><br>
+				        <span class="token string">"Bluetooth is "</span> <span class="token operator">+</span><br>
+				        <span class="token punctuation">(</span>status <span class="token operator">?</span> <span class="token string">"enabled"</span> <span class="token operator">:</span> <span class="token string">"disabled"</span><span class="token punctuation">)</span> <span class="token operator">+</span><br>
+				        <span class="token punctuation">(</span>status <span class="token operator">==</span> state <span class="token operator">?</span> <span class="token string">" and "</span> <span class="token operator">:</span> <span class="token string">" but "</span><span class="token punctuation">)</span> <span class="token operator">+</span><br>
+				        <span class="token punctuation">(</span>state <span class="token operator">?</span> <span class="token string">"on"</span> <span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

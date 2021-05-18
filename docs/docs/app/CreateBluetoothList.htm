@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateBluetoothList</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -55,13 +55,13 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> OnBtList <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> OnBtList <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnBtList</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> address</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span><span class="token string">"Name: "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"\nAddress: "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Result"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span><span class="token string">"Name: "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"\nAddress: "</span> <span class="token operator">+</span> address<span class="token punctuation">,</span> <span class="token string">"Result"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -75,7 +75,7 @@
 		<p>The following methods are available on the <strong>BluetoothList</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“BluetoothList”</docstr>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“BluetoothList”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">SetOnTouch</a>(
@@ -84,10 +84,10 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('string')">name</a>,
-		<a href="" onclick="app.ShowPopup('string')">address</a>
+		<a href="" onclick="app.ShowPopup('String')">name</a>,
+		<a href="" onclick="app.ShowPopup('String')">address</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>btl.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>btl.SetOnTouch</b><br>Define a callback function that is called when the user selects an element.</div>

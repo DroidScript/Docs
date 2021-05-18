@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SysExec</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -41,7 +41,7 @@
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">maxRead</a>,
 			<a href="#pop_num_sec" data-transition="pop" data-rel="popup">timeout</a> )
-			→ <b>string</b>
+			→ <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b>
 		</div>
 
 		<p><strong>NOTE:</strong> You have to add a '<kbd>exit</kbd>' command at the end of your script because the shell does not terminate automatically after finishing.<br>
@@ -52,16 +52,16 @@
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span style="display:inline-block"><span class="token keyword">var</span> delim <span class="token operator">=</span> <span class="token string">"\0"</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">SysExec</span><span class="token punctuation">(</span> <span class="token string">'ls -ap /sdcard/;exit'</span><span class="token punctuation">,</span> <span class="token string">"sh,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">list <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span></span></b><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> delim <span class="token operator">=</span> <span class="token string">"\0"</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">SysExec</span><span class="token punctuation">(</span> <span class="token string">'ls -ap /sdcard/;exit'</span><span class="token punctuation">,</span> <span class="token string">"sh,log"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    list <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
-				    <span style="display:inline-block">lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> list<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateList</span><span class="token punctuation">(</span> list<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> delim <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> lst <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -75,10 +75,10 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b>string</b></div>
-	<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“<a href="" onclick="app.ShowPopup('logs output to console')">log</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('dont read result (just execute)')">noread</a>”</docstr>, <docstr>“sh”</docstr> or <docstr>“su”</docstr></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
+	<div data-role="popup" id="pop_num_sec" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>seconds</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('logs output to console')">log</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('dont read result (just execute)')">noread</a>”</docstr>, <docstr>“sh”</docstr> or <docstr>“su”</docstr></div>
 </div>
 </body>
 

@@ -25,7 +25,7 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateSynth</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="setTheme(getTheme() == 'default' ? 'dark' : 'default')"></a>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -42,7 +42,7 @@
 			</span><br>
 		</div>
 
-		<p>Returns a Synth object which ca produces a variety of sounds, sound effects and music.</p>
+		<p>Returns a Synth object which can produces a variety of sounds, sound effects and music.</p>
 
 		<div class="samp">
 		syn = app.CreateSynth(
@@ -51,9 +51,9 @@
 		</div>
 
 		<h3>Some descriptions</h3>
-		<p><strong>note length:</strong> default is 2.56 seconds.<br>
-		<strong>midi note:</strong> like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:<br>
-		    <span style="display:inline-block">
+		<p><b>note length:</b> default is 2.56 seconds.<br>
+		<b>midi note:</b> like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:<br>
+		    
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">C</a>,
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup">C#</a>,
 			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup">D</a>,
@@ -65,7 +65,7 @@
 			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">G#</a>,
 			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">A</a>,
 			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">A#</a>,
-			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">B</a>.</span><br>
+			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">B</a>.<br>
 		<strong>duration:</strong> powers of two indicating whole, half, quarter etc. up to thirty second notes.<br>
 		<strong>frequency:</strong> A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.<br>
 		<span style="display:inline-block;padding-left:1em;">
@@ -74,24 +74,24 @@
 		<br>
 		<strong>Phaser:</strong> a sound filter which creates a series of peaks and troughs in the frequency spectrum<br>
 		<strong>VoltageControlledAmplifier:</strong> (Variable-Gain Amplifier) electronic amplifier that varies its gain<br>
-		<strong>Voltage-Controlled Filter:</strong> electronic amplifier that varies the frequency</p>
+		<b>Voltage-Controlled Filter:</b> electronic amplifier that varies the frequency</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Tetris Theme</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">syn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">syn<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">syn<span class="token punctuation">.</span><span class="token function">SetVcaSustain</span><span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">syn<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">syn<span class="token punctuation">.</span><span class="token function">SetNoteLength</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    syn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    syn<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    syn<span class="token punctuation">.</span><span class="token function">SetVcaSustain</span><span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    syn<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    syn<span class="token punctuation">.</span><span class="token function">SetNoteLength</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">syn<span class="token punctuation">.</span><span class="token function">PlayMidiTune</span><span class="token punctuation">(</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"76:4,71:8,72:8,74:4,72:8,71:8,69:4,69:8,72:8,76:4,"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:8,"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"69:8,71:8,72:8,74:8,74:4,77:8,81:4,79:8,77:8,76:8,76:4,72:8,76:4,"</span> <span class="token operator">+</span></span><br>
-				        <span style="display:inline-block"><span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:4"</span></span><br>
-				    <span style="display:inline-block"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    syn<span class="token punctuation">.</span><span class="token function">PlayMidiTune</span><span class="token punctuation">(</span><br>
+				        <span class="token string">"76:4,71:8,72:8,74:4,72:8,71:8,69:4,69:8,72:8,76:4,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:8,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"69:8,71:8,72:8,74:8,74:4,77:8,81:4,79:8,77:8,76:8,76:4,72:8,76:4,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:4"</span><br>
+				    <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -106,28 +106,28 @@
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <span style="display:inline-block">synth1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth1<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth1<span class="token punctuation">.</span><span class="token function">SetVcaSustain</span><span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth1<span class="token punctuation">.</span><span class="token function">SetVcaDecay</span><span class="token punctuation">(</span> <span class="token number">500</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth1<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    synth1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth1<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth1<span class="token punctuation">.</span><span class="token function">SetVcaSustain</span><span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth1<span class="token punctuation">.</span><span class="token function">SetVcaDecay</span><span class="token punctuation">(</span> <span class="token number">500</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth1<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block">synth2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth2<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth2<span class="token punctuation">.</span><span class="token function">SetVcaDecay</span><span class="token punctuation">(</span> <span class="token number">300</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block">synth2<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    synth2 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth2<span class="token punctuation">.</span><span class="token function">SetWaveShape</span><span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth2<span class="token punctuation">.</span><span class="token function">SetVcaDecay</span><span class="token punctuation">(</span> <span class="token number">300</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    synth2<span class="token punctuation">.</span><span class="token function">SetVolume</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
-				    <span style="display:inline-block"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -141,7 +141,7 @@
 		<p>The following methods are available on the <strong>Synth</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b>string:</b> <docstr>“Synth”</docstr>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Synth”</docstr>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">PlayMidiTune</a>(
@@ -290,17 +290,17 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>boolean</b></div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>number</b></div>
-	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>number:</b> <i>fraction (0..1)</i></div>
-	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>number:</b> <i>milliseconds</i></div>
-	<div data-role="popup" id="pop_num_sec" class="ui-content"><b>number:</b> <i>seconds</i></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>number:</b> <i>integer:</i> 0..125</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>number:</b> <i>frequency</i></div>
-	<div data-role="popup" id="pop_num_003" class="ui-content"><b>number:</b> <i>mls</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>string:</b> <docstr>“Signal”</docstr>, <docstr>“VCA”</docstr>, <docstr>“VCF”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>string:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“note1:duration1,note2:duration2,...”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>string:</b> <docstr>“Sin”</docstr>, <docstr>“Saw”</docstr>, <docstr>“Square”</docstr>, <docstr>“White”</docstr></div>
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a></b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_mls" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>milliseconds</i></div>
+	<div data-role="popup" id="pop_num_sec" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>seconds</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer:</i> 0..125</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>frequency</i></div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>mls</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Signal”</docstr>, <docstr>“VCA”</docstr>, <docstr>“VCF”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“note1:duration1,note2:duration2,...”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Sin”</docstr>, <docstr>“Saw”</docstr>, <docstr>“Square”</docstr>, <docstr>“White”</docstr></div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>syn.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.PlayMidiTune</b><br>Play a comma-separated sequence of <docstr>“midi_note:duration”</docstr> pairs.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>syn.PlayNote</b><br>Plays a single note</div>

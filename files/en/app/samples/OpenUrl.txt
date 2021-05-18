@@ -1,0 +1,5 @@
+<sample Example>
+function OnStart()
+{
+	 <b>app.OpenUrl( "http://droidscript.org" );</b>
+}</sample>

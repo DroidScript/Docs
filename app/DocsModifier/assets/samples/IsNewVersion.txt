@@ -1,7 +1,0 @@
-<sample Check Version Number increased>
-function OnStart()
-{
-    <b>var newVersion = app.IsNewVersion();</b>
-    app.Alert( newVersion, "Is new version:" );
-}
-</sample>
