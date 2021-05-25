@@ -120,7 +120,7 @@
 		"StartService"
 	],
 	"Controls": [
-		"CreateAdView",
+		"_CreateAdView",
 		"CreateButton",
 		"CreateCameraView",
 		"CreateCheckBox",

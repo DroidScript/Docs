@@ -262,7 +262,7 @@
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
 		"shortDesc": "Copies a folder to a given destination"
 	},
-	"CreateAdView": {
+	"_CreateAdView": {
 		"abbrev": "adv",
 		"desc": "#CreateAdView.md",
 		"pNames": ["unitId", "testId", "width", "height", "options"],
@@ -1149,6 +1149,10 @@
 				"shortDesc": "Undo an action"
 			}
 		}
+	},
+	"CreateCustomTabs": {
+		"desc": "Creates a CustomTab control.\nSee the [plugin documentation](plugins/customTabs/CustomTabs.html) for details",
+		"shortDesc": "Creates a CustomTab control"
 	},
 	"CreateCrypt": {
 		"abbrev": "crp",
@@ -2653,8 +2657,8 @@
 			},
 			"Play": {
 				"desc": "Play the current loaded song from the last paused time or from a given start time in in seconds.",
-				"pNames": ["from"],
-				"pTypes": ["num_sec"],
+				"pNames": [],
+				"pTypes": [],
 				"shortDesc": "Play the current loaded song"
 			},
 			"SeekTo": {
@@ -2951,7 +2955,7 @@
 		"abbrev": "ntf",
 		"desc": "#CreateNotification.md",
 		"pNames": ["options"],
-		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen"],
+		"pTypes": ["str_com-Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority"],
 		"retval": "dso-Notification",
 		"shortDesc": "Returns a new Notification object",
 		"subf": {
@@ -4319,7 +4323,7 @@
 		"abbrev": "tab",
 		"desc": "#CreateTabs.md",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_frc", "num_frc", "str_com"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-NoMargins"],
 		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
@@ -4357,6 +4361,11 @@
 				"pTypes": ["dso"],
 				"retval": "num_int",
 				"shortDesc": "Returns the z order of a child"
+			},
+			"GetCurrentTabName": {
+					"desc": "Returns the currently displayed tab name",
+					"retval": "str",
+					"short": "get current tab name"
 			},
 			"GetHeight": "#2576212953",
 			"GetLayout": {
@@ -6461,6 +6470,13 @@
 		"retval": "num",
 		"shortDesc": "Load saved boolean value"
 	},
+	"LoadJson": {
+		"desc": "Load a saved json object to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
+		"pNames": ["name", "default", "file"],
+		"pTypes": ["str", "obj", "str_ptf"],
+		"retval": "obj",
+		"shortDesc": "Load saved json object"
+	},
 	"LoadPlugin": {
 		"desc": "#LoadPlugin.md",
 		"pNames": ["url"],
@@ -6803,6 +6819,12 @@
 		"pTypes": ["str", "num", "str_ptf"],
 		"shortDesc": "Save a number value across multiple starts"
 	},
+	"SaveJson": {
+		"desc": "Save a json object to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
+		"pNames": ["name", "value", "file"],
+		"pTypes": ["str", "obj", "str_ptf"],
+		"shortDesc": "Save a json object across multiple starts"
+	},
 	"SaveText": {
 		"desc": "Save a text value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadText.",
 		"pNames": ["name", "value", "file"],
@@ -6965,8 +6987,8 @@
 	},
 	"SetKioskMode": {
 		"desc": "Blocks android functionality to keep the rest of your phone safe while others may use your app.\n\n<premium>\n<xfeature>",
-		"pNames": ["mode", "enable", "options"],
-		"pTypes": ["str_com-Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning", "bin", "str_com-Black,Tasks:prevents recent tasks button working"],
+		"pNames": ["mode", "enable", "options", "packages"],
+		"pTypes": ["str_com-Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning", "bin", "str_com-Black,Tasks:prevents recent tasks button working", "str"],
 		"shortDesc": "Blocks android functionality outside your app"
 	},
 	"SetAppLanguage": {

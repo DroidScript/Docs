@@ -1,5 +1,43 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
+
+### DS 210b1 (20-May-2021)
+- Added new Chat tab to right slide panel of mobile IDE.
+- Fixed chat (red dot on tab) message indicator on wifi editor.
+- Added app.CreateCustomTabs (thanks to Candlelight)
+- Added more fine grain control over COSU Kiosk mode (for >= Android 9).
+- Added GetCurrentTabName() method to tab control.
+- Added 'NoMargins' option to tab control.
+- Improved app startup time slightly.
+- BuildAPK dialog now saves version and package name for each project.
+- autoPermissions value in build.json now also checked when running app in ide.
+- App now shows warning before exiting if required dangerous permissions are missing.
+- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').
+- Added new !getperms command to wifi ide (gets dangerous permissions of current app).
+- Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)
+- Fixed broken wiki link in docs/resources.
+- External storage access (SAF) is now available to non-premium users.
+- Added 'NoVibrate' and 'Low' (priority) options to app.CreateNotification() method.
+- Added ongoing notification to keep DS alive in background.
+
+## DS 209 (06-May-2021)
+- Version number update only.
+
+### DS 208b2 (04-May-2021)
+- Created separate plugins page for premium (more plugins available).
+- app.AddCameraView() is now detected in permissions scan.
+
+### DS 208b1 (20-Apr-2021)
+- Added extra support for deep linking with 'urlScheme' tag in build.json.
+- Added default deep link scheme 'ds://*' and 'http://ds/*' for testing apps in IDE.
+- Fixed img.Play() method (should start animated gifs).
+- mui: Added new Spinner control.
+- mui: Added SetOnTouch method to DataTable.
+- mui: Added 'color' property on ListModern data for avatar color.
+- mui: To change badge color, set MUI.theme.badgeColor=color after initializing MUI.
+- Removed support for Admob (Google requirement).
+- Updated Chat component (now shows count of logged on users).
+
 ### DS 207b1 (18-Mar-2021)
 - Added new 'cleartask' option to app.SendIntent().
 - Fixed issue with i-frames opening separate window in html apps.

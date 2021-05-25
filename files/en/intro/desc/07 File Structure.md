@@ -68,6 +68,7 @@ If you create a file called 'build.json' at the top level of your project, then 
 		"debuggable": false,
 		"removePermissions": "WRITE\_EXTERNAL\_STORAGE",
 		"homeScreen": false,
+		"noPermsAction": "default",
 		"pathPattern": ".*\.png,.*\.jpg"
 	},
 	"autoPermissions": true
