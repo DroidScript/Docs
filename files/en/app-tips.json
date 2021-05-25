@@ -1,9 +1,4 @@
 {
-	"adv": {
-		"GetType": "Returns the control class name",
-		"Load": "Loads an ad",
-		"SetOnStatus": "Called when status changed"
-	},
 	"app": {
 		"AddAdView": "Create and add AdView to Layout",
 		"AddButton": "Create and add Button to Layout",
@@ -42,7 +37,6 @@
 		"CloseDrawer": "Closes the drawer layout on the given side",
 		"CopyFile": "Copies a file to a given destination",
 		"CopyFolder": "Copies a folder to a given destination",
-		"CreateAdView": "Returns an AdView object",
 		"CreateAudioRecorder": "Returns an AudioRecorder object",
 		"CreateBluetoothList": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"CreateBluetoothSerial": "Communicate with other Bluetooth devices",
@@ -53,6 +47,7 @@
 		"CreateCloudStore": "Returns a new CloudStore object",
 		"CreateCodeEdit": "Returns a new CodeEdit object",
 		"CreateCrypt": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
+		"CreateCustomTabs": "Creates a CustomTab control",
 		"CreateDebug": "Shows a debug log overlay",
 		"CreateDialog": "Returns a new Dialog object to display messages",
 		"CreateDownloader": "Returns a new Downloader object",
@@ -232,6 +227,7 @@
 		"LaunchApp": "Launch or search an app",
 		"ListFolder": "Get a list of files ans folders contained in a specific folder",
 		"LoadBoolean": "Load saved boolean value",
+		"LoadJson": "Load saved json object",
 		"LoadNumber": "Load saved boolean value",
 		"LoadPlugin": "Load an installed plugin to your app",
 		"LoadScript": "Asynchronously import a .js file",
@@ -261,6 +257,7 @@
 		"ReplaceInFile": "Replace text in a local file",
 		"SaveBoolean": "Save a boolean value across multiple starts",
 		"SaveCookies": "Save web cookies",
+		"SaveJson": "Save a json object across multiple starts",
 		"SaveNumber": "Save a number value across multiple starts",
 		"SaveText": "Save a text value across multiple starts",
 		"ScanFile": "Adds media files to phone gallery",

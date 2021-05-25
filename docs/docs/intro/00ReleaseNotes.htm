@@ -37,9 +37,15 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
-				- <a href="" onclick="jumpTo('DS 207b1(18-Mar-2021)')">DS 207b1</a><sup>(18-Mar-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 210b1(20-May-2021)')">DS 210b1</a><sup>(20-May-2021)</sup><br>
 			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DS 209(06-May-2021)')">DS 209</a><sup>(06-May-2021)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 208b2(04-May-2021)')">DS 208b2</a><sup>(04-May-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 208b1(20-Apr-2021)')">DS 208b1</a><sup>(20-Apr-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 207b1(18-Mar-2021)')">DS 207b1</a><sup>(18-Mar-2021)</sup><br>
+			</span><br>
 			• <a href="" onclick="jumpTo('DS 206(04-Mar-2021)')">DS 206</a><sup>(04-Mar-2021)</sup><br>
 			• <a href="" onclick="jumpTo('DS 205(03-Mar-2021)')">DS 205</a><sup>(03-Mar-2021)</sup><br>
 			<span style="display:inline-block;padding-left:1em;">
@@ -78,6 +84,39 @@
 		</div>
 
 		<p><!-- /<a href="[<i><i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
+		<h3>DS 210b1<sup>(20-May-2021)</sup></h3>
+		<p>- Added new Chat tab to right slide panel of mobile IDE.<br>
+		- Fixed chat (red dot on tab) message indicator on wifi editor.<br>
+		- Added app.CreateCustomTabs (thanks to Candlelight)<br>
+		- Added more fine grain control over COSU Kiosk mode (for >= Android 9).<br>
+		- Added GetCurrentTabName() method to tab control.<br>
+		- Added 'NoMargins' option to tab control.<br>
+		- Improved app startup time slightly.<br>
+		- BuildAPK dialog now saves version and package name for each project.<br>
+		- autoPermissions value in build.json now also checked when running app in ide.<br>
+		- App now shows warning before exiting if required dangerous permissions are missing.<br>
+		- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').<br>
+		- Added new !getperms command to wifi ide (gets dangerous permissions of current app).<br>
+		- Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)<br>
+		- Fixed broken wiki link in docs/resources.<br>
+		- External storage access (SAF) is now available to non-premium users.<br>
+		- Added 'NoVibrate' and 'Low' (priority) options to app.CreateNotification() method.<br>
+		- Added ongoing notification to keep DS alive in background.</p>
+		<h2>DS 209<sup>(06-May-2021)</sup></h2>
+		<p>- Version number update only.</p>
+		<h3>DS 208b2<sup>(04-May-2021)</sup></h3>
+		<p>- Created separate plugins page for premium (more plugins available).<br>
+		- app.AddCameraView() is now detected in permissions scan.</p>
+		<h3>DS 208b1<sup>(20-Apr-2021)</sup></h3>
+		<p>- Added extra support for deep linking with 'urlScheme' tag in build.json.<br>
+		- Added default deep link scheme 'ds://</i>' and 'http://ds/<i>' for testing apps in IDE.<br>
+		- Fixed img.Play() method (should start animated gifs).<br>
+		- mui: Added new Spinner control.<br>
+		- mui: Added SetOnTouch method to DataTable.<br>
+		- mui: Added 'color' property on ListModern data for avatar color.<br>
+		- mui: To change badge color, set MUI.theme.badgeColor=color after initializing MUI.<br>
+		- Removed support for Admob (Google requirement).<br>
+		- Updated Chat component (now shows count of logged on users).</p>
 		<h3>DS 207b1<sup>(18-Mar-2021)</sup></h3>
 		<p>- Added new 'cleartask' option to app.SendIntent().<br>
 		- Fixed issue with i-frames opening separate window in html apps.<br>
