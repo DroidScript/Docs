@@ -1873,10 +1873,10 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-    },
+    }, 
     "CreateSpinner": {
         "abbrev": "spn",
-		"desc": "Creates a material designed dropdown or spinner. Let the user select from a predefined options.",
+		"desc": "Creates a material designed dropdown. Let the user select from a predefined options.",
 		"pNames": ["list", "width", "height"],
 		"pTypes": ["lst-String. A comma separated options", "num_frc", "num_frc"],
 		"retval": "dso",

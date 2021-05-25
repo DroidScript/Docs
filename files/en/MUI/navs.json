@@ -102,6 +102,9 @@
     "Seekbars": [
         "CreateSeekBar"
     ],
+    "Spinner": [
+        "CreateSpinner"
+    ],
     "Switches": [
         "CreateSwitch",
         "CreateSwitchSettings"
