@@ -1,5 +1,5 @@
 {
-	"AddAdView": {
+	"_AddAdView": {
 		"desc": "Creates and adds a AdView to a Layout.\n<premium>\nSee @CreateAdView for full documentation.",
 		"pNames": ["layout", "unitId", "testId", "width", "height", "options"],
 		"pTypes": ["dso-CreateLayout", "str", "str", "num_frc", "num_frc", "str"],

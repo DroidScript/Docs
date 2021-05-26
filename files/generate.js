@@ -173,7 +173,7 @@ function generateNavigators(navs, name, pfx)
 	else Throw(Error("Wrong catlist datatype: " + typeof navs));
 
 	app.WriteFile( curDoc,
-		(keys(navs).length < 15 || navs instanceof Object ? naviBase :
+		(keys(navs).length < 15 || (navs instanceof Object && navs._nofilter) ? naviBase :
 			naviBase.replace( 'data-filter="false"', 'data-filter="true"' ))
 		.replace( "%c", addcontent )
 		.replace( "%l", nav )
