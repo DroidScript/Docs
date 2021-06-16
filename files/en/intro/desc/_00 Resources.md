@@ -28,5 +28,3 @@
 	Sharing platform for DroidScript Projects (SPKs) and Plugins
 - [Symbroson's DroidScript Blog](https://symbroson.blogspot.com) (inactive)
 	A blog about DroidScript and coding (contains Plugin creation tutorials)
-- [CSnake's Game Engine Tutorial Blog](https://dsgameengine.blogspot.com)
-	Provides tutorials for the DroidScript GameView

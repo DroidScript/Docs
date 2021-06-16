@@ -131,7 +131,7 @@ function generateScope(name, pattern)
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);
 	var vn = Number(app.ReadFile("../docs/version.txt", 0)) % 1000 + 1;
-	app.WriteFile("version.txt", v + vn);
+	app.WriteFile("version.txt", (v + vn).toString());
 	app.HideProgressBar();
 }
 
