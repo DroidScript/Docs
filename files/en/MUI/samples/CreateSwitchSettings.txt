@@ -1,6 +1,6 @@
 <sample Basic>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -25,7 +25,7 @@ function OnTouch(text, value)
 
 <sample More Settings>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

@@ -1801,6 +1801,12 @@
 				"pTypes": ["str-New note text", "num_int"],
 				"shortDesc": "SetNoteText"
 			},
+			"SetList": {
+				"desc": "Sets a new list",
+				"pNames": ["list"],
+				"pTypes": ["obj-List Modern list"],
+				"shortDesc": "Sets a new list"
+			},
 			"PopItem": {
 				"desc": "Removes an item at the bottom of the list",
 				"shortDesc": "PopItem"
@@ -1903,6 +1909,18 @@
 				"pTypes": ["num_int-The index of the option in the given values"],
 				"shortDesc": "SelectItemByIndex"
             },
+            "SetList": {
+                "desc": "Sets a new list of options.",
+				"pNames": ["list"],
+				"pTypes": ["lst-A comma separated values for options."],
+				"shortDesc": "SetList"
+            },
+            "SetHint": {
+                "desc": "Sets the hint when there is no active selection.",
+				"pNames": ["hint"],
+				"pTypes": ["str-The hint text."],
+				"shortDesc": "SetHint"
+            },
             "GetText": "#2387569276",
             "SetTextSize": "#5019790423",
             "SetTextColor": "#0175303923",
@@ -1974,6 +1992,12 @@
 				"retval": "obj",
 				"shortDesc": "GetList"
 			},
+			"SetList": {
+				"desc": "Sets a new list",
+				"pNames": ["list"],
+				"pTypes": ["obj-ListSimple list"],
+				"shortDesc": "Sets a new list"
+			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2014,7 +2038,13 @@
 					"pTypes": ["str", "num_int"]
 				}],
 				"shortDesc": "SetOnSelect"
-			},
+            },
+            "SetList": {
+                "desc": "Set a new list of options",
+                "pNames": ["list"],
+                "pTypes": ["lst-A comma separated options"],
+                "shortDesc": "SetList"
+            },
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
 			"Destroy": "#1924613325",
@@ -5061,5 +5091,24 @@
 		"isval": true,
 		"retval": "obj",
 		"shortDesc": "fonts"
+	},
+	"ShowMenu": {
+		"abbrev": "smu",
+		"desc": "Show a menu on a given control.",
+		"pNames": ["control", "list", "width"],
+		"pTypes": ["dso", "str_lst", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "Show a menu on a given control.",
+		"subf": {
+			"SetOnSelect": {
+				"desc": "Calls a function when the user selects an item.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["title"],
+					"pTypes": ["str-The title of the selected item."]
+				}],
+				"shortDesc": "Calls a function when the user selects an item."
+			}
+		}
 	}
 }

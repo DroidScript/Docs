@@ -1,6 +1,6 @@
 <sample Basic>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -23,7 +23,7 @@ function OnStart()
 
 <sample Sortable and Numeric Column>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -48,7 +48,7 @@ function OnStart()
 
 <sample Selectable and Dark>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -73,7 +73,7 @@ function OnStart()
 
 <sample With Footer>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

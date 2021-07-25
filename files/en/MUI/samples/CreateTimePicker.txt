@@ -1,6 +1,6 @@
 <sample Default Time>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -34,7 +34,7 @@ function OnSelect(time, hh, mm, pos)
 
 <sample Custom Time>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

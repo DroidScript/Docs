@@ -617,6 +617,7 @@
 		"SetEnabled": "En/Disable the control",
 		"SetImage": "SetImage",
 		"SetItem": "SetItem",
+		"SetList": "Sets a new list",
 		"SetMargins": "Define distances to other controls",
 		"SetNoteText": "SetNoteText",
 		"SetOnSelect": "Calls a function when an item in the list is select.",
@@ -652,6 +653,7 @@
 		"RemoveItem": "RemoveItem",
 		"SetBadge": "Sets a new badge",
 		"SetEnabled": "En/Disable the control",
+		"SetList": "Sets a new list",
 		"SetMargins": "Define distances to other controls",
 		"SetOnTouch": "SetOnTouch",
 		"SetPosition": "Defines position and size on absolute layouts",
@@ -781,6 +783,7 @@
 		"IsOverlap": "Checks if the control overlaps with another",
 		"IsVisible": "Checks if the control is currently visible",
 		"SetEnabled": "En/Disable the control",
+		"SetList": "SetList",
 		"SetOnSelect": "SetOnSelect",
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”"
@@ -853,7 +856,8 @@
 		"CreateTextParagraph": "Creates a paragraph text",
 		"CreateTextSecondary": "Creates a secondary text",
 		"CreateTimePicker": "Creates a material design time picker",
-		"fonts": "Fonts"
+		"fonts": "Fonts",
+		"ShowMenu": "Show a menu on a given control"
 	},
 	"mwi": {
 		"ClearFocus": "Removes the focus of the control",
@@ -1046,6 +1050,7 @@
 		"SetVisibility": "Change the visibility mode",
 		"Tween": "Animates the control"
 	},
+	"smu": { "SetOnSelect": "Calls a function when the user selects an item." },
 	"spn": {
 		"GetAbsHeight": "Get the control height in pixels",
 		"GetAbsWidth": "Get the control width in pixels",
@@ -1065,6 +1070,8 @@
 		"SelectItem": "SelectItem",
 		"SelectItemByIndex": "SelectItemByIndex",
 		"SetEnabled": "En/Disable the control",
+		"SetHint": "SetHint",
+		"SetList": "SetList",
 		"SetMargins": "Define distances to other controls",
 		"SetOnChange": "SetOnChange",
 		"SetPosition": "Defines position and size on absolute layouts",

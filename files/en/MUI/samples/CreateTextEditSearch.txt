@@ -1,6 +1,6 @@
 <sample Search>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -19,7 +19,7 @@ function OnStart()
 
 <sample SetOnEnter Callback>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

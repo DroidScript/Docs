@@ -1,6 +1,6 @@
 <sample Simple>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -15,7 +15,7 @@ function OnStart()
 
 <sample Custom>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -36,7 +36,7 @@ function CloseAlert()
 </sample>
 <sample Dark>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

@@ -45,7 +45,8 @@
     ],
     "Menus": [
         "CreateMenu",
-        "CreateMenuWithIcon"
+        "CreateMenuWithIcon",
+        "ShowMenu"
     ],
     "Pickers": [
         "CreateColorPicker",
