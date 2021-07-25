@@ -1,6 +1,6 @@
 <sample Unique Text Input>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

@@ -1,6 +1,6 @@
 <sample Just Layout>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -19,7 +19,7 @@ function OnStart()
 
 <sample Dark Layout with Card>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
