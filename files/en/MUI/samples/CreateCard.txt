@@ -1,6 +1,6 @@
 <sample No-image, No-Avatar>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -25,7 +25,7 @@ function OnStart()
 
 <sample With-image, No-Avatar>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -51,7 +51,7 @@ function OnStart()
 
 <sample With Image, With Avatar>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -78,7 +78,7 @@ function OnStart()
 
 <sample Complete>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

@@ -1,6 +1,6 @@
 <sample Basic & Light>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

@@ -355,11 +355,5 @@
         "pNames": ["height"],
 		"pTypes": ["num-Fraction of the screen height"],
 		"shortDesc": "Change the height of the control"
-    },
-    "#2114525702": { "name": "SetOnIconTouch",
-        "desc": "Add a callback function when icon is touch",
-        "pNames": ["callback"],
-		"pTypes": ["fnc-A function to be called"],
-		"shortDesc": "Calls a function when an icon is touch"
     }
 }

@@ -1,6 +1,6 @@
 <sample Default>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -32,7 +32,7 @@ function OnSelect(date, yyyy, mm, dd)
 
 <sample With Custom Date>
 cfg.Dark
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {

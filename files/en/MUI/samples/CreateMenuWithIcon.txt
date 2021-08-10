@@ -1,6 +1,6 @@
 <sample Basic>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
@@ -35,7 +35,7 @@ function OnSelect(choice)
 
 <sample Dark & Bottom,Right>
 cfg.Light
-cfg.MUI
+app.LoadPlugin('DroidScriptUIKit')
 
 function OnStart()
 {
