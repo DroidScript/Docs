@@ -2853,7 +2853,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTEFilledIconRight": {
@@ -2933,7 +2934,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTEOutlineIconLeft": {
@@ -3013,7 +3015,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTEOutlineIconRight": {
@@ -3093,7 +3096,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTESearchElegant": {
@@ -3179,7 +3183,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTESearchUnique": {
@@ -3259,7 +3264,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTextAreaFilled": {
@@ -3979,7 +3985,8 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+			},
+			"SetOnIconTouch": "#2114525702"
 		}
 	},
 	"CreateTextEditUnique": {
