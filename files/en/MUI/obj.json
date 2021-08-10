@@ -4016,7 +4016,12 @@
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
 			},
-			"SetOnIconTouch": "#2114525702"
+			"SetOnIconTouch": {
+				"desc": "Calls a function when icon is touch",
+				"pNames": ["callback"],
+				"pTypes": [{}],
+				"shortDesc": "Calls a function when icon is touch"
+			}
 		}
 	},
 	"CreateTextEditUnique": {

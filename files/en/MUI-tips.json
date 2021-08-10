@@ -1319,6 +1319,7 @@
 		"SetMargins": "Define distances to other controls",
 		"SetOnChange": "Called when content was changed by the user",
 		"SetOnEnter": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+		"SetOnIconTouch": "Calls a function when icon is touch",
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetText": "Change displayed text",
 		"Undo": "Undo an action"
