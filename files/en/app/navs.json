@@ -191,7 +191,7 @@
 		"SaveText",
 		"ClearValue",
 		"",
-		"CreateCloundStore",
+		"CreateCloudStore",
 		"DeleteDatabase",
 		"GetDatabaseFolder",
 		"OpenDatabase",

@@ -1,5 +1,11 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
+### DS 211b1
+- Added support for NodeJS scripts and modules!
+- Added new !addmodule command to wifi ide command box.
+- Improved wifi ide file browser drag-drop handling.
+- Removed 'UseBasicInput' option from chat webview.
+- Removed 'ongoing notification' (not effective at keeping DS alive).
 
 ### DS 210b1 (20-May-2021)
 - Added new Chat tab to right slide panel of mobile IDE.
