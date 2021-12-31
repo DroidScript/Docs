@@ -4,7 +4,591 @@
 		"isval": true,
 		"retval": "obj",
 		"shortDesc": "#colors.md"
-	},
+    },
+    "AddAlert": {
+        "abbrev": "alr",
+		"desc": "Adds a nice pop-up at the top. See @CreateAlert for a full documentation.",
+		"pNames": ["text", "icon", "color"],
+		"pTypes": ["str-Popup text", "str-Material icon", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddAlert"
+    },
+    "AddAlertSimple": {
+        "abbrev": "als",
+		"desc": "Adds a simple alert with a single button. See @CreateAlertSimple for a full documentation.",
+		"pNames": ["text", "btnText", "color"],
+		"pTypes": ["str-Text of the alert", "str-Button text. Default is OKAY", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddAlertSimple"
+    },
+    "AddAppBar": {
+        "abbrev": "apb",
+		"desc": "Adds an appbar on a given layout. See @CreateAppBar, @CreateAppBarElegant and @CreateAppBarModern for a full documentation. The parameters p1, p2 and p3 depends on the type of appbar. Refer to each type for more info. Example for @CreateAppBar and @CreateAppBarElegant 'ps' is 'title', 'p2' is 'logoIcon' and 'p3' is 'controls'. For @CreateAppBarModern 'p1' is 'hint','p2' is 'controlIcon' and 'p3' is 'color'.",
+		"pNames": ["parent", "p1", "p2", "p3", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Title text|Hint", "str-Material Icon", "str-controls|color", "str_com-Elegant|Modern|Default and Round|Rectangle for Modern Appbar"],
+		"retval": "obj",
+		"shortDesc": "CreateAppBar"
+    },
+    "AddAppBarElegant": {
+        "abbrev": "abe",
+		"desc": "Adds an elegant appbar on a given layout. See @CreateAppBarElegant for a full documentation.",
+		"pNames": ["parent", "title", "leadingIcon", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Title text", "str-Material icon font", "str_com-material icon font for the right controls"],
+		"retval": "obj",
+		"shortDesc": "AddAppBarElegant"
+    },
+    "AddAppBarModern": {
+        "abbrev": "abm",
+		"desc": "Adds a modern appbar on a given layout. See @CreateAppBarModern for a full documentation.",
+		"pNames": ["parent", "hint", "controlIcon", "options", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Hint text for the search input", "str-Material font for the control icon", "str-Can be Round|Rectangle", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddAppBarModern"
+    },
+    "AddBanner": {
+        "abbrev": "bnr",
+		"desc": "Adds a banner dialog. See @CreateBanner for a full documentation.",
+		"pNames": ["text", "okText", "cancelText"],
+		"pTypes": ["str", "str-Truthy button text", "str-Falsey button text"],
+		"retval": "obj",
+		"shortDesc": "AddBanner"
+    },
+    "AddButton": {
+        "abbrev": "btn",
+		"desc": "Adds a MUI button to a given layout. See @CreateButtonElegant, @CreateButtonFlat, @CreateButtonRaised, @CreateButtonRaisedO, @CreateButtonRound, and @CreateButtonRoundO for full documentation",
+		"pNames": ["parent", "text", "width", "height", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str-raised|raisedo|roundo|round|elegant|outlined|contained|text|flat"],
+		"retval": "obj",
+		"shortDesc": "AddButton"
+    },
+    "AddButtonElegant": {
+        "abbrev": "bte",
+		"desc": "Add an elegant button on a given layout. See @CreateButtonElegant for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonElegant"
+    },
+    "AddButtonFlat": {
+        "abbrev": "btf",
+		"desc": "Adds a flat button on given layout. See @CreateButtonFlat for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonFlat"
+    },
+    "AddButtonRaised": {
+        "abbrev": "btr",
+		"desc": "Adds a raised material button on a given layout. See @CreateButtonRaised for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color", "txtcolor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonRaised"
+    },
+    "AddButtonRaisedO": {
+        "abbrev": "bro",
+		"desc": "Adds an outlined material raised button on a given layout. See @CreateButtonRaisedO for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonRaisedO"
+    },
+    "AddButtonRound": {
+        "abbrev": "btr",
+		"desc": "Adds a round material button on a given layout. See @CreateButtonRound for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color", "txtcolor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonRound"
+    },
+    "AddButtonRoundO": {
+        "abbrev": "bro",
+		"desc": "Adds an outlined material round button on a given layout. See @CreateButtonRoundO for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddButtonRoundO"
+    },
+    "AddButtonOutlined": {
+        "abbrev": "bto",
+		"desc": "An outlined material button. See @CreateButtonOutlined for full documentation",
+		"pNames": ["parent", "text", "width", "height"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "An outlined material button"
+    },
+    "AddButtonContained": {
+        "abbrev": "btc",
+		"desc": "Adds a contained material button on a given layout. See @CreateButtonContained for full documentation.",
+		"pNames": ["parent", "text", "width", "height"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "AddButtonContained"
+    },
+    "AddButtonText": {
+        "abbrev": "btt",
+		"desc": "Adds a text button on a given layout. See @CreateButtonFlat for full documentation.",
+		"pNames": ["parent", "text", "width", "height"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "AddButtonText"
+    },
+    "AddButtonToggle": {
+        "abbrev": "btt",
+		"desc": "Adds a toggleable button on a given layout. See @CreateButtonToggle for a full documentation.",
+		"pNames": ["parent", "text", "width", "height", "value", "callback"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Button text", "num_frc", "num_frc", "bin", {}],
+		"retval": "obj",
+		"shortDesc": "AddButtonToggle"
+    },
+    "AddCard": {
+        "abbrev": "crd",
+		"desc": "Adds a card on a given layout. See @CreateCard for a full documentation.",
+		"pNames": ["parent", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "obj-{title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
+		"retval": "obj",
+		"shortDesc": "AddCard"
+    },
+    "AddColorPicker": {
+        "abbrev": "clp",
+		"desc": "Adds a color picker. See @CreateColorPicker for a full documentation.",
+		"pNames": ["textEdit", "title"],
+		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "str-Title"],
+		"retval": "obj",
+		"shortDesc": "Creates a color picker dialog where you can select a range of MUI predefined colors."
+    },
+    "AddCheckbox": {
+        "abbrev": "chc",
+		"desc": "Adds an MUI Checkbox on a given layout. See @CreateCheckbox for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-A comma separated string", "num_frc", "num_frc", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddCheckbox"
+    },
+    "AddCheckList": {
+        "abbrev": "chl",
+		"desc": "Adds an MUI checklist dialog. See @CreateCheckList for a full documentation.",
+		"pNames": ["textEdit", "title", "list", "color", "bottom"],
+		"pTypes": ["obj-MUI TextEdit control or DS TextEdit control", "str", "lst-An array of objects of the form {name: string, check: boolean}", "str_col", "bin"],
+		"retval": "obj",
+		"shortDesc": "AddCheckList"
+    },
+    "AddDataTable": {
+        "abbrev": "tbl",
+		"desc": "Adds a table control on a given layout. See @CreateDataTable for a full documentation.",
+		"pNames": ["parent", "columns", "values", "width", "height", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'", "lst-An array of strings of the form Val1:Val2:Val3...", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-A comma separated options. Can be Selectable"],
+		"retval": "obj",
+		"shortDesc": "Adds a new DataTable Control."
+    },
+    "AddPicker": {
+        "abbrev": "pck",
+		"desc": "Adds a picker dialog such as time, date or color. See @CreateDatePicker, @CreateTimePicker and @CreateColorPicker for a full documentation.",
+		"pNames": ["textEdit", "options"],
+		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "str-Date|Color|Time"],
+		"retval": "obj",
+		"shortDesc": "Adds a picker dialog such as time, date or color"
+    },
+    "AddDatePicker": {
+        "abbrev": "dtp",
+		"desc": "Adds a date picker dialog. See @CreateDatePicker for a full documentation.",
+		"pNames": ["textEdit", "yyyy", "mm", "dd", "color"],
+		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "num_int-Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddDatePicker"
+    },
+    "AddDialog": {
+        "abbrev": "dlg",
+		"desc": "Adds a customizable materialize dialog. See @CreateDialog for a full documentation.",
+		"pNames": ["title", "body", "okText", "cancelText", "divider"],
+		"pTypes": ["str-Title", "str-Body text", "str-Truthy button text", "str-Falsey button text", "bin-Show divider or hide"],
+		"retval": "obj",
+		"shortDesc": "Adds a customizable materialize dialog."
+    },
+    "AddDivider": {
+        "abbrev": "dvd",
+		"desc": "Adds a divider to a given layout. See @CreateDivider for a full documentation.",
+		"pNames": ["parent", "height"],
+		"pTypes": ["obj-MUI Layout or DS layout contorl", "num_px-Optional"],
+		"retval": "obj",
+		"shortDesc": "CreateDivider"
+    },
+    "AddFAB": {
+        "abbrev": "fab",
+		"desc": "Adds a floating action button. See @CreateFAB, @CreateFABElegant and @CreateFABOutline for a full documentation.",
+		"pNames": ["parent", "icon", "color", "options"],
+		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon fonts", "str_col", "str_com-outline|elegant|default"],
+		"retval": "obj",
+		"shortDesc": "Adds a floating action button."
+    },
+    "AddFABElegant": {
+        "abbrev": "fab",
+		"desc": "Adds an elegant floating action button. See @CreateFABElegant for a full documentation.",
+		"pNames": ["parent", "icon", "color"],
+		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon fonts", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddFABElegant"
+    },
+    "AddFABOutline": {
+        "abbrev": "fab",
+		"desc": "Adds an outlined floating action button on a given layout. See @CreateFABOutline for a full documentation.",
+		"pNames": ["parent", "icon", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon font", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddFABOutline"
+    },
+    "AddLayout": {
+        "abbrev": "lay",
+		"desc": "Adds a layout. See @CreateLayout for a full documentation.",
+		"pNames": ["parent", "type", "options"],
+		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Linear|Absolute|Frame|Card", "str-Comma separated DroidScript layout options"],
+		"retval": "obj",
+		"shortDesc": "AddLayout"
+    },
+    "AddList": {
+        "abbrev": "lst",
+		"desc": "Adds an MUI control on a given layout. See @CreateList, @CreateListModern and @CreateListSimple for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num", "num", "str_com-simple|modern|default|divider"],
+		"retval": "obj",
+		"shortDesc": "AddList"
+    },
+    "AddListDialog": {
+        "abbrev": "lsd",
+		"desc": "Adds a more customizable list dialog or checklist dialog. See @CreateListDialog and @CreateCheckList for a full documentation on each type.",
+		"pNames": ["textEdit", "title", "list", "color", "options"],
+		"pTypes": ["obj-MUI TextEdit control or DS TextEdit control", "str", "lst-An array of objects", "str_col", "str_com-CheckList|ListDialog|Bottom"],
+		"retval": "obj",
+		"shortDesc": "AddListDialog"
+    },
+    "AddListModern": {
+        "abbrev": "lsm",
+		"desc": "Adds a ListModern control on a given layout. See @CreateListModern for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-An array of object elements. See list example", "num", "num", "str-Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
+		"retval": "obj",
+		"shortDesc": "AddListModern"
+    },
+    "AddListSimple": {
+        "abbrev": "lss",
+		"desc": "Adds a simple list for navigation purposes. See @CreateListSimple for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "options"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-{title:str|icon:str-Material icon|color:str_col|badge:num}", "num_frc", "num_frc", "str-Divider"],
+		"retval": "dso",
+		"shortDesc": "AddListSimple"
+    },
+    "AddMenu": {
+        "abbrev": "mn",
+		"desc": "Adds a simple MUI menu. See @CreateMenu for a full documentation.",
+		"pNames": ["list", "width", "height", "position"],
+		"pTypes": ["str_com-list", "num_frc", "num_frc", "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"],
+		"retval": "obj",
+		"shortDesc": "Adds a simple menu"
+    },
+    "AddMenuWithIcon": {
+        "abbrev": "mwi",
+		"desc": "MUI menu with material icon font. See @CreateMenuWithIcon for a full documentation.",
+		"pNames": ["list", "width", "height", "position"],
+		"pTypes": ["lst-str", "num_frc", "num_frc", "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"],
+		"retval": "obj",
+		"shortDesc": "MUI menu with material icon font."
+    },
+    "AddModal": {
+        "abbrev": "mdl",
+		"desc": "Adds a modal. See @CreateModal for a full documentation.",
+		"pNames": ["title", "body", "okTxt", "cancelTxt", "options"],
+		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "str-Can be Full"],
+		"retval": "obj",
+		"shortDesc": "Adds a modal."
+    },
+    "AddRadio": {
+        "abbrev": "rd",
+		"desc": "Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRadioMaterial for a full documentation. The param p1 depends on the type of an MUI button. It can be a color for normal radio or orientation 'vertical or horizontal' for material and button type.",
+		"pNames": ["parent", "list", "width", "height", "options", "p1", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str_com-strings", "num", "num", "str_com-Buttons|Material|Normal", "str-color|orientation", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a radio material input."
+    },
+    "AddRadioButtons": {
+        "abbrev": "rdb",
+		"desc": "Adds an MUI radio button control. See @CreateRadioButtons for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "orientation", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a radio button control."
+    },
+    "AddRadioMaterial": {
+        "abbrev": "rdm",
+		"desc": "Adds an MUI RadioMaterial input. See @CreateRadioMaterial for a full documentation.",
+		"pNames": ["parent", "list", "width", "height", "orientation", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a material radio control."
+    },
+    "AddSeekBar": {
+        "abbrev": "skb",
+		"desc": "Adds an MUI seekbar on a given layout. See @CreateSeekBar for a full documentation.",
+		"pNames": ["parent", "value", "range", "width", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num-Must be between 0 and range", "num-The maximum value of your seekbar", "num", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds an MUI basic seekbar."
+    },
+    "AddSwitch": {
+        "abbrev": "swt",
+		"desc": "Adds an MUI Switch to a given control. See @CreateSwitch for a full documentation.",
+		"pNames": ["parent", "value", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "bin", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddSwitch"
+    },
+    "AddSwitchSettings": {
+        "abbrev": "sws",
+		"desc": "Adds an MUI SwitchSettings to a given layout. See @CreateSwitchSettings for a full documentation.",
+		"pNames": ["parent", "text", "width", "height", "value", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "bin", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddSwitchSettings"
+    },
+    "AddTabs": {
+        "abbrev": "tbf",
+		"desc": "Adds an MUI tab on a given layout. See @CreateTabFixed for a full documentation.",
+		"pNames": ["parent", "title", "width", "height", "options", "color", "animation"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "str_com-titles", "num", "num", "str_com-DS layout options|Fix", "str_col", "bin"],
+		"retval": "obj",
+		"shortDesc": "AddTabs"
+    },
+    "AddTextEdit": {
+        "abbrev": "ted",
+		"desc": "Adds a TextEdit control to a given layout. See @CreateTextEditFilled, @CreateTextEditFilledA, @CreateTextEditOutline, @CreateTextEditOutlineA, @CreateTEFilledIconLeft, @CreateTEFilledIconRight, @CreateTEOutlineIconLeft, @CreateTEOutlineIconRight, @CreateTESearchElegant, @CreateTESearchUnique, @CreateTextEditSearch and @CreateTextEditUnique for full documentation on each type of MUI TextEdit. For p1, p2, p3, p4 and p5 parameters, these are the params after the options. You can refer to the corresponding Create*** method to see what this parameters are. Example for @CreateTextEditFilled 'p1' is 'hint', 'p2' is 'label' and 'p3' is 'color'. For @CreateTextEditOutline 'p1' is 'hint', 'p2' is 'label', 'p3' is 'color' and 'p4' is 'backColor'.",
+		"pNames": ["parent", "width", "options", "p1", "p2", "p3", "p4", "p5"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-outline|filled|unique|search|active|icon and for icon can be  left|right", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit"],
+		"retval": "obj",
+		"shortDesc": "Adds a TextEdit control to a given layout"
+    },
+    "AddTEFilledIconLeft": {
+        "abbrev": "tef",
+		"desc": "Adds a filled text input with icon on the left on the given layout. See @CreateTEFilledIconLeft for full documentation.",
+		"pNames": ["parent", "width", "options", "icon", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str_com-DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a filled text input with icon on the left."
+    },
+    "AddTEFilledIconRight": {
+        "abbrev": "tef",
+		"desc": "Adds a filled text input with icon on the right on a given layout. See @CreateTEFilledIconRight for full documentaion.",
+		"pNames": ["parent", "width", "options", "icon", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str_com-DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a filled text input with icon on the right"
+    },
+    "AddTEOutlineIconLeft": {
+        "abbrev": "teo",
+		"desc": "Adds a material outlined text input with icon on the left on a given layout. See @CreateTEOutlineIconLeft for full documentation.",
+		"pNames": ["parent", "width", "options", "icon", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str_com-DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a material outlined text input with icon on the left."
+    },
+    "AddTEOutlineIconRight": {
+        "abbrev": "teo",
+		"desc": "Adds a material outlined text input with icon on the right on a given layout. See @CreateTEOutlineIconRight for full documenation.",
+		"pNames": ["parent", "width", "options", "icon", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str_com-DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a material outlined text input with icon on the right."
+    },
+    "AddTESearchElegant": {
+        "abbrev": "tes",
+		"desc": "Adds an elegant search textedit on a given layout. See @CreateTESearchElegant for full documentation.",
+		"pNames": ["parent", "width", "hint", "icon", "iconPos", "color", "option"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col", "str-Small|Normal|Border"],
+		"retval": "obj",
+		"shortDesc": "Adds an elegant search textedit"
+    },
+    "AddTESearchUnique": {
+        "abbrev": "tes",
+		"desc": "Adds a unique text input on a given layout. See @CreateTESearchUnique for full documentation.",
+		"pNames": ["parent", "width", "hint", "icon", "iconColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Hint text", "str-Material icon font", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Creates a unique text input"
+    },
+    "AddTextArea": {
+        "abbrev": "txa",
+		"desc": "Adds a material textarea on a given layout. See @CreateTextAreaFilled, @CreateTextAreaFilledA, @CreateTextAreaOutline and @CreateTextAreaOutlineA for a full documentation on each corresponding type.",
+		"pNames": ["parent", "width", "height", "options", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str_com-filled|outline|active", "str-Hint text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a material filled textarea"
+    },
+    "AddTextAreaFilled": {
+        "abbrev": "taf",
+		"desc": "Add a material filled textarea on a given layout. See @CreateTextAreaFilled for  a full documentation.",
+		"pNames": ["parent", "width", "height", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str-Hint text", "bin-Show or hide label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Add a material filled textarea"
+    },
+    "AddTextAreaFilledA": {
+        "abbrev": "taf",
+		"desc": "Adds an active filled textarea on a given layout. See @CreateTextAreaFilledA for a full documentation.",
+		"pNames": ["parent", "width", "height", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str-Hint|Label text", "bin-Hides or show label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds an active filled textarea."
+    },
+    "AddTextAreaOutline": {
+        "abbrev": "tao",
+		"desc": "Add an outlined material textarea on a given layout. See @CreateTextAreaOutline for a full documentation.",
+		"pNames": ["parent", "width", "height", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Add an outlined material textarea."
+    },
+    "AddTextAreaOutlineA": {
+        "abbrev": "tao",
+		"desc": "Add an active outlined material textarea on a given layout. See @CreateTextAreaOutlineA for a full documentation.",
+		"pNames": ["parent", "width", "height", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Add an active outlined material textarea."
+    },
+    "AddTextEditFilled": {
+        "abbrev": "tef",
+		"desc": "Adds the most common type of material text input on a given layout. See @CreateTextEditFilled for a full documentation.",
+		"pNames": ["parent", "width", "options", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds the most common type of material text input."
+    },
+    "AddTextEditFilledA": {
+        "abbrev": "tef",
+		"desc": "Add an active filled material text input on a given layout. See @CreateTextEditFilledA for a full documentation.",
+		"pNames": ["parent", "width", "options", "hint", "label", "color"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Add an active filled material text input."
+    },
+    "AddTextEditOutline": {
+        "abbrev": "teo",
+		"desc": "Adds an outlined material text input on a given layout. See @CreateTextEditOutline for full documentation.",
+		"pNames": ["parent", "width", "options", "hint", "label"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label"],
+		"retval": "obj",
+		"shortDesc": "Adds an outlined material text input."
+    },
+    "AddTextEditOutlineA": {
+        "abbrev": "teo",
+		"desc": "Adds an active outlined material text input on a given layout. See @CreateTextEditOutlineA for a full documentation.",
+		"pNames": ["parent", "width", "options", "hint", "label", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds an active outlined material text input."
+    },
+    "AddTextEditSearch": {
+        "abbrev": "tes",
+		"desc": "Adds a customize search style text input on given layout. See @CreateTextEditSearch for a full documentation.",
+		"pNames": ["parent", "width", "options", "hint", "color", "backColor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Comma separated DS TextEdit options", "str-Hint text", "str_col", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a customize search style text input."
+    },
+    "AddTextEditUnique": {
+        "abbrev": "teu",
+		"desc": "Adds a unique textedit customization on a given layout. See @CreateTextEditUnique for a full documentation.",
+		"pNames": ["parent", "width", "hint", "icon", "iconCOlor"],
+		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Hint text", "str-Material icon font", "str_col-Icon color"],
+		"retval": "obj",
+		"shortDesc": "Adds a unique textedit customization."
+    },
+    "AddText": {
+        "abbrev": "txt",
+		"desc": "Adds a mui text control to the layout. See @CreateTextH1, @CreateTextH2, @CreateTextH3, @CreateTextH4, @CreateTextH5, @CreateTextH6, @CreateTextJumbo, @CreateTextParagraph and @CreateTextSecondary for full documentation on each type of mui typhography.",
+		"pNames": ["parent", "text", "width", "height", "options", "color"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options with addition Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph", "str_col"],
+		"retval": "obj",
+		"shortDesc": "AddText"
+    },
+    "AddTextH1": {
+        "abbrev": "txh",
+		"desc": "Adds an H1 text to a layout. See @CreateTextH1 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H1 text"
+    },
+    "AddTextH2": {
+        "abbrev": "txh",
+		"desc": "Adds an H2 text to a layout. See @CreateTextH2 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H2 text"
+    },
+    "AddTextH3": {
+        "abbrev": "txh",
+		"desc": "Adds an H3 text to a layout. See @CreateTextH3 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H3 text"
+    },
+    "AddTextH4": {
+        "abbrev": "txh",
+		"desc": "Adds an H4 text to a layout. See @CreateTextH4 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H4 text"
+    },
+    "AddTextH5": {
+        "abbrev": "txh",
+		"desc": "Adds an H5 text to a layout. See @CreateTextH5 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H5 text"
+    },
+    "AddTextH6": {
+        "abbrev": "txh",
+		"desc": "Adds an H6 text to a layout. See @CreateTextH6 for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds an H6 text"
+    },
+    "AddTextJumbo": {
+        "abbrev": "txj",
+		"desc": "Adds an extra large text to a layout. See @CreateTextJumbo for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Creates an extra large text"
+    },
+    "AddTextParagraph": {
+        "abbrev": "txp",
+		"desc": "Adds a paragraph text to a layout. See @CreateTextParagraph for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds a paragraph text to a layout."
+    },
+    "AddTextSecondary": {
+        "abbrev": "txp",
+		"desc": "Adds a secondary text to a layout. See @CreateTextSecondary for full documentation.",
+		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
+		"retval": "obj",
+		"shortDesc": "Adds a secondary text to a layout."
+    },
+    "AddTimePicker": {
+        "abbrev": "tmp",
+		"desc": "Adds a timepicker dialog. See @CreateTimePicker for a full documentation.",
+		"pNames": ["textEdit", "hour", "minute", "color"],
+		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "num-[0-24]", "num-0-59", "str_col"],
+		"retval": "obj",
+		"shortDesc": "Adds a time picker."
+    },
 	"CreateAlert": {
 		"abbrev": "alr",
 		"desc": "A nice pop-up at the top of your current layout",
@@ -45,7 +629,7 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863"
 		}
-	},
+    },
 	"CreateAlertSimple": {
 		"abbrev": "als",
 		"desc": "Create a simple alert with a single button.",
@@ -90,7 +674,7 @@
 			"SetEnabled": "#1602385882",
 			"SetVisibility": "#1004824195"
 		}
-	},
+    },
 	"CreateAppBar": {
 		"abbrev": "apb",
 		"desc": "The most common type of material design app bar.",
@@ -160,7 +744,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateAppBarElegant": {
 		"abbrev": "abe",
 		"desc": "A more elegant appbar implementation",
@@ -230,7 +814,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateAppBarModern": {
 		"abbrev": "abm",
 		"desc": "A modern appbar with a search input, leading icon and trailing icon",
@@ -321,7 +905,7 @@
 				"shortDesc": "Undo"
 			}
 		}
-	},
+    },
 	"CreateBanner": {
 		"abbrev": "bnr",
 		"desc": "A banner dialog is a nice popup that slides from the top of your current page",
@@ -365,9 +949,10 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"SetEnabled": "#1602385882",
-			"SetVisibility": "#1004824195"
+            "SetVisibility": "#1004824195",
+            "SetOnClose": "#2114615302"
 		}
-	},
+    },
 	"CreateButtonElegant": {
 		"abbrev": "bte",
 		"desc": "An elegant button",
@@ -437,9 +1022,10 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
 	"CreateButtonFlat": {
 		"abbrev": "btf",
 		"desc": "Just a flat button.",
@@ -509,9 +1095,9 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateButtonRaised": {
 		"abbrev": "btr",
 		"desc": "The basic type of material button",
@@ -581,9 +1167,10 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
 	"CreateButtonRaisedO": {
 		"abbrev": "bro",
 		"desc": "An outlined material raised button.",
@@ -653,9 +1240,10 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
 	"CreateButtonRound": {
 		"abbrev": "btr",
 		"desc": "A round material button",
@@ -725,9 +1313,10 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
 	"CreateButtonRoundO": {
 		"abbrev": "bro",
 		"desc": "An outlined material round button",
@@ -797,9 +1386,162 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
+    "CreateButtonOutlined": {
+        "abbrev": "bto",
+		"desc": "An outlined material button",
+		"pNames": ["text", "width", "height"],
+		"pTypes": ["str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonOutlined",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"desc": "GetType",
+				"retval": "str-Button",
+				"shortDesc": "GetType"
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"desc": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
+				"shortDesc": "SetStyle"
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+            "Tween": "#2114624769"
+		}
+    },
+    "CreateButtonContained": {
+        "abbrev": "btc",
+		"desc": "An contained material button.",
+		"pNames": ["text", "width", "height"],
+		"pTypes": ["str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonContained",
+		"subf": {
+			"AdjustColor": "#1794786072",
+			"Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"data": {
+				"desc": "data",
+				"isval": true,
+				"retval": "obj",
+				"shortDesc": "data"
+			},
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetText": "#2387569276",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"desc": "GetType",
+				"retval": "str-Button",
+				"shortDesc": "GetType"
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetEllipsize": "#0897234673",
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHtml": "#8753208754",
+			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
+			"SetOnTouch": "#2398750419",
+			"SetPadding": "#1923105617",
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetStyle": {
+				"desc": "SetStyle",
+				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
+				"shortDesc": "SetStyle"
+			},
+			"SetText": "#8207502354",
+			"SetTextColor": "#0175303923",
+			"SetTextShadow": "#1093247031",
+			"SetTextSize": "#5019790423",
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+            "Tween": "#2114624769"
+		}
+    },
+    "CreateButtonText": {
+        "abbrev": "btt",
+		"desc": "Adds a text button. See @CreateButtonFlat for full documentation.",
+		"pNames": ["text", "width", "height"],
+		"pTypes": ["str", "num_frc", "num_frc"],
+		"retval": "obj",
+		"shortDesc": "CreateButtonText"
+    },
 	"CreateButtonToggle": {
 		"abbrev": "btt",
 		"desc": "CreateButtonToggle",
@@ -868,9 +1610,10 @@
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702"
 		}
-	},
+    },
 	"CreateCard": {
 		"abbrev": "crd",
 		"desc": "A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>",
@@ -938,7 +1681,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateColorPicker": {
 		"abbrev": "clp",
 		"desc": "Creates a color picker dialog where you can select a range of MUI predefined colors.",
@@ -970,9 +1713,10 @@
 			"GetTop": "#1981028136",
 			"GetWidth": "#1321469131",
 			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721"
+            "IsOverlap": "#1785728721",
+            "SetTextEdit": "#2114625302"
 		}
-	},
+    },
 	"CreateCheckbox": {
 		"abbrev": "chc",
 		"desc": "Checkbox is a powerful control when you want the user to select multiple items in a group",
@@ -1032,7 +1776,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateCheckList": {
 		"abbrev": "chl",
 		"desc": "Check list is a dialog type checkbox list. Let the user select items in a nice popup",
@@ -1051,13 +1795,29 @@
 				"shortDesc": "SetOnSubmit"
 			},
 			"Show": "#1243391562",
+			"SetHeight": "#2114625707",
 			"Hide": "#5372805812",
 			"Destroy": "#1924613325",
 			"GetVisibility": "#1672373665",
 			"IsVisible": "#1814300863",
-			"SetEnabled": "#1602385882"
+			"SetEnabled": "#1602385882",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+            "SetVisibility": "#1004824195",
+            "SetTextEdit": "#2114625302"
 		}
-	},
+    },
 	"CreateDataTable": {
 		"abbrev": "tbl",
 		"desc": "#CreateDataTable.md",
@@ -1114,6 +1874,24 @@
 				}],
 				"shortDesc": "SetOnTouch"
             },
+            "SetOnReady": {
+                "desc": "Calls a function when the Table is ready and rendered already.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": [],
+					"pTypes": []
+				}],
+				"shortDesc": "SetOnReady"
+            },
+            "SetOnProgress": {
+                "desc": "Calls a function when the Table is on progress",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value"],
+					"pTypes": ["num-The progress of the loading table from 0-100"]
+				}],
+				"shortDesc": "SetOnProgress"
+            },
 			"SetRows": {
 				"desc": "Set the rows of the table to a new values of data.",
 				"pNames": ["values"],
@@ -1153,7 +1931,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateDatePicker": {
 		"abbrev": "dtp",
 		"desc": "Creates a materialize date picker dialog.",
@@ -1176,9 +1954,19 @@
 			"Destroy": "#1924613325",
 			"GetVisibility": "#1672373665",
 			"IsVisible": "#1814300863",
-			"SetEnabled": "#1602385882"
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetWidth": "#1321469131",
+			"IsEnabled": "#1744802827",
+            "IsOverlap": "#1785728721",
+            "SetTextEdit": "#2114625302"
 		}
-	},
+    },
 	"CreateDialog": {
 		"abbrev": "dlg",
 		"desc": "Creates a customizable materialize dialog.",
@@ -1221,9 +2009,10 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"SetEnabled": "#1602385882",
-			"SetVisibility": "#1004824195"
+            "SetVisibility": "#1004824195",
+            "SetOnClose": "#2114615302"
 		}
-	},
+    },
 	"CreateDivider": {
 		"abbrev": "dvd",
 		"desc": "Creates a divider which you can add to your layout",
@@ -1240,7 +2029,7 @@
 			"SetEnabled": "#1602385882",
 			"SetVisibility": "#1004824195"
 		}
-	},
+    },
 	"CreateFAB": {
 		"abbrev": "fab",
 		"desc": "Creates a floating action button",
@@ -1297,9 +2086,11 @@
 			"SetPosition": "#1425862386",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702",
+            "SetText": "#8207502354"
 		}
-	},
+    },
 	"CreateFABElegant": {
 		"abbrev": "fab",
 		"desc": "An elegant floating action button",
@@ -1356,9 +2147,11 @@
 			"SetPosition": "#1425862386",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702",
+            "SetText": "#8207502354"
 		}
-	},
+    },
 	"CreateFABOutline": {
 		"abbrev": "fab",
 		"desc": "Creates an outlined floating action button",
@@ -1415,9 +2208,11 @@
 			"SetPosition": "#1425862386",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
-			"Tween": "#2114624769"
+            "Tween": "#2114624769",
+            "SetColor": "#2114625702",
+            "SetText": "#8207502354"
 		}
-	},
+    },
 	"CreateLayout": {
 		"abbrev": "lay",
 		"desc": "#CreateLayout.md",
@@ -1425,7 +2220,7 @@
 		"pTypes": ["str-Linear|Absolute|Frame|Card", "str-Comma separated DroidScript layout options"],
 		"retval": "obj",
 		"shortDesc": "#CreateLayout.md"
-	},
+    },
 	"CreateList": {
 		"abbrev": "lst",
 		"desc": "A manipulation of the DroidScript list object.",
@@ -1668,7 +2463,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateListDialog": {
 		"abbrev": "lsd",
 		"desc": "Creates a more customizable list dialog",
@@ -1706,9 +2501,10 @@
 			"Gone": "#5528553362",
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
-			"SetVisibility": "#1004824195"
+            "SetVisibility": "#1004824195",
+            "SetTextEdit": "#2114625302"
 		}
-	},
+    },
 	"CreateListModern": {
 		"abbrev": "lsm",
 		"desc": "#CreateListModern.md",
@@ -2021,7 +2817,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateMenu": {
 		"abbrev": "mn",
 		"desc": "A simple MUI implementation of material design menu.",
@@ -2066,7 +2862,7 @@
 			"IsOverlap": "#1785728721",
 			"SetVisibility": "#1004824195"
 		}
-	},
+    },
 	"CreateMenuWithIcon": {
 		"abbrev": "mwi",
 		"desc": "Advance MUI implementation of material design menu with additional icon using material icon font.",
@@ -2105,12 +2901,12 @@
 			"IsOverlap": "#1785728721",
 			"SetVisibility": "#1004824195"
 		}
-	},
+    },
 	"CreateModal": {
 		"abbrev": "mdl",
 		"desc": "#CreateModal.md",
-		"pNames": ["title", "body", "okTxt", "cancelTxt", "show"],
-		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin"],
+		"pNames": ["title", "body", "okTxt", "cancelTxt", "show", "options"],
+		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin", "str-Can be Full"],
 		"retval": "obj",
 		"shortDesc": "#CreateModal.md",
 		"subf": {
@@ -2163,9 +2959,10 @@
 			"Gone": "#5528553362",
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
-			"SetVisibility": "#1004824195"
+            "SetVisibility": "#1004824195",
+            "SetOnClose": "#2114615302"
 		}
-	},
+    },
 	"CreateRadio": {
 		"abbrev": "rd",
 		"desc": "Creates a radio control by manipulation of the DroidScript's list control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
@@ -2396,7 +3193,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateRadioButtons": {
 		"abbrev": "rdb",
 		"desc": "Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
@@ -2473,7 +3270,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateRadioMaterial": {
 		"abbrev": "rdm",
 		"desc": "Creates a material radio control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
@@ -2550,7 +3347,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateSeekBar": {
 		"abbrev": "skb",
 		"desc": "An MUI implementation of a basic seekbar.",
@@ -2611,7 +3408,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateSwitch": {
 		"abbrev": "swt",
 		"desc": "Creates a switch that can be toggled on and off.",
@@ -2665,7 +3462,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateSwitchSettings": {
 		"abbrev": "sws",
 		"desc": "Creates a switchable settings that can be toggled on and off.",
@@ -2719,7 +3516,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTabFixed": {
 		"abbrev": "tbf",
 		"desc": "#CreateTabFixed.md",
@@ -2775,7 +3572,7 @@
 			"SetVisibility": "#1004824195",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTEFilledIconLeft": {
 		"abbrev": "tef",
 		"desc": "Creates a filled text input with icon on the left",
@@ -2859,9 +3656,10 @@
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Calls a function when icon is touch"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTEFilledIconRight": {
 		"abbrev": "tef",
 		"desc": "Creates a filled text input with icon on the right",
@@ -2945,9 +3743,10 @@
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Calls a function when icon is touch"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTEOutlineIconLeft": {
 		"abbrev": "teo",
 		"desc": "Creates a material outlined text input with icon on the left.",
@@ -3031,9 +3830,10 @@
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Calls a function when icon is touch"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTEOutlineIconRight": {
 		"abbrev": "teo",
 		"desc": "Creates a material outlined text input with icon on the right.",
@@ -3117,9 +3917,10 @@
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Calls a function when icon is touch"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTESearchElegant": {
 		"abbrev": "tes",
 		"desc": "#CreateTESearchElegant.md",
@@ -3209,9 +4010,10 @@
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Calls a function when icon is touch"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTESearchUnique": {
 		"abbrev": "tes",
 		"desc": "Creates a unique text input",
@@ -3297,7 +4099,7 @@
 				"shortDesc": "Calls a function when icon is touch"
 			}
 		}
-	},
+    },
 	"CreateTextAreaFilled": {
 		"abbrev": "taf",
 		"desc": "Creates a material filled textarea",
@@ -3377,7 +4179,7 @@
 				"shortDesc": "Undo an action"
 			}
 		}
-	},
+    },
 	"CreateTextAreaFilledA": {
 		"abbrev": "taf",
 		"desc": "Creates an active filled textarea.",
@@ -3457,7 +4259,7 @@
 				"shortDesc": "Undo an action"
 			}
 		}
-	},
+    },
 	"CreateTextAreaOutline": {
 		"abbrev": "tao",
 		"desc": "Creates an outlined material textarea.",
@@ -3537,7 +4339,7 @@
 				"shortDesc": "Undo an action"
 			}
 		}
-	},
+    },
 	"CreateTextAreaOutlineA": {
 		"abbrev": "tao",
 		"desc": "Creates an active outlined material textarea.",
@@ -3617,7 +4419,7 @@
 				"shortDesc": "Undo an action"
 			}
 		}
-	},
+    },
 	"CreateTextEditFilled": {
 		"abbrev": "tef",
 		"desc": "Creates the most common type of material text input.",
@@ -3695,9 +4497,10 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTextEditFilledA": {
 		"abbrev": "tef",
 		"desc": "Creates an active filled material text input.",
@@ -3775,9 +4578,10 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTextEditOutline": {
 		"abbrev": "teo",
 		"desc": "Creates an outlined material text input.",
@@ -3855,9 +4659,10 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTextEditOutlineA": {
 		"abbrev": "teo",
 		"desc": "Creates an active outlined material text input.",
@@ -3935,9 +4740,10 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTextEditSearch": {
 		"abbrev": "tes",
 		"desc": "Creates a customize search style text input.",
@@ -4023,7 +4829,7 @@
 				"shortDesc": "Calls a function when icon is touch"
 			}
 		}
-	},
+    },
 	"CreateTextEditUnique": {
 		"abbrev": "teu",
 		"desc": "Creates a unique textedit customization.",
@@ -4101,9 +4907,10 @@
 			"Undo": {
 				"desc": "Undo an action",
 				"shortDesc": "Undo an action"
-			}
+            },
+            "SetOnTouch":"#2398750419"
 		}
-	},
+    },
 	"CreateTextH1": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 1",
@@ -4214,7 +5021,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextH2": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text ",
@@ -4325,7 +5132,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextH3": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 3",
@@ -4436,7 +5243,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextH4": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 4",
@@ -4547,7 +5354,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextH5": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 5",
@@ -4658,7 +5465,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextH6": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 6",
@@ -4769,7 +5576,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextJumbo": {
 		"abbrev": "txj",
 		"desc": "Creates an extra large text",
@@ -4880,7 +5687,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextParagraph": {
 		"abbrev": "txp",
 		"desc": "Creates a paragraph text",
@@ -4991,7 +5798,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTextSecondary": {
 		"abbrev": "txs",
 		"desc": "Creates a secondary text",
@@ -5102,7 +5909,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTimePicker": {
 		"abbrev": "tmp",
 		"desc": "Creates a material design time picker.",
@@ -5125,7 +5932,17 @@
 			"Destroy": "#1924613325",
 			"GetVisibility": "#1672373665",
 			"IsVisible": "#1814300863",
-			"SetEnabled": "#1602385882"
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetWidth": "#1321469131",
+			"IsEnabled": "#1744802827",
+            "IsOverlap": "#1785728721",
+            "SetTextEdit": "#2114625302"
 		}
 	},
 	"fonts": {

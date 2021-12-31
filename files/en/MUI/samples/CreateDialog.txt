@@ -1,6 +1,6 @@
 <sample Basic & Light>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -27,7 +27,7 @@ function ShowDialog()
 
 <sample Customize & Dark>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

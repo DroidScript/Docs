@@ -1,6 +1,6 @@
 <sample Basic>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -40,7 +40,7 @@ function OnTouch(name)
 
 <sample With Icon>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -80,7 +80,7 @@ function OnTouch(name)
 
 <sample With Icon & Colors>
 cfg.Light
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {
@@ -120,7 +120,7 @@ function OnTouch(name)
 
 <sample Dark Bottom>
 cfg.Dark
-app.LoadPlugin('DroidScriptUIKit')
+cfg.MUI
 
 function OnStart()
 {

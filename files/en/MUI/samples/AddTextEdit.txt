@@ -1,0 +1,15 @@
+<sample All Typography>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        ted1 = MUI.AddTextEdit(lay, 0.8, "filled", "Enter Name", true)
+        ted1 = MUI.AddTextEdit(lay, 0.8, "filled,active,password", "Enter password", true)
+        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,number", "Enter Number", true)
+        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,active", "Enter PIN", true)
+        ted1 = MUI.AddTextEdit(lay, 0.8, "elegant", "Enter name")
+    app.AddLayout(lay)
+}
+</sample>
