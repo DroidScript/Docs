@@ -297,7 +297,7 @@
         "abbrev": "mdl",
 		"desc": "Adds a modal. See @CreateModal for a full documentation.",
 		"pNames": ["title", "body", "okTxt", "cancelTxt", "options"],
-		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "str-Can be Full"],
+		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "str-Dialog options with additional Full option"],
 		"retval": "obj",
 		"shortDesc": "Adds a modal."
     },
@@ -2906,7 +2906,7 @@
 		"abbrev": "mdl",
 		"desc": "#CreateModal.md",
 		"pNames": ["title", "body", "okTxt", "cancelTxt", "show", "options"],
-		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin", "str-Can be Full"],
+		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin", "str-Dialog options with additional Full option"],
 		"retval": "obj",
 		"shortDesc": "#CreateModal.md",
 		"subf": {
