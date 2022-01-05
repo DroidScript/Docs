@@ -1,4 +1,4 @@
-<sample All Typography>
+<sample AddTextEdit>
 cfg.Light
 cfg.MUI
 
@@ -10,6 +10,8 @@ function OnStart()
         ted1 = MUI.AddTextEdit(lay, 0.8, "outline,number", "Enter Number", true)
         ted1 = MUI.AddTextEdit(lay, 0.8, "outline,active", "Enter PIN", true)
         ted1 = MUI.AddTextEdit(lay, 0.8, "elegant", "Enter name")
+        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,icon,left", "person", "Enter name", true)
+        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,icon,right", "password", "Enter password", true)
     app.AddLayout(lay)
 }
 </sample>
