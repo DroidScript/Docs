@@ -41,8 +41,8 @@
 	},
 	"AddDrawer": {
 		"desc": "AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.\n\nSee Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer",
-		"pNames": ["layout", "side", "width"],
-		"pTypes": ["dso-CreateLayout", "str-left|right", "num_frc"],
+		"pNames": ["layout", "side", "width", "grabWidth"],
+		"pTypes": ["dso-CreateLayout", "str-left|right", "num_frc", "num_frc"],
 		"shortDesc": "Adds a slide-able layout on given side"
 	},
 	"AddImage": {
@@ -223,7 +223,7 @@
 		"pTypes": ["str", "str", {
 			"pNames": ["ssid"],
 			"pTypes": ["str"]
-		}, "str_com-force|large", "str_com-ssids"],
+		}, "str_com-force|large", "str-ssids"],
 		"shortDesc": "Let the user choose a WiFi network"
 	},
 	"ClearCookies": {
@@ -387,7 +387,7 @@
 			"Connect": {
 				"desc": "Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.",
 				"pNames": ["name", "channel"],
-				"pTypes": ["str", "?"],
+				"pTypes": ["str", "str"],
 				"shortDesc": "Connect a Bluetooth device"
 			},
 			"Disconnect": {
@@ -514,6 +514,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEllipsize": "#0897234673",
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
@@ -680,6 +681,7 @@
 				"shortDesc": "Applies a color effect to the camera"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetDuplicateImage": {
 				"desc": "Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.",
 				"pNames": ["image1", "image2"],
@@ -853,6 +855,7 @@
 				"shortDesc": "Changes the ckecked state"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": {
@@ -934,7 +937,8 @@
 					"pTypes": ["bin", "obj-{data:str,error:str}", "num_int"]
 				}, "str"],
 				"shortDesc": "Saves data in the cloud."
-			}
+			},
+			"SetDescription": "#0937259723"
 		}
 	},
 	"CreateCodeEdit": {
@@ -1080,11 +1084,12 @@
 				"shortDesc": "Changes the color scheme"
 			},
 			"SetCursorPos": {
-				"desc": "Change the curernt cursor position.",
+				"desc": "Change the current cursor position.",
 				"pNames": ["position"],
 				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position"
+				"shortDesc": "Change the current cursor position"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetHtml": "#8753208754",
 			"SetLanguage": {
@@ -1133,7 +1138,7 @@
 			},
 			"SetSize": "#1296070870",
 			"SetText": "#8207502354",
-			"SetTextColor": "#1093247031",
+			"SetTextColor": "#0175303923",
 			"SetTextSize": "#5019790423",
 			"SetUseKeyboard": {
 				"desc": "En/Disable usage of the device keyboard.",
@@ -1151,7 +1156,7 @@
 		}
 	},
 	"CreateCustomTabs": {
-		"desc": "Creates a CustomTab control.\nSee the [plugin documentation](plugins/customTabs/CustomTabs.html) for details",
+		"desc": "Creates a CustomTab control.\nSee the @../Plugins page for details",
 		"shortDesc": "Creates a CustomTab control"
 	},
 	"CreateCrypt": {
@@ -1186,7 +1191,8 @@
 				"pNames": ["text", "mode", "options"],
 				"pTypes": ["str", "str-MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512", "str-Wrap"],
 				"shortDesc": "Get a hash from a string"
-			}
+			},
+			"SetDescription": "#0937259723"
 		}
 	},
 	"CreateDebug": {
@@ -1259,6 +1265,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnBack": {
@@ -1598,6 +1605,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetFile": "#0897234673",
 			"SetFrameRate": {
@@ -1811,6 +1819,7 @@
 			"SetBackGradient": "#7112142192",
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": "#2088093920",
@@ -2017,6 +2026,7 @@
 				"shortDesc": "Fills the image with a color"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetImage": {
@@ -2191,7 +2201,6 @@
 			},
 			"SetChildTextSize": {
 				"desc": "Change the text size of top-level children.",
-				"name": "SetTextSize",
 				"pNames": ["size", "mode"],
 				"pTypes": ["num", "str-px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution"],
 				"shortDesc": "Change text size of top-level children."
@@ -2208,6 +2217,7 @@
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply shadow to card layouts's"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetGravity": {
 				"desc": "Adjust the placing of contained children.",
@@ -2217,7 +2227,7 @@
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChildChange": {
-				"desc": "Defines a callback function which is called when the content of a child control has beed changed by the user.",
+				"desc": "Defines a callback function which is called when the content of a child control has been changed by the user.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["src"],
@@ -2394,6 +2404,7 @@
 				"pTypes": ["str-start|middle|end"],
 				"shortDesc": "Auto-crop bodys to fit in control"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetHiTextColor1": {
@@ -2527,7 +2538,7 @@
 		"abbrev": "ldg",
 		"desc": "#CreateListDialog.md",
 		"pNames": ["title", "list", "options"],
-		"pTypes": ["str", "str", "str_com-Multi|?"],
+		"pTypes": ["str", "str", "str-Multi"],
 		"retval": "dso-ListDialog",
 		"shortDesc": "Returns a new ListDialog object",
 		"subf": {
@@ -2782,13 +2793,10 @@
 		}
 	},
 	"CreateMusic": {
-		"desc": "?",
+		"desc": "Add music to your app. See the @../Plugins page for more details",
 		"abbrev": "mus",
-		"retval": "?",
-		"shortDesc": "?",
-		"subfuncs": {
-
-		}
+		"retval": "dso-Music",
+		"shortDesc": "Add Music to your app"
 	},
 	"CreateNetClient": {
 		"abbrev": "net",
@@ -3005,7 +3013,7 @@
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["source", "title", "message", "extra", "type"],
-					"pTypes": ["str", "str", "str", "str", "str-Normal|?"]
+					"pTypes": ["str", "str", "str", "str", "str-Normal"]
 				}],
 				"shortDesc": "Called when notification intercepted"
 			},
@@ -3435,6 +3443,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetPadding": "#1923105617",
@@ -3494,6 +3503,7 @@
 				"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over", "str"],
 				"shortDesc": "Adjust the visual color effect with different BlendModes"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetMaxRate": {
@@ -3932,6 +3942,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetList": {
 				"desc": "Change the item list of the spinner.",
@@ -4024,6 +4035,7 @@
 				"shortDesc": "Change the checked state"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": "#2088093920",
@@ -4323,7 +4335,7 @@
 		"abbrev": "tab",
 		"desc": "#CreateTabs.md",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_frc", "num_frc", "str_com-NoMargins"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str-NoMargins"],
 		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
@@ -4417,6 +4429,7 @@
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply corner radius to card layouts's"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"_SetGravity": {
 				"desc": "Adjust the placing of contained children.",
@@ -4436,7 +4449,7 @@
 				"shortDesc": "Called when current tab changed"
 			},
 			"SetOnChildChange": {
-				"desc": "Defines a callback function which is called when the content of a child control has beed changed by the user.",
+				"desc": "Defines a callback function which is called when the content of a child control has been changed by the user.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["src"],
@@ -4554,6 +4567,7 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetEllipsize": "#0897234673",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
@@ -4704,11 +4718,12 @@
 				"shortDesc": "Change cursor color"
 			},
 			"SetCursorPos": {
-				"desc": "Change the curernt cursor position.",
+				"desc": "Change the current cursor position.",
 				"pNames": ["position"],
 				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position"
+				"shortDesc": "Change the current cursor position"
 			},
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetHint": {
 				"desc": "Set a grey default which is shown when the edit is empty",
@@ -4726,9 +4741,15 @@
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
 			"SetOnFocus": "#9283752301",
+			"SetSelection": {
+				"desc": "Selects part of the text in a given range.",
+				"pNames": ["start", "stop"],
+				"pTypes": ["num_int", "num_int"],
+				"shortDesc": "Select text in a given range"
+			},
 			"SetSize": "#1296070870",
 			"SetText": "#8207502354",
-			"SetTextColor": "#1093247031",
+			"SetTextColor": "#0175303923",
 			"SetTextSize": "#5019790423",
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -4843,7 +4864,7 @@
 			"SetProgressBarOptions": {
 				"desc": "Define standard options of [progress bars](ShowProgressBar.htm).",
 				"pNames": ["options"],
-				"pTypes": ["str_com-Light"],
+				"pTypes": ["str-Light"],
 				"shortDesc": "Define progress bar options"
 			},
 			"SetProgressTextColor": {
@@ -4947,6 +4968,7 @@
 				"shortDesc": "Change the checked state"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnTouch": "#2088093920",
@@ -5120,6 +5142,7 @@
 			"SetBackGradientRadial": "#1101641465",
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetFile": {
 				"desc": "Set the video file path or url",
@@ -5434,10 +5457,11 @@
 			"SetBlockedUrls": {
 				"desc": "Define a list of urls that are blocked for loading.",
 				"pNames": ["urls"],
-				"pTypes": ["lst-[ urls:str ]||str_com-urls"],
+				"pTypes": ["lst-[ urls:str ]||str-urls"],
 				"shortDesc": "Block urls from loading"
 			},
 			"SetColorFilter": "#1096996086",
+			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetErrorPage": {
 				"desc": "Define a url loaded when an error occured.",
@@ -5758,7 +5782,7 @@
 	"DownloadFile": {
 		"desc": "#DownloadFile.md",
 		"pNames": ["source", "destination", "title", "description", "options"],
-		"pTypes": ["str", "str_pth", "str", "str", "str_com-NoDialog"],
+		"pTypes": ["str", "str_pth", "str", "str", "str-NoDialog"],
 		"shortDesc": "Download a file with Androids download manager"
 	},
 	"EnableBackKey": {
@@ -5788,7 +5812,7 @@
 	"ExtExec": {
 		"desc": "#ExtExec.md",
 		"pNames": ["name", "file", "args", "options"],
-		"pTypes": ["str-termux", "str_ptf", "str", "str_com-hide"],
+		"pTypes": ["str-termux", "str_ptf", "str", "str-hide"],
 		"shortDesc": "Execute a bash script using Termux"
 	},
 	"ExtractAssets": {
@@ -6108,7 +6132,7 @@
 	"GetPermission": {
 		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|ExtSDcard|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:\"<pid:num>\"", {
+		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<pid:num>", {
 			"pNames": ["ungranted"],
 			"pTypes": ["str_com||str_uri"]
 		}],
@@ -6124,7 +6148,7 @@
 	"GetResourceId": {
 		"desc": "Returns the id of a resource.\n\nSee Also: @LoadPlugin",
 		"pNames": ["name", "options"],
-		"pTypes": ["str", "str_com-android"],
+		"pTypes": ["str", "str-android"],
 		"retval": "str",
 		"shortDesc": "Get ID of a resource"
 	},
@@ -6161,14 +6185,14 @@
 	"GetScreenHeight": {
 		"desc": "Returns the total screen height of the device in pixels. With the 'Real' **option** softkeys will be included in the value.\n\nSee Also: @GetScreenWidth, @GetScreenDensity",
 		"pNames": ["options"],
-		"pTypes": ["str_com-Real"],
+		"pTypes": ["str-Real"],
 		"retval": "num_pxl",
 		"shortDesc": "Get width of device screen"
 	},
 	"GetScreenWidth": {
 		"desc": "Returns the total screen width of the device in pixels. With the 'Real' **option** softkeys will be included in the value.\n\nSee Also: @GetScreenHeight, @GetScreenDensity",
 		"pNames": ["options"],
-		"pTypes": ["str_com-Real"],
+		"pTypes": ["str-Real"],
 		"retval": "num_pxl",
 		"shortDesc": "Get height of device screen"
 	},
@@ -6225,7 +6249,7 @@
 	"GetTop": {
 		"desc": "Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the **px** option.",
 		"pNames": ["options"],
-		"pTypes": ["str_com-px"],
+		"pTypes": ["str-px"],
 		"retval": "num_frc",
 		"shortDesc": "GetTop"
 	},
@@ -6337,7 +6361,7 @@
 		"shortDesc": "Check whether device is charging"
 	},
 	"IsChrome": {
-		"desc": "Checks if the device is running on ChromeOS.\n\nSee Also: @IsTablet, @IsThings",
+		"desc": "Checks if the device is running on ChromeOS.\n\nSee Also: @IsTablet",
 		"retval": "bin",
 		"shortDesc": "Check if device OS is ChromeOS"
 	},
@@ -6411,7 +6435,7 @@
 		"shortDesc": "Check if app has finished loading"
 	},
 	"IsTablet": {
-		"desc": "Checks if the user device is a tablet.\n\nSee Also: @IsThings, @IsChrome",
+		"desc": "Checks if the user device is a tablet.\n\nSee Also: @IsChrome",
 		"retval": "bin",
 		"shortDesc": "Check if user device is a tablet"
 	},
@@ -6879,7 +6903,7 @@
 	"SendMail": {
 		"desc": "#SendMail.md",
 		"pNames": ["address", "subject", "body", "attach", "type", "options"],
-		"pTypes": ["str", "str", "str", "str_pth", "str_mim", "str_com-SendTo"],
+		"pTypes": ["str", "str", "str", "str_pth", "str_mim", "str-SendTo"],
 		"shortDesc": "Open the EMail app and autofill fields"
 	},
 	"SendMessage": {
@@ -6962,12 +6986,6 @@
 		"pNames": ["dpi"],
 		"pTypes": ["num_int"],
 		"shortDesc": "Changes the dpi value for any control creatred afterwards"
-	},
-	"SetDescription": {
-		"desc": "?",
-		"pNames": ["text"],
-		"pTypes": ["str"],
-		"shortDesc": "?"
 	},
 	"SetInBackground": {
 		"desc": "Set the current service to run in the background.\n\nSee Also: @StartService, @SetInForeground.",
@@ -7090,7 +7108,7 @@
 	"SetPosition": {
 		"desc": "Change the main app's position and size. Mostly used for transparent apps.",
 		"pNames": ["left", "top", "width", "height", "options"],
-		"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str_com-px"],
+		"pTypes": ["num_frc", "num_frc", "num_frc", "num_frc", "str-px"],
 		"shortDesc": "Change app position and size"
 	},
 	"SetPriority": {
@@ -7162,7 +7180,7 @@
 	"SetVolume": {
 		"desc": "Set the volume of a given volume type as a number between 0 and 1.\n\nSee Also: @GetVolume",
 		"pNames": ["stream", "level", "options"],
-		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_frc", "str_com-ShowUI"],
+		"pTypes": ["str-Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall", "num_frc", "str-ShowUI"],
 		"shortDesc": "Change volume of a given audio type"
 	},
 	"SetWifiApEnabled": {
@@ -7184,7 +7202,7 @@
 		"pTypes": ["str", "str-title:str\\:checked:bin||lst_obj-{ title:str, check:bin }", {
 			"pNames": ["data"],
 			"pTypes": ["obj-{ title:str, checked:bin }"]
-		}, "num_frc", "num_frc", "str-sun-moon"],
+		}, "num_frc", "num_frc", "str-sun-moon:shows sun and moon icons instead of default check boxes"],
 		"retval": "dso-CheckList",
 		"shortDesc": "Shows a CheckList"
 	},
@@ -7220,7 +7238,7 @@
 	"ShowProgressBar": {
 		"desc": "Shows a dialog with a bar indicating the current progress of a certain thing.\n\nSee Also: @UpdateProgressBar, @HideProgressBar",
 		"pNames": ["title", "percent", "options"],
-		"pTypes": ["str", "num_prc", "str_com-Light"],
+		"pTypes": ["str", "num_prc", "str-Light"],
 		"shortDesc": "Show a progress bar dialog"
 	},
 	"ShowTextDialog": {
@@ -7235,7 +7253,7 @@
 	"ShowTip": {
 		"desc": "Shows a tooltip message on the screen.",
 		"pNames": ["message", "left", "top", "timeOut", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "num_mls", "str_com-Down"],
+		"pTypes": ["str", "num_frc", "num_frc", "num_mls", "str-Down"],
 		"shortDesc": "Shows a tooltip message on the screen"
 	},
 	"SimulateDrag": {

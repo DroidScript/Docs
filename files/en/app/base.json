@@ -31,17 +31,17 @@
 		"shortDesc": "Set the focus to the control for immediate access"
 	},
 	"#1197564340": { "name": "GetAbsHeight",
-		"desc": "Get the absolute height of the control in pixels.",
+		"desc": "Get the absolute height of the control in pixels.\nNote that unlike the objects margins its padding does change this value.",
 		"retval": "num_int",
 		"shortDesc": "Get the control height in pixels"
 	},
 	"#1128215329": { "name": "GetAbsWidth",
-		"desc": "Get the absolute width of the control in pixels.",
+		"desc": "Get the absolute width of the control in pixels.\nNote that unlike the objects margins its padding does change this value.",
 		"retval": "num_int",
 		"shortDesc": "Get the control width in pixels"
 	},
 	"#2576212953": { "name": "GetHeight",
-		"desc": "Get the height of the control as screen height relative float or in pixels with the **px** option.",
+		"desc": "Get the height of the control as screen height relative float or in pixels with the **px** option.\nNote that unlike the objects margins its padding does change this value.",
 		"pNames": ["options"],
 		"pTypes": ["str-px"],
 		"retval": "num",
@@ -63,7 +63,7 @@
 		"desc": "Returns data about the position and size of the control.\nIf the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control.\nThe **px** options turns the relative values into pixels.",
 		"pNames": ["options"],
 		"pTypes": ["str-screen,px"],
-		"retval": "obj-{ left:num, top:num, right:num, bottom:num }",
+		"retval": "obj-{ left:num, top:num, width:num, height:num }",
 		"shortDesc": "Returns data about position and size"
 	},
 	"#2387569276": { "name": "GetText",
@@ -91,7 +91,7 @@
 		"shortDesc": "Returns the current visibility state"
 	},
 	"#1321469131": { "name": "GetWidth",
-		"desc": "Get the width of the control as screen width relative float or in pixels with the **px** option.",
+		"desc": "Get the width of the control as screen width relative float or in pixels with the **px** option.\nNote that unlike the objects margins its padding does change this value.",
 		"pNames": ["options"],
 		"pTypes": ["str-px"],
 		"retval": "num",
@@ -170,6 +170,12 @@
 		"pNames": ["color", "mode"],
 		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
 		"shortDesc": "Adjust the visual color effect with different BlendModes"
+	},
+	"#0937259723": { "name": "SetDescription",
+		"descSetEnabled": "Set a control description for accessibility",
+		"pNames": ["desc"],
+		"pTypes": ["str"],
+		"shortDesc": "Set accesibility description"
 	},
 	"#1602385882": { "name": "SetEnabled",
 		"desc": "En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.",
