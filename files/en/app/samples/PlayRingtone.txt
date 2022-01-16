@@ -1,4 +1,4 @@
-<sample Play Notificatinop Sound>
+<sample Play Notification Sound>
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );

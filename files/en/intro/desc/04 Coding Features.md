@@ -12,6 +12,12 @@ Defines the initial screen orientation your app will launch in
 These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.
 Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark.
 
+### cfg.Node
+Runs the app in NodeJS mode.
+
+### cfg.Hybrid
+Allows you to use MaterialUI controls in an html app.
+
 ### cfg.MUI
 Enables builtin material component support through the MUI object.
 <premium>

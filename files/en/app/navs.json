@@ -191,8 +191,8 @@
 		"SaveText",
 		"ClearValue",
 		"",
-		"CreateCloudStore",
-		"Delet eDatabase",
+		"CreateCloundStore",
+		"DeleteDatabase",
 		"GetDatabaseFolder",
 		"OpenDatabase",
 		"QueryContent"
@@ -298,6 +298,7 @@
 	"Files": [
 		"FileExists",
 		"ReadFile",
+		"ReadFileData",
 		"WriteFile",
 		"ReplaceInFile",
 		"CopyFile",
@@ -315,6 +316,7 @@
 		"IsFolder",
 		"MakeFolder",
 		"ListFolder",
+		"WalkFolder",
 		"CopyFolder",
 		"RenameFolder",
 		"DeleteFolder",
@@ -337,6 +339,7 @@
 		"ExtractAssets",
 		"ExtractPlugins",
 		"GetResourceId",
+		"RealPath",
 		"Uri2Path"
 	],
 	"Graphics": [

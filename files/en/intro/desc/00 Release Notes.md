@@ -1,6 +1,107 @@
 <!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
 
-### DS 211b1
+## DS 2.50 (31-Dec-2021)
+- Fixed ctrl.Batch call for base methods (use underscore)
+- Added app.PreventWifiSleep() to IDE server code (not sure it will help).
+- Fixed crash issues on ListView related to blurry icon fix.
+- Sped up app icon list even more and fixed its light mode text color.
+- Hidden 'SDK' menu for Android 10 or newer (scoped storage issues).
+
+### DS 2.17b1 (23-Dec-2021)
+- Added new 'Node' app type - cfg.Node.
+- Sped up app icon list display and app startup.
+- Added typeId field to every DS object.
+- Added app.Show/Hide methods.
+- Added obj.Batch() for faster batched method calls (set ctrl props all at once).
+- Added ReadFile and WriteFile to extension.js.
+- Introduced new 'glob' object for storing global variables (shorter alternative to app.data)
+- Improved MUI code completion/help in wifi-ide.
+- Increased size of wifi-ide tooltip docs jump link, changed from '?' to '...'.
+- Improved ide.AddModule() method (now shows yes/no dialog)
+- Fixed zip path traversal vulnerability (causes Google Play warning)
+- Added app.WalkFolder for recursive listing (use same options as listFolder).
+- Added 'NoEmpty' option to app.ListFolder and app.WalkFolder (hides empty folders)
+- Added 'Project' option to app.ListFolder (shows DS project folders only)
+- Added new extension function - openEditorFile( filename, lineOrPattern )
+
+### DS 2.14b1 (07-Dec-2021)
+- Added 'Music Sequencer' sample.
+- Added 'Synth Song Player' sample.
+- Fixed Music docs dark theme issue in wifi ide.
+- Fixed blurry icons in list control (when > 64dip).
+- Improved app -> node messaging reliability.
+- Added ide.AddModule() method (adds a node module from code)
+- app.Script() now 'defers' execution by default.
+- app.Script() now has noDefer parameter (causes inline load of script)
+- Errors in app.Script() includes are now highlighted.
+- Fixed language extension bug that caused loss of code changes.
+- Added new CloudStore extension to the WiFi IDE (for premium users).
+- Modified app.GetAppPath() to return full path to resources when in APK.
+- Added app.ReadFileData(file,mode) method ('base64','hex','int','ascii').
+- Fixed music component so it works inside APKs.
+- DS and all exported APKs are both 64bit and 32bit compatible by default.
+- mui: Added Add\*\*\* methods to MUI.
+- mui: Added SetColor method to Buttons
+- mui: Added SetColor method to FABs
+- mui: Button padding is added to button with null width.
+- mui: Add SetText method to FAB
+- mui: Added Add\*\*\* method to each control.
+- mui: Pass TextEdit control as param to pickers.
+- mui: Added SetTextEdit method to pickers.
+- mui: Added touch discovery to TextEdits
+- mui: Added SetOnTouch method to TextEdits
+- mui: Added 1 Outlined Button. A true material outline button.
+- mui: Added SetOnClose to AddBanner.
+- mui: Added SetOnClose to AddDialog.
+- mui: Redesign Modal dialog control.
+- mui: Added SetOnClose to AddModal.
+- mui: Added 'Full' options to AddModal.
+- mui: Fixed minor glitches on CreateDialog.
+- mui: Added SetTextEdit method to ListDialogs.
+- mui: Added SetOnReady and SetOnProgress method on DataTable
+
+### DS 2.13b1 (18-Nov-2021)
+- Fixed !addmodule command on slower devices.
+- Icon buttons sample fixed.
+- Plugin exceptions are now shown in debug log.
+- SysProc component now sets HOME and TMPDIR environment vars if none provided.
+- Fixed bug in 'packages' param of app.SetKioskMode() method.
+- Added 'Background Job' template to device IDE.
+- Fixed bug where version part of plugin names were not stripped off.
+- Blocked the use of 'Service' and 'Job' as app names.
+- MUI assets are now excluded from APKs if not used.
+- Changed camera profile for front camera recording.
+- Updated to newer APK/AAB v3 signature method.
+- Added RealPath() conversion to app.OpenDatabase() method.
+- Fixed app.GetIPAddress() for Android 11.
+- Fixed CustomTabs on Android 11.
+- Added 'Custom Browser Tabs' sample.
+- Fixed Speech Recognition on Android 11.
+- Fixed TextToSpeech on Android 11.
+- Fixed Background services for Android 11.
+- AAB files are now automatically signed with user.keystore file.
+- Added OnDone() callback to Node object.
+
+### DS 2.12b1 (23-Jul-2021)
+- Updated to Google Play Billing libraries v4.
+- Fixed case sensitivity issue with Desyrel font.
+- Allowed use of lib sub folder in plugins (for .so files)
+- Old Plugin folders are deleted when re-installing plugins
+- app.CreateNode() now supports 'paths' parameter (same as nodejs NODE_PATH env variable)
+- mui: Added ShowMenu() method to show menu on a given control
+- mui: Added SetList() method to all list control
+- mui: Added animation to spinner
+- mui: Added SetHint to Spinner
+- mui: Added SetList to Spinner
+- mui: Added SetList to Menu
+- mui: Added SetOnIconTouch to TextEdits with icons
+
+### DS 2.11b2 (23-Jul-2021)
+- Fixed issues with Node on 64bit devices and scoped devices.
+- Added app.RealPath method. Converts short file paths to full paths.
+- Improved 'plugin not licensed' error handling.
+
+### DS 2.11b1 (16-Jul-2021)
 - Added support for NodeJS scripts and modules!
 - Added new !addmodule command to wifi ide command box.
 - Improved wifi ide file browser drag-drop handling.
@@ -18,7 +119,7 @@
 - BuildAPK dialog now saves version and package name for each project.
 - autoPermissions value in build.json now also checked when running app in ide.
 - App now shows warning before exiting if required dangerous permissions are missing.
-- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').
+- Added new noPeup to 205 additionsup to 205 additionsrmsAction field in build.json (set to 'exit', 'continue', 'default').
 - Added new !getperms command to wifi ide (gets dangerous permissions of current app).
 - Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)
 - Fixed broken wiki link in docs/resources.
@@ -35,7 +136,7 @@
 
 ### DS 208b1 (20-Apr-2021)
 - Added extra support for deep linking with 'urlScheme' tag in build.json.
-- Added default deep link scheme 'ds://*' and 'http://ds/*' for testing apps in IDE.
+- Added default deep link scheme 'ds://\*' and 'http://ds/\*' for testing apps in IDE.
 - Fixed img.Play() method (should start animated gifs).
 - mui: Added new Spinner control.
 - mui: Added SetOnTouch method to DataTable.

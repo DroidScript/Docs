@@ -164,10 +164,6 @@
 		"pTypes": ["str-number"],
 		"shortDesc": "Calls a phone number"
 	},
-	"ScheduleJob": {
-		"desc": "Cancels scheduled background jobs\n\nSee Also: @ScheduleJob",
-		"shortDesc": "Cancels a scheduled background job"
-	},
 	"CheckLicense": {
 		"desc": "will trigger a standard Google Play license check for the running application (if it is a paid App).\nThe key can be found under “Development Tools > Services and API's” in the GooglePlay developer console.\nIf the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.",
 		"pNames": ["key"],
@@ -2959,6 +2955,13 @@
 			}
 		}
 	},
+	"CreateNode": {
+		"abbrev": "nod",
+		"desc": "Creates a NodeJS background process with all the functionality of common node.js.\nFor more details have a look at the Node docs in the @../Plugins page",
+		"pNames": ["paths", "options"],
+		"pTypes": ["str_pth-NODE_PATH env variable", "str"],
+		"shortDesc": "CreateNode"
+	},
 	"CreateNotification": {
 		"abbrev": "ntf",
 		"desc": "#CreateNotification.md",
@@ -4268,7 +4271,7 @@
 	},
 	"CreateSysProc": {
 		"abbrev": "sys",
-		"desc": "Creates a SystemProcedure of a command shell (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.",
+		"desc": "Creates a shell SystemProcess (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.\n\nIf env or dir are not provided HOME and TMDDIR are set by the component.",
 		"pNames": ["cmd", "env", "dir", "options"],
 		"pTypes": ["str:program name-sh|su|busybox", "str", "str_ptd", "str_com-combine:combines stdout and stderr|builder:force use of proc builder"],
 		"retval": "dso-SysProc",
@@ -5866,7 +5869,7 @@
 		"shortDesc": "Get current app name"
 	},
 	"GetAppPath": {
-		"desc": "Returns the path to the app assets folder. If it's a DroidScript project the path should be “/sdcard/DroidScript/appname” - If it is an apk it is “/Assets”\n\nSee Also: @GetPath, @GetPrivateFolder",
+		"desc": "Returns the path to the app assets folder. In a DroidScript project the path should be “/sdcard/DroidScript/APPNAME”\nIn an apk it instead returns the absolute path to the “/Assets” folder\n\nSee Also: @GetPath, @GetPrivateFolder",
 		"retval": "str_pth",
 		"shortDesc": "Get path to app assets"
 	},
@@ -6476,7 +6479,7 @@
 	"ListFolder": {
 		"desc": "#ListFolder.md",
 		"pNames": ["path", "filter", "limit", "options"],
-		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only"],
+		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only,NoEmpty:hide empty folders,project:Shows DS project folders only"],
 		"retval": "lst-[ paths:str_pth ]",
 		"shortDesc": "Get a list of files ans folders contained in a specific folder"
 	},
@@ -6791,6 +6794,18 @@
 		"pTypes": ["str_ptc", "str-US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1|base64"],
 		"shortDesc": "Read the content of a local file"
 	},
+	"ReadFileData": {
+		"desc": "Reads file data from the local filesystem and returns its contents.\n\nSee also: @WriteFile",
+		"pNames": ["file", "mode"],
+		"pTypes": ["str_pfa", "str-base64|hex|int|ascii"],
+		"shortDesc": "Read local file content data"
+	},
+	"RealPath": {
+		"desc": "Converts short file paths to full paths",
+		"pNames": ["path"],
+		"pTypes": ["str_pth"],
+		"shortDesc": "Convert short to full path"
+	},
 	"RedirectAssets": {
 		"desc": "Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.",
 		"pNames": ["dir"],
@@ -6874,9 +6889,9 @@
 		"shortDesc": "Schedules background jobs"
 	},
 	"Script": {
-		"desc": "Loads a local JavaScript file synchronously to your app to make its functionality available in your app.\n\nSee Also: @LoadScript",
-		"pNames": ["file"],
-		"pTypes": ["str_ptf"],
+		"desc": "Loads a local JavaScript file to your app to make its functionality available in your app.\nBy default it is loaded asynchronously unless you pass the “NoDefer” option.\n\nSee Also: @LoadScript",
+		"pNames": ["file", "options"],
+		"pTypes": ["str_ptf", "str-NoDefer-load script inline"],
 		"shortDesc": "Synchronously import an external JavaScript file"
 	},
 	"SendFile": {
@@ -7397,6 +7412,13 @@
 	"WakeUp": {
 		"desc": "Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)\n\nSee Also: @GoToSleep",
 		"shortDesc": "Wake the screen up"
+	},
+	"WalkFolder": {
+		"desc": "Lists a directory recursively similar to app.@ListFolder",
+		"pNames": ["path", "filter", "limit", "options"],
+		"pTypes": ["str_pth", "str", "num_int", "str_com-Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only,NoEmpty:hide empty folders,project:Shows DS project folders only"],
+		"retval": "lst-[ paths:str_pth ]",
+		"shortDesc": "Lists the contents of a folder recursively"
 	},
 	"WifiConnect": {
 		"desc": "Connect to a WiFi network by specifying the ssid and a password. See Also: @WifiScan, @SetOnWifiChange, @SetWifiApEnabled",

@@ -14,6 +14,12 @@
 		"pTypes": ["num--180..180", "num--100..100", "num--100..100", "num-0..100"],
 		"shortDesc": "Adjust the visual color effect of the control"
 	},
+	"#2357239857": { "name": "Batch",
+		"desc": "Batch method calls to be able to set all object's properties at once.",
+		"pNames": ["properties"],
+		"pTypes": ["obj-{ COMMAND:lst-args }"],
+		"shortDesc": "Batch method calls to set object properties"
+	},
 	"#1362225380": { "name": "ClearFocus",
 		"desc": "Removes the focus of the control so that the user no longer has immediate access to it.",
 		"shortDesc": "Removes the focus of the control"
@@ -67,7 +73,7 @@
 		"shortDesc": "Returns data about position and size"
 	},
 	"#2387569276": { "name": "GetText",
-		"desc": "Returns the current displayed text of the control.",
+		"desc": "Returns the current1605064214 displayed text of the control.",
 		"retval": "str",
 		"shortDesc": "Returns the currently contained text"
 	},
