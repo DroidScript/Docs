@@ -317,11 +317,15 @@
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetTextEdit</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">textEdit</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 
 	</div>
@@ -336,6 +340,7 @@
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_006" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> An MUI TextEdit control</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> An array of objects of the form {name: 'string', icon: 'material-icon', color: 'string'}</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">name</a>,
@@ -360,8 +365,9 @@
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lsd.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lsd.SetHeight</b><br>Change the height of the control</div>
 	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lsd.SetOnSelect</b><br>Calls a function when a user selects an item in the list</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lsd.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lsd.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lsd.SetTextEdit</b><br>Pass texedit control to display input values</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lsd.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lsd.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 </div>
 </body>
 

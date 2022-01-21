@@ -193,7 +193,11 @@
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">SetTextEdit</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">textEdit</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 
 	</div>
@@ -204,6 +208,7 @@
 	<div data-role="popup" id="pop_num_frc" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>fraction (0..1)</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> An MUI TextEdit control</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String: <br>  hexadecimal: “#rrggbb”, “#aarrggbb”<br>  colourName: “red”, “green”, ...: “The selected color”')">color</a>
 	)</div>
@@ -221,7 +226,8 @@
 	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>clp.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
 	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>clp.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>clp.SetOnSelect</b><br>Calls a function when a user click the OK button</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>clp.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>clp.SetTextEdit</b><br>Pass texedit control to display input values</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>clp.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 </div>
 </body>
 

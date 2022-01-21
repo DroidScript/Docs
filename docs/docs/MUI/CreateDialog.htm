@@ -209,36 +209,40 @@
 			<a href="#pop_str_htm" data-transition="pop" data-rel="popup">str</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">SetOnTouch</a>(
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">SetOnClose</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetOnTouch</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">SetText</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">SetTextColor</a>(
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">SetTextColor</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">SetTextSize</a>(
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">SetTextSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">size</a>,
 			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">SetTitle</a>(
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetTitle</a>(
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">newTitle</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetTitleColor</a>(
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">SetTitleColor</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
 			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 
 	</div>
@@ -260,7 +264,8 @@
 	<div data-role="popup" id="pop_str_00a" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“px”</docstr> or <docstr>“dip”</docstr> or <docstr>“sp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">pl</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('scales text in proportion with device resolution')">ps</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_00b" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“New title text”</docstr></div>
 	<div data-role="popup" id="pop_str_00c" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">isOkBtnClick</a>,
 		<a href="" onclick="app.ShowPopup('String')">btnText</a>
 	)</div>
@@ -282,14 +287,15 @@
 	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>dlg.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>dlg.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>dlg.SetHtml</b><br>Change the current text of the control to html-formatted text.</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>dlg.SetOnTouch</b><br>Calls a function when buttons are click (prev. SetOnTouchOK)</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>dlg.SetText</b><br>Change the currently displayed text in the control.</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>dlg.SetTextColor</b><br>Change the text color of the contained text.</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>dlg.SetTextSize</b><br>Change the size of the contained text.</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>dlg.SetTitle</b><br>Sets a new title text</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>dlg.SetTitleColor</b><br>Change the color of the title text</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>dlg.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>dlg.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>dlg.SetOnClose</b><br>Define a callback to be called when the dialog of control is closed.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>dlg.SetOnTouch</b><br>Calls a function when buttons are click (prev. SetOnTouchOK)</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>dlg.SetText</b><br>Change the currently displayed text in the control.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>dlg.SetTextColor</b><br>Change the text color of the contained text.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>dlg.SetTextSize</b><br>Change the size of the contained text.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>dlg.SetTitle</b><br>Sets a new title text</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>dlg.SetTitleColor</b><br>Change the color of the title text</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>dlg.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>dlg.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
 </div>
 </body>
 

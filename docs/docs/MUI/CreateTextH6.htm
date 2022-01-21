@@ -55,35 +55,21 @@
 		</div>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - All Headings</h3>
+			<h3>Example - Sample</h3>
 			<div id="examp1" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
-				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        h1 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth1</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
+				        h6 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Some Heading"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token string">"h6,Medium,Multiline"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        h2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth2</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
+				        h6 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddTextH6</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Some Heading"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Medium"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        h3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth3</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
-				        <br>
-				        h4 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth4</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
-				        <br>
-				        h5 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth5</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
-				        <br>
-				        h6 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTexth6</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
+				        h6 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextH6</span><span class="token punctuation">(</span><span class="token string">"Some Heading"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Medium"</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h6<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>

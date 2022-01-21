@@ -54,20 +54,21 @@
 		</div>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - All Headings</h3>
+			<h3>Example - Sample</h3>
 			<div id="examp1" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
-				    <br>
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        h <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextJumbo</span><span class="token punctuation">(</span><span class="token string">"Some jumbo text here"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><br>
+				        jum <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Some jumbo text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"Jumbo,Multiline"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        jum <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddTextJumbo</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Some jumbo text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Medium"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        jum <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextJumbo</span><span class="token punctuation">(</span><span class="token string">"Some jumbo text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Medium"</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>jum<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>

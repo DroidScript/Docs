@@ -55,7 +55,7 @@
 		</div>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - All Headings</h3>
+			<h3>Example - Paragraph-Sample</h3>
 			<div id="examp1" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
@@ -68,8 +68,13 @@
 				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
 				        <span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis nunc nec orci finibus blandit. Nam nec consectetur odio. Sed a erat ultrices lectus volutpat malesuada. Aliquam id dictum metus."</span><br>
-				        p <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextParagraph</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><br>
+				        <br>
+				        p1 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Multiline,Paragraph,Light"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        p2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddTextParagraph</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        p3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateTextParagraph</span><span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>p3<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>

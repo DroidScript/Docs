@@ -117,6 +117,30 @@
 		</div>
 
 
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Add Method</h3>
+			<div id="examp3" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn1 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddButtonFlat</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 1"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				        btn2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddButtonFlat</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"[fa-heart] BUTTON 2"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				        btn3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddButtonFlat</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 3"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>green<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>ButtonFlat</strong> object:</p>
 
