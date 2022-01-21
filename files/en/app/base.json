@@ -15,7 +15,7 @@
 		"shortDesc": "Adjust the visual color effect of the control"
 	},
 	"#2357239857": { "name": "Batch",
-		"desc": "Batch method calls to be able to set all object's properties at once.",
+		"desc": "Batch method calls to be able to set all object's properties at once.\nNote that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out)\nInherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>",
 		"pNames": ["properties"],
 		"pTypes": ["obj-{ COMMAND:lst-args }"],
 		"shortDesc": "Batch method calls to set object properties"

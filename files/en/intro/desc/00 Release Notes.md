@@ -119,7 +119,7 @@
 - BuildAPK dialog now saves version and package name for each project.
 - autoPermissions value in build.json now also checked when running app in ide.
 - App now shows warning before exiting if required dangerous permissions are missing.
-- Added new noPeup to 205 additionsup to 205 additionsrmsAction field in build.json (set to 'exit', 'continue', 'default').
+- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').
 - Added new !getperms command to wifi ide (gets dangerous permissions of current app).
 - Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)
 - Fixed broken wiki link in docs/resources.

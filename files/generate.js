@@ -863,7 +863,7 @@ function addMarkdown(s)
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
 		// additional notes
 		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
-		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*([a-z]+?))(#\w+)?\b/gi, '$1<a href="$2.htm$5" data-ajax="false">$4</a>') // @DocReference
+		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#\w+)?\b/gi, '$1<a href="$2.htm$5" data-ajax="false">$4</a>') // @DocReference
 		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
 	// convert int to 3-digit hex

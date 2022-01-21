@@ -292,6 +292,7 @@
 		"retval": "dso-AudioRecorder",
 		"shortDesc": "Returns an AudioRecorder object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetData": {
 				"desc": "Returns a list of frequency values. The amount is dependent on the set frequency.",
 				"retval": "lst-[ frequencies:num_int ]",
@@ -352,6 +353,7 @@
 		"retval": "dso-BluetoothList",
 		"shortDesc": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-BluetoothList",
@@ -376,6 +378,7 @@
 		"retval": "dso-BluetoothSerial",
 		"shortDesc": "Communicate with other Bluetooth devices",
 		"subf": {
+			"Batch": "#2357239857",
 			"Clear": {
 				"desc": "Clears the Bluetooth buffer of the serial connection.",
 				"shortDesc": "Clears the Bluetooth buffer"
@@ -480,6 +483,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -558,6 +562,7 @@
 				"pTypes": ["str_ptd", "str-File_n#_motion", "num_int"],
 				"shortDesc": "Takes a picture if a motion was detected"
 			},
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"FindFaces": {
 				"desc": "Finds faces in the current camera view.",
@@ -810,6 +815,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -883,6 +889,7 @@
 		"retval": "dso-CloudStore",
 		"shortDesc": "Returns a new CloudStore object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-CloudStore",
@@ -947,6 +954,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
@@ -1163,6 +1171,7 @@
 		"retval": "dso-Crypt",
 		"shortDesc": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
+			"Batch": "#2357239857",
 			"Decrypt": {
 				"desc": "Decrypt text with a key.",
 				"pNames": ["text", "password"],
@@ -1210,6 +1219,7 @@
 				"shortDesc": "Add content layout"
 			},
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Dismiss": "#1924613953",
 			"EnableBackKey": {
@@ -1330,6 +1340,7 @@
 		"retval": "dso-Downloader",
 		"shortDesc": "Returns a new Downloader object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Download": {
 				"desc": "Start downloading a file.",
 				"pNames": ["url", "fldr", "name", "headers"],
@@ -1400,6 +1411,7 @@
 		"retval": "dso-Email",
 		"shortDesc": "Returns an Email object for user to send emails",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Email",
@@ -1457,6 +1469,7 @@
 		"retval": "dso-File",
 		"shortDesc": "Returns a new File object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Close": {
 				"desc": "Close File",
 				"shortDesc": "Close File"
@@ -1568,6 +1581,7 @@
 		"shortDesc": "CreateGameView",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Execute": {
 				"desc": "Execute some code inside the GameView.",
@@ -1633,6 +1647,7 @@
 				"isval": true,
 				"retval": "num_flt"
 			},
+			"Batch": "#2357239857",
 			"canvas": {
 				"desc": "[HTMLDivElement]",
 				"isval": true,
@@ -1847,6 +1862,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"Clear": {
 				"desc": "Clears everything on the image except the background.",
 				"shortDesc": "Clears the image content"
@@ -2136,6 +2152,7 @@
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ChildToFront": {
 				"desc": "Moves a child in front of all other children.",
 				"pNames": ["child"],
@@ -2274,6 +2291,7 @@
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2539,6 +2557,7 @@
 		"shortDesc": "Returns a new ListDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -2577,6 +2596,7 @@
 		"retval": "dso-Locator",
 		"shortDesc": "Returns a new Locator object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetBearingTo": {
 				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.",
 				"pNames": ["latitude", "longitude"],
@@ -2627,6 +2647,7 @@
 		"retval": "dso-MediaPlayer",
 		"shortDesc": "Returns a new MediaPlayer object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Close": {
 				"desc": "Close the media player and thus make it unuseable for further use.",
 				"shortDesc": "Close the media player."
@@ -2722,6 +2743,7 @@
 		"retval": "dso-MediaStore",
 		"shortDesc": "Returns a new MediaStore object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetAlbumArt": {
 				"desc": "Loads the album image to an existing image:dso-CreateImage.",
 				"pNames": ["image", "id", "options"],
@@ -2808,6 +2830,7 @@
 				"pTypes": ["str_url", "num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
 				"shortDesc": "Calls the OnReceive callback for incoming TCP data"
 			},
+			"Batch": "#2357239857",
 			"Close": {
 				"desc": "Closes the NetClient socket.",
 				"shortDesc": "Closes the NetClient socket"
@@ -2957,7 +2980,7 @@
 	},
 	"CreateNode": {
 		"abbrev": "nod",
-		"desc": "Creates a NodeJS background process with all the functionality of common node.js.\nFor more details have a look at the Node docs in the @../Plugins page",
+		"desc": "#CreateNode.md",
 		"pNames": ["paths", "options"],
 		"pTypes": ["str_pth-NODE_PATH env variable", "str"],
 		"shortDesc": "CreateNode"
@@ -2970,6 +2993,7 @@
 		"retval": "dso-Notification",
 		"shortDesc": "Returns a new Notification object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
 				"pNames": ["id"],
@@ -3034,6 +3058,7 @@
 		"retval": "dso-Nxt",
 		"shortDesc": "Returns a new Nxt object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Beep": {
 				"desc": "Play tone with given frequency for a given time in milliseconds.",
 				"pNames": ["frequency", "duration"],
@@ -3274,6 +3299,7 @@
 				"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str-px"],
 				"shortDesc": "Adds layout to overlay"
 			},
+			"Batch": "#2357239857",
 			"GetParent": "#3557841648",
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -3301,6 +3327,7 @@
 		"retval": "dso-PhoneState",
 		"shortDesc": "Returns a new PhoneState object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-PhoneState",
@@ -3331,6 +3358,7 @@
 		"retval": "dso-PlayStore",
 		"shortDesc": "Returns a new PlayStore object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetBillingInfo": {
 				"desc": "Get product info of paid items from Google Play.",
 				"pNames": ["prodIDs", "callback", "options"],
@@ -3384,6 +3412,7 @@
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"DestroyChild": {
 				"desc": "Removes and releases a child object.",
@@ -3468,6 +3497,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -3545,6 +3575,7 @@
 		"retval": "dso-Sensor",
 		"shortDesc": "Returns a new Sensor object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetAzimuth": {
 				"desc": "Returns the first/x/azimuth value of a sensor.",
 				"retval": "num",
@@ -3615,6 +3646,7 @@
 		"retval": "dso-Service",
 		"shortDesc": "Returns a new Service object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Service",
@@ -3671,6 +3703,7 @@
 				"pTypes": ["obj-SWlay"],
 				"shortDesc": "Adds a layout to the SmartWatch"
 			},
+			"Batch": "#2357239857",
 			"CreateImage": {
 				"desc": "Creates a SmartWatch Image. See also: @CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
@@ -3806,6 +3839,7 @@
 		"retval": "dso-SMS",
 		"shortDesc": "Returns a new SMS object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-SMS",
@@ -3845,6 +3879,7 @@
 		"retval": "dso-SpeechRec",
 		"shortDesc": "Returns a new SpeechRec object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Cancel": {
 				"desc": "Stop recognizing speech and break other processes.",
 				"shortDesc": "Stop recognition"
@@ -3909,6 +3944,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -3997,6 +4033,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -4068,6 +4105,7 @@
 		"retval": "dso-Synth",
 		"shortDesc": "Returns a new Synth object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Synth",
@@ -4277,6 +4315,7 @@
 		"retval": "dso-SysProc",
 		"shortDesc": "Returns a new SysProc object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Err": {
 				"desc": "Read data from stderr",
 				"pNames": ["maxLines", "options"],
@@ -4351,6 +4390,7 @@
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"_ChildToFront": {
 				"desc": "Moves a child in front of all other children.",
 				"name": "ChildToFront",
@@ -4504,6 +4544,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -4610,6 +4651,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
@@ -4772,6 +4814,7 @@
 		"shortDesc": "Returns a new Theme object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Theme",
@@ -4930,6 +4973,7 @@
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -5001,6 +5045,7 @@
 		"retval": "dso-USBSerial",
 		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-USBSerial",
@@ -5088,6 +5133,7 @@
 		"shortDesc": "Returns a new VideoView object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -5210,6 +5256,7 @@
 		"pTypes": ["str_com"],
 		"shortDesc": "Returns a new Wallpaper object",
 		"subf": {
+			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"shortDesc": "GetType"
@@ -5241,6 +5288,7 @@
 				}],
 				"shortDesc": "Called when servlet received a message"
 			},
+			"Batch": "#2357239857",
 			"Disconnect": {
 				"desc": "Disconnects a client from the WebServer.",
 				"pNames": ["ip", "id"],
@@ -5318,6 +5366,7 @@
 		"retval": "dso-WebSocket",
 		"shortDesc": "Returns a new WebSocket object",
 		"subf": {
+			"Batch": "#2357239857",
 			"Close": {
 				"desc": "Close the web socket.",
 				"shortDesc": "Close web socket"
@@ -5375,6 +5424,7 @@
 				"desc": "Loads the previous page from history.",
 				"shortDesc": "Load previous page"
 			},
+			"Batch": "#2357239857",
 			"CanGoBack": {
 				"desc": "Check whether the user can travel back in history.",
 				"retval": "bin",
@@ -5578,6 +5628,7 @@
 		}, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"shortDesc": "CreateWizard",
 		"subf": {
+			"Batch": "#2357239857",
 			"Dismiss": "#1924613953",
 			"Finish": {
 				"desc": "Indicate that the Wizard is going to finish on the next page.",
@@ -5616,6 +5667,7 @@
 		"shortDesc": "Returns a new YesNoDialog object",
 		"subf": {
 			"AdjustColor": "#1794786072",
+			"Batch": "#2357239857",
 			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -5670,6 +5722,7 @@
 				"pTypes": ["str:zip path", "str"],
 				"shortDesc": "Add text to the zip"
 			},
+			"Batch": "#2357239857",
 			"Close": {
 				"desc": "Closes the zip util.",
 				"shortDesc": "Close ZipUtil"
@@ -6286,6 +6339,10 @@
 		"desc": "Checks if the device has a soft navigation bar on the screen.",
 		"retval": "bin",
 		"shortDesc": "Checks if device has soft keys"
+	},
+	"Hide": {
+		"desc": "Hides the main app layout in order to save performance when (re)creating controls.\n\nSee Also: @Show",
+		"shortDesc": "Hide the main app layout"
 	},
 	"HideKeyboard": {
 		"desc": "Hides the device keyboard if it is currently shown.\n\nSee Also: @ShowKeyboard, @SetOnShowKeyboard",
@@ -7209,6 +7266,10 @@
 		"pNames": ["enable"],
 		"pTypes": ["bin"],
 		"shortDesc": "En/Disable Wifi on the device"
+	},
+	"Show": {
+		"desc": "Shows the main app layout.\n\nSee Also: @Hide",
+		"shortDesc": "Show main app layout"
 	},
 	"ShowCheckList": {
 		"abbrev": "ckl",
