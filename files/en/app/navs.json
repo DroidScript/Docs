@@ -192,7 +192,7 @@
 		"ClearValue",
 		"",
 		"CreateCloudStore",
-		"DeleteDatabase",
+		"Delet eDatabase",
 		"GetDatabaseFolder",
 		"OpenDatabase",
 		"QueryContent"
