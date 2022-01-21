@@ -108,19 +108,23 @@
 		<p>The following methods are available on the <strong>SpeechRec</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Cancel</a>()
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Batch</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">properties</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetRMS</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>float</i>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Cancel</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“SpeechRec”</docstr>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetRMS</a>() → <b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>float</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">IsListening</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“SpeechRec”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">IsListening</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
 			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
@@ -130,28 +134,29 @@
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Recognize</a>()
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Recognize</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnError</a>(
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnError</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnReady</a>(
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnReady</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnResult</a>(
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetOnResult</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">Stop</a>()
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">Stop</a>()
 		</div>
 
 	</div>
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“NoBeep”</docstr>, <docstr>“Partial”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a>:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">error</a>
@@ -160,16 +165,17 @@
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">result</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>spr.Cancel</b><br>Stop recognizing speech and break other processes.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>spr.GetRMS</b><br>Returns the RMS value (Root Mean Square) from the audio recorder.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>spr.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>spr.IsListening</b><br>Check whether SpeechRec is currently listening.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>spr.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>spr.Recognize</b><br>Start recognizing speech.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>spr.SetOnError</b><br>Define a callback function which is called when an error occured.</div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>spr.SetOnReady</b><br>Define a callback function which is called when the SpeechRec object is ready for use.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>spr.SetOnResult</b><br>Define a callback function which is called when a text was successfully recognized</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>spr.Stop</b><br>Stop speech recording and start recognizing.</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>spr.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> SetBackColor_<span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>spr.Cancel</b><br>Stop recognizing speech and break other processes.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>spr.GetRMS</b><br>Returns the RMS value (Root Mean Square) from the audio recorder.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>spr.GetType</b><br>Returns the control class name.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>spr.IsListening</b><br>Check whether SpeechRec is currently listening.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>spr.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>spr.Recognize</b><br>Start recognizing speech.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>spr.SetOnError</b><br>Define a callback function which is called when an error occured.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>spr.SetOnReady</b><br>Define a callback function which is called when the SpeechRec object is ready for use.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>spr.SetOnResult</b><br>Define a callback function which is called when a text was successfully recognized</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>spr.Stop</b><br>Stop speech recording and start recognizing.</div>
 </div>
 </body>
 

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Best Practices</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Best Practices</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<a href="" onclick="jumpTo('General')">General</a><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('Performance')">Performance</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('UI')">UI</a><br>
+				- <a href="" onclick="jumpTo('Graphics / Animations')">Graphics / Animations</a><br>
+			</span><br>
+		</span><br>
+		</div>
+
+		<h1>General</h1>
+		<p>- Use the cfg object to enter specific app modes immediately (See <a href="04CodingFeatures.htm#The cfg object" data-ajax="false">Coding Features</a> for more details)<br>
+		- Use app.<a href="../app/Script.htm" data-ajax="false">Script</a> to load extra source files<br>
+		- Use app.Add* eqivalents to app.Create* to make your code shorter and cleaner<br>
+		- Use features that DS provides you instead of doing them yourself (ie. filtering ListFolder items)</p>
+		<h2>Performance</h2>
+		<h3>UI</h3>
+		<p>- Wrap your UI creation in app.Hide and app.Show<br>
+		- <grey>Use obj.<a href="../app/CreateLayout.htm" data-ajax="false">Batch</a> to do a whole bunch of configuration calls at one shot</grey><br>
+		- <grey>Use <span class="token function">_Boost</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> at the top of your main file</grey> to use a different backend bridge<br>
+		- Add a (optionally animated) splash screen while your app loads UI<br>
+		- Use app<span class="token punctuation">.</span><span class="token function"><a href="../app/SetDebugEnabled.htm" data-ajax="false">SetDebugEnabled</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> in your release version<br>
+		- Reduce the use of app.* calls (especially in loops) as it calls the backend bridge in most cases<br>
+		<span style="display:inline-block;padding-left:1em;">
+			- When initializing list controls use <a href="../app/CreateList.htm" data-ajax="false">precompiled item list</a> instead of calling AddItem multiple times<br>
+			- Apply styling to buttons and text boxes using the <docstr>“Html”</docstr> option<br>
+			- Use the premium <a href="../app.htm" data-ajax="false">app</a>.CreateTheme method for styling controls<br>
+		</span></p>
+		<h3>Graphics / Animations</h3>
+		<p>- <grey>Use cfg.<a href="04CodingFeatures.htm#NoDom" data-ajax="false">NoDom</a> to disable DOM elements</grey><br>
+		- Use app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> instead of setInterval<br>
+		- Use img<span class="token punctuation">.</span><span class="token function"><a href="../app/CreateImage.htm#SetAutoUpdate" data-ajax="false">SetAutoUpdate</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> and use manual img.<a href="../app/CreateImage.htm#Update" data-ajax="false">Update</a> calls<br>
+		- Switch to the <a href="../app/CreateGameView.htm" data-ajax="false">CreateGameView</a> control (using cfg.<a href="04CodingFeatures.htm#Game" data-ajax="false">Game</a>) as its generally faster and works in web browsers too<br>
+		- use the <docstr>“async”</docstr> option to load images</p>
+
+	</div>
+
+
+</div>
+</body>
+
+</html>

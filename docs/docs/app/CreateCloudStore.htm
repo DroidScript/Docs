@@ -81,39 +81,43 @@
 		<p>The following methods are available on the <strong>CloudStore</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Delete</a>(
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Batch</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">properties</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Delete</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“CloudStore”</docstr>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“CloudStore”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">List</a>(
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">List</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">filter</a>,
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Load</a>(
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Load</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Merge</a>(
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Merge</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Save</a>(
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Save</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_all" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetDescription</a>(
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetDescription</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">desc</a> )
 		</div>
 
@@ -123,37 +127,39 @@
 	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>Object</b></div>
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
 	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: “Entry Saved”')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: “Entry Saved”')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
-		<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">result</a>,
 		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
-		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">result</a>,
 		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
-		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">result</a>,
 		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
-		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_005')" data-transition="pop" data-rel="popup">result</a>,
 		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>cld.Delete</b><br>Deletes a file in the cloud.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>cld.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>cld.List</b><br>Lists files of the cloud.</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>cld.Load</b><br>Loads data from the cloud.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>cld.Merge</b><br>Merges an object with an already existing in the cloud.</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>cld.Save</b><br>Saves data in the cloud.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>cld.SetDescription</b><br>undefined</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>cld.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> SetBackColor_<span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>cld.Delete</b><br>Deletes a file in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>cld.GetType</b><br>Returns the control class name.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>cld.List</b><br>Lists files of the cloud.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>cld.Load</b><br>Loads data from the cloud.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>cld.Merge</b><br>Merges an object with an already existing in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>cld.Save</b><br>Saves data in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>cld.SetDescription</b><br>undefined</div>
 </div>
 </body>
 
