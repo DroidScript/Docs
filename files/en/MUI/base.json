@@ -355,5 +355,26 @@
         "pNames": ["height"],
 		"pTypes": ["num-Fraction of the screen height"],
 		"shortDesc": "Change the height of the control"
+    },
+    "#2114625702": { "name": "SetColor",
+        "desc": "Change the color of the control",
+        "pNames": ["color", "backColor"],
+		"pTypes": ["str_col", "str_col"],
+		"shortDesc": "Change the color of the control"
+    },
+    "#2114625302": { "name": "SetTextEdit",
+        "desc": "Pass texedit control to display input values",
+        "pNames": ["textEdit"],
+		"pTypes": ["obj-An MUI TextEdit control"],
+		"shortDesc": "Pass texedit control to display input values"
+    },
+    "#2114615302": { "name": "SetOnClose",
+        "desc": "Define a callback to be called when the dialog of control is closed.",
+		"pNames": ["callback"],
+		"pTypes": [{
+            "pNames": [],
+            "pTypes": []
+        }],
+		"shortDesc": "Called when the dialog or control has been closed."
     }
 }

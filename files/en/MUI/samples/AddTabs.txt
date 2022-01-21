@@ -1,0 +1,13 @@
+<sample AddPicker>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    lay = MUI.CreateLayout("Linear", "FillXY")
+    
+    tab = MUI.AddTabs(lay, "Movies,Games,Books", 1, 1, "fix")
+    
+    app.AddLayout( lay )
+}
+</sample> 

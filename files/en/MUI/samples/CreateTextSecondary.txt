@@ -10,8 +10,13 @@ function OnStart()
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
         var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        s = MUI.CreateTextSecondary(text)
-        lay.AddChild(s)
+
+        sec1 = MUI.AddText(lay, text, 0.9, null, "Secondary,Multiline,Light")
+
+        sec2 = MUI.AddTextSecondary(lay, text, 0.9, null, "Multiline", null, "Light")
+
+        sec3 = MUI.CreateTextSecondary(text, 0.9, null, "Multiline", null, "Light")
+        lay.AddChild(sec3)
 
     app.AddLayout(lay)
 }

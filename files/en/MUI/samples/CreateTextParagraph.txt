@@ -1,4 +1,4 @@
-<sample All Headings>
+<sample Paragraph-Sample>
 cfg.Light
 cfg.MUI
 
@@ -10,8 +10,13 @@ function OnStart()
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
         var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis nunc nec orci finibus blandit. Nam nec consectetur odio. Sed a erat ultrices lectus volutpat malesuada. Aliquam id dictum metus."
-        p = MUI.CreateTextParagraph(text)
-        lay.AddChild(p)
+        
+        p1 = MUI.AddText(lay, text, 0.9, null, "Multiline,Paragraph,Light")
+
+        p2 = MUI.AddTextParagraph(lay, text, 0.9, null, "Multiline", null, "Light")
+        
+        p3 = MUI.CreateTextParagraph(text, 0.9, null, "Multiline", null, "Light")
+        lay.AddChild(p3)
 
     app.AddLayout(lay)
 }
