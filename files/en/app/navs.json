@@ -2,10 +2,14 @@
 	"_nofilter": true,
 	"All": [],
 	"Premium": {
+		"CreateCloudStore": "",
 		"CreateCodeEdit": "",
 		"CreateOverlay": "",
+		"CreatePlayStore": "",
 		"CreateTheme": "",
+		"CreateWizard": "",
 		"ExtExec": "",
+		"GA": "",
 		"QueryContent": "",
 		"SetKioskMode": "",
 		"SetMockLocation": "",
@@ -24,6 +28,8 @@
 		"",
 		"Execute",
 		"ExtExec",
+		"CreateGame",
+		"CreateNode",
 		"",
 		"ChooseFile",
 		"OpenFile",
@@ -475,6 +481,8 @@
 		"id"
 	],
 	"UI Control": [
+		"Show",
+		"Hide",
 		"AddLayout",
 		"RemoveLayout",
 		"AddDrawer",

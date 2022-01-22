@@ -1201,7 +1201,7 @@
 		}
 	},
 	"CreateDebug": {
-		"desc": "CreateDebug is used to show the console as overlay above the app in order to see the debug logs.",
+		"desc": "CreateDebug is used to show the console as overlay above the app in order to see the debug logs.\n\nSee Also: @SetDebug, @Debug",
 		"shortDesc": "Shows a debug log overlay"
 	},
 	"CreateDialog": {
@@ -1856,7 +1856,7 @@
 		"abbrev": "img",
 		"desc": "#CreateImage.md",
 		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
-		"pTypes": ["str_ptc", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
+		"pTypes": ["str_ptc", "num", "num", "str_com-fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-Image",
 		"shortDesc": "Returns a new Image object",
 		"subf": {

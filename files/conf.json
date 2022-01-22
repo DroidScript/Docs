@@ -12,15 +12,15 @@
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
 		"all": "all types",
-		"bin": "<a href=\"../javascript/Global_Objects/Boolean.html\" data-ajax=\"false\" class=\"no-ui-link\">Boolean</a>",
+		"bin": "Boolean",
 		"dso": "app object",
 		"gvo": "game object",
 		"jso": "JavaScript object",
-		"fnc": "<a href=\"../javascript/Global_Objects/Function.html\" data-ajax=\"false\" class=\"no-ui-link\">Function</a>",
-		"lst": "<a href=\"../javascript/Global_Objects/List.html\" data-ajax=\"false\" class=\"no-ui-link\">List</a>",
-		"num": "<a href=\"../javascript/Global_Objects/Number.html\" data-ajax=\"false\" class=\"no-ui-link\">Number</a>",
+		"fnc": "Function",
+		"lst": "List",
+		"num": "Number",
 		"obj": "Object",
-		"str": "<a href=\"../javascript/Global_Objects/String.html\" data-ajax=\"false\" class=\"no-ui-link\">String</a>",
+		"str": "String",
 		"?": "unknown"
 	},
 	"tdesc": {
