@@ -5,14 +5,15 @@
 - Use app.Add\* eqivalents to app.Create* to make your code shorter and cleaner
 - Use features that DS provides you instead of doing them yourself (ie. filtering ListFolder items)
 - Frequently check the debug log for any warnings or errors - especially before releasing your app (see @../app/CreateDebug)
-- Use the web IDE for coding if you have a laptop becuase it is much easier than typing and debugging on a phone
+- Use the web IDE for coding if you have a laptop because it is much easier than typing and debugging on a phone
 
 ## Performance
 
 ### UI
 - Wrap your UI creation in app.Hide and app.Show
+- Use cfg.@04CodingFeatures#Dark and cfg.@04CodingFeatures#Light for an easy Light/Dark theme setting
 - <grey>Use obj.@../app/CreateLayout#Batch to do a whole bunch of configuration calls at one shot</grey>
-- <grey>Use <js nobox>_Boost(true)</js> at the top of your main file</grey> to use a different backend bridge
+- <grey>Use <js nobox>_Boost(true)</js> at the top of your main file to use a different backend bridge</grey>
 - Add a (optionally animated) splash screen while your app loads UI
 - Use <js nobox>app.@../app/SetDebugEnabled(false)</js> in your release version
 - Reduce the use of app.\* calls (especially in loops) as it calls the backend bridge in most cases

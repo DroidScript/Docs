@@ -52,12 +52,13 @@
 		- Use app.Add* eqivalents to app.Create* to make your code shorter and cleaner<br>
 		- Use features that DS provides you instead of doing them yourself (ie. filtering ListFolder items)<br>
 		- Frequently check the debug log for any warnings or errors - especially before releasing your app (see <a href="../app/CreateDebug.htm" data-ajax="false">CreateDebug</a>)<br>
-		- Use the web IDE for coding if you have a laptop becuase it is much easier than typing and debugging on a phone</p>
+		- Use the web IDE for coding if you have a laptop because it is much easier than typing and debugging on a phone</p>
 		<h2>Performance</h2>
 		<h3>UI</h3>
 		<p>- Wrap your UI creation in app.Hide and app.Show<br>
+		- Use cfg.<a href="04CodingFeatures.htm#Dark" data-ajax="false">Dark</a> and cfg.<a href="04CodingFeatures.htm#Light" data-ajax="false">Light</a> for an easy Light/Dark theme setting<br>
 		- <grey>Use obj.<a href="../app/CreateLayout.htm#Batch" data-ajax="false">Batch</a> to do a whole bunch of configuration calls at one shot</grey><br>
-		- <grey>Use <span class="token function">_Boost</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> at the top of your main file</grey> to use a different backend bridge<br>
+		- <grey>Use <span class="token function">_Boost</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> at the top of your main file to use a different backend bridge</grey><br>
 		- Add a (optionally animated) splash screen while your app loads UI<br>
 		- Use app<span class="token punctuation">.</span><span class="token function"><a href="../app/SetDebugEnabled.htm" data-ajax="false">SetDebugEnabled</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> in your release version<br>
 		- Reduce the use of app.* calls (especially in loops) as it calls the backend bridge in most cases<br>

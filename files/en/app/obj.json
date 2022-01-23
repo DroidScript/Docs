@@ -60,8 +60,8 @@
 	},
 	"AddList": {
 		"desc": "Creates and adds a List to a Layout.\nSee @CreateList for full documentation.",
-		"pNames": ["layout", "list", "width", "height", "options"],
-		"pTypes": ["dso-CreateLayout", "str", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"pNames": ["layout", "list", "width", "height", "options", "delim"],
+		"pTypes": ["dso-CreateLayout", "str_lst", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound", "str"],
 		"retval": "dso-List",
 		"shortDesc": "Create and add List to Layout."
 	},
@@ -2278,8 +2278,8 @@
 	"CreateList": {
 		"abbrev": "lst",
 		"desc": "#CreateList.md",
-		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound"],
+		"pNames": ["list", "width", "height", "options", "delim"],
+		"pTypes": ["str_lst", "num_frc", "num_frc", "str_com-bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound", "str"],
 		"retval": "dso-List",
 		"shortDesc": "Returns a new List object",
 		"subf": {
@@ -6946,10 +6946,10 @@
 		"shortDesc": "Schedules background jobs"
 	},
 	"Script": {
-		"desc": "Loads a local JavaScript file to your app to make its functionality available in your app.\nBy default it is loaded asynchronously unless you pass the “NoDefer” option.\n\nSee Also: @LoadScript",
-		"pNames": ["file", "options"],
-		"pTypes": ["str_ptf", "str-NoDefer-load script inline"],
-		"shortDesc": "Synchronously import an external JavaScript file"
+		"desc": "Loads a local JavaScript file to your app to make its functionality available in your app.\nBy default it is loaded just before OnStart is being called unless you set “NoDefer” to <js>true</js> which forces inline loading.\nThis is to ensure errors are highlighted correctly in external source files.\n\nSee Also: @LoadScript",
+		"pNames": ["file", "noDefer"],
+		"pTypes": ["str_ptf", "bin:load script inline"],
+		"shortDesc": "import an external JavaScript file"
 	},
 	"SendFile": {
 		"desc": "#SendFile.md",

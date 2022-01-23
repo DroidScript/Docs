@@ -266,7 +266,7 @@
 		"ScanFile": "Adds media files to phone gallery",
 		"ScheduleJob": "Schedules background jobs",
 		"ScreenShot": "Take a screen shot of your app",
-		"Script": "Synchronously import an external JavaScript file",
+		"Script": "Import an external JavaScript file",
 		"SendFile": "Send a file to a remote target",
 		"SendImage": "Send an image to a remote target",
 		"SendIntent": "SendIntent",
