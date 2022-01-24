@@ -13,7 +13,6 @@
 - Wrap your UI creation in app.Hide and app.Show
 - Use cfg.@04CodingFeatures#Dark and cfg.@04CodingFeatures#Light for an easy Light/Dark theme setting
 - <grey>Use obj.@../app/CreateLayout#Batch to do a whole bunch of configuration calls at one shot</grey>
-- <grey>Use <js nobox>_Boost(true)</js> at the top of your main file to use a different backend bridge</grey>
 - Add a (optionally animated) splash screen while your app loads UI
 - Use <js nobox>app.@../app/SetDebugEnabled(false)</js> in your release version
 - Reduce the use of app.\* calls (especially in loops) as it calls the backend bridge in most cases
@@ -23,7 +22,6 @@
     - Use the premium app.@../app/CreateTheme method for styling controls
 
 ### Graphics / Animations
-- <grey>Use cfg.@04CodingFeatures#NoDom to disable DOM elements</grey>
 - Use app.@../app/Animate instead of setInterval
 - Use <js nobox>img.@../app/CreateImage#SetAutoUpdate(false)</js> and use manual img.@../app/CreateImage#Update calls
 - Switch to the @../app/CreateGameView control (using cfg.@04CodingFeatures#Game) as its generally faster and works in web browsers too

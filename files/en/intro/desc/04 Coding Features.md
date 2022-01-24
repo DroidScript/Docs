@@ -29,9 +29,10 @@ The _Game_ configuration will let your app immediately run in [GameView](../app/
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
 
-### cfg.NoDom
+<!-- ### cfg.NoDom
 <red>Note: The _NoDom_ option is currently not available due to GooglePlays 64bit requirement since August 2019.
 If you really need this feature switch back to [DS version 1.74](https://androidscript.org/apk/DroidScript_174)</red>
+
 <!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.
 
 The NoDom config will make use of [googles V8 engine](https://v8.dev) instead which will cause these DOM objects not being available any more.

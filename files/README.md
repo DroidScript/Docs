@@ -1,27 +1,29 @@
 
 # Editing Docs using raw JSON files
 
-- [Table of contents](#Editing-Docs-using-raw-JSON-files)
-    - [Setup](#Setup)
-    - [Additional Views](#Additional-Views)
-        - [Git](#Git)
-        - [Terminal](#Terminal)
-    - [Resulting view](#Resulting-view)
-    - [File Structure](#File-Structure)
-    - [JSON Format](#JSON-Format)
-        - [JSON Examples](#JSON-Examples)
-    - [Markdown Format](#Markdown-Format)
-        - [Type](#Type)
-        - [Type Popups](#Type-Popups)
-        - [Cross- Doc References](#Cross-Doc-References)
-        - [Inline Code Areas](#Inline-Code-Areas)
-        - [Custom Constructor positions](#Custom-Constructor-positions)
-        - [Custom Sample positions](#Custom-Sample-positions)
-            - [Sample Examples](#Sample-Examples)
-        - [HTML Tags](#HTML-Tags)
-        - [Markdown](#Markdown)
-    - [Generating](#Generating)
-    - [Update Github Pages](#Update-Github-Pages)
+## Table of Contents
+
+- [Editing Docs using raw JSON files](#editing-docs-using-raw-json-files)
+	- [Table of Contents](#table-of-contents)
+	- [Setup](#setup)
+	- [Additional Views](#additional-views)
+		- [Git](#git)
+		- [Terminal](#terminal)
+	- [Resulting view](#resulting-view)
+	- [File Structure](#file-structure)
+		- [JSON Examples](#json-examples)
+	- [Markdown Format](#markdown-format)
+		- [Type](#type)
+		- [Type Popups](#type-popups)
+		- [Cross-Doc References](#cross-doc-references)
+		- [Inline Code Areas](#inline-code-areas)
+		- [Custom Constructor positions](#custom-constructor-positions)
+		- [Custom Sample positions](#custom-sample-positions)
+			- [Sample Examples](#sample-examples)
+		- [HTML Tags](#html-tags)
+		- [Markdown](#markdown)
+	- [Generating](#generating)
+	- [Update Github Pages](#update-github-pages)
 
 
 ## Setup
@@ -355,18 +357,19 @@ Besides these special formats you also have following standard text formatting f
 - \``code line`\`
 - \`\`\````code block```\`\`\`
 - \[[linktext](#)\]\(url\)
-- [linktext]{`js code`}
+- [linktext]{`onclick js code`}
 - <h4>### header</h3>
 
 ## Generating
 
 - in a terminal navigate to _'files'_ by executing `$ cd files`
 - execute `$ ./generate.js` to generate all docs of every language (`./generate.js` and `node generate.js` are synonym)
+- execute `$ ./generate.js -c` to foce a clean regeneration
 - execute `$ ./generate.js -help` to see more cli help
-- execute `$ ./generate.js \<lang\> [..]` to generate docs of a specific language
-- execute `$ ./generate.js \<scope\> [..]` to generate a specific scope
-- execute `$ ./generate.js \<scope\>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
-- execute `$ ./generate.js \<lang\>.\<scope\> [..]` to generate a specific scope of a language
+- execute `$ ./generate.js <lang> [..]` to generate docs of a specific language
+- execute `$ ./generate.js <scope> [..]` to generate a specific scope
+- execute `$ ./generate.js <scope>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
+- execute `$ ./generate.js <lang>.<scope> [..]` to generate a specific scope of a language
 
 Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option.
 
@@ -399,12 +402,17 @@ MEMBER-PATTERN:             RegEx pattern
 
 ## Update Github Pages
 
-Execute following commands to update the GitHub Pages Docs preview:
+To publish the generated html files on GitHub Pages execute the `updatePages.sh` script or execute the following commands by hand:
 ```shell
 # remove old docs from pages
 rm -r ../docs/docs/
 
 # copy new docs to pages
 cp -r docs/ ../docs/
+cp version.txt ../docs/
+
+# edit Docs.htm, search for 'Docs version:' and 
+# update the number to the last 3 digits of version.txt
+nano ../docs/Docs.htm
 ```
 Alternatively update them manually with the atom tree view or a file-browser of your choice

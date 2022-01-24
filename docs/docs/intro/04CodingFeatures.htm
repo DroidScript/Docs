@@ -46,7 +46,6 @@
 				- <a href="" onclick="jumpTo('cfg.MUI')">cfg.MUI</a><br>
 				- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a><br>
 				- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a><br>
-				- <a href="" onclick="jumpTo('cfg.NoDom')">cfg.NoDom</a><br>
 			</span><br>
 			• <a href="" onclick="jumpTo('Function Shortcuts DW DH TW')">Function Shortcuts DW DH TW</a><br>
 			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
@@ -80,10 +79,12 @@
 		<p>The <i>Game</i> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
 		<h3>cfg.Transparent</h3>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
-		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
-		<h3>cfg.NoDom</h3>
-		<p><red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.<br>
+		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div><br>
+		<br>
+		<!-- ### cfg.NoDom<br>
+		<red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.<br>
 		If you really need this feature switch back to <a href="https://androidscript.org/apk/DroidScript_174" onclick="return OpenUrl(this.href);">DS version 1.74</a></red><br>
+		<br>
 		<!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.<br>
 		<br>
 		The NoDom config will make use of <a href="https://v8.dev" onclick="return OpenUrl(this.href);">googles V8 engine</a> instead which will cause these DOM objects not being available any more.<br>

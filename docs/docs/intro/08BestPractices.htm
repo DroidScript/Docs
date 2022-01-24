@@ -58,7 +58,6 @@
 		<p>- Wrap your UI creation in app.Hide and app.Show<br>
 		- Use cfg.<a href="04CodingFeatures.htm#Dark" data-ajax="false">Dark</a> and cfg.<a href="04CodingFeatures.htm#Light" data-ajax="false">Light</a> for an easy Light/Dark theme setting<br>
 		- <grey>Use obj.<a href="../app/CreateLayout.htm#Batch" data-ajax="false">Batch</a> to do a whole bunch of configuration calls at one shot</grey><br>
-		- <grey>Use <span class="token function">_Boost</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> at the top of your main file to use a different backend bridge</grey><br>
 		- Add a (optionally animated) splash screen while your app loads UI<br>
 		- Use app<span class="token punctuation">.</span><span class="token function"><a href="../app/SetDebugEnabled.htm" data-ajax="false">SetDebugEnabled</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> in your release version<br>
 		- Reduce the use of app.* calls (especially in loops) as it calls the backend bridge in most cases<br>
@@ -69,8 +68,7 @@
 			- Use the premium app.<a href="../app/CreateTheme.htm" data-ajax="false">CreateTheme</a> method for styling controls<br>
 		</span></p>
 		<h3>Graphics / Animations</h3>
-		<p>- <grey>Use cfg.<a href="04CodingFeatures.htm#NoDom" data-ajax="false">NoDom</a> to disable DOM elements</grey><br>
-		- Use app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> instead of setInterval<br>
+		<p>- Use app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> instead of setInterval<br>
 		- Use img<span class="token punctuation">.</span><span class="token function"><a href="../app/CreateImage.htm#SetAutoUpdate" data-ajax="false">SetAutoUpdate</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> and use manual img.<a href="../app/CreateImage.htm#Update" data-ajax="false">Update</a> calls<br>
 		- Switch to the <a href="../app/CreateGameView.htm" data-ajax="false">CreateGameView</a> control (using cfg.<a href="04CodingFeatures.htm#Game" data-ajax="false">Game</a>) as its generally faster and works in web browsers too<br>
 		- use the <docstr>“async”</docstr> option to load images</p>
