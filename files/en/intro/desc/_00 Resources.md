@@ -1,5 +1,7 @@
 ### Official Websites
 - [Website](http://droidscript.org)
+- [Wiki](https://droidscript.org/wiki/doku.php)
+	A community-driven DroidScript wiki
 - [PlayStore](https://play.google.com/store/apps/details?id=com.smartphoneremote.androidscriptfree)
 - [GitHub](https://github.com/DroidScript)
 
@@ -22,8 +24,6 @@
 	Provides tutorials for the DroidScript GameView. Start with [lesson 1](https://dsgameview.wixsite.com/gameview/tutorial-1)
 
 ### Unofficial Websites
-- [DroidScript Wiki](https://droidscript.org/wiki/doku.php)
-	A community-driven DroidScript wiki
 - [Justin's SPK Store](https://dspk.justplayer.de)
 	Sharing platform for DroidScript Projects (SPKs) and Plugins
 - [Symbroson's DroidScript Blog](https://symbroson.blogspot.com) (inactive)

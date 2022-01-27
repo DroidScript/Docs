@@ -1,4 +1,4 @@
-# General
+## General
 
 - Use the cfg object to enter specific app modes immediately (See @04CodingFeatures for more details)
 - Use app.@../app/Script to load extra source files
@@ -26,3 +26,13 @@
 - Use <js nobox>img.@../app/CreateImage#SetAutoUpdate(false)</js> and use manual img.@../app/CreateImage#Update calls
 - Switch to the @../app/CreateGameView control (using cfg.@04CodingFeatures#Game) as its generally faster and works in web browsers too
 - use the “async” option to load images
+
+## Getting Help
+- Check out this documentation and the [DS Wiki](https://droidscript.org/wiki/doku.php) for any hints
+- Check if your issue has been resolved before by searching keywords on Google and on the @../Resources#Official_Forums
+- For short questions check out the Chat extension in the mobile or WiFi IDE
+- For more complex questions formalize your issue in the @../Resources#Official_Forums
+  - Always be polite, respectful and never offend any person or group of people
+  - Describe your issue in a way people can understand it without knowing anything about your individual project
+  - Attach screenshots and demo SPKs to your question
+  - Consider putting together a minimal demo showcasing your issue

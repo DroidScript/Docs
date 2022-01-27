@@ -2811,7 +2811,7 @@
 		}
 	},
 	"CreateMusic": {
-		"desc": "Add music to your app. See the @../Plugins page for more details",
+		"desc": "Add music to your app. See the @../Music page for more details",
 		"abbrev": "mus",
 		"retval": "dso-Music",
 		"shortDesc": "Add Music to your app"

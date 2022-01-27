@@ -299,18 +299,19 @@ If you want to use popups in a description text or in return values you can add 
 - `"retval": "obj-{ width:num_orw, height:num_orh }"`
 
 ### Cross-Doc References
-You can easily referenciate other docs using the `@funcname` format. This is mostly used for 'See Also: 's
+You can easily referenciate other docs using the `@docname` format. This is widely used for 'See Also: 's
 - See Also: [@WriteFile](https://symdstools.github.io/Docs/docs/app/WriteFile.htm)
 You can even point to parent- or subdirectories:
-- Have a look at the [@../app/SaveText](https://symdstools.github.io/Docs/docs/app/SaveText.htm)
+- [@../app/SaveText](https://symdstools.github.io/Docs/docs/app/SaveText.htm)
 And add html anchors:
-- Have a look at the [@../app/CreateImage#Hide](https://symdstools.github.io/Docs/docs/app/CreateImage.htm#Hide)
+- [@../app/CreateImage#Hide](https://symdstools.github.io/Docs/docs/app/CreateImage.htm#Hide)
+- You cannot use spaces in paths but html anchors allow underscores as placeholder
 
 ### Inline Code Areas
 If you have a short command or code example you want to include without making it a Sample block, you can use the \<smp\> tag or a specific highlighted language: \<js\> \<java\> or \<bash\>. Example:
 - `<js>img.DrawLine( 0, 0, 1, 1 );</js>`
 Additionally you can add some modifiers to the start tag to change the look. Ie:
-- `<js noinl>` will make the code inline instead of full-width
+- `<js noinl>` will make the code full-width instead of inline
 - `<js nobox>` will remove the grey box around the code
 
 ### Custom Constructor positions

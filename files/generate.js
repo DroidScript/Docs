@@ -869,10 +869,11 @@ function addMarkdown(s)
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
 		// additional notes
 		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
-		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) => 
-			`${b}<a href="${n}.htm${H||''}" data-ajax="false">${h||f}</a>`) // @DocReference
+		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) =>  // @DocReference
+			`${b}<a href="${n}.htm${(H||'').replace(/_/g, ' ')}" data-ajax="false">${(h||f).replace(/_/g, ' ')}</a>`)
 		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
+
 	// convert int to 3-digit hex
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
 	//returns the type name or description of a value or the value itself

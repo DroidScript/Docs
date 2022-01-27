@@ -38,16 +38,8 @@
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('The cfg object')">The cfg object</a><br>
-			<span style="display:inline-block;padding-left:1em;">
-				- <a href="" onclick="jumpTo('cfg.Portrait/Landscape')">cfg.Portrait/Landscape</a><br>
-				- <a href="" onclick="jumpTo('cfg.Holo cfg.Light cfg.Dark')">cfg.Holo cfg.Light cfg.Dark</a><br>
-				- <a href="" onclick="jumpTo('cfg.Node')">cfg.Node</a><br>
-				- <a href="" onclick="jumpTo('cfg.Hybrid')">cfg.Hybrid</a><br>
-				- <a href="" onclick="jumpTo('cfg.MUI')">cfg.MUI</a><br>
-				- <a href="" onclick="jumpTo('cfg.Game')">cfg.Game</a><br>
-				- <a href="" onclick="jumpTo('cfg.Transparent')">cfg.Transparent</a><br>
-			</span><br>
-			• <a href="" onclick="jumpTo('Function Shortcuts DW DH TW')">Function Shortcuts DW DH TW</a><br>
+			• <a href="" onclick="jumpTo('this Keyword')">this Keyword</a><br>
+			• <a href="" onclick="jumpTo('Function Shortcuts')">Function Shortcuts</a><br>
 			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
 			• <a href="" onclick="jumpTo('Translations: T()')">Translations: T()</a><br>
 			• <a href="" onclick="jumpTo('Unique Callbacks: I()')">Unique Callbacks: I()</a><br>
@@ -63,21 +55,21 @@
 		<h2>The cfg object</h2>
 		<p>The cfg object can be used to apply app options to your app before it is launched.<br>
 		They should be placed at the very top of your main source script.</p>
-		<h3>cfg.Portrait/Landscape</h3>
+		<h4>cfg.Portrait/Landscape</h4>
 		<p>Defines the initial screen orientation your app will launch in</p>
-		<h3>cfg.Holo cfg.Light cfg.Dark</h3>
+		<h4>cfg.Holo cfg.Light cfg.Dark</h4>
 		<p>These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.<br>
 		Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark.</p>
-		<h3>cfg.Node</h3>
+		<h4>cfg.Node</h4>
 		<p>Runs the app in NodeJS mode.</p>
-		<h3>cfg.Hybrid</h3>
+		<h4>cfg.Hybrid</h4>
 		<p>Allows you to use MaterialUI controls in an html app.</p>
-		<h3>cfg.MUI</h3>
+		<h4>cfg.MUI</h4>
 		<p>Enables builtin material component support through the MUI object.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
-		<h3>cfg.Game</h3>
+		<h4>cfg.Game</h4>
 		<p>The <i>Game</i> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
-		<h3>cfg.Transparent</h3>
+		<h4>cfg.Transparent</h4>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div><br>
 		<br>
@@ -91,11 +83,41 @@
 		For example setInterval and setTimeout will not be available any more, but you can use the <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> method instead</b>.<br>
 		<br>
 		Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.--></p>
-		<h2>Function Shortcuts DW DH TW</h2>
+		<h2>this Keyword</h2>
+		<p>In callback functions of controls you can use the <span class="token keyword">this</span> keyword to access the callee control object without having to assign the control to a specific variable. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Use Case of this</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">SetChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> i<span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>btnN_OnTouch<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">btnN_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+		<h2>Function Shortcuts</h2>
 		<p>There are shortcuts to certain functions, which are<br>
-		<span class="samp samp-inline"><span class="token constant">DW</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
-		<span class="samp samp-inline"><span class="token constant">DH</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br>
-		<span class="samp samp-inline"><span class="token constant">TW</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">)</span></span> for <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">GetTextBounds</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width</span></p>
+		<span class="token constant">DW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+		<span class="token constant">DH</span><span class="token punctuation">(</span><span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+		<span class="token constant">TW</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetTextBounds</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width</p>
 		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
@@ -108,7 +130,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Using I()</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -124,10 +146,9 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
@@ -137,33 +158,32 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <b id="snip2" style="font-size:100%">btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token constant">I</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
 			</div>
 		</div>
 
 		<h3>Custom Contexts: M()</h3>
-		<p>The M() macro is equivalent to the I() macro, except that it accepts a custom 'this' context as first argument.</p>
+		<p>The M() macro is equivalent to the I() macro, except that it accepts a custom '<span class="token keyword">this</span>' context as first argument.</p>
 		<h3>obj.data</h3>
 		<p>Alternatively you can make use of the controls <strong>data</strong> property and the <strong>this</strong> keyword in callbacks.<br>
 		This way you can assign variables to the object they belong to and you still make use of the callback optimization by DroidScript:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Using this.data</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -176,12 +196,11 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">NewButton2</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> lay</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> name<span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetTextColor</span><span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btn <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip2" style="font-size:100%">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span><br>
+				    <b id="snip3" style="font-size:100%">btn<span class="token punctuation">.</span>data<span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span><br>
 				    <br>
 				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
@@ -190,9 +209,9 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
 			</div>
 		</div>
 
