@@ -3,9 +3,10 @@
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
     "dependencies": {
-        "express": "^4.17.1",
-        "fs-extra": "^9.1.0",
-        "prismjs": "^1.23.0",
+        "express": "^4.17.2",
+        "fs-extra": "^10.0.0",
+        "node-fetch": "^2.0",
+        "prismjs": "^1.26.0",
         "rimraf": "^3.0.2"
     }
 }

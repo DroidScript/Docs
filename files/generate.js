@@ -2,7 +2,7 @@
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 var curDoc, curSubf, curScope, lang;
-var warnEnbl = false, conf, dbg = false, clean = false;
+var warnEnbl = false, conf, dbg = false, clean = false, force = false;
 var scope, base, navs, regGen, regHide, regControl, progress;
 
 if (typeof OnStart == 'undefined') OnStart = g_OnStart;
@@ -65,7 +65,7 @@ function generateScope(name, pattern)
 	navs = JSON.parse(ReadFile(curDoc, "{}"));
 
 	// check file dates for update
-	if (!clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
+	if (!force && !clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
 		return console.log(`Skipped ${lang}.${name}.${pattern||'*'}`);
 
 	app.ShowProgressBar(`Generating ${lang}.${name}.${pattern||'*'}`);
@@ -161,8 +161,13 @@ function generateNavigators(navs, name, pfx)
 			if (typeof navs[cat] == "string")
 			{
 				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
+				var add = "";
+				if (navs[cat].startsWith("http"))
+					add += ' onclick="return OpenUrl(this.href);"';
 				var f = m && scope[m[1]] ? m[3] ? scope[m[1]].subf[m[3]] : scope[m[1]] : null;
-				nav += newNaviItem(navs[cat], cat, f ? getAddClass(f) : null);
+				if (f) add += getAddClass(f);
+	
+				nav += newNaviItem(navs[cat], cat, add);
 				continue;
 			}
 			nav += newNaviItem(`${pfx + cat.replace(/\s+/g,'')}.htm`, cat, cat == "Premium" ? getAddClass({desc: "<premium>"}) : null);
@@ -434,28 +439,34 @@ function formatDesc(desc, name, hasData)
 		+ values(samples).concat("").reduce((a, b) => a + b);
 }
 
-// converts a function object into an html snippets object
-function getDocData(f, useAppPop)
+function fillMissingFuncProps(f)
 {
-	//needed for popups in popups
-	if (useAppPop == undefined)
-		useAppPop = false;
+	if (!f.desc) Throw("desc not set");
 
 	// default descriptions and capitalizing
-	f.shortDesc = f.shortDesc.trim();
-	if (!f.shortDesc) f.shortDesc = f.name;
+	if (f.shortDesc == undefined || !f.shortDesc.trim())
+		f.shortDesc = f.desc;
+
+	// start upper case without trailing dot
 	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
 		f.shortDesc.slice(1, f.shortDesc.endsWith('.') ? -1 : undefined );
+	
+	if (f.pNames == undefined) f.pNames = [];
+	if (f.pTypes == undefined) f.pTypes = [];
+}
+
+// converts a function object into an html snippets object
+function getDocData(f, useAppPop = false)
+{
+	var i, mArgs = [], type, fretval = "";
 
 	// abbrev for controls
 	if (isControl(f.name) && !f.abbrev)
 		f.abbrev = getAbbrev(f.name);
 
-	var i, mArgs = [], type, fretval = "";
+	fillMissingFuncProps(f);
 
 	// convert constructor line
-	if (f.pNames == undefined) f.pNames = [];
-	if (f.pTypes == undefined) f.pTypes = [];
 	for (i in f.pNames)
 	{
 		if (useAppPop)
@@ -509,14 +520,7 @@ function getDocData(f, useAppPop)
 
 		if (hidden(curSubf)) continue;
 
-		//add shortDesc entry if missing
-		if (met.shortDesc == undefined)
-		{
-			scope[f.name].subf[curSubf].shortDesc = "";
-			met.shortDesc = "";
-		}
-		if (met.pNames == undefined) met.pNames = [];
-		if (met.pTypes == undefined) met.pTypes = [];
+		fillMissingFuncProps(met);
 
 		//convert return value
 		if (met.retval)
@@ -638,7 +642,8 @@ function typeDesc(types)
 					case "num": return s[i] + rplop(type[2]);
 					case "str": return s[i] + rplop(type[2], true);
 					case "lst":
-					case "obj": return s[i] + replaceTypes(type[2], false);
+					case "obj":
+					case "jso": return s[i] + replaceTypes(type[2], false);
 					default:
 						if (!type[0].endsWith("o"))
 							Throw(Error("unknown typex " + type[1]));
@@ -1066,8 +1071,8 @@ var
 
 function getl(l) { if (l == undefined) l = lang; return l == "en" ? "" : "-" + l; }
 function l(s) { console.log(`-----${s}-----`); return s; }
-function hidden(name) { return !!name.match(regHide); }
-function nothidden(name) { return !name.match(regHide); }
+function hidden(name) { return !(force || !name.match(regHide)); }
+function nothidden(name) { return !hidden(name); }
 function isnum(c) { return c >= '0' && c <= '9'; }
 function has(l, v) { return !!l && l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
@@ -1173,6 +1178,7 @@ OPTIONS:
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                                 adds a scope to conf.json
 	-c  --clean            	regenerate the docs completely
+	-f  --force             force generation of otherwise skipped
 	-n  --nogen             don't generate
 	-s  --server            start webserver after generating
 	-v  --verbose           print more debug logs
@@ -1239,6 +1245,7 @@ if (typeof app == "undefined")
 				case "-n": case "--nogen": nogen = true; break;
 				case "-v": case "--verbose": dbg = true; break;
 				case "-c": case "--clean": clean = true; break;
+				case "-f": case "--force": force = true; break;
 				case "-h": case "--help": app.Alert(help); return;
 				case "-s": startServer = true; break;
 				case "-al": case "--addlang":

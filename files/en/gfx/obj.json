@@ -69,7 +69,7 @@
 				"shortDesc": "Removes physics"
 			},
 			"SetMatrix": {
-				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
+				"desc": "Applies a 2D transformation matrix to the game object.",
 				"pNames": ["mtx"],
 				"pTypes": ["obj-Matrix"],
 				"shortDesc": "Applies a 2d transformation"
@@ -592,7 +592,7 @@
 	},
 	"GetTime": {
 		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
-		"retval": "jso-@../javascript/Global_Objects/Date",
+		"retval": "jso-Date",
 		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
 	},
 	"height": {
@@ -758,7 +758,7 @@
 		"shortDesc": "Set callback for touch up"
 	},
 	"SetOrder": {
-		"desc": "",
+		"desc": "Change the drawing order of an object.",
 		"pNames": ["object", "order"],
 		"pTypes": ["obj", "num"],
 		"shortDesc": "SetOrder"

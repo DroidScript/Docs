@@ -14,7 +14,7 @@
 - Use cfg.@04CodingFeatures#Dark and cfg.@04CodingFeatures#Light for an easy Light/Dark theme setting
 - <grey>Use obj.@../app/CreateLayout#Batch to do a whole bunch of configuration calls at one shot</grey>
 - Add a (optionally animated) splash screen while your app loads UI
-- Use <js nobox>app.@../app/SetDebugEnabled(false)</js> in your release version
+- Use <js nobox>app.@../app/SetDebug(false)</js> in your release version
 - Reduce the use of app.\* calls (especially in loops) as it calls the backend bridge in most cases
     - Use lay.@../app/CreateLayout#SetChildMargins and lay.@../app/CreateLayout#SetChildTextSize to apply these properties to all children
     - When initializing list controls use a [precompiled item list](../app/CreateList.htm) instead of calling AddItem multiple times

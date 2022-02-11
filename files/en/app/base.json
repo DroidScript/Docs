@@ -178,7 +178,7 @@
 		"shortDesc": "Adjust the visual color effect with different BlendModes"
 	},
 	"#0937259723": { "name": "SetDescription",
-		"descSetEnabled": "Set a control description for accessibility",
+		"desc": "Set a control description for accessibility",
 		"pNames": ["desc"],
 		"pTypes": ["str"],
 		"shortDesc": "Set accesibility description"

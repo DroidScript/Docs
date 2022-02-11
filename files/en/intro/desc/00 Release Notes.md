@@ -1,4 +1,4 @@
-<!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
+<!-- /[^\\].?([_*])/\$1/ /:/&colon;/ -->
 
 ## DS 2.50 (31-Dec-2021)
 - Fixed ctrl.Batch call for base methods (use underscore)
@@ -210,7 +210,7 @@
 - Fixed many file access issues on Android 10/11 with fresh DS installs.
 - Added '/Storage' keyword as new alternative to '/sdcard'.
 - Added '/External' keyword as new alternative to '/extsdcard'.
-- Added support for 'content:' paths on app.ReadFile() and for Image Controls.
+- Added support for 'content&colon;' paths on app.ReadFile() and for Image Controls.
 - APKBuilder now uses private storage for its temp files.
 - Fixed bug in plugin docs extraction (non-doc file deletion code failed).
 - app.ChooseFile() method now returns a second 'name' parameter in callback.

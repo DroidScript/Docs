@@ -164,6 +164,10 @@
 		"pTypes": ["str-number"],
 		"shortDesc": "Calls a phone number"
 	},
+	"CancelJob": {
+		"desc": "Cancels a background job started via @ScheduleJob",
+		"shortDesc": "Cancel background job"
+	},
 	"CheckLicense": {
 		"desc": "will trigger a standard Google Play license check for the running application (if it is a paid App).\nThe key can be found under “Development Tools > Services and API's” in the GooglePlay developer console.\nIf the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.",
 		"pNames": ["key"],
@@ -2811,7 +2815,7 @@
 		}
 	},
 	"CreateMusic": {
-		"desc": "Add music to your app. See the @../Music page for more details",
+		"desc": "Add music to your app. See the @../Music/Music.html page for more details",
 		"abbrev": "mus",
 		"retval": "dso-Music",
 		"shortDesc": "Add Music to your app"
@@ -4420,7 +4424,7 @@
 			"GetCurrentTabName": {
 					"desc": "Returns the currently displayed tab name",
 					"retval": "str",
-					"short": "get current tab name"
+					"shortDesc": "get current tab name"
 			},
 			"GetHeight": "#2576212953",
 			"GetLayout": {
@@ -6033,7 +6037,7 @@
 		"desc": "GetFileDate returns a Date object containing the last modified date of a file or folder.",
 		"pNames": ["file"],
 		"pTypes": ["str_ptf"],
-		"retval": "jso-@../javascript/Global_Objects/Date.html",
+		"retval": "jso-Date",
 		"shortDesc": "Get last modified date of a file or folder"
 	},
 	"GetFileSize": {
