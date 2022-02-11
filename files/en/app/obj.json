@@ -247,8 +247,7 @@
 	"CloseDrawer": {
 		"desc": "Closes the drawer layout on the given side with slide animation.\n\nSee Also: @OpenDrawer",
 		"pNames": ["side"],
-		"pTypes": ["str-left|right"],
-		"shortDesc": "Closes the drawer layout on the given side"
+		"pTypes": ["str-left|right"]
 	},
 	"CopyFile": {
 		"desc": "CopyFile copies a file to a given destination. The target must locate to the actual target file, not the folder. An existing file will be overridden.\n\nSee Also: @RenameFile, @DeleteFile, @FileExists",
@@ -272,12 +271,10 @@
 		"subf": {
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-AdView",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-AdView"
 			},
 			"Load": {
-				"desc": "Loads an advertising banner.",
-				"shortDesc": "Loads an ad"
+				"desc": "Loads an advertising banner."
 			},
 			"SetOnStatus": {
 				"desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
@@ -304,18 +301,15 @@
 			},
 			"GetPeak": {
 				"desc": "Returns the PMPO value (Peak music power output).",
-				"retval": "num_flt",
-				"shortDesc": "Returns the PMPO value"
+				"retval": "num_flt"
 			},
 			"GetRMS": {
 				"desc": "Returns the RMS value (Root Mean Square)",
-				"retval": "num_flt",
-				"shortDesc": "Returns the RMS value"
+				"retval": "num_flt"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-AudioRecorder",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-AudioRecorder"
 			},
 			"Pause": {
 				"desc": "Pauses the recording temporally.",
@@ -340,8 +334,7 @@
 				"shortDesc": "Define the recording file"
 			},
 			"Start": {
-				"desc": "Start recording to the specified file.",
-				"shortDesc": "Start recording"
+				"desc": "Start recording to the specified file."
 			},
 			"Stop": {
 				"desc": "Stop the audio recording.",
@@ -360,8 +353,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-BluetoothList",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-BluetoothList"
 			},
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user selects an element.",
@@ -384,8 +376,7 @@
 		"subf": {
 			"Batch": "#2357239857",
 			"Clear": {
-				"desc": "Clears the Bluetooth buffer of the serial connection.",
-				"shortDesc": "Clears the Bluetooth buffer"
+				"desc": "Clears the Bluetooth buffer of the serial connection."
 			},
 			"Connect": {
 				"desc": "Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.",
@@ -399,18 +390,15 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-BluetoothSerial",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-BluetoothSerial"
 			},
 			"IsBluetoothEnabled": {
 				"desc": "Checks if Bluetooth is enabled or not.",
-				"retval": "bin",
-				"shortDesc": "Checks if Bluetooth is enabled"
+				"retval": "bin"
 			},
 			"IsConnected": {
 				"desc": "Checks if a Bluetooth connection exists to another device.",
-				"retval": "bin",
-				"shortDesc": "Checks if a Bluetooth connection exists"
+				"retval": "bin"
 			},
 			"IsPaired": {
 				"desc": "Checks if a specific device is paired using its Bt name.",
@@ -464,10 +452,8 @@
 				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
-				"desc": "SetTimeout",
 				"pNames": ["milliseconds"],
-				"pTypes": ["num_mls"],
-				"shortDesc": "SetTimeout"
+				"pTypes": ["num_mls"]
 			},
 			"Write": {
 				"desc": "Send data over the Bluetooth serial connection to the other device.",
@@ -501,8 +487,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Button",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -526,7 +511,7 @@
 			"SetMargins": "#1741900074",
 			"SetOnTouch": "#2398750419",
 			"SetOnLongTouch": {
-				"desc": "Define a callback function which is called when the button has been long pressed.",
+				"desc": "%cb% the button has been long pressed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the button was long pressed"
@@ -602,8 +587,7 @@
 			"GetLeft": "#1237814406",
 			"GetMaxZoom": {
 				"desc": "Returns the hightst possible zoom value.",
-				"retval": "num",
-				"shortDesc": "Returns the hightst possible zoom value"
+				"retval": "num"
 			},
 			"GetParameters": {
 				"desc": "Get properties, possible values and settings of the camera as “key=value; pairs.",
@@ -627,15 +611,13 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-CameraView",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-CameraView"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"GetZoom": {
 				"desc": "Returns the curent zoom value.",
-				"retval": "num",
-				"shortDesc": "Returns the curent zoom value"
+				"retval": "num"
 			},
 			"Gone": "#5528553362",
 			"HasFlash": {
@@ -682,8 +664,7 @@
 			"SetColorEffect": {
 				"desc": "Applies a color effect to the camera.",
 				"pNames": ["effect"],
-				"pTypes": ["str-none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"],
-				"shortDesc": "Applies a color effect to the camera"
+				"pTypes": ["str-none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"]
 			},
 			"SetColorFilter": "#1096996086",
 			"SetDescription": "#0937259723",
@@ -726,8 +707,7 @@
 			"SetOrientation": {
 				"desc": "Rotates the camera view.",
 				"pNames": ["angle"],
-				"pTypes": ["num_deg-0|90|180|270"],
-				"shortDesc": "Rotates the camera view"
+				"pTypes": ["num_deg-0|90|180|270"]
 			},
 			"SetPadding": "#1923105617",
 			"SetParameter": {
@@ -739,8 +719,7 @@
 			"SetPictureSize": {
 				"desc": "Define a custom picture size in pixels.",
 				"pNames": ["width", "height"],
-				"pTypes": ["num_pxl", "num_pxl"],
-				"shortDesc": "Define a custom picture size in pixels"
+				"pTypes": ["num_pxl", "num_pxl"]
 			},
 			"SetPosition": "#1425862386",
 			"SetPostRotation": {
@@ -773,27 +752,23 @@
 			"SetZoom": {
 				"desc": "Change the zoom value of the camera.",
 				"pNames": ["level"],
-				"pTypes": ["num"],
-				"shortDesc": "Change the zoom value of the camera"
+				"pTypes": ["num"]
 			},
 			"Show": "#1243391562",
 			"StartPreview": {
-				"desc": "Start the camera preview on the display.",
-				"shortDesc": "Start the camera preview"
+				"desc": "Start the camera preview on the display."
 			},
 			"Stop": {
 				"desc": "Stop recording a video.",
 				"shortDesc": "Stop recording video"
 			},
 			"StopPreview": {
-				"desc": "Stop the camera preview on the display.",
-				"shortDesc": "Stop the camera preview"
+				"desc": "Stop the camera preview on the display."
 			},
 			"Stream": {
 				"desc": "Streams the camera view to a local ip.",
 				"pNames": ["ip", "port", "quality", "fps", "mtu"],
-				"pTypes": ["str", "num_int", "num_prc", "num_fps", "num_mtu"],
-				"shortDesc": "Streams the camera view to a local ip"
+				"pTypes": ["str", "num_int", "num_prc", "num_fps", "num_mtu"]
 			},
 			"TakePicture": {
 				"desc": "Takes a picture of the current view and saves it to a file.",
@@ -838,8 +813,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-CheckBox",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-CheckBox"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -896,8 +870,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-CloudStore",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-CloudStore"
 			},
 			"Delete": {
 				"desc": "Deletes a file in the cloud.",
@@ -961,8 +934,7 @@
 			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clears the undo/redo history.",
-				"shortDesc": "Clears the undo/redo history"
+				"desc": "Clears the undo/redo history."
 			},
 			"Copy": {
 				"desc": "Copies the selected text to the device clipboard.",
@@ -1020,8 +992,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-CodeEdit",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-CodeEdit"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1048,8 +1019,7 @@
 				"shortDesc": "Paste clipboard to the current cursor position"
 			},
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action"
+				"desc": "Redo an undone action."
 			},
 			"Replace": {
 				"desc": "Replaces the current selection with the passed text.",
@@ -1060,8 +1030,7 @@
 			"ReplaceAll": {
 				"desc": "Replace all occurances of a string in the text.",
 				"pNames": ["text", "newText", "matchCase", "wholeWord"],
-				"pTypes": ["str", "str", "bin", "bin"],
-				"shortDesc": "Replace all occurances of a string in the text"
+				"pTypes": ["str", "str", "bin", "bin"]
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
@@ -1088,14 +1057,12 @@
 			"SetColorScheme": {
 				"desc": "Changes the color scheme of the CodeEdit.",
 				"pNames": ["scheme"],
-				"pTypes": ["str-Dark|Light"],
-				"shortDesc": "Changes the color scheme"
+				"pTypes": ["str-Dark|Light"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the current cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the current cursor position"
+				"pTypes": ["num_int"]
 			},
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
@@ -1103,8 +1070,7 @@
 			"SetLanguage": {
 				"desc": "Change the highlighted language syntax.",
 				"pNames": ["ext"],
-				"pTypes": ["str-.js,.java,.php,.c,.cpp,.cs,.rb,.m,.py,.txt"],
-				"shortDesc": "Change the highlighted language syntax"
+				"pTypes": ["str-.js,.java,.php,.c,.cpp,.cs,.rb,.m,.py,.txt"]
 			},
 			"SetMargins": "#1741900074",
 			"SetNavigationMethod": {
@@ -1121,7 +1087,7 @@
 				"shortDesc": "Define a Yoyo double-tap callback function"
 			},
 			"SetOnKey": {
-				"desc": "Define a callback function which is called when a key event appears.",
+				"desc": "%cb% a key event appears.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["action", "keyname", "keycode", "extra"],
@@ -1135,8 +1101,7 @@
 			"SetSelection": {
 				"desc": "Selects part of the text in a given range.",
 				"pNames": ["start", "stop"],
-				"pTypes": ["num_int", "num_int"],
-				"shortDesc": "Selects part of the text in a given range"
+				"pTypes": ["num_int", "num_int"]
 			},
 			"SetSelectMode": {
 				"desc": "En/Disables the selection mode for the cursor.",
@@ -1158,14 +1123,12 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769",
 			"Undo": {
-				"desc": "Undo an action.",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action."
 			}
 		}
 	},
 	"CreateCustomTabs": {
-		"desc": "Creates a CustomTab control.\nSee the @../Plugins page for details",
-		"shortDesc": "Creates a CustomTab control"
+		"desc": "Creates a CustomTab control.\nSee the @../Plugins page for details"
 	},
 	"CreateCrypt": {
 		"abbrev": "crp",
@@ -1180,20 +1143,17 @@
 				"desc": "Decrypt text with a key.",
 				"pNames": ["text", "password"],
 				"pTypes": ["str", "str"],
-				"retval": "str",
-				"shortDesc": "Decrypt text"
+				"retval": "str"
 			},
 			"Encrypt": {
 				"desc": "Encrypt text with a key.",
 				"pNames": ["text", "password"],
 				"pTypes": ["str", "str"],
-				"retval": "str",
-				"shortDesc": "Encrypt text"
+				"retval": "str"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Crypt",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Crypt"
 			},
 			"Hash": {
 				"desc": "Build a hash of a string for one-way encryption.",
@@ -1247,8 +1207,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Dialog",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Dialog"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1261,8 +1220,7 @@
 			"RemoveLayout": {
 				"desc": "Removes a content layout.",
 				"pNames": ["layout"],
-				"pTypes": ["dso-CreateLayout"],
-				"shortDesc": "Removes a content layout"
+				"pTypes": ["dso-CreateLayout"]
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": {
@@ -1279,13 +1237,13 @@
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
 			"SetOnBack": {
-				"desc": "Define a callback function which is called when the device's back button was pressed while the dialog was on front.",
+				"desc": "%cb% the device's back button was pressed while the dialog was on front.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when back button was pressed while the dialog was shown"
 			},
 			"SetOnCancel": {
-				"desc": "Define a callback function which is called when the dialog is cancelled.",
+				"desc": "%cb% the dialog is cancelled.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the dialog is cancelled"
@@ -1304,8 +1262,7 @@
 			"SetTitleColor": {
 				"desc": "Changes the color of the title divider.",
 				"pNames": ["clr"],
-				"pTypes": ["str_col"],
-				"shortDesc": "Changes the color of the title divider"
+				"pTypes": ["str_col"]
 			},
 			"SetTitleDividerColor": {
 				"desc": "Changes the title divider color of the dialog.",
@@ -1316,8 +1273,7 @@
 			"SetTitleDividerHeight": {
 				"desc": "Changes the divider height of the dialog.",
 				"pNames": ["height"],
-				"pTypes": ["num_pxl"],
-				"shortDesc": "Changes the divider height"
+				"pTypes": ["num_pxl"]
 			},
 			"SetTitleHeight": {
 				"desc": "Changes the height of the title bar.",
@@ -1363,8 +1319,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Downloader",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Downloader"
 			},
 			"IsComplete": {
 				"desc": "Checks if the download has compleated or not.",
@@ -1373,7 +1328,7 @@
 			},
 			"Method": "#1023663567",
 			"SetOnCancel": {
-				"desc": "Define a callback function which is called when download is cancelled.",
+				"desc": "%cb% download is cancelled.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["file"],
@@ -1382,13 +1337,13 @@
 				"shortDesc": "Called when download is cancelled"
 			},
 			"SetOnComplete": {
-				"desc": "Define a callback function which is called when the download is finished.",
+				"desc": "%cb% the download is finished.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the download is finished"
 			},
 			"SetOnDownload": {
-				"desc": "Define a callback function which is called when the download is downloaded.",
+				"desc": "%cb% the download is downloaded.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["path"],
@@ -1397,7 +1352,7 @@
 				"shortDesc": "Called when the download is downloaded"
 			},
 			"SetOnError": {
-				"desc": "Define a callback function which is called when an error occurred while downloading the file.",
+				"desc": "%cb% an error occurred while downloading the file.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["error"],
@@ -1418,20 +1373,17 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Email",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Email"
 			},
 			"Receive": {
 				"desc": "Start receiving emails from a given folder.",
 				"pNames": ["folder", "maxCount", "filter"],
-				"pTypes": ["str", "num_int", "str"],
-				"shortDesc": "Start receiving emails"
+				"pTypes": ["str", "num_int", "str"]
 			},
 			"Send": {
 				"desc": "Send an email to someone.",
 				"pNames": ["subject", "body", "sender", "recipients", "attach"],
-				"pTypes": ["str", "str", "str-email address", "str-email address", "str_pth"],
-				"shortDesc": "Send an email"
+				"pTypes": ["str", "str", "str-email address", "str-email address", "str_pth"]
 			},
 			"SetIMAP": {
 				"desc": "Set IMAP or POP3 settings for receiving messages.",
@@ -1440,7 +1392,7 @@
 				"shortDesc": "Set IMAP settings for receiving messages"
 			},
 			"SetOnMessage": {
-				"desc": "Define a callback function which is called when a message is received.",
+				"desc": "%cb% a message is received.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["data"],
@@ -1449,7 +1401,7 @@
 				"shortDesc": "Called when a message is received"
 			},
 			"SetOnStatus": {
-				"desc": "Define a callback function which is called when a status changed.",
+				"desc": "%cb% a status changed.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["status"],
@@ -1460,8 +1412,7 @@
 			"SetSMTP": {
 				"desc": "Set SMTP settings for sending messages.",
 				"pNames": ["server", "port"],
-				"pTypes": ["str-smtp.gmail.com:google,smtp.mail.yahoo.com:yahoo,mail.gmx.net:gmx", "num_int-465:SSL|578:TLS (gmail&comma; yahoo)|587:gmx"],
-				"shortDesc": "Set SMTP settings for sending messages"
+				"pTypes": ["str-smtp.gmail.com:google,smtp.mail.yahoo.com:yahoo,mail.gmx.net:gmx", "num_int-465:SSL|578:TLS (gmail&comma; yahoo)|587:gmx"]
 			}
 		}
 	},
@@ -1475,8 +1426,7 @@
 		"subf": {
 			"Batch": "#2357239857",
 			"Close": {
-				"desc": "Close File",
-				"shortDesc": "Close File"
+				"desc": "Close File"
 			},
 			"GetLength": {
 				"desc": "Returns the file size in bytes.",
@@ -1489,8 +1439,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-File",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-File"
 			},
 			"ReadData": {
 				"desc": "Reads a amount of bytes from the file.",
@@ -1502,8 +1451,7 @@
 				"desc": "Read numeric data from file.",
 				"pNames": ["type"],
 				"pTypes": ["str-Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE"],
-				"retval": "num",
-				"shortDesc": "Read numeric data"
+				"retval": "num"
 			},
 			"ReadText": {
 				"desc": "Read data from the file as text.",
@@ -1524,14 +1472,12 @@
 			"Seek": {
 				"desc": "CHange pointer position to a given byte in the file.",
 				"pNames": ["offset"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change pointer position"
+				"pTypes": ["num_int"]
 			},
 			"SetLength": {
 				"desc": "Allocate memory for a file.",
 				"pNames": ["len"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Allocate memory for a file"
+				"pTypes": ["num_int"]
 			},
 			"Skip": {
 				"desc": "Let the pointer skip a given number of bytes.",
@@ -1542,8 +1488,7 @@
 			"WriteData": {
 				"desc": "Write data to the file.",
 				"pNames": ["data", "mode"],
-				"pTypes": ["str-FA\\,FB\\,FC|250\\,251\\,252|abc46:low order 8-bit bytes", "str-Hex|Int|Text"],
-				"shortDesc": "Write data to the file"
+				"pTypes": ["str-FA\\,FB\\,FC|250\\,251\\,252|abc46:low order 8-bit bytes", "str-Hex|Int|Text"]
 			},
 			"WriteNumber": {
 				"desc": "Writes a number to the file.",
@@ -1563,17 +1508,12 @@
 		"desc": "#CreateGame.md",
 		"pNames": ["file", "orient"],
 		"pTypes": ["str_ptf", "str-Portrait|Landscape"],
-		"shortDesc": "CreateGame",
 		"subf": {
 			"game": {
-				"desc": "game",
-				"isval": true,
-				"shortDesc": "game"
+				"isval": true
 			},
 			"lay": {
-				"desc": "lay",
-				"isval": true,
-				"shortDesc": "lay"
+				"isval": true
 			}
 		}
 	},
@@ -1582,7 +1522,6 @@
 		"desc": "#CreateGameView.md",
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
-		"shortDesc": "CreateGameView",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Batch": "#2357239857",
@@ -1602,8 +1541,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "Returns the control class name.",
-				"shortDesc": "GetType"
+				"desc": "Returns the control class name."
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1708,8 +1646,7 @@
 				"desc": "<deprecated does nothing. ctx is automatically cleared after render()>",
 				"name": "ctx.clearRect",
 				"pNames": ["x", "y", "width", "height"],
-				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"],
-				"shortDesc": "deprecated"
+				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"]
 			},
 			"GetContext.ctx._drawCommands": {
 				"desc": "",
@@ -1749,8 +1686,7 @@
 			},
 			"GetContext.ctx.resetTransform": {
 				"desc": "Reset all transformations to default",
-				"name": "ctx.resetTransform",
-				"shortDesc": "Reset all transformations"
+				"name": "ctx.resetTransform"
 			},
 			"GetContext.ctx.restore": {
 				"desc": "Restore a previously saved context state",
@@ -1810,14 +1746,12 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-GLView",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-GLView"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
 			"height": {
-				"desc": "height",
 				"isval": true,
 				"retval": "num_int"
 			},
@@ -1850,7 +1784,6 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769",
 			"width": {
-				"desc": "width",
 				"isval": true,
 				"retval": "num_int"
 			}
@@ -1882,14 +1815,12 @@
 			"DrawArc": {
 				"desc": "Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.",
 				"pNames": ["x1", "y1", "x2", "y2", "start", "sweep"],
-				"pTypes": ["num:corner 1", "num:corner 1", "num:corner 2", "num:corner 2", "num_deg", "num_deg"],
-				"shortDesc": "Draws an elliptical arc"
+				"pTypes": ["num:corner 1", "num:corner 1", "num:corner 2", "num:corner 2", "num_deg", "num_deg"]
 			},
 			"DrawCircle": {
 				"desc": "Draws a Circle.",
 				"pNames": ["x", "y", "radius"],
-				"pTypes": ["num", "num", "num:width relative"],
-				"shortDesc": "Draws a Circle"
+				"pTypes": ["num", "num", "num:width relative"]
 			},
 			"DrawFrame": {
 				"desc": "Draws the frame on a given time of a loaded gif file.",
@@ -1900,8 +1831,7 @@
 			"DrawImage": {
 				"desc": "Draws an Image:dso-CreateImage.\nSee [Android Developers](https://developer.android.com/reference/android/graphics/PorterDuff.Mode#enum-values_1) for 'mode' info",
 				"pNames": ["image", "x", "y", "w", "h", "angle", "mode"],
-				"pTypes": ["dso-CreateImage", "num", "num", "num", "num", "num_deg", "str-ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR"],
-				"shortDesc": "Draws an Image"
+				"pTypes": ["dso-CreateImage", "num", "num", "num", "num", "num_deg", "str-ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR"]
 			},
 			"DrawImageMtx": {
 				"desc": "Draws an image with a 2d [transformation matrix](https://docs.rainmeter.net/tips/transformation-matrix-guide).",
@@ -1912,20 +1842,17 @@
 			"DrawLine": {
 				"desc": "Draws a line.",
 				"pNames": ["x1", "y1", "x2", "y2"],
-				"pTypes": ["num", "num", "num", "num"],
-				"shortDesc": "Draws a line"
+				"pTypes": ["num", "num", "num", "num"]
 			},
 			"DrawPoint": {
 				"desc": "Draws a single pixel.",
 				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"shortDesc": "Draws a single pixel"
+				"pTypes": ["num", "num"]
 			},
 			"DrawRectangle": {
 				"desc": "Draws a rectangle.",
 				"pNames": ["x1", "y1", "x2", "y2"],
-				"pTypes": ["num", "num", "num", "num"],
-				"shortDesc": "Draws a rectangle"
+				"pTypes": ["num", "num", "num", "num"]
 			},
 			"DrawSamples": {
 				"desc": "Draws a vertically centered graph in relation to the specified range in both direction.\nThe sample value _0_ would be vertically centered, _-range_ at the top and _range_ at the bottom.\nThe sample x positions are evenly distributed over the whole image width.",
@@ -1936,8 +1863,7 @@
 			"DrawText": {
 				"desc": "Draws a text.",
 				"pNames": ["txt", "x", "y"],
-				"pTypes": ["str", "num", "num"],
-				"shortDesc": "Draws a text"
+				"pTypes": ["str", "num", "num"]
 			},
 			"Flatten": {
 				"desc": "Applies certain modifications to the image data, such as translate, scale, skew or alpha.",
@@ -1950,8 +1876,7 @@
 			"GetLeft": "#1237814406",
 			"GetName": {
 				"desc": "Returns the name set via SetName.",
-				"retval": "str",
-				"shortDesc": "Returns the name set via SetName"
+				"retval": "str"
 			},
 			"GetParent": "#3557841648",
 			"GetPixelColor": {
@@ -1972,8 +1897,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Image",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Image"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2003,20 +1927,17 @@
 			"Rotate": {
 				"desc": "Rotates the content.",
 				"pNames": ["angle", "pivotX", "pivotY"],
-				"pTypes": ["num_deg", "num", "num"],
-				"shortDesc": "Rotates the content"
+				"pTypes": ["num_deg", "num", "num"]
 			},
 			"Save": {
 				"desc": "Saves the image to a file on the local filesystem.",
 				"pNames": ["fileName", "quality"],
-				"pTypes": ["str_ptf", "num_prc-for jpg files"],
-				"shortDesc": "Saves the image to a file"
+				"pTypes": ["str_ptf", "num_prc-for jpg files"]
 			},
 			"Scale": {
 				"desc": "Scales the content by the given factors.",
 				"pNames": ["x", "y"],
-				"pTypes": ["num_fac", "num_fac"],
-				"shortDesc": "Scales the content"
+				"pTypes": ["num_fac", "num_fac"]
 			},
 			"SetAlpha": {
 				"desc": "Change the image alpha to a value between 0 and 255, where 0 is full transparent.",
@@ -2067,11 +1988,10 @@
 			"SetName": {
 				"desc": "Change the name of the image.",
 				"pNames": ["name"],
-				"pTypes": ["str"],
-				"shortDesc": "Change the name of the image"
+				"pTypes": ["str"]
 			},
 			"SetOnLoad": {
-				"desc": "Define a callback function which is called when the image has loaded in “async” mode.",
+				"desc": "%cb% the image has loaded in “async” mode.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["img"],
@@ -2124,8 +2044,7 @@
 			"Skew": {
 				"desc": "Skews the content.",
 				"pNames": ["x", "y"],
-				"pTypes": ["num", "num"],
-				"shortDesc": "Skews the content"
+				"pTypes": ["num", "num"]
 			},
 			"Transform": {
 				"desc": "Transform the content with a 2d transformation matrix.",
@@ -2135,8 +2054,7 @@
 			},
 			"Tween": "#2114624769",
 			"Update": {
-				"desc": "Update the view in disabled AutoUpdate mode.",
-				"shortDesc": "Update the view"
+				"desc": "Update the view in disabled AutoUpdate mode."
 			}
 		}
 	},
@@ -2167,8 +2085,7 @@
 			"DestroyChild": {
 				"desc": "Destroys and removes a child from the layout.",
 				"pNames": ["child"],
-				"pTypes": ["dso"],
-				"shortDesc": "Destroys and removes a child"
+				"pTypes": ["dso"]
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2177,8 +2094,7 @@
 				"desc": "Returns the z order of a child.",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"retval": "num_int",
-				"shortDesc": "Returns the z order of a child"
+				"retval": "num_int"
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -2187,8 +2103,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Layout",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Layout"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2213,8 +2128,7 @@
 			"SetChildMargins": {
 				"desc": "Set margins of top-level children.",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
-				"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
-				"shortDesc": "Set margins of top-level children."
+				"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"]
 			},
 			"SetChildTextSize": {
 				"desc": "Change the text size of top-level children.",
@@ -2239,8 +2153,7 @@
 			"SetGravity": {
 				"desc": "Adjust the placing of contained children.",
 				"pNames": ["gravity"],
-				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"],
-				"shortDesc": "Adjust the placing of contained children"
+				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChildChange": {
@@ -2260,8 +2173,7 @@
 			"SetOrientation": {
 				"desc": "Change the children orientation.",
 				"pNames": ["orient"],
-				"pTypes": ["str-Horizontal|Vertical"],
-				"shortDesc": "Change the children orientation"
+				"pTypes": ["str-Horizontal|Vertical"]
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
@@ -2290,8 +2202,7 @@
 			"AddItem": {
 				"desc": "Adds an entry to the list.",
 				"pNames": ["title", "body", "image"],
-				"pTypes": ["str", "str", "str||str_ptf"],
-				"shortDesc": "Adds an entry to the list."
+				"pTypes": ["str", "str", "str||str_ptf"]
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -2334,8 +2245,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-List",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-List"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2476,8 +2386,7 @@
 			"SetList": {
 				"desc": "Set the content of the whole list.",
 				"pNames": ["list", "delim"],
-				"pTypes": ["str_lst-title|title&colon;icon|title&colon;body&colon;icon", "str"],
-				"shortDesc": "Set the content of the whole list"
+				"pTypes": ["str_lst-title|title&colon;icon|title&colon;body&colon;icon", "str"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": {
@@ -2506,14 +2415,12 @@
 			"SetTextColor1": {
 				"desc": "Change the default text color of titles.",
 				"pNames": ["color"],
-				"pTypes": ["str_col"],
-				"shortDesc": "Change the default text color of titles."
+				"pTypes": ["str_col"]
 			},
 			"SetTextColor2": {
 				"desc": "Change the default text color of bodies.",
 				"pNames": ["color"],
-				"pTypes": ["str_col"],
-				"shortDesc": "Change the default text color of bodies"
+				"pTypes": ["str_col"]
 			},
 			"SetTextMargins": {
 				"desc": "Define a distance to other controls on each side of the control.",
@@ -2565,8 +2472,7 @@
 			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-ListDialog",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-ListDialog"
 			},
 			"Hide": "#5372805812",
 			"Method": "#1023663567",
@@ -2586,8 +2492,7 @@
 			"SetTitle": {
 				"desc": "Change the dialog title.",
 				"pNames": ["title"],
-				"pTypes": ["str"],
-				"shortDesc": "Change the dialog title"
+				"pTypes": ["str"]
 			},
 			"Show": "#1243391562"
 		}
@@ -2617,8 +2522,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Locator",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Locator"
 			},
 			"SetOnChange": {
 				"desc": "Define a function which is called when some of the values changed.",
@@ -2668,8 +2572,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-MediaPlayer",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-MediaPlayer"
 			},
 			"IsLooping": {
 				"desc": "Checks if the media player will replay the song from the begining if it has finished.",
@@ -2684,20 +2587,15 @@
 				"shortDesc": "Returns if player is useable yet"
 			},
 			"Pause": {
-				"desc": "Pause the current playing song.",
-				"shortDesc": "Pause the current playing song"
+				"desc": "Pause the current playing song."
 			},
 			"Play": {
-				"desc": "Play the current loaded song from the last paused time or from a given start time in in seconds.",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "Play the current loaded song"
+				"desc": "Play the current loaded song from the last paused time or from a given start time in in seconds."
 			},
 			"SeekTo": {
 				"desc": "Seek the player to a given time in seconds.",
 				"pNames": ["time"],
-				"pTypes": ["num_flt"],
-				"shortDesc": "Seek the player to a given time"
+				"pTypes": ["num_flt"]
 			},
 			"SetFile": {
 				"desc": "Load a sound file to the media player.",
@@ -2712,19 +2610,19 @@
 				"shortDesc": "Set looping mode"
 			},
 			"SetOnComplete": {
-				"desc": "Define a callback function which is called when a sound file has finished playing.",
+				"desc": "%cb% a sound file has finished playing.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the player has finished playing a track"
 			},
 			"SetOnReady": {
-				"desc": "Define a callback function which is called when the player is ready for use.",
+				"desc": "%cb% the player is ready for use.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the player is ready for use"
 			},
 			"SetOnSeekDone": {
-				"desc": "Define a callback function which is called when a seeking process is done.",
+				"desc": "%cb% a seeking process is done.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when ply.Seek has finished"
@@ -2736,8 +2634,7 @@
 				"shortDesc": "Set the playing volume"
 			},
 			"Stop": {
-				"desc": "Stop playing a song.",
-				"shortDesc": "Stop playing a song"
+				"desc": "Stop playing a song."
 			}
 		}
 	},
@@ -2764,29 +2661,25 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-MediaStore",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-MediaStore"
 			},
 			"QueryAlbums": {
 				"desc": "Search for media albums.",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "str:coloumns-album,\\_id,albumArt,artist,numSongs,firstYear,lastYear", "str-internal|external"],
-				"shortDesc": "Search for media albums"
+				"pTypes": ["str_sql", "str:coloumns-album,\\_id,albumArt,artist,numSongs,firstYear,lastYear", "str-internal|external"]
 			},
 			"QueryArtists": {
 				"desc": "Search for media artists.",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "str:coloumns-\\_id,artist,numAlbums,numTracks", "str-internal|external"],
-				"shortDesc": "Search for media artists"
+				"pTypes": ["str_sql", "str:coloumns-\\_id,artist,numAlbums,numTracks", "str-internal|external"]
 			},
 			"QueryMedia": {
 				"desc": "Search for media.",
 				"pNames": ["filter", "sort", "options"],
-				"pTypes": ["str_sql", "str:coloumns-title,\\_id,duration,size,uri,album,albumID,artist,artistId", "str-internal|external"],
-				"shortDesc": "Search for media"
+				"pTypes": ["str_sql", "str:coloumns-title,\\_id,duration,size,uri,album,albumID,artist,artistId", "str-internal|external"]
 			},
 			"SetOnAlbumsResult": {
-				"desc": "Define a callback function which is called when an album query has finished.",
+				"desc": "%cb% an album query has finished.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
@@ -2795,7 +2688,7 @@
 				"shortDesc": "Called when album query has finished"
 			},
 			"SetOnArtistsResult": {
-				"desc": "Define a callback function which is called when a artist query has finished.",
+				"desc": "%cb% a artist query has finished.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
@@ -2804,7 +2697,7 @@
 				"shortDesc": "Called when artist query has finished"
 			},
 			"SetOnMediaResult": {
-				"desc": "Define a callback function which is called when a media query has finished.",
+				"desc": "%cb% a media query has finished.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
@@ -2817,8 +2710,7 @@
 	"CreateMusic": {
 		"desc": "Add music to your app. See the @../Music/Music.html page for more details",
 		"abbrev": "mus",
-		"retval": "dso-Music",
-		"shortDesc": "Add Music to your app"
+		"retval": "dso-Music"
 	},
 	"CreateNetClient": {
 		"abbrev": "net",
@@ -2836,8 +2728,7 @@
 			},
 			"Batch": "#2357239857",
 			"Close": {
-				"desc": "Closes the NetClient socket.",
-				"shortDesc": "Closes the NetClient socket"
+				"desc": "Closes the NetClient socket."
 			},
 			"Connect": {
 				"desc": "Connect the NetClient to a server.",
@@ -2852,18 +2743,15 @@
 			"DownloadFile": {
 				"desc": "Downloads a file via TCP from the server.",
 				"pNames": ["file"],
-				"pTypes": ["str_url"],
-				"shortDesc": "Downloads a file via TCP from the server"
+				"pTypes": ["str_url"]
 			},
 			"GetBroadcastAddress": {
 				"desc": "Returns the broadcast address of UDP connections.",
-				"retval": "str",
-				"shortDesc": "Returns the broadcast address of UDP connections."
+				"retval": "str"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-NetClient",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-NetClient"
 			},
 			"IsConnected": {
 				"desc": "Checks if the NetClient is connected to a server.",
@@ -2874,15 +2762,13 @@
 				"desc": "Receive data as bytes.",
 				"pNames": ["mode"],
 				"pTypes": ["str-Int|Hex"],
-				"retval": "lst-[ bytes:num_byt ]",
-				"shortDesc": "Receive data as bytes"
+				"retval": "lst-[ bytes:num_byt ]"
 			},
 			"ReceiveDatagram": {
 				"desc": "Receive an UDP Datagram.",
 				"pNames": ["mode", "port", "timeout", "options"],
 				"pTypes": ["str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "num_int", "num", "str-&lt;BUFSIZ:\"“1k,2k,4k,8k,16k,32k,64k”\"&gt;"],
-				"retval": "str",
-				"shortDesc": "Receive an UDP Datagram"
+				"retval": "str"
 			},
 			"ReceiveDatagrams": {
 				"desc": "Receive datagrams over UDP and calls the OnReceive callback for each one.",
@@ -2894,8 +2780,7 @@
 				"desc": "Receive a file via TCP from the server.",
 				"pNames": ["file", "wait"],
 				"pTypes": ["str", "num"],
-				"retval": "str",
-				"shortDesc": "Receive a file via TCP from the server"
+				"retval": "str"
 			},
 			"ReceiveText": {
 				"desc": "Receive text from TCP connection.",
@@ -2914,14 +2799,12 @@
 			"SendBytes": {
 				"desc": "Send bytes over TCP connection.",
 				"pNames": ["data", "mode"],
-				"pTypes": ["lst-[ bytes:num_byt ]||str_com-bytes:hexadecimal 00&period;&period;FF", "str-Int|Hex"],
-				"shortDesc": "Send bytes over TCP"
+				"pTypes": ["lst-[ bytes:num_byt ]||str_com-bytes:hexadecimal 00&period;&period;FF", "str-Int|Hex"]
 			},
 			"SendDatagram": {
 				"desc": "Send an UDP Datagram.",
 				"pNames": ["data", "mode", "address", "port", "options"],
-				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "str_url", "num_int", "str-Text|Hex|Bytes"],
-				"shortDesc": "Send an UDP Datagram"
+				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16", "str_url", "num_int", "str-Text|Hex|Bytes"]
 			},
 			"SetDataMode": {
 				"desc": "Enable sending data in several modes.",
@@ -2938,11 +2821,10 @@
 			"SendText": {
 				"desc": "Sends text over TCP connection.",
 				"pNames": ["text", "mode"],
-				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
-				"shortDesc": "Sends text over TCP"
+				"pTypes": ["str", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"]
 			},
 			"SetOnConnect": {
-				"desc": "Define a callback function which is called when a TCP connection could be established or if it failed to connect to the server. The _connected_ state is passed as first argument.",
+				"desc": "%cb% a TCP connection could be established or if it failed to connect to the server. The _connected_ state is passed as first argument.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["connected"],
@@ -2951,7 +2833,7 @@
 				"shortDesc": "Called when TCP connected or failed to connect to a server."
 			},
 			"SetOnDownload": {
-				"desc": "Define a callback function which is called when a TCP file download has finished.",
+				"desc": "%cb% a TCP file download has finished.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["something"],
@@ -2960,7 +2842,7 @@
 				"shortDesc": "called when a file download has finished"
 			},
 			"SetOnReceive": {
-				"desc": "Define a callback function which is called when a TCP NetClient received some data when AutoReceive was set.",
+				"desc": "%cb% a TCP NetClient received some data when AutoReceive was set.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["address"],
@@ -2986,8 +2868,7 @@
 		"abbrev": "nod",
 		"desc": "#CreateNode.md",
 		"pNames": ["paths", "options"],
-		"pTypes": ["str_pth-NODE_PATH env variable", "str"],
-		"shortDesc": "CreateNode"
+		"pTypes": ["str_pth-NODE_PATH env variable", "str"]
 	},
 	"CreateNotification": {
 		"abbrev": "ntf",
@@ -3001,13 +2882,11 @@
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
 				"pNames": ["id"],
-				"pTypes": ["str"],
-				"shortDesc": "Cancel a notification"
+				"pTypes": ["str"]
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Notification",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Notification"
 			},
 			"Listen": {
 				"desc": "Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.",
@@ -3018,8 +2897,7 @@
 			"Notify": {
 				"desc": "Send the notification to the user.",
 				"pNames": ["id"],
-				"pTypes": ["str"],
-				"shortDesc": "Send the notification"
+				"pTypes": ["str"]
 			},
 			"SetLargeImage": {
 				"desc": "Set an image which will be displayed bigger than usual.",
@@ -3036,8 +2914,7 @@
 			"SetMessage": {
 				"desc": "Set notification texts.",
 				"pNames": ["ticker", "title", "text", "extra"],
-				"pTypes": ["str", "str", "str", "str"],
-				"shortDesc": "Set notification texts"
+				"pTypes": ["str", "str", "str", "str"]
 			},
 			"SetOnNotify": {
 				"desc": "Called when a notification has been intercepted.",
@@ -3106,8 +2983,7 @@
 				"desc": "Find next program file on the NXT.",
 				"pNames": ["handle"],
 				"pTypes": ["str"],
-				"retval": "str",
-				"shortDesc": "Find next program"
+				"retval": "str"
 			},
 			"GetBtAddress": {
 				"desc": "Returns Bluetooth address of a connected NXT brick",
@@ -3133,8 +3009,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Nxt",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Nxt"
 			},
 			"IsBluetoothEnabled": {
 				"desc": "Checks if bluetooth is enabled on the device.",
@@ -3168,15 +3043,13 @@
 			"PlaySoundFile": {
 				"desc": "Play a sound file for a given amount of times.",
 				"pNames": ["file", "repeat"],
-				"pTypes": ["str_ptf", "num_int"],
-				"shortDesc": "Play a sound file"
+				"pTypes": ["str_ptf", "num_int"]
 			},
 			"ReadColorSensor": {
 				"desc": "Read a color sensor value on the input where the sensor is plugged into.\n\nIn “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.\nYou can use the ToColorName function to convert from these six values to a color name.\nAll other modes return a value between 0 and 1023.",
 				"pNames": ["input", "mode"],
 				"pTypes": ["num_int-1", "str-ColorDetect|LightSense|RedSense|GreenSense|BlueSense"],
-				"retval": "num_int-1..6 or 0..1023",
-				"shortDesc": "Read a color sensor value"
+				"retval": "num_int-1..6 or 0..1023"
 			},
 			"ReadDistanceSensor": {
 				"desc": "Reads the distance measured by the ultrasonic sensor in centimeters.",
@@ -3196,8 +3069,7 @@
 				"desc": "Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.",
 				"pNames": ["mailbox", "type", "remove"],
 				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "bin"],
-				"retval": "str",
-				"shortDesc": "Reads a message from the NXT brick's mail box"
+				"retval": "str"
 			},
 			"ReadSoundSensor": {
 				"desc": "Reads the sound pressure level of the surrounding.",
@@ -3220,14 +3092,12 @@
 			"Reset": {
 				"desc": "Reset wheel encoder offset to 0.",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Reset wheel encoder offset to 0."
+				"pTypes": ["str-A,B,C|ABC"]
 			},
 			"SendMail": {
 				"desc": "Sends a message to the NXT brick's mail box.",
 				"pNames": ["mailbox", "type", "message"],
-				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "str||num_int"],
-				"shortDesc": "Sends a message to the NXT brick's mail box."
+				"pTypes": ["num_int-1..10", "str-Text|Number|Logic", "str||num_int"]
 			},
 			"SetInvert": {
 				"desc": "Provides a convenient way to invert the direction of the motor commands.",
@@ -3242,7 +3112,7 @@
 				"shortDesc": "Change sensor LED color"
 			},
 			"SetOnConnect": {
-				"desc": "Define a callback function which is called when the NXT has been connected via Bluetooth or if it failed to.",
+				"desc": "%cb% the NXT has been connected via Bluetooth or if it failed to.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["connected"],
@@ -3251,7 +3121,7 @@
 				"shortDesc": "Called when NXT connection established or failed"
 			},
 			"SetOnConnected": {
-				"desc": "Define a callback function which is called when the NXT has been successfully connected via Bluetooth",
+				"desc": "%cb% the NXT has been successfully connected via Bluetooth",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when bt connection established"
@@ -3268,14 +3138,12 @@
 			"StartProgram": {
 				"desc": "Starts an NXT-G program on the NXT brick if available.",
 				"pNames": ["name"],
-				"pTypes": ["str_pth"],
-				"shortDesc": "Starts an NXT-G program"
+				"pTypes": ["str_pth"]
 			},
 			"Stop": {
 				"desc": "Stop powering some motors.",
 				"pNames": ["motors"],
-				"pTypes": ["str-A,B,C|ABC"],
-				"shortDesc": "Stop powering some motors."
+				"pTypes": ["str-A,B,C|ABC"]
 			},
 			"StopProgram": {
 				"desc": "Stops a the currently running NXT-G program.",
@@ -3306,8 +3174,7 @@
 			"Batch": "#2357239857",
 			"GetParent": "#3557841648",
 			"GetType": {
-				"desc": "Returns the control class name.",
-				"shortDesc": "GetType"
+				"desc": "Returns the control class name."
 			},
 			"RemoveLayout": {
 				"desc": "Removes a layout from the overlay.",
@@ -3334,11 +3201,10 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-PhoneState",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-PhoneState"
 			},
 			"SetOnChange": {
-				"desc": "Define a callback function which is called when a phone state has changed.",
+				"desc": "%cb% a phone state has changed.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["type", "data"],
@@ -3347,12 +3213,10 @@
 				"shortDesc": "Called when a phone state has changed"
 			},
 			"Start": {
-				"desc": "Start listening.",
-				"shortDesc": "Start listening"
+				"desc": "Start listening."
 			},
 			"Stop": {
-				"desc": "Stop listening.",
-				"shortDesc": "Stop listening"
+				"desc": "Stop listening."
 			}
 		}
 	},
@@ -3386,8 +3250,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-PlayStore",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-PlayStore"
 			},
 			"Purchase": {
 				"desc": "Purchase an item on Google Play.",
@@ -3444,8 +3307,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Scroller",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Scroller"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -3513,8 +3375,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-SeekBar",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-SeekBar"
 			},
 			"GetValue": {
 				"desc": "Returns the current value of the seek bar.",
@@ -3587,8 +3448,7 @@
 			},
 			"GetNames": {
 				"desc": "Returns a list of builtin sensors in your device.",
-				"retval": "str_com",
-				"shortDesc": "Returns a list of builtin sensors"
+				"retval": "str_com"
 			},
 			"GetPitch": {
 				"desc": "Returns the second/y/pitch value of a sensor.",
@@ -3602,8 +3462,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Sensor",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Sensor"
 			},
 			"GetValues": {
 				"desc": "Returns all values of a sensor.",
@@ -3624,7 +3483,7 @@
 				"shortDesc": "Set minimum value difference which triggers OnChange"
 			},
 			"SetOnChange": {
-				"desc": "Define a callback function which is called when a sensor value has changed.",
+				"desc": "%cb% a sensor value has changed.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["first", "second", "third", "time"],
@@ -3653,8 +3512,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Service",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Service"
 			},
 			"SendMessage": {
 				"desc": "Sends a message to the service.",
@@ -3663,17 +3521,15 @@
 				"shortDesc": "Send message to service"
 			},
 			"SetInBackground": {
-				"desc": "Run service in background.",
-				"shortDesc": "Run service in background"
+				"desc": "Run service in background."
 			},
 			"SetInForeground": {
 				"desc": "Run service in foreground.",
 				"pNames": ["title", "text", "largeIcon", "smallIcon", "importance"],
-				"pTypes": ["str", "str", "str_ptf", "str_ptf", "str-none|min|low|high"],
-				"shortDesc": "Run service in foreground"
+				"pTypes": ["str", "str", "str_ptf", "str_ptf", "str-none|min|low|high"]
 			},
 			"SetOnMessage": {
-				"desc": "Define a callback function which is called when a message arrived from the service.",
+				"desc": "%cb% a message arrived from the service.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["message"],
@@ -3754,43 +3610,43 @@
 				"shortDesc": "Set SmartWatch menu."
 			},
 			"SetOnBack": {
-				"desc": "Define a callback function which is called when the SmartWatch back button was pressed.",
+				"desc": "%cb% the SmartWatch back button was pressed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "called when SmartWatch back button was pressed"
 			},
 			"SetOnHide": {
-				"desc": "Define a callback function which is called when the SmartWatch app is hidden.",
+				"desc": "%cb% the SmartWatch app is hidden.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app is hidden"
 			},
 			"SetOnMenu": {
-				"desc": "Define a callback function which is called when the SmartWatch menu button is touched.",
+				"desc": "%cb% the SmartWatch menu button is touched.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch menu button is touched"
 			},
 			"SetOnShow": {
-				"desc": "Define a callback function which is called when the SmartWatch app is shown.",
+				"desc": "%cb% the SmartWatch app is shown.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app is shown"
 			},
 			"SetOnStart": {
-				"desc": "Define a callback function which is called when the SmartWatch app has started.",
+				"desc": "%cb% the SmartWatch app has started.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app has started"
 			},
 			"SetOnStop": {
-				"desc": "Define a callback function which is called when the SmartWatch app has stopped.",
+				"desc": "%cb% the SmartWatch app has stopped.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SmartWatch app has stopped"
 			},
 			"SetOnSwipe": {
-				"desc": "Define a callback function which is called when the SmartWatch screen is swiped.",
+				"desc": "%cb% the SmartWatch screen is swiped.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["dir"],
@@ -3799,7 +3655,7 @@
 				"shortDesc": "Called when SmartWatch screen is swiped"
 			},
 			"SetOnTouch": {
-				"desc": "Define a callback function which is called when the SmartWatch was touched.",
+				"desc": "%cb% the SmartWatch was touched.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["dir", "x", "y"],
@@ -3841,22 +3697,19 @@
 		"abbrev": "sms",
 		"desc": "Returns a new SMS object to send and retreive SMS messages.\n<xfeature>",
 		"retval": "dso-SMS",
-		"shortDesc": "Returns a new SMS object",
 		"subf": {
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-SMS",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-SMS"
 			},
 			"Send": {
 				"desc": "Send SMS message.",
 				"pNames": ["number", "message", "options"],
-				"pTypes": ["str", "str", "str-MultiPart:multi-part SMS messaging"],
-				"shortDesc": "Send SMS"
+				"pTypes": ["str", "str", "str-MultiPart:multi-part SMS messaging"]
 			},
 			"SetOnMessage": {
-				"desc": "Define a callback function which is called when the user received a SMS",
+				"desc": "%cb% the user received a SMS",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["message"],
@@ -3865,7 +3718,7 @@
 				"shortDesc": "Called when user received a SMS"
 			},
 			"SetOnStatus": {
-				"desc": "Define a callback function which is called when a status has changed.",
+				"desc": "%cb% a status has changed.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["status"],
@@ -3890,13 +3743,11 @@
 			},
 			"GetRMS": {
 				"desc": "Returns the RMS value (Root Mean Square) from the audio recorder.",
-				"retval": "num_flt",
-				"shortDesc": "Returns the RMS value"
+				"retval": "num_flt"
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-SpeechRec",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-SpeechRec"
 			},
 			"IsListening": {
 				"desc": "Check whether SpeechRec is currently listening.",
@@ -3909,7 +3760,7 @@
 				"shortDesc": "Start speech recognition"
 			},
 			"SetOnError": {
-				"desc": "Define a callback function which is called when an error occured.",
+				"desc": "%cb% an error occured.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["error"],
@@ -3918,13 +3769,13 @@
 				"shortDesc": "Called when an error occured."
 			},
 			"SetOnReady": {
-				"desc": "Define a callback function which is called when the SpeechRec object is ready for use.",
+				"desc": "%cb% the SpeechRec object is ready for use.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when SpeechRec is ready for use"
 			},
 			"SetOnResult": {
-				"desc": "Define a callback function which is called when a text was successfully recognized",
+				"desc": "%cb% a text was successfully recognized",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
@@ -3962,8 +3813,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Spinner",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Spinner"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4056,8 +3906,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Switch",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Switch"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4112,8 +3961,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Synth",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Synth"
 			},
 			"PlayMidiTune": {
 				"desc": "Play a comma-separated sequence of “midi_note&colon;duration” pairs.",
@@ -4130,8 +3978,7 @@
 			"PlayTone": {
 				"desc": "Plays a frequency tone.",
 				"pNames": ["frequency", "duration"],
-				"pTypes": ["num:frequency", "num_mls"],
-				"shortDesc": "Plays a frequency tone"
+				"pTypes": ["num:frequency", "num_mls"]
 			},
 			"SetDelay": {
 				"desc": "Change the delay effect difference",
@@ -4142,8 +3989,7 @@
 			"SetDelayEnabled": {
 				"desc": "Enables the delay effect (plays every note a second time after a given delay)",
 				"pNames": ["enable"],
-				"pTypes": ["bin"],
-				"shortDesc": "Enables the delay effect"
+				"pTypes": ["bin"]
 			},
 			"SetFeedback": {
 				"desc": "Adds a feedback effect when delay is enabled",
@@ -4178,32 +4024,27 @@
 			"SetPhaserEnabled": {
 				"desc": "En/Disables phaser effect",
 				"pNames": ["enable"],
-				"pTypes": ["bin"],
-				"shortDesc": "En/Disables phaser effect"
+				"pTypes": ["bin"]
 			},
 			"SetPhaserFeedback": {
 				"desc": "Enables phaser feedback",
 				"pNames": ["feedback"],
-				"pTypes": ["num_frc"],
-				"shortDesc": "Enables phaser feedback"
+				"pTypes": ["num_frc"]
 			},
 			"SetPhaserRange": {
 				"desc": "Set sweep range",
 				"pNames": ["range"],
-				"pTypes": ["num"],
-				"shortDesc": "Set sweep range"
+				"pTypes": ["num"]
 			},
 			"SetPhaserRate": {
 				"desc": "Set sweeps per second",
 				"pNames": ["rate"],
-				"pTypes": ["num"],
-				"shortDesc": "Set sweeps per second"
+				"pTypes": ["num"]
 			},
 			"SetVca": {
 				"desc": "Initializes the VCA",
 				"pNames": ["attack", "decay", "sustain", "release"],
-				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls"],
-				"shortDesc": "Initializes the VCA"
+				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls"]
 			},
 			"SetVcaAttack": {
 				"desc": "Set a time where the volume should reach a maximum",
@@ -4220,8 +4061,7 @@
 			"SetVcaEnabled": {
 				"desc": "En/Disables VCA effect",
 				"pNames": ["enable"],
-				"pTypes": ["bin"],
-				"shortDesc": "En/Disables VCA effect"
+				"pTypes": ["bin"]
 			},
 			"SetVcaRelease": {
 				"desc": "Set a time where the volume should reach a minimum",
@@ -4232,14 +4072,12 @@
 			"SetVcaSustain": {
 				"desc": "Set a basis volume",
 				"pNames": ["sustain"],
-				"pTypes": ["num_frc"],
-				"shortDesc": "Set a basis volume"
+				"pTypes": ["num_frc"]
 			},
 			"SetVcf": {
 				"desc": "Initialize the VCF effect",
 				"pNames": ["attack", "decay", "sustain", "release", "cuttoff", "resonance", "depth"],
-				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls", "num:frequency", "num_frc", "num_frc"],
-				"shortDesc": "Initialize the VCF effect"
+				"pTypes": ["num_mls", "num_mls", "num_frc", "num_mls", "num:frequency", "num_frc", "num_frc"]
 			},
 			"SetVcfAttack": {
 				"desc": "Set a time where the frequencies should reach a maximum",
@@ -4250,8 +4088,7 @@
 			"SetVcfCutoff": {
 				"desc": "Set a maximum frequency which will never be exceeded",
 				"pNames": ["cuttoff"],
-				"pTypes": ["num:frequency"],
-				"shortDesc": "Set a maximum frequency"
+				"pTypes": ["num:frequency"]
 			},
 			"SetVcfDecay": {
 				"desc": "Controls time in which the frequency is lowered to the sustain value.",
@@ -4268,8 +4105,7 @@
 			"SetVcfEnabled": {
 				"desc": "En/Disables VCF effect",
 				"pNames": ["enable"],
-				"pTypes": ["bin"],
-				"shortDesc": "En/Disables VCF effect"
+				"pTypes": ["bin"]
 			},
 			"SetVcfRelease": {
 				"desc": "Set a time where the volume should reach a minimum",
@@ -4280,14 +4116,12 @@
 			"SetVcfResonance": {
 				"desc": "Adds a resonance tone",
 				"pNames": ["resonance"],
-				"pTypes": ["num_frc"],
-				"shortDesc": "Adds a resonance tone"
+				"pTypes": ["num_frc"]
 			},
 			"SetVcfSustain": {
 				"desc": "Set a basis frequency",
 				"pNames": ["sustain"],
-				"pTypes": ["num_frc"],
-				"shortDesc": "Set a basis frequency"
+				"pTypes": ["num_frc"]
 			},
 			"SetVolume": {
 				"desc": "Set the overall synthesizer volume",
@@ -4298,16 +4132,13 @@
 			"SetWaveShape": {
 				"desc": "Set the wave shape of the synthesizer",
 				"pNames": ["shape"],
-				"pTypes": ["str-Sin,Saw,Square,White"],
-				"shortDesc": "Set the wave shape"
+				"pTypes": ["str-Sin,Saw,Square,White"]
 			},
 			"Start": {
-				"desc": "Start playing",
-				"shortDesc": "Start playing"
+				"desc": "Start playing"
 			},
 			"Stop": {
-				"desc": "Stop playing",
-				"shortDesc": "Stop playing"
+				"desc": "Stop playing"
 			}
 		}
 	},
@@ -4328,8 +4159,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-SysProc",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-SysProc"
 			},
 			"In": {
 				"desc": "Read data from stdin",
@@ -4352,7 +4182,7 @@
 				"shortDesc": "Read first byte of a file"
 			},
 			"SetOnError": {
-				"desc": "Define a callback function which is called when something was written to stderr",
+				"desc": "%cb% something was written to stderr",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["data"],
@@ -4361,7 +4191,7 @@
 				"shortDesc": "called when stderr changed"
 			},
 			"SetOnInput": {
-				"desc": "Define a callback function which is called when something was written to stdout",
+				"desc": "%cb% something was written to stdout",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["data"],
@@ -4407,8 +4237,7 @@
 				"desc": "Destroys and removes a child from the layout.",
 				"name": "DestroyChild",
 				"pNames": ["child"],
-				"pTypes": ["dso"],
-				"shortDesc": "Destroys and removes a child"
+				"pTypes": ["dso"]
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -4418,8 +4247,7 @@
 				"name": "GetChildOrder",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
-				"retval": "num_int",
-				"shortDesc": "Returns the z order of a child"
+				"retval": "num_int"
 			},
 			"GetCurrentTabName": {
 					"desc": "Returns the currently displayed tab name",
@@ -4440,8 +4268,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Tabs",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Tabs"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4482,12 +4309,11 @@
 				"desc": "Adjust the placing of contained children.",
 				"name": "SetGravity",
 				"pNames": ["gravity"],
-				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"],
-				"shortDesc": "Adjust the placing of contained children"
+				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": {
-				"desc": "Define a callback function which is called when the tab has been changed by the user.",
+				"desc": "%cb% the tab has been changed by the user.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["name"],
@@ -4513,8 +4339,7 @@
 				"desc": "Change the children orientation.",
 				"name": "SetOrientation",
 				"pNames": ["orient"],
-				"pTypes": ["str-Horizontal|Vertical"],
-				"shortDesc": "Change the children orientation"
+				"pTypes": ["str-Horizontal|Vertical"]
 			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
@@ -4591,8 +4416,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Text",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4727,8 +4551,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-TextEdit",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-TextEdit"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4745,8 +4568,7 @@
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action"
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
@@ -4769,8 +4591,7 @@
 			"SetCursorPos": {
 				"desc": "Change the current cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the current cursor position"
+				"pTypes": ["num_int"]
 			},
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
@@ -4784,7 +4605,7 @@
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)\nAlong with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)\nAlong with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
@@ -4804,8 +4625,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769",
 			"Undo": {
-				"desc": "Undo an action.",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action."
 			}
 		}
 	},
@@ -4821,8 +4641,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Theme",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Theme"
 			},
 			"Method": "#1023663567",
 			"SetBackColor": "#3857861627",
@@ -4996,8 +4815,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-Toggle",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-Toggle"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5052,8 +4870,7 @@
 			"Batch": "#2357239857",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-USBSerial",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-USBSerial"
 			},
 			"IsConnected": {
 				"desc": "Returns whether a USB serial device is connected.",
@@ -5107,10 +4924,8 @@
 				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
-				"desc": "SetTimeout",
 				"pNames": ["ms"],
-				"pTypes": ["num_mls"],
-				"shortDesc": "SetTimeout"
+				"pTypes": ["num_mls"]
 			},
 			"Start": {
 				"desc": "Start listening to the USB serial connection.",
@@ -5154,8 +4969,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-VideoView",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-VideoView"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5205,25 +5019,25 @@
 			},
 			"SetMargins": "#1741900074",
 			"SetOnComplete": {
-				"desc": "Define a callback function which is called when the playback has finished playing",
+				"desc": "%cb% the playback has finished playing",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when playback finished"
 			},
 			"SetOnError": {
-				"desc": "Define a callback function which is called when an error occured.",
+				"desc": "%cb% an error occured.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when an error occured"
 			},
 			"SetOnReady": {
-				"desc": "Define a callback function which is called when the video is ready for playback.",
+				"desc": "%cb% the video is ready for playback.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when video is ready for playback"
 			},
 			"SetOnSubtitle": {
-				"desc": "Define a callback function which is called when the subtitle text changed.",
+				"desc": "%cb% the subtitle text changed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when subtitle text changed"
@@ -5262,8 +5076,7 @@
 		"subf": {
 			"Batch": "#2357239857",
 			"GetType": {
-				"desc": "Returns the control class name.",
-				"shortDesc": "GetType"
+				"desc": "Returns the control class name."
 			},
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567"
@@ -5284,7 +5097,7 @@
 				"shortDesc": "Redirect urls"
 			},
 			"AddServlet": {
-				"desc": "Define a callback function which is called when a HTTP GET request on a given servlet name was recieved.",
+				"desc": "%cb% a HTTP GET request on a given servlet name was recieved.",
 				"pNames": ["path", "callback"],
 				"pTypes": ["str:url path-/name", {
 					"pNames": ["args", "info"],
@@ -5301,8 +5114,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-WebServer",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-WebServer"
 			},
 			"GetWebSockClients": {
 				"desc": "Returns a list of connected client [WebSockets](CreateWebSocket.htm).",
@@ -5323,7 +5135,7 @@
 				"shortDesc": "Set server root folder"
 			},
 			"SetOnReceive": {
-				"desc": "Define a callback function which is called when the server received a message from a client.",
+				"desc": "%cb% the server received a message from a client.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["msg", "ip", "id"],
@@ -5332,7 +5144,7 @@
 				"shortDesc": "Called when received client message"
 			},
 			"SetOnUpload": {
-				"desc": "Define a callback function which is called when a file was uploaded to the server.",
+				"desc": "%cb% a file was uploaded to the server.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["filename", "ip"],
@@ -5357,8 +5169,7 @@
 				"shortDesc": "Start server"
 			},
 			"Stop": {
-				"desc": "Stop server",
-				"shortDesc": "Stop server"
+				"desc": "Stop server"
 			}
 		}
 	},
@@ -5392,13 +5203,13 @@
 				"shortDesc": "Send message to server"
 			},
 			"SetOnClose": {
-				"desc": "Define a callback function which is called when the WebSocket has been closed.",
+				"desc": "%cb% the WebSocket has been closed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when WebSocket was closed"
 			},
 			"SetOnMessage": {
-				"desc": "Define a callback function which is called when the WebSocket recived a message from the server.",
+				"desc": "%cb% the WebSocket recived a message from the server.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["message"],
@@ -5407,7 +5218,7 @@
 				"shortDesc": "Called when received message from server"
 			},
 			"SetOnOpen": {
-				"desc": "Define a callback function which is called when the WebSocket has been opened.",
+				"desc": "%cb% the WebSocket has been opened.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when WebSocket is open"
@@ -5470,8 +5281,7 @@
 			"GetTop": "#1981028136",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-WebView",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-WebView"
 			},
 			"GetUrl": {
 				"desc": "Returns the current website url.",
@@ -5530,11 +5340,10 @@
 			"SetTextZoom": {
 				"desc": "Scales the html text by a given factor.",
 				"pNames": ["zoom"],
-				"pTypes": ["num_frc"],
-				"shortDesc": "Scales the html text"
+				"pTypes": ["num_frc"]
 			},
 			"SetOnConsole": {
-				"desc": "Define a callback function which is called when a message was logged to the console.",
+				"desc": "%cb% a message was logged to the console.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["msg"],
@@ -5543,7 +5352,7 @@
 				"shortDesc": "Called when message logged to console"
 			},
 			"SetOnError": {
-				"desc": "Define a callback function which is called when an error occured.",
+				"desc": "%cb% an error occured.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["error"],
@@ -5552,7 +5361,7 @@
 				"shortDesc": "Called when an error occured"
 			},
 			"SetOnProgress": {
-				"desc": "Define a callback function which is called when the webpage loading progress changed",
+				"desc": "%cb% the webpage loading progress changed",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["progress"],
@@ -5571,7 +5380,7 @@
 			},
 			"SetOnTouch": "#2088093920",
 			"SetOnUrl": {
-				"desc": "Define a callback function which is called when the user clicked a link.",
+				"desc": "%cb% the user clicked a link.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["url"],
@@ -5630,7 +5439,6 @@
 			"pNames": ["layout", "page"],
 			"pTypes": ["dso-CreateLayout", "num_int"]
 		}, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
-		"shortDesc": "CreateWizard",
 		"subf": {
 			"Batch": "#2357239857",
 			"Dismiss": "#1924613953",
@@ -5654,8 +5462,7 @@
 				"shortDesc": "Get wiz content layout"
 			},
 			"GetType": {
-				"desc": "Returns the control class name.",
-				"shortDesc": "GetType"
+				"desc": "Returns the control class name."
 			},
 			"Hide": "#5372805812",
 			"IsVisible": "#1814300863",
@@ -5675,8 +5482,7 @@
 			"Dismiss": "#1924613953",
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-YesNoDialog",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-YesNoDialog"
 			},
 			"Hide": "#5372805812",
 			"Method": "#1023663567",
@@ -5694,7 +5500,7 @@
 				"shortDesc": "Change Yes/No button text"
 			},
 			"SetOnTouch": {
-				"desc": "Define a callback function which is called when the user touches one of the buttons, passing either “Yes” or “No” to the callback function",
+				"desc": "%cb% the user touches one of the buttons, passing either “Yes” or “No” to the callback function",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
@@ -5757,8 +5563,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
-				"retval": "str-ZipUtil",
-				"shortDesc": "Returns the control class name"
+				"retval": "str-ZipUtil"
 			},
 			"List": {
 				"desc": "Returns a list of the files contained in the zip.",
@@ -5848,8 +5653,7 @@
 	"EnableBackKey": {
 		"desc": "#EnableBackKey.md",
 		"pNames": ["enable"],
-		"pTypes": ["bin"],
-		"shortDesc": "EnableBackKey"
+		"pTypes": ["bin"]
 	},
 	"Error": {
 		"desc": "Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.\n\nSee Also: @Alert",
@@ -5912,13 +5716,11 @@
 	},
 	"GetAccounts": {
 		"desc": "Returns a string of all known account names on the device separated with comma ','.\n\nSee Also: @ChooseAccount",
-		"retval": "str_com",
-		"shortDesc": "GetAccounts"
+		"retval": "str_com"
 	},
 	"GetActivities": {
 		"desc": "GetActivities returns a list of object of currently running activities.\n\nSee Also: @GetRunningApps, @GetRunningServices",
-		"retval": "lst-[{ label:str&comma; packageName:str&comma; className:str }]",
-		"shortDesc": "GetActivities"
+		"retval": "lst-[{ label:str&comma; packageName:str&comma; className:str }]"
 	},
 	"GetAppName": {
 		"desc": "Returns the name of the current app.",
@@ -6078,15 +5880,13 @@
 		"desc": "Returns the name of a conected joystick.\n\nSee Also: @GetJoystickState",
 		"pNames": ["id"],
 		"pTypes": ["num_int"],
-		"retval": "str",
-		"shortDesc": "GetJoystickName"
+		"retval": "str"
 	},
 	"GetJoystickState": {
 		"desc": "#GetJoystickState.md",
 		"pNames": ["id", "key"],
 		"pTypes": ["num_int", "str-A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12"],
-		"retval": "num",
-		"shortDesc": "GetJoystickState"
+		"retval": "num"
 	},
 	"GetJoystickStates": {
 		"desc": "Returns an object with all keystates.\n\nSee Also: @GetJoystickState",
@@ -6136,8 +5936,7 @@
 		"desc": "Returns a string list of metadata values contained in an audio file.\n\nSee Also: @CreateMediaPlayer",
 		"pNames": ["file", "keys"],
 		"pTypes": ["str_ptf", "str_com-album,artist,genre,title,composer,author,duration,bitrate,width,height"],
-		"retval": "str_com",
-		"shortDesc": "GetMetadata"
+		"retval": "str_com"
 	},
 	"GetModel": {
 		"desc": "Returns the model name of the device.",
@@ -6195,8 +5994,7 @@
 		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<pid:num>", {
 			"pNames": ["ungranted"],
 			"pTypes": ["str_com||str_uri"]
-		}],
-		"shortDesc": "GetPermission"
+		}]
 	},
 	"GetPrivateFolder": {
 		"desc": "Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.\n\nSee Also: @GetAppPath, @GetPath",
@@ -6273,8 +6071,7 @@
 	},
 	"GetSpeakerPhone": {
 		"desc": "Checks if the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
-		"retval": "bin",
-		"shortDesc": "Checks if the speaker is enabled"
+		"retval": "bin"
 	},
 	"GetSpecialFolder": {
 		"desc": "Returns the full path to a special folder commonly used for images, videos, music etc.\n\nSee Also: @GetPath, @GetAppPath, @WriteFile",
@@ -6310,13 +6107,11 @@
 		"desc": "Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the **px** option.",
 		"pNames": ["options"],
 		"pTypes": ["str-px"],
-		"retval": "num_frc",
-		"shortDesc": "GetTop"
+		"retval": "num_frc"
 	},
 	"GetType": {
 		"desc": "Returns the object class name.",
-		"retval": "str-App",
-		"shortDesc": "Returns the object class name"
+		"retval": "str-App"
 	},
 	"GetUser": {
 		"desc": "Returns the email-address of the currently active user account.\n\nSee Also: @GetAccounts",
@@ -6370,8 +6165,7 @@
 		"shortDesc": "Send Http request"
 	},
 	"InIDE": {
-		"desc": "InIDE",
-		"shortDesc": "InIDE"
+		"retval": "bin"
 	},
 	"InstallWallpaper": {
 		"desc": "Let the user install a device wallpaper located in the 'Wallpaper.js' script in the project root folder.\n\n<premium>\n\nSee also @CreateWallpaper.",
@@ -6480,8 +6274,7 @@
 	},
 	"IsScoped": {
 		"desc": "Indicates 'scoped storage' on Android 10+",
-		"retval": "bin",
-		"shortDesc": "Indicates 'scoped storage'"
+		"retval": "bin"
 	},
 	"IsScreenOn": {
 		"desc": "Checks if the device screen is currently on.",
@@ -6583,8 +6376,7 @@
 	"LoadText": {
 		"desc": "Load saved text value to remember varibale values between multiple app starts.\n\nSee also: @SaveText.",
 		"pNames": ["name", "default", "file"],
-		"pTypes": ["str", "str", "str_ptf"],
-		"shortDesc": "Load saved text value"
+		"pTypes": ["str", "str", "str_ptf"]
 	},
 	"Lock": {
 		"desc": "Locks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Unlock",
@@ -6608,13 +6400,11 @@
 		"pNames": ["name"],
 		"pTypes": ["str"],
 		"retval": "dso-Database",
-		"shortDesc": "OpenDatabase",
 		"subf": {
 			"addTransaction": {
 				"desc": "addTransaction\n<deprecated Use ExecuteSQL instead>",
 				"pNames": ["transaction"],
-				"pTypes": ["obj:JS SQLitePluginTransaction"],
-				"shortDesc": "addTransaction"
+				"pTypes": ["obj:JS SQLitePluginTransaction"]
 			},
 			"close": {
 				"desc": "Close the database\n<deprecated Use Close instead>",
@@ -6632,24 +6422,20 @@
 				"shortDesc": "Close the database"
 			},
 			"Close": {
-				"desc": "Close the database",
-				"shortDesc": "Close the database"
+				"desc": "Close the database"
 			},
 			"_databaseFeatures": {
 				"desc": "databaseFeatures\n<deprecated>",
 				"isval": true,
-				"name": "databaseFeatures",
-				"shortDesc": "databaseFeatures"
+				"name": "databaseFeatures"
 			},
 			"_dbname": {
 				"desc": "dbname\n<deprecated>",
 				"isval": true,
-				"name": "dbname",
-				"shortDesc": "dbname"
+				"name": "dbname"
 			},
 			"Delete": {
-				"desc": "Delete the database",
-				"shortDesc": "Delete the database"
+				"desc": "Delete the database"
 			},
 			"executeSql": {
 				"desc": "Executes a SQL query\n<deprecated Use ExecuteSql instead>",
@@ -6682,8 +6468,7 @@
 			},
 			"GetType": {
 				"desc": "Returns the component class name.",
-				"retval": "str-Database",
-				"shortDesc": "Returns the component class name"
+				"retval": "str-Database"
 			},
 			"name": {
 				"desc": "The database name\n<deprecated use GetName instead>",
@@ -6694,8 +6479,7 @@
 			"open": {
 				"desc": "Opens the database\n<deprecated>",
 				"pNames": ["success", "error"],
-				"pTypes": [
-{},
+				"pTypes": [{},
 					{
 						"pNames": ["msg"],
 						"pTypes": ["str"]
@@ -6706,8 +6490,7 @@
 			"_openargs": {
 				"desc": "openargs\n<deprecated>",
 				"isval": true,
-				"name": "openargs",
-				"shortDesc": "openargs"
+				"name": "openargs"
 			},
 			"_openDBs": {
 				"desc": "contains DBs\n<deprecated>",
@@ -6720,13 +6503,11 @@
 				"desc": "openError\n<deprecated>",
 				"name": "openError",
 				"pNames": ["err"],
-				"pTypes": ["str"],
-				"shortDesc": "openError"
+				"pTypes": ["str"]
 			},
 			"_openSuccess": {
 				"desc": "openSuccess\n<deprecated>",
-				"name": "openSuccess",
-				"shortDesc": "openSuccess"
+				"name": "openSuccess"
 			},
 			"readTransaction": {
 				"desc": "readTransaction\n<deprecated Use ExecuteSql instead>",
@@ -6744,12 +6525,10 @@
 						"pNames": ["tx", "res"],
 						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"]
 					}
-				],
-				"shortDesc": "ReadTransaction"
+				]
 			},
 			"startNextTransaction": {
-				"desc": "startNextTransaction\n<deprecated Use ExecuteSql instead>",
-				"shortDesc": "startNextTransaction"
+				"desc": "startNextTransaction\n<deprecated Use ExecuteSql instead>"
 			},
 			"transaction": {
 				"desc": "transaction\n<deprecated Use ExecuteSql instead>",
@@ -6773,16 +6552,14 @@
 							"obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"
 						]
 					}
-				],
-				"shortDesc": "transaction"
+				]
 			}
 		}
 	},
 	"OpenDrawer": {
 		"desc": "Opens the drawer layout on the given side with slide animation.\n\nSee Also: @AddDrawer",
 		"pNames": ["side"],
-		"pTypes": ["str-left|right"],
-		"shortDesc": "Opens the drawer layout on the given side"
+		"pTypes": ["str-left|right"]
 	},
 	"OpenFile": {
 		"desc": "Allows the user to open a file with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.\n\nSee also: @SendFile.",
@@ -6806,8 +6583,7 @@
 	"PairBtDevice": {
 		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
 		"pNames": ["address", "callback"],
-		"pTypes": ["str", {}],
-		"shortDesc": "PairBtDevice"
+		"pTypes": ["str", {}]
 	},
 	"PinScreen": {
 		"desc": "Pins the app on the screen",
@@ -6882,8 +6658,7 @@
 	"RemoveLayout": {
 		"desc": "Removes a layout added to the app.\n\nSee also: @AddLayout",
 		"pNames": ["layout"],
-		"pTypes": ["dso-CreateLayout"],
-		"shortDesc": "RemoveLayout"
+		"pTypes": ["dso-CreateLayout"]
 	},
 	"RenameFile": {
 		"desc": "Renames a file on the local filesystem. This method can also be used to move a file to a whole other destination.\n\nSee Also: @WriteFile, @CopyFile, @DeleteFile",
@@ -6946,8 +6721,7 @@
 	"ScheduleJob": {
 		"desc": "Schedules background jobs defined in a Job.js file\n\nSee Also: @CancelJob",
 		"pNames": ["delay", "options"],
-		"pTypes": ["num_mls", "str"],
-		"shortDesc": "Schedules background jobs"
+		"pTypes": ["num_mls", "str"]
 	},
 	"Script": {
 		"desc": "Loads a local JavaScript file to your app to make its functionality available in your app.\nBy default it is loaded just before OnStart is being called unless you set “NoDefer” to <js>true</js> which forces inline loading.\nThis is to ensure errors are highlighted correctly in external source files.\n\nSee Also: @LoadScript",
@@ -6973,8 +6747,7 @@
 		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
 			"pNames": ["resultCode", "data"],
 			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]
-		}],
-		"shortDesc": "SendIntent"
+		}]
 	},
 	"SendMail": {
 		"desc": "#SendMail.md",
@@ -7208,8 +6981,7 @@
 	"SetScreenMode": {
 		"desc": "Changes the screen mode of your application. If null is passed, the [app menu](SetMenu.htm) will be dismissed. When called, the global OnConfig function will be called (if defined).",
 		"pNames": ["mode"],
-		"pTypes": ["str-Default|Normal|Full|Game"],
-		"shortDesc": "SetScreenMode"
+		"pTypes": ["str-Default|Normal|Full|Game"]
 	},
 	"SetSharedApp": {
 		"desc": "Define a DroidScript Project which will be automatically started when DS received shared data. Check out the 'Shared Data' sample in the DS samples section.\n\nSee Also: @SetAutoStart",
@@ -7238,20 +7010,17 @@
 	"SetTheme": {
 		"desc": "Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.\n\n<premium>",
 		"pNames": ["theme"],
-		"pTypes": ["dso-CreateTheme"],
-		"shortDesc": "Change the theme of your app"
+		"pTypes": ["dso-CreateTheme"]
 	},
 	"SetUserAgent": {
 		"desc": "Change the user agent for html apps. For more details [ask Wikipedia](https://en.wikipedia.org/wiki/User_agent).",
 		"pNames": ["agent"],
-		"pTypes": ["str"],
-		"shortDesc": "Change the user agent"
+		"pTypes": ["str"]
 	},
 	"SetUserCreds": {
 		"desc": "Set user credentials in an html app for websites that require user login.",
 		"pNames": ["name", "password"],
-		"pTypes": ["str", "str"],
-		"shortDesc": "Set user credentials"
+		"pTypes": ["str", "str"]
 	},
 	"SetVolume": {
 		"desc": "Set the volume of a given volume type as a number between 0 and 1.\n\nSee Also: @GetVolume",
@@ -7268,8 +7037,7 @@
 	"SetWifiEnabled": {
 		"desc": "En/Disable Wifi on the device.\n\nSee Also: @SetWifiEnabled, @IsWifiApEnabled, @WifiScan",
 		"pNames": ["enable"],
-		"pTypes": ["bin"],
-		"shortDesc": "En/Disable Wifi on the device"
+		"pTypes": ["bin"]
 	},
 	"Show": {
 		"desc": "Shows the main app layout.\n\nSee Also: @Hide",
@@ -7300,8 +7068,7 @@
 		"shortDesc": "Show keyboard on a focussed control"
 	},
 	"ShowMenu": {
-		"desc": "Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @SetMenu",
-		"shortDesc": "Show the in-app menu"
+		"desc": "Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.\n\nSee Also: @SetMenu"
 	},
 	"ShowPopup": {
 		"desc": "Shows a simple popup message on the screen. It automatically disappears after about 5 secods or after an even shorter time if you pass the “Short” **option**, or when the user touches the screen.",
@@ -7333,26 +7100,22 @@
 	"ShowTip": {
 		"desc": "Shows a tooltip message on the screen.",
 		"pNames": ["message", "left", "top", "timeOut", "options"],
-		"pTypes": ["str", "num_frc", "num_frc", "num_mls", "str-Down"],
-		"shortDesc": "Shows a tooltip message on the screen"
+		"pTypes": ["str", "num_frc", "num_frc", "num_mls", "str-Down"]
 	},
 	"SimulateDrag": {
 		"desc": "Simulates a drag event on an app object in a scrollable container.",
 		"pNames": ["obj", "x1", "y1", "x2", "y2", "step", "pause"],
-		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"],
-		"shortDesc": "Simulates a drag event on an app object"
+		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"]
 	},
 	"SimulateKey": {
 		"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0)",
 		"pNames": ["obj", "keyName", "modifiers", "pause"],
-		"pTypes": ["dso", "str", "str-META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON", "num"],
-		"shortDesc": "Simulates a key event on an app object"
+		"pTypes": ["dso", "str", "str-META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON", "num"]
 	},
 	"SimulateScroll": {
 		"desc": "Simulates a scroll event on a scrollable app object.",
 		"pNames": ["obj", "x", "y", "dx", "dy", "count", "fling"],
-		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"],
-		"shortDesc": "Simulates a scroll event on a scrollable app object"
+		"pTypes": ["dso", "num_frc", "num_frc", "num_frc", "num_frc", "num", "num"]
 	},
 	"SimulateTouch": {
 		"desc": "Simulates a touch event on a rouchable control.",
@@ -7422,8 +7185,7 @@
 		"shortDesc": "Translate “Ok” and “Cancel” buttons"
 	},
 	"Unlock": {
-		"desc": "Unlocks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Lock",
-		"shortDesc": "Unlocks the device"
+		"desc": "Unlocks the device.\n\n<red>**Requires Root**</red>\n\nSee Also: @Lock"
 	},
 	"UnlockDrawer": {
 		"desc": "Unlocks a locked drawer.\nSee Also @LockDrawer, @AddDrawer",
@@ -7488,8 +7250,7 @@
 	"WifiConnect": {
 		"desc": "Connect to a WiFi network by specifying the ssid and a password. See Also: @WifiScan, @SetOnWifiChange, @SetWifiApEnabled",
 		"pNames": ["ssid", "key"],
-		"pTypes": ["str", "str"],
-		"shortDesc": "Connect to a WiFi network"
+		"pTypes": ["str", "str"]
 	},
 	"WifiScan": {
 		"desc": "Scans the surroundings for any available Wifi networks.",

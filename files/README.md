@@ -144,11 +144,12 @@ Each member in the obj.json file can have following properties:
 }
 ```
 Note that some values are not required under certain conditions:
-- `isval` if `false`
-- `pNames` and `pTypes` if empty
-- `retval` if `undefined`
-- `subfuncs` if `undefined`
 - `name` unless a custom name is used
+- `desc` and `shortDesc` when there is no description needed (generated from name)
+- `retval` if `undefined`
+- `pNames` and `pTypes` if empty
+- `subfuncs` if `undefined`
+- `isval` if `false`
 - the whole object if only a description is added, ie `{ "Method": "desc" }`
 
 When using base.json you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:

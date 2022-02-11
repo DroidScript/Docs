@@ -78,5 +78,8 @@
 		"str_sty": "style",
 		"str_uri": "URI encoded",
 		"str_url": "url path"
+	},
+	"tmpl": {
+		"cb": "Define a callback function which is called when"
 	}
 }

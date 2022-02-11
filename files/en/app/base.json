@@ -220,7 +220,7 @@
 		"shortDesc": "Called when the control gets focused"
 	},
 	"#2735982374": { "name": "SetOnLongTouch",
-		"desc": "Define a callback function which is called when the object has been long pressed.",
+		"desc": "%cb% the object has been long pressed.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["src"],
@@ -244,7 +244,7 @@
 		"shortDesc": "Define a callback function for user toches"
 	},
 	"#2938578932": { "name": "SetOnTouchDown",
-		"desc": "Define a callback function which is called when the user started toching the control.",
+		"desc": "%cb% the user started toching the control.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -253,7 +253,7 @@
 		"shortDesc": "Called when the user starts touching the control"
 	},
 	"#2039582034": { "name": "SetOnTouchMove",
-		"desc": "Define a callback function which is called when the user drags a finger over the screen.",
+		"desc": "%cb% the user drags a finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -262,7 +262,7 @@
 		"shortDesc": "Called when the user drags a finger over the screen"
 	},
 	"#9861324731": { "name": "SetOnTouchUp",
-		"desc": "Define a callback function which is called when the users finger leaves the screen.",
+		"desc": "%cb% the users finger leaves the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
