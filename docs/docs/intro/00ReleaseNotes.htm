@@ -90,7 +90,7 @@
 		</span><br>
 		</div>
 
-		<p><!-- /<a href="[<i><i>]" data-ajax="false">^\\</a>/\$1/ /:/:/ --></p>
+		<p><!-- /[^\\].?([<i><i>])/\$1/ /:/:/ --></p>
 		<h2>DS 2.50<sup>(31-Dec-2021)</sup></h2>
 		<p>- Fixed ctrl.Batch call for base methods (use underscore)<br>
 		- Added app.PreventWifiSleep() to IDE server code (not sure it will help).<br>
@@ -283,10 +283,10 @@
 		<p>- Fixed many file access issues on Android 10/11 with fresh DS installs.<br>
 		- Added '/Storage' keyword as new alternative to '/sdcard'.<br>
 		- Added '/External' keyword as new alternative to '/extsdcard'.<br>
-		- Added support for '<a href="" onclick="app.ShowPopup(' paths on app.ReadFile() and for Image Controls.<br>
+		- Added support for 'content:' paths on app.ReadFile() and for Image Controls.<br>
 		- APKBuilder now uses private storage for its temp files.<br>
 		- Fixed bug in plugin docs extraction (non-doc file deletion code failed).<br>
-		- app.ChooseFile() method now returns a second')">content</a> name' parameter in callback.</p>
+		- app.ChooseFile() method now returns a second 'name' parameter in callback.</p>
 		<h4>DS 195b1</h4>
 		<p>- Fixed bug with APK builder corrupting user assets.<br>
 		- Fixed issue with scoped storage re-directs.<br>

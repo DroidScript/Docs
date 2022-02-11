@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>CreateMusic</title>
+	<title>CancelJob</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>CreateMusic</h1>
+		<h1>CancelJob</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -33,13 +33,12 @@
 	</div>
 
 	<div data-role="content">
-		<p>Add music to your app.</p>
+		<p>Cancels a background job started via <a href="ScheduleJob.htm" data-ajax="false">ScheduleJob</a>.</p>
 
 		<div class="samp">
-		mus = app.CreateMusic() → <b>app object:</b> Music
+		app.CancelJob()
 		</div>
 
-		<p>See the <a href="../Music/Music.htm" data-ajax="false">Music</a>.html page for more details</p>
 
 	</div>
 

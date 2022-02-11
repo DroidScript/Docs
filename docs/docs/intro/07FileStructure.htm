@@ -86,29 +86,29 @@
 		</code></p>
 		<h3>lang.json</h3>
 		<p>If you want to allow users to switch languages, you can use the<br>
-		app.<a href="../app/SetLanguage.htm#Example" data-ajax="false">SetAppLanguage</a> method and the T() function combined with a special JSON<br>
+		app.<a href="../app/SetAppLanguage.htm#Example" data-ajax="false">SetAppLanguage</a> method and the T() function combined with a special JSON<br>
 		file called 'lang.json' in your app that looks like this:-</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - lang.json</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
-				    <span class="token string">"langs"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Deutsch"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				    <span class="token string-property property">"langs"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Deutsch"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
 				    <br>
-				    <span class="token string">"codes"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">"english"</span><span class="token operator">:</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token string">"deutsch"</span><span class="token operator">:</span><span class="token string">"de"</span><span class="token punctuation">,</span> <span class="token string">"español"</span><span class="token operator">:</span><span class="token string">"es"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				    <span class="token string-property property">"codes"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"english"</span><span class="token operator">:</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token string-property property">"deutsch"</span><span class="token operator">:</span><span class="token string">"de"</span><span class="token punctuation">,</span> <span class="token string-property property">"español"</span><span class="token operator">:</span><span class="token string">"es"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
 				    <br>
-				    <span class="token string">"trans"</span> <span class="token operator">:</span><br>
+				    <span class="token string-property property">"trans"</span> <span class="token operator">:</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token string">"SelectLang"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
-				            <span class="token string">"en"</span><span class="token operator">:</span><span class="token string">"Please select your prefered language from the 'Settings' menu"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"de"</span><span class="token operator">:</span><span class="token string">"Bitte wähle deine Sprache in den 'Einstellungen' aus"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"es"</span><span class="token operator">:</span><span class="token string">"Selecciona tu idioma preferido en el menú 'Settings'"</span><br>
+				        <span class="token string-property property">"SelectLang"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string-property property">"en"</span><span class="token operator">:</span><span class="token string">"Please select your prefered language from the 'Settings' menu"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"de"</span><span class="token operator">:</span><span class="token string">"Bitte wähle deine Sprache in den 'Einstellungen' aus"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"es"</span><span class="token operator">:</span><span class="token string">"Selecciona tu idioma preferido en el menú 'Settings'"</span><br>
 				        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
 				        <br>
-				        <span class="token string">"PrivacyPolicy"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
-				            <span class="token string">"en"</span><span class="token operator">:</span><span class="token string">"Privacy Policy"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"de"</span><span class="token operator">:</span><span class="token string">"Datenschutzerklärung"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"es"</span><span class="token operator">:</span><span class="token string">"Política de Privacidad"</span><br>
+				        <span class="token string-property property">"PrivacyPolicy"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string-property property">"en"</span><span class="token operator">:</span><span class="token string">"Privacy Policy"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"de"</span><span class="token operator">:</span><span class="token string">"Datenschutzerklärung"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"es"</span><span class="token operator">:</span><span class="token string">"Política de Privacidad"</span><br>
 				        <span class="token punctuation">}</span><br>
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
@@ -130,17 +130,17 @@
 			<h3>Example - build.json</h3>
 			<div id="examp2" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
-				    <span class="token string">"manifest"</span><span class="token operator">:</span><br>
+				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"debuggable"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE\_EXTERNAL\_STORAGE"</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"homeScreen"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"noPermsAction"</span><span class="token operator">:</span> <span class="token string">"default"</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"pathPattern"</span><span class="token operator">:</span> <span class="token string">".*\.png,.*\.jpg"</span><br>
+				        <span class="token string-property property">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"debuggable"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE\_EXTERNAL\_STORAGE"</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"homeScreen"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"noPermsAction"</span><span class="token operator">:</span> <span class="token string">"default"</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"pathPattern"</span><span class="token operator">:</span> <span class="token string">".*\.png,.*\.jpg"</span><br>
 				    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
-				    <span class="token string">"autoPermissions"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>
+				    <span class="token string-property property">"autoPermissions"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -169,10 +169,10 @@
 			<h3>Example - minimal build.json</h3>
 			<div id="examp3" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
-				    <span class="token string">"manifest"</span><span class="token operator">:</span><br>
+				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token string">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><br>
+				        <span class="token string-property property">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><br>
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
