@@ -33,14 +33,15 @@
 	</div>
 
 	<div data-role="content">
-		<p>ChooseFile opens a file picker for user to select a file.</p>
+		<p>ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.</p>
 
 		<div class="samp">
 		app.ChooseFile(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a> )
+			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 
 		<p>See Also: <a href="ReadFile.htm" data-ajax="false">ReadFile</a></p>
@@ -89,8 +90,9 @@
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“mimetype”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>persist:</i> <docstr>“keep file permission after reboot”</docstr>, <docstr>“nodownload-prevents file downloads”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('String: path to file or folder ( “/absolute/...” or “relative/...” )')">path</a>,
+		<a href="" onclick="app.ShowPopup('String: path to file or folder ( “/absolute/...” or “relative/...” )\nString: URI encoded')">path</a>,
 		<a href="" onclick="app.ShowPopup('String')">name</a>
 	)</div>
 </div>

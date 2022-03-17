@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>UriPath</title>
+	<title>UpdateUI</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>UriPath</h1>
+		<h1>UpdateUI</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -33,21 +33,17 @@
 	</div>
 
 	<div data-role="content">
-		<p>Decodes a URI encoded string.</p>
+		<p>Force an UI refresh during a very time consuming calculation.</p>
 
 		<div class="samp">
-		app.Uri2Path(
-			<a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
-			→ <b>String</b>
+		app.UpdateUI(
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">ms</a> )
 		</div>
 
-		<p>See Also: <a href="SetOnError.htm" data-ajax="false">SetOnError</a></p>
 
 	</div>
 
-	<div data-role="popup" id="pop_str_uri" class="ui-content"><b>String:</b> <i>URI encoded</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>pretty:</i> <docstr>“returns DS style paths”</docstr></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> <i>milliseconds:</i> rate</div>
 </div>
 </body>
 

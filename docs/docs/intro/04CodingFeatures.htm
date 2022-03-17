@@ -73,16 +73,17 @@
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div><br>
 		<br>
-		<!-- ### cfg.NoDom<br>
-		<red>Note: The <i>NoDom</i> option is currently not available due to GooglePlays 64bit requirement since August 2019.<br>
-		If you really need this feature switch back to <a href="https://androidscript.org/apk/DroidScript_174" onclick="return OpenUrl(this.href);">DS version 1.74</a></red><br>
+		<!--</p>
+		<h4>cfg.NoSwapify</h4>
+		<p>This option prevents function name swapping during obfuscation</p>
+		<h4>cfg.Legacy</h4>
+		<p>Enables various legacy transparent app behaviour<br>
+		--></p>
+		<h4>cfg.Fast</h4>
+		<p>The Fast config will make use of <a href="https://eclipsesource.com/j2v8" onclick="return OpenUrl(this.href);">the J2V8 engine</a> which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.<br>
 		<br>
-		<!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.<br>
-		<br>
-		The NoDom config will make use of <a href="https://v8.dev" onclick="return OpenUrl(this.href);">googles V8 engine</a> instead which will cause these DOM objects not being available any more.<br>
-		For example setInterval and setTimeout will not be available any more, but you can use the <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> method instead</b>.<br>
-		<br>
-		Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.--></p>
+		The drawback of this method is that all default WebView DOM objects are not available any more.<br>
+		This includes methods like setInterval and setTimeout which should be converted to <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a></b> respectively.</p>
 		<h2>this Keyword</h2>
 		<p>In callback functions of controls you can use the <span class="token keyword">this</span> keyword to access the callee control object without having to assign the control to a specific variable. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:</p>
 

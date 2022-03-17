@@ -36,6 +36,13 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 2.51b1p2(16-Mar-2022)')">DS 2.51b1</i>p2</a><sup>(16-Mar-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51b1p1(10-Mar-2022)')">DS 2.51b1<i>p1</a><sup>(10-Mar-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51b1(02-Mar-2022)')">DS 2.51b1</a><sup>(02-Mar-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51a1(Feb-2022)')">DS 2.51a1</a><sup>(Feb-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.50p1(06-Jan-2022)')">DS 2.50<i>p1</a><sup>(06-Jan-2022)</sup><br>
+			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 2.50(31-Dec-2021)')">DS 2.50</a><sup>(31-Dec-2021)</sup><br>
 			<span style="display:inline-block;padding-left:1em;">
@@ -91,6 +98,46 @@
 		</div>
 
 		<p><!-- /[^\\].?([<i><i>])/\$1/ /:/:/ --></p>
+		<h3>DS 2.51b1</i>p2<sup>(16-Mar-2022)</sup></h3>
+		<p>- Updated app.ChooseFile() to support GoogleDrive,OneDrive and DropBox.<br>
+		- Added 'nodownload' option to app.ChooseFile (just returns uri, no downloading of files).<br>
+		- Added 'persist' option to app.ChooseFile (persists file permission after reboot).<br>
+		- Added 'pretty' option to app.Uri2Path (returns DS style paths).<br>
+		- AddPermission 'alert' bug fixed (introduced in 2.51b1).</p>
+		<h3>DS 2.51b1<i>p1<sup>(10-Mar-2022)</sup></h3>
+		<p>- AddPermission 'alert' bug fixed.<br>
+		- Added 'pretty path' parameter to app.GetPermission() callback.</p>
+		<h3>DS 2.51b1<sup>(02-Mar-2022)</sup></h3>
+		<p>- Fixed playback of transparent animated gifs in Image control.<br>
+		- APKBuilder is no longer sensitive to spaces around brackets of LoadPlugin call.<br>
+		- List.OnTouch() event now returns unicode chars with correct upper case hex codes.<br>
+		- Transparent apps now startup with zero size (to prevent black flash).<br>
+		- Added cfg.Legacy option to enable various legacy transparent app behaviour.<br>
+		- Added app.UpdateUI() method for forcing UI drawing during heavy processing.<br>
+		- Enabled 3rd party cookies by default for webviews, fetch and xmlHttpRequest.<br>
+		- Fixed broken app.SetAlarm() method.<br>
+		- app.ListFolder() now supports SAF (can list outside scoped storage).</p>
+		<h3>DS 2.51a1<sup>(Feb-2022)</sup></h3>
+		<p>- Added support for /Internal/</i> and /External/<i> SAF paths.<br>
+		- app.GetPermission() now supports 'external' and 'internal' keywords.<br>
+		- Replaced 'Sdcard Access' sample with 'Storage Access' sample.<br>
+		- Improved permissions detection for file:///android</i>asset paths.<br>
+		- Fixed 'Share SPK' for scoped storage devices.<br>
+		- Fixed app.SendFile, app.SendImage, app.SendMail for scoped storage devices.<br>
+		- Added QUERY<i>ALL</i>PACKAGES permission to X version.<br>
+		- Removed default params from edit/mui.js (older webviews don't not like it)<br>
+		- Added web.Func(name,args...) for easy calling of functions defined in a WebView.<br>
+		- Added app.Func(name,args...) for easy calling of main script functions from a WebView.<br>
+		- app.SimulateTouch() now copes with lower case keywords.<br>
+		- Fixed 'atob' issue with console logging in NodeJS apps.<br>
+		- Added new GetDocumentFile() method to Plugin parent object.<br>
+		- Added new app.GetRouterAddress() method.<br>
+		- Added tabs.SetTextSize(size,mode) method.<br>
+		- Added cfg.Fast mode for premium users (3x faster apps!)<br>
+		- Added XMLHttpRequest polyfill for Fast mode.</p>
+		<h3>DS 2.50<i>p1<sup>(06-Jan-2022)</sup></h3>
+		<p>- Added 'Query Images' and 'Query Videos' samples.<br>
+		- Fixed crash when building APKs/AABs for Html apps.</p>
 		<h2>DS 2.50<sup>(31-Dec-2021)</sup></h2>
 		<p>- Fixed ctrl.Batch call for base methods (use underscore)<br>
 		- Added app.PreventWifiSleep() to IDE server code (not sure it will help).<br>

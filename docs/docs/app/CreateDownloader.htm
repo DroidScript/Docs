@@ -89,7 +89,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Download</a>(
-			<a href="#pop_str_url" data-transition="pop" data-rel="popup">url</a>,
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">url</a>,
 			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">headers</a> )
@@ -137,8 +137,8 @@
 
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_str_url" class="ui-content"><b>String:</b> <i>url path</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“NoDialog”</docstr> or <docstr>“Light”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String:</b> <i>url path</i><br><b>List:</b> [<a href="" onclick="app.ShowPopup('String: url path')">urls</a>]</div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
@@ -152,16 +152,16 @@
 		<a href="" onclick="app.ShowPopup('String')">error</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dwn.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">SetBackColor_</span><span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dwn.Download</b><br>Start downloading a file.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dwn.Download</b><br>Start downloading one or multiple files.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>dwn.GetProgress</b><br>Returns the current download progress.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>dwn.GetSize</b><br>Returns the target download size in bytes.</div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>dwn.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>dwn.IsComplete</b><br>Checks if the download has compleated or not.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>dwn.IsComplete</b><br>Checks if all downloads are completed.</div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>dwn.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>dwn.SetOnCancel</b><br>Define a callback function which is called when download is cancelled.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>dwn.SetOnComplete</b><br>Define a callback function which is called when the download is finished.</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>dwn.SetOnDownload</b><br>Define a callback function which is called when the download is downloaded.</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>dwn.SetOnError</b><br>Define a callback function which is called when an error occurred while downloading the file.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>dwn.SetOnComplete</b><br>Define a callback function which is called when all downloads are finished.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>dwn.SetOnDownload</b><br>Define a callback function which is called when a file is download.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>dwn.SetOnError</b><br>Define a callback function which is called when an error occurred while downloading a file.</div>
 </div>
 </body>
 
