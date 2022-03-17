@@ -918,7 +918,15 @@
 				}, "str"],
 				"shortDesc": "Saves data in the cloud."
 			},
-			"SetDescription": "#0937259723"
+			"SetDescription": "#0937259723",
+			"Upload": {
+				"desc": "Upload a file to the cloud.",
+				"pNames":["data", "name", "type", "callback", "password"],
+				"pTypes":["str", "str", "str_mim", {
+					"pNames": ["response"],
+					"pTypes": ["obj-{error:str,name:str,folder:str,id:str,mimetype:str_mim,size:num}"]
+				}, "str"]
+			}
 		}
 	},
 	"CreateCodeEdit": {

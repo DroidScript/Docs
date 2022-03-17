@@ -645,7 +645,8 @@
 		"Load": "Loads data from the cloud",
 		"Merge": "Merges data in the cloud",
 		"Save": "Saves data in the cloud",
-		"SetDescription": "Set accesibility description"
+		"SetDescription": "Set accesibility description",
+		"Upload": "Upload a file to the cloud"
 	},
 	"crp": {
 		"Batch": "Batch method calls to set object properties",
