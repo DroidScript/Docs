@@ -25,7 +25,8 @@ function Generate(patFunc, patScope, patLang)
 	if (patScope && !conf.scopes[patScope])
 		Throw(new Error(`scope ${patScope} not specified in conf.json`));
 
-	for (var l in conf.langs) if (l.match(patLang) != null) {
+	for (var l in conf.langs) if (l.match(patLang) != null)
+	{
 		lang = l;
 
 		if (patScope + patFunc == "")
@@ -124,7 +125,12 @@ function generateScope(name, pattern)
 
 	// start generating
 	if ("navs".match(regGen))
+	{
 		generateNavigators(navs, conf.scopes[curScope] || curScope);
+		var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+		if(base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
+	}
+
 	generateDocs(scope);
 
 	// update version number
@@ -140,11 +146,27 @@ function generateNavigators(navs, name, pfx)
 	pfx = `${pfx || curScope}_`;
 	var nav = '', addcontent = '';
 
-	if (navs instanceof Array) {
+	// function list
+	if (navs instanceof Array)
+	{
 		for (var func of navs = navs.filter(nothidden))
-			nav += func ? newNaviItem(curScope + `/${func.replace(/\s+/g, '')}.htm`,
-				func.replace(/^\d+\s*/, ''), getAddClass(scope[func])) : "<li></li>";
+		{
+			if (!func) nav += "<li></li>";
+			else
+			{
+				if (name != 'All' && scope['_'+func]) scope['_'+func].hasNav = true;
+				else if (!scope[func]) Throw(`nav to deleted method ${curScope}.${func}`);
+				else
+				{
+					if(name != 'All') scope[func].hasNav = true;
+					nav += newNaviItem(
+						curScope + `/${func.replace(/\s+/g, '')}.htm`,
+						func.replace(/^\d+\s*/, ''), getAddClass(scope[func]));
+				}
+			}
+		}
 	}
+	// name:target.htm or scope:categories association
 	else if (navs instanceof Object)
 	{
 		for (var cat of keys(navs).filter(nothidden))
@@ -155,21 +177,24 @@ function generateNavigators(navs, name, pfx)
 				continue;
 			}
 			if (!navs[cat]) navs[cat] = curScope + "/" + cat + ".htm";
-			if (typeof navs[cat] == "string") {
-				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
-				var add = "";
-				if (navs[cat].startsWith("http"))
-					add += ' onclick="return OpenUrl(this.href);"';
-				var f = m && scope[m[1]] ? m[3] ? scope[m[1]].subf[m[3]] : scope[m[1]] : null;
-				if (f) add += getAddClass(f);
 
+			// targtet file
+			if (typeof navs[cat] == "string")
+			{
+				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
+				var f = null, add = "";
+				if (navs[cat].startsWith("http")) add += ' onclick="return OpenUrl(this.href);"';
+				if (m && scope[m[1]]) f = m[3] ? scope[m[1]].subf[m[3]] : scope[m[1]];
+				if (f) add += getAddClass(f), f.hasNav = true;
 				nav += newNaviItem(navs[cat], cat, add);
-				continue;
 			}
-			nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat == "Premium" ? getAddClass({ desc: "<premium>" }) : null);
-			var tdoc = curDoc;
-			generateNavigators(navs[cat], cat, pfx);
-			curDoc = tdoc;
+			else // new category
+			{
+				nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat == "Premium" ? getAddClass({ desc: "<premium>" }) : null);
+				var tdoc = curDoc;
+				generateNavigators(navs[cat], cat, pfx);
+				curDoc = tdoc;
+			}
 		}
 	}
 	else Throw(Error("Wrong catlist datatype: " + typeof navs));
@@ -235,7 +260,7 @@ function generateDoc(name)
 {
 	if (typeof scope[name] == "string")
 		scope[name] = {name, desc:scope[name], noCon:true};
-	else scope[name].name ||= name;
+	else scope[name].name = scope[name].name || name;
 
 	curDoc = `docs${getl()}/${curScope}/${(scope[name].name).replace(/\s+/g, '')}.htm`;
 	resetGlobals();

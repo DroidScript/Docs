@@ -1,5 +1,6 @@
 The CloudStore component allows you to easily store and retrieve app data (as a simple or complex JSON object) from a cloud.
 This is useful for game high scores, IOT sensor data storage etc. which should be shared across all user devices even if they're not in the same local network.
+Also have look at the [CloudStore Dashboard and API documentation](https://enjine-io.github.io/cloudstore/#dashboard)
 
 <premium>
 

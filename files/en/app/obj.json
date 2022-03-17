@@ -200,12 +200,12 @@
 		"shortDesc": "Let the user choose an image"
 	},
 	"ChooseFile": {
-		"desc": "ChooseFile opens a file picker for user to select a file.\n\nSee Also: @ReadFile",
-		"pNames": ["message", "type", "callback", "fldr"],
+		"desc": "ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.\n\nSee Also: @ReadFile",
+		"pNames": ["message", "type", "callback", "fldr", "options"],
 		"pTypes": ["str", "str-mimetype", {
 			"pNames": ["path", "name"],
-			"pTypes": ["str_pth", "str"]
-		}, "str_pth"],
+			"pTypes": ["str_pth||str_uri", "str"]
+		}, "str_pth", "str:persist-keep file permission after reboot,nodownload-prevents file downloads"],
 		"shortDesc": "Let the user choose a file"
 	},
 	"ChooseImage": {
@@ -227,9 +227,9 @@
 		"shortDesc": "Let the user choose a WiFi network"
 	},
 	"ClearCookies": {
-		"desc": "ClearCookies clears the saved cookies for webviews or html apps. If session was not given, the latest one will be selected.\n\nSee Also: @SaveCookies",
+		"desc": "ClearCookies clears the saved cookies for webviews or html apps.\n\nSee Also: @SaveCookies",
 		"pNames": ["session"],
-		"pTypes": ["?"],
+		"pTypes": ["bin-Clear session cookies"],
 		"shortDesc": "Clears saved web cookies"
 	},
 	"ClearData": {
@@ -1302,10 +1302,10 @@
 		"subf": {
 			"Batch": "#2357239857",
 			"Download": {
-				"desc": "Start downloading a file.",
+				"desc": "Start downloading one or multiple files.",
 				"pNames": ["url", "fldr", "name", "headers"],
-				"pTypes": ["str_url", "str_pth", "str", "str"],
-				"shortDesc": "Download a file"
+				"pTypes": ["str_url||lst-[urls:str_url]", "str_pth", "str", "str"],
+				"shortDesc": "Download file(s)"
 			},
 			"GetProgress": {
 				"desc": "Returns the current download progress.",
@@ -1322,7 +1322,7 @@
 				"retval": "str-Downloader"
 			},
 			"IsComplete": {
-				"desc": "Checks if the download has compleated or not.",
+				"desc": "Checks if all downloads are completed.",
 				"retval": "bin",
 				"shortDesc": "Get download completed state"
 			},
@@ -1337,22 +1337,22 @@
 				"shortDesc": "Called when download is cancelled"
 			},
 			"SetOnComplete": {
-				"desc": "%cb% the download is finished.",
+				"desc": "%cb% all downloads are finished.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Called when the download is finished"
+				"shortDesc": "Called when downloads are finished"
 			},
 			"SetOnDownload": {
-				"desc": "%cb% the download is downloaded.",
+				"desc": "%cb% a file is download.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["path"],
 					"pTypes": ["str_pth"]
 				}],
-				"shortDesc": "Called when the download is downloaded"
+				"shortDesc": "Called when a file is downloaded"
 			},
 			"SetOnError": {
-				"desc": "%cb% an error occurred while downloading the file.",
+				"desc": "%cb% an error occurred while downloading a file.",
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["error"],
@@ -1363,7 +1363,7 @@
 		}
 	},
 	"CreateEmail": {
-		"abbrev": "eml",
+		"abbrev": "mail",
 		"desc": "The Email component allows us to send and receive emails without user interaction.",
 		"pNames": ["account", "password"],
 		"pTypes": ["str-email", "str-password"],
@@ -2701,7 +2701,7 @@
 				"pNames": ["callback"],
 				"pTypes": [{
 					"pNames": ["result"],
-					"pTypes": ["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"]
+					"pTypes": ["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str_uri&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"]
 				}],
 				"shortDesc": "Called when media query has finished"
 			}
@@ -3546,7 +3546,7 @@
 	"CreateShortcut": {
 		"desc": "This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.\nNote: since Android 9 this method prompts a system dialog",
 		"pNames": ["name", "iconFile", "file", "options"],
-		"pTypes": ["str", "str_ptf", "str_ptf", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
+		"pTypes": ["str", "str_ptf", "str_ptf", "str_com-Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
 		"shortDesc": "Creates a Home-Screen shortcut to an app"
 	},
 	"CreateSmartWatch": {
@@ -4345,6 +4345,10 @@
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
+			"SetTextSize": {
+				"pNames": ["size", "mode"],
+				"pTypes": ["num", "str-px|sp|dip|mm|pt"]
+			},
 			"SetTouchable": "#2562918782",
 			"SetTouchThrough": {
 				"desc": "Define whether the layout should forward OnTouch events to underlying controls.",
@@ -5176,8 +5180,8 @@
 	"CreateWebSocket": {
 		"abbrev": "wbs",
 		"desc": "#CreateWebSocket.md",
-		"pNames": ["id", "ip", "port"],
-		"pTypes": ["str", "str", "num_int"],
+		"pNames": ["ip", "id", "retry", "options"],
+		"pTypes": ["str", "str", "num_int", "str"],
 		"retval": "dso-WebSocket",
 		"shortDesc": "Returns a new WebSocket object",
 		"subf": {
@@ -5272,6 +5276,11 @@
 				"desc": "Loads the following page from history.",
 				"shortDesc": "Load following page"
 			},
+			"Func": {
+				"desc": "Call functions defined inside a webview",
+				"pNames": ["name", "args..."],
+				"pTypes": ["string", "all"]
+			},		
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
@@ -5703,6 +5712,11 @@
 		"retval": "bin",
 		"shortDesc": "Checks if the folder exists"
 	},
+	"Func": {
+		"desc": "Call main app functions from inside a webview",
+		"pNames": ["name", "args..."],
+		"pTypes": ["string", "all"]
+	},
 	"GA": {
 		"desc": "#GA.md",
 		"pNames": ["command", "[...fields]", "options"],
@@ -5959,8 +5973,8 @@
 		"shortDesc": "Get map of created DroidScript objects"
 	},
 	"GetOptions": {
-		"desc": "Returns all current app settings. If ran from inside DroidScript, “remote” is the default value.\n\nSee Also: @SetOptions",
-		"retval": "str_com-Portrait,Landscape,<i>NoDom</i>,Game,Remote,Transparent",
+		"desc": "Returns all current app settings. If ran from inside DroidScript, “debug,remote,holo” is the default value.\n\nSee Also: @SetOptions",
+		"retval": "str_com-portrait,landscape,dark,light,holo,node,hybrid,mui,transparent,debug,remote,noswapify",
 		"shortDesc": "Get app options"
 	},
 	"GetOrientation": {
@@ -5991,7 +6005,7 @@
 	"GetPermission": {
 		"desc": "GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.\n\nSee Also: @CheckPermission",
 		"pNames": ["type", "callback"],
-		"pTypes": ["str_com-Camera|ExtSDcard|Network|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<pid:num>", {
+		"pTypes": ["str_com-Camera|ExtSDcard|External|Internal|Network|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\\:<pid:num>", {
 			"pNames": ["ungranted"],
 			"pTypes": ["str_com||str_uri"]
 		}]
@@ -6019,6 +6033,10 @@
 		"desc": "Returns the current rotation of the device around it's Z-Axis in 90 degree steps. The values are relative to the initial orientation of the device on startup.\n\nSee Also: @GetOrientation",
 		"retval": "num_deg-0|90|180|270",
 		"shortDesc": "Get device rotation"
+	},
+	"GetRouterAddress": {
+		"desc": "Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)",
+		"retval": "str:ip"
 	},
 	"GetRSSI": {
 		"desc": "#GetRSSI.md",
@@ -6337,6 +6355,12 @@
 		"retval": "lst-[ paths:str_pth ]",
 		"shortDesc": "Get a list of files ans folders contained in a specific folder"
 	},
+	"ListPermissions": {
+		"desc": "Returns a list of granted permissions",
+		"pNames": ["type"],
+		"pTypes": ["str-storage"],
+		"retval": "lst-[perm:str_uri]"
+	},
 	"LoadBoolean": {
 		"desc": "Load a saved boolean value to remember varibale values between multiple app starts.\n\nSee also: @SaveBoolean.",
 		"pNames": ["name", "default", "file"],
@@ -6616,7 +6640,7 @@
 	"QueryContent": {
 		"desc": "#QueryContent.md",
 		"pNames": ["uri", "columns", "select", "args", "sort"],
-		"pTypes": ["str_url", "str_com", "str_sql", "lst", "str-coloumn:a coloumn specified in 'coloumns'"],
+		"pTypes": ["str_uri", "str_com", "str_sql", "lst", "str-coloumn:a coloumn specified in 'coloumns'"],
 		"shortDesc": "Queries content from the android content model"
 	},
 	"Quit": {
@@ -6659,6 +6683,11 @@
 		"desc": "Removes a layout added to the app.\n\nSee also: @AddLayout",
 		"pNames": ["layout"],
 		"pTypes": ["dso-CreateLayout"]
+	},
+	"RemovePermission": {
+		"desc": "Removes a granted permission",
+		"pNames":["uri"],
+		"pTypes":["str_uri"]
 	},
 	"RenameFile": {
 		"desc": "Renames a file on the local filesystem. This method can also be used to move a file to a whole other destination.\n\nSee Also: @WriteFile, @CopyFile, @DeleteFile",
@@ -6744,7 +6773,7 @@
 	"SendIntent": {
 		"desc": "#SendIntent.md",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
-		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
+		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str_uri", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
 			"pNames": ["resultCode", "data"],
 			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]
 		}]
@@ -7130,7 +7159,7 @@
 	"StartApp": {
 		"desc": "Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.\n\nSee Also: @StopApp",
 		"pNames": ["file", "options", "intent"],
-		"pTypes": ["str_ptf", "str_com-Portrait|Landscape,Transparent,<i>NoDom</i>,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
+		"pTypes": ["str_ptf", "str_com-Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote", "str-{ action:str&comma; type:str&comma; data:obj&comma; extras:obj }"],
 		"shortDesc": "Starts an app in a new window"
 	},
 	"StartDebugServer": {
@@ -7211,6 +7240,12 @@
 		"pTypes": ["num_prc"],
 		"shortDesc": "Update the ProgressBar percentage"
 	},
+	"UpdateUI": {
+		"desc": "Force an UI refresh during a very time consuming calculation.",
+		"pNames": ["ms"],
+		"pTypes": ["num_mls-rate"],
+		"shortDesc": "Force UI refresh"
+	},
 	"UploadFile": {
 		"desc": "Uploads a file to a server.",
 		"pNames": ["url", "file", "name", "callback"],
@@ -7219,8 +7254,8 @@
 	},
 	"Uri2Path": {
 		"desc": "Decodes a URI encoded string.\n\nSee Also: @SetOnError",
-		"pNames": ["uri"],
-		"pTypes": ["str_uri"],
+		"pNames": ["uri", "options"],
+		"pTypes": ["str_uri", "str:pretty-returns DS style paths"],
 		"retval": "str",
 		"shortDesc": "Decode a URI encoded string"
 	},

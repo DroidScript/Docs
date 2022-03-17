@@ -102,8 +102,7 @@
         "",
         "AddColorPicker",
         "AddDatePicker",
-        "AddTimePicker",
-        "AddSpinner"
+        "AddTimePicker"
     ],
     "Table": [
         "CreateDataTable",
@@ -210,9 +209,7 @@
         "AddSwitchSettings"
     ],
     "Tabs": [
-        "CreateTabFixed",
-        "",
-        "AddTabFixed"
+        "CreateTabFixed"
     ],
     "Miscellaneous": [
         "colors",

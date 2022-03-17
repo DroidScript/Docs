@@ -18,6 +18,8 @@
 	A forum for premium users and advanced questions
 
 ### Official Tutorials
+- [CloudStore](https://droidscript.github.io/CloudStore)
+	The official CloudStore API documentation
 - [DroidScript](http://androidscript.org/droidscript/tutorials)
 	Provides 'Getting Started with DroidScript' tutorials
 - [GameView](https://dsgameview.wixsite.com/gameview)

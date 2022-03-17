@@ -1,4 +1,48 @@
 <!-- /[^\\].?([_*])/\$1/ /:/&colon;/ -->
+### DS 2.51b1_p2 (16-Mar-2022)
+- Updated app.ChooseFile() to support GoogleDrive,OneDrive and DropBox.
+- Added 'nodownload' option to app.ChooseFile (just returns uri, no downloading of files).
+- Added 'persist' option to app.ChooseFile (persists file permission after reboot).
+- Added 'pretty' option to app.Uri2Path (returns DS style paths).
+- AddPermission 'alert' bug fixed (introduced in 2.51b1).
+
+### DS 2.51b1_p1 (10-Mar-2022)
+- AddPermission 'alert' bug fixed.
+- Added 'pretty path' parameter to app.GetPermission() callback.
+
+### DS 2.51b1 (02-Mar-2022)
+- Fixed playback of transparent animated gifs in Image control.
+- APKBuilder is no longer sensitive to spaces around brackets of LoadPlugin call.
+- List.OnTouch() event now returns unicode chars with correct upper case hex codes.
+- Transparent apps now startup with zero size (to prevent black flash).
+- Added cfg.Legacy option to enable various legacy transparent app behaviour.
+- Added app.UpdateUI() method for forcing UI drawing during heavy processing.
+- Enabled 3rd party cookies by default for webviews, fetch and xmlHttpRequest.
+- Fixed broken app.SetAlarm() method.
+- app.ListFolder() now supports SAF (can list outside scoped storage).
+
+### DS 2.51a1 (Feb-2022)
+- Added support for /Internal/* and /External/* SAF paths.
+- app.GetPermission() now supports 'external' and 'internal' keywords.
+- Replaced 'Sdcard Access' sample with 'Storage Access' sample.
+- Improved permissions detection for file:///android_asset paths.
+- Fixed 'Share SPK' for scoped storage devices.
+- Fixed app.SendFile, app.SendImage, app.SendMail for scoped storage devices.
+- Added QUERY_ALL_PACKAGES permission to X version.
+- Removed default params from edit/mui.js (older webviews don't not like it)
+- Added web.Func(name,args...) for easy calling of functions defined in a WebView.
+- Added app.Func(name,args...) for easy calling of main script functions from a WebView.
+- app.SimulateTouch() now copes with lower case keywords.
+- Fixed 'atob' issue with console logging in NodeJS apps.
+- Added new GetDocumentFile() method to Plugin parent object.
+- Added new app.GetRouterAddress() method.
+- Added tabs.SetTextSize(size,mode) method.
+- Added cfg.Fast mode for premium users (3x faster apps!)
+- Added XMLHttpRequest polyfill for Fast mode.
+
+### DS 2.50_p1 (06-Jan-2022)
+- Added 'Query Images' and 'Query Videos' samples.
+- Fixed crash when building APKs/AABs for Html apps.
 
 ## DS 2.50 (31-Dec-2021)
 - Fixed ctrl.Batch call for base methods (use underscore)

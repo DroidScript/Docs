@@ -113,6 +113,7 @@
 		"ExtractPlugins": "Forcefully update your plugins",
 		"FileExists": "Checks if the file exists",
 		"FolderExists": "Checks if the folder exists",
+		"Func": "Call main app functions from inside a webview",
 		"GA": "Google Analytics",
 		"GetAccessibility": "Get accesibility feature availability",
 		"GetAccounts": "Returns a string of all known account names on the device separated with comma ','.\n\nSee Also: @ChooseAccount",
@@ -172,6 +173,7 @@
 		"GetResourceId": "Get ID of a resource",
 		"GetRingerMode": "Get current device ringer mode",
 		"GetRotation": "Get device rotation",
+		"GetRouterAddress": "Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)",
 		"GetRSSI": "Get RSSI in dBm",
 		"GetRunningApps": "Get list of running apps",
 		"GetRunningServices": "Get list of running services",
@@ -228,6 +230,7 @@
 		"KillApp": "Kill an app by its pid",
 		"LaunchApp": "Launch or search an app",
 		"ListFolder": "Get a list of files ans folders contained in a specific folder",
+		"ListPermissions": "Returns a list of granted permissions",
 		"LoadBoolean": "Load saved boolean value",
 		"LoadJson": "Load saved json object",
 		"LoadNumber": "Load saved boolean value",
@@ -256,6 +259,7 @@
 		"RedirectAssets": "Read assets from given folder",
 		"RemoveDrawer": "Remove drawer layout from a given side",
 		"RemoveLayout": "Removes a layout added to the app.\n\nSee also: @AddLayout",
+		"RemovePermission": "Removes a granted permission",
 		"RenameFile": "Rename or move a local file",
 		"RenameFolder": "Rename or move a local folder",
 		"ReplaceInFile": "Replace text in a local file",
@@ -348,6 +352,7 @@
 		"UnpairBtDevice": "Unpair a paired Bluetooth device",
 		"UnzipFile": "Unzip a zip file",
 		"UpdateProgressBar": "Update the ProgressBar percentage",
+		"UpdateUI": "Force UI refresh",
 		"UploadFile": "Uploads a file to a server",
 		"Uri2Path": "Decode a URI encoded string",
 		"Vibrate": "Vibrate device in a pattern",
@@ -719,15 +724,15 @@
 	},
 	"dwn": {
 		"Batch": "Batch method calls to set object properties",
-		"Download": "Download a file",
+		"Download": "Download file(s)",
 		"GetProgress": "Get current download progress",
 		"GetSize": "Get target download size in bytes",
 		"GetType": "Returns the control class name",
 		"IsComplete": "Get download completed state",
 		"Method": "Access Java object methods via reflection",
 		"SetOnCancel": "Called when download is cancelled",
-		"SetOnComplete": "Called when the download is finished",
-		"SetOnDownload": "Called when the download is downloaded",
+		"SetOnComplete": "Called when downloads are finished",
+		"SetOnDownload": "Called when a file is downloaded",
 		"SetOnError": "Called when an error occurred while downloading"
 	},
 	"edt": {
@@ -793,16 +798,6 @@
 		"Show": "Set the visibility to “Show”",
 		"Tween": "Animates the control",
 		"Undo": "Undo an action"
-	},
-	"eml": {
-		"Batch": "Batch method calls to set object properties",
-		"GetType": "Returns the control class name",
-		"Receive": "Start receiving emails from a given folder",
-		"Send": "Send an email to someone",
-		"SetIMAP": "Set IMAP settings for receiving messages",
-		"SetOnMessage": "Called when a message is received",
-		"SetOnStatus": "Called when a status changed",
-		"SetSMTP": "Set SMTP settings for sending messages"
 	},
 	"fil": {
 		"Batch": "Batch method calls to set object properties",
@@ -1172,6 +1167,16 @@
 		"SetVisibility": "Change the visibility mode",
 		"Show": "Set the visibility to “Show”",
 		"Tween": "Animates the control"
+	},
+	"mail": {
+		"Batch": "Batch method calls to set object properties",
+		"GetType": "Returns the control class name",
+		"Receive": "Start receiving emails from a given folder",
+		"Send": "Send an email to someone",
+		"SetIMAP": "Set IMAP settings for receiving messages",
+		"SetOnMessage": "Called when a message is received",
+		"SetOnStatus": "Called when a status changed",
+		"SetSMTP": "Set SMTP settings for sending messages"
 	},
 	"med": {
 		"Batch": "Batch method calls to set object properties",
@@ -1662,6 +1667,7 @@
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
+		"SetTextSize": "Set text size",
 		"SetTouchable": "En/Disables touch events to be fired on the control. Other events like OnChange will still be fired",
 		"SetTouchThrough": "Enable touch event forwarding",
 		"SetVisibility": "Change the visibility mode",
@@ -1901,6 +1907,7 @@
 		"Execute": "Execute JS code inside the WebView",
 		"Focus": "Set the focus to the control for immediate access",
 		"Forward": "Load following page",
+		"Func": "Call functions defined inside a webview",
 		"GetAbsHeight": "Get the control height in pixels",
 		"GetAbsWidth": "Get the control width in pixels",
 		"GetHeight": "Get the height of the control",
