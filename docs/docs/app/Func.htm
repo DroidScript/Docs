@@ -44,47 +44,47 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - WebView Greeter</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">var</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
-				&lt;html><br>
-				&lt;head><br>
-				    &lt;meta name="viewport" content="width=device-width"><br>
-				    &lt;script src='file:///android_asset/app.js'>&lt;/script><br>
-				&lt;/head><br>
+				<span class="token keyword">var</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
+				&lt;html><br>
+				&lt;head><br>
+				    &lt;meta name="viewport" content="width=device-width"><br>
+				    &lt;script src='file:///android_asset/app.js'>&lt;/script><br>
+				&lt;/head><br>
 				<br>
-				&lt;script><br>
-				function greetWeb(name) {<br>
-				    app.ShowPopup("Hello " + name + ", I'm the WebView");<br>
-				}<br>
-				function greetApp() {<br>
-				    app.Func("greetApp", "WebView");<br>
-				}<br>
-				function OnRequest(err, s) {<br>
-				    alert(s.split("\\n").join("\\n"))<br>
-				}<br>
-				&lt;/script><br>
+				&lt;script><br>
+				function greetWeb(name) {<br>
+				    app.ShowPopup("Hello " + name + ", I'm the WebView");<br>
+				}<br>
+				function greetApp() {<br>
+				    app.Func("greetApp", "WebView");<br>
+				}<br>
+				function OnRequest(err, s) {<br>
+				    alert(s.split("\\n").join("\\n"))<br>
+				}<br>
+				&lt;/script><br>
 				<br>
-				&lt;input type="button" onclick="greetApp()" value="Greet App"/><br>
-				&lt;/html><br>
-				</span><span class="token template-punctuation string">`</span></span><br>
+				&lt;input type="button" onclick="greetApp()" value="Greet App"/><br>
+				&lt;/html><br>
+				</span><span class="token template-punctuation string">`</span></span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddWebView</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    web <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddWebView</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    web<span class="token punctuation">.</span><span class="token function">LoadHtml</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Greet WebView"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>greetWeb<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Greet WebView"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>greetWeb<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">greetApp</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the App"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				<span class="token punctuation">}</span><br>
-				<span class="token keyword">function</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				    web<span class="token punctuation">.</span><span class="token function">Func</span><span class="token punctuation">(</span><span class="token string">"greetWeb"</span><span class="token punctuation">,</span> <span class="token string">"App"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">function</span> <span class="token function">greetApp</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the App"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<span class="token keyword">function</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    web<span class="token punctuation">.</span><span class="token function">Func</span><span class="token punctuation">(</span><span class="token string">"greetWeb"</span><span class="token punctuation">,</span> <span class="token string">"App"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">

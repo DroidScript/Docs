@@ -43,24 +43,24 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    spn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddSpinner</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">ListPermissions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Remove"</span><span class="token punctuation">,</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><br>
-				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><br>
+				    spn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddSpinner</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> app<span class="token punctuation">.</span><span class="token function">ListPermissions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Remove"</span><span class="token punctuation">,</span> <span class="token number">0.3</span> <span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
-				<span class="token punctuation">}</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
 				<br>
-				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token keyword">var</span> perm <span class="token operator">=</span> spn<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token keyword">if</span><span class="token punctuation">(</span>perm<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">RemovePermission</span><span class="token punctuation">(</span>perm<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Removed "</span> <span class="token operator">+</span> perm<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <span class="token punctuation">}</span><br>
+				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> perm <span class="token operator">=</span> spn<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span>perm<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">RemovePermission</span><span class="token punctuation">(</span>perm<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Removed "</span> <span class="token operator">+</span> perm<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
