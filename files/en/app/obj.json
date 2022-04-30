@@ -3418,7 +3418,15 @@
 				"pTypes": ["num_mls"],
 				"shortDesc": "Set rate of OnChange calls"
 			},
-			"SetOnChange": "#2137502353",
+			"SetOnChange": {
+				"desc": "Called when the containing data has been changed by the user.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value"],
+					"pTypes": ["num"]
+				}],
+				"shortDesc": "Called when content was changed by the user"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetRange": {
@@ -3474,7 +3482,7 @@
 			},
 			"GetValues": {
 				"desc": "Returns all values of a sensor.",
-				"retval": "lst-[ first:num, second:num, third:num ]",
+				"retval": "lst-[ time:num_mls, first:num, second:num, third:num ]",
 				"shortDesc": "Get all values from sensor"
 			},
 			"Method": "#1023663567",
@@ -3939,13 +3947,21 @@
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2088093920",
+			"SetOnTouch": {
+				"desc": "Called when the control has been clicked by the user.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value"],
+					"pTypes": ["bin"]
+				}],
+				"shortDesc": "Called when user touched the control"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "Costomize the look of the toggle.",
+				"desc": "Customize the look of the toggle.",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
 				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
 				"shortDesc": "Customize the button looks"
@@ -4340,9 +4356,9 @@
 			},
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2088093920",
-			"SetOnTouchDown": "#2938578932",
-			"SetOnTouchMove": "#2039582034",
-			"SetOnTouchUp": "#9861324731",
+			"_SetOnTouchDown": "#2938578932",
+			"_SetOnTouchMove": "#2039582034",
+			"_SetOnTouchUp": "#9861324731",
 			"_SetOrientation": {
 				"desc": "Change the children orientation.",
 				"name": "SetOrientation",
@@ -4852,7 +4868,15 @@
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
 			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2088093920",
+			"SetOnTouch": {
+				"desc": "Called when the control has been clicked by the user.",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value"],
+					"pTypes": ["bin"]
+				}],
+				"shortDesc": "Called when user touched the control"
+			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",

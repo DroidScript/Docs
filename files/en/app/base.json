@@ -174,7 +174,7 @@
 	"#1096996086": { "name": "SetColorFilter",
 		"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
 		"pNames": ["color", "mode"],
-		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
+		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|color|color_burn|color_dodge|difference|exclusion|hard_light|hue|luminosity|modulate|saturation|soft_light|src|dst|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
 		"shortDesc": "Adjust the visual color effect with different BlendModes"
 	},
 	"#0937259723": { "name": "SetDescription",
@@ -241,7 +241,7 @@
 			"pNames": ["event"],
 			"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
-		"shortDesc": "Define a callback function for user toches"
+		"shortDesc": "Called when user touched the control"
 	},
 	"#2938578932": { "name": "SetOnTouchDown",
 		"desc": "%cb% the user started toching the control.",

@@ -36,3 +36,5 @@
   - Describe your issue in a way people can understand it without knowing anything about your individual project
   - Attach screenshots and demo SPKs to your question
   - Consider putting together a minimal demo showcasing your issue
+
+<sample GetDeviceSpecs>
