@@ -16,14 +16,12 @@
 		"desc": "Adds a sprite batch to the game.",
 		"name": "AddBatch",
 		"pNames": ["batch"],
-		"pTypes": ["gvo-CreateBatch"],
-		"shortDesc": "Adds a sprite batch to the game"
+		"pTypes": ["gvo-CreateBatch"]
 	},
 	"AddGraphic": {
 		"desc": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
 		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
-		"pTypes": ["obj", "num_frc", "num_frc", "num_frc", "num_frc", "num_rad", "num_frc"],
-		"shortDesc": "Adds a basic shape object to the game"
+		"pTypes": ["obj", "num_frc", "num_frc", "num_frc", "num_frc", "num_rad", "num_frc"]
 	},
 	"AddPhysics": {
 		"abbrev": "phs",
@@ -54,8 +52,7 @@
 			"EnablePhysics": {
 				"desc": "Temporally En/Disables physics for the game object.",
 				"pNames": ["enable"],
-				"pTypes": ["bin"],
-				"shortDesc": "Temporally En/Disables physics"
+				"pTypes": ["bin"]
 			},
 			"GetVelocity": {
 				"desc": "Returns the current total linear velocity or the “x”, “y” or “angular” component.",
@@ -65,14 +62,12 @@
 				"shortDesc": "Returns the total velocity or a component of it"
 			},
 			"RemovePhysics": {
-				"desc": "Removes physics from the game oblect.",
-				"shortDesc": "Removes physics"
+				"desc": "Removes physics from the game oblect."
 			},
 			"SetMatrix": {
-				"desc": "Applies a [2d transformation matrix](Matrix.htm) to the game object.",
+				"desc": "Applies a 2D transformation matrix to the game object.",
 				"pNames": ["mtx"],
-				"pTypes": ["obj-Matrix"],
-				"shortDesc": "Applies a 2d transformation"
+				"pTypes": ["obj-Matrix"]
 			},
 			"SetPhysics": {
 				"desc": "Set the physics properties for the game object.",
@@ -235,7 +230,6 @@
 		"pNames": ["points", "pivotX", "pivotY", "color", "lineWidth", "lineColor", "lineAlpha", "group"],
 		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
 		"retval": "gvo-Polygon",
-		"shortDesc": "Creates a polygon",
 		"subf": {
 			"alpha": "#2974510528",
 			"angle": "#1034034325",
@@ -459,14 +453,12 @@
 			"x": {
 				"desc": "X-position on the screen.",
 				"isval": true,
-				"retval": "num_frv",
-				"shortDesc": "x-Position"
+				"retval": "num_frv"
 			},
 			"y": {
 				"desc": "Y-position on the screen.",
 				"isval": true,
-				"retval": "num_frc",
-				"shortDesc": "Y-position"
+				"retval": "num_frc"
 			}
 		}
 	},
@@ -548,8 +540,7 @@
 	"data": {
 		"desc": "GameView custom data",
 		"isval": true,
-		"retval": "obj",
-		"shortDesc": "Data"
+		"retval": "obj"
 	},
 	"EnablePhysics": {
 		"desc": "En/Disables the added Box2D physics engine in your game. The methods added to your GameView objects are described in @AddPhysics.",
@@ -560,8 +551,7 @@
 	"Enclose": {
 		"desc": "Enclose an area with a physics fence.",
 		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
-		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"],
-		"shortDesc": "Enclose an area with a physics fence."
+		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"]
 	},
 	"_GenPixiJson": {
 		"desc": "Generate pixi texture atlas from info in a file name.",
@@ -573,8 +563,14 @@
 	"_GetContext": {
 		"desc": "",
 		"name": "GetContext",
-		"retval": "?",
-		"shortDesc": "GetContext"
+		"retval": "?"
+	},
+	"GetJoystick": {
+		"desc": "Gets object containing joystick states",
+		"pNames": ["id"],
+		"pTypes": ["str"],
+		"retval": "obj",
+		"shortDesc": "Get joystick states"
 	},
 	"GetOrder": {
 		"desc": "Returns the order index of a specific GameView object.",
@@ -585,14 +581,13 @@
 	},
 	"GetTime": {
 		"desc": "Returns the time since the last gfx.@Pause or gfx.@Play call.",
-		"retval": "jso-@../javascript/Global_Objects/Date",
+		"retval": "jso-Date",
 		"shortDesc": "Get time since last gfx.Pause or gfx.Play"
 	},
 	"height": {
 		"desc": "Display height in pixels",
 		"isval": true,
-		"retval": "num_pxl",
-		"shortDesc": "display height"
+		"retval": "num_pxl"
 	},
 	"IsOverlap": {
 		"desc": "Tests if two GameView objects are overlapping.",
@@ -615,14 +610,19 @@
 	"keyDown": {
 		"desc": "Currently pressed key",
 		"isval": true,
-		"retval": "str",
-		"shortDesc": "Currently pressed key"
+		"retval": "str"
 	},
 	"keyState": {
 		"desc": "Current pressed key state",
 		"isval": true,
 		"retval": "str-Down|Up",
 		"shortDesc": "Current key state"
+	},
+	"multiTouch": {
+		"desc": "Enables multiple touch inputs.",
+		"isval": true,
+		"retval": "bin",
+		"shortDesc": "Enables multitouch"
 	},
 	"objects": {
 		"desc": "List of all active GameView objects",
@@ -675,8 +675,7 @@
 		"desc": "PIXI renderer",
 		"isval": true,
 		"name": "renderer",
-		"retval": "obj-PIXI.Renderer",
-		"shortDesc": "Renderer"
+		"retval": "obj-PIXI.Renderer"
 	},
 	"Script": {
 		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your game.",
@@ -696,11 +695,10 @@
 		"pTypes": [{
 			"pNames": ["a", "b"],
 			"pTypes": ["gvo", "gvo"]
-		}],
-		"shortDesc": "SetOnCollide"
+		}]
 	},
 	"SetOnKeyDown": {
-		"desc": "Define a callback function which is called when the user started pressing a key.",
+		"desc": "%cb% the user started pressing a key.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["key"],
@@ -709,7 +707,7 @@
 		"shortDesc": "Define a KeyDown callback"
 	},
 	"SetOnKeyUp": {
-		"desc": "Define a callback function which is called when the user released a key.",
+		"desc": "%cb% the user released a key.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["key"],
@@ -722,9 +720,8 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch down"
 	},
 	"SetOnTouchMove": {
@@ -732,9 +729,8 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch move"
 	},
 	"SetOnTouchUp": {
@@ -742,31 +738,26 @@
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["x", "y"],
-			"pTypes": ["num_frc", "num_frc"]
+			"pTypes": ["num_frc||lst_num-fractions", "num_frc||lst_num-fractions"]
 		}],
-		"retval": "?",
 		"shortDesc": "Set callback for touch up"
 	},
 	"SetOrder": {
-		"desc": "",
+		"desc": "Change the drawing order of an object.",
 		"pNames": ["object", "order"],
-		"pTypes": ["obj", "num"],
-		"retval": "?",
-		"shortDesc": "SetOrder"
+		"pTypes": ["obj", "num"]
 	},
 	"_SetPixelMode": {
 		"desc": "",
 		"name": "SetPixelMode",
 		"pNames": ["usePixels"],
-		"pTypes": ["?"],
-		"retval": "?"
+		"pTypes": ["bin"]
 	},
 	"_stage": {
 		"desc": "",
 		"isval": true,
 		"name": "stage",
-		"retval": "?",
-		"shortDesc": "Stage"
+		"retval": "?"
 	},
 	"SwapOrder": {
 		"desc": "Swap the drawing order of two GameView objects.",
@@ -783,13 +774,11 @@
 	"Vibrate": {
 		"desc": "Shortcut to app.@../app/Vibrate)",
 		"pNames": ["pattern"],
-		"pTypes": ["str"],
-		"shortDesc": "Vibrate"
+		"pTypes": ["str"]
 	},
 	"width": {
 		"desc": "display width",
 		"isval": true,
-		"retval": "num_pxl",
-		"shortDesc": "display Width"
+		"retval": "num_pxl"
 	}
 }

@@ -2,152 +2,133 @@
 	"colors": {
 		"desc": "#colors.md",
 		"isval": true,
-		"retval": "obj",
-		"shortDesc": "#colors.md"
+		"retval": "obj"
     },
     "AddAlert": {
         "abbrev": "alr",
 		"desc": "Adds a nice pop-up at the top. See @CreateAlert for a full documentation.",
 		"pNames": ["text", "icon", "color"],
 		"pTypes": ["str-Popup text", "str-Material icon", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddAlert"
+		"retval": "obj"
     },
     "AddAlertSimple": {
         "abbrev": "als",
 		"desc": "Adds a simple alert with a single button. See @CreateAlertSimple for a full documentation.",
 		"pNames": ["text", "btnText", "color"],
 		"pTypes": ["str-Text of the alert", "str-Button text. Default is OKAY", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddAlertSimple"
+		"retval": "obj"
     },
     "AddAppBar": {
         "abbrev": "apb",
 		"desc": "Adds an appbar on a given layout. See @CreateAppBar, @CreateAppBarElegant and @CreateAppBarModern for a full documentation. The parameters p1, p2 and p3 depends on the type of appbar. Refer to each type for more info. Example for @CreateAppBar and @CreateAppBarElegant 'ps' is 'title', 'p2' is 'logoIcon' and 'p3' is 'controls'. For @CreateAppBarModern 'p1' is 'hint','p2' is 'controlIcon' and 'p3' is 'color'.",
 		"pNames": ["parent", "p1", "p2", "p3", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Title text|Hint", "str-Material Icon", "str-controls|color", "str_com-Elegant|Modern|Default and Round|Rectangle for Modern Appbar"],
-		"retval": "obj",
-		"shortDesc": "CreateAppBar"
+		"retval": "obj"
     },
     "AddAppBarElegant": {
         "abbrev": "abe",
 		"desc": "Adds an elegant appbar on a given layout. See @CreateAppBarElegant for a full documentation.",
 		"pNames": ["parent", "title", "leadingIcon", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Title text", "str-Material icon font", "str_com-material icon font for the right controls"],
-		"retval": "obj",
-		"shortDesc": "AddAppBarElegant"
+		"retval": "obj"
     },
     "AddAppBarModern": {
         "abbrev": "abm",
 		"desc": "Adds a modern appbar on a given layout. See @CreateAppBarModern for a full documentation.",
 		"pNames": ["parent", "hint", "controlIcon", "options", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Hint text for the search input", "str-Material font for the control icon", "str-Can be Round|Rectangle", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddAppBarModern"
+		"retval": "obj"
     },
     "AddBanner": {
         "abbrev": "bnr",
 		"desc": "Adds a banner dialog. See @CreateBanner for a full documentation.",
 		"pNames": ["text", "okText", "cancelText"],
 		"pTypes": ["str", "str-Truthy button text", "str-Falsey button text"],
-		"retval": "obj",
-		"shortDesc": "AddBanner"
+		"retval": "obj"
     },
     "AddButton": {
         "abbrev": "btn",
 		"desc": "Adds a MUI button to a given layout. See @CreateButtonElegant, @CreateButtonFlat, @CreateButtonRaised, @CreateButtonRaisedO, @CreateButtonRound, and @CreateButtonRoundO for full documentation",
 		"pNames": ["parent", "text", "width", "height", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str-raised|raisedo|roundo|round|elegant|outlined|contained|text|flat"],
-		"retval": "obj",
-		"shortDesc": "AddButton"
+		"retval": "obj"
     },
     "AddButtonElegant": {
         "abbrev": "bte",
 		"desc": "Add an elegant button on a given layout. See @CreateButtonElegant for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonElegant"
+		"retval": "obj"
     },
     "AddButtonFlat": {
         "abbrev": "btf",
 		"desc": "Adds a flat button on given layout. See @CreateButtonFlat for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonFlat"
+		"retval": "obj"
     },
     "AddButtonRaised": {
         "abbrev": "btr",
 		"desc": "Adds a raised material button on a given layout. See @CreateButtonRaised for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color", "txtcolor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonRaised"
+		"retval": "obj"
     },
     "AddButtonRaisedO": {
         "abbrev": "bro",
 		"desc": "Adds an outlined material raised button on a given layout. See @CreateButtonRaisedO for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonRaisedO"
+		"retval": "obj"
     },
     "AddButtonRound": {
         "abbrev": "btr",
 		"desc": "Adds a round material button on a given layout. See @CreateButtonRound for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color", "txtcolor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonRound"
+		"retval": "obj"
     },
     "AddButtonRoundO": {
         "abbrev": "bro",
 		"desc": "Adds an outlined material round button on a given layout. See @CreateButtonRoundO for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddButtonRoundO"
+		"retval": "obj"
     },
     "AddButtonOutlined": {
         "abbrev": "bto",
 		"desc": "An outlined material button. See @CreateButtonOutlined for full documentation",
 		"pNames": ["parent", "text", "width", "height"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
-		"retval": "obj",
-		"shortDesc": "An outlined material button"
+		"retval": "obj"
     },
     "AddButtonContained": {
         "abbrev": "btc",
 		"desc": "Adds a contained material button on a given layout. See @CreateButtonContained for full documentation.",
 		"pNames": ["parent", "text", "width", "height"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
-		"retval": "obj",
-		"shortDesc": "AddButtonContained"
+		"retval": "obj"
     },
     "AddButtonText": {
         "abbrev": "btt",
 		"desc": "Adds a text button on a given layout. See @CreateButtonFlat for full documentation.",
 		"pNames": ["parent", "text", "width", "height"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc"],
-		"retval": "obj",
-		"shortDesc": "AddButtonText"
+		"retval": "obj"
     },
     "AddButtonToggle": {
         "abbrev": "btt",
 		"desc": "Adds a toggleable button on a given layout. See @CreateButtonToggle for a full documentation.",
 		"pNames": ["parent", "text", "width", "height", "value", "callback"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str-Button text", "num_frc", "num_frc", "bin", {}],
-		"retval": "obj",
-		"shortDesc": "AddButtonToggle"
+		"retval": "obj"
     },
     "AddCard": {
         "abbrev": "crd",
 		"desc": "Adds a card on a given layout. See @CreateCard for a full documentation.",
 		"pNames": ["parent", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "obj-{title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
-		"retval": "obj",
-		"shortDesc": "AddCard"
+		"retval": "obj"
     },
     "AddColorPicker": {
         "abbrev": "clp",
@@ -162,16 +143,14 @@
 		"desc": "Adds an MUI Checkbox on a given layout. See @CreateCheckbox for a full documentation.",
 		"pNames": ["parent", "list", "width", "height", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-A comma separated string", "num_frc", "num_frc", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddCheckbox"
+		"retval": "obj"
     },
     "AddCheckList": {
         "abbrev": "chl",
 		"desc": "Adds an MUI checklist dialog. See @CreateCheckList for a full documentation.",
 		"pNames": ["textEdit", "title", "list", "color", "bottom"],
 		"pTypes": ["obj-MUI TextEdit control or DS TextEdit control", "str", "lst-An array of objects of the form {name: string, check: boolean}", "str_col", "bin"],
-		"retval": "obj",
-		"shortDesc": "AddCheckList"
+		"retval": "obj"
     },
     "AddDataTable": {
         "abbrev": "tbl",
@@ -186,96 +165,84 @@
 		"desc": "Adds a picker dialog such as time, date or color. See @CreateDatePicker, @CreateTimePicker and @CreateColorPicker for a full documentation.",
 		"pNames": ["textEdit", "options"],
 		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "str-Date|Color|Time"],
-		"retval": "obj",
-		"shortDesc": "Adds a picker dialog such as time, date or color"
+		"retval": "obj"
     },
     "AddDatePicker": {
         "abbrev": "dtp",
 		"desc": "Adds a date picker dialog. See @CreateDatePicker for a full documentation.",
 		"pNames": ["textEdit", "yyyy", "mm", "dd", "color"],
 		"pTypes": ["obj-MUI TextEdit or DS TextEdit control", "num_int-Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddDatePicker"
+		"retval": "obj"
     },
     "AddDialog": {
         "abbrev": "dlg",
 		"desc": "Adds a customizable materialize dialog. See @CreateDialog for a full documentation.",
 		"pNames": ["title", "body", "okText", "cancelText", "divider"],
 		"pTypes": ["str-Title", "str-Body text", "str-Truthy button text", "str-Falsey button text", "bin-Show divider or hide"],
-		"retval": "obj",
-		"shortDesc": "Adds a customizable materialize dialog."
+		"retval": "obj"
     },
     "AddDivider": {
         "abbrev": "dvd",
 		"desc": "Adds a divider to a given layout. See @CreateDivider for a full documentation.",
 		"pNames": ["parent", "height"],
 		"pTypes": ["obj-MUI Layout or DS layout contorl", "num_px-Optional"],
-		"retval": "obj",
-		"shortDesc": "CreateDivider"
+		"retval": "obj"
     },
     "AddFAB": {
         "abbrev": "fab",
 		"desc": "Adds a floating action button. See @CreateFAB, @CreateFABElegant and @CreateFABOutline for a full documentation.",
 		"pNames": ["parent", "icon", "color", "options"],
 		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon fonts", "str_col", "str_com-outline|elegant|default"],
-		"retval": "obj",
-		"shortDesc": "Adds a floating action button."
+		"retval": "obj"
     },
     "AddFABElegant": {
         "abbrev": "fab",
 		"desc": "Adds an elegant floating action button. See @CreateFABElegant for a full documentation.",
 		"pNames": ["parent", "icon", "color"],
 		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon fonts", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddFABElegant"
+		"retval": "obj"
     },
     "AddFABOutline": {
         "abbrev": "fab",
 		"desc": "Adds an outlined floating action button on a given layout. See @CreateFABOutline for a full documentation.",
 		"pNames": ["parent", "icon", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Material icon font", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddFABOutline"
+		"retval": "obj"
     },
     "AddLayout": {
         "abbrev": "lay",
 		"desc": "Adds a layout. See @CreateLayout for a full documentation.",
 		"pNames": ["parent", "type", "options"],
 		"pTypes": ["obj-MUI Layout or DS layout contorl", "str-Linear|Absolute|Frame|Card", "str-Comma separated DroidScript layout options"],
-		"retval": "obj",
-		"shortDesc": "AddLayout"
+		"retval": "obj"
     },
     "AddList": {
         "abbrev": "lst",
 		"desc": "Adds an MUI control on a given layout. See @CreateList, @CreateListModern and @CreateListSimple for a full documentation.",
 		"pNames": ["parent", "list", "width", "height", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num", "num", "str_com-simple|modern|default|divider"],
-		"retval": "obj",
-		"shortDesc": "AddList"
+		"retval": "obj"
     },
     "AddListDialog": {
         "abbrev": "lsd",
 		"desc": "Adds a more customizable list dialog or checklist dialog. See @CreateListDialog and @CreateCheckList for a full documentation on each type.",
 		"pNames": ["textEdit", "title", "list", "color", "options"],
 		"pTypes": ["obj-MUI TextEdit control or DS TextEdit control", "str", "lst-An array of objects", "str_col", "str_com-CheckList|ListDialog|Bottom"],
-		"retval": "obj",
-		"shortDesc": "AddListDialog"
+		"retval": "obj"
     },
     "AddListModern": {
         "abbrev": "lsm",
 		"desc": "Adds a ListModern control on a given layout. See @CreateListModern for a full documentation.",
 		"pNames": ["parent", "list", "width", "height", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-An array of object elements. See list example", "num", "num", "str-Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
-		"retval": "obj",
-		"shortDesc": "AddListModern"
+		"retval": "obj"
     },
     "AddListSimple": {
         "abbrev": "lss",
 		"desc": "Adds a simple list for navigation purposes. See @CreateListSimple for a full documentation.",
 		"pNames": ["parent", "list", "width", "height", "options"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "lst-{title:str|icon:str-Material icon|color:str_col|badge:num}", "num_frc", "num_frc", "str-Divider"],
-		"retval": "dso",
-		"shortDesc": "AddListSimple"
+		"retval": "dso"
     },
     "AddMenu": {
         "abbrev": "mn",
@@ -290,24 +257,21 @@
 		"desc": "MUI menu with material icon font. See @CreateMenuWithIcon for a full documentation.",
 		"pNames": ["list", "width", "height", "position"],
 		"pTypes": ["lst-str", "num_frc", "num_frc", "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"],
-		"retval": "obj",
-		"shortDesc": "MUI menu with material icon font."
+		"retval": "obj"
     },
     "AddModal": {
         "abbrev": "mdl",
 		"desc": "Adds a modal. See @CreateModal for a full documentation.",
 		"pNames": ["title", "body", "okTxt", "cancelTxt", "options"],
 		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "str-Dialog options with additional Full option"],
-		"retval": "obj",
-		"shortDesc": "Adds a modal."
+		"retval": "obj"
     },
     "AddRadio": {
         "abbrev": "rd",
 		"desc": "Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRadioMaterial for a full documentation. The param p1 depends on the type of an MUI button. It can be a color for normal radio or orientation 'vertical or horizontal' for material and button type.",
 		"pNames": ["parent", "list", "width", "height", "options", "p1", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str_com-strings", "num", "num", "str_com-Buttons|Material|Normal", "str-color|orientation", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "Adds a radio material input."
+		"retval": "obj"
     },
     "AddRadioButtons": {
         "abbrev": "rdb",
@@ -338,32 +302,28 @@
 		"desc": "Adds an MUI Switch to a given control. See @CreateSwitch for a full documentation.",
 		"pNames": ["parent", "value", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "bin", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddSwitch"
+		"retval": "obj"
     },
     "AddSwitchSettings": {
         "abbrev": "sws",
 		"desc": "Adds an MUI SwitchSettings to a given layout. See @CreateSwitchSettings for a full documentation.",
 		"pNames": ["parent", "text", "width", "height", "value", "color", "backColor"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str", "num_frc", "num_frc", "bin", "str_col", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddSwitchSettings"
+		"retval": "obj"
     },
     "AddTabs": {
         "abbrev": "tbf",
 		"desc": "Adds an MUI tab on a given layout. See @CreateTabFixed for a full documentation.",
 		"pNames": ["parent", "title", "width", "height", "options", "color", "animation"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "str_com-titles", "num", "num", "str_com-DS layout options|Fix", "str_col", "bin"],
-		"retval": "obj",
-		"shortDesc": "AddTabs"
+		"retval": "obj"
     },
     "AddTextEdit": {
         "abbrev": "ted",
 		"desc": "Adds a TextEdit control to a given layout. See @CreateTextEditFilled, @CreateTextEditFilledA, @CreateTextEditOutline, @CreateTextEditOutlineA, @CreateTEFilledIconLeft, @CreateTEFilledIconRight, @CreateTEOutlineIconLeft, @CreateTEOutlineIconRight, @CreateTESearchElegant, @CreateTESearchUnique, @CreateTextEditSearch and @CreateTextEditUnique for full documentation on each type of MUI TextEdit. For p1, p2, p3, p4 and p5 parameters, these are the params after the options. You can refer to the corresponding Create*** method to see what this parameters are. Example for @CreateTextEditFilled 'p1' is 'hint', 'p2' is 'label' and 'p3' is 'color'. For @CreateTextEditOutline 'p1' is 'hint', 'p2' is 'label', 'p3' is 'color' and 'p4' is 'backColor'.",
 		"pNames": ["parent", "width", "options", "p1", "p2", "p3", "p4", "p5"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-outline|filled|unique|search|active|icon and for icon can be  left|right", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit", "str-See corresponding MUI TextEdit"],
-		"retval": "obj",
-		"shortDesc": "Adds a TextEdit control to a given layout"
+		"retval": "obj"
     },
     "AddTEFilledIconLeft": {
         "abbrev": "tef",
@@ -378,8 +338,7 @@
 		"desc": "Adds a filled text input with icon on the right on a given layout. See @CreateTEFilledIconRight for full documentaion.",
 		"pNames": ["parent", "width", "options", "icon", "hint", "label", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str_com-DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col"],
-		"retval": "obj",
-		"shortDesc": "Adds a filled text input with icon on the right"
+		"retval": "obj"
     },
     "AddTEOutlineIconLeft": {
         "abbrev": "teo",
@@ -402,8 +361,7 @@
 		"desc": "Adds an elegant search textedit on a given layout. See @CreateTESearchElegant for full documentation.",
 		"pNames": ["parent", "width", "hint", "icon", "iconPos", "color", "option"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col", "str-Small|Normal|Border"],
-		"retval": "obj",
-		"shortDesc": "Adds an elegant search textedit"
+		"retval": "obj"
     },
     "AddTESearchUnique": {
         "abbrev": "tes",
@@ -426,8 +384,7 @@
 		"desc": "Add a material filled textarea on a given layout. See @CreateTextAreaFilled for  a full documentation.",
 		"pNames": ["parent", "width", "height", "hint", "label", "color"],
 		"pTypes": ["obj-MUI Layout or DS Layout control", "num", "num", "str-Hint text", "bin-Show or hide label", "str_col"],
-		"retval": "obj",
-		"shortDesc": "Add a material filled textarea"
+		"retval": "obj"
     },
     "AddTextAreaFilledA": {
         "abbrev": "taf",
@@ -506,56 +463,49 @@
 		"desc": "Adds a mui text control to the layout. See @CreateTextH1, @CreateTextH2, @CreateTextH3, @CreateTextH4, @CreateTextH5, @CreateTextH6, @CreateTextJumbo, @CreateTextParagraph and @CreateTextSecondary for full documentation on each type of mui typhography.",
 		"pNames": ["parent", "text", "width", "height", "options", "color"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options with addition Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph", "str_col"],
-		"retval": "obj",
-		"shortDesc": "AddText"
+		"retval": "obj"
     },
     "AddTextH1": {
         "abbrev": "txh",
 		"desc": "Adds an H1 text to a layout. See @CreateTextH1 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H1 text"
+		"retval": "obj"
     },
     "AddTextH2": {
         "abbrev": "txh",
 		"desc": "Adds an H2 text to a layout. See @CreateTextH2 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H2 text"
+		"retval": "obj"
     },
     "AddTextH3": {
         "abbrev": "txh",
 		"desc": "Adds an H3 text to a layout. See @CreateTextH3 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H3 text"
+		"retval": "obj"
     },
     "AddTextH4": {
         "abbrev": "txh",
 		"desc": "Adds an H4 text to a layout. See @CreateTextH4 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H4 text"
+		"retval": "obj"
     },
     "AddTextH5": {
         "abbrev": "txh",
 		"desc": "Adds an H5 text to a layout. See @CreateTextH5 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H5 text"
+		"retval": "obj"
     },
     "AddTextH6": {
         "abbrev": "txh",
 		"desc": "Adds an H6 text to a layout. See @CreateTextH6 for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds an H6 text"
+		"retval": "obj"
     },
     "AddTextJumbo": {
         "abbrev": "txj",
@@ -570,16 +520,14 @@
 		"desc": "Adds a paragraph text to a layout. See @CreateTextParagraph for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds a paragraph text to a layout."
+		"retval": "obj"
     },
     "AddTextSecondary": {
         "abbrev": "txp",
 		"desc": "Adds a secondary text to a layout. See @CreateTextSecondary for full documentation.",
 		"pNames": ["parent", "text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["obj-MUI Layout or DS layout control", "str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
-		"retval": "obj",
-		"shortDesc": "Adds a secondary text to a layout."
+		"retval": "obj"
     },
     "AddTimePicker": {
         "abbrev": "tmp",
@@ -595,11 +543,9 @@
 		"pNames": ["text", "icon", "color"],
 		"pTypes": ["str-Popup text", "str-Material icon", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateAlert",
 		"subf": {
 			"Destroy": {
-				"desc": "Destroys the popup object.",
-				"shortDesc": "Destroy"
+				"desc": "Destroys the popup object."
 			},
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
@@ -609,8 +555,7 @@
 				"pTypes": [{
 					"pNames": ["isBtnClick"],
 					"pTypes": ["bin-Is the button click or not"]
-				}],
-				"shortDesc": "SetOnClose"
+				}]
 			},
 			"SetText": "#8207502354",
 			"Show": "#1243391562",
@@ -636,11 +581,9 @@
 		"pNames": ["text", "btnText", "color"],
 		"pTypes": ["str-Text of the alert", "str-Button text. Default is OKAY", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateAlertSimple",
 		"subf": {
 			"Destroy": {
-				"desc": "Destroys the popup object.",
-				"shortDesc": "Destroy"
+				"desc": "Destroys the popup object."
 			},
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
@@ -650,8 +593,7 @@
 				"pTypes": [{
 					"pNames": ["isBtnClick"],
 					"pTypes": ["bin"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -681,19 +623,16 @@
 		"pNames": ["title", "leadingIcon", "controls"],
 		"pTypes": ["str-Title text", "str-A material font icon for the leading control", "str_com-material icon font for the right controls"],
 		"retval": "obj",
-		"shortDesc": "CreateAppBar",
 		"subf": {
 			"SetMenuIcon": {
 				"desc": "Sets a new heading icon",
 				"pNames": ["newIcon"],
-				"pTypes": ["str-New material icon font"],
-				"shortDesc": "SetMenuIcon"
+				"pTypes": ["str-New material icon font"]
 			},
 			"SetMenuIconColor": {
 				"desc": "Change the color of the heading icon",
 				"pNames": ["newColor"],
-				"pTypes": ["str_col-New color of the heading icon"],
-				"shortDesc": "SetMenuIconColor"
+				"pTypes": ["str_col-New color of the heading icon"]
 			},
 			"SetOnControlTouch": {
 				"desc": "Calls a function when the right controls are click",
@@ -701,26 +640,22 @@
 				"pTypes": [{
 					"pNames": ["btnTxt", "index"],
 					"pTypes": ["str", "num_int"]
-				}],
-				"shortDesc": "SetOnControlTouch"
+				}]
 			},
 			"SetOnMenuTouch": {
 				"desc": "Calls a function when the heading icon is click",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnMenuTouch"
+				"pTypes": [{}]
 			},
 			"SetTitleText": {
 				"desc": "Sets a new title",
 				"pNames": ["newTitle"],
-				"pTypes": ["str-New title text"],
-				"shortDesc": "SetTitleText"
+				"pTypes": ["str-New title text"]
 			},
 			"SetTitleTextColor": {
 				"desc": "Change the color of the title",
 				"pNames": ["newColor"],
-				"pTypes": ["str_col"],
-				"shortDesc": "SetTitleTextColor"
+				"pTypes": ["str_col"]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -751,19 +686,16 @@
 		"pNames": ["title", "leadingIcon", "options"],
 		"pTypes": ["str-Title text", "str-Material icon font", "str_com-material icon font for the right controls"],
 		"retval": "obj",
-		"shortDesc": "CreateAppBarElegant",
 		"subf": {
 			"SetMenuIcon": {
 				"desc": "Sets a new heading icon",
 				"pNames": ["newIcon"],
-				"pTypes": ["str-New material icon font"],
-				"shortDesc": "SetMenuIcon"
+				"pTypes": ["str-New material icon font"]
 			},
 			"SetMenuIconColor": {
 				"desc": "Change the color of the heading icon",
 				"pNames": ["newColor"],
-				"pTypes": ["str_col-New color of the heading icon"],
-				"shortDesc": "SetMenuIconColor"
+				"pTypes": ["str_col-New color of the heading icon"]
 			},
 			"SetOnControlTouch": {
 				"desc": "Calls a function when the right controls are click",
@@ -771,26 +703,22 @@
 				"pTypes": [{
 					"pNames": ["btnTxt", "index"],
 					"pTypes": ["str", "num_int"]
-				}],
-				"shortDesc": "SetOnControlTouch"
+				}]
 			},
 			"SetOnMenuTouch": {
 				"desc": "Calls a function when the heading icon is click",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnMenuTouch"
+				"pTypes": [{}]
 			},
 			"SetTitleText": {
 				"desc": "Sets a new title",
 				"pNames": ["newTitle"],
-				"pTypes": ["str-New title text"],
-				"shortDesc": "SetTitleText"
+				"pTypes": ["str-New title text"]
 			},
 			"SetTitleTextColor": {
 				"desc": "Change the color of the title",
 				"pNames": ["newColor"],
-				"pTypes": ["str_col"],
-				"shortDesc": "SetTitleTextColor"
+				"pTypes": ["str_col"]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -821,88 +749,60 @@
 		"pNames": ["hint", "controlIcon", "options", "color"],
 		"pTypes": ["str-Hint text for the search input", "str-Material font for the control icon", "str-Can be Round|Rectangle", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateAppBarModern",
 		"subf": {
 			"GetHeight": "#2576212953",
 			"SetOnControlTouch": {
 				"desc": "Calls a function when right control is touch",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnControlTouch"
+				"pTypes": [{}]
 			},
 			"SetOnMenuTouch": {
 				"desc": "Call a function when the menu icon is touch",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnMenuTouch"
+				"pTypes": [{}]
 			},
 			"ClearFocus": "#1362225380",
-			"ClearHistory": {
-				"desc": "ClearHistory",
-				"shortDesc": "ClearHistory"
-			},
+			"ClearHistory": {},
 			"Focus": "#7324472769",
-			"GetCursorLine": {
-				"desc": "GetCursorLine",
-				"shortDesc": "GetCursorLine"
-			},
-			"GetCursorPos": {
-				"desc": "GetCursorPos",
-				"shortDesc": "GetCursorPos"
-			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetCursorLine": {},
+			"GetCursorPos": {},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "InsertText"
+				"pTypes": ["str", "num_int"]
 			},
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo"
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "ReplaceText"
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetCursorPos"
+				"pTypes": ["num_int"]
 			},
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnEnter"
+				"pTypes": [{}]
 			},
 			"SetOnFocus": {
-				"desc": "Define a callback function called when the user focuses the control.",
+				"desc": "%cb% the user focuses the control.",
 				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "SetOnFocus"
+				"pTypes": [{}]
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action.",
-				"shortDesc": "Undo"
+				"desc": "Undo an action."
 			}
 		}
     },
@@ -912,7 +812,6 @@
 		"pNames": ["text", "okText", "cancelText"],
 		"pTypes": ["str", "str-Truthy button text", "str-Falsey button text"],
 		"retval": "obj",
-		"shortDesc": "CreateBanner",
 		"subf": {
 			"SetOnTouch": {
 				"desc": "Calls a function when buttons are click (prev. SetOnTouchOK)",
@@ -920,8 +819,7 @@
 				"pTypes": [{
 					"pNames": ["isOkBtnClick", "btnText"],
 					"pTypes": ["bin", "str"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"Show": "#1243391562",
 			"SetText": "#8207502354",
@@ -930,8 +828,7 @@
 			"SetTextSize": "#5019790423",
 			"Hide": "#5372805812",
 			"Destroy": {
-				"desc": "Destroys the banner object",
-				"shortDesc": "Destroy"
+				"desc": "Destroys the banner object"
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -959,16 +856,13 @@
 		"pNames": ["text", "width", "height", "color"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonElegant",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -981,9 +875,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1011,10 +903,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1032,16 +922,13 @@
 		"pNames": ["text", "width", "height", "color", "backColor"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonFlat",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1054,9 +941,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1084,10 +969,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1104,16 +987,13 @@
 		"pNames": ["text", "width", "height", "color", "txtcolor"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonRaised",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1126,9 +1006,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1156,10 +1034,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1177,16 +1053,13 @@
 		"pNames": ["text", "width", "height", "color", "backColor"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonRaisedO",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1199,9 +1072,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1229,10 +1100,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1250,16 +1119,13 @@
 		"pNames": ["text", "width", "height", "color", "txtcolor"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonRound",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1272,9 +1138,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1302,10 +1166,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1323,16 +1185,13 @@
 		"pNames": ["text", "width", "height", "color", "backColor"],
 		"pTypes": ["str", "num_frc", "num_frc", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonRoundO",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1345,9 +1204,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1375,10 +1232,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1396,16 +1251,13 @@
 		"pNames": ["text", "width", "height"],
 		"pTypes": ["str", "num_frc", "num_frc"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonOutlined",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1418,9 +1270,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1448,10 +1298,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1468,16 +1316,13 @@
 		"pNames": ["text", "width", "height"],
 		"pTypes": ["str", "num_frc", "num_frc"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonContained",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1490,9 +1335,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1520,10 +1363,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1539,25 +1380,20 @@
 		"desc": "Adds a text button. See @CreateButtonFlat for full documentation.",
 		"pNames": ["text", "width", "height"],
 		"pTypes": ["str", "num_frc", "num_frc"],
-		"retval": "obj",
-		"shortDesc": "CreateButtonText"
+		"retval": "obj"
     },
 	"CreateButtonToggle": {
 		"abbrev": "btt",
-		"desc": "CreateButtonToggle",
 		"pNames": ["text", "width", "height", "value", "callback", "color", "backColor"],
 		"pTypes": ["str", "num_frc", "num_frc", "bin", {}, "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateButtonToggle",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -1570,9 +1406,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -1599,10 +1433,8 @@
 			"SetScale": "#1990464376",
 			"SetSize": "#1296070870",
 			"SetStyle": {
-				"desc": "SetStyle",
 				"pNames": ["clr1", "clr2", "radius", "strokeClr", "strokeWidth", "shadow"],
-				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"],
-				"shortDesc": "SetStyle"
+				"pTypes": ["str_col", "str_col", "num", "str_col", "num", "num"]
 			},
 			"SetText": "#8207502354",
 			"SetTextColor": "#0175303923",
@@ -1620,7 +1452,6 @@
 		"pNames": ["options"],
 		"pTypes": ["obj-{title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-\"raised|raisedoutline|round|roundoutline|flat\"}"],
 		"retval": "obj",
-		"shortDesc": "CreateCard",
 		"subf": {
 			"SetOnButtonTouch": {
 				"desc": "Calls a function when buttons are click.",
@@ -1628,8 +1459,7 @@
 				"pTypes": [{
 					"pNames": ["btnText", "cardName"],
 					"pTypes": ["str", "str"]
-				}],
-				"shortDesc": "SetOnButtonTouch"
+				}]
 			},
 			"SetOnImageTouch": {
 				"desc": "Calls a function when the image is click.",
@@ -1637,8 +1467,7 @@
 				"pTypes": [{
 					"pNames": ["cardName"],
 					"pTypes": ["str"]
-				}],
-				"shortDesc": "SetOnImageTouch"
+				}]
 			},
 			"SetOnAvatarTouch": {
 				"desc": "Calls a function when avatar is click.",
@@ -1646,8 +1475,7 @@
 				"pTypes": [{
 					"pNames": ["cardName"],
 					"pTypes": ["str"]
-				}],
-				"shortDesc": "SetOnAvatarTouch"
+				}]
 			},
 			"SetOnTitleTouch": {
 				"desc": "Calls a function when title item is click.",
@@ -1655,8 +1483,7 @@
 				"pTypes": [{
 					"pNames": ["title", "cardName"],
 					"pTypes": ["str", "str"]
-				}],
-				"shortDesc": "SetOnTitleTouch"
+				}]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -1688,7 +1515,6 @@
 		"pNames": ["title"],
 		"pTypes": ["str"],
 		"retval": "obj",
-		"shortDesc": "Creates a color picker dialog where you can select a range of MUI predefined colors.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when a user click the OK button",
@@ -1696,8 +1522,7 @@
 				"pTypes": [{
 					"pNames": ["color"],
 					"pTypes": ["str_col-The selected color"]
-				}],
-				"shortDesc": "SetOnSelect"
+				}]
 			},
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
@@ -1723,7 +1548,6 @@
 		"pNames": ["list", "width", "height", "color"],
 		"pTypes": ["lst-A comma separated string", "num_frc", "num_frc", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateCheckbox",
 		"subf": {
 			"SetOnTouch": {
 				"desc": "Calls a function when the checkbox is click",
@@ -1731,25 +1555,21 @@
 				"pTypes": [{
 					"pNames": ["index", "checked"],
 					"pTypes": ["num_int", "bin"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"GetCheckItem": {
 				"desc": "Get the check items in the list",
-				"retval": "lst-List of indexes for slected items",
-				"shortDesc": "GetCheckItem"
+				"retval": "lst-List of indexes for slected items"
 			},
 			"CheckItemByIndex": {
 				"desc": "Checks the corresponding item/items in the checkbox list",
 				"pNames": ["index"],
-				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"],
-				"shortDesc": "GetCheckItem"
+				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"]
 			},
 			"UncheckItemByIndex": {
 				"desc": "Unchecks the corresponding item/items in the checkbox list",
 				"pNames": ["index"],
-				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"],
-				"shortDesc": "GetCheckItem"
+				"pTypes": ["num_int-You can also pass an array of indexes e.g. [1, 3]"]
 			},
 			"SetHeight": "#2114625707",
 			"ClearFocus": "#1362225380",
@@ -1783,7 +1603,6 @@
 		"pNames": ["title", "list", "color", "bottom"],
 		"pTypes": ["str", "lst-An array of objects of the form {name: string, check: boolean}", "str_col", "bin"],
 		"retval": "obj",
-		"shortDesc": "CreateCheckList",
 		"subf": {
 			"SetOnSubmit": {
 				"desc": "Calls a function when the checklist is submitted",
@@ -1791,8 +1610,7 @@
 				"pTypes": [{
 					"pNames": ["list"],
 					"pTypes": ["lst"]
-				}],
-				"shortDesc": "SetOnSubmit"
+				}]
 			},
 			"Show": "#1243391562",
 			"SetHeight": "#2114625707",
@@ -1841,8 +1659,7 @@
 			"RemoveRows": {
 				"desc": "Remove a row at a given index or indexes",
 				"pNames": ["index"],
-				"pTypes": ["lst-An array of indexes you want to remove. It can also be just a number for a single index."],
-				"shortDesc": "RemoveRows"
+				"pTypes": ["lst-An array of indexes you want to remove. It can also be just a number for a single index."]
 			},
 			"GetSelectedRows": {
 				"desc": "Get the selected rows. This function is synchronous. You need to pass a callback.",
@@ -1850,8 +1667,7 @@
 				"pTypes": [{
 					"pNames": ["indexes"],
 					"pTypes": ["lst-An array of indexes."]
-				}],
-				"shortDesc": "GetSelectedRows"
+				}]
 			},
 			"SetOnSelectionStatus": {
 				"desc": "Calls a function when the selection status of the table changes.",
@@ -1859,8 +1675,7 @@
 				"pTypes": [{
 					"pNames": ["isTrue"],
 					"pTypes": ["bin-True if there's an active selection, false otherwise."]
-				}],
-				"shortDesc": "SetOnSelectionStatus"
+				}]
             },
             "SetOnTouch": {
                 "desc": "Calls a function when a row in the table is click.",
@@ -1871,8 +1686,7 @@
                         "str-The row data separated by colon (:)",
                         "num_int-The index of row being click."
                     ]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
             },
             "SetOnReady": {
                 "desc": "Calls a function when the Table is ready and rendered already.",
@@ -1880,8 +1694,7 @@
 				"pTypes": [{
 					"pNames": [],
 					"pTypes": []
-				}],
-				"shortDesc": "SetOnReady"
+				}]
             },
             "SetOnProgress": {
                 "desc": "Calls a function when the Table is on progress",
@@ -1889,14 +1702,12 @@
 				"pTypes": [{
 					"pNames": ["value"],
 					"pTypes": ["num-The progress of the loading table from 0-100"]
-				}],
-				"shortDesc": "SetOnProgress"
+				}]
             },
 			"SetRows": {
 				"desc": "Set the rows of the table to a new values of data.",
 				"pNames": ["values"],
-				"pTypes": ["lst-A comma separated strings of the form \"Val1:Val2:Val3:...\""],
-				"shortDesc": "SetRows"
+				"pTypes": ["lst-A comma separated strings of the form \"Val1:Val2:Val3:...\""]
 			},
 			"AddFooter": {
 				"desc": "Add a footer layout to the table where you can add controls.",
@@ -1905,8 +1716,7 @@
 					"str-Type of layout. Can be Linear|Absolute|Frame. Default to Linear",
 					"str-A comma separated layout options. Default to Horizontal|Right|VCenter",
 					"num-A fraction of the screen height."
-				],
-				"shortDesc": "Add a footer layout to the table"
+				]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -1938,7 +1748,6 @@
 		"pNames": ["yyyy", "mm", "dd", "color"],
 		"pTypes": ["num_int-Full year", "num_int-[0-11]", "num_int-[1-31]", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateDatePicker",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when a user click the OK button",
@@ -1946,8 +1755,7 @@
 				"pTypes": [{
 					"pNames": ["yyyy-mm-dd", "yyyy", "mm", "dd"],
 					"pTypes": ["str", "num_int", "num_int", "num_int"]
-				}],
-				"shortDesc": "SetOnSelect"
+				}]
 			},
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
@@ -1973,7 +1781,6 @@
 		"pNames": ["title", "body", "okText", "cancelText", "divider"],
 		"pTypes": ["str-Title", "str-Body text", "str-Truthy button text", "str-Falsey button text", "bin-Show divider or hide"],
 		"retval": "obj",
-		"shortDesc": "Creates a customizable materialize dialog.",
 		"subf": {
 			"SetOnTouch": {
 				"desc": "Calls a function when buttons are click (prev. SetOnTouchOK)",
@@ -1981,8 +1788,7 @@
 				"pTypes": [{
 					"pNames": ["isOkBtnClick", "btnText"],
 					"pTypes": ["bin", "str"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"Show": "#1243391562",
 			"SetText": "#8207502354",
@@ -2019,7 +1825,6 @@
 		"pNames": ["height"],
 		"pTypes": ["num_px-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateDivider",
 		"subf": {
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
@@ -2036,30 +1841,25 @@
 		"pNames": ["icon", "color"],
 		"pTypes": ["str-Material icon fonts", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateFAB",
 		"subf": {
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2398750419",
 			"SetIcon": {
 				"desc": "Sets a new material icon",
 				"pNames": ["icon"],
-				"pTypes": ["str-Material icon font"],
-				"shortDesc": "SetIcon"
+				"pTypes": ["str-Material icon font"]
 			},
 			"SetIconColor": {
 				"desc": "Sets the text color",
 				"pNames": ["color"],
-				"pTypes": ["str_col-"],
-				"shortDesc": "SetIconColor"
+				"pTypes": ["str_col-"]
 			},
 			"GetIcon": "#2387569276",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2070,9 +1870,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2097,30 +1895,25 @@
 		"pNames": ["icon", "color"],
 		"pTypes": ["str-Material icon fonts", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateFABElegant",
 		"subf": {
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2398750419",
 			"SetIcon": {
 				"desc": "Sets a new material icon",
 				"pNames": ["icon"],
-				"pTypes": ["str-Material icon font"],
-				"shortDesc": "SetIcon"
+				"pTypes": ["str-Material icon font"]
 			},
 			"SetIconColor": {
 				"desc": "Sets the text color",
 				"pNames": ["color"],
-				"pTypes": ["str_col-"],
-				"shortDesc": "SetIconColor"
+				"pTypes": ["str_col-"]
 			},
 			"GetIcon": "#2387569276",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2131,9 +1924,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2158,30 +1949,25 @@
 		"pNames": ["icon", "color", "backColor"],
 		"pTypes": ["str-Material icon font", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateFABOutline",
 		"subf": {
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2398750419",
 			"SetIcon": {
 				"desc": "Sets a new material icon",
 				"pNames": ["icon"],
-				"pTypes": ["str-Material icon font"],
-				"shortDesc": "SetIcon"
+				"pTypes": ["str-Material icon font"]
 			},
 			"SetIconColor": {
 				"desc": "Sets the text color",
 				"pNames": ["color"],
-				"pTypes": ["str_col-"],
-				"shortDesc": "SetIconColor"
+				"pTypes": ["str_col-"]
 			},
 			"GetIcon": "#2387569276",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
@@ -2192,9 +1978,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Button",
-				"shortDesc": "GetType"
+				"retval": "str-Button"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -2218,8 +2002,7 @@
 		"desc": "#CreateLayout.md",
 		"pNames": ["type", "options"],
 		"pTypes": ["str-Linear|Absolute|Frame|Card", "str-Comma separated DroidScript layout options"],
-		"retval": "obj",
-		"shortDesc": "#CreateLayout.md"
+		"retval": "obj"
     },
 	"CreateList": {
 		"abbrev": "lst",
@@ -2227,13 +2010,10 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str", "num", "num", "str"],
 		"retval": "obj",
-		"shortDesc": "CreateList",
 		"subf": {
 			"AddItem": {
-				"desc": "AddItem",
 				"pNames": ["title", "body", "image"],
-				"pTypes": ["str", "str", "str_ptf"],
-				"shortDesc": "AddItem"
+				"pTypes": ["str", "str", "str_ptf"]
 			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -2243,94 +2023,67 @@
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetItem": {
-				"desc": "GetItem",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"retval": "obj",
-				"shortDesc": "GetItem"
+				"retval": "obj"
 			},
 			"GetItemByIndex": {
-				"desc": "GetItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num"],
-				"retval": "obj",
-				"shortDesc": "GetItemByIndex"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLength": {
-				"desc": "GetLength",
-				"retval": "num_int",
-				"shortDesc": "GetLength"
+				"retval": "num_int"
 			},
 			"GetList": {
-				"desc": "GetList",
 				"pNames": ["delim"],
 				"pTypes": ["str"],
-				"retval": "obj",
-				"shortDesc": "GetList"
+				"retval": "obj"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-List",
-				"shortDesc": "GetType"
+				"retval": "str-List"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"InsertItem": {
-				"desc": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
-				"pTypes": ["num", "str", "str", "str_ptf"],
-				"shortDesc": "InsertItem"
+				"pTypes": ["num", "str", "str", "str_ptf"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
-			"RemoveAll": {
-				"desc": "RemoveAll",
-				"shortDesc": "RemoveAll"
-			},
+			"RemoveAll": {},
 			"RemoveItem": {
-				"desc": "RemoveItem",
 				"pNames": ["title"],
-				"pTypes": ["str"],
-				"shortDesc": "RemoveItem"
+				"pTypes": ["str"]
 			},
 			"RemoveItemByIndex": {
-				"desc": "RemoveItemByIndex",
 				"pNames": ["index"],
-				"pTypes": ["num"],
-				"shortDesc": "RemoveItemByIndex"
+				"pTypes": ["num"]
 			},
 			"ScrollToItem": {
-				"desc": "ScrollToItem",
 				"pNames": ["title", "body"],
-				"pTypes": ["str", "str"],
-				"shortDesc": "ScrollToItem"
+				"pTypes": ["str", "str"]
 			},
 			"ScrollToItemByIndex": {
-				"desc": "ScrollToItemByIndex",
 				"pNames": ["index"],
-				"pTypes": ["num"],
-				"shortDesc": "ScrollToItemByIndex"
+				"pTypes": ["num"]
 			},
 			"SelectItem": {
-				"desc": "SelectItem",
 				"pNames": ["title", "body", "scroll"],
-				"pTypes": ["str", "str", "bin"],
-				"shortDesc": "SelectItem"
+				"pTypes": ["str", "str", "bin"]
 			},
 			"SelectItemByIndex": {
-				"desc": "SelectItemByIndex",
 				"pNames": ["index", "scroll"],
-				"pTypes": ["num", "bin"],
-				"shortDesc": "SelectItemByIndex"
+				"pTypes": ["num", "bin"]
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -2339,73 +2092,51 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetColumnWidths": {
-				"desc": "SetColumnWidths",
 				"pNames": ["icon", "title", "body", "mode"],
-				"pTypes": ["?", "str", "str", "?"],
-				"shortDesc": "SetColumnWidths"
+				"pTypes": ["?", "str", "str", "?"]
 			},
 			"SetDivider": {
-				"desc": "SetDivider",
 				"pNames": ["height", "color"],
-				"pTypes": ["num", "str_col"],
-				"shortDesc": "SetDivider"
+				"pTypes": ["num", "str_col"]
 			},
 			"SetEllipsize": "#0897234673",
 			"SetEllipsize1": {
-				"desc": "SetEllipsize1",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
-				"shortDesc": "SetEllipsize1"
+				"pTypes": ["?"]
 			},
 			"SetEllipsize2": {
-				"desc": "SetEllipsize2",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
-				"shortDesc": "SetEllipsize2"
+				"pTypes": ["?"]
 			},
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetHiTextColor1": {
-				"desc": "SetHiTextColor1",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetHiTextColor1"
+				"pTypes": ["?"]
 			},
 			"SetHiTextColor2": {
-				"desc": "SetHiTextColor2",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetHiTextColor2"
+				"pTypes": ["?"]
 			},
 			"SetIconMargins": {
-				"desc": "SetIconMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
-				"pTypes": ["?", "?", "?", "?", "?"],
-				"shortDesc": "SetIconMargins"
+				"pTypes": ["?", "?", "?", "?", "?"]
 			},
 			"SetIconSize": {
-				"desc": "SetIconSize",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetIconSize"
+				"pTypes": ["?", "?"]
 			},
 			"SetItem": {
-				"desc": "SetItem",
 				"pNames": ["title", "newTitle", "newBody", "newImage"],
-				"pTypes": ["str", "?", "num", "?"],
-				"shortDesc": "SetItem"
+				"pTypes": ["str", "?", "num", "?"]
 			},
 			"SetItemByIndex": {
-				"desc": "SetItemByIndex",
 				"pNames": ["index", "newTitle", "newBody", "newImage"],
-				"pTypes": ["num", "?", "num", "?"],
-				"shortDesc": "SetItemByIndex"
+				"pTypes": ["num", "?", "num", "?"]
 			},
 			"SetList": {
-				"desc": "SetList",
 				"pNames": ["list", "delim"],
-				"pTypes": ["?", "str"],
-				"shortDesc": "SetList"
+				"pTypes": ["?", "str"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -2416,48 +2147,34 @@
 			"SetSize": "#1296070870",
 			"SetTextColor": "#0175303923",
 			"SetTextColor1": {
-				"desc": "SetTextColor1",
 				"pNames": ["clr"],
-				"pTypes": ["str_col"],
-				"shortDesc": "SetTextColor1"
+				"pTypes": ["str_col"]
 			},
 			"SetTextColor2": {
-				"desc": "SetTextColor2",
 				"pNames": ["clr"],
-				"pTypes": ["str_col"],
-				"shortDesc": "SetTextColor2"
+				"pTypes": ["str_col"]
 			},
 			"SetTextMargins": {
-				"desc": "SetTextMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
-				"pTypes": ["?", "?", "?", "?", "?", "str_com"],
-				"shortDesc": "SetTextMargins"
+				"pTypes": ["?", "?", "?", "?", "?", "str_com"]
 			},
 			"SetTextShadow": "#1093247031",
 			"SetTextShadow1": {
-				"desc": "SetTextShadow1",
 				"pNames": ["radius", "dx", "dy", "color"],
-				"pTypes": ["num", "num", "num", "str_col"],
-				"shortDesc": "SetTextShadow1"
+				"pTypes": ["num", "num", "num", "str_col"]
 			},
 			"SetTextShadow2": {
-				"desc": "SetTextShadow2",
 				"pNames": ["radius", "dx", "dy", "color"],
-				"pTypes": ["num", "num", "num", "str_col"],
-				"shortDesc": "SetTextShadow2"
+				"pTypes": ["num", "num", "num", "str_col"]
 			},
 			"SetTextSize": "#5019790423",
 			"SetTextSize1": {
-				"desc": "SetTextSize1",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTextSize1"
+				"pTypes": ["?", "?"]
 			},
 			"SetTextSize2": {
-				"desc": "SetTextSize2",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTextSize2"
+				"pTypes": ["?", "?"]
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -2470,7 +2187,6 @@
 		"pNames": ["title", "list", "color", "bottom"],
 		"pTypes": ["str", "lst-An array of objects of the form {name: 'string', icon: 'material-icon', color: 'string'}", "str_col", "bin"],
 		"retval": "obj",
-		"shortDesc": "CreateListDialog",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when a user selects an item in the list",
@@ -2511,7 +2227,6 @@
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
 		"retval": "obj",
-		"shortDesc": "#CreateListModern.md",
 		"subf": {
 			"SetOnTouch": {
 				"desc": "Calls a function when an item is click.",
@@ -2519,8 +2234,7 @@
 				"pTypes": [{
 					"pNames": ["title", "body", "index"],
 					"pTypes": ["str", "str", "num_int"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"SetOnSelect": {
 				"desc": "Calls a function when an item in the list is select. List must be selectable.",
@@ -2537,14 +2251,12 @@
 				"pTypes": [{
 					"pNames": ["index"],
 					"pTypes": ["num_int"]
-				}],
-				"shortDesc": "SetAvatarOnTouch"
+				}]
             },
             "SetSelectable": {
 				"desc": "Enable or disable selectable option.",
 				"pNames": ["selectable"],
-				"pTypes": ["bin"],
-				"shortDesc": "SetSelectable"
+				"pTypes": ["bin"]
 			},
 			"SetControlOnTouch": {
 				"desc": "Calls a function when a right icon is click",
@@ -2552,105 +2264,86 @@
 				"pTypes": [{
 					"pNames": ["index"],
 					"pTypes": ["num_int"]
-				}],
-				"shortDesc": "SetControlOnTouch"
+				}]
 			},
 			"AppendItem": {
 				"desc": "Appends an item at the bottom of the list",
 				"pNames": ["data"],
-				"pTypes": ["obj-A single element of the list"],
-				"shortDesc": "AppendItem"
+				"pTypes": ["obj-A single element of the list"]
 			},
 			"RemoveItem": {
 				"desc": "Removes a single item in the list.",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "RemoveItem"
+				"pTypes": ["num_int"]
 			},
 			"RemoveItems": {
 				"desc": "Removes multiple items in the list.",
 				"pNames": ["indexes"],
-				"pTypes": ["lst-An array of indexes."],
-				"shortDesc": "RemoveItems"
+				"pTypes": ["lst-An array of indexes."]
 			},
 			"SetTitleText": {
 				"desc": "Set a new title to a respective index",
 				"pNames": ["newTitle", "index"],
-				"pTypes": ["str-New title text", "num_int"],
-				"shortDesc": "SetTitleText"
+				"pTypes": ["str-New title text", "num_int"]
 			},
 			"SetBodyText": {
 				"desc": "Set a new body to a respective index",
 				"pNames": ["newBody", "index"],
-				"pTypes": ["str-New body text", "num_int"],
-				"shortDesc": "SetBodyText"
+				"pTypes": ["str-New body text", "num_int"]
 			},
 			"SetRightIcon": {
 				"desc": "Set a new material icon to the right icon",
 				"pNames": ["newIcon", "index"],
-				"pTypes": ["str-New right icon", "num_int"],
-				"shortDesc": "SetRightIcon"
+				"pTypes": ["str-New right icon", "num_int"]
 			},
 			"SetNoteText": {
 				"desc": "Set a new note text for a respective item on the list",
 				"pNames": ["newNote", "index"],
-				"pTypes": ["str-New note text", "num_int"],
-				"shortDesc": "SetNoteText"
+				"pTypes": ["str-New note text", "num_int"]
 			},
 			"SetList": {
 				"desc": "Sets a new list",
 				"pNames": ["list"],
-				"pTypes": ["obj-List Modern list"],
-				"shortDesc": "Sets a new list"
+				"pTypes": ["obj-List Modern list"]
 			},
 			"PopItem": {
-				"desc": "Removes an item at the bottom of the list",
-				"shortDesc": "PopItem"
+				"desc": "Removes an item at the bottom of the list"
 			},
 			"ShiftItem": {
-				"desc": "Removes an item at the beginning of the list",
-				"shortDesc": "ShiftItem"
+				"desc": "Removes an item at the beginning of the list"
 			},
 			"GetList": {
 				"desc": "Returns the current list object",
-				"retval": "obj",
-				"shortDesc": "GetList"
+				"retval": "obj"
 			},
 			"GetItem": {
 				"desc": "Returns the respective item in the list",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"retval": "obj",
-				"shortDesc": "GetItem"
+				"retval": "obj"
 			},
 			"GetSelectedItems": {
 				"desc": "Returns the selected items in the list",
-				"retval": "lst-List of indexes for slected items",
-				"shortDesc": "GetSelectedItems"
+				"retval": "lst-List of indexes for slected items"
 			},
 			"Highlight": {
 				"desc": "Highlight a respective item in the list",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Highlight"
+				"pTypes": ["num_int"]
 			},
 			"RemoveHighlight": {
 				"desc": "Removes a highlight to a respective item in the list",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "RemoveHighlight"
+				"pTypes": ["num_int"]
 			},
 			"SetImage": {
 				"desc": "Set a new image to a respective item in the list",
 				"pNames": ["newImagePath", "index"],
-				"pTypes": ["str_ptf-Path to the new image", "num_int"],
-				"shortDesc": "SetImage"
+				"pTypes": ["str_ptf-Path to the new image", "num_int"]
 			},
 			"SetItem": {
-				"desc": "SetItem",
 				"pNames": ["data", "index"],
-				"pTypes": ["obj-A single element of the list object", "num_int"],
-				"shortDesc": "SetItem"
+				"pTypes": ["obj-A single element of the list object", "num_int"]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -2690,32 +2383,27 @@
 				"pTypes": [{
 					"pNames": ["value", "index"],
 					"pTypes": ["str-Value of the spinner", "num_int-The index of the value"]
-				}],
-				"shortDesc": "SetOnChange"
+				}]
             },
             "SelectItem" :{
                 "desc": "Select an option",
 				"pNames": ["value"],
-				"pTypes": ["str-Must be one of the provided values"],
-				"shortDesc": "SelectItem"
+				"pTypes": ["str-Must be one of the provided values"]
             },
             "SelectItemByIndex": {
                 "desc": "Select an option with a given index.",
 				"pNames": ["index"],
-				"pTypes": ["num_int-The index of the option in the given values"],
-				"shortDesc": "SelectItemByIndex"
+				"pTypes": ["num_int-The index of the option in the given values"]
             },
             "SetList": {
                 "desc": "Sets a new list of options.",
 				"pNames": ["list"],
-				"pTypes": ["lst-A comma separated values for options."],
-				"shortDesc": "SetList"
+				"pTypes": ["lst-A comma separated values for options."]
             },
             "SetHint": {
                 "desc": "Sets the hint when there is no active selection.",
 				"pNames": ["hint"],
-				"pTypes": ["str-The hint text."],
-				"shortDesc": "SetHint"
+				"pTypes": ["str-The hint text."]
             },
             "GetText": "#2387569276",
             "SetTextSize": "#5019790423",
@@ -2756,20 +2444,17 @@
 				"pTypes": [{
 					"pNames": ["title", "index", "icon", "badge"],
 					"pTypes": ["str", "num_int", "str-Material icon", "num"]
-				}],
-				"shortDesc": "SetOnTouch"
+				}]
 			},
 			"AppendItem": {
 				"desc": "Appends an item at the bottom of the list",
 				"pNames": ["data"],
-				"pTypes": ["obj-A single element of the list"],
-				"shortDesc": "AppendItem"
+				"pTypes": ["obj-A single element of the list"]
 			},
 			"RemoveItem": {
 				"desc": "Removes an item in the list.",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "RemoveItem"
+				"pTypes": ["num_int"]
 			},
 			"SetBadge": {
 				"desc": "Set the badge of the corresponding item",
@@ -2780,19 +2465,16 @@
 			"SetTitleText": {
 				"desc": "Sets a new title to a corresponding item",
 				"pNames": ["newTitle", "index"],
-				"pTypes": ["str-New title text", "num_int"],
-				"shortDesc": "SetTitleText"
+				"pTypes": ["str-New title text", "num_int"]
 			},
 			"GetList": {
 				"desc": "Returns the current list object",
-				"retval": "obj",
-				"shortDesc": "GetList"
+				"retval": "obj"
 			},
 			"SetList": {
 				"desc": "Sets a new list",
 				"pNames": ["list"],
-				"pTypes": ["obj-ListSimple list"],
-				"shortDesc": "Sets a new list"
+				"pTypes": ["obj-ListSimple list"]
 			},
 			"ClearFocus": "#1362225380",
 			"Focus": "#7324472769",
@@ -2832,14 +2514,12 @@
 				"pTypes": [{
 					"pNames": ["title", "index"],
 					"pTypes": ["str", "num_int"]
-				}],
-				"shortDesc": "SetOnSelect"
+				}]
             },
             "SetList": {
                 "desc": "Set a new list of options",
                 "pNames": ["list"],
-                "pTypes": ["lst-A comma separated options"],
-                "shortDesc": "SetList"
+                "pTypes": ["lst-A comma separated options"]
             },
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
@@ -2869,7 +2549,6 @@
 		"pNames": ["list", "width", "height", "position"],
 		"pTypes": ["lst-str", "num_frc", "num_frc", "str-Top,Left|Top,Right|Bottom,Left|Bottom,Right"],
 		"retval": "obj",
-		"shortDesc": "Advance MUI implementation of material design menu with additional icon using material icon font.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when item is click",
@@ -2877,8 +2556,7 @@
 				"pTypes": [{
 					"pNames": ["text", "index"],
 					"pTypes": ["str", "num_int"]
-				}],
-				"shortDesc": "SetOnSelect"
+				}]
 			},
 			"Show": "#1243391562",
 			"Hide": "#5372805812",
@@ -2908,7 +2586,6 @@
 		"pNames": ["title", "body", "okTxt", "cancelTxt", "show", "options"],
 		"pTypes": ["str", "str-Body text. If you want to customize the modal layout pass an empty string.", "str-Truthy button text", "str-Falsy button text", "bin", "str-Dialog options with additional Full option"],
 		"retval": "obj",
-		"shortDesc": "#CreateModal.md",
 		"subf": {
 			"SetOnTouch": {
 				"desc": "Calls a function when control buttons are click",
@@ -2921,8 +2598,7 @@
 			},
 			"GetLayout": {
 				"desc": "Get the layout of the modal where you can add your controls.",
-				"retval": "dso-@../app/CreateLayout",
-				"shortDesc": "Get the layout of the modal where you can add your controls."
+				"retval": "dso-@../app/CreateLayout"
 			},
 			"Destroy": "#1924613325",
 			"SetText": "#8207502354",
@@ -2931,8 +2607,7 @@
 				"desc": "Sets a new title to the modal",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"retval": "",
-				"shortDesc": "Sets a new title to the modal"
+				"retval": ""
 			},
 			"SetHeaderColor": {
 				"desc": "Change the background color of the header",
@@ -2983,13 +2658,11 @@
 			"CheckItemByIndex": {
 				"desc": "Checks a corresponding item",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Checks a corresponding item"
+				"pTypes": ["num_int"]
 			},
 			"GetCheckItem": {
 				"desc": "Gets the checked item in the list",
-				"retval": "str-title,index",
-				"shortDesc": "Gets the checked item in the list"
+				"retval": "str-title,index"
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -2998,94 +2671,67 @@
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetItem": {
-				"desc": "GetItem",
 				"pNames": ["title"],
 				"pTypes": ["str"],
-				"retval": "obj",
-				"shortDesc": "GetItem"
+				"retval": "obj"
 			},
 			"GetItemByIndex": {
-				"desc": "GetItemByIndex",
 				"pNames": ["index"],
 				"pTypes": ["num"],
-				"retval": "obj",
-				"shortDesc": "GetItemByIndex"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLength": {
-				"desc": "GetLength",
-				"retval": "num_int",
-				"shortDesc": "GetLength"
+				"retval": "num_int"
 			},
 			"GetList": {
-				"desc": "GetList",
 				"pNames": ["delim"],
 				"pTypes": ["str"],
-				"retval": "obj",
-				"shortDesc": "GetList"
+				"retval": "obj"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-List",
-				"shortDesc": "GetType"
+				"retval": "str-List"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
 			"Hide": "#5372805812",
 			"InsertItem": {
-				"desc": "InsertItem",
 				"pNames": ["index", "title", "body", "image"],
-				"pTypes": ["num", "str", "str", "str_ptf"],
-				"shortDesc": "InsertItem"
+				"pTypes": ["num", "str", "str", "str_ptf"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Method": "#1023663567",
-			"RemoveAll": {
-				"desc": "RemoveAll",
-				"shortDesc": "RemoveAll"
-			},
+			"RemoveAll": {},
 			"RemoveItem": {
-				"desc": "RemoveItem",
 				"pNames": ["title"],
-				"pTypes": ["str"],
-				"shortDesc": "RemoveItem"
+				"pTypes": ["str"]
 			},
 			"RemoveItemByIndex": {
-				"desc": "RemoveItemByIndex",
 				"pNames": ["index"],
-				"pTypes": ["num"],
-				"shortDesc": "RemoveItemByIndex"
+				"pTypes": ["num"]
 			},
 			"ScrollToItem": {
-				"desc": "ScrollToItem",
 				"pNames": ["title", "body"],
-				"pTypes": ["str", "str"],
-				"shortDesc": "ScrollToItem"
+				"pTypes": ["str", "str"]
 			},
 			"ScrollToItemByIndex": {
-				"desc": "ScrollToItemByIndex",
 				"pNames": ["index"],
-				"pTypes": ["num"],
-				"shortDesc": "ScrollToItemByIndex"
+				"pTypes": ["num"]
 			},
 			"SelectItem": {
-				"desc": "SelectItem",
 				"pNames": ["title", "body", "scroll"],
-				"pTypes": ["str", "str", "?"],
-				"shortDesc": "SelectItem"
+				"pTypes": ["str", "str", "?"]
 			},
 			"SelectItemByIndex": {
-				"desc": "SelectItemByIndex",
 				"pNames": ["index", "scroll"],
-				"pTypes": ["num", "?"],
-				"shortDesc": "SelectItemByIndex"
+				"pTypes": ["num", "?"]
 			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
@@ -3094,49 +2740,35 @@
 			"SetBackground": "#1239127541",
 			"SetColorFilter": "#1096996086",
 			"SetColumnWidths": {
-				"desc": "SetColumnWidths",
 				"pNames": ["icon", "title", "body", "mode"],
-				"pTypes": ["?", "str", "str", "?"],
-				"shortDesc": "SetColumnWidths"
+				"pTypes": ["?", "str", "str", "?"]
 			},
 			"SetDivider": {
-				"desc": "SetDivider",
 				"pNames": ["height", "color"],
-				"pTypes": ["num", "str_col"],
-				"shortDesc": "SetDivider"
+				"pTypes": ["num", "str_col"]
 			},
 			"SetEllipsize": "#0897234673",
 			"SetEllipsize1": {
-				"desc": "SetEllipsize1",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
-				"shortDesc": "SetEllipsize1"
+				"pTypes": ["?"]
 			},
 			"SetEllipsize2": {
-				"desc": "SetEllipsize2",
 				"pNames": ["mode"],
-				"pTypes": ["?"],
-				"shortDesc": "SetEllipsize2"
+				"pTypes": ["?"]
 			},
 			"SetEnabled": "#1602385882",
 			"SetFontFile": "#0197498372",
 			"SetHiTextColor1": {
-				"desc": "SetHiTextColor1",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetHiTextColor1"
+				"pTypes": ["?"]
 			},
 			"SetHiTextColor2": {
-				"desc": "SetHiTextColor2",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetHiTextColor2"
+				"pTypes": ["?"]
 			},
 			"SetList": {
-				"desc": "SetList",
 				"pNames": ["list", "delim"],
-				"pTypes": ["?", "str"],
-				"shortDesc": "SetList"
+				"pTypes": ["?", "str"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -3146,48 +2778,34 @@
 			"SetSize": "#1296070870",
 			"SetTextColor": "#0175303923",
 			"SetTextColor1": {
-				"desc": "SetTextColor1",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetTextColor1"
+				"pTypes": ["?"]
 			},
 			"SetTextColor2": {
-				"desc": "SetTextColor2",
 				"pNames": ["clr"],
-				"pTypes": ["?"],
-				"shortDesc": "SetTextColor2"
+				"pTypes": ["?"]
 			},
 			"SetTextMargins": {
-				"desc": "SetTextMargins",
 				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
-				"pTypes": ["?", "?", "?", "?", "?", "str_com"],
-				"shortDesc": "SetTextMargins"
+				"pTypes": ["?", "?", "?", "?", "?", "str_com"]
 			},
 			"SetTextShadow": "#1093247031",
 			"SetTextShadow1": {
-				"desc": "SetTextShadow1",
 				"pNames": ["radius", "dx", "dy", "color"],
-				"pTypes": ["num", "num", "num", "str_col"],
-				"shortDesc": "SetTextShadow1"
+				"pTypes": ["num", "num", "num", "str_col"]
 			},
 			"SetTextShadow2": {
-				"desc": "SetTextShadow2",
 				"pNames": ["radius", "dx", "dy", "color"],
-				"pTypes": ["num", "num", "num", "str_col"],
-				"shortDesc": "SetTextShadow2"
+				"pTypes": ["num", "num", "num", "str_col"]
 			},
 			"SetTextSize": "#5019790423",
 			"SetTextSize1": {
-				"desc": "SetTextSize1",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTextSize1"
+				"pTypes": ["?", "?"]
 			},
 			"SetTextSize2": {
-				"desc": "SetTextSize2",
 				"pNames": ["size", "mode"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTextSize2"
+				"pTypes": ["?", "?"]
 			},
 			"SetVisibility": "#1004824195",
 			"Show": "#1243391562",
@@ -3200,7 +2818,6 @@
 		"pNames": ["list", "width", "height", "orientation", "color", "backColor"],
 		"pTypes": ["lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a radio button control.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item in the list",
@@ -3214,13 +2831,11 @@
 			"CheckItemByIndex": {
 				"desc": "Checks a corresponding item",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Checks a corresponding item"
+				"pTypes": ["num_int"]
 			},
 			"GetCheckItem": {
 				"desc": "Gets the checked item in the list",
-				"retval": "str-title,index",
-				"shortDesc": "Gets the checked item in the list"
+				"retval": "str-title,index"
 			},
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
@@ -3228,8 +2843,7 @@
 			"SetPosition": "#1425862386",
 			"Show": "#1243391562",
 			"Toggle": {
-				"desc": "Show or Hide the list",
-				"shortDesc": "Show or Hide the list"
+				"desc": "Show or Hide the list"
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -3241,22 +2855,18 @@
 				"desc": "Returns the corresponding item",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"retval": "str-title",
-				"shortDesc": "Returns the corresponding item"
+				"retval": "str-title"
 			},
 			"GetLeft": "#1237814406",
 			"GetList": {
 				"desc": "Gets the list",
-				"retval": "lst-Array of titles",
-				"shortDesc": "Gets the list"
+				"retval": "lst-Array of titles"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Radio",
-				"shortDesc": "GetType"
+				"retval": "str-Radio"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3277,7 +2887,6 @@
 		"pNames": ["list", "width", "height", "orientation", "color", "backColor"],
 		"pTypes": ["lst-A comma separated strings", "num", "num", "str-Vertical|Horizontal", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a material radio control.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item in the list",
@@ -3291,13 +2900,11 @@
 			"CheckItemByIndex": {
 				"desc": "Checks a corresponding item",
 				"pNames": ["index"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Checks a corresponding item"
+				"pTypes": ["num_int"]
 			},
 			"GetCheckItem": {
 				"desc": "Gets the checked item in the list",
-				"retval": "str-title,index",
-				"shortDesc": "Gets the checked item in the list"
+				"retval": "str-title,index"
 			},
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
@@ -3305,8 +2912,7 @@
 			"SetPosition": "#1425862386",
 			"Show": "#1243391562",
 			"Toggle": {
-				"desc": "Show or Hide the list",
-				"shortDesc": "Show or Hide the list"
+				"desc": "Show or Hide the list"
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -3318,22 +2924,18 @@
 				"desc": "Returns the corresponding item",
 				"pNames": ["index"],
 				"pTypes": ["num_int"],
-				"retval": "str-title",
-				"shortDesc": "Returns the corresponding item"
+				"retval": "str-title"
 			},
 			"GetLeft": "#1237814406",
 			"GetList": {
 				"desc": "Gets the list",
-				"retval": "lst-Array of titles",
-				"shortDesc": "Gets the list"
+				"retval": "lst-Array of titles"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Radio",
-				"shortDesc": "GetType"
+				"retval": "str-Radio"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3354,18 +2956,15 @@
 		"pNames": ["value", "range", "width", "color"],
 		"pTypes": ["num-Must be between 0 and range", "num-The maximum value of your seekbar", "num", "str_col"],
 		"retval": "obj",
-		"shortDesc": "An MUI implementation of a basic seekbar.",
 		"subf": {
 			"GetValue": {
 				"desc": "Get the current value of the seekbar.",
-				"retval": "num",
-				"shortDesc": "GetValue"
+				"retval": "num"
 			},
 			"SetDecimals": {
 				"desc": "Set the number of decimals to the value",
 				"pNames": ["decimals"],
-				"pTypes": ["num_int-The number of decimals"],
-				"shortDesc": "SetDecimals"
+				"pTypes": ["num_int-The number of decimals"]
 			},
 			"SetOnTouch": {
 				"desc": "Calls a function when the seekbar is touch. Returns the value to the callback.",
@@ -3379,8 +2978,7 @@
 			"SetValue": {
 				"desc": "Sets a new value to the seekbar.",
 				"pNames": ["value"],
-				"pTypes": ["num-Must be between 0 and range"],
-				"shortDesc": "SetValue"
+				"pTypes": ["num-Must be between 0 and range"]
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -3393,9 +2991,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Seekbar",
-				"shortDesc": "GetType"
+				"retval": "str-Seekbar"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3415,12 +3011,10 @@
 		"pNames": ["value", "color"],
 		"pTypes": ["bin", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a switch that can be toggled on and off.",
 		"subf": {
 			"GetValue": {
 				"desc": "Get the current value of the switch",
-				"retval": "bin",
-				"shortDesc": "GetValue"
+				"retval": "bin"
 			},
 			"SetOnTouch": {
 				"desc": "Calls a function when switch is click",
@@ -3434,8 +3028,7 @@
 			"SetValue": {
 				"desc": "Sets the value of the switch",
 				"pNames": ["value"],
-				"pTypes": ["bin"],
-				"shortDesc": "Sets the value of the switch"
+				"pTypes": ["bin"]
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -3448,9 +3041,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Seekbar",
-				"shortDesc": "GetType"
+				"retval": "str-Seekbar"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3469,12 +3060,10 @@
 		"pNames": ["text", "width", "height", "value", "color", "backColor"],
 		"pTypes": ["str", "num_frc", "num_frc", "bin", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a switchable settings that can be toggled on and off.",
 		"subf": {
 			"GetValue": {
 				"desc": "Get the current value of the switch",
-				"retval": "bin",
-				"shortDesc": "GetValue"
+				"retval": "bin"
 			},
 			"SetOnTouch": {
 				"desc": "Calls a function when switch is click",
@@ -3488,8 +3077,7 @@
 			"SetValue": {
 				"desc": "Sets the value of the switch",
 				"pNames": ["value"],
-				"pTypes": ["bin"],
-				"shortDesc": "Sets the value of the switch"
+				"pTypes": ["bin"]
 			},
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
@@ -3502,9 +3090,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Seekbar",
-				"shortDesc": "GetType"
+				"retval": "str-Seekbar"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3523,20 +3109,17 @@
 		"pNames": ["title", "width", "height", "options", "color", "animation"],
 		"pTypes": ["str_com-titles", "num", "num", "str_com-DS layout options", "str_col", "bin"],
 		"retval": "obj",
-		"shortDesc": "#CreateTabFixed.md",
 		"subf": {
 			"GetLayout": {
 				"desc": "Get the corresponding layout of a given name where you can add your controls",
 				"pNames": ["name"],
 				"pTypes": ["str-The layout name"],
-				"retval": "dso-@../app/CreateLayout",
-				"shortDesc": "Get the corresponding layout of a given name"
+				"retval": "dso-@../app/CreateLayout"
 			},
 			"SetActiveTabByIndex": {
 				"desc": "Open the a tab by passing an index",
 				"pNames": ["index"],
-				"pTypes": ["num"],
-				"shortDesc": "Open the a tab by passing an index"
+				"pTypes": ["num"]
 			},
 			"SetOnSelect": {
 				"desc": "Calls a function when the tab is click.",
@@ -3558,9 +3141,7 @@
 			"GetPosition": "#1605064214",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Tab",
-				"shortDesc": "GetType"
+				"retval": "str-Tab"
 			},
 			"GetWidth": "#1321469131",
 			"Gone": "#5528553362",
@@ -3579,35 +3160,22 @@
 		"pNames": ["width", "options", "icon", "hint", "label", "color"],
 		"pTypes": ["num", "str_com-DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a filled text input with icon on the left",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -3615,41 +3183,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -3666,35 +3229,22 @@
 		"pNames": ["width", "options", "icon", "hint", "label", "color"],
 		"pTypes": ["num", "str_com-DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a filled text input with icon on the right",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -3702,41 +3252,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -3753,35 +3298,22 @@
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "str_com-DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a material outlined text input with icon on the left.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -3789,41 +3321,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -3840,35 +3367,22 @@
 		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "str_com-DS TextEdit options with additional 'Round' option.", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a material outlined text input with icon on the right.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -3876,41 +3390,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -3927,35 +3436,22 @@
 		"pNames": ["width", "hint", "icon", "iconPos", "color", "option"],
 		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str-Right|Left", "str_col", "str-Small|Normal|Border"],
 		"retval": "obj",
-		"shortDesc": "#CreateTESearchElegant.md",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -3963,47 +3459,42 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetIconOnTouch": {
-				"desc": "Define a callback function which is called when the user pressed the icon.",
+				"desc": "%cb% the user pressed the icon.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed the icon."
+				"shortDesc": "%cb% the user pressed the icon."
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -4020,35 +3511,22 @@
 		"pNames": ["width", "hint", "icon", "iconColor"],
 		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a unique text input",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4056,41 +3534,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -4106,35 +3579,22 @@
 		"pNames": ["width", "height", "hint", "label", "color"],
 		"pTypes": ["num", "num", "str-Hint text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a material filled textarea",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4142,41 +3602,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			}
 		}
     },
@@ -4186,35 +3641,22 @@
 		"pNames": ["width", "height", "hint", "label", "color"],
 		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Hides or show label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an active filled textarea.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4222,41 +3664,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			}
 		}
     },
@@ -4266,35 +3703,22 @@
 		"pNames": ["width", "height", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an outlined material textarea.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4302,41 +3726,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			}
 		}
     },
@@ -4346,35 +3765,22 @@
 		"pNames": ["width", "height", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an active outlined material textarea.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4382,41 +3788,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			}
 		}
     },
@@ -4426,35 +3827,22 @@
 		"pNames": ["width", "options", "hint", "label", "color"],
 		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates the most common type of material text input.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4462,41 +3850,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
             },
             "SetOnTouch":"#2398750419"
 		}
@@ -4507,35 +3890,22 @@
 		"pNames": ["width", "options", "hint", "label", "color"],
 		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an active filled material text input.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4543,41 +3913,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
             },
             "SetOnTouch":"#2398750419"
 		}
@@ -4588,35 +3953,22 @@
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an outlined material text input.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4624,41 +3976,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
             },
             "SetOnTouch":"#2398750419"
 		}
@@ -4669,35 +4016,22 @@
 		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
 		"pTypes": ["num", "str-Comma separated DS TextEdit options with additional 'Round' option.", "str-Hint|Label text", "bin-Show or hide label", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an active outlined material text input.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4705,41 +4039,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
             },
             "SetOnTouch":"#2398750419"
 		}
@@ -4750,35 +4079,22 @@
 		"pNames": ["width", "options", "hint", "color", "backColor"],
 		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint text", "str_col", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a customize search style text input.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4786,41 +4102,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
 			},
 			"SetOnIconTouch": {
 				"desc": "Calls a function when icon is touch",
@@ -4836,35 +4147,22 @@
 		"pNames": ["width", "hint", "icon", "iconCOlor"],
 		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str_col-Icon color"],
 		"retval": "obj",
-		"shortDesc": "Creates a unique textedit customization.",
 		"subf": {
 			"ClearFocus": "#1362225380",
 			"ClearHistory": {
-				"desc": "Clear input history",
-				"shortDesc": "Clear input history"
+				"desc": "Clear input history"
 			},
 			"Focus": "#7324472769",
 			"GetCursorLine": {
 				"desc": "Get cursor line",
-				"retval": "num",
-				"shortDesc": "Get cursor line"
+				"retval": "num"
 			},
 			"GetCursorPos": {
-				"desc": "Get cursor position",
-				"shortDesc": "Get cursor position"
+				"desc": "Get cursor position"
 			},
-			"GetSelectedText": {
-				"desc": "GetSelectedText",
-				"shortDesc": "GetSelectedText"
-			},
-			"GetSelectionEnd": {
-				"desc": "GetSelectionEnd",
-				"shortDesc": "GetSelectionEnd"
-			},
-			"GetSelectionStart": {
-				"desc": "GetSelectionStart",
-				"shortDesc": "GetSelectionStart"
-			},
+			"GetSelectedText": {},
+			"GetSelectionEnd": {},
+			"GetSelectionStart": {},
 			"GetText": "#2387569276",
 			"GetType": "#2114624701",
 			"GetVisibility": "#1672373665",
@@ -4872,41 +4170,36 @@
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
-				"pTypes": ["str", "num_int"],
-				"shortDesc": "Inserts a string at a given position."
+				"pTypes": ["str", "num_int"]
 			},
 			"IsEnabled": "#1744802827",
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Redo": {
-				"desc": "Redo an undone action.",
-				"shortDesc": "Redo an undone action."
+				"desc": "Redo an undone action."
 			},
 			"ReplaceText": {
 				"desc": "Replaces a given range in the text with some string.",
 				"pNames": ["text", "start", "end"],
-				"pTypes": ["str", "num_int", "num_int"],
-				"shortDesc": "Replaces a given range in the text with some string."
+				"pTypes": ["str", "num_int", "num_int"]
 			},
 			"SetCursorPos": {
 				"desc": "Change the curernt cursor position.",
 				"pNames": ["position"],
-				"pTypes": ["num_int"],
-				"shortDesc": "Change the curernt cursor position."
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": "#2137502353",
 			"SetOnEnter": {
-				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard",
 				"pNames": ["callback"],
 				"pTypes": [{}],
-				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard"
+				"shortDesc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard"
 			},
 			"SetPosition": "#1425862386",
 			"SetText": "#8207502354",
 			"Undo": {
-				"desc": "Undo an action",
-				"shortDesc": "Undo an action"
+				"desc": "Undo an action"
             },
             "SetOnTouch":"#2398750419"
 		}
@@ -4917,50 +4210,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a heading text 1",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -4968,9 +4248,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -4980,10 +4258,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -4997,10 +4273,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5034,44 +4308,32 @@
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5079,9 +4341,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5091,10 +4351,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5108,10 +4366,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5139,50 +4395,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a heading text 3",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5190,9 +4433,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5202,10 +4443,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5219,10 +4458,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5250,50 +4487,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a heading text 4",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5301,9 +4525,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5313,10 +4535,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5330,10 +4550,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5361,50 +4579,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a heading text 5",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5412,9 +4617,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5424,10 +4627,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5441,10 +4642,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5472,50 +4671,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a heading text 6",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5523,9 +4709,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5535,10 +4719,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5552,10 +4734,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5583,50 +4763,37 @@
 		"pNames": ["text", "width", "height", "options", "color"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates an extra large text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5634,9 +4801,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5646,10 +4811,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5663,10 +4826,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5694,50 +4855,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a paragraph text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5745,9 +4893,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5757,10 +4903,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5774,10 +4918,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5805,50 +4947,37 @@
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "Creates a secondary text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
-				"desc": "data",
 				"isval": true,
-				"retval": "obj",
-				"shortDesc": "data"
+				"retval": "obj"
 			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
 			"GetHtml": {
-				"desc": "GetHtml",
-				"retval": "obj",
-				"shortDesc": "GetHtml"
+				"retval": "obj"
 			},
 			"GetLeft": "#1237814406",
 			"GetLineCount": {
-				"desc": "GetLineCount",
-				"retval": "num_int",
-				"shortDesc": "GetLineCount"
+				"retval": "num_int"
 			},
 			"GetLineStart": {
-				"desc": "GetLineStart",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num_int",
-				"shortDesc": "GetLineStart"
+				"retval": "num_int"
 			},
 			"GetLineTop": {
-				"desc": "GetLineTop",
 				"pNames": ["line"],
 				"pTypes": ["num_int"],
-				"retval": "num",
-				"shortDesc": "GetLineTop"
+				"retval": "num"
 			},
 			"GetMaxLines": {
-				"desc": "GetMaxLines",
-				"retval": "num_int",
-				"shortDesc": "GetMaxLines"
+				"retval": "num_int"
 			},
 			"GetParent": "#3557841648",
 			"GetPosition": "#1605064214",
@@ -5856,9 +4985,7 @@
 			"GetTextSize": "#2530918945",
 			"GetTop": "#1981028136",
 			"GetType": {
-				"desc": "GetType",
-				"retval": "str-Text",
-				"shortDesc": "GetType"
+				"retval": "str-Text"
 			},
 			"GetVisibility": "#1672373665",
 			"GetWidth": "#1321469131",
@@ -5868,10 +4995,8 @@
 			"IsOverlap": "#1785728721",
 			"IsVisible": "#1814300863",
 			"Log": {
-				"desc": "Log",
 				"pNames": ["msg", "options"],
-				"pTypes": ["str", "str_com"],
-				"shortDesc": "Log"
+				"pTypes": ["str", "str_com"]
 			},
 			"Method": "#1023663567",
 			"SetBackAlpha": "#1162431318",
@@ -5885,10 +5010,8 @@
 			"SetFontFile": "#0197498372",
 			"SetHtml": "#8753208754",
 			"SetLog": {
-				"desc": "SetLog",
 				"pNames": ["maxLines"],
-				"pTypes": ["num_int"],
-				"shortDesc": "SetLog"
+				"pTypes": ["num_int"]
 			},
 			"SetMargins": "#1741900074",
 			"SetOnLongTouch": "#2735982374",
@@ -5916,7 +5039,6 @@
 		"pNames": ["hour", "minute", "color"],
 		"pTypes": ["num-[0-24]", "num-0-59", "str_col"],
 		"retval": "obj",
-		"shortDesc": "Creates a material design time picker.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects a time.",
@@ -5948,8 +5070,7 @@
 	"fonts": {
 		"desc": "MUI uses the free Roboto font family downloaded from <a href='www.fonts.google.com'>Google Fonts</a> as its main font for all of the controls. To use your own font family just put your .ttf font file into the Fonts/ directory of your app with the corresponding variation names.<br>For the icons, MUI uses the Google's Material Icon Font.",
 		"isval": true,
-		"retval": "obj",
-		"shortDesc": "fonts"
+		"retval": "obj"
 	},
 	"ShowMenu": {
 		"abbrev": "smu",
@@ -5957,7 +5078,6 @@
 		"pNames": ["control", "list", "width"],
 		"pTypes": ["dso", "str_lst", "num_frc"],
 		"retval": "obj",
-		"shortDesc": "Show a menu on a given control.",
 		"subf": {
 			"SetOnSelect": {
 				"desc": "Calls a function when the user selects an item.",

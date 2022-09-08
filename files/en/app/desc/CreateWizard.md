@@ -9,5 +9,3 @@ On the very first call the page index is **0** which means 'initialisation'.
 Then you have to create and add all wizard pages to the passed (frame) layout.
 
 In case the user cancels the wizard the index is **-1**.
-
-<premium>

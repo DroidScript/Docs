@@ -54,7 +54,7 @@
 		<h2>Overview:</h2>
 		<p>For those who dislike reading I'll summarize some facts about the four ways you can create games in DroidScript:<br>
 		<br>
-		<strong>GUI Games:</strong><br>
+		<b>GUI Games:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			<green>+</green> Well suited for beginners<br>
 			<green>+</green> Easy animations using <a href="https://github.com/tweenjs/tween.js" onclick="return OpenUrl(this.href);">Tween.js</a><br>
@@ -97,7 +97,7 @@
 				- basic shapes and polygons as game objects<br>
 			</span><br>
 			<green>+</green> Helper functions and main app access through the gfx object<br>
-			<red><b>-</b></red> <strong>Only works on Android 6 and newer</strong><br>
+			<red><b>-</b></red> <b>Only works on Android 6 and newer</b><br>
 		</span></p>
 		<h2>GUI Games</h2>
 		<p>The by far easiest way to create games without complex maths and drawing commands is using GUI controls for your game.<br>
@@ -155,7 +155,7 @@
 				    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><br>
 				    <span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span><span class="token string">"XO"</span><span class="token punctuation">[</span>player <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Tween</span><span class="token punctuation">(</span> <span class="token punctuation">{</span> sw<span class="token operator">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> rot<span class="token operator">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">Tween</span><span class="token punctuation">(</span> <span class="token punctuation">{</span> <span class="token literal-property property">sw</span><span class="token operator">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">rot</span><span class="token operator">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">SetTouchable</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
 				    <span class="token comment">//Check winrows if someone won</span><br>

@@ -14,6 +14,12 @@
 		"pTypes": ["num--180..180", "num--100..100", "num--100..100", "num-0..100"],
 		"shortDesc": "Adjust the visual color effect of the control"
 	},
+	"#2357239857": { "name": "Batch",
+		"desc": "Batch method calls to be able to set all object's properties at once.\nNote that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out)\nInherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>",
+		"pNames": ["properties"],
+		"pTypes": ["obj-{ COMMAND:lst-args }"],
+		"shortDesc": "Batch method calls to set object properties"
+	},
 	"#1362225380": { "name": "ClearFocus",
 		"desc": "Removes the focus of the control so that the user no longer has immediate access to it.",
 		"shortDesc": "Removes the focus of the control"
@@ -31,17 +37,17 @@
 		"shortDesc": "Set the focus to the control for immediate access"
 	},
 	"#1197564340": { "name": "GetAbsHeight",
-		"desc": "Get the absolute height of the control in pixels.",
+		"desc": "Get the absolute height of the control in pixels.\nNote that unlike the objects margins its padding does change this value.",
 		"retval": "num_int",
 		"shortDesc": "Get the control height in pixels"
 	},
 	"#1128215329": { "name": "GetAbsWidth",
-		"desc": "Get the absolute width of the control in pixels.",
+		"desc": "Get the absolute width of the control in pixels.\nNote that unlike the objects margins its padding does change this value.",
 		"retval": "num_int",
 		"shortDesc": "Get the control width in pixels"
 	},
 	"#2576212953": { "name": "GetHeight",
-		"desc": "Get the height of the control as screen height relative float or in pixels with the **px** option.",
+		"desc": "Get the height of the control as screen height relative float or in pixels with the **px** option.\nNote that unlike the objects margins its padding does change this value.",
 		"pNames": ["options"],
 		"pTypes": ["str-px"],
 		"retval": "num",
@@ -63,11 +69,11 @@
 		"desc": "Returns data about the position and size of the control.\nIf the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control.\nThe **px** options turns the relative values into pixels.",
 		"pNames": ["options"],
 		"pTypes": ["str-screen,px"],
-		"retval": "obj-{ left:num, top:num, right:num, bottom:num }",
+		"retval": "obj-{ left:num, top:num, width:num, height:num }",
 		"shortDesc": "Returns data about position and size"
 	},
 	"#2387569276": { "name": "GetText",
-		"desc": "Returns the current displayed text of the control.",
+		"desc": "Returns the current1605064214 displayed text of the control.",
 		"retval": "str",
 		"shortDesc": "Returns the currently contained text"
 	},
@@ -91,7 +97,7 @@
 		"shortDesc": "Returns the current visibility state"
 	},
 	"#1321469131": { "name": "GetWidth",
-		"desc": "Get the width of the control as screen width relative float or in pixels with the **px** option.",
+		"desc": "Get the width of the control as screen width relative float or in pixels with the **px** option.\nNote that unlike the objects margins its padding does change this value.",
 		"pNames": ["options"],
 		"pTypes": ["str-px"],
 		"retval": "num",
@@ -168,8 +174,14 @@
 	"#1096996086": { "name": "SetColorFilter",
 		"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
 		"pNames": ["color", "mode"],
-		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
+		"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|color|color_burn|color_dodge|difference|exclusion|hard_light|hue|luminosity|modulate|saturation|soft_light|src|dst|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over"],
 		"shortDesc": "Adjust the visual color effect with different BlendModes"
+	},
+	"#0937259723": { "name": "SetDescription",
+		"desc": "Set a control description for accessibility",
+		"pNames": ["desc"],
+		"pTypes": ["str"],
+		"shortDesc": "Set accesibility description"
 	},
 	"#1602385882": { "name": "SetEnabled",
 		"desc": "En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.",
@@ -208,7 +220,7 @@
 		"shortDesc": "Called when the control gets focused"
 	},
 	"#2735982374": { "name": "SetOnLongTouch",
-		"desc": "Define a callback function which is called when the object has been long pressed.",
+		"desc": "%cb% the object has been long pressed.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["src"],
@@ -229,10 +241,10 @@
 			"pNames": ["event"],
 			"pTypes": ["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]
 		}],
-		"shortDesc": "Define a callback function for user toches"
+		"shortDesc": "Called when user touched the control"
 	},
 	"#2938578932": { "name": "SetOnTouchDown",
-		"desc": "Define a callback function which is called when the user started toching the control.",
+		"desc": "%cb% the user started toching the control.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -241,7 +253,7 @@
 		"shortDesc": "Called when the user starts touching the control"
 	},
 	"#2039582034": { "name": "SetOnTouchMove",
-		"desc": "Define a callback function which is called when the user drags a finger over the screen.",
+		"desc": "%cb% the user drags a finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -250,7 +262,7 @@
 		"shortDesc": "Called when the user drags a finger over the screen"
 	},
 	"#9861324731": { "name": "SetOnTouchUp",
-		"desc": "Define a callback function which is called when the users finger leaves the screen.",
+		"desc": "%cb% the users finger leaves the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],

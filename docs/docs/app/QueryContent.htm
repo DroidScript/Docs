@@ -37,14 +37,14 @@
 
 		<div class="samp">
 		app.QueryContent(
-			<a href="#pop_str_url" data-transition="pop" data-rel="popup">uri</a>,
+			<a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a>,
 			<a href="#pop_str_com" data-transition="pop" data-rel="popup">columns</a>,
 			<a href="#pop_str_sql" data-transition="pop" data-rel="popup">select</a>,
 			<a href="#pop_std_lst" data-transition="pop" data-rel="popup">args</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">sort</a> )
 		</div>
 
-		<p>The <strong>uri</strong> typically have the syntax <docstr>“content://authority/path/id”</docstr>. You can find more infos about it on the <a href="https://developer.android.com/reference/android/content/ContentUris" onclick="return OpenUrl(this.href);">Android Developer page</a>.<br>
+		<p>The <b>uri</b> typically have the syntax <docstr>“content://authority/path/id”</docstr>. You can find more infos about it on the <a href="https://developer.android.com/reference/android/content/ContentUris" onclick="return OpenUrl(this.href);">Android Developer page</a>.<br>
 		<br>
 		The <strong>coloumns</strong> are specific for the database you are accessing. You can get this information from the respective content provider.<br>
 		<br>
@@ -85,11 +85,11 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_lst" class="ui-content"><b><a href="../javascript/Global_Objects/List.html" data-ajax="false" class="no-ui-link">List</a></b></div>
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_sql" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>sql code</i></div>
-	<div data-role="popup" id="pop_str_url" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>url path</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <docstr>“<a href="" onclick="app.ShowPopup('a coloumn specified in 'coloumns'')">coloumn</a>”</docstr></div>
+	<div data-role="popup" id="pop_std_lst" class="ui-content"><b>List</b></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_sql" class="ui-content"><b>String:</b> <i>sql code</i></div>
+	<div data-role="popup" id="pop_str_uri" class="ui-content"><b>String:</b> <i>URI encoded</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('a coloumn specified in 'coloumns'')">coloumn</a>”</docstr></div>
 </div>
 </body>
 

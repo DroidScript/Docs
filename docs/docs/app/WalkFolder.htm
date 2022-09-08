@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WalkFolder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>WalkFolder</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Lists a directory recursively similar to app.<a href="ListFolder.htm" data-ajax="false">ListFolder</a></p>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b>Number:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('sorts the paths in alphabetical order')">Alphasort</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('returns absolute paths to the listed items')">FullPath</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('accepts regexp patterns')">RegEx</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('list folders only')">Folders</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('list files only')">Files</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('hide empty folders')">NoEmpty</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('Shows DS project folders only')">project</a>”</docstr></div>
+</div>
+</body>
+
+</html>

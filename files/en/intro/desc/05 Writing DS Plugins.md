@@ -35,7 +35,7 @@ That leads us to the ways how you can write and more importantly compile java pl
 	- Modify, Build, Install and Run the plugin app. A popup:'Plugin installed. Please restart DroidScript.' will appear once the plugin is ready to be installed on the next DroidScript restart
 
 2. AndroidStudio
-	- There is a [UserPlugin template](https://github.com/DroidScript/Plugin-UserPlugin) available on [DroidScript's GitHub page](https://github.com/DroidScript)
+	- There is a [UserPlugin template](https://github.com/DroidScript/Plugin-Java) available on [DroidScript's GitHub page](https://github.com/DroidScript)
 	- Follow the instructions in [this BlogSpot guide](https://symbroson.blogspot.com/2018/02/ds-java-plugins-android-studio.html)
 
 It may be possible with other IDE's as well (ie. IntelliJ even has a AndroidSDK Plugin), but this has not been tested before or just couldn't be made to work.

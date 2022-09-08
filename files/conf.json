@@ -12,19 +12,20 @@
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
 		"all": "all types",
-		"bin": "<a href=\"../javascript/Global_Objects/Boolean.html\" data-ajax=\"false\" class=\"no-ui-link\">Boolean</a>",
+		"bin": "Boolean",
 		"dso": "app object",
 		"gvo": "game object",
 		"jso": "JavaScript object",
-		"fnc": "<a href=\"../javascript/Global_Objects/Function.html\" data-ajax=\"false\" class=\"no-ui-link\">Function</a>",
-		"lst": "<a href=\"../javascript/Global_Objects/List.html\" data-ajax=\"false\" class=\"no-ui-link\">List</a>",
-		"num": "<a href=\"../javascript/Global_Objects/Number.html\" data-ajax=\"false\" class=\"no-ui-link\">Number</a>",
+		"fnc": "Function",
+		"lst": "List",
+		"num": "Number",
 		"obj": "Object",
-		"str": "<a href=\"../javascript/Global_Objects/String.html\" data-ajax=\"false\" class=\"no-ui-link\">String</a>",
+		"str": "String",
 		"?": "unknown"
 	},
 	"tdesc": {
 		"lst_obj": "of objects",
+		"lst_num": "of numbers",
 		"num_byt": "bytes",
 		"num_col": "hexadecimal 0xrrggbb",
 		"num_dat": "datetime in milliseconds (from JS Date object)",
@@ -63,6 +64,7 @@
 		"str_oid": "object id “#id”",
 		"str_ort": "“Default”, “Portrait”, “Landscape”",
 		"str_pip": "pipe “|” separated",
+		"str_ptc": "file path or content:// uri",
 		"str_pth": "path to file or folder ( “/absolute/...” or “relative/...” )",
 		"str_ptf": "path to file ( “/absolute/...” or “relative/...” )",
 		"str_ptd": "path to folder ( “/absolute/...” or “relative/...” )",
@@ -76,5 +78,8 @@
 		"str_sty": "style",
 		"str_uri": "URI encoded",
 		"str_url": "url path"
+	},
+	"tmpl": {
+		"cb": "Define a callback function which is called when"
 	}
 }

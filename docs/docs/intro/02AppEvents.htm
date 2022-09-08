@@ -45,13 +45,14 @@
 				- <a href="" onclick="jumpTo('OnConfig()')">OnConfig()</a><br>
 				- <a href="" onclick="jumpTo('OnAlarm()')">OnAlarm()</a><br>
 				- <a href="" onclick="jumpTo('OnData()')">OnData()</a><br>
+				- <a href="" onclick="jumpTo('OnDrawer(side, state)')">OnDrawer(side, state)</a><br>
 			</span><br>
 		</div>
 
 		<p>In your app you can use various event functions which will be automatically called by DroidScript.</p>
 		<h3>OnStart()</h3>
 		<p>This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called <strong>after</strong> OnStart was called.<br>
-		When OnStart has returned, the apps '<strong>started</strong>' state will be set to <span class="token boolean">true</span>. Therefore <strong>app.<a href="../app/IsStarted.htm" data-ajax="false">IsStarted</a>()</strong> method will return <span class="token boolean">true</span> as well.</p>
+		When OnStart has returned, the apps '<strong>started</strong>' state will be set to <span class="token boolean">true</span>. Therefore <b>app.<a href="../app/IsStarted.htm" data-ajax="false">IsStarted</a>()</b> method will return <span class="token boolean">true</span> as well.</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnStart</h3>
@@ -280,6 +281,10 @@
 			</div>
 		</div>
 
+		<h3>OnDrawer(side, state)</h3>
+		<p>When the user opens or closes a drawer the OnDrawer callback is called.<br>
+		state can be <docstr>“Open”</docstr> or <docstr>“Closed”</docstr><br>
+		side can be <docstr>“Left”</docstr> or <docstr>“Right”</docstr></p>
 
 	</div>
 

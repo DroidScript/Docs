@@ -45,9 +45,10 @@
 
 		<div class="samp">
 		wbs = app.CreateWebSocket(
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">id</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">retry</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>app object:</b> WebSocket
 		</div>
 
@@ -106,46 +107,52 @@
 		<p>The following methods are available on the <strong>WebSocket</strong> object:</p>
 
 		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Close</a>()
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Batch</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">properties</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetSocket</a>() → <b>JavaScript object:</b> WebSocket
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Close</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">IsOpen</a>() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetSocket</a>() → <b>JavaScript object:</b> WebSocket
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Send</a>(
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">IsOpen</a>() → <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Send</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetOnClose</a>(
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnClose</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnMessage</a>(
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnMessage</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetOnOpen</a>(
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetOnOpen</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_str" class="ui-content"><b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a></b></div>
-	<div data-role="popup" id="pop_num_int" class="ui-content"><b><a href="../javascript/Global_Objects/Number.html" data-ajax="false" class="no-ui-link">Number</a>:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_num_int" class="ui-content"><b>Number:</b> <i>integer</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">message</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wbs.Close</b><br>Close the web socket.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wbs.GetSocket</b><br>Returns the js Socket instance</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wbs.IsOpen</b><br>Check whether WebSocket is open</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>wbs.Send</b><br>Send a message to the server</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>wbs.SetOnClose</b><br>Define a callback function which is called when the WebSocket has been closed.</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>wbs.SetOnMessage</b><br>Define a callback function which is called when the WebSocket recived a message from the server.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>wbs.SetOnOpen</b><br>Define a callback function which is called when the WebSocket has been opened.</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>wbs.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">SetBackColor_</span><span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>wbs.Close</b><br>Close the web socket.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>wbs.GetSocket</b><br>Returns the js Socket instance</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>wbs.IsOpen</b><br>Check whether WebSocket is open</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>wbs.Send</b><br>Send a message to the server</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>wbs.SetOnClose</b><br>Define a callback function which is called when the WebSocket has been closed.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>wbs.SetOnMessage</b><br>Define a callback function which is called when the WebSocket recived a message from the server.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>wbs.SetOnOpen</b><br>Define a callback function which is called when the WebSocket has been opened.</div>
 </div>
 </body>
 

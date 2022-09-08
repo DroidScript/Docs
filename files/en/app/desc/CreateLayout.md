@@ -23,5 +23,5 @@ Frame Layouts are useful if you wish to do **animated Flips** or **Slides** to r
 Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the **SetPosition** and **SetSize** functions of each of the child objects. However, you are encouraged use linear layouts for most of your programs, unless it is _absolute_ly necessary.
 
 ### Card Layouts
-Card Layouts are just like linear layouts, but with rounded corners and a shadow by default.
+Card Layouts are just like frame layouts, but with rounded corners and a shadow by default.
 They may be used to display offers with an image and optional info text.

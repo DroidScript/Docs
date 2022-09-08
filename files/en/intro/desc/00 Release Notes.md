@@ -1,6 +1,289 @@
-<!-- /[^\\]([_*])/\$1/ /:/&colon;/ -->
+<!-- /[^\\].?([_*])/\$1/ /:/&colon;/ -->
+### DS 2.51b1_p2 (16-Mar-2022)
+- Updated app.ChooseFile() to support GoogleDrive,OneDrive and DropBox.
+- Added 'nodownload' option to app.ChooseFile (just returns uri, no downloading of files).
+- Added 'persist' option to app.ChooseFile (persists file permission after reboot).
+- Added 'pretty' option to app.Uri2Path (returns DS style paths).
+- AddPermission 'alert' bug fixed (introduced in 2.51b1).
 
-## DS 2.00
+### DS 2.51b1_p1 (10-Mar-2022)
+- AddPermission 'alert' bug fixed.
+- Added 'pretty path' parameter to app.GetPermission() callback.
+
+### DS 2.51b1 (02-Mar-2022)
+- Fixed playback of transparent animated gifs in Image control.
+- APKBuilder is no longer sensitive to spaces around brackets of LoadPlugin call.
+- List.OnTouch() event now returns unicode chars with correct upper case hex codes.
+- Transparent apps now startup with zero size (to prevent black flash).
+- Added cfg.Legacy option to enable various legacy transparent app behaviour.
+- Added app.UpdateUI() method for forcing UI drawing during heavy processing.
+- Enabled 3rd party cookies by default for webviews, fetch and xmlHttpRequest.
+- Fixed broken app.SetAlarm() method.
+- app.ListFolder() now supports SAF (can list outside scoped storage).
+
+### DS 2.51a1 (Feb-2022)
+- Added support for /Internal/* and /External/* SAF paths.
+- app.GetPermission() now supports 'external' and 'internal' keywords.
+- Replaced 'Sdcard Access' sample with 'Storage Access' sample.
+- Improved permissions detection for file:///android_asset paths.
+- Fixed 'Share SPK' for scoped storage devices.
+- Fixed app.SendFile, app.SendImage, app.SendMail for scoped storage devices.
+- Added QUERY_ALL_PACKAGES permission to X version.
+- Removed default params from edit/mui.js (older webviews don't not like it)
+- Added web.Func(name,args...) for easy calling of functions defined in a WebView.
+- Added app.Func(name,args...) for easy calling of main script functions from a WebView.
+- app.SimulateTouch() now copes with lower case keywords.
+- Fixed 'atob' issue with console logging in NodeJS apps.
+- Added new GetDocumentFile() method to Plugin parent object.
+- Added new app.GetRouterAddress() method.
+- Added tabs.SetTextSize(size,mode) method.
+- Added cfg.Fast mode for premium users (3x faster apps!)
+- Added XMLHttpRequest polyfill for Fast mode.
+
+### DS 2.50_p1 (06-Jan-2022)
+- Added 'Query Images' and 'Query Videos' samples.
+- Fixed crash when building APKs/AABs for Html apps.
+
+## DS 2.50 (31-Dec-2021)
+- Fixed ctrl.Batch call for base methods (use underscore)
+- Added app.PreventWifiSleep() to IDE server code (not sure it will help).
+- Fixed crash issues on ListView related to blurry icon fix.
+- Sped up app icon list even more and fixed its light mode text color.
+- Hidden 'SDK' menu for Android 10 or newer (scoped storage issues).
+
+### DS 2.17b1 (23-Dec-2021)
+- Added new 'Node' app type - cfg.Node.
+- Sped up app icon list display and app startup.
+- Added typeId field to every DS object.
+- Added app.Show/Hide methods.
+- Added obj.Batch() for faster batched method calls (set ctrl props all at once).
+- Added ReadFile and WriteFile to extension.js.
+- Introduced new 'glob' object for storing global variables (shorter alternative to app.data)
+- Improved MUI code completion/help in wifi-ide.
+- Increased size of wifi-ide tooltip docs jump link, changed from '?' to '...'.
+- Improved ide.AddModule() method (now shows yes/no dialog)
+- Fixed zip path traversal vulnerability (causes Google Play warning)
+- Added app.WalkFolder for recursive listing (use same options as listFolder).
+- Added 'NoEmpty' option to app.ListFolder and app.WalkFolder (hides empty folders)
+- Added 'Project' option to app.ListFolder (shows DS project folders only)
+- Added new extension function - openEditorFile( filename, lineOrPattern )
+
+### DS 2.14b1 (07-Dec-2021)
+- Added 'Music Sequencer' sample.
+- Added 'Synth Song Player' sample.
+- Fixed Music docs dark theme issue in wifi ide.
+- Fixed blurry icons in list control (when > 64dip).
+- Improved app -> node messaging reliability.
+- Added ide.AddModule() method (adds a node module from code)
+- app.Script() now 'defers' execution by default.
+- app.Script() now has noDefer parameter (causes inline load of script)
+- Errors in app.Script() includes are now highlighted.
+- Fixed language extension bug that caused loss of code changes.
+- Added new CloudStore extension to the WiFi IDE (for premium users).
+- Modified app.GetAppPath() to return full path to resources when in APK.
+- Added app.ReadFileData(file,mode) method ('base64','hex','int','ascii').
+- Fixed music component so it works inside APKs.
+- DS and all exported APKs are both 64bit and 32bit compatible by default.
+- mui: Added Add\*\*\* methods to MUI.
+- mui: Added SetColor method to Buttons
+- mui: Added SetColor method to FABs
+- mui: Button padding is added to button with null width.
+- mui: Add SetText method to FAB
+- mui: Added Add\*\*\* method to each control.
+- mui: Pass TextEdit control as param to pickers.
+- mui: Added SetTextEdit method to pickers.
+- mui: Added touch discovery to TextEdits
+- mui: Added SetOnTouch method to TextEdits
+- mui: Added 1 Outlined Button. A true material outline button.
+- mui: Added SetOnClose to AddBanner.
+- mui: Added SetOnClose to AddDialog.
+- mui: Redesign Modal dialog control.
+- mui: Added SetOnClose to AddModal.
+- mui: Added 'Full' options to AddModal.
+- mui: Fixed minor glitches on CreateDialog.
+- mui: Added SetTextEdit method to ListDialogs.
+- mui: Added SetOnReady and SetOnProgress method on DataTable
+
+### DS 2.13b1 (18-Nov-2021)
+- Fixed !addmodule command on slower devices.
+- Icon buttons sample fixed.
+- Plugin exceptions are now shown in debug log.
+- SysProc component now sets HOME and TMPDIR environment vars if none provided.
+- Fixed bug in 'packages' param of app.SetKioskMode() method.
+- Added 'Background Job' template to device IDE.
+- Fixed bug where version part of plugin names were not stripped off.
+- Blocked the use of 'Service' and 'Job' as app names.
+- MUI assets are now excluded from APKs if not used.
+- Changed camera profile for front camera recording.
+- Updated to newer APK/AAB v3 signature method.
+- Added RealPath() conversion to app.OpenDatabase() method.
+- Fixed app.GetIPAddress() for Android 11.
+- Fixed CustomTabs on Android 11.
+- Added 'Custom Browser Tabs' sample.
+- Fixed Speech Recognition on Android 11.
+- Fixed TextToSpeech on Android 11.
+- Fixed Background services for Android 11.
+- AAB files are now automatically signed with user.keystore file.
+- Added OnDone() callback to Node object.
+
+### DS 2.12b1 (23-Jul-2021)
+- Updated to Google Play Billing libraries v4.
+- Fixed case sensitivity issue with Desyrel font.
+- Allowed use of lib sub folder in plugins (for .so files)
+- Old Plugin folders are deleted when re-installing plugins
+- app.CreateNode() now supports 'paths' parameter (same as nodejs NODE_PATH env variable)
+- mui: Added ShowMenu() method to show menu on a given control
+- mui: Added SetList() method to all list control
+- mui: Added animation to spinner
+- mui: Added SetHint to Spinner
+- mui: Added SetList to Spinner
+- mui: Added SetList to Menu
+- mui: Added SetOnIconTouch to TextEdits with icons
+
+### DS 2.11b2 (23-Jul-2021)
+- Fixed issues with Node on 64bit devices and scoped devices.
+- Added app.RealPath method. Converts short file paths to full paths.
+- Improved 'plugin not licensed' error handling.
+
+### DS 2.11b1 (16-Jul-2021)
+- Added support for NodeJS scripts and modules!
+- Added new !addmodule command to wifi ide command box.
+- Improved wifi ide file browser drag-drop handling.
+- Removed 'UseBasicInput' option from chat webview.
+- Removed 'ongoing notification' (not effective at keeping DS alive).
+
+### DS 210b1 (20-May-2021)
+- Added new Chat tab to right slide panel of mobile IDE.
+- Fixed chat (red dot on tab) message indicator on wifi editor.
+- Added app.CreateCustomTabs (thanks to Candlelight)
+- Added more fine grain control over COSU Kiosk mode (for >= Android 9).
+- Added GetCurrentTabName() method to tab control.
+- Added 'NoMargins' option to tab control.
+- Improved app startup time slightly.
+- BuildAPK dialog now saves version and package name for each project.
+- autoPermissions value in build.json now also checked when running app in ide.
+- App now shows warning before exiting if required dangerous permissions are missing.
+- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').
+- Added new !getperms command to wifi ide (gets dangerous permissions of current app).
+- Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)
+- Fixed broken wiki link in docs/resources.
+- External storage access (SAF) is now available to non-premium users.
+- Added 'NoVibrate' and 'Low' (priority) options to app.CreateNotification() method.
+- Added ongoing notification to keep DS alive in background.
+
+## DS 209 (06-May-2021)
+- Version number update only.
+
+### DS 208b2 (04-May-2021)
+- Created separate plugins page for premium (more plugins available).
+- app.AddCameraView() is now detected in permissions scan.
+
+### DS 208b1 (20-Apr-2021)
+- Added extra support for deep linking with 'urlScheme' tag in build.json.
+- Added default deep link scheme 'ds://\*' and 'http://ds/\*' for testing apps in IDE.
+- Fixed img.Play() method (should start animated gifs).
+- mui: Added new Spinner control.
+- mui: Added SetOnTouch method to DataTable.
+- mui: Added 'color' property on ListModern data for avatar color.
+- mui: To change badge color, set MUI.theme.badgeColor=color after initializing MUI.
+- Removed support for Admob (Google requirement).
+- Updated Chat component (now shows count of logged on users).
+
+### DS 207b1 (18-Mar-2021)
+- Added new 'cleartask' option to app.SendIntent().
+- Fixed issue with i-frames opening separate window in html apps.
+- Fixed issue with IDE hiding after running app on Android10+.
+
+## DS 206 (04-Mar-2021)
+- Fix for new projects created in Wifi IDE having old 'holo' look.
+- mui: Fix for DataTable column sorting with duplicate vals.
+- Chat extension moved to 'experiments' mode.
+
+## DS 205 (03-Mar-2021)
+- Default theme for wifi ide is now dark.
+- mui: SetOnSelectionStatus bug in CreateDataTable docs fixed.
+- mui: Icons in CreateDataTable headers now showing properly.
+- Fixed banner add clicks always going to Premium dialog.
+- Improved reliability of language extension.
+
+### DS 204b1 (18-Feb-2021)
+- Added new "/Plugins" keyword to get path to plugins.
+- Added gfx.GetJoystick() gets object containing joystick states.
+- Added new gfx.multiTouch=true option to GameView (x/y vals will be arrays).
+- Wifi IDE app icons is now refreshed after spk installs.
+- GameView: Fixed gfx.Reload() not working on some devices.
+- Enabled the download and install of .ppk files from the DroidStore.
+- Fixed bug preventing multiple plugin installs at once.
+- app.AutoWifi and app.AutoStart now deprecated in favour of ide.AutoWifi, ide.AutoStart.
+- app.AutoBoot() can now contain both 'app' and 'service' keywords at same time.
+- Fixed app.IsStarted() to work for multi-page html apps.
+- Added app.ScheduleJob() method to schedule background jobs (using Job.js file).
+- Added 'Background Job' app template for premium users.
+- Added app.PinScreen() method (screen pinning must be enabled in settings).
+
+### DS 203b1 (08-Feb-2021)
+- Fixed bug with SendDataGrams showing EADDRINUSE error.
+- Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)
+- Added new app.GetJoystickStates() method, returns single object with all states.
+- Removed semi-colons from device code completion.
+- Download component and WebView/Html Apps now support 'content-disposition' header.
+- Added USE_FULL_SCREEN_INTENT permission if required.
+- Removed deprecated funcs SetLanguage, Language2Code.
+- Fixed obfuscation issues related to SetAppLanguage and GetAppLangCode.
+- Added app.CreateCanvas() method, creates blank image with auto-update turned off.
+- Fixed SET_ALARM permission having wrong path.
+- Added new ide.MakePlugin method (turns current project into a plugin and installs it).
+- Updated Wifi IDE toolbar and button styles.
+- Scoped storage state remembered from first run (safe to install your APKs on Android 10)
+- Added app.IsScoped() method to indicate 'scoped storage' on Android 10+.
+- Added SetOnRequest() to detect all WebView requests (params: url,method,isMain,isRedirect).
+- Added Stop() method to WebView, cancels current page load.
+- Added SetBlockedUrls() to WebView, comma seperated list of urls to block.
+
+## DS 202 (08-Feb-2021)
+- Fixed bad link in documentation to CloudStore component.
+- Update CloudStore documentation.
+
+#### DS 201b1
+- Fixed imagegrid showing black squares after 200b1 scoped storage changes.
+- Added new app.Path2Uri method (gets a 'content://*' path for images and videos).
+- MUI: Fixed MenuWithIcon error.
+- MUI: Fixed DataTable selectable icons.
+
+#### DS 200b1
+- Fixed many file access issues on Android 10/11 with fresh DS installs.
+- Added '/Storage' keyword as new alternative to '/sdcard'.
+- Added '/External' keyword as new alternative to '/extsdcard'.
+- Added support for 'content&colon;' paths on app.ReadFile() and for Image Controls.
+- APKBuilder now uses private storage for its temp files.
+- Fixed bug in plugin docs extraction (non-doc file deletion code failed).
+- app.ChooseFile() method now returns a second 'name' parameter in callback.
+
+#### DS 195b1
+- Fixed bug with APK builder corrupting user assets.
+- Fixed issue with scoped storage re-directs.
+- Updated new improved search extension (thanks to Cemal)
+- Added new premium file differencing extension (thanks to Cemal)
+- Fixed assets not being added from phone Downloads folder.
+- Fixed issue with app.Execute obfuscation.
+- MUI: app.InitializeUIKit(color) to change color.
+- MUI: app.InitializeUIKit(color, theme) to force change the theme to dark or light.
+- MUI: Added new DataTable control.
+- MUI: Dialogs and pickers displayed on the center will now close when back key is click.
+- MUI: Added SetText,SetHtml,SetTextColor, SetTextSize method to banner.
+- MUI: Added SetTitle, SetTitleColor, SetText, SetHtml, SetTextColor, SetTextSize method to dialogs.
+- MUI: Added SetTitle, SetText, SetTextColor, SetHeaderColor to modal.
+- MUI: Added SetText, SetHtml, SetTextColor to AlertSimple.
+- MUI: Added SetHeight method to ListDialog and CheckList dialogs for long list.
+
+#### DS 194b1
+- Allowed 'app' query parameter on wifi IDE urls.
+- Added 'Launch in new tab' option to wifi IDE app icons.
+- Obfuscated MUI APKs now work.
+- Added new built-in Music Engine (thanks to Cemal)
+- Updated CloudStore component to use enjine.io
+- Fixed bug with installing spks over existing ones.
+- Added SetDescription method to all controls (for accessibility)
 
 #### DS 193b1
 - Switched to use scoped storage for user scripts in Android 10/11.

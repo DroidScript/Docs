@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>IsThings</title>
+	<title>ListPermissions</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -24,7 +24,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>IsThings</h1>
+		<h1>ListPermissions</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -33,24 +33,25 @@
 	</div>
 
 	<div data-role="content">
-		<p>Checks if the OS is AndroidThings.</p>
+		<p>Returns a list of granted permissions.</p>
 
 		<div class="samp">
-		app.IsThings() → <b><a href="../javascript/Global_Objects/Boolean.html" data-ajax="false" class="no-ui-link">Boolean</a></b>
+		app.ListPermissions(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+			→ <b>List:</b> [
+			<a href="#pop_str_uri" data-transition="pop" data-rel="popup">perm</a>]
 		</div>
 
-		<p>See Also: <a href="IsTablet.htm" data-ajax="false">IsTablet</a>, <a href="IsChrome.htm" data-ajax="false">IsChrome</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Check OS is Things</h3>
+			<h3>Example - List Permissions</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token parameter">perms</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> isThings <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsThings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
-				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> isThings<span class="token punctuation">,</span> <span class="token string">"IsThings"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> perms <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ListPermissions</span><span class="token punctuation">(</span><span class="token string">"storage"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>perms<span class="token punctuation">,</span> <span class="token string">"Permissions:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
 			</div>
@@ -60,7 +61,8 @@
 
 	</div>
 
-
+	<div data-role="popup" id="pop_str_uri" class="ui-content"><b>String:</b> <i>URI encoded</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“storage”</docstr></div>
 </div>
 </body>
 

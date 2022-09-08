@@ -73,8 +73,7 @@
 		"shortDesc": "Set 2d transformation"
 	},
 	"#1274618924": { "name": "Update",
-		"desc": "Updates internal properties",
-		"shortDesc": "Updates internal properties"
+		"desc": "Updates internal properties"
 	},
 	"#1584619232": { "name": "visible",
 		"desc": "Indicates the objects visibility state",
@@ -89,12 +88,10 @@
 		"shortDesc": "Object width"
 	},
 	"#8798237593": { "name": "PauseTween",
-		"desc": "Pause tweening.",
-		"shortDesc": "Pause tween"
+		"desc": "Pause tweening."
 	},
 	"#9832987464": { "name": "PlayTween",
-		"desc": "Resume tweening.",
-		"shortDesc": "Resume tween"
+		"desc": "Resume tweening."
 	},
 	"#8929387454": { "name": "SetTween",
 		"desc": "Sets up tween methods and properties without playing it.",

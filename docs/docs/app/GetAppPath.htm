@@ -36,10 +36,11 @@
 		<p>Returns the path to the app assets folder.</p>
 
 		<div class="samp">
-		app.GetAppPath() → <b><a href="../javascript/Global_Objects/String.html" data-ajax="false" class="no-ui-link">String</a>:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
+		app.GetAppPath() → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i>
 		</div>
 
-		<p>If it's a DroidScript project the path should be <docstr>“/sdcard/DroidScript/appname”</docstr> - If it is an apk it is <docstr>“/Assets”</docstr><br>
+		<p>In a DroidScript project the path should be <docstr>“/sdcard/DroidScript/APPNAME”</docstr><br>
+		In an apk it instead returns the absolute path to the <docstr>“/Assets”</docstr> folder<br>
 		<br>
 		See Also: <a href="GetPath.htm" data-ajax="false">GetPath</a>, <a href="GetPrivateFolder.htm" data-ajax="false">GetPrivateFolder</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">

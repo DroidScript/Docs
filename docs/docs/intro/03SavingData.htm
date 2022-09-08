@@ -49,11 +49,11 @@
 		<h2>Save data during one session</h2>
 		<p>Some settings are just meaningful in a current running program.<br>
 		For example if you keep track of the current app state (opened tabs, documents, pages).<br>
-		For this purpose you can use the <strong>app.<a href="../app/SetData.htm" data-ajax="false">SetData</a></strong> and the <strong>app.<a href="../app/GetData.htm" data-ajax="false">GetData</a></strong> method.<br>
-		To clear stored data use <strong>app.<a href="../app/ClearData.htm" data-ajax="false">ClearData</a></strong>.</p>
+		For this purpose you can use the <b>app.<a href="../app/SetData.htm" data-ajax="false">SetData</a></b> and the <b>app.<a href="../app/GetData.htm" data-ajax="false">GetData</a></b> method.<br>
+		To clear stored data use <b>app.<a href="../app/ClearData.htm" data-ajax="false">ClearData</a></b>.</p>
 		<h2>Save data across multiple app starts</h2>
 		<p>Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.<br>
-		To clear a saved value use the <strong>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></strong> method.</p>
+		To clear a saved value use the <b>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></b> method.</p>
         <table>
             <tr>
                 <th width="10%">Save</th>
@@ -82,7 +82,7 @@
 			<h3>Example - App Settings</h3>
 			<div id="examp1" style="font-size:70%">
 				<b id="snip1" style="font-size:100%"><span class="token comment">// default settings</span><br>
-				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> version<span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> startNo<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
+				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> <span class="token literal-property property">startNo</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>

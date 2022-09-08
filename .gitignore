@@ -1,12 +1,10 @@
-# Dependency directories
+
+# node packages
 node_modules/
 
-# Generated files
-package-lock.json
-
+# stuff
 /files/css
 /files/font-awesome
-
 /files/docs*
 /files/*.sh
 /files/ide.*js
@@ -14,7 +12,10 @@ package-lock.json
 /files/generate_dsuikit.js
 /app/
 
+# hidden files
 _*.htm
 ~*
+
+# temporary
 docs-de
 de
