@@ -21,7 +21,9 @@
 		"shortDesc": "Create and add CameraView to Layout."
 	},
 	"AddCanvas": {
-		"desc": "Creates and adds a blank white [Image](CreateImage.htm) with the AutoUpdate feature turned off to a Layout.",
+		"desc": "Creates and adds a blank white [Image](CreateImage.htm) with the AutoUpdate feature turned off to a Layout.\nSee @CreateImage for full documentation.",
+		"pNames": ["layout", "file", "width", "height", "options", "pxw", "pxh"],
+		"pTypes": ["dso-CreateLayout", "str_ptc", "num", "num", "str_com-fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-CreateImage",
 		"shortDesc": "Create and add Button to Layout."
 	},
@@ -780,7 +782,9 @@
 		}
 	},
 	"CreateCanvas": {
-		"desc": "Creates and adds a blank white Image with the Auto-Update feature turned off.\nSee @CreateButton for full documentation.",
+		"desc": "Creates and adds a blank white Image with the Auto-Update feature turned off.\nSee @CreateImage for full documentation.",
+		"pNames": ["file", "width", "height", "options", "pxw", "pxh"],
+		"pTypes": ["str_ptc", "num", "num", "str_com-fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
 		"retval": "dso-CreateImage",
 		"shortDesc": "Create a blank white Image object."
 	},
@@ -1180,7 +1184,7 @@
 		"abbrev": "dlg",
 		"desc": "#CreateDialog.md",
 		"pNames": ["title", "options"],
-		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners"],
+		"pTypes": ["str", "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,Fillscreen,Fullscreen,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners"],
 		"retval": "dso-Dialog",
 		"shortDesc": "Returns a new Dialog object to display messages",
 		"subf": {
@@ -2635,11 +2639,23 @@
 				"pTypes": [{}],
 				"shortDesc": "Called when ply.Seek has finished"
 			},
+			"SetSpeed": {
+				"desc": "Change the speed of the playing song.",
+				"pNames": ["speed"],
+				"pTypes": ["num_fac"],
+				"shortDesc": "Set the playback speed"
+			},
+			"SetPitch": {
+				"desc": "Change the pitch of the playing song.",
+				"pNames": ["pitch"],
+				"pTypes": ["num_fac"],
+				"shortDesc": "Set the playback pitch"
+			},
 			"SetVolume": {
 				"desc": "Change the volume of the playing song.",
 				"pNames": ["left", "right"],
 				"pTypes": ["num_prc", "num_prc"],
-				"shortDesc": "Set the playing volume"
+				"shortDesc": "Set the playback volume"
 			},
 			"Stop": {
 				"desc": "Stop playing a song."
@@ -2890,7 +2906,7 @@
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
 				"pNames": ["id"],
-				"pTypes": ["str"]
+				"pTypes": ["str-id|*"]
 			},
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -4235,7 +4251,7 @@
 		"abbrev": "tab",
 		"desc": "#CreateTabs.md",
 		"pNames": ["list", "width", "height", "options"],
-		"pTypes": ["str_com", "num_frc", "num_frc", "str-NoMargins"],
+		"pTypes": ["str_com", "num_frc", "num_frc", "str-NoMargins|Fade|FontAwesome"],
 		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
@@ -7299,8 +7315,8 @@
 	},
 	"Wait": {
 		"desc": "#Wait.md",
-		"pNames": ["seconds"],
-		"pTypes": ["num_sec"],
+		"pNames": ["seconds", "doEvents"],
+		"pTypes": ["num_sec", "bin"],
 		"shortDesc": "Perform a synchronous delay"
 	},
 	"WakeUp": {

@@ -36,14 +36,24 @@
 		<p>Creates and adds a blank white Image with the Auto-Update feature turned off.</p>
 
 		<div class="samp">
-		app.CreateCanvas() → <b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a>
+		app.CreateCanvas(
+			<a href="#pop_str_ptc" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxw</a>,
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxh</a> )
+			→ <b>app object:</b> <a href="CreateImage.htm" data-ajax="false">Image</a>
 		</div>
 
-		<p>See <a href="CreateButton.htm" data-ajax="false">CreateButton</a> for full documentation.</p>
+		<p>See <a href="CreateImage.htm" data-ajax="false">CreateImage</a> for full documentation.</p>
 
 	</div>
 
-
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_num_pxl" class="ui-content"><b>Number:</b> <i>pixel</i></div>
+	<div data-role="popup" id="pop_str_ptc" class="ui-content"><b>String:</b> <i>file path or content:// uri</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('image with fixed resolution')">fix</a>”</docstr>, <docstr>“alias”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('use pixel values for size')">px</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('causes image to depress like a button when touched')">Button</a>”</docstr>, <docstr>“ScaleCenter”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('loads the image asynchronously')">async</a>”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“Resize”</docstr>, <docstr>“TouchThrough”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('allows loading of app icons')">Icon</a>”</docstr>, <docstr>“wallpaper”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('prevent gifs from playing automatically')">NoPlay</a>”</docstr></div>
 </div>
 </body>
 

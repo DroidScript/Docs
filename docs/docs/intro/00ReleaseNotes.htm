@@ -37,11 +37,12 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
-				- <a href="" onclick="jumpTo('DS 2.51b1p2(16-Mar-2022)')">DS 2.51b1</i>p2</a><sup>(16-Mar-2022)</sup><br>
-				- <a href="" onclick="jumpTo('DS 2.51b1p1(10-Mar-2022)')">DS 2.51b1<i>p1</a><sup>(10-Mar-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.55b1(23-Oct-2022)')">DS 2.55b1</a><sup>(23-Oct-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.54b1(11-Sep-2022)')">DS 2.54b1</a><sup>(11-Sep-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.53b1(24-Aug-2022)')">DS 2.53b1</a><sup>(24-Aug-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.52b1(07-Jun-2022)')">DS 2.52b1</a><sup>(07-Jun-2022)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.51b1(02-Mar-2022)')">DS 2.51b1</a><sup>(02-Mar-2022)</sup><br>
-				- <a href="" onclick="jumpTo('DS 2.51a1(Feb-2022)')">DS 2.51a1</a><sup>(Feb-2022)</sup><br>
-				- <a href="" onclick="jumpTo('DS 2.50p1(06-Jan-2022)')">DS 2.50<i>p1</a><sup>(06-Jan-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51a1(15-Feb-2022)')">DS 2.51a1</a><sup>(15-Feb-2022)</sup><br>
 			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 2.50(31-Dec-2021)')">DS 2.50</a><sup>(31-Dec-2021)</sup><br>
@@ -97,14 +98,59 @@
 		</span><br>
 		</div>
 
-		<p><!-- /[^\\].?([<i><i>])/\$1/ /:/:/ --></p>
-		<h3>DS 2.51b1</i>p2<sup>(16-Mar-2022)</sup></h3>
+		<p><!-- /<a href="[_*]" data-ajax="false">^\\</a>/\\$1/ /:/:/ --></p>
+		<h3>DS 2.55b1<sup>(23-Oct-2022)</sup></h3>
+		<p>- Added new 'CloudStore' tab to device IDE.<br>
+		- Added new SSH/Device Terminal tab to device IDE.<br>
+		- Switched device IDE 'Chat' tab to use Discord.<br>
+		- Added new 'RemoteTerminal' SSH extension to wifi IDE.<br>
+		- Move UI controls into an updatable internal DS plugin.<br>
+		- Support for ds:/* style paths in HTML elements (eg. ds:/Sys/app.js).<br>
+		- The 'FontAwesome' option can now be used with app.CreateTabs.<br>
+		- Changed wifi IDE right side tabs to show icons only.<br>
+		- Changed node.Run() method to use separate VM contexts on each call.<br>
+		- Changed FileDiff extension to full browser width.<br>
+		- Fixed problem of ide.AddModule() only working once after DS restart.<br>
+		- Added link to Playstore unsubscribe page.</p>
+		<h3>DS 2.54b1<sup>(11-Sep-2022)</sup></h3>
+		<p>- Added 'YouTube Player' and 'Google Maps' samples.<br>
+		- Added 'Card Flip' and 'Card Animation' samples.<br>
+		- Added 'Shopping Cart' sample.<br>
+		- Fixed bugs with device IDE image chooser.<br>
+		- Added ext.displayWidth + ext.displayHeight to extensions API.<br>
+		- Added ext.Play, ext.Stop, ext.Save to extensions API.<br>
+		- Fixed bug causing notification listener to fail.<br>
+		- Fixed bug with fine/coarse location in AABs.<br>
+		- Made AAB builder more reliable (was often getting stuck at 99%)<br>
+		- Added new WYSIWYG Layout extension to WiFi IDE (in experiments mode)<br>
+		- Added version number to APK/AAB build output files.<br>
+		- Added SPK auto-save feature when building APKs/AABs.<br>
+		- Fixed problem with Turkish characters in control callbacks.</p>
+		<h3>DS 2.53b1<sup>(24-Aug-2022)</sup></h3>
+		<p>- Added new app.eventSource property.<br>
+		- Fixed extraction issues with APK asset files containing 'dots'.<br>
+		- Fixed mui.js not found bug when building Node APKs.<br>
+		- Fixed build.json being ignored for AAB files.<br>
+		- Fixed debug messages from NodeJS apps not readable.<br>
+		- Improved !addmodule command to support versions (eg. mi...@1.6.0)<br>
+		- Added new GitHub feature for premium users.</p>
+		<h3>DS 2.52b1<sup>(07-Jun-2022)</sup></h3>
+		<p>- Added SetSpeed and SetPitch methods to MediaPlayer.<br>
+		- Plugins can now contain sub-folders ('docs' sub-folder is removed in APK build).<br>
+		- Added support for Cancel(id) or Cancel('*') in notification listener.<br>
+		- JS errors from remote pages are now ignored for HTML and Hybrid apps.<br>
+		- Multiple cfg.Hybrid app samples added when in 'experiments' mode.<br>
+		- Re-organized app templates.</p>
+		<h4>DS 2.51b_p3<sup>(21-Mar-2022)</sup></h4>
+		<p>- Fixed app.SaveText() causing 'Storage' permission request.<br>
+		- Added 'fillscreen' and 'fullscreen' options for Custom Dialogs.</p>
+		<h4>DS 2.51b_p2<sup>(16-Mar-2022)</sup></h4>
 		<p>- Updated app.ChooseFile() to support GoogleDrive,OneDrive and DropBox.<br>
 		- Added 'nodownload' option to app.ChooseFile (just returns uri, no downloading of files).<br>
 		- Added 'persist' option to app.ChooseFile (persists file permission after reboot).<br>
 		- Added 'pretty' option to app.Uri2Path (returns DS style paths).<br>
 		- AddPermission 'alert' bug fixed (introduced in 2.51b1).</p>
-		<h3>DS 2.51b1<i>p1<sup>(10-Mar-2022)</sup></h3>
+		<h4>DS 2.51b_p1<sup>(10-Mar-2022)</sup></h4>
 		<p>- AddPermission 'alert' bug fixed.<br>
 		- Added 'pretty path' parameter to app.GetPermission() callback.</p>
 		<h3>DS 2.51b1<sup>(02-Mar-2022)</sup></h3>
@@ -117,14 +163,14 @@
 		- Enabled 3rd party cookies by default for webviews, fetch and xmlHttpRequest.<br>
 		- Fixed broken app.SetAlarm() method.<br>
 		- app.ListFolder() now supports SAF (can list outside scoped storage).</p>
-		<h3>DS 2.51a1<sup>(Feb-2022)</sup></h3>
-		<p>- Added support for /Internal/</i> and /External/<i> SAF paths.<br>
+		<h3>DS 2.51a1<sup>(15-Feb-2022)</sup></h3>
+		<p>- Added support for /Internal/* and /External/* SAF paths.<br>
 		- app.GetPermission() now supports 'external' and 'internal' keywords.<br>
 		- Replaced 'Sdcard Access' sample with 'Storage Access' sample.<br>
-		- Improved permissions detection for file:///android</i>asset paths.<br>
+		- Improved permissions detection for file:///android_asset paths.<br>
 		- Fixed 'Share SPK' for scoped storage devices.<br>
 		- Fixed app.SendFile, app.SendImage, app.SendMail for scoped storage devices.<br>
-		- Added QUERY<i>ALL</i>PACKAGES permission to X version.<br>
+		- Added QUERY_ALL_PACKAGES permission to X version.<br>
 		- Removed default params from edit/mui.js (older webviews don't not like it)<br>
 		- Added web.Func(name,args...) for easy calling of functions defined in a WebView.<br>
 		- Added app.Func(name,args...) for easy calling of main script functions from a WebView.<br>
@@ -135,7 +181,7 @@
 		- Added tabs.SetTextSize(size,mode) method.<br>
 		- Added cfg.Fast mode for premium users (3x faster apps!)<br>
 		- Added XMLHttpRequest polyfill for Fast mode.</p>
-		<h3>DS 2.50<i>p1<sup>(06-Jan-2022)</sup></h3>
+		<h4>DS 2.5_p1<sup>(06-Jan-2022)</sup></h4>
 		<p>- Added 'Query Images' and 'Query Videos' samples.<br>
 		- Fixed crash when building APKs/AABs for Html apps.</p>
 		<h2>DS 2.50<sup>(31-Dec-2021)</sup></h2>
@@ -221,7 +267,7 @@
 		- Fixed case sensitivity issue with Desyrel font.<br>
 		- Allowed use of lib sub folder in plugins (for .so files)<br>
 		- Old Plugin folders are deleted when re-installing plugins<br>
-		- app.CreateNode() now supports 'paths' parameter (same as nodejs NODE</i>PATH env variable)<br>
+		- app.CreateNode() now supports 'paths' parameter (same as nodejs NOD_PATH env variable)<br>
 		- mui: Added ShowMenu() method to show menu on a given control<br>
 		- mui: Added SetList() method to all list control<br>
 		- mui: Added animation to spinner<br>
@@ -306,11 +352,11 @@
 		- Added new app.GetJoystickStates() method, returns single object with all states.<br>
 		- Removed semi-colons from device code completion.<br>
 		- Download component and WebView/Html Apps now support 'content-disposition' header.<br>
-		- Added USE<i>FULL</i>SCREEN<i>INTENT permission if required.<br>
+		- Added US_FUL_SCREE_INTENT permission if required.<br>
 		- Removed deprecated funcs SetLanguage, Language2Code.<br>
 		- Fixed obfuscation issues related to SetAppLanguage and GetAppLangCode.<br>
 		- Added app.CreateCanvas() method, creates blank image with auto-update turned off.<br>
-		- Fixed SET</i>ALARM permission having wrong path.<br>
+		- Fixed SE_ALARM permission having wrong path.<br>
 		- Added new ide.MakePlugin method (turns current project into a plugin and installs it).<br>
 		- Updated Wifi IDE toolbar and button styles.<br>
 		- Scoped storage state remembered from first run (safe to install your APKs on Android 10)<br>
@@ -323,7 +369,7 @@
 		- Update CloudStore documentation.</p>
 		<h4>DS 201b1</h4>
 		<p>- Fixed imagegrid showing black squares after 200b1 scoped storage changes.<br>
-		- Added new app.Path2Uri method (gets a 'content://</i>' path for images and videos).<br>
+		- Added new app.Path2Uri method (gets a 'content:/*' path for images and videos).<br>
 		- MUI: Fixed MenuWithIcon error.<br>
 		- MUI: Fixed DataTable selectable icons.</p>
 		<h4>DS 200b1</h4>
@@ -405,7 +451,7 @@
 		- Fixed scanfile bug in 'Create Shortcut' option.<br>
 		- Fixed issue with custom button colors in APKs for holo theme.</p>
 		<h4>DS 1.91b1<sup>(16-Jul-2020)</sup></h4>
-		<p>- Added new MUI.<i> material controls for premium users!<br>
+		<p>- Added new MUI* material controls for premium users!<br>
 		- Added MUI controls demo app to docs.<br>
 		- Added new 'Class' file/template.<br>
 		- Upgraded obfuscator to support ES6 classes properly.<br>
@@ -425,7 +471,7 @@
 		- SPKs now contain a new hidden file '~package.json' with the DS version used.<br>
 		- Older SPKs and DS projects now default to Holo theme.<br>
 		- Added "Biometric" permission option.<br>
-		- Fixed problem with the word Add being incorrectly replaced when using Add</i> methods.<br>
+		- Fixed problem with the word Add being incorrectly replaced when using Ad* methods.<br>
 		- NoIcons now defaults to true if a screen reader is detected.<br>
 		- Fixed app.GetThemeInfo() unset colours. Now returns null.<br>
 		- app.Install() now returns (packageName,status) params in callback.<br>

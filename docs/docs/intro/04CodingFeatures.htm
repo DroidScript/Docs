@@ -38,7 +38,7 @@
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('The cfg object')">The cfg object</a><br>
-			• <a href="" onclick="jumpTo('this Keyword')">this Keyword</a><br>
+			• <a href="" onclick="jumpTo('app.eventSource')">app.eventSource</a><br>
 			• <a href="" onclick="jumpTo('Function Shortcuts')">Function Shortcuts</a><br>
 			• <a href="" onclick="jumpTo('Permissions')">Permissions</a><br>
 			• <a href="" onclick="jumpTo('Translations: T()')">Translations: T()</a><br>
@@ -84,8 +84,8 @@
 		<br>
 		The drawback of this method is that all default WebView DOM objects are not available any more.<br>
 		This includes methods like setInterval and setTimeout which should be converted to <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a></b> respectively.</p>
-		<h2>this Keyword</h2>
-		<p>In callback functions of controls you can use the <span class="token keyword">this</span> keyword to access the callee control object without having to assign the control to a specific variable. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:</p>
+		<h2>app.eventSource</h2>
+		<p>In callback functions of controls you can use app<span class="token punctuation">.</span>eventSource to access the callee control object without having to assign the control to a specific variable. Previously this could be achieved by using the <span class="token keyword">this</span> keyword. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:</p>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Use Case of this</h3>
@@ -105,7 +105,8 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">btnN_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token comment">// app.eventSource == this</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>eventSource<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -118,7 +119,20 @@
 		<p>There are shortcuts to certain functions, which are<br>
 		<span class="token constant">DW</span><span class="token punctuation">(</span><span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 		<span class="token constant">DH</span><span class="token punctuation">(</span><span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-		<span class="token constant">TW</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetTextBounds</span><span class="token punctuation">(</span>txt<span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width</p>
+		<span class="token constant">TW</span><span class="token punctuation">(</span>
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a><span class="token punctuation">,</span> size<span class="token punctuation">)</span> => app<span class="token punctuation">.</span><span class="token function">GetTextBounds</span><span class="token punctuation">(</span>
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">txt</a><span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<br>
+		_<span class="token function"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">PlaySound</span></a><span class="token punctuation">(</span>
+			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">file</a><span class="token punctuation">)</span><br>
+		_<span class="token function"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">GetRandomColor</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a><br>
+		<a href="#pop_dsc_003" data-transition="pop" data-rel="popup"><span class="token constant">RGB</span><span class="token function"></span></a><span class="token punctuation">(</span>
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">r</a><span class="token punctuation">,</span>
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">g</a><span class="token punctuation">,</span>
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">b</a><span class="token punctuation">)</span>:
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a><br>
+		<span class="token function"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">atob2</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span>:
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">base64</a> .</p>
 		<h2>Permissions</h2>
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
@@ -219,7 +233,15 @@
 
 	</div>
 
-
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">Uses a dummy player to play a file</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns a random hexadecimal color string</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Make a color using fraction values</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">atob equivalent</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content">str_b64</div>
 </div>
 </body>
 

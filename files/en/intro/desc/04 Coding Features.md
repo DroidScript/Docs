@@ -44,8 +44,8 @@ The drawback of this method is that all default WebView DOM objects are not avai
 This includes methods like setInterval and setTimeout which should be converted to **app.@../app/Animate** respectively.
 
 
-## this Keyword
-In callback functions of controls you can use the <js nobox>this</js> keyword to access the callee control object without having to assign the control to a specific variable. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:
+## app.eventSource
+In callback functions of controls you can use <js nobox>app.eventSource</js> to access the callee control object without having to assign the control to a specific variable. Previously this could be achieved by using the <js nobox>this</js> keyword. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:
 <sample Use Case of this>
 function OnStart()
 {
@@ -62,7 +62,8 @@ function OnStart()
 
 function btnN_OnTouch()
 {
-    app.ShowPopup("Hello " + this.GetText());
+	// app.eventSource == this
+    app.ShowPopup("Hello " + app.eventSource.GetText());
 }
 </sample>
 
@@ -70,7 +71,12 @@ function btnN_OnTouch()
 There are shortcuts to certain functions, which are
 <js nobox>DW()</js> => <js nobox>app.GetDisplayWidth()</js>
 <js nobox>DH()</js> => <js nobox>app.GetDisplayHeight()</js>
-<js nobox>TW(txt, size)</js> => <js nobox>app.GetTextBounds(txt, size, 0, null).width</js>
+<js nobox>TW(txt:str, size)</js> => <js nobox>app.GetTextBounds(txt:str, size, 0, null).width</js>
+\_<js nobox>PlaySound:"Uses a dummy player to play a file"(file:str\_pth)</js>
+\_<js nobox>GetRandomColor:"Returns a random hexadecimal color string"(): color:str\_col</js>
+<js nobox>RGB:"Make a color using fraction values"(r:num\_frc, g:num\_frc, b:num\_frc)</js>: color:str\_col
+<js nobox>atob2:"atob equivalent"()</js>: base64:str\_b64 .
+
 
 ## Permissions
 These methods can force DroidScript to add or remove specific permissions from your app.

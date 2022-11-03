@@ -1303,7 +1303,9 @@
 		"SetOnComplete": "Called when the player has finished playing a track",
 		"SetOnReady": "Called when the player is ready for use",
 		"SetOnSeekDone": "Called when ply.Seek has finished",
-		"SetVolume": "Set the playing volume",
+		"SetPitch": "Set the playback pitch",
+		"SetSpeed": "Set the playback speed",
+		"SetVolume": "Set the playback volume",
 		"Stop": "Stop playing a song"
 	},
 	"pst": {

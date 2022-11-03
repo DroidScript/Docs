@@ -140,17 +140,26 @@
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetVolume</a>(
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetPitch</a>(
+			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">pitch</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetSpeed</a>(
+			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">speed</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetVolume</a>(
 			<a href="#pop_num_prc" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_num_prc" data-transition="pop" data-rel="popup">right</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">Stop</a>()
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">Stop</a>()
 		</div>
 
 	</div>
 
 	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
+	<div data-role="popup" id="pop_num_fac" class="ui-content"><b>Number:</b> <i>factor</i></div>
 	<div data-role="popup" id="pop_num_flt" class="ui-content"><b>Number:</b> <i>float</i></div>
 	<div data-role="popup" id="pop_num_prc" class="ui-content"><b>Number:</b> <i>percent</i></div>
 	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
@@ -172,8 +181,10 @@
 	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>ply.SetOnComplete</b><br>Define a callback function which is called when a sound file has finished playing.</div>
 	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>ply.SetOnReady</b><br>Define a callback function which is called when the player is ready for use.</div>
 	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>ply.SetOnSeekDone</b><br>Define a callback function which is called when a seeking process is done.</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>ply.SetVolume</b><br>Change the volume of the playing song.</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>ply.Stop</b><br>Stop playing a song.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>ply.SetPitch</b><br>Change the pitch of the playing song.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>ply.SetSpeed</b><br>Change the speed of the playing song.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>ply.SetVolume</b><br>Change the volume of the playing song.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>ply.Stop</b><br>Stop playing a song.</div>
 </div>
 </body>
 
