@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateNode</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateNode</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Creates a NodeJS background process with all the functionality of common node.js.</p>
+
+		<div class="samp">
+		nod = app.CreateNode(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">paths</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+
+		<p>Note that to define private functions (functions that are invisible by the main app) you have to declare them as global variable without usign the var keyword.<br>
+		This is actually a safer way of working as it prevents name clashes and libraries overwriting each other's functions and variables accidentally.  Ideally you should put your code into objects or classes for better protection and avoid using many globals.</p>
+
+		<div class="samp">
+		<span class="token keyword">var</span> myLocalVariable <span class="token operator">=</span> <span class="token string">"Local Hello"</span><span class="token punctuation">;</span><br>
+		myGlobalVariable <span class="token operator">=</span> <span class="token string">"Global Hello"</span><br>
+		<br>
+		<span class="token keyword">function</span> <span class="token function">myLocalFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token string">"Local Hello"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><br>
+		<span class="token function-variable function">myGlobalFunction</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token string">"Global Hello"</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+		</div>
+
+		<p>For more details have a look at the Node docs in the <a href="../Plugins.htm" data-ajax="false">Plugins</a> page</p>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> ):</i> <docstr>“NODE_PATH env variable”</docstr></div>
+</div>
+</body>
+
+</html>

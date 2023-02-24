@@ -5,38 +5,72 @@ You don't necessarily need to use these features but they are still pretty usefu
 The cfg object can be used to apply app options to your app before it is launched.
 They should be placed at the very top of your main source script.
 
-### cfg.Portrait/Landscape
+#### cfg.Portrait/Landscape
 Defines the initial screen orientation your app will launch in
 
-### cfg.Holo cfg.Light cfg.Dark
+#### cfg.Holo cfg.Light cfg.Dark
 These settings will change the look of all your controls. Holo was the default theme until DS 1.90 beta, where cfg.Light and cfg.Dark were added and cfg.Dark became the dark theme.
 Note that only Light and Dark theme can be exchanged securely, Holo might cause broken UI in some cases when switching to Light or Dark.
 
-### cfg.MUI
+#### cfg.Node
+Runs the app in NodeJS mode.
+
+#### cfg.Hybrid
+Allows you to use MaterialUI controls in an html app.
+
+#### cfg.MUI
 Enables builtin material component support through the MUI object.
 <premium>
 
-### cfg.Game
+#### cfg.Game
 The _Game_ configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
 
-### cfg.Transparent
+#### cfg.Transparent
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
 
-### cfg.NoDom
-<red>Note: The _NoDom_ option is currently not available due to GooglePlays 64bit requirement since August 2019.</red>
-<!--By default your script is executed by a WebView which supports DOM elements and functions which are typically available in a web environment.
+<!--
+#### cfg.NoSwapify
+This option prevents function name swapping during obfuscation
 
-The NoDom config will make use of [googles V8 engine](https://v8.dev) instead which will cause these DOM objects not being available any more.
-For example setInterval and setTimeout will not be available any more, but you can use the **app.@../app/Animate method instead**.
+#### cfg.Legacy
+Enables various legacy transparent app behaviour
+-->
 
-Furthermore the use of V8 will increase the execution speed of your app. Specifically it will increase the speed of app.* calls. Your app will commonly execute 3 to 8 times faster than usual which is quite useful when animating stuff or when creating ans modifying a huge amount of app controls.-->
+#### cfg.Fast
+The Fast config will make use of [the J2V8 engine](https://eclipsesource.com/j2v8) which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.
 
-## Function Shortcuts DW DH TW
+The drawback of this method is that all default WebView DOM objects are not available any more.
+This includes methods like setInterval and setTimeout which should be converted to **app.@../app/Animate** respectively.
+
+
+## this Keyword
+In callback functions of controls you can use the <js nobox>this</js> keyword to access the callee control object without having to assign the control to a specific variable. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:
+<sample Use Case of this>
+function OnStart()
+{
+    lay = app.CreateLayout("Linear", "FillXY,VCenter");
+    lay.SetChildMargins(0, 0.03);
+
+    for(var i = 1; i <= 5; i++)
+    {
+        var btn = app.AddButton(lay, i, 0.6);
+        btn.SetOnTouch(btnN_OnTouch);
+    }
+    app.AddLayout(lay);
+}
+
+function btnN_OnTouch()
+{
+    app.ShowPopup("Hello " + this.GetText());
+}
+</sample>
+
+## Function Shortcuts
 There are shortcuts to certain functions, which are
-<js>DW()</js> for <js>app.GetDisplayWidth()</js>
-<js>DH()</js> for <js>app.GetDisplayHeight()</js>
-<js>TW(txt, size)</js> for <js>app.GetTextBounds(txt, size, 0, null).width</js>
+<js nobox>DW()</js> => <js nobox>app.GetDisplayWidth()</js>
+<js nobox>DH()</js> => <js nobox>app.GetDisplayHeight()</js>
+<js nobox>TW(txt, size)</js> => <js nobox>app.GetTextBounds(txt, size, 0, null).width</js>
 
 ## Permissions
 These methods can force DroidScript to add or remove specific permissions from your app.
@@ -67,10 +101,9 @@ function OnStart()
 
 function NewButton(name, lay)
 {
-	btn = app.CreateButton( name, 0.3, 0.1 );
+	var btn = app.AddButton( lay, name, 0.3, 0.1 );
 	btn.SetMargins( 0, 0, 0, 0.02 );
 	btn.SetTextColor( "red" );
-	lay.AddChild( btn );
 
 	btn.SetOnTouch( function()
 	{
@@ -80,10 +113,9 @@ function NewButton(name, lay)
 
 function NewButton2(name, lay)
 {
-	btn = app.CreateButton( name, 0.3, 0.1 );
+	var btn = app.AddButton( name, 0.3, 0.1 );
 	btn.SetTextColor( "green" );
 	btn.SetMargins( 0, 0.02 );
-	lay.AddChild( btn );
 
 	<b>btn.SetOnTouch( I(function()
 	{
@@ -94,7 +126,7 @@ function NewButton2(name, lay)
 </sample Using I()>
 
 ### Custom Contexts: M()
-The M() macro is equivalent to the I() macro, except that it accepts a custom 'this' context as first argument.
+The M() macro is equivalent to the I() macro, except that it accepts a custom '<js nobox>this</js>' context as first argument.
 
 ### obj.data
 Alternatively you can make use of the controls **data** property and the **this** keyword in callbacks.
@@ -114,10 +146,9 @@ function OnStart()
 
 function NewButton2(name, lay)
 {
-	btn = app.CreateButton( name, 0.3, 0.1 );
+	btn = app.AddButton( lay, name, 0.3, 0.1 );
 	btn.SetTextColor( "green" );
 	btn.SetMargins( 0, 0.02 );
-	lay.AddChild( btn );
 
 	<b>btn.data.name = name;
 

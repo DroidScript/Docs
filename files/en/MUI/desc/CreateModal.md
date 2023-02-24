@@ -1,6 +1,6 @@
 A modal is a popup with more controls that can be added.
 
-You can display a modal with text directly by providing a body text.
+You can display a modal with text directly by providing a body text. You can use the "Full" as options if you want your modal to occupy the whole screen.
 
 <sample Basic>
 

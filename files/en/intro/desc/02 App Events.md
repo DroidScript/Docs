@@ -185,3 +185,10 @@ function OnData( isStartUp )
 }
 
 </sample Received Intent Data>
+
+
+
+### OnDrawer(side, state)
+When the user opens or closes a drawer the OnDrawer callback is called.
+state can be “Open” or “Closed”
+side can be “Left” or “Right”

@@ -23,8 +23,7 @@
 		"shortDesc": "Hides the control and removes it from the screen"
 	},
 	"#1924613325": { "name": "Destroy",
-		"desc": "Destroys the control completely",
-		"shortDesc": "Destroys the control completely"
+		"desc": "Destroys the control completely"
 	},
 	"#1500174100": { "name": "Explode",
 		"desc": "Destroys the control with an explode animation and sound.",
@@ -91,10 +90,7 @@
 	},
 	"#2114624701": { "name": "GetType",
 		"desc": "Get the type of MUI control.",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "str",
-		"shortDesc": "Get the type of MUI control."
+		"retval": "str"
 	},
 	"#1672373665": { "name": "GetVisibility",
 		"desc": "Returns the current visibility state of the control. The Values are:\n**Show**: visible\n**Hide**: invisible but still consuming space\n**Gone**: invisible and not consuming space",
@@ -219,7 +215,7 @@
 		"shortDesc": "Called when the control gets focused"
 	},
 	"#2735982374": { "name": "SetOnLongTouch",
-		"desc": "Define a callback function which is called when the object has been long pressed.",
+		"desc": "%cb% the object has been long pressed.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["src"],
@@ -243,7 +239,7 @@
 		"shortDesc": "Define a callback function for user toches"
 	},
 	"#2938578932": { "name": "SetOnTouchDown",
-		"desc": "Define a callback function which is called when the user started toching the control.",
+		"desc": "%cb% the user started toching the control.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -252,7 +248,7 @@
 		"shortDesc": "Called when the user starts touching the control"
 	},
 	"#2039582034": { "name": "SetOnTouchMove",
-		"desc": "Define a callback function which is called when the user drags his finger over the screen.",
+		"desc": "%cb% the user drags his finger over the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -261,7 +257,7 @@
 		"shortDesc": "Called when the user drags his finger over the screen"
 	},
 	"#9861324731": { "name": "SetOnTouchUp",
-		"desc": "Define a callback function which is called when the users finger leaves the screen.",
+		"desc": "%cb% the users finger leaves the screen.",
 		"pNames": ["callback"],
 		"pTypes": [{
 			"pNames": ["event"],
@@ -341,19 +337,32 @@
 	"#2114625769": { "name": "SetTitle",
         "desc": "Sets a new title text",
         "pNames": ["newTitle"],
-		"pTypes": ["str-New title text"],
-		"shortDesc": "Sets a new title text"
+		"pTypes": ["str-New title text"]
     },
     "#2114625709": { "name": "SetTitleColor",
         "desc": "Change the color of the title text",
         "pNames": ["color"],
-		"pTypes": ["str_col"],
-		"shortDesc": "Change the color of the title text"
+		"pTypes": ["str_col"]
     },
     "#2114625707": { "name": "SetHeight",
         "desc": "Change the height of the control",
         "pNames": ["height"],
-		"pTypes": ["num-Fraction of the screen height"],
-		"shortDesc": "Change the height of the control"
+		"pTypes": ["num-Fraction of the screen height"]
+    },
+    "#2114625702": { "name": "SetColor",
+        "desc": "Change the color of the control",
+        "pNames": ["color", "backColor"],
+		"pTypes": ["str_col", "str_col"]
+    },
+    "#2114625302": { "name": "SetTextEdit",
+        "desc": "Pass texedit control to display input values",
+        "pNames": ["textEdit"],
+		"pTypes": ["obj-An MUI TextEdit control"]
+    },
+    "#2114615302": { "name": "SetOnClose",
+        "desc": "Define a callback to be called when the dialog of control is closed.",
+		"pNames": ["callback"        ],
+		"pTypes": [{}],
+		"shortDesc": "Called when the dialog or control has been closed."
     }
 }

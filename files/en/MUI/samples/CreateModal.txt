@@ -97,3 +97,32 @@ function OnControlTouch(isOk, btnText)
     app.ShowPopup(isOk+" : "+btnText)
 }
 </sample>
+
+<sample Full Modal>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        btn = MUI.AddButtonRaised(lay, "SHOW MODAL", 0.35)
+        btn.SetOnTouch(ShowModal)
+
+    app.AddLayout(lay)
+
+    var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    modal = UI.CreateModal("Modal title", text, "Save", "Close", false, "Full")
+    modal.SetOnTouch(OnControlTouch)
+}
+
+function ShowModal()
+{
+    modal.Show()
+}
+
+function OnControlTouch(isOk, btnText)
+{
+    app.ShowPopup(isOk+" : "+btnText)
+}
+</sample>

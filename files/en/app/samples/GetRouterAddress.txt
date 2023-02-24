@@ -1,0 +1,7 @@
+ <sample Get Router Address>
+ function OnStart()
+{
+    var ip = app.GetRouterAddress();
+    app.Alert(ip);
+}
+</sample>

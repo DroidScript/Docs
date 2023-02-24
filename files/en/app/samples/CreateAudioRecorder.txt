@@ -1,8 +1,9 @@
 <sample Example>
+var file = "/sdcard/demofile.wav";
 function OnStart()
 {
 	<b>rec = app.CreateAudioRecorder();
-	rec.SetFile( "/sdcard/demofile.wav" );
+	rec.SetFile( file );
 	rec.Start();</b>
 
 	app.ShowPopup( "Please speak" );

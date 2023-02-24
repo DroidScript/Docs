@@ -1,16 +1,17 @@
-<sample All Headings>
+<sample Sample>
 cfg.Light
 cfg.MUI
 
 function OnStart()
 {
-    color = MUI.colors.teal
-    app.InitializeUIKit(color.teal, "Light")
-
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        h = MUI.CreateTextJumbo("Some jumbo text here")
-        lay.AddChild(h)
+        jum = MUI.AddText(lay, "Some jumbo text", 0.8, 0.3, "Jumbo,Multiline")
+
+        jum = MUI.AddTextJumbo(lay, "Some jumbo text", 0.8, 0.3, "Multiline", null, "Medium")
+
+        jum = MUI.CreateTextJumbo("Some jumbo text", 0.8, 0.3, "Multiline", null, "Medium")
+        lay.AddChild(jum)
 
     app.AddLayout(lay)
 }

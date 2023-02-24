@@ -23,7 +23,7 @@
 ### lang.json
 
 If you want to allow users to switch languages, you can use the
-app.[SetAppLanguage](../app/SetLanguage.htm#Example) method and the T() function combined with a special JSON
+app.[SetAppLanguage](../app/SetAppLanguage.htm#Example) method and the T() function combined with a special JSON
 file called 'lang.json' in your app that looks like this:-
 <sample lang.json norun>
 {
@@ -68,6 +68,7 @@ If you create a file called 'build.json' at the top level of your project, then 
 		"debuggable": false,
 		"removePermissions": "WRITE\_EXTERNAL\_STORAGE",
 		"homeScreen": false,
+		"noPermsAction": "default",
 		"pathPattern": ".*\.png,.*\.jpg"
 	},
 	"autoPermissions": true

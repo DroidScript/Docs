@@ -13,7 +13,7 @@ function OnStart()
     } else
         <b>app.ShowPopup( "No Paired devices found" );</b>
 }
-<sample>
+</sample>
 
 <sample Check Paired from Available>
 function OnStart()

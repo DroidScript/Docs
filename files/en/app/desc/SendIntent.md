@@ -7,7 +7,7 @@ If you expect a **callback** you have to pass the “result” **option**. The *
 	1: _user-defined activity results_
 	0: _operation canceled_
 
-You can find some common used examples for that in the [DroidScript Wiki](https://wiki.droidscript.me.uk/doku.php?id=intents:open_apps&s[]=sendintent)
+You can find some common used examples for that in the [DroidScript Wiki]( https://droidscript.org/wiki/doku.php?id=intents:start)
 For more information visit the [Android Developer Page](https://developer.android.com/reference/android/content/Intent.html). There you can find informations about the [activity](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions), [category](https://developer.android.com/reference/android/content/Intent.html#standard-categories) and [extra](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data).
 
 See Also: @GetIntent
