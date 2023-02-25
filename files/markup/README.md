@@ -47,7 +47,7 @@ Though the line `$$app.Call(number)$$` can be omitted, it is provided for some r
 
 > Each line must have the asterisk (*) at the beginning.
 
-For more information about the parameter descriptions, see the [parameter section](#parameter-section) below.
+For more information about the parameter descriptions, see the [parameter section](#parameter-description) below.
 
 ## Long Description
 
@@ -176,9 +176,9 @@ Example 2: Method definition of SetSize method.
 ```
 > As stated above, the lines that includes `$$ txt.SetText(text) $$` and `$$ txt.SetSize(width, height, options) $$` is not necessary but it is provided for reference to the parameter description.
 
-For more information on parameter descriptions especially data types, see the [Parameter Section](#parameter-section) below.
+For more information on parameter descriptions especially data types, see the [Parameter Section](#parameter-description) below.
 
-## Parameter Description {#parameter-section}
+## Parameter Description
 
 The parameter description is of the form
 
@@ -189,14 +189,14 @@ The parameter description is of the form
 Where
 
 _Type_: The data type.
-- Can be a **str** for _string_, **num** for _number_, **bin** for _boolean_, **obj** for _objects_ and **fnc** for _functions_. See the [Data Types](#data-types-section) section below for more details.
+- Can be a **str** for _string_, **num** for _number_, **bin** for _boolean_, **obj** for _objects_ and **fnc** for _functions_. See the [Data Types](#parameter-data-types) section below for more details.
 
 _Name_: The parameter name.
 
 _Description_: The parameter description.
 
 
-## Parameter Data Types {#data-types-section}
+## Parameter Data Types
 Here are the complete data types you can use for parameter and return descriptions.
 
 - **str :** String [You can also write _String_]
