@@ -1,4 +1,8 @@
 
+var baseFolder = "/sdcard/DroidScript/.edit/docs/";
+var extDocsFolder = baseFolder + "external/";
+var pluginFolder = baseFolder + "plugins/"; //app.GetPrivateFolder( "Plugins" );
+
 if(!String.prototype.startsWith) {
 	Object.defineProperty(String.prototype, 'startsWith', {
 		value: function(search, pos) {
@@ -142,128 +146,100 @@ function OnAddress()
 	//}, 3000 )
 }
 
+
+function makeLink(name, path)
+{
+	var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
+	var link = '<a href="$1">$2</a>';
+	return "<li>" + link.replace("$2", name).replace("$1", path) +
+		btnRem.replace("$1", name) + "</li>\n"
+}
+
+function addList(parent, list, getPath)
+{
+	var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
+
+	for( var i in list ) 
+		if(list[i]) 
+			html += makeLink( list[i], getPath(list[i]));
+
+	html += "</ul>";
+	$(parent).html(html);
+	$(parent).trigger("create");
+}
+
+//Get list from device.
+function getIdeList(cmd, cb)
+{
+	//Get list from device.
+	xmlHttp = new XMLHttpRequest();
+	xmlHttp.onload = function()
+	{
+		//Extract plugins list.
+		var data = JSON.parse(xmlHttp.responseText);
+		if(data.status == "access denied") data.status = "IDE not connected";
+		if(!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
+		cb(data);
+	};
+	xmlHttp.open( "get", "/ide?cmd=" + cmd, true );
+	xmlHttp.send();
+}
+
 //Dynamically create plugins page.
 function ShowPluginsPage()
 {
+	var getPath = name => "plugins/" + name.toLowerCase() + "/" +  name + ".html";
 	try
 	{
-		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
-		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
-		var link = '<a href="$1">$2</a>';
-
-		var addLink = function( name )
-		{
-			html += "<li>" + link.replace("$2", name)
-				.replace("$1", "plugins/" + name.toLowerCase() + "/" + name + ".html") +
-				btnRem.replace("$1", name) + "</li>\n";
-		};
-
-		var finishList = function()
-		{
-			html += "</ul>";
-			$('#divPlugs').html(html);
-			$('#divPlugs').trigger("create");
-		};
-
 		//If on device.
 		if( isMobileIDE )
 		{
-			var fldr = "/sdcard/DroidScript/.edit/docs/plugins";
-			//app.GetPrivateFolder( "Plugins" );
-			var list = app.ListFolder( fldr, null, null, "folders");
+			var list = app.ListFolder( pluginFolder, null, null, "folders");
 
 			for( var i in list )
 			{
 				//Get main docs file
-				var files = app.ListFolder( fldr + "/" + list[i],
+				var files = app.ListFolder( pluginFolder + list[i],
 					"(?i)" + list[i] + "\\.html", null, "RegExp" );
-
-				if(list[i] && files.length > 0)
-					addLink( files[0].slice(0, -5) );
+				list[i] = list[i] && files.length > 0 ? files[0].slice(0, -5) : false;
 			}
-			finishList();
+			addList('#divPlugs', list, getPath);
 		}
 		//If on PC.
 		else
 		{
-			//Get list from device.
-			xmlHttp = new XMLHttpRequest();
-			xmlHttp.onload = function()
-			{
-				//Extract plugins list.
-				var data = JSON.parse(xmlHttp.responseText);
-				if(data.status == "access denied") data.status = "IDE not connected";
-				if(!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
-				var list = data.plugins.split(",");
-
-				//Build html list.
-				for( var i in list )
-					if(list[i]) addLink( list[i] );
-				finishList();
-			};
-			xmlHttp.open( "get", "/ide?cmd=getplugins", true );
-			xmlHttp.send();
+			getplugins("getplugins", data =>
+				addList('#divPlugs', data.plugins.split(","), getPath)
+			);
 		}
 	}
 	catch( e ) {}
 }
-
 
 //Dynamically create extensions page.
 function ShowExtensionsPage()
 {
 	try
 	{
-		var html = '<ul data-role="listview" data-inset="true" data-filter="false">\n';
-		var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemoveExtension(\'$1\')"></a>';
-		var link = '<a href="$1">$2</a>';
-
-		var addLink = function( name ) {
-			html += "<li>" + link.replace("$2", name)
-				.replace("$1", (isMobileIDE?"/sdcard/DroidScript":"") + "/Extensions/" + name + "/Docs.html") +
-				btnRem.replace("$1", name) + "</li>\n";
-		};
-
-		var finishList = function() {
-			html += "</ul>";
-			$('#divExts').html(html);
-			$('#divExts').trigger("create");
-		};
-
 		//If on device.
 		if( isMobileIDE )
 		{
 			var fldr = "/sdcard/DroidScript/Extensions";
 			var list = app.ListFolder( fldr, null, null, "folders");
-			for( var i in list ) addLink( list[i] );
-			finishList();
+			var getPath = name => "/sdcard/DroidScript/Extensions/" + name + "/Docs.html";
+			addList('#divExts', list, getPath);
 		}
 		//If on PC.
 		else
 		{
-			//Get list from device.
-			xmlHttp = new XMLHttpRequest();
-			xmlHttp.onload = function()
-			{
-				//Extract extensions list.
-				var data = JSON.parse(xmlHttp.responseText);
-				if(data.status == "access denied") data.status = "IDE not connected";
-				if(!data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
-				var list = data.extensions.split(",");
-
-				//Build html list.
-				for( var i in list )
-					if(list[i]) addLink( list[i] );
-				finishList();
-			};
-			xmlHttp.open( "get", "/ide?cmd=getextensions", true );
-			xmlHttp.send();
+			var getPath = name => "/Extensions/" + name + "/Docs.html";
+			getplugins("getextensions", data =>
+				addList('#divExts', data.extensions.split(","), getPath)
+			);
 		}
-
 	}
 	catch( e ) {}
 }
-
 
 $(window).load(function()
 {

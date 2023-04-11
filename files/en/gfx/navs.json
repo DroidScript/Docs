@@ -11,7 +11,7 @@
         "CreateSprite",
         "CreateSpriteSheet",
         "CreateTexture",
-        "AddBasicSprite",
+        "_AddBasicSprite",
         "AddBatch",
         "AddSprite",
         "RemoveSprite",

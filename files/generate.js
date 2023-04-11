@@ -171,6 +171,7 @@ function generateNavigators(navs, name, pfx)
 	{
 		for (var cat of keys(navs).filter(nothidden))
 		{
+			if (cat == '_nofilter') continue;
 			if (cat.startsWith("+html"))
 			{
 				addcontent += navs[cat];
@@ -222,6 +223,12 @@ function generateDocs(scope)
 
 	if (!"tips".match(regGen)) return;
 
+	generateTips(scope);
+	generateTsx(scope);
+}
+
+function generateTips(scope)
+{
 	curDoc = lang + `/${curScope}-tips.json`;
 	var tsubf, tips = { [curScope]: {} };
 
@@ -253,6 +260,11 @@ function generateDocs(scope)
 	tips = tos(tips);
 	if (tips.lastIndexOf("}") != 25)
 		app.WriteFile(curDoc, tips);
+}
+
+function generateTsx(scope)
+{
+	// TODO
 }
 
 // generates one document by function name

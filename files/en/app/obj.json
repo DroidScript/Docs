@@ -3600,28 +3600,28 @@
 				"desc": "Creates a SmartWatch Image. See also: @CreateImage",
 				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
 				"pTypes": ["str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
-				"retval": "swo-Image",
+				"retval": "swo-CreateImage",
 				"shortDesc": "Returns a new SmartWatch Image"
 			},
 			"CreateLayout": {
 				"desc": "Creates a SmartWatch Layout. See also: @CreateLayout",
 				"pNames": ["type", "options"],
 				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
-				"retval": "swo-Layout",
+				"retval": "swo-CreateLayout",
 				"shortDesc": "Returns a new SmartWatch Layout"
 			},
 			"CreateSensor": {
 				"desc": "Creates a SmartWatch Sensor. See also: @CreateSensor",
 				"pNames": ["name", "options"],
 				"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
-				"retval": "swo-Sensor",
+				"retval": "swo-CreateSensor",
 				"shortDesc": "Returns a new SmartWatch Sensor"
 			},
 			"CreateText": {
 				"desc": "Creates a SmartWatch Text. See also: @CreateText",
 				"pNames": ["text", "width", "height", "options"],
 				"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
-				"retval": "swo-Text",
+				"retval": "swo-CreateText",
 				"shortDesc": "Returns a new SmartWatch Text"
 			},
 			"GetVersion": {
