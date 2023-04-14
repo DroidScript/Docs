@@ -36,7 +36,15 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
-		<span style="display:inline-block;padding-left:2em;">
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DS 2.61(23-Mar-2023)')">DS 2.61</a><sup>(23-Mar-2023)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 2.60b1(28-Feb-2023)')">DS 2.60b1</a><sup>(28-Feb-2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.58b1(08-Jan-2023)')">DS 2.58b1</a><sup>(08-Jan-2023)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 2.57(24-Nov-2022)')">DS 2.57</a><sup>(24-Nov-2022)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 2.56b1(15-Nov-2022)')">DS 2.56b1</a><sup>(15-Nov-2022)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.55b1(23-Oct-2022)')">DS 2.55b1</a><sup>(23-Oct-2022)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.54b1(11-Sep-2022)')">DS 2.54b1</a><sup>(11-Sep-2022)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.53b1(24-Aug-2022)')">DS 2.53b1</a><sup>(24-Aug-2022)</sup><br>
@@ -44,7 +52,6 @@
 				- <a href="" onclick="jumpTo('DS 2.51b1(02-Mar-2022)')">DS 2.51b1</a><sup>(02-Mar-2022)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.51a1(15-Feb-2022)')">DS 2.51a1</a><sup>(15-Feb-2022)</sup><br>
 			</span><br>
-		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 2.50(31-Dec-2021)')">DS 2.50</a><sup>(31-Dec-2021)</sup><br>
 			<span style="display:inline-block;padding-left:1em;">
 				- <a href="" onclick="jumpTo('DS 2.17b1(23-Dec-2021)')">DS 2.17b1</a><sup>(23-Dec-2021)</sup><br>
@@ -99,6 +106,100 @@
 		</div>
 
 		<p><!-- /<a href="[_*]" data-ajax="false">^\\</a>/\\$1/ /:/:/ --></p>
+		<h2>DS 2.61<sup>(23-Mar-2023)</sup></h2>
+		<p>- Updated UI plugin to v0.22</p>
+		<h4>DS 2.60b_p4<sup>(21-Mar-2023)</sup></h4>
+		<p>- FileManager extension now supports remote install of APKs/SPKs/PPKs.<br>
+		- FileManager extension now allows diff comparison of two text files.<br>
+		- Device now displays multiple remote (wifi ide) connections.<br>
+		- Fixed crash when switching to terminal.<br>
+		- Fixed crash after subscribing to monthly premium.<br>
+		- Added yearly premium subscription option (cheaper).</p>
+		<h4>DS 2.60b_p3<sup>(28-Feb-2023)</sup></h4>
+		<p>- Extension API func ext.Open() now switches to coding tabs when loading/displaying a file.<br>
+		- Added new 'options' param to ide.Obfuscate(), use 'noswap' to prevent app* swapify.<br>
+		- Fixed missing 'Billing' permission in AABs when using app.CreatePlayStore.<br>
+		- Fixed missing 'Accounts' permission in AABs when using app.GetUser/Accounts.<br>
+		- Fixed the double-tap wifi "EADDRINUSE" error in wifi ide.<br>
+		- Added DS build number to About box + new app.GetDSBuild() method.<br>
+		- Tidied up app.CreateBluetoothList() layout.<br>
+		- Prevented ide.AddModule from firing more than once per run.</p>
+		<h4>DS 2.60b_p2<sup>(21-Feb-2023)</sup></h4>
+		<p>- Fixed issue with using ctrl.Batch() method with obfuscation.<br>
+		- Removed troublesome bytecode file.</p>
+		<h3>DS 2.60b1<sup>(28-Feb-2023)</sup></h3>
+		<p>- Added FLA_MUTABLE to app.SetInForeground() and others to stop API 31 error.<br>
+		- Added app.GetIsBatteryOptimized() detects if app is being optimized.<br>
+		- Added app.ShowBatterySettings() show user battery optimization settings.<br>
+		- Added foreground location service support for Android 10+.<br>
+		- Project dir is now added to module search paths for cfg.Node apps.<br>
+		- Added new obfuscate option to build.json (array of extra files to obfuscate).<br>
+		- Added ide.Obfuscate( src,dest ) method (useful for building extensions/plugins).<br>
+		- Added new !clean IDE command (cleans internal cache/temp dirs and re-extracts internal assets)<br>
+		- Added new !reset IDE command (resets to fresh install state, keeps projects & prefs)<br>
+		- Fixed bug with app.HttpRequest() and docs sample.<br>
+		- Upgraded Node from version 12 to version 16.<br>
+		- Fixed issue with ide.AddModule() randomly missing out modules.<br>
+		- Fixed problem with multiple @ symbols in ide.AddModule() method.<br>
+		- Added new cfg.NodeESM option to support use of ES modules.<br>
+		- Added new 'esm' option to app.CreateNode() to support ES modules.<br>
+		- Added new 'debug' option to app.CreateNode() enables generic debug trace for express and others.<br>
+		- Added new 'id' parameter to node.Run/Execute calls (for isolating script contexts in extended mode).<br>
+		- Fixed issue with BLE onUartReceive returning atob wrapped values.<br>
+		- Fixed issue building APKs with non-english characters in app title.<br>
+		- Fixed bug with quotes in debug run box causing DS crash.<br>
+		- Update internal docs to v237.<br>
+		- Fixed mail.Send for Android 11.<br>
+		- GameView: Added default loading splash screen.<br>
+		- GameView: Added gfx.SetSplash() (allows use of animated gif during load).<br>
+		- GameView: Fixed bug where OnReady called too early when loading text.<br>
+		- GameView: Added gfx.useCanvas property (use outside of OnLoad).<br>
+		- GameView: Added new gfx.debug=true option to visualise physics objects (use outside OnLoad)<br>
+		- GameView: Added new AddShape( 'polygon', [[x,y],[x,y],..] ) option to physics.<br>
+		- GameView: Fixed keyboard bug where keydown not being called in OnControl function.<br>
+		- GameView: Fixed bug where natural size of sprites was not available after load.<br>
+		- GameView: Added new ide.Export("GameView",src,dest) command to export game as HTML.</p>
+		<h3>DS 2.58b1<sup>(08-Jan-2023)</sup></h3>
+		<p>- UI plugin now automatically added to APKs when building Hybrid apps.<br>
+		- Fixed atob2 errors in Hybrid apps.<br>
+		- Fixed plugin sub-folders unwanted .js extension swaps in APK builds.<br>
+		- Fixed building APK with Hybrid apps.<br>
+		- Fixed missing options parameter on app.UpdateProgressBar.<br>
+		- Added 'shallow' option to app.ExtractAssets() method (only extracts top level).<br>
+		- Added 'extended' option to app.CreateNode() method (allows use of app* methods).<br>
+		- Added 'documents' to app.GetSpecialFolder() method.<br>
+		- Added new Bluetooth permissions for Android 12.<br>
+		- Improved notification listener robustness.<br>
+		- Added app.GetPublicFolder()<br>
+		- Added app.GetTempFolder() method (Android automatically deletes old files if needed)<br>
+		- Added '/Public' file path support (maps to scoped/sandbox public folder for app).<br>
+		- Added '/Private' file path support (maps to app's private folder).<br>
+		- Added '/Temp' file path support (maps to app's cache/temp folder).<br>
+		- Added 'uri' type to app.SendIntent() extras.<br>
+		- Added 'Camera Photo' sample (uses built-in camera app)<br>
+		- Changed app.SaveJson() to take any object type.<br>
+		- Added node.SetEnv( name, val ) method to nodejs component.<br>
+		- Fixed list control not auto-expanding when calling SetTextSize or SetDivider.<br>
+		- Added 'Expand' method to list control.<br>
+		- Fixed app.Uri2Path for folder names containing blanks.<br>
+		- Fixed issue with drawer not displaying in cfg.Fast mode.<br>
+		- Fixed edit.setCursorColor() for Android 10+.<br>
+		- Added new edit.SetSelectColor() method.</p>
+		<h2>DS 2.57<sup>(24-Nov-2022)</sup></h2>
+		<p>- Chat extension now deleted on install (using Discord now).<br>
+		- UpdateProgressBar now has 'doevents' option to force ui update in v8 mode.<br>
+		- Fixed issue with slow APK builds.<br>
+		- Fixed issue with APK install just showing folder after build.<br>
+		- Hybrid apps are now auto-detected (don't need cfg.Hybrid)<br>
+		- Hybrid apps now removed from samples list, use UI plugin docs instead.<br>
+		- Main DS App class changed to DsApp, so won't clash with Hybrid/Enjine apps.<br>
+		- Added include() function for compatibility with Hybrid/Enjine apps.<br>
+		- Updated Hybrid templates.<br>
+		- Fixed crash with Notification listener during WhatsApp messages.</p>
+		<h3>DS 2.56b1<sup>(15-Nov-2022)</sup></h3>
+		<p>- Hybrid components docs now visible after UI plugin install.<br>
+		- Layout extension now automatically installed from UI plugin.<br>
+		- Progress bar now shown when extracting assets at startup.</p>
 		<h3>DS 2.55b1<sup>(23-Oct-2022)</sup></h3>
 		<p>- Added new 'CloudStore' tab to device IDE.<br>
 		- Added new SSH/Device Terminal tab to device IDE.<br>

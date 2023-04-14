@@ -218,6 +218,7 @@ function generateDocs(scope)
 	for (var i = 0; i < lst.length; i++) {
 		progress = Math.floor(100 * i / lst.length);
 		app.UpdateProgressBar(progress, curScope + '.' + lst[i]);
+		//console.log('\n:'+i+':'+lst[i]+'\n');
 		generateDoc(lst[i]);
 	}
 

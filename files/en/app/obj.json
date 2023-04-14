@@ -2220,6 +2220,9 @@
 			"Animate": "#8294739481",
 			"Batch": "#2357239857",
 			"ClearFocus": "#1362225380",
+			"Expand": {
+				"desc": "?"
+			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
@@ -2892,7 +2895,7 @@
 		"abbrev": "nod",
 		"desc": "#CreateNode.md",
 		"pNames": ["paths", "options"],
-		"pTypes": ["str_pth-NODE_PATH env variable", "str"]
+		"pTypes": ["str_pth-NODE_PATH env variable", "str-extended:allow app.* methods"]
 	},
 	"CreateNotification": {
 		"abbrev": "ntf",
@@ -4655,6 +4658,12 @@
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
 			"SetOnFocus": "#9283752301",
+			"SetSelectColor": {
+				"desc": "Set the background color for selected text.",
+				"pNames": ["col"],
+				"pTypes": ["str_col"],
+				"shortDesc": "Set selection color"
+			},
 			"SetSelection": {
 				"desc": "Selects part of the text in a given range.",
 				"pNames": ["start", "stop"],
@@ -5739,7 +5748,7 @@
 	"ExtractAssets": {
 		"desc": "ExtractAssets allows to extract folders and files from your compiled APK to the local storage. But it works for local DroidScript projects as well. When override is false, already existant files will be kept and not overridden.",
 		"pNames": ["source", "destination", "overwrite", "options"],
-		"pTypes": ["str_pth", "str_pth", "bin", "str-DoEvents:extract in background"],
+		"pTypes": ["str_pth", "str_pth", "bin", "str-DoEvents:extract in background,shallow:extract top level"],
 		"shortDesc": "Extract app assets to a local directory"
 	},
 	"ExtractPlugins": {
@@ -6142,7 +6151,7 @@
 	"GetSpecialFolder": {
 		"desc": "Returns the full path to a special folder commonly used for images, videos, music etc.\n\nSee Also: @GetPath, @GetAppPath, @WriteFile",
 		"pNames": ["name"],
-		"pTypes": ["str-DCIM|Pictures|Movies|Downloads|Music"],
+		"pTypes": ["str-DCIM|Pictures|Movies|Downloads|Documents|Music"],
 		"retval": "str_pth",
 		"shortDesc": "Get full path to a special media folder"
 	},
@@ -6821,7 +6830,7 @@
 	"SendIntent": {
 		"desc": "#SendIntent.md",
 		"pNames": ["packageName", "className", "action", "category", "uri", "type", "extras", "options", "callback"],
-		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str_uri", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
+		"pTypes": ["str", "str", "str-android.intent.action.*", "str-android.intent.category.*", "str_uri", "str_mim", "lst-[{ name:str&comma; type:str-\"string|float|int|long|bool|list|file|uri|keydown|keyup\"&comma; value:str }]", "str_com-result,cleartask", {
 			"pNames": ["resultCode", "data"],
 			"pTypes": ["num_int--1|0|1", "obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]
 		}]
@@ -7284,8 +7293,8 @@
 	},
 	"UpdateProgressBar": {
 		"desc": "Updates the progress percentage of a ProgressBar.\nSee Also: @ShowProgressBar, @HideProgressBar.",
-		"pNames": ["percent"],
-		"pTypes": ["num_prc"],
+		"pNames": ["percent", "options"],
+		"pTypes": ["num_prc", "str-doevents:force v8 UI update"],
 		"shortDesc": "Update the ProgressBar percentage"
 	},
 	"UpdateUI": {

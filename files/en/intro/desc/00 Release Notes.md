@@ -1,5 +1,107 @@
 <!-- /[^\\]([_*])/\\$1/ /:/&colon;/ -->
 
+## DS 2.61 (23-Mar-2023)
+- Updated UI plugin to v0.22
+
+#### DS 2.60b\_p4 (21-Mar-2023)
+- FileManager extension now supports remote install of APKs/SPKs/PPKs.
+- FileManager extension now allows diff comparison of two text files.
+- Device now displays multiple remote (wifi ide) connections.
+- Fixed crash when switching to terminal.
+- Fixed crash after subscribing to monthly premium.
+- Added yearly premium subscription option (cheaper).
+
+#### DS 2.60b\_p3 (28-Feb-2023)
+- Extension API func ext.Open() now switches to coding tabs when loading/displaying a file.
+- Added new 'options' param to ide.Obfuscate(), use 'noswap' to prevent app\* swapify.
+- Fixed missing 'Billing' permission in AABs when using app.CreatePlayStore.
+- Fixed missing 'Accounts' permission in AABs when using app.GetUser/Accounts.
+- Fixed the double-tap wifi "EADDRINUSE" error in wifi ide.
+- Added DS build number to About box + new app.GetDSBuild() method.
+- Tidied up app.CreateBluetoothList() layout.
+- Prevented ide.AddModule from firing more than once per run.
+
+#### DS 2.60b\_p2 (21-Feb-2023)
+- Fixed issue with using ctrl.Batch() method with obfuscation.
+- Removed troublesome bytecode file.
+
+### DS 2.60b1 (28-Feb-2023)
+- Added FLA\_MUTABLE to app.SetInForeground() and others to stop API 31 error.
+- Added app.GetIsBatteryOptimized() detects if app is being optimized.
+- Added app.ShowBatterySettings() show user battery optimization settings.
+- Added foreground location service support for Android 10+.
+- Project dir is now added to module search paths for cfg.Node apps.
+- Added new obfuscate option to build.json (array of extra files to obfuscate).
+- Added ide.Obfuscate( src,dest ) method (useful for building extensions/plugins).
+- Added new !clean IDE command (cleans internal cache/temp dirs and re-extracts internal assets)
+- Added new !reset IDE command (resets to fresh install state, keeps projects & prefs)
+- Fixed bug with app.HttpRequest() and docs sample.
+- Upgraded Node from version 12 to version 16.
+- Fixed issue with ide.AddModule() randomly missing out modules.
+- Fixed problem with multiple @ symbols in ide.AddModule() method.
+- Added new cfg.NodeESM option to support use of ES modules.
+- Added new 'esm' option to app.CreateNode() to support ES modules.
+- Added new 'debug' option to app.CreateNode() enables generic debug trace for express and others.
+- Added new 'id' parameter to node.Run/Execute calls (for isolating script contexts in extended mode).
+- Fixed issue with BLE onUartReceive returning atob wrapped values.
+- Fixed issue building APKs with non-english characters in app title.
+- Fixed bug with quotes in debug run box causing DS crash.
+- Update internal docs to v237.
+- Fixed mail.Send for Android 11.
+- GameView: Added default loading splash screen.
+- GameView: Added gfx.SetSplash() (allows use of animated gif during load).
+- GameView: Fixed bug where OnReady called too early when loading text.
+- GameView: Added gfx.useCanvas property (use outside of OnLoad).
+- GameView: Added new gfx.debug=true option to visualise physics objects (use outside OnLoad)
+- GameView: Added new AddShape( 'polygon', [[x,y],[x,y],..] ) option to physics.
+- GameView: Fixed keyboard bug where keydown not being called in OnControl function.
+- GameView: Fixed bug where natural size of sprites was not available after load.
+-.GameView: Added new ide.Export("GameView",src,dest) command to export game as HTML.
+
+### DS 2.58b1 (08-Jan-2023)
+- UI plugin now automatically added to APKs when building Hybrid apps.
+- Fixed atob2 errors in Hybrid apps.
+- Fixed plugin sub-folders unwanted .js extension swaps in APK builds.
+- Fixed building APK with Hybrid apps.
+- Fixed missing options parameter on app.UpdateProgressBar.
+- Added 'shallow' option to app.ExtractAssets() method (only extracts top level).
+- Added 'extended' option to app.CreateNode() method (allows use of app\* methods).
+- Added 'documents' to app.GetSpecialFolder() method.
+- Added new Bluetooth permissions for Android 12.
+- Improved notification listener robustness.
+-.Added app.GetPublicFolder()
+-.Added app.GetTempFolder() method (Android automatically deletes old files if needed)
+-.Added '/Public' file path support (maps to scoped/sandbox public folder for app).
+-.Added '/Private' file path support (maps to app's private folder).
+-.Added '/Temp' file path support (maps to app's cache/temp folder).
+- Added 'uri' type to app.SendIntent() extras.
+- Added 'Camera Photo' sample (uses built-in camera app)
+- Changed app.SaveJson() to take any object type.
+-.Added node.SetEnv( name, val ) method to nodejs component.
+- Fixed list control not auto-expanding when calling SetTextSize or SetDivider.
+-.Added 'Expand' method to list control.
+- Fixed app.Uri2Path for folder names containing blanks.
+- Fixed issue with drawer not displaying in cfg.Fast mode.
+- Fixed edit.setCursorColor() for Android 10+.
+- Added new edit.SetSelectColor() method.
+
+## DS 2.57 (24-Nov-2022)
+- Chat extension now deleted on install (using Discord now).
+- UpdateProgressBar now has 'doevents' option to force ui update in v8 mode.
+- Fixed issue with slow APK builds.
+- Fixed issue with APK install just showing folder after build.
+- Hybrid apps are now auto-detected (don't need cfg.Hybrid)
+- Hybrid apps now removed from samples list, use UI plugin docs instead.
+- Main DS App class changed to DsApp, so won't clash with Hybrid/Enjine apps.
+- Added include() function for compatibility with Hybrid/Enjine apps.
+- Updated Hybrid templates.
+- Fixed crash with Notification listener during WhatsApp messages.
+
+### DS 2.56b1 (15-Nov-2022)
+- Hybrid components docs now visible after UI plugin install.
+- Layout extension now automatically installed from UI plugin.
+- Progress bar now shown when extracting assets at startup.
+
 ### DS 2.55b1 (23-Oct-2022)
 - Added new 'CloudStore' tab to device IDE.
 - Added new SSH/Device Terminal tab to device IDE.
