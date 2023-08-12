@@ -1,0 +1,82 @@
+
+
+<sample Basic>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            // Adds checkbox control
+            this.ckb = ui.addCheckbox( this.main, "This is checkbox label" )
+        }
+    }
+</sample>
+
+<sample Colors>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            // Adds checkbox control
+
+            // Default
+            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label" )
+
+            // Primary Color
+            this.ckb2 = ui.addCheckbox( this.main, "This is checkbox label", "Primary" )
+
+            // set value
+            this.ckb3 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary" )
+            this.ckb3.value = true
+        }
+    }
+</sample>
+
+<sample Text Positions>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            // Adds checkbox control
+
+            // Left
+            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label", "Left" )
+
+            // Top
+            this.ckb2 = ui.addCheckbox( this.main, "This is checkbox label", "Primary,Top" )
+
+            // Right
+            this.ckb3 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary,Right" )
+
+            // Bottom
+            this.ckb4 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary,Bottom" )
+        }
+    }
+</sample>
+
+<sample Adding custom checkbox icon>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            // Adds checkbox control
+            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label", "Left,Secondary" )
+            this.ckb1.setIcon( "favorite", "person" )
+        }
+    }
+</sample>

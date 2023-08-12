@@ -1,0 +1,61 @@
+
+
+<sample Basic AppBar>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+			// Adds an appbar to the layout
+			this.apb = ui.addAppBar( this.main, "My Sample AppBar", "", 1 )
+		}
+	}
+</sample>
+
+<sample AppBar with Menu>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+			// Adds an appbar to the layout
+			this.apb = ui.addAppBar( this.main, "My Sample AppBar", "Menu,Fixed", 1 )
+		}
+	}
+</sample>
+
+<sample AppBar Menu & Colors>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+			// Adds an appbar to the layout
+			this.apb = ui.addAppBar( this.main, "My Sample AppBar,Fixed", "Menu,Secondary", 1 )
+		}
+	}
+</sample>
+
+<sample Adding controls>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "Top,Center", 1, 1 )
+
+			this.apb = ui.addAppBar( this.main, "My App", "Menu,Primary" )
+		
+			// add icon button to the appbar
+			this.btn1 = ui.addButton( this.apb.layout, "person", "icon" )
+			this.btn2 = ui.addButton( this.apb.layout, "delete", "icon" )
+			this.btn3 = ui.addButton( this.apb.layout, "more_vert", "icon" )
+		}
+	}
+</sample>

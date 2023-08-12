@@ -1,0 +1,78 @@
+
+
+<sample Sample Popup>
+	class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0,0,0,0.02)
+
+            // Adds first button to the layout.
+            this.btn1 = ui.addButton( this.main, "Top & Grow", "Primary" )
+            this.btn1.setOnTouch( this.onTouch1 )
+
+            // Adds second button to the layout.
+            this.btn2 = ui.addButton( this.main, "Bottom and Slide", "Secondary" )
+            this.btn2.setOnTouch( this.onTouch2 )
+        }
+
+        onTouch1()
+        {
+            // Display popup on the Top with transition Grow
+            ui.showPopup( "Hello world.", "Top,Grow" )
+        }
+
+        onTouch2()
+        {
+            // Display popup on the Bottom with transition Slide in 1.5 seconds.
+            ui.showPopup( "Hello world.", "Bottom,Slide", 1500 )
+        }
+    }
+</sample>
+
+<sample Popup Samples>
+	class Main extends App {
+		//Called when app starts.
+		onStart() {
+			//Add main layout and set default child margins.
+			this.layMain = ui.addLayout( "main", "linear", "VCenter", 1, 1 )
+			this.layMain.setChildMargins(0, 0, 0, 0.05)
+			
+			// add buttons to show pop-ups
+
+			// No Transition
+			this.btn1 = ui.addButton( this.layMain, "Top,Center" )
+			this.btn1.setOnTouch( () => { ui.showPopup( "This is a message" , "Top,Center" ) } )
+
+			// With Transitions
+			this.btn1 = ui.addButton( this.layMain, "Top,Center,Grow" )
+			this.btn1.setOnTouch( () => { ui.showPopup( "This is a message" , "Top,Center,Grow" ) } )
+
+			this.btn2 = ui.addButton( this.layMain, "Top,Center,Zoom" )
+			this.btn2.setOnTouch( () => { ui.showPopup( "This is a message" , "Top,Center,Zoom" ) } )
+
+			this.btn3 = ui.addButton( this.layMain, "Top,Center,Collapse" )
+			this.btn3.setOnTouch( () => { ui.showPopup( "This is a message" , "Top,Center,Collapse" ) } )
+
+			this.btn4 = ui.addButton( this.layMain, "Top,Center,Slide" )
+			this.btn4.setOnTouch( () => { ui.showPopup( "This is a message" , "Top,Center,Slide" ) } )
+
+			ui.addText( this.layMain, "Positioning & Customization" )
+
+			this.btn5 = ui.addButton( this.layMain, "Bottom with action" )
+			this.btn5.setOnTouch( this.showLogin )
+		}
+
+		showLogin() {
+			this.snackbar = ui.showPopup( "Please login to continue", "Bottom,Center", "", "Login" )
+			this.snackbar.setOnAction( this.onAction )
+		}
+
+		onAction() {
+			this.snackbar.hide()
+			ui.showPopup("Login is click. Show login Page.")
+		}
+	}
+</sample>

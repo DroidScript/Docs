@@ -1,0 +1,141 @@
+
+
+<sample Simple TextFields>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( "12px", "12px", "12px", "12px" )
+
+            // Default
+            this.tfd1 = ui.addTextField( this.main )
+            this.tfd1.label = "Enter text"
+
+            // Filled, Primary, Number
+            this.tfd2 = ui.addTextField( this.main, "", "Filled,Primary,Number" )
+            this.tfd2.label =  "Enter number"
+
+            // Outlined, Secondary, Email
+            this.tfd3 = ui.addTextField( this.main, "", "Outlined,Secondary,Email" )
+            this.tfd3.label = "Enter email"
+
+            // Small
+            this.tfd4 = ui.addTextField( this.main, "", "Outlined,Small" )
+            this.tfd4.label = "Enter text"
+        }
+    }
+</sample>
+
+<sample With callbacks>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.05 )
+
+            // Outlined, Secondary, Email
+            this.tfd = ui.addTextField( this.main, "", "Outlined,Secondary" )
+            this.tfd.label = "Enter text"
+            this.tfd.setOnChange( this.onChange )
+            this.tfd.setOnEnter( this.onEnter )
+
+            this.btn = ui.addButton( this.main, "Get value", "Outlined,Secondary" )
+            this.btn.setOnTouch( this.btn_onTouch )
+        }
+
+        onChange( value )
+        {
+            ui.showPopup( "Change : " + value )
+        }
+
+        onEnter( value )
+        {
+            ui.showPopup( "Enter : " + value )
+        }
+
+        btn_onTouch()
+        {
+            ui.showPopup( "Value : " + this.tfd.text )
+        }
+    }
+</sample>
+
+<sample Multiline TextField>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.05 )
+
+            ui.addText( this.main, "This is a multiline type of TextField input", "Left", 0.8 )
+
+            // Multiline
+            this.tfd = ui.addTextField( this.main, "", "Outlined,Secondary,Multiline", 0.8 )
+            this.tfd.label = "Enter description"
+            this.tfd.setRows( 3, 6 )
+        }
+    }
+</sample>
+
+<sample Advance TextField>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter,ScrollY", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            // Start and end adornment
+            ui.addText( this.main,  "Click the eye icon to show password.", "Left", 0.7 )
+            this.tfd = ui.addTextField( this.main, "", "Outlined,Secondary,Password", 0.7 )
+            this.tfd.label = "Enter password"
+            this.tfd.setStartAdornment( "lock", "Icon" )
+            this.tfd.setEndAdornment( "visibility_off", "Icon,Touchable" )
+            this.tfd.setEndAdornmentOnTouch( this.togglePasswordVisibility )
+
+            // Start Adornment text
+            ui.addText( this.main,  "Start text adornment", "Left,Overline", 0.7 )
+            this.tfd1 = ui.addTextField( this.main, "", "Outlined,Secondary,Number", 0.7 )
+            this.tfd1.label = "Enter mass" 
+            this.tfd1.setStartAdornment( "KG", "Text" )
+
+            // Start Adornment icon
+            ui.addText( this.main,  "Start icon adornment", "Left,Overline", 0.7 )
+            this.tfd2 = ui.addTextField( this.main, "", "Outlined,Secondary", 0.7 )
+            this.tfd2.label = "Enter username"
+            this.tfd2.setStartAdornment( "person", "Icon" )
+
+            // End Adornment text
+            ui.addText( this.main,  "End text adornment", "Left,Overline", 0.7 )
+            this.tfd3 = ui.addTextField( this.main, "", "Outlined,Secondary,Number", 0.7 )
+            this.tfd3.label = "Enter amount"
+            this.tfd3.setEndAdornment( "$", "Text" )
+
+            // End Adornment icon
+            ui.addText( this.main,  "End icon adornment", "Left,Overline", 0.7 )
+            this.tfd4 = ui.addTextField( this.main, "", "Outlined,Secondary,Password", 0.7 )
+            this.tfd4.label = "Enter password"
+            this.tfd4.setEndAdornment( "lock", "Icon" )
+        }
+
+        togglePasswordVisibility()
+        {
+            if( this.tfd.endAdornment == "visibility_off" )
+            {
+                this.tfd.setEndAdornment( "visibility_on", "icon,touchable" )
+                this.tfd.inputType = 'text'
+            }
+            else {
+                this.tfd.setEndAdornment( "visibility_off", "icon,touchable" )
+                this.tfd.inputType = 'password'
+            }
+        }
+    }
+</sample>

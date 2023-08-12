@@ -3,7 +3,8 @@
 		"intro": "Introduction",
 		"app": "Reference",
 		"gfx": "Game Engine",
-		"MUI": "Material UI"
+		"MUI": "Material UI",
+        "ui": "Hybrid UI"
 	},
 	"langs": {
 		"en": "English"
@@ -21,7 +22,8 @@
 		"num": "Number",
 		"obj": "Object",
 		"str": "String",
-		"?": "unknown"
+		"?": "unknown",
+        "ui": "ui object"
 	},
 	"tdesc": {
 		"lst_obj": "of objects",

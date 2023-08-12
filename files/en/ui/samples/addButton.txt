@@ -1,0 +1,158 @@
+
+
+<sample Button Variants>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Contained
+			this.btn1 = ui.addButton( this.main, "Contained", "Contained" )
+
+			// Outlined
+			this.btn2 = ui.addButton( this.main, "Outlined", "Outlined" )
+
+			// Text
+			this.btn3 = ui.addButton( this.main, "Text", "Text" )
+		}
+	}
+</sample>
+
+<sample Button Colors>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Primary
+			this.btn1 = ui.addButton( this.main, "Primary", "Contained,Primary" )
+
+			// Secondary
+			this.btn2 = ui.addButton( this.main, "Secondary", "Outlined,Secondary" )
+
+			// Default
+			this.btn3 = ui.addButton( this.main, "Default", "Text,Default" )
+		}
+	}
+</sample>
+
+<sample Button Sizes>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Small
+			this.btn1 = ui.addButton( this.main, "Small", "Contained,Primary,Small" )
+
+			// Medium / Default
+			this.btn2 = ui.addButton( this.main, "Medium", "Contained,Primary,Medium" )
+
+			// Large
+			this.btn3 = ui.addButton( this.main, "Large", "Contained,Primary,Large" )
+		}
+	}
+</sample>
+
+<sample Button Tooltips>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Left
+			this.btn1 = ui.addButton( this.main, "Left", "Contained,Primary" )
+			this.btn1.setToolTip( "Tooltip on the left", "left" )
+
+			// Top
+			this.btn2 = ui.addButton( this.main, "Top", "Contained,Primary" )
+			this.btn2.setToolTip( "Tooltip on the top", "top" )
+
+			// Right
+			this.btn3 = ui.addButton( this.main, "Right", "Contained,Primary" )
+			this.btn3.setToolTip( "Tooltip on the right", "right" )
+
+			// Bottom
+			this.btn4 = ui.addButton( this.main, "Bottom", "Contained,Primary" )
+			this.btn4.setToolTip( "Tooltip on the bottom", "bottom" )
+		}
+	}
+</sample>
+
+<sample Button Icons & Badges>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Anroid icon
+			this.btn1 = ui.addButton( this.main, "android", "Primary,Icon" )
+
+			// Settings icon
+			this.btn2 = ui.addButton( this.main, "settings", "Primary,Icon" )
+			this.btn2.setBadge( 5 )
+
+			// Width badge primary
+			this.btn3 = ui.addButton( this.main, "With Badge", "Secondary,Outlined" )
+			this.btn3.setBadge( "New", "Primary" )
+		}
+	}
+</sample>
+
+<sample Upload button>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with objects vertically centered
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			// Anroid icon
+			this.btn1 = ui.addButton( this.main, "backup", "Primary,Icon,Upload" )
+			this.btn1.setToolTip( "Upload file" )
+			this.btn1.setOnFileSelect( this.onFileSelect )
+		}
+
+		onFileSelect( file )
+		{
+			console.log( file[0] )
+		}
+	}
+</sample>
+
+<sample Button with icons>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
+            this.main.setChildMargins("12px", "12px", "12px", "12px")
+
+            ui.addAppBar(this.main, "Button With Icons")
+
+            // create a send button
+            this.btn1 = ui.addButton(this.main, "Send", "Secondary")
+            this.btn1.icon = "send"
+
+            this.btn2 = ui.addButton(this.main, "Add to cart", "Secondary")
+            this.btn2.icon = "shopping_cart"
+        }
+    }
+</sample>

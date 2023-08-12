@@ -1,0 +1,32 @@
+
+
+<sample EnjineIO Homepage>
+    class Main extends App
+    {
+        onStart()
+        {
+            this.main = ui.addLayout( "main", "Liner", "VCenter", 1, 1 )
+
+            this.web = ui.addWebView( this.main, "https://enjine.io/", "", 0.9, 0.9 ) 
+        }
+    }
+</sample>
+
+<sample Call a function>
+    class Main extends App
+    {
+        onStart()
+        {
+            this.main = ui.addLayout( "main", "Liner", "VCenter", 1, 1 )
+
+            this.web = ui.addWebView( this.main, "my-page.html", "", 0.9, 0.7 )
+            
+            this.btn = ui.addButton( this.main, "Call A function" )
+            this.btn.setOnTouch( this.call )
+        }
+        call()
+        {
+            this.web.E.Hello( "This is text", 5, true )
+        }
+    }
+</sample>
