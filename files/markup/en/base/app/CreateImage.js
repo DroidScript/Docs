@@ -18,7 +18,7 @@
 /** @Description
 Image controls can be used to display images such like png, jpg or gif.
 Just pass the file path and you're done.
-%c
+
 Without the **width** and **height** dimensions the image will be shown without any scaling.
 <sample Original Size>
 
