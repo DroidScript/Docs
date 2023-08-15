@@ -35,20 +35,24 @@ declare global {
         noCon?: boolean;
         abbrev?: string;
         params?: string;
-        subf?: {[x:string]: DSFunction|string}
+        subf?: Obj<DSFunction|string>
     }
 
     type DSFunction = Partial<DSMethod>;
     type PopMap = { fnc: number, dsc: number, mul: number, std: number, ukn: number }
 
-    type DSConfig = typeof config & { tmpl: {[x:string]: string} };
+    type DSConfig = typeof config & { tmpl: Obj<string> };
     type ScopeKeys = keyof DSConfig["scopes"];
     type LangKeys = keyof DSConfig["langs"];
 
-    type DSScopeRaw = {[x: string]: DSFunction | string};
-    type DSScope = {[x: string]: DSFunction};
-    type DSBase = {[x: string]: DSFunction};
-    type DSNavs = (string[] | {[x:string]: string | DSNavs}) & {_nofilter?: boolean}
+    interface Obj<T> {
+        [x:string]: T;
+    }
+
+    type DSScopeRaw = Obj<DSFunction | string>;
+    type DSScope = Obj<DSFunction>;
+    type DSBase = Obj<DSFunction>;
+    type DSNavs = (string[] | Obj<string | DSNavs>) & {_nofilter?: boolean}
     var app: App;
     var OnStart: () => void;
 }

@@ -56,7 +56,7 @@
 - GameView: Added new AddShape( 'polygon', [[x,y],[x,y],..] ) option to physics.
 - GameView: Fixed keyboard bug where keydown not being called in OnControl function.
 - GameView: Fixed bug where natural size of sprites was not available after load.
--.GameView: Added new ide.Export("GameView",src,dest) command to export game as HTML.
+- GameView: Added new ide.Export("GameView",src,dest) command to export game as HTML.
 
 ### DS 2.58b1 (08-Jan-2023)
 - UI plugin now automatically added to APKs when building Hybrid apps.
@@ -69,17 +69,17 @@
 - Added 'documents' to app.GetSpecialFolder() method.
 - Added new Bluetooth permissions for Android 12.
 - Improved notification listener robustness.
--.Added app.GetPublicFolder()
--.Added app.GetTempFolder() method (Android automatically deletes old files if needed)
--.Added '/Public' file path support (maps to scoped/sandbox public folder for app).
--.Added '/Private' file path support (maps to app's private folder).
--.Added '/Temp' file path support (maps to app's cache/temp folder).
+- Added app.GetPublicFolder()
+- Added app.GetTempFolder() method (Android automatically deletes old files if needed)
+- Added '/Public' file path support (maps to scoped/sandbox public folder for app).
+- Added '/Private' file path support (maps to app's private folder).
+- Added '/Temp' file path support (maps to app's cache/temp folder).
 - Added 'uri' type to app.SendIntent() extras.
 - Added 'Camera Photo' sample (uses built-in camera app)
 - Changed app.SaveJson() to take any object type.
--.Added node.SetEnv( name, val ) method to nodejs component.
+- Added node.SetEnv( name, val ) method to nodejs component.
 - Fixed list control not auto-expanding when calling SetTextSize or SetDivider.
--.Added 'Expand' method to list control.
+- Added 'Expand' method to list control.
 - Fixed app.Uri2Path for folder names containing blanks.
 - Fixed issue with drawer not displaying in cfg.Fast mode.
 - Fixed edit.setCursorColor() for Android 10+.

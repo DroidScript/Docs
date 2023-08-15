@@ -15,9 +15,9 @@ var scope;
 var curScope;
 /** @type {string[]} */
 var allKeys = [];
-/** @type {{[x:string]: string}} */
+/** @type {Obj<string>} */
 var tDesc;
-/** @type {{[x:string]: string}} */
+/** @type {Obj<string>} */
 var tName;
 
 // @ts-ignore
@@ -268,7 +268,7 @@ function generateTips(scope)
 	curDoc = lang + `/${curScope}-tips.json`;
 	/** @type {DSScopeRaw} */
 	var tsubf;
-	/** @type {{[x:string]: {[x:string]: string}}} */
+	/** @type {Obj<Obj<string>>} */
 	var tips = { [curScope]: {} };
 
 	for (var name of keys(scope).filter(nothidden)) {
@@ -280,7 +280,7 @@ function generateTips(scope)
 		if (s.subf && s.abbrev)
 		{
 			tsubf = s.subf;
-			/** @type {{[x:string]: string}} */
+			/** @type {Obj<string>} */
 			var tctrl = {};
 			tips[s.abbrev] = tctrl;
 
@@ -371,9 +371,9 @@ function generateDoc(name)
 
 /*----------------------------------------------------------------------------*/
 
-/** @type {{[x:string]: string}} */
+/** @type {Obj<string>} */
 var popDefs;
-/** @type {{[x: string]: number}} */
+/** @type {Obj<number>} */
 var spop;
 
 // reset globals
@@ -423,7 +423,7 @@ function adjustDoc(html, name)
 		// popup object list
 		.replace(/%p/, popList)
 		// additional notes
-		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => eval(n + "Hint").replace("%s", a))
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => hints[n].replace("%s", a))
 		// colored passages
 		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
 		// some html char placeholders
@@ -550,7 +550,7 @@ function fillMissingFuncProps(f)
 	if (!f.desc) f.desc = f.name[0] + f.name.slice(1)
 		.replace(/([A-Z]+)/g, " $1").toLowerCase();
 
-	if (!f.shortDesc || !f.shortDesc.trim())
+	if (!f.shortDesc?.trim())
 		f.shortDesc = f.desc;
 
 	// start upper case without trailing dot
@@ -624,25 +624,25 @@ function getDocData(f, useAppPop = false) {
 			met.params = "";
 		}
 
-		if (hidden(curSubf) || !met.pNames || !met.pTypes) continue;
+		if (hidden(curSubf)) continue;
 
-		fillMissingFuncProps(met);
+		const m = fillMissingFuncProps(met);
 
 		//convert return value
-		if (met.retval)
-			retval = (!met.isval && met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(met.retval);
+		if (m.retval)
+			retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(m.retval);
 
 		//convert function types
-		var mdesc = met.desc || "";
-		if (!met.isval) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
+		var mdesc = m.desc || "";
+		if (!m.isval) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
 
 		var args = [], metpop = newPopup("dsc", curSubf,
 			addMarkdown(replaceTypes(replW(mdesc), true)),
-			getAddClass(met) || (has(allKeys, curSubf) ? ' class="baseFunc"' : ""));
+			getAddClass(m) || (has(allKeys, curSubf) ? ' class="baseFunc"' : ""));
 
-		if (!met.isval) {
-			for (i in met.pNames)
-				args.push(toArgPop(met.pNames[i], met.pTypes[i]));
+		if (!m.isval) {
+			for (i in m.pNames)
+				args.push(toArgPop(m.pNames[i], m.pTypes[i]));
 
 			metpop += args.length ? `(${args.join(",")} )` : "()";
 
@@ -662,7 +662,7 @@ function getDocData(f, useAppPop = false) {
 /** @param {string} name */
 function getSamples(name) {
 	var sampcnt = 0, s = ReadFile(scopeDir + `samples/${name}.txt`, " ", !scope[name].isval);
-	/** @type {{[x:string]: string}} */
+	/** @type {Obj<string>} */
 	var samples = {};
 
 	s.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
@@ -986,7 +986,7 @@ function addMarkdown(s) {
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
 		// additional notes
-		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => eval(n + "Hint").replace("%s", a))
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => hints[n].replace("%s", a))
 		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) =>  // @DocReference
 			`${b}<a href="${n}.htm${(H || '').replace(/_/g, ' ')}" data-ajax="false">${(h || f).replace(/_/g, ' ')}</a>`)
 		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
@@ -1073,10 +1073,10 @@ function newPopup(type, name, desc, addClass) {
 	return newTxtPopup(pop_id, name, addClass);
 }
 
-/** @param {string | number} d */
+/** @param {number} d */
 function getHead(d) {
-	d = new Array(d).fill("../").join("");
-	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
+	const sd = new Array(d).fill("../").join("");
+	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${sd}`)
 }
 
 /* % placeholder descriptions in the html base strings
@@ -1110,12 +1110,12 @@ var		// subfunction
 	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 	// subfunction list
 	subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <strong>%t</strong> object:</p>\n\n%f`,
-	// deprecated note
-	deprecatedHint = "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>",
-	// premium note
-	premiumHint = "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>",
-	// xfeature note
-	xfeatureHint = "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>";
+	/** @type {Obj<string>} */
+	hints = {
+		deprecated: "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>",
+		premium: "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>",
+		xfeature: "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>",
+	};
 
 	// example snippets
 var sampBase = `
@@ -1411,7 +1411,7 @@ if (typeof app == "undefined") {
 	}
 
 	var patLang = "", patScope = "", patFunc = "";
-	/** @type {{add: boolean, langs: {[x:string]: string}, scopes: {[x:string]: string}}} */
+	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>}} */
 	var addcfg = { add: false, langs: {}, scopes: {} };
 	var nogen = false, startServer = false;
 
