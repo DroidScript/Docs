@@ -91,6 +91,7 @@
 		"width": "Display width"
 	},
 	"phs": {
+		"AddShape": "Adds velocity to the object",
 		"AddVelocity": "Adds velocity to the object",
 		"ApplyImpulse": "Applies an impulse p=m*v to the object",
 		"Contains": "Checks if a point is in the hitbox",
