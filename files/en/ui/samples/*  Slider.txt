@@ -1,0 +1,94 @@
+
+
+<sample>
+    var marks = [
+        {label: "First stop", value: 10 },
+        {label: "Second stop", value: 30 },
+        {label: "Third stop", value: 70 }
+    ]
+</sample>
+
+<sample Basic>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            // Adds a select component
+            this.sld = ui.addSlider( this.main, 10, "", 0.7 )
+        }
+    }
+</sample>
+
+<sample With steps and marks>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            // Adds a select component
+            this.sld = ui.addSlider( this.main, 10, "", 0.7 )
+            this.sld.step = 10
+            this.sld.marks = true
+        }
+    }
+</sample>
+
+<sample Custom step marks>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            // Adds a select component
+            this.sld = ui.addSlider( this.main, 10, "Primary", 0.7 )
+            this.sld.step = 10
+            this.sld.marks = [
+                { label: "First", value: 10 },
+                { label: "Second", value: 40 },
+                { label: "Third", value: 60 }
+            ]
+        }
+    }
+</sample>
+
+<sample With Callback>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            // Adds a select component
+            this.sld = ui.addSlider( this.main, 10, "Primary", 0.7 )
+            this.sld.step = 10
+            this.sld.setOnSelect( this.onSelect )
+        }
+
+        onSelect( value )
+        {
+            ui.showPopup( value+"" )
+        }
+    }
+</sample>
+
+<sample Vertical Slider>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with objects vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            // Adds a select component
+            this.sld = ui.addSlider( this.main, 10, "vertical", 0.2, 0.7 )
+        }
+    }
+</sample>

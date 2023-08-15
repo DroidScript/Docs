@@ -1,0 +1,111 @@
+
+
+<sample Basic ButtonGroup>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with object vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+			var buttons = [ "Button 1", "Button 2", "Button 3" ]
+
+			this.btg = ui.addButtonGroup( this.main, buttons, "", 0.9 )
+		}
+	}
+</sample>
+
+<sample ButtonGroup Colors>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with object vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			var buttons = [ "Button 1", "Button 2", "Button 3" ]
+
+			// Default
+			this.btg1 = ui.addButtonGroup( this.main, buttons, "Default", 0.9 )
+
+			// Primary
+			this.btg2 = ui.addButtonGroup( this.main, buttons, "Primary", 0.9 )
+
+			// Secondary
+			this.btg3 = ui.addButtonGroup( this.main, buttons, "Secondary", 0.9 )
+		}
+	}
+</sample>
+
+<sample ButtonGroup Variants>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with object vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			var buttons = [ "Button 1", "Button 2", "Button 3" ]
+
+			// Default
+			this.btg1 = ui.addButtonGroup( this.main, buttons, "Default", 0.9 )
+
+			// Contained
+			this.btg2 = ui.addButtonGroup( this.main, buttons, "Primary,Contained", 0.9 )
+
+			// Outlined
+			this.btg3 = ui.addButtonGroup( this.main, buttons, "Secondary,Outlined", 0.9 )
+
+			// Text
+			this.btg4 = ui.addButtonGroup( this.main, buttons, "Primary,Text", 0.9 )
+		}
+	}
+</sample>
+
+<sample ButtonGroup Sizes>
+	class Main extends App
+	{
+		onStart()
+		{
+			// Creates a fullscreen layout with object vertically centered.
+			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+			var buttons = [ "Button 1", "Button 2", "Button 3" ]
+
+			// Small
+			this.btg1 = ui.addButtonGroup( this.main, buttons, "Contained,Primary,Small", 0.9 )
+
+			// Medium
+			this.btg2 = ui.addButtonGroup( this.main, buttons, "Contained,Secondary,Medium", 0.9 )
+
+			// Large
+			this.btg3 = ui.addButtonGroup( this.main, buttons, "Contained,Primary,Large", 0.9 )
+		}
+	}
+</sample>
+
+<sample Icon Button>
+	class Main extends App
+    {
+        onStart()
+        {
+            // Creates a fullscreen layout with object vertically centered.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+            var buttons = [ "delete", "shopping_cart", "dashboard" ]
+
+            // Small
+            this.btg1 = ui.addButtonGroup( this.main, buttons, "Contained,Primary,Small,Icon" )
+
+            // Medium
+            this.btg2 = ui.addButtonGroup( this.main, buttons, "Contained,Secondary,Medium,Icon" )
+
+            // Large
+            this.btg3 = ui.addButtonGroup( this.main, buttons, "Contained,Primary,Large,Icon" )
+        }
+    }
+</sample>

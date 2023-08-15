@@ -1,0 +1,101 @@
+
+
+<sample Basic>
+	class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+
+            var tabs = [ "Tab 1", "Tab 2", "Tab 3" ]
+
+            // Adds a tab to the main layout.
+            this.tab = ui.addTabs( this.main, tabs, "", 1 )
+        }
+    }
+</sample>
+
+<sample With Icon>
+	class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+
+            var tabs = [
+                [ "favorite", "Favorites" ],
+                [ "bluetooth", "Bluetooth" ],
+                [ "wifi", "Connection" ]
+            ]
+
+            // Adds a tab to the main layout.
+            this.tab = ui.addTabs( this.main, tabs, "Icon", 1 )
+        }
+    }
+</sample>
+
+<sample With Styles>
+	class Main extends App
+    {
+        onStart()
+        {
+            ui.setThemeColor( "#673ab7", "#ffc107" )
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+
+            var tabs = [
+                [ "favorite", "Favorites" ],
+                [ "bluetooth", "Bluetooth" ],
+                [ "wifi", "Connection" ]
+            ]
+
+            // Adds a tab to the main layout.
+            this.tab = ui.addTabs( this.main, tabs, "Icon", 1 )
+            this.tab.color = "primary"
+            this.tab.textColor = "#ffffff"
+        }
+    }
+</sample>
+
+<sample Icon only>
+	class Main extends App
+    {
+        onStart()
+        {
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+
+            var tabs = [ "favorite", "person", "wifi" ]
+
+            // Adds a tab to the main layout.
+            this.tab = ui.addTabs( this.main, tabs, "Icon", 1 )
+        }
+    }
+</sample>
+
+<sample Custom Colors and Sizes>
+    class Main extends App
+    {
+        onStart()
+        {
+            ui.setThemeColor( "#673ab7", "#ffc107" )
+            // Creates a layout with objects verticaly centered.
+            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+
+            var tabs = [
+                [ "favorite", "Favorites" ],
+                [ "bluetooth", "Bluetooth" ],
+                [ "wifi", "Connection" ]
+            ]
+
+            // Adds a tab to the main layout.
+            this.tab = ui.addTabs( this.main, tabs, "Icon", 1 )
+            this.tab.color = "primary"
+            this.tab.textColor = "#ffffff"
+            this.tab.iconColor = "orange"
+            this.tab.iconSize = 30
+        }
+    }
+</sample>
