@@ -51,7 +51,7 @@ function checkType(f, i)
 		return;
 
 	const oc = {'.':3,d:6,f:2,'-':1}
-	const c = v => v ? '\033[1;3'+oc[v]+'m'+v+'\033[0;37m' : v;
+	const c = v => v ? '\x1b[1;3'+oc[v]+'m'+v+'\x1b[0;37m' : v;
 	const sc = a => console.log(curp.replace(".json",''),c(a||''),curf,curm, f.pNames[i]+": "+f.pTypes[i]);
 	//if((f.pNames[i] == "file") && f.pTypes[i] != "str_ptf") sc();
 
@@ -124,7 +124,6 @@ function tos(o, intd, m)
 				return s + `\n${intd}}`;
 			}
 	}
-	return s;
 }
 
 ///////////////// arg parsing /////////////////////

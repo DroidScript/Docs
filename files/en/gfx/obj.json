@@ -30,6 +30,12 @@
 		"pTypes": ["num", "num", "num"],
 		"shortDesc": "Adds physics to the game",
 		"subf": {
+			"AddShape": {
+				"desc": "Adds linear and angular velocity to the object",
+				"pNames": ["type", "points"],
+				"pTypes": ["str-Polygon", "lst-[ [x:num_frc, y:num_frc], [x:num_frc, y:num_frc], ... ]"],
+				"shortDesc": "Adds velocity to the object"
+			},
 			"AddVelocity": {
 				"desc": "Adds linear and angular velocity to the object",
 				"pNames": ["x", "y", "angular", "bodyRelative"],

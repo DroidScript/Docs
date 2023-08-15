@@ -1,31 +1,49 @@
 #!/usr/bin/env node
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
-var curDoc, curSubf, curScope, lang;
-var warnEnbl = false, conf, dbg = false, clean = false, force = false;
-var scope, base, navs, regGen, regHide, regControl, progress;
+var conf = /** @type {DSConfig} */ ({});
+var curDoc = "", curSubf = "", lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
+var warnEnbl = false, dbg = false, clean = false, force = false;
+var scopeDir = "", regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
+/** @type {DSBase|null} */
+var base;
+/** @type {DSNavs} */
+var navs;
+/** @type {DSScope} */
+var scope;
+/** @type {ScopeKeys} */
+var curScope;
+/** @type {string[]} */
+var allKeys = [];
+/** @type {{[x:string]: string}} */
+var tDesc;
+/** @type {{[x:string]: string}} */
+var tName;
 
+// @ts-ignore
 if (typeof OnStart == 'undefined') OnStart = g_OnStart;
 
 function g_OnStart() { }
 
 /**
- * @param patLang {string} optional RegEx pattern
- * @param patScope {string} optional RegEx pattern
- * @param patFunc {string} optional RegEx pattern
+ * @param {LangKeys | ""} patLang optional RegEx pattern
+ * @param {ScopeKeys | ""} patScope optional RegEx pattern
+ * @param {string} patFunc optional RegEx pattern
  */
 function Generate(patFunc, patScope, patLang)
 {
 	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
+	tDesc = conf.tdesc;
+	tName = conf.tname;
 
 	if (patLang && !conf.langs[patLang])
 		Throw(new Error(`language ${patLang} not specified in conf.json`));
 	if (patScope && !conf.scopes[patScope])
 		Throw(new Error(`scope ${patScope} not specified in conf.json`));
 
-	for (var l in conf.langs) if (l.match(patLang) != null)
+	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l =>
 	{
 		lang = l;
 
@@ -37,15 +55,20 @@ function Generate(patFunc, patScope, patLang)
 				app.CopyFolder("docs-base", "docs" + getl());
 		}
 
-		for (var s in conf.scopes) if (s.match(patScope) != null)
+		keys(conf.scopes).filter(s => s.match(patScope) != null).forEach(s => {
 			try { generateScope(s, patFunc); }
 			catch (e) {
 				console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
 				Throw(e);
 			}
-	}
+		});
+	})
 }
 
+/**
+ * @param {ScopeKeys} name
+ * @param {string} pattern
+ */
 function generateScope(name, pattern)
 {
 	curScope = name;
@@ -76,36 +99,39 @@ function generateScope(name, pattern)
 	{
 		scope = JSON.parse(ReadFile(curDoc, "false"));
 		if (!keys(navs).length) navs = keys(scope);
+		// @ts-ignore
 		else navs.All = keys(scope);
 
 		// read base functions used in scope
 		curDoc = scopeDir + "base.json";
-		if (base = JSON.parse(ReadFile(curDoc, "false"))) {
+		base = JSON.parse(ReadFile(curDoc, "false"));
+		if (base) {
 			// additionally, read /*#obj*/ marked functions from .js file if exists
 			if (!app.FileExists(scopeDir + curScope + ".js"))
-				base.all = keys(base).map(k => base[k].name || k);
+				allKeys = keys(base).map(k => base && base[k].name || k);
 			else
-				base.all = app.ReadFile(scopeDir + curScope + ".js")
+				allKeys = app.ReadFile(scopeDir + curScope + ".js")
 					.split("/*#obj*/ self.").slice(1)
-					.map(v => v.slice(0, v.indexOf(" ")));
+					.map((v) => v.slice(0, v.indexOf(" ")));
 
 			// additionally, read Obj.prototype functions from utils.js if exists
 			if (curScope == "app" && app.FileExists(scopeDir + "util.js"))
-				base.all.concat(app.ReadFile(scopeDir + "util.js")
+				allKeys.concat(app.ReadFile(scopeDir + "util.js")
 					.split("Obj.prototype.").slice(1)
-					.map(v => v.slice(0, v.indexOf(" "))))
-		} else base = { all: [] }
+					.map((v) => v.slice(0, v.indexOf(" "))))
+		} else base = {}
 	}
 	else // no json file available
 	{
 		regGen = RegExp("(?=^tips$)[]|(?!^tips$)^.*" + regGen.source);
 		// add files from scope folder to be generated
-		scope = {}; base = false; navs = [];
+		scope = {}; base = null; navs = [];
 
 		for (var n of app.ListFolder(scopeDir + "desc"))
 		{
 			n = n.slice(0, n.lastIndexOf("."));
 			navs.push(n.replace(/^\s+/, ""));
+			// @ts-ignore
 			scope[n] = `#${n}.md`;
 		}
 	}
@@ -114,7 +140,7 @@ function generateScope(name, pattern)
 	{
 		// delete navs
 		if ("navs".match(regGen))
-			app.ListFolder("docs" + getl()).map(f =>
+			app.ListFolder("docs" + getl()).map((/** @type {string} */ f) =>
 				f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
 		// delete docs
 		else app.DeleteFolder(`docs${getl()}/` + name);
@@ -135,11 +161,16 @@ function generateScope(name, pattern)
 
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(app.ReadFile("../docs/version.txt", 0)) % 1000 + 1;
+	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 + 1;
 	app.WriteFile("version.txt", (v + vn).toString());
 	app.HideProgressBar();
 }
 
+/**
+ * @param {DSNavs} navs
+ * @param {string} name
+ * @param {string | undefined} [pfx]
+ */
 function generateNavigators(navs, name, pfx)
 {
 	curDoc = `docs${getl()}/${pfx || ''}${name.replace(/\s+/g, '')}.htm`;
@@ -171,29 +202,31 @@ function generateNavigators(navs, name, pfx)
 	{
 		for (var cat of keys(navs).filter(nothidden))
 		{
+			var val = navs[cat];
 			if (cat == '_nofilter') continue;
 			if (cat.startsWith("+html"))
 			{
-				addcontent += navs[cat];
+				addcontent += val;
 				continue;
 			}
-			if (!navs[cat]) navs[cat] = curScope + "/" + cat + ".htm";
+			if (!val) val = curScope + "/" + cat + ".htm";
 
 			// targtet file
-			if (typeof navs[cat] == "string")
+			if (typeof val == "string")
 			{
-				var m = navs[cat].match(curScope + "\\/(\\w+).htm(#(.*))?");
-				var f = null, add = "";
-				if (navs[cat].startsWith("http")) add += ' onclick="return OpenUrl(this.href);"';
-				if (m && scope[m[1]]) f = m[3] ? scope[m[1]].subf[m[3]] : scope[m[1]];
-				if (f) add += getAddClass(f), f.hasNav = true;
-				nav += newNaviItem(navs[cat], cat, add);
+				var m = val.match(curScope + "\\/(\\w+).htm(#(.*))?");
+				/** @type {DSFunction|string|undefined} */
+				var f, add = "";
+				if (val.startsWith("http")) add += ' onclick="return OpenUrl(this.href);"';
+				if (m && scope[m[1]]) f = m[3] ? (scope[m[1]].subf || {})[m[3]] : scope[m[1]];
+				if (f && typeof f != "string") add += getAddClass(f), f.hasNav = true;
+				nav += newNaviItem(val, cat, add);
 			}
 			else // new category
 			{
-				nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat == "Premium" ? getAddClass({ desc: "<premium>" }) : null);
+				nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat == "Premium" ? getAddClass({ desc: "<premium>" }) : undefined);
 				var tdoc = curDoc;
-				generateNavigators(navs[cat], cat, pfx);
+				generateNavigators(val, cat, pfx);
 				curDoc = tdoc;
 			}
 		}
@@ -210,6 +243,7 @@ function generateNavigators(navs, name, pfx)
 }
 
 //generates doc files
+/** @param {DSScope} scope */
 function generateDocs(scope)
 {
 	curDoc = lang + "/" + curScope;
@@ -228,77 +262,92 @@ function generateDocs(scope)
 	generateTsx(scope);
 }
 
+/** @param {DSScope} scope */
 function generateTips(scope)
 {
 	curDoc = lang + `/${curScope}-tips.json`;
-	var tsubf, tips = { [curScope]: {} };
+	/** @type {DSScopeRaw} */
+	var tsubf;
+	/** @type {{[x:string]: {[x:string]: string}}} */
+	var tips = { [curScope]: {} };
 
 	for (var name of keys(scope).filter(nothidden)) {
-		if (scope[name].shortDesc)
-			tips[curScope][name] = scope[name].shortDesc;
+		const s = scope[name];
+		if (s.shortDesc)
+			tips[curScope][name] = s.shortDesc;
 		else continue;
 
-		if (tsubf = scope[name].subf)
+		if (s.subf && s.abbrev)
 		{
+			tsubf = s.subf;
+			/** @type {{[x:string]: string}} */
 			var tctrl = {};
-			tips[scope[name].abbrev] = tctrl;
+			tips[s.abbrev] = tctrl;
 
 			for (var j of keys(tsubf).filter(nothidden))
 			{
-				if (typeof tsubf[j] == "string" && tsubf[j].startsWith('#'))
+				const t = tsubf[j];
+				if (typeof t === "string")
 				{
-					if (base && base[tsubf[j]])
+					if (!t.startsWith('#')) Throw(Error(`md ref must have '#' prefix, got '${t}'`))
+					if (base && base[t])
 					{
-						if (base[tsubf[j]].shortDesc)
-							tctrl[j] = base[tsubf[j]].shortDesc;
+						const b = base[t];
+						if (b.shortDesc) tctrl[j] = b.shortDesc;
 					}
-					else Throw(Error(`basefunc ${tsubf[j]} not found!`));
+					else Throw(Error(`basefunc ${t} not found!`));
 				}
-				else if (tsubf[j].shortDesc) tctrl[j] = tsubf[j].shortDesc;
+				else if (t.shortDesc) tctrl[j] = t.shortDesc;
 			}
 		}
 	}
-	tips = tos(tips);
-	if (tips.lastIndexOf("}") != 25)
-		app.WriteFile(curDoc, tips);
+
+	const stips = tos(tips);
+	if (stips.lastIndexOf("}") != 25)
+		app.WriteFile(curDoc, stips);
 }
 
+/** @param {any} scope */
 function generateTsx(scope)
 {
 	// TODO
 }
 
 // generates one document by function name
+/** @param {string} name */
 function generateDoc(name)
 {
-	if (typeof scope[name] == "string")
-		scope[name] = {name, desc:scope[name], noCon:true};
-	else scope[name].name = scope[name].name || name;
+	/** @type {DSFunction | string} */
+	var ps = scope[name];
+	if (typeof ps == "string")
+		scope[name] = ps = {name, desc: ps, noCon: true};
+	else ps.name = ps.name || name;
+	if (typeof ps == "string" || !ps.name) return;
 
-	curDoc = `docs${getl()}/${curScope}/${(scope[name].name).replace(/\s+/g, '')}.htm`;
+	curDoc = `docs${getl()}/${curScope}/${(ps.name).replace(/\s+/g, '')}.htm`;
 	resetGlobals();
 
-	var data, funcLine = "", subfuncs = "", desc = scope[name].desc;
+	var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
 
 	// get description from external file
-	if (desc && desc.startsWith('#'))
+	if (ps.desc && ps.desc.startsWith('#'))
 	{
-		desc = ReadFile(scopeDir + `desc/${desc.slice(1)}`, false);
-		if (!desc) Throw(Error(`description file ${scope[name].desc.slice(1)} linked but doesn't exist.`));
+		desc = ReadFile(scopeDir + `desc/${ps.desc.slice(1)}`, "");
+		if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
 	}
 
 	// get function specific data
-	if (!scope[name].noCon)
+	if (!ps.noCon)
 	{
 		if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " get data");
 
-		fillMissingFuncProps(scope[name]);
-		data = getDocData(scope[name]);
-		desc = scope[name].desc;
+		const m = fillMissingFuncProps(ps);
+		data = getDocData(m);
+		desc = m.desc;
 
 		// function line with popups
-		if (scope[name].abbrev) funcLine = scope[name].abbrev + " = ";
-		funcLine += `${curScope}.${name}` + (scope[name].isval ? '' : `(${data.args})`) + data.ret;
+		if (m.abbrev) funcLine = m.abbrev + " = ";
+		funcLine += `${curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
 
 		// subfunctions of controls with popups
 		if (isControl(name) && data.mets)
@@ -306,7 +355,7 @@ function generateDoc(name)
 				.replace(/%t/g, name.replace(regConPrefix, ''))
 				.replace("%f", data.mets);
 	}
-	if(!desc) console.log(scope[name]);
+	// if (!desc) console.log(m);
 
 	// insert data to html base
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " generate description");
@@ -322,6 +371,11 @@ function generateDoc(name)
 
 /*----------------------------------------------------------------------------*/
 
+/** @type {{[x:string]: string}} */
+var popDefs;
+/** @type {{[x: string]: number}} */
+var spop;
+
 // reset globals
 function resetGlobals() {
 	popDefs = {};
@@ -329,6 +383,10 @@ function resetGlobals() {
 	keys(conf.tname).map(k => spop[k] = 0);
 }
 
+/**
+ * @param {string} html
+ * @param {string} name
+ */
 function adjustDoc(html, name)
 {
 	var order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
@@ -344,10 +402,11 @@ function adjustDoc(html, name)
 		}).join("\n\t");
 
 	var toc = [];
-	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function (m, i, t) {
+	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function (m, /** @type {number} */ i, /** @type {string} */ t) {
 		if (t != "%t" && i < 4) toc.push(
 			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
 			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t.replace(/(<sup>|$)/, "</a>$1")}<br>`);
+		return "";
 	});
 	if (toc.length)
 	{
@@ -364,23 +423,23 @@ function adjustDoc(html, name)
 		// popup object list
 		.replace(/%p/, popList)
 		// additional notes
-		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => eval(n + "Hint").replace("%s", a))
 		// colored passages
 		.replace(/<(red|greed|blue|grey)>(.*?)<\/\1>/g, '<$1>$2</$1>')
 		// some html char placeholders
-		.replace(/&(.+?);/g, (m, v) => _htm[v] || m)
+		.replace(/&(.+?);/g, (m, /** @type {keyof typeof _htm} */ v) => _htm[v] || m)
 		// remove special whitespace from tables
 		.replace(/([\n\t ]+)(<\/?t([rhd]|head|body|able))/g,
-			(m, w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
+			(m, /** @type {string} */ w, t) => w.replace(/\t/g, "    ").replace(/ /g, ' ') + t)
 
 		// text indentation
-		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) =>
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, /** @type {string} */ w, t, _1, /** @type {string} */ c, _2) =>
 			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length - 1}em;">` +
 			`${c.replace(RegExp(w + "|^|$", 'g'), w.replace(/    /g, '\t')).slice(0, -1)}</span><br>`)
-		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) =>
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, /** @type {string} */ w, t, _1, /** @type {string} */ c, _2) =>
 			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length - 1}em;">` +
 			`${c.replace(RegExp(w + "|^|$", 'g'), w.replace(/    /g, '\t')).slice(0, -1)}</span><br>`)
-		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, w, t, _1, c, _2) =>
+		.replace(/((\n\t{1,3})(    )+)((.*?<br>\1?)+)/g, (m, /** @type {string} */ w, t, _1, /** @type {string} */ c, _2) =>
 			`${t}<span style="display:inline-block;padding-left:${w.split("    ").length - 1}em;">` +
 			`${c.replace(RegExp(w + "|^|$", 'g'), w.replace(/    /g, '\t')).slice(0, -1)}</span><br>`)
 	// .replace(/(^|\n)([\t ]*- )(.*)/g, '$1$2<span style="display:inline-block">$3</span>')
@@ -388,10 +447,13 @@ function adjustDoc(html, name)
 	// replace <js> and <bash> tags with sample
 	html = html.replace(
 		/(\s|<br>)*<(js|bash|smp|java|json)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
-		function (m, w1, lang, options, _, _, code, _, w2, _) {
-			options = options.split(" ");
+		function (m, w1, /** @type {string} */ lang, /** @type {string} */ soptions, _1, _2, /** @type {string} */ code, _3, w2, _4) {
+			const options = soptions.split(" ");
 			if (w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
 			if (Prism.languages[lang]) {
+				/**
+				 * @type {any[]}
+				 */
 				var tags = [];
 				code = code
 					.replace(/<br>/g, "")
@@ -423,7 +485,7 @@ function adjustDoc(html, name)
 		// remove trailing <br> tags from table
 		.replace(/(<\/?(t([rdh]|head|body|able))[^>]*>)<br>/g, "$1")
 		// indent line breaks
-		.replace(/\n\s*<br>\n(\s+)/g, (m, w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
+		.replace(/\n\s*<br>\n(\s+)/g, (m, /** @type {string} */ w) => `\n${w.replace(/ /g, " ")}<br>\n${w}`)
 		// remove trailing whitespace
 		.replace(/[ \t]+\n/g, "\n");
 
@@ -432,6 +494,11 @@ function adjustDoc(html, name)
 }
 
 // returns an html formatted description of a function
+/**
+ * @param {string} desc
+ * @param {any} name
+ * @param {boolean} hasData
+ */
 function formatDesc(desc, name, hasData)
 {
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
@@ -441,7 +508,7 @@ function formatDesc(desc, name, hasData)
 	if (!has(desc, '.')) desc += '.';
 
 	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\2?>/g,
-		function (m, _, _1, t, opt, _2, c) {
+		function (m, _, _1, /** @type {string} */ t, opt, _2, c) {
 			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt, opt);
 			return `<sample ${_}>`;
 		});
@@ -461,15 +528,24 @@ function formatDesc(desc, name, hasData)
 		// format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
-		.replace(/<sample (.*?)>/g, (m, t) => (s = samples[t]) ?
+		.replace(/<sample (.*?)>/g, (m, /** @type {string} */ t) => (s = samples[t]) ?
 			(delete samples[t], `</p>\n\t\t${s}<p>`) :
-			Throw(Error(`sample ${t} not found for ${name}. Have ${keys(samples) + "" || "none"}.`)))
+			(Throw(Error(`sample ${t} not found for ${name}. Have ${keys(samples) + "" || "none"}.`)), ''))
 		.replace(/(“.*?”)/g, "<docstr>$1</docstr>")
 		+ values(samples).concat("").reduce((a, b) => a + b);
 }
 
+/** 
+ * @param {DSFunction} f 
+ * @returns {DSMethod}
+ * */
 function fillMissingFuncProps(f)
 {
+	if (!f.name) {
+		Throw(Error(`missing name in ${tos(f)}`));
+		process.exit();
+	}
+
 	// default descriptions and capitalizing
 	if (!f.desc) f.desc = f.name[0] + f.name.slice(1)
 		.replace(/([A-Z]+)/g, " $1").toLowerCase();
@@ -481,16 +557,20 @@ function fillMissingFuncProps(f)
 	f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
 		f.shortDesc.slice(1, f.shortDesc.endsWith('.') ? -1 : undefined);
 
-	f.desc = f.desc.replace(/%(\w+)%/g, (m, t) => conf.tmpl[t] || Throw(`template ${t} not found`));
-	f.shortDesc = f.shortDesc.replace(/%(\w+)%/g, (m, t) => conf.tmpl[t] || Throw(`template ${t} not found`));
+	f.desc = f.desc.replace(/%(\w+)%/g, (m, /** @type {string} */ t) => conf.tmpl[t] || Throw(`template ${t} not found`) || '');
+	f.shortDesc = f.shortDesc.replace(/%(\w+)%/g, (m, /** @type {string} */ t) => conf.tmpl[t] || Throw(`template ${t} not found`) || '');
 
 	if (f.pNames == undefined) f.pNames = [];
 	if (f.pTypes == undefined) f.pTypes = [];
+	return /** @type {DSMethod} */ (f);
 }
 
 // converts a function object into an html snippets object
+/** @param {DSMethod} f */
 function getDocData(f, useAppPop = false) {
-	var i, mArgs = [], type, fretval = "";
+	/** @type {string[]} */
+	var mArgs = [];
+	var i, type, fretval = "";
 
 	// abbrev for controls
 	if (isControl(f.name) && !f.abbrev)
@@ -499,6 +579,7 @@ function getDocData(f, useAppPop = false) {
 	// convert constructor line
 	for (i in f.pNames) {
 		if (useAppPop) {
+			// @ts-ignore
 			mArgs.push(newAppPopup(f.pNames[i], typeDesc(f.pTypes[i]))
 				.replace(/<\/?\w+?>/g, ""));
 		}
@@ -506,7 +587,7 @@ function getDocData(f, useAppPop = false) {
 			mArgs.push(toArgPop(f.pNames[i], f.pTypes[i]));
 	}
 
-	mArgs = mArgs.length ? mArgs.join(",") + " " : "";
+	const smArgs = mArgs.length ? String(mArgs) + " " : "";
 
 	// convert return value
 	if (f.retval)
@@ -514,7 +595,7 @@ function getDocData(f, useAppPop = false) {
 
 	// return data if there are no subfunction
 	if (!f.subf || !keys(f.subf).length)
-		return { args: mArgs, ret: fretval, mets: "" }
+		return { args: smArgs, ret: fretval, mets: "" }
 
 	var k, methods = "",
 		// function list
@@ -523,27 +604,27 @@ function getDocData(f, useAppPop = false) {
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + f.name + " generate subfunctions");
 	for (k = 0; k < mkeys.length; k++) {
 		var met = f.subf[mkeys[k]], retval = "", type;
-		curSubf = met.name = met.name || mkeys[k];
 
 		// load base func
-		if (typeof (met) == "string" && met.startsWith('#')) {
-			if (!base[met]) Throw(Error("basefunc " + met + " not found!"));
+		if (typeof met === "string") {
+			if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!")), process.exit();
+			if (!met.startsWith('#')) Throw(Error(`md link must have # prefix. got '${met}'`)), process.exit();
 			met = base[met];
-			if (!met.name) met.name = mkeys[k];
-			// force use of entry name
-			if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
-			curSubf = met.name;
 		}
+
+		curSubf = met.name = met.name || mkeys[k];
+		// force use of entry name
+		if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 
 		// load params from base
 		while (typeof met.params == "string" && met.params.startsWith('#')) {
-			if (!base[met.params]) Throw(Error("basefunc " + met.params + " not found!"));
-			met.pNames = base[met.params].pNames;
-			met.pTypes = base[met.params].pTypes;
-			met.params = base[met.params].params;
+			if (!base || !base[met.params]) Throw(Error("basefunc " + met.params + " not found!")), process.exit();
+			met.pNames = base[met.params].pNames || [];
+			met.pTypes = base[met.params].pTypes || [];
+			met.params = "";
 		}
 
-		if (hidden(curSubf)) continue;
+		if (hidden(curSubf) || !met.pNames || !met.pTypes) continue;
 
 		fillMissingFuncProps(met);
 
@@ -552,12 +633,12 @@ function getDocData(f, useAppPop = false) {
 			retval = (!met.isval && met.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(met.retval);
 
 		//convert function types
-		var mdesc = met.desc;
+		var mdesc = met.desc || "";
 		if (!met.isval) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
 
 		var args = [], metpop = newPopup("dsc", curSubf,
 			addMarkdown(replaceTypes(replW(mdesc), true)),
-			getAddClass(met) || (has(base.all, curSubf) ? ' class="baseFunc"' : ""));
+			getAddClass(met) || (has(allKeys, curSubf) ? ' class="baseFunc"' : ""));
 
 		if (!met.isval) {
 			for (i in met.pNames)
@@ -572,14 +653,17 @@ function getDocData(f, useAppPop = false) {
 		}
 		else methods += subfBase.replace("\n\t\t", "").replace("%s", metpop.trim() + retval);
 	}
-	curSubf = null;
+	curSubf = "";
 
-	return { args: mArgs, mets: methods, ret: fretval }
+	return { args: String(mArgs) + " ", mets: methods, ret: fretval }
 }
 
 // read and return html converted example snippets file
+/** @param {string} name */
 function getSamples(name) {
-	var sampcnt = 0, samples = {}, s = ReadFile(scopeDir + `samples/${name}.txt`, " ", !scope[name].isval);
+	var sampcnt = 0, s = ReadFile(scopeDir + `samples/${name}.txt`, " ", !scope[name].isval);
+	/** @type {{[x:string]: string}} */
+	var samples = {};
 
 	s.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
 		(m, _, name, opt, _1, c) => samples[name || sampcnt + 1] = toHtmlSamp(c, name, ++sampcnt, opt)
@@ -589,6 +673,12 @@ function getSamples(name) {
 }
 
 // convert a sample to html code
+/**
+ * @param {string} code
+ * @param {string} name
+ * @param {number} index
+ * @param {string} options
+ */
 function toHtmlSamp(code, name, index, options) {
 	var hasBold = has(code, "<b>") && code.indexOf("</b>") > code.indexOf("<b>");
 	if (!hasBold) Warn(`${curDoc} sample "${name || ''}" has no bold area\n`);
@@ -611,14 +701,15 @@ function toHtmlSamp(code, name, index, options) {
 	}
 	if (has(options, "norun")) code = code.replace(/\s*<a .*? onclick="demo\( examp.*?<\/a>/, "");
 
-	return code.replace(/%i/g, index).replace(/%t/g, name ? " - " + name : '');
+	return code.replace(/%i/g, String(index)).replace(/%t/g, name ? " - " + name : '');
 }
 
 
+/** @param {DSFunction} m */
 function getAddClass(m) {
 	if (!m || typeof m.desc != "string") return '';
 	if (m.desc.startsWith('#')) {
-		m.desc = ReadFile(scopeDir + `desc/${m.desc.slice(1)}`, false);
+		m.desc = ReadFile(scopeDir + `desc/${m.desc.slice(1)}`, "");
 		if (!m.desc) return '';
 	}
 
@@ -629,26 +720,27 @@ function getAddClass(m) {
 }
 
 // returns a formatted description of a type - used for subfunction return values
-function typeDesc(types) {
-	types = types.split("||").map(type => [type.slice(0, 3)]
+/** @param {string} stypes */
+function typeDesc(stypes) {
+	const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
 		.concat(type
 			// custom type desc
-			.replace(/^(...):([^-]*)/, (m, btype, desc) =>
-				(conf.tdesc[btype + "_tmp"] = desc, btype + "_tmp"))
+			.replace(/^(...):([^-]*)/, (m, /** @type {string} */ btype, desc) =>
+				(tDesc[btype + "_tmp"] = desc, btype + "_tmp"))
 			// sample vals
 			.replace(/-/, '\x01').split('\x01')
 		)
 	);
 
-	var last;
+	var last = "";
 	var s = types.map(
-		(type, i) => (last = "</b>", conf.tname[type[0]]) ?
-			"<b>" + conf.tname[type[0]] + (conf.tdesc[type[1]] ?
-				(last = "</i>", ":</b> <i>" + conf.tdesc[type[1]]) : ""
-			) + (type[2] ? `:${last} ` : last) : undefined
+		(/** @type {any[]} */ type, i) => (last = "</b>", tName[type[0]]) ?
+			"<b>" + tName[type[0]] + (tDesc[type[1]] ?
+				(last = "</i>", ":</b> <i>" + tDesc[type[1]]) : ""
+			) + (type[2] ? `:${last} ` : last) : ""
 	);
 
-	s = types.map(
+	var ss = types.map(
 		function (type, i) {
 			if (s[i] && type.length == 3) {
 				//allow limited values for parameters
@@ -673,38 +765,47 @@ function typeDesc(types) {
 				return s[i] || Throw(Error("unknown type " + type[1]));
 		}).join("<br>\n\t\t\t").replace(/(“.*?”)/g, "<docstr>$1</docstr>");
 
-	if (types.length > 1) s = '<span style="display:inline-block;vertical-align: middle;">' + s + "</span>";
-	return s;
+	if (types.length > 1) ss = '<span style="display:inline-block;vertical-align: middle;">' + s + "</span>";
+	return ss;
 }
 
 //nearly equal to typeDesc, but returns an app.popup for arguments
-function toArgPop(name, types, doSwitch) {
+/**
+ * @param {string} name
+ * @param {DSFunction | string} stypes
+ * @param {boolean} [doSwitch]
+ */
+function toArgPop(name, stypes, doSwitch) {
+	if (Array.isArray(stypes)) return "";
+
 	// function callbacks
-	if (typeof types == "object") {
-		if (types.pNames == undefined) types.pNames = [];
-		var s = newPopup("fnc", name,
-			("<b>function</b>(\n\t\t" + types.pNames.map(
+	if (typeof stypes == "object") {
+		if (stypes.pNames == undefined) stypes.pNames = [];
+		var s1 = newPopup("fnc", name,
+			("<b>function</b>(\n\t\t" + stypes.pNames.map(
 				function (n, i) {
-					if (types.pTypes[i].isval === false || typeof types.pTypes[i] == "object" || has("lst,obj", types.pTypes[i].slice(0, 3)))
+					if (Array.isArray(stypes) || !stypes.pTypes) return;
+					const val = stypes.pTypes[i];
+					if (typeof val == "object" || has("lst,obj", val.slice(0, 3)))
 						// for lists and objects in callback parameters switch popups
-						return toArgPop(n, types.pTypes[i], true);
+						return toArgPop(n, val, true);
 					else
 						// primitive types get a primitive popup
-						return toArgAppPop(n, types.pTypes[i]);
+						return toArgAppPop(n, val);
 				}
 			).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
 		);
-		if (doSwitch) s = s.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
-		return s;
+		if (doSwitch) s1 = s1.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
+		return s1;
 	}
 
 	// multiple types
-	types = types.split("||").map(
-		type => [type.slice(0, 3)]
+	var types = stypes.split("||").map(
+		(		/** @type {string} */ type) => [type.slice(0, 3)]
 			.concat(type
 				// custom type desc
-				.replace(/^(...):([^-]*)/, (m, btype, desc) =>
-					(conf.tdesc[btype + "_tmp"] = desc, btype + "_tmp"))
+				.replace(/^(...):([^-]*)/, (m, /** @type {string} */ btype, desc) =>
+					(tDesc[btype + "_tmp"] = desc, btype + "_tmp"))
 				// sample vals
 				.replace(/-/, '\x01').split('\x01')
 			)
@@ -712,11 +813,11 @@ function toArgPop(name, types, doSwitch) {
 
 	// start of type desc string. (tips: [optional], [:] if followed by value)
 	// <b>type[:]</b> [[<i>desc[:]</i>] values]
-	var last;
-	var s = types
-		.map((type, i) => "<b>" + conf.tname[type[0]] +
-			(last = "</b>", conf.tdesc[type[1]] ?
-				(last = "</i>", ":</b> <i>" + conf.tdesc[type[1]]) : ""
+	var last = "";
+	var s2 = types
+		.map((/** @type {any[]} */ type, i) => "<b>" + tName[type[0]] +
+			(last = "</b>", tDesc[type[1]] ?
+				(last = "</i>", ":</b> <i>" + tDesc[type[1]]) : ""
 			) + (type[2] ? `:${last} ` : last)
 		);
 
@@ -729,62 +830,70 @@ function toArgPop(name, types, doSwitch) {
 				case "bin":
 					if (type.length == 3 && has(type[2], ':'))
 						type[2] = replaceTypes(type[2], true);
-					return s[i] + rplop(type[2], type[0] == "str");
+					return s2[i] + rplop(type[2], type[0] == "str");
 				case "lst":
-				case "obj": return s[i] + replaceTypes(replW(type[2]), true);
+				case "obj": return s2[i] + replaceTypes(replW(type[2]), true);
 				default:
 					if (!type[0].endsWith("o"))
 						Throw(Error("unknown typex " + type[1]));
 					if (curDoc.endsWith(type[2] + ".htm"))
-						return s[i] + type[2];
+						return s2[i] + type[2];
 					if (!type[2].startsWith("@") && !scope[type[2]])
 						Throw(Error("link required for " + type[2]));
-					return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
+					return s2[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
 						type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
 			}
 		}
-		else return s[i];
+		else return s2[i];
 	});
 
 	// build popup id, "std_type" for common or "type_index" for individual popups
 	// save popup definition and return popup text (= link)
 	if (types.length == 1) {
-		types = types[0];
-		if (types[1].endsWith("_tmp")) types[2] = true;
+		var type = types[0];
+		if (type[1].endsWith("_tmp")) type[2] = "true";
 		var pop_id =
-			(types[1].match("_") || types[2] ? "" : "std_") +
-			(!types[2] ? types[1].replace("?", "ukn") :
-				types[0] + "_" + incpop(types[0], 1)
+			(type[1].match("_") || type[2] ? "" : "std_") +
+			(!type[2] ? type[1].replace("?", "ukn") :
+				type[0] + "_" + incpop(type[0], 1)
 			);
 		if (pop_id.match(/[^_\w]/)) Throw(Error("invalid popup id " + pop_id));
 
-		s = newPopup(pop_id, name, str[0].replace(/ShowPopup\('.*?'\)/g,
-			(m) => m.replace(/“/g, "&ldquo;").replace(/”/g, "&rdquo;")), "");
-		if (doSwitch) s = s.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
-		return s;
+		var s3 = newPopup(pop_id, name, str[0].replace(/ShowPopup\('.*?'\)/g,
+			(/** @type {string} */ m) => m.replace(/“/g, "&ldquo;").replace(/”/g, "&rdquo;")), "");
+		if (doSwitch) s3 = s3.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
+		return s3;
 	}
 	else
 		// for values with multiple types
 		return newPopup("mul", name, str.join("<br>"));
 }
 
-function toArgAppPop(name, types) {
-	types = types.split("||")
-		.map((type) => [type.slice(0, 3)]
+/**
+ * @param {string} name
+ * @param {string} stypes
+ */
+function toArgAppPop(name, stypes) {
+	var types = stypes.split("||")
+		.map((/** @type {string} */ type) => [type.slice(0, 3)]
 			.concat(type.replace('-', '\x01')
 				.split('\x01'))
 		);
 
 	return newAppPopup(
 		name, types.map(
-			(type) => conf.tname[type[0]].replace(/<[^>]*>/g, '') +
-				(conf.tdesc[type[1]] ? ": " + conf.tdesc[type[1]] : "") +
+			(/** @type {string | any[]} */ type) => tName[type[0]].replace(/<[^>]*>/g, '') +
+				(tDesc[type[1]] ? ": " + tDesc[type[1]] : "") +
 				(type.length == 3 ? ": " + rplop(type[2], type[0] == "str") : "")
 		).join("\\n")
 	);
 }
 
 //replace whitespace with html syntax whitespace
+/**
+ * @param {string} s
+ * @param {boolean} [n]
+ */
 function replW(s, n) {
 	if (n == undefined) n = true;
 	return s
@@ -795,38 +904,46 @@ function replW(s, n) {
 }
 
 //increase special popup counters and returns its id
+/**
+ * @param {string} type
+ * @param {number} i
+ */
 function incpop(type, i) {
 	if (i) spop[type] += i;
-	return hex(spop[type]);
+	return hex(spop[type] || 0);
 }
 
 // accept formats: "name":"desc" name:type name:"types" name:"type-values"
 // using name:'...' will force app popups
+/**
+ * @param {string} s
+ * @param {boolean} [useAppPop]
+ */
 function replaceTypes(s, useAppPop) {
 	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
 	_s.replace(/(\b([\w_.#-]+)|"(.*?)"):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\.|[^.|:,”}\]\n])*)?['"]?/g,
-		function (m, _, name, aname, type, _, desc) {
+		function (m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type, _2, /** @type {string} */ desc) {
 			var r, space = '', tapop = false;
 			if (!name) name = aname;
-			if (!type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return;
+			if (!type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return '';
 
 			if (desc) {
 				if (desc.endsWith(' ')) space = ' ';
-				desc = desc.slice(desc[0] == '"', space ? -1 : undefined);
+				desc = desc.slice(Number(desc[0] == '"'), space ? -1 : undefined);
 				if (desc[0] == "'") tapop = true, desc = desc.slice(1);
-				if (conf.tname[desc.slice(0, 3)] && (!desc[4] || !desc[4].match(/[a-z]/i))) type = desc, desc = '';
+				if (tName[desc.slice(0, 3)] && (!desc[4] || !desc[4].match(/[a-z]/i))) type = desc, desc = '';
 			}
 
 			if (type) {
-				if (conf.tname[type.slice(0, 3)]) { if (desc) type += '-' + desc, desc = ''; }
+				if (tName[type.slice(0, 3)]) { if (desc) type += '-' + desc, desc = ''; }
 				else
 					desc = type + (desc || ''), type = '';
 			}
 
 			if (useAppPop || tapop) {
 				if (type && !desc) r = toArgAppPop(name, type);
-				else r = newAppPopup(name, type ? conf.tname[type.slice(0, 3)] +
-					(conf.tdesc[type] ? ": " + conf.tdesc[type] : "") : desc);
+				else r = newAppPopup(name, type ? tName[type.slice(0, 3)] +
+					(tDesc[type] ? ": " + tDesc[type] : "") : desc);
 			}
 			else if (type) r = toArgPop(name, type);
 			else r = newPopup("dsc", name, desc);
@@ -839,10 +956,11 @@ function replaceTypes(s, useAppPop) {
 }
 
 // convert markdown symbols to html
+/** @param {string} s */
 function addMarkdown(s) {
 	return s
 		// links
-		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function (match, white, name, url) {
+		.replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function (match, /** @type {string} */ white, name, /** @type {string} */ url) {
 			if (name && !url) url = name;
 			if (!name && url) name = url;
 			// web link ? external : internal
@@ -852,11 +970,11 @@ function addMarkdown(s) {
 				+ `${name}</a>`;
 		})
 		// link + onclick
-		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function (match, white, name, script) {
+		.replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function (match, /** @type {string} */ white, name, /** @type {string} */ script) {
 			script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
 			return white + `<a href="" onclick="${script}">${name}</a>`;
 		})
-		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, white, h, title) =>		// ## headline
+		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, /** @type {string} */ white, /** @type {string | any[]} */ h, /** @type {string} */ title) =>		// ## headline
 			white + `<h${h.length}>${title.replace(/ (\(.+?\))/, "<sup>$1</sup>")}</h${h.length}>`)
 		//.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
 		.replace(/([^\\]|^)\*\*([a-z]{3,}?[^\\])\*\*/gi, "$1<strong>$2</strong>")   // **bold**
@@ -868,39 +986,80 @@ function addMarkdown(s) {
 		//.replace(/([^\\]|^)```([^]*?[^\\])```/g, "$1<kbd>$2</kbd>")   // `monospace`
 		.replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
 		// additional notes
-		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, n, a) => eval(n + "Hint").replace("%s", a))
+		.replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => eval(n + "Hint").replace("%s", a))
 		.replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) =>  // @DocReference
 			`${b}<a href="${n}.htm${(H || '').replace(/_/g, ' ')}" data-ajax="false">${(h || f).replace(/_/g, ' ')}</a>`)
 		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
 
 // convert int to 3-digit hex
+/** @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
 //returns the type name or description of a value or the value itself
-function getv(v) { return conf.tdesc[v] || conf.tname[v] || v; }
+/** @param {string} v */
+function getv(v) { return tDesc[v] || tName[v] || v; }
 //returns a comma separated list of object keys
+/** @param {any} o */
 function skeys(o) { return "" + keys(o); }
 //replaces \ paceholders with its placeholder 'name'
+/** @param {string} s */
 function reprs(s) { return s.replace(/\n/g, "\\n").replace(/\t/g, "\\t"); }
 //replace "&" and "|" operators with "and" and "or"
+/**
+ * @param {string} s
+ * @param {boolean} [n]
+ */
 function rplop(s, n) {
 	return replW((n ? `“${s}”` : s)
-		.replace(/\\(.)/g, (m, c) => `§${c.charCodeAt(0)}§`)
+		.replace(/\\(.)/g, (m, /** @type {string} */ c) => `§${c.charCodeAt(0)}§`)
 		.replace(/\|/g, n ? "” or “" : " or ")
 		//.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
 		.replace(/,/g, n ? "”, “" : ", ")
-		.replace(/§(\d+)§/g, (m, c) => `${String.fromCharCode(c)}`)
+		.replace(/§(\d+)§/g, (m, /** @type {number} */ c) => `${String.fromCharCode(c)}`)
 	);
 }
+/**
+ * @param {string | Error} e
+ */
 function Throw(e) { throw e; }
+/** @param {string} msg */
 function Warn(msg) { if (warnEnbl) console.error("Warning: " + msg); }
+/**
+ * @param {string} link
+ * @param {string} text
+ * @param {string} [add]
+ */
 function newNaviItem(link, text, add) { return naviItem.replace("%s", link).replace("%s", add || "").replace("%s", text); }
+/**
+ * @param {string} id
+ * @param {string} text
+ * @param {string | false} [add]
+ */
 function newTxtPopup(id, text, add) { return txtPopup.replace("%s", id).replace("%s", add || "").replace("%s", text); }
+/**
+ * @param {string} id
+ * @param {string} text
+ */
 function newDefPopup(id, text) { return defPopup.replace("%s", id).replace("%s", text); }
+/**
+ * @param {string} name
+ * @param {string} desc
+ */
 function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
+/**
+ * @param {string} target
+ * @param {string} text
+ */
 function newLink(target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
+/** @param {string} code */
 function newCode(code) { return codeBase.replace("%s", code); }
 
+/**
+ * @param {string} type
+ * @param {string} name
+ * @param {string} desc
+ * @param {string | false} [addClass]
+ */
 function newPopup(type, name, desc, addClass) {
 	if (addClass !== false) desc = desc.replace(/(“.*?”)/g, "<docstr>$1</docstr>");
 
@@ -914,6 +1073,7 @@ function newPopup(type, name, desc, addClass) {
 	return newTxtPopup(pop_id, name, addClass);
 }
 
+/** @param {string | number} d */
 function getHead(d) {
 	d = new Array(d).fill("../").join("");
 	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${d}`)
@@ -950,15 +1110,15 @@ var		// subfunction
 	defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>',
 	// subfunction list
 	subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <strong>%t</strong> object:</p>\n\n%f`,
-
 	// deprecated note
-	deprecatedHint = "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>";
-// premium note
-premiumHint = "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>";
-// xfeature note
-xfeatureHint = "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>";
-// example snippets
-sampBase = `
+	deprecatedHint = "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>",
+	// premium note
+	premiumHint = "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>",
+	// xfeature note
+	xfeatureHint = "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>";
+
+	// example snippets
+var sampBase = `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example%t</h3>
 			<div id="examp%i" style="font-size:70%">
@@ -971,7 +1131,7 @@ sampBase = `
 			</div>
 		</div>\n\n\t\t`;
 
-htmlHead = `<head>
+var htmlHead = `<head>
 	<title>%t</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1060,16 +1220,31 @@ var
 	path = __dirname + "/";
 
 
+/** @param {string} [l] */
 function getl(l) { if (l == undefined) l = lang; return l == "en" ? "" : "-" + l; }
+/** @param {string} s */
 function l(s) { console.log(`-----${s}-----`); return s; }
+/** @param {string} name */
 function hidden(name) { return !(force || !name.match(regHide)); }
+/** @param {string} name */
 function nothidden(name) { return !hidden(name); }
+/** @param {string | number} c */
 function isnum(c) { return c >= '0' && c <= '9'; }
+/** @type {(l:string|string[], v:string) => boolean} */
 function has(l, v) { return !!l && l.indexOf(v) > -1; }
+/** @ts-ignore @type {<T extends object>(O: T) => T[keyof T][]} */
 function values(o) { return Object.values(o); }
+/** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
 function keys(o) { return Object.keys(o); }
+/**
+ * @param {any} v
+ */
 function d(v) { console.log(v); return v; }
 function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope, true)); }
+/**
+ * @param {string | number} a
+ * @param {string | number} b
+ */
 function sortAsc(a, b) {
 	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
 	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
@@ -1077,8 +1252,12 @@ function sortAsc(a, b) {
 	return la == lb ? a < b ? 1 : -1 : la > lb ? 1 : -1;
 }
 
+/** @param {string} name */
 function isControl(name) { return !!scope[name].subf; }
 
+/**
+ * @param {string} s
+ */
 function getAbbrev(s) {
 	var count = 0;
 	// remove 'Create'
@@ -1094,6 +1273,11 @@ function getAbbrev(s) {
 		.slice(0, 3).toLowerCase();
 }
 
+/**
+ * @param {string} file
+ * @param {string} dflt
+ * @param {boolean} [write]
+ */
 function ReadFile(file, dflt, write) {
 	if (app.FileExists(file)) return app.ReadFile(file);
 	else if (write) app.WriteFile(file, dflt);
@@ -1102,6 +1286,13 @@ function ReadFile(file, dflt, write) {
 
 // converts a variable to indented string
 // supports Boolean, Number, String, Array and Object
+/**
+ * @param {any} o
+ * @param {boolean} [nosort]
+ * @param {string} [intd]
+ * @param {boolean} [m]
+ * @returns {string}
+ */
 function tos(o, nosort, intd, m) {
 	if (intd == undefined) intd = "";
 	if (m == undefined) m = true;
@@ -1137,22 +1328,25 @@ function tos(o, nosort, intd, m) {
 					return s + `\n${intd}}`;
 			}
 	}
-	return s;
 }
 
+/**
+ * @param {string} p
+ * @return {number}
+ */
 function newestFileDate(p) {
 	var files;
 	if (arguments.length > 1) files = [...arguments];
-	else if (!p.endsWith('/') && app.FileExists(p)) return app.GetFileDate(p);
-	else if (!app.FolderExists(p)) return null;
-	else files = app.ListFolder(p).map(f => p + (p.endsWith('/') ? '' : '/') + f);
-	return files.length ? Math.max.apply(null, files.map(f => newestFileDate(f))) : null;
+	else if (!p.endsWith('/') && app.FileExists(p)) return app.GetFileDate(p).getTime();
+	else if (!app.FolderExists(p)) return 0;
+	else files = app.ListFolder(p).map((/** @type {string} */ f) => p + (p.endsWith('/') ? '' : '/') + f);
+	return files.length ? Math.max.apply(null, files.map((f) => newestFileDate(f))) : 0;
 }
 
 // ---------------------------- nodejs app wrapper -----------------------------
 
 
-help = `${process.argv.slice(0, 2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
+var help = `${process.argv.slice(0, 2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
 	-l  --lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
                          	defaults to 'en'
@@ -1187,8 +1381,12 @@ if (typeof app == "undefined") {
 	var fs = require("fs-extra");
 	var rimraf = require("rimraf");
 	var Prism = require('prismjs');
+	// @ts-ignore
 	require('prismjs/components/prism-java.min.js');
 
+	/**
+	 * @param {string} p
+	 */
 	function absPth(p) { return p.startsWith("/") ? p : path + p; }
 
 	app = {
@@ -1206,27 +1404,27 @@ if (typeof app == "undefined") {
 		GetFileDate: (p) => new Date(fs.statSync(absPth(p)).ctime),
 		SetDebug: (d) => dbg = d,
 		ShowProgressBar: (t) => console.log(t + "\n"),
-		UpdateProgressBar: (i, t) => console.log("\033[1A\033[K" + `${i}% ${t || 'Initializing'}`),
-		HideProgressBar: () => console.log("\033[1A\033[K100% done."),
+		UpdateProgressBar: (i, t) => console.log("\x1b[1A\x1b[K" + `${i}% ${t || 'Initializing'}`),
+		HideProgressBar: () => console.log("\x1b[1A\x1b[K100% done."),
 		ShowPopup: console.log,
 		Alert: console.log
 	}
 
 	var patLang = "", patScope = "", patFunc = "";
+	/** @type {{add: boolean, langs: {[x:string]: string}, scopes: {[x:string]: string}}} */
 	var addcfg = { add: false, langs: {}, scopes: {} };
 	var nogen = false, startServer = false;
 
-	for (var pat of process.argv.slice(2)) {
-		if (pat.startsWith("-")) {
-			pat = pat.split("=");
+	for (var spat of process.argv.slice(2)) {
+		if (spat.startsWith("-")) {
+			const pat = spat.split("=");
 			switch (pat[0]) {
-				case "-l": case "--lang": lang = pat[1]; break;
+				case "-l": case "--lang": lang = /** @type {LangKeys} */ (pat[1]); break;
 				case "-n": case "--nogen": nogen = true; break;
 				case "-v": case "--verbose": dbg = true; break;
 				case "-c": case "--clean": clean = true; break;
 				case "-f": case "--force": force = true; break;
-				case "-h": case "--help": app.Alert(help); return;
-				case "-s": startServer = true; break;
+				case "-h": case "--help": app.Alert(help); process.exit(0);				case "-s": startServer = true; break;
 				case "-al": case "--addlang":
 					if (pat.length < 3) Throw(Error("missing option args. expected 2"));
 					addcfg.add = true;
@@ -1241,9 +1439,8 @@ if (typeof app == "undefined") {
 			}
 		}
 		else {
-			var p = pat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
-			if (!p) Throw(Error("invalid pattern " + pat));
-
+			var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
+			if (!p) throw Error("invalid pattern " + spat);
 			patLang = p[1];
 			patScope = p[3];
 			patFunc = p[5];
@@ -1251,7 +1448,7 @@ if (typeof app == "undefined") {
 	}
 
 	if (addcfg.add) {
-		var conf = JSON.parse(app.ReadFile("conf.json", false, false));
+		var conf = /** @type {DSConfig} */ (JSON.parse(app.ReadFile("conf.json")));
 		if (!conf) Throw(Error("conf.json not readable."));
 
 		Object.assign(conf.langs, addcfg.langs);
@@ -1260,7 +1457,7 @@ if (typeof app == "undefined") {
 		app.WriteFile("conf.json", tos(conf, true));
 	}
 
-	if (!nogen) Generate(patFunc, patScope, patLang);
+	if (!nogen) Generate(patFunc, /** @type {ScopeKeys | ""} */ (patScope), /** @type {LangKeys | ""} */ (patLang));
 	if (startServer) {
 		var express = require('express');
 		var server = express();
