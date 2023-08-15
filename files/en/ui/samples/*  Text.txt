@@ -1,0 +1,107 @@
+
+
+<sample Basic Text Control>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Create a full screen layout.
+            this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY" )
+
+            var t = "This is the sample text to be displayed."
+
+            this.text = ui.addText( this.main, t )
+        }
+    }
+</sample>
+
+<sample Heading Variants>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Create a full screen layout.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            this.h1 = ui.addText( this.main, "Heading 1", "H1" )
+
+            this.h2 = ui.addText( this.main, "Heading 2", "H2" )
+
+            this.h3 = ui.addText( this.main, "Heading 3", "H3" )
+
+            this.h4 = ui.addText( this.main, "Heading 4", "H4" )
+
+            this.h5 = ui.addText( this.main, "Heading 5", "H5" )
+
+            this.h6 = ui.addText( this.main, "Heading 6", "H6" )
+        }
+    }
+</sample>
+
+<sample Other Variants>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Create a full screen layout.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            var t = "This is a text to display."
+
+            this.text = ui.addText( this.main, t, "body1" )
+
+            this.text = ui.addText( this.main, t, "body2" )
+
+            this.text = ui.addText( this.main, t, "subtitle1" )
+
+            this.text = ui.addText( this.main, t, "subtitle2" )
+
+            this.text = ui.addText( this.main, t, "overline" )
+
+            this.text = ui.addText( this.main, t, "button" )
+
+            this.text = ui.addText( this.main, t, "caption" )
+        }
+    }
+</sample>
+
+<sample Alignments & Colors>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Create a full screen layout.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            var t = "This is a text to display."
+            
+            // Default is left
+            this.text = ui.addText( this.main, t, "body1,Left", 0.9 )
+
+            // Center and color primary
+            this.text = ui.addText( this.main, t, "body1,Center,Primary", 0.9 )
+
+            // Right and color secondary
+            this.text = ui.addText( this.main, t, "body1,Right,Secondary", 0.9 )
+        }
+    }
+</sample>
+
+<sample Icon Text>
+    class Main extends App
+    {
+        onStart()
+        {
+            // Create a full screen layout.
+            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+            ui.addText( this.main, "settings", "Icon" )
+
+            ui.addText( this.main, "add_a_photo", "Icon" )
+
+            ui.addText( this.main, "favorite", "Icon,Secondary" )
+
+            ui.addText( this.main, "android", "Icon,Primary" )
+        }
+    }
+</sample>
