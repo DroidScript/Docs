@@ -1,4 +1,4 @@
-## File Structure
+## DroidScript Folder
 
 <code>"/sdcard/DroidScript":"DroidScript root folder"/
 ├── \_nopremium\_:"Temporarily disable premium"

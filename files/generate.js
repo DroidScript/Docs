@@ -6,22 +6,14 @@ var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var curVer = "", curDoc = "", curSubf = "", pattern = "";
 var warnEnbl = false, dbg = false, clean = false, force = false;
 var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
-/** @type {DSConfig} */
-var conf;
-/** @type {DSBase|null} */
-var base;
-/** @type {DSNavs} */
-var navs;
-/** @type {DSScope} */
-var scope;
-/** @type {ScopeKeys} */
-var curScope;
-/** @type {string[]} */
-var allKeys = [];
-/** @type {Obj<string>} */
-var tDesc;
-/** @type {Obj<string>} */
-var tName;
+/** @type {DSConfig} */    var conf;
+/** @type {DSBase|null} */ var base;
+/** @type {DSNavs} */      var navs;
+/** @type {DSScope} */     var scope;
+/** @type {ScopeKeys} */   var curScope;
+/** @type {string[]} */    var allKeys = [];
+/** @type {Obj<string>} */ var tDesc;
+/** @type {Obj<string>} */ var tName;
 
 // @ts-ignore
 if (typeof OnStart == 'undefined') OnStart = g_OnStart;
@@ -33,8 +25,7 @@ function g_OnStart() { }
  * @param {ScopeKeys | ""} patScope optional RegEx pattern
  * @param {string} patFunc optional RegEx pattern
  */
-function Generate(patFunc, patScope, patLang)
-{
+function Generate(patFunc, patScope, patLang) {
 	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
@@ -47,9 +38,8 @@ function Generate(patFunc, patScope, patLang)
 	if (patScope && !conf.scopes[patScope])
 		Throw(new Error(`scope ${patScope} not specified in conf.json`));
 
-	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l =>
-	{
-			// delete old generated files
+	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
+		// delete old generated files
 		if (patScope + patFunc == "")
 			if (clean) app.DeleteFolder("docs" + getl());
 
@@ -71,8 +61,7 @@ function getDstDir(level, file = "") {
 }
 
 /** @param {LangKeys} l */
-function generateLang(l)
-{
+function generateLang(l) {
 	lang = l;
 	const langDir = getSrcDir(D_LANG);
 	scope = {};
@@ -84,28 +73,26 @@ function generateLang(l)
 }
 
 /** @param {string} ver */
-function generateVersion(ver)
-{
+function generateVersion(ver) {
 	curVer = ver;
 	const curDir = getDstDir(D_VER);
-	
+
 	if (clean || !app.FolderExists(curDir))
 		app.CopyFolder("docs-base", curDir);
 
 	keys(conf.scopes)
-	.filter(s => s.match(patScope) != null)
-	.forEach(scope => {
-		try { generateScope(scope); }
-		catch (e) {
-			console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
-			Throw(e);
-		}
-	});
+		.filter(s => s.match(patScope) != null)
+		.forEach(scope => {
+			try { generateScope(scope); }
+			catch (e) {
+				console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
+				Throw(e);
+			}
+		});
 }
 
 /** @param {ScopeKeys} name */
-function generateScope(name)
-{
+function generateScope(name) {
 	curScope = name;
 	const scopeDir = getSrcDir(D_SCOPE);
 	const dstDir = getDstDir(D_SCOPE);
@@ -123,8 +110,7 @@ function generateScope(name)
 	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${pattern || '*'}`);
 	parseInput();
 
-	if (!clean)
-	{
+	if (!clean) {
 		const verDir = getDstDir(D_VER);
 		// delete navs
 		if ("navs".match(regGen))
@@ -137,8 +123,7 @@ function generateScope(name)
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
 	// start generating
-	if ("navs".match(regGen))
-	{
+	if ("navs".match(regGen)) {
 		generateNavigators(navs, conf.scopes[curScope] || curScope);
 		var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
 		if (base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
@@ -153,8 +138,7 @@ function generateScope(name)
 	app.HideProgressBar();
 }
 
-function parseInput()
-{
+function parseInput() {
 	var newScope = scope, newBase = base;
 
 	// read categories
@@ -164,8 +148,7 @@ function parseInput()
 
 	// read scope members
 	curDoc = scopeDir + "obj.json";
-	if (app.FileExists(curDoc))
-	{
+	if (app.FileExists(curDoc)) {
 		newScope = JSON.parse(ReadFile(curDoc, "false"));
 		scope = mergeObject(scope, newScope);
 		if (!keys(navs).length) navs = keys(scope);
@@ -198,8 +181,7 @@ function parseInput()
 		// add files from scope folder to be generated
 		newScope = {}; base = null; navs = [];
 
-		for (var n of app.ListFolder(scopeDir + "desc"))
-		{
+		for (var n of app.ListFolder(scopeDir + "desc")) {
 			n = n.slice(0, n.lastIndexOf("."));
 			navs.push(n.replace(/^\s+/, ""));
 			// @ts-ignore
@@ -214,25 +196,20 @@ function parseInput()
  * @param {string} name
  * @param {string} [pfx]
  */
-function generateNavigators(navs, name, pfx)
-{
+function generateNavigators(navs, name, pfx) {
 	curDoc = getDstDir(D_VER, `${pfx || ''}${name.replace(/\s+/g, '')}.htm`);
 	pfx = `${pfx || curScope}_`;
 	var nav = '', addcontent = '';
 
 	// function list
-	if (navs instanceof Array)
-	{
-		for (var func of navs = navs.filter(nothidden))
-		{
+	if (navs instanceof Array) {
+		for (var func of navs = navs.filter(nothidden)) {
 			if (!func) nav += "<li></li>";
-			else
-			{
-				if (name != 'All' && scope['_'+func]) scope['_'+func].hasNav = true;
+			else {
+				if (name != 'All' && scope['_' + func]) scope['_' + func].hasNav = true;
 				else if (!scope[func]) Throw(`nav to deleted method ${curScope}.${func}`);
-				else
-				{
-					if(name != 'All') scope[func].hasNav = true;
+				else {
+					if (name != 'All') scope[func].hasNav = true;
 					nav += newNaviItem(
 						curScope + `/${func.replace(/\s+/g, '')}.htm`,
 						func.replace(/^\d+\s*/, ''), getAddClass(scope[func]));
@@ -241,22 +218,18 @@ function generateNavigators(navs, name, pfx)
 		}
 	}
 	// name:target.htm or scope:categories association
-	else if (navs instanceof Object)
-	{
-		for (var cat of keys(navs).filter(nothidden))
-		{
+	else if (navs instanceof Object) {
+		for (var cat of keys(navs).filter(nothidden)) {
 			var val = navs[cat];
 			if (cat == '_nofilter') continue;
-			if (cat.startsWith("+html"))
-			{
+			if (cat.startsWith("+html")) {
 				addcontent += val;
 				continue;
 			}
 			if (!val) val = curScope + "/" + cat + ".htm";
 
 			// targtet file
-			if (typeof val == "string")
-			{
+			if (typeof val == "string") {
 				var m = val.match(curScope + "\\/(\\w+).htm(#(.*))?");
 				/** @type {DSFunction|string|undefined} */
 				var f, add = "";
@@ -276,19 +249,13 @@ function generateNavigators(navs, name, pfx)
 	}
 	else Throw(Error("Wrong catlist datatype: " + typeof navs));
 
-	app.WriteFile(curDoc,
-		(keys(navs).length < 15 || (navs instanceof Object && navs._nofilter) ? naviBase :
-			naviBase.replace('data-filter="false"', 'data-filter="true"'))
-			.replace("%c", addcontent)
-			.replace("%l", nav)
-			.replace(/%t/g, name)
-	);
+	const nofilter = keys(navs).length < 15 || (navs instanceof Object && navs._nofilter);
+	app.WriteFile(curDoc, htmlNavi(name, addcontent, nav, !nofilter));
 }
 
 //generates doc files
 /** @param {DSScope} scope */
-function generateDocs(scope)
-{
+function generateDocs(scope) {
 	curDoc = getSrcDir(D_SCOPE);
 	var lst = keys(scope).filter(nothidden).filter(n => !!n.match(regGen));
 
@@ -306,8 +273,7 @@ function generateDocs(scope)
 }
 
 /** @param {DSScope} scope */
-function generateTips(scope)
-{
+function generateTips(scope) {
 	curDoc = getSrcDir(D_VER, curScope + '-tips.json');
 	/** @type {DSScopeRaw} */
 	var tsubf;
@@ -320,21 +286,17 @@ function generateTips(scope)
 			tips[curScope][name] = s.shortDesc;
 		else continue;
 
-		if (s.subf && s.abbrev)
-		{
+		if (s.subf && s.abbrev) {
 			tsubf = s.subf;
 			/** @type {Obj<string>} */
 			var tctrl = {};
 			tips[s.abbrev] = tctrl;
 
-			for (var j of keys(tsubf).filter(nothidden))
-			{
+			for (var j of keys(tsubf).filter(nothidden)) {
 				const t = tsubf[j];
-				if (typeof t === "string")
-				{
+				if (typeof t === "string") {
 					if (!t.startsWith('#')) Throw(Error(`md ref must have '#' prefix, got '${t}'`))
-					if (base && base[t])
-					{
+					if (base && base[t]) {
 						const b = base[t];
 						if (b.shortDesc) tctrl[j] = b.shortDesc;
 					}
@@ -351,19 +313,17 @@ function generateTips(scope)
 }
 
 /** @param {any} scope */
-function generateTsx(scope)
-{
+function generateTsx(scope) {
 	// TODO
 }
 
 // generates one document by function name
 /** @param {string} name */
-function generateDoc(name)
-{
+function generateDoc(name) {
 	/** @type {DSFunction | string} */
 	var ps = scope[name];
 	if (typeof ps == "string")
-		scope[name] = ps = {name, desc: ps, noCon: true};
+		scope[name] = ps = { name, desc: ps, noCon: true };
 	else ps.name = ps.name || name;
 	if (typeof ps == "string" || !ps.name) return;
 
@@ -373,15 +333,13 @@ function generateDoc(name)
 	var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
 
 	// get description from external file
-	if (ps.desc && ps.desc.startsWith('#'))
-	{
+	if (ps.desc && ps.desc.startsWith('#')) {
 		desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "");
 		if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
 	}
 
 	// get function specific data
-	if (!ps.noCon)
-	{
+	if (!ps.noCon) {
 		if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " get data");
 
 		const m = fillMissingFuncProps(ps);
@@ -402,11 +360,7 @@ function generateDoc(name)
 
 	// insert data to html base
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " generate description");
-	var html = htmlBase
-		.replace("%b", subfuncs)
-		.replace("%d", formatDesc(desc, name, !!data))
-		.replace("%c", funcLine);
-
+	const html = htmlDoc(name, formatDesc(desc, name, !!data), subfuncs, funcLine);
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " adjusting");
 	app.WriteFile(curDoc, adjustDoc(html, name));
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " done");
@@ -430,8 +384,7 @@ function resetGlobals() {
  * @param {string} html
  * @param {string} name
  */
-function adjustDoc(html, name)
-{
+function adjustDoc(html, name) {
 	var order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
 	var popList = keys(popDefs)
 		.map((d) => newDefPopup(popDefs[d], d))
@@ -446,13 +399,12 @@ function adjustDoc(html, name)
 
 	var toc = [];
 	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function (m, /** @type {number} */ i, /** @type {string} */ t) {
-		if (t != "%t" && i < 4) toc.push(
+		if (!name.endsWith(t) && i < 4) toc.push(
 			new Array(Number(i)).join("    ") + ([0, 0, "• ", "- "][i] || "") +
 			`<a href="" onclick="jumpTo('${t.replace(/<.*?>/g, "")}')">${t.replace(/(<sup>|$)/, "</a>$1")}<br>`);
 		return "";
 	});
-	if (toc.length)
-	{
+	if (toc.length) {
 		toc.unshift("<b>Content:</b><br>");
 		toc.unshift('\n\t\t<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">');
 		toc.push("</div>\n\n\t\t");
@@ -461,8 +413,6 @@ function adjustDoc(html, name)
 	html = html
 		// table of contents
 		.replace(/("content">\n\t\t)/, `$1${toc.join("\n\t\t")}`)
-		// title occurances
-		.replace(/%t/g, name.replace(/\d+\s*/, ''))
 		// popup object list
 		.replace(/%p/, popList)
 		// additional notes
@@ -542,8 +492,7 @@ function adjustDoc(html, name)
  * @param {any} name
  * @param {boolean} hasData
  */
-function formatDesc(desc, name, hasData)
-{
+function formatDesc(desc, name, hasData) {
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
 	var samples = getSamples(name), s;
@@ -582,8 +531,7 @@ function formatDesc(desc, name, hasData)
  * @param {DSFunction} f 
  * @returns {DSMethod}
  * */
-function fillMissingFuncProps(f)
-{
+function fillMissingFuncProps(f) {
 	if (!f.name) {
 		Throw(Error(`missing name in ${tos(f)}`));
 		process.exit();
@@ -732,19 +680,7 @@ function toHtmlSamp(code, name, index, options) {
 		.replace(/    /g, "&#160;&#160;&#160;&#160;")
 		.replace(/\n/g, "<br>\n\t\t\t\t")
 
-	if (hasBold) {
-		code = sampBase
-			.replace("%b", code)
-			.replace(/§b§([^]+?)§b§/g, "<b id=\"snip%i\" style=\"font-size:100%\">$1</b>");
-	}
-	else {
-		code = sampBase
-			.replace(/.*<a.*onclick="copy\( snip%i \)">.*<\/a>\n/, "")
-			.replace("%b", code);
-	}
-	if (has(options, "norun")) code = code.replace(/\s*<a .*? onclick="demo\( examp.*?<\/a>/, "");
-
-	return code.replace(/%i/g, String(index)).replace(/%t/g, name ? " - " + name : '');
+	return htmlSample(name, String(index), code, hasBold, !has(options, "norun"));
 }
 
 
@@ -1116,11 +1052,6 @@ function newPopup(type, name, desc, addClass) {
 	return newTxtPopup(pop_id, name, addClass);
 }
 
-/** @param {number} d */
-function getHead(d) {
-	const sd = new Array(d).fill("../").join("");
-	return htmlHead.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${sd}`)
-}
 
 /* % placeholder descriptions in the html base strings
 	%t: title name
@@ -1160,22 +1091,27 @@ var		// subfunction
 		xfeature: "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>",
 	};
 
-	// example snippets
-var sampBase = `
+function htmlSample(title = "", id = "", code = "", bold = false, run = false)
+{
+	if(bold) code = code.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" style="font-size:100%">$1</b>`);
+	return `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example%t</h3>
-			<div id="examp%i" style="font-size:70%">
-				%b
+			<h3>Example${title && ' - ' + title}</h3>
+			<div id="examp${id}" style="font-size:70%">
+				${code}
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip%i )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp%i )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp%i )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
-			</div>
-		</div>\n\n\t\t`;
+			${bold ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip${id} )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			` : ''}<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp${id} )">Copy All</a>
+			${run ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp${id} )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+			` : ''}</div>
+		</div>\n\n\t\t`.replace(/%i/g, id).replace(/%t/g, title);
+}
 
-var htmlHead = `<head>
-	<title>%t</title>
+function getHead(title = "", d = 0) {
+	const sd = new Array(d).fill("../").join("");
+	return `<head>
+	<title>${title}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css"/>
@@ -1189,46 +1125,53 @@ var htmlHead = `<head>
 	<script src="js/common.js"></script>
 	<script src="js/example.js"></script>
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
-</head>`,
-	//docs navigator list base
-	naviBase = `
+</head>`.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${sd}`);
+}
+
+function htmlNavi(title = "", content = "", navs = "", filter = false)
+{
+	return `
 <!DOCTYPE html>
 <html>
 
-${getHead(0)}
+${getHead(title, 0)}
 
 <body>
 <div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-		<h1>%t</h1>
+		<h1>${title}</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div><!-- /header -->
 
-	%c
+	${content}
 
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-filter="false">
-		%l
+		<ul data-role="listview" data-inset="true" data-filter="${filter}">
+		${navs}
 		</ul>
 	</div><!-- /content -->
 </div><!-- /page -->
 </body>
-</html>\n`,
-	//whole html document
-	htmlBase = `
+</html>\n`;
+}
+
+function htmlDoc(title = "", desc = "", subf = "", construct = "")
+{
+	title = title.replace(/^\d+\s*/, '');
+	return `
 <!DOCTYPE html>
 <html>
-
-${getHead(1)}
-
+	
+${getHead(title, 1)}
+	
 <body>
 <div data-role="page" data-theme="a">
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>%t</h1>
+		<h1>${title}</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -1237,15 +1180,16 @@ ${getHead(1)}
 	</div>
 
 	<div data-role="content">
-		%d
-		%b
+		${desc.replace("%c", construct)}
+		${subf}
 	</div>
 
 	%p
 </div>
 </body>
-
+	
 </html>\n`;
+}
 
 // ---------------------------- top globs --------------------------------------
 
@@ -1483,7 +1427,7 @@ if (typeof app == "undefined") {
 				case "-v": case "--verbose": dbg = true; break;
 				case "-c": case "--clean": clean = true; break;
 				case "-f": case "--force": force = true; break;
-				case "-h": case "--help": app.Alert(help); process.exit(0);				case "-s": startServer = true; break;
+				case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
 				case "-al": case "--addlang":
 					if (pat.length < 3) Throw(Error("missing option args. expected 2"));
 					addcfg.add = true;
@@ -1516,7 +1460,7 @@ if (typeof app == "undefined") {
 		app.WriteFile("conf.json", tos(conf, true));
 	}
 
-	if (!nogen) Generate(patFunc, /** @type {ScopeKeys | ""} */ (patScope), /** @type {LangKeys | ""} */ (patLang));
+	if (!nogen) Generate(patFunc, /** @type {ScopeKeys | ""} */(patScope), /** @type {LangKeys | ""} */(patLang));
 	if (startServer) {
 		var express = require('express');
 		var server = express();
