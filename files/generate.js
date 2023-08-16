@@ -2,9 +2,10 @@
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 var conf = /** @type {DSConfig} */ ({});
-var curDoc = "", curSubf = "", lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
+var verDir = "", scopeDir = "", curDir = "", curVer = "", curDoc = "", curSubf = "";
+var pattern = "", lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var warnEnbl = false, dbg = false, clean = false, force = false;
-var scopeDir = "", regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
+var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
 /** @type {DSBase|null} */
 var base;
 /** @type {DSNavs} */
@@ -37,6 +38,7 @@ function Generate(patFunc, patScope, patLang)
 	regControl = RegExp(conf.regControl);
 	tDesc = conf.tdesc;
 	tName = conf.tname;
+	pattern = patFunc;
 
 	if (patLang && !conf.langs[patLang])
 		Throw(new Error(`language ${patLang} not specified in conf.json`));
@@ -45,66 +47,119 @@ function Generate(patFunc, patScope, patLang)
 
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l =>
 	{
-		lang = l;
-
-		if (patScope + patFunc == "")
-		{
 			// delete old generated files
+		if (patScope + patFunc == "")
 			if (clean) app.DeleteFolder("docs" + getl());
-			if (clean || !app.FolderExists("docs" + getl()))
-				app.CopyFolder("docs-base", "docs" + getl());
-		}
 
-		keys(conf.scopes).filter(s => s.match(patScope) != null).forEach(s => {
-			try { generateScope(s, patFunc); }
-			catch (e) {
-				console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
-				Throw(e);
-			}
-		});
+		generateLang(l);
 	})
 }
 
-/**
- * @param {ScopeKeys} name
- * @param {string} pattern
- */
-function generateScope(name, pattern)
+/** @param {LangKeys} l */
+function generateLang(l)
+{
+	lang = l;
+	scope = {};
+	base = {};
+
+	const versions = app.ListFolder(lang).sort();
+	for (const v of versions) generateVersion(v);
+}
+
+/** @param {string} ver */
+function generateVersion(ver)
+{
+	curVer = ver;
+	verDir = `${lang}/${curVer}/`;
+	curDir = `docs${getl()}/${curVer}/`;
+	
+	if (clean || !app.FolderExists(curDir))
+		app.CopyFolder("docs-base", curDir);
+
+	keys(conf.scopes)
+	.filter(s => s.match(patScope) != null)
+	.forEach(scope => {
+		try { generateScope(scope); }
+		catch (e) {
+			console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
+			Throw(e);
+		}
+	});
+}
+
+/** @param {ScopeKeys} name */
+function generateScope(name)
 {
 	curScope = name;
-	scopeDir = lang + `/${curScope}/`;
+	scopeDir = verDir + curScope + '/';
 	regGen = RegExp(pattern || ".*");
 
 	if (!app.FolderExists(lang)) Throw(Error(`Language '${lang}' doesn't exist.`));
 
 	if (!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
-		Throw(Error(`Scope '${lang}.${name}' doesn't exist.`));
+		Throw(Error(`'${scopeDir}' doesn't exist.`));
 
-	if (!app.FolderExists(scopeDir + "samples"))
-		app.MakeFolder(scopeDir + "samples");
+	if (!app.FolderExists(scopeDir + "samples")) app.MakeFolder(scopeDir + "samples");
+
+	// check file dates for update
+	if (!force && !clean && newestFileDate(curDir + curScope) > newestFileDate(scopeDir, "generate.js"))
+		return console.log(`Skipped ${lang}.${curVer}.${name}.${pattern || '*'}`);
+
+	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${pattern || '*'}`);
+	parseInput();
+
+	if (!clean)
+	{
+		// delete navs
+		if ("navs".match(regGen))
+			app.ListFolder("docs" + getl()).map((/** @type {string} */ f) =>
+				f.startsWith(name + "_") && app.DeleteFile(curDir + f));
+		// delete docs
+		else app.DeleteFolder(curDir + name);
+	}
+
+	if (!app.FolderExists(curDir + name))
+		app.MakeFolder(curDir + name);
+
+	// start generating
+	if ("navs".match(regGen))
+	{
+		generateNavigators(navs, conf.scopes[curScope] || curScope);
+		var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+		if (base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
+	}
+
+	generateDocs(scope);
+
+	// update version number
+	var v = 1000 * (Date.now() / 864e5 | 0);
+	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 + 1;
+	app.WriteFile("version.txt", (v + vn).toString());
+	app.HideProgressBar();
+}
+
+function parseInput()
+{
+	var newScope = scope, newBase = base;
 
 	// read categories
 	curDoc = scopeDir + "navs.json";
 	navs = JSON.parse(ReadFile(curDoc, "{}"));
 
-	// check file dates for update
-	if (!force && !clean && newestFileDate(`docs${getl()}/${curScope}`) > newestFileDate(scopeDir, "generate.js"))
-		return console.log(`Skipped ${lang}.${name}.${pattern || '*'}`);
-
-	app.ShowProgressBar(`Generating ${lang}.${name}.${pattern || '*'}`);
-
 	// read scope members
 	curDoc = scopeDir + "obj.json";
 	if (app.FileExists(curDoc))
 	{
-		scope = JSON.parse(ReadFile(curDoc, "false"));
+		newScope = JSON.parse(ReadFile(curDoc, "false"));
+		scope = mergeObject(scope, newScope);
 		if (!keys(navs).length) navs = keys(scope);
 		// @ts-ignore
 		else navs.All = keys(scope);
 
 		// read base functions used in scope
 		curDoc = scopeDir + "base.json";
-		base = JSON.parse(ReadFile(curDoc, "false"));
+		newBase = JSON.parse(ReadFile(curDoc, "false"));
+		base = mergeObject(base, newBase);
 		if (base) {
 			// additionally, read /*#obj*/ marked functions from .js file if exists
 			if (!app.FileExists(scopeDir + curScope + ".js"))
@@ -125,45 +180,17 @@ function generateScope(name, pattern)
 	{
 		regGen = RegExp("(?=^tips$)[]|(?!^tips$)^.*" + regGen.source);
 		// add files from scope folder to be generated
-		scope = {}; base = null; navs = [];
+		newScope = {}; base = null; navs = [];
 
 		for (var n of app.ListFolder(scopeDir + "desc"))
 		{
 			n = n.slice(0, n.lastIndexOf("."));
 			navs.push(n.replace(/^\s+/, ""));
 			// @ts-ignore
-			scope[n] = `#${n}.md`;
+			newScope[n] = `#${n}.md`;
 		}
+		scope = mergeObject(scope, newScope);
 	}
-
-	if (!clean)
-	{
-		// delete navs
-		if ("navs".match(regGen))
-			app.ListFolder("docs" + getl()).map((/** @type {string} */ f) =>
-				f.startsWith(name + "_") && app.DeleteFile(`docs${getl()}/` + f));
-		// delete docs
-		else app.DeleteFolder(`docs${getl()}/` + name);
-	}
-
-	if (!app.FolderExists(`docs${getl()}/` + name))
-		app.MakeFolder(`docs${getl()}/` + name);
-
-	// start generating
-	if ("navs".match(regGen))
-	{
-		generateNavigators(navs, conf.scopes[curScope] || curScope);
-		var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
-		if(base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
-	}
-
-	generateDocs(scope);
-
-	// update version number
-	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 + 1;
-	app.WriteFile("version.txt", (v + vn).toString());
-	app.HideProgressBar();
 }
 
 /**
@@ -173,7 +200,7 @@ function generateScope(name, pattern)
  */
 function generateNavigators(navs, name, pfx)
 {
-	curDoc = `docs${getl()}/${pfx || ''}${name.replace(/\s+/g, '')}.htm`;
+	curDoc = `${curDir}${pfx || ''}${name.replace(/\s+/g, '')}.htm`;
 	pfx = `${pfx || curScope}_`;
 	var nav = '', addcontent = '';
 
@@ -246,7 +273,7 @@ function generateNavigators(navs, name, pfx)
 /** @param {DSScope} scope */
 function generateDocs(scope)
 {
-	curDoc = lang + "/" + curScope;
+	curDoc = verDir + curScope;
 	var lst = keys(scope).filter(nothidden).filter(n => !!n.match(regGen));
 
 	for (var i = 0; i < lst.length; i++) {
@@ -265,7 +292,7 @@ function generateDocs(scope)
 /** @param {DSScope} scope */
 function generateTips(scope)
 {
-	curDoc = lang + `/${curScope}-tips.json`;
+	curDoc = verDir + `${curScope}-tips.json`;
 	/** @type {DSScopeRaw} */
 	var tsubf;
 	/** @type {Obj<Obj<string>>} */
@@ -324,7 +351,7 @@ function generateDoc(name)
 	else ps.name = ps.name || name;
 	if (typeof ps == "string" || !ps.name) return;
 
-	curDoc = `docs${getl()}/${curScope}/${(ps.name).replace(/\s+/g, '')}.htm`;
+	curDoc = `${curDir}${curScope}/${(ps.name).replace(/\s+/g, '')}.htm`;
 	resetGlobals();
 
 	var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
@@ -1236,28 +1263,24 @@ function has(l, v) { return !!l && l.indexOf(v) > -1; }
 function values(o) { return Object.values(o); }
 /** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
 function keys(o) { return Object.keys(o); }
-/**
- * @param {any} v
- */
+/** @param {any} v */
 function d(v) { console.log(v); return v; }
 function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope, true)); }
 /**
- * @param {string | number} a
- * @param {string | number} b
+ * @param {any} a
+ * @param {any} b
  */
 function sortAsc(a, b) {
-	a = a.toString().replace(/[^a-z0-9]/gi, "") || a + "";
-	b = b.toString().replace(/[^a-z0-9]/gi, "") || b + "";
-	var la = a.toLowerCase(), lb = b.toLowerCase();
-	return la == lb ? a < b ? 1 : -1 : la > lb ? 1 : -1;
+	const sa = String(a).replace(/[^a-z0-9]/gi, "") || String(a);
+	const sb = String(b).replace(/[^a-z0-9]/gi, "") || String(b);
+	var la = sa.toLowerCase(), lb = sb.toLowerCase();
+	return la == lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
 }
 
 /** @param {string} name */
 function isControl(name) { return !!scope[name].subf; }
 
-/**
- * @param {string} s
- */
+/** @param {string} s */
 function getAbbrev(s) {
 	var count = 0;
 	// remove 'Create'
@@ -1282,6 +1305,26 @@ function ReadFile(file, dflt, write) {
 	if (app.FileExists(file)) return app.ReadFile(file);
 	else if (write) app.WriteFile(file, dflt);
 	return dflt;
+}
+
+/**
+ * @template T
+ * @param {T} a
+ * @param {T} b
+ */
+function mergeObject(a, b) {
+	// inherit old from a / copy new from b
+	if (a === undefined || b === undefined) return a || b;
+	if (a === null || b === null) return a || b;
+	if (typeof b === "object") {
+		for (const k in b) {
+			if (b[k] === null) delete a[k];
+			else if (a[k] === null) throw Error("mergeObject restore deleted property " + k);
+			else a[k] = mergeObject(a[k], b[k]);
+		}
+	}
+	// override primitives
+	return b;
 }
 
 // converts a variable to indented string
