@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addTabs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addTabs</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Tab<br>
+		Adds a Tabs Component into your layout<br>
+		Default Tab variant for mobile screens is <kbd>fullWidth</kbd> unless provided</p>
+		<h3>Properties</h3>
+		<p>These are the setter and getter properties for the addTabs Component.<div class="samp" style="margin-top:2px;"><a href="#absheight-0" data-transition="pop" data-rel="popup" class="ui-link">absHeight </a></div><div class="samp" style="margin-top:2px;"><a href="#absleft-5" data-transition="pop" data-rel="popup" class="ui-link">absLeft </a></div><div class="samp" style="margin-top:2px;"><a href="#abstop-10" data-transition="pop" data-rel="popup" class="ui-link">absTop </a></div><div class="samp" style="margin-top:2px;"><a href="#abswidth-15" data-transition="pop" data-rel="popup" class="ui-link">absWidth </a></div><div class="samp" style="margin-top:2px;"><a href="#backcolor-20" data-transition="pop" data-rel="popup" class="ui-link">backColor </a></div><div class="samp" style="margin-top:2px;"><a href="#backimage-25" data-transition="pop" data-rel="popup" class="ui-link">backImage </a></div><div class="samp" style="margin-top:2px;"><a href="#border-30" data-transition="pop" data-rel="popup" class="ui-link">border </a></div><div class="samp" style="margin-top:2px;"><a href="#bordercolor-35" data-transition="pop" data-rel="popup" class="ui-link">borderColor </a></div><div class="samp" style="margin-top:2px;"><a href="#centered-40" data-transition="pop" data-rel="popup" class="ui-link">centered </a></div><div class="samp" style="margin-top:2px;"><a href="#color-45" data-transition="pop" data-rel="popup" class="ui-link">color </a></div><div class="samp" style="margin-top:2px;"><a href="#cornerradius-50" data-transition="pop" data-rel="popup" class="ui-link">cornerRadius </a></div><div class="samp" style="margin-top:2px;"><a href="#disabled-55" data-transition="pop" data-rel="popup" class="ui-link">disabled </a></div><div class="samp" style="margin-top:2px;"><a href="#elevation-60" data-transition="pop" data-rel="popup" class="ui-link">elevation </a></div><div class="samp" style="margin-top:2px;"><a href="#fontfile-65" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp" style="margin-top:2px;"><a href="#fontfile-70" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp" style="margin-top:2px;"><a href="#height-75" data-transition="pop" data-rel="popup" class="ui-link">height </a></div><div class="samp" style="margin-top:2px;"><a href="#iconcolor-80" data-transition="pop" data-rel="popup" class="ui-link">iconColor </a></div><div class="samp" style="margin-top:2px;"><a href="#iconsize-85" data-transition="pop" data-rel="popup" class="ui-link">iconSize </a></div><div class="samp" style="margin-top:2px;"><a href="#indicatorcolor-90" data-transition="pop" data-rel="popup" class="ui-link">indicatorColor </a></div><div class="samp" style="margin-top:2px;"><a href="#indicatorradius-95" data-transition="pop" data-rel="popup" class="ui-link">indicatorRadius </a></div><div class="samp" style="margin-top:2px;"><a href="#indicatorthickness-100" data-transition="pop" data-rel="popup" class="ui-link">indicatorThickness </a></div><div class="samp" style="margin-top:2px;"><a href="#indicatorwidth-105" data-transition="pop" data-rel="popup" class="ui-link">indicatorWidth </a></div><div class="samp" style="margin-top:2px;"><a href="#isvisible-110" data-transition="pop" data-rel="popup" class="ui-link">isVisible </a></div><div class="samp" style="margin-top:2px;"><a href="#left-115" data-transition="pop" data-rel="popup" class="ui-link">left </a></div><div class="samp" style="margin-top:2px;"><a href="#margins-120" data-transition="pop" data-rel="popup" class="ui-link">margins </a></div><div class="samp" style="margin-top:2px;"><a href="#opacity-125" data-transition="pop" data-rel="popup" class="ui-link">opacity </a></div><div class="samp" style="margin-top:2px;"><a href="#options-130" data-transition="pop" data-rel="popup" class="ui-link">options </a></div><div class="samp" style="margin-top:2px;"><a href="#padding-135" data-transition="pop" data-rel="popup" class="ui-link">padding </a></div><div class="samp" style="margin-top:2px;"><a href="#parent-140" data-transition="pop" data-rel="popup" class="ui-link">parent </a></div><div class="samp" style="margin-top:2px;"><a href="#position-145" data-transition="pop" data-rel="popup" class="ui-link">position </a></div><div class="samp" style="margin-top:2px;"><a href="#rotation-150" data-transition="pop" data-rel="popup" class="ui-link">rotation </a></div><div class="samp" style="margin-top:2px;"><a href="#scrollbuttonmode-155" data-transition="pop" data-rel="popup" class="ui-link">scrollButtonMode </a></div><div class="samp" style="margin-top:2px;"><a href="#tabheight-160" data-transition="pop" data-rel="popup" class="ui-link">tabHeight </a></div><div class="samp" style="margin-top:2px;"><a href="#tabpadding-165" data-transition="pop" data-rel="popup" class="ui-link">tabPadding </a></div><div class="samp" style="margin-top:2px;"><a href="#textcolor-170" data-transition="pop" data-rel="popup" class="ui-link">textColor </a></div><div class="samp" style="margin-top:2px;"><a href="#textsize-175" data-transition="pop" data-rel="popup" class="ui-link">textSize </a></div><div class="samp" style="margin-top:2px;"><a href="#top-180" data-transition="pop" data-rel="popup" class="ui-link">top </a></div><div class="samp" style="margin-top:2px;"><a href="#type-185" data-transition="pop" data-rel="popup" class="ui-link">type </a></div><div class="samp" style="margin-top:2px;"><a href="#variant-190" data-transition="pop" data-rel="popup" class="ui-link">variant </a></div><div class="samp" style="margin-top:2px;"><a href="#visibility-195" data-transition="pop" data-rel="popup" class="ui-link">visibility </a></div><div class="samp" style="margin-top:2px;"><a href="#width-200" data-transition="pop" data-rel="popup" class="ui-link">width </a></div><br>
+		<div data-role="popup" id="absheight-0" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the absolute height of the control in pixels.</p></div><div data-role="popup" id="absleft-5" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the absolute distance of the control from the left in pixels.</p></div><div data-role="popup" id="abstop-10" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the absolute distance of the control from the top in pixels.</p></div><div data-role="popup" id="abswidth-15" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the absolute width of the control in pixels.</p></div><div data-role="popup" id="backcolor-20" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		A hexadecimal color of the form <kbd>#rrggbb</kbd></p></div><div data-role="popup" id="backimage-25" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		The path to your image file.</p></div><div data-role="popup" id="border-30" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the border thickness in pixels.</p></div><div data-role="popup" id="bordercolor-35" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the border color.</p>
+
+		<div class="samp">
+		s = ui.addTabs(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>Object:</b> Tabs Component
+		</div>
+
+		<p>Color is in hexadecimal form <kbd>#rrggbb</kbd></p></div><div data-role="popup" id="centered-40" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Sets or returns a boolean value whether the tabs are centered or not.</p></div><div data-role="popup" id="color-45" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the theme color of the tab bar. Values can be <kbd>Default</kbd> <kbd>Primary</kbd> or <kbd>Secondary</kbd></p></div><div data-role="popup" id="cornerradius-50" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the corner radius in pixels.</p></div><div data-role="popup" id="disabled-55" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Sets or returns the <kbd>disbaled</kbd> state of the control.</p></div><div data-role="popup" id="elevation-60" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the elevation of the tab bar. Make sure to pass a <kbd>Paper</kbd> option for this to work.</p></div><div data-role="popup" id="fontfile-65" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the path to the font-family use.</p></div><div data-role="popup" id="fontfile-70" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the font file use.</p></div><div data-role="popup" id="height-75" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the height of the control.</p></div><div data-role="popup" id="iconcolor-80" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the color ofthe tab icon.</p></div><div data-role="popup" id="iconsize-85" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the tab icon.</p></div><div data-role="popup" id="indicatorcolor-90" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the color of the indicator bar. You can pass theme color <kbd>primary</kbd> or <kbd>secondary</kbd> or in hexadecimal format <kbd>#rrggbb</kbd>.</p></div><div data-role="popup" id="indicatorradius-95" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the corner radius of the indicator bar in pixels.</p></div><div data-role="popup" id="indicatorthickness-100" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the thickness of the indicator bar in pixels.</p></div><div data-role="popup" id="indicatorwidth-105" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the width of the indicator bar as a fraction of the tab item width. Works only on <kbd>FullWidth</kbd> tab.</p></div><div data-role="popup" id="isvisible-110" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Returns whether the control is visible or not.</p></div><div data-role="popup" id="left-115" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the distance of the control from the left.</p></div><div data-role="popup" id="margins-120" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
+		Sets or returns the margin of the control. Works on controls with <kbd>Linear</kbd> parent only. You can also pass a number to set equal margins for all sides.</p></div><div data-role="popup" id="opacity-125" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the opacity of the control.</p></div><div data-role="popup" id="options-130" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the <kbd>options</kbd> of the control.</p></div><div data-role="popup" id="padding-135" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
+		Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</p></div><div data-role="popup" id="parent-140" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
+		Returns the parent layout control.</p></div><div data-role="popup" id="position-145" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
+		Returns the position of the control. The returned object has <kbd>left</kbd> <kbd>top</kbd> <kbd>right</kbd> and <kbd>bottom</kbd> props.</p></div><div data-role="popup" id="rotation-150" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the angle of rotation in degrees.</p></div><div data-role="popup" id="scrollbuttonmode-155" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the scroll button mode when tab items overflow the width of its container. Values are <kbd>auto</kbd> <kbd>desktop</kbd> <kbd>on</kbd> and <kbd>of</kbd>.</p></div><div data-role="popup" id="tabheight-160" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the height of the tab in pixels.</p></div><div data-role="popup" id="tabpadding-165" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the padding of the tab items. The return value is an object of the form <kbd>{left, top, right, bottom</p></div><div data-role="popup" id="textcolor-170" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the theme color for the tab bar titles </kbd>Primary<kbd> or </kbd>Secondary<kbd>. You can also pass a hexadecimal color of the form </kbd>#rrggbb<kbd></p></div><div data-role="popup" id="textsize-175" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the size of the text within the control.</p></div><div data-role="popup" id="top-180" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the distance of the control from the top.</p></div><div data-role="popup" id="type-185" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Returns the type of the control.</p></div><div data-role="popup" id="variant-190" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the variant of the Tabs Component. Values can be </kbd>Standard<kbd> </kbd>Scrollable<kbd> or </kbd>FullWidth`</p></div><div data-role="popup" id="visibility-195" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the visibility of the control.</p></div><div data-role="popup" id="width-200" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the width of the control.</p></div></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token keyword">var</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Tab 1"</span><span class="token punctuation">,</span> <span class="token string">"Tab 2"</span><span class="token punctuation">,</span> <span class="token string">"Tab 3"</span> <span class="token punctuation">]</span><br>
+				            <br>
+				            <span class="token comment">// Adds a tab to the main layout.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTabs</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - With Icon</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token keyword">var</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span> <span class="token punctuation">]</span><br>
+				            <span class="token punctuation">]</span><br>
+				            <br>
+				            <span class="token comment">// Adds a tab to the main layout.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTabs</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - With Styles</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span class="token punctuation">(</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#ffc107"</span> <span class="token punctuation">)</span><br>
+				            <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token keyword">var</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span> <span class="token punctuation">]</span><br>
+				            <span class="token punctuation">]</span><br>
+				            <br>
+				            <span class="token comment">// Adds a tab to the main layout.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTabs</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"primary"</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#ffffff"</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Icon only</h3>
+			<div id="examp4" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token keyword">var</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"wifi"</span> <span class="token punctuation">]</span><br>
+				            <br>
+				            <span class="token comment">// Adds a tab to the main layout.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTabs</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Custom Colors and Sizes</h3>
+			<div id="examp5" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span class="token punctuation">(</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#ffc107"</span> <span class="token punctuation">)</span><br>
+				            <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token keyword">var</span> tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				                <span class="token punctuation">[</span> <span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span> <span class="token punctuation">]</span><br>
+				            <span class="token punctuation">]</span><br>
+				            <br>
+				            <span class="token comment">// Adds a tab to the main layout.</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTabs</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"primary"</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#ffffff"</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"orange"</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>tab<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token number">30</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Tabs</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">addTab</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">icon</a>,
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">index</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">animate</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">anim</a>,
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">bringForward</a>(
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">destroy</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">getEnabled</a>(
+			<a href="#pop_num_006" data-transition="pop" data-rel="popup">index</a> )
+			→ <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">getEnabledByName</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a> )
+			→ <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">getLayout</a>(
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">name</a> )
+			→ <b>Object:</b> Layout Component
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">getLayoutIndex</a>(
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">layout</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">getPosition</a>(
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">gone</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">removeTabByIndex</a>(
+			<a href="#pop_num_007" data-transition="pop" data-rel="popup">index</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">removeTabByName</a>(
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">name</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">sendBackward</a>(
+			<a href="#pop_num_008" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">setBorder</a>(
+			<a href="#pop_num_009" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">setCornerRadius</a>(
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">tl</a>,
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tr</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">bl</a>,
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">br</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">setEnabled</a>(
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">index</a>,
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">setEnabledByName</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">setIcon</a>(
+			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">index</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">icon</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">setIndicatorStyle</a>(
+			<a href="#pop_num_010" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_011" data-transition="pop" data-rel="popup">thickness</a>,
+			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">color</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">radius</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setMargins</a>(
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">setOnChange</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">setPadding</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_019" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">setPosition</a>(
+			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">setScale</a>(
+			<a href="#pop_num_01d" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_01e" data-transition="pop" data-rel="popup">y</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">setSize</a>(
+			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_020" data-transition="pop" data-rel="popup">height</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">setTabPadding</a>(
+			<a href="#pop_num_021" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_022" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_023" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_024" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">setTabs</a>(
+			<a href="#pop_lst_002" data-transition="pop" data-rel="popup">tabs</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">setTitleText</a>(
+			<a href="#pop_num_025" data-transition="pop" data-rel="popup">index</a>,
+			<a href="#pop_str_013" data-transition="pop" data-rel="popup">title</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup">show</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">showScrollButton</a>(
+			<a href="#pop_str_014" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">showTab</a>(
+			<a href="#pop_str_015" data-transition="pop" data-rel="popup">name</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">showTabByIndex</a>(
+			<a href="#pop_num_026" data-transition="pop" data-rel="popup">index</a> )
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> Values can be `true` or `false`.</div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The index in which to insert the tab.</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> The z-index. A negative value behaves like `sendBackward` method.</div>
+	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> The index of the corresponding tab.</div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> The index of the corresponding tab to remove.</div>
+	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
+	<div data-role="popup" id="pop_num_009" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> Top-left corner radius.</div>
+	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> Top-right corner radius.</div>
+	<div data-role="popup" id="pop_num_00c" class="ui-content"><b>Number:</b> Bottom-left corner radius.</div>
+	<div data-role="popup" id="pop_num_00d" class="ui-content"><b>Number:</b> Bottom-right corner radius.</div>
+	<div data-role="popup" id="pop_num_00e" class="ui-content"><b>Number:</b> The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.</div>
+	<div data-role="popup" id="pop_num_00f" class="ui-content"><b>Number:</b> The index of the tab.</div>
+	<div data-role="popup" id="pop_num_010" class="ui-content"><b>Number:</b> Fraction of the tab item width. This works only on `fullWidth` tab.</div>
+	<div data-role="popup" id="pop_num_011" class="ui-content"><b>Number:</b> Thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_012" class="ui-content"><b>Number:</b> The corner radius in pixels.</div>
+	<div data-role="popup" id="pop_num_013" class="ui-content"><b>Number:</b> Fraction of the parent width.</div>
+	<div data-role="popup" id="pop_num_014" class="ui-content"><b>Number:</b> Fraction of the parent height.</div>
+	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
+	<div data-role="popup" id="pop_num_018" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
+	<div data-role="popup" id="pop_num_019" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
+	<div data-role="popup" id="pop_num_01b" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
+	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_020" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_021" class="ui-content"><b>Number:</b> The tab-item left padding.</div>
+	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> The tab-item top padding.</div>
+	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> The tab-item right padding.</div>
+	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> The tab-item bottom padding.</div>
+	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> Index of the tab.</div>
+	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> The index of the tab to be shown.</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated options for Tabs. n Enable swipe: `Swipeable` n Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` n Variant: `Standard` `Scrollable` `FullWidth` n Layout: `Linear`”</docstr>, <docstr>“ `Absolute` nUtils: `Icon` `Center` `Paper`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The name of the tab.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Material icon font.”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“The name of the tab. You can also pass the index of the tab.”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The name of the corresponding tab to remove.”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“Hexadecimal color of the form `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.”</docstr></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“The new title.”</docstr></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“Values can be n `auto` : will only present them when not all the items are visible n `desktop` : will only present them on medium and larger viewports n `on` : will always present them n `off` : will never present them.”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“The name of the tab to be shown.”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add the Tabs Component.</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The layout to check.</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The pointer event object.</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> An array of tab names.</div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> The tab titles array. See examples for format.</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The tab name.”')">name </a>,
+		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding tab.')">index </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The text of the tab item.”')">text </a>,
+		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding tab item.')">index </a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The tab name text.”')">name </a>,
+		<a href="" onclick="app.ShowPopup('Number: tab item index.')">The </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>s.addTab</b><br>Add or insert a tab to the Tabs Component<br><br></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>s.animate</b><br>Animate the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>s.bringForward</b><br>Bring this component forward by a given z-index<br><br></div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>s.destroy</b><br>Destroy the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>s.getEnabled</b><br>Get the enabled state of a tab<br><br></div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>s.getEnabledByName</b><br>Get the enabled state of a tab by its name<br><br></div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>s.getLayout</b><br>Returns the layout of the corresponding tab. You can then add components into the returned layout<br><br></div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>s.getLayoutIndex</b><br>Get the index of the corresponding layout<br><br></div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>s.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom<br><br></div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>s.gone</b><br>Destroy the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>s.hide</b><br>Hide the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>s.removeTabByIndex</b><br>Removes a tab item by its corresponding index<br><br></div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>s.removeTabByName</b><br>Removes a tab item by its corresponding name<br><br></div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>s.sendBackward</b><br>Bring this component backward by a given z-index<br><br></div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>s.setBorder</b><br>Sets the border line for the component container<br><br></div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>s.setCornerRadius</b><br>Sets the corner radius of the tab<br><br></div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>s.setEnabled</b><br>Enable or disable a tab item. Pass <kbd>index</kbd> as number if you want the corresponding tab index to be enabled or disabled<br>Pass <kbd>index</kbd> as Boolean, if you want to disable the entire Tabs component<br><br></div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>s.setEnabledByName</b><br>Enable or disable a tab by its name<br><br></div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>s.setIcon</b><br>Sets an icon to a corresponding tab title<br><br></div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>s.setIndicatorStyle</b><br>Add a custom styling to the indicator color<br><br></div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>s.setMargins</b><br>Sets the margin of the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>s.setOnChange</b><br>Sets a callback function when the value of the tab changes<br><br></div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>s.setOnContextMenu</b><br>Adds a callback function on right click<br><br></div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>s.setOnTouch</b><br>Add a callback function when a tab item i click<br><br></div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>s.setPadding</b><br>Sets the padding component container<br><br></div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>s.setPosition</b><br>Sets the position of the component relative to its parent dimensions<br><br></div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>s.setScale</b><br>Sets the x and y scaling of the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>s.setSize</b><br>Sets the size of the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>s.setTabPadding</b><br>Sets the padding of the tab items<br><br></div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>s.setTabs</b><br>Sets the tab titles array<br><br></div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>s.setTitleText</b><br>Sets a new title for the corresponding tab<br><br></div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>s.show</b><br>Show the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>s.showScrollButton</b><br>Determines the behavior of scroll buttons when tabs are set to `scrollable<br><br></div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>s.showTab</b><br>Show a tab panel by its corresponding name. This will make the tab in active state<br><br></div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>s.showTabByIndex</b><br>Show a tab panel by its corresponding name. This will make the tab in active state<br><br></div>
+</div>
+</body>
+
+</html>
