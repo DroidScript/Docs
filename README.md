@@ -12,10 +12,14 @@ More DS tools [here](https://github.com/SymDSTools)
 
 ### Structure
 
-- **docs:** The generated documentation for the GithubPages preview
+- **docs:** The latest generated documentation for the Github Pages preview
 - **files:** all relevant generation files
 
-Check out [files/README.md](files/README.md) for a brief documentation of the generation setup, execution and the file format.
+**Note:** The generation process is currently changing from solely json-based sources to more intuitive **markdown based** files to allow easier contributions by the public.
+
+The markup format is described in [files/markup/README.md](files/markdown/README.md). Ultimatively the markup files will be converted into the intermediate JSON format which is used by the existing generator like before.
+
+The generator and the JSON format are documented in [files/json/README.md](files/json/README.md).
 
 ### For Contributors:
 

@@ -5,54 +5,21 @@
 
 - [Editing Docs using raw JSON files](#editing-docs-using-raw-json-files)
 	- [Table of Contents](#table-of-contents)
-	- [Setup](#setup)
-	- [Additional Views](#additional-views)
-		- [Git](#git)
-		- [Terminal](#terminal)
-	- [Resulting view](#resulting-view)
 	- [File Structure](#file-structure)
+		- [Source Files](#source-files)
+	- [JSON Format](#json-format)
 		- [JSON Examples](#json-examples)
-	- [Markdown Format](#markdown-format)
-		- [Type](#type)
+		- [Types](#types)
 		- [Type Popups](#type-popups)
 		- [Cross-Doc References](#cross-doc-references)
+	- [Description Format](#description-format)
+		- [Types](#types-1)
+		- [Samples](#samples)
 		- [Inline Code Areas](#inline-code-areas)
 		- [Custom Constructor positions](#custom-constructor-positions)
 		- [Custom Sample positions](#custom-sample-positions)
-			- [Sample Examples](#sample-examples)
-		- [HTML Tags](#html-tags)
-		- [Markdown](#markdown)
 	- [Generating](#generating)
 	- [Update Github Pages](#update-github-pages)
-
-
-## Setup
-
-Open a plain text editor of your choice on your desktop PC.<br>
-Personally I use the [Atom editor](https://atom.io) available for Linux, Windows or OS X, because it has any feature you'll need to comfortably edit the docs. This guide will focus on Atom as well.
-
-- Open the 'Docs' Project folder
-- Open all **files/\<lang\>/\<scope\>/*.json** files of the scope you want to edit to by double-clicking on them in the file tree view
-    - for obj.json click **Edit/Folding/Fold Level 2** in the toolbar to get a comfortable overview over all functions
-    - Optionally split your view vertically - on the right side you can open temporary needed files like **files/\<lang\>/\<scope\>/samples/\***
-- Enable _'Soft Wrap'_ in the Settings/Editor tab
-
-
-## Additional Views
-
-### Git
-press **Ctrl-Shift-9** to open the **git tab** in a new pane on the right.<br>
-There you can easily add, commit and even push changes to your repository
-
-### Terminal
-- download '**platformio-ide-terminal**' from Settings/Packages
-- press **Alt-Shift-T** to open the terminal pane on the bottom
-
-
-## Resulting view
-
-![Screenshot](Screenshot_Atom.png)
-
 
 ## File Structure
 
@@ -62,28 +29,45 @@ The generator has a specific file structure you have to use to be able to genera
 	general generation info (languages and scopes)
 - **docs-base**:
 	the html/css/js source basis for every language
-- **\<lang\>/**:
-	the generation sources for a specific language
-- \<lang\>/**\<scope\>**:
+- **\<lang\>**/:
+	encapsulate sources for a specific language
+- \<lang\>/**\<ver\>**/\<scope\>:
+	encapsulate sources for a specific version
+- \<lang\>/\<ver\>/**\<scope\>**:
 	the generation sources for a specific scope
-- \<lang\>/\<scope\>/**obj.json**:
-	The main generation source in { [JSON Format](#JSON-Format) }
-	```js
-	{
-		"member1": { /* <member object> */ }
-		/* ... */
-	}
-	```
-- \<lang\>/\<scope\>/**base.json**:
-	Put member definitions which are often needed here. The keys are 10 digit IDs starting with a '#' which are used in the \<scope\>.json file to refer to scope-base members:
-	```js
-	{
-		"#0123456789": { /* <member object> */ }
-		/* ... */
-	}
-	```
-- \<lang\>/\<scope\>/**navs.json**:
-	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all members.<br>
+
+```bash
+files/
+├─ conf.json    # general generation info (languages and scopes)
+├─ docs-base/   # the html/css/js source basis for every language
+└─ <lang>/      # encapsulate sources for a specific language
+   └─ <ver>/      # encapsulate sources for a specific version
+      └─ <scope>/   # the generation sources for a specific scope
+```
+
+Each scope in the `<lang>/<ver>/<scope>` directory can have following source files:
+
+```bash
+files/<lang>/<ver>/<scope>/
+├─ obj.json    # method definitions
+├─ base.json   # template definitions
+├─ navs.json   # scope categories for navigation
+├─ desc/<member>.md      # large description files
+└─ samples<member>.txt   # large code examples
+```
+
+Note: in fact, no file is reqired all the times. Following rules apply:
+- If _obj.json_ is defined, it can make use of _desc/\<member\>.md_ **and** _base.json_
+- If _obj.json_ is **not** defined, the description files in the _desc/_ directory will be used as scope contents
+- If _navs.json_ is **not** defined, the scope members (from _obj.json_ or _desc/_) will be listed as flat index (similar to the 'All' category)
+
+### Source Files
+- **obj.json**:
+	The main generation source in [JSON Format](#JSON-Format)
+- **base.json**:
+	Template definitions for often needed members or parameters. The keys are 10 digit IDs starting with a '#' which are used in obj.json to avoid duplicated definitions. (See [Note 2](#JSON-Format-Note2))
+- **navs.json**:
+	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all scope members.<br>
     You can use one level of categorization using `"catname": ["subcat"]` or `"catname":"url"` pairs:
 	```js
 	{
@@ -99,9 +83,9 @@ The generator has a specific file structure you have to use to be able to genera
 	```
 
 
-- \<lang\>/\<scope\>/**desc/\<member\>.md**:
+- **desc/\<member\>.md**:
 	Put large descriptions of scope members here
-- \<lang\>/\<scope\>/**samples/\<member\>.txt**:
+- **samples/\<member\>.txt**:
 	A file which includes large example codes
     ```html
 	// an unnamed sample
@@ -115,13 +99,6 @@ The generator has a specific file structure you have to use to be able to genera
 	</sample>
 	```
 
-
-Note: in fact, no file is reqired all the times. Following rules apply:
-- If _obj.json_ is defined, it can make use of _desc/\<member\>.md_ **and** _base.json_
-- If _obj.json_ is **not** defined, the content of the _desc/\<member\>.md_ directory will be used to generate plain description docs
-- If _navs.json_ is not defined, the _obj.json_ members (or _desc/\<member\>.md_ if rule #2 applies) will be listed (similar to the 'All' category)
-
-
 ## JSON Format
 
 Each member in the obj.json file can have following properties:
@@ -130,47 +107,38 @@ Each member in the obj.json file can have following properties:
 {
 	"<membername>" : {           // the name used for sorting and filtering
 	    "desc": "<description>", /* or "#<membername>.md" */
-	    "isval": true,  		 // boolean indicating if the member is a value
+	    "isval": true,  		 // indicates that member is not a function
 	    "name": "<membername>",  // displayed member name
 	    "pNames": ["<name1>", "<name2>" /* ... */ ], // parameter names
 	    "pTypes": ["<type1>", "<type2>" /* ... */ ], // parameter types
 	    "retval": "<type>",      // the type of the return value
-	    "shortDesc": "<description>", // a short description for <scope>-info.json
-	    "subfuncs": {            // a member container with submembers of the member (requires a control (dso) as retval)
+	    "shortDesc": "<description>", // short description for info.json
+	    "subfuncs": {            // submembers of the member
 	        "<memName1>": {      /* a member object */ },
-	        "<memName2>": "#id"  /* id from base.json */ }
+	        "<memName2>": "#id"  /* id from base.json */
 	    }
 	}
+	"params": "#id",             // copy params from base.json, in place of pNames and pTypes
 }
 ```
-Note that some values are not required under certain conditions:
+**Note 1**: 
+<a href="#JSON-Format-Note1"></a>
+some values are not required under certain conditions:
 - `name` unless a custom name is used
 - `desc` and `shortDesc` when there is no description needed (generated from name)
-- `retval` if `undefined`
-- `pNames` and `pTypes` if empty
-- `subfuncs` if `undefined`
-- `isval` if `false`
-- the whole object if only a description is added, ie `{ "Method": "desc" }`
+- `retval` if `void` / there is none
+- `pNames` and `pTypes` if empty or `params` is specified
+- `params` if `pNames` and `pTypes` are defined
+- `subfuncs` if there are none
+- `isval` if it is `false`
 
-When using base.json you still might want to only use parts of it without having to copy-paste the whole thing. There are some hacky features you can use in that case to reduce your effort and filesize:
-- when appending an exclamation mark '!' to a subfunction's name this name will be used instead of the one defined in the base object: `"customMemName!": "#id"`
+This leads to callback functions with no arguments to be representable solely by an empty object `{}`
 
-- to use the parameter list of a base.json entry use `"params":"#id"` instead of `pNames` and `pTypes`<br>
-you can also use this method in base.json
+**Note 2:**
+<a href="#JSON-Format-Note2"></a>
+You can override member names that are copied from obj.json by appending an exclamation mark `!` to the obj.json member name: `"customMemName!": "#id"`
 
 ### JSON Examples
-
-<details>
-<summary>Description only</summary>
-
-When only adding a description only a string is needed
-```json
-{
-    "Method": "#Method.md"
-}
-```
-</details>
-
 
 <details>
 <summary>Basic value</summary>
@@ -189,12 +157,12 @@ from [gfx/obj.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 </details>
 
 <details>
-<summary>Basic base method using a parameter reference</summary>
+<summary>Basic method in <i>base.json</i> using a parameter reference</summary>
 
-from [gfx/base.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/gfx/base.json#L101)
+SetTween from [gfx/base.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/gfx/base.json#L101)
 ```json
 {
-    "#8929387454": { "name": "SetTween",
+    "#8929387454": {
         "desc": "Sets up tween methods and properties without playing it.",
         "params": "#2114624769",
         "shortDesc": "Setup tween methods"
@@ -219,27 +187,20 @@ from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
-            [ ... ]
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+            /* ... */
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Button",
 				"shortDesc": "Returns the control class name"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-            [ ... ]
-			"SetOnTouch": "#2398750419",
+            /* ... */
 			"SetOnLongTouch": {
 				"desc": "Define a callback function which is called when the button has been long pressed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the button was long pressed"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-            [ ... ]
+            /* ... */
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
@@ -249,14 +210,8 @@ from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 </details>
 
 
-## Markdown Format
-
-You can use following methods to format the documentation
-
-### Type
-types have following format:
-
-first specify of which type the variable is. This is a 3-character long string of
+### Types
+Types are represented by a 3 digit identifier. The following base types are available:
 - `ukn`: unknown
 - `all`: all types
 - `bin`: boolean
@@ -268,30 +223,19 @@ first specify of which type the variable is. This is a 3-character long string o
 - `dso`: app object
 - `gvo`: GameView object
 
-optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [conf.json](conf.json#L25) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
+Optionally you can specify a subtype of your type separated with an underscore. These are predefined values in the [conf.json](conf.json#L25) script. Currently only '`Number`' and '`String`' have subtypes available. Examples are
 - `num_int`: integer
 - `num_mls`: milliseconds
 - `str_col`: "\<color\>" or "#[aa]rrggbb"
 - `str_pth`: file path
 
-if the subtype you need isn't specified here you can add custom pair any time. Example:
+If the subtype you need isn't specified here you can add custom pair any time. Example:
 - `"num_tlx":"top left x coordinate"`
 
-Inside descriptions you can use these types as well. You can use one of the following formats:
-```sh
-name:type
-name:"types"       # ".." uses jQuery or app popups
-name:"type-values"
-name:'types'       # '..' forces app popups
-name:'type-values'
-"name":"desc"      # for non-alphanumerical names
-```
+if there is a fixed set of argument vales available you can append them with a '`-`' prefix. Separate options with pipes '`|`' when they are mutually exclusive or commas '`,`' if they are compatible. Example from Layouts: 
+- `str_com-Linear|Absolute|Frame|Card`
 
-
-if there is a fixed set of argument vales available you can add them separated with pipes '`|`' for alternatives or commas '`,`', with a leading '`-`' to begin the list. Example:
-- `str_com-Linear|Frame|Absolute`
-
-To describe a possible argument value more you can add a description text separated with '`:`'. Example:
+To describe a possible argument value further you can add a description text separated with '`:`'. Example:
 - `str_com-Linear:linear ordered objects|Frame|Absolute`
 
 ### Type Popups
@@ -308,22 +252,38 @@ And add html anchors:
 - [@../app/CreateImage#Hide](https://symdstools.github.io/Docs/docs/app/CreateImage.htm#Hide)
 - You cannot use spaces in paths but html anchors allow underscores as placeholder
 
-### Inline Code Areas
-If you have a short command or code example you want to include without making it a Sample block, you can use the \<smp\> tag or a specific highlighted language: \<js\> \<java\> or \<bash\>. Example:
-- `<js>img.DrawLine( 0, 0, 1, 1 );</js>`
-Additionally you can add some modifiers to the start tag to change the look. Ie:
-- `<js noinl>` will make the code full-width instead of inline
-- `<js nobox>` will remove the grey box around the code
+## Description Format
 
-### Custom Constructor positions
-By Default the constructor line of a DroidScript object will be inserted after the first sentence (marked with a dor '`.`'). But you can customize that position with the `%c` flag:
-- `This is a description. Followed by more description. %c`
+If a description exceeds a basic explanation sentence its best (but not required) to put it in a separate markdown file that is easier to edit.
 
-### Custom Sample positions
-If you want to put a sample of a sample.txt file to a specified position in your description, you can use the <sample> tag, where sample is followed by the sample name. Example:
-- `<sample Sample Name>`
+The description supports basic markdown features as well as standard html tags for basic formatting:
 
-#### Sample Examples
+- \*\***bold**\*\*
+- \__italic_\_
+- \**italic*\*
+- \_\_<u>underlined</u>\_\_
+- \~\~~~strikethrouh~~\~\~
+- \``code line`\`
+- \`\`\````code block```\`\`\`
+- \[[linktext](#)\]\(url\)
+- [linktext]{`onclick js code`}
+- <h4>### header</h3>
+
+Besides those there are more custom formats available that allow to write a good looking, full-featured documentation.
+
+### Types
+
+Inside descriptions you can use types and type popups as well. The type format is the same described in the [JSON section](#types). You can use one of the following formats:
+```sh
+name:type
+name:"type"        # "quotes" uses jQuery popups and app popups as needed
+name:"type-values"
+name:'type'        # 'ticks' forces app popups
+name:'type-values'
+"name":"desc"      # for non-alphanumerical names
+```
+
+### Samples
 A good documentation should provide examples of the described method. They can be copied and executed directly from the docs.<br>
 Each sample should have a highlighted area which shows the snipped where the method was used. Use the &lt;b&gt; tag for that.<br>
 You can define samples by using the <sample> tag, either in the description itself or in a member.txt file in the [samples/](en/app/samples) folder, where each scope member has its own \<member\>.txt file.<br>
@@ -343,24 +303,21 @@ You can disable an example using standard html comments like
 </sample-->
 ```
 
-<br>
+### Inline Code Areas
+If you have a short command or code example you want to include without making it a Sample block, you can use the standard \<smp\> HTML tag or one of the custom language specific tags: \<js\> \<java\> or \<bash\>. Example:
+- `<js>img.DrawLine( 0, 0, 1, 1 );</js>`
+Additionally you can add some attributes to change their appearance. Ie:
+- `<js noinl>` will make the code full-width instead of inline
+- `<js nobox>` will remove the grey box around the code
 
-Besides these special formats you also have following standard text formatting features available:
+### Custom Constructor positions
+By Default the constructor line of a DroidScript object will be inserted after the first sentence (marked with a dor '`.`'). But you can customize that position with the `%c` flag:
+- `This is a description. Followed by more description. %c`
 
-### HTML Tags
+### Custom Sample positions
+If you want to put a sample of a sample.txt file to a specified position in your description, you can use the <sample> tag, where sample is followed by the sample name. Example:
+- `<sample Sample Name>`
 
-
-### Markdown
-- \*\***bold**\*\*
-- \__italic_\_
-- \**italic*\*
-- \_\_<u>underlined</u>\_\_
-- \~\~~~strikethrouh~~\~\~
-- \``code line`\`
-- \`\`\````code block```\`\`\`
-- \[[linktext](#)\]\(url\)
-- [linktext]{`onclick js code`}
-- <h4>### header</h3>
 
 ## Generating
 
@@ -376,7 +333,7 @@ Besides these special formats you also have following standard text formatting f
 Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option.
 
 <details>
-<summary><b>Full generate.js help</b></summary>
+<summary><b>Full generate.js option list</b></summary>
 
 ```
 [OPTIONS] [PATTERN ...]
@@ -404,17 +361,19 @@ MEMBER-PATTERN:             RegEx pattern
 
 ## Update Github Pages
 
-To publish the generated html files on GitHub Pages execute the `updatePages.sh` script or execute the following commands by hand:
+To publish the generated html files on GitHub Pages execute the `updatePages.sh` script
 ```shell
-# remove old docs from pages
+./updatePages.sh
+```
+Alternatively update them manually with a file-browser of your choice, based on these commands:
+```shell
+# delete old docs
 rm -r ../docs/docs/
 
-# copy new docs to pages
-cp -r docs/ ../docs/
-cp version.txt ../docs/
+# copy new docs and version
+cp -r docs/ version.txt ../docs/
 
-# edit Docs.htm, search for 'Docs version:' and 
-# update the number to the last 3 digits of version.txt
+# edit Docs.htm, search for 'Docs version:' and
+# increment the number (last 3 digits of version.txt)
 nano ../docs/Docs.htm
 ```
-Alternatively update them manually with the atom tree view or a file-browser of your choice

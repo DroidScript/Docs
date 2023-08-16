@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
-var conf = /** @type {DSConfig} */ ({});
-var verDir = "", scopeDir = "", curDir = "", curVer = "", curDoc = "", curSubf = "";
-var pattern = "", lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
+const baseDir = "json/";
+var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
+var curVer = "", curDoc = "", curSubf = "", pattern = "";
 var warnEnbl = false, dbg = false, clean = false, force = false;
 var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
+/** @type {DSConfig} */
+var conf;
 /** @type {DSBase|null} */
 var base;
 /** @type {DSNavs} */
@@ -55,14 +57,29 @@ function Generate(patFunc, patScope, patLang)
 	})
 }
 
+const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
+/** @param {0|1|2|3} level */
+function getSrcDir(level, file = "") {
+	const dir = [lang, curVer, curScope];
+	return baseDir + dir.slice(0, level).join('/') + '/' + file;
+}
+
+/** @param {0|1|2|3} level */
+function getDstDir(level, file = "") {
+	const dir = ['docs' + getl(), curVer, curScope];
+	return dir.slice(0, level).join('/') + '/' + file;
+}
+
 /** @param {LangKeys} l */
 function generateLang(l)
 {
 	lang = l;
+	const langDir = getSrcDir(D_LANG);
 	scope = {};
 	base = {};
 
-	const versions = app.ListFolder(lang).sort();
+	if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
+	const versions = app.ListFolder(langDir).sort();
 	for (const v of versions) generateVersion(v);
 }
 
@@ -70,8 +87,7 @@ function generateLang(l)
 function generateVersion(ver)
 {
 	curVer = ver;
-	verDir = `${lang}/${curVer}/`;
-	curDir = `docs${getl()}/${curVer}/`;
+	const curDir = getDstDir(D_VER);
 	
 	if (clean || !app.FolderExists(curDir))
 		app.CopyFolder("docs-base", curDir);
@@ -91,10 +107,9 @@ function generateVersion(ver)
 function generateScope(name)
 {
 	curScope = name;
-	scopeDir = verDir + curScope + '/';
+	const scopeDir = getSrcDir(D_SCOPE);
+	const dstDir = getDstDir(D_SCOPE);
 	regGen = RegExp(pattern || ".*");
-
-	if (!app.FolderExists(lang)) Throw(Error(`Language '${lang}' doesn't exist.`));
 
 	if (!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
 		Throw(Error(`'${scopeDir}' doesn't exist.`));
@@ -102,7 +117,7 @@ function generateScope(name)
 	if (!app.FolderExists(scopeDir + "samples")) app.MakeFolder(scopeDir + "samples");
 
 	// check file dates for update
-	if (!force && !clean && newestFileDate(curDir + curScope) > newestFileDate(scopeDir, "generate.js"))
+	if (!force && !clean && newestFileDate(dstDir) > newestFileDate(scopeDir, "generate.js"))
 		return console.log(`Skipped ${lang}.${curVer}.${name}.${pattern || '*'}`);
 
 	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${pattern || '*'}`);
@@ -110,16 +125,16 @@ function generateScope(name)
 
 	if (!clean)
 	{
+		const verDir = getDstDir(D_VER);
 		// delete navs
 		if ("navs".match(regGen))
-			app.ListFolder("docs" + getl()).map((/** @type {string} */ f) =>
-				f.startsWith(name + "_") && app.DeleteFile(curDir + f));
+			app.ListFolder(verDir).map((f) =>
+				f.startsWith(name + "_") && app.DeleteFile(verDir + f));
 		// delete docs
-		else app.DeleteFolder(curDir + name);
+		else app.DeleteFolder(dstDir);
 	}
 
-	if (!app.FolderExists(curDir + name))
-		app.MakeFolder(curDir + name);
+	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
 	// start generating
 	if ("navs".match(regGen))
@@ -143,6 +158,7 @@ function parseInput()
 	var newScope = scope, newBase = base;
 
 	// read categories
+	const scopeDir = getSrcDir(D_SCOPE);
 	curDoc = scopeDir + "navs.json";
 	navs = JSON.parse(ReadFile(curDoc, "{}"));
 
@@ -196,11 +212,11 @@ function parseInput()
 /**
  * @param {DSNavs} navs
  * @param {string} name
- * @param {string | undefined} [pfx]
+ * @param {string} [pfx]
  */
 function generateNavigators(navs, name, pfx)
 {
-	curDoc = `${curDir}${pfx || ''}${name.replace(/\s+/g, '')}.htm`;
+	curDoc = getDstDir(D_VER, `${pfx || ''}${name.replace(/\s+/g, '')}.htm`);
 	pfx = `${pfx || curScope}_`;
 	var nav = '', addcontent = '';
 
@@ -273,7 +289,7 @@ function generateNavigators(navs, name, pfx)
 /** @param {DSScope} scope */
 function generateDocs(scope)
 {
-	curDoc = verDir + curScope;
+	curDoc = getSrcDir(D_SCOPE);
 	var lst = keys(scope).filter(nothidden).filter(n => !!n.match(regGen));
 
 	for (var i = 0; i < lst.length; i++) {
@@ -292,7 +308,7 @@ function generateDocs(scope)
 /** @param {DSScope} scope */
 function generateTips(scope)
 {
-	curDoc = verDir + `${curScope}-tips.json`;
+	curDoc = getSrcDir(D_VER, curScope + '-tips.json');
 	/** @type {DSScopeRaw} */
 	var tsubf;
 	/** @type {Obj<Obj<string>>} */
@@ -351,7 +367,7 @@ function generateDoc(name)
 	else ps.name = ps.name || name;
 	if (typeof ps == "string" || !ps.name) return;
 
-	curDoc = `${curDir}${curScope}/${(ps.name).replace(/\s+/g, '')}.htm`;
+	curDoc = getDstDir(D_SCOPE, ps.name.replace(/\s+/g, '') + '.htm');
 	resetGlobals();
 
 	var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
@@ -359,7 +375,7 @@ function generateDoc(name)
 	// get description from external file
 	if (ps.desc && ps.desc.startsWith('#'))
 	{
-		desc = ReadFile(scopeDir + `desc/${ps.desc.slice(1)}`, "");
+		desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "");
 		if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
 	}
 
@@ -688,7 +704,7 @@ function getDocData(f, useAppPop = false) {
 // read and return html converted example snippets file
 /** @param {string} name */
 function getSamples(name) {
-	var sampcnt = 0, s = ReadFile(scopeDir + `samples/${name}.txt`, " ", !scope[name].isval);
+	var sampcnt = 0, s = ReadFile(getSrcDir(D_SCOPE, `samples/${name}.txt`), " ", !scope[name].isval);
 	/** @type {Obj<string>} */
 	var samples = {};
 
@@ -736,7 +752,7 @@ function toHtmlSamp(code, name, index, options) {
 function getAddClass(m) {
 	if (!m || typeof m.desc != "string") return '';
 	if (m.desc.startsWith('#')) {
-		m.desc = ReadFile(scopeDir + `desc/${m.desc.slice(1)}`, "");
+		m.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + m.desc.slice(1)), "");
 		if (!m.desc) return '';
 	}
 
@@ -1265,7 +1281,7 @@ function values(o) { return Object.values(o); }
 function keys(o) { return Object.keys(o); }
 /** @param {any} v */
 function d(v) { console.log(v); return v; }
-function saveScope() { app.WriteFile(scopeDir + "obj.json", tos(scope, true)); }
+function saveScope() { app.WriteFile(getSrcDir(D_SCOPE, "obj.json"), tos(scope, true)); }
 /**
  * @param {any} a
  * @param {any} b
