@@ -38,7 +38,11 @@ declare global {
         subf?: Obj<DSFunction|string>
     }
 
-    type DSFunction = Partial<DSMethod>;
+    type UndefinedPartial<T> = {
+        [K in keyof T]?: T[K] | undefined;
+      };
+
+    type DSFunction = UndefinedPartial<DSMethod>;
     type PopMap = { fnc: number, dsc: number, mul: number, std: number, ukn: number }
 
     type DSConfig = typeof config & { tmpl: Obj<string> };

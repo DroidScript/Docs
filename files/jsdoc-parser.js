@@ -76,12 +76,53 @@ function LoopFiles(SOURCE_DIR) {
         }
 
         let objJsonFile = path.join(outputFolder, "obj.json");
-        fs.writeFileSync(objJsonFile, JSON.stringify(objJson, null, '\t'));
+        fs.writeFileSync(objJsonFile, tos(objJson));
 
         // copy navs.json file for the namespace
         if (fs.existsSync(navsJson))
             fs.copyFileSync(navsJson, path.join(outputFolder, "navs.json"));
     });
+}
+
+// converts a variable to indented string
+// supports Boolean, Number, String, Array and Object
+/**
+ * @param {any} o
+ * @param {string} [intd]
+ * @param {boolean} [m]
+ * @returns {string}
+ */
+function tos(o, intd, m) {
+    if (intd == undefined) intd = "";
+    if (m == undefined) m = true;
+    var s = m ? intd : "";
+
+    if (o === null || o === undefined) return "null";
+    else switch (o.constructor.name) {
+        case "String": case "Number": case "Boolean":
+            return s + JSON.stringify(o);
+        case "Array":
+            s += "[";
+            for (var i = 0; i < o.length; i++) {
+                s += tos(o[i], intd, false);
+                if (i < o.length - 1) s += ", ";
+            }
+            return s + "]";
+        default:
+            var okeys = Object.keys(o);
+            switch (okeys.length) {
+                case 0: return "{}";
+                case 1: return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], "", false)} }`;
+                default:
+                    s += "{\n";
+                    for (var i = 0; i < okeys.length; i++) {
+                        if (o[okeys[i]] === undefined) continue;
+                        s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
+                        if (i < okeys.length - 1) s += ",\n";
+                    }
+                    return s + `\n${intd}}`;
+            }
+    }
 }
 
 /**
@@ -151,6 +192,15 @@ function renderFile(filePath, objJson) {
     };
 }
 
+/** @returns {DSFunction} */
+const newDSFunc = () => ({
+    desc: "",
+    pNames: undefined,
+    pTypes: undefined,
+    retval: undefined,
+    shortDesc: "",
+});
+
 /**
  * @param {Obj<DSFunction>} objJson
  * @param {import('esprima').Token[]} tokens
@@ -196,14 +246,7 @@ function RenderComments(objJson, tokens, cmp, name = "") {
             else {
                 const cmt = c.value.split(/\r?\n/);
                 isCA = false;
-                /** @type {DSMethod} */
-                let met = {
-                    name: "",
-                    pNames: [],
-                    pTypes: [],
-                    shortDesc: "",
-                    desc: ""
-                };
+                let met = newDSFunc();
 
                 for (let j = 0; j < cmt.length; j++) {
                     const line = cmt[j].trim();
@@ -211,12 +254,8 @@ function RenderComments(objJson, tokens, cmp, name = "") {
                         //isCA = false
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 
-                        json[method] = met = {
-                            pNames: [],
-                            pTypes: [],
-                            shortDesc: method,
-                            desc: ""
-                        }
+                        json[method] = met = newDSFunc();
+                        met.shortDesc = method;
                         // if( parent && parent[method] ) {
                         //     delete parent[method];
                         // }
@@ -258,28 +297,20 @@ function RenderComments(objJson, tokens, cmp, name = "") {
                             }
                         }
 
-                        if (isCA) {
-                            if (!func.pNames) func.pNames = [];
-                            if (!func.pTypes) func.pTypes = [];
-                            func.pNames = [...func.pNames, p[1]]
-                            func.pTypes = [...func.pTypes, _d]
-                            afterCmpParam = true
-                        }
-                        else {
-                            met.pNames = [...met.pNames, p[1]]
-                            met.pTypes = [...met.pTypes, _d]
-                        }
+                        const obj = isCA ? func : met;
+                        if (isCA) afterCmpParam = true;
+
+                        if (!obj.pNames) obj.pNames = [];
+                        if (!obj.pTypes) obj.pTypes = [];
+                        obj.pNames.push(p[1]);
+                        obj.pTypes.push(_d);
+                        afterCmpParam = true;
                     }
 
                     else if (line.includes("#") && !func.desc) {
                         isCA = true;
-                        func = objJson[name] = {
-                            desc: "",
-                            pNames: [],
-                            pTypes: [],
-                            shortDesc: name,
-                            subf: {}
-                        };
+                        func = objJson[name] = newDSFunc();
+                        func.shortDesc = name;
                         // if( parent && isChild ) {
                         //     met.subf = JSON.parse(JSON.stringify(parent));
                         // }
