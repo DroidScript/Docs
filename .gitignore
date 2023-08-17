@@ -6,6 +6,7 @@ node_modules/
 /files/css
 /files/font-awesome
 /files/docs*
+/files/out/
 /files/*.sh
 /files/ide.*js
 /files/version.txt

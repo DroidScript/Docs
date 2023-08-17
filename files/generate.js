@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
-const baseDir = "json/";
+const baseDir = "json/", outDir = "out/";
 var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var curVer = "", curDoc = "", curSubf = "", pattern = "";
 var warnEnbl = false, dbg = false, clean = false, force = false;
@@ -19,6 +19,19 @@ var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
 if (typeof OnStart == 'undefined') OnStart = g_OnStart;
 
 function g_OnStart() { }
+
+const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
+/** @param {0|1|2|3} level */
+function getSrcDir(level, file = "") {
+	const dir = [lang, curVer, curScope];
+	return baseDir + dir.slice(0, level).join('/') + '/' + file;
+}
+
+/** @param {0|1|2|3} level */
+function getDstDir(level, file = "") {
+	const dir = ['docs' + getl(), curVer, curScope];
+	return outDir + dir.slice(0, level).join('/') + '/' + file;
+}
 
 /**
  * @param {LangKeys | ""} patLang optional RegEx pattern
@@ -38,37 +51,45 @@ function Generate(patFunc, patScope, patLang) {
 	if (patScope && !conf.scopes[patScope])
 		Throw(new Error(`scope ${patScope} not specified in conf.json`));
 
+	const dstDir = getDstDir(D_BASE);
+	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+
+	// language index page
+	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/index.html`, conf.langs[l]));
+	const index = htmlNavi("Available languages:", "", nav.join(''))
+		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
+	app.WriteFile(dstDir + "index.html", index);
+
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
 		// delete old generated files
 		if (patScope + patFunc == "")
 			if (clean) app.DeleteFolder("docs" + getl());
-
 		generateLang(l);
 	})
-}
-
-const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
-/** @param {0|1|2|3} level */
-function getSrcDir(level, file = "") {
-	const dir = [lang, curVer, curScope];
-	return baseDir + dir.slice(0, level).join('/') + '/' + file;
-}
-
-/** @param {0|1|2|3} level */
-function getDstDir(level, file = "") {
-	const dir = ['docs' + getl(), curVer, curScope];
-	return dir.slice(0, level).join('/') + '/' + file;
 }
 
 /** @param {LangKeys} l */
 function generateLang(l) {
 	lang = l;
 	const langDir = getSrcDir(D_LANG);
+	const dstDir = getDstDir(D_LANG);
 	scope = {};
 	base = {};
 
 	if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
+	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+	if (clean || !app.FolderExists(dstDir + "font-awesome")) app.CopyFolder("font-awesome", dstDir + "font-awesome");
+	if (clean || !app.FileExists(dstDir + "app.js")) app.CopyFolder("app.js", dstDir + "app.js");
+	if (clean || !app.FolderExists(dstDir + "css")) app.CopyFolder("docs-base/css", dstDir + "css");
+	if (clean || !app.FolderExists(dstDir + "js")) app.CopyFolder("docs-base/js", dstDir + "js");
 	const versions = app.ListFolder(langDir).sort();
+
+	// version index page
+	const nav = versions.map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)/, "$1.$2")));
+	const index = htmlNavi("Available versions:", "", nav.join(''))
+		.replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/');
+	app.WriteFile(dstDir + "index.html", index);
+
 	for (const v of versions) generateVersion(v);
 }
 
@@ -1091,9 +1112,8 @@ var		// subfunction
 		xfeature: "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>",
 	};
 
-function htmlSample(title = "", id = "", code = "", bold = false, run = false)
-{
-	if(bold) code = code.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" style="font-size:100%">$1</b>`);
+function htmlSample(title = "", id = "", code = "", bold = false, run = false) {
+	if (bold) code = code.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" style="font-size:100%">$1</b>`);
 	return `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example${title && ' - ' + title}</h3>
@@ -1125,11 +1145,10 @@ function getHead(title = "", d = 0) {
 	<script src="js/common.js"></script>
 	<script src="js/example.js"></script>
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
-</head>`.replace(/(href|src)="(?!http|\/)/g, (m, p) => `${p}="${sd}`);
+</head>`.replace(/(href|src)="(?!http|\/)/g, '$1="' + sd);
 }
 
-function htmlNavi(title = "", content = "", navs = "", filter = false)
-{
+function htmlNavi(title = "", content = "", navs = "", filter = false) {
 	return `
 <!DOCTYPE html>
 <html>
@@ -1157,8 +1176,7 @@ ${getHead(title, 0)}
 </html>\n`;
 }
 
-function htmlDoc(title = "", desc = "", subf = "", construct = "")
-{
+function htmlDoc(title = "", desc = "", subf = "", construct = "") {
 	title = title.replace(/^\d+\s*/, '');
 	return `
 <!DOCTYPE html>
