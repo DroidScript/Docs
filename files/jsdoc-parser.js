@@ -4,7 +4,8 @@ const fs = require("fs-extra");
 const path = require("path");
 const getComment = require("esprima-extract-comments");
 
-const version = "v257"
+const extraFormat = false;
+const version = "v257";
 const SRC = "markup/en";
 const DST = "json/en/" + version;
 const typx = "all,bin,dso,gvo,jso,fnc,lst,num,obj,str,?";
@@ -54,66 +55,19 @@ function LoopFiles(SOURCE_DIR) {
 
         for (let i = 0; i < files.length; i++) {
             const file = files[i]
-            const filePath = path.join(SOURCE_DIR, file)
-            const stats = fs.statSync(filePath)
+            const folderPath = path.join(SOURCE_DIR, file);
+            const stats = fs.statSync(folderPath)
             if (stats.isFile()) {
-                if (file.includes(".js")) {
-
-                    let str = await fs.readFileSync(filePath, 'utf8')
-                    let isChild = new RegExp('\\bextends +ui.Control\\b', 'm').test(str)
-
-                    const strComments = getComment.file(filePath, {});
-
-                    let _fname = file.slice(0, -3);
-
-                    const objData = RenderComments(objJson, strComments, true, _fname);
-                    /** @type {typeof objData} */
-                    const data = JSON.parse(JSON.stringify(objData));
-
-                    // description
-                    let desc = objJson[data.name].desc || ''
-                    objJson[data.name].desc = "#" + data.name + ".md"
-
-                    desc += `<style>.samp { margin-top: 2px; } </style>`
-
-                    // if( isChild ) props = [...parent.props, ...data.props]
-                    // else props = data.props
-
-                    let popups = ""
-                    const props = data.props
-
-                    // bubble sort TODO: use array.sort()
-                    for (let o = 0; o < props.length - 1; o++) {
-                        for (let p = o + 1; p < props.length; p++) {
-                            if (props[p][1] < props[o][1]) {
-                                let tmp = props[p]
-                                props[p] = props[o]
-                                props[o] = tmp
-                            }
-                        }
-                    }
-
-                    if (props.length) {
-                        desc += "<h3>Properties</h3>"
-                        desc += "These are the setter and getter properties for the " + data.name + " Component.\n"
-                        for (let o = 0; o < props.length; o++) {
-                            const p = props[o]
-                            p[2] = extractBacktickStrings(p[2]);
-                            let id = p[1].toLowerCase().trim() + "-" + (o * 5)
-                            desc += `<div class="samp"><a href="#${id}" data-transition="pop" data-rel="popup" class="ui-link">${p[1]}</a></div>`
-                            popups += `<div data-role="popup" id="${id}" class="ui-content"><p><span style="color:#4c4;">${p[0]}</span><br>${p[2]}</p></div>`
-                        }
-                    }
-
-                    desc += "\n" + popups;
+                if (file.endsWith(".js")) {
+                    const data = renderFile(folderPath, objJson);
 
                     // write description.md file
                     const descFile = path.join(outputDesc, data.name + ".md")
-                    await fs.writeFileSync(descFile, extractBacktickStringsDesc(desc.trim()))
+                    if (data.desc) fs.writeFileSync(descFile, data.desc)
 
                     // write sample.txt file
                     const sampleFile = path.join(outputSamples, data.name + ".txt")
-                    await fs.writeFileSync(sampleFile, data.samples)
+                    fs.writeFileSync(sampleFile, data.samples)
                 }
             }
             else {
@@ -122,17 +76,79 @@ function LoopFiles(SOURCE_DIR) {
         }
 
         let objJsonFile = path.join(outputFolder, "obj.json");
-        await fs.writeFileSync(objJsonFile, JSON.stringify(objJson, null, 2));
+        fs.writeFileSync(objJsonFile, JSON.stringify(objJson, null, '\t'));
 
         // copy navs.json file for the namespace
-        if (fs.existsSync(navsJson)) {
-            fs.copy(navsJson, path.join(outputFolder, "navs.json"), err => {
-                if (err) {
-                    console.error('Error copying file:', err);
-                }
-            });
-        }
+        if (fs.existsSync(navsJson))
+            fs.copyFileSync(navsJson, path.join(outputFolder, "navs.json"));
     });
+}
+
+/**
+ * @param {string} filePath
+ * @param {Obj<DSFunction>} objJson
+ */
+function renderFile(filePath, objJson) {
+
+    const file = path.basename(filePath);
+    let str = fs.readFileSync(filePath, 'utf8')
+    let isChild = new RegExp('\\bextends +ui.Control\\b', 'm').test(str)
+
+    const strComments = getComment.file(filePath, {});
+
+    let _fname = file.slice(0, -3);
+
+    const objData = RenderComments(objJson, strComments, true, _fname);
+    /** @type {typeof objData} */
+    const data = JSON.parse(JSON.stringify(objData));
+
+    // description
+    let desc = objJson[data.name].desc || ''
+    objJson[data.name].desc = "#" + data.name + ".md"
+
+    if (extraFormat) desc += `<style>.samp { margin-top: 2px; } </style>`
+
+    // if( isChild ) props = [...parent.props, ...data.props]
+    // else props = data.props
+
+    let popups = ""
+    const props = data.props
+
+    // bubble sort TODO: use array.sort()
+    for (let o = 0; o < props.length - 1; o++) {
+        for (let p = o + 1; p < props.length; p++) {
+            if (props[p][1] < props[o][1]) {
+                let tmp = props[p]
+                props[p] = props[o]
+                props[o] = tmp
+            }
+        }
+    }
+
+    if (props.length) {
+        desc += "<h3>Properties</h3>"
+        desc += "These are the setter and getter properties for the " + data.name + " Component.\n"
+        for (let o = 0; o < props.length; o++) {
+            const p = props[o]
+            p[2] = extractBacktickStrings(p[2]);
+            let id = p[1].toLowerCase().trim() + "-" + (o * 5)
+            desc += `<div class="samp"><a href="#${id}" data-transition="pop" data-rel="popup" class="ui-link">${p[1]}</a></div>`
+            popups += `<div data-role="popup" id="${id}" class="ui-content"><p><span style="color:#4c4;">${p[0]}</span><br>${p[2]}</p></div>`
+        }
+    }
+
+    desc += "\n" + popups;
+    desc = extractBacktickStringsDesc(desc.trim());
+    if (desc.length < 256) {
+        objJson[data.name].desc = desc;
+        desc = "";
+    }
+
+    return {
+        name: data.name,
+        desc,
+        samples: data.samples,
+    };
 }
 
 /**
@@ -373,7 +389,7 @@ function extractBacktickStrings(str) {
         //match[1]
         finalStr = finalStr.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
     }
-    finalStr = finalStr.replace(/,/gm, "&#44;");
+    if (extraFormat) finalStr = finalStr.replace(/,/gm, "&#44;");
     return finalStr;
 }
 
@@ -398,8 +414,6 @@ fs.readdir(SRC, { withFileTypes: true }, (err, files) => {
 
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => file.isDirectory());
-    folders.forEach(folder => {
-        const folderPath = path.join(SRC, folder.name);
-        LoopFiles(folderPath);
-    });
+    for (const folder of folders)
+        LoopFiles(path.join(SRC, folder.name));
 });
