@@ -18,11 +18,12 @@
     function onLoad()
     {
         if (!location.pathname.match(/^\/Docs\/docs\/[^v]/)) return;
-        const href = location.pathname.replace('/Docs/docs/', '/Docs/docs/<latest>')
-        console.log("suggested " + href);
+        const path = location.pathname.replace('/Docs/docs/', '/Docs/docs/<latest>/')
+        location.pathname = path;
+        console.log("suggested " + path);
         
         const link = document.getElementById("altLink")
-        if (link) link.href = href;
+        if (link) link.href = path;
         const div = document.getElementById("divLink")
         if (div) div.style.display = "";
     }
