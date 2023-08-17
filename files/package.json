@@ -1,4 +1,5 @@
 {
+    "name": "droidscript-docs",
     "repository": {},
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
@@ -7,6 +8,7 @@
         "fs-extra": "^10.0.0",
         "node-fetch": "^2.0",
         "prismjs": "^1.26.0",
-        "rimraf": "^3.0.2"
+        "rimraf": "^3.0.2",
+        "esprima-extract-comments": "^1.1.0"
     }
 }
