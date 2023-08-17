@@ -54,6 +54,10 @@ function Generate(patFunc, patScope, patLang) {
 	const dstDir = getDstDir(D_BASE);
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
+	// 404 page
+	const page404 = app.ReadFile('404.html');
+	app.WriteFile(dstDir + '404.html', page404.replace('<latest>', 'v257'));
+
 	// language index page
 	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/index.html`, conf.langs[l]));
 	const index = htmlNavi("Available languages:", "", nav.join(''))

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>404 Page not found</title>
+<style>
+
+</style>
+</head>
+<body>
+    <div id="content">
+        <h1>Oops. That shouldn't have happened.</h1>
+        The site you requested was not available.
+        <div id="divLink" style="display:none">
+        You werent forwarded properly. Try <a id="altLink" href="">this link</a> instead.
+        </div>
+    </div>
+    
+    <script>
+    function onLoad()
+    {
+        if (!location.pathname.match(/^\/Docs\/docs\/[^v]/)) return;
+        const href = location.pathname.replace('/Docs/docs/', '/Docs/docs/v257')
+        console.log("suggested " + href);
+        
+        const link = document.getElementById("altLink")
+        if (link) link.href = href;
+        const div = document.getElementById("divLink")
+        if (div) div.style.display = "";
+    }
+    onLoad();    
+    </script>
+</body>
+</html>
