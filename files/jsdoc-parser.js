@@ -1,10 +1,15 @@
+#!/usr/bin/node
+
 const fs = require("fs-extra");
 const path = require("path");
 const getComment = require("esprima-extract-comments");
 
-let SRC = "markup/en";
-let typx = "all,bin,dso,gvo,jso,fnc,lst,num,obj,str,?";
-let types = {
+const version = "v257"
+const SRC = "markup/en";
+const DST = "json/en/" + version;
+const typx = "all,bin,dso,gvo,jso,fnc,lst,num,obj,str,?";
+/** @type {Obj<string>} */
+const types = {
     String: "str",
     Number: "num",
     Object: "obj",
@@ -16,11 +21,11 @@ let types = {
     unknown: "?"
 }
 
-var objJson = {};
 // Replace backticks with forward slashes around text inside them
 const pattern = /`([^`]*)`/g; // Matches any text between backticks
 const replacement = '“$1”'; // Replaces backticks with slash before and after the matched text
 
+/** @param {string} SOURCE_DIR */
 function LoopFiles( SOURCE_DIR ) {
     // console.log("<---- Generating json for "+SOURCE_DIR+" ----->";
 
@@ -28,46 +33,45 @@ function LoopFiles( SOURCE_DIR ) {
         return console.log( SOURCE_DIR + " does not exist!" );
     }
 
-    let folder = SOURCE_DIR.split("/").pop();
-    let outputFolder = path.join("en", folder);
+    
+    let folder = path.basename(SOURCE_DIR);
+    let outputFolder = path.join(DST, folder);
     let outputSamples = path.join(outputFolder, "samples");
     let outputDesc = path.join(outputFolder, "desc");
 
     let navsJson = path.join(SOURCE_DIR.substring(0, SOURCE_DIR.lastIndexOf("/")), folder+"-navs.json");
 
-    objJson = {}
-
     // parent methods
-    // var parent = false
+    // let parent = false
 
     if( !fs.existsSync( outputFolder ) ) fs.mkdirSync( outputFolder )
     if( !fs.existsSync( outputSamples ) ) fs.mkdirSync( outputSamples )
     if( !fs.existsSync( outputDesc ) ) fs.mkdirSync( outputDesc )
 
     fs.readdir( SOURCE_DIR, async (err, files) => {
-        objJson = {}
+        /** @type {Obj<DSFunction>} */
+        const objJson = {}
 
-        var strComments = [], filePath = "", file, data, sampleFile, descFile, stats, props, tmp, desc="", popups="";
-
-        for(var i=0; i<files.length; i++) {
-            file = files[i]
-            filePath = path.join(SOURCE_DIR, file)
-            stats = fs.statSync( filePath )
+        for(let i=0; i<files.length; i++) {
+            const file = files[i]
+            const filePath = path.join(SOURCE_DIR, file)
+            const stats = fs.statSync( filePath )
             if( stats.isFile() ) {
                 if( file.includes(".js") ) {
-                    var str = await fs.readFileSync( filePath )
-                    str = str.toString()
-                    var isChild = new RegExp('\\bextends +ui.Control\\b', 'm').test(str)
+
+                    let str = await fs.readFileSync( filePath, 'utf8' )
+                    let isChild = new RegExp('\\bextends +ui.Control\\b', 'm').test(str)
                     
-                    strComments = getComment.file( filePath );
+                    const strComments = getComment.file( filePath, {} );
 
                     let _fname = file.slice(0, -3);
                     
-                    data = RenderComments(strComments, true, _fname);
-                    data = JSON.parse( JSON.stringify(data) );
+                    const objData = RenderComments(objJson, strComments, true, _fname);
+                    /** @type {typeof objData} */
+                    const data = JSON.parse( JSON.stringify(objData) );
 
                     // description
-                    desc += objJson[data.name].desc
+                    let desc = objJson[data.name].desc || ''
                     objJson[data.name].desc = "#"+data.name+".md"
 
                     desc += `<style>.samp { margin-top: 2px; } </style>`
@@ -75,13 +79,14 @@ function LoopFiles( SOURCE_DIR ) {
                     // if( isChild ) props = [...parent.props, ...data.props]
                     // else props = data.props
                      
-                    props = data.props
+                    let popups = ""
+                    const props = data.props
 
-                    // bubble sort
-                    for( var o=0; o<props.length-1; o++) {
-                        for( var p=o+1; p<props.length; p++ ) {
+                    // bubble sort TODO: use array.sort()
+                    for( let o=0; o<props.length-1; o++) {
+                        for( let p=o+1; p<props.length; p++ ) {
                             if( props[p][1] < props[o][1] ) {
-                                tmp = props[p]
+                                let tmp = props[p]
                                 props[p] = props[o]
                                 props[o] = tmp
                             }
@@ -91,10 +96,10 @@ function LoopFiles( SOURCE_DIR ) {
                     if( props.length ) {
                         desc += "<h3>Properties</h3>"
                         desc += "These are the setter and getter properties for the "+data.name+" Component.\n"
-                        for( var o=0; o<props.length; o++ ) {
-                            var p = props[o]
+                        for( let o=0; o<props.length; o++ ) {
+                            const p = props[o]
                             p[2] = extractBacktickStrings(p[2]);
-                            var id = p[1].toLowerCase().trim()+"-"+(o*5)
+                            let id = p[1].toLowerCase().trim()+"-"+(o*5)
                             desc += `<div class="samp"><a href="#${id}" data-transition="pop" data-rel="popup" class="ui-link">${p[1]}</a></div>`
                             popups += `<div data-role="popup" id="${id}" class="ui-content"><p><span style="color:#4c4;">${p[0]}</span><br>${p[2]}</p></div>`
                         }
@@ -103,15 +108,12 @@ function LoopFiles( SOURCE_DIR ) {
                     desc += "\n"+popups;
 
                     // write description.md file
-                    descFile = path.join( outputDesc, data.name+".md" )
+                    const descFile = path.join( outputDesc, data.name+".md" )
                     await fs.writeFileSync( descFile, extractBacktickStringsDesc(desc.trim()) )
 
                     // write sample.txt file
-                    sampleFile = path.join(outputSamples, data.name+".txt")
+                    const sampleFile = path.join(outputSamples, data.name+".txt")
                     await fs.writeFileSync(sampleFile, data.samples)
-
-                    desc = ""
-                    popups = ""
                 }
             }
             else
@@ -120,7 +122,7 @@ function LoopFiles( SOURCE_DIR ) {
             }
         }
 
-        var objJsonFile = path.join(outputFolder, "obj.json");
+        let objJsonFile = path.join(outputFolder, "obj.json");
         await fs.writeFileSync(objJsonFile, JSON.stringify(objJson, null, 2));
 
         // copy navs.json file for the namespace
@@ -134,19 +136,29 @@ function LoopFiles( SOURCE_DIR ) {
     });
 }
 
-function RenderComments(str, cmp, fileName) {
-    var isCA = false, name = fileName || "";
+/**
+ * @param {Obj<DSFunction>} objJson
+ * @param {import('esprima').Token[]} tokens
+ * @param {boolean} cmp
+ * @param {string} [name]
+ */
+function RenderComments(objJson, tokens, cmp, name = "") {
+    let isCA = false;
     objJson[name] = {};
-    var samples = "";
-    var props = [];
-    var json = {}, cmt = [], method = "", line = "", currMethod = "", afterCmpParam = false;
-    str.forEach( (c, i) => {
+    let func = objJson[name];
+    
+    let samples = "";
+    /** @type {string[][]} */
+    let props = [];
+    /** @type {Obj<DSFunction>} */
+    let json = {}, afterCmpParam = false;
+    tokens.forEach( (c, i) => {
         if(c.type == "BlockComment") {
             const DescriptionPattern = /[#@]\s*[Dd]escription/;
             const SamplePattern = /[#@]\s*[Ss]ample/;
 
             if( c.value.toLowerCase().includes("#example") ) {
-                var _x = c.value.trim().split("\n")
+                let _x = c.value.trim().split("\n")
                 samples += "\n\n"
                 samples += `<sample${_x[0].split("#Example")[1].trim().replace("-","") }>\n`
                 samples += _x.splice( 1, _x.length-1 ).join("\n")
@@ -157,7 +169,7 @@ function RenderComments(str, cmp, fileName) {
             // Description.md
             else if( DescriptionPattern.test(c.value) ) {
                 let _desc = c.value.substring( c.value.indexOf("\n") );
-                objJson[name].desc += `${_desc}`;
+                func.desc += `${_desc}`;
             }
 
             // Sample.txt
@@ -167,17 +179,24 @@ function RenderComments(str, cmp, fileName) {
             }
 
             else {
-                cmt = c.value.split( /\r?\n/ );
+                const cmt = c.value.split( /\r?\n/ );
                 isCA = false;
+                /** @type {DSMethod} */
+                let met = {
+                    name: "",
+                    pNames: [],
+                    pTypes: [],
+                    shortDesc: "",
+                    desc: ""
+                };
 
-                for(var j=0; j<cmt.length; j++) {
-                    line = cmt[j].trim();
+                for(let j=0; j<cmt.length; j++) {
+                    const line = cmt[j].trim();
                     if( line.includes("###") ) {
                         //isCA = false
-                        method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
-                        currMethod = method;
+                        const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
 
-                        json[ method ] = {
+                        json[method] = met = {
                             pNames: [],
                             pTypes: [],
                             shortDesc: method,
@@ -189,16 +208,16 @@ function RenderComments(str, cmp, fileName) {
                     }
 
                     else if( line.includes("##") ) {
-                        // objJson[name] += line;
+                        // met += line;
                     }
 
                     else if( line.includes("@prop") ) {
                         //isCA = false
-                        var p = extractParamDef( line )
+                        let p = extractParamDef( line )
                         props.push( p )
                     }
 
-                    else if( (line.includes("@param") && json[currMethod]) || (line.includes("@param") && isCA)) {
+                    else if( (line.includes("@param") && met) || (line.includes("@param") && isCA)) {
                         let _l = line.split("@param")[1].trim();
                         let p = extractParams(_l);
                         let isFunc = false, _d;
@@ -225,98 +244,103 @@ function RenderComments(str, cmp, fileName) {
                         }
 
                         if( isCA ) {
-                            if( !objJson[name].pNames ) objJson[name].pNames = [];
-                            if( !objJson[name].pTypes ) objJson[name].pTypes = [];
-                            objJson[name].pNames = [ ...objJson[ name ].pNames, p[1] ]
-                            objJson[name].pTypes = [ ...objJson[ name ].pTypes, _d ]
+                            if( !func.pNames ) func.pNames = [];
+                            if( !func.pTypes ) func.pTypes = [];
+                            func.pNames = [ ...func.pNames, p[1] ]
+                            func.pTypes = [ ...func.pTypes, _d ]
                             afterCmpParam = true
                         }
                         else {
-                            json[ currMethod ].pNames = [ ...json[ currMethod ].pNames, p[1] ]
-                            json[ currMethod ].pTypes = [ ...json[ currMethod ].pTypes, _d ]
+                            met.pNames = [ ...met.pNames, p[1] ]
+                            met.pTypes = [ ...met.pTypes, _d ]
                         }
                     }
 
-                    else if(line.includes("#") && !objJson[name].desc) {
+                    else if(line.includes("#") && !func.desc) {
                         isCA = true;
-                        objJson[name] = {
+                        func = objJson[name] = {
                             desc: "",
                             pNames: [],
                             pTypes: [],
                             shortDesc: name,
                             subf: {}
-                        }
+                        };
                         // if( parent && isChild ) {
-                        //     objJson[name].subf = JSON.parse(JSON.stringify(parent));
+                        //     met.subf = JSON.parse(JSON.stringify(parent));
                         // }
                     }
 
-                    else if( (line.includes("@return") && json[currMethod]) || (line.includes("@return") && isCA) ) {
+                    else if( (line.includes("@return") && met) || (line.includes("@return") && isCA) ) {
                         let f = line.split("returns")[1].trim(), g = f.split(/[_\s-]/)[0], v;
                         if( types[g] ) v = types[g];
                         else if(typx.includes(g)) v = f;
                         else v = "obj-"+f;
-                        if( isCA ) objJson[name].retval = v;
-                        else json[ currMethod ].retval = v;
+                        if( isCA ) func.retval = v;
+                        else met.retval = v;
                     }
 
-                    else if( (line.includes( "@img" ) && json[ currMethod ] ) || (line.includes( "@img" ) && isCA ) ) {}
-                    else if( (line.includes( "@@" ) && json[ currMethod ] ) || (line.includes( "@@" ) && isCA ) ) {}
+                    else if( (line.includes( "@img" ) && met ) || (line.includes( "@img" ) && isCA ) ) {}
+                    else if( (line.includes( "@@" ) && met ) || (line.includes( "@@" ) && isCA ) ) {}
 
-                    else if( (line.includes( "$$" ) && json[ currMethod ] ) || (line.includes( "$$" ) && isCA ) ) {
+                    else if( (line.includes( "$$" ) && met ) || (line.includes( "$$" ) && isCA ) ) {
                         if(isCA && afterCmpParam) {
-                            const match = line.match(/\$\$(.*?)\$\$/);
-                            objJson[name].desc += ('\n<js>'+match[1].replace(/:/g,' : ')+'</js>\n');
+                            const match = line.match(/\$\$(.*?)\$\$/) || [];
+                            func.desc += ('\n<js>'+match[1].replace(/:/g,' : ')+'</js>\n');
                         }
                     }
 
                     else if( line.includes("@abbrev") ) {
-                        objJson[name].abbrev = line.split("abbrev")[1].trim();
+                        func.abbrev = line.split("abbrev")[1].trim();
                     }
 
-                    else if( (line.trim() == "*" && json[currMethod]) || (line.trim() == "*" && isCA ) ) {
-                        if( isCA ) objJson[name].desc += "\n"
-                        else json[ currMethod ].desc += "\n"
+                    else if( (line.trim() == "*" && met) || (line.trim() == "*" && isCA ) ) {
+                        if( isCA ) func.desc += "\n"
+                        else met.desc += "\n"
                     }
 
-                    else if(json[currMethod] || isCA) {
+                    else if(met || isCA) {
                         if( isCA ) {
-                            objJson[name].desc += "\n\n"+line.trim().replace(/^\*/, '');
+                            func.desc += "\n\n"+line.trim().replace(/^\*/, '');
                             // isCA = false;
                         } else
-                            json[ currMethod ].desc += "\n\n"+line.trim().replace(/^\*/, '');
+                            met.desc += "\n\n"+line.trim().replace(/^\*/, '');
                     }
                 }
             }
         }
     });
 
-    if( cmp && json!={} ) {
-        objJson[name].subf = {...objJson[name].subf, ...json};
+    if( cmp && Object.keys(json).length ) {
+        func.subf = {...func.subf, ...json};
     }
     return {
         json,
         name,
         samples,
-        objJson: objJson[name],
+        objJson: func,
         props
     }
 }
 
+/** @param {string} str */
 function extractParamDef( str )
 {
-    var s = str.split( "}" ).map( l => { return l.trim() } )
-    var n = s[1].slice(0, s[1].trim().indexOf( ' ' ) + 1 )
-    var d = s[1].slice( n.length )
-    var t = s[0].split("{")[1].trim()
+    let s = str.split( "}" ).map( (/** @type {string} */ l) => { return l.trim() } )
+    let n = s[1].slice(0, s[1].trim().indexOf( ' ' ) + 1 )
+    let d = s[1].slice( n.length )
+    let t = s[0].split("{")[1].trim()
     return [ t, n, d ]
 }
 
-function formatDef( line ) {
-    if( !line ) return "";
-    let pNames = [], pTypes = [];
-    line = line.split("@arg");
-    line.map( function(l) {
+/** @param {string} sline */
+function formatDef( sline ) {
+    if( !sline ) return "";
+    /** @type {string[]} */
+    let pNames = [];
+    /** @type {string[]} */
+    let pTypes = [];
+    let line = sline.split("@arg");
+    line.map( function(/** @type {string} */ l) {
         if( !l.trim() ) return;
         let r = extractParamDef(l);
         pNames.push(r[1]);
@@ -325,6 +349,7 @@ function formatDef( line ) {
     return { pNames, pTypes };
 }
 
+/** @param {string} str */
 function extractParams(str) {
     const regex = /{([^}]+)}\s*(\S+)\s*(.*)/;
     const matches = str.match(regex);
@@ -338,7 +363,9 @@ function extractParams(str) {
     }
 }
 
-// replace backticks with a colored string
+/** replace backticks with a colored string
+ * @param {string} str
+ */
 function extractBacktickStrings(str) {
     let finalStr = str + '';
     const regex = /`([^`]*)`/g;
@@ -352,6 +379,7 @@ function extractBacktickStrings(str) {
     return finalStr;
 }
 
+/** @param {string} str */
 function extractBacktickStringsDesc(str) {
     let finalStr = str + '';
     const regex = /`([^`]*)`/g;

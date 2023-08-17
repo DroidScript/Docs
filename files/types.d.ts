@@ -24,7 +24,7 @@ declare class App {
 declare global {
     
     declare class DSMethod {
-        name: string;
+        name?: string;
         desc: string;
         shortDesc: string;
         pNames: string[];

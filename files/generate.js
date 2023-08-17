@@ -589,7 +589,7 @@ function getDocData(f, useAppPop = false) {
 	var i, type, fretval = "";
 
 	// abbrev for controls
-	if (isControl(f.name) && !f.abbrev)
+	if (f.name && isControl(f.name) && !f.abbrev)
 		f.abbrev = getAbbrev(f.name);
 
 	// convert constructor line
