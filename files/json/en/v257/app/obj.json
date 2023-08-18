@@ -236,7 +236,7 @@
 	"ClearValue": {
 		"desc": "ClearValue deletes a variable saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SaveText, @SaveNumber, @SaveBoolean",
 		"pNames": ["name", "file"],
-		"pTypes": ["string", "str_ptf"],
+		"pTypes": ["str", "str_ptf"],
 		"shortDesc": "Deletes a variable saved via app.Save*()"
 	},
 	"CloseDrawer": {
@@ -1488,10 +1488,12 @@
 		"pTypes": ["str_ptf", "str-Portrait|Landscape"],
 		"subf": {
 			"game": {
-				"isval": true
+				"isval": true,
+				"retval": "dso-Game"
 			},
 			"lay": {
-				"isval": true
+				"isval": true,
+				"retval": "dso-CreateLayout"
 			}
 		}
 	},
@@ -5798,7 +5800,7 @@
 	},
 	"GetRouterAddress": {
 		"desc": "Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)",
-		"retval": "str-ip address"
+		"retval": "str:ip address"
 	},
 	"GetRSSI": {
 		"desc": "#GetRSSI.md",

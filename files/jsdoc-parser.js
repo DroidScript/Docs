@@ -209,7 +209,6 @@ function renderMdFile(filePath, objJson) {
     const name = file.slice(0, -3);
     const desc = fs.readFileSync(filePath, "utf8");
     objJson[name] = newDSFunc();
-    objJson[name].shortDesc = name;
     objJson[name].desc = "#" + name + ".md";
     return {
         name,
@@ -231,11 +230,12 @@ function getBaseMethods(filePath) {
 
 /** @returns {DSFunction} */
 const newDSFunc = () => ({
+    abbrev: undefined,
     desc: "",
     pNames: undefined,
     pTypes: undefined,
     retval: undefined,
-    shortDesc: "",
+    shortDesc: undefined,
 });
 
 /**
@@ -304,12 +304,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                     if (line.includes("###")) {
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
                         json[method] = met = newDSFunc();
-                        if (c.value.includes("@prop")) {
-                            isval = true;
-                        }
-                        else {
-                            met.shortDesc = method;
-                        }
+                        if (c.value.includes("@prop")) isval = true;
                     }
 
                     else if (line.includes("##")) {
@@ -361,7 +356,6 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                     else if (line.includes("#") && !func.desc) {
                         isCA = true;
                         func = objJson[name] = newDSFunc();
-                        func.shortDesc = name;
                         // if( parent && isChild ) {
                         //     met.subf = JSON.parse(JSON.stringify(parent));
                         // }
@@ -390,7 +384,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                     else if (line.trim() == "*") obj.desc += "\n";
                     else if (line.trim() == "*/" || !line.trim()) { }
                     else {
-                        if (isCA) obj.desc += "\n\n";
+                        if (isCA) obj.desc += "\n";
                         obj.desc += line.trim().replace(/^\* */, '');
                     }
                 }
