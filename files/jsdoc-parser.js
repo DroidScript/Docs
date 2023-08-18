@@ -225,11 +225,15 @@ function renderMdFile(filePath, objJson) {
     }
 }
 
+/**
+ * Get base methods.
+ * @param {String} filePath Path to the _base.js file
+ */
 function getBaseMethods( filePath ) {
     const file = path.basename(filePath);
     const strComments = getComment.file(filePath, {});
     const name = file.slice(0, -3);
-    const objData = RenderComments({}, strComments, true, name);
+    const objData = RenderComments({}, strComments, true, name, {});
     return objData.json;
 }
 
@@ -247,8 +251,9 @@ const newDSFunc = () => ({
  * @param {import('esprima').Token[]} tokens
  * @param {boolean} cmp
  * @param {string} [name]
+ * @param {Obj<DSFunction>} baseJson
  */
-function RenderComments(objJson, tokens, cmp, name = "", baseJson) {
+function RenderComments(objJson, tokens, cmp, name = "", baseJson={}) {
     objJson[name] = {};
     let func = objJson[name];
 
@@ -287,9 +292,11 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson) {
             else if (ExternPattern.test(c.value)) {
                 const r = /@extern([\s\S]*)/;
                 const _m = r.exec(c.value);
-                const _n = _m[1].trim();
-                if(_n && baseJson[_n]) {
-                    json[_n] = baseJson[_n];
+                if( _m ) {
+                    const _n = _m[1].trim();
+                    if(_n && baseJson[_n]) {
+                        json[_n] = baseJson[_n];
+                    }
                 }
             }
 
