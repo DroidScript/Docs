@@ -8,7 +8,7 @@ const versions = {"en":"v257"};
     const newPath = pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink);
     console.log("suggested " + newPath);
 
-    if (pathname === newPath) return;
+    if (pathname === newPath || pathname === "/Docs/404.html") return;
     if (location.pathname === pathname) location.pathname = newPath;
     if (typeof onForward === "function") onForward(newPath);
 
