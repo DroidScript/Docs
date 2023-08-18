@@ -45,11 +45,16 @@ function LoopFiles(SOURCE_DIR) {
     // parent methods
     // let parent = false
 
-    if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder)
-    if (!fs.existsSync(outputSamples)) fs.mkdirSync(outputSamples)
-    if (!fs.existsSync(outputDesc)) fs.mkdirSync(outputDesc)
+    if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder, {recursive: true})
+    if (!fs.existsSync(outputSamples)) fs.mkdirSync(outputSamples, {recursive: true})
+    if (!fs.existsSync(outputDesc)) fs.mkdirSync(outputDesc, {recursive: true})
 
     fs.readdir(SOURCE_DIR, async (err, files) => {
+
+        if( err ) {
+            return console.log("Error reading "+SOURCE_DIR, err);
+        }
+
         /** @type {Obj<DSFunction>} */
         const objJson = {}
 
@@ -68,6 +73,12 @@ function LoopFiles(SOURCE_DIR) {
                     // write sample.txt file
                     const sampleFile = path.join(outputSamples, data.name + ".txt")
                     fs.writeFileSync(sampleFile, data.samples)
+                }
+                else if(file.endsWith(".md")) {
+                    const data = renderMdFile(folderPath, objJson);
+                    // write description.md file
+                    const descFile = path.join(outputDesc, data.name + ".md");
+                    fs.writeFileSync(descFile, data.desc);
                 }
             }
             else {
@@ -132,8 +143,6 @@ function tos(o, intd, m) {
 function renderFile(filePath, objJson) {
 
     const file = path.basename(filePath);
-    let str = fs.readFileSync(filePath, 'utf8')
-    let isChild = new RegExp('\\bextends +ui.Control\\b', 'm').test(str)
 
     const strComments = getComment.file(filePath, {});
 
@@ -148,9 +157,6 @@ function renderFile(filePath, objJson) {
     objJson[data.name].desc = "#" + data.name + ".md"
 
     if (extraFormat) desc += `<style>.samp { margin-top: 2px; } </style>`
-
-    // if( isChild ) props = [...parent.props, ...data.props]
-    // else props = data.props
 
     let popups = ""
     const props = data.props
@@ -176,9 +182,9 @@ function renderFile(filePath, objJson) {
             desc += `<div class="samp"><a href="#${id}" data-transition="pop" data-rel="popup" class="ui-link">${p[1]}</a></div>`
             popups += `<div data-role="popup" id="${id}" class="ui-content"><p><span style="color:#4c4;">${p[0]}</span><br>${p[2]}</p></div>`
         }
+        desc += "\n" + popups;
     }
 
-    desc += "\n" + popups;
     desc = extractBacktickStringsDesc(desc.trim());
     if (desc.length < 256) {
         objJson[data.name].desc = desc;
@@ -186,7 +192,7 @@ function renderFile(filePath, objJson) {
     }
     else desc += "\n";
 
-    if (data.samples.trim()) data.samples = data.samples.trim() + "\n"
+    if (data.samples.trim()) data.samples = data.samples.trim() + "\n";
     else data.samples = " ";
 
     return {
@@ -194,6 +200,19 @@ function renderFile(filePath, objJson) {
         desc,
         samples: data.samples,
     };
+}
+
+function renderMdFile(filePath, objJson) {
+    const file = path.basename(filePath);
+    const name = file.slice(0, -3);
+    const desc = fs.readFileSync(filePath, "utf8");
+    objJson[name] = newDSFunc();
+    objJson[name].shortDesc = name;
+    objJson[name].desc = "#" + name + ".md";
+    return {
+        name,
+        desc
+    }
 }
 
 /** @returns {DSFunction} */
@@ -420,7 +439,7 @@ function extractBacktickStringsDesc(str) {
     let finalStr = str + '';
     const regex = /`([^`]*)`/g;
     const matches = str.matchAll(regex);
-    const style = "color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;";
+    const style = "color:#4c4; font-size:100%; padding:0px 2px;";
     for (const match of matches) {
         //match[1]
         finalStr = finalStr.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
