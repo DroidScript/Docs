@@ -1,11 +1,4 @@
 {
-	"_AddAdView": {
-		"desc": "Creates and adds a AdView to a Layout.\n<premium>\nSee @CreateAdView for full documentation.",
-		"pNames": ["layout", "unitId", "testId", "width", "height", "options"],
-		"pTypes": ["dso-CreateLayout", "str", "str", "num_frc", "num_frc", "str"],
-		"retval": "dso-AdView",
-		"shortDesc": "Create and add AdView to Layout."
-	},
 	"AddButton": {
 		"desc": "Creates and adds a Button to a Layout.\nSee @CreateButton for full documentation.",
 		"pNames": ["layout", "text", "width", "height", "options"],
@@ -262,32 +255,6 @@
 		"pNames": ["source", "destination", "overwrite", "filter"],
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
 		"shortDesc": "Copies a folder to a given destination"
-	},
-	"_CreateAdView": {
-		"abbrev": "adv",
-		"desc": "#CreateAdView.md",
-		"pNames": ["unitId", "testId", "width", "height", "options"],
-		"pTypes": ["str", "str", "num_frc", "num_frc", "str"],
-		"retval": "dso-AdView",
-		"shortDesc": "Returns an AdView object",
-		"subf": {
-			"GetType": {
-				"desc": "Returns the control class name.",
-				"retval": "str-AdView"
-			},
-			"Load": {
-				"desc": "Loads an advertising banner."
-			},
-			"SetOnStatus": {
-				"desc": "Called when the AdView status changed. A List of StatusCodes can be obtained by [the AdView source](https://github.com/pozirk/ANEAdMob/blob/ad9ba23e23733a36e4efebb00b124153ad409f1a/air/AdMob/com/pozirk/ads/admob/AdMob.as#L106).",
-				"pNames": ["callback"],
-				"pTypes": [{
-					"pNames": ["status"],
-					"pTypes": ["str-ALTERNATIVE|..."]
-				}],
-				"shortDesc": "Called when status changed"
-			}
-		}
 	},
 	"CreateAudioRecorder": {
 		"abbrev": "rec",
@@ -912,7 +879,6 @@
 				}],
 				"shortDesc": "Merges data in the cloud."
 			},
-			"_Method": "#1023663567",
 			"Save": {
 				"desc": "Saves data in the cloud.",
 				"pNames": ["file", "data", "callback", "options"],
@@ -925,8 +891,8 @@
 			"SetDescription": "#0937259723",
 			"Upload": {
 				"desc": "Upload a file to the cloud.",
-				"pNames":["data", "name", "type", "callback", "password"],
-				"pTypes":["str", "str", "str_mim", {
+				"pNames": ["data", "name", "type", "callback", "password"],
+				"pTypes": ["str", "str", "str_mim", {
 					"pNames": ["response"],
 					"pTypes": ["obj-{error:str,name:str,folder:str,id:str,mimetype:str_mim,size:num}"]
 				}, "str"]
@@ -1626,19 +1592,6 @@
 				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
 				"shortDesc": "Draw part of a sprite to the canvas"
 			},
-			"_Exec": {
-				"desc": "calls _gfx.Exec()",
-				"name": "Exec",
-				"pNames": ["p1", "p2", "p3", "p4"],
-				"pTypes": ["?", "?", "?", "?"]
-			},
-			"_Execute": {
-				"desc": "",
-				"name": "Execute",
-				"pNames": ["p1", "p2", "p3", "p4"],
-				"pTypes": ["?", "?", "?", "?"]
-			},
-			"Explode": "#1500174100",
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
@@ -1660,36 +1613,12 @@
 				"pNames": ["x", "y", "width", "height"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"]
 			},
-			"GetContext.ctx._drawCommands": {
-				"desc": "",
-				"isval": true,
-				"name": "ctx._drawCommands",
-				"retval": "str"
-			},
 			"GetContext.ctx.drawImage": {
 				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
 				"name": "ctx.drawImage",
 				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
 				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
 				"shortDesc": "Draws part of a sprite to the context"
-			},
-			"GetContext.ctx._globalAlpha": {
-				"desc": "",
-				"isval": true,
-				"name": "ctx._globalAlpha",
-				"retval": "num_frc"
-			},
-			"GetContext.ctx.loadTexture": {
-				"desc": "",
-				"name": "ctx.loadTexture",
-				"pNames": ["image", "successCallback", "errorCallback"],
-				"pTypes": ["str_ptf", {
-					"pNames": ["metrics"],
-					"pTypes": ["lst-[ width:num_pxl, height:num_pxl ]"]
-				}, {
-					"pNames": ["msg"],
-					"pTypes": ["str"]
-				}]
 			},
 			"GetContext.ctx.render": {
 				"desc": "render the draw commands to the context",
@@ -1744,12 +1673,6 @@
 				"pNames": ["tx", "ty"],
 				"pTypes": ["num_pxl", "num_pxl"],
 				"shortDesc": "'Move' the transformation matrix"
-			},
-			"GetContext.ctx.unloadTexture": {
-				"desc": "",
-				"name": "ctx.unloadTexture",
-				"pNames": ["image"],
-				"pTypes": ["str_ptf"]
 			},
 			"GetHeight": "#2576212953",
 			"GetLeft": "#1237814406",
@@ -1817,13 +1740,6 @@
 				"shortDesc": "Clears the image content"
 			},
 			"ClearFocus": "#1362225380",
-			"_Draw": {
-				"desc": "Cache draw command when not autoupdating",
-				"name": "Draw",
-				"pNames": ["func", "p1", "p2", "p3", "p4", "p5", "p6", "p7"],
-				"pTypes": ["str", "str", "num", "num", "num", "num", "num", "num"],
-				"shortDesc": "Cache draw commands"
-			},
 			"DrawArc": {
 				"desc": "Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.",
 				"pNames": ["x1", "y1", "x2", "y2", "start", "sweep"],
@@ -3153,11 +3069,6 @@
 				"pTypes": [{}],
 				"shortDesc": "Called when bt connection established"
 			},
-			"SetOnConnectEx": {
-				"desc": "called when NXT has successfully connected via Bluetooth",
-				"pNames": ["callback"],
-				"pTypes": [{}]
-			},
 			"ShowDevices": {
 				"desc": "Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.",
 				"shortDesc": "Shows a list of paired NXT devices to connect to"
@@ -3583,150 +3494,6 @@
 		"pNames": ["name", "iconFile", "file", "options"],
 		"pTypes": ["str", "str_ptf", "str_ptf", "str_com-Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote"],
 		"shortDesc": "Creates a Home-Screen shortcut to an app"
-	},
-	"CreateSmartWatch": {
-		"abbrev": "smw",
-		"desc": "Returns a SmartWatch object.",
-		"pNames": ["type"],
-		"pTypes": ["str-|Sony"],
-		"retval": "dso-SmartWatch",
-		"shortDesc": "Returns a new SmartWatch object",
-		"subf": {
-			"AddLayout": {
-				"desc": "AddLayout adds a layout to the SmartWatch screen so that it is visible (if not hidden with SetVisibility)",
-				"pNames": ["layout"],
-				"pTypes": ["obj-SWlay"],
-				"shortDesc": "Adds a layout to the SmartWatch"
-			},
-			"Batch": "#2357239857",
-			"CreateImage": {
-				"desc": "Creates a SmartWatch Image. See also: @CreateImage",
-				"pNames": ["image", "width", "height", "options", "pxwidth", "pxheight"],
-				"pTypes": ["str_ptf", "num", "num", "str_com-fix,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically", "num_pxl", "num_pxl"],
-				"retval": "swo-CreateImage",
-				"shortDesc": "Returns a new SmartWatch Image"
-			},
-			"CreateLayout": {
-				"desc": "Creates a SmartWatch Layout. See also: @CreateLayout",
-				"pNames": ["type", "options"],
-				"pTypes": ["str-Linear|Absolute|Frame", "str_com-TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|VCenter,Wrap,Horizontal|Vertical,FillX,FillY,FillXY"],
-				"retval": "swo-CreateLayout",
-				"shortDesc": "Returns a new SmartWatch Layout"
-			},
-			"CreateSensor": {
-				"desc": "Creates a SmartWatch Sensor. See also: @CreateSensor",
-				"pNames": ["name", "options"],
-				"pTypes": ["str-Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector", "str_com-Slow|Medium|Fast|Fastest"],
-				"retval": "swo-CreateSensor",
-				"shortDesc": "Returns a new SmartWatch Sensor"
-			},
-			"CreateText": {
-				"desc": "Creates a SmartWatch Text. See also: @CreateText",
-				"pNames": ["text", "width", "height", "options"],
-				"pTypes": ["str", "num_frc", "num_frc", "str_com-Multiline,Left|Right,Html,Bold,Monospace,AutoSize,NoWrap,Log"],
-				"retval": "swo-CreateText",
-				"shortDesc": "Returns a new SmartWatch Text"
-			},
-			"GetVersion": {
-				"desc": "Returns the SmartWatch DS version number.",
-				"retval": "str",
-				"shortDesc": "Get SW DS version"
-			},
-			"RemoveLayout": {
-				"desc": "Removes a SmartWatch layout from the screen.",
-				"pNames": ["layout"],
-				"pTypes": ["obj-SWlay"],
-				"shortDesc": "Remove SW layout from the screen"
-			},
-			"SetMenu": {
-				"desc": "Set the SmartWatch menu fields",
-				"pNames": ["list", "iconPath"],
-				"pTypes": ["str_com", "str_ptf"],
-				"shortDesc": "Set SmartWatch menu."
-			},
-			"SetOnBack": {
-				"desc": "%cb% the SmartWatch back button was pressed.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "called when SmartWatch back button was pressed"
-			},
-			"SetOnHide": {
-				"desc": "%cb% the SmartWatch app is hidden.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "Called when SmartWatch app is hidden"
-			},
-			"SetOnMenu": {
-				"desc": "%cb% the SmartWatch menu button is touched.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "Called when SmartWatch menu button is touched"
-			},
-			"SetOnShow": {
-				"desc": "%cb% the SmartWatch app is shown.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "Called when SmartWatch app is shown"
-			},
-			"SetOnStart": {
-				"desc": "%cb% the SmartWatch app has started.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "Called when SmartWatch app has started"
-			},
-			"SetOnStop": {
-				"desc": "%cb% the SmartWatch app has stopped.",
-				"pNames": ["callback"],
-				"pTypes": [{}],
-				"shortDesc": "Called when SmartWatch app has stopped"
-			},
-			"SetOnSwipe": {
-				"desc": "%cb% the SmartWatch screen is swiped.",
-				"pNames": ["callback"],
-				"pTypes": [{
-					"pNames": ["dir"],
-					"pTypes": ["str-Left|Up|Right|Down"]
-				}],
-				"shortDesc": "Called when SmartWatch screen is swiped"
-			},
-			"SetOnTouch": {
-				"desc": "%cb% the SmartWatch was touched.",
-				"pNames": ["callback"],
-				"pTypes": [{
-					"pNames": ["dir", "x", "y"],
-					"pTypes": ["str-Down|Move|Up", "num_frc", "num_frc"]
-				}],
-				"shortDesc": "called when SmartWatch touched"
-			},
-			"SetScreenState": {
-				"desc": "Change the screen state",
-				"pNames": ["p1"],
-				"pTypes": ["?"],
-				"shortDesc": "Change screen state"
-			},
-			"ShowLayout": {
-				"desc": "Show a layout on the screen",
-				"pNames": ["layout", "x", "y"],
-				"pTypes": ["obj-SWlay", "num_frc", "num_frc"],
-				"shortDesc": "Show layout on screen"
-			},
-			"ShowMessage": {
-				"desc": "Shows a message on the screen",
-				"pNames": ["message"],
-				"pTypes": ["str"],
-				"shortDesc": "Show message on screen"
-			},
-			"StopApp": {
-				"desc": "Stops the running SmartWatch app.",
-				"shortDesc": "Stop running app"
-			},
-			"Vibrate": {
-				"desc": "Makes the SmartWatch vibrate",
-				"pNames": ["p1", "p2", "p3"],
-				"pTypes": ["?", "?", "?"],
-				"shortDesc": "Vibrate SmartWatch"
-			}
-		}
 	},
 	"CreateSMS": {
 		"abbrev": "sms",
@@ -4258,44 +4025,17 @@
 		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
-			"_AddChild": {
-				"desc": "Adds a control to the layout.",
-				"name": "AddChild",
-				"pNames": ["child", "order"],
-				"pTypes": ["dso", "num_int"],
-				"shortDesc": "Add a control to the layout"
-			},
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"Batch": "#2357239857",
-			"_ChildToFront": {
-				"desc": "Moves a child in front of all other children.",
-				"name": "ChildToFront",
-				"pNames": ["child"],
-				"pTypes": ["dso"],
-				"shortDesc": "Moves a child to the layout front"
-			},
 			"ClearFocus": "#1362225380",
-			"_DestroyChild": {
-				"desc": "Destroys and removes a child from the layout.",
-				"name": "DestroyChild",
-				"pNames": ["child"],
-				"pTypes": ["dso"]
-			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
-			"_GetChildOrder": {
-				"desc": "Returns the z order of a child.",
-				"name": "GetChildOrder",
-				"pNames": ["child"],
-				"pTypes": ["dso"],
-				"retval": "num_int"
-			},
 			"GetCurrentTabName": {
-					"desc": "Returns the currently displayed tab name",
-					"retval": "str",
-					"shortDesc": "get current tab name"
+				"desc": "Returns the currently displayed tab name",
+				"retval": "str",
+				"shortDesc": "get current tab name"
 			},
 			"GetHeight": "#2576212953",
 			"GetLayout": {
@@ -4327,13 +4067,6 @@
 				"pTypes": ["str"],
 				"shortDesc": "Add a new tab"
 			},
-			"_RemoveChild": {
-				"desc": "Removes a child from the layout.",
-				"name": "RemoveChild",
-				"pNames": ["child"],
-				"pTypes": ["dso"],
-				"shortDesc": "Remove a child from the layout"
-			},
 			"SetBackAlpha": "#1162431318",
 			"SetBackColor": "#3857861627",
 			"SetBackGradient": "#7112142192",
@@ -4348,12 +4081,6 @@
 			},
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
-			"_SetGravity": {
-				"desc": "Adjust the placing of contained children.",
-				"name": "SetGravity",
-				"pNames": ["gravity"],
-				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"]
-			},
 			"SetMargins": "#1741900074",
 			"SetOnChange": {
 				"desc": "%cb% the tab has been changed by the user.",
@@ -4375,15 +4102,6 @@
 			},
 			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2088093920",
-			"_SetOnTouchDown": "#2938578932",
-			"_SetOnTouchMove": "#2039582034",
-			"_SetOnTouchUp": "#9861324731",
-			"_SetOrientation": {
-				"desc": "Change the children orientation.",
-				"name": "SetOrientation",
-				"pNames": ["orient"],
-				"pTypes": ["str-Horizontal|Vertical"]
-			},
 			"SetPadding": "#1923105617",
 			"SetPosition": "#1425862386",
 			"SetScale": "#1990464376",
@@ -5128,21 +4846,6 @@
 			"Tween": "#2114624769"
 		}
 	},
-	"CreateWallpaper": {
-		"abbrev": "wlp",
-		"desc": "Creates a wallpaper instance in the wallpaper.js script.\n\n<premium>",
-		"pNames": ["options"],
-		"pTypes": ["str_com"],
-		"shortDesc": "Returns a new Wallpaper object",
-		"subf": {
-			"Batch": "#2357239857",
-			"GetType": {
-				"desc": "Returns the control class name."
-			},
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567"
-		}
-	},
 	"CreateWebServer": {
 		"abbrev": "sock",
 		"desc": "#CreateWebServer.md",
@@ -5318,7 +5021,9 @@
 				"shortDesc": "Capture WebView as png"
 			},
 			"ClearFocus": "#1362225380",
-			"ClearHistory": { "desc": "Clears the page history for Back() and Forward()" },
+			"ClearHistory": {
+				"desc": "Clears the page history for Back() and Forward()"
+			},
 			"Execute": {
 				"desc": "Executes JavaScript code inside the WebView and passes the result to the callback",
 				"pNames": ["code", "callback"],
@@ -5337,7 +5042,7 @@
 				"desc": "Call functions defined inside a webview",
 				"pNames": ["name", "args..."],
 				"pTypes": ["string", "all"]
-			},		
+			},
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
 			"GetHeight": "#2576212953",
@@ -6242,13 +5947,6 @@
 	"InIDE": {
 		"retval": "bin"
 	},
-	"InstallWallpaper": {
-		"desc": "Let the user install a device wallpaper located in the 'Wallpaper.js' script in the project root folder.\n\n<premium>\n\nSee also @CreateWallpaper.",
-		"pNames": ["packageName", "className"],
-		"pTypes": ["str-this", "str-this"],
-		"retval": "bin",
-		"shortDesc": "Install Wallpaper.js as device wallpaper"
-	},
 	"InstallApp": {
 		"desc": "Starts the installation process of an apk file from your local drive.",
 		"pNames": ["apkFile", "callback", "options"],
@@ -6505,16 +6203,6 @@
 			"Close": {
 				"desc": "Close the database"
 			},
-			"_databaseFeatures": {
-				"desc": "databaseFeatures\n<deprecated>",
-				"isval": true,
-				"name": "databaseFeatures"
-			},
-			"_dbname": {
-				"desc": "dbname\n<deprecated>",
-				"isval": true,
-				"name": "dbname"
-			},
 			"Delete": {
 				"desc": "Delete the database"
 			},
@@ -6560,35 +6248,14 @@
 			"open": {
 				"desc": "Opens the database\n<deprecated>",
 				"pNames": ["success", "error"],
-				"pTypes": [{},
+				"pTypes": [
+{},
 					{
 						"pNames": ["msg"],
 						"pTypes": ["str"]
 					}
 				],
 				"shortDesc": "Open database"
-			},
-			"_openargs": {
-				"desc": "openargs\n<deprecated>",
-				"isval": true,
-				"name": "openargs"
-			},
-			"_openDBs": {
-				"desc": "contains DBs\n<deprecated>",
-				"isval": true,
-				"name": "openDBs",
-				"retval": "obj-{ name:obj-Database }",
-				"shortDesc": "open DBs"
-			},
-			"_openError": {
-				"desc": "openError\n<deprecated>",
-				"name": "openError",
-				"pNames": ["err"],
-				"pTypes": ["str"]
-			},
-			"_openSuccess": {
-				"desc": "openSuccess\n<deprecated>",
-				"name": "openSuccess"
 			},
 			"readTransaction": {
 				"desc": "readTransaction\n<deprecated Use ExecuteSql instead>",
@@ -6743,8 +6410,8 @@
 	},
 	"RemovePermission": {
 		"desc": "Removes a granted permission",
-		"pNames":["uri"],
-		"pTypes":["str_uri"]
+		"pNames": ["uri"],
+		"pTypes": ["str_uri"]
 	},
 	"RenameFile": {
 		"desc": "Renames a file on the local filesystem. This method can also be used to move a file to a whole other destination.\n\nSee Also: @WriteFile, @CopyFile, @DeleteFile",

@@ -28,10 +28,6 @@
 		"desc": "Hide the control and remove it from the screen.",
 		"shortDesc": "Hides the control and removes it from the screen"
 	},
-	"#1500174100": { "name": "Explode",
-		"desc": "Destroys the control with an explode animation and sound.",
-		"shortDesc": "Destroy the control with a huge explosion"
-	},
 	"#7324472769": { "name": "Focus",
 		"desc": "Set the focus to the control so that the user can interact with it immediately.",
 		"shortDesc": "Set the focus to the control for immediate access"

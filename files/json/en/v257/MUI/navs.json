@@ -1,220 +1,220 @@
 {
-    "+html": "<br>\n\t<div style='align-items: center; text-align: center;'>\n\t\t<a href='#' data-role='button' data-mini='false' data-inline='true'  onclick='run( \"/assets/demos/mui/DroidScript_UI_Kit.js\" )'> Run Demos </a>\n\t</div>\n\t<br>\n",
-    "All": [],
-    "Website": "https://gineerslife.com/droidscript-ui-kit",
-    "Overview": "MUIDocs.htm",
-    "Layout": [
-        "CreateLayout",
-        "",
-        "AddLayout"
-    ],
+	"+html": "<br>\n\t<div style='align-items: center; text-align: center;'>\n\t\t<a href='#' data-role='button' data-mini='false' data-inline='true'  onclick='run( \"/assets/demos/mui/DroidScript_UI_Kit.js\" )'> Run Demos </a>\n\t</div>\n\t<br>\n",
+	"All": [],
+	"Website": "https://gineerslife.com/droidscript-ui-kit",
+	"Overview": "MUIDocs.htm",
+	"Layout": [
+		"CreateLayout",
+		"",
+		"AddLayout"
+	],
 	"Buttons": [
-        "AddButton",
-        "",
-        "CreateButtonElegant",
-        "CreateButtonFlat",
-        "CreateButtonRaised",
-        "CreateButtonRaisedO",
-        "CreateButtonRound",
-        "CreateButtonRoundO",
-        "CreateButtonToggle",
-        "",
-        "AddButtonElegant",
-        "AddButtonFlat",
-        "AddButtonRaised",
-        "AddButtonRaisedO",
-        "AddButtonRound",
-        "AddButtonRoundO",
-        "AddButtonToggle"
-    ],
-    "AppBar": [
-        "AddAppBar",
-        "",
-        "CreateAppBar",
-        "CreateAppBarElegant",
-        "CreateAppBarModern",
-        "",
-        "AddAppBarElegant",
-        "AddAppBarModern"
-    ],
-    "Cards": [
-        "CreateCard",
-        "",
-        "AddCard"
-    ],
-    "Dialogs": [
-        "CreateAlert",
-        "CreateAlertSimple",
-        "CreateDialog",
-        "CreateBanner",
-        "CreateModal",
-        "",
-        "AddAlert",
-        "AddAlertSimple",
-        "AddDialog",
-        "AddBanner",
-        "AddModal"
-    ],
-    "ListDialogs": [
-        "CreateListDialog",
-        "CreateCheckList",
-        "",
-        "AddListDialog",
-        "AddCheckList"
-    ],
-    "FABs": [
-        "AddFAB",
-        "",
-        "CreateFAB",
-        "CreateFABElegant",
-        "CreateFABOutline",
-        "",
-        "AddFABElegant",
-        "AddFABOutline"
-    ],
-    "Lists": [
-        "AddList",
-        "",
-        "CreateList",
-        "CreateListModern",
-        "CreateListSimple",
-        "CreateDataTable",
-        "",
-        "AddListModern",
-        "AddListSimple",
-        "AddDataTable"
-    ],
-    "Menus": [
-        "CreateMenu",
-        "CreateMenuWithIcon",
-        "ShowMenu",
-        "",
-        "AddMenu",
-        "AddMenuWithIcon"
-    ],
-    "Pickers": [
-        "AddPicker",
-        "",
-        "CreateColorPicker",
-        "CreateDatePicker",
-        "CreateTimePicker",
-        "CreateSpinner",
-        "",
-        "AddColorPicker",
-        "AddDatePicker",
-        "AddTimePicker"
-    ],
-    "Table": [
-        "CreateDataTable",
-        "",
-        "AddDataTable"
-    ],
-    "Texts": [
-        "AddText",
-        "",
-        "CreateTextH1",
-        "CreateTextH2",
-        "CreateTextH3",
-        "CreateTextH4",
-        "CreateTextH5",
-        "CreateTextH6",
-        "CreateTextJumbo",
-        "CreateTextParagraph",
-        "CreateTextSecondary",
-        "",
-        "AddTextH1",
-        "AddTextH2",
-        "AddTextH3",
-        "AddTextH4",
-        "AddTextH5",
-        "AddTextH6",
-        "AddTextJumbo",
-        "AddTextParagraph",
-        "AddTextSecondary"
-    ],
-    "TextEdits": [
-        "AddTextEdit",
-        "",
-        "CreateTextEditFilled",
-        "CreateTextEditFilledA",
-        "CreateTextEditOutline",
-        "CreateTextEditOutlineA",
-        "",
-        "CreateTextEditSearch",
-        "CreateTESearchElegant",
-        "CreateTESearchUnique",
-        "CreateTextEditUnique",
-        "",
-        "CreateTEFilledIconLeft",
-        "CreateTEFilledIconRight",
-        "CreateTEOutlineIconLeft",
-        "CreateTEOutlineIconRight",
-        "",
-        "AddTextEditFilled",
-        "AddTextEditFilledA",
-        "AddTextEditOutline",
-        "AddTextEditOutlineA",
-        "",
-        "AddTextEditSearch",
-        "AddTESearchElegant",
-        "AddTESearchUnique",
-        "AddTextEditUnique",
-        "",
-        "AddTEFilledIconLeft",
-        "AddTEFilledIconRight",
-        "AddTEOutlineIconLeft",
-        "AddTEOutlineIconRight"
-    ],
-    "TextAreas": [
-        "AddTextArea",
-        "",
-        "CreateTextAreaFilled",
-        "CreateTextAreaFilledA",
-        "CreateTextAreaOutline",
-        "CreateTextAreaOutlineA",
-        "",
-        "AddTextAreaFilled",
-        "AddTextAreaFilledA",
-        "AddTextAreaOutline",
-        "AddTextAreaOutlineA"
-    ],
-    "Checkboxes": [
-        "CreateCheckbox",
-        "",
-        "AddCheckbox"
-    ],
-    "Radios": [
-        "AddRadio",
-        "",
-        "CreateRadio",
-        "CreateRadioButtons",
-        "CreateRadioMaterial",
-        "",
-        "AddRadioButtons",
-        "AddRadioMaterial"
-    ],
-    "Seekbars": [
-        "CreateSeekBar",
-        "",
-        "AddSeekBar"
-    ],
-    "Spinner": [
-        "CreateSpinner"
-    ],
-    "Switches": [
-        "CreateSwitch",
-        "CreateSwitchSettings",
-        "",
-        "AddSwitch",
-        "AddSwitchSettings"
-    ],
-    "Tabs": [
-        "CreateTabFixed"
-    ],
-    "Miscellaneous": [
-        "colors",
-        "CreateDivider",
-        "",
-        "AddDivider"
-    ]
+		"AddButton",
+		"",
+		"CreateButtonElegant",
+		"CreateButtonFlat",
+		"CreateButtonRaised",
+		"CreateButtonRaisedO",
+		"CreateButtonRound",
+		"CreateButtonRoundO",
+		"CreateButtonToggle",
+		"",
+		"AddButtonElegant",
+		"AddButtonFlat",
+		"AddButtonRaised",
+		"AddButtonRaisedO",
+		"AddButtonRound",
+		"AddButtonRoundO",
+		"AddButtonToggle"
+	],
+	"AppBar": [
+		"AddAppBar",
+		"",
+		"CreateAppBar",
+		"CreateAppBarElegant",
+		"CreateAppBarModern",
+		"",
+		"AddAppBarElegant",
+		"AddAppBarModern"
+	],
+	"Cards": [
+		"CreateCard",
+		"",
+		"AddCard"
+	],
+	"Dialogs": [
+		"CreateAlert",
+		"CreateAlertSimple",
+		"CreateDialog",
+		"CreateBanner",
+		"CreateModal",
+		"",
+		"AddAlert",
+		"AddAlertSimple",
+		"AddDialog",
+		"AddBanner",
+		"AddModal"
+	],
+	"ListDialogs": [
+		"CreateListDialog",
+		"CreateCheckList",
+		"",
+		"AddListDialog",
+		"AddCheckList"
+	],
+	"FABs": [
+		"AddFAB",
+		"",
+		"CreateFAB",
+		"CreateFABElegant",
+		"CreateFABOutline",
+		"",
+		"AddFABElegant",
+		"AddFABOutline"
+	],
+	"Lists": [
+		"AddList",
+		"",
+		"CreateList",
+		"CreateListModern",
+		"CreateListSimple",
+		"CreateDataTable",
+		"",
+		"AddListModern",
+		"AddListSimple",
+		"AddDataTable"
+	],
+	"Menus": [
+		"CreateMenu",
+		"CreateMenuWithIcon",
+		"ShowMenu",
+		"",
+		"AddMenu",
+		"AddMenuWithIcon"
+	],
+	"Pickers": [
+		"AddPicker",
+		"",
+		"CreateColorPicker",
+		"CreateDatePicker",
+		"CreateTimePicker",
+		"CreateSpinner",
+		"",
+		"AddColorPicker",
+		"AddDatePicker",
+		"AddTimePicker"
+	],
+	"Table": [
+		"CreateDataTable",
+		"",
+		"AddDataTable"
+	],
+	"Texts": [
+		"AddText",
+		"",
+		"CreateTextH1",
+		"CreateTextH2",
+		"CreateTextH3",
+		"CreateTextH4",
+		"CreateTextH5",
+		"CreateTextH6",
+		"CreateTextJumbo",
+		"CreateTextParagraph",
+		"CreateTextSecondary",
+		"",
+		"AddTextH1",
+		"AddTextH2",
+		"AddTextH3",
+		"AddTextH4",
+		"AddTextH5",
+		"AddTextH6",
+		"AddTextJumbo",
+		"AddTextParagraph",
+		"AddTextSecondary"
+	],
+	"TextEdits": [
+		"AddTextEdit",
+		"",
+		"CreateTextEditFilled",
+		"CreateTextEditFilledA",
+		"CreateTextEditOutline",
+		"CreateTextEditOutlineA",
+		"",
+		"CreateTextEditSearch",
+		"CreateTESearchElegant",
+		"CreateTESearchUnique",
+		"CreateTextEditUnique",
+		"",
+		"CreateTEFilledIconLeft",
+		"CreateTEFilledIconRight",
+		"CreateTEOutlineIconLeft",
+		"CreateTEOutlineIconRight",
+		"",
+		"AddTextEditFilled",
+		"AddTextEditFilledA",
+		"AddTextEditOutline",
+		"AddTextEditOutlineA",
+		"",
+		"AddTextEditSearch",
+		"AddTESearchElegant",
+		"AddTESearchUnique",
+		"AddTextEditUnique",
+		"",
+		"AddTEFilledIconLeft",
+		"AddTEFilledIconRight",
+		"AddTEOutlineIconLeft",
+		"AddTEOutlineIconRight"
+	],
+	"TextAreas": [
+		"AddTextArea",
+		"",
+		"CreateTextAreaFilled",
+		"CreateTextAreaFilledA",
+		"CreateTextAreaOutline",
+		"CreateTextAreaOutlineA",
+		"",
+		"AddTextAreaFilled",
+		"AddTextAreaFilledA",
+		"AddTextAreaOutline",
+		"AddTextAreaOutlineA"
+	],
+	"Checkboxes": [
+		"CreateCheckbox",
+		"",
+		"AddCheckbox"
+	],
+	"Radios": [
+		"AddRadio",
+		"",
+		"CreateRadio",
+		"CreateRadioButtons",
+		"CreateRadioMaterial",
+		"",
+		"AddRadioButtons",
+		"AddRadioMaterial"
+	],
+	"Seekbars": [
+		"CreateSeekBar",
+		"",
+		"AddSeekBar"
+	],
+	"Spinner": [
+		"CreateSpinner"
+	],
+	"Switches": [
+		"CreateSwitch",
+		"CreateSwitchSettings",
+		"",
+		"AddSwitch",
+		"AddSwitchSettings"
+	],
+	"Tabs": [
+		"CreateTabFixed"
+	],
+	"Miscellaneous": [
+		"colors",
+		"CreateDivider",
+		"",
+		"AddDivider"
+	]
 }

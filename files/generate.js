@@ -641,7 +641,7 @@ function getDocData(f, useAppPop = false) {
 
 		curSubf = met.name = met.name || mkeys[k];
 		// force use of entry name
-		if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
+		//if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 
 		// load params from base
 		while (typeof met.params == "string" && met.params.startsWith('#')) {

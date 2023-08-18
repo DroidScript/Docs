@@ -135,7 +135,6 @@
 		"CreatePlayStore",
 		"CreateSensor",
 		"CreateService",
-		"CreateSmartWatch",
 		"CreateSpeechRec",
 		"CreateSynth",
 		"CreateSysProc",
@@ -145,7 +144,6 @@
 		"CreateZipUtil"
 	],
 	"Controls": [
-		"_CreateAdView",
 		"CreateButton",
 		"CreateCameraView",
 		"CreateCanvas",
@@ -169,7 +167,6 @@
 		"CreateVideoView",
 		"CreateWebView",
 		"",
-		"_AddAdView",
 		"AddButton",
 		"AddCameraView",
 		"AddCanvas",
@@ -240,8 +237,6 @@
 		"",
 		"CreateNotification",
 		"CreateShortcut",
-		"CreateWallpaper",
-		"InstallWallpaper",
 		"InstallApp",
 		"ScreenShot",
 		"SysExec",
@@ -271,7 +266,6 @@
 		"GoToSleep",
 		"",
 		"CreateNxt",
-		"CreateSmartWatch",
 		"GetJoystickName",
 		"GetJoystickState",
 		"SetJoystickOptions"
@@ -449,8 +443,6 @@
 		"CreateDownloader",
 		"DownloadFile",
 		"UploadFile"
-	],
-	"Obj": [
 	],
 	"Sounds": [
 		"CreateAudioRecorder",

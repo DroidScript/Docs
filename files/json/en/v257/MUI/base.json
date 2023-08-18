@@ -22,13 +22,6 @@
 		"desc": "Hide the control and remove it from the screen.",
 		"shortDesc": "Hides the control and removes it from the screen"
 	},
-	"#1924613325": { "name": "Destroy",
-		"desc": "Destroys the control completely"
-	},
-	"#1500174100": { "name": "Explode",
-		"desc": "Destroys the control with an explode animation and sound.",
-		"shortDesc": "Destroy the control with a huge explosion"
-	},
 	"#7324472769": { "name": "Focus",
 		"desc": "Set the focus to the control so that the user can interact with it immediately.",
 		"shortDesc": "Set the focus to the control for immediate access"
@@ -335,34 +328,34 @@
 		"shortDesc": "Animates the control"
 	},
 	"#2114625769": { "name": "SetTitle",
-        "desc": "Sets a new title text",
-        "pNames": ["newTitle"],
+		"desc": "Sets a new title text",
+		"pNames": ["newTitle"],
 		"pTypes": ["str-New title text"]
-    },
-    "#2114625709": { "name": "SetTitleColor",
-        "desc": "Change the color of the title text",
-        "pNames": ["color"],
+	},
+	"#2114625709": { "name": "SetTitleColor",
+		"desc": "Change the color of the title text",
+		"pNames": ["color"],
 		"pTypes": ["str_col"]
-    },
-    "#2114625707": { "name": "SetHeight",
-        "desc": "Change the height of the control",
-        "pNames": ["height"],
+	},
+	"#2114625707": { "name": "SetHeight",
+		"desc": "Change the height of the control",
+		"pNames": ["height"],
 		"pTypes": ["num-Fraction of the screen height"]
-    },
-    "#2114625702": { "name": "SetColor",
-        "desc": "Change the color of the control",
-        "pNames": ["color", "backColor"],
+	},
+	"#2114625702": { "name": "SetColor",
+		"desc": "Change the color of the control",
+		"pNames": ["color", "backColor"],
 		"pTypes": ["str_col", "str_col"]
-    },
-    "#2114625302": { "name": "SetTextEdit",
-        "desc": "Pass texedit control to display input values",
-        "pNames": ["textEdit"],
+	},
+	"#2114625302": { "name": "SetTextEdit",
+		"desc": "Pass texedit control to display input values",
+		"pNames": ["textEdit"],
 		"pTypes": ["obj-An MUI TextEdit control"]
-    },
-    "#2114615302": { "name": "SetOnClose",
-        "desc": "Define a callback to be called when the dialog of control is closed.",
-		"pNames": ["callback"        ],
+	},
+	"#2114615302": { "name": "SetOnClose",
+		"desc": "Define a callback to be called when the dialog of control is closed.",
+		"pNames": ["callback"],
 		"pTypes": [{}],
 		"shortDesc": "Called when the dialog or control has been closed."
-    }
+	}
 }

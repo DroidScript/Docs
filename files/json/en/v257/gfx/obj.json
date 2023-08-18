@@ -5,19 +5,6 @@
 		"pTypes": ["gvo-CreateBackground"],
 		"shortDesc": "Adds a background to the game"
 	},
-	"_AddBasicSprite": {
-		"desc": "Adds a [Basic Sprite](CreateBasicSprite.htm) to your game.",
-		"name": "AddBasicSprite",
-		"pNames": ["sprite"],
-		"pTypes": ["gvo-CreateSprite"],
-		"shortDesc": "Adds a BasicSprite to the game"
-	},
-	"_AddBatch": {
-		"desc": "Adds a sprite batch to the game.",
-		"name": "AddBatch",
-		"pNames": ["batch"],
-		"pTypes": ["gvo-CreateBatch"]
-	},
 	"AddGraphic": {
 		"desc": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
 		"pNames": ["obj", "x", "y", "w", "h", "angle", "alpha"],
@@ -111,16 +98,6 @@
 		"pTypes": ["gvo-CreateText", "num_frc", "num_frc", "num_frc", "num_frc"],
 		"shortDesc": "Adds a text object"
 	},
-	"_Animate": {
-		"desc": "Animate repeatedly calls a function with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.",
-		"name": "Animate",
-		"pNames": ["callback"],
-		"pTypes": [{
-			"pNames": ["time", "dtime"],
-			"pTypes": ["num_mls", "num_mls"]
-		}],
-		"shortDesc": "Similar to setInterval"
-	},
 	"AppExec": {
 		"desc": "Executes some code in the main app.",
 		"pNames": ["js"],
@@ -152,33 +129,8 @@
 				"isval": true,
 				"retval": "bin",
 				"shortDesc": "indicates if ready for use"
-			},
-			"_sprite": {
-				"desc": "",
-				"isval": true,
-				"name": "sprite",
-				"retval": "PIXI.Sprite"
-			},
-			"_texture": {
-				"desc": "",
-				"isval": true,
-				"name": "texture",
-				"retval": "PIXI.Texture"
 			}
 		}
-	},
-	"_CreateBasicSprite": {
-		"desc": "",
-		"name": "CreateBasicSprite",
-		"pNames": ["texture"],
-		"pTypes": ["str"],
-		"retval": "?"
-	},
-	"_CreateBatch": {
-		"desc": "",
-		"isval": true,
-		"name": "CreateBatch",
-		"retval": "?"
 	},
 	"CreateCircle": {
 		"abbrev": "cir",
@@ -293,12 +245,6 @@
 				"retval": "str",
 				"shortDesc": "The file url"
 			},
-			"_id": {
-				"desc": "",
-				"isval": true,
-				"name": "id",
-				"retval": "str"
-			},
 			"Pause": {
 				"desc": "Pause the playback if the sound is currently palaying.",
 				"shortDesc": "Pause the track"
@@ -354,18 +300,6 @@
 			},
 			"group": "#5193861923",
 			"height": "#0162475314",
-			"_isAtlas": {
-				"desc": "",
-				"isval": true,
-				"name": "isAtlas",
-				"retval": "bin"
-			},
-			"_isStrip": {
-				"desc": "",
-				"isval": true,
-				"name": "isStrip",
-				"retval": "bin"
-			},
 			"PauseTween": "#8798237593",
 			"pivotX": "#2983519836",
 			"pivotY": "#9812693423",
@@ -428,12 +362,6 @@
 				"shortDesc": "Change sprite texture"
 			},
 			"SetTween": "#8929387454",
-			"_sprite": {
-				"desc": "",
-				"isval": true,
-				"name": "sprite",
-				"retval": "?"
-			},
 			"StartTween": "#1234231242",
 			"StepTween": "#9872394872",
 			"Stop": {
@@ -445,12 +373,6 @@
 				"pNames": ["frame"],
 				"pTypes": ["num_int"],
 				"shortDesc": "Stop animation on frame"
-			},
-			"_texture": {
-				"desc": "",
-				"isval": true,
-				"name": "texture",
-				"retval": "str"
 			},
 			"Tween": "#2114624769",
 			"Update": "#1274618924",
@@ -482,18 +404,6 @@
 				"isval": true,
 				"retval": "bin",
 				"shortDesc": "loaded indicator"
-			},
-			"_loader": {
-				"desc": "",
-				"isval": true,
-				"name": "loader",
-				"retval": "obj"
-			},
-			"_sprite": {
-				"desc": "",
-				"isval": true,
-				"name": "sprite",
-				"retval": "?"
 			}
 		}
 	},
@@ -558,18 +468,6 @@
 		"desc": "Enclose an area with a physics fence.",
 		"pNames": ["groupId", "options", "density", "bounce", "friction", "offset"],
 		"pTypes": ["str", "str_com-left|top|right|bottom", "num", "num", "num", "num"]
-	},
-	"_GenPixiJson": {
-		"desc": "Generate pixi texture atlas from info in a file name.",
-		"pNames": ["path"],
-		"pTypes": ["str_pth"],
-		"retval": "str_jsn",
-		"shortDesc": "Generate texture json from path"
-	},
-	"_GetContext": {
-		"desc": "",
-		"name": "GetContext",
-		"retval": "?"
 	},
 	"GetJoystick": {
 		"desc": "Gets object containing joystick states",
@@ -672,17 +570,6 @@
 		"pTypes": ["gvo-CreateText"],
 		"shortDesc": "Remove text from game"
 	},
-	"_Render": {
-		"desc": "",
-		"name": "Render",
-		"retval": "?"
-	},
-	"_renderer": {
-		"desc": "PIXI renderer",
-		"isval": true,
-		"name": "renderer",
-		"retval": "obj-PIXI.Renderer"
-	},
 	"Script": {
 		"desc": "Loads a local JavaScript file asynchronously to your app to make its functionality available in your game.",
 		"pNames": ["uri", "callback"],
@@ -752,18 +639,6 @@
 		"desc": "Change the drawing order of an object.",
 		"pNames": ["object", "order"],
 		"pTypes": ["obj", "num"]
-	},
-	"_SetPixelMode": {
-		"desc": "",
-		"name": "SetPixelMode",
-		"pNames": ["usePixels"],
-		"pTypes": ["bin"]
-	},
-	"_stage": {
-		"desc": "",
-		"isval": true,
-		"name": "stage",
-		"retval": "?"
 	},
 	"SwapOrder": {
 		"desc": "Swap the drawing order of two GameView objects.",
