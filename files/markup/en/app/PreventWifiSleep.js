@@ -1,5 +1,6 @@
 
 /** # PreventWifiSleep #
+ * @brief Prevent Wifi from powering down
  * Prevent the device WiFi from powering down.
  * 
  * See Also: @SetWifiEnabled, @IsWifiEnabled

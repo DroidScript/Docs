@@ -1,6 +1,7 @@
 
 /** # CreateEmail #
  * @abbrev mail
+ * @brief Returns an Email object for user to send emails
  * The Email component allows us to send and receive emails without user interaction.
  * $$ mail = app.CreateEmail(account, password) $$ 
  * @param {str} account email
@@ -9,17 +10,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateEmail
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ mail.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.

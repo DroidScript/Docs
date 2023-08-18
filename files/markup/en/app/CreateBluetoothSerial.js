@@ -1,6 +1,7 @@
 
 /** # CreateBluetoothSerial #
  * @abbrev bls
+ * @brief Communicate with other Bluetooth devices
  * The CreateBluetoothSerial object is used for communicating with other Bluetooth devices.The 'Text' mode is set by default, but **int**eger and **hex**adecimal values can also be sent.
  * $$ bls = app.CreateBluetoothSerial(mode) $$ 
  * @param {str} mode Text|Int|Hex
@@ -8,17 +9,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateBluetoothSerial
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ bls.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Clear ###
  * Clears the Bluetooth buffer of the serial connection.
@@ -76,18 +74,9 @@
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ bls.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### RequestEnable ###
  * If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.

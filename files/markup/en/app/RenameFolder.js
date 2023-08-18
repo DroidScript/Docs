@@ -1,5 +1,6 @@
 
 /** # RenameFolder #
+ * @brief Rename or move a local folder
  * Renames a folder on the local filesystem. This method can also be used to move a folder to a whole other destination.
  * 
  * See Also: @MakeFolder, @CopyFolder, @DeleteFolder

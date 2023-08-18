@@ -1,5 +1,6 @@
 
 /** # AddBackground #
+ * @brief Adds a background to the game
  * Adds a static background to your game.
  * $$ gfx.AddBackground(obj) $$ 
  * @param {gvo} obj CreateBackground

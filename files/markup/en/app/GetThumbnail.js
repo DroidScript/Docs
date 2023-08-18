@@ -1,5 +1,6 @@
 
 /** # GetThumbnail #
+ * @brief Create downscaled copy of an image
  * Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.
  * 
  * See Also: @CreateImage

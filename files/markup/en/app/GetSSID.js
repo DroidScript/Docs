@@ -1,5 +1,6 @@
 
 /** # GetSSID #
+ * @brief Get WiFi network SSID (name)
  * Returns the name (SSID) of the current network the user is connected with. If WiFi is disabled “<unknown ssid>” is returned.
  * 
  * See Also: @IsWifiEnabled, @SetWifiEnabled, @WifiConnect

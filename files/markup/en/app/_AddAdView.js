@@ -1,5 +1,6 @@
 
 /** # _AddAdView #
+ * @brief Create and add AdView to Layout.
  * Creates and adds a AdView to a Layout.
  * <premium>
  * See @CreateAdView for full documentation.

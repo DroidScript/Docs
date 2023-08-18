@@ -1,5 +1,6 @@
 
 /** # DownloadFile #
+ * @brief Download a file with Androids download manager
  * 
  * $$ app.DownloadFile(source, destination, title, description, options) $$ 
  * @param {str} source 

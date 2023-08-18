@@ -1,5 +1,6 @@
 
 /** # GetMediaFile #
+ * @brief Get a path to an unambiguous media file
  * Returns a file path to a unique media file matching the format “/storage/emulated/0/Pictures/[**folder**]/**YYYYMMDD**_**hhmmSSsss**[**ext**]”. The folder for this file will be created automatically.
  * 
  * See Also: @CreateImage, @CreateCameraView

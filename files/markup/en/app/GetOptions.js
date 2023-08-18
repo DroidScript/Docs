@@ -1,5 +1,6 @@
 
 /** # GetOptions #
+ * @brief Get app options
  * Returns all current app settings. If ran from inside DroidScript, “debug,remote,holo” is the default value.
  * 
  * See Also: @SetOptions

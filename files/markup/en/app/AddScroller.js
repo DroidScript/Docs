@@ -1,5 +1,6 @@
 
 /** # AddScroller #
+ * @brief Create and add Scroller to Layout.
  * Creates and adds a Scroller to a Layout.
  * See @CreateScroller for full documentation.
  * $$ app.AddScroller(layout, width, height, options) $$ 

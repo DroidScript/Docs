@@ -1,6 +1,7 @@
 
 /** # CreateBackground #
  * @abbrev bck
+ * @brief Returns a new background
  * Creates a background
  * $$ bck = gfx.CreateBackground(file, options) $$ 
  * @param {str_ptf} file 
@@ -9,9 +10,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateBackground
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### Scroll ###
@@ -22,27 +23,27 @@
  */
 
 
-/** ### loaded ###
+/** ### loaded
+ * @prop
  * Indicates if the background is ready for use
- * $$ bck.loaded() $$
  * @returns bin
  */
 
-
-/** ### _sprite ###
+                    
+/** ### _sprite
+ * @prop
  * 
- * $$ bck._sprite() $$
  * @returns PIXI.Sprite
  */
 
-
-/** ### _texture ###
+                    
+/** ### _texture
+ * @prop
  * 
- * $$ bck._texture() $$
  * @returns PIXI.Texture
  */
 
-// CreateBackground.txt --> All the sample codes
+                    // CreateBackground.txt --> All the sample codes
 
 /** @Sample
 <sample Scroll>

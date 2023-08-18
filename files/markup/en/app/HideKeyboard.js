@@ -1,5 +1,6 @@
 
 /** # HideKeyboard #
+ * @brief Hide the device keyboard
  * Hides the device keyboard if it is currently shown.
  * 
  * See Also: @ShowKeyboard, @SetOnShowKeyboard

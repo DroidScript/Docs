@@ -1,5 +1,6 @@
 
 /** # Wait #
+ * @brief Perform a synchronous delay
  * 
  * $$ app.Wait(seconds) $$ 
  * @param {num_sec} seconds 

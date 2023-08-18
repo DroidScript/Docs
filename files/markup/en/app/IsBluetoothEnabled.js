@@ -1,5 +1,6 @@
 
 /** # IsBluetoothEnabled #
+ * @brief Check bluetooth enabled
  * Return whether bluetooth was enabled. 
  * 
  * See Also: @SetBluetoothEnabled

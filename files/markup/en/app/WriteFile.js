@@ -1,5 +1,6 @@
 
 /** # WriteFile #
+ * @brief Write text to a local file
  * Writes text to a local file.
  * 
  * See Also: @ReadFile.

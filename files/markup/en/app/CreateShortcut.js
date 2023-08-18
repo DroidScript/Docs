@@ -1,5 +1,6 @@
 
 /** # CreateShortcut #
+ * @brief Creates a Home-Screen shortcut to an app
  * This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.
  * Note: since Android 9 this method prompts a system dialog
  * $$ app.CreateShortcut(name, iconFile, file, options) $$ 

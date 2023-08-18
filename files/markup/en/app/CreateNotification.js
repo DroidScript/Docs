@@ -1,6 +1,7 @@
 
 /** # CreateNotification #
  * @abbrev ntf
+ * @brief Returns a new Notification object
  * 
  * $$ ntf = app.CreateNotification(options) $$ 
  * @param {str_com} options Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority
@@ -22,17 +23,14 @@ When the user touches your notification, your app will come to the front, even i
 If you use more than one notification, **app.GetNotifyId** can be used to check which notification was pressed by the user.
  */
 
-/** ## Methods ##
- * These are the methods available for CreateNotification
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ ntf.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Cancel ###
  * Cancel a notification with a specific id.

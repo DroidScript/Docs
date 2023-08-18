@@ -1,6 +1,7 @@
 
 /** # CreatePolygon #
  * @abbrev pol
+
  * Creates a polygonal game object.
  * $$ pol = gfx.CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) $$ 
  * @param {lst} points [ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]
@@ -15,116 +16,70 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreatePolygon
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern alpha
  */
 
-
-/** ### alpha ###
- * The objects alpha value
- * $$ pol.alpha() $$
- * @returns num_frc
+/**
+ * @extern angle
  */
 
-
-/** ### angle ###
- * The rotation fraction of the object
- * $$ pol.angle() $$
- * @returns num_frc
+/**
+ * @extern Contains
  */
 
-
-/** ### Contains ###
- * Checks if a point is contained in the sprite
- * $$ pol.Contains(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @returns bin
+/**
+ * @extern data
  */
 
-
-/** ### data ###
- * An object for saving individual extra properties.
- * $$ pol.data() $$
- * @returns obj
+/**
+ * @extern graphic
  */
 
-
-/** ### graphic ###
- * the PIXI graphic
- * $$ pol.graphic() $$
- * @returns obj
+/**
+ * @extern group
  */
 
-
-/** ### group ###
- * The objects group identifier
- * $$ pol.group() $$
- * @returns str
+/**
+ * @extern height
  */
 
-
-/** ### height ###
- * The height of the object
- * $$ pol.height() $$
- * @returns num_frc
+/**
+ * @extern pivotX
  */
 
-
-/** ### pivotX ###
- * The x pivot for rotations
- * $$ pol.pivotX() $$
- * @returns num_frc
+/**
+ * @extern pivotY
  */
 
-
-/** ### pivotY ###
- * The y pivot for rotations
- * $$ pol.pivotY() $$
- * @returns num_frc
+/**
+ * @extern scaleX
  */
 
-
-/** ### scaleX ###
- * The horizontal scaling
- * $$ pol.scaleX() $$
- * @returns num_fac
+/**
+ * @extern scaleY
  */
 
-
-/** ### scaleY ###
- * The vertical scaling
- * $$ pol.scaleY() $$
- * @returns num_fac
+/**
+ * @extern SetMatrix
  */
 
-
-/** ### SetMatrix ###
- * Set the individual 2d transformation
- * $$ pol.SetMatrix(mtx) $$
- * @param {obj} mtx Matrix
+/**
+ * @extern Update
  */
 
-
-/** ### Update ###
- * Updates internal properties
- * $$ pol.Update() $$
+/**
+ * @extern visible
  */
 
-
-/** ### visible ###
- * Indicates the objects visibility state
- * $$ pol.visible() $$
- * @returns bin
+/**
+ * @extern width
  */
-
-
-/** ### width ###
- * The obects width
- * $$ pol.width() $$
- * @returns num
- */
-
 // CreatePolygon.txt --> All the sample codes
 
 /** @Sample

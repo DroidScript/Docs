@@ -1,5 +1,6 @@
 
 /** # GetDisplayHeight #
+ * @brief Get apps display height
  * Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.
  * 
  * See Also: @GetDisplayWidth, @GetScreenHeight

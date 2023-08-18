@@ -1,5 +1,6 @@
 
 /** # GetCountryCode #
+ * @brief Get users country code
  * Returns the code of the device country (ie. “GB” or “DE”)
  * 
  * See Also: @GetCountry, GetLanguageCode

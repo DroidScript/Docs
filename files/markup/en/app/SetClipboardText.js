@@ -1,5 +1,6 @@
 
 /** # SetClipboardText #
+ * @brief Change the device clipboard text
  * The SetClipboardText method puts text data on the device clip board. This allows you to copy and paste text between different applications.
  * 
  * See Also: @GetClipboardText

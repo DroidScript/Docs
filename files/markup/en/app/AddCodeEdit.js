@@ -1,5 +1,6 @@
 
 /** # AddCodeEdit #
+ * @brief Create and add CodeEdit to Layout.
  * Creates and adds a CodeEdit to a Layout.
  * <premium>
  * See @CreateCodeEdit for full documentation.

@@ -1,6 +1,7 @@
 
 /** # CreateNetClient #
  * @abbrev net
+ * @brief Returns a new NetClient object
  * 
  * $$ net = app.CreateNetClient(type) $$ 
  * @param {str} type UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message
@@ -19,9 +20,9 @@ Note: A few routers block fast UDP messages by default
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateNetClient
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AutoReceive ###
@@ -33,12 +34,9 @@ Note: A few routers block fast UDP messages by default
  */
 
 
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ net.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Batch
  */
-
 
 /** ### Close ###
  * Closes the NetClient socket.
@@ -87,12 +85,9 @@ Note: A few routers block fast UDP messages by default
  */
 
 
-/** ### IsEnabled ###
- * Returns whether the control is currently useable by the user.
- * $$ net.IsEnabled() $$
- * @returns bin
+/**
+ * @extern IsEnabled
  */
-
 
 /** ### ReceiveBytes ###
  * Receive data as bytes.

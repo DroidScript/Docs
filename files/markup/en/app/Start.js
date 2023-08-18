@@ -1,5 +1,6 @@
 
 /** # Start #
+ * @brief Start your DS app in an html project
  * Starts your DS app in an html project. Call it in the document.onload function in order to initialize DroidScript and execute your OnStart() function.
  * $$ app.Start() $$ 
 */

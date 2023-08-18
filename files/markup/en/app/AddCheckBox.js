@@ -1,5 +1,6 @@
 
 /** # AddCheckBox #
+ * @brief Create and add CheckBox to Layout.
  * Creates and adds a CheckBox to a Layout.
  * See @CreateCheckBox for full documentation.
  * $$ app.AddCheckBox(layout, text, width, height, options) $$ 

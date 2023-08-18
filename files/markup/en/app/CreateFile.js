@@ -1,6 +1,7 @@
 
 /** # CreateFile #
  * @abbrev fil
+ * @brief Returns a new File object
  * Returns a File object.
  * $$ fil = app.CreateFile(file, mode) $$ 
  * @param {str_ptf} file 
@@ -9,17 +10,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateFile
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ fil.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Close ###
  * Close File

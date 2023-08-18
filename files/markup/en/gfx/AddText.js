@@ -1,5 +1,6 @@
 
 /** # AddText #
+ * @brief Adds a text object
  * Adds a [text](CreateText.htm) object to the game.
  * $$ gfx.AddText(obj, x, y, angle, alpha) $$ 
  * @param {gvo} obj CreateText

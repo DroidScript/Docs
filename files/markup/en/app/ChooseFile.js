@@ -1,5 +1,6 @@
 
 /** # ChooseFile #
+ * @brief Let the user choose a file
  * ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.
  * 
  * See Also: @ReadFile

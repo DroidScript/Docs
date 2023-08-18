@@ -1,6 +1,7 @@
 
 /** # OpenDatabase #
  * @abbrev db
+
  * OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time.
  * $$ db = app.OpenDatabase(name) $$ 
  * @param {str} name 
@@ -8,9 +9,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for OpenDatabase
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### addTransaction ###
@@ -34,18 +35,20 @@
  */
 
 
-/** ### _databaseFeatures ###
+/** ### _databaseFeatures
+ * @prop
  * databaseFeatures * <deprecated>
- * $$ db._databaseFeatures() $$
+ * @returns undefined
  */
 
-
-/** ### _dbname ###
+                    
+/** ### _dbname
+ * @prop
  * dbname * <deprecated>
- * $$ db._dbname() $$
+ * @returns undefined
  */
 
-
+                    
 /** ### Delete ###
  * Delete the database
  * $$ db.Delete() $$
@@ -86,13 +89,13 @@
  */
 
 
-/** ### name ###
+/** ### name
+ * @prop
  * The database name * <deprecated use GetName instead>
- * $$ db.name() $$
  * @returns str
  */
 
-
+                    
 /** ### open ###
  * Opens the database * <deprecated>
  * $$ db.open(success, error) $$
@@ -101,19 +104,20 @@
  */
 
 
-/** ### _openargs ###
+/** ### _openargs
+ * @prop
  * openargs * <deprecated>
- * $$ db._openargs() $$
+ * @returns undefined
  */
 
-
-/** ### _openDBs ###
+                    
+/** ### _openDBs
+ * @prop
  * contains DBs * <deprecated>
- * $$ db._openDBs() $$
  * @returns obj-{ name:obj-Database }
  */
 
-
+                    
 /** ### _openError ###
  * openError * <deprecated>
  * $$ db._openError(err) $$

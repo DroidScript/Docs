@@ -1,5 +1,6 @@
 
 /** # SetInForeground #
+ * @brief Set services to run in the foreground
  * Set the current service to run in the foreground.
  * 
  * See Also: @StartService, @SetInBackground

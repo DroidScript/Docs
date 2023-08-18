@@ -1,5 +1,6 @@
 
 /** # ShowKeyboard #
+ * @brief Show keyboard on a focussed control
  * Shows the keyboard on a focussed control.
  * 
  * See Also: @HideKeyboard

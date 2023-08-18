@@ -1,5 +1,6 @@
 
 /** # AddLayout #
+ * @brief Adds a layout to the app
  * AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)
  * When @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.
  * 

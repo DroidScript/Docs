@@ -1,6 +1,7 @@
 
 /** # _CreateAdView #
  * @abbrev adv
+ * @brief Returns an AdView object
  * 
  * $$ adv = app._CreateAdView(unitId, testId, width, height, options) $$ 
  * @param {str} unitId 
@@ -12,9 +13,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for _CreateAdView
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### GetType ###

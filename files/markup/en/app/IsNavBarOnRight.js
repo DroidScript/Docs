@@ -1,5 +1,6 @@
 
 /** # IsNavBarOnRight #
+ * @brief Check if NavBar is on righthand side
  * Checks if the Navigation Bar is on the righthand side of the display.
  * $$ app.IsNavBarOnRight() $$ 
  * @returns bin

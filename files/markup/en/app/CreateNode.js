@@ -1,6 +1,7 @@
 
 /** # CreateNode #
  * @abbrev nod
+
  * 
  * $$ nod = app.CreateNode(paths, options) $$ 
  * @param {str_pth} paths NODE_PATH env variable

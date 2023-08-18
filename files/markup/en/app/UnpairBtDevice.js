@@ -1,5 +1,6 @@
 
 /** # UnpairBtDevice #
+ * @brief Unpair a paired Bluetooth device
  * Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.
  * 
  * See Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial

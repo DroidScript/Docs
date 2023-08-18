@@ -1,5 +1,6 @@
 
 /** # SendFile #
+ * @brief Send a file to a remote target
  * 
  * $$ app.SendFile(file, subject, text, choose) $$ 
  * @param {str_pfa} file 

@@ -1,5 +1,6 @@
 
 /** # GetInternalFolder #
+ * @brief Get internal storage path
  * Get devices internal “/sdcard/” path. Normally it should be “/storage/emulated/legacy”.
  * 
  * See Also: @GetExternalFolder

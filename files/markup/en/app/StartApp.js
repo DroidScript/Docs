@@ -1,5 +1,6 @@
 
 /** # StartApp #
+ * @brief Starts an app in a new window
  * Starts an app in a new window. **Note:** This function does only work in APKs because in the IDE your app is already running.
  * 
  * See Also: @StopApp

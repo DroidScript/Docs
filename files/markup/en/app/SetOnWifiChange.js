@@ -1,5 +1,6 @@
 
 /** # SetOnWifiChange #
+ * @brief Called on WiFi connected state changes
  * Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be “CONNECTING”, “CONNECTED”, or “DISCONNECTED”. The WiFi ssid is passed on “CONNECTED” only.
  * 
  * See Also: @WifiConnect, @WifiScan

@@ -1,6 +1,7 @@
 
 /** # CreatePlayStore #
  * @abbrev pls
+ * @brief Returns a new PlayStore object
  * 
  * $$ pls = app.CreatePlayStore() $$ 
  * @returns dso-PlayStore
@@ -16,17 +17,14 @@ Notes: If your email address is listed in the 'licence testing' section of the d
 Subscriptions can be cancelled in the Google Play App found on your device (they will stay active for the remains of the period that has been purchased).
  */
 
-/** ## Methods ##
- * These are the methods available for CreatePlayStore
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ pls.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetBillingInfo ###
  * Get product info of paid items from Google Play.

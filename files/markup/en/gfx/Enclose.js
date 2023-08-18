@@ -1,5 +1,6 @@
 
 /** # Enclose #
+
  * Enclose an area with a physics fence.
  * $$ gfx.Enclose(groupId, options, density, bounce, friction, offset) $$ 
  * @param {str} groupId 

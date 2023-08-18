@@ -1,5 +1,6 @@
 
 /** # GetModel #
+ * @brief Get device model name
  * Returns the model name of the device.
  * $$ app.GetModel() $$ 
  * @returns str

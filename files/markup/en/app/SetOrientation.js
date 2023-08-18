@@ -1,5 +1,6 @@
 
 /** # SetOrientation #
+ * @brief Fix display orientation
  * Set the display orientation to a fixed value. You can unlock it again passing “Default” as **orientation**.
  * 
  * See Also: @GetOrientation

@@ -1,5 +1,6 @@
 
 /** # AddDrawer #
+ * @brief Adds a slide-able layout on given side
  * AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.
  * 
  * See Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer

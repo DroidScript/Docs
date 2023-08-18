@@ -1,5 +1,6 @@
 
 /** # IsPortrait #
+ * @brief Check if device is in portrait mode
  * Checks if the device is in portrait mode.
  * $$ app.IsPortrait() $$ 
  * @returns bin

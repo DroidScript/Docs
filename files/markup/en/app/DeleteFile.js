@@ -1,5 +1,6 @@
 
 /** # DeleteFile #
+ * @brief Deletes a file
  * DeleteFile deletes a given file from the filesystem. This makes it hard to restore it!
  * 
  * See Also: @WriteFile, @RenameFile, @FileExists

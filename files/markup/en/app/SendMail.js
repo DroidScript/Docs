@@ -1,5 +1,6 @@
 
 /** # SendMail #
+ * @brief Open the EMail app and autofill fields
  * 
  * $$ app.SendMail(address, subject, body, attach, type, options) $$ 
  * @param {str} address 

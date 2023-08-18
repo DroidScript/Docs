@@ -1,5 +1,6 @@
 
 /** # GetResourceId #
+ * @brief Get ID of a resource
  * Returns the id of a resource.
  * 
  * See Also: @LoadPlugin

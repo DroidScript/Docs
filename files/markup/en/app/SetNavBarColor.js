@@ -1,5 +1,6 @@
 
 /** # SetNavBarColor #
+ * @brief Set NavBar color
  * Change the android NavBar color.
  * 
  * <premium>

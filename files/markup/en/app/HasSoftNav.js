@@ -1,5 +1,6 @@
 
 /** # HasSoftNav #
+ * @brief Checks if device has soft keys
  * Checks if the device has a soft navigation bar on the screen.
  * $$ app.HasSoftNav() $$ 
  * @returns bin

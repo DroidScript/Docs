@@ -1,5 +1,6 @@
 
 /** # GetDrawerState #
+ * @brief Get current drawer state
  * Returns the current drawer state of a drawer on a given side.
  * 
  * See Also: @OpenDrawer, @CloseDrawer, @AddDrawer

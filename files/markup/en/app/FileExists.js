@@ -1,5 +1,6 @@
 
 /** # FileExists #
+ * @brief Checks if the file exists
  * FileExists Checks if a given file exists in your filesystem or not.
  * 
  * See Also: @WriteFile, @CopyFile, @RenameFile

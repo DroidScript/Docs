@@ -1,5 +1,6 @@
 
 /** # ChooseImage #
+ * @brief Let the user choose an image
  * ChooseImage opens the photo gallery for user to select an image.
  * 
  * See Also: @CreateImage

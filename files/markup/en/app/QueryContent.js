@@ -1,5 +1,6 @@
 
 /** # QueryContent #
+ * @brief Queries content from the android content model
  * 
  * $$ app.QueryContent(uri, columns, select, args, sort) $$ 
  * @param {str_uri} uri 

@@ -1,5 +1,6 @@
 
 /** # AddSpinner #
+ * @brief Create and add Spinner to Layout.
  * Creates and adds a Spinner to a Layout.
  * See @CreateSpinner for full documentation.
  * $$ app.AddSpinner(layout, list, width, height, options) $$ 

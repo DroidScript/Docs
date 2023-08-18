@@ -1,5 +1,6 @@
 
 /** # IsWifiApEnabled #
+ * @brief Check if the mobile Wifi Access Point is enabled
  * Checks if the mobile Wifi Access Point is enabled on the user device.
  * 
  * See Also: @SetWifiApEnabled

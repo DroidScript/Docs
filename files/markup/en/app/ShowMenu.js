@@ -1,5 +1,6 @@
 
 /** # ShowMenu #
+
  * Show the in-app menu. When a menu entry is touched, the _OnMenu_ event will be called.
  * 
  * See Also: @SetMenu

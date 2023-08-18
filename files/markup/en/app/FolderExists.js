@@ -1,5 +1,6 @@
 
 /** # FolderExists #
+ * @brief Checks if the folder exists
  * Checks if a given folder exits or not.
  * 
  * See Also: @MakeFolder, @CopyFolder, @RenameFolder

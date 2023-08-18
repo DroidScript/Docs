@@ -1,5 +1,6 @@
 
 /** # SetAlarm #
+ * @brief Set alarm to open your app at a specific time
  * Set a time when you want your app to start automatically if it is not already opened. When the alarm is fired, the global _OnAlarm_ event will be fired.
  * $$ app.SetAlarm(type, id, callback, time, interval, options) $$ 
  * @param {str} type Set|Repeat|Cancel

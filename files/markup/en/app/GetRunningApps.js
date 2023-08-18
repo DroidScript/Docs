@@ -1,5 +1,6 @@
 
 /** # GetRunningApps #
+ * @brief Get list of running apps
  * Returns a list of objects containing info about all currently running apps in the fore- or background.
  * 
  * See Also: @GetRunningServices, @GetInstalledApps

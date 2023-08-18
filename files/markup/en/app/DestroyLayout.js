@@ -1,5 +1,6 @@
 
 /** # DestroyLayout #
+ * @brief Destroy a layout
  * DestroyLayout destroys a layout and all its contents so it can't be used any more. As a result, all memory occupied by these objects will be released.
  * 
  * See Also: @CreateLayout, @AddLayout

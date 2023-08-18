@@ -1,5 +1,6 @@
 
 /** # StartService #
+ * @brief Starts a parallel service
  * Starts a service which runs parallel to your app.
  * 
  * See Also: @StopService.

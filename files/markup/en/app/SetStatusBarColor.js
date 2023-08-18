@@ -1,5 +1,6 @@
 
 /** # SetStatusBarColor #
+ * @brief Set status bar color
  * Change the android status bar color.
  * 
  * <premium>

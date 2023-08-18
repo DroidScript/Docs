@@ -1,5 +1,6 @@
 
 /** # GetNotifyId #
+ * @brief Get the caller notification id
  * If the app was started by a notification, this function will return the id of that notification.
  * 
  * See Also: @CreateNotification

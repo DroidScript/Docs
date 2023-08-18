@@ -1,5 +1,6 @@
 
 /** # IsCharging #
+ * @brief Check whether device is charging
  * Checks if phone is currently charging or not.
  * 
  * See Also: @GetBatteryLevel, @GetChargeType

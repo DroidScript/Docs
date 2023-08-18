@@ -1,5 +1,6 @@
 
 /** # GoToSleep #
+ * @brief Puts the phone into sleep mode
  * Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)
  * 
  * See Also: @WakeUp

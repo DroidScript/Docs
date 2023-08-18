@@ -1,5 +1,6 @@
 
 /** # GetMetadata #
+
  * Returns a string list of metadata values contained in an audio file.
  * 
  * See Also: @CreateMediaPlayer

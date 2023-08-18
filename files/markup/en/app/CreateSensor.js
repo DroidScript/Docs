@@ -1,6 +1,7 @@
 
 /** # CreateSensor #
  * @abbrev sns
+ * @brief Returns a new Sensor object
  * 
  * $$ sns = app.CreateSensor(type, options) $$ 
  * @param {str} type Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector
@@ -17,17 +18,14 @@ The sensor object can be used to access numerous sensors of your device. You can
 Change the rate that a sensor checks for changes by adding one the options “Fastest”, “Fast”, “Medium” or “Slow”. “Slow” is the default.
  */
 
-/** ## Methods ##
- * These are the methods available for CreateSensor
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ sns.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetAzimuth ###
  * Returns the first/x/azimuth value of a sensor.
@@ -71,18 +69,9 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ sns.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### SetMaxRate ###
  * Define a minimum timeout between two OnChage calls.

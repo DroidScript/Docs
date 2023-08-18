@@ -1,5 +1,6 @@
 
 /** # SetOnDebug #
+ * @brief Called on app debug messages
  * Define a callback function for debug messages.
  * 
  * See also: @Debug, @SetDebug

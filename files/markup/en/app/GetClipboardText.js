@@ -1,5 +1,6 @@
 
 /** # GetClipboardText #
+ * @brief Get latest clipboard text
  * GetClipboardText returns text that was last copied to the clipboard.
  * 
  * See Also: @SetClipboardText

@@ -1,5 +1,6 @@
 
 /** # AddToggle #
+ * @brief Create and add Toggle to Layout.
  * Creates and adds a Toggle to a Layout.
  * See @CreateToggle for full documentation.
  * $$ app.AddToggle(layout, text, width, height, options) $$ 

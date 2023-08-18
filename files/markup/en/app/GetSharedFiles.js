@@ -1,5 +1,6 @@
 
 /** # GetSharedFiles #
+ * @brief Get list of shared files
  * Returns a path list of files shared with the app. If the results were retreived they can't be read an other time, unless they will be shared again.
  * 
  * See Also: @GetSharedText, @SendFile, @SendText

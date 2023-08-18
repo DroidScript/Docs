@@ -1,6 +1,7 @@
 
 /** # CreateSynth #
  * @abbrev syn
+ * @brief Returns a new Synth object
  * 
  * $$ syn = app.CreateSynth(type) $$ 
  * @param {str} type Signal,VCA,VCF
@@ -28,17 +29,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateSynth
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ syn.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.

@@ -1,5 +1,6 @@
 
 /** # GetJoystickStates #
+ * @brief Get joystick key states object
  * Returns an object with all keystates.
  * 
  * See Also: @GetJoystickState

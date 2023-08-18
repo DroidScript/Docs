@@ -1,5 +1,6 @@
 
 /** # GetAccounts #
+
  * Returns a string of all known account names on the device separated with comma ','.
  * 
  * See Also: @ChooseAccount

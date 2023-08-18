@@ -1,5 +1,6 @@
 
 /** # SetDensity #
+ * @brief Changes the dpi value for any control creatred afterwards
  * Changes the dpi value (dots per inch) that affects the content of any control created afterwards. The smaller the value, the smaller the scaling.
  * 
  * See Also: @GetScreenDensity

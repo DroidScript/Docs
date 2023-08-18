@@ -1,5 +1,6 @@
 
 /** # GetScreenDensity #
+ * @brief Get the screen density
  * Returns the density of the device's screen.
  * 
  * See Also: @GetScreenWidth, @GetScreenHeight, @SetDensity

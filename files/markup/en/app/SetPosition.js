@@ -1,5 +1,6 @@
 
 /** # SetPosition #
+ * @brief Change app position and size
  * Change the main app's position and size. Mostly used for transparent apps.
  * $$ app.SetPosition(left, top, width, height, options) $$ 
  * @param {num_frc} left 

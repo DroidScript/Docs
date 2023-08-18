@@ -1,5 +1,6 @@
 
 /** # SetDebug #
+ * @brief Control the debug level of the program
  * 
  * $$ app.SetDebug(switches) $$ 
  * @param {str_com} switches console,ds,adb,all

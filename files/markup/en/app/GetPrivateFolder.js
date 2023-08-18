@@ -1,5 +1,6 @@
 
 /** # GetPrivateFolder #
+ * @brief Get path to a private folder
  * Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.
  * 
  * See Also: @GetAppPath, @GetPath

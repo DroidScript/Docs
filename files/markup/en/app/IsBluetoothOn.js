@@ -1,5 +1,6 @@
 
 /** # IsBluetoothOn #
+ * @brief Check if bluetooth is on
  * Checks if bluetooth is enabled and on.
  * 
  * See Also: @CreateBluetoothSerial, @DiscoverBtDevices

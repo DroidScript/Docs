@@ -1,5 +1,6 @@
 
 /** # IsPremium #
+ * @brief Check if user has a DroidScript Premium subscription
  * Checks if the user has a DroidScript premium subscription inside the IDE.
  * $$ app.IsPremium() $$ 
  * @returns bin

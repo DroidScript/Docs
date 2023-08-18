@@ -1,5 +1,6 @@
 
 /** # PlaySound #
+ * @brief Plays a local or remote sound file
  * Plays a sound file stored remotely or on the local filesystem.
  * 
  * See Also: @CreateMediaPlayer

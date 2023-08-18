@@ -1,5 +1,6 @@
 
 /** # LoadNumber #
+ * @brief Load saved boolean value
  * Load a saved number value to remember varibale values between multiple app starts.
  * 
  * See also: @SaveNumber.

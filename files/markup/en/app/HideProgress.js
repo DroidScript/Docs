@@ -1,5 +1,6 @@
 
 /** # HideProgress #
+ * @brief Hide progress indicator
  * Hides a previously shown progress indicator.
  * See also @ShowProgress.
  * $$ app.HideProgress() $$ 

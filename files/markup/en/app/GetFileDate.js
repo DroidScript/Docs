@@ -1,5 +1,6 @@
 
 /** # GetFileDate #
+ * @brief Get last modified date of a file or folder
  * GetFileDate returns a Date object containing the last modified date of a file or folder.
  * $$ app.GetFileDate(file) $$ 
  * @param {str_ptf} file 

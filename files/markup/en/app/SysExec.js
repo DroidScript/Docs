@@ -1,5 +1,6 @@
 
 /** # SysExec #
+ * @brief Execute a shell command on the android shell
  * Executes a shell command on the android shell. **NOTE:** You have to add a '`exit`' command at the end of your script because the shell does not terminate automatically after finishing.
  * 
  * See Also: @ExtExec

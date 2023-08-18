@@ -1,6 +1,7 @@
 
 /** # CreateDownloader #
  * @abbrev dwn
+ * @brief Returns a new Downloader object
  * 
  * $$ dwn = app.CreateDownloader(options) $$ 
  * @param {str_com} options NoDialog|Light
@@ -19,17 +20,14 @@ If you want to know when the download process has finished (or failed) you can d
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateDownloader
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ dwn.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Download ###
  * Start downloading one or multiple files.
@@ -69,18 +67,9 @@ If you want to know when the download process has finished (or failed) you can d
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ dwn.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### SetOnCancel ###
  * %cb% download is cancelled.

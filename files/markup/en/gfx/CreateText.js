@@ -1,6 +1,7 @@
 
 /** # CreateText #
  * @abbrev txt
+ * @brief Returns a new text object
  * Creates a text label which is used to display texts in your game.
  * $$ txt = gfx.CreateText(text, fontSize, fontFile, align, callback) $$ 
  * @param {str} text 
@@ -11,116 +12,79 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateText
- */
 
 
-/** ### align ###
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/** ### align
+ * @prop
  * Alignment for multiline text. does not affect single line text.
- * $$ txt.align() $$
  * @returns str-left|center|right
  */
 
-
-/** ### alpha ###
- * The objects alpha value
- * $$ txt.alpha() $$
- * @returns num_frc
+                    
+/**
+ * @extern alpha
  */
 
-
-/** ### angle ###
- * The rotation fraction of the object
- * $$ txt.angle() $$
- * @returns num_frc
+/**
+ * @extern angle
  */
 
-
-/** ### Contains ###
- * Checks if a point is contained in the sprite
- * $$ txt.Contains(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @returns bin
+/**
+ * @extern Contains
  */
 
-
-/** ### file ###
+/** ### file
+ * @prop
  * Path to the source file.
- * $$ txt.file() $$
  * @returns str_pth
  */
 
-
-/** ### fontSize ###
+                    
+/** ### fontSize
+ * @prop
  * text font size in pixels
- * $$ txt.fontSize() $$
  * @returns num_pxl
  */
 
-
-/** ### height ###
- * The height of the object
- * $$ txt.height() $$
- * @returns num_frc
+                    
+/**
+ * @extern height
  */
 
-
-/** ### pivotX ###
- * The x pivot for rotations
- * $$ txt.pivotX() $$
- * @returns num_frc
+/**
+ * @extern pivotX
  */
 
-
-/** ### pivotY ###
- * The y pivot for rotations
- * $$ txt.pivotY() $$
- * @returns num_frc
+/**
+ * @extern pivotY
  */
 
-
-/** ### scaleX ###
- * The horizontal scaling
- * $$ txt.scaleX() $$
- * @returns num_fac
+/**
+ * @extern scaleX
  */
 
-
-/** ### scaleY ###
- * The vertical scaling
- * $$ txt.scaleY() $$
- * @returns num_fac
+/**
+ * @extern scaleY
  */
 
-
-/** ### SetMatrix ###
- * Set the individual 2d transformation
- * $$ txt.SetMatrix(mtx) $$
- * @param {obj} mtx Matrix
+/**
+ * @extern SetMatrix
  */
 
-
-/** ### Update ###
- * Updates internal properties
- * $$ txt.Update() $$
+/**
+ * @extern Update
  */
 
-
-/** ### visible ###
- * Indicates the objects visibility state
- * $$ txt.visible() $$
- * @returns bin
+/**
+ * @extern visible
  */
 
-
-/** ### width ###
- * The obects width
- * $$ txt.width() $$
- * @returns num
+/**
+ * @extern width
  */
-
 // CreateText.txt --> All the sample codes
 
 /** @Sample

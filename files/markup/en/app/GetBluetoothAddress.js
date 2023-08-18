@@ -1,5 +1,6 @@
 
 /** # GetBluetoothAddress #
+ * @brief Get the bluetooth address
  * Returns the hexadecimal Bluetooth address of the device, following the pattern “00&colon;00&colon;00&colon;00&colon;00&colon;00”.
  * 
  * See Also: @CreateBluetoothSerial

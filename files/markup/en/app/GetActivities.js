@@ -1,5 +1,6 @@
 
 /** # GetActivities #
+
  * GetActivities returns a list of object of currently running activities.
  * 
  * See Also: @GetRunningApps, @GetRunningServices

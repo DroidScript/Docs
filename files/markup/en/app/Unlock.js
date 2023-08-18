@@ -1,5 +1,6 @@
 
 /** # Unlock #
+
  * Unlocks the device.
  * 
  * <red>**Requires Root**</red>

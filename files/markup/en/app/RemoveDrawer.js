@@ -1,5 +1,6 @@
 
 /** # RemoveDrawer #
+ * @brief Remove drawer layout from a given side
  * Removes a drawer layout from a given side.
  * 
  * See also: @AddDrawer

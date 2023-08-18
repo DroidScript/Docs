@@ -1,5 +1,6 @@
 
 /** # GetOSVersion #
+ * @brief Get API target level
  * GetOSVersion returns the API target level  of the android version.
  * $$ app.GetOSVersion() $$ 
  * @returns num_int

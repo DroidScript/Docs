@@ -1,5 +1,6 @@
 
 /** # GetIntent #
+ * @brief Get received intent data
  * Returns an intent object sent to the app.
  * 
  * See Also: @SendIntent

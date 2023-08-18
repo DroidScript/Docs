@@ -1,5 +1,6 @@
 
 /** # SendText #
+ * @brief Share text between apps
  * 
  * $$ app.SendText(text, subject, choose) $$ 
  * @param {str} text 

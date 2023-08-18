@@ -1,6 +1,7 @@
 
 /** # CreateService #
  * @abbrev srv
+ * @brief Returns a new Service object
  * 
  * $$ srv = app.CreateService(packageName, className, callback, options) $$ 
  * @param {str} packageName this|&lt;package&gt;
@@ -48,17 +49,14 @@ Inspect the debug console and see the log messages from the service in gray.
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateService
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ srv.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.

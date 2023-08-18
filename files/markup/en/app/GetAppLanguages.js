@@ -1,5 +1,6 @@
 
 /** # GetAppLanguages #
+ * @brief Get translation languages
  * Returns the available translation languages specified in your lang.json file.
  * 
  * See Also: @SetAppLanguage

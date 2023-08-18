@@ -1,5 +1,6 @@
 
 /** # GetLanguageCode #
+ * @brief Get user language code
  * GetLanguageCode returns the user language code (ie&period; “en” or “de”).
  * 
  * See Also: @GetLanguage, @GetCountryCode

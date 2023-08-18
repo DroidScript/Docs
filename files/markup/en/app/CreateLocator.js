@@ -1,6 +1,7 @@
 
 /** # CreateLocator #
  * @abbrev loc
+ * @brief Returns a new Locator object
  * 
  * $$ loc = app.CreateLocator(type, options) $$ 
  * @param {str_com} type GPS,Network
@@ -18,17 +19,14 @@ To Start the locator use the **Start** method. You can also stop it with **Stop*
 To get regulat updates about your current positino use the **SetOnChange** function.
  */
 
-/** ## Methods ##
- * These are the methods available for CreateLocator
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ loc.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetBearingTo ###
  * Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.

@@ -1,6 +1,7 @@
 
 /** # CreateGame #
  * @abbrev gam
+
  * 
  * $$ gam = app.CreateGame(file, orient) $$ 
  * @param {str_ptf} file 
@@ -60,23 +61,25 @@ function OnReady()
 </sample>
  */
 
-/** ## Methods ##
- * These are the methods available for CreateGame
- */
 
 
-/** ### game ###
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/** ### game
+ * @prop
  * 
- * $$ gam.game() $$
+ * @returns undefined
  */
 
-
-/** ### lay ###
+                    
+/** ### lay
+ * @prop
  * 
- * $$ gam.lay() $$
+ * @returns undefined
  */
 
-// CreateGame.txt --> All the sample codes
+                    // CreateGame.txt --> All the sample codes
 
 /** @Sample
 <sample Demo>

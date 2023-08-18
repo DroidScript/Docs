@@ -1,5 +1,6 @@
 
 /** # SetMargins #
+ * @brief Set default margins
  * Set the default margins settings for controls
  * $$ app.SetMargins(left, top, right, bottom, mode) $$ 
  * @param {num} left 

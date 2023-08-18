@@ -1,5 +1,6 @@
 
 /** # GetChargeType #
+ * @brief Get current charge type
  * Returns the current charge type. If the device isn't charging the result is “None”.
  * 
  * See Also: @GetBatteryLevel, @IsCharging

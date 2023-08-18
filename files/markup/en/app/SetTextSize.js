@@ -1,5 +1,6 @@
 
 /** # SetTextSize #
+ * @brief Set default text size
  * Set the default text size setting for controls
  * $$ app.SetTextSize(size, mode) $$ 
  * @param {num} size 

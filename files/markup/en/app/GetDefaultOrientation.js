@@ -1,5 +1,6 @@
 
 /** # GetDefaultOrientation #
+ * @brief Get devces default orientation
  * Returns the default Orientation of the device. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.
  * 
  * See Also: @SetOrientation, @GetOrientation

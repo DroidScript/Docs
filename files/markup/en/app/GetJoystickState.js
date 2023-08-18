@@ -1,5 +1,6 @@
 
 /** # GetJoystickState #
+
  * 
  * $$ app.GetJoystickState(id, key) $$ 
  * @param {num_int} id 

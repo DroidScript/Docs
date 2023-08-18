@@ -1,5 +1,6 @@
 
 /** # UnlockDrawer #
+ * @brief Unlock a locked drawer
  * Unlocks a locked drawer.
  * See Also @LockDrawer, @AddDrawer
  * $$ app.UnlockDrawer(side) $$ 

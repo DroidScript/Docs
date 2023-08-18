@@ -1,5 +1,6 @@
 
 /** # GetExternalFolder #
+ * @brief Get external sdcard folder
  * GetExternalFolder returns the path to the external micro sdcard of the device. Normally it is something like “/storage/extsd” or “/storage/extSdCard”
  * 
  * See Also: @GetInternalFolder

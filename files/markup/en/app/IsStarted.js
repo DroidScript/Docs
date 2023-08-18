@@ -1,5 +1,6 @@
 
 /** # IsStarted #
+ * @brief Check if app has finished loading
  * Checks if the app has finished loading. It will return true after OnStart has returned.
  * $$ app.IsStarted() $$ 
  * @returns bin

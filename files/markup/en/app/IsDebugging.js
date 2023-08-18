@@ -1,5 +1,6 @@
 
 /** # IsDebugging #
+ * @brief Check whether app is debugging
  * Checks if the app is currently debugging.
  * See also @SetDebug, @Debug
  * $$ app.IsDebugging() $$ 

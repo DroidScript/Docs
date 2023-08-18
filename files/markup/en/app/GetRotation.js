@@ -1,5 +1,6 @@
 
 /** # GetRotation #
+ * @brief Get device rotation
  * Returns the current rotation of the device around it's Z-Axis in 90 degree steps. The values are relative to the initial orientation of the device on startup.
  * 
  * See Also: @GetOrientation

@@ -1,5 +1,6 @@
 
 /** # TextToSpeech #
+ * @brief Audiolize text
  * 
  * $$ app.TextToSpeech(text, pitch, rate, callback, stream, locale, engine) $$ 
  * @param {str} text 

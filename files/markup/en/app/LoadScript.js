@@ -1,5 +1,6 @@
 
 /** # LoadScript #
+ * @brief Asynchronously import a .js file
  * Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.
  * 
  * See Also: @Script

@@ -1,5 +1,6 @@
 
 /** # DeleteFolder #
+ * @brief Delete a folder
  * DeleteFolder does the same as DeleteFile but with folders. It recursively removes all files and folders of the given folder and finally deletes it.
  * 
  * See Also: @MakeFolder, @RenameFolder, @FolderExists

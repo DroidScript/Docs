@@ -1,5 +1,6 @@
 
 /** # Debug #
+ * @brief Debug messages to the console
  * This function is an app equivalent to console.log(msg) which writes text into a console visible in debug mode “true” or “console”.
  * 
  * See Also: @SetDebug

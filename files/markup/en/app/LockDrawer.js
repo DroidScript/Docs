@@ -1,5 +1,6 @@
 
 /** # LockDrawer #
+ * @brief Hide and lock a drawer
  * Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.
  * 
  * See Also: @AddDrawer

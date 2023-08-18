@@ -1,5 +1,6 @@
 
 /** # MakeFolder #
+ * @brief Create new folder in the local fs
  * Creates a new folder in the local filesystem recursively.
  * 
  * See Also: @FolderExists

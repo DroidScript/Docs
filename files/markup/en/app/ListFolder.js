@@ -1,5 +1,6 @@
 
 /** # ListFolder #
+ * @brief Get a list of files ans folders contained in a specific folder
  * 
  * $$ app.ListFolder(path, filter, limit, options) $$ 
  * @param {str_pth} path 

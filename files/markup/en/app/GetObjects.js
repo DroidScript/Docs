@@ -1,5 +1,6 @@
 
 /** # GetObjects #
+ * @brief Get map of created DroidScript objects
  * Returns a map of DroidScript control objects with their id as key.
  * $$ app.GetObjects() $$ 
  * @returns lst-[ id:str_oid: control:dso ]

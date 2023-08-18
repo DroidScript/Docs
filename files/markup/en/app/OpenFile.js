@@ -1,5 +1,6 @@
 
 /** # OpenFile #
+ * @brief Allow user to open a file with an external app
  * Allows the user to open a file with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.
  * 
  * See also: @SendFile.

@@ -1,5 +1,6 @@
 
 /** # SetRingerMode #
+ * @brief Set current device ringer mode
  * Change the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.
  * 
  * See Also: @GetRingerMode

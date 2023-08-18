@@ -1,5 +1,6 @@
 
 /** # GetBluetoothName #
+ * @brief Get the bluetooth name
  * Returns the Bluetooth name of the device.
  * 
  * See Also: @CreateBluetoothSerial

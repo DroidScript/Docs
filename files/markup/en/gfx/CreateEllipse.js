@@ -1,6 +1,7 @@
 
 /** # CreateEllipse #
  * @abbrev elp
+ * @brief Creates an ellipse
  * Creates a elliptical game object.
  * $$ elp = gfx.CreateEllipse(width, height, color, lineWidth, lineColor, lineAlpha, group) $$ 
  * @param {num_frc} width 
@@ -14,116 +15,70 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateEllipse
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern alpha
  */
 
-
-/** ### alpha ###
- * The objects alpha value
- * $$ elp.alpha() $$
- * @returns num_frc
+/**
+ * @extern angle
  */
 
-
-/** ### angle ###
- * The rotation fraction of the object
- * $$ elp.angle() $$
- * @returns num_frc
+/**
+ * @extern Contains
  */
 
-
-/** ### Contains ###
- * Checks if a point is contained in the sprite
- * $$ elp.Contains(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @returns bin
+/**
+ * @extern data
  */
 
-
-/** ### data ###
- * An object for saving individual extra properties.
- * $$ elp.data() $$
- * @returns obj
+/**
+ * @extern graphic
  */
 
-
-/** ### graphic ###
- * the PIXI graphic
- * $$ elp.graphic() $$
- * @returns obj
+/**
+ * @extern group
  */
 
-
-/** ### group ###
- * The objects group identifier
- * $$ elp.group() $$
- * @returns str
+/**
+ * @extern height
  */
 
-
-/** ### height ###
- * The height of the object
- * $$ elp.height() $$
- * @returns num_frc
+/**
+ * @extern pivotX
  */
 
-
-/** ### pivotX ###
- * The x pivot for rotations
- * $$ elp.pivotX() $$
- * @returns num_frc
+/**
+ * @extern pivotY
  */
 
-
-/** ### pivotY ###
- * The y pivot for rotations
- * $$ elp.pivotY() $$
- * @returns num_frc
+/**
+ * @extern scaleX
  */
 
-
-/** ### scaleX ###
- * The horizontal scaling
- * $$ elp.scaleX() $$
- * @returns num_fac
+/**
+ * @extern scaleY
  */
 
-
-/** ### scaleY ###
- * The vertical scaling
- * $$ elp.scaleY() $$
- * @returns num_fac
+/**
+ * @extern SetMatrix
  */
 
-
-/** ### SetMatrix ###
- * Set the individual 2d transformation
- * $$ elp.SetMatrix(mtx) $$
- * @param {obj} mtx Matrix
+/**
+ * @extern Update
  */
 
-
-/** ### Update ###
- * Updates internal properties
- * $$ elp.Update() $$
+/**
+ * @extern visible
  */
 
-
-/** ### visible ###
- * Indicates the objects visibility state
- * $$ elp.visible() $$
- * @returns bin
+/**
+ * @extern width
  */
-
-
-/** ### width ###
- * The obects width
- * $$ elp.width() $$
- * @returns num
- */
-
 // CreateEllipse.txt --> All the sample codes
 
 /** @Sample

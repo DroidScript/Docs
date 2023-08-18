@@ -1,5 +1,6 @@
 
 /** # SendSMS #
+ * @brief Open the SMS app and autofill fields
  * Send an SMS to someone using the default SMS application. The passed argumets will be auto-filled or requested by the SMS app otherwise. %c
  * 
  * See Also: @SendMail, @SendText, @SendFile

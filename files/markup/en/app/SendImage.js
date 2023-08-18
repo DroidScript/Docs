@@ -1,5 +1,6 @@
 
 /** # SendImage #
+ * @brief Send an image to a remote target
  * 
  * $$ app.SendImage(file, choose) $$ 
  * @param {str_pfa} file 

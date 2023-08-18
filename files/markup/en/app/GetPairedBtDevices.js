@@ -1,5 +1,6 @@
 
 /** # GetPairedBtDevices #
+ * @brief Get list of paired bluetooth devices
  * Returns a list of objects containing the name and bluetooth address of paired devices. Note that Bluetooth must be turned on to receive this information.
  * 
  * See Also: @UnpairBtDevice, @CreateBluetoothSerial, @DiscoverBtDevices

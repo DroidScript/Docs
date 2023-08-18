@@ -1,5 +1,6 @@
 
 /** # Vibrate #
+ * @brief Vibrate device in a pattern
  * Makes the device vibrate in a specified pattern in millisecond values:
  * “pause:num\_mls,play:num\_mls,pause:num\_mls,play:num\_mls,...”
  * $$ app.Vibrate(pattern) $$ 

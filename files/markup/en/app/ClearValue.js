@@ -1,5 +1,6 @@
 
 /** # ClearValue #
+ * @brief Deletes a variable saved via app.Save*()
  * ClearValue deletes a variable saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.
  * 
  * See Also: @SaveText, @SaveNumber, @SaveBoolean

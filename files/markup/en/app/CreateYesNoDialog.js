@@ -1,6 +1,7 @@
 
 /** # CreateYesNoDialog #
  * @abbrev ynd
+ * @brief Returns a new YesNoDialog object
  * The YesNo dialog can be used to let the user confirm a specific action. Its the equivalent to the js confirm function, but it is more customizable. <grey>(and doesn't crash when aborting</grey>
  * $$ ynd = app.CreateYesNoDialog(message, options) $$ 
  * @param {str} message 
@@ -9,33 +10,22 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateYesNoDialog
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern AdjustColor
  */
 
-
-/** ### AdjustColor ###
- * Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.
- * $$ ynd.AdjustColor(hue, saturation, brightness, contrast) $$
- * @param {num} hue 
- * @param {num} saturation 
- * @param {num} brightness 
- * @param {num} contrast 0..100
+/**
+ * @extern Batch
  */
 
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ ynd.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Dismiss
  */
-
-
-/** ### Dismiss ###
- * Hide the control and remove it from the screen.
- * $$ ynd.Dismiss() $$
- */
-
 
 /** ### GetType ###
  * Returns the control class name.
@@ -44,24 +34,13 @@
  */
 
 
-/** ### Hide ###
- * Hide the control but keep the layout space free.
- * $$ ynd.Hide() $$
+/**
+ * @extern Hide
  */
 
-
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ ynd.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### SetBackColor ###
  * Changes the background color of the control.
@@ -71,13 +50,9 @@
  */
 
 
-/** ### SetBackground ###
- * Changes the background to an image which can be repeated using the `repeat` option. * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
- * $$ ynd.SetBackground(file, options) $$
- * @param {str_ptf} file 
- * @param {str} options repeat
+/**
+ * @extern SetBackground
  */
-
 
 /** ### SetButtonText ###
  * Changes the texts of the two Yes/No buttons.
@@ -94,20 +69,13 @@
  */
 
 
-/** ### SetSize ###
- * Change the size of the control in either screen relative values or in pixels if the `px` option was given.
- * $$ ynd.SetSize(width, height, options) $$
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px|sp|dip|dp|mm|pt
+/**
+ * @extern SetSize
  */
 
-
-/** ### Show ###
- * Set the visibility of the control to “Show”.
- * $$ ynd.Show() $$
+/**
+ * @extern Show
  */
-
 // CreateYesNoDialog.txt --> All the sample codes
 
 /** @Sample

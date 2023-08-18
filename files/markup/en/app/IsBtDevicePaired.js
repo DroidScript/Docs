@@ -1,5 +1,6 @@
 
 /** # IsBtDevicePaired #
+ * @brief Check bt paired state to other device
  * Checks if a given bluetooth device was paired with the user device.
  * 
  * See Also: @GetPairedBtDevices, @UnpairBtDevice

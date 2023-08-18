@@ -1,5 +1,6 @@
 
 /** # HideProgressBar #
+ * @brief Hide progress bar dialog
  * Hides a previously shown progress bar dialog.
  * See also @ShowProgressBar, @UpdateProgressBar.
  * $$ app.HideProgressBar() $$ 

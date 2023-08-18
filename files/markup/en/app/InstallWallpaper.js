@@ -1,5 +1,6 @@
 
 /** # InstallWallpaper #
+ * @brief Install Wallpaper.js as device wallpaper
  * Let the user install a device wallpaper located in the 'Wallpaper.js' script in the project root folder.
  * 
  * <premium>

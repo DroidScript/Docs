@@ -1,6 +1,7 @@
 
 /** # CreateWizard #
  * @abbrev wiz
+
  * 
  * $$ wiz = app.CreateWizard(title, width, height, callback, options) $$ 
  * @param {str} title 
@@ -27,23 +28,18 @@ In case the user cancels the wizard the index is **-1**.
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateWizard
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
 
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ wiz.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Dismiss
  */
-
-
-/** ### Dismiss ###
- * Hide the control and remove it from the screen.
- * $$ wiz.Dismiss() $$
- */
-
 
 /** ### Finish ###
  * Indicate that the Wizard is going to finish on the next page.
@@ -78,24 +74,17 @@ In case the user cancels the wizard the index is **-1**.
  */
 
 
-/** ### Hide ###
- * Hide the control but keep the layout space free.
- * $$ wiz.Hide() $$
+/**
+ * @extern Hide
  */
 
-
-/** ### IsVisible ###
- * Returns whether the control is currently visible to the user, ignoring overlaying controls.
- * $$ wiz.IsVisible() $$
- * @returns bin
+/**
+ * @extern IsVisible
  */
 
-
-/** ### Show ###
- * Set the visibility of the control to “Show”.
- * $$ wiz.Show() $$
+/**
+ * @extern Show
  */
-
 // CreateWizard.txt --> All the sample codes
 
 /** @Sample

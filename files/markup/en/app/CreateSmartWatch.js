@@ -1,6 +1,7 @@
 
 /** # CreateSmartWatch #
  * @abbrev smw
+ * @brief Returns a new SmartWatch object
  * Returns a SmartWatch object.
  * $$ smw = app.CreateSmartWatch(type) $$ 
  * @param {str} type |Sony
@@ -8,9 +9,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateSmartWatch
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AddLayout ###
@@ -20,12 +21,9 @@
  */
 
 
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ smw.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Batch
  */
-
 
 /** ### CreateImage ###
  * Creates a SmartWatch Image. See also: @CreateImage

@@ -1,5 +1,6 @@
 
 /** # AppExec #
+ * @brief Executes code in the main app
  * Executes some code in the main app.
  * $$ gfx.AppExec(js) $$ 
  * @param {str_jsc} js 

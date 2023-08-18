@@ -1,5 +1,6 @@
 
 /** # ReadFile #
+ * @brief Read the content of a local file
  * Reads a file from the local filesystem and returns its contents.
  * 
  * See also: @WriteFile

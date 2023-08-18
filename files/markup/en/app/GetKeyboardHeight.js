@@ -1,5 +1,6 @@
 
 /** # GetKeyboardHeight #
+ * @brief Get current keyboard height
  * Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.
  * 
  * See Also: @ShowKeyboard

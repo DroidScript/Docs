@@ -1,6 +1,7 @@
 
 /** # CreateCrypt #
  * @abbrev crp
+ * @brief Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it
  * The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.
  * $$ crp = app.CreateCrypt(options) $$ 
  * @param {str_com} options 
@@ -8,17 +9,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateCrypt
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ crp.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Decrypt ###
  * Decrypt text with a key.
@@ -54,12 +52,9 @@
  */
 
 
-/** ### SetDescription ###
- * Set a control description for accessibility
- * $$ crp.SetDescription(desc) $$
- * @param {str} desc 
+/**
+ * @extern SetDescription
  */
-
 // CreateCrypt.txt --> All the sample codes
 
 /** @Sample

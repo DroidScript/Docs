@@ -1,6 +1,7 @@
 
 /** # CreateUSBSerial #
  * @abbrev usb
+ * @brief Returns a new USBSerial object
  * 
  * $$ usb = app.CreateUSBSerial(baudRate, dataBits, stopBits, parity, device) $$ 
  * @param {num_int} baudRate 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600
@@ -26,17 +27,14 @@ The default constructor values are:
 **Dont work:** Nexus4, GalaxyS1, AsusMemo
  */
 
-/** ## Methods ##
- * These are the methods available for CreateUSBSerial
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ usb.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.
@@ -52,18 +50,9 @@ The default constructor values are:
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ usb.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### SetDataMode ###
  * Enable sending data in several modes.

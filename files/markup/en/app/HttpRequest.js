@@ -1,5 +1,6 @@
 
 /** # HttpRequest #
+ * @brief Send Http request
  * HttpRequest sends a request to a server. baseUrl and path will just be added to one string to get the address.
  * Multiple parameters are available using pipes:
  * 	“param1=value1|param2=value2”

@@ -1,5 +1,6 @@
 
 /** # WalkFolder #
+ * @brief Lists the contents of a folder recursively
  * Lists a directory recursively similar to app.@ListFolder
  * $$ app.WalkFolder(path, filter, limit, options) $$ 
  * @param {str_pth} path 

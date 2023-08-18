@@ -1,5 +1,6 @@
 
 /** # GetMemoryInfo #
+ * @brief Get RAM memory information
  * Returns an object containing informations about the RAM memory.
  * $$ app.GetMemoryInfo() $$ 
  * @returns obj-{ avail:num_byt&comma; low:bin&comma; threshold:num_byt&comma; total:num_byt }

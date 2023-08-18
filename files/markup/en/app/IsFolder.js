@@ -1,5 +1,6 @@
 
 /** # IsFolder #
+ * @brief Check if path leads to a folder
  * Checks if the passed fs path leads to a folder.
  * 
  * See Also: @FolderExists, @FileExists

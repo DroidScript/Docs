@@ -1,6 +1,7 @@
 
 /** # CreateAudioRecorder #
  * @abbrev rec
+ * @brief Returns an AudioRecorder object
  * 
  * $$ rec = app.CreateAudioRecorder() $$ 
  * @returns dso-AudioRecorder
@@ -22,17 +23,14 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateAudioRecorder
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ rec.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetData ###
  * Returns a list of frequency values. The amount is dependent on the set frequency.

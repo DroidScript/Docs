@@ -1,5 +1,6 @@
 
 /** # SetAppLanguage #
+ * @brief Load the language code from lang.json
  * Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).
  * 
  * See Also: @GetAppLanguages

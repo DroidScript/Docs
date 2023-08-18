@@ -1,5 +1,6 @@
 
 /** # GetPackageName #
+ * @brief Get APK package name
  * Returns the package name of the APK.
  * $$ app.GetPackageName() $$ 
  * @returns str

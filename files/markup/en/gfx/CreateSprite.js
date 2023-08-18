@@ -1,6 +1,7 @@
 
 /** # CreateSprite #
  * @abbrev spr
+ * @brief Returns a new sprite object
  * 
  * $$ spr = gfx.CreateSprite(file, group, callback) $$ 
  * @param {str_ptf} file 
@@ -35,54 +36,40 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateSprite
- */
 
 
-/** ### added ###
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/** ### added
+ * @prop
  * Indicates if the sprite has been added to the game
- * $$ spr.added() $$
  * @returns bin
  */
 
-
-/** ### alpha ###
- * The objects alpha value
- * $$ spr.alpha() $$
- * @returns num_frc
+                    
+/**
+ * @extern alpha
  */
 
-
-/** ### angle ###
- * The rotation fraction of the object
- * $$ spr.angle() $$
- * @returns num_frc
+/**
+ * @extern angle
  */
 
-
-/** ### aspect ###
+/** ### aspect
+ * @prop
  * The aspect ratio of the sprite
- * $$ spr.aspect() $$
  * @returns num
  */
 
-
-/** ### Contains ###
- * Checks if a point is contained in the sprite
- * $$ spr.Contains(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @returns bin
+                    
+/**
+ * @extern Contains
  */
 
-
-/** ### data ###
- * An object for saving individual extra properties.
- * $$ spr.data() $$
- * @returns obj
+/**
+ * @extern data
  */
-
 
 /** ### Flip ###
  * Flips the sprite on the horizontal and/or the vertical axis.
@@ -106,53 +93,39 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### group ###
- * The objects group identifier
- * $$ spr.group() $$
- * @returns str
+/**
+ * @extern group
  */
 
-
-/** ### height ###
- * The height of the object
- * $$ spr.height() $$
- * @returns num_frc
+/**
+ * @extern height
  */
 
-
-/** ### _isAtlas ###
+/** ### _isAtlas
+ * @prop
  * 
- * $$ spr._isAtlas() $$
  * @returns bin
  */
 
-
-/** ### _isStrip ###
+                    
+/** ### _isStrip
+ * @prop
  * 
- * $$ spr._isStrip() $$
  * @returns bin
  */
 
-
-/** ### PauseTween ###
- * Pause tweening.
- * $$ spr.PauseTween() $$
+                    
+/**
+ * @extern PauseTween
  */
 
-
-/** ### pivotX ###
- * The x pivot for rotations
- * $$ spr.pivotX() $$
- * @returns num_frc
+/**
+ * @extern pivotX
  */
 
-
-/** ### pivotY ###
- * The y pivot for rotations
- * $$ spr.pivotY() $$
- * @returns num_frc
+/**
+ * @extern pivotY
  */
-
 
 /** ### Play ###
  * Start playing the sprite animation
@@ -180,25 +153,17 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### PlayTween ###
- * Resume tweening.
- * $$ spr.PlayTween() $$
+/**
+ * @extern PlayTween
  */
 
-
-/** ### scaleX ###
- * The horizontal scaling
- * $$ spr.scaleX() $$
- * @returns num_fac
+/**
+ * @extern scaleX
  */
 
-
-/** ### scaleY ###
- * The vertical scaling
- * $$ spr.scaleY() $$
- * @returns num_fac
+/**
+ * @extern scaleY
  */
-
 
 /** ### SetLoop ###
  * Define if the animation should loop or stop at the end
@@ -207,12 +172,9 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### SetMatrix ###
- * Set the individual 2d transformation
- * $$ spr.SetMatrix(mtx) $$
- * @param {obj} mtx Matrix
+/**
+ * @extern SetMatrix
  */
-
 
 /** ### SetPlaySpeed ###
  * Define at which speed the animation will play. 1 equals to 60 fps
@@ -254,30 +216,24 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### SetTween ###
- * Sets up tween methods and properties without playing it.
- * $$ spr.SetTween() $$
+/**
+ * @extern SetTween
  */
 
-
-/** ### _sprite ###
+/** ### _sprite
+ * @prop
  * 
- * $$ spr._sprite() $$
  * @returns ?
  */
 
-
-/** ### StartTween ###
- * Start tweening automatically on every rendered frame.
- * $$ spr.StartTween() $$
+                    
+/**
+ * @extern StartTween
  */
 
-
-/** ### StepTween ###
- * Updates a tween to the current time (if not paused).
- * $$ spr.StepTween() $$
+/**
+ * @extern StepTween
  */
-
 
 /** ### Stop ###
  * Stop playin the animation.
@@ -292,59 +248,43 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### _texture ###
+/** ### _texture
+ * @prop
  * 
- * $$ spr._texture() $$
  * @returns str
  */
 
-
-/** ### Tween ###
- * Performs an animation on the control. * The `target` object is for the position, size and rotation that the control has at the end of the animation. *  * The `type` specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation. *  * With the amount of `repeat`s you can control how many times you want to play the animation. *  * If you have `jojo` activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation. *  * Finally the `callback` function will be called after the animation has finished. Well, it's about time!
- * $$ spr.Tween(target, duration, type, repeat, yoyo, callback) $$
- * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc
- * @param {num_mls} duration 
- * @param {str} type Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out
- * @param {num_int} repeat 
- * @param {bin} yoyo 
- * @param {fnc_json} callback {}
+                    
+/**
+ * @extern Tween
  */
 
-
-/** ### Update ###
- * Updates internal properties
- * $$ spr.Update() $$
+/**
+ * @extern Update
  */
 
-
-/** ### visible ###
- * Indicates the objects visibility state
- * $$ spr.visible() $$
- * @returns bin
+/**
+ * @extern visible
  */
 
-
-/** ### width ###
- * The obects width
- * $$ spr.width() $$
- * @returns num
+/**
+ * @extern width
  */
 
-
-/** ### x ###
+/** ### x
+ * @prop
  * X-position on the screen.
- * $$ spr.x() $$
  * @returns num_frv
  */
 
-
-/** ### y ###
+                    
+/** ### y
+ * @prop
  * Y-position on the screen.
- * $$ spr.y() $$
  * @returns num_frc
  */
 
-// CreateSprite.txt --> All the sample codes
+                    // CreateSprite.txt --> All the sample codes
 
 /** @Sample
  

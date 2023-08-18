@@ -1,5 +1,6 @@
 
 /** # GetAppName #
+ * @brief Get current app name
  * Returns the name of the current app.
  * $$ app.GetAppName() $$ 
  * @returns str

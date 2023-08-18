@@ -1,5 +1,6 @@
 
 /** # ShowDebug #
+ * @brief Show the in-app debug console
  * Show/Hide the debug console as overlay in your app, after calling @CreateDebug.
  * 
  * See Also: @Debug

@@ -1,5 +1,6 @@
 
 /** # ChooseAccount #
+ * @brief Let the user choose an google account
  * Opens an Android dialog and allows the user to select one of the registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.
  * 
  * See Also: @GetAccounts

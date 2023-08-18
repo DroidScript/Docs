@@ -1,5 +1,6 @@
 
 /** # SetAutoStart #
+ * @brief Autostart DroidScript Project on DS restart
  * Set a DroidScript project name which will be launched automatically when DroidScript starts.
  * 
  * <deprecated in favour of ide.AutoStart>

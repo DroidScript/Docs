@@ -1,8 +1,9 @@
 
 /** # GetRouterAddress #
+
  * Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)
  * $$ app.GetRouterAddress() $$ 
- * @returns str-ip address
+ * @returns str:ip
 */
 
 

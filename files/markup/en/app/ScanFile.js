@@ -1,5 +1,6 @@
 
 /** # ScanFile #
+ * @brief Adds media files to phone gallery
  * Forces android to scan an image file to appear in the phone's gallery.
  * 
  * See also: @CreateImage, @CreateCameraView, @ScreenShot.

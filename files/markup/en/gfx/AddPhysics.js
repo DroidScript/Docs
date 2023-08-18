@@ -1,6 +1,7 @@
 
 /** # AddPhysics #
  * @abbrev phs
+ * @brief Adds physics to the game
  * Adds the Box2D physics engine to your game.
  * <sample Billiard>
  * <sample Collision>
@@ -13,9 +14,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for AddPhysics
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AddVelocity ###
@@ -58,7 +59,7 @@
  * Returns the current total linear velocity or the “x”, “y” or “angular” component.
  * $$ phs.GetVelocity(component) $$
  * @param {str} component x|y|angular
- * @returns num
+ * @returns number
  */
 
 

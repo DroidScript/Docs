@@ -1,6 +1,7 @@
 
 /** # CreateNxt #
  * @abbrev nxt
+ * @brief Returns a new Nxt object
  * The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.
  * <deprecated Please install and visit the NXT-Docs from the Plugins page>
  * $$ nxt = app.CreateNxt() $$ 
@@ -8,17 +9,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateNxt
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ nxt.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Beep ###
  * Play tone with given frequency for a given time in milliseconds.

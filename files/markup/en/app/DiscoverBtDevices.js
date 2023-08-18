@@ -1,5 +1,6 @@
 
 /** # DiscoverBtDevices #
+ * @brief Search for nearby bluetooth devices
  * 
  * $$ app.DiscoverBtDevices(filter, onFound, onComplete) $$ 
  * @param {str} filter 

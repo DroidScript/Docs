@@ -1,5 +1,6 @@
 
 /** # IsConnected #
+ * @brief Check if device is connected to any network
  * Checks if the device is connected to any network.
  * 
  * See Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange

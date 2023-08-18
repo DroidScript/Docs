@@ -1,6 +1,7 @@
 
 /** # CreatePhoneState #
  * @abbrev pst
+ * @brief Returns a new PhoneState object
  * 
  * $$ pst = app.CreatePhoneState(types) $$ 
  * @param {str} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
@@ -26,17 +27,14 @@ The callback data depends on the type:
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreatePhoneState
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ pst.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.

@@ -1,5 +1,6 @@
 
 /** # SetAutoBoot #
+ * @brief Autostart APK when device boots
  * Causes the current running APK or its Service to be started automatically when your device boots.
  * 
  * See Also: @SetAutoStart

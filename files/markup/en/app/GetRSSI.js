@@ -1,5 +1,6 @@
 
 /** # GetRSSI #
+ * @brief Get RSSI in dBm
  * 
  * $$ app.GetRSSI() $$ 
  * @returns num_int--127..-30

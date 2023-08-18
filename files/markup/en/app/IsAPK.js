@@ -1,5 +1,6 @@
 
 /** # IsAPK #
+ * @brief Returns true if ran from apk
  * Returns whether current app is an APK or not (case not it's a DroidScript Project).
  * $$ app.IsAPK() $$ 
  * @returns bin

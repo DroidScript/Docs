@@ -1,6 +1,7 @@
 
 /** # CreateWebSocket #
  * @abbrev wbs
+ * @brief Returns a new WebSocket object
  * 
  * $$ wbs = app.CreateWebSocket(ip, id, retry, options) $$ 
  * @param {str} ip 
@@ -22,17 +23,14 @@ In order to receive messages from the server you have to specify a **OnMessage**
 See Also: @CreateWebServer
  */
 
-/** ## Methods ##
- * These are the methods available for CreateWebSocket
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ wbs.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Close ###
  * Close the web socket.

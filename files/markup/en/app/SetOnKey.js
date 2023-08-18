@@ -1,5 +1,6 @@
 
 /** # SetOnKey #
+ * @brief Catch key events fired in your app
  * 
  * $$ app.SetOnKey(callback) $$ 
 */

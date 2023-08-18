@@ -1,5 +1,6 @@
 
 /** # IsNewVersion #
+ * @brief Check if apk version increased
  * Checks if the apk version number increased compared to the last time started.
  * $$ app.IsNewVersion() $$ 
  * @returns bin

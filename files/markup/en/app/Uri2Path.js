@@ -1,5 +1,6 @@
 
 /** # Uri2Path #
+ * @brief Decode a URI encoded string
  * Decodes a URI encoded string.
  * 
  * See Also: @SetOnError

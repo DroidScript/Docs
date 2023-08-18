@@ -1,5 +1,6 @@
 
 /** # IsChrome #
+ * @brief Check if device OS is ChromeOS
  * Checks if the device is running on ChromeOS.
  * 
  * See Also: @IsTablet

@@ -1,5 +1,6 @@
 
 /** # GetBtProfileState #
+ * @brief Returns Bluetooth type connected state
  * Returns the Bluetooth State of a given Bt connection type.
  * 
  * See Also: @CreateBluetoothSerial

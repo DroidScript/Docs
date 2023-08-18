@@ -1,5 +1,6 @@
 
 /** # LoadPlugin #
+ * @brief Load an installed plugin to your app
  * 
  * $$ app.LoadPlugin(url) $$ 
  * @param {str_url} url 

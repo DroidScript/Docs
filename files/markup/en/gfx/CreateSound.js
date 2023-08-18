@@ -1,6 +1,7 @@
 
 /** # CreateSound #
  * @abbrev snd
+ * @brief Returns a new sound object
  * Creates a sound object which can play audio files.
  * $$ snd = gfx.CreateSound(file) $$ 
  * @param {str_ptf} file 
@@ -8,25 +9,25 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateSound
- */
 
 
-/** ### file ###
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/** ### file
+ * @prop
  * Contains the url of the loaded file.
- * $$ snd.file() $$
  * @returns str
  */
 
-
-/** ### _id ###
+                    
+/** ### _id
+ * @prop
  * 
- * $$ snd._id() $$
  * @returns str
  */
 
-
+                    
 /** ### Pause ###
  * Pause the playback if the sound is currently palaying.
  * $$ snd.Pause() $$

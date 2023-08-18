@@ -1,5 +1,6 @@
 
 /** # IsScreenOn #
+ * @brief Check if device screen is on
  * Checks if the device screen is currently on.
  * $$ app.IsScreenOn() $$ 
  * @returns bin

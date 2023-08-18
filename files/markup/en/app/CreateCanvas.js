@@ -1,5 +1,6 @@
 
 /** # CreateCanvas #
+ * @brief Create a blank white Image object.
  * Creates and adds a blank white Image with the Auto-Update feature turned off.
  * See @CreateButton for full documentation.
  * $$ app.CreateCanvas() $$ 

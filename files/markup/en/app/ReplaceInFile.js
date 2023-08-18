@@ -1,5 +1,6 @@
 
 /** # ReplaceInFile #
+ * @brief Replace text in a local file
  * Replaces all occurances of some text or a regex pattern in a local file with some other text.
  * $$ app.ReplaceInFile(file, txt, rep, options) $$ 
  * @param {str_ptf} file 

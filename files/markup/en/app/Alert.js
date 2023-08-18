@@ -1,5 +1,6 @@
 
 /** # Alert #
+ * @brief Shows a popup message with an 'OK' button to exit
  * 
  * $$ app.Alert(message, title, options, hue) $$ 
  * @param {str} message 

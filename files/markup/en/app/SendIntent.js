@@ -1,5 +1,6 @@
 
 /** # SendIntent #
+
  * 
  * $$ app.SendIntent(packageName, className, action, category, uri, type, extras, options, callback) $$ 
  * @param {str} packageName 

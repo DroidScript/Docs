@@ -1,5 +1,6 @@
 
 /** # GetRunningServices #
+ * @brief Get list of running services
  * Returns a list of objects containing info about all currently running services in the background.
  * 
  * See Also: @GetRunningApps, @GetInstalledApps

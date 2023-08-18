@@ -1,5 +1,6 @@
 
 /** # ChooseContact #
+ * @brief Let the user choose an image
  * ChooseContact opens the Contacts app so that the user can select the name and either the phone number or email address of a user.
  * $$ app.ChooseContact(type, callback) $$ 
  * @param {str} type Phone|Email

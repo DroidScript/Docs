@@ -1,5 +1,6 @@
 
 /** # BroadcastIntent #
+ * @brief Send broadcast intent
  * Send a broadcasting intent with a custom action.
  * $$ app.BroadcastIntent(action, category, data, type, extras, options) $$ 
  * @param {str} action android action

@@ -1,5 +1,6 @@
 
 /** # UnzipFile #
+ * @brief Unzip a zip file
  * Extracts the contents of a zip file to a given target folder.
  * 
  * See Also: @ZipFolder, @ZipFile

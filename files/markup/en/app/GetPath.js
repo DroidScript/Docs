@@ -1,5 +1,6 @@
 
 /** # GetPath #
+ * @brief Get APK's local storage path
  * Returns the path to the local storage folder of the APK.
  * 
  * See Also: @GetAppPath, @GetPrivateFolder

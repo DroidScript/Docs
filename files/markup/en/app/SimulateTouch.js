@@ -1,5 +1,6 @@
 
 /** # SimulateTouch #
+ * @brief Simulate a touch event on a rouchable control
  * Simulates a touch event on a rouchable control.
  * $$ app.SimulateTouch(obj, x, y, dir) $$ 
  * @param {dso} obj 

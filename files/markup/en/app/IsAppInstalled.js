@@ -1,5 +1,6 @@
 
 /** # IsAppInstalled #
+ * @brief Check if package is installed
  * Checks if an app given by a package name is installed.
  * 
  * See also: @GetPackageName, @GetInstalledApps

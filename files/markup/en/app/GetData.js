@@ -1,5 +1,6 @@
 
 /** # GetData #
+ * @brief Retreive saved data
  * Returns data stored via app.SetData(key, value). All data will be lost when the app is closed.
  * 
  * See Also: @SetData

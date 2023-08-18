@@ -1,6 +1,7 @@
 
 /** # CreateZipUtil #
  * @abbrev zip
+ * @brief Returns a new ZipUtil object
  * The ZipUtil is handy for creating, editing and extracting zip files. You can even add files or texts to existing zip files, list their contents and extract single files from them.
  * $$ zip = app.CreateZipUtil(mode) $$ 
  * @param {str} mode 
@@ -8,9 +9,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateZipUtil
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AddFile ###
@@ -29,12 +30,9 @@
  */
 
 
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ zip.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Batch
  */
-
 
 /** ### Close ###
  * Closes the zip util.

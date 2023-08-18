@@ -1,5 +1,6 @@
 
 /** # GetVolume #
+ * @brief Get volume of a given audio type
  * Returns the volume level of a given audio type as a number between 0 and 1. By default the “System” volume is returned.
  * 
  * See Also: @SetVolume

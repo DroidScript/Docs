@@ -1,5 +1,6 @@
 
 /** # aspect #
+ * @brief The display aspect ratio
  * The aspect ratio of the gfx container (display)
  * $$ gfx.aspect() $$ 
  * @returns num

@@ -1,5 +1,6 @@
 
 /** # Animate #
+ * @brief Similar to setInterval
  * 
  * $$ app.Animate(callback, fps) $$ 
  * @param {num_fps} fps 

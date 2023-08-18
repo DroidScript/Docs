@@ -1,5 +1,6 @@
 
 /** # Lock #
+ * @brief Lock the device
  * Locks the device.
  * 
  * <red>**Requires Root**</red>

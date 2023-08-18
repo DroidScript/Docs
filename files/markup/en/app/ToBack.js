@@ -1,5 +1,6 @@
 
 /** # ToBack #
+ * @brief Put the app in the background
  * Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.
  * 
  * See Also: @ToFront

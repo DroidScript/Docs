@@ -1,6 +1,7 @@
 
 /** # CreateLayout #
  * @abbrev lay
+ * @brief Returns a new Layout object
  * 
  * $$ lay = app.CreateLayout(type, options) $$ 
  * @param {str} type Linear|Absolute|Frame|Card
@@ -42,9 +43,9 @@ They may be used to display offers with an image and optional info text.
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateLayout
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AddChild ###
@@ -55,31 +56,17 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### AdjustColor ###
- * Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.
- * $$ lay.AdjustColor(hue, saturation, brightness, contrast) $$
- * @param {num} hue 
- * @param {num} saturation 
- * @param {num} brightness 
- * @param {num} contrast 0..100
+/**
+ * @extern AdjustColor
  */
 
-
-/** ### Animate ###
- * Animates the control. *  * There are * 	“in”-Animations which are used to show objects from hidden state * 	“out”-animations which are used to hide objects in visible state and * 	“static”-animations which keep the visible state.
- * $$ lay.Animate(type, callback, time) $$
- * @param {str} type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
- * @param {fnc_json} callback {"pNames":["type"],"pTypes":["str"]}
- * @param {num_mls} time 
+/**
+ * @extern Animate
  */
 
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ lay.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Batch
  */
-
 
 /** ### ChildToFront ###
  * Moves a child in front of all other children.
@@ -88,11 +75,9 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### ClearFocus ###
- * Removes the focus of the control so that the user no longer has immediate access to it.
- * $$ lay.ClearFocus() $$
+/**
+ * @extern ClearFocus
  */
-
 
 /** ### DestroyChild ###
  * Destroys and removes a child from the layout.
@@ -101,25 +86,17 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### Focus ###
- * Set the focus to the control so that the user can interact with it immediately.
- * $$ lay.Focus() $$
+/**
+ * @extern Focus
  */
 
-
-/** ### GetAbsHeight ###
- * Get the absolute height of the control in pixels. * Note that unlike the objects margins its padding does change this value.
- * $$ lay.GetAbsHeight() $$
- * @returns num_int
+/**
+ * @extern GetAbsHeight
  */
 
-
-/** ### GetAbsWidth ###
- * Get the absolute width of the control in pixels. * Note that unlike the objects margins its padding does change this value.
- * $$ lay.GetAbsWidth() $$
- * @returns num_int
+/**
+ * @extern GetAbsWidth
  */
-
 
 /** ### GetChildOrder ###
  * Returns the z order of a child.
@@ -129,44 +106,25 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### GetHeight ###
- * Get the height of the control as screen height relative float or in pixels with the `px` option. * Note that unlike the objects margins its padding does change this value.
- * $$ lay.GetHeight(options) $$
- * @param {str} options px
- * @returns num
+/**
+ * @extern GetHeight
  */
 
-
-/** ### GetLeft ###
- * Get the distance from the control to the left parent border as width relative float or in pixels with the `px` option.
- * $$ lay.GetLeft(options) $$
- * @param {str} options px
- * @returns num
+/**
+ * @extern GetLeft
  */
 
-
-/** ### GetParent ###
- * Returns the parent control object where the object was added to - commonly a layout.
- * $$ lay.GetParent() $$
- * @returns dso
+/**
+ * @extern GetParent
  */
 
-
-/** ### GetPosition ###
- * Returns data about the position and size of the control. * If the `screen` option is given the position on the screen will be returned. Otherwise relative to the parent control. * The `px` options turns the relative values into pixels.
- * $$ lay.GetPosition(options) $$
- * @param {str} options screen,px
- * @returns obj-{ left:num, top:num, width:num, height:num }
+/**
+ * @extern GetPosition
  */
 
-
-/** ### GetTop ###
- * Get the distance from the control to the upper parent border as height relative float or in pixels with the `px` option.
- * $$ lay.GetTop(options) $$
- * @param {str} options px
- * @returns num
+/**
+ * @extern GetTop
  */
-
 
 /** ### GetType ###
  * Returns the control class name.
@@ -175,68 +133,37 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### GetVisibility ###
- * Returns the current visibility state of the control. The Values are: * `Show`: visible * `Hide`: invisible but still consuming space * `Gone`: invisible and not consuming space
- * $$ lay.GetVisibility() $$
- * @returns str-Show|Hide|Gone
+/**
+ * @extern GetVisibility
  */
 
-
-/** ### GetWidth ###
- * Get the width of the control as screen width relative float or in pixels with the `px` option. * Note that unlike the objects margins its padding does change this value.
- * $$ lay.GetWidth(options) $$
- * @param {str} options px
- * @returns num
+/**
+ * @extern GetWidth
  */
 
-
-/** ### Gone ###
- * Hides the control without consuming any more layout space as if it were never there.
- * $$ lay.Gone() $$
+/**
+ * @extern Gone
  */
 
-
-/** ### Hide ###
- * Hide the control but keep the layout space free.
- * $$ lay.Hide() $$
+/**
+ * @extern Hide
  */
 
-
-/** ### IsEnabled ###
- * Returns whether the control is currently useable by the user.
- * $$ lay.IsEnabled() $$
- * @returns bin
+/**
+ * @extern IsEnabled
  */
 
-
-/** ### IsOverlap ###
- * Returns whether the control overlaps with another by a given distance.
- * $$ lay.IsOverlap(obj, depth) $$
- * @param {dso} obj 
- * @param {num_frc} depth 
- * @returns bin
+/**
+ * @extern IsOverlap
  */
 
-
-/** ### IsVisible ###
- * Returns whether the control is currently visible to the user, ignoring overlaying controls.
- * $$ lay.IsVisible() $$
- * @returns bin
+/**
+ * @extern IsVisible
  */
 
-
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ lay.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### RemoveChild ###
  * Removes a child from the layout.
@@ -245,58 +172,29 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetBackAlpha ###
- * Set the transparency of the background by an alpha value between `0` (_no transparency_) and `0.99` (_full transparent_) or `1` (_no transparency_) and `256` (_full transparent_)
- * $$ lay.SetBackAlpha(alpha) $$
- * @param {num} alpha 0..0.99|1..256
+/**
+ * @extern SetBackAlpha
  */
 
-
-/** ### SetBackColor ###
- * Changes the background color of the control.
- * $$ lay.SetBackColor(color) $$
- * @param {str_col} color 
+/**
+ * @extern SetBackColor
  */
 
-
-/** ### SetBackGradient ###
- * Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.
- * $$ lay.SetBackGradient(color1, color2, color3, options) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {?} color3 
- * @param {str} options left
+/**
+ * @extern SetBackGradient
  */
 
-
-/** ### SetBackGradientRadial ###
- * Define a radial color gradient for the background of control.
- * $$ lay.SetBackGradientRadial(x, y, radius, color1, color2, color3, options) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @param {num_frc} radius 
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {?} color3 
- * @param {str_com} options 
+/**
+ * @extern SetBackGradientRadial
  */
 
-
-/** ### SetBackground ###
- * Changes the background to an image which can be repeated using the `repeat` option. * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
- * $$ lay.SetBackground(file, options) $$
- * @param {str_ptf} file 
- * @param {str} options repeat
+/**
+ * @extern SetBackground
  */
 
-
-/** ### SetColorFilter ###
- * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
- * $$ lay.SetColorFilter(color, mode) $$
- * @param {str_col} color 
- * @param {str} mode Add|Multiply|clear|darken|lighten|overlay|screen|xor|color|color_burn|color_dodge|difference|exclusion|hard_light|hue|luminosity|modulate|saturation|soft_light|src|dst|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over
+/**
+ * @extern SetColorFilter
  */
-
 
 /** ### SetChildMargins ###
  * Set margins of top-level children.
@@ -331,19 +229,13 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetDescription ###
- * Set a control description for accessibility
- * $$ lay.SetDescription(desc) $$
- * @param {str} desc 
+/**
+ * @extern SetDescription
  */
 
-
-/** ### SetEnabled ###
- * En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.
- * $$ lay.SetEnabled(enable) $$
- * @param {bin} enable 
+/**
+ * @extern SetEnabled
  */
-
 
 /** ### SetGravity ###
  * Adjust the placing of contained children.
@@ -352,16 +244,9 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetMargins ###
- * Define a distance to other controls on each side of the control.
- * $$ lay.SetMargins(left, top, right, bottom, mode) $$
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {num_frc} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+/**
+ * @extern SetMargins
  */
-
 
 /** ### SetOnChildChange ###
  * Defines a callback function which is called when the content of a child control has been changed by the user.
@@ -370,40 +255,25 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetOnLongTouch ###
- * %cb% the object has been long pressed.
- * $$ lay.SetOnLongTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["src"],"pTypes":["dso"]}
+/**
+ * @extern SetOnLongTouch
  */
 
-
-/** ### SetOnTouch ###
- * Define a callback function that is called when the user touches the control. In addition, an `event` object is passed to the callback function to obtain information about the touch `type`, the touch `position(s)`, the `amount` of touches and the `control` that was touched.
- * $$ lay.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+/**
+ * @extern SetOnTouch
  */
 
-
-/** ### SetOnTouchDown ###
- * %cb% the user started toching the control.
- * $$ lay.SetOnTouchDown(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Down, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+/**
+ * @extern SetOnTouchDown
  */
 
-
-/** ### SetOnTouchMove ###
- * %cb% the user drags a finger over the screen.
- * $$ lay.SetOnTouchMove(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Move, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+/**
+ * @extern SetOnTouchMove
  */
 
-
-/** ### SetOnTouchUp ###
- * %cb% the users finger leaves the screen.
- * $$ lay.SetOnTouchUp(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Up, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+/**
+ * @extern SetOnTouchUp
  */
-
 
 /** ### SetOrientation ###
  * Change the children orientation.
@@ -412,51 +282,25 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetPadding ###
- * Define distances that elements within the control are to maintain from the control borders.
- * $$ lay.SetPadding(left, top, right, bottom, mode) $$
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {num_frc} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+/**
+ * @extern SetPadding
  */
 
-
-/** ### SetPosition ###
- * Defines the position and size for the control if the parent is an absolute layout.
- * $$ lay.SetPosition(left, top, width, height, options) $$
- * @param {num} left 
- * @param {num} top 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px
+/**
+ * @extern SetPosition
  */
 
-
-/** ### SetScale ###
- * Scales the control along with its contents by the factors passed to the function.
- * $$ lay.SetScale(x, y) $$
- * @param {num_fac} x 
- * @param {num_fac} y 
+/**
+ * @extern SetScale
  */
 
-
-/** ### SetSize ###
- * Change the size of the control in either screen relative values or in pixels if the `px` option was given.
- * $$ lay.SetSize(width, height, options) $$
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px|sp|dip|dp|mm|pt
+/**
+ * @extern SetSize
  */
 
-
-/** ### SetTouchable ###
- * En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.
- * $$ lay.SetTouchable(touchable) $$
- * @param {bin} touchable 
+/**
+ * @extern SetTouchable
  */
-
 
 /** ### SetTouchThrough ###
  * Define whether the layout should forward OnTouch events to underlying controls.
@@ -465,30 +309,17 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/** ### SetVisibility ###
- * Change the visibility of the control to one of the available modes: * `Show:` visible * `Hide:` invisible but still consuming space * `Gone:` invisible and not consuming space
- * $$ lay.SetVisibility(mode) $$
- * @param {str} mode Show|Hide|Gone
+/**
+ * @extern SetVisibility
  */
 
-
-/** ### Show ###
- * Set the visibility of the control to “Show”.
- * $$ lay.Show() $$
+/**
+ * @extern Show
  */
 
-
-/** ### Tween ###
- * Performs an animation on the control. * The `target` object is for the position, size and rotation that the control has at the end of the animation. *  * The `type` specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation. *  * With the amount of `repeat`s you can control how many times you want to play the animation. *  * If you have `jojo` activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation. *  * Finally the `callback` function will be called after the animation has finished. Well, it's about time!
- * $$ lay.Tween(target, duration, type, repeat, yoyo, callback) $$
- * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc
- * @param {num_mls} duration 
- * @param {str} type Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out
- * @param {num_int} repeat 
- * @param {bin} yoyo 
- * @param {fnc_json} callback {}
+/**
+ * @extern Tween
  */
-
 // CreateLayout.txt --> All the sample codes
 
 /** @Sample

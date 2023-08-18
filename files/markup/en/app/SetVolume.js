@@ -1,5 +1,6 @@
 
 /** # SetVolume #
+ * @brief Change volume of a given audio type
  * Set the volume of a given volume type as a number between 0 and 1.
  * 
  * See Also: @GetVolume

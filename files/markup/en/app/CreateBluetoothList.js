@@ -1,6 +1,7 @@
 
 /** # CreateBluetoothList #
  * @abbrev btl
+ * @brief Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices
  * CreateBluetoothList shows an Android dialog which allows the user to select a Bluetooth device from paired and discovered devices. See Also: @GetPairedBtDevices, @DiscoverBtDevices.
  * $$ btl = app.CreateBluetoothList(filter) $$ 
  * @param {str} filter 
@@ -8,17 +9,14 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateBluetoothList
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ btl.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.

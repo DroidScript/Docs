@@ -1,5 +1,6 @@
 
 /** # DisableTouch #
+ * @brief Suppress all touch events
  * Use this method to prevent any user interaction with the app.
  * You could use this for a safe mode for a slideshow.
  * $$ app.DisableTouch(disable) $$ 

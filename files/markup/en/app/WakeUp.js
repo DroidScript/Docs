@@ -1,5 +1,6 @@
 
 /** # WakeUp #
+ * @brief Wake the screen up
  * Forces the screen to turn on the screen. (This has the same effect as pressing the power button in sleep mode)
  * 
  * See Also: @GoToSleep

@@ -1,6 +1,7 @@
 
 /** # CreateTheme #
  * @abbrev thm
+ * @brief Returns a new Theme object
  * Returns a Theme object.
  * 
  * <premium>
@@ -10,27 +11,18 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateTheme
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern AdjustColor
  */
 
-
-/** ### AdjustColor ###
- * Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.
- * $$ thm.AdjustColor(hue, saturation, brightness, contrast) $$
- * @param {num} hue 
- * @param {num} saturation 
- * @param {num} brightness 
- * @param {num} contrast 0..100
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ thm.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetType ###
  * Returns the control class name.
@@ -39,33 +31,17 @@
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ thm.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
 
-
-/** ### SetBackColor ###
- * Changes the background color of the control.
- * $$ thm.SetBackColor(color) $$
- * @param {str_col} color 
+/**
+ * @extern SetBackColor
  */
 
-
-/** ### SetBackground ###
- * Changes the background to an image which can be repeated using the `repeat` option. * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
- * $$ thm.SetBackground(file, options) $$
- * @param {str_ptf} file 
- * @param {str} options repeat
+/**
+ * @extern SetBackground
  */
-
 
 /** ### SetBtnTextColor ###
  * Define the standard text color of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).

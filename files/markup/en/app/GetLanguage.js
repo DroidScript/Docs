@@ -1,5 +1,6 @@
 
 /** # GetLanguage #
+ * @brief Get device language
  * GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).
  * %c
  * 

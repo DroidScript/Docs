@@ -1,5 +1,6 @@
 
 /** # GetSpecialFolder #
+ * @brief Get full path to a special media folder
  * Returns the full path to a special folder commonly used for images, videos, music etc.
  * 
  * See Also: @GetPath, @GetAppPath, @WriteFile

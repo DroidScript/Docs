@@ -1,5 +1,6 @@
 
 /** # SaveNumber #
+ * @brief Save a number value across multiple starts
  * Save a number value to remember varibale values between multiple app starts and updates.
  * 
  * See also: @LoadNumber.

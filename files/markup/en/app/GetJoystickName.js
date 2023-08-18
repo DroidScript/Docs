@@ -1,5 +1,6 @@
 
 /** # GetJoystickName #
+
  * Returns the name of a conected joystick.
  * 
  * See Also: @GetJoystickState

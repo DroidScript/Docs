@@ -1,5 +1,6 @@
 
 /** # SimulateDrag #
+
  * Simulates a drag event on an app object in a scrollable container.
  * $$ app.SimulateDrag(obj, x1, y1, x2, y2, step, pause) $$ 
  * @param {dso} obj 

@@ -1,5 +1,6 @@
 
 /** # AddWebView #
+ * @brief Create and add WebView to Layout.
  * Creates and adds a WebView to a Layout.
  * See @CreateWebView for full documentation.
  * $$ app.AddWebView(layout, width, height, options, zoom) $$ 

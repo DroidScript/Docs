@@ -1,5 +1,6 @@
 
 /** # GetBuildNum #
+ * @brief Get APK build number
  * GetBuildNum returns the build number of an APK.
  * $$ app.GetBuildNum() $$ 
  * @returns num_int

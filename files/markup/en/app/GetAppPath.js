@@ -1,5 +1,6 @@
 
 /** # GetAppPath #
+ * @brief Get path to app assets
  * Returns the path to the app assets folder. In a DroidScript project the path should be “/sdcard/DroidScript/APPNAME”
  * In an apk it instead returns the absolute path to the “/Assets” folder
  * 

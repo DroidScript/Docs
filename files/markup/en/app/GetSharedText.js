@@ -1,5 +1,6 @@
 
 /** # GetSharedText #
+ * @brief Get value of shared text
  * Returns the value of a shared text. If the result is returned, it cannot be read another time unless it is shared again.
  * 
  * See Also: @GetSharedFiles, @SendFile, @SendText

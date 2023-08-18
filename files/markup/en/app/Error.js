@@ -1,5 +1,6 @@
 
 /** # Error #
+ * @brief Show an error message
  * Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.
  * 
  * See Also: @Alert

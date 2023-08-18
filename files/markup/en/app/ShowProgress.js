@@ -1,5 +1,6 @@
 
 /** # ShowProgress #
+ * @brief Show a progress indicator
  * Shows a rotating progress circle indicating that something happens and that the user should keep his extremities with him until the process completed.
  * $$ app.ShowProgress(message, options) $$ 
  * @param {str} message 

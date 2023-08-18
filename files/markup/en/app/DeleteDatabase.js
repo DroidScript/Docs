@@ -1,5 +1,6 @@
 
 /** # DeleteDatabase #
+ * @brief Deletes a database
  * DeleteDatabase removes a specific database
  * 
  * See Also: @OpenDatabase

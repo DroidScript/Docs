@@ -1,5 +1,6 @@
 
 /** # AddButton #
+ * @brief Create and add Button to Layout.
  * Creates and adds a Button to a Layout.
  * See @CreateButton for full documentation.
  * $$ app.AddButton(layout, text, width, height, options) $$ 

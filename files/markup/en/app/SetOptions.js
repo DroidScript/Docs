@@ -1,5 +1,6 @@
 
 /** # SetOptions #
+ * @brief Define global app options
  * Define some global options for the app.
  * 
  * See Also: @GetOptions

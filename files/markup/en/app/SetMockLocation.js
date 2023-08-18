@@ -1,5 +1,6 @@
 
 /** # SetMockLocation #
+ * @brief Emulate GPS location
  * Emulates a GPS location on the device.
  * 
  * <premium>

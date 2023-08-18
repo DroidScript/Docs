@@ -1,6 +1,7 @@
 
 /** # CreateMediaPlayer #
  * @abbrev ply
+ * @brief Returns a new MediaPlayer object
  * 
  * $$ ply = app.CreateMediaPlayer() $$ 
  * @returns dso-MediaPlayer
@@ -21,17 +22,14 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateMediaPlayer
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ ply.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Close ###
  * Close the media player and thus make it unuseable for further use.

@@ -1,5 +1,6 @@
 
 /** # GetSpeakerPhone #
+
  * Checks if the speaker is enabled for phone calls. Returns false if no call is active.
  * 
  * See also: @SetSpeakerPhone.

@@ -1,5 +1,6 @@
 
 /** # SetTheme #
+
  * Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.
  * 
  * <premium>

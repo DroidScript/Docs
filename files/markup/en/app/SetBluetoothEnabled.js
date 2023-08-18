@@ -1,5 +1,6 @@
 
 /** # SetBluetoothEnabled #
+ * @brief Enable Bluetooth on the device
  * Enables Bluetooth on the device.
  * 
  * See Also: @IsBluetoothEnabled, @IsBluetoothOn, @CreateBluetoothSerial

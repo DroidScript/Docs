@@ -1,5 +1,6 @@
 
 /** # DisableKeys #
+ * @brief Disable specific device keys
  * 
  * $$ app.DisableKeys(keyList) $$ 
  * @param {str_com} keyList VOLUME_DOWN,VOLUME_UP,FORWARD,BACK,MENU,ENTER,...

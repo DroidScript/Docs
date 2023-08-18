@@ -1,5 +1,6 @@
 
 /** # ToFront #
+ * @brief Bring your app to the foreground
  * Brings the app back to the foreground.
  * 
  * See Also: @ToBack.

@@ -1,5 +1,6 @@
 
 /** # IsWifiEnabled #
+ * @brief Check if WiFi is enabled
  * Checks if Wifi is enabled on the user device.
  * 
  * See Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled

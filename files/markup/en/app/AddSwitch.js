@@ -1,5 +1,6 @@
 
 /** # AddSwitch #
+ * @brief Create and add Switch toggle to Layout.
  * Creates and adds a Switch toggle to a Layout.
  * See @CreateSwitch for full documentation.
  * $$ app.AddSwitch(layout, text, width, height, options) $$ 

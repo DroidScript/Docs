@@ -1,5 +1,6 @@
 
 /** # GetInstalledApps #
+ * @brief Get data about installed apps
  * Returns a list of objects containing informations about installed apps.
  * 
  * See Also: @GetRunningApps, @GetRunningServices

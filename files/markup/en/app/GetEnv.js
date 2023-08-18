@@ -1,5 +1,6 @@
 
 /** # GetEnv #
+ * @brief Get environment variable
  * Returns the value of an environment variable defined on the device.
  * $$ app.GetEnv(name) $$ 
  * @param {str} name PATH|...

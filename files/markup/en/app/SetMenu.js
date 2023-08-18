@@ -1,5 +1,6 @@
 
 /** # SetMenu #
+ * @brief Set app menu
  * Set the app menu fields. When a menu entry is touched, the global _OnMenu_ event will be called.
  * 
  * See Also: @ShowMenu

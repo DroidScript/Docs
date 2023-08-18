@@ -1,5 +1,6 @@
 
 /** # AddImage #
+ * @brief Create and add Image to Layout.
  * Creates and adds a Image to a Layout.
  * See @CreateImage for full documentation.
  * $$ app.AddImage(layout, file, width, height, options, pxw, pxh) $$ 

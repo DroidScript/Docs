@@ -1,5 +1,6 @@
 
 /** # AddSprite #
+ * @brief Adds a sprite object
  * Adds a [sprite](CreateSprite.htm) object to the game.
  * $$ gfx.AddSprite(sprite, x, y, w, h, angle, alpha) $$ 
  * @param {gvo} sprite CreateSprite

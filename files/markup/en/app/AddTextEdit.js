@@ -1,5 +1,6 @@
 
 /** # AddTextEdit #
+ * @brief Create and add TextEdit to Layout.
  * Creates and adds a TextEdit to a Layout.
  * See @CreateTextEdit for full documentation.
  * $$ app.AddTextEdit(layout, text, width, height, options) $$ 

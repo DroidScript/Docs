@@ -1,5 +1,6 @@
 
 /** # IsLocationEnabled #
+ * @brief Check if location method is enabled
  * Checks if a specific location mode was enabled.
  * 
  * See Also: @CreateLocator

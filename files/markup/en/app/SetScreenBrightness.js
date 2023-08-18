@@ -1,5 +1,6 @@
 
 /** # SetScreenBrightness #
+ * @brief Change screen brightness
  * Change the screen brightness to a value between 0 and 1, where 0 is the lowest and 1 the highest possible brightness value.
  * $$ app.SetScreenBrightness(level) $$ 
  * @param {num_frc} level 

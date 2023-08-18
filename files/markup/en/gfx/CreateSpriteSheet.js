@@ -1,6 +1,7 @@
 
 /** # CreateSpriteSheet #
  * @abbrev sht
+ * @brief Returns a new SpriteSheet object
  * Creates a SpriteSheet for an animation for instance.
  * 
  * See Also: @CreateSprite
@@ -10,39 +11,36 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateSpriteSheet
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern data
  */
 
-
-/** ### data ###
- * An object for saving individual extra properties.
- * $$ sht.data() $$
- * @returns obj
- */
-
-
-/** ### loaded ###
+/** ### loaded
+ * @prop
  * indicates if the sheet is already loaded.
- * $$ sht.loaded() $$
  * @returns bin
  */
 
-
-/** ### _loader ###
+                    
+/** ### _loader
+ * @prop
  * 
- * $$ sht._loader() $$
  * @returns obj
  */
 
-
-/** ### _sprite ###
+                    
+/** ### _sprite
+ * @prop
  * 
- * $$ sht._sprite() $$
  * @returns ?
  */
 
-// CreateSpriteSheet.txt --> All the sample codes
+                    // CreateSpriteSheet.txt --> All the sample codes
 
 /** @Sample
  

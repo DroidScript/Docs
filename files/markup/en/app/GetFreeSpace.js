@@ -1,5 +1,6 @@
 
 /** # GetFreeSpace #
+ * @brief Get remaining storage size
  * Returns the free space of the internal or external storage in GigaBytes.
  * $$ app.GetFreeSpace(mode) $$ 
  * @param {str} mode internal|external

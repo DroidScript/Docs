@@ -1,5 +1,6 @@
 
 /** # SetData #
+ * @brief Save data while app is running
  * Saves variables until the app closes. All saved data will be lost afterwards. %c
  * 
  * See Also: @GetData, @ClearData

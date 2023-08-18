@@ -1,5 +1,6 @@
 
 /** # GetFileSize #
+ * @brief Get the size of a file or folder
  * GetFileSize returns the size of a file or folder in bytes
  * $$ app.GetFileSize(file) $$ 
  * @param {str_ptf} file 

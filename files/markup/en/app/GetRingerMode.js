@@ -1,5 +1,6 @@
 
 /** # GetRingerMode #
+ * @brief Get current device ringer mode
  * Returns the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.
  * 
  * See Also: @SetRingerMode

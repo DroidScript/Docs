@@ -1,5 +1,6 @@
 
 /** # IsKeyboardShown #
+ * @brief Check whether device keyboard is shown
  * Checks if the device keyboard is currently visible or not.
  * 
  * See Also: @ShowKeyboard, @HideKeyboard

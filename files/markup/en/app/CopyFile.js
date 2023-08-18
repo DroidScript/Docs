@@ -1,5 +1,6 @@
 
 /** # CopyFile #
+ * @brief Copies a file to a given destination
  * CopyFile copies a file to a given destination. The target must locate to the actual target file, not the folder. An existing file will be overridden.
  * 
  * See Also: @RenameFile, @DeleteFile, @FileExists

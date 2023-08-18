@@ -1,5 +1,6 @@
 
 /** # GetCountry #
+ * @brief Get user country name
  * Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)
  * 
  * See Also: @GetCountryCode, 

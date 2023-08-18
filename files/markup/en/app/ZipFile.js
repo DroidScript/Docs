@@ -1,5 +1,6 @@
 
 /** # ZipFile #
+ * @brief Compress a file to zip
  * Compresses a local file to a zip file.
  * 
  * See Also: @ZipFolder

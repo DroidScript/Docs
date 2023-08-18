@@ -1,5 +1,6 @@
 
 /** # RenameFile #
+ * @brief Rename or move a local file
  * Renames a file on the local filesystem. This method can also be used to move a file to a whole other destination.
  * 
  * See Also: @WriteFile, @CopyFile, @DeleteFile

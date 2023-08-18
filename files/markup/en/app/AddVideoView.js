@@ -1,5 +1,6 @@
 
 /** # AddVideoView #
+ * @brief Create and add VideoView to Layout.
  * Creates and adds a VideoView to a Layout.
  * See @CreateVideoView for full documentation.
  * $$ app.AddVideoView(layout, width, height, options) $$ 

@@ -1,5 +1,6 @@
 
 /** # CheckPermission #
+ * @brief Checks if permission was granted
  * CheckPermission checks whether the permission of a particular component has been granted.
  * 
  * See Also: @GetPermission

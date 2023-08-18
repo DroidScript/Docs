@@ -1,6 +1,7 @@
 
 /** # ShowCheckList #
  * @abbrev ckl
+ * @brief Shows a CheckList
  * The check list provides a similar functionality to the “Multi” [ListDiaog](CreateListDialog.htm), although you can adjust its initial check states with an object structure.
  * $$ ckl = app.ShowCheckList(title, list, callback, width, height, options) $$ 
  * @param {str} title 

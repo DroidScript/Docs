@@ -1,5 +1,6 @@
 
 /** # SetOnShowKeyboard #
+ * @brief Called on keyboard visibility changes
  * Define a callback function to detect when keyboard visible state has changed.
  * 
  * See Also: @ShowKeyboard, @HideKeyboard

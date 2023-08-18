@@ -1,5 +1,6 @@
 
 /** # RemoveLayout #
+
  * Removes a layout added to the app.
  * 
  * See also: @AddLayout

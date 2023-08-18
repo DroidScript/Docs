@@ -1,5 +1,6 @@
 
 /** # SetWifiApEnabled #
+ * @brief En/Disable the mobile Wifi Access Point of the device
  * 
  * $$ app.SetWifiApEnabled(enable, ssid, key) $$ 
  * @param {bin} enable 

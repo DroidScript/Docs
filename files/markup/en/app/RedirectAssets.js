@@ -1,5 +1,6 @@
 
 /** # RedirectAssets #
+ * @brief Read assets from given folder
  * Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.
  * $$ app.RedirectAssets(dir) $$ 
  * @param {str_ptd} dir 

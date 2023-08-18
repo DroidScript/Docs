@@ -1,5 +1,6 @@
 
 /** # KillApp #
+ * @brief Kill an app by its pid
  * Kills a running app by its process ID. You can retreive a list of all running apps with their pids using the @GetRunningApps function of the **app** object.
  * $$ app.KillApp(pid) $$ 
  * @param {num_int} pid 

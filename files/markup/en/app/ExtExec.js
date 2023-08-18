@@ -1,5 +1,6 @@
 
 /** # ExtExec #
+ * @brief Execute a bash script using Termux
  * 
  * $$ app.ExtExec(name, file, args, options) $$ 
  * @param {str} name termux

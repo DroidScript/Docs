@@ -1,5 +1,6 @@
 
 /** # Execute #
+ * @brief Execute js code from your app or a WebWiew
  * Executes a piece of code asynchroneously to your program. It is designed for interacting with your main app from within a [WebView](CreateWebView.htm).
  * $$ app.Execute(js) $$ 
  * @param {str_jsc} js 

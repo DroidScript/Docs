@@ -1,5 +1,6 @@
 
 /** # GetUser #
+ * @brief Get current user email
  * Returns the email-address of the currently active user account.
  * 
  * See Also: @GetAccounts

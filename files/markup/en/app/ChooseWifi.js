@@ -1,5 +1,6 @@
 
 /** # ChooseWifi #
+ * @brief Let the user choose a WiFi network
  * 
  * $$ app.ChooseWifi(title1, title2, callback, options, extra) $$ 
  * @param {str} title1 

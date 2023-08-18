@@ -1,5 +1,6 @@
 
 /** # SendMessage #
+ * @brief Send message from Service to main app
  * Send a message from a Service to the main app.
  * $$ app.SendMessage(message) $$ 
  * @param {str} message 

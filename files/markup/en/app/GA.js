@@ -1,5 +1,6 @@
 
 /** # GA #
+ * @brief Google Analytics
  * 
  * $$ app.GA(command, [...fields], options) $$ 
  * @param {str} command create|send|set|require|provide|remove

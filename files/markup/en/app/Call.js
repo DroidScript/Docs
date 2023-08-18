@@ -1,5 +1,6 @@
 
 /** # Call #
+ * @brief Calls a phone number
  * Call is used to call the given phone number.
  * $$ app.Call(number) $$ 
  * @param {str} number number

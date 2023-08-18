@@ -1,5 +1,6 @@
 
 /** # PlayRingtone #
+ * @brief Play specific ringtone type
  * Play a specific ringtone type based on the users device settings for ringtones. _Type_ can be “Alarm”, “Notification” or “Ringtone”.
  * $$ app.PlayRingtone(type) $$ 
  * @param {str} type Alarm|Notification|Ringtone

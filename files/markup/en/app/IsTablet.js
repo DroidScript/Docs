@@ -1,5 +1,6 @@
 
 /** # IsTablet #
+ * @brief Check if user device is a tablet
  * Checks if the user device is a tablet.
  * 
  * See Also: @IsChrome

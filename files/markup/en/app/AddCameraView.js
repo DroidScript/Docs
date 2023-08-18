@@ -1,5 +1,6 @@
 
 /** # AddCameraView #
+ * @brief Create and add CameraView to Layout.
  * Creates and adds a CameraView to a Layout.
  * See @CreateCameraView for full documentation.
  * $$ app.AddCameraView(layout, width, height, options) $$ 

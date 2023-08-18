@@ -1,5 +1,6 @@
 
 /** # GetScreenHeight #
+ * @brief Get width of device screen
  * Returns the total screen height of the device in pixels. With the 'Real' **option** softkeys will be included in the value.
  * 
  * See Also: @GetScreenWidth, @GetScreenDensity

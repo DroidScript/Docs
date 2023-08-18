@@ -1,5 +1,6 @@
 
 /** # ZipFolder #
+ * @brief Compress a folder to zip
  * Recursively compresses a local folder to a zip file.
  * 
  * See Also: @ZipFile, @UnzipFile

@@ -1,5 +1,6 @@
 
 /** # SetKioskMode #
+ * @brief Blocks android functionality outside your app
  * Blocks android functionality to keep the rest of your phone safe while others may use your app.
  * 
  * <premium>

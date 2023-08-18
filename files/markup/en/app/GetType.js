@@ -1,5 +1,6 @@
 
 /** # GetType #
+
  * Returns the object class name.
  * $$ app.GetType() $$ 
  * @returns str-App

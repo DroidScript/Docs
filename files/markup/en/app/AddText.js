@@ -1,5 +1,6 @@
 
 /** # AddText #
+ * @brief Create and add Text to Layout.
  * Creates and adds a Text to a Layout.
  * See @CreateText for full documentation.
  * $$ app.AddText(layout, text, width, height, options) $$ 

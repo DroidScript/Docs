@@ -1,6 +1,7 @@
 
 /** # CreateSpeechRec #
  * @abbrev spr
+ * @brief Returns a new SpeechRec object
  * 
  * $$ spr = app.CreateSpeechRec(options) $$ 
  * @param {str_com} options NoBeep,Partial
@@ -23,17 +24,14 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
  */
 
-/** ## Methods ##
- * These are the methods available for CreateSpeechRec
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ spr.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### Cancel ###
  * Stop recognizing speech and break other processes.
@@ -62,18 +60,9 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
  */
 
 
-/** ### Method ###
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
- * $$ spr.Method(name, types, p1, p2, p3, p4) $$
- * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} p1 
- * @param {str} p2 
- * @param {str} p3 
- * @param {str} p4 
- * @returns all
+/**
+ * @extern Method
  */
-
 
 /** ### Recognize ###
  * Start recognizing speech.

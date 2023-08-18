@@ -1,5 +1,6 @@
 
 /** # IsService #
+ * @brief Check id app is a service
  * Checks if the currently running app instance is a service.
  * $$ app.IsService() $$ 
  * @returns bin

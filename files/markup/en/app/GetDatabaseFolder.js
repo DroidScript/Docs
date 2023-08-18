@@ -1,5 +1,6 @@
 
 /** # GetDatabaseFolder #
+ * @brief Get apps database folder
  * Returns the path to the database folder of the app. An example pattern is “/data/data/packageName/databases”.
  * 
  * See Also: @OpenDatabase

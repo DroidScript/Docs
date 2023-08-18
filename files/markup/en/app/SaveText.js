@@ -1,5 +1,6 @@
 
 /** # SaveText #
+ * @brief Save a text value across multiple starts
  * Save a text value to remember varibale values between multiple app starts and updates.
  * 
  * See also: @LoadText.

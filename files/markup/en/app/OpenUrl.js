@@ -1,5 +1,6 @@
 
 /** # OpenUrl #
+ * @brief Allow user to open an url with an external app
  * Allows the user to open an url with an external application on the device. The **choose** parameter shows the user a custom message in the choose dialog.
  * 
  * See Also: @CreateWebView, @OpenFile

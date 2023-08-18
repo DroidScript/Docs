@@ -1,5 +1,6 @@
 
 /** # ShowProgressBar #
+ * @brief Show a progress bar dialog
  * Shows a dialog with a bar indicating the current progress of a certain thing.
  * 
  * See Also: @UpdateProgressBar, @HideProgressBar

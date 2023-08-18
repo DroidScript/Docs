@@ -1,5 +1,6 @@
 
 /** # SetOnError #
+ * @brief Called on thrown JS errors
  * Define a callback function to catch thrown errors messages.
  * 
  * See also: @Error

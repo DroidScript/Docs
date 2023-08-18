@@ -1,5 +1,6 @@
 
 /** # UpdateProgressBar #
+ * @brief Update the ProgressBar percentage
  * Updates the progress percentage of a ProgressBar.
  * See Also: @ShowProgressBar, @HideProgressBar.
  * $$ app.UpdateProgressBar(percent) $$ 

@@ -1,6 +1,7 @@
 
 /** # CreateOverlay #
  * @abbrev ovl
+ * @brief Returns a new Overlay object
  * Overlays are displayed above everything on the screen - even on the home screen or above other applications. Overlays can be created from services as well which makes them almost perfect for interacting with them.
  * 
  * <premium>
@@ -9,9 +10,9 @@
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateOverlay
- */
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
 /** ### AddLayout ###
@@ -24,19 +25,13 @@
  */
 
 
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ ovl.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+/**
+ * @extern Batch
  */
 
-
-/** ### GetParent ###
- * Returns the parent control object where the object was added to - commonly a layout.
- * $$ ovl.GetParent() $$
- * @returns dso
+/**
+ * @extern GetParent
  */
-
 
 /** ### GetType ###
  * Returns the control class name.

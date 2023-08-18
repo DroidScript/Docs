@@ -1,23 +1,21 @@
 
 /** # CreateMediaStore #
  * @abbrev med
+ * @brief Returns a new MediaStore object
  * The MediaStore is used to query audio information from the android provider or from the device in the “/sdcard/Music” folder.
  * $$ med = app.CreateMediaStore() $$ 
  * @returns dso-MediaStore
 */
 
 
-/** ## Methods ##
- * These are the methods available for CreateMediaStore
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern Batch
  */
-
-
-/** ### Batch ###
- * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
- * $$ med.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
- */
-
 
 /** ### GetAlbumArt ###
  * Loads the album image to an existing image:dso-CreateImage.

@@ -1,5 +1,6 @@
 
 /** # AddList #
+ * @brief Create and add List to Layout.
  * Creates and adds a List to a Layout.
  * See @CreateList for full documentation.
  * $$ app.AddList(layout, list, width, height, options, delim) $$ 
