@@ -14,14 +14,19 @@ const versions = {"en":"v257"};
 
     function moveSite() {
         const div = document.createElement('div');
-        Object.assign(div.style, { backgroundColor: "red", padding: "5px" });
+        Object.assign(div.style, { backgroundColor: "red", padding: "5px", position: "fixed", zIndex: 1001, top: 0, width: "100%" });
         document.querySelector('html').appendChild(div);
 
         var timer = 4;
         const itvMove = setInterval((function moveTimer() {
             --timer;
             const link = `<a href=${JSON.stringify(location.href.replace(oldHost, newHost))}>${location.origin.replace(oldHost, newHost)}</a>`;
-            div.innerHTML = `<big>This site permanently moved to ${link}. Please update links accordingly.\n<br>You are being forwarded automatically in ${timer}...</big>`;
+            div.innerHTML = `<big>This site permanently moved to ${link}. Please update links accordingly.</big>`
+
+            if (timer > 0) {
+                div.innerHTML += `\n<br><big>You are being forwarded automatically in ${timer}...</big> <a id="stay" href="#">[stay here]</div>`;
+                div.querySelector("#stay").onclick = () => (clearInterval(itvMove), timer = 0, moveTimer());
+            }
             if (timer) return moveTimer;
             clearInterval(itvMove);
             location.host = newHost;
