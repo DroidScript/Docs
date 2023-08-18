@@ -44,6 +44,11 @@ function LoopFiles(SOURCE_DIR) {
 
     // parent methods
     // let parent = false
+    const baseFile = path.join(SOURCE_DIR, "_base.js");
+    let baseJson = {};
+    if( fs.existsSync(baseFile) ) {
+        baseJson = getBaseMethods( baseFile );
+    }
 
     if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder, {recursive: true})
     if (!fs.existsSync(outputSamples)) fs.mkdirSync(outputSamples, {recursive: true})
@@ -64,7 +69,7 @@ function LoopFiles(SOURCE_DIR) {
             const stats = fs.statSync(folderPath)
             if (stats.isFile()) {
                 if (file.endsWith(".js")) {
-                    const data = renderFile(folderPath, objJson);
+                    const data = renderFile(folderPath, objJson, baseJson);
 
                     // write description.md file
                     const descFile = path.join(outputDesc, data.name + ".md")
@@ -140,7 +145,7 @@ function tos(o, intd, m) {
  * @param {string} filePath
  * @param {Obj<DSFunction>} objJson
  */
-function renderFile(filePath, objJson) {
+function renderFile(filePath, objJson, baseJson) {
 
     const file = path.basename(filePath);
 
@@ -148,7 +153,7 @@ function renderFile(filePath, objJson) {
 
     let _fname = file.slice(0, -3);
 
-    const objData = RenderComments(objJson, strComments, true, _fname);
+    const objData = RenderComments(objJson, strComments, true, _fname, baseJson);
     /** @type {typeof objData} */
     const data = JSON.parse(JSON.stringify(objData));
 
@@ -198,10 +203,15 @@ function renderFile(filePath, objJson) {
     return {
         name: data.name,
         desc,
-        samples: data.samples,
+        samples: data.samples
     };
 }
 
+/**
+ * Render markown files.
+ * @param {String} filePath Path to the md file
+ * @param {Object<DSFunction>} objJson
+ */
 function renderMdFile(filePath, objJson) {
     const file = path.basename(filePath);
     const name = file.slice(0, -3);
@@ -213,6 +223,14 @@ function renderMdFile(filePath, objJson) {
         name,
         desc
     }
+}
+
+function getBaseMethods( filePath ) {
+    const file = path.basename(filePath);
+    const strComments = getComment.file(filePath, {});
+    const name = file.slice(0, -3);
+    const objData = RenderComments({}, strComments, true, name);
+    return objData.json;
 }
 
 /** @returns {DSFunction} */
@@ -230,7 +248,7 @@ const newDSFunc = () => ({
  * @param {boolean} cmp
  * @param {string} [name]
  */
-function RenderComments(objJson, tokens, cmp, name = "") {
+function RenderComments(objJson, tokens, cmp, name = "", baseJson) {
     objJson[name] = {};
     let func = objJson[name];
 
@@ -243,6 +261,7 @@ function RenderComments(objJson, tokens, cmp, name = "") {
         if (c.type == "BlockComment") {
             const DescriptionPattern = /[#@]\s*[Dd]escription/;
             const SamplePattern = /[#@]\s*[Ss]ample/;
+            const ExternPattern = /[#@]\s*[Ee]xtern/;
 
             if (c.value.toLowerCase().includes("#example")) {
                 let _x = c.value.trim().split("\n")
@@ -262,6 +281,16 @@ function RenderComments(objJson, tokens, cmp, name = "") {
             else if (SamplePattern.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
                 samples += `\n\n${_samp}\n\n`
+            }
+
+            // Base method
+            else if (ExternPattern.test(c.value)) {
+                const r = /@extern([\s\S]*)/;
+                const _m = r.exec(c.value);
+                const _n = _m[1].trim();
+                if(_n && baseJson[_n]) {
+                    json[_n] = baseJson[_n];
+                }
             }
 
             else {
