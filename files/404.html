@@ -1,33 +1,38 @@
 <html>
-<head>
-<title>404 Page not found</title>
-<style>
 
-</style>
+<head>
+    <title>404 Page not found</title>
+    <script>
+        const versions = { en: 'v257' };
+        let pathname = "/Docs/docs/app/Alert.htm"; //location.pathname;
+        (function () {
+            let sheet = document.createElement('style');
+            sheet.innerHTML = "#parDNF{display:unset}#parFWD{display:none}";
+            document.firstChild.appendChild(sheet);
+            const newPath = pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink);
+            if (location.pathname === pathname) location.pathname = newPath;
+            pathname = newPath;
+
+            function getLink(m, add = '', lang = 'en') {
+                sheet.innerHTML = "#parDNF{display:none}#parFWD{display:unset}";
+                return `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;
+            }
+        })();
+    </script>
+    <style>
+
+    </style>
 </head>
-<body>
+
+<body onLoad="altLink.href=pathname;">
     <div id="content">
         <h1>Oops. That shouldn't have happened.</h1>
-        The site you requested was not available.
-        <div id="divLink" style="display:none">
-        You werent forwarded properly. Try <a id="altLink" href="">this link</a> instead.
-        </div>
+        <p id="parDNF">The site you requested was not available.</p>
+        <p id="parFWD">
+            You probably tried to access an outdated path.<br>
+            If you are not forwarded automatically <a id="altLink" href="">click here</a>.
+        </p>
     </div>
-    
-    <script>
-    function onLoad()
-    {
-        if (!location.pathname.match(/^\/Docs\/docs\/[^v]/)) return;
-        const path = location.pathname.replace('/Docs/docs/', '/Docs/docs/<latest>/')
-        location.pathname = path;
-        console.log("suggested " + path);
-        
-        const link = document.getElementById("altLink")
-        if (link) link.href = path;
-        const div = document.getElementById("divLink")
-        if (div) div.style.display = "";
-    }
-    onLoad();    
-    </script>
 </body>
+
 </html>

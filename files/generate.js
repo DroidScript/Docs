@@ -54,22 +54,24 @@ function Generate(patFunc, patScope, patLang) {
 	const dstDir = getDstDir(D_BASE);
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
-	// 404 page
-	const page404 = app.ReadFile('404.html');
-	app.WriteFile(dstDir + '404.html', page404.replace('<latest>', 'v257'));
-
 	// language index page
 	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/index.html`, conf.langs[l]));
 	const index = htmlNavi("Available languages:", "", nav.join(''))
 		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
 	app.WriteFile(dstDir + "index.html", index);
 
+	/** @type {Obj<number>} */
+	const latest = {};
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
 		// delete old generated files
 		if (patScope + patFunc == "")
 			if (clean) app.DeleteFolder("docs" + getl());
-		generateLang(l);
-	})
+		latest[l] = generateLang(l);
+	});
+
+	// 404 page
+	const page404 = app.ReadFile('404.html');
+	app.WriteFile(dstDir + '404.html', page404.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));	
 }
 
 /** @param {LangKeys} l */
@@ -95,6 +97,7 @@ function generateLang(l) {
 	app.WriteFile(dstDir + "index.html", index);
 
 	for (const v of versions) generateVersion(v);
+	return versions.pop();
 }
 
 /** @param {string} ver */
