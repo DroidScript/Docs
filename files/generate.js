@@ -4,7 +4,7 @@
 const baseDir = "json/", outDir = "out/";
 var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var curVer = "", curDoc = "", curSubf = "", pattern = "";
-var warnEnbl = false, dbg = false, clean = false, force = false;
+var warnEnbl = false, dbg = false, clean = false, force = false, updateVer = false;
 var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
 /** @type {DSConfig} */    var conf;
 /** @type {DSBase|null} */ var base;
@@ -60,18 +60,25 @@ function Generate(patFunc, patScope, patLang) {
 		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
 	app.WriteFile(dstDir + "index.html", index);
 
+	// 404 page
+	app.CopyFolder('404.html', dstDir + '404.html');
+
 	/** @type {Obj<string>} */
 	const latest = {};
+	const forwardjs = app.ReadFile('docs-base/js/forward.js');
+	keys(conf.langs).map(l => {
+		lang = l;
+		const versions = app.ListFolder(getSrcDir(D_LANG)).sort();
+		latest[lang] = versions[versions.length - 1];
+	});
+	app.WriteFile('docs-base/js/forward.js', forwardjs.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
+
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
 		// delete old generated files
 		if (patScope + patFunc == "")
 			if (clean) app.DeleteFolder("docs" + getl());
-		latest[l] = generateLang(l);
+		generateLang(l);
 	});
-
-	// 404 page
-	const page404 = app.ReadFile('404.html');
-	app.WriteFile(dstDir + '404.html', page404.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
 }
 
 /** @param {LangKeys} l */
@@ -98,7 +105,6 @@ function generateLang(l) {
 	app.WriteFile(dstDir + "Docs.htm", index);
 
 	for (const v of versions) generateVersion(v);
-	return versions[versions.length - 1];
 }
 
 /** @param {string} ver */
@@ -162,7 +168,8 @@ function generateScope(name) {
 
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 + 1;
+	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000;
+	if (updateVer) vn++;
 	app.WriteFile("version.txt", (v + vn).toString());
 	app.HideProgressBar();
 }
@@ -1384,6 +1391,7 @@ OPTIONS:
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                                 adds a scope to conf.json
 	-c  --clean            	regenerate the docs completely
+	-u  --update           	update the docs version number
 	-f  --force             force generation of otherwise skipped
 	-n  --nogen             don't generate
 	-s  --server            start webserver after generating
@@ -1452,6 +1460,7 @@ if (typeof app == "undefined") {
 				case "-n": case "--nogen": nogen = true; break;
 				case "-v": case "--verbose": dbg = true; break;
 				case "-c": case "--clean": clean = true; break;
+				case "-u": case "--update": updateVer = true; break;
 				case "-f": case "--force": force = true; break;
 				case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
 				case "-al": case "--addlang":

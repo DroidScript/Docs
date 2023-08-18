@@ -23,14 +23,13 @@ The generator and the JSON format are documented in [files/json/README.md](files
 
 ### For Contributors:
 
-Please fork this repository to your github account to make any changes and create a pull request to submit them
+Please fork the [DroidScript/Docs](https://github.com/DroidScript/Docs) repository to your github account to make any changes and create a pull request to submit them
 
 _Descibe what you have done in your commits or in the pull request info._<br>
 The title should describe what you did in general and the body includes a detailed listing of your changes.
 
 To update the Github Pages preview move your generated files/docs folder to docs/docs.
 
-<center>
-<b>Thank you for your contribution and support of DroidScript.org.!</b>
-<br><br><br>
-Thanks for RTFM.</center>
+<div style="text-align:center">
+<b>Thank you for your contribution and support of </strong>DroidScript.org</strong>.!</b>
+</div>

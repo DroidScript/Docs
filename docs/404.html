@@ -1,37 +1,29 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>404 Page not found</title>
     <script>
-        const versions = {"en":"v257"};
         let pathname = location.pathname;
+        let sheet = document.createElement('style');
         (function () {
-            let sheet = document.createElement('style');
-            sheet.innerHTML = "#parDNF{display:unset}#parFWD{display:none}";
-            document.firstChild.appendChild(sheet);
-            const newPath = pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink);
-            if (location.pathname === pathname) location.pathname = newPath;
-            pathname = newPath;
-
-            function getLink(m, add = '', lang = 'en') {
-                sheet.innerHTML = "#parDNF{display:none}#parFWD{display:unset}";
-                return `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;
-            }
+            sheet.innerHTML = ".parFWD{display:none}p{font-size:larger}";
+            document.querySelector('html').appendChild(sheet);
         })();
+        function onForward(newPath = '') {
+            pathname = newPath;
+            sheet.innerHTML = ".parDNF{display:none}p{font-size:larger}";
+        }
     </script>
-    <style>
-
-    </style>
+    <script src="docs/js/forward.js"></script>
 </head>
 
-<body onLoad="altLink.href=pathname;">
+<body onLoad="altLink.href = pathname;">
     <div id="content">
         <h1>Oops. That shouldn't have happened.</h1>
-        <p id="parDNF">The site you requested was not available.</p>
-        <p id="parFWD">
-            You probably tried to access an outdated path.<br>
-            If you are not forwarded automatically <a id="altLink" href="">click here</a>.
-        </p>
+        <p class="parDNF">The site you requested was not available.</p>
+        <p class="parFWD">You probably tried to access an outdated path.</p>
+        <p class="parFWD">If you are not forwarded automatically <a id="altLink" href="">click here</a>.</p>
     </div>
 </body>
 
