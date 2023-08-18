@@ -64,7 +64,7 @@
 				"desc": "Returns the current total linear velocity or the “x”, “y” or “angular” component.",
 				"pNames": ["component"],
 				"pTypes": ["str-x|y|angular"],
-				"retval": "number",
+				"retval": "num",
 				"shortDesc": "Returns the total velocity or a component of it"
 			},
 			"RemovePhysics": {

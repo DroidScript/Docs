@@ -8,7 +8,7 @@ const extraFormat = false;
 const version = "v257";
 const SRC = "markup/en";
 const DST = "json/en/" + version;
-const typx = "all,bin,dso,gvo,jso,fnc,lst,num,obj,str,?";
+const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
 const types = {
     String: "str",
@@ -184,6 +184,10 @@ function renderFile(filePath, objJson) {
         objJson[data.name].desc = desc;
         desc = "";
     }
+    else desc += "\n";
+
+    if (data.samples.trim()) data.samples = data.samples.trim() + "\n"
+    else data.samples = " ";
 
     return {
         name: data.name,
@@ -208,7 +212,6 @@ const newDSFunc = () => ({
  * @param {string} [name]
  */
 function RenderComments(objJson, tokens, cmp, name = "") {
-    let isCA = false;
     objJson[name] = {};
     let func = objJson[name];
 
@@ -216,7 +219,7 @@ function RenderComments(objJson, tokens, cmp, name = "") {
     /** @type {string[][]} */
     let props = [];
     /** @type {Obj<DSFunction>} */
-    let json = {}, afterCmpParam = false;
+    let json = {};
     tokens.forEach((c, i) => {
         if (c.type == "BlockComment") {
             const DescriptionPattern = /[#@]\s*[Dd]escription/;
@@ -233,8 +236,7 @@ function RenderComments(objJson, tokens, cmp, name = "") {
 
             // Description.md
             else if (DescriptionPattern.test(c.value)) {
-                let _desc = c.value.substring(c.value.indexOf("\n"));
-                func.desc += `${_desc}`;
+                func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
             // Sample.txt
@@ -244,12 +246,13 @@ function RenderComments(objJson, tokens, cmp, name = "") {
             }
 
             else {
-                const cmt = c.value.split(/\r?\n/);
-                isCA = false;
+                let isCA = false, afterCmpParam = false;
                 let met = newDSFunc();
 
-                for (let j = 0; j < cmt.length; j++) {
-                    const line = cmt[j].trim();
+                for (let line of c.value.split(/\r?\n/)) {
+                    line = line.trim();
+                    const obj = isCA ? func : met;
+
                     if (line.includes("###")) {
                         //isCA = false
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
@@ -265,13 +268,11 @@ function RenderComments(objJson, tokens, cmp, name = "") {
                         // met += line;
                     }
 
-                    else if (line.includes("@prop")) {
-                        //isCA = false
-                        let p = extractParamDef(line)
-                        props.push(p)
-                    }
+                    //isCA = false
+                    else if (line.includes("@prop")) props.push(extractParamDef(line))
+                    else if (line.includes("@brief")) obj.shortDesc = line;
 
-                    else if ((line.includes("@param") && met) || (line.includes("@param") && isCA)) {
+                    else if (line.includes("@param")) {
                         let _l = line.split("@param")[1].trim();
                         let p = extractParams(_l);
                         let isFunc = false, _d;
@@ -297,7 +298,6 @@ function RenderComments(objJson, tokens, cmp, name = "") {
                             }
                         }
 
-                        const obj = isCA ? func : met;
                         if (isCA) afterCmpParam = true;
 
                         if (!obj.pNames) obj.pNames = [];
@@ -316,40 +316,31 @@ function RenderComments(objJson, tokens, cmp, name = "") {
                         // }
                     }
 
-                    else if ((line.includes("@return") && met) || (line.includes("@return") && isCA)) {
+                    else if (line.includes("@return")) {
                         let f = line.split("returns")[1].trim(), g = f.split(/[_\s-]/)[0], v;
                         if (types[g]) v = types[g];
                         else if (typx.includes(g)) v = f;
-                        else v = "obj-" + f;
-                        if (isCA) func.retval = v;
-                        else met.retval = v;
+                        else console.log("unknown type " + g), v = "obj-" + f;
+                        obj.retval = v;
                     }
 
-                    else if ((line.includes("@img") && met) || (line.includes("@img") && isCA)) { }
-                    else if ((line.includes("@@") && met) || (line.includes("@@") && isCA)) { }
+                    else if (line.includes("@img")) { }
+                    else if (line.includes("@@")) { }
 
-                    else if ((line.includes("$$") && met) || (line.includes("$$") && isCA)) {
+                    else if (line.includes("$$")) {
+                        if (!line.includes('(')) obj.isval = true;
                         if (isCA && afterCmpParam) {
                             const match = line.match(/\$\$(.*?)\$\$/) || [];
                             func.desc += ('\n<js>' + match[1].replace(/:/g, ' : ') + '</js>\n');
                         }
                     }
 
-                    else if (line.includes("@abbrev")) {
-                        func.abbrev = line.split("abbrev")[1].trim();
-                    }
-
-                    else if ((line.trim() == "*" && met) || (line.trim() == "*" && isCA)) {
-                        if (isCA) func.desc += "\n"
-                        else met.desc += "\n"
-                    }
-
-                    else if (met || isCA) {
-                        if (isCA) {
-                            func.desc += "\n\n" + line.trim().replace(/^\*/, '');
-                            // isCA = false;
-                        } else
-                            met.desc += "\n\n" + line.trim().replace(/^\*/, '');
+                    else if (line.includes("@abbrev")) func.abbrev = line.split("abbrev")[1].trim();
+                    else if (line.trim() == "*") obj.desc += "\n";
+                    else if (line.trim() == "*/" || !line.trim()) { }
+                    else {
+                        if (isCA) obj.desc += "\n\n";
+                        obj.desc += line.trim().replace(/^\* */, '');
                     }
                 }
             }

@@ -60,7 +60,7 @@ function Generate(patFunc, patScope, patLang) {
 		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
 	app.WriteFile(dstDir + "index.html", index);
 
-	/** @type {Obj<number>} */
+	/** @type {Obj<string>} */
 	const latest = {};
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
 		// delete old generated files
@@ -71,7 +71,7 @@ function Generate(patFunc, patScope, patLang) {
 
 	// 404 page
 	const page404 = app.ReadFile('404.html');
-	app.WriteFile(dstDir + '404.html', page404.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));	
+	app.WriteFile(dstDir + '404.html', page404.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
 }
 
 /** @param {LangKeys} l */
@@ -97,7 +97,7 @@ function generateLang(l) {
 	app.WriteFile(dstDir + "index.html", index);
 
 	for (const v of versions) generateVersion(v);
-	return versions.pop();
+	return versions[versions.length - 1];
 }
 
 /** @param {string} ver */

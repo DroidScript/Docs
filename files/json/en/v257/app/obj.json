@@ -6093,7 +6093,7 @@
 	},
 	"GetRouterAddress": {
 		"desc": "Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)",
-		"retval": "str:ip"
+		"retval": "str-ip address"
 	},
 	"GetRSSI": {
 		"desc": "#GetRSSI.md",

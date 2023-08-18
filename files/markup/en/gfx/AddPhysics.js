@@ -58,7 +58,7 @@
  * Returns the current total linear velocity or the “x”, “y” or “angular” component.
  * $$ phs.GetVelocity(component) $$
  * @param {str} component x|y|angular
- * @returns number
+ * @returns num
  */
 
 
