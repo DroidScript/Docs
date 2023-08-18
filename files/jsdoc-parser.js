@@ -246,6 +246,12 @@ const newDSFunc = () => ({
     shortDesc: "",
 });
 
+const newDSProp = () => ({
+    desc: "",
+    isval: true,
+    retval: undefined
+});
+
 /**
  * @param {Obj<DSFunction>} objJson
  * @param {import('esprima').Token[]} tokens
@@ -303,29 +309,34 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson={}) {
             else {
                 let isCA = false, afterCmpParam = false;
                 let met = newDSFunc();
+                let isval = false;
 
                 for (let line of c.value.split(/\r?\n/)) {
                     line = line.trim();
                     const obj = isCA ? func : met;
 
                     if (line.includes("###")) {
-                        //isCA = false
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
-
-                        json[method] = met = newDSFunc();
-                        met.shortDesc = method;
-                        // if( parent && parent[method] ) {
-                        //     delete parent[method];
-                        // }
+                        if(c.value.includes("@prop")) {
+                            json[method] = met = newDSProp();
+                            isval = true;
+                        }
+                        else {
+                            json[method] = met = newDSFunc();
+                            met.shortDesc = method;
+                        }
                     }
 
                     else if (line.includes("##")) {
                         // met += line;
                     }
 
-                    //isCA = false
-                    else if (line.includes("@prop")) props.push(extractParamDef(line))
-                    else if (line.includes("@brief")) obj.shortDesc = line;
+                    // isCA = false
+                    else if (line.includes("@prop")) {
+                        if( !isval )
+                            props.push(extractParamDef(line));
+                    }
+                    else if (line.includes("@brief")) obj.shortDesc = line.substring(line.indexOf("@brief")+6).trim();
 
                     else if (line.includes("@param")) {
                         let _l = line.split("@param")[1].trim();
