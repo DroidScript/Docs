@@ -29,7 +29,7 @@ const replacement = '“$1”'; // Replaces backticks with slash before and afte
 /** @param {string} SOURCE_DIR */
 function LoopFiles(SOURCE_DIR) {
     // console.log("<---- Generating json for "+SOURCE_DIR+" ----->";
-    if (!fs.existsSync(SOURCE_DIR))  return console.log(SOURCE_DIR + " does not exist!");
+    if (!fs.existsSync(SOURCE_DIR)) return console.log(SOURCE_DIR + " does not exist!");
 
     let folder = path.basename(SOURCE_DIR);
     let outputFolder = path.join(DST, folder);
@@ -56,13 +56,18 @@ function LoopFiles(SOURCE_DIR) {
         /** @type {Obj<DSFunction>} */
         const objJson = {}
 
+        /** @type {Obj<string[]>} */
+        let navs = {};
+        if (fs.existsSync(navsJson))
+            navs = JSON.parse(fs.readFileSync(navsJson, 'utf8'));
+
         for (let i = 0; i < files.length; i++) {
             const file = files[i]
             const folderPath = path.join(SOURCE_DIR, file);
             const stats = fs.statSync(folderPath)
             if (stats.isFile()) {
                 if (file.endsWith(".js")) {
-                    const data = renderFile(folderPath, objJson, baseJson);
+                    const data = renderFile(folderPath, objJson, baseJson, navs);
 
                     // write description.md file
                     const descFile = path.join(outputDesc, data.name + ".md")
@@ -87,9 +92,8 @@ function LoopFiles(SOURCE_DIR) {
         let objJsonFile = path.join(outputFolder, "obj.json");
         fs.writeFileSync(objJsonFile, tos(objJson));
 
-        // copy navs.json file for the namespace
-        if (fs.existsSync(navsJson))
-            fs.copyFileSync(navsJson, path.join(outputFolder, "navs.json"));
+        let navsJsonFile = path.join(outputFolder, "navs.json");
+        fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
     });
 }
 
@@ -118,14 +122,13 @@ function tos(o, intd, m) {
             }
             return s + "]";
         default:
-            var okeys = Object.keys(o);
+            var okeys = Object.keys(o).filter(k => o[k] !== undefined);
             switch (okeys.length) {
                 case 0: return "{}";
                 case 1: return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], "", false)} }`;
                 default:
                     s += "{\n";
                     for (var i = 0; i < okeys.length; i++) {
-                        if (o[okeys[i]] === undefined) continue;
                         s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
                         if (i < okeys.length - 1) s += ",\n";
                     }
@@ -138,8 +141,9 @@ function tos(o, intd, m) {
  * @param {string} filePath
  * @param {Obj<DSFunction>} objJson
  * @param {Obj<DSFunction>} baseJson
+ * @param {Obj<string[]>} navs
  */
-function renderFile(filePath, objJson, baseJson) {
+function renderFile(filePath, objJson, baseJson, navs) {
 
     const file = path.basename(filePath);
 
@@ -150,6 +154,11 @@ function renderFile(filePath, objJson, baseJson) {
     const objData = RenderComments(objJson, strComments, true, _fname, baseJson);
     /** @type {typeof objData} */
     const data = JSON.parse(JSON.stringify(objData));
+
+    for (const cat of objData.categories) {
+        if (!navs[cat]) navs[cat] = [];
+        if (!navs[cat].includes(objData.name)) navs[cat].push(objData.name);
+    }
 
     // description
     let desc = objJson[data.name].desc || ''
@@ -252,13 +261,13 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
     let samples = "";
     /** @type {string[][]} */
     let props = [];
+    /** @type {string[]} */
+    let categories = [];
     /** @type {Obj<DSFunction>} */
     let json = {};
+
     tokens.forEach((c, i) => {
         if (c.type == "BlockComment") {
-            const DescriptionPattern = /[#@]\s*[Dd]escription/;
-            const SamplePattern = /[#@]\s*[Ss]ample/;
-            const ExternPattern = /[#@]\s*[Ee]xtern/;
 
             if (c.value.toLowerCase().includes("#example")) {
                 let _x = c.value.trim().split("\n")
@@ -270,25 +279,32 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
             else if (c.value.includes('```')) { }
 
             // Description.md
-            else if (DescriptionPattern.test(c.value)) {
+            else if (/[#@]\s*[Dd]escription/.test(c.value)) {
                 func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
             // Sample.txt
-            else if (SamplePattern.test(c.value)) {
+            else if (/[#@]\s*[Ss]ample/.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
                 samples += `\n\n${_samp}\n\n`
             }
 
             // Base method
-            else if (ExternPattern.test(c.value)) {
-                const r = /@extern([\s\S]*)/;
+            else if (/[#@]\s*[Ee]xtern/.test(c.value)) {
+                const r = /[#@]\s*[Ee]xtern([\s\S]*)/;
                 const _m = r.exec(c.value);
                 if (_m) {
                     const _n = _m[1].trim();
-                    if (_n && baseJson[_n]) {
-                        json[_n] = baseJson[_n];
-                    }
+                    if (_n && baseJson[_n]) json[_n] = baseJson[_n];
+                }
+            }
+
+            // Category
+            else if (/[#@]\s*[Cc]ategory/.test(c.value)) {
+                const _m = /[#@]\s*[Cc]ategory([\s\S]*)/.exec(c.value);
+                if (_m) {
+                    const _n = _m[1].trim();
+                    if (_n) categories.push(_n);
                 }
             }
 
@@ -399,6 +415,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
         json,
         name,
         samples,
+        categories,
         objJson: func,
         props
     }
