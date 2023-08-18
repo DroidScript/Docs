@@ -55,7 +55,7 @@ function Generate(patFunc, patScope, patLang) {
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
 	// language index page
-	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/index.html`, conf.langs[l]));
+	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/Docs.htm`, conf.langs[l]));
 	const index = htmlNavi("Available languages:", "", nav.join(''))
 		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
 	app.WriteFile(dstDir + "index.html", index);
@@ -88,13 +88,14 @@ function generateLang(l) {
 	if (clean || !app.FileExists(dstDir + "app.js")) app.CopyFolder("app.js", dstDir + "app.js");
 	if (clean || !app.FolderExists(dstDir + "css")) app.CopyFolder("docs-base/css", dstDir + "css");
 	if (clean || !app.FolderExists(dstDir + "js")) app.CopyFolder("docs-base/js", dstDir + "js");
+	if (clean || !app.FileExists(dstDir + "index.html")) app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
 	const versions = app.ListFolder(langDir).sort();
 
 	// version index page
 	const nav = versions.map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)/, "$1.$2")));
 	const index = htmlNavi("Available versions:", "", nav.join(''))
 		.replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/');
-	app.WriteFile(dstDir + "index.html", index);
+	app.WriteFile(dstDir + "Docs.htm", index);
 
 	for (const v of versions) generateVersion(v);
 	return versions[versions.length - 1];

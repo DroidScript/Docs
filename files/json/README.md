@@ -1,5 +1,5 @@
 
-# Editing Docs using raw JSON files
+# Docs JSON Format Documentation
 
 ## Table of Contents
 
