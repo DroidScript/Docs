@@ -454,7 +454,7 @@ function extractBacktickStrings(str) {
     let finalStr = str + '';
     const regex = /`([^`]*)`/g;
     const matches = str.matchAll(regex);
-    const style = "color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;";
+    const style = "color:#fb8c00; font-size:100%; padding:0px 2px;";
     for (const match of matches) {
         //match[1]
         finalStr = finalStr.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
