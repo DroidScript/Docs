@@ -1,39 +1,95 @@
 
 
 <sample Chips>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-			this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setChildMargins(0, 0.025, 0, 0.025)
 
-			// Basic Chip
-			this.chip1 = ui.addChip( this.main, 'Basic Chip' )
+        // Add a default chip to the main layout
+        this.chip1 = ui.addChip(this.main, "Basic Chip")
 
-			// Primary Small chip
-			this.chip2 = ui.addChip( this.main, 'Primary Chip Small', 'Primary,Small' )
+        // Add a callback handler for `onTouch` event.
+        this.chip1.setOnTouch( this.onTouch )
 
-			// Touchable chip
-			this.chip3 = ui.addChip( this.main, 'Secondary Chip', 'Secondary,Touchable' )
+        // Add a small primary chip
+        this.chip2 = ui.addChip(this.main, "Small Primary Chip", "Primary,Small")
+        this.chip2.setOnTouch( this.onTouch )
 
-			// Deletable chip
-			this.chip4 = ui.addChip( this.main, 'Deletable', 'Secondary,Touchable')
-			this.chip4.setOnDelete( this.onDelete )
+        // Add a touchable secondary chip
+        this.chip3 = ui.addChip(this.main, "Secondary Chip", "Secondary,Touchable")
+        this.chip2.setOnTouch( this.onTouch )
+    }
 
-			// Chip with icon
-			this.chip5 = ui.addChip( this.main, 'Shopping Cart' )
-			this.chip5.icon = 'shopping_cart'
+    onTouch()
+    {
+        ui.showPopup( "You touched the chip!" )
+    }
+}
+</sample>
 
-			// Chip with avatar
-			this.chip6 = ui.addChip( this.main, 'Character Avatar', 'Primary,Touchable' )
-			this.chip6.avatar = 'E'
-		}
+<sample Deletable chip>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-		onDelete()
-		{
-			ui.showPopup( "Deleted" )
-		}
-	}
+        // Add a touchable and deletable chip
+        this.chip = ui.addChip(this.main, 'Deletable', 'Secondary,Touchable')
+
+        // Add callback hanlder for `onDelete` event.
+        // This will also add a delete icon to the chip.
+        this.chip.setOnDelete( this.onDelete )
+    }
+
+    onDelete()
+    {
+        ui.showPopup( "Chip is deleted!" )
+    }
+}
+</sample>
+
+<sample Custom styles>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a chip control to the main layout
+        this.chip = ui.addChip(this.main, "Shopping Cart")
+
+        // Add a leading icon to the chip control
+        this.chip.icon = "shopping_cart"
+
+        // Sets the icon color of the chip control
+        this.chip.iconColor = "#673ab7"
+
+        // Sets the text size of the chip control
+        this.chip.textSize = 14
+    }
+}
+</sample>
+
+<sample Avatar>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a chip control to the main layout
+        this.chip = ui.addChip(this.main, "Character Avatar")
+
+        // Set the avatar property of the main layout
+        this.chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+    }
+}
 </sample>

@@ -1,51 +1,61 @@
 
 
 <sample Basic>
-	class Main extends App
-	{
-		onStart()
-		{
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen linear layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-			var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Initialize items to show in the dropdown
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-			this.dpd = ui.addDropdown( this.main, items )
-		}
-	}
+        // Add Dropdown control to the main layout.
+        this.dpd = ui.addDropdown(this.main, items)
+
+        // Add a callback handler for `onChange` event on the Dropdown control
+        this.dpd.setOnChange( this.onChange )
+    }
+
+    onChange(text, index)
+    {
+        ui.showPopup( "Value is " + text )
+    }
+}
 </sample>
 
-<sample With Label, Outlined & Primary>
-	class Main extends App
-	{
-		onStart()
-		{
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+<sample Custom styles>
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen linear layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-			var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Initialize dropdown items
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-			this.dpd = ui.addDropdown( this.main, items, "Outlined,Primary" )
-			this.dpd.label = "Choose and item"
-		}
-	}
-</sample>
+        // Add a Dropdown control to the main layout
+        // and pass `Outlined` and `Primary` options for styling
+        this.dpd = ui.addDropdown( this.main, items, "Outlined,Primary" )
 
-<sample With callback>
-	class Main extends App
-	{
-		onStart()
-		{
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Set the label property of the Dropdown
+        this.dpd.label = "Choose and item"
 
-			var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Set the corner radius to 16px
+        this.dpd.cornerRadius = 16
 
-			this.dpd = ui.addDropdown( this.main, items, "Outlined,Primary" )
-			this.dpd.label = "Choose and item"
-			this.dpd.setOnChange( this.onChange )
-		}
+        // Set the text size to 18
+        this.dpd.textSize = 18
 
-		onChange( item, index )
-		{
-			ui.showPopup( item + " : " + index )
-		}
-	}
+        // Add a callback handler for `onChange` event of the Dropdown control
+        this.dpd.setOnChange( this.onChange )
+    }
+
+    onChange(text, index)
+    {
+        ui.showPopup( "Value is " + text )
+    }
+}
 </sample>

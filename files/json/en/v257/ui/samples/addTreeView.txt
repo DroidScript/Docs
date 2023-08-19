@@ -1,86 +1,91 @@
 
 
 <sample Items>
-    var items = {
-        "Group 1": {
-            "Item 1": "",
-            "Item 2": "",
-            "Item 3": ""
-        },
-        "Group 2": {
-            "Item 1": "",
-            "Item 2": "",
-            "Item 3": ""
-        },
-        "Applications": {
-            "Editor": "",
-            "Productivity": "",
-            "Social Media": {
-                "TikTok": "",
-                "YouTube": "",
-                "Meta": {
-                    "Facebook": "",
-                    "Instagram": "",
-                    "Whatsapp": "",
-                    "Messenger": ""
-                }
+var items = {
+    "Group 1": {
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": ""
+    },
+    "Group 2": {
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": ""
+    },
+    "Applications": {
+        "Editor": "",
+        "Productivity": "",
+        "Social Media": {
+            "TikTok": "",
+            "YouTube": "",
+            "Meta": {
+                "Facebook": "",
+                "Instagram": "",
+                "Whatsapp": "",
+                "Messenger": ""
             }
         }
     }
+}
 </sample>
 
-<sample Items With Icons>
-    var items = {
-        "Folders": {
-            "Music": "music_note",
-            "Photos": "photo",
-            "Favorites": "favorite"
-        }
+<sample Items with icons>
+var items = {
+    "Folders": {
+        "Music": "music_note",
+        "Photos": "photo",
+        "Favorites": "favorite"
     }
+}
 </sample>
 
 <sample Basic TreeView>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            this.main = ui.addLayout( "main", "Linear", "VCenter,ScrollY", 1, 1 )
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
 
-            var items = {
-                "Group 1": {
-                    "Item 1": "",
-                    "Item 2": "",
-                    "Item 3": ""
-                },
-                "Group 2": {
-                    "Item 1": "",
-                    "Item 2": "",
-                    "Item 3": ""
-                },
-                "Applications": {
-                    "Editor": "",
-                    "Productivity": "",
-                    "Social Media": {
-                        "TikTok": "",
-                        "YouTube": "",
-                        "Meta": {
-                            "Facebook": "",
-                            "Instagram": "",
-                            "Whatsapp": "",
-                            "Messenger": ""
-                        }
+        // Initialize json object for the treeview items
+        var items = {
+            "Group 1": {
+                "Item 1": "",
+                "Item 2": "",
+                "Item 3": ""
+            },
+            "Group 2": {
+                "Item 1": "",
+                "Item 2": "",
+                "Item 3": ""
+            },
+            "Applications": {
+                "Editor": "",
+                "Productivity": "",
+                "Social Media": {
+                    "TikTok": "",
+                    "YouTube": "",
+                    "Meta": {
+                        "Facebook": "",
+                        "Instagram": "",
+                        "Whatsapp": "",
+                        "Messenger": ""
                     }
                 }
             }
-
-            this.trv = ui.addTreeView( this.main, items, "Primary", 0.3, 0.2 )
-
-            this.trv.setOnTouch( this.onTouch )
         }
 
-        onTouch( value, path )
-        {
-            ui.showPopup( "Value: "+value + " Path: "+path )
-        }
+        // Add a treeview component to the main layout
+        this.trv = ui.addTreeView(this.main, items, "Primary")
+        this.trv.setMargins(0, 5, 0, 0, "rem")
+
+        // Add a callback handler when the treeview item is touched
+        this.trv.setOnTouch( this.onTouch )
     }
+
+    onTouch(value, path)
+    {
+        ui.showPopup("Value: "+value + " Path: "+path)
+    }
+}
 </sample>

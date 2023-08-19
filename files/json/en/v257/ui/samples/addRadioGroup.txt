@@ -1,55 +1,89 @@
 
 
-<sample Basic>
-    class Main extends App
+<sample Basic radiogroup>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            // list items
-            var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Initialize list items to show
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-            // Adds a radiogroup component
-            this.rdg = ui.addRadioGroup( this.main, items )
-        }
+        // Add a radiogroup control to the main layout
+        this.rdg = ui.addRadioGroup(this.main, items)
+
+        // Add a callback handler when the value changes
+        this.rdg.setOnChange( this.onChange )
     }
+
+    onChange(text, index)
+    {
+        ui.showPopup("You choose " + text)
+    }
+}
 </sample>
 
-<sample Customize & Secondary RadioGroup>
-    class Main extends App
+<sample Elevated secondary radiogroup>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            // list items
-            var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Initialize list items to show
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-            // Adds a radiogroup component
-            this.rdg = ui.addRadioGroup( this.main, items, "Elevated,Secondary", 0.6 )
-            this.rdg.label = "Select one"
-            this.rdg.elevation = 4
-        }
+        // Add an elevated radiogroup control to the main layout
+        this.rdg = ui.addRadioGroup(this.main, items, "Elevated,Secondary", 0.6)
+
+        // Set the label text of the radiogroup
+        this.rdg.label = "Select one"
+
+        // Set the elevation depth
+        this.rdg.elevation = 4
+
+        // Add a callback handler when the value changes
+        this.rdg.setOnChange( this.onChange )
     }
+
+    onChange(text, index)
+    {
+        ui.showPopup("You choose " + text)
+    }
+}
 </sample>
 
-<sample Outlined & Primary RadioGroup>
-    class Main extends App
+<sample Outlined and radios to the right>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            // list items
-            var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Initialize list items to show
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-            // Adds a radiogroup component
-            this.rdg = ui.addRadioGroup( this.main, items, "Outlined,Primary", 0.6 )
-            this.rdg.label = "Select one"
-        }
+        // Add an outlined radiogroup control to the main layout
+        // Passing `Right` will display the radios to the right
+        this.rdg = ui.addRadioGroup( this.main, items, "Outlined,Primary,Right", 0.6)
+
+        // Set the label text of the radiogroup
+        this.rdg.label = "Select one"
+
+        // Set the corner radius to 12
+        this.rdg.cornerRadius = 12
+
+        // Add a callback handler when the value changes
+        this.rdg.setOnChange( this.onChange )
     }
+
+    onChange(text, index)
+    {
+        ui.showPopup("You choose " + text)
+    }
+}
 </sample>

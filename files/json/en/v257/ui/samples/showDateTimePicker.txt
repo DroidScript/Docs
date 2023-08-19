@@ -1,24 +1,24 @@
 
 
 <sample DateTimePicker>
-    class Main extends App 
+class Main extends App 
+{
+    onStart()
     {
-        onStart()
-        {
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
 
-            this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
-            this.btn.setOnTouch( this.btn_onTouch )
-        }
-
-        btn_onTouch()
-        {
-            ui.showDateTimePicker( this.onDateTime )
-        }
-
-        onDateTime( val )
-        {
-            ui.showPopup( val )
-        }
+        this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
+        this.btn.setOnTouch( this.btn_onTouch )
     }
+
+    btn_onTouch()
+    {
+        ui.showDateTimePicker( this.onDateTime )
+    }
+
+    onDateTime( val )
+    {
+        ui.showPopup( val )
+    }
+}
 </sample>

@@ -1,67 +1,152 @@
 
 
 <sample Drawer Implementation>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
 
-            // Adds a text
-            ui.addText(this.main, "<---- Swipe left ----->\n or", "Multiline,Center");
+        // Add a fixed appbar with menu icon to the main layout.
+        this.apb = ui.addAppBar(this.main, "My App", "Menu,Fixed")
 
-            // Adds a button to the main layout.
-            this.btn = ui.addButton( this.main, "Open Drawer", "Contained,Primary" )
-            this.btn.setOnTouch( this.openDrawer )
+        // Add a callback handler for `onMenu` event of the AppBar control.
+        this.apb.setOnMenu( this.openDrawer )
 
-            // Creates the drawer layout.
-            this.drawerLay = ui.addLayout( null, "Linear", "VCenter", 1 )
+        // Add a text control to the main layout.
+        ui.addText(this.main, "<---- Swipe left ----->", "Center");
 
-            // Initialize the drawer by passing the drawer layout.
-            this.drawer = ui.addDrawer( this.drawerLay, "left" )
-            this.drawer.setOnClose( this.onClose )
+        // Create a linear layout for the drawer.
+        this.drawerLay = ui.addLayout(null, "Linear")
 
-            var lst1 = [
-                [ "music_note", "Audios" ],
-                [ "movie", "Videos" ],
-                [ "insert_drive_file", "Documents" ]
-            ]
+        // Initialize the drawer by passing the drawer layout above.
+        this.drawer = ui.addDrawer(this.drawerLay, "left", 0.7)
 
-            // Adds a list to the drawer layout.
-            this.lstMenu1 = ui.addList( this.drawerLay, lst1, "Icon", 1 )
-            this.lstMenu1.setOnTouch( this.closeDrawer )
-            this.lstMenu1.label = "Main navigation"
+        // Add a callback handler for `onClose` event on the Drawer component.
+        this.drawer.setOnClose( this.onClose )
 
-            // Adds a divider into the drawer layout.
-            ui.addDivider( this.drawerLay, 1 )
+        var lst1 = [
+            [ "music_note", "Audios" ],
+            [ "movie", "Videos" ],
+            [ "insert_drive_file", "Documents" ]
+        ]
 
-            var lst2 = [
-                [ "mail", "All Mail" ],
-                [ "inbox", "Inbox" ],
-                [ "drafts", "Outbox" ],
-                [ "send", "Sent" ]
-            ]
+        // Adds a list to the drawer layout. See List control for customization.
+        this.lstMenu1 = ui.addList( this.drawerLay, lst1, "Icon", 1 )
+        this.lstMenu1.label = "Main navigation"
 
-            // Adds another list to the drawer layout.
-            this.lstMenu2 = ui.addList( this.drawerLay, lst2, "Icon", 1 )
-            this.lstMenu2.label = "Secondary navigation"
-            this.lstMenu2.setOnTouch( this.closeDrawer )
-        }
+        // Add a callback handler for `onSelect` event on the list.
+        this.lstMenu1.setOnTouch( this.onSelect )
 
-        openDrawer()
-        {
-            this.drawer.show('left')
-        }
+        // Adds a divider into the drawer layout.
+        ui.addDivider( this.drawerLay, 1 )
 
-        closeDrawer()
-        {
-            this.drawer.hide()
-        }
+        var lst2 = [
+            [ "mail", "All Mail" ],
+            [ "inbox", "Inbox" ],
+            [ "drafts", "Outbox" ],
+            [ "send", "Sent" ]
+        ]
 
-        onClose()
-        {
-            ui.showPopup('Drawer is close')
-        }
+        // Adds another list to the drawer layout. See List control for customization.
+        this.lstMenu2 = ui.addList( this.drawerLay, lst2, "Icon", 1 )
+        this.lstMenu2.label = "Secondary navigation"
+        this.lstMenu2.setOnTouch( this.onSelect )
     }
+
+    openDrawer()
+    {
+        this.drawer.show()
+    }
+
+    onSelect(title)
+    {
+        this.apb.text = title
+        ui.showPopup( title )
+        this.drawer.hide()
+    }
+
+    onClose()
+    {
+        ui.showPopup('Drawer is close', "bottom")
+    }
+}
+</sample>
+
+<sample Drawer Anchor Positions>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+
+        // Adds a select control to the main layout.
+        this.sel = ui.addSelect(this.main, ["Left", "Top", "Right", "Bottom"], "Radio,Outlined", 0.7)
+        this.sel.label = "Select anchor position"
+
+        // Add a callback handler for `onChange` event of the select control.
+        this.sel.setOnChange(this.onSelect)
+
+        // Creates a linear layout for the drawer.
+        this.drawerLay = ui.addLayout( null, "Linear" )
+
+        // Initialize the drawer by passing the drawer layout.
+        this.drawer = ui.addDrawer( this.drawerLay, "left" )
+
+        var lst1 = [
+            [ "music_note", "Audios" ],
+            [ "movie", "Videos" ],
+            [ "insert_drive_file", "Documents" ]
+        ]
+
+        // Adds a list to the drawer layout.
+        this.lstMenu1 = ui.addList( this.drawerLay, lst1, "Icon", 1 )
+        this.lstMenu1.setOnTouch( this.closeDrawer )
+        this.lstMenu1.label = "Main navigation"
+
+        // Adds a divider into the drawer layout.
+        ui.addDivider( this.drawerLay, 1 )
+
+        var lst2 = [
+            [ "mail", "All Mail" ],
+            [ "inbox", "Inbox" ],
+            [ "drafts", "Outbox" ],
+            [ "send", "Sent" ]
+        ]
+
+        // Adds another list to the drawer layout.
+        this.lstMenu2 = ui.addList( this.drawerLay, lst2, "Icon", 1 )
+        this.lstMenu2.label = "Secondary navigation"
+        this.lstMenu2.setOnTouch( this.closeDrawer )
+    }
+
+    openDrawer()
+    {
+        this.drawer.show()
+    }
+
+    closeDrawer( title )
+    {
+        ui.showPopup( title )
+        this.drawer.hide()
+    }
+
+    onSelect( value )
+    {
+        // Set the drawer anchor first
+        this.drawer.anchor = value
+
+        // Set the drawer width depending on anchor position
+        if(value == "Top" || value == "Bottom") {
+            this.drawer.width = 0.5
+        } else {
+            this.drawer.width = 0.7
+        }
+        
+        // Open the drawer
+        this.drawer.show()
+    }
+}
 </sample>

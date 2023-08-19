@@ -1,125 +1,134 @@
 
 
 <sample Basic>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-			var list = [
-				"Checkbox item 1",
-				"Checkbox item 2",
-				"Checkbox item 3"
-			]
+        // Initialize checkbox items
+        this.items = [
+            "Checkbox item 1",
+            "Checkbox item 2",
+            "Checkbox item 3"
+        ]
 
-			// Add a checkbox group to the main layout.
-			this.ckb = ui.addCheckboxGroup( this.main, list, "", 0.9  )
-		}
-	}
+        // Add a checkbox group to the main layout.
+        this.ckg = ui.addCheckboxGroup(this.main, this.items)
+
+        // Add a callback handler for `onTouch` event
+        this.ckg.setOnTouch( this.onTouch )
+    }
+
+    onTouch(value, item, index)
+    {
+        ui.showPopup( `Value of ${ item } is ${ value }` )
+    }
+}
 </sample>
 
 <sample Colors>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.childSpacing = "evenly"
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.childSpacing = "evenly"
 
-			var list = [
-				"Checkbox item 1",
-				"Checkbox item 2",
-				"Checkbox item 3"
-			]
+        // Initialize the checkbox items
+        var list = [
+            "Checkbox item 1",
+            "Checkbox item 2",
+            "Checkbox item 3"
+        ]
 
-			// Add a checkbox group to the main layout.
+        // Add a default CheckboxGroup to the main layout
+        this.ckg1 = ui.addCheckboxGroup(this.main, list)
+        this.ckg1.setOnTouch( this.onTouch )
 
-			// Default
-			this.ckb1 = ui.addCheckboxGroup( this.main, list, "", 0.9  )
+        // Add a primary CheckboxGroup to the main layout
+        this.ckg2 = ui.addCheckboxGroup(this.main, list, "Primary")
+        this.ckg2.setOnTouch( this.onTouch )
 
-			// Primary
-			this.ckb2 = ui.addCheckboxGroup( this.main, list, "Primary", 0.9  )
+        // Add a secondary CheckboxGroup to the main layout
+        this.ckg3 = ui.addCheckboxGroup(this.main, list, "Secondary")
+        this.ckg3.setOnTouch( this.onTouch )
+    }
 
-			// Secondary
-			this.ckb3 = ui.addCheckboxGroup( this.main, list, "Secondary", 0.9 )
-		}
-	}
-</sample>
-
-<sample Callback>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-
-			var list = [
-				"Checkbox item 1",
-				"Checkbox item 2",
-				"Checkbox item 3"
-			]
-
-			// Add a checkbox group to the main layout.
-			this.ckb = ui.addCheckboxGroup( this.main, list, "Primary", 0.9 )
-			this.ckb.setOnTouch( this.onChange )
-		}
-
-		onChange( text, checked, value )
-		{
-			ui.showPopup( text + " : " + checked )
-		}
-	}
+    onTouch(value, item, index)
+    {
+        ui.showPopup( `Value of ${ item } is ${ value }` )
+    }
+}
 </sample>
 
 <sample Elevated>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-			//ui.setTheme("dark")
+        // Initialize the checkbox list items
+        var list = [
+            "Checkbox item 1",
+            "Checkbox item 2",
+            "Checkbox item 3"
+        ]
 
-			var list = [
-				"Checkbox item 1",
-				"Checkbox item 2",
-				"Checkbox item 3"
-			]
+        // Add an elevated checkbox group to the main layout.
+        this.ckg = ui.addCheckboxGroup( this.main, list, "Elevated,Secondary", 0.6)
 
-			// Add a checkbox group to the main layout.
-			this.ckb = ui.addCheckboxGroup( this.main, list, "Elevated,Secondary", 0.9, 0.5 )
-			this.ckb.label = "Select as many as you can"
-			this.ckb.elevation = 4
-		}
-	}
+        // Set the label of the CheckboxGroup
+        this.ckg.label = "Select as many as you can"
+
+        // Set the elevation of the CheckboxGroup container
+        this.ckg.elevation = 4
+
+        // Add a callback handler for `onTouch` event
+        this.ckg.setOnTouch( this.onTouch )
+    }
+
+    onTouch(value, item, index)
+    {
+        ui.showPopup( `Value of ${ item } is ${ value }` )
+    }
+}
 </sample>
 
-<sample Custom Background Color>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen layout with objects vertically centered.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+<sample Outlined>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-			//ui.setTheme("dark")
+        // Initialize the checkbox items
+        var list = [
+            "Checkbox item 1",
+            "Checkbox item 2",
+            "Checkbox item 3"
+        ]
 
-			var list = [
-				"Checkbox item 1",
-				"Checkbox item 2",
-				"Checkbox item 3"
-			]
+        // Add an outlined checkbox group to the main layout.
+        this.ckg = ui.addCheckboxGroup( this.main, list, "Outlined,Secondary", 0.9 )
+        this.ckg.setOnTouch( this.onTouch )
 
-			// Add a checkbox group to the main layout.
-			this.ckb = ui.addCheckboxGroup( this.main, list, "Elevated,Secondary", 0.9 )
-			this.ckb.label = "Select as many as you can"
-			this.ckb.elevation = 4
-			this.ckb.backColor = "#009688"
-		}
-	}
+        // Set the label of the CheckboxGroup items
+        this.ckg.label = "Select as many as you can"
+
+        // Set the cornerRadius to `20`
+        this.ckg.cornerRadius = 20
+    }
+
+    onTouch(value, item, index)
+    {
+        ui.showPopup( `Value of ${ item } is ${ value }` )
+    }
+}
 </sample>

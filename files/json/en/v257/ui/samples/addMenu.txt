@@ -1,121 +1,157 @@
 
 
-<sample Basic>
-	class Main extends App
+<sample Basic menu>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            // Adds a button to the layout.
-            this.btn = ui.addButton( this.main, "Show Menu", "Primary" )
-            this.btn.setOnTouch( this.onTouch )
+        // Adds a button control to the layout
+        this.btn = ui.addButton(this.main, "Show Menu", "Primary")
+        this.btn.setOnTouch( this.onTouch )
 
-            // List items
-            var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Menu items to display in the popup
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-            // Adds a menu passing the btn as anchor component.
-            this.menu = ui.addMenu( this.btn, items )
-        }
+        // Adds a menu passing the button control as anchor
+        this.menu = ui.addMenu(this.btn, items)
 
-        onTouch()
-        {
-            // show the menu
-            this.menu.show()
-        }
+        // Add a callback handler when a menu is touched
+        this.menu.setOnTouch( this.menuTouch )
     }
+
+    onTouch()
+    {
+        // show the menu
+        this.menu.show()
+    }
+
+    menuTouch( item )
+    {
+        ui.showPopup( item )
+    }
+}
 </sample>
 
-<sample Anchor Component>
-	class Main extends App
+<sample Changing anchor component>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildSpacing( "Evenly" )
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setChildSpacing( "Evenly" )
 
-            // Adds first button to the layout.
-            this.btn1 = ui.addButton( this.main, "Show Menu Here", "Primary" )
-            this.btn1.setOnTouch( this.onTouch1 )
+        // Add a first button control to the layout
+        this.btn1 = ui.addButton(this.main, "Button 1", "Primary")
+        this.btn1.setOnTouch( this.onTouch1 )
 
-            // Adds second button to the layout.
-            this.btn2 = ui.addButton( this.main, "Transfer Menu Here", "Secondary" )
-            this.btn2.setOnTouch( this.onTouch2 )
+        // Add a second button control to the layout
+        this.btn2 = ui.addButton(this.main, "Button 2", "Secondary")
+        this.btn2.setOnTouch( this.onTouch2 )
 
-            // List items
-            var items = [ "Item 1", "Item 2", "Item 3" ]
+        // Menu items to display the menu popup
+        var items = ["Item 1", "Item 2", "Item 3"]
 
-            // Adds a menu without anchor component.
-            this.menu = ui.addMenu( null, items )
-        }
+        // Adds a menu without anchor component
+        this.menu = ui.addMenu(null, items)
 
-        onTouch1()
-        {
-            // show the menu on button 1
-            this.menu.show( this.btn1 )
-        }
-
-        onTouch2()
-        {
-            // show the menu on button 2
-            this.menu.show( this.btn2 )
-        }
+        // Add a callback handler when a menu is touched
+        this.menu.setOnTouch( this.menuTouch )
     }
+
+    onTouch1()
+    {
+        // Show the menu on button 1
+        this.menu.show( this.btn1 )
+    }
+
+    onTouch2()
+    {
+        // Show the menu on button 2
+        this.menu.show( this.btn2 )
+    }
+
+    menuTouch( item )
+    {
+        ui.showPopup( item )
+    }
+}
 </sample>
 
-<sample With Icons>
-    class Main extends App
+<sample With icons and disabled items>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            // Adds a button to the layout.
-            this.btn = ui.addButton( this.main, "Show Menu", "Primary" )
-            this.btn.setOnTouch( this.onTouch )
+        // Add a button control to the main layout
+        this.btn = ui.addButton(this.main, "Show Menu", "Primary")
+        this.btn.setOnTouch( this.onTouch )
 
-            // List items with icons
-            var items = [ "person:Item 1", "delete:Item 2", "favorite:Item 3" ]
+        // List items with icons
+        var items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
 
-            // Adds a menu passing the btn as anchor component.
-            this.menu = ui.addMenu( this.btn, items, "Icons,Primary,Dense" )
-            this.menu.setEnabled(1, false)
-        }
+        // Add a menu passing the btn as anchor component
+        this.menu = ui.addMenu(this.btn, items, "Icons,Primary,Dense")
 
-        onTouch()
-        {
-            // show the menu
-            this.menu.show()
-        }
+        // Disable the second menu item
+        this.menu.setEnabled(1, false)
+
+        // Add a callback handler when a menu is touched
+        this.menu.setOnTouch( this.menuTouch )
     }
+
+    onTouch()
+    {
+        // show the menu
+        this.menu.show()
+    }
+
+    menuTouch( item )
+    {
+        // display the selected item
+        ui.showPopup( item )
+    }
+}
 </sample>
 
 <sample Anchor position on mouse>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 );
-            this.main.setOnContextMenu( this.onMenu );
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setOnContextMenu( this.onMenu )
 
-            // Adds a text to the layout.
-            this.txt = ui.addText( this.main, "Right click anywhere on the screen.");
+        // Add a text control to the layout
+        this.txt = ui.addText(this.main, "Right click anywhere on the screen.")
 
-            // List items with icons
-            var items = [ "person:Item 1", "delete:Item 2", "favorite:Item 3" ];
+        // List items with icons
+        var items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
 
-            // Adds a menu passing the btn as anchor component.
-            this.menu = ui.addMenu( null, items, "Icons,Dense" );
-        }
+        // Add menu passing the btn as anchor component
+        this.menu = ui.addMenu(null, items, "Icons,Dense")
 
-        onMenu(e)
-        {
-            // show the menu on mouseX and mouseY position
-            this.menu.show(e.clientX, e.clientY);
-        }
+        // Add a callback handler when a menu is touched
+        this.menu.setOnTouch( this.menuTouch )
     }
+
+    onMenu( pos )
+    {
+        // show the menu on the position of the mouse
+        this.menu.show(pos.x, pos.y)
+    }
+
+    menuTouch( item )
+    {
+        // display the selected item
+        ui.showPopup( item )
+    }
+}
 </sample>

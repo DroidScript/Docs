@@ -1,82 +1,113 @@
 
 
 <sample Basic>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-            // Adds checkbox control
-            this.ckb = ui.addCheckbox( this.main, "This is checkbox label" )
-        }
+        // Add a checkbox control to the main layout
+        this.ckb = ui.addCheckbox(this.main, "This is checkbox label")
+
+        // Add a callback handler for `onTouch` event
+        this.ckb.setOnTouch( this.onTouch )
     }
+
+    onTouch( value )
+    {
+        ui.showPopup( `Value is ${ value }` )
+    }
+}
 </sample>
 
 <sample Colors>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        this.main.setChildMargins(0, 0.05, 0, 0.05)
 
-            // Adds checkbox control
+        // Add a default checkbox control to the main layout
+        this.ckb1 = ui.addCheckbox(this.main, "This is checkbox label")
+        this.ckb1.setOnTouch( this.onTouch )
 
-            // Default
-            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label" )
+        // Add a primary checkbox control to the main layout
+        this.ckb2 = ui.addCheckbox(this.main, "This is checkbox label", "Primary")
+        this.ckb2.setOnTouch( this.onTouch )
 
-            // Primary Color
-            this.ckb2 = ui.addCheckbox( this.main, "This is checkbox label", "Primary" )
-
-            // set value
-            this.ckb3 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary" )
-            this.ckb3.value = true
-        }
+        // Add a secondary checkbox control to the main layout
+        // and set its value to `true`
+        this.ckb3 = ui.addCheckbox(this.main, "This is checkbox label", "Secondary")
+        this.ckb3.value = true
+        this.ckb3.setOnTouch( this.onTouch )
     }
+
+    onTouch( value )
+    {
+        ui.showPopup( `Value is ${ value }` )
+    }
+}
 </sample>
 
-<sample Text Positions>
-    class Main extends App
+<sample Text positions>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        this.main.setChildMargins(0, 0.05, 0, 0.05)
 
-            // Adds checkbox control
+        // Add a checkbox with label on the right. 
+        this.ckb1 = ui.addCheckbox(this.main, "Checkbox on the left", "Left")
+        this.ckb1.setOnTouch( this.onTouch )
 
-            // Left
-            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label", "Left" )
+        // Add a checkbox with label on the bottom.
+        this.ckb2 = ui.addCheckbox(this.main, "Checkbox on the top", "Primary,Top")
+        this.ckb2.setOnTouch( this.onTouch )
 
-            // Top
-            this.ckb2 = ui.addCheckbox( this.main, "This is checkbox label", "Primary,Top" )
+        // Add a checkbox with label on the left.
+        this.ckb3 = ui.addCheckbox(this.main, "Checkbox on the right", "Secondary,Right")
+        this.ckb3.setOnTouch( this.onTouch )
 
-            // Right
-            this.ckb3 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary,Right" )
-
-            // Bottom
-            this.ckb4 = ui.addCheckbox( this.main, "This is checkbox label", "Secondary,Bottom" )
-        }
+        // Add a checkbox with label on top.
+        this.ckb4 = ui.addCheckbox(this.main, "Checkbox on the bottom", "Secondary,Bottom")
+        this.ckb4.setOnTouch( this.onTouch )
     }
+
+    onTouch( value )
+    {
+        ui.showPopup( `Value is ${ value }` )
+    }
+}
 </sample>
 
 <sample Adding custom checkbox icon>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen layout with objects vertically centered.
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-            // Adds checkbox control
-            this.ckb1 = ui.addCheckbox( this.main, "This is checkbox label", "Left,Secondary" )
-            this.ckb1.setIcon( "favorite", "person" )
-        }
+        // Adds checkbox control to the main layout
+        this.ckb = ui.addCheckbox(this.main, "This is checkbox label", "Left,Secondary")
+
+        // Set the checked icon to `favorite`
+        // and uncheck icon to `person`
+        this.ckb.setIcon("favorite", "person")
+
+        // Add a callback handler for `onTouch` event
+        this.ckb.setOnTouch( this.onTouch )
     }
+
+    onTouch( value )
+    {
+        ui.showPopup( `Value is ${ value }` )
+    }
+}
 </sample>

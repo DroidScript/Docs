@@ -1,128 +1,117 @@
 
 
-<sample Creates the main app layout.>
-    class Main extends App
+<sample Main layout>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
+        // Create a fullscreen linear layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+        // Add a callback hanlder when the layout is touched
+        this.main.setOnTouch( this.onTouch )
+
+        // Add a button control to the main layout
+        this.btn = ui.addButton(this.main, "Button", "primary")
+
+        // Add a callback handler when the button is touched
+        this.btn.setOnTouch( this.btnTouch )
+    }
+
+    onTouch()
+    {
+        ui.showPopup( "You click the layout!" )
+    }
+
+    btnTouch()
+    {
+        if(this.main.backColor == "yellow")
         {
-            // Create the main layout. A fullscreen layout with object vertically centered.
-            
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+            this.main.backColor = "white"
+        }  
+        else
+        {
+            this.main.backColor = "yellow"
         }
     }
+}
 </sample>
 
-<sample Default>
-    class Main extends App
+<sample Bottom aligned with margins>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen main layout.
-            this.main = ui.addLayout( "main", "Linear", "FillXY" )
+        // Creates a fullscreen main layout with objects aligned at the bottom
+        this.main = ui.addLayout("main", "Linear", "Bottom,FillXY")
 
-            // Adds a button to the main layout.
-            this.btn = ui.addButton( this.main, "Button", "Primary" )
-        }
+        // Set margins for children controls
+        this.main.setChildMargins(0, 0.05, 0, 0.05)
+
+        // Add buttons to the main layout
+        this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
+        this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
+        this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
     }
+}
 </sample>
 
-<sample Bottom Aligned With Margins>
-    class Main extends App
+<sample Orientation and spacing>
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            // Creates a fullscreen main layout. With objects aligned at the bottom.
-            this.main = ui.addLayout( "main", "Linear", "Bottom,FillXY" )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+        // Create a fullscreen main layout with objects centered horizontally
+        this.main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
 
-            // Adds a button to the main layout.
-            this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
-            this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
-            this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
-        }
+        // Set the children spacing
+        this.main.childSpacing = "even"
+
+        // Add buttons to the main layout.
+        this.btn1 = ui.addButton(this.main, "Button 1", "Primary")
+        this.btn2 = ui.addButton(this.main, "Button 2", "Secondary")
+        this.btn3 = ui.addButton(this.main, "Button 3", "Primary,Outlined")
     }
-</sample>
-
-<sample Horizontal>
-    class Main extends App
-    {
-        onStart()
-        {
-            // Creates a fullscreen main layout. With objects aligned at the bottom.
-            this.main = ui.addLayout( "main", "Linear", "VCenter,Horizontal", 1, 1 )
-            this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
-
-            // Adds a button to the main layout.
-            this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
-            this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
-            this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
-        }
-    }
-</sample>
-
-<sample Space Evenly>
-    class Main extends App
-    {
-        onStart()
-        {
-            // Creates a fullscreen main layout. With objects aligned at the bottom.
-            this.main = ui.addLayout( "main", "Linear", "VCenter,Horizontal", 1, 1 )
-            this.main.setChildSpacing( "Evenly" )
-
-            // Adds a button to the main layout.
-            this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
-            this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
-            this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
-        }
-    }
-</sample>
-
-<sample Space Around & Vertical>
-    class Main extends App
-    {
-        onStart()
-        {
-            // Creates a fullscreen main layout. With objects aligned at the bottom.
-            this.main = ui.addLayout( "main", "Linear", "Vertical", 1, 1 )
-            this.main.setChildSpacing( "Around" )
-
-            // Adds a button to the main layout.
-            this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
-            this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
-            this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
-        }
-    }
+}
 </sample>
 
 <sample Slide Layout>
-    class Main extends App
+class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-            this.main.setChildMargins( 0, 0, 0, 0.03 )
+        // Create a fullscreen slide layout with objects vertically centered
+        // You can pass `Vertical` option to make a vertical slide
+        this.main = ui.addLayout( "main", "Slide", "VCenter,FillXY" )
+        
+        // Adds an onSlide event handler to the layout
+        this.main.setOnSlide( this.onSlide )
 
-            // Add a Slide layout
-            this.laySlide = ui.addLayout( this.main, "Slide", "VCenter", 0.3, 0.2 )
-            this.laySlide.setBackColor( "rgba(0,0,0,0.1)" )
+        // Adds a yellow-colored Linear first layout to the slide
+        var lay1 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        lay1.backColor = "yellow"
+        ui.addText(lay1, "First Page")
 
-            // images urls
-            var image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
-            var image2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Hornet_Mascot.png/640px-Hornet_Mascot.png"
+        // Adds a green-colored Linear second layout to the slide
+        var lay2 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        lay2.backColor = "green"
+        ui.addText(lay2, "Second Page")
 
-            // Add images component to slide layout
-            this.img1 = ui.addImage( this.laySlide, image, "", 1, 1 )
-            this.img2 = ui.addImage( this.laySlide, image2, "", 1, 1 )
+        // Adds a red-colored Linear third layout to the slide
+        var lay3 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        lay3.backColor = "red"
+        ui.addText(lay3, "Third Page")
 
-            // Add a button to the main layout
-            this.btn = ui.addButtonGroup( this.main, "Previous,Next" )
-            this.btn.setOnTouch( this.onTouch )
-        }
+        // Adds a blue-colored Linear fourth layout to the slide
+        var lay4 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        lay4.backColor = "blue"
+        ui.addText(lay4, "Fourth Page")
 
-        onTouch( e )
-        {
-            if( e == "Next" ) this.laySlide.next()
-            else this.laySlide.previous()
-        }
+        ui.showPopup("Swipe horizontally", "Long");
     }
+
+    onSlide( ctrl, index ) {
+        ui.showPopup( index, "", 350 );
+    }
+}
 </sample>

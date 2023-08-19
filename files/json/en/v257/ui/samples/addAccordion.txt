@@ -1,125 +1,135 @@
 
 
-<sample Add Secondary Text>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen main layout.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+<sample Complete accordion implementation>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen main layout.
+        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
 
-			var accords = [ "Accordion 1", "Accordion 2", "Accordion 3" ]
+        this.accords = [ "Accordion 1", "Accordion 2", "Accordion 3" ]
 
-			// Adds an accordion to the main layout
-			this.acc = ui.addAccordion( this.main, accords, "", 0.9 )
+        // Adds an accordion to the main layout
+        this.acc = ui.addAccordion( this.main, this.accords, "", 0.9 )
 
-			// Secondary text to display
-			var secTxt = [
-				"This is the secondary text 1",
-				"This is the secondary text 2",
-				"This is the secondary text 3"
-			]
+        // Secondary text to display
+        var secTxt = [
+            "This is the secondary text 1",
+            "This is the secondary text 2",
+            "This is the secondary text 3"
+        ]
 
-			// sets the secondary text
-			this.acc.setSecondaryText( secTxt )
-		}
-	}
+        // sets the secondary text
+        this.acc.setSecondaryText( secTxt )
+
+        // Add ontouch event handler to the accordion
+        this.acc.setOnTouch( this.onTouch )
+
+        // Add controls to the first accordion layout
+        this.lay1 = this.acc.getLayout( 0 )
+        this.txt = ui.addText(this.lay1, "This is a text in the first layout.")
+
+        // Add controls to the second layout
+        this.lay2 = this.acc.getLayout( 1 )
+        this.btn = ui.addButton(this.lay2, "Button", "Primary")
+
+        // Add controls to the third layout
+        this.lay3 = this.acc.getLayout( 2 )
+        this.tfd = ui.addTextField(this.lay3, "", "Outlined", 0.3)
+        this.tfd.label = "Enter some text"
+    }
+    
+    onTouch(index, expand)
+    {
+        var msg = `${this.accords[index]} is ${expand ? "open" : "close"}`
+        ui.showPopup( msg )
+    }
+}
 </sample>
 
-<sample Adding controls>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen main layout.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+<sample Items manipulation>
+class Main extends App
+{
+    onStart()
+    {
+        this.count = 1;
 
-			var accords = [ "Accordion 1", "Accordion 2", "Accordion 3" ]
+        // Creates a fullscreen main layout.
+        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        this.main.setChildMargins(0, 0.01, 0, 0.01)
 
-			// Adds an accordion to the main layout
-			this.acc = ui.addAccordion( this.main, accords, "", 0.9 )
+        var accords = [ "Accordion 1", "Accordion 2", "Accordion 3" ]
 
-			// Get the first accordion layout
-			this.accLay1 = this.acc.getLayout( 0 )
+        // Adds an accordion to the main layout
+        this.acc = ui.addAccordion( this.main, accords, "", 0.9 )
 
-			// Adds a text control to the first accordion
-			ui.addText( this.accLay1, "This is a text in accordion 1." )
+        this.lay = ui.addLayout(this.main, "Linear", "Horizontal", 0.9)
+        this.lay.childSpacing = "evenly"
 
-			// Get the second accordion layout
-			this.accLay2 = this.acc.getLayout( 1 )
+        // add a button controls to add or remove accordion item
+        this.btn1 = ui.addButton( this.lay, "Append Item" )
+        this.btn1.setOnTouch( this.btn1_onTouch )
 
-			// Adds a button control to the second accordion
-			ui.addButton( this.accLay2, "My Button", "Outlined,Secondary,Large" )
+        this.btn2 = ui.addButton( this.lay, "Add Item in index 1" )
+        this.btn2.setOnTouch( this.btn2_onTouch )
 
-			// Get the third accordion layout by its title
-			this.accLay3 = this.acc.getLayout( "Accordion 3" )
+        this.btn3 = ui.addButton( this.lay, "Remove Item" )
+        this.btn3.setOnTouch(  this.btn3_onTouch )
+    }
 
-			// Adds a TextField control to the third accordion
-			this.tfd = ui.addTextField( this.accLay3, "", "Outlined" )
-    		this.tfd.label = "Type your name"
-		}
-	}
+    btn1_onTouch()
+    {
+        // add an item at the bottom of the accordion
+        this.acc.addItem( "New Bottom Title", "New secondary text" )
+    }
+
+    btn2_onTouch()
+    {
+        var title = "New Title " + this.count++
+        // insert item in the second index
+        this.acc.addItem( title, "New secondary text", 1 )
+    }
+
+    btn3_onTouch()
+    {
+        this.acc.removeItemByIndex( 2 )
+        ui.showPopup( "Second item is removed" )
+    }
+}
 </sample>
 
-<sample Add & removing>
-	class Main extends App
-	{
-		onStart()
-		{
-			// Creates a fullscreen main layout.
-			this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-			this.main.setChildMargins(0, 0.01, 0, 0.01)
+<sample Custom styles>
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen main layout.
+        this.main = ui.addLayout("main", "Linear", "VCenter")
 
-			var accords = [ "Accordion 1", "Accordion 2", "Accordion 3" ]
+        var items = ["Accordion 1", "Accordion 2", "Accordion 3"]
+        var texts = ["Description for item 1", "Description for item 2", "Description for item 3"];
 
-			// Adds an accordion to the main layout
-			this.acc = ui.addAccordion( this.main, accords, "", 0.9 )
+        // Adds an accordion to the main layout
+        this.acc = ui.addAccordion(this.main, items, "", 0.9)
+        this.acc.setSecondaryText( texts )
 
-			// Get the first accordion layout
-			this.accLay1 = this.acc.getLayout( 0 )
+        // Sets the background color
+        this.acc.backColor = "#b2dfdb"
 
-			// Adds a text control to the first accordion
-			ui.addText( this.accLay1, "This is a text in accordion 1." )
+        // Sets the text-sizes
+        this.acc.textSize1 = 18
+        this.acc.textSize2 = 14
 
-			// Get the second accordion layout
-			this.accLay2 = this.acc.getLayout( 1 )
+        // Sets the text colors
+        this.acc.textColor1 = "#00695c"
+        this.acc.textColor2 = "#009688"
 
-			// Adds a button control to the second accordion
-			ui.addButton( this.accLay2, "My Button", "Outlined,Secondary,Large" )
+        // Sets the corner radius
+        this.acc.cornerRadius = 14
 
-			// Get the third accordion layout by its title
-			this.accLay3 = this.acc.getLayout( "Accordion 3" )
-
-			// Adds a TextField control to the third accordion
-			this.tfd = ui.addTextField( this.accLay3, "", "Outlined" )
-			this.tfd.setLabel( "Type your name" )
-
-			// add a button controls to add or remove accordion item
-			this.btn1 = ui.addButton( this.main, "Append Item" )
-			this.btn1.setOnTouch( this.btn1_onTouch )
-
-			this.btn2 = ui.addButton( this.main, "Add Item in index 1" )
-			this.btn2.setOnTouch( this.btn2_onTouch )
-
-			this.btn3 = ui.addButton( this.main, "Remove Item" )
-			this.btn3.setOnTouch(  this.btn3_onTouch )
-		}
-
-		btn1_onTouch()
-		{
-			// add an item at the bottom of the accordion
-			this.acc.addItem( "New Bottom Title", "New secondary text" )
-		}
-
-		btn2_onTouch()
-		{
-			// insert item in the second index
-			this.acc.addItem( "New Second Title", "New secondary text", 1 )
-		}
-
-		btn3_onTouch()
-		{
-			this.acc.removeItemByIndex( 2 )
-		}
-	}
+        // Sets the expand icon
+        this.acc.expandIcon = "favorite"
+    }
+}
 </sample>
