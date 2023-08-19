@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetMemoryInfo #
  * @brief Get RAM memory information
@@ -7,19 +9,26 @@
 */
 
 
-// GetMemoryInfo.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     <b>var mem = app.GetMemoryInfo();</b>
     var s = JSON.stringify( mem );
     app.Alert( s.replace( /,/g, ",\n ") );
 }
-</sample>
-
-<sample Show Memory>
+ */
+    
+            
+    
+/**
+@sample Show Memory
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "fillxy,vcenter" );
@@ -47,7 +56,6 @@ function ShowMemory() {
 
     txt.SetHtml( text.fontcolor( color ));
 }
-</sample>
-
  */
-
+    
+            

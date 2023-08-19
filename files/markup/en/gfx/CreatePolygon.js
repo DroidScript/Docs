@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreatePolygon #
  * @abbrev pol
@@ -18,72 +20,46 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** @extern alpha */
+
+/** @extern angle */
+
+/** @extern Contains */
+
+/** @extern data */
+
+/** @extern graphic */
+
+/** @extern group */
+
+/** @extern height */
+
+/** @extern pivotX */
+
+/** @extern pivotY */
+
+/** @extern scaleX */
+
+/** @extern scaleY */
+
+/** @extern SetMatrix */
+
+/** @extern Update */
+
+/** @extern visible */
+
+/** @extern width */
+
+
+// ------------- SAMPLES ------------- 
+
+
+    
 /**
- * @extern alpha
- */
-
-/**
- * @extern angle
- */
-
-/**
- * @extern Contains
- */
-
-/**
- * @extern data
- */
-
-/**
- * @extern graphic
- */
-
-/**
- * @extern group
- */
-
-/**
- * @extern height
- */
-
-/**
- * @extern pivotX
- */
-
-/**
- * @extern pivotY
- */
-
-/**
- * @extern scaleX
- */
-
-/**
- * @extern scaleY
- */
-
-/**
- * @extern SetMatrix
- */
-
-/**
- * @extern Update
- */
-
-/**
- * @extern visible
- */
-
-/**
- * @extern width
- */
-// CreatePolygon.txt --> All the sample codes
-
-/** @Sample
-<sample>
+@sample 
 cfg.Game;
 
 function OnLoad()
@@ -96,7 +72,6 @@ function OnReady()
     gfx.AddGraphic( polygon, 0.2, 0.7 );
     gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

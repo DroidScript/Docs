@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetMacAddress #
  * @brief Get devices MAC address
@@ -7,16 +9,19 @@
 */
 
 
-// GetMacAddress.txt --> All the sample codes
 
-/** @Sample
-<sample Show MAC Address>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show MAC Address
 function OnStart()
 {
 	<b>var mac = app.GetMacAddress();</b>
 	app.ShowPopup( mac );
 }
-</sample>
-
  */
-
+    
+            

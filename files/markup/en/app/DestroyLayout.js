@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DestroyLayout #
  * @brief Destroy a layout
@@ -9,10 +11,14 @@
 */
 
 
-// DestroyLayout.txt --> All the sample codes
 
-/** @Sample
-<sample Destroy layout and check if deleted>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Destroy layout and check if deleted
 //Called when application is started.
 function OnStart()
 {
@@ -32,7 +38,6 @@ function btn_OnTouch()
     var text = this.GetText() || "nothing in here!";
 	app.ShowPopup(text);
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddDatePicker #
  * @abbrev dtp
@@ -13,9 +15,7 @@
 */
 
 
-// AddDatePicker.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

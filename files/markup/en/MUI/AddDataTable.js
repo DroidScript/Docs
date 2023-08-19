@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddDataTable #
  * @abbrev tbl
@@ -14,9 +16,7 @@
 */
 
 
-// AddDataTable.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

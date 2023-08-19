@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsWifiApEnabled #
  * @brief Check if the mobile Wifi Access Point is enabled
@@ -9,16 +11,19 @@
 */
 
 
-// IsWifiApEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Check WifiAccessPoint Enabled>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check WifiAccessPoint Enabled
 function OnStart()
 {
     <b>var wapEnabled = app.IsWifiApEnabled();</b>
     app.Alert( wapEnabled, "Wifi Access Point Enabled:" );
 }
-</sample>
-
  */
-
+    
+            

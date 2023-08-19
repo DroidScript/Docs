@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetIPAddress #
  * @brief Get network IP address
@@ -7,16 +9,19 @@
 */
 
 
-// GetIPAddress.txt --> All the sample codes
 
-/** @Sample
-<sample Show Device IP>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Device IP
 function OnStart()
 {
     var ip = app.GetIPAddress();
     app.Alert( ip );
 }
-</sample>
-
  */
-
+    
+            

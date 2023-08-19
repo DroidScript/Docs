@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsBtDevicePaired #
  * @brief Check bt paired state to other device
@@ -10,10 +12,14 @@
 */
 
 
-// IsBtDevicePaired.txt --> All the sample codes
 
-/** @Sample
-<sample Check Paired>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Paired
 function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
@@ -28,9 +34,12 @@ function OnStart()
     } else
         <b>app.ShowPopup( "No Paired devices found" );</b>
 }
-</sample>
-
-<sample Check Paired from Available>
+ */
+    
+            
+    
+/**
+@sample Check Paired from Available
 function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
@@ -51,9 +60,12 @@ function bt_OnFound( name, address )
 function bt_OnComplete() {
     app.HideProgress();
 }
-</sample>
-
-<sample Pairing and Unpairing bluetooth devices>
+ */
+    
+            
+    
+/**
+@sample Pairing and Unpairing bluetooth devices
 function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
@@ -107,7 +119,6 @@ function OnPair( name, address ) {
 function OnUnpair() {
     app.Alert( name + "  " + address, "Unpairing successful!" );
 }
-</sample>
-
  */
-
+    
+            

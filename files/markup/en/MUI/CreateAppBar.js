@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateAppBar #
  * @abbrev apb
@@ -13,7 +15,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetMenuIcon ###
@@ -58,93 +60,55 @@
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateAppBar.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Just a title>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Just a title
 cfg.Light
 cfg.MUI
 
@@ -178,12 +142,14 @@ function OnStart()
     * the page layout
     *
     * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
+    *_
 }
-</sample>
-
-
-<sample Sample page>
+ */
+    
+            
+    
+/**
+@sample Sample page
 cfg.Light
 cfg.MUI
 
@@ -229,11 +195,12 @@ function OnMenuTouch()
 {
     lay.Animate("SlideToBottom")
 }
-</sample>
-
-
-
-<sample Complete controls>
+ */
+    
+            
+    
+/**
+@sample Complete controls
 cfg.Light
 cfg.MUI
 
@@ -261,10 +228,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Dark mode>
+ */
+    
+            
+    
+/**
+@sample Dark mode
 cfg.Dark
 cfg.MUI
 
@@ -305,6 +274,6 @@ function OnControlTouch(text, index)
 {
     app.ShowPopup("You click " + text + ": Control index = "+index)
 }
-</sample>
  */
-
+    
+            

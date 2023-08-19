@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetTextBounds #
  * @brief Calculates text bounds
@@ -11,9 +13,7 @@
 */
 
 
-// GetTextBounds.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

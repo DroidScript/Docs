@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetUserAgent #
 
@@ -7,10 +9,14 @@
 */
 
 
-// SetUserAgent.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 var defaultUserAgent = navigator.userAgent;
 var myUserAgent = defaultUserAgent;
 
@@ -18,7 +24,6 @@ function OnStart()
 {
     app.SetUserAgent( myUserAgent );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # OpenUrl #
  * @brief Allow user to open an url with an external app
@@ -11,14 +13,18 @@
 */
 
 
-// OpenUrl.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	 <b>app.OpenUrl( "http://droidscript.org" );</b>
-}</sample>
-
+}
  */
-
+    
+            

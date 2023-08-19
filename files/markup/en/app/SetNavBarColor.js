@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetNavBarColor #
  * @brief Set NavBar color
@@ -9,14 +11,17 @@
 */
 
 
-// SetNavBarColor.txt --> All the sample codes
 
-/** @Sample
-<sample Change NavBar Color>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Change NavBar Color
 function OnStart() {
     <b>app.SetNavBarColor("green");</b>
 }
-</sample>
-
  */
-
+    
+            

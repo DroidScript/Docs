@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SimulateScroll #
 
@@ -13,9 +15,7 @@
 */
 
 
-// SimulateScroll.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonText #
  * @abbrev btt
@@ -12,9 +14,7 @@
 */
 
 
-// AddButtonText.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

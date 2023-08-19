@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddList #
  * @brief Create and add List to Layout.
@@ -14,9 +16,7 @@
 */
 
 
-// AddList.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

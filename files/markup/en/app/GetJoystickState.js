@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetJoystickState #
 
@@ -9,7 +11,7 @@
 */
 
 
-// GetJoystickState.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Returns the state of a connected joystick. The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.
@@ -17,10 +19,14 @@ Returns the state of a connected joystick. The key can have many values dependin
 See Also: @GetJoystickName
  */
 
-// GetJoystickState.txt --> All the sample codes
 
-/** @Sample
-<sample Show States>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show States
 function OnStart()
 {
 	lay = app.CreateLayout( "linear" );
@@ -50,7 +56,6 @@ function ShowStates()
 
     txt.SetText( lst.join( "\n" ) );
 }
-</sample>
-
  */
-
+    
+            

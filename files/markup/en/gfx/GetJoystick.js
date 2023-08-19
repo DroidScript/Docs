@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetJoystick #
  * @brief Get joystick states
@@ -8,9 +10,7 @@
 */
 
 
-// GetJoystick.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

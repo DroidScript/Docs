@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddBackground #
  * @brief Adds a background to the game
@@ -7,10 +9,14 @@
 */
 
 
-// AddBackground.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Game;
 
 function OnLoad()
@@ -23,7 +29,6 @@ function OnReady()
     <b>gfx.AddBackground( sky );</b>
 	gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

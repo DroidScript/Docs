@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DeleteDatabase #
  * @brief Deletes a database
@@ -9,9 +11,7 @@
 */
 
 
-// DeleteDatabase.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

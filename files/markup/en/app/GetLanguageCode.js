@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetLanguageCode #
  * @brief Get user language code
@@ -9,16 +11,19 @@
 */
 
 
-// GetLanguageCode.txt --> All the sample codes
 
-/** @Sample
-<sample Show User Language Code>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show User Language Code
 function OnStart()
 {
     <b>var code = app.GetLanguageCode();</b>
     app.Alert( code );
 }
-</sample>
-
  */
-
+    
+            

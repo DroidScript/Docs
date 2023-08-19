@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateShortcut #
  * @brief Creates a Home-Screen shortcut to an app
@@ -11,17 +13,20 @@
 */
 
 
-// CreateShortcut.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
     <b>var file = app.GetAppPath() + "/" + app.GetAppName() + ".js";
 	app.CreateShortcut( "Demo", "/Sys/Img/Icon.png", file );</b>
     app.ShowPopup( "Add Shortcut" );
 }
-</sample>
-
  */
-
+    
+            

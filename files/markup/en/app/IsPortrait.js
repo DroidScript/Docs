@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsPortrait #
  * @brief Check if device is in portrait mode
@@ -7,16 +9,19 @@
 */
 
 
-// IsPortrait.txt --> All the sample codes
 
-/** @Sample
-<sample Check Portrait>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Portrait
 function OnStart()
 {
     <b>var isPortrait = app.IsPortrait();</b>
     app.Alert( isPortrait, "is Portrait:" );
 }
-</sample>
-
  */
-
+    
+            

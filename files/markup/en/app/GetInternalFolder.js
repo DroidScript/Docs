@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetInternalFolder #
  * @brief Get internal storage path
@@ -9,16 +11,19 @@
 */
 
 
-// GetInternalFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Show Internal Storage Path>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Internal Storage Path
 function OnStart()
 {
     <b>var dir = app.GetInternalFolder();</b>
     app.Alert( dir );
 }
-</sample>
-
  */
-
+    
+            

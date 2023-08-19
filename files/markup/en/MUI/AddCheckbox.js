@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddCheckbox #
  * @abbrev chc
@@ -13,9 +15,7 @@
 */
 
 
-// AddCheckbox.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

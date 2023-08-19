@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDialog #
  * @abbrev dlg
@@ -10,7 +12,7 @@
 */
 
 
-// CreateDialog.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Custom dialogs appear on top of the app and thus can be used to show temporary information or collect data from the user. They are also useful for displaying configuration or settings controls.
@@ -30,7 +32,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddLayout ###
@@ -40,21 +42,13 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Dismiss
- */
+/** @extern Dismiss */
 
 /** ### EnableBackKey ###
  * En/Disables the device back key to hide the dialog.
@@ -63,33 +57,19 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
 /** ### GetTitleHeight ###
  * Returns the height of the title bar.
@@ -98,9 +78,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -109,37 +87,21 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RemoveLayout ###
  * Removes a content layout.
@@ -148,9 +110,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
 /** ### SetBackColor ###
  * Changes the background color of the control.
@@ -160,33 +120,19 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnBack ###
  * %cb% the device's back button was pressed while the dialog was on front.
@@ -202,25 +148,15 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetTitle ###
  * Changes the title of the dialog.
@@ -266,22 +202,19 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
  */
 
 
+/** @extern SetVisibility */
+
+/** @extern Show */
+
+/** @extern Tween */
+
+
+// ------------- SAMPLES ------------- 
+
+
+    
 /**
- * @extern SetVisibility
- */
-
-/**
- * @extern Show
- */
-
-/**
- * @extern Tween
- */
-// CreateDialog.txt --> All the sample codes
-
-/** @Sample
-<sample Demo>
-
+@sample Demo
 function OnStart()
 {
 	dlg = app.CreateDialog( "Custom Dialog" );
@@ -305,7 +238,6 @@ function btnDlg_OnTouch()
 {
 	dlg.Dismiss();
 }
-</sample>
-
  */
-
+    
+            

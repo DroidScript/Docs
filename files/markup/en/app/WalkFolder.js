@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # WalkFolder #
  * @brief Lists the contents of a folder recursively
@@ -11,9 +13,7 @@
 */
 
 
-// WalkFolder.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

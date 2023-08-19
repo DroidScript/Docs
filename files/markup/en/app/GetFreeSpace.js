@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetFreeSpace #
  * @brief Get remaining storage size
@@ -8,10 +10,14 @@
 */
 
 
-// GetFreeSpace.txt --> All the sample codes
 
-/** @Sample
-<sample Show remaining internal and external storage>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show remaining internal and external storage
 function OnStart()
 {
     <b>var intSize = Math.round(app.GetFreeSpace("internal") * 1024);
@@ -23,7 +29,6 @@ function OnStart()
 
     app.Alert( text );
 }
-</sample>
-
  */
-
+    
+            

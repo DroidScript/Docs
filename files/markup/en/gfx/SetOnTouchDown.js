@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnTouchDown #
  * @brief Set callback for touch down
@@ -6,9 +8,7 @@
 */
 
 
-// SetOnTouchDown.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

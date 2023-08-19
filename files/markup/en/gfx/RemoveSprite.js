@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveSprite #
  * @brief Remove sprite from game
@@ -7,9 +9,7 @@
 */
 
 
-// RemoveSprite.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

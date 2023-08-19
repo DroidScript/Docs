@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddFABElegant #
  * @abbrev fab
@@ -11,9 +13,7 @@
 */
 
 
-// AddFABElegant.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddRadioButtons #
  * @abbrev rdb
@@ -15,9 +17,7 @@
 */
 
 
-// AddRadioButtons.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

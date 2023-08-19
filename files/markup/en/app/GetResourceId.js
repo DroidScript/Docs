@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetResourceId #
  * @brief Get ID of a resource
@@ -11,10 +13,7 @@
 */
 
 
-// GetResourceId.txt --> All the sample codes
 
-/** @Sample
- 
 
- */
+// ------------- SAMPLES ------------- 
 

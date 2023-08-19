@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CheckLicense #
  * @brief Checks if app is licensed with Google Play
@@ -9,9 +11,7 @@
 */
 
 
-// CheckLicense.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

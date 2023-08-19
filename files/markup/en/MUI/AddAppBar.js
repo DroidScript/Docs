@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddAppBar #
  * @abbrev apb
@@ -13,10 +15,14 @@
 */
 
 
-// AddAppBar.txt --> All the sample codes
 
-/** @Sample
-<sample AddAppBar>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddAppBar
 cfg.Light
 cfg.MUI
 
@@ -29,6 +35,6 @@ function OnStart()
         apb3 = MUI.AddAppBar(lay, "Search product", "search", null, "Modern,Rectangle")
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

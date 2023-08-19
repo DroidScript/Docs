@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # KillApp #
  * @brief Kill an app by its pid
@@ -7,10 +9,14 @@
 */
 
 
-// KillApp.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	<b>var apps = app.GetRunningApps();
@@ -21,7 +27,6 @@ function OnStart()
     app.KillApp( pid );</b>
     app.ShowPopup( "Done" ); // not shown
 }
-</sample>
-
  */
-
+    
+            

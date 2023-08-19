@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextJumbo #
  * @abbrev txj
@@ -14,9 +16,7 @@
 */
 
 
-// AddTextJumbo.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

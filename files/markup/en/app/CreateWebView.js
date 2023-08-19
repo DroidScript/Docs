@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateWebView #
  * @abbrev web
@@ -12,7 +14,7 @@
 */
 
 
-// CreateWebView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 You can create a control to display local or remote web pages in your App using the **CreateWebView** method.
@@ -28,16 +30,12 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
 /** ### Back ###
  * Loads the previous page from history.
@@ -45,9 +43,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### CanGoBack ###
  * Check whether the user can travel back in history.
@@ -70,9 +66,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * Clears the page history for Back() and Forward()
@@ -88,9 +82,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
 /** ### Forward ###
  * Loads the following page from history.
@@ -106,33 +98,19 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -148,33 +126,19 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
 /** ### LoadHtml ###
  * Loads html code to the WebView.
@@ -193,9 +157,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Print ###
  * Print current page via the builtin android printer dialog. *  * Note: Available since Android 4.4 KitKat
@@ -209,25 +171,15 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetBlockedUrls ###
  * Define a list of urls that are blocked for loading.
@@ -236,17 +188,11 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
 /** ### SetErrorPage ###
  * Define a url loaded when an error occured.
@@ -255,9 +201,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetTextZoom ###
  * Scales the html text by a given factor.
@@ -294,9 +238,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
 /** ### SetOnUrl ###
  * %cb% the user clicked a link.
@@ -305,13 +247,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
 /** ### SetRedirect ###
  * Add a url redirection rule.
@@ -321,13 +259,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetTouchMode ###
  * Set the control in touch mode.
@@ -351,13 +285,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### SimulateKey ###
  * Simulates a key event on an app object. *  * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
@@ -374,13 +304,15 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/**
- * @extern Tween
- */
-// CreateWebView.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Remote>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Remote
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -398,9 +330,12 @@ function web_OnProgess( progress )
 {
 	 app.Debug( "progress = " + progress );
 }
-</sample>
-
-<sample Local File>
+ */
+    
+            
+    
+/**
+@sample Local File
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -413,9 +348,12 @@ function OnStart()
 
 	 web.LoadUrl( "file:///Sys/Html/Page.htm" );
 }
-</sample>
-
-<sample Direct Html>
+ */
+    
+            
+    
+/**
+@sample Direct Html
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -434,7 +372,6 @@ function OnStart()
 
 	 web.LoadHtml( html, "file:///Sys/" );
 }
-</sample>
-
  */
-
+    
+            

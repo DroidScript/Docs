@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetStatusBarColor #
  * @brief Set status bar color
@@ -9,14 +11,17 @@
 */
 
 
-// SetStatusBarColor.txt --> All the sample codes
 
-/** @Sample
-<sample Set StatusBar Color>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Set StatusBar Color
 function OnStart() {
     <b>app.SetStatusBarColor("green");</b>
 }
-</sample>
-
  */
-
+    
+            

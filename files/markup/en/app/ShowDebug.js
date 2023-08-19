@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowDebug #
  * @brief Show the in-app debug console
@@ -9,10 +11,14 @@
 */
 
 
-// ShowDebug.txt --> All the sample codes
 
-/** @Sample
-<sample Toggle Debug>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Toggle Debug
 function OnStart()
 {
     app.CreateDebug();
@@ -31,7 +37,6 @@ function ShowDebug( show )
 {
     <b>app.ShowDebug( show );</b>
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSprite #
  * @brief Adds a sprite object
@@ -13,11 +15,14 @@
 */
 
 
-// AddSprite.txt --> All the sample codes
 
-/** @Sample
-<sample>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 cfg.Game;
 
 function OnLoad()
@@ -30,7 +35,6 @@ function OnReady()
     gfx.AddSprite( droid, 0.2, 0.4, 0.5 );
     gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

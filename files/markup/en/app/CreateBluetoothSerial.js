@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateBluetoothSerial #
  * @abbrev bls
@@ -11,12 +13,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Clear ###
  * Clears the Bluetooth buffer of the serial connection.
@@ -74,9 +74,7 @@
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RequestEnable ###
  * If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.
@@ -133,11 +131,14 @@
  * @param {str} data 
  */
 
-// CreateBluetoothSerial.txt --> All the sample codes
 
-/** @Sample
-<sample Connect to Device>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Connect to Device
 function OnStart()
 {
     app.ShowProgress( "Enabling Bluetooth" );
@@ -176,7 +177,6 @@ function bt_OnConnect( ok, data )
     } else
         app.ShowPopup( "Failed to connect!" );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ScreenShot #
  * @brief Take a screen shot of your app
@@ -10,10 +12,14 @@
 */
 
 
-// ScreenShot.txt --> All the sample codes
 
-/** @Sample
-<sample Take Screenshot>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Take Screenshot
 function OnStart()
 {
     lay = app.CreateLayout( "linear" );
@@ -26,7 +32,6 @@ function OnStart()
     <b>app.ScreenShot( "/sdcard/file.jpg" );</b>
     img.SetImage( "/sdcard/file.jpg" );
 }
-</sample>
-
  */
-
+    
+            

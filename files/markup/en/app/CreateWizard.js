@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateWizard #
  * @abbrev wiz
@@ -11,7 +13,7 @@
 */
 
 
-// CreateWizard.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user.
@@ -30,16 +32,12 @@ In case the user cancels the wizard the index is **-1**.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern Dismiss
- */
+/** @extern Dismiss */
 
 /** ### Finish ###
  * Indicate that the Wizard is going to finish on the next page.
@@ -74,21 +72,19 @@ In case the user cancels the wizard the index is **-1**.
  */
 
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Show
- */
-// CreateWizard.txt --> All the sample codes
+/** @extern Show */
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
     var theme = app.CreateTheme( "light" );
@@ -140,7 +136,6 @@ function OnWizard( lay, page )
         app.ShowPopup( "Wizard cancelled" );
     }
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateLayout #
  * @abbrev lay
@@ -10,7 +12,7 @@
 */
 
 
-// CreateLayout.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 4 types of layouts: _**“Linear”**_, _**“Absolute”**_, _**“Frame”**_ and _**“Card”**_.
@@ -45,7 +47,7 @@ They may be used to display offers with an image and optional info text.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddChild ###
@@ -56,17 +58,11 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### ChildToFront ###
  * Moves a child in front of all other children.
@@ -75,9 +71,7 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### DestroyChild ###
  * Destroys and removes a child from the layout.
@@ -86,17 +80,11 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetChildOrder ###
  * Returns the z order of a child.
@@ -106,25 +94,15 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -133,37 +111,21 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RemoveChild ###
  * Removes a child from the layout.
@@ -172,29 +134,17 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetChildMargins ###
  * Set margins of top-level children.
@@ -229,13 +179,9 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
 /** ### SetGravity ###
  * Adjust the placing of contained children.
@@ -244,9 +190,7 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnChildChange ###
  * Defines a callback function which is called when the content of a child control has been changed by the user.
@@ -255,25 +199,15 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetOnTouchDown
- */
+/** @extern SetOnTouchDown */
 
-/**
- * @extern SetOnTouchMove
- */
+/** @extern SetOnTouchMove */
 
-/**
- * @extern SetOnTouchUp
- */
+/** @extern SetOnTouchUp */
 
 /** ### SetOrientation ###
  * Change the children orientation.
@@ -282,25 +216,15 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTouchable
- */
+/** @extern SetTouchable */
 
 /** ### SetTouchThrough ###
  * Define whether the layout should forward OnTouch events to underlying controls.
@@ -309,21 +233,19 @@ They may be used to display offers with an image and optional info text.
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateLayout.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Vertical>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Vertical
 function OnStart()
 {
 	<b>lay = app.CreateLayout( "Linear", "Vertical" );</b>
@@ -339,9 +261,12 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
-<sample Horizontal>
+ */
+    
+            
+    
+/**
+@sample Horizontal
 function OnStart()
 {
 	<b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );</b>
@@ -357,9 +282,12 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
-<sample Combined>
+ */
+    
+            
+    
+/**
+@sample Combined
 function OnStart()
 {
 	layVert = app.CreateLayout( "Linear", "Vertical,FillXY" );
@@ -382,9 +310,12 @@ function OnStart()
 
 	app.AddLayout( layVert );
 }
-</sample>
-
-<sample Image Swap>
+ */
+    
+            
+    
+/**
+@sample Image Swap
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -413,7 +344,6 @@ function btn_OnTouch()
 	else
 	   img2.SetVisibility( "Hide" );
 }
-</sample>
-
  */
-
+    
+            

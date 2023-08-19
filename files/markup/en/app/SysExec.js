@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SysExec #
  * @brief Execute a shell command on the android shell
@@ -13,10 +15,14 @@
 */
 
 
-// SysExec.txt --> All the sample codes
 
-/** @Sample
-<sample ListDir SH>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample ListDir SH
 function OnStart()
 {
     <b>var delim = "\0";
@@ -30,7 +36,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

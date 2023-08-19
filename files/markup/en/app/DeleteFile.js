@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DeleteFile #
  * @brief Deletes a file
@@ -9,10 +11,14 @@
 */
 
 
-// DeleteFile.txt --> All the sample codes
 
-/** @Sample
-<sample Delete created file>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Delete created file
 function OnStart()
 {
     app.WriteFile( "myFile.txt", "Bye World!\n", "Append" );
@@ -24,7 +30,6 @@ function OnStart()
     else
 	    app.ShowPopup("myFile was deleted!");
 }
-</sample>
-
  */
-
+    
+            

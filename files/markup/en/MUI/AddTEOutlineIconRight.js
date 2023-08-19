@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTEOutlineIconRight #
  * @abbrev teo
@@ -16,9 +18,7 @@
 */
 
 
-// AddTEOutlineIconRight.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

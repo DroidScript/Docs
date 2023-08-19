@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # EnablePhysics #
  * @brief En/Disables the physics engine
@@ -7,9 +9,7 @@
 */
 
 
-// EnablePhysics.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

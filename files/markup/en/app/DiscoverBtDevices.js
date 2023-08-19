@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DiscoverBtDevices #
  * @brief Search for nearby bluetooth devices
@@ -7,7 +9,7 @@
 */
 
 
-// DiscoverBtDevices.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Use DiscoverBtDevices to search for other bluetooth devices which are not paired with the current device. If any was found it will be forwarded directly to the **onFound** callback. If the search has finished **onComplete** function will be called.
@@ -15,11 +17,14 @@ Use DiscoverBtDevices to search for other bluetooth devices which are not paired
 See Also: @CreateBluetoothSerial, @PairBtDevice, @IsBtDevicePaired
  */
 
-// DiscoverBtDevices.txt --> All the sample codes
 
-/** @Sample
-<sample Discover Bluetooth Devices>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Discover Bluetooth Devices
 function OnStart()
 {
     app.SetBluetoothEnabled(true);
@@ -45,7 +50,6 @@ function OnComplete()
 {
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

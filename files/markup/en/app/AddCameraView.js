@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddCameraView #
  * @brief Create and add CameraView to Layout.
@@ -12,9 +14,7 @@
 */
 
 
-// AddCameraView.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

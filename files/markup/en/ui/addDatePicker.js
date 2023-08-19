@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addDatePicker #
  * @abbrev dtp
@@ -10,7 +12,7 @@
 */
 
 
-// addDatePicker.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a date picker component to the app.
@@ -22,7 +24,7 @@ Adds a date picker component to the app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### show ###
@@ -65,12 +67,14 @@ Adds a date picker component to the app.
  * @returns bin
  */
 
-// addDatePicker.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Default>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Default
 class Main extends App 
 {
     onStart()
@@ -93,9 +97,12 @@ class Main extends App
         this.dtp.show()
     }
 }
-</sample>
-
-<sample Default>
+ */
+    
+            
+    
+/**
+@sample Default
 class Main extends App 
 {
     onStart()
@@ -118,9 +125,12 @@ class Main extends App
         this.dtp.show()
     }
 }
-</sample>
-
-<sample With initial value & portrait>
+ */
+    
+            
+    
+/**
+@sample With initial value & portrait
 class Main extends App 
 {
     onStart()
@@ -143,9 +153,12 @@ class Main extends App
         this.dtp.show()
     }
 }
-</sample>
-
-<sample With limits & callback>
+ */
+    
+            
+    
+/**
+@sample With limits & callback
 class Main extends App 
 {
     onStart()
@@ -174,6 +187,6 @@ class Main extends App
         console.log( value )
     }
 }
-</sample>
  */
-
+    
+            

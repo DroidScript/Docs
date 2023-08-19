@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # UploadFile #
  * @brief Uploads a file to a server
@@ -9,10 +11,14 @@
 */
 
 
-// UploadFile.txt --> All the sample codes
 
-/** @Sample
-<sample Upload File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Upload File
 function OnStart()
 {
     var name = app.GetAppName() + ".js";
@@ -25,7 +31,6 @@ function OnUpload( error, file, result )
     if(error) app.Alert( "Upload Failed!" )
     else app.ShowPopup( "Response:\n" + result, "Upload Successful!" );
 }
-</sample>
-
  */
-
+    
+            

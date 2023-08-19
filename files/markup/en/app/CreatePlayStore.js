@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreatePlayStore #
  * @abbrev pls
@@ -8,7 +10,7 @@
 */
 
 
-// CreatePlayStore.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Creates a new PlayStore instance for retreiving informations or purchasing items.
@@ -19,12 +21,10 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetBillingInfo ###
  * Get product info of paid items from Google Play.
@@ -59,9 +59,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
  * @param {str} options SUBS
  */
 
-// CreatePlayStore.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

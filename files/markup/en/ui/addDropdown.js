@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addDropdown #
  * @abbrev dpd
@@ -13,7 +15,7 @@
 */
 
 
-// addDropdown.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a dropdown component into your layout.
@@ -25,7 +27,7 @@ Adds a dropdown component into your layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnChange ###
@@ -265,12 +267,14 @@ Adds a dropdown component into your layout.
  * @param {num} zIndex The z
  */
 
-// addDropdown.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -293,9 +297,12 @@ class Main extends App
         ui.showPopup( "Value is " + text )
     }
 }
-</sample>
-
-<sample Custom styles>
+ */
+    
+            
+    
+/**
+@sample Custom styles
 class Main extends App
 {
     onStart()
@@ -328,6 +335,6 @@ class Main extends App
         ui.showPopup( "Value is " + text )
     }
 }
-</sample>
  */
-
+    
+            

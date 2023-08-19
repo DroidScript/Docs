@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEditOutline #
  * @abbrev teo
@@ -13,9 +15,7 @@
 */
 
 
-// AddTextEditOutline.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

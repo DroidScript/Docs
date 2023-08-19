@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsConnected #
  * @brief Check if device is connected to any network
@@ -9,16 +11,19 @@
 */
 
 
-// IsConnected.txt --> All the sample codes
 
-/** @Sample
-<sample Check Connected>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Connected
 function OnStart()
 {
     <b>var isConnected = app.IsConnected();</b>
     app.Alert( isConnected, "is Connected:" );
 }
-</sample>
-
  */
-
+    
+            

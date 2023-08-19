@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ToBack #
  * @brief Put the app in the background
@@ -8,10 +10,14 @@
 */
 
 
-// ToBack.txt --> All the sample codes
 
-/** @Sample
-<sample App to Background>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample App to Background
 function OnStart()
 {
     alert( "App will now go to back." );
@@ -27,7 +33,6 @@ function OnResume()
 {
     app.ShowPopup( "OnResume" );
 }
-</sample>
-
  */
-
+    
+            

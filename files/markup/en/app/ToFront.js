@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ToFront #
  * @brief Bring your app to the foreground
@@ -8,10 +10,14 @@
 */
 
 
-// ToFront.txt --> All the sample codes
 
-/** @Sample
-<sample Hide and Peek>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Hide and Peek
 function OnStart()
 {
     app.ToBack();
@@ -27,7 +33,6 @@ function OnResume()
 {
     app.ShowPopup( "OnResume" );
 }
-</sample>
-
  */
-
+    
+            

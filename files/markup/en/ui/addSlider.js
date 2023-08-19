@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addSlider #
  * @abbrev sld
@@ -13,7 +15,7 @@
 */
 
 
-// addSlider.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a Slider Component into your App.
@@ -29,7 +31,7 @@ Adds a Slider Component into your App.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnChange ###
@@ -202,20 +204,25 @@ Adds a Slider Component into your App.
  * @param {num} zIndex The z
  */
 
-// addSlider.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Marks array>
-    var marks = [
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Marks array
+var marks = [
         { label: "First stop", value: 10 },
         { label: "Second stop", value: 30 },
         { label: "Third stop", value: 70 }
     ]
-</sample>
-
-<sample Basic slider>
+ */
+    
+            
+    
+/**
+@sample Basic slider
 class Main extends App
 {
     onStart()
@@ -239,9 +246,12 @@ class Main extends App
         this.popup.show()
     }
 }
-</sample>
-
-<sample Slider steps and marks>
+ */
+    
+            
+    
+/**
+@sample Slider steps and marks
 class Main extends App
 {
     onStart()
@@ -270,9 +280,12 @@ class Main extends App
         this.txt.text = "Value is " + value
     }
 }
-</sample>
-
-<sample Slider with custom step marks>
+ */
+    
+            
+    
+/**
+@sample Slider with custom step marks
 class Main extends App
 {
     onStart()
@@ -306,9 +319,12 @@ class Main extends App
         this.txt.text = "Value is " + value
     }
 }
-</sample>
-
-<sample Vertical slider>
+ */
+    
+            
+    
+/**
+@sample Vertical slider
 class Main extends App
 {
     onStart()
@@ -332,6 +348,6 @@ class Main extends App
         this.popup.show()
     }
 }
-</sample>
  */
-
+    
+            

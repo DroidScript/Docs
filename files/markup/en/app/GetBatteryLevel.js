@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetBatteryLevel #
  * @brief Get current battery level
@@ -9,16 +11,19 @@
 */
 
 
-// GetBatteryLevel.txt --> All the sample codes
 
-/** @Sample
-<sample Show Battery Level>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Battery Level
 function OnStart()
 {
     <b>var lvl = app.GetBatteryLevel();</b>
     app.Alert( lvl );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateGLView #
  * @abbrev glv
@@ -11,7 +13,7 @@
 */
 
 
-// CreateGLView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.
@@ -45,7 +47,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### aspect
@@ -55,9 +57,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
                     
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### canvas
  * @prop
@@ -66,9 +66,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
                     
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### CreateImage ###
  * Create a sprite object which can be drawn on the GLView
@@ -107,17 +105,11 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetContext ###
  * Returns the current FastCanvas context
@@ -235,25 +227,15 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -262,17 +244,11 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
 /** ### height
  * @prop
@@ -281,25 +257,15 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
                     
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Render ###
  * Render all draw commands to the canvas
@@ -307,81 +273,43 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetOnTouchDown
- */
+/** @extern SetOnTouchDown */
 
-/**
- * @extern SetOnTouchMove
- */
+/** @extern SetOnTouchMove */
 
-/**
- * @extern SetOnTouchUp
- */
+/** @extern SetOnTouchUp */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTouchable
- */
+/** @extern SetTouchable */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
 /** ### width
  * @prop
@@ -389,10 +317,14 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @returns num_int
  */
 
-                    // CreateGLView.txt --> All the sample codes
+                    
 
-/** @Sample
-<sample DrawImage>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample DrawImage
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY" );
@@ -410,9 +342,12 @@ function DrawFrame()
 	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 );
 	glview.Render();
 }
-</sample>
-
-<sample Render Loop>
+ */
+    
+            
+    
+/**
+@sample Render Loop
 var angle = 0;
 
 function OnStart()
@@ -441,9 +376,12 @@ function DrawFrame()
 
 	glview.Render();
 }
-</sample>
-
-<sample Sprite Sheet Animation>
+ */
+    
+            
+    
+/**
+@sample Sprite Sheet Animation
 var spriteCount = 8;
 var srcWidth = 50;
 var srcHeight = 60;
@@ -478,9 +416,13 @@ function DrawFrame()
 
 	glview.Render();
 	frameCount++;
-}</sample>
-
-<sample Sprite Touch>
+}
+ */
+    
+            
+    
+/**
+@sample Sprite Touch
 objects = [];
 
 //Called when application is started.
@@ -536,7 +478,6 @@ function touched(img, ev) {
 	return img.X < ev.X && img.X + img.W > ev.X
 		&& img.Y < ev.Y && img.Y + img.H > ev.Y;
 }
-</sample>
-
  */
-
+    
+            

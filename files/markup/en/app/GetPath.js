@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetPath #
  * @brief Get APK's local storage path
@@ -9,16 +11,19 @@
 */
 
 
-// GetPath.txt --> All the sample codes
 
-/** @Sample
-<sample Show App Path>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show App Path
 function OnStart()
 {
     <b>var path = app.GetPath();</b>
     app.Alert( path );
 }
-</sample>
-
  */
-
+    
+            

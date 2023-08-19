@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateLocator #
  * @abbrev loc
@@ -10,7 +12,7 @@
 */
 
 
-// CreateLocator.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The Locator component can be used to find your whereabouts on the planet using either your device's GPS or information from your network. The provider specifies where the locator should retreive its information from . “Network” means get the location from the cell network and wifi, “GPS” tells the locator to use the device's GPS
@@ -21,12 +23,10 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetBearingTo ###
  * Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.
@@ -78,10 +78,14 @@ To get regulat updates about your current positino use the **SetOnChange** funct
  * $$ loc.Stop() $$
  */
 
-// CreateLocator.txt --> All the sample codes
 
-/** @Sample
-<sample Get Location Updates>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Location Updates
 function OnStart()
 {
 	<b>loc = app.CreateLocator("GPS,Network");
@@ -95,7 +99,6 @@ function loc_OnChange(pos)
 	var msg = pos.latitude + ", " + pos.longitude;
 	app.ShowPopup( msg );
 }
-</sample>
-
  */
-
+    
+            

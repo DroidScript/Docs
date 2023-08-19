@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SaveCookies #
  * @brief Save web cookies
@@ -8,9 +10,7 @@
 */
 
 
-// SaveCookies.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetRingerMode #
  * @brief Set current device ringer mode
@@ -9,10 +11,14 @@
 */
 
 
-// SetRingerMode.txt --> All the sample codes
 
-/** @Sample
-<sample SetRingerMode Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample SetRingerMode Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -38,7 +44,7 @@ function Notify()
     var ntf = app.CreateNotification();
     ntf.SetMessage( "RingerMode Demo", "RingerMode Demo notifies:", "Helo World" );
     ntf.Notify();
-}</sample>
-
+}
  */
-
+    
+            

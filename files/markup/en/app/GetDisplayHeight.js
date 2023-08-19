@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDisplayHeight #
  * @brief Get apps display height
@@ -9,16 +11,19 @@
 */
 
 
-// GetDisplayHeight.txt --> All the sample codes
 
-/** @Sample
-<sample Show display height>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show display height
 function OnStart()
 {
     <b>var height = app.GetDisplayHeight();</b>
     app.Alert( height );
 }
-</sample>
-
  */
-
+    
+            

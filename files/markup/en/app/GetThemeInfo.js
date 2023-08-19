@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetThemeInfo #
  * @brief Get theme configuration
@@ -7,9 +9,7 @@
 */
 
 
-// GetThemeInfo.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

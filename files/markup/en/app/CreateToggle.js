@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateToggle #
  * @abbrev tgl
@@ -12,7 +14,7 @@
 */
 
 
-// CreateToggle.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Toggle buttons are basically [Buttons](CreateButton.htm) with an additional light bar indicating if it is activated or not. The user can toggle this state by pressing on it.
@@ -27,36 +29,22 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetChecked ###
  * Returns whether the toggle is currently activated
@@ -65,33 +53,19 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -100,57 +74,31 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetChecked ###
  * Change the current checked state of the toggle.
@@ -159,21 +107,13 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  */
 
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnTouch ###
  * Called when the control has been clicked by the user.
@@ -182,21 +122,13 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetStyle ###
  * Costomize the look of the toggle.
@@ -210,33 +142,25 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  */
 
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateToggle.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -252,7 +176,6 @@ function ShowState( isChecked )
 {
     app.ShowPopup( "Checked = " + isChecked, "Short" );
 }
-</sample>
-
  */
-
+    
+            

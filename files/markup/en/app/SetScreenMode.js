@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetScreenMode #
 
@@ -7,10 +9,14 @@
 */
 
 
-// SetScreenMode.txt --> All the sample codes
 
-/** @Sample
-<sample SetScreenMode Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample SetScreenMode Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "Vertical,VCenter,FillXY" );
@@ -26,7 +32,6 @@ function SetScreenMode( mode )
 {
     <b>app.SetScreenMode( mode );</b>
 }
-</sample>
-
  */
-
+    
+            

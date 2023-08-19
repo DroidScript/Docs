@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SendMail #
  * @brief Open the EMail app and autofill fields
@@ -12,7 +14,7 @@
 */
 
 
-// SendMail.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Send an EMail to someone using the default mail application. The passed argumets will be auto-filled.
@@ -33,15 +35,19 @@ See Also: @SendSMS, @SendFile
 
  */
 
-// SendMail.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
     app.CopyFile( "/Sys/Img/Hello.png", "/sdcard/Hello.png" );
     <b>app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png" );</b>
-}</sample>
-
+}
  */
-
+    
+            

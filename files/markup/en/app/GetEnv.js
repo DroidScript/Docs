@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetEnv #
  * @brief Get environment variable
@@ -8,16 +10,19 @@
 */
 
 
-// GetEnv.txt --> All the sample codes
 
-/** @Sample
-<sample Show PATH environment variable>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show PATH environment variable
 function OnStart()
 {
     <b>var envPath = app.GetEnv("PATH");</b>
     app.Alert( envPath );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetAutoWifi #
  * @brief Automatically enable the WiFi editor
@@ -9,15 +11,18 @@
 */
 
 
-// SetAutoWifi.txt --> All the sample codes
 
-/** @Sample
-<sample Auto Enable WiFi>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Auto Enable WiFi
 function OnStart()
 {
 	app.SetAutoWifi( true );
 }
-</sample>
-
  */
-
+    
+            

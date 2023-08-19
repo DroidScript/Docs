@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # showPopup #
  * @abbrev pop
@@ -12,7 +14,7 @@
 */
 
 
-// showPopup.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Shows a popup into your app.
@@ -24,7 +26,7 @@ Shows a popup into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnClose ###
@@ -67,12 +69,14 @@ Shows a popup into your app.
  * @returns obj
  */
 
-// showPopup.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -93,9 +97,12 @@ class Main extends App
         ui.showPopup("Hello from popup!")
     }
 }
-</sample>
-
-<sample Popups with transitions>
+ */
+    
+            
+    
+/**
+@sample Popups with transitions
 class Main extends App
 {
     onStart()
@@ -125,9 +132,12 @@ class Main extends App
         ui.showPopup("Hello world.", "Bottom,Slide", 1500)
     }
 }
-</sample>
-
-<sample With Transition>
+ */
+    
+            
+    
+/**
+@sample With Transition
 class Main extends App
 {
     onStart()
@@ -158,6 +168,6 @@ class Main extends App
         ui.showPopup("Login is click. Show login Page.")
     }
 }
-</sample>
  */
-
+    
+            

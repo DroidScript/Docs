@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsCharging #
  * @brief Check whether device is charging
@@ -9,16 +11,19 @@
 */
 
 
-// IsCharging.txt --> All the sample codes
 
-/** @Sample
-<sample Check Charging State>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Charging State
 function OnStart()
 {
     <b>var charging = app.IsCharging();</b>
     app.Alert( charging, "is charging:" );
 }
-</sample>
-
  */
-
+    
+            

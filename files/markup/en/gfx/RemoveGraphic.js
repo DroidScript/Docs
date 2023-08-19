@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveGraphic #
  * @brief Remove graphic from game
@@ -7,9 +9,7 @@
 */
 
 
-// RemoveGraphic.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

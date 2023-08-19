@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateGame #
  * @abbrev gam
@@ -9,7 +11,7 @@
 */
 
 
-// CreateGame.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script.
@@ -63,7 +65,7 @@ function OnReady()
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### game
@@ -79,16 +81,19 @@ function OnReady()
  * @returns dso-CreateLayout
  */
 
-                    // CreateGame.txt --> All the sample codes
+                    
 
-/** @Sample
-<sample Demo>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	app.CopyFile("/assets/samples/Game_Bounce.js", "script.js");
 	app.CreateGame("script.js", "landscape");
 }
-</sample>
-
  */
-
+    
+            

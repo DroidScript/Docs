@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StopDebugServer #
  * @brief Stop a running debug server
@@ -8,9 +10,7 @@
 */
 
 
-// StopDebugServer.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetPriority #
  * @brief Change GUI thread priority
@@ -7,9 +9,7 @@
 */
 
 
-// SetPriority.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

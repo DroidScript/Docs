@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnKey #
  * @brief Catch key events fired in your app
@@ -6,7 +8,7 @@
 */
 
 
-// SetOnKey.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 You can use SetOnKey for receiving and handling all key events fired in the application.
@@ -18,10 +20,14 @@ You can find the complete list of keys and their codes on the [Android Developer
 See Also: @SimulateKey
  */
 
-// SetOnKey.txt --> All the sample codes
 
-/** @Sample
-<sample Demonstration>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demonstration
 app.DisableKeys( 'VOLUME_DOWN,VOLUME_UP,BACK' );
 
 function OnStart()
@@ -52,9 +58,12 @@ function OnKey(action, name, code, extra) {
 
     txt.SetText( text );
 }
-</sample>
-
-<sample Surprise>
+ */
+    
+            
+    
+/**
+@sample Surprise
 var prev;
 
 function OnStart()
@@ -82,7 +91,6 @@ function OnKey(action, name, code, extra)
     }
     prev = action;
 }
-</sample>
-
  */
-
+    
+            

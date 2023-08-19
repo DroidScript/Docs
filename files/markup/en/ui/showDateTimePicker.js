@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # showDateTimePicker #
  * @abbrev dtp
@@ -12,7 +14,7 @@
 */
 
 
-// showDateTimePicker.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Show a DateTimePicker where the user can select a date and time.
@@ -24,7 +26,7 @@ Show a DateTimePicker where the user can select a date and time.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnSelect ###
@@ -33,12 +35,14 @@ Show a DateTimePicker where the user can select a date and time.
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]}
  */
 
-// showDateTimePicker.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample DateTimePicker>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample DateTimePicker
 class Main extends App 
 {
     onStart()
@@ -59,6 +63,6 @@ class Main extends App
         ui.showPopup( val )
     }
 }
-</sample>
  */
-
+    
+            

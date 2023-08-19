@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddCheckBox #
  * @brief Create and add CheckBox to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddCheckBox.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

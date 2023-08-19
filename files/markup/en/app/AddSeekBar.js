@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSeekBar #
  * @brief Create and add SeekBar to Layout.
@@ -12,9 +14,7 @@
 */
 
 
-// AddSeekBar.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

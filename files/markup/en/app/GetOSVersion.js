@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetOSVersion #
  * @brief Get API target level
@@ -7,16 +9,19 @@
 */
 
 
-// GetOSVersion.txt --> All the sample codes
 
-/** @Sample
-<sample Show Android API Level>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Android API Level
 function OnStart()
 {
 	<b>version = app.GetOSVersion();</b>
 	app.Alert( version );
 }
-</sample>
-
  */
-
+    
+            

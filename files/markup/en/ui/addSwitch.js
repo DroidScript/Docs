@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addSwitch #
  * @abbrev swt
@@ -13,7 +15,7 @@
 */
 
 
-// addSwitch.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a Switch Component into your layout. A switch is a control whose values can be toggled between <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">on</span> and <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">off</span>.
@@ -25,7 +27,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -162,12 +164,14 @@ Adds a Switch Component into your layout. A switch is a control whose values can
  * @param {num} zIndex The z
  */
 
-// addSwitch.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -190,9 +194,12 @@ class Main extends App
         this.swt.text = `Check me (Value is ${value})`
     }
 }
-</sample>
-
-<sample Right switch with custom styles>
+ */
+    
+            
+    
+/**
+@sample Right switch with custom styles
 class Main extends App
 {
     onStart()
@@ -219,6 +226,6 @@ class Main extends App
         ui.showPopup("Value is : "  + value)
     }
 }
-</sample>
  */
-
+    
+            

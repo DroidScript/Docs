@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveText #
  * @brief Remove text from game
@@ -7,9 +9,7 @@
 */
 
 
-// RemoveText.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDatabaseFolder #
  * @brief Get apps database folder
@@ -9,16 +11,19 @@
 */
 
 
-// GetDatabaseFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Show >
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show
 function OnStart()
 {
     <b>var dir = app.GetDatabaseFolder();</b>
     app.Alert( dir );
 }
-</sample>
-
  */
-
+    
+            

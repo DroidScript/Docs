@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTextEdit #
  * @abbrev edt
@@ -12,7 +14,7 @@
 */
 
 
-// CreateTextEdit.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the “numbers” **option**.
@@ -31,24 +33,16 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * Clears the undo/redo history.
@@ -56,17 +50,11 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetCursorLine ###
  * Returns the current line index where the cursor is located.
@@ -82,9 +70,7 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetHtml ###
  * Returns the html formatted content.
@@ -93,9 +79,7 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLineCount ###
  * Returns the amount of lines in the text even with html formatting
@@ -127,13 +111,9 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
 /** ### GetSelectedText ###
  * Returns the currently selected text.
@@ -156,17 +136,11 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -175,21 +149,13 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### InsertText ###
  * Inserts a string at a given position.
@@ -199,21 +165,13 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Redo ###
  * Redo an undone action.
@@ -230,29 +188,17 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetCursorColor ###
  * Changes the cursor color.
@@ -268,13 +214,9 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
 /** ### SetHint ###
  * Set a grey default which is shown when the edit is empty
@@ -283,17 +225,11 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnChange
- */
+/** @extern SetOnChange */
 
 /** ### SetOnEnter ###
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter) * Along with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_
@@ -302,9 +238,7 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern SetOnFocus
- */
+/** @extern SetOnFocus */
 
 /** ### SetSelectColor ###
  * Set the background color for selected text.
@@ -321,43 +255,33 @@ You can also set a background image/pattern or background gradient for the List 
  */
 
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
 /** ### Undo ###
  * Undo an action.
  * $$ edt.Undo() $$
  */
 
-// CreateTextEdit.txt --> All the sample codes
 
-/** @Sample
-<sample Using OnChange>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Using OnChange
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -377,9 +301,12 @@ function edt_OnChange()
 {
 	txt.SetText( edt.GetText() );
 }
-</sample>
-
-<sample Blue on White>
+ */
+    
+            
+    
+/**
+@sample Blue on White
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -391,9 +318,12 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
-<sample Password>
+ */
+    
+            
+    
+/**
+@sample Password
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -411,7 +341,6 @@ function edt_OnEnter()
     var password = edt.GetText();
     app.ShowPopup( password );
 }
-</sample>
-
  */
-
+    
+            

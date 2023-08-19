@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # showPopover #
  * @brief showPopover
@@ -12,7 +14,7 @@
 */
 
 
-// showPopover.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Show a popover on any <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">UI Components</span> except Dialogs and Popups. Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
@@ -24,14 +26,16 @@ Show a popover on any <span style="color:#4c4; font-family:Courier, monospace; f
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
-
-// showPopover.txt --> All the sample codes
-
-/** @Sample
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -51,9 +55,12 @@ class Main extends App
         ui.showPopover(this.btn, "This is a text to be displayed.")
     }
 }
-</sample>
-
-<sample Positioning>
+ */
+    
+            
+    
+/**
+@sample Positioning
 class Main extends App
 {
     onStart()
@@ -126,9 +133,12 @@ class Main extends App
         btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,br") } )
     }
 }
-</sample>
-
-<sample Advanced>
+ */
+    
+            
+    
+/**
+@sample Advanced
 class Main extends App
 {
     onStart()
@@ -161,6 +171,6 @@ class Main extends App
         ui.showPopover( this.btn, lay, "bl,tr")
     }
 }
-</sample>
  */
-
+    
+            

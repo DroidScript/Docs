@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsChrome #
  * @brief Check if device OS is ChromeOS
@@ -9,16 +11,19 @@
 */
 
 
-// IsChrome.txt --> All the sample codes
 
-/** @Sample
-<sample Check APK>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check APK
 function OnStart()
 {
     <b>var isChrome = app.IsChrome();</b>
     app.Alert( isChrome, "is Chrome:" );
 }
-</sample>
-
  */
-
+    
+            

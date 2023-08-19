@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowKeyboard #
  * @brief Show keyboard on a focussed control
@@ -10,10 +12,14 @@
 */
 
 
-// ShowKeyboard.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -26,9 +32,12 @@ function OnStart()
 
 	app.ShowKeyboard( edt );
 }
-</sample>
-
-<sample Toggle Keyboard>
+ */
+    
+            
+    
+/**
+@sample Toggle Keyboard
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -49,7 +58,6 @@ function tgl_OnTouch( show )
 	<b>if( show ) app.ShowKeyboard( edt );
 	else app.HideKeyboard();</b>
 }
-</sample>
-
  */
-
+    
+            

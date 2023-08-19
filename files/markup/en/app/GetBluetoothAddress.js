@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetBluetoothAddress #
  * @brief Get the bluetooth address
@@ -9,16 +11,19 @@
 */
 
 
-// GetBluetoothAddress.txt --> All the sample codes
 
-/** @Sample
-<sample Show Bluetooth Address>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Bluetooth Address
 function OnStart()
 {
     <b>var addr = app.GetBluetoothAddress();</b>
     app.Alert( addr );
 }
-</sample>
-
  */
-
+    
+            

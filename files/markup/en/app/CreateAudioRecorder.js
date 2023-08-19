@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateAudioRecorder #
  * @abbrev rec
@@ -8,7 +10,7 @@
 */
 
 
-// CreateAudioRecorder.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The AudioRecorder object can be used to listen for sound and record it to a file.
@@ -25,12 +27,10 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetData ###
  * Returns a list of frequency values. The amount is dependent on the set frequency.
@@ -98,10 +98,14 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
  * $$ rec.Stop() $$
  */
 
-// CreateAudioRecorder.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 var file = "/sdcard/demofile.wav";
 function OnStart()
 {
@@ -122,7 +126,6 @@ function StopRecording()
 	ply.SetFile( file );
 	ply.SetOnReady( ply.Play );
 }
-</sample>
-
  */
-
+    
+            

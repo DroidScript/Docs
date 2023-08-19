@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Execute #
  * @brief Execute js code from your app or a WebWiew
@@ -7,10 +9,14 @@
 */
 
 
-// Execute.txt --> All the sample codes
 
-/** @Sample
-<sample Execute code from WebView>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Execute code from WebView
 var html = `
 <html>
 <head>
@@ -51,7 +57,6 @@ function btn_OnTouch()
 {
     app.Execute( "app.Alert( 'source: " + source + "\\ntarget: ' + source );" );
 }
-</sample>
-
  */
-
+    
+            

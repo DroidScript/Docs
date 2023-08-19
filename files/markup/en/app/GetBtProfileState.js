@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetBtProfileState #
  * @brief Returns Bluetooth type connected state
@@ -10,10 +12,14 @@
 */
 
 
-// GetBtProfileState.txt --> All the sample codes
 
-/** @Sample
-<sample Show Bluetooth Profile State>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Bluetooth Profile State
 function OnStart()
 {
     var states = "a2dp|headset|gatt|health".split( "|" );
@@ -27,7 +33,6 @@ function OnStart()
 
     app.Alert( lst.join( "\n" ) );
 }
-</sample>
-
  */
-
+    
+            

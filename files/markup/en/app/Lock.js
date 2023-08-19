@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Lock #
  * @brief Lock the device
@@ -10,10 +12,14 @@
 */
 
 
-// Lock.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" );
@@ -30,7 +36,6 @@ function btn_OnTouch()
 	app.Lock();
 	app.ShowPopup( "Locked" );
 }
-</sample>
-
  */
-
+    
+            

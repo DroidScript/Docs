@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSMS #
  * @abbrev sms
@@ -11,12 +13,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -47,9 +47,7 @@
  * @param {fnc_json} callback {"pNames":["status"],"pTypes":["str"]}
  */
 
-// CreateSMS.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

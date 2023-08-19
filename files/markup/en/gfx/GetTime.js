@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetTime #
  * @brief Get time since last gfx.Pause or gfx.Play
@@ -7,9 +9,7 @@
 */
 
 
-// GetTime.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

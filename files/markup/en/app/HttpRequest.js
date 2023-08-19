@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # HttpRequest #
  * @brief Send Http request
@@ -13,10 +15,14 @@
 */
 
 
-// HttpRequest.txt --> All the sample codes
 
-/** @Sample
-<sample Get Funfact>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Funfact
 var address = "http://www.randomfunfacts.com";
 
 <b>app.HttpRequest( "GET", address, null, null, handleReply );</b>
@@ -30,7 +36,6 @@ function handleReply( error, reply )
 		alert( funfact );
 	}
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CopyFile #
  * @brief Copies a file to a given destination
@@ -10,10 +12,14 @@
 */
 
 
-// CopyFile.txt --> All the sample codes
 
-/** @Sample
-<sample Copy file>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Copy file
 function OnStart()
 {
     app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" );
@@ -25,7 +31,6 @@ function OnStart()
     else
 	    app.ShowPopup("myFile does not exist in /sdcard/!");
 }
-</sample>
-
  */
-
+    
+            

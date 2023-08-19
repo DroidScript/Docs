@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Func #
 
@@ -8,10 +10,14 @@
 */
 
 
-// Func.txt --> All the sample codes
 
-/** @Sample
-<sample WebView Greeter>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample WebView Greeter
 var html = `
 <html>
 <head>
@@ -54,6 +60,6 @@ function greetApp(name) {
 function greetWeb() {
     web.Func("greetWeb", "App");
 }
-</sample>
  */
-
+    
+            

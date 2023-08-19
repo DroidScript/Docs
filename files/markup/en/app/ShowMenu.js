@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowMenu #
 
@@ -8,16 +10,19 @@
 */
 
 
-// ShowMenu.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	<b>app.SetMenu( "Option 1,Option 2,Option 3" );
 	app.ShowMenu();</b>
 }
-</sample>
-
  */
-
+    
+            

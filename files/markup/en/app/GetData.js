@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetData #
  * @brief Retreive saved data
@@ -10,19 +12,26 @@
 */
 
 
-// GetData.txt --> All the sample codes
 
-/** @Sample
-<sample Get Saved Data>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Saved Data
 function OnStart()
 {
     app.SetData( "myvar", "Hello World!" );
     <b>var data = app.GetData("myvar");</b>
     app.Alert( data, "Saved Data:" );
 }
-</sample>
-
-<sample Random Value>
+ */
+    
+            
+    
+/**
+@sample Random Value
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -40,7 +49,6 @@ function btn_OnTouch()
     <b>var data = app.GetData( "number" );</b>
 	app.ShowPopup( "Data: " + data);
 }
-</sample>
-
  */
-
+    
+            

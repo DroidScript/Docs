@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateNetClient #
  * @abbrev net
@@ -9,7 +11,7 @@
 */
 
 
-// CreateNetClient.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 NetClients can be used to communicate with servers on the web. You can choose between two different protocols:
@@ -22,7 +24,7 @@ Note: A few routers block fast UDP messages by default
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AutoReceive ###
@@ -34,9 +36,7 @@ Note: A few routers block fast UDP messages by default
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Close ###
  * Closes the NetClient socket.
@@ -85,9 +85,7 @@ Note: A few routers block fast UDP messages by default
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
 /** ### ReceiveBytes ###
  * Receive data as bytes.
@@ -221,10 +219,14 @@ Note: A few routers block fast UDP messages by default
  * @param {str} mac 
  */
 
-// CreateNetClient.txt --> All the sample codes
 
-/** @Sample
-<sample TCP Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample TCP Basic
 function OnStart()
 {
     lay = app.CreateLayout( "linear" );
@@ -258,9 +260,12 @@ function net_OnConnect( connected )
 
     net.Disconnect();
 }
-</sample>
-
-<sample TCP AutoReceive>
+ */
+    
+            
+    
+/**
+@sample TCP AutoReceive
 function OnStart()
 {
     lay = app.CreateLayout( "linear" );
@@ -303,10 +308,12 @@ function OnReceive( s )
         msg = "";
     }
 }
-</sample>
-
-<sample UDP Messaging>
-
+ */
+    
+            
+    
+/**
+@sample UDP Messaging
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -344,7 +351,6 @@ function CheckForMsg()
             app.ShowPopup( parts[1] );
     }
 }
-</sample>
-
  */
-
+    
+            

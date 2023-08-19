@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addMenu #
  * @abbrev men
@@ -13,7 +15,7 @@
 */
 
 
-// addMenu.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a pop-up menu into your components.
@@ -39,7 +41,7 @@ Adds a pop-up menu into your components.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -256,12 +258,14 @@ Adds a pop-up menu into your components.
  * @param {num} zIndex The z
  */
 
-// addMenu.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic menu>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic menu
 class Main extends App
 {
     onStart()
@@ -294,9 +298,12 @@ class Main extends App
         ui.showPopup( item )
     }
 }
-</sample>
-
-<sample Changing anchor component>
+ */
+    
+            
+    
+/**
+@sample Changing anchor component
 class Main extends App
 {
     onStart()
@@ -340,9 +347,12 @@ class Main extends App
         ui.showPopup( item )
     }
 }
-</sample>
-
-<sample With icons and disabled items>
+ */
+    
+            
+    
+/**
+@sample With icons and disabled items
 class Main extends App
 {
     onStart()
@@ -379,9 +389,12 @@ class Main extends App
         ui.showPopup( item )
     }
 }
-</sample>
-
-<sample Anchor position on mouse>
+ */
+    
+            
+    
+/**
+@sample Anchor position on mouse
 class Main extends App
 {
     onStart()
@@ -415,6 +428,6 @@ class Main extends App
         ui.showPopup( item )
     }
 }
-</sample>
  */
-
+    
+            

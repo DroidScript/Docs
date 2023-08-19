@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSeekBar #
  * @abbrev skb
@@ -11,7 +13,7 @@
 */
 
 
-// CreateSeekBar.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 SeekBars are bars with a moveable pointer which let the user select a value in a given range.
@@ -21,56 +23,32 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -86,57 +64,31 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetColorFilter ###
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
@@ -147,17 +99,11 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetMaxRate ###
  * Change the minimum timeout in milliseconds between two OnChange calls.
@@ -173,13 +119,9 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
 /** ### SetRange ###
  * Change the value which represents 100% of the seek bar. Default is 100
@@ -188,13 +130,9 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetValue ###
  * Change the current seekbar value in the defined range.
@@ -203,21 +141,19 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateSeekBar.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -235,7 +171,6 @@ function skb_OnTouch( value )
 {
 	app.ShowPopup( "Value = " + value );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateBluetoothList #
  * @abbrev btl
@@ -11,12 +13,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -31,10 +31,14 @@
  * @param {fnc_json} callback {"pNames":["name","address"],"pTypes":["str","str"]}
  */
 
-// CreateBluetoothList.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     lst = app.CreateBluetoothList();
@@ -45,7 +49,6 @@ function OnBtList(name, address)
 {
     app.Alert("Name: " + name + "\nAddress: " + address, "Result");
 }
-</sample>
-
  */
-
+    
+            

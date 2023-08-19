@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTimePicker #
  * @abbrev tmp
@@ -12,9 +14,7 @@
 */
 
 
-// AddTimePicker.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

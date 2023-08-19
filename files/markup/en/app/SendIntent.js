@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SendIntent #
 
@@ -14,7 +16,7 @@
 */
 
 
-// SendIntent.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Intens can be used to perform an operation between different applications or activities. _It is basically a passive data structure holding an abstract description of an action to be performed_.
@@ -32,9 +34,7 @@ For more information visit the [Android Developer Page](https://developer.androi
 See Also: @GetIntent
  */
 
-// SendIntent.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDisplayWidth #
  * @brief Get apps display width
@@ -9,16 +11,19 @@
 */
 
 
-// GetDisplayWidth.txt --> All the sample codes
 
-/** @Sample
-<sample Show display width>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show display width
 function OnStart()
 {
     <b>var width = app.GetDisplayWidth();</b>
     app.Alert( width );
 }
-</sample>
-
  */
-
+    
+            

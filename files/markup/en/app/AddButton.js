@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButton #
  * @brief Create and add Button to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddButton.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

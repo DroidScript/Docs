@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # WifiScan #
  * @brief Scan for any available Wifi networks
@@ -7,10 +9,14 @@
 */
 
 
-// WifiScan.txt --> All the sample codes
 
-/** @Sample
-<sample Conect to DS WiFi AP>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Conect to DS WiFi AP
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -27,7 +33,6 @@ function OnWifi( ssid )
     lst.SetList( ssid, "\\|" )
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Reload #
  * @brief Restart game from scratch
@@ -6,9 +8,7 @@
 */
 
 
-// Reload.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

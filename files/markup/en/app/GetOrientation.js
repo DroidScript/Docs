@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetOrientation #
  * @brief Get current screen orientation
@@ -9,16 +11,19 @@
 */
 
 
-// GetOrientation.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>orient = app.GetOrientation();
 	app.Alert( orient );</b>
 }
-</sample>
-
  */
-
+    
+            

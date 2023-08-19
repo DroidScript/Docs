@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addButton #
  * @abbrev btn
@@ -13,7 +15,7 @@
 */
 
 
-// addButton.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a button control into your app.
@@ -27,7 +29,7 @@ Adds a button control into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnFileSelect ###
@@ -189,12 +191,14 @@ Adds a button control into your app.
  * @param {num} zIndex The z
  */
 
-// addButton.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Button variants>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Button variants
 class Main extends App
 {
     onStart()
@@ -223,9 +227,12 @@ class Main extends App
         ui.showPopup( "Button is touch!" )
     }
 }
-</sample>
-
-<sample Button theme colors>
+ */
+    
+            
+    
+/**
+@sample Button theme colors
 class Main extends App
 {
     onStart()
@@ -254,9 +261,12 @@ class Main extends App
         ui.showPopup( "Button is touch!" )
     }
 }
-</sample>
-
-<sample Button sizes>
+ */
+    
+            
+    
+/**
+@sample Button sizes
 class Main extends App
 {
     onStart()
@@ -283,9 +293,12 @@ class Main extends App
         ui.showPopup( "Button is touch!" )
     }
 }
-</sample>
-
-<sample Button tooltips>
+ */
+    
+            
+    
+/**
+@sample Button tooltips
 class Main extends App
 {
     onStart()
@@ -315,9 +328,12 @@ class Main extends App
         this.btn4.setToolTip("Tooltip on the bottom", "bottom")
     }
 }
-</sample>
-
-<sample Button with icons>
+ */
+    
+            
+    
+/**
+@sample Button with icons
 class Main extends App
 {
     onStart()
@@ -343,9 +359,12 @@ class Main extends App
         this.btn4 = ui.addButton(this.main, "settings", "Secondary,Icon")
     }
 }
-</sample>
-
-<sample Buttons with badges>
+ */
+    
+            
+    
+/**
+@sample Buttons with badges
 class Main extends App
 {
     onStart()
@@ -368,9 +387,12 @@ class Main extends App
         this.btn3.setBadge("New", "Primary")
     }
 }
-</sample>
-
-<sample Upload button>
+ */
+    
+            
+    
+/**
+@sample Upload button
 class Main extends App
 {
     onStart()
@@ -393,6 +415,6 @@ class Main extends App
         ui.showPopup( `${file.name} is selected.` )
     }
 }
-</sample>
  */
-
+    
+            

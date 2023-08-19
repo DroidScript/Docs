@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetExternalFolder #
  * @brief Get external sdcard folder
@@ -9,16 +11,19 @@
 */
 
 
-// GetExternalFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Show External Folder>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show External Folder
 function OnStart()
 {
     <b>var dir = app.GetExternalFolder();</b>
     app.Alert( dir );
 }
-</sample>
-
  */
-
+    
+            

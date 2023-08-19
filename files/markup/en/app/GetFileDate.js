@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetFileDate #
  * @brief Get last modified date of a file or folder
@@ -8,16 +10,19 @@
 */
 
 
-// GetFileDate.txt --> All the sample codes
 
-/** @Sample
-<sample Show /sdcard/ last modifies date>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show /sdcard/ last modifies date
 function OnStart()
 {
     var date = app.GetFileDate("/sdcard/");
     app.Alert( date.toLocaleString() );
 }
-</sample>
-
  */
-
+    
+            

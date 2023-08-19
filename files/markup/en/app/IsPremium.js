@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsPremium #
  * @brief Check if user has a DroidScript Premium subscription
@@ -7,16 +9,19 @@
 */
 
 
-// IsPremium.txt --> All the sample codes
 
-/** @Sample
-<sample Check Premium subscription>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Premium subscription
 function OnStart()
 {
     <b>var premium = app.IsPremium();</b>
     app.Alert( premium, "IsPremium" );
 }
-</sample>
-
  */
-
+    
+            

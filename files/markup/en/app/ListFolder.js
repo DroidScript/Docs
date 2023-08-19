@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ListFolder #
  * @brief Get a list of files ans folders contained in a specific folder
@@ -11,7 +13,7 @@
 */
 
 
-// ListFolder.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The ListFolder method returns a list of all files and folders in a given folder.
@@ -23,10 +25,14 @@ See Also: @WalkFolder, @IsFolder, @CreateList
 
  */
 
-// ListFolder.txt --> All the sample codes
 
-/** @Sample
-<sample List home directory>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample List home directory
 function OnStart()
 {
 	<b>var list = app.ListFolder( "/sdcard/" );</b>
@@ -34,9 +40,12 @@ function OnStart()
 	ldg = app.CreateListDialog( "/sdcard/*", list );
 	ldg.Show();
 }
-</sample>
-
-<sample List .jpg assets>
+ */
+    
+            
+    
+/**
+@sample List .jpg assets
 function OnStart()
 {
 	<b>var list = app.ListFolder( "/Sys/Img", ".jpg" );</b>
@@ -44,7 +53,6 @@ function OnStart()
 	ldg = app.CreateListDialog( "/Sys/Img/*.jpg", list );
 	ldg.Show();
 }
-</sample>
-
  */
-
+    
+            

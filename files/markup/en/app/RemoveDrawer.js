@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveDrawer #
  * @brief Remove drawer layout from a given side
@@ -9,10 +11,14 @@
 */
 
 
-// RemoveDrawer.txt --> All the sample codes
 
-/** @Sample
-<sample left>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample left
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -36,7 +42,6 @@ function OnStart()
 function RemoveDrawer() {
     <b>app.RemoveDrawer( "left" );</b>
 }
-</sample>
-
  */
-
+    
+            

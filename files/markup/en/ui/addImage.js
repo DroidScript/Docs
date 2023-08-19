@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addImage #
  * @abbrev img
@@ -13,7 +15,7 @@
 */
 
 
-// addImage.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds an image into your layout.
@@ -27,7 +29,7 @@ Adds an image into your layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnLoad ###
@@ -316,12 +318,14 @@ Adds an image into your layout.
  * @param {num} zIndex The z
  */
 
-// addImage.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic Image>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic Image
 class Main extends App
 {
     onStart()
@@ -343,9 +347,12 @@ class Main extends App
         ui.showPopup( "You touched the mango!" ) 
     }
 }
-</sample>
-
-<sample Avatar>
+ */
+    
+            
+    
+/**
+@sample Avatar
 class Main extends App
 {
     onStart()
@@ -368,9 +375,12 @@ class Main extends App
         ui.showPopup( "You touched the mango!" )
     }
 }
-</sample>
-
-<sample Button>
+ */
+    
+            
+    
+/**
+@sample Button
 class Main extends App
 {
     onStart()
@@ -393,9 +403,12 @@ class Main extends App
         ui.showPopup( "You touched the mango!" )
     }
 }
-</sample>
-
-<sample Drawings>
+ */
+    
+            
+    
+/**
+@sample Drawings
 class Main extends App
 {
     onStart()
@@ -435,9 +448,12 @@ class Main extends App
         this.img.drawPolyline( points, "blue", 10 )
     }
 }
-</sample>
-
-<sample Text and Shapes>
+ */
+    
+            
+    
+/**
+@sample Text and Shapes
 class Main extends App
 {
     onStart()
@@ -466,9 +482,12 @@ class Main extends App
         this.img.drawText("World", 10, 325, "", "", 3);
     }
 }
-</sample>
-
-<sample Analog Clock>
+ */
+    
+            
+    
+/**
+@sample Analog Clock
 class Main extends App
 {
     onStart()
@@ -553,10 +572,13 @@ class Main extends App
         this.img.drawLine(150, 150, x, y, color, width )
     }
 }
-</sample>
-
-<sample Scratch Pad>
-	class Main extends App
+ */
+    
+            
+    
+/**
+@sample Scratch Pad
+class Main extends App
     {
         onStart()
         {
@@ -595,6 +617,6 @@ class Main extends App
             this.img.drawCircle( e.x, e.y, this.sld.value, this.color, "", 0 )
         }
     }
-</sample>
  */
-
+    
+            

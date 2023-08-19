@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsService #
  * @brief Check id app is a service
@@ -7,16 +9,19 @@
 */
 
 
-// IsService.txt --> All the sample codes
 
-/** @Sample
-<sample Check if App is Service>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check if App is Service
 function OnStart()
 {
     <b>var isSvc = app.IsService();</b>
     app.Alert( isSvc, "IsService" );
 }
-</sample>
-
  */
-
+    
+            

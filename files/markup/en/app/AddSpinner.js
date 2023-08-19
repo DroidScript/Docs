@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSpinner #
  * @brief Create and add Spinner to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddSpinner.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

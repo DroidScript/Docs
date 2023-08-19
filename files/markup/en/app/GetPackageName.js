@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetPackageName #
  * @brief Get APK package name
@@ -7,16 +9,19 @@
 */
 
 
-// GetPackageName.txt --> All the sample codes
 
-/** @Sample
-<sample Show Package Name>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Package Name
 function OnStart()
 {
     <b>var pkg = app.GetPackageName();</b>
     app.Alert( pkg );
 }
-</sample>
-
  */
-
+    
+            

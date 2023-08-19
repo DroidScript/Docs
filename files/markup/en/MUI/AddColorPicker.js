@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddColorPicker #
  * @abbrev clp
@@ -10,9 +12,7 @@
 */
 
 
-// AddColorPicker.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

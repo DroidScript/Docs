@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DeleteFolder #
  * @brief Delete a folder
@@ -9,10 +11,14 @@
 */
 
 
-// DeleteFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Delete created folder>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Delete created folder
 function OnStart()
 {
     app.MakeFolder("myFolder");
@@ -24,7 +30,6 @@ function OnStart()
     else
 	    app.ShowPopup("myFolder was deleted!");
 }
-</sample>
-
  */
-
+    
+            

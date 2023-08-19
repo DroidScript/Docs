@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetTheme #
 
@@ -9,11 +11,14 @@
 */
 
 
-// SetTheme.txt --> All the sample codes
 
-/** @Sample
-<sample Themes Demo>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Themes Demo
 var lay = null;
 var themeName = "Default";
 
@@ -52,6 +57,6 @@ function spin_OnChange( item )
     CreateLayout();
 }
 </theme>
-
  */
-
+    
+            

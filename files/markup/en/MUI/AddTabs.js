@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTabs #
  * @abbrev tbf
@@ -15,10 +17,14 @@
 */
 
 
-// AddTabs.txt --> All the sample codes
 
-/** @Sample
-<sample AddPicker>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddPicker
 cfg.Light
 cfg.MUI
 
@@ -30,6 +36,6 @@ function OnStart()
     
     app.AddLayout( lay )
 }
-</sample> 
  */
-
+    
+            

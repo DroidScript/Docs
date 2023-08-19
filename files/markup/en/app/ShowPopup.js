@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowPopup #
  * @brief Show a popup message
@@ -8,22 +10,28 @@
 */
 
 
-// ShowPopup.txt --> All the sample codes
 
-/** @Sample
-<sample Top>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Top
 function OnStart()
 {
 	<b>app.ShowPopup( "Hello World!" );</b>
 }
-</sample>
-
-<sample Bottom>
+ */
+    
+            
+    
+/**
+@sample Bottom
 function OnStart()
 {
 	<b>app.ShowPopup( "Hello World!", "Bottom,Short" );</b>
 }
-</sample>
-
  */
-
+    
+            

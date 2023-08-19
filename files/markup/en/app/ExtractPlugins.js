@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ExtractPlugins #
  * @brief Forcefully update your plugins
@@ -8,9 +10,7 @@
 */
 
 
-// ExtractPlugins.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

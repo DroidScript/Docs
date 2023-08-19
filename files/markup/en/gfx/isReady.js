@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # isReady #
  * @brief True when game is ready
@@ -7,9 +9,7 @@
 */
 
 
-// isReady.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

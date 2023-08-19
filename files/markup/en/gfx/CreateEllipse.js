@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateEllipse #
  * @abbrev elp
@@ -17,72 +19,46 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** @extern alpha */
+
+/** @extern angle */
+
+/** @extern Contains */
+
+/** @extern data */
+
+/** @extern graphic */
+
+/** @extern group */
+
+/** @extern height */
+
+/** @extern pivotX */
+
+/** @extern pivotY */
+
+/** @extern scaleX */
+
+/** @extern scaleY */
+
+/** @extern SetMatrix */
+
+/** @extern Update */
+
+/** @extern visible */
+
+/** @extern width */
+
+
+// ------------- SAMPLES ------------- 
+
+
+    
 /**
- * @extern alpha
- */
-
-/**
- * @extern angle
- */
-
-/**
- * @extern Contains
- */
-
-/**
- * @extern data
- */
-
-/**
- * @extern graphic
- */
-
-/**
- * @extern group
- */
-
-/**
- * @extern height
- */
-
-/**
- * @extern pivotX
- */
-
-/**
- * @extern pivotY
- */
-
-/**
- * @extern scaleX
- */
-
-/**
- * @extern scaleY
- */
-
-/**
- * @extern SetMatrix
- */
-
-/**
- * @extern Update
- */
-
-/**
- * @extern visible
- */
-
-/**
- * @extern width
- */
-// CreateEllipse.txt --> All the sample codes
-
-/** @Sample
-<sample>
+@sample 
 cfg.Game;
 
 function OnLoad()
@@ -95,7 +71,6 @@ function OnReady()
     gfx.AddGraphic( ellipse, 0.1, 0.2 );
     gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

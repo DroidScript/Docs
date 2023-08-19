@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsFolder #
  * @brief Check if path leads to a folder
@@ -10,16 +12,19 @@
 */
 
 
-// IsFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Check /sdcard/ available>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check /sdcard/ available
 function OnStart()
 {
     <b>var isFolder = app.IsFolder("/sdcard/");</b>
     app.Alert( isFolder, "/sdcard/ is Folder:" );
 }
-</sample>
-
  */
-
+    
+            

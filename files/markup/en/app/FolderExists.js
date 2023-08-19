@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # FolderExists #
  * @brief Checks if the folder exists
@@ -10,10 +12,14 @@
 */
 
 
-// FolderExists.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>if(app.FolderExists("myFolder"))
@@ -21,7 +27,6 @@ function OnStart()
     else
 	    app.ShowPopup("myFolder does not exist!");</b>
 }
-</sample>
-
  */
-
+    
+            

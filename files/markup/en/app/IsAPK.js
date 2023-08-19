@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsAPK #
  * @brief Returns true if ran from apk
@@ -7,16 +9,19 @@
 */
 
 
-// IsAPK.txt --> All the sample codes
 
-/** @Sample
-<sample Check APK>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check APK
 function OnStart()
 {
     <b>var isAPK = app.IsAPK();</b>
     app.Alert( isAPK, "is APK:" );
 }
-</sample>
-
  */
-
+    
+            

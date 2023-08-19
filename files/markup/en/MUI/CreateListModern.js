@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateListModern #
  * @abbrev lsm
@@ -12,7 +14,7 @@
 */
 
 
-// CreateListModern.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 A modern implementation of list using the available controls of DroidScript.
@@ -36,7 +38,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnTouch ###
@@ -198,97 +200,57 @@ ListModern has lots of very useful function you can use to manipulate your list.
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateListModern.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample No-options>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample No-options
 cfg.Light
 cfg.MUI
 
@@ -316,9 +278,12 @@ function OnTouch(title, body, index)
 {
     app.ShowPopup(title+" : "+body+" : "+index)
 }
-</sample>
-
-<sample With-Color No Options>
+ */
+    
+            
+    
+/**
+@sample With-Color No Options
 cfg.Light
 cfg.MUI
 
@@ -346,9 +311,12 @@ function OnTouch(title, body, index)
 {
     app.ShowPopup(title+" : "+body+" : "+index)
 }
-</sample>
-
-<sample Selectable>
+ */
+    
+            
+    
+/**
+@sample Selectable
 cfg.Dark
 cfg.MUI
 
@@ -393,10 +361,12 @@ function GetSelectedItems()
         app.Alert(JSON.stringify(item))
     }
 }
-</sample>
-
-
-<sample CreateListInitialIcon>
+ */
+    
+            
+    
+/**
+@sample CreateListInitialIcon
 cfg.Dark
 cfg.MUI
 
@@ -418,10 +388,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample CreateListMaterialIcon>
+ */
+    
+            
+    
+/**
+@sample CreateListMaterialIcon
 cfg.Dark
 cfg.MUI
 
@@ -459,10 +431,12 @@ function GetSelectedItems()
         app.Alert(JSON.stringify(item))
     }
 }
-</sample>
-
-
-<sample CreateListWithAvatar>
+ */
+    
+            
+    
+/**
+@sample CreateListWithAvatar
 cfg.Light
 cfg.MUI
 
@@ -500,12 +474,12 @@ function GetSelectedItems()
         app.Alert(JSON.stringify(item))
     }
 }
-</sample>
-
-
-
-
-<sample RemoveItems>
+ */
+    
+            
+    
+/**
+@sample RemoveItems
 cfg.Dark
 cfg.MUI
 
@@ -551,6 +525,6 @@ function RemoveSelected()
     var items = lsm.GetSelectedItems()
     lsm.RemoveItems(items)
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # InstallApp #
  * @brief Start apk installation process
@@ -9,9 +11,7 @@
 */
 
 
-// InstallApp.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

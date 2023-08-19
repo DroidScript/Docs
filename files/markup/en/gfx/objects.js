@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # objects #
  * @brief List of active objects
@@ -7,9 +9,7 @@
 */
 
 
-// objects.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

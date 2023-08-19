@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Error #
  * @brief Show an error message
@@ -12,16 +14,19 @@
 */
 
 
-// Error.txt --> All the sample codes
 
-/** @Sample
-<sample Show error and exit>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show error and exit
 function OnStart()
 {
     var msg = "How dare you running that sample.\nI will close immediately!";
     app.Error( msg, 4, "demo.js", true );
 }
-</sample>
-
  */
-
+    
+            

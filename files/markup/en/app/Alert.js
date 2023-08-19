@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Alert #
  * @brief Shows a popup message with an 'OK' button to exit
@@ -10,7 +12,7 @@
 */
 
 
-// Alert.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Alert shows a simple text dialog with a colored title and a 'Ok' button to exit. If title was not given the dialog looks like a normal alert box.
@@ -22,22 +24,28 @@ See Also: @Error, @ShowTextDialog, @CreateYesNoDialog.
 
  */
 
-// Alert.txt --> All the sample codes
 
-/** @Sample
-<sample No Title>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample No Title
 function OnStart()
 {
 	<b>app.Alert( "Hello World!" );</b>
 }
-</sample>
-
-<sample Yellow Title>
+ */
+    
+            
+    
+/**
+@sample Yellow Title
 function OnStart()
 {
 	<b>app.Alert( "This is an alert box", "Hello Yellow World!", "", -100 );</b>
 }
-</sample>
-
  */
-
+    
+            

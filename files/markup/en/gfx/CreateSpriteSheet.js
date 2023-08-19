@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSpriteSheet #
  * @abbrev sht
@@ -13,12 +15,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern data
- */
+/** @extern data */
 
 /** ### loaded
  * @prop
@@ -26,9 +26,7 @@
  * @returns bin
  */
 
-                    // CreateSpriteSheet.txt --> All the sample codes
+                    
 
-/** @Sample
- 
- */
+// ------------- SAMPLES ------------- 
 

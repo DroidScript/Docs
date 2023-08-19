@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SimulateKey #
 
@@ -12,10 +14,14 @@
 */
 
 
-// SimulateKey.txt --> All the sample codes
 
-/** @Sample
-<sample Infinite Monkey>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Infinite Monkey
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -32,7 +38,6 @@ function SimulateKey()
     var char = String.fromCharCode( ran );
     <b>app.SimulateKey( edt, char );</b>
 }
-</sample>
-
  */
-
+    
+            

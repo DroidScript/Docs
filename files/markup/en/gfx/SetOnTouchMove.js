@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnTouchMove #
  * @brief Set callback for touch move
@@ -6,9 +8,7 @@
 */
 
 
-// SetOnTouchMove.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

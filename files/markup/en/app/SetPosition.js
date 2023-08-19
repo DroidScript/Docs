@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetPosition #
  * @brief Change app position and size
@@ -11,10 +13,14 @@
 */
 
 
-// SetPosition.txt --> All the sample codes
 
-/** @Sample
-<sample SetPosition>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample SetPosition
 function OnStart()
 {
 	<b>app.SetPosition( 0.2, 0.2, .6, .6 );</b>
@@ -27,7 +33,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

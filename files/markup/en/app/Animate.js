@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Animate #
  * @brief Similar to setInterval
@@ -7,7 +9,7 @@
 */
 
 
-// Animate.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.
@@ -65,10 +67,14 @@ function loop(t, dt)
 
  */
 
-// Animate.txt --> All the sample codes
 
-/** @Sample
-<sample Digital Clock>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Digital Clock
 function OnStart()
 {
     app.SetOrientation( "Portrait" );
@@ -89,9 +95,12 @@ function OnAnimate( time, dtime )
 {
     txt.SetText( new Date().toLocaleString() + "\n" + time );
 }
-</sample>
-
-<sample SpeedTest>
+ */
+    
+            
+    
+/**
+@sample SpeedTest
 cfg.No_Dom;
 
 var ltime = Date.now(), c = 0;
@@ -117,7 +126,6 @@ function OnAnimate( time, dtime )
         c = 0;
     }
 }
-</sample>
-
  */
-
+    
+            

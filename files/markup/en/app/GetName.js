@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetName #
  * @brief Get APK name
@@ -7,16 +9,19 @@
 */
 
 
-// GetName.txt --> All the sample codes
 
-/** @Sample
-<sample Get app Name>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get app Name
 function OnStart()
 {
 	<b>name = app.GetName();</b>
 	app.Alert( name );
 }
-</sample>
-
  */
-
+    
+            

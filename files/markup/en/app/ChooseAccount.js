@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ChooseAccount #
  * @brief Let the user choose an google account
@@ -8,10 +10,14 @@
 */
 
 
-// ChooseAccount.txt --> All the sample codes
 
-/** @Sample
-<sample Choose Account>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Choose Account
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -32,7 +38,6 @@ function OnChoose( account )
 {
     alert( "selected account: " + account );
 }
-</sample>
-
  */
-
+    
+            

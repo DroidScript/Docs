@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateLayout #
  * @abbrev lay
@@ -10,7 +12,7 @@
 */
 
 
-// CreateLayout.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 It is just the **CreateLayout** method of DroidScript with predefined values on background color just to be consistent on MUI theming.
@@ -27,10 +29,14 @@ Card layout is ligter than other types of layouts to make it appear as a primary
 Since it returns a DroidScript layout object, you can use all the layout methods you know.
  */
 
-// CreateLayout.txt --> All the sample codes
 
-/** @Sample
-<sample Just Layout>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Just Layout
 cfg.Light
 cfg.MUI
 
@@ -46,10 +52,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Dark Layout with Card>
+ */
+    
+            
+    
+/**
+@sample Dark Layout with Card
 cfg.Dark
 cfg.MUI
 
@@ -66,6 +74,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

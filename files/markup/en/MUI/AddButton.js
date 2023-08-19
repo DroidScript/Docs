@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButton #
  * @abbrev btn
@@ -13,10 +15,14 @@
 */
 
 
-// AddButton.txt --> All the sample codes
 
-/** @Sample
-<sample AddButton>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddButton
 cfg.Light
 cfg.MUI
 
@@ -38,6 +44,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

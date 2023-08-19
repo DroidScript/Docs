@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Uri2Path #
  * @brief Decode a URI encoded string
@@ -11,9 +13,8 @@
 */
 
 
-// Uri2Path.txt --> All the sample codes
 
-/** @Sample
 
- */
+// ------------- SAMPLES ------------- 
 
+undefined

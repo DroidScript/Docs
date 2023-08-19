@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StartApp #
  * @brief Starts an app in a new window
@@ -11,15 +13,18 @@
 */
 
 
-// StartApp.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
     <b>app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" );</b>
 }
-</sample>
-
  */
-
+    
+            

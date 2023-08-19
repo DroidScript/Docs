@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextArea #
  * @abbrev txa
@@ -16,10 +18,14 @@
 */
 
 
-// AddTextArea.txt --> All the sample codes
 
-/** @Sample
-<sample AddTextArea>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddTextArea
 cfg.Light
 cfg.MUI
 
@@ -32,6 +38,6 @@ function OnStart()
         ted1 = MUI.AddTextArea(lay, 0.8, "outlined,active", "Enter message", true)
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

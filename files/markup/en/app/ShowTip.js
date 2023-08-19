@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowTip #
 
@@ -11,10 +13,14 @@
 */
 
 
-// ShowTip.txt --> All the sample codes
 
-/** @Sample
-<sample Show Tool-Tip>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Tool-Tip
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -27,7 +33,6 @@ function OnStart()
     <b>var pos = edt.GetPosition( "screen" );
     app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" );</b>
 }
-</sample>
-
  */
-
+    
+            

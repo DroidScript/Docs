@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ClearData #
  * @brief Deletes app.Save*() storage
@@ -11,10 +13,14 @@
 */
 
 
-// ClearData.txt --> All the sample codes
 
-/** @Sample
-<sample Save, Load and Clear Data>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Save, Load and Clear Data
 var file = "demofile";
 
 function OnStart()
@@ -46,7 +52,6 @@ function getValues()
         "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
         "first start: " + app.LoadBoolean( "first", true, file ) + "\n");
 }
-</sample>
-
  */
-
+    
+            

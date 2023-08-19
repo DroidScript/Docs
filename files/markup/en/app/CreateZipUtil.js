@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateZipUtil #
  * @abbrev zip
@@ -11,7 +13,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddFile ###
@@ -30,9 +32,7 @@
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Close ###
  * Closes the zip util.
@@ -116,10 +116,14 @@
  * @param {str_com} options Launch,Debug
  */
 
-// CreateZipUtil.txt --> All the sample codes
 
-/** @Sample
-<sample List Contents>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample List Contents
 function OnStart()
 {
 	var name = app.GetAppName();
@@ -131,9 +135,12 @@ function OnStart()
 	app.Alert(list.join(",\n"));
 	zip.Close();
 }
-</sample>
-
-<sample Compress>
+ */
+    
+            
+    
+/**
+@sample Compress
 function OnStart()
 {
 	var name = app.GetAppName();
@@ -162,7 +169,6 @@ function OnStart()
 			AddFolder( zip, name + "/" + title, fldr + "/"+title );
 	}
 }</b>
-</sample>
-
  */
-
+    
+            

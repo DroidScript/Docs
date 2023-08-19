@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # colors #
 
@@ -7,7 +9,7 @@
 */
 
 
-// colors.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 MUI colors are accessible through the **colors** property of the MUI object.
@@ -42,10 +44,14 @@ To select a color and shading choose the right property of the base color object
 
  */
 
-// colors.txt --> All the sample codes
 
-/** @Sample
-<sample All Colors From Green>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample All Colors From Green
 cfg.Light
 cfg.MUI
 
@@ -84,8 +90,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-<sample Change Layout Background>
+ */
+    
+            
+    
+/**
+@sample Change Layout Background
 cfg.Light
 cfg.MUI
 
@@ -125,7 +135,6 @@ function OnSelect(name)
 {
     lay.SetBackColor(color[name])
 }
-</sample>
-
  */
-
+    
+            

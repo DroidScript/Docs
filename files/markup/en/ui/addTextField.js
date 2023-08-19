@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addTextField #
  * @abbrev tfd
@@ -13,7 +15,7 @@
 */
 
 
-// addTextField.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Add a textfield component into your app. Collect inputs from users. Inputs can be a number, text, emails, passwords and more. Just pass the corresponding type into
@@ -29,7 +31,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnEnter ###
@@ -239,12 +241,14 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  * @param {num} zIndex The z
  */
 
-// addTextField.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Textfield variants>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Textfield variants
 class Main extends App
 {
     onStart()
@@ -280,9 +284,12 @@ class Main extends App
         this.popup.show()
     }
 }
-</sample>
-
-<sample Callbacks>
+ */
+    
+            
+    
+/**
+@sample Callbacks
 class Main extends App
 {
     onStart()
@@ -329,9 +336,12 @@ class Main extends App
         this.popup.show()
     }
 }
-</sample>
-
-<sample Multiline textfield>
+ */
+    
+            
+    
+/**
+@sample Multiline textfield
 class Main extends App
 {
     onStart()
@@ -349,9 +359,12 @@ class Main extends App
         this.tfd.setRows(3, 6)
     }
 }
-</sample>
-
-<sample Advance textfield>
+ */
+    
+            
+    
+/**
+@sample Advance textfield
 class Main extends App
 {
     onStart()
@@ -407,6 +420,6 @@ class Main extends App
         }
     }
 }
-</sample>
  */
-
+    
+            

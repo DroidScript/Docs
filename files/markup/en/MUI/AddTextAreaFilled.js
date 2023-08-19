@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextAreaFilled #
  * @abbrev taf
@@ -14,9 +16,7 @@
 */
 
 
-// AddTextAreaFilled.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

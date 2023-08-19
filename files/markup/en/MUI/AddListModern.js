@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddListModern #
  * @abbrev lsm
@@ -13,9 +15,7 @@
 */
 
 
-// AddListModern.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

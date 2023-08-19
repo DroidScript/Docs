@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetPrivateFolder #
  * @brief Get path to a private folder
@@ -11,16 +13,19 @@
 */
 
 
-// GetPrivateFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Show >
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show
 function OnStart()
 {
     <b>var path = app.GetPrivateFolder( "temp" );</b>
     app.Alert( path );
 }
-</sample>
-
  */
-
+    
+            

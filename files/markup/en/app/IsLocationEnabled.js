@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsLocationEnabled #
  * @brief Check if location method is enabled
@@ -10,16 +12,19 @@
 */
 
 
-// IsLocationEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Check Locatoin Enabled>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Locatoin Enabled
 function OnStart()
 {
     <b>var locEnabled = app.IsLocationEnabled();</b>
     app.Alert( locEnabled, "Location Enabled:" );
 }
-</sample>
-
  */
-
+    
+            

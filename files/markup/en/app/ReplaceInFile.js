@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ReplaceInFile #
  * @brief Replace text in a local file
@@ -10,26 +12,32 @@
 */
 
 
-// ReplaceInFile.txt --> All the sample codes
 
-/** @Sample
-<sample Replace Text in File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Replace Text in File
 function OnStart()
 {
     app.WriteFile( "file.txt", "Hello world, exciting world." );
 	<b>app.ReplaceInFile( "file.txt", "world", "user" );</b>
     app.Alert( app.ReadFile( "file.txt" ), "Result" );
 }
-</sample>
-
-<sample Replace Regular Expression>
+ */
+    
+            
+    
+/**
+@sample Replace Regular Expression
 function OnStart()
 {
     app.WriteFile( "file.txt", "Hello world, exciting world." );
 	<b>app.ReplaceInFile( "file.txt", "(\\w+)o (\\w+)", "$2 is $1" );</b>
     app.Alert( app.ReadFile( "file.txt" ), "Result" );
 }
-</sample>
-
  */
-
+    
+            

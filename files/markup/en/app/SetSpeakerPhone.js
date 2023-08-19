@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetSpeakerPhone #
  * @brief En/Disable speaker for phone calls
@@ -9,9 +11,7 @@
 */
 
 
-// SetSpeakerPhone.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

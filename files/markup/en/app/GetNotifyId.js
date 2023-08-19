@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetNotifyId #
  * @brief Get the caller notification id
@@ -9,10 +11,14 @@
 */
 
 
-// GetNotifyId.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
     <b>var id = app.GetNotifyId();</b>
@@ -29,7 +35,6 @@ function OnStart()
         setTimeout( app.Exit,  2000 );
 	}
 }
-</sample>
-
  */
-
+    
+            

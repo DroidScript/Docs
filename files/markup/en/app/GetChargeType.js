@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetChargeType #
  * @brief Get current charge type
@@ -9,16 +11,19 @@
 */
 
 
-// GetChargeType.txt --> All the sample codes
 
-/** @Sample
-<sample Show Charge Type>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Charge Type
 function OnStart()
 {
     <b>var type = app.GetChargeType();</b>
     app.Alert( type );
 }
-</sample>
-
  */
-
+    
+            

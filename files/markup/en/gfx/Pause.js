@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Pause #
  * @brief Pause game
@@ -6,9 +8,7 @@
 */
 
 
-// Pause.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowTextDialog #
  * @brief Show a text input dialog
@@ -8,10 +10,14 @@
 */
 
 
-// ShowTextDialog.txt --> All the sample codes
 
-/** @Sample
-<sample Input Name>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Input Name
 function OnStart()
 {
 	<b>app.ShowTextDialog( "Type your Name:", "", OnInputName );</b>
@@ -21,7 +27,6 @@ function OnInputName( name )
 {
     app.ShowPopup( "Your name is " + name );
 }
-</sample>
-
  */
-
+    
+            

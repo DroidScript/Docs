@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ExtractAssets #
  * @brief Extract app assets to a local directory
@@ -10,19 +12,26 @@
 */
 
 
-// ExtractAssets.txt --> All the sample codes
 
-/** @Sample
-<sample Extract File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Extract File
 function OnStart()
 {
     app.WriteFile( "myData.txt", "main: " + app.GetAppName() );
     app.ExtractAssets( "myData.txt", "/sdcard/myData.txt" );
     app.Alert(app.ReadFile("/sdcard/myData.txt"));
 }
-</sample>
-
-<sample Extract Folder>
+ */
+    
+            
+    
+/**
+@sample Extract Folder
 function OnStart()
 {
     app.MakeFolder( app.GetAppPath() + "/myFolder" );
@@ -30,7 +39,6 @@ function OnStart()
     app.ExtractAssets( "myFolder", "/sdcard/myFolder" );
     app.Alert(app.ReadFile("/sdcard/myFolder/myData.txt"));
 }
-</sample>
-
  */
-
+    
+            

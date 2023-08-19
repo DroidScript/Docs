@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addRadioGroup #
  * @abbrev rdg
@@ -13,7 +15,7 @@
 */
 
 
-// addRadioGroup.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a radiogroup component into your app. A radiogroup is a type of select list that can only have a single value being checked at a time.
@@ -27,7 +29,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnChange ###
@@ -260,12 +262,14 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
  * @param {num} zIndex The z
  */
 
-// addRadioGroup.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic radiogroup>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic radiogroup
 class Main extends App
 {
     onStart()
@@ -288,9 +292,12 @@ class Main extends App
         ui.showPopup("You choose " + text)
     }
 }
-</sample>
-
-<sample Elevated secondary radiogroup>
+ */
+    
+            
+    
+/**
+@sample Elevated secondary radiogroup
 class Main extends App
 {
     onStart()
@@ -319,9 +326,12 @@ class Main extends App
         ui.showPopup("You choose " + text)
     }
 }
-</sample>
-
-<sample Outlined and radios to the right>
+ */
+    
+            
+    
+/**
+@sample Outlined and radios to the right
 class Main extends App
 {
     onStart()
@@ -351,6 +361,6 @@ class Main extends App
         ui.showPopup("You choose " + text)
     }
 }
-</sample>
  */
-
+    
+            

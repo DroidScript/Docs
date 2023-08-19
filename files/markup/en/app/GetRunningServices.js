@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRunningServices #
  * @brief Get list of running services
@@ -9,10 +11,14 @@
 */
 
 
-// GetRunningServices.txt --> All the sample codes
 
-/** @Sample
-<sample Show Running Services>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Running Services
 function OnStart()
 {
     app.ShowProgress();
@@ -38,7 +44,6 @@ function OnStart()
 
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

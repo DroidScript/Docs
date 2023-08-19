@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Quit #
  * @brief Quit the app with showing a dialog and exit after closing
@@ -9,17 +11,20 @@
 */
 
 
-// Quit.txt --> All the sample codes
 
-/** @Sample
-<sample Quit>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Quit
 function OnStart()
 {
     app.ShowPopup( "Exciting" );
     <b>app.Quit( "App will now exit anyway.", "No error detected." );</b>
     app.ShowPopup( "Exited" ); // not shown
 }
-</sample>
-
  */
-
+    
+            

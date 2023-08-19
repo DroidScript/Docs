@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTimePicker #
  * @abbrev tmp
@@ -13,7 +15,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -23,69 +25,43 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern SetTextEdit
- */
-// CreateTimePicker.txt --> All the sample codes
+/** @extern SetTextEdit */
 
-/** @Sample
-<sample Default Time>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Default Time
 cfg.Light
 cfg.MUI
 
@@ -115,11 +91,12 @@ function OnSelect(time, hh, mm, pos)
 {
     app.ShowPopup(hh+":"+mm+":"+pos)
 }
-</sample>
-
-
-
-<sample Custom Time>
+ */
+    
+            
+    
+/**
+@sample Custom Time
 cfg.Dark
 cfg.MUI
 
@@ -149,6 +126,6 @@ function OnSelect(time, hh, mm, pos)
 {
     app.ShowPopup(hh+":"+mm+":"+pos)
 }
-</sample>
  */
-
+    
+            

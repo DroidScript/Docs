@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateListSimple #
  * @abbrev lss
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnTouch ###
@@ -68,97 +70,57 @@
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateListSimple.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -186,11 +148,12 @@ function OnTouch(title, index, icon, badge)
 {
     app.ShowPopup(title+" : "+index)
 }
-</sample>
-
-
-
-<sample With Icon & Color>
+ */
+    
+            
+    
+/**
+@sample With Icon & Color
 cfg.Light
 cfg.MUI
 
@@ -212,11 +175,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-
-<sample With Icon, Color & Badge>
+ */
+    
+            
+    
+/**
+@sample With Icon, Color & Badge
 cfg.Light
 cfg.MUI
 
@@ -238,9 +202,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-<sample Badge Color>
+ */
+    
+            
+    
+/**
+@sample Badge Color
 cfg.Light
 cfg.MUI
 
@@ -262,10 +229,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Dark With Divider>
+ */
+    
+            
+    
+/**
+@sample Dark With Divider
 cfg.Dark
 cfg.MUI
 
@@ -287,6 +256,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

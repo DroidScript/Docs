@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateBackground #
  * @abbrev bck
@@ -12,7 +14,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### Scroll ###
@@ -29,10 +31,14 @@
  * @returns bin
  */
 
-                    // CreateBackground.txt --> All the sample codes
+                    
 
-/** @Sample
-<sample Scroll>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Scroll
 cfg.Game;
 
 function OnLoad()
@@ -50,7 +56,6 @@ function OnAnimate(t,dt)
 {
     <b>sky.Scroll(-dt/1000, 0);</b>
 }
-</sample>
-
  */
-
+    
+            

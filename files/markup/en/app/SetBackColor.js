@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetBackColor #
  * @brief Change the app's background color
@@ -7,15 +9,18 @@
 */
 
 
-// SetBackColor.txt --> All the sample codes
 
-/** @Sample
-<sample Blue Background>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Blue Background
 function OnStart()
 {
     app.SetBackColor( "blue" );
 }
-</sample>
-
  */
-
+    
+            

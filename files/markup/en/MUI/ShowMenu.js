@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowMenu #
  * @abbrev smu
@@ -13,7 +15,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -22,10 +24,14 @@
  * @param {fnc_json} callback {"pNames":["title"],"pTypes":["str-The title of the selected item."]}
  */
 
-// ShowMenu.txt --> All the sample codes
 
-/** @Sample
-<sample Basic usage>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic usage
 cfg.Light
 cfg.MUI
 
@@ -45,6 +51,6 @@ function btn_OnTouch() {
         app.ShowPopup(item)
     })
 }
-</sample>
  */
-
+    
+            

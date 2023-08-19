@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addFAB #
  * @abbrev fab
@@ -12,7 +14,7 @@
 */
 
 
-// addFAB.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a floating action button on your layout. FAB usually float at the bottom right of your screen by default.
@@ -28,7 +30,7 @@ Adds a floating action button on your layout. FAB usually float at the bottom ri
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setCornerRadius ###
@@ -165,12 +167,14 @@ Adds a floating action button on your layout. FAB usually float at the bottom ri
  * @param {num} zIndex The z
  */
 
-// addFAB.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic FAB>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic FAB
 class Main extends App
 {
     onStart()
@@ -191,9 +195,12 @@ class Main extends App
         ui.showPopup( "You click me!" )
     }
 }
-</sample>
-
-<sample Primary static FAB>
+ */
+    
+            
+    
+/**
+@sample Primary static FAB
 class Main extends App
 {
     onStart()
@@ -215,9 +222,12 @@ class Main extends App
         ui.showPopup( "You click me!" )
     }
 }
-</sample>
-
-<sample Extended FAB>
+ */
+    
+            
+    
+/**
+@sample Extended FAB
 class Main extends App
 {
     onStart()
@@ -238,9 +248,12 @@ class Main extends App
         ui.showPopup( "You click me!" )
     }
 }
-</sample>
-
-<sample Secondary,Extended,Left>
+ */
+    
+            
+    
+/**
+@sample Secondary,Extended,Left
 class Main extends App
 {
     onStart()
@@ -261,6 +274,6 @@ class Main extends App
         ui.showPopup( "You click me!" )
     }
 }
-</sample>
  */
-
+    
+            

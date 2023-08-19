@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateListDialog #
  * @abbrev ldg
@@ -11,7 +13,7 @@
 */
 
 
-// CreateListDialog.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.
@@ -25,20 +27,14 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern Dismiss
- */
+/** @extern Dismiss */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -47,21 +43,13 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
  */
 
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetOnTouch ###
  * Define a callback function that is called when the user touches a list item.
@@ -70,13 +58,9 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
  */
 
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
 /** ### SetTitle ###
  * Change the dialog title.
@@ -85,13 +69,15 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
  */
 
 
-/**
- * @extern Show
- */
-// CreateListDialog.txt --> All the sample codes
+/** @extern Show */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	<b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
@@ -103,9 +89,12 @@ function dlg_OnTouch( item )
 {
 	app.ShowPopup( item );
 }
-</sample>
-
-<sample Multi>
+ */
+    
+            
+    
+/**
+@sample Multi
 function OnStart()
 {
 	<b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
@@ -117,7 +106,6 @@ function dlg_OnTouch( item, isChecked )
 {
 	app.ShowPopup( item + " isChecked = " + isChecked );
 }
-</sample>
-
  */
-
+    
+            

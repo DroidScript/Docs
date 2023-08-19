@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateButton #
  * @abbrev btn
@@ -12,7 +14,7 @@
 */
 
 
-// CreateButton.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method:
@@ -42,64 +44,36 @@ You can customize the visual look in many ways by either using one of the existi
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -108,89 +82,47 @@ You can customize the visual look in many ways by either using one of the existi
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEllipsize
- */
+/** @extern SetEllipsize */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
 /** ### SetOnLongTouch ###
  * %cb% the button has been long pressed.
@@ -199,21 +131,13 @@ You can customize the visual look in many ways by either using one of the existi
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetStyle ###
  * Customize the look of the button.
@@ -227,37 +151,27 @@ You can customize the visual look in many ways by either using one of the existi
  */
 
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextShadow
- */
+/** @extern SetTextShadow */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateButton.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Default Size>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Default Size
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -273,9 +187,12 @@ function SayHello()
 {
 	app.ShowPopup("Hello World!");
 }
-</sample>
-
-<sample Fixed Size>
+ */
+    
+            
+    
+/**
+@sample Fixed Size
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -291,9 +208,12 @@ function SayHello()
 {
 	app.ShowPopup("Hello World!");
 }
-</sample>
-
-<sample Fill Layout Width>
+ */
+    
+            
+    
+/**
+@sample Fill Layout Width
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -310,9 +230,12 @@ function SayHello()
 {
 	app.ShowPopup("Hello World!");
 }
-</sample>
-
-<sample Change Style>
+ */
+    
+            
+    
+/**
+@sample Change Style
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
@@ -329,7 +252,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

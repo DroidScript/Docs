@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveBackground #
  * @brief Remove background from game
@@ -7,9 +9,7 @@
 */
 
 
-// RemoveBackground.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

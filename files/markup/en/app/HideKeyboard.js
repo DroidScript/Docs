@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # HideKeyboard #
  * @brief Hide the device keyboard
@@ -8,10 +10,14 @@
 */
 
 
-// HideKeyboard.txt --> All the sample codes
 
-/** @Sample
-<sample Toggle Keyboard>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Toggle Keyboard
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -32,7 +38,6 @@ function tgl_OnTouch( show )
 	<b>if( show ) app.ShowKeyboard( edt );
 	else app.HideKeyboard();</b>
 }
-</sample>
-
  */
-
+    
+            

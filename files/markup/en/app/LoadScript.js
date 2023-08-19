@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LoadScript #
  * @brief Asynchronously import a .js file
@@ -9,10 +11,14 @@
 */
 
 
-// LoadScript.txt --> All the sample codes
 
-/** @Sample
-<sample Compute the Answer to the Ultimate Question of Life, the Universe, and Everything>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Compute the Answer to the Ultimate Question of Life, the Universe, and Everything
 var scriptJS = `
 var num = 7;
 function computeNum() { return 6 * num; }
@@ -27,7 +33,6 @@ function OnLoad() {
     app.ShowPopup( "script.js loaded." );
     app.Alert( computeNum(), "computed number: " );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSpeechRec #
  * @abbrev spr
@@ -9,7 +11,7 @@
 */
 
 
-// CreateSpeechRec.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The **SpeechRec** object can be used to listen for and recognize speech.
@@ -26,12 +28,10 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Cancel ###
  * Stop recognizing speech and break other processes.
@@ -60,9 +60,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Recognize ###
  * Start recognizing speech.
@@ -96,10 +94,14 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
  * $$ spr.Stop() $$
  */
 
-// CreateSpeechRec.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -135,7 +137,6 @@ function speech_OnError()
 {
 	app.ShowPopup( "Please speak more clearly!" );
 }
-</sample>
-
  */
-
+    
+            

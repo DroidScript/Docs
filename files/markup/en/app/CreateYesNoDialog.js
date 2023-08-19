@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateYesNoDialog #
  * @abbrev ynd
@@ -12,20 +14,14 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern Dismiss
- */
+/** @extern Dismiss */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -34,13 +30,9 @@
  */
 
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### SetBackColor ###
  * Changes the background color of the control.
@@ -50,9 +42,7 @@
  */
 
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetButtonText ###
  * Changes the texts of the two Yes/No buttons.
@@ -69,17 +59,17 @@
  */
 
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern Show
- */
-// CreateYesNoDialog.txt --> All the sample codes
+/** @extern Show */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     ynd = app.CreateYesNoDialog( "Choose an answer" );
@@ -91,7 +81,6 @@ function Ynd_OnTouch( result )
 {
     app.Alert( result, "Result" );
 }
-</sample>
-
  */
-
+    
+            

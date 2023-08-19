@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSensor #
  * @abbrev sns
@@ -10,7 +12,7 @@
 */
 
 
-// CreateSensor.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The sensor object can be used to access numerous sensors of your device. You can use the **SetOnChange** function of the Sensor to set the name of a function you want to be called when a the changes occur.
@@ -20,12 +22,10 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetAzimuth ###
  * Returns the first/x/azimuth value of a sensor.
@@ -69,9 +69,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### SetMaxRate ###
  * Define a minimum timeout between two OnChage calls.
@@ -105,19 +103,26 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
  * $$ sns.Stop() $$
  */
 
-// CreateSensor.txt --> All the sample codes
 
-/** @Sample
-<sample GetNames>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample GetNames
 function OnStart()
 {
     sns = app.CreateSensor();
     <b>var names = sns.GetNames();
     app.Alert(names.replace(/,/g, ",\n"), "Sensor Names");</b>
 }
-</sample>
-
-<sample Accelerometer>
+ */
+    
+            
+    
+/**
+@sample Accelerometer
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -136,9 +141,12 @@ function sns_OnChange( x, y, z, time )
 {
 	txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
 }
-</sample>
-
-<sample Orientation>
+ */
+    
+            
+    
+/**
+@sample Orientation
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -160,9 +168,12 @@ function sns_OnChange( azimuth, pitch, roll, time )
 	msg += "\n roll = " + roll.toFixed(1);
 	txt.SetText( msg );
 }
-</sample>
-
-<sample Light>
+ */
+    
+            
+    
+/**
+@sample Light
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -180,7 +191,6 @@ function sns_OnChange( lux )
 {
 	txt.SetText( "level = " + lux + " lux" );
 }
-</sample>
-
  */
-
+    
+            

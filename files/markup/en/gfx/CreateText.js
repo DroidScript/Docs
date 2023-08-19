@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateText #
  * @abbrev txt
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### align
@@ -24,17 +26,11 @@
  */
 
                     
-/**
- * @extern alpha
- */
+/** @extern alpha */
 
-/**
- * @extern angle
- */
+/** @extern angle */
 
-/**
- * @extern Contains
- */
+/** @extern Contains */
 
 /** ### file
  * @prop
@@ -50,44 +46,24 @@
  */
 
                     
-/**
- * @extern height
- */
+/** @extern height */
 
-/**
- * @extern pivotX
- */
+/** @extern pivotX */
 
-/**
- * @extern pivotY
- */
+/** @extern pivotY */
 
-/**
- * @extern scaleX
- */
+/** @extern scaleX */
 
-/**
- * @extern scaleY
- */
+/** @extern scaleY */
 
-/**
- * @extern SetMatrix
- */
+/** @extern SetMatrix */
 
-/**
- * @extern Update
- */
+/** @extern Update */
 
-/**
- * @extern visible
- */
+/** @extern visible */
 
-/**
- * @extern width
- */
-// CreateText.txt --> All the sample codes
+/** @extern width */
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

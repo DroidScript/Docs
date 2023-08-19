@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetActivities #
 
@@ -9,10 +11,14 @@
 */
 
 
-// GetActivities.txt --> All the sample codes
 
-/** @Sample
-<sample Show Activities>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Activities
 function OnStart()
 {
     app.ShowProgress();
@@ -33,7 +39,6 @@ function OnStart()
 
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

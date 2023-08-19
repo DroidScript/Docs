@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateMediaStore #
  * @abbrev med
@@ -10,12 +12,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetAlbumArt ###
  * Loads the album image to an existing image:dso-CreateImage.
@@ -91,11 +91,14 @@
  * @param {fnc_json} callback {"pNames":["result"],"pTypes":["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str_uri&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"]}
  */
 
-// CreateMediaStore.txt --> All the sample codes
 
-/** @Sample
 
-<sample Query Artists>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Query Artists
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -121,9 +124,12 @@ function media_OnArtistsResult( result )
     } );
     app.HideProgress();
 }
-</sample>
-
-<sample Query Albums>
+ */
+    
+            
+    
+/**
+@sample Query Albums
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -151,9 +157,12 @@ function media_OnAlbumsResult( result )
     } );
     app.HideProgress();
 }
-</sample>
-
-<sample Query Media>
+ */
+    
+            
+    
+/**
+@sample Query Media
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -179,7 +188,6 @@ function media_OnMediaResult( result )
     } );
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

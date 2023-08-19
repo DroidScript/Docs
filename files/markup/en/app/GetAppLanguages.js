@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetAppLanguages #
  * @brief Get translation languages
@@ -9,9 +11,7 @@
 */
 
 
-// GetAppLanguages.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

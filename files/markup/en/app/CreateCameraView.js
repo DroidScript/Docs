@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCameraView #
  * @abbrev cam
@@ -11,7 +13,7 @@
 */
 
 
-// CreateCameraView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 **CameraView**s are used to access the device camera.
@@ -35,16 +37,12 @@ More samples can be found in the samples section of DroidScript.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
 /** ### AutoCapture ###
  * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}. * The first # in the filename is a placeholder for numbers increasing for every taken picture.
@@ -55,13 +53,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### FindFaces ###
  * Finds faces in the current camera view.
@@ -71,17 +65,11 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetCameraCount ###
  * Returns the amount of cameras built in to the device.
@@ -97,9 +85,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetImageHeight ###
  * Returns the camera capture height in pixels.
@@ -115,9 +101,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetMaxZoom ###
  * Returns the hightst possible zoom value.
@@ -133,9 +117,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
 /** ### GetPictureSizes ###
  * Returns a list of possible picture dimensions.
@@ -156,13 +138,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -171,13 +149,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
 /** ### GetZoom ###
  * Returns the curent zoom value.
@@ -186,9 +160,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
 /** ### HasFlash ###
  * Checks if the currently used camera has a camera flash.
@@ -197,17 +169,11 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
 /** ### IsRecording ###
  * Returns a boolea indicating whether the camera is currently recording a video.
@@ -216,13 +182,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### MotionMosaic ###
  * Defines a raster which is used for motion detection. * Use AutoCapture to take pictures if a motion was detected.
@@ -253,25 +215,15 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetColorEffect ###
  * Applies a color effect to the camera.
@@ -280,13 +232,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
 /** ### SetDuplicateImage ###
  * Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.
@@ -296,9 +244,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
 /** ### SetFlash ###
  * En- or disables the camera flash if available.
@@ -314,13 +260,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnFocus
- */
+/** @extern SetOnFocus */
 
 /** ### SetOnPicture ###
  * Defines a callback function which is called if cam.AutoCapture took a picture. The _file_ parameter contains the path to the image file.
@@ -343,9 +285,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
 /** ### SetParameter ###
  * Change property values of the camera. * See GetProperties to get a full list of available keys.
@@ -363,9 +303,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
 /** ### SetPostRotation ###
  * Rotates captured image in any desired angle in degrees.
@@ -381,13 +319,9 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetSound ###
  * En-/Disables the camera sound playing when taking pictures.
@@ -404,9 +338,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
 /** ### SetZoom ###
  * Change the zoom value of the camera.
@@ -415,9 +347,7 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### StartPreview ###
  * Start the camera preview on the display.
@@ -455,13 +385,15 @@ More samples can be found in the samples section of DroidScript.
  */
 
 
-/**
- * @extern Tween
- */
-// CreateCameraView.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Show Camera Preview>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Camera Preview
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -476,9 +408,12 @@ function OnStart()
 function cam_OnReady() {
   cam.StartPreview();
 }
-</sample>
-
-<sample Take pictures>
+ */
+    
+            
+    
+/**
+@sample Take pictures
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -504,10 +439,12 @@ function Snap()
 	cam.TakePicture( "/sdcard/MyPic.jpg" );
 	app.ShowPopup("Picture saved");
 }
-</sample>
-
-<sample Record Video>
-
+ */
+    
+            
+    
+/**
+@sample Record Video
 function OnStart()
 {
     app.SetOrientation("Landscape");
@@ -547,10 +484,12 @@ function Record( start )
         app.ShowPopup("Saved to " + recFolder + "/test.mp4");
 	}
 }
-</sample>
-
-<sample Motion Detector>
-
+ */
+    
+            
+    
+/**
+@sample Motion Detector
 var sensitivity = 10; // motion threshold
 var minPeriod = 500;  // millisecs
 var snapFolder = "/sdcard/Snaps";
@@ -583,7 +522,6 @@ function StartDetection()
 	cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img );
 	cam.StartPreview();
 }
-</sample>
-
  */
-
+    
+            

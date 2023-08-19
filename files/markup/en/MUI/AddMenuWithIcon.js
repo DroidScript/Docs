@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddMenuWithIcon #
  * @abbrev mwi
@@ -12,9 +14,7 @@
 */
 
 
-// AddMenuWithIcon.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

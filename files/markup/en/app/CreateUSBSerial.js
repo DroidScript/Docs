@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateUSBSerial #
  * @abbrev usb
@@ -13,7 +15,7 @@
 */
 
 
-// CreateUSBSerial.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The USBSerial component can be used to communicate with other USB devices connected to yours.
@@ -29,12 +31,10 @@ The default constructor values are:
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -50,9 +50,7 @@ The default constructor values are:
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### SetDataMode ###
  * Enable sending data in several modes.
@@ -131,9 +129,7 @@ The default constructor values are:
  * @param {str} encoding US
  */
 
-// CreateUSBSerial.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

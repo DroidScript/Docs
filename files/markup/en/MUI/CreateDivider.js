@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDivider #
  * @abbrev dvd
@@ -11,40 +13,30 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** @extern Show */
+
+/** @extern Hide */
+
+/** @extern GetVisibility */
+
+/** @extern IsEnabled */
+
+/** @extern IsVisible */
+
+/** @extern SetEnabled */
+
+/** @extern SetVisibility */
+
+
+// ------------- SAMPLES ------------- 
+
+
+    
 /**
- * @extern Show
- */
-
-/**
- * @extern Hide
- */
-
-/**
- * @extern GetVisibility
- */
-
-/**
- * @extern IsEnabled
- */
-
-/**
- * @extern IsVisible
- */
-
-/**
- * @extern SetEnabled
- */
-
-/**
- * @extern SetVisibility
- */
-// CreateDivider.txt --> All the sample codes
-
-/** @Sample
-<sample Basic & Light>
+@sample Basic & Light
 cfg.Light
 cfg.MUI
 
@@ -63,6 +55,6 @@ function OnStart()
     var text = "You can undone this process."
     dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
 }
-</sample>
  */
-
+    
+            

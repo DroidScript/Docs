@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SimulateTouch #
  * @brief Simulate a touch event on a rouchable control
@@ -10,10 +12,14 @@
 */
 
 
-// SimulateTouch.txt --> All the sample codes
 
-/** @Sample
-<sample Pressing Buttons>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Pressing Buttons
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -37,7 +43,6 @@ function btn_OnTouch()
 {
 	app.ShowPopup( "Hello World " + i++ );
 }
-</sample>
-
  */
-
+    
+            

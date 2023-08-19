@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonRound #
  * @abbrev btr
@@ -14,9 +16,7 @@
 */
 
 
-// AddButtonRound.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

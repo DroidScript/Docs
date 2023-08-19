@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SaveNumber #
  * @brief Save a number value across multiple starts
@@ -11,10 +13,14 @@
 */
 
 
-// SaveNumber.txt --> All the sample codes
 
-/** @Sample
-<sample Click Counter>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Click Counter
 var clicks = 0, file = "demofile";
 
 function OnStart()
@@ -35,7 +41,6 @@ function btn_OnTouch()
 	<b>app.SaveNumber( "clicks", ++clicks, file );</b>
 	app.ShowPopup( "Clicks: " + clicks );
 }
-</sample>
-
  */
-
+    
+            

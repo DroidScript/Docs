@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateMenuWithIcon #
  * @abbrev mwi
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -24,85 +26,51 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern SetVisibility
- */
-// CreateMenuWithIcon.txt --> All the sample codes
+/** @extern SetVisibility */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -133,11 +101,12 @@ function OnSelect(choice)
 {
     app.ShowPopup(choice)
 }
-</sample>
-
-
-
-<sample Dark & Bottom,Right>
+ */
+    
+            
+    
+/**
+@sample Dark & Bottom,Right
 cfg.Light
 cfg.MUI
 
@@ -168,6 +137,6 @@ function OnSelect(choice, index)
 {
     app.ShowPopup(choice+" : "+index)
 }
-</sample> 
  */
-
+    
+            

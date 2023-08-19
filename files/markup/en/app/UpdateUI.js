@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # UpdateUI #
  * @brief Force UI refresh
@@ -7,9 +9,7 @@
 */
 
 
-// UpdateUI.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

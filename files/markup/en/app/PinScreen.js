@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PinScreen #
  * @brief Pin app on screen
@@ -7,9 +9,7 @@
 */
 
 
-// PinScreen.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

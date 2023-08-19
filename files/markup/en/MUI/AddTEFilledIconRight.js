@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTEFilledIconRight #
  * @abbrev tef
@@ -15,9 +17,7 @@
 */
 
 
-// AddTEFilledIconRight.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

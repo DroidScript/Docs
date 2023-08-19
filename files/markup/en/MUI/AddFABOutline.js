@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddFABOutline #
  * @abbrev fab
@@ -12,9 +14,7 @@
 */
 
 
-// AddFABOutline.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

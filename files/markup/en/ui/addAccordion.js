@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addAccordion #
  * @abbrev acc
@@ -13,7 +15,7 @@
 */
 
 
-// addAccordion.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds an accordion or expansion panel into your app. This is very useful to display controls that are grouped together.
@@ -25,7 +27,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### getLayout ###
@@ -276,12 +278,14 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
  * @param {num} zIndex The z
  */
 
-// addAccordion.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Complete accordion implementation>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Complete accordion implementation
 class Main extends App
 {
     onStart()
@@ -327,9 +331,12 @@ class Main extends App
         ui.showPopup( msg )
     }
 }
-</sample>
-
-<sample Items manipulation>
+ */
+    
+            
+    
+/**
+@sample Items manipulation
 class Main extends App
 {
     onStart()
@@ -378,9 +385,12 @@ class Main extends App
         ui.showPopup( "Second item is removed" )
     }
 }
-</sample>
-
-<sample Custom styles>
+ */
+    
+            
+    
+/**
+@sample Custom styles
 class Main extends App
 {
     onStart()
@@ -413,6 +423,6 @@ class Main extends App
         this.acc.expandIcon = "favorite"
     }
 }
-</sample>
  */
-
+    
+            

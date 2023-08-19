@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetMediaFile #
  * @brief Get a path to an unambiguous media file
@@ -11,16 +13,19 @@
 */
 
 
-// GetMediaFile.txt --> All the sample codes
 
-/** @Sample
-<sample Get Media File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Media File
 function OnStart()
 {
     <b>var path = app.GetMediaFile("Hello World", ".png");</b>
     app.Alert( path );
 }
-</sample>
-
  */
-
+    
+            

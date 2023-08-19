@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddPhysics #
  * @abbrev phs
@@ -16,7 +18,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddShape ###
@@ -121,11 +123,14 @@
  * $$ phs.UpdatePhysics() $$
  */
 
-// AddPhysics.txt --> All the sample codes
 
-/** @Sample
-<sample Billiard>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Billiard
 cfg.Game;
 
 function OnLoad()
@@ -151,10 +156,12 @@ function OnReady()
 
     gfx.Play();
 }
-</sample>
-
-<sample Collision>
-
+ */
+    
+            
+    
+/**
+@sample Collision
 cfg.Game;
 
 function OnLoad()
@@ -181,8 +188,6 @@ function OnReady()
     if( a.group == "bunnies" )
         squeak.Play( false, 0, 0 );
 }</b>
-
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateNxt #
  * @abbrev nxt
@@ -11,12 +13,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Beep ###
  * Play tone with given frequency for a given time in milliseconds.
@@ -296,10 +296,14 @@
  * @returns str-black|blue|green|yellow|red|white
  */
 
-// CreateNxt.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     <b>nxt = app.CreateNxt();
@@ -311,9 +315,12 @@ function OnConnected()
 {
     nxt.Beep( 100, 500 );
 }
-</sample>
-
-<sample Auto Connect>
+ */
+    
+            
+    
+/**
+@sample Auto Connect
 function OnStart()
 {
 	nxt = app.CreateNxt();
@@ -337,9 +344,12 @@ function nxt_OnConnect( success, nxt )
     else app.Alert( "Failed to connect!" );
     app.HideProgress();
 }
-</sample>
-
-<sample Sensors>
+ */
+    
+            
+    
+/**
+@sample Sensors
 function OnStart()
 {
     nxt = app.CreateNxt();
@@ -383,7 +393,6 @@ function ReadSensor()
     if(res) app.ShowPopup( res );
     else app.ShowPopup( "No Value" );
 }
-</sample>
-
  */
-
+    
+            

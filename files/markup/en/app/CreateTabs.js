@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTabs #
  * @abbrev tab
@@ -12,7 +14,7 @@
 */
 
 
-// CreateTabs.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Tabs are useful if you have multiple subsections in your app. The user can then press the title of a tab and the control will automatically switch to the corresponding layout.
@@ -24,36 +26,22 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetCurrentTabName ###
  * Returns the currently displayed tab name
@@ -62,9 +50,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetLayout ###
  * Returns the content layout of a given tab.
@@ -74,21 +60,13 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -97,37 +75,21 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### parent.AddTab ###
  * Adds a new tab to the tabs control.
@@ -136,29 +98,17 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetCornerRadius ###
  * Applies a corner radius to card layouts.
@@ -167,17 +117,11 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnChange ###
  * %cb% the tab has been changed by the user.
@@ -193,29 +137,17 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetTextSize ###
  * 
@@ -225,9 +157,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern SetTouchable
- */
+/** @extern SetTouchable */
 
 /** ### SetTouchThrough ###
  * Define whether the layout should forward OnTouch events to underlying controls.
@@ -236,13 +166,9 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### ShowTab ###
  * Switch to a given tab name
@@ -251,13 +177,15 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/**
- * @extern Tween
- */
-// CreateTabs.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -276,7 +204,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

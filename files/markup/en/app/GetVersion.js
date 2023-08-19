@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetVersion #
  * @brief Get apk version number
@@ -7,16 +9,19 @@
 */
 
 
-// GetVersion.txt --> All the sample codes
 
-/** @Sample
-<sample Show App Version>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show App Version
 function OnStart()
 {
     <b>var version = app.GetVersion();</b>
     app.Alert( version, "App Version:" );
 }
-</sample>
-
  */
-
+    
+            

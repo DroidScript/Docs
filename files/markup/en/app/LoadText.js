@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LoadText #
 
@@ -11,10 +13,14 @@
 */
 
 
-// LoadText.txt --> All the sample codes
 
-/** @Sample
-<sample Load Saved Text>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Load Saved Text
 var file = "demofile";
 
 function OnStart()
@@ -47,7 +53,6 @@ function btnLoad_OnTouch()
     <b>var value = app.LoadText( "value", "no value stored", file );</b>
 	app.ShowPopup( value );
 }
-</sample>
-
  */
-
+    
+            

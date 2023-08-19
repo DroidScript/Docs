@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetCountry #
  * @brief Get user country name
@@ -11,16 +13,19 @@
 */
 
 
-// GetCountry.txt --> All the sample codes
 
-/** @Sample
-<sample Show Country>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Country
 function OnStart()
 {
     <b>var name = app.GetCountry();</b>
     app.Alert( name );
 }
-</sample>
-
  */
-
+    
+            

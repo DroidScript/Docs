@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetWifiEnabled #
 
@@ -9,10 +11,14 @@
 */
 
 
-// SetWifiEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Toggle WiFi>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Toggle WiFi
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -28,7 +34,6 @@ function tgl_OnTouch( enable )
 {
     <b>app.SetWifiEnabled( enable );</b>
 }
-</sample>
-
  */
-
+    
+            

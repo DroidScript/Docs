@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Exit #
  * @brief Close and stop the app
@@ -7,10 +9,14 @@
 */
 
 
-// Exit.txt --> All the sample codes
 
-/** @Sample
-<sample Exit dialog>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Exit dialog
 function OnStart()
 {
     app.EnableBackKey( false );
@@ -27,7 +33,6 @@ function yesNo_OnTouch( result )
 {
     if( result == "Yes" ) app.Exit();
 }
-</sample>
-
  */
-
+    
+            

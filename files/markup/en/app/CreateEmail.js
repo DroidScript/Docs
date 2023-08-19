@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateEmail #
  * @abbrev mail
@@ -12,12 +14,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -75,10 +75,14 @@
  * @param {num_int} port 465:SSL|578:TLS (gmail&comma; yahoo)|587:gmx
  */
 
-// CreateEmail.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>email = app.CreateEmail( "mymail@gmail.com", "MyPass" );
@@ -94,7 +98,6 @@ function email_OnStatus( status )
 	app.HideProgress();
 	app.ShowPopup( status );
 }
-</sample>
-
  */
-
+    
+            

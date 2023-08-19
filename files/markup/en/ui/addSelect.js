@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addSelect #
  * @abbrev sel
@@ -13,7 +15,7 @@
 */
 
 
-// addSelect.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a Select Component to a given layout.
@@ -35,7 +37,7 @@ Adds a Select Component to a given layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnChange ###
@@ -273,12 +275,14 @@ Adds a Select Component to a given layout.
  * @param {num} zIndex The z
  */
 
-// addSelect.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -304,9 +308,12 @@ class Main extends App
         ui.showPopup("You choose " + text)
     }
 }
-</sample>
-
-<sample Group title>
+ */
+    
+            
+    
+/**
+@sample Group title
 class Main extends App
 {
     onStart()
@@ -333,9 +340,12 @@ class Main extends App
         ui.showPopup("You choose " + text)
     }
 }
-</sample>
-
-<sample Multiple selection>
+ */
+    
+            
+    
+/**
+@sample Multiple selection
 class Main extends App
 {
     onStart()
@@ -360,9 +370,12 @@ class Main extends App
         ui.showPopup( "You choose " + items.join(", ") )
     }
 }
-</sample>
-
-<sample Outlined and small>
+ */
+    
+            
+    
+/**
+@sample Outlined and small
 class Main extends App
 {
     onStart()
@@ -388,9 +401,12 @@ class Main extends App
         ui.showPopup( "You choose " + item )
     }
 }
-</sample>
-
-<sample Radiogroup items>
+ */
+    
+            
+    
+/**
+@sample Radiogroup items
 class Main extends App
 {
     onStart()
@@ -415,9 +431,12 @@ class Main extends App
         ui.showPopup( "You choose " + item )
     }
 }
-</sample>
-
-<sample Grouped list items>
+ */
+    
+            
+    
+/**
+@sample Grouped list items
 class Main extends App
 {
     onStart()
@@ -441,9 +460,12 @@ class Main extends App
         ui.showPopup( "You choose " + item )
     }
 }
-</sample>
-
-<sample Multiple radiogroup with titles>
+ */
+    
+            
+    
+/**
+@sample Multiple radiogroup with titles
 class Main extends App
 {
     onStart()
@@ -467,6 +489,6 @@ class Main extends App
         ui.showPopup( "You choose " + items.join(", ") )
     }
 }
-</sample>
  */
-
+    
+            

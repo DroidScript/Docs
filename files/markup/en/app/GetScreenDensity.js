@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetScreenDensity #
  * @brief Get the screen density
@@ -9,16 +11,19 @@
 */
 
 
-// GetScreenDensity.txt --> All the sample codes
 
-/** @Sample
-<sample Show Screen Density>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Screen Density
 function OnStart()
 {
     <b>var dens = app.GetScreenDensity();</b>
     app.Alert( dens );
 }
-</sample>
-
  */
-
+    
+            

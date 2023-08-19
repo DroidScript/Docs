@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addDivider #
  * @brief addDivider
@@ -10,7 +12,7 @@
 */
 
 
-// addDivider.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a hairline divider into your layout.
@@ -22,7 +24,7 @@ Adds a hairline divider into your layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -159,12 +161,14 @@ Adds a hairline divider into your layout.
  * @param {num} zIndex The z
  */
 
-// addDivider.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -188,6 +192,6 @@ class Main extends App
         ui.addText(this.main, text, "Justify", 0.8)
     }
 }
-</sample>
  */
-
+    
+            

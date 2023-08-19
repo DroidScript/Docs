@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ClearCookies #
  * @brief Clears saved web cookies
@@ -9,9 +11,7 @@
 */
 
 
-// ClearCookies.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

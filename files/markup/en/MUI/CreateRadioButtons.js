@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateRadioButtons #
  * @abbrev rdb
@@ -16,7 +18,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -40,25 +42,15 @@
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### Toggle ###
  * Show or Hide the list
@@ -66,29 +58,17 @@
  */
 
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetItem ###
  * Returns the corresponding item
@@ -98,9 +78,7 @@
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetList ###
  * Gets the list
@@ -109,17 +87,11 @@
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * 
@@ -128,53 +100,35 @@
  */
 
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Tween
- */
-// CreateRadioButtons.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -191,11 +145,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-
-<sample With callback>
+ */
+    
+            
+    
+/**
+@sample With callback
 cfg.Light
 cfg.MUI
 
@@ -218,6 +173,6 @@ function OnTouch(name, index)
 {
     app.ShowPopup(name+" : "+index)
 }
-</sample>
  */
-
+    
+            

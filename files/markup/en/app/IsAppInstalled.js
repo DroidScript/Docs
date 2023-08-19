@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsAppInstalled #
  * @brief Check if package is installed
@@ -10,17 +12,20 @@
 */
 
 
-// IsAppInstalled.txt --> All the sample codes
 
-/** @Sample
-<sample Check App Installed>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check App Installed
 function OnStart()
 {
     var pkg = app.GetPackageName();
     <b>var isInstalled = app.IsAppInstalled( pkg );</b>
     app.Alert( isInstalled, pkg + " installed:" );
 }
-</sample>
-
  */
-
+    
+            

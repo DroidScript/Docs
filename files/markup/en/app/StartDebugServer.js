@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StartDebugServer #
  * @brief Start remote debug server
@@ -8,9 +10,7 @@
 */
 
 
-// StartDebugServer.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

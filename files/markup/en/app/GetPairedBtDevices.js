@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetPairedBtDevices #
  * @brief Get list of paired bluetooth devices
@@ -9,10 +11,14 @@
 */
 
 
-// GetPairedBtDevices.txt --> All the sample codes
 
-/** @Sample
-<sample Show >
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show
 var itv;
 
 function OnStart()
@@ -44,7 +50,6 @@ function checkBtOn()
             lst.AddItem( devices[i].name, devices[i].address );</b>
     }
 }
-</sample>
-
  */
-
+    
+            

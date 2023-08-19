@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTESearchUnique #
  * @abbrev tes
@@ -13,9 +15,7 @@
 */
 
 
-// AddTESearchUnique.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

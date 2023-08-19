@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addProgress #
  * @abbrev prg
@@ -13,7 +15,7 @@
 */
 
 
-// addProgress.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a progress component into your app.
@@ -29,7 +31,7 @@ Adds a progress component into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -166,12 +168,14 @@ Adds a progress component into your app.
  * @param {num} zIndex The z
  */
 
-// addProgress.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Progress control implementation>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Progress control implementation
 class Main extends App
 {
     onStart()
@@ -194,9 +198,12 @@ class Main extends App
         this.prog4.circleSize = 100
     }
 }
-</sample>
-
-<sample Setting progress value>
+ */
+    
+            
+    
+/**
+@sample Setting progress value
 class Main extends App
 {
     onStart()
@@ -228,6 +235,6 @@ class Main extends App
         }
     }
 }
-</sample>
  */
-
+    
+            

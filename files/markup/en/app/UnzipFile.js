@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # UnzipFile #
  * @brief Unzip a zip file
@@ -10,15 +12,18 @@
 */
 
 
-// UnzipFile.txt --> All the sample codes
 
-/** @Sample
-<sample Unzip File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Unzip File
 function OnStart()
 {
 	<b>app.UnzipFile( "yourfile.zip", "/sdcard/Extracted" );</b>
 }
-</sample>
-
  */
-
+    
+            

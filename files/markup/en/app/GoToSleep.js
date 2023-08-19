@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GoToSleep #
  * @brief Puts the phone into sleep mode
@@ -8,16 +10,19 @@
 */
 
 
-// GoToSleep.txt --> All the sample codes
 
-/** @Sample
-<sample Sleep and Wake>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Sleep and Wake
 function OnStart()
 {
     <b>app.GoToSleep();</b>
     setTimeout("app.WakeUp()", 5000)
 }
-</sample>
-
  */
-
+    
+            

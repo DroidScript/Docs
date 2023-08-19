@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetMargins #
  * @brief Set default margins
@@ -11,9 +13,7 @@
 */
 
 
-// SetMargins.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSynth #
  * @abbrev syn
@@ -9,7 +11,7 @@
 */
 
 
-// CreateSynth.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Returns a Synth object which can produces a variety of sounds, sound effects and music.
@@ -31,12 +33,10 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -287,11 +287,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * $$ syn.Stop() $$
  */
 
-// CreateSynth.txt --> All the sample codes
 
-/** @Sample
 
-<sample Tetris Theme>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Tetris Theme
 function OnStart()
 {
     syn = app.CreateSynth();
@@ -307,9 +310,12 @@ function OnStart()
         "74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:4"
     );
 }
-</sample>
-
-<sample Multiple Synths Song>
+ */
+    
+            
+    
+/**
+@sample Multiple Synths Song
 function OnStart()
 {
     synth1 = app.CreateSynth();
@@ -335,7 +341,6 @@ function OnStart()
     setTimeout('synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")', 4*5120);
     setTimeout('synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")', 5*5120);
 }
-</sample>
-
  */
-
+    
+            

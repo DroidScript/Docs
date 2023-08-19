@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddText #
  * @brief Create and add Text to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddText.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

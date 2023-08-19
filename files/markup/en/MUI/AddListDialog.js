@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddListDialog #
  * @abbrev lsd
@@ -13,10 +15,14 @@
 */
 
 
-// AddListDialog.txt --> All the sample codes
 
-/** @Sample
-<sample AddPicker>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddPicker
 cfg.Light
 cfg.MUI
 
@@ -59,6 +65,6 @@ function ShowChecklist()
 {
     ckl.Show()
 }
-</sample>
  */
-
+    
+            

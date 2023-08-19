@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Show #
  * @brief Show main app layout
@@ -8,9 +10,7 @@
 */
 
 
-// Show.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

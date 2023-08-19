@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Translate #
  * @brief Translate “Ok” and “Cancel” buttons
@@ -8,17 +10,20 @@
 */
 
 
-// Translate.txt --> All the sample codes
 
-/** @Sample
-<sample Translate Buttons>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Translate Buttons
 function OnStart()
 {
     <b>app.Translate("new cancel", "new ok");</b>
     app.Alert("my message");
     app.ShowTextDialog("Type some text", "");
 }
-</sample>
-
  */
-
+    
+            

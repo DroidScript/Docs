@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetType #
 
@@ -7,16 +9,19 @@
 */
 
 
-// GetType.txt --> All the sample codes
 
-/** @Sample
-<sample GetType>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample GetType
 function OnStart()
 {
     <b>var type = app.GetType();</b>
     app.Alert( type, "Type" );
 }
-</sample>
-
  */
-
+    
+            

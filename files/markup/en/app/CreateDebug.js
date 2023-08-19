@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDebug #
  * @brief Shows a debug log overlay
@@ -8,17 +10,20 @@
 */
 
 
-// CreateDebug.txt --> All the sample codes
 
-/** @Sample
-<sample Demonstration>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demonstration
 function OnStart()
 {
     <b>app.CreateDebug();</b>
 
 	app.Debug("Hello World!");
 }
-</sample>
-
  */
-
+    
+            

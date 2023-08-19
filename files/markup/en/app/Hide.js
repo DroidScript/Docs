@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Hide #
  * @brief Hide the main app layout
@@ -8,9 +10,7 @@
 */
 
 
-// Hide.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

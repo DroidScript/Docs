@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddListSimple #
  * @abbrev lss
@@ -13,9 +15,7 @@
 */
 
 
-// AddListSimple.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

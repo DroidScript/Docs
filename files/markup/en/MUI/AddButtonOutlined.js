@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonOutlined #
  * @abbrev bto
@@ -12,9 +14,7 @@
 */
 
 
-// AddButtonOutlined.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

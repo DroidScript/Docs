@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RealPath #
  * @brief Convert short to full path
@@ -7,9 +9,7 @@
 */
 
 
-// RealPath.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

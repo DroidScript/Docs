@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ChooseFile #
  * @brief Let the user choose a file
@@ -12,15 +14,19 @@
 */
 
 
-// ChooseFile.txt --> All the sample codes
 
-/** @Sample
-<sample Choose File by Mimetype>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Choose File by Mimetype
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-    var list = "*/*,application/text,application/apk,application/zip," +
+    var list = "*_*,application/text,application/apk,application/zip," +
         "audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css," +
         "text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg";
 
@@ -43,7 +49,6 @@ function OnChoose( file )
 {
     alert( "file path: " + file );
 }
-</sample>
-
  */
-
+    
+            

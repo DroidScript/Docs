@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateVideoView #
  * @abbrev vid
@@ -11,7 +13,7 @@
 */
 
 
-// CreateVideoView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The **VideoView** can be used to play local video files from the filesystem or video streams from remote sources.
@@ -24,32 +26,20 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetDuration ###
  * Retunrs the video duration in seconds.
@@ -58,25 +48,15 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -85,29 +65,17 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
 /** ### IsPlaying ###
  * Returns whether the VideoView is currently playing a video
@@ -123,13 +91,9 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Pause ###
  * Pauses the video.
@@ -150,37 +114,21 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
 /** ### SetFile ###
  * Set the video file path or url
@@ -189,9 +137,7 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnComplete ###
  * %cb% the playback has finished playing
@@ -221,21 +167,13 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetSubtitles ###
  * Set a subtitle file where to retreive the video subtitles from.
@@ -244,9 +182,7 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
 /** ### SetVolume ###
  * Change the video player volume
@@ -256,9 +192,7 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### Stop ###
  * Stop the video playback.
@@ -266,13 +200,15 @@ If the video cannot be played, the OnError callback function will be called. Use
  */
 
 
-/**
- * @extern Tween
- */
-// CreateVideoView.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Video Stream>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Video Stream
 function OnStart()
 {
     lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -301,7 +237,6 @@ function player_OnError(e)
     app.HideProgress();
     app.ShowPopup( "Error" );
 }
-</sample>
-
  */
-
+    
+            

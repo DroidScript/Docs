@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsNavBarOnRight #
  * @brief Check if NavBar is on righthand side
@@ -7,16 +9,19 @@
 */
 
 
-// IsNavBarOnRight.txt --> All the sample codes
 
-/** @Sample
-<sample Check NavBar is on the Dark Side>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check NavBar is on the Dark Side
 function OnStart()
 {
     <b>var navOnRight = app.IsNavBarOnRight();</b>
     app.Alert( navOnRight, "NavBar on right" );
 }
-</sample>
-
  */
-
+    
+            

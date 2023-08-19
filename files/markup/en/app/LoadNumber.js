@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LoadNumber #
  * @brief Load saved boolean value
@@ -12,10 +14,14 @@
 */
 
 
-// LoadNumber.txt --> All the sample codes
 
-/** @Sample
-<sample Click Counter>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Click Counter
 var clicks = 0, file = "demofile";
 
 function OnStart()
@@ -36,7 +42,6 @@ function btn_OnTouch()
 	app.SaveNumber( "clicks", ++clicks, file );
 	app.ShowPopup( "Clicks: " + clicks );
 }
-</sample>
-
  */
-
+    
+            

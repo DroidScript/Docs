@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonFlat #
  * @abbrev btf
@@ -14,9 +16,7 @@
 */
 
 
-// AddButtonFlat.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

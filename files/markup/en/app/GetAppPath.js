@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetAppPath #
  * @brief Get path to app assets
@@ -10,16 +12,19 @@
 */
 
 
-// GetAppPath.txt --> All the sample codes
 
-/** @Sample
-<sample Show app path>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show app path
 function OnStart()
 {
     <b>var path = app.GetAppPath();</b>
     app.Alert( path );
 }
-</sample>
-
  */
-
+    
+            

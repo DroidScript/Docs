@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCrypt #
  * @abbrev crp
@@ -11,12 +13,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Decrypt ###
  * Decrypt text with a key.
@@ -52,13 +52,15 @@
  */
 
 
-/**
- * @extern SetDescription
- */
-// CreateCrypt.txt --> All the sample codes
+/** @extern SetDescription */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     text = "Hello World!";
@@ -75,9 +77,12 @@ function OnStart()
         "Data"
     );
 }
-</sample>
-
-<sample Encrypt using device id>
+ */
+    
+            
+    
+/**
+@sample Encrypt using device id
 function OnStart()
 {
 	crp = app.CreateCrypt();
@@ -111,7 +116,6 @@ function OnAction( result )
         ShowDialog( result );
     }
 }
-</sample>
-
  */
-
+    
+            

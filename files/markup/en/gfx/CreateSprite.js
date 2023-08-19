@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSprite #
  * @abbrev spr
@@ -10,7 +12,7 @@
 */
 
 
-// CreateSprite.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Creates a sprite object based on an image file containing a sprite or a spritesheet.
@@ -38,7 +40,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### added
@@ -48,13 +50,9 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
                     
-/**
- * @extern alpha
- */
+/** @extern alpha */
 
-/**
- * @extern angle
- */
+/** @extern angle */
 
 /** ### aspect
  * @prop
@@ -63,13 +61,9 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
                     
-/**
- * @extern Contains
- */
+/** @extern Contains */
 
-/**
- * @extern data
- */
+/** @extern data */
 
 /** ### Flip ###
  * Flips the sprite on the horizontal and/or the vertical axis.
@@ -93,25 +87,15 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/**
- * @extern group
- */
+/** @extern group */
 
-/**
- * @extern height
- */
+/** @extern height */
 
-/**
- * @extern PauseTween
- */
+/** @extern PauseTween */
 
-/**
- * @extern pivotX
- */
+/** @extern pivotX */
 
-/**
- * @extern pivotY
- */
+/** @extern pivotY */
 
 /** ### Play ###
  * Start playing the sprite animation
@@ -139,17 +123,11 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/**
- * @extern PlayTween
- */
+/** @extern PlayTween */
 
-/**
- * @extern scaleX
- */
+/** @extern scaleX */
 
-/**
- * @extern scaleY
- */
+/** @extern scaleY */
 
 /** ### SetLoop ###
  * Define if the animation should loop or stop at the end
@@ -158,9 +136,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/**
- * @extern SetMatrix
- */
+/** @extern SetMatrix */
 
 /** ### SetPlaySpeed ###
  * Define at which speed the animation will play. 1 equals to 60 fps
@@ -202,17 +178,11 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/**
- * @extern SetTween
- */
+/** @extern SetTween */
 
-/**
- * @extern StartTween
- */
+/** @extern StartTween */
 
-/**
- * @extern StepTween
- */
+/** @extern StepTween */
 
 /** ### Stop ###
  * Stop playin the animation.
@@ -227,21 +197,13 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
-/**
- * @extern Update
- */
+/** @extern Update */
 
-/**
- * @extern visible
- */
+/** @extern visible */
 
-/**
- * @extern width
- */
+/** @extern width */
 
 /** ### x
  * @prop
@@ -256,9 +218,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @returns num_frc
  */
 
-                    // CreateSprite.txt --> All the sample codes
+                    
 
-/** @Sample
- 
- */
+// ------------- SAMPLES ------------- 
 

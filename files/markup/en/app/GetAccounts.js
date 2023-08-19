@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetAccounts #
 
@@ -9,10 +11,14 @@
 */
 
 
-// GetAccounts.txt --> All the sample codes
 
-/** @Sample
-<sample Get Accounts>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Accounts
 function OnStart()
 {
     <b>var accounts = app.GetAccounts();</b>
@@ -25,7 +31,6 @@ function dlg_OnTouch( account )
 {
 	app.ShowPopup( "Selected Account: " + account );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRingerMode #
  * @brief Get current device ringer mode
@@ -9,16 +11,19 @@
 */
 
 
-// GetRingerMode.txt --> All the sample codes
 
-/** @Sample
-<sample Show Current Ringer Mode>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Current Ringer Mode
 function OnStart()
 {
     <b>var mode = app.GetRingerMode();</b>
     app.Alert( mode )
 }
-</sample>
-
  */
-
+    
+            

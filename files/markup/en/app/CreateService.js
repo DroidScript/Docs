@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateService #
  * @abbrev srv
@@ -11,7 +13,7 @@
 */
 
 
-// CreateService.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.
@@ -51,12 +53,10 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -101,10 +101,14 @@ Inspect the debug console and see the log messages from the service in gray.
  * $$ srv.Stop() $$
  */
 
-// CreateService.txt --> All the sample codes
 
-/** @Sample
-<sample Services>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Services
 //our Service.js code.
 //In regular usage move this code to a separate Service.js file
 var servicejs = `
@@ -185,7 +189,6 @@ function OnServiceMessage( msg )
 {
     txt.SetText( "Count: " + msg );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Wait #
  * @brief Perform a synchronous delay
@@ -8,7 +10,7 @@
 */
 
 
-// Wait.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Performs a **synchronous** delay in your program which effectively pauses it. You can enable processing (input) events by setting doEvents to <js nobox>true</js>.
@@ -19,17 +21,20 @@ Be careful when using this method without doevents in your code as Android quick
 
  */
 
-// Wait.txt --> All the sample codes
 
-/** @Sample
-<sample Synchronous delay>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Synchronous delay
 function OnStart()
 {
     alert( "Press Ok to start the delay." )
     <b>app.Wait( 5 );</b>
     app.ShowPopup( "Done." );
 }
-</sample>
-
  */
-
+    
+            

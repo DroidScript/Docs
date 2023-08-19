@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateSysProc #
  * @abbrev sys
@@ -16,12 +18,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Err ###
  * Read data from stderr
@@ -46,9 +46,7 @@
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Out ###
  * Writes a command to stdout. A trailing linebreak will execute it.
@@ -86,10 +84,14 @@
  * @param {str} data 
  */
 
-// CreateSysProc.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     lay = app.CreateLayout( "linear" );
@@ -115,9 +117,12 @@ function sys_OnError( msg )
 {
     txt.Log( msg );
 }
-</sample>
-
-<sample Colored>
+ */
+    
+            
+    
+/**
+@sample Colored
 function OnStart()
 {
     lay = app.CreateLayout( "linear" );
@@ -161,7 +166,6 @@ function sys_OnError( msg )
     txt.Log( msg, "red" );
     scr.ScrollTo( 0, txt.GetHeight() );
 }
-</sample>
-
  */
-
+    
+            

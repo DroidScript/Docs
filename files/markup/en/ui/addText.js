@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addText #
  * @abbrev txt
@@ -13,7 +15,7 @@
 */
 
 
-// addText.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a text to your app.
@@ -25,7 +27,7 @@ Adds a text to your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setHtml ###
@@ -186,12 +188,14 @@ Adds a text to your app.
  * @param {num} zIndex The z
  */
 
-// addText.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic text control>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic text control
 class Main extends App
 {
     onStart()
@@ -213,9 +217,12 @@ class Main extends App
         ui.showPopup( "You touched the text!" )
     }
 }
-</sample>
-
-<sample Heading variants>
+ */
+    
+            
+    
+/**
+@sample Heading variants
 class Main extends App
 {
     onStart()
@@ -240,9 +247,12 @@ class Main extends App
         this.h6 = ui.addText( this.main, "Heading 6", "H6" )
     }
 }
-</sample>
-
-<sample Other variants>
+ */
+    
+            
+    
+/**
+@sample Other variants
 class Main extends App
 {
     onStart()
@@ -267,9 +277,12 @@ class Main extends App
         this.text = ui.addText( this.main, t, "caption" )
     }
 }
-</sample>
-
-<sample Alignments and colors>
+ */
+    
+            
+    
+/**
+@sample Alignments and colors
 class Main extends App
 {
     onStart()
@@ -297,9 +310,12 @@ class Main extends App
         this.txt4.backColor = "#e0e0e0"
     }
 }
-</sample>
-
-<sample Icons>
+ */
+    
+            
+    
+/**
+@sample Icons
 class Main extends App
 {
     onStart()
@@ -327,9 +343,12 @@ class Main extends App
         ui.showPopup( "You touch the icon!" )
     }
 }
-</sample>
-
-<sample Html formatted text>
+ */
+    
+            
+    
+/**
+@sample Html formatted text
 class Main extends App
 {
     onStart()
@@ -345,6 +364,6 @@ class Main extends App
         this.txt = ui.addText(this.main, t, "html")
     }
 }
-</sample>
  */
-
+    
+            

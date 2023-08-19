@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemovePermission #
 
@@ -7,10 +9,14 @@
 */
 
 
-// RemovePermission.txt --> All the sample codes
 
-/** @Sample
-<sample>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 function OnStart()
 {
 	var lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -30,6 +36,6 @@ function btn_OnTouch()
         app.ShowPopup("Removed " + perm);
     }
 }
-</sample>
  */
-
+    
+            

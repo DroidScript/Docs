@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRotation #
  * @brief Get device rotation
@@ -9,10 +11,14 @@
 */
 
 
-// GetRotation.txt --> All the sample codes
 
-/** @Sample
-<sample Repeatedly Show Rotation>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Repeatedly Show Rotation
 function OnStart()
 {
     app.Animate( ShowRotation, 2 );
@@ -23,9 +29,12 @@ function ShowRotation()
     <b>var mode = app.GetRotation();</b>
     app.ShowPopup( mode );
 }
-</sample>
-
-<sample Show Rotation and switch Orientation>
+ */
+    
+            
+    
+/**
+@sample Show Rotation and switch Orientation
 cfg.Portrait;
 
 function OnStart()
@@ -39,7 +48,6 @@ function ShowRotation()
     <b>var mode = app.GetRotation();</b>
     app.ShowPopup( mode );
 }
-</sample>
-
  */
-
+    
+            

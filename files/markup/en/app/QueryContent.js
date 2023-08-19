@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # QueryContent #
  * @brief Queries content from the android content model
@@ -11,7 +13,7 @@
 */
 
 
-// QueryContent.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Queries content from the android content model. The **uri** typically have the syntax “content://authority/path/id”. You can find more infos about it on the [Android Developer page](https://developer.android.com/reference/android/content/ContentUris).
@@ -25,10 +27,14 @@ The **coloumns** are specific for the database you are accessing. You can get th
 <premium>
  */
 
-// QueryContent.txt --> All the sample codes
 
-/** @Sample
-<sample Show Contacts>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Contacts
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -47,7 +53,6 @@ function OnStart()
 
     lst.SetList( list );
 }
-</sample>
-
  */
-
+    
+            

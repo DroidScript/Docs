@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetBluetoothEnabled #
  * @brief Enable Bluetooth on the device
@@ -9,10 +11,14 @@
 */
 
 
-// SetBluetoothEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Enabling Bluetooth>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Enabling Bluetooth
 function OnStart()
 {
     app.ShowProgress( "Enabling Bluetooth" );
@@ -23,9 +29,12 @@ function OnStart()
     while( !app.IsBluetoothOn() && ++cnt < 10 ) app.Wait( 0.3 );
     app.HideProgress();
 }
-</sample>
-
-<sample En/Disable Bluetooth>
+ */
+    
+            
+    
+/**
+@sample En/Disable Bluetooth
 var itv = 0;
 
 function OnStart()
@@ -90,7 +99,6 @@ function checkBtOff()
         itv = 0;
     }
 }
-</sample>
-
  */
-
+    
+            

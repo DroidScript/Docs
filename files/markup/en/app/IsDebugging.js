@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsDebugging #
  * @brief Check whether app is debugging
@@ -8,16 +10,19 @@
 */
 
 
-// IsDebugging.txt --> All the sample codes
 
-/** @Sample
-<sample Check Debugging>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Debugging
 function OnStart()
 {
     <b>var isDbg = app.IsDebugging();</b>
     app.Alert( isDbg, "now debugging:" );
 }
-</sample>
-
  */
-
+    
+            

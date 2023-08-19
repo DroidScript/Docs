@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SimulateDrag #
 
@@ -13,9 +15,7 @@
 */
 
 
-// SimulateDrag.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

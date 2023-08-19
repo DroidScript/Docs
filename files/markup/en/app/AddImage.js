@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddImage #
  * @brief Create and add Image to Layout.
@@ -15,9 +17,7 @@
 */
 
 
-// AddImage.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

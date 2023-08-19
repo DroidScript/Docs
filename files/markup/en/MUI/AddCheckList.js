@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddCheckList #
  * @abbrev chl
@@ -13,9 +15,7 @@
 */
 
 
-// AddCheckList.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

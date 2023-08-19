@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetBackColor #
  * @brief Set solid background color
@@ -7,9 +9,7 @@
 */
 
 
-// SetBackColor.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

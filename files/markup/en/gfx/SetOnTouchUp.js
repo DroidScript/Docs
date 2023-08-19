@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnTouchUp #
  * @brief Set callback for touch up
@@ -6,9 +8,7 @@
 */
 
 
-// SetOnTouchUp.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

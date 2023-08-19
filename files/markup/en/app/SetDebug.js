@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetDebug #
  * @brief Control the debug level of the program
@@ -7,7 +9,7 @@
 */
 
 
-// SetDebug.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 SetDebug lets you control the debugging level. The available modes are:
@@ -23,10 +25,14 @@ See Also: @Debug, @IsDebugging
 
  */
 
-// SetDebug.txt --> All the sample codes
 
-/** @Sample
-<sample Demonstration>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demonstration
 function OnStart()
 {
     app.CreateDebug();
@@ -58,7 +64,6 @@ function OnStart()
 	app.Debug("hello 13");    // off
 	console.log("hello 14");  // off
 }
-</sample>
-
  */
-
+    
+            

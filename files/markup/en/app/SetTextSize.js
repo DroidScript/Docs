@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetTextSize #
  * @brief Set default text size
@@ -8,9 +10,7 @@
 */
 
 
-// SetTextSize.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

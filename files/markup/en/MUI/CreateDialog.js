@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDialog #
  * @abbrev dlg
@@ -15,7 +17,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnTouch ###
@@ -25,113 +27,65 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern SetTitle
- */
+/** @extern SetTitle */
 
-/**
- * @extern SetTitleColor
- */
+/** @extern SetTitleColor */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern SetOnClose
- */
-// CreateDialog.txt --> All the sample codes
+/** @extern SetOnClose */
 
-/** @Sample
-<sample Basic & Light>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic & Light
 cfg.Light
 cfg.MUI
 
@@ -156,9 +110,12 @@ function ShowDialog()
 {
     dlg.Show()
 }
-</sample>
-
-<sample Customize & Dark>
+ */
+    
+            
+    
+/**
+@sample Customize & Dark
 cfg.Dark
 cfg.MUI
 
@@ -192,6 +149,6 @@ function OnTouch(val, btnTxt)
     else
         app.ShowPopup("You decline the confirmation.")
 }
-</sample>
  */
-
+    
+            

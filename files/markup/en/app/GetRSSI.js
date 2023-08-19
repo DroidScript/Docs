@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRSSI #
  * @brief Get RSSI in dBm
@@ -7,7 +9,7 @@
 */
 
 
-// GetRSSI.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).
@@ -60,10 +62,14 @@ See Also: @SetWifiEnabled, @IsWifiEnabled
 
  */
 
-// GetRSSI.txt --> All the sample codes
 
-/** @Sample
-<sample Show RSSI>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show RSSI
 function OnStart()
 {
     app.Animate( ShowRSSI, 1);
@@ -74,7 +80,6 @@ function ShowRSSI()
     var rssi = app.GetRSSI();
     app.ShowPopup( rssi );
 }
-</sample>
-
  */
-
+    
+            

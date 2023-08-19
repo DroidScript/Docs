@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Broadcast #
  * @brief Used for broadcasting messages between DroidScript apps
@@ -10,9 +12,7 @@
 */
 
 
-// Broadcast.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

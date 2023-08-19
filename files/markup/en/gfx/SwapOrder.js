@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SwapOrder #
  * @brief Swap drawing order of two objects
@@ -8,9 +10,7 @@
 */
 
 
-// SwapOrder.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

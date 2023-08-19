@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetAccessibility #
  * @brief Get accesibility feature availability
@@ -7,9 +9,7 @@
 */
 
 
-// GetAccessibility.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

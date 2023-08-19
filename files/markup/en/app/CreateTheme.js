@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTheme #
  * @abbrev thm
@@ -13,16 +15,12 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -31,17 +29,11 @@
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetBtnTextColor ###
  * Define the standard text color of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).
@@ -216,10 +208,14 @@
  * @param {str_com} options px|dip|sp|mm|pt|pl|ps
  */
 
-// CreateTheme.txt --> All the sample codes
 
-/** @Sample
-<sample Hackers Theme>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Hackers Theme
 function OnStart()
 {
     SetHackerTheme();
@@ -259,7 +255,6 @@ function SetHackerTheme()
     theme.AdjustColor( -76 );
     app.SetTheme( theme );</b>
 }
-</sample>
-
  */
-
+    
+            

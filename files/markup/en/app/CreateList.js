@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateList #
  * @abbrev lst
@@ -13,7 +15,7 @@
 */
 
 
-// CreateList.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 If you want to display many dataset of the same structure you might consider using the **List** object.
@@ -45,7 +47,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddItem ###
@@ -57,21 +59,13 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### Expand ###
  * ?
@@ -79,21 +73,13 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetItem ###
  * Returns item data of an item with a specific title.
@@ -111,9 +97,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLength ###
  * Returns the amount of items in the lists.
@@ -130,21 +114,13 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -153,21 +129,13 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### InsertItem ###
  * Inserts an item at s specific index in the list.
@@ -179,21 +147,13 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RemoveAll ###
  * Removes all entries of the list.
@@ -247,29 +207,17 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetColumnWidths ###
  * Changes the coloumn withs for title, body and icon. Often used with the “Horiz” option.
@@ -289,9 +237,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetEllipsize
- */
+/** @extern SetEllipsize */
 
 /** ### SetEllipsize1 ###
  * Will cause the element titles to be broken with ... at the start or the end if it cannot fit in the control.
@@ -307,17 +253,11 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
 /** ### SetHiTextColor1 ###
  * Change the highlight color of titles when selected.
@@ -398,9 +338,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetOnLongTouch ###
  * Define a callback function that is called when the user touches a list item.
@@ -416,25 +354,15 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
 /** ### SetTextColor1 ###
  * Change the default text color of titles.
@@ -462,9 +390,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetTextShadow
- */
+/** @extern SetTextShadow */
 
 /** ### SetTextShadow1 ###
  * Apply text shadows to titles.
@@ -486,9 +412,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
 /** ### SetTextSize1 ###
  * Change the text size for titles.
@@ -506,23 +430,19 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  */
 
 
+/** @extern SetVisibility */
+
+/** @extern Show */
+
+/** @extern Tween */
+
+
+// ------------- SAMPLES ------------- 
+
+
+    
 /**
- * @extern SetVisibility
- */
-
-/**
- * @extern Show
- */
-
-/**
- * @extern Tween
- */
-// CreateList.txt --> All the sample codes
-
-/** @Sample
-
-<sample Simple>
-
+@sample Simple
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -544,10 +464,12 @@ function lst_OnLongTouch( title, body, icon, index )
 {
 	app.ShowPopup( "Long Touch Item = " + title + ", Index = " + index, "Short" );
 }
-</sample>
-
-<sample Gray on White>
-
+ */
+    
+            
+    
+/**
+@sample Gray on White
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -565,10 +487,12 @@ function lst_OnTouch( title, body, type, index )
 {
 	app.ShowPopup( "Touched Item = " + title );
 }
-</sample>
-
-<sample Title + Icon>
-
+ */
+    
+            
+    
+/**
+@sample Title + Icon
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -585,10 +509,12 @@ function lst_OnTouch( title, body, type, index )
 {
 	app.ShowPopup( "Touched Item = " + title );
 }
-</sample>
-
-<sample Title + Body>
-
+ */
+    
+            
+    
+/**
+@sample Title + Body
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -606,10 +532,12 @@ function lst_OnTouch( title, body, type, index )
 {
 	app.ShowPopup( "Touched Item = " + title );
 }
-</sample>
-
-<sample Orange Buttons>
-
+ */
+    
+            
+    
+/**
+@sample Orange Buttons
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -628,10 +556,12 @@ function lst_OnTouch( title, body, type, index )
 {
 	app.ShowPopup( "Touched Item = " + title );
 }
-</sample>
-
-<sample Gradient Background>
-
+ */
+    
+            
+    
+/**
+@sample Gradient Background
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -656,7 +586,6 @@ function lst_OnTouch( title, body, type, index )
 {
 	app.ShowPopup( "Touched Item = " + title );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # MakeFolder #
  * @brief Create new folder in the local fs
@@ -9,10 +11,14 @@
 */
 
 
-// MakeFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Create folder>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Create folder
 function OnStart()
 {
     <b>app.MakeFolder("myFolder");</b>
@@ -22,7 +28,6 @@ function OnStart()
     else
 	    app.ShowPopup("myFolder does not exist!");
 }
-</sample>
-
  */
-
+    
+            

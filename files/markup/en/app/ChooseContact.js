@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ChooseContact #
  * @brief Let the user choose an image
@@ -7,10 +9,14 @@
 */
 
 
-// ChooseContact.txt --> All the sample codes
 
-/** @Sample
-<sample Choose Phone Number>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Choose Phone Number
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -31,9 +37,12 @@ function OnPhoneChoose( name, number )
 {
      app.ShowPopup( name + " " + number );
 }
-</sample>
-
-<sample Choose Email Address>
+ */
+    
+            
+    
+/**
+@sample Choose Email Address
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -54,7 +63,6 @@ function OnEmailChoose( name, email )
 {
      app.ShowPopup( name + " " + email );
 }
-</sample>
-
  */
-
+    
+            

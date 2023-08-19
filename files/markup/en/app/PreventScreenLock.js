@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PreventScreenLock #
  * @brief Prevent screen from locking after some time
@@ -7,14 +9,18 @@
 */
 
 
-// PreventScreenLock.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>app.PreventScreenLock( true );</b>
-}</sample>
-
+}
  */
-
+    
+            

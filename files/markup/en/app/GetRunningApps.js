@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRunningApps #
  * @brief Get list of running apps
@@ -9,10 +11,14 @@
 */
 
 
-// GetRunningApps.txt --> All the sample codes
 
-/** @Sample
-<sample Show Running Apps>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Running Apps
 function OnStart()
 {
     app.ShowProgress();
@@ -39,9 +45,12 @@ function OnStart()
 
     app.HideProgress();
 }
-</sample>
-
-<sample Is In Foreground>
+ */
+    
+            
+    
+/**
+@sample Is In Foreground
 function OnStart()
 {
     app.Animate(CheckForeground, 0.2);
@@ -59,7 +68,6 @@ function CheckForeground()
             app.ShowPopup("In Foreground: " + apps[i].foreground);
     }
 }
-</sample>
-
  */
-
+    
+            

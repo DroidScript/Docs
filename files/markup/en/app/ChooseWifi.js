@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ChooseWifi #
  * @brief Let the user choose a WiFi network
@@ -10,7 +12,7 @@
 */
 
 
-// ChooseWifi.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 ChooseWifi lets the user select a WiFi network in range.
@@ -27,10 +29,14 @@ See Also:  @WifiConnect
 
  */
 
-// ChooseWifi.txt --> All the sample codes
 
-/** @Sample
-<sample Choose WiFi Network>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Choose WiFi Network
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -51,7 +57,6 @@ function OnWifiChoose( ssid )
 {
      app.ShowPopup( "User selected " + ssid );
 }
-</sample>
-
  */
-
+    
+            

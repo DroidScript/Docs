@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetData #
  * @brief Save data while app is running
@@ -10,19 +12,26 @@
 */
 
 
-// SetData.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     <b>app.SetData( "myvar", "Hello World!" );</b>
     var data = app.GetData("myvar");
     app.Alert( data, "Saved Data:" );
 }
-</sample>
-
-<sample Random Value>
+ */
+    
+            
+    
+/**
+@sample Random Value
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -40,7 +49,6 @@ function btn_OnTouch()
 
 	app.ShowPopup( "Data: " + app.GetData( "number" ));
 }
-</sample>
-
  */
-
+    
+            

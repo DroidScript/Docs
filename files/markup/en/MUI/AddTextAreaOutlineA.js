@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextAreaOutlineA #
  * @abbrev tao
@@ -15,9 +17,7 @@
 */
 
 
-// AddTextAreaOutlineA.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

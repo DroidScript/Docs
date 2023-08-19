@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetCountryCode #
  * @brief Get users country code
@@ -9,16 +11,19 @@
 */
 
 
-// GetCountryCode.txt --> All the sample codes
 
-/** @Sample
-<sample Show Country Code>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Country Code
 function OnStart()
 {
     <b>var code = app.GetCountryCode();</b>
     app.Alert( code );
 }
-</sample>
-
  */
-
+    
+            

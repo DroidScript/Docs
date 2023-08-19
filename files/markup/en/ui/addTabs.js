@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addTabs #
  * @brief addTabs
@@ -12,7 +14,7 @@
 */
 
 
-// addTabs.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a Tabs Component into your layout.
@@ -26,7 +28,7 @@ Adds a Tabs Component into your layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnChange ###
@@ -306,12 +308,14 @@ Adds a Tabs Component into your layout.
  * @param {num} zIndex The z
  */
 
-// addTabs.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -350,9 +354,12 @@ class Main extends App
         ui.showPopup( tab + " : Index " + index)
     }
 }
-</sample>
-
-<sample With Icon>
+ */
+    
+            
+    
+/**
+@sample With Icon
 class Main extends App
 {
     onStart()
@@ -395,9 +402,12 @@ class Main extends App
         ui.showPopup( tab + " : Index " + index)
     }
 }
-</sample>
-
-<sample Swipeable tabs>
+ */
+    
+            
+    
+/**
+@sample Swipeable tabs
 class Main extends App
 {
     onStart()
@@ -436,9 +446,12 @@ class Main extends App
         ui.showPopup( tab + " : Index " + index)
     }
 }
-</sample>
-
-<sample Open tabs dynamically>
+ */
+    
+            
+    
+/**
+@sample Open tabs dynamically
 class Main extends App
 {
     onStart()
@@ -496,9 +509,12 @@ class Main extends App
         ui.showPopup( tab + " : Index " + index)
     }
 }
-</sample>
-
-<sample Icon only>
+ */
+    
+            
+    
+/**
+@sample Icon only
 class Main extends App
 {
     onStart()
@@ -542,9 +558,12 @@ class Main extends App
         ui.showPopup(tab + " : Index " + index, "Bottom")
     }
 }
-</sample>
-
-<sample Custom colors and sizes>
+ */
+    
+            
+    
+/**
+@sample Custom colors and sizes
 class Main extends App
 {
     onStart()
@@ -569,6 +588,6 @@ class Main extends App
         this.tabs.indicatorColor = "#f4511e"
     }
 }
-</sample>
  */
-
+    
+            

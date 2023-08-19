@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDownloader #
  * @abbrev dwn
@@ -9,7 +11,7 @@
 */
 
 
-// CreateDownloader.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage. You can download a file with the **Download** method which accepts a _source url_ and a _target directory_: <js>dwn.Download( srcFileUrl, targetDir );</js>
@@ -22,12 +24,10 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Download ###
  * Start downloading one or multiple files.
@@ -67,9 +67,7 @@ If you want to know when the download process has finished (or failed) you can d
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### SetOnCancel ###
  * %cb% download is cancelled.
@@ -98,10 +96,14 @@ If you want to know when the download process has finished (or failed) you can d
  * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}
  */
 
-// CreateDownloader.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	var srcFileUrl = "http://sgarman.net/downloadable.txt";
@@ -116,7 +118,6 @@ function dload_OnComplete()
 {
 	app.ShowPopup("Download complete");
 }
-</sample>
-
  */
-
+    
+            

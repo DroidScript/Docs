@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowCheckList #
  * @abbrev ckl
@@ -13,11 +15,14 @@
 */
 
 
-// ShowCheckList.txt --> All the sample codes
 
-/** @Sample
-<sample>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 function OnStart()
 {
 	<b>app.ShowCheckList( "Select Animals", "Sheep:true,Cows:false,Pigs:false", OnFinish, 0.8, 0.5 );</b>
@@ -30,8 +35,6 @@ function OnFinish( data )
 	else
 	    app.ShowPopup( "Cancelled" );
 }
-
-</sample>
-
  */
-
+    
+            

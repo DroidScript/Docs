@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PlaySound #
  * @brief Plays a local or remote sound file
@@ -9,10 +11,14 @@
 */
 
 
-// PlaySound.txt --> All the sample codes
 
-/** @Sample
-<sample Play Local Sound File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Play Local Sound File
 function OnStart(){
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
@@ -26,10 +32,15 @@ function OnStart(){
 function btn_OnTouch()
 {
     <b>app.PlaySound( "/Sys/Snd/Trill.ogg" );</b>
-}</sample>
+}
+ */
+    
+            
+    
+/**
+@sample >
 
-<!--https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3-->
-
+<sample
 <sample Play Remote Sound File>
 function OnStart(){
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -44,7 +55,7 @@ function OnStart(){
 function btn_OnTouch()
 {
     <b>app.PlaySound( "https://sgarman.net/silly.mp3" );</b>
-}</sample>
-
+}
  */
-
+    
+            

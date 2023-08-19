@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AppExec #
  * @brief Executes code in the main app
@@ -7,10 +9,14 @@
 */
 
 
-// AppExec.txt --> All the sample codes
 
-/** @Sample
-<sample>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 cfg.Game;
 
 function OnLoad()
@@ -19,7 +25,6 @@ function OnLoad()
 }
 
 function OnReady() {}
-</sample>
-
  */
-
+    
+            

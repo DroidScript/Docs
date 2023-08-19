@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CloseDrawer #
 
@@ -9,10 +11,14 @@
 */
 
 
-// CloseDrawer.txt --> All the sample codes
 
-/** @Sample
-<sample Open and Close Drawer via Button>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Open and Close Drawer via Button
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
@@ -51,7 +57,6 @@ function btnClose_OnTouch()
 {
     <b>app.CloseDrawer( "left" );</b>
 }
-</sample>
-
  */
-
+    
+            

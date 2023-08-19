@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LockDrawer #
  * @brief Hide and lock a drawer
@@ -9,10 +11,14 @@
 */
 
 
-// LockDrawer.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -36,9 +42,12 @@ function OnLockChange( lock )
     <b>if( lock ) app.LockDrawer( "left" );
     else app.UnlockDrawer( "left" );</b>
 }
-</sample>
-
-<sample Open and Close Drawer via Button>
+ */
+    
+            
+    
+/**
+@sample Open and Close Drawer via Button
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
@@ -75,7 +84,6 @@ function btn_OnTouch()
     else // "Open"
         app.CloseDrawer( "left" );
 }
-</sample>
-
  */
-
+    
+            

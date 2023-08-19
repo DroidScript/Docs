@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetIntent #
  * @brief Get received intent data
@@ -9,16 +11,19 @@
 */
 
 
-// GetIntent.txt --> All the sample codes
 
-/** @Sample
-<sample Get received intent data>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get received intent data
 function OnStart()
 {
     <b>var int = app.GetIntent();</b>
     app.Alert( JSON.stringify( int ));
 }
-</sample>
-
  */
-
+    
+            

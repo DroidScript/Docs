@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetDensity #
  * @brief Changes the dpi value for any control creatred afterwards
@@ -9,11 +11,14 @@
 */
 
 
-// SetDensity.txt --> All the sample codes
 
-/** @Sample
-<sample Demonstration>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demonstration
 function OnStart() {
 	var dens = app.GetScreenDensity();
 
@@ -33,7 +38,6 @@ function OnStart() {
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

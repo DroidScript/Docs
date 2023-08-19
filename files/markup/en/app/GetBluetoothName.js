@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetBluetoothName #
  * @brief Get the bluetooth name
@@ -9,16 +11,19 @@
 */
 
 
-// GetBluetoothName.txt --> All the sample codes
 
-/** @Sample
-<sample Show Bluetooth Name>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Bluetooth Name
 function OnStart()
 {
     <b>var name = app.GetBluetoothName();</b>
     app.Alert( name );
 }
-</sample>
-
  */
-
+    
+            

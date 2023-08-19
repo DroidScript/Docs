@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Call #
  * @brief Calls a phone number
@@ -7,10 +9,14 @@
 */
 
 
-// Call.txt --> All the sample codes
 
-/** @Sample
-<sample Check Voice Messages>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Voice Messages
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -30,7 +36,6 @@ function btnCall_OnTouch()
 {
 	<b>app.Call( edtNumber.GetText() );</b>
 }
-</sample>
-
  */
-
+    
+            

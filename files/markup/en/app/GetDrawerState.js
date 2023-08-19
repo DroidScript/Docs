@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDrawerState #
  * @brief Get current drawer state
@@ -10,10 +12,14 @@
 */
 
 
-// GetDrawerState.txt --> All the sample codes
 
-/** @Sample
-function OnStart()
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample on OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
 
@@ -44,11 +50,12 @@ function OnStart()
 
 function btn_OnTouch()
 {
-    <b>if(app.GetDrawerState("left") == "Closed")
+    <b
+if(app.GetDrawerState("left") == "Closed")
         app.OpenDrawer( "left" );
     else // "Open"
         app.CloseDrawer( "left" );</b>
 }
-
  */
-
+    
+            

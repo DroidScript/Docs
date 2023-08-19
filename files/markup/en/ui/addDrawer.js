@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addDrawer #
  * @abbrev drw
@@ -10,7 +12,7 @@
 */
 
 
-// addDrawer.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a drawer into your app.
@@ -22,7 +24,7 @@ Adds a drawer into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### addLayout ###
@@ -79,12 +81,14 @@ Adds a drawer into your app.
  * $$ drw.hide() $$
  */
 
-// addDrawer.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Drawer Implementation>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Drawer Implementation
 class Main extends App
 {
     onStart()
@@ -156,9 +160,12 @@ class Main extends App
         ui.showPopup('Drawer is close', "bottom")
     }
 }
-</sample>
-
-<sample Drawer Anchor Positions>
+ */
+    
+            
+    
+/**
+@sample Drawer Anchor Positions
 class Main extends App
 {
     onStart()
@@ -233,6 +240,6 @@ class Main extends App
         this.drawer.show()
     }
 }
-</sample>
  */
-
+    
+            

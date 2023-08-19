@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SendText #
  * @brief Share text between apps
@@ -9,7 +11,7 @@
 */
 
 
-// SendText.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 This Method is used for sharing text between apps.
@@ -22,15 +24,18 @@ The **subject** parameter seems to be obsolete these times and is just kept for 
 See Also: @SendFile
  */
 
-// SendText.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
     <b>app.SendText("Hello World", "My Subject", "Choose an app");</b>
 }
-</sample>
-
  */
-
+    
+            

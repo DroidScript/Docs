@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ExtExec #
  * @brief Execute a bash script using Termux
@@ -10,7 +12,7 @@
 */
 
 
-// ExtExec.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.
@@ -32,19 +34,26 @@ After that create a symbolic link from the tasker plugin folder to your home dir
 ln -s /sdcard/termux/scripts .termux/tasker</bash>Finally you can run a termux shell script from inside DroidScript:
  */
 
-// ExtExec.txt --> All the sample codes
 
-/** @Sample
-<sample Open Termux and pass arguments>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Open Termux and pass arguments
 function OnStart()
 {
     app.WriteFile( "/sdcard/termux/scripts/hello.sh", "echo Hello $1 and $2" );
     <b>var err = app.ExtExec( "termux", "hello.sh", 'World "' + app.GetUser() + '"', "" );</b>
     if( err ) app.Alert( "Termux Error:" + err );
 }
-</sample>
-
-<sample Execute in Background and retreive output>
+ */
+    
+            
+    
+/**
+@sample Execute in Background and retreive output
 var itv, lock = "/sdcard/.termuxlock";
 var script = `
 {  # this is a comment
@@ -91,7 +100,6 @@ function CheckReady()
         txt.SetText( text );
     }
 }
-</sample>
-
  */
-
+    
+            

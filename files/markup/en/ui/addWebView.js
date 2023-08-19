@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addWebView #
  * @abbrev web
@@ -13,7 +15,7 @@
 */
 
 
-// addWebView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a webview into your app. A webview is a component where you can display a website into your app layout.
@@ -25,7 +27,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnLoad ###
@@ -169,12 +171,14 @@ Adds a webview into your app. A webview is a component where you can display a w
  * @param {num} zIndex The z
  */
 
-// addWebView.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample EnjineIO homepage>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample EnjineIO homepage
 class Main extends App
 {
     onStart()
@@ -194,9 +198,12 @@ class Main extends App
         ui.showPopup( "Website is loaded!" )
     }
 }
-</sample>
-
-<sample Call a function inside the webview>
+ */
+    
+            
+    
+/**
+@sample Call a function inside the webview
 class Main extends App
 {
     onStart()
@@ -232,9 +239,12 @@ class Main extends App
         var x = this.web.window.callFunc( "John Doe" )
     }
 }
-</sample>
-
-<sample Getting returned values from a function in a webview>
+ */
+    
+            
+    
+/**
+@sample Getting returned values from a function in a webview
 class Main extends App
 {
     onStart()
@@ -273,9 +283,12 @@ class Main extends App
         ui.showPopup( "The product is " + prod )
     }
 }
-</sample>
-
-<sample Manipulate dom inside the webview>
+ */
+    
+            
+    
+/**
+@sample Manipulate dom inside the webview
 class Main extends App
 {
     onStart()
@@ -335,6 +348,6 @@ class Main extends App
             ui.showPopup( "Webview is not yet loaded!" )
     }
 }
-</sample>
  */
-
+    
+            

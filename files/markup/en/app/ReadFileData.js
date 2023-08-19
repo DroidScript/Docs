@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ReadFileData #
  * @brief Read local file content data
@@ -10,9 +12,7 @@
 */
 
 
-// ReadFileData.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

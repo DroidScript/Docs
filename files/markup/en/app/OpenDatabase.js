@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # OpenDatabase #
  * @abbrev db
@@ -11,7 +13,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### addTransaction ###
@@ -113,9 +115,7 @@
  * @param {fnc_json} success {"pNames":["fnc","res"],"pTypes":[{"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]},"obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]}
  */
 
-// OpenDatabase.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

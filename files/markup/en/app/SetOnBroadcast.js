@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnBroadcast #
  * @brief Called on incoming Broadcasts
@@ -11,9 +13,7 @@
 */
 
 
-// SetOnBroadcast.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

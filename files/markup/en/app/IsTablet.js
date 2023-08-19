@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsTablet #
  * @brief Check if user device is a tablet
@@ -9,16 +11,19 @@
 */
 
 
-// IsTablet.txt --> All the sample codes
 
-/** @Sample
-<sample Check Tablet>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Tablet
 function OnStart()
 {
 	<b>tablet = app.IsTablet();</b>
 	app.ShowPopup( tablet, "Is Tablet:" );
 }
-</sample>
-
  */
-
+    
+            

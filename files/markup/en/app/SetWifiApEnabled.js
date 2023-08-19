@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetWifiApEnabled #
  * @brief En/Disable the mobile Wifi Access Point of the device
@@ -9,7 +11,7 @@
 */
 
 
-// SetWifiApEnabled.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.
@@ -21,10 +23,14 @@ See Also: @IsWifiApEnabled, @IsWifiEnabled
 
  */
 
-// SetWifiApEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample WiFi Access Point>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample WiFi Access Point
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -41,7 +47,6 @@ function tgl_OnTouch( enable )
     <b>if( enable ) app.SetWifiApEnabled( true, "DS Wifi AP", "mypass" );
     else app.SetWifiApEnabled( false );</b>
 }
-</sample>
-
  */
-
+    
+            

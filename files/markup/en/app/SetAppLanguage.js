@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetAppLanguage #
  * @brief Load the language code from lang.json
@@ -9,10 +11,14 @@
 */
 
 
-// SetAppLanguage.txt --> All the sample codes
 
-/** @Sample
-<sample Switch Language>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Switch Language
 var langJson = `
 {
     "langs": [ "English", "Español" ],
@@ -49,7 +55,6 @@ function spinLang_OnChange()
     app.DestroyLayout( lay );
     OnStart();
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RedirectAssets #
  * @brief Read assets from given folder
@@ -7,10 +9,14 @@
 */
 
 
-// RedirectAssets.txt --> All the sample codes
 
-/** @Sample
-<sample Redirect Assets>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Redirect Assets
 function OnStart()
 {
     <b>app.RedirectAssets("/sdcard/DroidScript/Hello World/");</b>
@@ -22,7 +28,6 @@ function OnStart()
 
     app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

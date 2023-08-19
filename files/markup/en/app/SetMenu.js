@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetMenu #
  * @brief Set app menu
@@ -10,10 +12,14 @@
 */
 
 
-// SetMenu.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>app.SetMenu( "Start,Stop,Pause" );</b>
@@ -31,9 +37,12 @@ function OnMenu( item )
 {
 	app.ShowPopup( item, "Short" );
 }
-</sample>
-
-<sample Menu Icons>
+ */
+    
+            
+    
+/**
+@sample Menu Icons
 function OnStart()
 {
     <b>menus = "Files:folder,Music:list,Images:picture";
@@ -45,7 +54,6 @@ function OnMenu( item )
 {
     app.ShowPopup( item, "Short" );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSpeechEngines #
  * @brief Get tts engines
@@ -9,9 +11,7 @@
 */
 
 
-// GetSpeechEngines.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

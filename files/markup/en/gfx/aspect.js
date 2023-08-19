@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # aspect #
  * @brief The display aspect ratio
@@ -7,10 +9,14 @@
 */
 
 
-// aspect.txt --> All the sample codes
 
-/** @Sample
-<sample Square>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Square
 cfg.Game;
 
 function OnLoad()
@@ -23,7 +29,6 @@ function OnReady()
     gfx.AddGraphic( square, 0.3, 0.2 );
     gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

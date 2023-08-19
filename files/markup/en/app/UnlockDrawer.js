@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # UnlockDrawer #
  * @brief Unlock a locked drawer
@@ -8,10 +10,14 @@
 */
 
 
-// UnlockDrawer.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -35,7 +41,6 @@ function OnLockChange( lock )
     <b>if( lock ) app.LockDrawer( "left" );
     else app.UnlockDrawer( "left" );</b>
 }
-</sample>
-
  */
-
+    
+            

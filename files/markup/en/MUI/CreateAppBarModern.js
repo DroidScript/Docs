@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateAppBarModern #
  * @abbrev abm
@@ -14,12 +16,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### SetOnControlTouch ###
  * Calls a function when right control is touch
@@ -35,9 +35,7 @@
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * 
@@ -45,9 +43,7 @@
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
 /** ### GetCursorLine ###
  * 
@@ -79,9 +75,7 @@
  */
 
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
 /** ### InsertText ###
  * Inserts a string at a given position.
@@ -113,9 +107,7 @@
  */
 
 
-/**
- * @extern SetOnChange
- */
+/** @extern SetOnChange */
 
 /** ### SetOnEnter ###
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)
@@ -131,23 +123,23 @@
  */
 
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
 /** ### Undo ###
  * Undo an action.
  * $$ abm.Undo() $$
  */
 
-// CreateAppBarModern.txt --> All the sample codes
 
-/** @Sample
- <sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -175,10 +167,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Sample page>
+ */
+    
+            
+    
+/**
+@sample Sample page
 cfg.Light
 cfg.MUI
 
@@ -219,10 +213,12 @@ function OnCtrlTouch()
 {
     app.ShowPopup("You click for more options.")
 }
-</sample>
-
-
-<sample Dark mode>
+ */
+    
+            
+    
+/**
+@sample Dark mode
 cfg.Dark
 cfg.MUI
 
@@ -250,6 +246,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

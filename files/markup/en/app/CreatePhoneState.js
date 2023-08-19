@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreatePhoneState #
  * @abbrev pst
@@ -9,7 +11,7 @@
 */
 
 
-// CreatePhoneState.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The PhoneState component is able to detect phone state changes.
@@ -29,12 +31,10 @@ The callback data depends on the type:
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -61,11 +61,14 @@ The callback data depends on the type:
  * $$ pst.Stop() $$
  */
 
-// CreatePhoneState.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -90,7 +93,6 @@ function state_OnChange( type, data )
     log.push( type.bold() + ":<br>\t" + JSON.stringify(data) );
     txt.SetHtml( log.join("<br>") );
 }
-</sample>
-
  */
-
+    
+            

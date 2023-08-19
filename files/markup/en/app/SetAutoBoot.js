@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetAutoBoot #
  * @brief Autostart APK when device boots
@@ -9,24 +11,30 @@
 */
 
 
-// SetAutoBoot.txt --> All the sample codes
 
-/** @Sample
-<sample Set Auto Boot>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Set Auto Boot
 function OnStart()
 {
     app.SetAutoBoot( true );
     app.ShowPopup( "You may reboot your phone now." );
 }
-</sample>
-
-<sample Unset Auto Boot>
+ */
+    
+            
+    
+/**
+@sample Unset Auto Boot
 function OnStart()
 {
     app.SetAutoBoot( false );
     app.ShowPopup( "AutoBoot Disabled." );
 }
-</sample>
-
  */
-
+    
+            

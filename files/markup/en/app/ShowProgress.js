@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ShowProgress #
  * @brief Show a progress indicator
@@ -8,16 +10,19 @@
 */
 
 
-// ShowProgress.txt --> All the sample codes
 
-/** @Sample
-<sample Show and Hide Progress>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show and Hide Progress
 function OnStart()
 {
 	<b>app.ShowProgress( "Loading..." );
 	setTimeout( "app.HideProgress()", 3000 );</b>
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEditSearch #
  * @abbrev tes
@@ -14,9 +16,7 @@
 */
 
 
-// AddTextEditSearch.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

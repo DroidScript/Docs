@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Script #
  * @brief synchronously import a .js file
@@ -7,9 +9,7 @@
 */
 
 
-// Script.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetClipboardText #
  * @brief Change the device clipboard text
@@ -9,15 +11,18 @@
 */
 
 
-// SetClipboardText.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>app.SetClipboardText( "Sample Text" );</b>
 }
-</sample>
-
  */
-
+    
+            

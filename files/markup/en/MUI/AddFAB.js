@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddFAB #
  * @abbrev fab
@@ -12,10 +14,14 @@
 */
 
 
-// AddFAB.txt --> All the sample codes
 
-/** @Sample
-<sample AddFAB>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddFAB
 cfg.Light
 cfg.MUI
 
@@ -29,6 +35,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

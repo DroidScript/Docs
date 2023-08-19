@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateFABElegant #
  * @abbrev fab
@@ -12,16 +14,12 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
 /** ### SetIcon ###
  * Sets a new material icon
@@ -37,17 +35,11 @@
  */
 
 
-/**
- * @extern GetIcon
- */
+/** @extern GetIcon */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### data
  * @prop
@@ -56,37 +48,21 @@
  */
 
                     
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * 
@@ -95,69 +71,43 @@
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
-/**
- * @extern SetColor
- */
+/** @extern SetColor */
 
-/**
- * @extern SetText
- */
-// CreateFABElegant.txt --> All the sample codes
+/** @extern SetText */
 
-/** @Sample
-<sample>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 cfg.Light
 cfg.MUI
 
@@ -179,6 +129,6 @@ function OnClick()
 {
     app.ShowPopup("You click FAB")
 }
-</sample>
  */
-
+    
+            

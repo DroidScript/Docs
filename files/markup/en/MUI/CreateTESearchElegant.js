@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTESearchElegant #
  * @abbrev tes
@@ -14,7 +16,7 @@
 */
 
 
-// CreateTESearchElegant.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Creates a customizable elegant text input.
@@ -34,12 +36,10 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * Clear input history
@@ -47,9 +47,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
 /** ### GetCursorLine ###
  * Get cursor line
@@ -82,21 +80,13 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetType
- */
+/** @extern GetType */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
 /** ### InsertText ###
  * Inserts a string at a given position.
@@ -106,17 +96,11 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
 /** ### Redo ###
  * Redo an undone action.
@@ -140,13 +124,9 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnChange
- */
+/** @extern SetOnChange */
 
 /** ### SetOnEnter ###
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
@@ -162,13 +142,9 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
 /** ### Undo ###
  * Undo an action
@@ -183,13 +159,15 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/**
- * @extern SetOnTouch
- */
-// CreateTESearchElegant.txt --> All the sample codes
+/** @extern SetOnTouch */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -205,11 +183,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-
-<sample RightIcon>
+ */
+    
+            
+    
+/**
+@sample RightIcon
 cfg.Dark
 cfg.MUI
 
@@ -225,10 +204,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Small>
+ */
+    
+            
+    
+/**
+@sample Small
 cfg.Light
 cfg.MUI
 
@@ -244,10 +225,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Border>
+ */
+    
+            
+    
+/**
+@sample Border
 cfg.Dark
 cfg.MUI
 
@@ -263,6 +246,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

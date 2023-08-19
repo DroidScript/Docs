@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddMenu #
  * @abbrev mn
@@ -12,9 +14,7 @@
 */
 
 
-// AddMenu.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

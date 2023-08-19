@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonContained #
  * @abbrev btc
@@ -12,9 +14,7 @@
 */
 
 
-// AddButtonContained.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addTreeView #
  * @abbrev trv
@@ -13,7 +15,7 @@
 */
 
 
-// addTreeView.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a TreeView component into your app. A tree view is best use in file system navigation.
@@ -25,7 +27,7 @@ Adds a TreeView component into your app. A tree view is best use in file system 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -185,12 +187,14 @@ Adds a TreeView component into your app. A tree view is best use in file system 
  * @param {num} zIndex The z
  */
 
-// addTreeView.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Items>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Items
 var items = {
     "Group 1": {
         "Item 1": "",
@@ -217,9 +221,12 @@ var items = {
         }
     }
 }
-</sample>
-
-<sample Items with icons>
+ */
+    
+            
+    
+/**
+@sample Items with icons
 var items = {
     "Folders": {
         "Music": "music_note",
@@ -227,9 +234,12 @@ var items = {
         "Favorites": "favorite"
     }
 }
-</sample>
-
-<sample Basic TreeView>
+ */
+    
+            
+    
+/**
+@sample Basic TreeView
 class Main extends App
 {
     onStart()
@@ -278,6 +288,6 @@ class Main extends App
         ui.showPopup("Value: "+value + " Path: "+path)
     }
 }
-</sample>
  */
-
+    
+            

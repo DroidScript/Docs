@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTexture #
  * @brief Returns a new texture object
@@ -7,9 +9,7 @@
 */
 
 
-// CreateTexture.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

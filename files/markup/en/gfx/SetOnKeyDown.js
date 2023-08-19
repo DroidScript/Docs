@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnKeyDown #
  * @brief Define a KeyDown callback
@@ -6,9 +8,7 @@
 */
 
 
-// SetOnKeyDown.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

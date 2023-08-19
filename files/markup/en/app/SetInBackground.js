@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetInBackground #
  * @brief Set services to run in the background
@@ -8,10 +10,14 @@
 */
 
 
-// SetInBackground.txt --> All the sample codes
 
-/** @Sample
-var serviceJS = `
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample rviceJS = `
 function OnStart()
 {
     var i = 0;
@@ -20,7 +26,8 @@ function OnStart()
 
 function OnMessage( msg)
 {
-    <b>if( msg == "fg" ) app.SetInForeground( "My Service", "Service is running", "/Sys/Img/Hello.png", "/Sys/Img/Icon.png", "low");
+    <b
+if( msg == "fg" ) app.SetInForeground( "My Service", "Service is running", "/Sys/Img/Hello.png", "/Sys/Img/Icon.png", "low");
     else if( msg == "bg" ) app.SetInBackground();</b>
 }`;
 
@@ -44,6 +51,6 @@ function tgl_OnTouch( fg )
     if( fg ) svc.SendMessage( "fg" );
     else svc.SendMessage( "bg" );
 }
-
  */
-
+    
+            

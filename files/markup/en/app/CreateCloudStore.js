@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCloudStore #
  * @abbrev cld
@@ -9,7 +11,7 @@
 */
 
 
-// CreateCloudStore.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The CloudStore component allows you to easily store and retrieve app data (as a simple or complex JSON object) from a cloud.
@@ -44,12 +46,10 @@ combine the parts only when making CloudStore API calls.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -102,9 +102,7 @@ combine the parts only when making CloudStore API calls.
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
 /** ### Upload ###
  * Upload a file to the cloud.
@@ -116,9 +114,7 @@ combine the parts only when making CloudStore API calls.
  * @param {str} password 
  */
 
-// CreateCloudStore.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

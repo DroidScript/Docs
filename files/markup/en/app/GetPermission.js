@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetPermission #
 
@@ -9,10 +11,14 @@
 */
 
 
-// GetPermission.txt --> All the sample codes
 
-/** @Sample
-<sample Get ExtSDCard Permission and User-Selected Path>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get ExtSDCard Permission and User-Selected Path
 function OnStart()
 {
     <b>var path = app.GetPermission( "extsdcard", OnPermission );</b>
@@ -22,7 +28,6 @@ function OnPermission( pathURI )
 {
     app.Alert( pathURI );
 }
-</sample>
-
  */
-
+    
+            

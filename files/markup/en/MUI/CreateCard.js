@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCard #
  * @abbrev crd
@@ -11,7 +13,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnButtonTouch ###
@@ -42,97 +44,57 @@
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateCard.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample No-image, No-Avatar>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample No-image, No-Avatar
 cfg.Light
 cfg.MUI
 
@@ -154,10 +116,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample With-image, No-Avatar>
+ */
+    
+            
+    
+/**
+@sample With-image, No-Avatar
 cfg.Light
 cfg.MUI
 
@@ -180,10 +144,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample With Image, With Avatar>
+ */
+    
+            
+    
+/**
+@sample With Image, With Avatar
 cfg.Light
 cfg.MUI
 
@@ -207,10 +173,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample Complete>
+ */
+    
+            
+    
+/**
+@sample Complete
 cfg.Dark
 cfg.MUI
 
@@ -253,6 +221,6 @@ function OnBtnTouch(btnText, cardName)
 {
     app.ShowPopup(btnText + " : " + cardName)
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addDialog #
  * @abbrev dlg
@@ -12,7 +14,7 @@
 */
 
 
-// addDialog.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a dialog into your app.
@@ -24,7 +26,7 @@ Adds a dialog into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnAction ###
@@ -52,12 +54,14 @@ Adds a dialog into your app.
  * $$ dlg.hide() $$
  */
 
-// addDialog.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -82,9 +86,12 @@ class Main extends App
         this.dlg.show()
     }
 }
-</sample>
-
-<sample NoCancel>
+ */
+    
+            
+    
+/**
+@sample NoCancel
 class Main extends App
 {
     onStart()
@@ -127,9 +134,12 @@ class Main extends App
         }
     }
 }
-</sample>
-
-<sample Adding controls to the dialog>
+ */
+    
+            
+    
+/**
+@sample Adding controls to the dialog
 class Main extends App
 {
     onStart()
@@ -176,6 +186,6 @@ class Main extends App
         }
     }
 }
-</sample>
  */
-
+    
+            

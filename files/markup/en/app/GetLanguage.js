@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetLanguage #
  * @brief Get device language
@@ -10,16 +12,19 @@
 */
 
 
-// GetLanguage.txt --> All the sample codes
 
-/** @Sample
-<sample Show User Language>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show User Language
 function OnStart()
 {
     <b>var lang = app.GetLanguage();</b>
     app.Alert( lang );
 }
-</sample>
-
  */
-
+    
+            

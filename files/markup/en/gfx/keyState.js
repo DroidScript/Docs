@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # keyState #
  * @brief Current key state
@@ -7,9 +9,7 @@
 */
 
 
-// keyState.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

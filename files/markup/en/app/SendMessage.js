@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SendMessage #
  * @brief Send message from Service to main app
@@ -7,10 +9,14 @@
 */
 
 
-// SendMessage.txt --> All the sample codes
 
-/** @Sample
-<sample Services>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Services
 //our Service.js code.
 //In regular usage move this code to a separate Service.js file
 var servicejs = `
@@ -91,7 +97,6 @@ function OnServiceMessage( msg )
 {
     txt.SetText( "Count: " + msg );
 }
-</sample>
-
  */
-
+    
+            

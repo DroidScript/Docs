@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ClearValue #
  * @brief Deletes a variable saved via app.Save*()
@@ -10,10 +12,14 @@
 */
 
 
-// ClearValue.txt --> All the sample codes
 
-/** @Sample
-<sample Save, Load and Clear Data>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Save, Load and Clear Data
 var file = "demofile";
 
 function OnStart()
@@ -56,7 +62,6 @@ function btnClear_OnTouch()
 	<b>app.ClearData( file );</b>
 	app.ShowPopup( "Data Cleared." );
 }
-</sample>
-
  */
-
+    
+            

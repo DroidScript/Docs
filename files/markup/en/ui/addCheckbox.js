@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addCheckbox #
  * @abbrev ckb
@@ -13,7 +15,7 @@
 */
 
 
-// addCheckbox.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a checkbox control to the given layout.
@@ -25,7 +27,7 @@ Adds a checkbox control to the given layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -177,12 +179,14 @@ Adds a checkbox control to the given layout.
  * @param {num} zIndex The z
  */
 
-// addCheckbox.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -202,9 +206,12 @@ class Main extends App
         ui.showPopup( `Value is ${ value }` )
     }
 }
-</sample>
-
-<sample Colors>
+ */
+    
+            
+    
+/**
+@sample Colors
 class Main extends App
 {
     onStart()
@@ -233,9 +240,12 @@ class Main extends App
         ui.showPopup( `Value is ${ value }` )
     }
 }
-</sample>
-
-<sample Text positions>
+ */
+    
+            
+    
+/**
+@sample Text positions
 class Main extends App
 {
     onStart()
@@ -266,9 +276,12 @@ class Main extends App
         ui.showPopup( `Value is ${ value }` )
     }
 }
-</sample>
-
-<sample Adding custom checkbox icon>
+ */
+    
+            
+    
+/**
+@sample Adding custom checkbox icon
 class Main extends App
 {
     onStart()
@@ -292,6 +305,6 @@ class Main extends App
         ui.showPopup( `Value is ${ value }` )
     }
 }
-</sample>
  */
-
+    
+            

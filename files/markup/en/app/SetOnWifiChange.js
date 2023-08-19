@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnWifiChange #
  * @brief Called on WiFi connected state changes
@@ -8,10 +10,14 @@
 */
 
 
-// SetOnWifiChange.txt --> All the sample codes
 
-/** @Sample
-<sample Detect WiFi Changes>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Detect WiFi Changes
 function OnStart()
 {
     app.SetOnWifiChange( OnWifiChange );
@@ -26,7 +32,6 @@ function OnStart()
     }
     else app.ShowProgress( state )
 }</b>
-</sample>
-
  */
-
+    
+            

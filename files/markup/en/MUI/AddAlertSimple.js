@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddAlertSimple #
  * @abbrev als
@@ -11,9 +13,7 @@
 */
 
 
-// AddAlertSimple.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddAppBarModern #
  * @abbrev abm
@@ -13,9 +15,7 @@
 */
 
 
-// AddAppBarModern.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

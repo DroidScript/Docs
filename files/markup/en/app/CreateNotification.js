@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateNotification #
  * @abbrev ntf
@@ -9,7 +11,7 @@
 */
 
 
-// CreateNotification.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The Notification object can be used to put messages in the notification drawer. The “AutoCancel” **option** will automatically dismiss the notificatin if the user touches it. “FullScreen” tries to create a larger notification on the screen. And “OnGoing” makes the Notification closeable by your app only.
@@ -25,12 +27,10 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Cancel ###
  * Cancel a notification with a specific id.
@@ -99,10 +99,14 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
  * @param {str_ptf} image 
  */
 
-// CreateNotification.txt --> All the sample codes
 
-/** @Sample
-<sample Notification>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Notification
 function OnStart()
 {
 	app.ShowPopup( "Sending notification" );
@@ -117,7 +121,6 @@ function cancel()
 	notify.Cancel( "testID" );
 	app.ShowPopup( "Notification cancelled" );
 }
-</sample>
-
  */
-
+    
+            

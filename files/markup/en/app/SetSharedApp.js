@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetSharedApp #
  * @brief Auto-Launch Project when shared data received
@@ -9,15 +11,18 @@
 */
 
 
-// SetSharedApp.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
     app.SetSharedApp( "Hello World" );
 }
-</sample>
-
  */
-
+    
+            

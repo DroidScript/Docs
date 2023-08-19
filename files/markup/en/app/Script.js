@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Script #
  * @brief import an external JavaScript file
@@ -12,10 +14,14 @@
 */
 
 
-// Script.txt --> All the sample codes
 
-/** @Sample
-<sample Deferred Loading (recommended)>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Deferred Loading (recommended)
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
 <b>app.Script( "script.js" );</b>
 
@@ -23,8 +29,12 @@ function OnStart() {
     app.ShowPopup( "script.js loaded." );
     app.Alert( computeNum(), "computed number: " );
 }
-</sample>
-<sample Inline Loading>
+ */
+    
+            
+    
+/**
+@sample Inline Loading
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
 
 function OnStart() {
@@ -35,7 +45,6 @@ function OnStart() {
     app.ShowPopup( "script.js loaded." );
     app.Alert( computeNum(), "computed number: " );
 }
-</sample>
-
  */
-
+    
+            

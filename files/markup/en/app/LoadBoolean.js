@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LoadBoolean #
  * @brief Load saved boolean value
@@ -12,10 +14,14 @@
 */
 
 
-// LoadBoolean.txt --> All the sample codes
 
-/** @Sample
-<sample Detect First Start>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Detect First Start
 var file = "demofile";
 
 function OnStart()
@@ -29,7 +35,6 @@ function OnStart()
 
 	app.SaveBoolean( "first", false, file );
 }
-</sample>
-
  */
-
+    
+            

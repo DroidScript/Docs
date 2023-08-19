@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetKioskMode #
  * @brief Blocks android functionality outside your app
@@ -13,15 +15,18 @@
 */
 
 
-// SetKioskMode.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
     app.SetKioskMode( "Status,Nav", true, "Black" );
 }
-</sample>
-
  */
-
+    
+            

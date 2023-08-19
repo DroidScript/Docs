@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateBanner #
  * @abbrev bnr
@@ -13,7 +15,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnTouch ###
@@ -23,105 +25,61 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern SetOnClose
- */
-// CreateBanner.txt --> All the sample codes
+/** @extern SetOnClose */
 
-/** @Sample
-<sample Light>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Light
 cfg.Light
 cfg.MUI
 
@@ -136,9 +94,12 @@ function OnStart()
     ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
     ban.Show()
 }
-</sample>
-
-<sample Dark>
+ */
+    
+            
+    
+/**
+@sample Dark
 cfg.Dark
 cfg.MUI
 
@@ -162,6 +123,6 @@ function OnTouch(v)
 	else
 		app.ShowPopup("Banner close")
 }
-</sample>
  */
-
+    
+            

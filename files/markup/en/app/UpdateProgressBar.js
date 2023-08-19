@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # UpdateProgressBar #
  * @brief Update the ProgressBar percentage
@@ -9,10 +11,14 @@
 */
 
 
-// UpdateProgressBar.txt --> All the sample codes
 
-/** @Sample
-<sample Progress Bar>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Progress Bar
 function OnStart()
 {
 	<b>app.ShowProgressBar( "Loading..." );
@@ -22,7 +28,6 @@ function OnStart()
 
 	app.HideProgressBar();</b>
 }
-</sample>
-
  */
-
+    
+            

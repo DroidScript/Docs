@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetObjects #
  * @brief Get map of created DroidScript objects
@@ -7,10 +9,14 @@
 */
 
 
-// GetObjects.txt --> All the sample codes
 
-/** @Sample
-<sample Show Types of all Objects>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Types of all Objects
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -36,7 +42,6 @@ function btn_OnTouch()
 
     app.Alert( lst.join( "\n" ));
 }
-</sample>
-
  */
-
+    
+            

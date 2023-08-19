@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateDataTable #
  * @abbrev tbl
@@ -13,7 +15,7 @@
 */
 
 
-// CreateDataTable.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Data tables display sets of data across rows and columns. You can pass options and and configure your header and rows to add specific functionality.
@@ -35,7 +37,7 @@ You can also add a footer into your table if you want controls associated with t
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AppendRow ###
@@ -110,97 +112,57 @@ You can also add a footer into your table if you want controls associated with t
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateDataTable.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -221,9 +183,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-<sample Sortable and Numeric Column>
+ */
+    
+            
+    
+/**
+@sample Sortable and Numeric Column
 cfg.Light
 cfg.MUI
 
@@ -246,9 +211,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-<sample Selectable and Dark>
+ */
+    
+            
+    
+/**
+@sample Selectable and Dark
 cfg.Dark
 cfg.MUI
 
@@ -271,9 +239,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-<sample With Footer>
+ */
+    
+            
+    
+/**
+@sample With Footer
 cfg.Dark
 cfg.MUI
 
@@ -309,6 +280,6 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsPaused #
  * @brief Get paused state
@@ -7,9 +9,7 @@
 */
 
 
-// IsPaused.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

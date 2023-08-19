@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddAlert #
  * @abbrev alr
@@ -11,9 +13,7 @@
 */
 
 
-// AddAlert.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

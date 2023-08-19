@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDefaultOrientation #
  * @brief Get devces default orientation
@@ -9,16 +11,19 @@
 */
 
 
-// GetDefaultOrientation.txt --> All the sample codes
 
-/** @Sample
-<sample Show Default Orientation>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Default Orientation
 function OnStart()
 {
     <b>var orient = app.GetDefaultOrientation();</b>
     app.Alert( orient );
 }
-</sample>
-
  */
-
+    
+            

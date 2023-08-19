@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CancelJob #
  * @brief Cancel background job
@@ -6,9 +8,7 @@
 */
 
 
-// CancelJob.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

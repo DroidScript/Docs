@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddLayout #
  * @brief Adds a layout to the app
@@ -12,10 +14,14 @@
 */
 
 
-// AddLayout.txt --> All the sample codes
 
-/** @Sample
-<sample Vertical>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Vertical
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -26,7 +32,6 @@ function OnStart()
 
 	<b>app.AddLayout( lay );</b>
 }
-</sample>
-
  */
-
+    
+            

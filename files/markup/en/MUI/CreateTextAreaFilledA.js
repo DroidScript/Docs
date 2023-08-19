@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateTextAreaFilledA #
  * @abbrev taf
@@ -15,12 +17,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * Clear input history
@@ -28,9 +28,7 @@
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
 /** ### GetCursorLine ###
  * Get cursor line
@@ -63,21 +61,13 @@
  */
 
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetType
- */
+/** @extern GetType */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
 /** ### InsertText ###
  * Inserts a string at a given position.
@@ -87,17 +77,11 @@
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
 /** ### Redo ###
  * Redo an undone action.
@@ -121,13 +105,9 @@
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnChange
- */
+/** @extern SetOnChange */
 
 /** ### SetOnEnter ###
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
@@ -136,23 +116,23 @@
  */
 
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
 /** ### Undo ###
  * Undo an action
  * $$ taf.Undo() $$
  */
 
-// CreateTextAreaFilledA.txt --> All the sample codes
 
-/** @Sample
-<sample No Label>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample No Label
 cfg.Light
 cfg.MUI
 
@@ -168,10 +148,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample With Label>
+ */
+    
+            
+    
+/**
+@sample With Label
 cfg.Light
 cfg.MUI
 
@@ -187,10 +169,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-<sample SetOnEnter Callback>
+ */
+    
+            
+    
+/**
+@sample SetOnEnter Callback
 cfg.Dark
 cfg.MUI
 
@@ -212,6 +196,6 @@ function OnEnter()
 {
     app.ShowPopup(this.GetText())
 }
-</sample>
  */
-
+    
+            

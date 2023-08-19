@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddRadioMaterial #
  * @abbrev rdm
@@ -15,9 +17,7 @@
 */
 
 
-// AddRadioMaterial.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

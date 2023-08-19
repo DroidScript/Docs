@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SendSMS #
  * @brief Open the SMS app and autofill fields
@@ -10,15 +12,18 @@
 */
 
 
-// SendSMS.txt --> All the sample codes
 
-/** @Sample
-<sample Send SMS>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Send SMS
 function OnStart()
 {
     app.SendSMS( "Hello World!", "0123456789" );
 }
-</sample>
-
  */
-
+    
+            

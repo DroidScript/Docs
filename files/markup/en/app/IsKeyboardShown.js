@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsKeyboardShown #
  * @brief Check whether device keyboard is shown
@@ -9,16 +11,19 @@
 */
 
 
-// IsKeyboardShown.txt --> All the sample codes
 
-/** @Sample
-<sample Is Keyboard Shown>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Is Keyboard Shown
 function OnStart()
 {
     <b>var kbShown = app.IsKeyboardShown();</b>
     app.Alert( kbShown, "Is Keyboard Shown:" );
 }
-</sample>
-
  */
-
+    
+            

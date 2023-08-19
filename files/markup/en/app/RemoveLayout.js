@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RemoveLayout #
 
@@ -9,10 +11,14 @@
 */
 
 
-// RemoveLayout.txt --> All the sample codes
 
-/** @Sample
-<sample Vertical>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Vertical
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -31,7 +37,6 @@ function OnStart()
 function RemoveDrawer() {
     <b>app.RemoveLayout( lay );</b>
 }
-</sample>
-
  */
-
+    
+            

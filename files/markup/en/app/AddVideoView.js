@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddVideoView #
  * @brief Create and add VideoView to Layout.
@@ -12,9 +14,7 @@
 */
 
 
-// AddVideoView.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

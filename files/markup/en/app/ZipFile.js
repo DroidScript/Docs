@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ZipFile #
  * @brief Compress a file to zip
@@ -10,17 +12,20 @@
 */
 
 
-// ZipFile.txt --> All the sample codes
 
-/** @Sample
-<sample Zip File>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Zip File
 function OnStart()
 {
     var file = "/sdcard/DroidScript/Hello World/Hello World.js";
 	app.ZipFile( file, file + ".zip" );
 	app.ShowPopup( "Compressed to " + file + ".zip" )
 }
-</sample>
-
  */
-
+    
+            

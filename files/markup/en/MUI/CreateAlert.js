@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateAlert #
  * @abbrev alr
@@ -13,16 +15,12 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### SetOnClose ###
  * Calls a function when alert is close
@@ -31,73 +29,45 @@
  */
 
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
-// CreateAlert.txt --> All the sample codes
+/** @extern IsVisible */
 
-/** @Sample
-<sample No icon>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample No icon
 cfg.Light
 cfg.MUI
 
@@ -110,9 +80,12 @@ function OnStart()
     alr = MUI.CreateAlert(text)
     alr.Show()
 }
-</sample>
-
-<sample With icon>
+ */
+    
+            
+    
+/**
+@sample With icon
 cfg.Light
 cfg.MUI
 
@@ -132,8 +105,12 @@ function CloseAlert()
 {
     alr.Hide()
 }
-</sample>
-<sample On close function>
+ */
+    
+            
+    
+/**
+@sample On close function
 cfg.Dark
 cfg.MUI
 
@@ -153,7 +130,6 @@ function AlertOnClose(val)
     if(val)
         app.ShowPopup("You close me!")
 }
-</sample>
-
  */
-
+    
+            

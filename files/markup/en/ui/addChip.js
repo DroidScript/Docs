@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addChip #
  * @abbrev chp
@@ -13,7 +15,7 @@
 */
 
 
-// addChip.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a chip into your app.
@@ -27,7 +29,7 @@ Adds a chip into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setTouchable ###
@@ -178,12 +180,14 @@ Adds a chip into your app.
  * @param {num} zIndex The z
  */
 
-// addChip.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Chips>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Chips
 class Main extends App
 {
     onStart()
@@ -212,9 +216,12 @@ class Main extends App
         ui.showPopup( "You touched the chip!" )
     }
 }
-</sample>
-
-<sample Deletable chip>
+ */
+    
+            
+    
+/**
+@sample Deletable chip
 class Main extends App
 {
     onStart()
@@ -235,9 +242,12 @@ class Main extends App
         ui.showPopup( "Chip is deleted!" )
     }
 }
-</sample>
-
-<sample Custom styles>
+ */
+    
+            
+    
+/**
+@sample Custom styles
 class Main extends App
 {
     onStart()
@@ -258,9 +268,12 @@ class Main extends App
         this.chip.textSize = 14
     }
 }
-</sample>
-
-<sample Avatar>
+ */
+    
+            
+    
+/**
+@sample Avatar
 class Main extends App
 {
     onStart()
@@ -275,6 +288,6 @@ class Main extends App
         this.chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
     }
 }
-</sample>
  */
-
+    
+            

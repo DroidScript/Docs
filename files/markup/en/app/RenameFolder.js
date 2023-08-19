@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RenameFolder #
  * @brief Rename or move a local folder
@@ -10,22 +12,28 @@
 */
 
 
-// RenameFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Rename>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Rename
 function OnStart()
 {
 	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/YourFolder" );</b>
 }
-</sample>
-
-<sample Move>
+ */
+    
+            
+    
+/**
+@sample Move
 function OnStart()
 {
 	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/DroidScript/MyFolder" );</b>
 }
-</sample>
-
  */
-
+    
+            

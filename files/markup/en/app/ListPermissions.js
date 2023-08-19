@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ListPermissions #
 
@@ -8,15 +10,19 @@
 */
 
 
-// ListPermissions.txt --> All the sample codes
 
-/** @Sample
-<sample List Permissions>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample List Permissions
 function OnStart(perms)
 {
     var perms = app.ListPermissions("storage");
     app.Alert(perms, "Permissions:");
 }
-</sample>
  */
-
+    
+            

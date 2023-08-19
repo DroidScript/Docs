@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SaveText #
  * @brief Save a text value across multiple starts
@@ -11,10 +13,14 @@
 */
 
 
-// SaveText.txt --> All the sample codes
 
-/** @Sample
-<sample Load Saved Text>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Load Saved Text
 var file = "demofile";
 
 function OnStart()
@@ -47,7 +53,6 @@ function btnLoad_OnTouch()
     var value = app.LoadText( "value", "no value stored", file );
 	app.ShowPopup( value );
 }
-</sample>
-
  */
-
+    
+            

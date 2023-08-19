@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddLayout #
  * @abbrev lay
@@ -11,9 +13,7 @@
 */
 
 
-// AddLayout.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

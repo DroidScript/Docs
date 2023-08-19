@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddToggle #
  * @brief Create and add Toggle to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddToggle.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

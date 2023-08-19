@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCanvas #
  * @brief Create a blank white Image object.
@@ -14,9 +16,7 @@
 */
 
 
-// CreateCanvas.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

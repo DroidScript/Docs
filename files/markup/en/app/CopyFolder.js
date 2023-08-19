@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CopyFolder #
  * @brief Copies a folder to a given destination
@@ -14,19 +16,24 @@
 */
 
 
-// CopyFolder.txt --> All the sample codes
 
-/** @Sample
-function OnStart()
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample on OnStart()
 {
     app.MakeFolder("myFolder");
-    <b>app.CopyFolder("myFolder", "/sdcard/myFolder");</b>
+    <b
+app.CopyFolder("myFolder", "/sdcard/myFolder");</b>
 
 	if(app.FolderExists("/sdcard/myFolder"))
 	    app.ShowPopup("myFolder exists in /sdcard/!");
     else
 	    app.ShowPopup("myFolder does not exist in /sdcard/!");
 }
-
  */
-
+    
+            

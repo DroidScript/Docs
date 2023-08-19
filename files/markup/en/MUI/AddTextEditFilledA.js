@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEditFilledA #
  * @abbrev tef
@@ -14,9 +16,7 @@
 */
 
 
-// AddTextEditFilledA.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

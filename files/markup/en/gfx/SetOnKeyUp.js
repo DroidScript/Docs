@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnKeyUp #
  * @brief Define a KeyUp callback
@@ -6,9 +8,7 @@
 */
 
 
-// SetOnKeyUp.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetVolume #
  * @brief Get volume of a given audio type
@@ -10,16 +12,19 @@
 */
 
 
-// GetVolume.txt --> All the sample codes
 
-/** @Sample
-<sample Get System Volume>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get System Volume
 function OnStart()
 {
     <b>var vol = app.GetVolume();</b>
     app.Alert( vol, "System Volume:" );
 }
-</sample>
-
  */
-
+    
+            

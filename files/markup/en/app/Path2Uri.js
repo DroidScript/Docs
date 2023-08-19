@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Path2Uri #
  * @brief Convert file path to content uri
@@ -8,9 +10,7 @@
 */
 
 
-// Path2Uri.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

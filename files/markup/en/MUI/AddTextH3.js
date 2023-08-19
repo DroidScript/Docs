@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextH3 #
  * @abbrev txh
@@ -15,9 +17,7 @@
 */
 
 
-// AddTextH3.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddModal #
  * @abbrev mdl
@@ -13,9 +15,7 @@
 */
 
 
-// AddModal.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

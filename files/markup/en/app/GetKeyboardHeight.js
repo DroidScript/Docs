@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetKeyboardHeight #
  * @brief Get current keyboard height
@@ -9,10 +11,14 @@
 */
 
 
-// GetKeyboardHeight.txt --> All the sample codes
 
-/** @Sample
-<sample Show Keyboard Height>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Keyboard Height
 function OnStart()
 {
 	lay = app.CreateLayout( "linear" );
@@ -33,7 +39,6 @@ function OnKeyboardShow()
     <b>var height = app.GetKeyboardHeight();</b>
     txt.SetText( "Keyboard Height: " + height + "px" );
 }
-</sample>
-
  */
-
+    
+            

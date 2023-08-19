@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateAlertSimple #
  * @abbrev als
@@ -13,16 +15,12 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### SetOnTouch ###
  * Calls a function when button is click
@@ -31,89 +29,53 @@
  */
 
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetVisibility
- */
-// CreateAlertSimple.txt --> All the sample codes
+/** @extern SetVisibility */
 
-/** @Sample
-<sample Simple>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Simple
 cfg.Light
 cfg.MUI
 
@@ -126,9 +88,12 @@ function OnStart()
     als = MUI.CreateAlertSimple(text)
     als.Show()
 }
-</sample>
-
-<sample Custom>
+ */
+    
+            
+    
+/**
+@sample Custom
 cfg.Light
 cfg.MUI
 
@@ -148,8 +113,12 @@ function CloseAlert()
 {
     als.Hide()
 }
-</sample>
-<sample Dark>
+ */
+    
+            
+    
+/**
+@sample Dark
 cfg.Dark
 cfg.MUI
 
@@ -180,6 +149,6 @@ function AlertOnTouch(val)
 {
     app.ShowPopup(val)
 }
-</sample>
  */
-
+    
+            

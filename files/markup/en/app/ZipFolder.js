@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ZipFolder #
  * @brief Compress a folder to zip
@@ -10,17 +12,20 @@
 */
 
 
-// ZipFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Zip Folder>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Zip Folder
 function OnStart()
 {
     var folder = "/sdcard/DroidScript/Hello World";
 	app.ZipFolder( folder, folder + ".zip" );
 	app.ShowPopup( "Compressed to " + folder + ".zip" );
 }
-</sample>
-
  */
-
+    
+            

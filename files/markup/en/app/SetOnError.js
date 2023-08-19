@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnError #
  * @brief Called on thrown JS errors
@@ -8,10 +10,14 @@
 */
 
 
-// SetOnError.txt --> All the sample codes
 
-/** @Sample
-<sample Catch JS Errors>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Catch JS Errors
 function OnStart()
 {
     app.SetOnError( OnError );
@@ -27,9 +33,12 @@ function OnStart()
 
     app.Alert( text, "Received error message:" );
 }</b>
-</sample>
-
-<!--sample Catch JS Errors>
+ */
+    
+            
+    
+/**
+@sample sample Catch JS Errors
 function OnStart()
 {
     app.SetOnError( OnError );
@@ -46,6 +55,6 @@ File: "${decodeURI(file)}"`;
     app.Alert( text, "Received error message:" );
 }<b>
 </sample-->
-
  */
-
+    
+            

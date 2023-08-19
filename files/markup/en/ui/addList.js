@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addList #
  * @abbrev lst
@@ -13,7 +15,7 @@
 */
 
 
-// addList.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Lists are continuous, vertical indexes of text or images. They are used to group together related pieces of data or informations to highlight association with each other and easy to read. They are frequently used for navigation as well as displaying general content.
@@ -35,7 +37,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### addItem ###
@@ -319,12 +321,14 @@ Lists are continuous, vertical indexes of text or images. They are used to group
  * @param {num} zIndex The z
  */
 
-// addList.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic list>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic list
 class Main extends App
 {
     onStart()
@@ -347,9 +351,12 @@ class Main extends App
         ui.showPopup( title, "Short" )
     }
 }
-</sample>
-
-<sample List with icon and body>
+ */
+    
+            
+    
+/**
+@sample List with icon and body
 class Main extends App
 {
     onStart()
@@ -388,9 +395,12 @@ class Main extends App
         this.lst.iconColor = "#e91e63"
     }
 }
-</sample>
-
-<sample Contacts list>
+ */
+    
+            
+    
+/**
+@sample Contacts list
 class Main extends App
 {
     onStart()
@@ -420,9 +430,12 @@ class Main extends App
         ui.showPopup(title + " : " +body, "Short")
     }
 }
-</sample>
-
-<sample Elevated list>
+ */
+    
+            
+    
+/**
+@sample Elevated list
 class Main extends App
 {
     onStart()
@@ -455,9 +468,12 @@ class Main extends App
         ui.showPopup(title + " : " +body, "Short")
     }
 }
-</sample>
-
-<sample Outlined List>
+ */
+    
+            
+    
+/**
+@sample Outlined List
 class Main extends App
 {
     onStart()
@@ -490,9 +506,12 @@ class Main extends App
         ui.showPopup(title + " : " +body, "Short")
     }
 }
-</sample>
-
-<sample Selectable List>
+ */
+    
+            
+    
+/**
+@sample Selectable List
 class Main extends App
 {
     onStart()
@@ -526,6 +545,6 @@ class Main extends App
         ui. showPopup(title + " : " + value)
     }
 }
-</sample>
  */
-
+    
+            

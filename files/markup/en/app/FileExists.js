@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # FileExists #
  * @brief Checks if the file exists
@@ -10,10 +12,14 @@
 */
 
 
-// FileExists.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
     <b>if(app.FileExists("myFile.txt")) {
@@ -22,7 +28,6 @@ function OnStart()
         app.ShowPopup("myFile does not exist!");
     }</b>
 }
-</sample>
-
  */
-
+    
+            

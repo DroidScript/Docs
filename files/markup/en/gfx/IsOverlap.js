@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsOverlap #
  * @brief Tests if two objects overlap
@@ -10,9 +12,7 @@
 */
 
 
-// IsOverlap.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

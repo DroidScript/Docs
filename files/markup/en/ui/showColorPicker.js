@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # showColorPicker #
  * @brief showColorPicker
@@ -10,7 +12,7 @@
 */
 
 
-// showColorPicker.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Shows a color picker. Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
@@ -22,7 +24,7 @@ Shows a color picker. Customize a color or choose from the presets of color care
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### getValue ###
@@ -31,12 +33,14 @@ Shows a color picker. Customize a color or choose from the presets of color care
  * @returns str
  */
 
-// showColorPicker.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -63,6 +67,6 @@ class Main extends App
         ui.showPopup( clr )
     }
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateMediaPlayer #
  * @abbrev ply
@@ -8,7 +10,7 @@
 */
 
 
-// CreateMediaPlayer.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The MediaPlayer object can be used to play sound files from the phone or tablet.
@@ -24,12 +26,10 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Close ###
  * Close the media player and thus make it unuseable for further use.
@@ -157,10 +157,14 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * $$ ply.Stop() $$
  */
 
-// CreateMediaPlayer.txt --> All the sample codes
 
-/** @Sample
-<sample Playing Audio>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Playing Audio
 function OnStart()
 {
 	<b>player = app.CreateMediaPlayer();
@@ -178,7 +182,6 @@ function player_OnComplete()
 {
 	app.ShowPopup( "OnComplete" );
 }
-</sample>
-
  */
-
+    
+            

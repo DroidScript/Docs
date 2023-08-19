@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCheckList #
  * @abbrev chl
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSubmit ###
@@ -24,93 +26,55 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern SetHeight
- */
+/** @extern SetHeight */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern SetTextEdit
- */
-// CreateCheckList.txt --> All the sample codes
+/** @extern SetTextEdit */
 
-/** @Sample
-<sample Light>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Light
 cfg.Light
 cfg.MUI
 
@@ -146,10 +110,12 @@ function OnSubmit(lst)
 {
     app.ShowPopup(JSON.stringify(lst))   
 }
-</sample>
-
-
-<sample Dark, Bottom>
+ */
+    
+            
+    
+/**
+@sample Dark, Bottom
 cfg.Dark
 cfg.MUI
 
@@ -185,6 +151,6 @@ function OnSubmit(lst)
 {
     app.ShowPopup(JSON.stringify(lst))   
 }
-</sample>
  */
-
+    
+            

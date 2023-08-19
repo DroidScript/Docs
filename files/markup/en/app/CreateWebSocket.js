@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateWebSocket #
  * @abbrev wbs
@@ -12,7 +14,7 @@
 */
 
 
-// CreateWebSocket.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.
@@ -25,12 +27,10 @@ See Also: @CreateWebServer
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Close ###
  * Close the web socket.
@@ -79,10 +79,14 @@ See Also: @CreateWebServer
  * @param {fnc_json} callback {}
  */
 
-// CreateWebSocket.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     ip = app.GetIPAddress();
@@ -117,7 +121,6 @@ function OnSockClose()
 {
     app.ShowPopup( "Disconnected" );
 }
-</sample>
-
  */
-
+    
+            

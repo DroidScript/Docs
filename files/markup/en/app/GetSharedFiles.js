@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSharedFiles #
  * @brief Get list of shared files
@@ -9,17 +11,21 @@
 */
 
 
-// GetSharedFiles.txt --> All the sample codes
 
-/** @Sample
-<sample Show Shared Files>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Shared Files
 function OnStart()
 {
 	<b>var files = app.GetSharedFiles();</b>
 
 	if( files ) app.Alert( files.join( "\n" ) );
 	else app.ShowPopup( "No shared files received." );
-}</sample>
-
+}
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddBanner #
  * @abbrev bnr
@@ -11,9 +13,7 @@
 */
 
 
-// AddBanner.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateWebServer #
  * @abbrev sock
@@ -10,7 +12,7 @@
 */
 
 
-// CreateWebServer.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.
@@ -52,7 +54,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddRedirect ###
@@ -71,9 +73,7 @@ The following example demonstrates web sockets being used to receive messages fr
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Disconnect ###
  * Disconnects a client from the WebServer.
@@ -97,9 +97,7 @@ The following example demonstrates web sockets being used to receive messages fr
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### SendText ###
  * Sends a message to a specific client. * If no id is given, all clients of the specified ip are notified. * If neither ip nor id is given, the message will be sent to all connected clients.
@@ -156,10 +154,14 @@ The following example demonstrates web sockets being used to receive messages fr
  * $$ sock.Stop() $$
  */
 
-// CreateWebServer.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 function OnStart()
 {
     var ip = app.GetIPAddress();
@@ -169,9 +171,12 @@ function OnStart()
     serv.SetFolder( "/sdcard/DroidScript" );
     serv.Start();</b>
 }
-</sample>
-
-<sample Servlets>
+ */
+    
+            
+    
+/**
+@sample Servlets
 function OnStart()
 {
     var ip = app.GetIPAddress();
@@ -188,9 +193,12 @@ function OnServlet( request, info )
 	serv.SetResponse( "Got it!" );
 	app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
 }
-</sample>
-
-<sample Send and Receive messages>
+ */
+    
+            
+    
+/**
+@sample Send and Receive messages
 var indexhtml = `
 <html>
 <head>
@@ -294,7 +302,6 @@ function SendMessage() {
 function serv_OnReceive( msg, ip ) {
 	txtMsg.SetText( ip + ": " + msg );
 }
-</sample>
-
  */
-
+    
+            

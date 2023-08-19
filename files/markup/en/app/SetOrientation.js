@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOrientation #
  * @brief Fix display orientation
@@ -9,10 +11,14 @@
 */
 
 
-// SetOrientation.txt --> All the sample codes
 
-/** @Sample
-<sample Change Orientation>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Change Orientation
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -28,7 +34,6 @@ function SetOrientation( orient )
 {
     <b>app.SetOrientation( orient )</b>
 }
-</sample>
-
  */
-
+    
+            

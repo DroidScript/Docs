@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Unlock #
 
@@ -10,11 +12,14 @@
 */
 
 
-// Unlock.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" );
@@ -33,7 +38,6 @@ function btn_OnTouch()
 
 	<b>setTimeout(app.Unlock, 5000);</b>
 }
-</sample>
-
  */
-
+    
+            

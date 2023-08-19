@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # WakeUp #
  * @brief Wake the screen up
@@ -8,16 +10,19 @@
 */
 
 
-// WakeUp.txt --> All the sample codes
 
-/** @Sample
-<sample Sleep and Wake>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Sleep and Wake
 function OnStart()
 {
     app.GoToSleep();
     <b>setTimeout("app.WakeUp()", 5000)</b>
 }
-</sample>
-
  */
-
+    
+            

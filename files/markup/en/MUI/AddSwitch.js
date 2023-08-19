@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSwitch #
  * @abbrev swt
@@ -11,9 +13,7 @@
 */
 
 
-// AddSwitch.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

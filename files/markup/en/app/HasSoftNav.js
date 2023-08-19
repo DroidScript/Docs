@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # HasSoftNav #
  * @brief Checks if device has soft keys
@@ -7,16 +9,19 @@
 */
 
 
-// HasSoftNav.txt --> All the sample codes
 
-/** @Sample
-<sample Check Softkeys>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Softkeys
 function OnStart()
 {
     <b>var hasSoftNav = app.HasSoftNav();</b>
     app.Alert( hasSoftNav, "Has Soft Keys:" );
 }
-</sample>
-
  */
-
+    
+            

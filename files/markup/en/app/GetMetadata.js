@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetMetadata #
 
@@ -11,10 +13,14 @@
 */
 
 
-// GetMetadata.txt --> All the sample codes
 
-/** @Sample
-<sample Retreive all Metadata>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Retreive all Metadata
 function OnStart()
 {
     app.ChooseFile( "Choose an audio file", "audio/mpeg", OnChoose );
@@ -36,6 +42,6 @@ function OnChoose( path )
     app.Alert( lst.join( "\n" ), path );
 }
 <sample>
-
  */
-
+    
+            

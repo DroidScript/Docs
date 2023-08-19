@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextParagraph #
  * @abbrev txp
@@ -15,9 +17,7 @@
 */
 
 
-// AddTextParagraph.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

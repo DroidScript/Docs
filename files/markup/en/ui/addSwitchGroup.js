@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addSwitchGroup #
  * @abbrev swg
@@ -13,7 +15,7 @@
 */
 
 
-// addSwitchGroup.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a SwitchGroup Component into your layout. A switchgroup is a list whose items can be toggled between <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">on</span> and <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">off</span>.
@@ -25,7 +27,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -244,12 +246,14 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
  * @param {num} zIndex The z
  */
 
-// addSwitchGroup.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -271,9 +275,12 @@ class Main extends App
         ui.showPopup(item + " : "  + value)
     }
 }
-</sample>
-
-<sample SwitchGroup with leading icons>
+ */
+    
+            
+    
+/**
+@sample SwitchGroup with leading icons
 class Main extends App
 {
     onStart()
@@ -303,9 +310,12 @@ class Main extends App
         ui.showPopup(item + " : "  + value)
     }
 }
-</sample>
-
-<sample With custom styles>
+ */
+    
+            
+    
+/**
+@sample With custom styles
 class Main extends App
 {
     onStart()
@@ -342,9 +352,12 @@ class Main extends App
         ui.showPopup( item + " : "  + value )
     }
 }
-</sample>
-
-<sample Elevated switchgroup with onChange callback>
+ */
+    
+            
+    
+/**
+@sample Elevated switchgroup with onChange callback
 class Main extends App
 {
     onStart()
@@ -369,9 +382,12 @@ class Main extends App
         ui.showPopup( items.join(", ") )
     }
 }
-</sample>
-
-<sample Outlined switchgroup>
+ */
+    
+            
+    
+/**
+@sample Outlined switchgroup
 class Main extends App
 {
     onStart()
@@ -396,6 +412,6 @@ class Main extends App
         ui.showPopup( items.join(", ") )
     }
 }
-</sample>
  */
-
+    
+            

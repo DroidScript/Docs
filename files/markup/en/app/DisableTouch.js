@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DisableTouch #
  * @brief Suppress all touch events
@@ -8,10 +10,14 @@
 */
 
 
-// DisableTouch.txt --> All the sample codes
 
-/** @Sample
-<sample Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" );
@@ -28,7 +34,6 @@ function btn_OnTouch()
 	<b>app.DisableTouch( true );</b>
 	app.ShowPopup( "Touch Disabled." );
 }
-</sample>
-
  */
-
+    
+            

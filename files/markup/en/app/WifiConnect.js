@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # WifiConnect #
 
@@ -8,11 +10,14 @@
 */
 
 
-// WifiConnect.txt --> All the sample codes
 
-/** @Sample
-<sample Conect to DS WiFi AP>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Conect to DS WiFi AP
 function OnStart()
 {
 	<b>app.WifiConnect( "DS WiFi AP", "mypass" );</b>
@@ -23,8 +28,6 @@ function OnWifiChange( state, ssid )
 {
     app.ShowPopup( ssid + " " + state );
 }
-
-</sample>
-
  */
-
+    
+            

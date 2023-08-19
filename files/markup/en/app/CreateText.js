@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateText #
  * @abbrev txt
@@ -12,7 +14,7 @@
 */
 
 
-// CreateText.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 If you want to display text in your app you can use the Text object. You can use the “Multiline” **option** to allow multi-line text and the “Left” or “Right” options to align the text. The default is single line centered text.
@@ -32,40 +34,24 @@ You can also set a background image/pattern or background gradient for the Text 
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetHtml ###
  * Returns the html formatted content.
@@ -74,9 +60,7 @@ You can also set a background image/pattern or background gradient for the Text 
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLineCount ###
  * Returns the amount of lines in the text even with html formatting
@@ -108,25 +92,15 @@ You can also set a background image/pattern or background gradient for the Text 
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -135,33 +109,19 @@ You can also set a background image/pattern or background gradient for the Text 
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
 /** ### Log ###
  * Append a string to the text separated with a line break
@@ -171,53 +131,29 @@ You can also set a background image/pattern or background gradient for the Text 
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetEllipsize
- */
+/** @extern SetEllipsize */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
 /** ### SetLog ###
  * Define a maximum amount of log lines
@@ -226,81 +162,49 @@ You can also set a background image/pattern or background gradient for the Text 
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetOnTouchDown
- */
+/** @extern SetOnTouchDown */
 
-/**
- * @extern SetOnTouchMove
- */
+/** @extern SetOnTouchMove */
 
-/**
- * @extern SetOnTouchUp
- */
+/** @extern SetOnTouchUp */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextShadow
- */
+/** @extern SetTextShadow */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
-/**
- * @extern SetTouchable
- */
+/** @extern SetTouchable */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateText.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Single line>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Single line
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -310,9 +214,13 @@ function OnStart()
 	lay.AddChild( txt );</b>
 
 	app.AddLayout( lay );
-}</sample>
-
-<sample Multi line>
+}
+ */
+    
+            
+    
+/**
+@sample Multi line
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -325,9 +233,12 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
-<sample Ellipsize>
+ */
+    
+            
+    
+/**
+@sample Ellipsize
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -339,7 +250,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

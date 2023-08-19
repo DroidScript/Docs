@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PreventWifiSleep #
  * @brief Prevent Wifi from powering down
@@ -8,14 +10,18 @@
 */
 
 
-// PreventWifiSleep.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>app.PreventWifiSleep();</b>
-}</sample>
-
+}
  */
-
+    
+            

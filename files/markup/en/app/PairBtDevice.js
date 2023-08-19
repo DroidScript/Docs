@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PairBtDevice #
 
@@ -9,10 +11,14 @@
 */
 
 
-// PairBtDevice.txt --> All the sample codes
 
-/** @Sample
-<sample Pairing and Unpairing bluetooth devices>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Pairing and Unpairing bluetooth devices
 function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
@@ -66,7 +72,6 @@ function OnPair( name, address ) {
 function OnUnpair() {
     app.Alert( name + "  " + address, "Unpairing successful!" );
 }
-</sample>
-
  */
-
+    
+            

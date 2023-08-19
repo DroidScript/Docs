@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateColorPicker #
  * @abbrev clp
@@ -11,7 +13,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -21,69 +23,43 @@
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern SetTextEdit
- */
-// CreateColorPicker.txt --> All the sample codes
+/** @extern SetTextEdit */
 
-/** @Sample
-<sample Light>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Light
 cfg.Light
 cfg.MUI
 
@@ -113,9 +89,12 @@ function OnSelect(color)
 {
     app.ShowPopup(color)
 }
-</sample>
-
-<sample Dark>
+ */
+    
+            
+    
+/**
+@sample Dark
 cfg.Dark
 cfg.MUI
 
@@ -145,6 +124,6 @@ function OnSelect(color)
 {
     app.ShowPopup(color)
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateList #
  * @abbrev lst
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddItem ###
@@ -26,33 +28,19 @@
  */
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetItem ###
  * 
@@ -70,9 +58,7 @@
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLength ###
  * 
@@ -89,21 +75,13 @@
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * 
@@ -112,21 +90,13 @@
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### InsertItem ###
  * 
@@ -138,21 +108,13 @@
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RemoveAll ###
  * 
@@ -206,29 +168,17 @@
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetColumnWidths ###
  * 
@@ -248,9 +198,7 @@
  */
 
 
-/**
- * @extern SetEllipsize
- */
+/** @extern SetEllipsize */
 
 /** ### SetEllipsize1 ###
  * 
@@ -266,13 +214,9 @@
  */
 
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
 /** ### SetHiTextColor1 ###
  * 
@@ -335,37 +279,21 @@
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
 /** ### SetTextColor1 ###
  * 
@@ -393,9 +321,7 @@
  */
 
 
-/**
- * @extern SetTextShadow
- */
+/** @extern SetTextShadow */
 
 /** ### SetTextShadow1 ###
  * 
@@ -417,9 +343,7 @@
  */
 
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
 /** ### SetTextSize1 ###
  * 
@@ -437,21 +361,19 @@
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateList.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -474,11 +396,12 @@ function OnTouch(title)
 {
     app.ShowPopup(title)
 }
-</sample>
-
-
-
-<sample With-Icon>
+ */
+    
+            
+    
+/**
+@sample With-Icon
 cfg.Light
 cfg.MUI
 
@@ -501,10 +424,12 @@ function OnTouch(title)
 {
     app.ShowPopup(title)
 }
-</sample>
-
-
-<sample Dark With Body & Icon>
+ */
+    
+            
+    
+/**
+@sample Dark With Body & Icon
 cfg.Dark
 cfg.MUI
 
@@ -531,6 +456,6 @@ function OnTouch(title, body)
 {
     app.ShowPopup(title+" : "+body)
 }
-</sample>
  */
-
+    
+            

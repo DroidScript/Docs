@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddText #
  * @brief Adds a text object
@@ -11,10 +13,14 @@
 */
 
 
-// AddText.txt --> All the sample codes
 
-/** @Sample
-<sample>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample 
 cfg.Game;
 
 function OnLoad()
@@ -27,7 +33,6 @@ function OnReady()
     <b>gfx.AddText( text, 0.2, 0.4, 0.2 );</b>
     gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

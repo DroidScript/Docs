@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Debug #
  * @brief Debug messages to the console
@@ -9,10 +11,14 @@
 */
 
 
-// Debug.txt --> All the sample codes
 
-/** @Sample
-<sample Demonstration>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Demonstration
 function OnStart()
 {
     app.CreateDebug();
@@ -20,7 +26,6 @@ function OnStart()
 
 	<b>app.Debug("\n\t\tHello World!");</b>
 }
-</sample>
-
  */
-
+    
+            

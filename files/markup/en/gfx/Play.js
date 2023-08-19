@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Play #
  * @brief Start or resume game
@@ -6,9 +8,7 @@
 */
 
 
-// Play.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

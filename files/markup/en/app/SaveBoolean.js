@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SaveBoolean #
  * @brief Save a boolean value across multiple starts
@@ -11,10 +13,14 @@
 */
 
 
-// SaveBoolean.txt --> All the sample codes
 
-/** @Sample
-<sample Detect First Start>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Detect First Start
 var file = "demofile";
 
 function OnStart()
@@ -28,7 +34,6 @@ function OnStart()
 
 	<b>app.SaveBoolean( "first", false, file );</b>
 }
-</sample>
-
  */
-
+    
+            

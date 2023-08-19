@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddText #
  * @abbrev txt
@@ -14,10 +16,14 @@
 */
 
 
-// AddText.txt --> All the sample codes
 
-/** @Sample
-<sample All Typography>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample All Typography
 cfg.Light
 cfg.MUI
 
@@ -36,6 +42,6 @@ function OnStart()
         s = MUI.AddText(lay, "text", 0.8, null, "secondary,light")
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

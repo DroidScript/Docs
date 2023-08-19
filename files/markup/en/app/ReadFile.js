@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ReadFile #
  * @brief Read the content of a local file
@@ -10,10 +12,14 @@
 */
 
 
-// ReadFile.txt --> All the sample codes
 
-/** @Sample
-<sample Append file and get line count>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Append file and get line count
 function OnStart()
 {
     app.WriteFile( "myFile.txt", "Hello World from Copy\n", "Append" );
@@ -22,7 +28,6 @@ function OnStart()
     var length = txt.split("\n").length;
     app.ShowPopup("myFile contains " + length + " lines");
 }
-</sample>
-
  */
-
+    
+            

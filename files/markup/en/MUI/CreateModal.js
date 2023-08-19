@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateModal #
  * @abbrev mdl
@@ -14,7 +16,7 @@
 */
 
 
-// CreateModal.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 A modal is a popup with more controls that can be added.
@@ -35,7 +37,7 @@ Use **SetOnTouch** method to call a function when the user touches the control b
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnTouch ###
@@ -52,13 +54,9 @@ Use **SetOnTouch** method to call a function when the user touches the control b
  */
 
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
 /** ### SetTitle ###
  * Sets a new title to the modal
@@ -74,89 +72,53 @@ Use **SetOnTouch** method to call a function when the user touches the control b
  */
 
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern SetOnClose
- */
-// CreateModal.txt --> All the sample codes
+/** @extern SetOnClose */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -181,12 +143,12 @@ function ShowModal()
 {
     modal.Show()
 }
-</sample>
-
-
-
-
-<sample Custom Controls>
+ */
+    
+            
+    
+/**
+@sample Custom Controls
 cfg.Light
 cfg.MUI
 
@@ -219,11 +181,12 @@ function ShowModal()
 {
     modal.Show()
 }
-</sample>
-
-
-
-<sample With Callback>
+ */
+    
+            
+    
+/**
+@sample With Callback
 cfg.Dark
 cfg.MUI
 
@@ -254,9 +217,12 @@ function OnControlTouch(isOk, btnText)
 {
     app.ShowPopup(isOk+" : "+btnText)
 }
-</sample>
-
-<sample Full Modal>
+ */
+    
+            
+    
+/**
+@sample Full Modal
 cfg.Light
 cfg.MUI
 
@@ -283,6 +249,6 @@ function OnControlTouch(isOk, btnText)
 {
     app.ShowPopup(isOk+" : "+btnText)
 }
-</sample>
  */
-
+    
+            

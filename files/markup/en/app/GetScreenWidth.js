@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetScreenWidth #
  * @brief Get height of device screen
@@ -10,16 +12,19 @@
 */
 
 
-// GetScreenWidth.txt --> All the sample codes
 
-/** @Sample
-<sample Show Screen Width>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Screen Width
 function OnStart()
 {
     <b>var width = app.GetScreenWidth();</b>
     app.Alert( width );
 }
-</sample>
-
  */
-
+    
+            

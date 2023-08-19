@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCustomTabs #
 
@@ -7,9 +9,7 @@
 */
 
 
-// CreateCustomTabs.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

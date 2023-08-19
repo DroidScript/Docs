@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSpecialFolder #
  * @brief Get full path to a special media folder
@@ -10,16 +12,19 @@
 */
 
 
-// GetSpecialFolder.txt --> All the sample codes
 
-/** @Sample
-<sample Get Pictures folder>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Pictures folder
 function OnStart()
 {
     var fld = app.GetSpecialFolder( "Pictures" );
     app.Alert( fld );
 }
-</sample>
-
  */
-
+    
+            

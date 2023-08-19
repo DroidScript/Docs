@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetMockLocation #
  * @brief Emulate GPS location
@@ -11,9 +13,7 @@
 */
 
 
-// SetMockLocation.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

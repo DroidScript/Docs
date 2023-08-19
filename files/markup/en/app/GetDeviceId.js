@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetDeviceId #
  * @brief Get device ID
@@ -7,16 +9,19 @@
 */
 
 
-// GetDeviceId.txt --> All the sample codes
 
-/** @Sample
-<sample Show Devide ID>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Devide ID
 function OnStart()
 {
     <b>var id = app.GetDeviceId();</b>
     app.Alert( id );
 }
-</sample>
-
  */
-
+    
+            

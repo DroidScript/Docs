@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateFile #
  * @abbrev fil
@@ -12,12 +14,10 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Close ###
  * Close File
@@ -121,10 +121,14 @@
  * @param {str} type UTF:write UTF
  */
 
-// CreateFile.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function btn_OnTouch()
 {
 	var file = app.CreateFile( "/sdcard/test.txt", "rw" );
@@ -146,7 +150,6 @@ function btn_OnTouch()
 
 	file.Close();
 }
-</sample>
-
  */
-
+    
+            

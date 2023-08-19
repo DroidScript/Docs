@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonRaised #
  * @abbrev btr
@@ -14,9 +16,7 @@
 */
 
 
-// AddButtonRaised.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

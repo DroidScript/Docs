@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnShowKeyboard #
  * @brief Called on keyboard visibility changes
@@ -8,10 +10,14 @@
 */
 
 
-// SetOnShowKeyboard.txt --> All the sample codes
 
-/** @Sample
-<sample Toggle Keyboard>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Toggle Keyboard
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -39,7 +45,6 @@ function tgl_OnTouch( show )
 {
     app.ShowPopup( "Keyboard shown: " + shown );
 }</b>
-</sample>
-
  */
-
+    
+            

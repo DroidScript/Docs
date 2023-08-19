@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addBottomNavbar #
  * @abbrev bmn
@@ -13,7 +15,7 @@
 */
 
 
-// addBottomNavbar.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a bottom navigation bar to your app.
@@ -33,7 +35,7 @@ var navs = [
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnContextMenu ###
@@ -307,20 +309,25 @@ var navs = [
  * @param {num} zIndex The z
  */
 
-// addBottomNavbar.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Sample navs array.>
-    var navs = [
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Sample navs array.
+var navs = [
         [ "Favorites", "favorites" ],
         [ "Groups", "person" ],
         [ "Folder", "folder" ]
     ]
-</sample>
-
-<sample Basic>
+ */
+    
+            
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -347,9 +354,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample Hide or show labels>
+ */
+    
+            
+    
+/**
+@sample Hide or show labels
 class Main extends App
 {
     onStart()
@@ -394,9 +404,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample Custom styles>
+ */
+    
+            
+    
+/**
+@sample Custom styles
 class Main extends App
 {
     onStart()
@@ -424,6 +437,6 @@ class Main extends App
         this.bmn.iconSize = "2rem"
     }
 }
-</sample>
  */
-
+    
+            

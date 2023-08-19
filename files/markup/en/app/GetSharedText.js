@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSharedText #
  * @brief Get value of shared text
@@ -9,17 +11,21 @@
 */
 
 
-// GetSharedText.txt --> All the sample codes
 
-/** @Sample
-<sample Show Shared Text>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show Shared Text
 function OnStart()
 {
 	<b>var text = app.GetSharedText();</b>
 
 	if( text ) app.Alert( text );
 	else app.ShowPopup( "No shared text received." );
-}</sample>
-
+}
  */
-
+    
+            

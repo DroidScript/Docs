@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetTop #
 
@@ -8,16 +10,19 @@
 */
 
 
-// GetTop.txt --> All the sample codes
 
-/** @Sample
-<sample GetTop>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample GetTop
 function OnStart()
 {
     var top = app.GetTop();
     app.Alert(top, "Top");
 }
-</sample>
-
  */
-
+    
+            

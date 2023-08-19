@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateNode #
  * @abbrev nod
@@ -9,7 +11,7 @@
 */
 
 
-// CreateNode.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Creates a NodeJS background process with all the functionality of common node.js.
@@ -28,9 +30,7 @@ myGlobalFunction = function() { return "Global Hello"; }
 For more details have a look at the Node docs in the @../Plugins page
  */
 
-// CreateNode.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetClipboardText #
  * @brief Get latest clipboard text
@@ -9,16 +11,19 @@
 */
 
 
-// GetClipboardText.txt --> All the sample codes
 
-/** @Sample
-<sample show latest clipboard text>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample show latest clipboard text
 function OnStart()
 {
     <b>var text = app.GetClipboardText();</b>
     app.Alert( text );
 }
-</sample>
-
  */
-
+    
+            

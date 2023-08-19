@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addAppBar #
  * @abbrev apb
@@ -13,7 +15,7 @@
 */
 
 
-// addAppBar.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds an AppBar on your app.
@@ -25,7 +27,7 @@ Adds an AppBar on your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnMenu ###
@@ -176,12 +178,14 @@ Adds an AppBar on your app.
  * @param {num} zIndex The z
  */
 
-// addAppBar.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic AppBar>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic AppBar
 class Main extends App
 {
     onStart()
@@ -197,9 +201,12 @@ class Main extends App
         this.btn.margins = 0.1
     }
 }
-</sample>
-
-<sample Fixed appbar with drawer>
+ */
+    
+            
+    
+/**
+@sample Fixed appbar with drawer
 class Main extends App
 {
     onStart()
@@ -246,9 +253,12 @@ class Main extends App
         this.drawer.hide()
     }
 }
-</sample>
-
-<sample Appbar with actions>
+ */
+    
+            
+    
+/**
+@sample Appbar with actions
 class Main extends App
 {
     onStart()
@@ -302,9 +312,12 @@ class Main extends App
         this.drawer.hide()
     }
 }
-</sample>
-
-<sample Appbar with search field>
+ */
+    
+            
+    
+/**
+@sample Appbar with search field
 class Main extends App
 {
     onStart()
@@ -341,6 +354,6 @@ class Main extends App
         }
     }
 }
-</sample>
  */
-
+    
+            

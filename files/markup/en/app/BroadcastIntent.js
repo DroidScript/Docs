@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # BroadcastIntent #
  * @brief Send broadcast intent
@@ -12,9 +14,7 @@
 */
 
 
-// BroadcastIntent.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

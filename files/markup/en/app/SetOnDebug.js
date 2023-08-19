@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOnDebug #
  * @brief Called on app debug messages
@@ -8,10 +10,14 @@
 */
 
 
-// SetOnDebug.txt --> All the sample codes
 
-/** @Sample
-<sample OnDebug>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample OnDebug
 function OnStart()
 {
     <b>app.SetOnDebug( OnDebug );</b>
@@ -24,7 +30,6 @@ function OnDebug(msg)
     app.Alert( msg, "Received debug message:" );
     app.SetDebug( true );
 }
-</sample>
-
  */
-
+    
+            

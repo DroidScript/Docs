@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEditUnique #
  * @abbrev teu
@@ -13,9 +15,7 @@
 */
 
 
-// AddTextEditUnique.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

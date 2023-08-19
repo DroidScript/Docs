@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsNewVersion #
  * @brief Check if apk version increased
@@ -7,16 +9,19 @@
 */
 
 
-// IsNewVersion.txt --> All the sample codes
 
-/** @Sample
-<sample Check Version Number increased>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Version Number increased
 function OnStart()
 {
     <b>var newVersion = app.IsNewVersion();</b>
     app.Alert( newVersion, "Is new version:" );
 }
-</sample>
-
  */
-
+    
+            

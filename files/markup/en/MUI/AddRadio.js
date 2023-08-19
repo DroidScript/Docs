@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddRadio #
  * @abbrev rd
@@ -16,10 +18,14 @@
 */
 
 
-// AddRadio.txt --> All the sample codes
 
-/** @Sample
-<sample AddPicker>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddPicker
 cfg.Light
 cfg.MUI
 
@@ -41,6 +47,6 @@ function OnStart()
     scr.AddChild( lay2 )
     app.AddLayout( lay )
 }
-</sample> 
  */
-
+    
+            

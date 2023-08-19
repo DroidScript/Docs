@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetThumbnail #
  * @brief Create downscaled copy of an image
@@ -12,10 +14,14 @@
 */
 
 
-// GetThumbnail.txt --> All the sample codes
 
-/** @Sample
-<sample Create Thumbnail>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Create Thumbnail
 function OnStart()
 {
     lay = app.CreateLayout( "absolute" );
@@ -29,7 +35,6 @@ function OnStart()
 
     app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

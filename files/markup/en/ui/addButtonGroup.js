@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addButtonGroup #
  * @abbrev btg
@@ -13,7 +15,7 @@
 */
 
 
-// addButtonGroup.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a button group into your app.
@@ -25,7 +27,7 @@ Adds a button group into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -257,12 +259,14 @@ Adds a button group into your app.
  * @param {num} zIndex The z
  */
 
-// addButtonGroup.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic ButtonGroup>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic ButtonGroup
 class Main extends App
 {
     onStart()
@@ -286,9 +290,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample ButtonGroup variants>
+ */
+    
+            
+    
+/**
+@sample ButtonGroup variants
 class Main extends App
 {
     onStart()
@@ -318,9 +325,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample ButtonGroup colors>
+ */
+    
+            
+    
+/**
+@sample ButtonGroup colors
 class Main extends App
 {
     onStart()
@@ -351,9 +361,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample ButtonGroup sizes>
+ */
+    
+            
+    
+/**
+@sample ButtonGroup sizes
 class Main extends App
 {
     onStart()
@@ -384,9 +397,12 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
-
-<sample ButtonGroup icons>
+ */
+    
+            
+    
+/**
+@sample ButtonGroup icons
 class Main extends App
 {
     onStart()
@@ -417,6 +433,6 @@ class Main extends App
         ui.showPopup( text )
     }
 }
-</sample>
  */
-
+    
+            

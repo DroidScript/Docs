@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CheckPermission #
  * @brief Checks if permission was granted
@@ -10,10 +12,14 @@
 */
 
 
-// CheckPermission.txt --> All the sample codes
 
-/** @Sample
-<sample check and get permissions>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample check and get permissions
 function OnStart()
 {
     <b>var check = app.CheckPermission( "Camera,ExtSDcard,Network,Storage" );</b>
@@ -28,7 +34,6 @@ function PermissionResult( ungranted )
 {
     alert( "ungranted: " + ungranted );
 }
-</sample>
-
  */
-
+    
+            

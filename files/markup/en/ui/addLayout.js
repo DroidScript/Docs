@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addLayout #
  * @abbrev lay
@@ -13,7 +15,7 @@
 */
 
 
-// addLayout.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a layout into your app. A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more.
@@ -57,7 +59,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setChildMargins ###
@@ -261,12 +263,14 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
  * @param {num} zIndex The z
  */
 
-// addLayout.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Main layout>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Main layout
 class Main extends App
 {
     onStart()
@@ -301,9 +305,12 @@ class Main extends App
         }
     }
 }
-</sample>
-
-<sample Bottom aligned with margins>
+ */
+    
+            
+    
+/**
+@sample Bottom aligned with margins
 class Main extends App
 {
     onStart()
@@ -320,9 +327,12 @@ class Main extends App
         this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
     }
 }
-</sample>
-
-<sample Orientation and spacing>
+ */
+    
+            
+    
+/**
+@sample Orientation and spacing
 class Main extends App
 {
     onStart()
@@ -339,9 +349,12 @@ class Main extends App
         this.btn3 = ui.addButton(this.main, "Button 3", "Primary,Outlined")
     }
 }
-</sample>
-
-<sample Slide Layout>
+ */
+    
+            
+    
+/**
+@sample Slide Layout
 class Main extends App
 {
     onStart()
@@ -380,6 +393,6 @@ class Main extends App
         ui.showPopup( index, "", 350 );
     }
 }
-</sample>
  */
-
+    
+            

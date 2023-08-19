@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddDrawer #
  * @brief Adds a slide-able layout on given side
@@ -12,10 +14,14 @@
 */
 
 
-// AddDrawer.txt --> All the sample codes
 
-/** @Sample
-<sample left>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample left
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
@@ -35,7 +41,6 @@ function OnStart()
 
 	<b>app.AddDrawer( layDrawer, "left", 0.8 );</b>
 }
-</sample>
-
  */
-
+    
+            

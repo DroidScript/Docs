@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddWebView #
  * @brief Create and add WebView to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddWebView.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

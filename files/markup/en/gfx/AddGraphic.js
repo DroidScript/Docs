@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddGraphic #
 
@@ -14,10 +16,14 @@
 */
 
 
-// AddGraphic.txt --> All the sample codes
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Game;
 
 function OnLoad()
@@ -30,7 +36,6 @@ function OnReady()
     <b>gfx.AddGraphic( rect, .1, 0.4 );</b>
 	gfx.Play();
 }
-</sample>
-
  */
-
+    
+            

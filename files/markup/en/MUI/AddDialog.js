@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddDialog #
  * @abbrev dlg
@@ -13,9 +15,7 @@
 */
 
 
-// AddDialog.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

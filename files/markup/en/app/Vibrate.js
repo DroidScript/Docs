@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Vibrate #
  * @brief Vibrate device in a pattern
@@ -8,14 +10,18 @@
 */
 
 
-// Vibrate.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	<b>app.Vibrate( "0,100,30,100,50,300" );</b>
-}</sample>
-
+}
  */
-
+    
+            

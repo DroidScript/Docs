@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSwitchSettings #
  * @abbrev sws
@@ -15,9 +17,7 @@
 */
 
 
-// AddSwitchSettings.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddCanvas #
  * @brief Create and add Button to Layout.
@@ -15,9 +17,7 @@
 */
 
 
-// AddCanvas.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # DisableKeys #
  * @brief Disable specific device keys
@@ -7,7 +9,7 @@
 */
 
 
-// DisableKeys.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 DisableKeys prevents the default behavior of several hard, soft or keyboard keys.
@@ -16,10 +18,14 @@ This way you can apply a custom action for them using @SetOnKey.
 You can find the complete list of keycodes on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#summary)
  */
 
-// DisableKeys.txt --> All the sample codes
 
-/** @Sample
-<sample Surprise>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Surprise
 var prev;
 
 function OnStart()
@@ -47,7 +53,6 @@ function OnKey(action, name, code, extra)
     }
     prev = action;
 }
-</sample>
-
  */
-
+    
+            

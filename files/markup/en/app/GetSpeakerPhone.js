@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSpeakerPhone #
 
@@ -9,15 +11,19 @@
 */
 
 
-// GetSpeakerPhone.txt --> All the sample codes
 
-/** @Sample
-<sample Show if Speaker is Enabled>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show if Speaker is Enabled
 function OnStart()
 {
     var speaker = app.GetSpeakerPhone();
     app.Alert( speaker );
-}</sample>
-
+}
  */
-
+    
+            

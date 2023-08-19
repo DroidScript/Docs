@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ScanFile #
  * @brief Adds media files to phone gallery
@@ -9,10 +11,14 @@
 */
 
 
-// ScanFile.txt --> All the sample codes
 
-/** @Sample
-<sample Add Image to Gallery>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Add Image to Gallery
 function OnStart()
 {
     img = app.CreateImage( null, 1, 1 );
@@ -23,7 +29,6 @@ function OnStart()
     app.ScanFile( "circle.jpg" );
     app.ChooseImage();
 }
-</sample>
-
  */
-
+    
+            

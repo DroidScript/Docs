@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateRadio #
  * @abbrev rd
@@ -14,7 +16,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### SetOnSelect ###
@@ -38,29 +40,17 @@
  */
 
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
 /** ### GetItem ###
  * 
@@ -78,9 +68,7 @@
  */
 
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLength ###
  * 
@@ -97,21 +85,13 @@
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTextSize
- */
+/** @extern GetTextSize */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * 
@@ -120,21 +100,13 @@
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### InsertItem ###
  * 
@@ -146,21 +118,13 @@
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### RemoveAll ###
  * 
@@ -214,29 +178,17 @@
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetColumnWidths ###
  * 
@@ -256,9 +208,7 @@
  */
 
 
-/**
- * @extern SetEllipsize
- */
+/** @extern SetEllipsize */
 
 /** ### SetEllipsize1 ###
  * 
@@ -274,13 +224,9 @@
  */
 
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
 /** ### SetHiTextColor1 ###
  * 
@@ -304,33 +250,19 @@
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
 /** ### SetTextColor1 ###
  * 
@@ -358,9 +290,7 @@
  */
 
 
-/**
- * @extern SetTextShadow
- */
+/** @extern SetTextShadow */
 
 /** ### SetTextShadow1 ###
  * 
@@ -382,9 +312,7 @@
  */
 
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
 /** ### SetTextSize1 ###
  * 
@@ -402,21 +330,19 @@
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
-// CreateRadio.txt --> All the sample codes
+/** @extern Tween */
 
-/** @Sample
-<sample Basic>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 cfg.Light
 cfg.MUI
 
@@ -433,11 +359,12 @@ function OnStart()
 
     app.AddLayout(lay)
 }
-</sample>
-
-
-
-<sample With callback>
+ */
+    
+            
+    
+/**
+@sample With callback
 cfg.Light
 cfg.MUI
 
@@ -460,6 +387,6 @@ function OnTouch(name, index)
 {
     app.ShowPopup(name+" : "+index)
 }
-</sample>
  */
-
+    
+            

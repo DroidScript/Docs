@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetAppLangCode #
  * @brief Convert language name to its code or get current language code
@@ -10,9 +12,7 @@
 */
 
 
-// GetAppLangCode.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

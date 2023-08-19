@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # showProgressDialog #
  * @abbrev prd
@@ -10,7 +12,7 @@
 */
 
 
-// showProgressDialog.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Shows a progress dialog component into your app.
@@ -22,7 +24,7 @@ Shows a progress dialog component into your app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### show ###
@@ -43,12 +45,14 @@ Shows a progress dialog component into your app.
  * @param {} callback 
  */
 
-// showProgressDialog.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Progress Dialog>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Progress Dialog
 class Main extends App
 {
     onStart()
@@ -69,9 +73,12 @@ class Main extends App
         ui.showProgressDialog("Loading...", "AutoCancel")
     }
 }
-</sample>
-
-<sample Nocancel progress dialog>
+ */
+    
+            
+    
+/**
+@sample Nocancel progress dialog
 class Main extends App
 {
     onStart()
@@ -98,6 +105,6 @@ class Main extends App
         }, 2000)
     }
 }
-</sample>
  */
-
+    
+            

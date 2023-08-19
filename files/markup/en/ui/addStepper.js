@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addStepper #
  * @abbrev stp
@@ -13,7 +15,7 @@
 */
 
 
-// addStepper.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a Stepper to a given layout. A stepper can display a series of steps or information that a user can navigate forward or backward.
@@ -31,7 +33,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnComplete ###
@@ -225,12 +227,14 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
  * @param {num} zIndex The z
  */
 
-// addStepper.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic stepper>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic stepper
 class Main extends App
 {
     onStart()
@@ -264,9 +268,12 @@ class Main extends App
         this.stp.previousStep()
     }
 }
-</sample>
-
-<sample Vertical stepper>
+ */
+    
+            
+    
+/**
+@sample Vertical stepper
 class Main extends App
 {
     onStart()
@@ -318,9 +325,12 @@ class Main extends App
         this.stp.previousStep()
     }
 }
-</sample>
-
-<sample Mobile Stepper>
+ */
+    
+            
+    
+/**
+@sample Mobile Stepper
 class Main extends App
 {
     onStart()
@@ -364,9 +374,12 @@ class Main extends App
         ui.showPopup( "Layout index " + index )
     }
 }
-</sample>
-
-<sample Autoswipe and Fraction Mobile Stepper>
+ */
+    
+            
+    
+/**
+@sample Autoswipe and Fraction Mobile Stepper
 class Main extends App
 {
     onStart()
@@ -412,6 +425,6 @@ class Main extends App
         ui.showPopup( "Layout index " + index )
     }
 }
-</sample>
  */
-
+    
+            

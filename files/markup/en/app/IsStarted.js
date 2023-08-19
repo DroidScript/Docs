@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsStarted #
  * @brief Check if app has finished loading
@@ -7,11 +9,14 @@
 */
 
 
-// IsStarted.txt --> All the sample codes
 
-/** @Sample
-<sample Check Started>
 
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Started
 setTimeout('app.Alert( app.IsStarted(), "Started in global:" );');
 
 function OnStart()
@@ -19,7 +24,6 @@ function OnStart()
     <b>var started = app.IsStarted();</b>
     app.Alert( started, "Started in OnStart:" );
 }
-</sample>
-
  */
-
+    
+            

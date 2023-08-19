@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetRouterAddress #
 
@@ -7,15 +9,19 @@
 */
 
 
-// GetRouterAddress.txt --> All the sample codes
 
-/** @Sample
- <sample Get Router Address>
- function OnStart()
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Get Router Address
+function OnStart()
 {
     var ip = app.GetRouterAddress();
     app.Alert(ip);
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # ChooseImage #
  * @brief Let the user choose an image
@@ -9,10 +11,14 @@
 */
 
 
-// ChooseImage.txt --> All the sample codes
 
-/** @Sample
-<sample Choose Image>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Choose Image
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -33,7 +39,6 @@ function OnChoose( path )
 {
     alert( "image path: " + path );
 }
-</sample>
-
  */
-
+    
+            

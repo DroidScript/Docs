@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetInstalledApps #
  * @brief Get data about installed apps
@@ -9,10 +11,14 @@
 */
 
 
-// GetInstalledApps.txt --> All the sample codes
 
-/** @Sample
-<sample Show installed apps>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show installed apps
 function OnStart()
 {
     app.ShowProgress();
@@ -33,7 +39,6 @@ function OnStart()
 
     app.HideProgress();
 }
-</sample>
-
  */
-
+    
+            

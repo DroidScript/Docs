@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetOptions #
  * @brief Get app options
@@ -9,10 +11,14 @@
 */
 
 
-// GetOptions.txt --> All the sample codes
 
-/** @Sample
-<sample Show App Options>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show App Options
 cfg.No_Dom, cfg.Portrait;
 
 function OnStart()
@@ -20,7 +26,6 @@ function OnStart()
 	var opt = app.GetOptions();
 	app.Alert( opt );
 }
-</sample>
-
  */
-
+    
+            

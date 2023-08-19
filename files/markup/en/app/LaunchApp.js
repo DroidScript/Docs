@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # LaunchApp #
  * @brief Launch or search an app
@@ -8,9 +10,7 @@
 */
 
 
-// LaunchApp.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetUser #
  * @brief Get current user email
@@ -9,16 +11,19 @@
 */
 
 
-// GetUser.txt --> All the sample codes
 
-/** @Sample
-<sample Show App Path>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show App Path
 function OnStart()
 {
     <b>var usr = app.GetPath();</b>
     app.Alert( usr, "Active User:" );
 }
-</sample>
-
  */
-
+    
+            

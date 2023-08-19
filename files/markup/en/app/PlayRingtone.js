@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # PlayRingtone #
  * @brief Play specific ringtone type
@@ -7,10 +9,14 @@
 */
 
 
-// PlayRingtone.txt --> All the sample codes
 
-/** @Sample
-<sample Play Notification Sound>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Play Notification Sound
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -26,7 +32,6 @@ function btn_OnTouch()
 {
     app.PlayRingtone("Notification");
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addCheckboxGroup #
  * @abbrev ckb
@@ -13,7 +15,7 @@
 */
 
 
-// addCheckboxGroup.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a CheckboxGroup to a given layout.
@@ -25,7 +27,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### setOnTouch ###
@@ -320,12 +322,14 @@ Adds a CheckboxGroup to a given layout.
  * @param {num} zIndex The z
  */
 
-// addCheckboxGroup.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -352,9 +356,12 @@ class Main extends App
         ui.showPopup( `Value of ${ item } is ${ value }` )
     }
 }
-</sample>
-
-<sample Colors>
+ */
+    
+            
+    
+/**
+@sample Colors
 class Main extends App
 {
     onStart()
@@ -388,9 +395,12 @@ class Main extends App
         ui.showPopup( `Value of ${ item } is ${ value }` )
     }
 }
-</sample>
-
-<sample Elevated>
+ */
+    
+            
+    
+/**
+@sample Elevated
 class Main extends App
 {
     onStart()
@@ -423,9 +433,12 @@ class Main extends App
         ui.showPopup( `Value of ${ item } is ${ value }` )
     }
 }
-</sample>
-
-<sample Outlined>
+ */
+    
+            
+    
+/**
+@sample Outlined
 class Main extends App
 {
     onStart()
@@ -456,6 +469,6 @@ class Main extends App
         ui.showPopup( `Value of ${ item } is ${ value }` )
     }
 }
-</sample>
  */
-
+    
+            

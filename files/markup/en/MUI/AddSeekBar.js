@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSeekBar #
  * @abbrev skb
@@ -13,9 +15,7 @@
 */
 
 
-// AddSeekBar.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsWifiEnabled #
  * @brief Check if WiFi is enabled
@@ -9,16 +11,19 @@
 */
 
 
-// IsWifiEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Check Wifi Enabled>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Wifi Enabled
 function OnStart()
 {
     <b>var wifiEnabled = app.IsWifiEnabled();</b>
     app.Alert( wifiEnabled, "Wifi Enabled:" );
 }
-</sample>
-
  */
-
+    
+            

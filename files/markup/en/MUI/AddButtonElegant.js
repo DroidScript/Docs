@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonElegant #
  * @abbrev bte
@@ -13,9 +15,7 @@
 */
 
 
-// AddButtonElegant.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

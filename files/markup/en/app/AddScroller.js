@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddScroller #
  * @brief Create and add Scroller to Layout.
@@ -12,9 +14,7 @@
 */
 
 
-// AddScroller.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

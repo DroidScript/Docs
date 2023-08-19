@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # RenameFile #
  * @brief Rename or move a local file
@@ -10,17 +12,21 @@
 */
 
 
-// RenameFile.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	var oldfile = "test.txt";
     var newfile = "test2.txt";
 	app.WriteFile( file, "Created: " + new Date() );
 	<b>app.RenameFile( file, "/sdcard/wftest2.txt" );</b>
-}</sample>
-
+}
  */
-
+    
+            

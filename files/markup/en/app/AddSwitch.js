@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddSwitch #
  * @brief Create and add Switch toggle to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddSwitch.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

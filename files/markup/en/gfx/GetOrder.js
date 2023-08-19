@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetOrder #
  * @brief get object's order index
@@ -8,9 +10,7 @@
 */
 
 
-// GetOrder.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

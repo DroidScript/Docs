@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateImage #
  * @abbrev img
@@ -14,7 +16,7 @@
 */
 
 
-// CreateImage.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Image controls can be used to display images such like png, jpg or gif.
@@ -62,20 +64,14 @@ For animations you can then use the **Animate** function of the app object which
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
 /** ### Clear ###
  * Clears everything on the image except the background.
@@ -83,9 +79,7 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### DrawArc ###
  * Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.
@@ -187,25 +181,15 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetName ###
  * Returns the name set via SetName.
@@ -214,9 +198,7 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
 /** ### GetPixelColor ###
  * Returns the [r,g,b] values from a pixel on the image.
@@ -239,13 +221,9 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -254,33 +232,19 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
 /** ### MeasureText ###
  * Measure width and height of a given text with the current image settings.
@@ -290,9 +254,7 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Move ###
  * Moves the content of the image to the specified position.
@@ -347,25 +309,15 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
 /** ### SetColor ###
  * Fills the image with a specific color.
@@ -374,21 +326,13 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetFontFile
- */
+/** @extern SetFontFile */
 
 /** ### SetImage ###
  * Set the content to an image:dso-"CreateImage" control or specify a path to an image which will then be loaded.
@@ -407,9 +351,7 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetMaxRate ###
  * Set a minimum timeout between two touch 'move' actions fired.
@@ -432,29 +374,17 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetOnLongTouch
- */
+/** @extern SetOnLongTouch */
 
-/**
- * @extern SetOnTouch
- */
+/** @extern SetOnTouch */
 
-/**
- * @extern SetOnTouchDown
- */
+/** @extern SetOnTouchDown */
 
-/**
- * @extern SetOnTouchMove
- */
+/** @extern SetOnTouchMove */
 
-/**
- * @extern SetOnTouchUp
- */
+/** @extern SetOnTouchUp */
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
 /** ### SetPaintColor ###
  * Change the current paint color for drawing methods.
@@ -487,17 +417,11 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
 /** ### SetTextSize ###
  * Change the size of drawn text.
@@ -506,17 +430,11 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern SetTouchable
- */
+/** @extern SetTouchable */
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
 /** ### Skew ###
  * Skews the content.
@@ -533,19 +451,21 @@ For animations you can then use the **Animate** function of the app object which
  */
 
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
 /** ### Update ###
  * Update the view in disabled AutoUpdate mode.
  * $$ img.Update() $$
  */
 
-// CreateImage.txt --> All the sample codes
 
-/** @Sample
-<sample Original Size>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Original Size
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -562,9 +482,12 @@ function img_OnTouch( ev )
 	if( ev.action=="Down" )
 		app.ShowPopup( "Ouch!" );
 }
-</sample>
-
-<sample Stretched>
+ */
+    
+            
+    
+/**
+@sample Stretched
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -581,9 +504,12 @@ function img_OnTouch( ev )
 	if( ev.action=="Down" )
 		app.ShowPopup( "Aaaargh!" );
 }
-</sample>
-
-<sample Maintain Aspect>
+ */
+    
+            
+    
+/**
+@sample Maintain Aspect
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -600,9 +526,12 @@ function img_OnTouch( ev )
 	if( ev.action=="Down" )
 		app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" );
 }
-</sample>
-
-<sample Draw Shapes>
+ */
+    
+            
+    
+/**
+@sample Draw Shapes
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -617,9 +546,12 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
-<sample Advanced Clock Animating>
+ */
+    
+            
+    
+/**
+@sample Advanced Clock Animating
 cfg.No_Dom, cfg.Portrait;
 
 var wh;
@@ -682,9 +614,12 @@ function OnAnimate( time, dtime )
     img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh );
     img.Update();
 }
-</sample>
-
-<sample Button>
+ */
+    
+            
+    
+/**
+@sample Button
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -701,7 +636,6 @@ function btn_OnTouch()
 	app.ShowPopup( "Hello World!" );
 	app.Vibrate( "0,100,30,100,50,300" );
 }
-</sample>
-
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # Start #
  * @brief Start your DS app in an html project
@@ -6,10 +8,14 @@
 */
 
 
-// Start.txt --> All the sample codes
 
-/** @Sample
-<sample Html App>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Html App
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
@@ -26,7 +32,6 @@
 <body onload="app.Start()" style="background-color: #ffffff;">
 </body>
 </html>
-</sample>
-
  */
-
+    
+            

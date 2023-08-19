@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StopApp #
  * @brief Stop an app started via @StartApp
@@ -7,9 +9,7 @@
 */
 
 
-// StopApp.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

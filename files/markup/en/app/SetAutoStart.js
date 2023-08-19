@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetAutoStart #
  * @brief Autostart DroidScript Project on DS restart
@@ -11,25 +13,30 @@
 */
 
 
-// SetAutoStart.txt --> All the sample codes
 
-/** @Sample
-<sample Auto Start 'Hello World'>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Auto Start 'Hello World'
 function OnStart()
 {
     app.SetAutoStart( "Hello World" );
     app.ShowPopup( "You may now restart DroidScript." );
 }
-</sample>
-
-<sample Unset Autostart>
+ */
+    
+            
+    
+/**
+@sample Unset Autostart
 function OnStart()
 {
     app.SetAutoStart( "" );
     app.ShowPopup( "Autostart unset." );
 }
-</sample>
-
-
  */
-
+    
+            

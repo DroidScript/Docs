@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetOptions #
  * @brief Define global app options
@@ -9,9 +11,7 @@
 */
 
 
-// SetOptions.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

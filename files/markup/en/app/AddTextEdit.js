@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEdit #
  * @brief Create and add TextEdit to Layout.
@@ -13,9 +15,7 @@
 */
 
 
-// AddTextEdit.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

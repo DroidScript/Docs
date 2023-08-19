@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetScreenBrightness #
  * @brief Change screen brightness
@@ -7,10 +9,14 @@
 */
 
 
-// SetScreenBrightness.txt --> All the sample codes
 
-/** @Sample
-<sample SetScreenBrightness Demo>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample SetScreenBrightness Demo
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -28,7 +34,6 @@ function SetScreenBrightness( level )
 {
     app.SetScreenBrightness( level );
 }
-</sample>
-
  */
-
+    
+            

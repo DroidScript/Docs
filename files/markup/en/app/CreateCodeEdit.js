@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateCodeEdit #
  * @abbrev cde
@@ -16,24 +18,16 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
-/**
- * @extern AdjustColor
- */
+/** @extern AdjustColor */
 
-/**
- * @extern Animate
- */
+/** @extern Animate */
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern ClearFocus
- */
+/** @extern ClearFocus */
 
 /** ### ClearHistory ###
  * Clears the undo/redo history.
@@ -53,17 +47,11 @@
  */
 
 
-/**
- * @extern Focus
- */
+/** @extern Focus */
 
-/**
- * @extern GetAbsHeight
- */
+/** @extern GetAbsHeight */
 
-/**
- * @extern GetAbsWidth
- */
+/** @extern GetAbsWidth */
 
 /** ### GetCursorLine ###
  * Returns the current line index where the cursor is located.
@@ -79,13 +67,9 @@
  */
 
 
-/**
- * @extern GetHeight
- */
+/** @extern GetHeight */
 
-/**
- * @extern GetLeft
- */
+/** @extern GetLeft */
 
 /** ### GetLineStart ###
  * Returns at which character in the text a certain line begins.
@@ -95,13 +79,9 @@
  */
 
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
-/**
- * @extern GetPosition
- */
+/** @extern GetPosition */
 
 /** ### GetSelectedText ###
  * Returns the currently selected text.
@@ -131,13 +111,9 @@
  */
 
 
-/**
- * @extern GetText
- */
+/** @extern GetText */
 
-/**
- * @extern GetTop
- */
+/** @extern GetTop */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -146,21 +122,13 @@
  */
 
 
-/**
- * @extern GetVisibility
- */
+/** @extern GetVisibility */
 
-/**
- * @extern GetWidth
- */
+/** @extern GetWidth */
 
-/**
- * @extern Gone
- */
+/** @extern Gone */
 
-/**
- * @extern Hide
- */
+/** @extern Hide */
 
 /** ### HighlightLine ###
  * Highlights a specific line in the text with a thin red underline.
@@ -176,21 +144,13 @@
  */
 
 
-/**
- * @extern IsEnabled
- */
+/** @extern IsEnabled */
 
-/**
- * @extern IsOverlap
- */
+/** @extern IsOverlap */
 
-/**
- * @extern IsVisible
- */
+/** @extern IsVisible */
 
-/**
- * @extern Method
- */
+/** @extern Method */
 
 /** ### Paste ###
  * Paste text from the clipboard at the current cursor position.
@@ -246,29 +206,17 @@
  */
 
 
-/**
- * @extern SetBackAlpha
- */
+/** @extern SetBackAlpha */
 
-/**
- * @extern SetBackColor
- */
+/** @extern SetBackColor */
 
-/**
- * @extern SetBackGradient
- */
+/** @extern SetBackGradient */
 
-/**
- * @extern SetBackGradientRadial
- */
+/** @extern SetBackGradientRadial */
 
-/**
- * @extern SetBackground
- */
+/** @extern SetBackground */
 
-/**
- * @extern SetColorFilter
- */
+/** @extern SetColorFilter */
 
 /** ### SetColorScheme ###
  * Changes the color scheme of the CodeEdit.
@@ -284,17 +232,11 @@
  */
 
 
-/**
- * @extern SetDescription
- */
+/** @extern SetDescription */
 
-/**
- * @extern SetEnabled
- */
+/** @extern SetEnabled */
 
-/**
- * @extern SetHtml
- */
+/** @extern SetHtml */
 
 /** ### SetLanguage ###
  * Change the highlighted language syntax.
@@ -303,9 +245,7 @@
  */
 
 
-/**
- * @extern SetMargins
- */
+/** @extern SetMargins */
 
 /** ### SetNavigationMethod ###
  * Select between navigating using the Yoyo or standard touch.
@@ -314,9 +254,7 @@
  */
 
 
-/**
- * @extern SetOnChange
- */
+/** @extern SetOnChange */
 
 /** ### SetOnDoubleTap ###
  * Defines a callback function which is called when the user double-taps the Yoyo.
@@ -332,17 +270,11 @@
  */
 
 
-/**
- * @extern SetPadding
- */
+/** @extern SetPadding */
 
-/**
- * @extern SetPosition
- */
+/** @extern SetPosition */
 
-/**
- * @extern SetScale
- */
+/** @extern SetScale */
 
 /** ### SetSelection ###
  * Selects part of the text in a given range.
@@ -359,21 +291,13 @@
  */
 
 
-/**
- * @extern SetSize
- */
+/** @extern SetSize */
 
-/**
- * @extern SetText
- */
+/** @extern SetText */
 
-/**
- * @extern SetTextColor
- */
+/** @extern SetTextColor */
 
-/**
- * @extern SetTextSize
- */
+/** @extern SetTextSize */
 
 /** ### SetUseKeyboard ###
  * En/Disable usage of the device keyboard.
@@ -382,27 +306,25 @@
  */
 
 
-/**
- * @extern SetVisibility
- */
+/** @extern SetVisibility */
 
-/**
- * @extern Show
- */
+/** @extern Show */
 
-/**
- * @extern Tween
- */
+/** @extern Tween */
 
 /** ### Undo ###
  * Undo an action.
  * $$ cde.Undo() $$
  */
 
-// CreateCodeEdit.txt --> All the sample codes
 
-/** @Sample
-<sample dark scheme>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample dark scheme
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -415,7 +337,6 @@ function OnStart()
 
 	app.AddLayout( lay );
 }
-</sample>
-
  */
-
+    
+            

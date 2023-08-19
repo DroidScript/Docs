@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # WriteFile #
  * @brief Write text to a local file
@@ -12,10 +14,14 @@
 */
 
 
-// WriteFile.txt --> All the sample codes
 
-/** @Sample
-<sample Append file and get line count>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Append file and get line count
 function OnStart()
 {
     <b>app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" );</b>
@@ -24,7 +30,6 @@ function OnStart()
     var length = txt.split("\n").length;
     app.ShowPopup("myFile contains " + length + " lines");
 }
-</sample>
-
  */
-
+    
+            

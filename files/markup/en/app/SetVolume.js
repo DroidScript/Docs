@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetVolume #
  * @brief Change volume of a given audio type
@@ -11,10 +13,14 @@
 */
 
 
-// SetVolume.txt --> All the sample codes
 
-/** @Sample
-<sample Set Volume>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Set Volume
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
@@ -32,7 +38,6 @@ function SetVolume( value )
     <b>app.SetVolume( "Music", value );</b>
     app.PlaySound( "/Sys/Snd/Poing.ogg" );
 }
-</sample>
-
  */
-
+    
+            

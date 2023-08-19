@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsBluetoothEnabled #
  * @brief Check bluetooth enabled
@@ -9,10 +11,14 @@
 */
 
 
-// IsBluetoothEnabled.txt --> All the sample codes
 
-/** @Sample
-<sample Check Bluetooth Status>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Check Bluetooth Status
 function OnStart()
 {
     <b>var status = app.IsBluetoothEnabled()</b>
@@ -25,7 +31,6 @@ function OnStart()
         (state ? "on" : "off")
     );
 }
-</sample>
-
  */
-
+    
+            

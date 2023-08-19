@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # multiTouch #
  * @brief Enables multitouch

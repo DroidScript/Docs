@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddDivider #
  * @abbrev dvd
@@ -10,9 +12,7 @@
 */
 
 
-// AddDivider.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

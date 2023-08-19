@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # OpenFile #
  * @brief Allow user to open a file with an external app
@@ -11,15 +13,19 @@
 */
 
 
-// OpenFile.txt --> All the sample codes
 
-/** @Sample
-<sample Example>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Example
 function OnStart()
 {
 	 app.WriteFile( "/sdcard/test.txt", "Hello" );
 	 <b>app.OpenFile( "/sdcard/test.txt", "text/plain", "Choose Editor" );</b>
-}</sample>
-
+}
  */
-
+    
+            

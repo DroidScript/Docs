@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddAppBarElegant #
  * @abbrev abe
@@ -12,9 +14,7 @@
 */
 
 
-// AddAppBarElegant.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

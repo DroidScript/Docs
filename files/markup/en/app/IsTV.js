@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # IsTV #
  * @brief Check if OS is AndroidThings
@@ -9,9 +11,7 @@
 */
 
 
-// IsTV.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

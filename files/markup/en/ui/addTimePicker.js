@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # addTimePicker #
  * @abbrev tpk
@@ -10,7 +12,7 @@
 */
 
 
-// addTimePicker.md --> Complete documentation. Sample codes is at the bottom of this file.
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Adds a time picker component to the app.
@@ -22,7 +24,7 @@ Adds a time picker component to the app.
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### show ###
@@ -33,12 +35,14 @@ Adds a time picker component to the app.
  * @returns bin
  */
 
-// addTimePicker.txt --> All the sample codes
-
-/** @Sample
 
 
-<sample Basic>
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Basic
 class Main extends App
 {
     onStart()
@@ -66,6 +70,6 @@ class Main extends App
         console.log( value )
     }
 }
-</sample>
  */
-
+    
+            

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # SetAlarm #
  * @brief Set alarm to open your app at a specific time
@@ -11,10 +13,14 @@
 */
 
 
-// SetAlarm.txt --> All the sample codes
 
-/** @Sample
-<sample Set Alarm>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Set Alarm
 function OnStart()
 {
     <b>var now = Date.now();
@@ -27,7 +33,6 @@ function OnAlarm( id )
 {
     app.ShowPopup( "Got Alarm: id = " + id );
 }
-</sample>
-
  */
-
+    
+            

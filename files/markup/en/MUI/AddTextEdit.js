@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddTextEdit #
  * @abbrev ted
@@ -16,10 +18,14 @@
 */
 
 
-// AddTextEdit.txt --> All the sample codes
 
-/** @Sample
-<sample AddTextEdit>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample AddTextEdit
 cfg.Light
 cfg.MUI
 
@@ -35,6 +41,6 @@ function OnStart()
         ted1 = MUI.AddTextEdit(lay, 0.8, "outline,icon,right", "password", "Enter password", true)
     app.AddLayout(lay)
 }
-</sample>
  */
-
+    
+            

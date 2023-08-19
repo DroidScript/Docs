@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # CreateOverlay #
  * @abbrev ovl
@@ -12,7 +14,7 @@
 
 
 
-// -------- VISIBLE METHODS & PROPERTIES --------- 
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### AddLayout ###
@@ -25,13 +27,9 @@
  */
 
 
-/**
- * @extern Batch
- */
+/** @extern Batch */
 
-/**
- * @extern GetParent
- */
+/** @extern GetParent */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -55,10 +53,14 @@
  * @param {str} options px
  */
 
-// CreateOverlay.txt --> All the sample codes
 
-/** @Sample
-<sample Memory Monitor>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Memory Monitor
 cfg.Portrait;
 
 function OnStart()
@@ -93,7 +95,6 @@ function Update( time )
     img.DrawSamples( lst, 50 );
     img.Update();
 }
-</sample>
-
  */
-
+    
+            

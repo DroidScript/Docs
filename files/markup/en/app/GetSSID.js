@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # GetSSID #
  * @brief Get WiFi network SSID (name)
@@ -9,16 +11,19 @@
 */
 
 
-// GetSSID.txt --> All the sample codes
 
-/** @Sample
-<sample Show SSID>
+
+// ------------- SAMPLES ------------- 
+
+
+    
+/**
+@sample Show SSID
 function OnStart()
 {
     var ssid = app.GetSSID();
     app.Alert( ssid );
 }
-</sample>
-
  */
-
+    
+            

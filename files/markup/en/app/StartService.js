@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StartService #
  * @brief Starts a parallel service
@@ -10,9 +12,7 @@
 */
 
 
-// StartService.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

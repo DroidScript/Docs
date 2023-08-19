@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # AddButtonToggle #
  * @abbrev btt
@@ -13,9 +15,7 @@
 */
 
 
-// AddButtonToggle.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 

@@ -1,3 +1,5 @@
+// ------------- HEADER SECTION ------------- 
+
 
 /** # StopService #
  * @brief Stops a running app service
@@ -6,9 +8,7 @@
 */
 
 
-// StopService.txt --> All the sample codes
 
-/** @Sample
- 
- */
+
+// ------------- SAMPLES ------------- 
 
