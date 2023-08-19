@@ -269,12 +269,16 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
     tokens.forEach((c, i) => {
         if (c.type == "BlockComment") {
 
-            if (c.value.toLowerCase().includes("#example")) {
-                let _x = c.value.trim().split("\n")
-                samples += "\n\n"
-                samples += `<sample${_x[0].split("#Example")[1].trim().replace("-", "")}>\n`
-                samples += _x.splice(1, _x.length - 1).join("\n")
-                samples += "\n</sample>"
+            if (c.value.toLowerCase().includes("#example") || c.value.toLowerCase().includes("@sample")) {
+                let t = "", cod = "";
+                if( c.value.toLowerCase().includes("@sample") ) t = c.value.split("@sample")[1].split("\n")[0];
+                else t = c.value.split("#Example")[1].split("\n")[0];
+                t = t.trim();
+                if( t.startsWith("-") ) t = t.substring(1).trim();
+                cod = c.value.substring(c.value.indexOf(t) + t.length).trim();
+                samples += `\n\n<sample ${t}>\n`
+                samples += cod.replace(/\*\_/g, '*/');
+                samples += "\n</sample>";
             }
             else if (c.value.includes('```')) { }
 
