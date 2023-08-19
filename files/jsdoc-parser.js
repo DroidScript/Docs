@@ -27,7 +27,7 @@ const pattern = /`([^`]*)`/g; // Matches any text between backticks
 const replacement = '“$1”'; // Replaces backticks with slash before and after the matched text
 
 /** @param {string} SOURCE_DIR */
-function LoopFiles(SOURCE_DIR) {
+async function LoopFiles(SOURCE_DIR) {
     // console.log("<---- Generating json for "+SOURCE_DIR+" ----->";
     if (!fs.existsSync(SOURCE_DIR)) return console.log(SOURCE_DIR + " does not exist!");
 
@@ -49,52 +49,50 @@ function LoopFiles(SOURCE_DIR) {
     let baseJson = {};
     if (fs.existsSync(baseFile)) baseJson = getBaseMethods(baseFile);
 
-    fs.readdir(SOURCE_DIR, async (err, files) => {
+    const files = await fs.readdir(SOURCE_DIR);
 
-        if (err) return console.log("Error reading " + SOURCE_DIR, err);
+    /** @type {Obj<DSFunction>} */
+    const objJson = {}
 
-        /** @type {Obj<DSFunction>} */
-        const objJson = {}
+    /** @type {Obj<string[]>} */
+    let navs = {};
+    if (fs.existsSync(navsJson))
+        navs = JSON.parse(fs.readFileSync(navsJson, 'utf8'));
 
-        /** @type {Obj<string[]>} */
-        let navs = {};
-        if (fs.existsSync(navsJson))
-            navs = JSON.parse(fs.readFileSync(navsJson, 'utf8'));
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i]
+        const folderPath = path.join(SOURCE_DIR, file);
+        const stats = fs.statSync(folderPath)
+        if (stats.isFile()) {
+            if (file.endsWith(".js")) {
+                const data = renderFile(folderPath, objJson, baseJson, navs);
 
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i]
-            const folderPath = path.join(SOURCE_DIR, file);
-            const stats = fs.statSync(folderPath)
-            if (stats.isFile()) {
-                if (file.endsWith(".js")) {
-                    const data = renderFile(folderPath, objJson, baseJson, navs);
+                // write description.md file
+                const descFile = path.join(outputDesc, data.name + ".md")
+                if (data.desc) fs.writeFileSync(descFile, data.desc)
 
-                    // write description.md file
-                    const descFile = path.join(outputDesc, data.name + ".md")
-                    if (data.desc) fs.writeFileSync(descFile, data.desc)
-
-                    // write sample.txt file
-                    const sampleFile = path.join(outputSamples, data.name + ".txt")
-                    fs.writeFileSync(sampleFile, data.samples)
-                }
-                else if (file.endsWith(".md")) {
-                    const data = renderMdFile(folderPath, objJson);
-                    // write description.md file
-                    const descFile = path.join(outputDesc, data.name + ".md");
-                    fs.writeFileSync(descFile, data.desc);
-                }
+                // write sample.txt file
+                const sampleFile = path.join(outputSamples, data.name + ".txt")
+                fs.writeFileSync(sampleFile, data.samples)
             }
-            else {
-                //console.log( "Sub-folder is not rendered" )
+            else if (file.endsWith(".md")) {
+                const data = renderMdFile(folderPath, objJson);
+                // write description.md file
+                const descFile = path.join(outputDesc, data.name + ".md");
+                fs.writeFileSync(descFile, data.desc);
             }
         }
+        else {
+            //console.log( "Sub-folder is not rendered" )
+        }
+    }
 
-        let objJsonFile = path.join(outputFolder, "obj.json");
-        fs.writeFileSync(objJsonFile, tos(objJson));
+    let objJsonFile = path.join(outputFolder, "obj.json");
+    fs.writeFileSync(objJsonFile, tos(objJson));
 
-        let navsJsonFile = path.join(outputFolder, "navs.json");
-        fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
-    });
+    let navsJsonFile = path.join(outputFolder, "navs.json");
+    fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
+
 }
 
 // converts a variable to indented string
@@ -490,14 +488,12 @@ function extractBacktickStringsDesc(str) {
     return finalStr;
 }
 
-fs.readdir(SRC, { withFileTypes: true }, (err, files) => {
-    if (err) {
-        console.error('Error reading directory:', err);
-        return;
-    }
-
+async function GetFolders() {
+    const files = await fs.readdir(SRC, { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => file.isDirectory());
     for (const folder of folders)
         LoopFiles(path.join(SRC, folder.name));
-});
+}
+
+GetFolders();

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fsp = require('fs').promises;
 
 const ver = "v257";
 const dir = "json/en/"+ver;
@@ -7,21 +8,19 @@ const outDir = "markup/en";
 /**
  * @param {String} scope 
  * @param {String} path Path to the scope
- * @param {Object} obj json object
- * @param {Object} base base object
- * @param {Object} navs navs-json object
+ * @param {Obj<DSFunction>} obj json object
+ * @param {Obj<DSFunction>} base base object
+ * @param {Obj<DSNavs>} navs navs-json object
  */
 async function GenerateJSFile(scope, path, obj={}, base={}, navs={}) {
     let folder = path.replace(dir, outDir);
-    if( !fs.existsSync(folder) ) await fs.mkdirSync(folder, {recursive: true});
-    let fileName, outputFile;
-    let data = {}, str;
+    if( !fs.existsSync(folder) ) fs.mkdirSync(folder, {recursive: true});
 
     for( let key in obj ) {
-        str = "// ------------- HEADER SECTION ------------- \n\n";
-        fileName = key+".js";
-        outputFile = folder+"/"+fileName;
-        data = obj[key];
+        let str = "// ------------- HEADER SECTION ------------- \n\n";
+        const fileName = key+".js";
+        const outputFile = folder+"/"+fileName;
+        const data = obj[key];
 
         let _desc = data.desc || "";
         if( !_desc.includes(".md") ) _desc = _desc.replace(/\n/g, "\n * ")
@@ -37,7 +36,7 @@ ${ info }
  * ${ _desc }
  * $$ ${data.abbrev ? data.abbrev+" = ":""}${scope}.${key}(${ (data.pNames && data.pNames.length) ? data.pNames.join(", "):""}) $$ \n`;
         
-        if( data.pNames && data.pNames.length ) {
+        if( data.pNames && data.pTypes && data.pNames.length ) {
             for(let i=0; i<data.pNames.length; i++) {
                 let pDesc = "", pType = "", pDef = data.pTypes[i];
                 if( typeof(pDef) == "string" ) {
@@ -58,7 +57,7 @@ ${ info }
         let mdFile = path+"/desc/"+key+".md";
         if( data.desc && data.desc.includes(".md") && fs.existsSync( mdFile ) ) {
             str += "// ------------- LONG DESCRIPTION ------------- \n\n"
-            let cmpDesc = await fs.readFileSync(mdFile);
+            let cmpDesc = fs.readFileSync(mdFile);
             str += `/** @Description\n${cmpDesc}\n */\n\n`;
         }
 
@@ -67,7 +66,7 @@ ${ info }
         let sampFile = path+"/samples/"+key+".txt";
         if( fs.existsSync(sampFile) ) {
             str += "\n\n// ------------- SAMPLES ------------- \n\n";
-            let cmpSamp = await fs.readFileSync(sampFile);
+            let cmpSamp = fs.readFileSync(sampFile);
             str += `/** @Sample\n${cmpSamp}\n */\n\n`;
         }
 
@@ -88,12 +87,9 @@ ${ info }
                     `;
                 }
 
-                else if(typeof methodData == "string" && methodData.includes("#")) {
-str += `
-/**
- * @extern ${method}
- */
-`;
+                else if(typeof methodData == "string") {
+                    if (!methodData.startsWith("#")) throw "Unexpected subf string " + methodData;
+str += `\n/** @extern ${method} */\n`;
                 }
 
                 else {
@@ -103,7 +99,7 @@ str += `
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * $$ ${data.abbrev}.${method}(${ (methodData.pNames && methodData.pNames.length) ? methodData.pNames.join(", "):""}) $$\n`;
                     
-                    if( methodData.pNames && methodData.pNames.length ) {
+                    if( methodData.pNames && methodData.pTypes && methodData.pNames.length ) {
                         for(let i=0; i<methodData.pNames.length; i++) {
                             let pDesc = "", pType = "", pDef = methodData.pTypes[i];
                             if(typeof pDef == "string") {
@@ -125,7 +121,7 @@ str += `
             }
         }
 
-        await fs.writeFileSync(outputFile, str);
+        await fsp.writeFile(outputFile, str);
     }
 
     let baseStr = "";
@@ -139,7 +135,7 @@ str += `
  * ${ methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * $$ obj.${method}(${ (methodData.pNames && methodData.pNames.length) ? methodData.pNames.join(", "):""}) $$\n`;
         
-        if( methodData.pNames && methodData.pNames.length ) {
+        if( methodData.pNames && methodData.pTypes && methodData.pNames.length ) {
             for(let i=0; i<methodData.pNames.length; i++) {
                 let pDesc = "", pType = "", pDef = methodData.pTypes[i];
                 if(typeof pDef == "string") {
@@ -166,43 +162,31 @@ str += `
     }
 }
 
-function GetFolders(folder="") {
-    fs.readdir(folder, async function(err, folders) {
+async function GetFolders(folder="") {
+    const folders = await fsp.readdir(folder);
         if( !folders.length ) return;
 
-        let path, desc, samples, base, navs, obj, objJson, baseJson, navsJson;
         for(let i = 0; i<folders.length; i++ ) {
-            path = folder+"/"+folders[i];
-            desc = path+"/desc"
-            samples = path+"/samples"
-            base = path+"/base.json"
-            navs = path+"/navs.json"
-            obj = path+"/obj.json"
+            let path = folder+"/"+folders[i];
+            let desc = path+"/desc"
+            let samples = path+"/samples"
+            let base = path+"/base.json"
+            let navs = path+"/navs.json"
+            let obj = path+"/obj.json"
 
             if( fs.existsSync(obj) ) {
                 const filePaths = [obj, base, navs];
                 try {
-                    const fileDataPromises = filePaths.map((filePath) => {
-                        return new Promise((resolve, reject) => {
-                            fs.readFile(filePath, 'utf-8', (err, data) => {
-                                if (err) {
-                                    reject(err);
-                                } else {
-                                    resolve(data);
-                                }
-                            });
-                        });
-                    });
+                    const fileDataPromises = filePaths.map((filePath) => fsp.readFile(filePath, 'utf-8'));
                     const [objData, baseData, navsData] = await Promise.all(fileDataPromises);
-                    objJson = JSON.parse(objData);
-                    baseJson = JSON.parse(baseData);
-                    navsJson = JSON.parse(navsData);
+                    let objJson = JSON.parse(objData);
+                    let baseJson = JSON.parse(baseData);
+                    let navsJson = JSON.parse(navsData);
                     await GenerateJSFile(folders[i], path, objJson, baseJson, navsJson);
                 } catch (err) {
                     console.error(err);
                 }
             }
         }
-    });
 }
 GetFolders(dir);
