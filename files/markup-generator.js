@@ -14,7 +14,7 @@ const outDir = "markup/en";
  * @param {Obj<DSFunction>} base base object
  * @param {Obj<DSNavs>} navs navs-json object
  */
-async function GenerateJSFile(scope, path, obj = {}, base = {}, navs = {}) {
+async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
     let folder = path.replace(dir, outDir);
     if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
 
@@ -62,7 +62,6 @@ ${info}
             let cmpDesc = fs.readFileSync(mdFile);
             str += `/** @Description\n${cmpDesc}\n */\n\n`;
         }
-
 
         // methods
         if (data.subf) {
@@ -116,11 +115,14 @@ ${info}
         }
 
         // samples
+
+        // samples
         let sampFile = path + "/samples/" + key + ".txt";
         if (fs.existsSync(sampFile)) {
             str += "\n\n// ------------- SAMPLES ------------- \n\n";
-            let cmpSamp = fs.readFileSync(sampFile);
-            str += `/** @Sample\n${cmpSamp}\n */\n\n`;
+            let cmpSamp = await fs.readFileSync(sampFile, "utf8");
+            // str += `/** @Sample\n${cmpSamp}\n */\n\n`;
+            str += renderSamples(cmpSamp);
         }
 
         await fsp.writeFile(outputFile, str);
@@ -164,30 +166,50 @@ ${info}
     }
 }
 
+/** @param {string} raw */
+function renderSamples(raw) {
+    if (!raw) return;
+    let str = "";
+    const strArr = raw.split("</sample>");
+    strArr.forEach(samp => {
+        if (samp.trim()) {
+            let name = samp.substring(samp.indexOf("<sample") + 7, samp.indexOf(">")).trim();
+            let cod = samp.substring(samp.indexOf(">") + 1).trim();
+            cod = cod.replace(/\*\//g, "*_");
+            str += `
+    
+/**
+@sample ${name}
+${cod}
+ */
+    
+            `;
+        }
+    });
+    return str;
+}
+
 async function GetFolders(folder = "") {
     const folders = await fsp.readdir(folder);
-    if (!folders.length) return;
+    for (const fld of folders) {
+        const path = folder + "/" + fld;
+        const desc = path + "/desc"
+        const samples = path + "/samples"
+        const base = path + "/base.json"
+        const navs = path + "/navs.json"
+        const obj = path + "/obj.json"
+        if (!fs.existsSync(obj)) continue;
 
-    for (let i = 0; i < folders.length; i++) {
-        let path = folder + "/" + folders[i];
-        let desc = path + "/desc"
-        let samples = path + "/samples"
-        let base = path + "/base.json"
-        let navs = path + "/navs.json"
-        let obj = path + "/obj.json"
-
-        if (fs.existsSync(obj)) {
-            const filePaths = [obj, base, navs];
-            try {
-                const fileDataPromises = filePaths.map((filePath) => fsp.readFile(filePath, 'utf-8'));
-                const [objData, baseData, navsData] = await Promise.all(fileDataPromises);
-                let objJson = JSON.parse(objData);
-                let baseJson = JSON.parse(baseData);
-                let navsJson = JSON.parse(navsData);
-                await GenerateJSFile(folders[i], path, objJson, baseJson, navsJson);
-            } catch (err) {
-                console.error(err);
-            }
+        const filePaths = [obj, base, navs];
+        try {
+            const fileDataPromises = filePaths.map((filePath) => fsp.readFile(filePath, 'utf-8'));
+            const [objData, baseData, navsData] = await Promise.all(fileDataPromises);
+            const objJson = JSON.parse(objData);
+            const baseJson = JSON.parse(baseData);
+            const navsJson = JSON.parse(navsData);
+            await GenerateJSFile(fld, path, objJson, baseJson, navsJson);
+        } catch (err) {
+            console.error(err);
         }
     }
 }
