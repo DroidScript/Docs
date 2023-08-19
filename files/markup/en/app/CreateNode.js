@@ -5,7 +5,7 @@
  * 
  * $$ nod = app.CreateNode(paths, options) $$ 
  * @param {str_pth} paths NODE_PATH env variable
- * @param {str} options 
+ * @param {str} options extended:allow app.* methods
 */
 
 

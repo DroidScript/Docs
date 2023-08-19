@@ -107,30 +107,6 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/** ### _Exec ###
- * calls _gfx.Exec()
- * $$ glv._Exec(p1, p2, p3, p4) $$
- * @param {?} p1 
- * @param {?} p2 
- * @param {?} p3 
- * @param {?} p4 
- */
-
-
-/** ### _Execute ###
- * 
- * $$ glv._Execute(p1, p2, p3, p4) $$
- * @param {?} p1 
- * @param {?} p2 
- * @param {?} p3 
- * @param {?} p4 
- */
-
-
-/**
- * @extern Explode
- */
-
 /**
  * @extern Focus
  */
@@ -173,13 +149,6 @@ The following example uses a sprite sheet containing 8 stages of a character run
  */
 
 
-/** ### GetContext.ctx._drawCommands
- * @prop
- * 
- * @returns str
- */
-
-                    
 /** ### GetContext.ctx.drawImage ###
  * Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.
  * $$ glv.GetContext.ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) $$
@@ -192,22 +161,6 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @param {num_pxl} dy 
  * @param {num_pxl} dw 
  * @param {num_pxl} dh 
- */
-
-
-/** ### GetContext.ctx._globalAlpha
- * @prop
- * 
- * @returns num_frc
- */
-
-                    
-/** ### GetContext.ctx.loadTexture ###
- * 
- * $$ glv.GetContext.ctx.loadTexture(image, successCallback, errorCallback) $$
- * @param {str_ptf} image 
- * @param {fnc_json} successCallback {"pNames":["metrics"],"pTypes":["lst-[ width:num_pxl, height:num_pxl ]"]}
- * @param {fnc_json} errorCallback {"pNames":["msg"],"pTypes":["str"]}
  */
 
 
@@ -279,13 +232,6 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * $$ glv.GetContext.ctx.translate(tx, ty) $$
  * @param {num_pxl} tx 
  * @param {num_pxl} ty 
- */
-
-
-/** ### GetContext.ctx.unloadTexture ###
- * 
- * $$ glv.GetContext.ctx.unloadTexture(image) $$
- * @param {str_ptf} image 
  */
 
 

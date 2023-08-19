@@ -5,7 +5,7 @@
  * 
  * See Also: @SaveText, @SaveNumber, @SaveBoolean
  * $$ app.ClearValue(name, file) $$ 
- * @param {string} name 
+ * @param {str} name 
  * @param {str_ptf} file 
 */
 

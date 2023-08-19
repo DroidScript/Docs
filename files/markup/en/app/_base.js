@@ -37,12 +37,6 @@
  */
 
 
-/** ### Explode
- * Destroys the control with an explode animation and sound.
- * $$ obj.Explode() $$
- */
-
-
 /** ### Focus
  * Set the focus to the control so that the user can interact with it immediately.
  * $$ obj.Focus() $$

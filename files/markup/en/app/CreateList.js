@@ -73,6 +73,12 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
  * @extern ClearFocus
  */
 
+/** ### Expand ###
+ * ?
+ * $$ lst.Expand() $$
+ */
+
+
 /**
  * @extern Focus
  */

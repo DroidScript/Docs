@@ -69,14 +69,14 @@ function OnReady()
 /** ### game
  * @prop
  * 
- * @returns undefined
+ * @returns dso-Game
  */
 
                     
 /** ### lay
  * @prop
  * 
- * @returns undefined
+ * @returns dso-CreateLayout
  */
 
                     // CreateGame.txt --> All the sample codes

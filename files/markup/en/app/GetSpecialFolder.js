@@ -5,7 +5,7 @@
  * 
  * See Also: @GetPath, @GetAppPath, @WriteFile
  * $$ app.GetSpecialFolder(name) $$ 
- * @param {str} name DCIM|Pictures|Movies|Downloads|Music
+ * @param {str} name DCIM|Pictures|Movies|Downloads|Documents|Music
  * @returns str_pth
 */
 

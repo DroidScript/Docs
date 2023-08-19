@@ -21,13 +21,6 @@
  */
 
                     
-/** ### _id
- * @prop
- * 
- * @returns str
- */
-
-                    
 /** ### Pause ###
  * Pause the playback if the sound is currently palaying.
  * $$ snd.Pause() $$

@@ -7,7 +7,7 @@
  * @param {str_com} list 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str} options NoMargins
+ * @param {str} options NoMargins|Fade|FontAwesome
  * @returns dso-Tabs
 */
 
@@ -27,14 +27,6 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 // -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
-/** ### _AddChild ###
- * Adds a control to the layout.
- * $$ tab._AddChild(child, order) $$
- * @param {dso} child 
- * @param {num_int} order 
- */
-
-
 /**
  * @extern AdjustColor
  */
@@ -47,23 +39,9 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @extern Batch
  */
 
-/** ### _ChildToFront ###
- * Moves a child in front of all other children.
- * $$ tab._ChildToFront(child) $$
- * @param {dso} child 
- */
-
-
 /**
  * @extern ClearFocus
  */
-
-/** ### _DestroyChild ###
- * Destroys and removes a child from the layout.
- * $$ tab._DestroyChild(child) $$
- * @param {dso} child 
- */
-
 
 /**
  * @extern Focus
@@ -76,14 +54,6 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /**
  * @extern GetAbsWidth
  */
-
-/** ### _GetChildOrder ###
- * Returns the z order of a child.
- * $$ tab._GetChildOrder(child) $$
- * @param {dso} child 
- * @returns num_int
- */
-
 
 /** ### GetCurrentTabName ###
  * Returns the currently displayed tab name
@@ -166,13 +136,6 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  */
 
 
-/** ### _RemoveChild ###
- * Removes a child from the layout.
- * $$ tab._RemoveChild(child) $$
- * @param {dso} child 
- */
-
-
 /**
  * @extern SetBackAlpha
  */
@@ -212,13 +175,6 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @extern SetEnabled
  */
 
-/** ### _SetGravity ###
- * Adjust the placing of contained children.
- * $$ tab._SetGravity(gravity) $$
- * @param {str} gravity Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY
- */
-
-
 /**
  * @extern SetMargins
  */
@@ -244,25 +200,6 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /**
  * @extern SetOnTouch
  */
-
-/**
- * @extern _SetOnTouchDown
- */
-
-/**
- * @extern _SetOnTouchMove
- */
-
-/**
- * @extern _SetOnTouchUp
- */
-
-/** ### _SetOrientation ###
- * Change the children orientation.
- * $$ tab._SetOrientation(orient) $$
- * @param {str} orient Horizontal|Vertical
- */
-
 
 /**
  * @extern SetPadding

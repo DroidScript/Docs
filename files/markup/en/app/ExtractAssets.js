@@ -6,7 +6,7 @@
  * @param {str_pth} source 
  * @param {str_pth} destination 
  * @param {bin} overwrite 
- * @param {str} options DoEvents:extract in background
+ * @param {str} options DoEvents:extract in background,shallow:extract top level
 */
 
 

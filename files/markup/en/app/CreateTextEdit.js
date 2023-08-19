@@ -306,6 +306,13 @@ You can also set a background image/pattern or background gradient for the List 
  * @extern SetOnFocus
  */
 
+/** ### SetSelectColor ###
+ * Set the background color for selected text.
+ * $$ edt.SetSelectColor(col) $$
+ * @param {str_col} col 
+ */
+
+
 /** ### SetSelection ###
  * Selects part of the text in a given range.
  * $$ edt.SetSelection(start, stop) $$

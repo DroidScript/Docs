@@ -26,20 +26,6 @@
  * @returns bin
  */
 
-                    
-/** ### _loader
- * @prop
- * 
- * @returns obj
- */
-
-                    
-/** ### _sprite
- * @prop
- * 
- * @returns ?
- */
-
                     // CreateSpriteSheet.txt --> All the sample codes
 
 /** @Sample

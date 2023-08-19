@@ -263,13 +263,6 @@
  */
 
 
-/** ### SetOnConnectEx ###
- * called when NXT has successfully connected via Bluetooth
- * $$ nxt.SetOnConnectEx(callback) $$
- * @param {fnc_json} callback {}
- */
-
-
 /** ### ShowDevices ###
  * Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.
  * $$ nxt.ShowDevices() $$

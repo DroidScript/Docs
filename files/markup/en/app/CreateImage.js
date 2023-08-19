@@ -87,20 +87,6 @@ For animations you can then use the **Animate** function of the app object which
  * @extern ClearFocus
  */
 
-/** ### _Draw ###
- * Cache draw command when not autoupdating
- * $$ img._Draw(func, p1, p2, p3, p4, p5, p6, p7) $$
- * @param {str} func 
- * @param {str} p1 
- * @param {num} p2 
- * @param {num} p3 
- * @param {num} p4 
- * @param {num} p5 
- * @param {num} p6 
- * @param {num} p7 
- */
-
-
 /** ### DrawArc ###
  * Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.
  * $$ img.DrawArc(x1, y1, x2, y2, start, sweep) $$

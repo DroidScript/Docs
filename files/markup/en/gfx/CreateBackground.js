@@ -29,20 +29,6 @@
  * @returns bin
  */
 
-                    
-/** ### _sprite
- * @prop
- * 
- * @returns PIXI.Sprite
- */
-
-                    
-/** ### _texture
- * @prop
- * 
- * @returns PIXI.Texture
- */
-
                     // CreateBackground.txt --> All the sample codes
 
 /** @Sample

@@ -35,20 +35,6 @@
  */
 
 
-/** ### _databaseFeatures
- * @prop
- * databaseFeatures * <deprecated>
- * @returns undefined
- */
-
-                    
-/** ### _dbname
- * @prop
- * dbname * <deprecated>
- * @returns undefined
- */
-
-                    
 /** ### Delete ###
  * Delete the database
  * $$ db.Delete() $$
@@ -101,33 +87,6 @@
  * $$ db.open(success, error) $$
  * @param {fnc_json} success {}
  * @param {fnc_json} error {"pNames":["msg"],"pTypes":["str"]}
- */
-
-
-/** ### _openargs
- * @prop
- * openargs * <deprecated>
- * @returns undefined
- */
-
-                    
-/** ### _openDBs
- * @prop
- * contains DBs * <deprecated>
- * @returns obj-{ name:obj-Database }
- */
-
-                    
-/** ### _openError ###
- * openError * <deprecated>
- * $$ db._openError(err) $$
- * @param {str} err 
- */
-
-
-/** ### _openSuccess ###
- * openSuccess * <deprecated>
- * $$ db._openSuccess() $$
  */
 
 

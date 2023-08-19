@@ -101,20 +101,6 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @extern height
  */
 
-/** ### _isAtlas
- * @prop
- * 
- * @returns bin
- */
-
-                    
-/** ### _isStrip
- * @prop
- * 
- * @returns bin
- */
-
-                    
 /**
  * @extern PauseTween
  */
@@ -220,13 +206,6 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @extern SetTween
  */
 
-/** ### _sprite
- * @prop
- * 
- * @returns ?
- */
-
-                    
 /**
  * @extern StartTween
  */
@@ -248,13 +227,6 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
 
-/** ### _texture
- * @prop
- * 
- * @returns str
- */
-
-                    
 /**
  * @extern Tween
  */

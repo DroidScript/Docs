@@ -130,6 +130,20 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  */
 
 
+/** ### SetSpeed ###
+ * Change the speed of the playing song.
+ * $$ ply.SetSpeed(speed) $$
+ * @param {num_fac} speed 
+ */
+
+
+/** ### SetPitch ###
+ * Change the pitch of the playing song.
+ * $$ ply.SetPitch(pitch) $$
+ * @param {num_fac} pitch 
+ */
+
+
 /** ### SetVolume ###
  * Change the volume of the playing song.
  * $$ ply.SetVolume(left, right) $$

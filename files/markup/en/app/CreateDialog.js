@@ -5,7 +5,7 @@
  * 
  * $$ dlg = app.CreateDialog(title, options) $$ 
  * @param {str} title 
- * @param {str_com} options AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners
+ * @param {str_com} options AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,Fillscreen,Fullscreen,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners
  * @returns dso-Dialog
 */
 

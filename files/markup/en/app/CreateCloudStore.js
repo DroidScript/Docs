@@ -92,10 +92,6 @@ combine the parts only when making CloudStore API calls.
  */
 
 
-/**
- * @extern _Method
- */
-
 /** ### Save ###
  * Saves data in the cloud.
  * $$ cld.Save(file, data, callback, options) $$

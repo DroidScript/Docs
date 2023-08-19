@@ -19,6 +19,14 @@
 // -------- VISIBLE METHODS & PROPERTIES --------- 
 
 
+/** ### AddShape ###
+ * Adds linear and angular velocity to the object
+ * $$ phs.AddShape(type, points) $$
+ * @param {str} type Polygon
+ * @param {lst} points [ [x:num_frc, y:num_frc], [x:num_frc, y:num_frc], ... ]
+ */
+
+
 /** ### AddVelocity ###
  * Adds linear and angular velocity to the object
  * $$ phs.AddVelocity(x, y, angular, bodyRelative) $$
@@ -59,7 +67,7 @@
  * Returns the current total linear velocity or the “x”, “y” or “angular” component.
  * $$ phs.GetVelocity(component) $$
  * @param {str} component x|y|angular
- * @returns number
+ * @returns num
  */
 
 
