@@ -4,7 +4,14 @@ const ver = "v257";
 const dir = "json/en/"+ver;
 const outDir = "markup/en";
 
-async function GenerateJSFile(scope, path, obj, base={}, navs={}) {
+/**
+ * @param {String} scope 
+ * @param {String} path Path to the scope
+ * @param {Object} obj json object
+ * @param {Object} base base object
+ * @param {Object} navs navs-json object
+ */
+async function GenerateJSFile(scope, path, obj={}, base={}, navs={}) {
     let folder = path.replace(dir, outDir);
     if( !fs.existsSync(folder) ) await fs.mkdirSync(folder, {recursive: true});
     let fileName, outputFile;
