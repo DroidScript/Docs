@@ -11,7 +11,7 @@ const outDir = "markup/en";
  * @param {Object} base base object
  * @param {Object} navs navs-json object
  */
-async function GenerateJSFile(scope, path, obj={}, base={}, navs={}) {
+async function GenerateJSFile(scope, path, obj, base={}, navs={}) {
     let folder = path.replace(dir, outDir);
     if( !fs.existsSync(folder) ) await fs.mkdirSync(folder, {recursive: true});
     let fileName, outputFile;
@@ -68,7 +68,10 @@ ${ info }
         if( fs.existsSync(sampFile) ) {
             str += "\n\n// ------------- SAMPLES ------------- \n\n";
             let cmpSamp = await fs.readFileSync(sampFile);
-            str += `/** @Sample\n${cmpSamp}\n */\n\n`;
+
+            // str += `/** @Sample\n${cmpSamp}\n */\n\n`;
+
+            str += renderSamples( cmpSamp );
         }
 
         // methods
@@ -164,6 +167,30 @@ str += `
         let _baseOutFile = folder+"/"+_baseFile;
         await fs.writeFileSync(_baseOutFile, baseStr);
     }
+}
+
+
+function renderSamples( buff ) {
+    if( !buff ) return;
+    const raw = buff.toString();
+    let str = "";
+    const strArr = raw.split("</sample>");
+    strArr.forEach(samp => {
+        if( samp.trim() ) {
+            let name = samp.substring(samp.indexOf("<sample")+7, samp.indexOf(">")).trim();
+            let cod = samp.substring(samp.indexOf(">")+1).trim();
+            cod = cod.replace(/\*\//g, "*_");
+            str += `
+    
+/**
+@sample ${name}
+${cod}
+ */
+    
+            `;
+        }
+    });
+    return str;
 }
 
 function GetFolders(folder="") {
