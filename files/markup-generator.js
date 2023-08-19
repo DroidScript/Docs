@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const fs = require('fs');
 const fsp = require('fs').promises;
 
@@ -62,14 +64,6 @@ ${info}
         }
 
 
-        // samples
-        let sampFile = path + "/samples/" + key + ".txt";
-        if (fs.existsSync(sampFile)) {
-            str += "\n\n// ------------- SAMPLES ------------- \n\n";
-            let cmpSamp = fs.readFileSync(sampFile);
-            str += `/** @Sample\n${cmpSamp}\n */\n\n`;
-        }
-
         // methods
         if (data.subf) {
             str += `\n\n// ------------- VISIBLE METHODS & PROPERTIES ------------- \n\n`
@@ -97,9 +91,9 @@ ${info}
                     str += `
 /** ### ${method} ###
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
- * $$ ${data.abbrev}.${method}(${(methodData.pNames && methodData.pNames.length) ? methodData.pNames.join(", ") : ""}) $$\n`;
+ * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$\n`;
 
-                    if (methodData.pNames && methodData.pTypes && methodData.pNames.length) {
+                    if (methodData.pNames && methodData.pTypes) {
                         for (let i = 0; i < methodData.pNames.length; i++) {
                             let pDesc = "", pType = "", pDef = methodData.pTypes[i];
                             if (typeof pDef == "string") {
@@ -121,6 +115,14 @@ ${info}
             }
         }
 
+        // samples
+        let sampFile = path + "/samples/" + key + ".txt";
+        if (fs.existsSync(sampFile)) {
+            str += "\n\n// ------------- SAMPLES ------------- \n\n";
+            let cmpSamp = fs.readFileSync(sampFile);
+            str += `/** @Sample\n${cmpSamp}\n */\n\n`;
+        }
+
         await fsp.writeFile(outputFile, str);
     }
 
@@ -133,9 +135,9 @@ ${info}
         baseStr += `
 /** ### ${method}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
- * $$ obj.${method}(${(methodData.pNames && methodData.pNames.length) ? methodData.pNames.join(", ") : ""}) $$\n`;
+ * $$ obj.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$\n`;
 
-        if (methodData.pNames && methodData.pTypes && methodData.pNames.length) {
+        if (methodData.pNames && methodData.pTypes) {
             for (let i = 0; i < methodData.pNames.length; i++) {
                 let pDesc = "", pType = "", pDef = methodData.pTypes[i];
                 if (typeof pDef == "string") {
@@ -158,7 +160,7 @@ ${info}
     if (baseStr) {
         let _baseFile = "_base.js";
         let _baseOutFile = folder + "/" + _baseFile;
-        await fs.writeFileSync(_baseOutFile, baseStr);
+        fs.writeFileSync(_baseOutFile, baseStr);
     }
 }
 

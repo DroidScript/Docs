@@ -1,0 +1,179 @@
+
+/** # addDatePicker #
+ * @abbrev dtp
+ * @brief addDatePicker
+ * 
+ * $$ dtp = ui.addDatePicker(date, options) $$ 
+ * @param {str} date A default date value to which the datepicker begins. Format `YYYY
+ * @param {str} options A comma separated options for the date picker. Can be `Portrait` `Landscape`
+ * @returns obj-DatePicker Component
+*/
+
+
+// addDatePicker.md --> Complete documentation. Sample codes is at the bottom of this file.
+
+/** @Description
+Adds a date picker component to the app.
+
+<style>.samp { margin-top: 2px; } </style><h3>Properties</h3>These are the setter and getter properties for the addDatePicker Component.
+<div class="samp"><a href="#format-0" data-transition="pop" data-rel="popup" class="ui-link">format </a></div>
+<div data-role="popup" id="format-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>Sets or returns the format of the selected date. Values are <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">YYYY-MM-DD</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">MM-DD-YYYY</span> or <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">DD-MM-YYYY</span></p></div>
+ */
+
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/** ### show ###
+ * Show the date picker the dialog *  * 
+ * $$ dtp.show() $$
+ */
+
+
+/** ### hide ###
+ * Hide the date picker dialog *  * 
+ * $$ dtp.hide() $$
+ */
+
+
+/** ### setLimits ###
+ * Set a limit to which the date picker dialog can render a date *  * 
+ * $$ dtp.setLimits(past, future) $$
+ * @param {str} past Date in the past of the form `YYYY
+ * @param {str} future Date in the future of the form `YYYY
+ */
+
+
+/** ### setOnSelect ###
+ * Sets a callback function to execute when date picker dialog is submitted *  * 
+ * $$ dtp.setOnSelect(callback) $$
+ * @param {fnc_json} callback {"pNames":["date "],"pTypes":["str-The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property."]}
+ */
+
+
+/** ### setFormat ###
+ * Sets the format of the date to be passed into the onSelect callback *  * 
+ * $$ dtp.setFormat(format) $$
+ * @param {str} format A date format. Can be `YYYY
+ */
+
+
+/** ### isVisible ###
+ * Get the current visibility of the date picker *  * 
+ * $$ dtp.isVisible() $$
+ * @returns bin
+ */
+
+// addDatePicker.txt --> All the sample codes
+
+/** @Sample
+
+
+<sample Default>
+class Main extends App 
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
+        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
+
+        // Add a button to the main layout
+        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
+        this.btn.setOnTouch( this.showDatePicker )
+
+        // Initialize date picker
+        this.dtp = ui.addDatePicker()
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        this.dtp.show()
+    }
+}
+</sample>
+
+<sample Default>
+class Main extends App 
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
+        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
+
+        // Add a button to the main layout
+        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
+        this.btn.setOnTouch( this.showDatePicker )
+
+        // Initialize date picker
+        this.dtp = ui.addDatePicker()
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        this.dtp.show()
+    }
+}
+</sample>
+
+<sample With initial value & portrait>
+class Main extends App 
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
+        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
+
+        // Add a button to the main layout
+        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
+        this.btn.setOnTouch( this.showDatePicker )
+
+        // With initial value. Date must be of the form "YYYY-MM-DD"
+        this.dtp = ui.addDatePicker( "2022-12-25", "Portrait" )
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        this.dtp.show()
+    }
+}
+</sample>
+
+<sample With limits & callback>
+class Main extends App 
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
+        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
+
+        // Add a button to the main layout
+        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
+        this.btn.setOnTouch( this.showDatePicker )
+
+        // With initial value. Date must be of the form "YYYY-MM-DD"
+        this.dtp = ui.addDatePicker( "2022-12-25", "Portrait" )
+        this.dtp.setOnSelect( this.onSelect )
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        this.dtp.show()
+    }
+
+    onSelect( value )
+    {
+        console.log( value )
+    }
+}
+</sample>
+ */
+

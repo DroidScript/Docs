@@ -1,0 +1,230 @@
+
+/** # CreateTEOutlineIconRight #
+ * @abbrev teo
+
+ * Creates a material outlined text input with icon on the right.
+ * $$ teo = MUI.CreateTEOutlineIconRight(width, options, icon, hint, label, color, backColor) $$ 
+ * @param {num} width 
+ * @param {str_com} options DS TextEdit options with additional 'Round' option.
+ * @param {str} icon Material icon font
+ * @param {str} hint Hint|Label text
+ * @param {bin} label Show or hide label
+ * @param {str_col} color 
+ * @param {str_col} backColor 
+ * @returns obj
+*/
+
+
+
+
+// -------- VISIBLE METHODS & PROPERTIES --------- 
+
+
+/**
+ * @extern ClearFocus
+ */
+
+/** ### ClearHistory ###
+ * Clear input history
+ * $$ teo.ClearHistory() $$
+ */
+
+
+/**
+ * @extern Focus
+ */
+
+/** ### GetCursorLine ###
+ * Get cursor line
+ * $$ teo.GetCursorLine() $$
+ * @returns num
+ */
+
+
+/** ### GetCursorPos ###
+ * Get cursor position
+ * $$ teo.GetCursorPos() $$
+ */
+
+
+/** ### GetSelectedText ###
+ * 
+ * $$ teo.GetSelectedText() $$
+ */
+
+
+/** ### GetSelectionEnd ###
+ * 
+ * $$ teo.GetSelectionEnd() $$
+ */
+
+
+/** ### GetSelectionStart ###
+ * 
+ * $$ teo.GetSelectionStart() $$
+ */
+
+
+/**
+ * @extern GetText
+ */
+
+/**
+ * @extern GetType
+ */
+
+/**
+ * @extern GetVisibility
+ */
+
+/**
+ * @extern Gone
+ */
+
+/** ### InsertText ###
+ * Inserts a string at a given position.
+ * $$ teo.InsertText(text, start) $$
+ * @param {str} text 
+ * @param {num_int} start 
+ */
+
+
+/**
+ * @extern IsEnabled
+ */
+
+/**
+ * @extern IsOverlap
+ */
+
+/**
+ * @extern IsVisible
+ */
+
+/** ### Redo ###
+ * Redo an undone action.
+ * $$ teo.Redo() $$
+ */
+
+
+/** ### ReplaceText ###
+ * Replaces a given range in the text with some string.
+ * $$ teo.ReplaceText(text, start, end) $$
+ * @param {str} text 
+ * @param {num_int} start 
+ * @param {num_int} end 
+ */
+
+
+/** ### SetCursorPos ###
+ * Change the curernt cursor position.
+ * $$ teo.SetCursorPos(position) $$
+ * @param {num_int} position 
+ */
+
+
+/**
+ * @extern SetMargins
+ */
+
+/**
+ * @extern SetOnChange
+ */
+
+/** ### SetOnEnter ###
+ * %cb% the user pressed 'Done' or 'Enter' on the keyboard
+ * $$ teo.SetOnEnter(callback) $$
+ * @param {fnc_json} callback {}
+ */
+
+
+/**
+ * @extern SetPosition
+ */
+
+/**
+ * @extern SetText
+ */
+
+/** ### Undo ###
+ * Undo an action
+ * $$ teo.Undo() $$
+ */
+
+
+/** ### SetOnIconTouch ###
+ * Calls a function when icon is touch
+ * $$ teo.SetOnIconTouch(callback) $$
+ * @param {fnc_json} callback {}
+ */
+
+
+/**
+ * @extern SetOnTouch
+ */
+// CreateTEOutlineIconRight.txt --> All the sample codes
+
+/** @Sample
+<sample No Label>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left", "person", "Type your name")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample Dark With Label>
+cfg.Dark
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left,Password", "lock", "Type your password", true)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+</sample>
+
+
+<sample SetOnEnter Callback>
+cfg.Light
+cfg.MUI
+
+function OnStart()
+{
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left,Number", "call", "Type your number", true)
+        tef.SetOnEnter(OnEnter)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+}
+
+function OnEnter()
+{
+    app.ShowPopup(this.GetText())
+}
+</sample>
+ */
+
