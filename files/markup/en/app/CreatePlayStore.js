@@ -27,6 +27,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
 /** @extern Batch */
 
 /** ### GetBillingInfo ###
+ * @brief Get product info from Google Play.
  * Get product info of paid items from Google Play.
  * $$ pls.GetBillingInfo(prodIDs, callback, options) $$
  * @param {str} prodIDs 
@@ -36,6 +37,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
 
 
 /** ### GetPurchases ###
+ * @brief Get purchased items from Google Play.
  * Get product info of purchased items from Google Play.
  * $$ pls.GetPurchases(callback, options) $$
  * @param {fnc_json} callback {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
@@ -51,6 +53,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
 
 
 /** ### Purchase ###
+ * @brief Purchase an item on Google Play.
  * Purchase an item on Google Play.
  * $$ pls.Purchase(prodID, token, callback, options) $$
  * @param {str} prodID 

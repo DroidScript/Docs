@@ -24,6 +24,7 @@
 
 
 /** ### close ###
+ * @brief Close the database
  * Close the database * <deprecated Use Close instead>
  * $$ db.close(success, error) $$
  * @param {fnc_json} success {"pNames":["msg"],"pTypes":["str"]}
@@ -44,6 +45,7 @@
 
 
 /** ### executeSql ###
+ * @brief Execute SQL query
  * Executes a SQL query * <deprecated Use ExecuteSql instead>
  * $$ db.executeSql(statement, params, success, error) $$
  * @param {str_sql} statement 
@@ -54,6 +56,7 @@
 
 
 /** ### ExecuteSql ###
+ * @brief Execute SQL query
  * Executes a SQL query
  * $$ db.ExecuteSql(sql, params, success, error) $$
  * @param {str_sql} sql 
@@ -64,6 +67,7 @@
 
 
 /** ### GetName ###
+ * @brief Get database name
  * Returns the database name
  * $$ db.GetName() $$
  * @returns str
@@ -79,12 +83,14 @@
 
 /** ### name
  * @prop
+ * @brief database name
  * The database name * <deprecated use GetName instead>
  * @returns str
  */
 
                     
 /** ### open ###
+ * @brief Open database
  * Opens the database * <deprecated>
  * $$ db.open(success, error) $$
  * @param {fnc_json} success {}

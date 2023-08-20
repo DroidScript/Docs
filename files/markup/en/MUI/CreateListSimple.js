@@ -41,6 +41,7 @@
 
 
 /** ### SetBadge ###
+ * @brief Sets a new badge
  * Set the badge of the corresponding item
  * $$ lss.SetBadge(newBadge, index) $$
  * @param {num_int} newBadge 

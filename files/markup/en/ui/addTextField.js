@@ -35,6 +35,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setOnEnter ###
+ * @brief setOnEnter
  * Sets a callback function on `enter` or `submit` event *  * 
  * $$ tfd.setOnEnter(callback) $$
  * @param {fnc_json} callback {"pNames":["text "],"pTypes":["str-The text value of the input."]}
@@ -42,6 +43,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setOnChange ###
+ * @brief setOnChange
  * Sets a callback function on `values changes` event *  * 
  * $$ tfd.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["text "],"pTypes":["str-The text value of the input."]}
@@ -49,6 +51,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setOnFocus ###
+ * @brief setOnFocus
  * Adds a callback function when the textfield is focus or blur *  * 
  * $$ tfd.setOnFocus(callback) $$
  * @param {fnc_json} callback {"pNames":["focus "],"pTypes":["bin-The focus state of the input component."]}
@@ -56,6 +59,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setRows ###
+ * @brief setRows
  * Sets the minimum and maximum number of rows on a multiline type TextField *  * 
  * $$ tfd.setRows(min, max) $$
  * @param {num} min The minimum number of rows.
@@ -64,6 +68,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setStartAdornment ###
+ * @brief setStartAdornment
  * Set a start adornment control into the TextField Component *  * 
  * $$ tfd.setStartAdornment(text, type) $$
  * @param {str} text Text or material icon font.
@@ -72,6 +77,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setStartAdornmentOnTouch ###
+ * @brief setStartAdornmentOnTouch
  * Add a callback handler when the start adornment control is touch *  * 
  * $$ tfd.setStartAdornmentOnTouch(callback) $$
  * @param {} callback 
@@ -79,6 +85,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### getStartAdornment ###
+ * @brief getStartAdornment
  * Returns the start adornment text *  * 
  * $$ tfd.getStartAdornment() $$
  * @returns str
@@ -86,6 +93,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setEndAdornment ###
+ * @brief setEndAdornment
  * Add an end adornment control into the TextField Component *  * 
  * $$ tfd.setEndAdornment(text, type) $$
  * @param {str} text Text or material icon font.
@@ -94,6 +102,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setEndAdornmentOnTouch ###
+ * @brief setEndAdornmentOnTouch
  * Add a callback handler when the end adornment control is touch *  * 
  * $$ tfd.setEndAdornmentOnTouch(callback) $$
  * @param {} callback 
@@ -101,6 +110,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### getEndAdornment ###
+ * @brief getEndAdornment
  * Returns the end adornment text *  * 
  * $$ tfd.getEndAdornment() $$
  * @returns str
@@ -108,6 +118,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds a callback handler when the component is touch *  * 
  * $$ tfd.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
@@ -115,6 +126,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ tfd.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -122,6 +134,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ tfd.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -130,6 +143,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ tfd.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -138,30 +152,35 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ tfd.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ tfd.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ tfd.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ tfd.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ tfd.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -170,6 +189,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ tfd.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -178,6 +198,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ tfd.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -189,6 +210,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ tfd.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -200,6 +222,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ tfd.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -209,6 +232,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ tfd.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -218,6 +242,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the component *  * 
  * $$ tfd.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
@@ -229,6 +254,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ tfd.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -236,6 +262,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ tfd.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

@@ -32,6 +32,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 /** @extern Batch */
 
 /** ### GetData ###
+ * @brief Returns a new list of frequency values
  * Returns a list of frequency values. The amount is dependent on the set frequency.
  * $$ rec.GetData() $$
  * @returns lst-[ frequencies:num_int ]
@@ -60,12 +61,14 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 /** ### Pause ###
+ * @brief Pause the recording
  * Pauses the recording temporally.
  * $$ rec.Pause() $$
  */
 
 
 /** ### SetFile ###
+ * @brief Define the recording file
  * Define the file where the recorder should record to.
  * $$ rec.SetFile(file) $$
  * @param {str_ptf} file 
@@ -73,6 +76,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 /** ### SetFrequency ###
+ * @brief Define the Recording frequency
  * Set the Recording frequency to one of the possible values.
  * $$ rec.SetFrequency(frequency) $$
  * @param {num_int} frequency 8000|11025|22050|44100|48000
@@ -80,6 +84,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 /** ### SetSource ###
+ * @brief Define the recording file
  * Define the file where the recorder should record to.
  * $$ rec.SetSource(src) $$
  * @param {str} src Default|Camcorder|Mic|Unprocessed|Voicecommunication|Voiceperformance|Voicerecognition
@@ -93,6 +98,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 /** ### Stop ###
+ * @brief Stop recording
  * Stop the audio recording.
  * $$ rec.Stop() $$
  */

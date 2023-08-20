@@ -18,6 +18,7 @@
 
 
 /** ### AddLayout ###
+ * @brief Adds layout to overlay
  * Adds a layout to the overlay.
  * $$ ovl.AddLayout(layout, left, top, options) $$
  * @param {dso} layout CreateLayout
@@ -38,6 +39,7 @@
 
 
 /** ### RemoveLayout ###
+ * @brief Remove layout from overlay
  * Removes a layout from the overlay.
  * $$ ovl.RemoveLayout(layout) $$
  * @param {dso} layout CreateLayout
@@ -45,6 +47,7 @@
 
 
 /** ### SetPosition ###
+ * @brief Changes a child layout position
  * Defines the position of a contained layout.
  * $$ ovl.SetPosition(layout, left, top, options) $$
  * @param {dso} layout CreateLayout

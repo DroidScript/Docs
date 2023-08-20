@@ -28,6 +28,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 /** @extern Batch */
 
 /** ### GetAzimuth ###
+ * @brief Get first value of a sensor
  * Returns the first/x/azimuth value of a sensor.
  * $$ sns.GetAzimuth() $$
  * @returns num
@@ -42,6 +43,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### GetPitch ###
+ * @brief Get second value of a sensor
  * Returns the second/y/pitch value of a sensor.
  * $$ sns.GetPitch() $$
  * @returns num
@@ -49,6 +51,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### GetRoll ###
+ * @brief Get third value of a sensor
  * Returns the third/z/roll value of a sensor.
  * $$ sns.GetRoll() $$
  * @returns num
@@ -63,6 +66,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### GetValues ###
+ * @brief Get all values from sensor
  * Returns all values of a sensor.
  * $$ sns.GetValues() $$
  * @returns lst-[ time:num_mls, first:num, second:num, third:num ]
@@ -72,6 +76,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 /** @extern Method */
 
 /** ### SetMaxRate ###
+ * @brief Set maximum OnChange rate
  * Define a minimum timeout between two OnChage calls.
  * $$ sns.SetMaxRate(rate) $$
  * @param {num_mls} rate 
@@ -79,6 +84,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### SetMinChange ###
+ * @brief Set minimum value difference which triggers OnChange
  * Define a minimum threshold value which triggers a OnChange call.
  * $$ sns.SetMinChange(min) $$
  * @param {num} min 
@@ -86,6 +92,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### SetOnChange ###
+ * @brief Called when a sensor value has changed
  * %cb% a sensor value has changed.
  * $$ sns.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["first","second","third","time"],"pTypes":["num","num","num","num_mls"]}
@@ -93,12 +100,14 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 /** ### Start ###
+ * @brief Start the sensor
  * Start reading from the sensor.
  * $$ sns.Start() $$
  */
 
 
 /** ### Stop ###
+ * @brief Stop the sensor
  * Stop reading from the sensor.
  * $$ sns.Stop() $$
  */

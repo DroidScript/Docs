@@ -58,6 +58,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 
 /** ### GetValue ###
+ * @brief Get current value
  * Returns the current value of the seek bar.
  * $$ skb.GetValue() $$
  * @returns num
@@ -91,6 +92,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** @extern SetBackground */
 
 /** ### SetColorFilter ###
+ * @brief Adjust the visual color effect with different BlendModes
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
  * $$ skb.SetColorFilter(color, mode, options) $$
  * @param {str_col} color 
@@ -106,6 +108,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** @extern SetMargins */
 
 /** ### SetMaxRate ###
+ * @brief Set rate of OnChange calls
  * Change the minimum timeout in milliseconds between two OnChange calls.
  * $$ skb.SetMaxRate(rate) $$
  * @param {num_mls} rate 
@@ -113,6 +116,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 
 /** ### SetOnChange ###
+ * @brief Called when content was changed by the user
  * Called when the containing data has been changed by the user.
  * $$ skb.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["value"],"pTypes":["num"]}
@@ -124,6 +128,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** @extern SetPosition */
 
 /** ### SetRange ###
+ * @brief Set value range.
  * Change the value which represents 100% of the seek bar. Default is 100
  * $$ skb.SetRange(range) $$
  * @param {num} range 
@@ -135,6 +140,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** @extern SetSize */
 
 /** ### SetValue ###
+ * @brief Set current seekbar value
  * Change the current seekbar value in the defined range.
  * $$ skb.SetValue(val) $$
  * @param {num} val 

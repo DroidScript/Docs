@@ -31,12 +31,14 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 /** @extern Batch */
 
 /** ### Close ###
+ * @brief Close the media player.
  * Close the media player and thus make it unuseable for further use.
  * $$ ply.Close() $$
  */
 
 
 /** ### GetDuration ###
+ * @brief Get the song length in seconds
  * Returns the total duration of the currently loaded song in seconds.
  * $$ ply.GetDuration() $$
  * @returns num_sec
@@ -44,6 +46,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### GetPosition ###
+ * @brief Get  elapsed playtime in seconds
  * Returns the elapsed playtime in seconds.
  * $$ ply.GetPosition() $$
  * @returns num_sec
@@ -58,18 +61,21 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### IsLooping ###
+ * @brief Returns if the player is looping.
  * Checks if the media player will replay the song from the begining if it has finished.
  * $$ ply.IsLooping() $$
  */
 
 
 /** ### IsPlaying ###
+ * @brief Get current playing state
  * Checks if the media player is currently playing.
  * $$ ply.IsPlaying() $$
  */
 
 
 /** ### IsReady ###
+ * @brief Returns if player is useable yet
  * Checks if the media player is ready for use.
  * $$ ply.IsReady() $$
  */
@@ -95,6 +101,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetFile ###
+ * @brief Load a sound file to the player
  * Load a sound file to the media player.
  * $$ ply.SetFile(file) $$
  * @param {str_ptf} file 
@@ -102,6 +109,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetLooping ###
+ * @brief Set looping mode
  * Define whether the media player should replay the song when completed.
  * $$ ply.SetLooping(loop) $$
  * @param {bin} loop 
@@ -109,6 +117,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetOnComplete ###
+ * @brief Called when the player has finished playing a track
  * %cb% a sound file has finished playing.
  * $$ ply.SetOnComplete(callback) $$
  * @param {fnc_json} callback {}
@@ -116,6 +125,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetOnReady ###
+ * @brief Called when the player is ready for use
  * %cb% the player is ready for use.
  * $$ ply.SetOnReady(callback) $$
  * @param {fnc_json} callback {}
@@ -123,6 +133,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetOnSeekDone ###
+ * @brief Called when ply.Seek has finished
  * %cb% a seeking process is done.
  * $$ ply.SetOnSeekDone(callback) $$
  * @param {fnc_json} callback {}
@@ -130,6 +141,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetSpeed ###
+ * @brief Set the playback speed
  * Change the speed of the playing song.
  * $$ ply.SetSpeed(speed) $$
  * @param {num_fac} speed 
@@ -137,6 +149,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetPitch ###
+ * @brief Set the playback pitch
  * Change the pitch of the playing song.
  * $$ ply.SetPitch(pitch) $$
  * @param {num_fac} pitch 
@@ -144,6 +157,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 /** ### SetVolume ###
+ * @brief Set the playback volume
  * Change the volume of the playing song.
  * $$ ply.SetVolume(left, right) $$
  * @param {num_prc} left 

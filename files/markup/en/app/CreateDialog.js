@@ -35,6 +35,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### AddLayout ###
+ * @brief Add content layout
  * Add the content layout to the dialog.
  * $$ dlg.AddLayout(layout) $$
  * @param {dso} layout CreateLayout
@@ -50,6 +51,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** @extern Dismiss */
 
 /** ### EnableBackKey ###
+ * @brief En/Disables hiding via presing the back key
  * En/Disables the device back key to hide the dialog.
  * $$ dlg.EnableBackKey(enable) $$
  * @param {bin} enable 
@@ -71,6 +73,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** @extern GetPosition */
 
 /** ### GetTitleHeight ###
+ * @brief Get title bar height
  * Returns the height of the title bar.
  * $$ dlg.GetTitleHeight() $$
  * @returns num_pxl
@@ -112,6 +115,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** @extern SetBackAlpha */
 
 /** ### SetBackColor ###
+ * @brief Change the background color
  * Changes the background color of the control.
  * $$ dlg.SetBackColor(color, radius) $$
  * @param {str_col} color 
@@ -134,6 +138,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** @extern SetMargins */
 
 /** ### SetOnBack ###
+ * @brief Called when back button was pressed while the dialog was shown
  * %cb% the device's back button was pressed while the dialog was on front.
  * $$ dlg.SetOnBack(callback) $$
  * @param {fnc_json} callback {}
@@ -141,6 +146,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetOnCancel ###
+ * @brief Called when the dialog is cancelled
  * %cb% the dialog is cancelled.
  * $$ dlg.SetOnCancel(callback) $$
  * @param {fnc_json} callback {}
@@ -158,6 +164,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** @extern SetSize */
 
 /** ### SetTitle ###
+ * @brief Changes the dialog title
  * Changes the title of the dialog.
  * $$ dlg.SetTitle(title) $$
  * @param {str} title 
@@ -172,6 +179,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetTitleDividerColor ###
+ * @brief Changes the title divider height
  * Changes the title divider color of the dialog.
  * $$ dlg.SetTitleDividerColor(color) $$
  * @param {str_col} color 
@@ -186,6 +194,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetTitleHeight ###
+ * @brief Change height of the title bar
  * Changes the height of the title bar.
  * $$ dlg.SetTitleHeight(height, options) $$
  * @param {num_pxl} height 
@@ -194,6 +203,7 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetTitleTextSize ###
+ * @brief Changes the title text size
  * Changes the text size of the dialog title.
  * $$ dlg.SetTitleTextSize(size, options) $$
  * @param {num} size 

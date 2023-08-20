@@ -25,6 +25,7 @@
 
 
 /** ### Connect ###
+ * @brief Connect a Bluetooth device
  * Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.
  * $$ bls.Connect(name, channel) $$
  * @param {str} name 
@@ -33,6 +34,7 @@
 
 
 /** ### Disconnect ###
+ * @brief Disconnect the Bluetooth connection
  * Disconnect your device from an eventually existant connection. Calls the OnDisconnect callback function on both devices.
  * $$ bls.Disconnect() $$
  */
@@ -60,6 +62,7 @@
 
 
 /** ### IsPaired ###
+ * @brief Check pairing status to another device
  * Checks if a specific device is paired using its Bt name.
  * $$ bls.IsPaired(name) $$
  * @param {str} name 
@@ -68,6 +71,7 @@
 
 
 /** ### Listen ###
+ * @brief Listen <s>or stop listening</s> for incoming messages
  * Listen to your serial connection for any incoming mesages by passing <i>true</i> as first argument, <s>or stop listening by passing false</s>. It has to be called before an other device can connect with yours via bt.Connect.
  * $$ bls.Listen(enabled) $$
  * @param {bin} enabled 
@@ -77,12 +81,14 @@
 /** @extern Method */
 
 /** ### RequestEnable ###
+ * @brief Ask user to enable Bluetooth
  * If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.
  * $$ bls.RequestEnable() $$
  */
 
 
 /** ### SetDataMode ###
+ * @brief Define data format for outgoing data
  * Enable sending data in several modes.
  * $$ bls.SetDataMode(mode) $$
  * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
@@ -97,12 +103,14 @@
 
 
 /** ### SetOnDisconnect ###
+ * @brief Called after disconnecting from bluetooth connection
  * SetOnDisconnect will be called on both devices after disconnecting from an existing bluetooth connection.
  * $$ bls.SetOnDisconnect() $$
  */
 
 
 /** ### SetOnReceive ###
+ * @brief Called after received Data via Bluetooth
  * The SetOnReceive callback is called automatically after data has been received via the Bluetooth serial connection.
  * $$ bls.SetOnReceive(callback) $$
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["str"]}
@@ -110,6 +118,7 @@
 
 
 /** ### SetSplitMode ###
+ * @brief Specify how to split received data
  * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls. * p2 and p3 have different purposes for different modes: * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ bls.SetSplitMode(mode, p2, p3) $$
  * @param {str} mode End|Start-End|Size
@@ -126,6 +135,7 @@
 
 
 /** ### Write ###
+ * @brief Send data to connected device
  * Send data over the Bluetooth serial connection to the other device.
  * $$ bls.Write(data) $$
  * @param {str} data 

@@ -33,12 +33,14 @@ See Also: @CreateWebServer
 /** @extern Batch */
 
 /** ### Close ###
+ * @brief Close web socket
  * Close the web socket.
  * $$ wbs.Close() $$
  */
 
 
 /** ### GetSocket ###
+ * @brief Get js Socket instance
  * Returns the js Socket instance
  * $$ wbs.GetSocket() $$
  * @returns jso-WebSocket
@@ -46,6 +48,7 @@ See Also: @CreateWebServer
 
 
 /** ### IsOpen ###
+ * @brief Check if WebSocket is open
  * Check whether WebSocket is open
  * $$ wbs.IsOpen() $$
  * @returns bin
@@ -53,6 +56,7 @@ See Also: @CreateWebServer
 
 
 /** ### Send ###
+ * @brief Send message to server
  * Send a message to the server
  * $$ wbs.Send(message) $$
  * @param {str} message 
@@ -60,6 +64,7 @@ See Also: @CreateWebServer
 
 
 /** ### SetOnClose ###
+ * @brief Called when WebSocket was closed
  * %cb% the WebSocket has been closed.
  * $$ wbs.SetOnClose(callback) $$
  * @param {fnc_json} callback {}
@@ -67,6 +72,7 @@ See Also: @CreateWebServer
 
 
 /** ### SetOnMessage ###
+ * @brief Called when received message from server
  * %cb% the WebSocket recived a message from the server.
  * $$ wbs.SetOnMessage(callback) $$
  * @param {fnc_json} callback {"pNames":["message"],"pTypes":["str"]}
@@ -74,6 +80,7 @@ See Also: @CreateWebServer
 
 
 /** ### SetOnOpen ###
+ * @brief Called when WebSocket is open
  * %cb% the WebSocket has been opened.
  * $$ wbs.SetOnOpen(callback) $$
  * @param {fnc_json} callback {}

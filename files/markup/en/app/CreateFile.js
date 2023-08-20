@@ -26,6 +26,7 @@
 
 
 /** ### GetLength ###
+ * @brief Get file size in bytes
  * Returns the file size in bytes.
  * $$ fil.GetLength() $$
  * @returns num_byt
@@ -33,6 +34,7 @@
 
 
 /** ### GetPointer ###
+ * @brief Get pointer position
  * Returns the current pointer position in the file.
  * $$ fil.GetPointer() $$
  */
@@ -46,6 +48,7 @@
 
 
 /** ### ReadData ###
+ * @brief Read data from file
  * Reads a amount of bytes from the file.
  * $$ fil.ReadData(len, mode) $$
  * @param {num_int} len 
@@ -62,6 +65,7 @@
 
 
 /** ### ReadText ###
+ * @brief Read data as text
  * Read data from the file as text.
  * $$ fil.ReadText(type) $$
  * @param {str} type UTF:read UTF-8 string with 2 byte header,Line:"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n"|Char:read big-endian 16-bit character
@@ -70,6 +74,7 @@
 
 
 /** ### ReadTextAsync ###
+ * @brief Asynchronously read data as text
  * Asynchronously reads a single character or a line as text.
  * $$ fil.ReadTextAsync(type, callback) $$
  * @param {str} type Line:"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n"|Char:read big-endian 16-bit character
@@ -92,6 +97,7 @@
 
 
 /** ### Skip ###
+ * @brief Let the pointer skip some bytes
  * Let the pointer skip a given number of bytes.
  * $$ fil.Skip(bytes) $$
  * @param {num_int} bytes 
@@ -107,6 +113,7 @@
 
 
 /** ### WriteNumber ###
+ * @brief Write number to the file
  * Writes a number to the file.
  * $$ fil.WriteNumber(data, type) $$
  * @param {num} data 

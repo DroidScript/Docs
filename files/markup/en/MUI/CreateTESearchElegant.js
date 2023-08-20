@@ -129,6 +129,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 /** @extern SetOnChange */
 
 /** ### SetOnEnter ###
+ * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * $$ tes.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}
@@ -136,6 +137,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 
 
 /** ### SetIconOnTouch ###
+ * @brief %cb% the user pressed the icon.
  * %cb% the user pressed the icon.
  * $$ tes.SetIconOnTouch(callback) $$
  * @param {fnc_json} callback {}
@@ -153,6 +155,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 
 
 /** ### SetOnIconTouch ###
+ * @brief Calls a function when icon is touch
  * Calls a function when icon is touch
  * $$ tes.SetOnIconTouch(callback) $$
  * @param {fnc_json} callback {}

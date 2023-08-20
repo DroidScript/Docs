@@ -64,9 +64,10 @@ ${info}
                 let methodData = data.subf[method];
 
                 if (typeof methodData == "object" && methodData.isval) {
+                    const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
                     str += `
 /** ### ${method}
- * @prop
+ * @prop${brief || ''}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * @returns ${methodData.retval}
  */
@@ -79,9 +80,9 @@ ${info}
                 }
 
                 else {
-
+                    const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
                     str += `
-/** ### ${method} ###
+/** ### ${method} ###${brief || ''}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;

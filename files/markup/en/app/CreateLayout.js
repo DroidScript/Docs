@@ -50,6 +50,7 @@ They may be used to display offers with an image and optional info text.
 
 
 /** ### AddChild ###
+ * @brief Add a control to the layout
  * Adds a control to the layout.
  * $$ lay.AddChild(child, order) $$
  * @param {dso} child 
@@ -64,6 +65,7 @@ They may be used to display offers with an image and optional info text.
 /** @extern Batch */
 
 /** ### ChildToFront ###
+ * @brief Moves a child to the layout front
  * Moves a child in front of all other children.
  * $$ lay.ChildToFront(child) $$
  * @param {dso} child 
@@ -127,6 +129,7 @@ They may be used to display offers with an image and optional info text.
 /** @extern Method */
 
 /** ### RemoveChild ###
+ * @brief Remove a child from the layout
  * Removes a child from the layout.
  * $$ lay.RemoveChild(child) $$
  * @param {dso} child 
@@ -157,6 +160,7 @@ They may be used to display offers with an image and optional info text.
 
 
 /** ### SetChildTextSize ###
+ * @brief Change text size of top-level children.
  * Change the text size of top-level children.
  * $$ lay.SetChildTextSize(size, mode) $$
  * @param {num} size 
@@ -165,6 +169,7 @@ They may be used to display offers with an image and optional info text.
 
 
 /** ### SetCornerRadius ###
+ * @brief Apply corner radius to card layouts's
  * Applies a corner radius to card layouts.
  * $$ lay.SetCornerRadius(radius) $$
  * @param {num_pxl} radius 
@@ -172,6 +177,7 @@ They may be used to display offers with an image and optional info text.
 
 
 /** ### SetElevation ###
+ * @brief Apply shadow to card layouts's
  * Applies a shadow to card layouts.
  * $$ lay.SetElevation(elevation) $$
  * @param {num_pxl} elevation 
@@ -192,6 +198,7 @@ They may be used to display offers with an image and optional info text.
 /** @extern SetMargins */
 
 /** ### SetOnChildChange ###
+ * @brief Called when the user changed a control content
  * Defines a callback function which is called when the content of a child control has been changed by the user.
  * $$ lay.SetOnChildChange(callback) $$
  * @param {fnc_json} callback {"pNames":["src"],"pTypes":["dso"]}
@@ -226,6 +233,7 @@ They may be used to display offers with an image and optional info text.
 /** @extern SetTouchable */
 
 /** ### SetTouchThrough ###
+ * @brief Enable touch event forwarding
  * Define whether the layout should forward OnTouch events to underlying controls.
  * $$ lay.SetTouchThrough(through) $$
  * @param {bin} through 

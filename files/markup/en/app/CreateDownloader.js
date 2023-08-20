@@ -29,6 +29,7 @@ If you want to know when the download process has finished (or failed) you can d
 /** @extern Batch */
 
 /** ### Download ###
+ * @brief Download file(s)
  * Start downloading one or multiple files.
  * $$ dwn.Download(url, fldr, name, headers) $$
  * @param {str_url||lst} url [urls:str_url]
@@ -39,6 +40,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### GetProgress ###
+ * @brief Get current download progress
  * Returns the current download progress.
  * $$ dwn.GetProgress() $$
  * @returns num_frc
@@ -46,6 +48,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### GetSize ###
+ * @brief Get target download size in bytes
  * Returns the target download size in bytes.
  * $$ dwn.GetSize() $$
  * @returns num_byt
@@ -60,6 +63,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### IsComplete ###
+ * @brief Get download completed state
  * Checks if all downloads are completed.
  * $$ dwn.IsComplete() $$
  * @returns bin
@@ -69,6 +73,7 @@ If you want to know when the download process has finished (or failed) you can d
 /** @extern Method */
 
 /** ### SetOnCancel ###
+ * @brief Called when download is cancelled
  * %cb% download is cancelled.
  * $$ dwn.SetOnCancel(callback) $$
  * @param {fnc_json} callback {"pNames":["file"],"pTypes":["str_pth"]}
@@ -76,6 +81,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### SetOnComplete ###
+ * @brief Called when downloads are finished
  * %cb% all downloads are finished.
  * $$ dwn.SetOnComplete(callback) $$
  * @param {fnc_json} callback {}
@@ -83,6 +89,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### SetOnDownload ###
+ * @brief Called when a file is downloaded
  * %cb% a file is download.
  * $$ dwn.SetOnDownload(callback) $$
  * @param {fnc_json} callback {"pNames":["path"],"pTypes":["str_pth"]}
@@ -90,6 +97,7 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 /** ### SetOnError ###
+ * @brief Called when an error occurred while downloading
  * %cb% an error occurred while downloading a file.
  * $$ dwn.SetOnError(callback) $$
  * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}

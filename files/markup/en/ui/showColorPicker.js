@@ -28,6 +28,7 @@ Shows a color picker. Customize a color or choose from the presets of color care
 
 
 /** ### getValue ###
+ * @brief getValue
  * Returns the hexadecimal string color value of the color picker *  * 
  * $$ .getValue() $$
  * @returns str

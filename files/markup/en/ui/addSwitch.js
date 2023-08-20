@@ -31,6 +31,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds an event handler when the switch is touch *  * 
  * $$ swt.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["check "],"pTypes":["bin-The checked state of the switch control."]}
@@ -38,6 +39,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ swt.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -45,6 +47,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ swt.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -53,6 +56,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ swt.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -61,30 +65,35 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ swt.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ swt.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ swt.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ swt.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ swt.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -93,6 +102,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ swt.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -101,6 +111,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ swt.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -112,6 +123,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ swt.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -123,6 +135,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ swt.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -132,6 +145,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ swt.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -141,6 +155,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the component *  * 
  * $$ swt.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
@@ -152,6 +167,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ swt.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -159,6 +175,7 @@ Adds a Switch Component into your layout. A switch is a control whose values can
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ swt.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

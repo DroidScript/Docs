@@ -47,6 +47,7 @@
 
 
 /** ### SetIMAP ###
+ * @brief Set IMAP settings for receiving messages
  * Set IMAP or POP3 settings for receiving messages.
  * $$ mail.SetIMAP(server, port) $$
  * @param {str} server imap/pop.gmail.com:google|imap/pop.mail.yahoo.com:yahoo|imap/pop.gmx.net:gmx
@@ -55,6 +56,7 @@
 
 
 /** ### SetOnMessage ###
+ * @brief Called when a message is received
  * %cb% a message is received.
  * $$ mail.SetOnMessage(callback) $$
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["obj-{ from:str_eml&comma; to:str_eml&comma; cc:str_eml&comma; subject:str&comma; body:str }"]}
@@ -62,6 +64,7 @@
 
 
 /** ### SetOnStatus ###
+ * @brief Called when a status changed
  * %cb% a status changed.
  * $$ mail.SetOnStatus(callback) $$
  * @param {fnc_json} callback {"pNames":["status"],"pTypes":["str-Receive complete|Failed to receive emails: ...|Failed to send email: ..."]}

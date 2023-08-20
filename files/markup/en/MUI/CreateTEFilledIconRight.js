@@ -111,6 +111,7 @@
 /** @extern SetOnChange */
 
 /** ### SetOnEnter ###
+ * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * $$ tef.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}
@@ -128,6 +129,7 @@
 
 
 /** ### SetOnIconTouch ###
+ * @brief Calls a function when icon is touch
  * Calls a function when icon is touch
  * $$ tef.SetOnIconTouch(callback) $$
  * @param {fnc_json} callback {}

@@ -26,6 +26,7 @@
 
 
 /** ### SetOnTouch ###
+ * @brief Define a callback function for touch events
  * Define a callback function that is called when the user selects an element.
  * $$ btl.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["name","address"],"pTypes":["str","str"]}

@@ -18,18 +18,21 @@
 
 /** ### file
  * @prop
+ * @brief The file url
  * Contains the url of the loaded file.
  * @returns str
  */
 
                     
 /** ### Pause ###
+ * @brief Pause the track
  * Pause the playback if the sound is currently palaying.
  * $$ snd.Pause() $$
  */
 
 
 /** ### Play ###
+ * @brief Play the soundtrack
  * Start the playback of the current loaded audio file.
  * $$ snd.Play(loop, delay, gap) $$
  * @param {bool} loop 

@@ -44,6 +44,7 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 /** @extern GetAbsWidth */
 
 /** ### GetChecked ###
+ * @brief Get current checked state
  * Checks if the checkbox is currently checked or not.
  * $$ chk.GetChecked() $$
  * @returns bin
@@ -98,6 +99,7 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 /** @extern SetBackground */
 
 /** ### SetChecked ###
+ * @brief Changes the ckecked state
  * Changes the current checked state of the CheckBox.
  * $$ chk.SetChecked(checked) $$
  * @param {bin} checked 
@@ -113,6 +115,7 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 /** @extern SetMargins */
 
 /** ### SetOnTouch ###
+ * @brief Called when the CheckBox was touched
  * Define a callback function that is called when the user touches the CheckBox.
  * $$ chk.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["isChecked"],"pTypes":["bin"]}

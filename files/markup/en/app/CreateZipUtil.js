@@ -17,6 +17,7 @@
 
 
 /** ### AddFile ###
+ * @brief Add file to zip
  * Adds a file to the zip relative to the zip root.
  * $$ zip.AddFile(name, file) $$
  * @param {str:zip path} name 
@@ -25,6 +26,7 @@
 
 
 /** ### AddText ###
+ * @brief Add text to the zip
  * Adds some text to the zip relative to the zip root.
  * $$ zip.AddText(name, text) $$
  * @param {str:zip path} name 
@@ -35,12 +37,14 @@
 /** @extern Batch */
 
 /** ### Close ###
+ * @brief Close ZipUtil
  * Closes the zip util.
  * $$ zip.Close() $$
  */
 
 
 /** ### Create ###
+ * @brief Create zip file
  * Creates a new zip file.
  * $$ zip.Create(file) $$
  * @param {str_ptf} file 
@@ -48,6 +52,7 @@
 
 
 /** ### CreateDebugKey ###
+ * @brief Create debug keystore file
  * Creates a Debuk keystore file
  * $$ zip.CreateDebugKey(file) $$
  * @param {str_ptf} file debug.keystore
@@ -55,6 +60,7 @@
 
 
 /** ### CreateKey ###
+ * @brief Create a user keystore file
  * Creates a user keystore file
  * $$ zip.CreateKey(file, password, name, organization) $$
  * @param {str_ptf} file user.keystore
@@ -65,6 +71,7 @@
 
 
 /** ### Extract ###
+ * @brief Extract file from zip
  * Extract a single file from the zip to a gived destination.
  * $$ zip.Extract(name, file) $$
  * @param {str:zip path} name 
@@ -80,6 +87,7 @@
 
 
 /** ### List ###
+ * @brief Get contained file list
  * Returns a list of the files contained in the zip.
  * $$ zip.List(path) $$
  * @param {str_pth} path 
@@ -88,6 +96,7 @@
 
 
 /** ### Open ###
+ * @brief Open existing zip
  * Opens an already existing zip file.
  * $$ zip.Open(file) $$
  * @param {str_ptf} file 
@@ -95,6 +104,7 @@
 
 
 /** ### Sign ###
+ * @brief Sign and check zip against keystore file
  * Signs and checks the zip against the keystore file and returns if it is ok.
  * $$ zip.Sign(fileIn, fileOut, keyStore, password) $$
  * @param {str_ptf} fileIn 
@@ -106,6 +116,7 @@
 
 
 /** ### UpdateManifest ###
+ * @brief Update zip manifest
  * Updates the zip manifest
  * $$ zip.UpdateManifest(fileIn, fileOut, packageName, appName, permissions, options) $$
  * @param {str_ptf} fileIn 

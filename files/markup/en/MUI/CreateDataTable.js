@@ -41,6 +41,7 @@ You can also add a footer into your table if you want controls associated with t
 
 
 /** ### AppendRow ###
+ * @brief Append a row to the table.
  * Add a row at the end of the table. The same as AddRow
  * $$ tbl.AppendRow(row) $$
  * @param {str} row A colon ':' separated entries for the new row.
@@ -48,6 +49,7 @@ You can also add a footer into your table if you want controls associated with t
 
 
 /** ### PrependRow ###
+ * @brief Prepend a row to the table.
  * Add a row at the beginning of the table.
  * $$ tbl.PrependRow(row) $$
  * @param {str} row A colon ':' separated entries for the new row.

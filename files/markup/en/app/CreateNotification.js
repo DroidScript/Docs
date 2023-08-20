@@ -47,6 +47,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 /** ### Listen ###
+ * @brief Listen for any notifications
  * Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.
  * $$ ntf.Listen(options) $$
  * @param {str} options CheckPerms
@@ -61,6 +62,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 /** ### SetLargeImage ###
+ * @brief Set a large image in the notification
  * Set an image which will be displayed bigger than usual.
  * $$ ntf.SetLargeImage(image) $$
  * @param {str_ptf} image 
@@ -68,6 +70,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 /** ### SetLights ###
+ * @brief Activate device notification LEDs
  * Activate the device notification LEDs.
  * $$ ntf.SetLights(color, onMs, offMs) $$
  * @param {str_col} color 
@@ -87,6 +90,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 /** ### SetOnNotify ###
+ * @brief Called when notification intercepted
  * Called when a notification has been intercepted.
  * $$ ntf.SetOnNotify(callback) $$
  * @param {fnc_json} callback {"pNames":["source","title","message","extra","type"],"pTypes":["str","str","str","str","str-Normal"]}
@@ -94,6 +98,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 /** ### SetSmallImage ###
+ * @brief Set a small image icon
  * Set a small image in your notification.
  * $$ ntf.SetSmallImage(image) $$
  * @param {str_ptf} image 

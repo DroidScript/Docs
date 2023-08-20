@@ -28,6 +28,7 @@ Adds a time picker component to the app.
 
 
 /** ### show ###
+ * @brief show
  * Show the date picker the dialog *  * Hide the date picker dialog *  * Sets a callback function to execute when date picker dialog is submitted *  * Sets the format of the date to be passed into the onSelect callback *  * Get the current visibility of the date picker *  * 
  * $$ tpk.show(callback, format) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The selected time of the form `HH:MM:SS`. Change the format by setting the `format` property."]}

@@ -58,6 +58,7 @@ combine the parts only when making CloudStore API calls.
 
 
 /** ### Delete ###
+ * @brief Deletes a file in the cloud.
  * Deletes a file in the cloud.
  * $$ cld.Delete(file, callback) $$
  * @param {str_ptf} file 
@@ -66,6 +67,7 @@ combine the parts only when making CloudStore API calls.
 
 
 /** ### List ###
+ * @brief Lists files of the cloud.
  * Lists files of the cloud.
  * $$ cld.List(filter, callback) $$
  * @param {str} filter 
@@ -74,6 +76,7 @@ combine the parts only when making CloudStore API calls.
 
 
 /** ### Load ###
+ * @brief Loads data from the cloud.
  * Loads data from the cloud.
  * $$ cld.Load(file, callback, options) $$
  * @param {str_ptf} file 
@@ -83,6 +86,7 @@ combine the parts only when making CloudStore API calls.
 
 
 /** ### Merge ###
+ * @brief Merges data in the cloud.
  * Merges an object with an already existing in the cloud.
  * $$ cld.Merge(file, data, callback) $$
  * @param {str_ptf} file 
@@ -92,6 +96,7 @@ combine the parts only when making CloudStore API calls.
 
 
 /** ### Save ###
+ * @brief Saves data in the cloud.
  * Saves data in the cloud.
  * $$ cld.Save(file, data, callback, options) $$
  * @param {str_ptf} file 

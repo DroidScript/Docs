@@ -18,6 +18,7 @@
 /** @extern Batch */
 
 /** ### GetAlbumArt ###
+ * @brief Load the album art to an image
  * Loads the album image to an existing image:dso-CreateImage.
  * $$ med.GetAlbumArt(image, id, options) $$
  * @param {dso} image CreateImage
@@ -28,6 +29,7 @@
 
 
 /** ### GetSongArt ###
+ * @brief Load the song art to an image
  * Loads the song image to an existing image:dso-CreateImage.
  * $$ med.GetSongArt(image, id, options) $$
  * @param {dso} image CreateImage
@@ -72,6 +74,7 @@
 
 
 /** ### SetOnAlbumsResult ###
+ * @brief Called when album query has finished
  * %cb% an album query has finished.
  * $$ med.SetOnAlbumsResult(callback) $$
  * @param {fnc_json} callback {"pNames":["result"],"pTypes":["lst-[{ album:str&comma; id:num_int&comma; albumArt:str_pth&comma; artist:str&comma; numSongs:num_int&comma; firstYear:str&comma; lastYear:str }]"]}
@@ -79,6 +82,7 @@
 
 
 /** ### SetOnArtistsResult ###
+ * @brief Called when artist query has finished
  * %cb% a artist query has finished.
  * $$ med.SetOnArtistsResult(callback) $$
  * @param {fnc_json} callback {"pNames":["result"],"pTypes":["lst-[{ id:num_int&comma; artist:str&comma; numAlbums:num_int&comma; numTracks:num_int }]"]}
@@ -86,6 +90,7 @@
 
 
 /** ### SetOnMediaResult ###
+ * @brief Called when media query has finished
  * %cb% a media query has finished.
  * $$ med.SetOnMediaResult(callback) $$
  * @param {fnc_json} callback {"pNames":["result"],"pTypes":["lst-[{ title:str&comma; id:num_int&comma; duration:num_mls&comma; size:num_byt&comma; uri:str_uri&comma; album:str&comma; albumID:num_int&comma; artist:str&comma; artistId:num_int }]"]}

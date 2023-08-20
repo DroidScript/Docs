@@ -77,6 +77,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### DrawImage ###
+ * @brief Draw image to canvas
  * Draws an image to the canvas
  * $$ glv.DrawImage(image, x, y, w, h, angle) $$
  * @param {obj} image glv Image
@@ -89,6 +90,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### DrawSprite ###
+ * @brief Draw part of a sprite to the canvas
  * Draws a part of an image to the canvas.
  * $$ glv.DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) $$
  * @param {obj} sheet GLV Image
@@ -111,6 +113,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 /** @extern GetAbsWidth */
 
 /** ### GetContext ###
+ * @brief returns the glv context
  * Returns the current FastCanvas context
  * $$ glv.GetContext() $$
  * @returns obj-ctx
@@ -118,6 +121,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.capture ###
+ * @brief Captures the canvas to a png image
  * Captures the current cached context to a png image. * The path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”
  * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback, errorCallback) $$
  * @param {num_pxl} x 
@@ -141,6 +145,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.drawImage ###
+ * @brief Draws part of a sprite to the context
  * Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.
  * $$ glv.GetContext.ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) $$
  * @param {obj} image glv Image
@@ -156,6 +161,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.render ###
+ * @brief render draw commands
  * render the draw commands to the context
  * $$ glv.GetContext.ctx.render() $$
  */
@@ -168,12 +174,14 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.restore ###
+ * @brief Restore saved context
  * Restore a previously saved context state
  * $$ glv.GetContext.ctx.restore() $$
  */
 
 
 /** ### GetContext.ctx.rotate ###
+ * @brief Rotates the transformation matrix
  * Rotates the current applied transformation
  * $$ glv.GetContext.ctx.rotate(angle) $$
  * @param {num_rad} angle 
@@ -181,12 +189,14 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.save ###
+ * @brief Saves current context
  * Saves the current context state
  * $$ glv.GetContext.ctx.save() $$
  */
 
 
 /** ### GetContext.ctx.scale ###
+ * @brief Scale the transformation matrix
  * Scales the current applied transformation matrix
  * $$ glv.GetContext.ctx.scale(a, d) $$
  * @param {num_frc} a 
@@ -195,6 +205,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.setTransform ###
+ * @brief Set current matrix
  * Set the current transformation matrix
  * $$ glv.GetContext.ctx.setTransform(a, b, c, d, tx, ty) $$
  * @param {num} a 
@@ -207,6 +218,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.transform ###
+ * @brief Transform the current matrix
  * Apply an other transformation matrix to the current one
  * $$ glv.GetContext.ctx.transform(a, b, c, d, tx, ty) $$
  * @param {num} a 
@@ -219,6 +231,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 /** ### GetContext.ctx.translate ###
+ * @brief 'Move' the transformation matrix
  * 'Moves' the current applied transformation matrix
  * $$ glv.GetContext.ctx.translate(tx, ty) $$
  * @param {num_pxl} tx 
@@ -267,6 +280,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 /** @extern Method */
 
 /** ### Render ###
+ * @brief Render draw commands
  * Render all draw commands to the canvas
  * $$ glv.Render() $$
  */

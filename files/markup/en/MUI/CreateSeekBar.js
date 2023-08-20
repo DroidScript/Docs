@@ -34,6 +34,7 @@
 
 
 /** ### SetOnTouch ###
+ * @brief Calls a function when the seekbar is touch
  * Calls a function when the seekbar is touch. Returns the value to the callback.
  * $$ skb.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["value"],"pTypes":["num"]}

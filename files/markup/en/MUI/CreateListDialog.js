@@ -20,6 +20,7 @@
 
 
 /** ### SetOnSelect ###
+ * @brief Calls a function selects an item in the list
  * Calls a function when a user selects an item in the list
  * $$ lsd.SetOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str","num_int"]}

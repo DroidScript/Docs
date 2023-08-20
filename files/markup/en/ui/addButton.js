@@ -33,6 +33,7 @@ Adds a button control into your app.
 
 
 /** ### setOnFileSelect ###
+ * @brief setOnFileSelect
  * Sets a callback on file select *  * 
  * $$ btn.setOnFileSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["files "],"pTypes":["lst-An array of file objects selected."]}
@@ -40,6 +41,7 @@ Adds a button control into your app.
 
 
 /** ### setToolTip ###
+ * @brief setToolTip
  * Sets a tooltip when the button is hovered *  * 
  * $$ btn.setToolTip(title, pos) $$
  * @param {str} title The text of the tooltip
@@ -48,6 +50,7 @@ Adds a button control into your app.
 
 
 /** ### setTextShadow ###
+ * @brief setTextShadow
  * Sets a text-shadow to the button text *  * 
  * $$ btn.setTextShadow(radius, dx, dy, color) $$
  * @param {num} radius The radius in pixels
@@ -58,6 +61,7 @@ Adds a button control into your app.
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding of the button *  * 
  * $$ btn.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left The left padding in pixel.
@@ -69,6 +73,7 @@ Adds a button control into your app.
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the button *  * 
  * $$ btn.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
@@ -80,6 +85,7 @@ Adds a button control into your app.
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds a callback handler when the component is touch *  * 
  * $$ btn.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
@@ -87,6 +93,7 @@ Adds a button control into your app.
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ btn.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -94,6 +101,7 @@ Adds a button control into your app.
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ btn.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -102,6 +110,7 @@ Adds a button control into your app.
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ btn.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -110,30 +119,35 @@ Adds a button control into your app.
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ btn.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ btn.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ btn.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ btn.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ btn.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -142,6 +156,7 @@ Adds a button control into your app.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ btn.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -150,6 +165,7 @@ Adds a button control into your app.
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ btn.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -161,6 +177,7 @@ Adds a button control into your app.
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ btn.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -170,6 +187,7 @@ Adds a button control into your app.
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ btn.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -179,6 +197,7 @@ Adds a button control into your app.
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ btn.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -186,6 +205,7 @@ Adds a button control into your app.
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ btn.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

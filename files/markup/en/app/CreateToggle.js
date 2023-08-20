@@ -46,6 +46,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern GetAbsWidth */
 
 /** ### GetChecked ###
+ * @brief Checks if toggle is activated
  * Returns whether the toggle is currently activated
  * $$ tgl.GetChecked() $$
  * @returns bin
@@ -100,6 +101,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern SetBackground */
 
 /** ### SetChecked ###
+ * @brief Change the checked state
  * Change the current checked state of the toggle.
  * $$ tgl.SetChecked(checked) $$
  * @param {bin} checked 
@@ -115,6 +117,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern SetMargins */
 
 /** ### SetOnTouch ###
+ * @brief Called when user touched the control
  * Called when the control has been clicked by the user.
  * $$ tgl.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["value"],"pTypes":["bin"]}
@@ -130,6 +133,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern SetSize */
 
 /** ### SetStyle ###
+ * @brief Customize the button looks
  * Costomize the look of the toggle.
  * $$ tgl.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
  * @param {str_col} color1 

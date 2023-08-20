@@ -35,6 +35,7 @@
 
 
 /** ### SetOnMessage ###
+ * @brief Called when user received a SMS
  * %cb% the user received a SMS
  * $$ sms.SetOnMessage(callback) $$
  * @param {fnc_json} callback {"pNames":["message"],"pTypes":["str"]}
@@ -42,6 +43,7 @@
 
 
 /** ### SetOnStatus ###
+ * @brief Called when a status has changed
  * %cb% a status has changed.
  * $$ sms.SetOnStatus(callback) $$
  * @param {fnc_json} callback {"pNames":["status"],"pTypes":["str"]}

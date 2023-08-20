@@ -124,6 +124,7 @@ You can customize the visual look in many ways by either using one of the existi
 /** @extern SetOnTouch */
 
 /** ### SetOnLongTouch ###
+ * @brief Called when the button was long pressed
  * %cb% the button has been long pressed.
  * $$ btn.SetOnLongTouch(callback) $$
  * @param {fnc_json} callback {}
@@ -139,6 +140,7 @@ You can customize the visual look in many ways by either using one of the existi
 /** @extern SetSize */
 
 /** ### SetStyle ###
+ * @brief Customize the button looks
  * Customize the look of the button.
  * $$ btn.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
  * @param {str_col} color1 

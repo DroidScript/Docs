@@ -43,6 +43,7 @@ The callback data depends on the type:
 
 
 /** ### SetOnChange ###
+ * @brief Called when a phone state has changed
  * %cb% a phone state has changed.
  * $$ pst.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["type","data"],"pTypes":["str-CellLocation|DataConnection|DataActivity|CallState|ServiceState|SignalStrength|CallForwarding|MessageWaiting","all"]}

@@ -44,6 +44,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern GetAbsWidth */
 
 /** ### GetChecked ###
+ * @brief Checks if switch is activated
  * Returns whether the switch is currently activated
  * $$ swi.GetChecked() $$
  * @returns bin
@@ -98,6 +99,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern SetBackground */
 
 /** ### SetChecked ###
+ * @brief Change the checked state
  * Change the current checked state of the switch.
  * $$ swi.SetChecked(checked) $$
  * @param {bin} checked 
@@ -113,6 +115,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern SetMargins */
 
 /** ### SetOnTouch ###
+ * @brief Called when user touched the control
  * Called when the control has been clicked by the user.
  * $$ swi.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["value"],"pTypes":["bin"]}
@@ -128,6 +131,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern SetSize */
 
 /** ### SetStyle ###
+ * @brief Customize the button looks
  * Customize the look of the toggle.
  * $$ swi.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
  * @param {str_col} color1 

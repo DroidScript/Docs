@@ -45,6 +45,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### PlayMidiTune ###
+ * @brief Play a sequence of notes
  * Play a comma-separated sequence of “midi_note&colon;duration” pairs.
  * $$ syn.PlayMidiTune(tune) $$
  * @param {str_com} tune note1&colon;duration1&comma;note2&colon;duration2&comma;...
@@ -52,6 +53,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### PlayNote ###
+ * @brief Play a single note
  * Plays a single note
  * $$ syn.PlayNote(note) $$
  * @param {num_int} note 0..125
@@ -67,6 +69,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetDelay ###
+ * @brief Change delay effect difference
  * Change the delay effect difference
  * $$ syn.SetDelay(milliseconds) $$
  * @param {num_mls} milliseconds 
@@ -81,6 +84,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetFeedback ###
+ * @brief Adds a delay feedback effect
  * Adds a feedback effect when delay is enabled
  * $$ syn.SetFeedback(feedback) $$
  * @param {num_frc} feedback 
@@ -88,6 +92,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetFrequency ###
+ * @brief Set current frequency
  * Set the current played frequency
  * $$ syn.SetFrequency(frequency) $$
  * @param {num} frequency 
@@ -95,6 +100,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetNoteLength ###
+ * @brief Set whole note length
  * Set the length of a whole note in seconds. Defaults to 2.56
  * $$ syn.SetNoteLength(duration) $$
  * @param {num_sec} duration 
@@ -102,6 +108,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetPhaser ###
+ * @brief Initializes phaser
  * Initializes the phaser effect
  * $$ syn.SetPhaser(drywet, rate, range, feedback) $$
  * @param {num_frc} drywet 
@@ -112,6 +119,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetPhaserDryWet ###
+ * @brief Control unprocessed/delayed signals ratio
  * Control producing of unprocessed (0) and delayed (1) signals (whatever this means)
  * $$ syn.SetPhaserDryWet(drywet) $$
  * @param {num_frc} drywet 
@@ -157,6 +165,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcaAttack ###
+ * @brief Set a time of maximum volume
  * Set a time where the volume should reach a maximum
  * $$ syn.SetVcaAttack(attack) $$
  * @param {num_mls} attack 
@@ -164,6 +173,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcaDecay ###
+ * @brief Controls time when volume is lowered to sustain
  * Controls time in which the volume is lowered to the sustain value
  * $$ syn.SetVcaDecay(decay) $$
  * @param {num_mls} decay 
@@ -178,6 +188,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcaRelease ###
+ * @brief set a time of minimum volume
  * Set a time where the volume should reach a minimum
  * $$ syn.SetVcaRelease(release) $$
  * @param {num:mls} release 
@@ -205,6 +216,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcfAttack ###
+ * @brief Set a time of maximum frequencies
  * Set a time where the frequencies should reach a maximum
  * $$ syn.SetVcfAttack(attack) $$
  * @param {num_mls} attack 
@@ -219,6 +231,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcfDecay ###
+ * @brief Controls time when frequency is lowered to sustain
  * Controls time in which the frequency is lowered to the sustain value.
  * $$ syn.SetVcfDecay(decay) $$
  * @param {num_mls} decay 
@@ -226,6 +239,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcfDepth ###
+ * @brief Set filter strength
  * Set the strength of the Vcf filter
  * $$ syn.SetVcfDepth(depth) $$
  * @param {num_frc} depth 
@@ -240,6 +254,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVcfRelease ###
+ * @brief set a time of minimum frequency
  * Set a time where the volume should reach a minimum
  * $$ syn.SetVcfRelease(release) $$
  * @param {num_mls} release 
@@ -261,6 +276,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 
 /** ### SetVolume ###
+ * @brief Set master volume
  * Set the overall synthesizer volume
  * $$ syn.SetVolume(left, right) $$
  * @param {num_frc} left 

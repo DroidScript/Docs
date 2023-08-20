@@ -73,6 +73,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern Batch */
 
 /** ### Clear ###
+ * @brief Clears the image content
  * Clears everything on the image except the background.
  * $$ img.Clear() $$
  */
@@ -102,6 +103,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### DrawFrame ###
+ * @brief Draw gif frame on a specific time
  * Draws the frame on a given time of a loaded gif file.
  * $$ img.DrawFrame(ms) $$
  * @param {num_mls} ms 
@@ -122,6 +124,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### DrawImageMtx ###
+ * @brief Draws an image with a 2d transformation matrix
  * Draws an image with a 2d [transformation matrix](https://docs.rainmeter.net/tips/transformation-matrix-guide).
  * $$ img.DrawImageMtx(image, matrix) $$
  * @param {dso} image CreateImage
@@ -158,6 +161,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### DrawSamples ###
+ * @brief Draws a vertically centered sample graph
  * Draws a vertically centered graph in relation to the specified range in both direction. * The sample value _0_ would be vertically centered, _-range_ at the top and _range_ at the bottom. * The sample x positions are evenly distributed over the whole image width.
  * $$ img.DrawSamples(data, range) $$
  * @param {lst} data [ data:num_int ]
@@ -175,6 +179,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### Flatten ###
+ * @brief Applies modifications to the image data
  * Applies certain modifications to the image data, such as translate, scale, skew or alpha.
  * $$ img.Flatten() $$
  */
@@ -200,6 +205,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern GetParent */
 
 /** ### GetPixelColor ###
+ * @brief Returns color values of a pixel
  * Returns the [r,g,b] values from a pixel on the image.
  * $$ img.GetPixelColor(x, y) $$
  * @param {num} x 
@@ -209,6 +215,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### GetPixelData ###
+ * @brief Returns base64 encoded image data
  * Returns the raw, png or jpg image data encoded as base64.
  * $$ img.GetPixelData(format, left, top, width, height) $$
  * @param {str} format rawbase64|pngbase64|jpgbase64
@@ -246,6 +253,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern IsVisible */
 
 /** ### MeasureText ###
+ * @brief Measures the size of a given text
  * Measure width and height of a given text with the current image settings.
  * $$ img.MeasureText(txt) $$
  * @param {str} txt 
@@ -256,6 +264,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern Method */
 
 /** ### Move ###
+ * @brief Moves the image content
  * Moves the content of the image to the specified position.
  * $$ img.Move(x, y) $$
  * @param {num} x 
@@ -264,6 +273,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### Reset ###
+ * @brief Reset all transformations
  * Resets all transformations.
  * $$ img.Reset() $$
  */
@@ -295,6 +305,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetAlpha ###
+ * @brief Change the alpha value
  * Change the image alpha to a value between 0 and 255, where 0 is full transparent.
  * $$ img.SetAlpha(alpha) $$
  * @param {num_dhx} alpha 
@@ -302,6 +313,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetAutoUpdate ###
+ * @brief En/Disables automatic view updates
  * En/disable updating the view after every drawing or transformation method.
  * $$ img.SetAutoUpdate(onoff) $$
  * @param {bin} onoff 
@@ -319,6 +331,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern SetBackground */
 
 /** ### SetColor ###
+ * @brief Fills the image with a color
  * Fills the image with a specific color.
  * $$ img.SetColor(color) $$
  * @param {str_col} color 
@@ -334,6 +347,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern SetFontFile */
 
 /** ### SetImage ###
+ * @brief Change the content to an other image
  * Set the content to an image:dso-"CreateImage" control or specify a path to an image which will then be loaded.
  * $$ img.SetImage(image, width, height, options) $$
  * @param {str_pth||dso} image Image
@@ -344,6 +358,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetLineWidth ###
+ * @brief Change the stroke width
  * Set the stroke width to a number in pixels.
  * $$ img.SetLineWidth(width) $$
  * @param {num_pxl} width 
@@ -353,6 +368,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern SetMargins */
 
 /** ### SetMaxRate ###
+ * @brief Set a minimum OnTouchMove call timeout
  * Set a minimum timeout between two touch 'move' actions fired.
  * $$ img.SetMaxRate(milliseconds) $$
  * @param {num_mls} milliseconds 
@@ -367,6 +383,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetOnLoad ###
+ * @brief Called when image has loaded asynchronously
  * %cb% the image has loaded in “async” mode.
  * $$ img.SetOnLoad(callback) $$
  * @param {fnc_json} callback {"pNames":["img"],"pTypes":["dso-CreateImage"]}
@@ -386,6 +403,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern SetPadding */
 
 /** ### SetPaintColor ###
+ * @brief Change the paint color
  * Change the current paint color for drawing methods.
  * $$ img.SetPaintColor(color) $$
  * @param {str_col} color 
@@ -393,6 +411,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetPaintStyle ###
+ * @brief Change the paint style
  * Change the current paint style for drawing methods.
  * $$ img.SetPaintStyle(style) $$
  * @param {str} style Fill|Line
@@ -400,6 +419,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetPixelData ###
+ * @brief Set base64 encoded pixel data
  * Set the image to base64 encoded pixel data.
  * $$ img.SetPixelData(data, width, height, options) $$
  * @param {str_b64} data &lt;rawbase64&gt;|data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;,data&colon;image/png;base64&comma;&lt;pngbase64&gt;
@@ -410,6 +430,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### SetPixelMode ###
+ * @brief Change the pixel mode for drawing methods
  * En-/Disable pixel mode for the image so that all drawing methods use either control relative or pixel values.
  * $$ img.SetPixelMode(onoff) $$
  * @param {bin} onoff 
@@ -423,6 +444,7 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern SetSize */
 
 /** ### SetTextSize ###
+ * @brief Change the drawn text size
  * Change the size of drawn text.
  * $$ img.SetTextSize(size) $$
  * @param {num} size 
@@ -444,6 +466,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### Transform ###
+ * @brief Applies a transformation matrix to the content
  * Transform the content with a 2d transformation matrix.
  * $$ img.Transform(matrix) $$
  * @param {lst} matrix 

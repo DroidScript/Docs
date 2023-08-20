@@ -53,6 +53,7 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern GetHeight */
 
 /** ### GetHtml ###
+ * @brief Return html formatted text
  * Returns the html formatted content.
  * $$ txt.GetHtml() $$
  * @returns str_htm
@@ -62,6 +63,7 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern GetLeft */
 
 /** ### GetLineCount ###
+ * @brief Get amount of text lines
  * Returns the amount of lines in the text even with html formatting
  * $$ txt.GetLineCount() $$
  * @returns num_int
@@ -69,6 +71,7 @@ You can also set a background image/pattern or background gradient for the Text 
 
 
 /** ### GetLineStart ###
+ * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ txt.GetLineStart(line) $$
  * @param {num_int} line 
@@ -77,6 +80,7 @@ You can also set a background image/pattern or background gradient for the Text 
 
 
 /** ### GetLineTop ###
+ * @brief Get line top position on screen
  * Returns the top position of a given line on the screen.
  * $$ txt.GetLineTop(line) $$
  * @param {num_int} line 
@@ -85,6 +89,7 @@ You can also set a background image/pattern or background gradient for the Text 
 
 
 /** ### GetMaxLines ###
+ * @brief Get amount of lines fitting in the control
  * Returns the maximum amount of lines the control can hold with the current control and font height
  * $$ txt.GetMaxLines() $$
  * @returns num_int
@@ -123,6 +128,7 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern IsVisible */
 
 /** ### Log ###
+ * @brief Append line to the text
  * Append a string to the text separated with a line break
  * $$ txt.Log(message, options) $$
  * @param {str} message 
@@ -155,6 +161,7 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern SetHtml */
 
 /** ### SetLog ###
+ * @brief Set maximum log length
  * Define a maximum amount of log lines
  * $$ txt.SetLog(maxLines) $$
  * @param {num_int} maxLines 

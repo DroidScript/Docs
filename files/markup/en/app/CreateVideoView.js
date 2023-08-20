@@ -42,6 +42,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern GetAbsWidth */
 
 /** ### GetDuration ###
+ * @brief Get video duration in seconds
  * Retunrs the video duration in seconds.
  * $$ vid.GetDuration() $$
  * @returns num_flt
@@ -78,6 +79,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern IsOverlap */
 
 /** ### IsPlaying ###
+ * @brief Checks if the view is currently playing
  * Returns whether the VideoView is currently playing a video
  * $$ vid.IsPlaying() $$
  * @returns bin
@@ -85,6 +87,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 /** ### IsReady ###
+ * @brief Check if the video is ready for playback
  * Returns whether the video is ready for playing.
  * $$ vid.IsReady() $$
  * @returns bin
@@ -96,18 +99,21 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern Method */
 
 /** ### Pause ###
+ * @brief Pause the video
  * Pauses the video.
  * $$ vid.Pause() $$
  */
 
 
 /** ### Play ###
+ * @brief Play video
  * Plays the video.
  * $$ vid.Play() $$
  */
 
 
 /** ### SeekTo ###
+ * @brief Seek to a given playback time
  * Seek the video to given time in seconds.
  * $$ vid.SeekTo(seconds) $$
  * @param {num_int} seconds 
@@ -131,6 +137,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern SetEnabled */
 
 /** ### SetFile ###
+ * @brief Set video source
  * Set the video file path or url
  * $$ vid.SetFile(file) $$
  * @param {str_pth||str_url} file http(s)://url
@@ -140,6 +147,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern SetMargins */
 
 /** ### SetOnComplete ###
+ * @brief Called when playback finished
  * %cb% the playback has finished playing
  * $$ vid.SetOnComplete(callback) $$
  * @param {fnc_json} callback {}
@@ -147,6 +155,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 /** ### SetOnError ###
+ * @brief Called when an error occured
  * %cb% an error occured.
  * $$ vid.SetOnError(callback) $$
  * @param {fnc_json} callback {}
@@ -154,6 +163,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 /** ### SetOnReady ###
+ * @brief Called when video is ready for playback
  * %cb% the video is ready for playback.
  * $$ vid.SetOnReady(callback) $$
  * @param {fnc_json} callback {}
@@ -161,6 +171,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 /** ### SetOnSubtitle ###
+ * @brief Called when subtitle text changed
  * %cb% the subtitle text changed.
  * $$ vid.SetOnSubtitle(callback) $$
  * @param {fnc_json} callback {}
@@ -176,6 +187,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern SetSize */
 
 /** ### SetSubtitles ###
+ * @brief Set a subtitle source
  * Set a subtitle file where to retreive the video subtitles from.
  * $$ vid.SetSubtitles(file) $$
  * @param {str_ptf} file 
@@ -185,6 +197,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern SetVisibility */
 
 /** ### SetVolume ###
+ * @brief Change the playback volume
  * Change the video player volume
  * $$ vid.SetVolume(left, right) $$
  * @param {num_prc} left 
@@ -195,6 +208,7 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern Show */
 
 /** ### Stop ###
+ * @brief Stop video playback.
  * Stop the video playback.
  * $$ vid.Stop() $$
  */

@@ -24,6 +24,7 @@
 /** @extern Batch */
 
 /** ### Err ###
+ * @brief Read from stderr
  * Read data from stderr
  * $$ sys.Err(maxLines, options) $$
  * @param {num_int} maxLines 
@@ -39,6 +40,7 @@
 
 
 /** ### In ###
+ * @brief Read from stdin
  * Read data from stdin
  * $$ sys.In(maxLines, options) $$
  * @param {num_int} maxLines 
@@ -49,6 +51,7 @@
 /** @extern Method */
 
 /** ### Out ###
+ * @brief Write to stdout
  * Writes a command to stdout. A trailing linebreak will execute it.
  * $$ sys.Out(command) $$
  * @param {str} command 
@@ -56,6 +59,7 @@
 
 
 /** ### ReadFileAsByte ###
+ * @brief Read first byte of a file
  * Returns the first byte of a file.
  * $$ sys.ReadFileAsByte(file) $$
  * @param {str_ptf} file 
@@ -64,6 +68,7 @@
 
 
 /** ### SetOnError ###
+ * @brief called when stderr changed
  * %cb% something was written to stderr
  * $$ sys.SetOnError(callback) $$
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["str"]}
@@ -71,6 +76,7 @@
 
 
 /** ### SetOnInput ###
+ * @brief called when stdout changed
  * %cb% something was written to stdout
  * $$ sys.SetOnInput(callback) $$
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["str"]}
@@ -78,6 +84,7 @@
 
 
 /** ### WriteToFile ###
+ * @brief Write binary data to file
  * Write a binary string to a file.
  * $$ sys.WriteToFile(file, data) $$
  * @param {str_ptf} file 

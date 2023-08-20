@@ -33,6 +33,7 @@ Adds an image into your layout.
 
 
 /** ### setOnLoad ###
+ * @brief setOnLoad
  * Sets a callback function on load event *  * 
  * $$ img.setOnLoad(callback) $$
  * @param {} callback 
@@ -40,6 +41,7 @@ Adds an image into your layout.
 
 
 /** ### enableContextMenu ###
+ * @brief enableContextMenu
  * Enable or disbale the context menu or the right click menus *  * 
  * $$ img.enableContextMenu(value) $$
  * @param {bin} value Value. Can be `true` `false`
@@ -47,6 +49,7 @@ Adds an image into your layout.
 
 
 /** ### setImage ###
+ * @brief setImage
  * Update the image file *  * 
  * $$ img.setImage(file) $$
  * @param {str} file The path to the image file.
@@ -54,6 +57,7 @@ Adds an image into your layout.
 
 
 /** ### getPixelColor ###
+ * @brief getPixelColor
  * Get the pixel color of a single pixel in the image *  * 
  * $$ img.getPixelColor(x, y) $$
  * @param {num} x The x-coordinate of the pixel from the left.
@@ -63,6 +67,7 @@ Adds an image into your layout.
 
 
 /** ### getPixelData ###
+ * @brief getPixelData
  * Returns the pixel data of the image *  * 
  * $$ img.getPixelData() $$
  * @returns str
@@ -70,6 +75,7 @@ Adds an image into your layout.
 
 
 /** ### drawLine ###
+ * @brief drawLine
  * Draws a line between two points in the canvas *  * 
  * $$ img.drawLine(x1, y1, x2, y2, strokeColor, strokeWidth) $$
  * @param {num} x1 The x-coordinate of the starting point in pixels.
@@ -82,6 +88,7 @@ Adds an image into your layout.
 
 
 /** ### drawCircle ###
+ * @brief drawCircle
  * Draws a circle in the canvas *  * 
  * $$ img.drawCircle(x, y, radius, fillColor, strokeColor, strokeWidth) $$
  * @param {num} x The x-coordinate of the center of the circle in pixels.
@@ -94,6 +101,7 @@ Adds an image into your layout.
 
 
 /** ### drawSquare ###
+ * @brief drawSquare
  * Draws a square into the canvas *  * 
  * $$ img.drawSquare(x, y, width, fillColor, strokeColor, strokeWidth) $$
  * @param {num} x The position from the left of the top-left corner of the square in pixels.
@@ -106,6 +114,7 @@ Adds an image into your layout.
 
 
 /** ### drawRectangle ###
+ * @brief drawRectangle
  * Draws a rectangle into the canvas *  * 
  * $$ img.drawRectangle(x1, y1, width, height, fillColor, strokeColor, strokeWidth) $$
  * @param {num} x1 The distance from the left of the top-left corner of the rectangle in pixels.
@@ -119,6 +128,7 @@ Adds an image into your layout.
 
 
 /** ### drawArc ###
+ * @brief drawArc
  * Draws an arc in the canvas *  * 
  * $$ img.drawArc(x, y, radius, start, end, fillColor, strokeColor, strokeWidth) $$
  * @param {num} x The x-coordinate of the center of the arc in pixels.
@@ -133,6 +143,7 @@ Adds an image into your layout.
 
 
 /** ### drawImage ###
+ * @brief drawImage
  * Draws an image to the canvas *  * 
  * $$ img.drawImage(img, x, y, width, height) $$
  * @param {str} img Path to image file.
@@ -144,12 +155,14 @@ Adds an image into your layout.
 
 
 /** ### clear ###
+ * @brief clear
  * Clears the drawings by filling the whole canvas with white background color *  * 
  * $$ img.clear() $$
  */
 
 
 /** ### drawPolyline ###
+ * @brief drawPolyline
  * Draws a polyline on the canvas by passing an array of points *  * 
  * $$ img.drawPolyline(points, strokeColor, strokeWidth) $$
  * @param {lst} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
@@ -159,6 +172,7 @@ Adds an image into your layout.
 
 
 /** ### drawPolygon ###
+ * @brief drawPolygon
  * Draws a polygon on the canvas by passing an array of points *  * 
  * $$ img.drawPolygon(points, fillColor, strokeColor, strokeWidth) $$
  * @param {lst} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
@@ -169,6 +183,7 @@ Adds an image into your layout.
 
 
 /** ### drawPoint ###
+ * @brief drawPoint
  * Draws a single pixel point in a specified coordinate *  * 
  * $$ img.drawPoint(x, y, color) $$
  * @param {num} x The x-coordinate in pixels.
@@ -178,6 +193,7 @@ Adds an image into your layout.
 
 
 /** ### setOnTouchMove ###
+ * @brief setOnTouchMove
  * Sets a callback function when the a mouse move event is triggered *  * 
  * $$ img.setOnTouchMove(callback) $$
  * @param {} callback 
@@ -185,6 +201,7 @@ Adds an image into your layout.
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds a callback handler when the component is touch *  * 
  * $$ img.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
@@ -192,6 +209,7 @@ Adds an image into your layout.
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ img.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -199,6 +217,7 @@ Adds an image into your layout.
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ img.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -207,6 +226,7 @@ Adds an image into your layout.
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ img.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -215,30 +235,35 @@ Adds an image into your layout.
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ img.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ img.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ img.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ img.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ img.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -247,6 +272,7 @@ Adds an image into your layout.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ img.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -255,6 +281,7 @@ Adds an image into your layout.
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ img.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -266,6 +293,7 @@ Adds an image into your layout.
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ img.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -277,6 +305,7 @@ Adds an image into your layout.
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ img.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -286,6 +315,7 @@ Adds an image into your layout.
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ img.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -295,6 +325,7 @@ Adds an image into your layout.
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the component *  * 
  * $$ img.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
@@ -306,6 +337,7 @@ Adds an image into your layout.
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ img.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -313,6 +345,7 @@ Adds an image into your layout.
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ img.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

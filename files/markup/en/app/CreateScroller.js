@@ -27,6 +27,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 
 /** ### AddChild ###
+ * @brief Add a layout control
  * Add a layout to the scroller.
  * $$ scr.AddChild(layout) $$
  * @param {dso} layout CreateLayout
@@ -42,6 +43,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 /** @extern ClearFocus */
 
 /** ### DestroyChild ###
+ * @brief Devil rises and takes a child with him to hell
  * Removes and releases a child object.
  * $$ scr.DestroyChild(layout) $$
  * @param {dso} layout CreateLayout
@@ -63,6 +65,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 /** @extern GetPosition */
 
 /** ### GetScrollX ###
+ * @brief Get horizontal scroll bar position
  * Returns the horizontal scroll bar position.
  * $$ scr.GetScrollX() $$
  * @returns num_frc
@@ -70,6 +73,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 
 /** ### GetScrollY ###
+ * @brief Get vertical scroll bar position
  * Returns the vertical scroll bar position.
  * $$ scr.GetScrollY() $$
  * @returns num_frc
@@ -102,6 +106,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 /** @extern Method */
 
 /** ### RemoveChild ###
+ * @brief Remove a scroller layout
  * Removes a scroller layout from the scroller.
  * $$ scr.RemoveChild(child) $$
  * @param {dso} child 
@@ -109,6 +114,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 
 /** ### ScrollBy ###
+ * @brief Scroll relative to the current position
  * Scrolls relatively to the current scroll bar positions.
  * $$ scr.ScrollBy(x, y) $$
  * @param {num_frc} x 
@@ -117,6 +123,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 
 /** ### ScrollTo ###
+ * @brief Scrolls to a given position
  * Scrolls to a given fixed position.
  * $$ scr.ScrollTo(x, y) $$
  * @param {num_frc} x 

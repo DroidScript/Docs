@@ -28,18 +28,21 @@ Shows a progress dialog component into your app.
 
 
 /** ### show ###
+ * @brief show
  * Show the progress dialog component *  * 
  * $$ prd.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hides the dialog component *  * 
  * $$ prd.hide() $$
  */
 
 
 /** ### setOnClose ###
+ * @brief setOnClose
  * Adds a callback handler method on close event *  * 
  * $$ prd.setOnClose(callback) $$
  * @param {} callback 

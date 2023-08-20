@@ -44,6 +44,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern ClearFocus */
 
 /** ### ClearHistory ###
+ * @brief Clear undo/redo history
  * Clears the undo/redo history.
  * $$ edt.ClearHistory() $$
  */
@@ -56,6 +57,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern GetAbsWidth */
 
 /** ### GetCursorLine ###
+ * @brief Get the current cursor line index
  * Returns the current line index where the cursor is located.
  * $$ edt.GetCursorLine() $$
  * @returns num_int
@@ -63,6 +65,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetCursorPos ###
+ * @brief Get the cursor position in the text
  * Returns the index of the character where the cursor is currently located.
  * $$ edt.GetCursorPos() $$
  * @returns num_int
@@ -72,6 +75,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern GetHeight */
 
 /** ### GetHtml ###
+ * @brief Return html formatted text
  * Returns the html formatted content.
  * $$ edt.GetHtml() $$
  * @returns str_htm
@@ -81,6 +85,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern GetLeft */
 
 /** ### GetLineCount ###
+ * @brief Get amount of text lines
  * Returns the amount of lines in the text even with html formatting
  * $$ edt.GetLineCount() $$
  * @returns num_int
@@ -88,6 +93,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetLineStart ###
+ * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ edt.GetLineStart(line) $$
  * @param {num_int} line 
@@ -96,6 +102,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetLineTop ###
+ * @brief Get line top position on screen
  * Returns the top position of a given line on the screen.
  * $$ edt.GetLineTop(line) $$
  * @param {num_int} line 
@@ -104,6 +111,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetMaxLines ###
+ * @brief Get amount of lines fitting in the control
  * Returns the maximum amount of lines the control can hold with the current control and font height
  * $$ edt.GetMaxLines() $$
  * @returns num_int
@@ -115,6 +123,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern GetPosition */
 
 /** ### GetSelectedText ###
+ * @brief Get the selected text
  * Returns the currently selected text.
  * $$ edt.GetSelectedText() $$
  * @returns str
@@ -122,6 +131,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetSelectionEnd ###
+ * @brief Get selection end position
  * Returns the position of where the user selection ends.
  * $$ edt.GetSelectionEnd() $$
  * @returns num_int
@@ -129,6 +139,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### GetSelectionStart ###
+ * @brief Get selection start position
  * Returns the position of where the user selection begins.
  * $$ edt.GetSelectionStart() $$
  * @returns num_int
@@ -157,6 +168,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern Hide */
 
 /** ### InsertText ###
+ * @brief Insert text at a given position
  * Inserts a string at a given position.
  * $$ edt.InsertText(text, start) $$
  * @param {str} text 
@@ -179,6 +191,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### ReplaceText ###
+ * @brief Replace a range of the text with a string
  * Replaces a given range in the text with some string.
  * $$ edt.ReplaceText(text, start, end) $$
  * @param {str} text 
@@ -200,6 +213,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern SetColorFilter */
 
 /** ### SetCursorColor ###
+ * @brief Change cursor color
  * Changes the cursor color.
  * $$ edt.SetCursorColor(color) $$
  * @param {str_col} color 
@@ -218,6 +232,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern SetEnabled */
 
 /** ### SetHint ###
+ * @brief Shows a grey default text
  * Set a grey default which is shown when the edit is empty
  * $$ edt.SetHint(text) $$
  * @param {str} text 
@@ -231,6 +246,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern SetOnChange */
 
 /** ### SetOnEnter ###
+ * @brief Called when user pressed 'Done' or 'Enter'
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter) * Along with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_
  * $$ edt.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}
@@ -240,6 +256,7 @@ You can also set a background image/pattern or background gradient for the List 
 /** @extern SetOnFocus */
 
 /** ### SetSelectColor ###
+ * @brief Set selection color
  * Set the background color for selected text.
  * $$ edt.SetSelectColor(col) $$
  * @param {str_col} col 
@@ -247,6 +264,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 /** ### SetSelection ###
+ * @brief Select text in a given range
  * Selects part of the text in a given range.
  * $$ edt.SetSelection(start, stop) $$
  * @param {num_int} start 

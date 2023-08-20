@@ -22,6 +22,7 @@
 
 /** ### align
  * @prop
+ * @brief Multiline text alignment
  * Alignment for multiline text. does not affect single line text.
  * @returns str-left|center|right
  */
@@ -35,6 +36,7 @@
 
 /** ### file
  * @prop
+ * @brief Source file
  * Path to the source file.
  * @returns str_pth
  */
@@ -42,6 +44,7 @@
                     
 /** ### fontSize
  * @prop
+ * @brief pixel font size
  * text font size in pixels
  * @returns num_pxl
  */

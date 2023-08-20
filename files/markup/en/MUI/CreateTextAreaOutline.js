@@ -111,6 +111,7 @@
 /** @extern SetOnChange */
 
 /** ### SetOnEnter ###
+ * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * $$ tao.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}

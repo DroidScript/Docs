@@ -20,6 +20,7 @@
 
 
 /** ### SetOnSelect ###
+ * @brief Calls a function when the user selects an item in the list
  * Calls a function when the user selects an item in the list
  * $$ rd.SetOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str","num_int"]}

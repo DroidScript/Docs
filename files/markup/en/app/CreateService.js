@@ -66,6 +66,7 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 /** ### SendMessage ###
+ * @brief Send message to service
  * Sends a message to the service.
  * $$ srv.SendMessage(message) $$
  * @param {str} message 
@@ -90,6 +91,7 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 /** ### SetOnMessage ###
+ * @brief Called when service sent a message
  * %cb% a message arrived from the service.
  * $$ srv.SetOnMessage(callback) $$
  * @param {fnc_json} callback {"pNames":["message"],"pTypes":["str"]}
@@ -97,6 +99,7 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 /** ### Stop ###
+ * @brief Stop service
  * Stop the service.
  * $$ srv.Stop() $$
  */

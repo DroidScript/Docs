@@ -19,6 +19,7 @@
 /** @extern Batch */
 
 /** ### Beep ###
+ * @brief Play frequency tone
  * Play tone with given frequency for a given time in milliseconds.
  * $$ nxt.Beep(frequency, duration) $$
  * @param {num_hrz} frequency 
@@ -27,6 +28,7 @@
 
 
 /** ### Brake ###
+ * @brief Brakes motors smoothly
  * Brakes motors by lowering the input power.
  * $$ nxt.Brake(motors) $$
  * @param {str} motors A,B,C|ABC
@@ -34,6 +36,7 @@
 
 
 /** ### CheckConnection ###
+ * @brief Check if device is connected to NXT
  * Check whether phone/tablet is connected to the NXT.
  * $$ nxt.CheckConnection() $$
  * @returns bin
@@ -41,6 +44,7 @@
 
 
 /** ### Connect ###
+ * @brief Connect to NXT
  * Connects to the NXT device via Bluetooth.
  * $$ nxt.Connect(name) $$
  * @param {str} name 
@@ -48,6 +52,7 @@
 
 
 /** ### Disconnect ###
+ * @brief Disconnect NXT
  * Disconnect Phone/Tablet from NXT.
  * $$ nxt.Disconnect() $$
  */
@@ -64,6 +69,7 @@
 
 
 /** ### FileFindFirst ###
+ * @brief Find first program file
  * Find the first program file of the NXT.
  * $$ nxt.FileFindFirst(pattern) $$
  * @param {str} pattern 
@@ -80,6 +86,7 @@
 
 
 /** ### GetBtAddress ###
+ * @brief Returns NXT Bt address
  * Returns Bluetooth address of a connected NXT brick
  * $$ nxt.GetBtAddress() $$
  * @returns str
@@ -87,6 +94,7 @@
 
 
 /** ### GetBtName ###
+ * @brief Returns NXT Bt name
  * Returns Bluetooth name of a connected NXT brick
  * $$ nxt.GetBtName() $$
  * @returns str
@@ -94,6 +102,7 @@
 
 
 /** ### GetCurrentProgram ###
+ * @brief Returns the current running program name
  * Returns the name of the currently running program.
  * $$ nxt.GetCurrentProgram() $$
  * @returns str
@@ -101,6 +110,7 @@
 
 
 /** ### GetRotationCount ###
+ * @brief Returns a new wheel encoder value.
  * Returns the wheel encoder value of a motor.
  * $$ nxt.GetRotationCount(motor) $$
  * @param {str} motor A,B,C|ABC
@@ -116,6 +126,7 @@
 
 
 /** ### IsBluetoothEnabled ###
+ * @brief Checks if bt is enabled
  * Checks if bluetooth is enabled on the device.
  * $$ nxt.IsBluetoothEnabled() $$
  * @returns bin
@@ -123,6 +134,7 @@
 
 
 /** ### IsConnected ###
+ * @brief Checks if NXT is connected
  * Checks if the device is connected to a NXT.
  * $$ nxt.IsConnected() $$
  * @returns bin
@@ -130,6 +142,7 @@
 
 
 /** ### IsEnabled ###
+ * @brief Checks if bt is enabled
  * Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.
  * $$ nxt.IsEnabled() $$
  * @returns bin
@@ -137,6 +150,7 @@
 
 
 /** ### IsMotorIdle ###
+ * @brief Check if a motor is powered
  * Checks if a motor is currently powered
  * $$ nxt.IsMotorIdle(motor) $$
  * @param {str} motor A,B,C|ABC
@@ -144,6 +158,7 @@
 
 
 /** ### IsPaired ###
+ * @brief Checks if the device is paired with an other
  * Checks if a Bluetooth device with a given name is paired with our device.
  * $$ nxt.IsPaired(name) $$
  * @param {str} name 
@@ -169,6 +184,7 @@
 
 
 /** ### ReadDistanceSensor ###
+ * @brief Get measured ultrasinic distance in cm
  * Reads the distance measured by the ultrasonic sensor in centimeters.
  * $$ nxt.ReadDistanceSensor(input) $$
  * @param {num_int} input 1..4
@@ -177,6 +193,7 @@
 
 
 /** ### ReadLightSensor ###
+ * @brief Measures the light intensity
  * Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.
  * $$ nxt.ReadLightSensor(input, active) $$
  * @param {num_int} input 1..4
@@ -196,6 +213,7 @@
 
 
 /** ### ReadSoundSensor ###
+ * @brief Measure the sound pressure level
  * Reads the sound pressure level of the surrounding.
  * $$ nxt.ReadSoundSensor(input, mode) $$
  * @param {num_int} input 1..4
@@ -205,6 +223,7 @@
 
 
 /** ### ReadTouchSensor ###
+ * @brief Check if the touch sensor is pressed
  * Returns whether the touch sensor switch is currently pushed.
  * $$ nxt.ReadTouchSensor(input) $$
  * @param {num_int} input 1..4
@@ -213,6 +232,7 @@
 
 
 /** ### RequestEnable ###
+ * @brief Request enabling bluetooth if it isn't
  * Invokes system dialog box which could enable Bluetooth on tablet/phone when Bluetooth is disabled.
  * $$ nxt.RequestEnable() $$
  */
@@ -235,6 +255,7 @@
 
 
 /** ### SetInvert ###
+ * @brief Inverts the direction of motor commands
  * Provides a convenient way to invert the direction of the motor commands.
  * $$ nxt.SetInvert(invert) $$
  * @param {bin} invert 
@@ -242,6 +263,7 @@
 
 
 /** ### SetLampColor ###
+ * @brief Change sensor LED color
  * Changes the color sensor LED to one color of “White”, “Red”, “Green”, “Blue” or “Off”
  * $$ nxt.SetLampColor(input, color) $$
  * @param {num_int} input 1..4
@@ -250,6 +272,7 @@
 
 
 /** ### SetOnConnect ###
+ * @brief Called when NXT connection established or failed
  * %cb% the NXT has been connected via Bluetooth or if it failed to.
  * $$ nxt.SetOnConnect(callback) $$
  * @param {fnc_json} callback {"pNames":["connected"],"pTypes":["bin"]}
@@ -257,6 +280,7 @@
 
 
 /** ### SetOnConnected ###
+ * @brief Called when bt connection established
  * %cb% the NXT has been successfully connected via Bluetooth
  * $$ nxt.SetOnConnected(callback) $$
  * @param {fnc_json} callback {}
@@ -264,6 +288,7 @@
 
 
 /** ### ShowDevices ###
+ * @brief Shows a list of paired NXT devices to connect to
  * Shows the user a dialog box that contains a list of NXT bricks which are paired with the phone. The user can then select the brick to connect to via Bluetooth.
  * $$ nxt.ShowDevices() $$
  */
@@ -284,12 +309,14 @@
 
 
 /** ### StopProgram ###
+ * @brief Stops the current running program
  * Stops a the currently running NXT-G program.
  * $$ nxt.StopProgram() $$
  */
 
 
 /** ### ToColorName ###
+ * @brief Convert color number to its name
  * Converts a color integer received from ReadColorSensor to a meaningful color name.
  * $$ nxt.ToColorName(val) $$
  * @param {num_int} val 1..6

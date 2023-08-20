@@ -38,6 +38,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Animate */
 
 /** ### Back ###
+ * @brief Load previous page
  * Loads the previous page from history.
  * $$ web.Back() $$
  */
@@ -46,6 +47,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Batch */
 
 /** ### CanGoBack ###
+ * @brief Check if history contains a previous page
  * Check whether the user can travel back in history.
  * $$ web.CanGoBack() $$
  * @returns bin
@@ -53,6 +55,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### CanGoForward ###
+ * @brief Check if history has a following page
  * Check whether the user can travel forward in history.
  * $$ web.CanGoForward() $$
  * @returns bin
@@ -60,6 +63,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### Capture ###
+ * @brief Capture WebView as png
  * Captures the visible area of the web view to a file.
  * $$ web.Capture(file) $$
  * @param {str_ptf} file 
@@ -75,6 +79,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### Execute ###
+ * @brief Execute JS code inside the WebView
  * Executes JavaScript code inside the WebView and passes the result to the callback
  * $$ web.Execute(code, callback) $$
  * @param {str_jsc} code 
@@ -85,6 +90,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Focus */
 
 /** ### Forward ###
+ * @brief Load following page
  * Loads the following page from history.
  * $$ web.Forward() $$
  */
@@ -120,6 +126,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### GetUrl ###
+ * @brief Get current url
  * Returns the current website url.
  * $$ web.GetUrl() $$
  * @returns str_url
@@ -141,6 +148,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern IsVisible */
 
 /** ### LoadHtml ###
+ * @brief Load html to WebView
  * Loads html code to the WebView.
  * $$ web.LoadHtml(html, baseFolder, options) $$
  * @param {str_htm} html 
@@ -150,6 +158,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### LoadUrl ###
+ * @brief Load url to WebView
  * Loads an url to the WebView
  * $$ web.LoadUrl(url, options) $$
  * @param {str_url} url 
@@ -160,12 +169,14 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Method */
 
 /** ### Print ###
+ * @brief Print webpage via anddroid printer dialog
  * Print current page via the builtin android printer dialog. *  * Note: Available since Android 4.4 KitKat
  * $$ web.Print() $$
  */
 
 
 /** ### Reload ###
+ * @brief Reload current page
  * Reloads the current page
  * $$ web.Reload() $$
  */
@@ -182,6 +193,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetBackground */
 
 /** ### SetBlockedUrls ###
+ * @brief Block urls from loading
  * Define a list of urls that are blocked for loading.
  * $$ web.SetBlockedUrls(urls) $$
  * @param {lst} urls [ urls:str ]||str-urls
@@ -195,6 +207,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetEnabled */
 
 /** ### SetErrorPage ###
+ * @brief Define error page
  * Define a url loaded when an error occured.
  * $$ web.SetErrorPage(url) $$
  * @param {str_url} url 
@@ -211,6 +224,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetOnConsole ###
+ * @brief Called when message logged to console
  * %cb% a message was logged to the console.
  * $$ web.SetOnConsole(callback) $$
  * @param {fnc_json} callback {"pNames":["msg"],"pTypes":["str"]}
@@ -218,6 +232,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetOnError ###
+ * @brief Called when an error occured
  * %cb% an error occured.
  * $$ web.SetOnError(callback) $$
  * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}
@@ -225,6 +240,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetOnProgress ###
+ * @brief Called when loading progress changed
  * %cb% the webpage loading progress changed
  * $$ web.SetOnProgress(callback) $$
  * @param {fnc_json} callback {"pNames":["progress"],"pTypes":["num_prc"]}
@@ -232,6 +248,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetOnRequest ###
+ * @brief Traps HTTP Requests
  * Called when a HTTP Request was made in the webview.
  * $$ web.SetOnRequest(callback) $$
  * @param {fnc_json} callback {"pNames":["url","method","isMain","isRedirect"],"pTypes":["str","str","bin","bin"]}
@@ -241,6 +258,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetOnTouch */
 
 /** ### SetOnUrl ###
+ * @brief Called when link klicked
  * %cb% the user clicked a link.
  * $$ web.SetOnUrl(callback) $$
  * @param {fnc_json} callback {"pNames":["url"],"pTypes":["str_url"]}
@@ -252,6 +270,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetPosition */
 
 /** ### SetRedirect ###
+ * @brief Add url redirection rule
  * Add a url redirection rule.
  * $$ web.SetRedirect(urlFrom, urlTo) $$
  * @param {str_url} urlFrom 
@@ -264,6 +283,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetSize */
 
 /** ### SetTouchMode ###
+ * @brief En/Disable touchmode on the control
  * Set the control in touch mode.
  * $$ web.SetTouchMode(mode) $$
  * @param {bin} mode 
@@ -271,6 +291,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetUserAgent ###
+ * @brief Set custom user agent
  * Defines a custom user agent
  * $$ web.SetUserAgent(agent) $$
  * @param {str} agent 
@@ -278,6 +299,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### SetUserCreds ###
+ * @brief Set authentication/login data
  * Set login data for websites that require authentication.
  * $$ web.SetUserCreds(name, password) $$
  * @param {str} name 
@@ -290,6 +312,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Show */
 
 /** ### SimulateKey ###
+ * @brief Simulate key event
  * Simulates a key event on an app object. *  * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
  * $$ web.SimulateKey(keyName, modifiers, pause) $$
  * @param {str} keyName 
@@ -299,6 +322,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** ### Stop ###
+ * @brief Stop loading processes
  * Stops any web loading.
  * $$ web.Stop() $$
  */

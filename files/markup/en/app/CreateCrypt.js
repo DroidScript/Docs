@@ -44,6 +44,7 @@
 
 
 /** ### Hash ###
+ * @brief Get a hash from a string
  * Build a hash of a string for one-way encryption.
  * $$ crp.Hash(text, mode, options) $$
  * @param {str} text 

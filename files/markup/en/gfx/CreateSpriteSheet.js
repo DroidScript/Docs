@@ -23,6 +23,7 @@
 
 /** ### loaded
  * @prop
+ * @brief loaded indicator
  * indicates if the sheet is already loaded.
  * @returns bin
  */

@@ -41,6 +41,7 @@ Use **SetOnTouch** method to call a function when the user touches the control b
 
 
 /** ### SetOnTouch ###
+ * @brief Calls a function when control buttons are click
  * Calls a function when control buttons are click
  * $$ mdl.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["isOkBtnClick","btnText"],"pTypes":["bin","str"]}
@@ -66,6 +67,7 @@ Use **SetOnTouch** method to call a function when the user touches the control b
 
 
 /** ### SetHeaderColor ###
+ * @brief Sets a new title to the modal
  * Change the background color of the header
  * $$ mdl.SetHeaderColor(color) $$
  * @param {str_col} color 

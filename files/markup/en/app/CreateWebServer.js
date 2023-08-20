@@ -57,6 +57,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### AddRedirect ###
+ * @brief Redirect urls
  * Redirects a url pattern (with * wildcards) to a target location
  * $$ sock.AddRedirect(pattern, location) $$
  * @param {str_url} pattern 
@@ -65,6 +66,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### AddServlet ###
+ * @brief Called when servlet received a message
  * %cb% a HTTP GET request on a given servlet name was recieved.
  * $$ sock.AddServlet(path, callback) $$
  * @param {str:url path} path /name
@@ -75,6 +77,7 @@ The following example demonstrates web sockets being used to receive messages fr
 /** @extern Batch */
 
 /** ### Disconnect ###
+ * @brief Disconnect Client from WebServer
  * Disconnects a client from the WebServer.
  * $$ sock.Disconnect(ip, id) $$
  * @param {str} ip 
@@ -90,6 +93,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### GetWebSockClients ###
+ * @brief Get connected clients
  * Returns a list of connected client [WebSockets](CreateWebSocket.htm).
  * $$ sock.GetWebSockClients() $$
  * @returns lst_obj-[{ remoteAddress:str, id:num_int }]
@@ -99,6 +103,7 @@ The following example demonstrates web sockets being used to receive messages fr
 /** @extern Method */
 
 /** ### SendText ###
+ * @brief Send message to client(s)
  * Sends a message to a specific client. * If no id is given, all clients of the specified ip are notified. * If neither ip nor id is given, the message will be sent to all connected clients.
  * $$ sock.SendText(txt, ip, id) $$
  * @param {str} txt 
@@ -108,6 +113,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### SetFolder ###
+ * @brief Set server root folder
  * Specifies the root folder of the server.
  * $$ sock.SetFolder(folder) $$
  * @param {str_ptd} folder 
@@ -115,6 +121,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### SetOnReceive ###
+ * @brief Called when received client message
  * %cb% the server received a message from a client.
  * $$ sock.SetOnReceive(callback) $$
  * @param {fnc_json} callback {"pNames":["msg","ip","id"],"pTypes":["str","str","num_int"]}
@@ -122,6 +129,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### SetOnUpload ###
+ * @brief Called when file uploaded to server
  * %cb% a file was uploaded to the server.
  * $$ sock.SetOnUpload(callback) $$
  * @param {fnc_json} callback {"pNames":["filename","ip"],"pTypes":["str","str"]}
@@ -129,6 +137,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### SetResponse ###
+ * @brief Respond to incoming HTTP request
  * Responds to an incoming HTTP request
  * $$ sock.SetResponse(text) $$
  * @param {str} text 
@@ -136,6 +145,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### SetUploadFolder ###
+ * @brief Defile file upload destination
  * Set a folder where uploaded files are to be placed.
  * $$ sock.SetUploadFolder(folder) $$
  * @param {str_ptd} folder 
@@ -143,6 +153,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 /** ### Start ###
+ * @brief Start server
  * Start the server.
  * $$ sock.Start() $$
  */

@@ -29,6 +29,7 @@
 
 
 /** ### SetOnTouch ###
+ * @brief Calls a function when switch is click
  * Calls a function when switch is click
  * $$ sws.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["text","value"],"pTypes":["str-Settings text","bin-Settings value"]}

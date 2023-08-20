@@ -22,6 +22,7 @@
 
 
 /** ### AddShape ###
+ * @brief Adds velocity to the object
  * Adds linear and angular velocity to the object
  * $$ phs.AddShape(type, points) $$
  * @param {str} type Polygon
@@ -30,6 +31,7 @@
 
 
 /** ### AddVelocity ###
+ * @brief Adds velocity to the object
  * Adds linear and angular velocity to the object
  * $$ phs.AddVelocity(x, y, angular, bodyRelative) $$
  * @param {num} x 
@@ -40,6 +42,7 @@
 
 
 /** ### ApplyImpulse ###
+ * @brief Applies an impulse p=m*v to the object
  * Applies an impulse (impulse=velocity*mass) to the object
  * $$ phs.ApplyImpulse(x, y, offsetX, offsetY) $$
  * @param {num} x 
@@ -50,6 +53,7 @@
 
 
 /** ### Contains ###
+ * @brief Checks if a point is in the hitbox
  * Checks if a given point is in the hitbox
  * $$ phs.Contains(x, y) $$
  * @param {num_frc} x 
@@ -66,6 +70,7 @@
 
 
 /** ### GetVelocity ###
+ * @brief Returns the total velocity or a component of it
  * Returns the current total linear velocity or the “x”, “y” or “angular” component.
  * $$ phs.GetVelocity(component) $$
  * @param {str} component x|y|angular
@@ -87,6 +92,7 @@
 
 
 /** ### SetPhysics ###
+ * @brief Set physics properties
  * Set the physics properties for the game object.
  * $$ phs.SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) $$
  * @param {str} groupId 
@@ -100,6 +106,7 @@
 
 
 /** ### SetShape ###
+ * @brief Define the collision shape
  * Defines the shape for collision detection of the object.
  * $$ phs.SetShape(shape, width, height) $$
  * @param {str} shape rect|round
@@ -109,6 +116,7 @@
 
 
 /** ### SetVelocity ###
+ * @brief Set the object velocity
  * Set the velocity of the game object.
  * $$ phs.SetVelocity(x, y, angular, bodyRelative) $$
  * @param {num} x 
@@ -119,6 +127,7 @@
 
 
 /** ### UpdatePhysics ###
+ * @brief Update internal physics properties
  * Updates the internal position and size properties
  * $$ phs.UpdatePhysics() $$
  */

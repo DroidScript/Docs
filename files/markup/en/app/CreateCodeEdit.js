@@ -36,12 +36,14 @@
 
 
 /** ### Copy ###
+ * @brief Copy selected text to the clipboard
  * Copies the selected text to the device clipboard.
  * $$ cde.Copy() $$
  */
 
 
 /** ### Cut ###
+ * @brief Cut selected text to the clipboard
  * Cut selected text and copies it to the device clipboard.
  * $$ cde.Cut() $$
  */
@@ -54,6 +56,7 @@
 /** @extern GetAbsWidth */
 
 /** ### GetCursorLine ###
+ * @brief Get the current cursor line index
  * Returns the current line index where the cursor is located.
  * $$ cde.GetCursorLine() $$
  * @returns num_int
@@ -61,6 +64,7 @@
 
 
 /** ### GetCursorPos ###
+ * @brief Get the cursor position in the text
  * Returns the index of the character where the cursor is currently located.
  * $$ cde.GetCursorPos() $$
  * @returns num_int
@@ -72,6 +76,7 @@
 /** @extern GetLeft */
 
 /** ### GetLineStart ###
+ * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ cde.GetLineStart(line) $$
  * @param {num_int} line 
@@ -84,6 +89,7 @@
 /** @extern GetPosition */
 
 /** ### GetSelectedText ###
+ * @brief Get the selected text
  * Returns the currently selected text.
  * $$ cde.GetSelectedText() $$
  * @returns str
@@ -91,6 +97,7 @@
 
 
 /** ### GetSelectionEnd ###
+ * @brief Get selection end position
  * Returns the position of where the user selection ends.
  * $$ cde.GetSelectionEnd() $$
  * @returns num_int
@@ -98,6 +105,7 @@
 
 
 /** ### GetSelectionStart ###
+ * @brief Get selection start position
  * Returns the position of where the user selection begins.
  * $$ cde.GetSelectionStart() $$
  * @returns num_int
@@ -105,6 +113,7 @@
 
 
 /** ### GetSelectMode ###
+ * @brief Get current selection state
  * Checks if there is currently some text selected.
  * $$ cde.GetSelectMode() $$
  * @returns bin
@@ -131,6 +140,7 @@
 /** @extern Hide */
 
 /** ### HighlightLine ###
+ * @brief Underlines a certain line in the text
  * Highlights a specific line in the text with a thin red underline.
  * $$ cde.HighlightLine(line) $$
  * @param {num_int} line 
@@ -138,6 +148,7 @@
 
 
 /** ### InsertText ###
+ * @brief Insert text at the cursor
  * Inserts a string at the current cursor position.
  * $$ cde.InsertText(text) $$
  * @param {str} text 
@@ -153,6 +164,7 @@
 /** @extern Method */
 
 /** ### Paste ###
+ * @brief Paste clipboard to the current cursor position
  * Paste text from the clipboard at the current cursor position.
  * $$ cde.Paste() $$
  */
@@ -165,6 +177,7 @@
 
 
 /** ### Replace ###
+ * @brief Replace the selected text
  * Replaces the current selection with the passed text.
  * $$ cde.Replace(text) $$
  * @param {str} text 
@@ -182,6 +195,7 @@
 
 
 /** ### ReplaceText ###
+ * @brief Replace a range of the text with a string
  * Replaces a given range in the text with some string.
  * $$ cde.ReplaceText(text, start, end) $$
  * @param {str} text 
@@ -191,6 +205,7 @@
 
 
 /** ### Search ###
+ * @brief Search and select a string in the text
  * Search for a string in the text in a given direction and selects it.
  * $$ cde.Search(text, direction, matchCase, wholeWord) $$
  * @param {str} text 
@@ -201,6 +216,7 @@
 
 
 /** ### SelectAll ###
+ * @brief Select the whole text
  * Selects the whole text.
  * $$ cde.SelectAll() $$
  */
@@ -248,6 +264,7 @@
 /** @extern SetMargins */
 
 /** ### SetNavigationMethod ###
+ * @brief Select between Yoyo or Touch mode
  * Select between navigating using the Yoyo or standard touch.
  * $$ cde.SetNavigationMethod(method) $$
  * @param {str} method Yoyo|Touch
@@ -257,6 +274,7 @@
 /** @extern SetOnChange */
 
 /** ### SetOnDoubleTap ###
+ * @brief Define a Yoyo double-tap callback function
  * Defines a callback function which is called when the user double-taps the Yoyo.
  * $$ cde.SetOnDoubleTap(callback) $$
  * @param {fnc_json} callback {}
@@ -264,6 +282,7 @@
 
 
 /** ### SetOnKey ###
+ * @brief Define a key-event callback function
  * %cb% a key event appears.
  * $$ cde.SetOnKey(callback) $$
  * @param {fnc_json} callback {"pNames":["action","keyname","keycode","extra"],"pTypes":["str-Down|Move|Up","str-VOLUME_DOWN|VOLUME_UP|BACK|MENU","num_int","str-Shift,Ctrl,Alt,Meta"]}
@@ -285,6 +304,7 @@
 
 
 /** ### SetSelectMode ###
+ * @brief En/Disable cursor selection mode
  * En/Disables the selection mode for the cursor.
  * $$ cde.SetSelectMode(onOff) $$
  * @param {bin} onOff 
@@ -300,6 +320,7 @@
 /** @extern SetTextSize */
 
 /** ### SetUseKeyboard ###
+ * @brief En/Disable device keyboard
  * En/Disable usage of the device keyboard.
  * $$ cde.SetUseKeyboard(onOff) $$
  * @param {bin} onOff 

@@ -30,6 +30,7 @@ Shows a popup into your app.
 
 
 /** ### setOnClose ###
+ * @brief setOnClose
  * Adds an onClose callback to your popup *  * 
  * $$ pop.setOnClose(callback) $$
  * @param {} callback 
@@ -37,6 +38,7 @@ Shows a popup into your app.
 
 
 /** ### setOnAction ###
+ * @brief setOnAction
  * Adds an action callback when the user touches the action button. The `btnText` param must * be provided in order to create an action button *  * 
  * $$ pop.setOnAction(callback) $$
  * @param {} callback 
@@ -44,18 +46,21 @@ Shows a popup into your app.
 
 
 /** ### show ###
+ * @brief show
  * Show the popup *  * 
  * $$ pop.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the popup *  * 
  * $$ pop.hide() $$
  */
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Updates the position of the popup *  * 
  * $$ pop.setPosition(vertical, horizontal) $$
  * @param {str} vertical Vertical alignment. Values can be `Top` `Bottom`
@@ -64,6 +69,7 @@ Shows a popup into your app.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the popup. The returned object is of the form `{ vertical, horizontal *  * 
  * $$ pop.getPosition() $$
  * @returns obj

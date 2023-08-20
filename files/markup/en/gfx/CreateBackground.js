@@ -18,6 +18,7 @@
 
 
 /** ### Scroll ###
+ * @brief Scroll Background
  * Scrolls the background by a given value
  * $$ bck.Scroll(x, y) $$
  * @param {num} x 
@@ -27,6 +28,7 @@
 
 /** ### loaded
  * @prop
+ * @brief indicates if ready for use
  * Indicates if the background is ready for use
  * @returns bin
  */

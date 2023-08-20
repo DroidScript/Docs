@@ -110,6 +110,7 @@
 /** @extern SetOnChange */
 
 /** ### SetOnEnter ###
+ * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * %cb% the user pressed 'Done' or 'Enter' on the keyboard
  * $$ tef.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}

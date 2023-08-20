@@ -33,6 +33,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 /** @extern Batch */
 
 /** ### Cancel ###
+ * @brief Stop recognition
  * Stop recognizing speech and break other processes.
  * $$ spr.Cancel() $$
  */
@@ -53,6 +54,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 /** ### IsListening ###
+ * @brief Check whether SpeechRec is listening
  * Check whether SpeechRec is currently listening.
  * $$ spr.IsListening() $$
  * @returns bin
@@ -62,12 +64,14 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 /** @extern Method */
 
 /** ### Recognize ###
+ * @brief Start speech recognition
  * Start recognizing speech.
  * $$ spr.Recognize() $$
  */
 
 
 /** ### SetOnError ###
+ * @brief Called when an error occured.
  * %cb% an error occured.
  * $$ spr.SetOnError(callback) $$
  * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}
@@ -75,6 +79,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 /** ### SetOnReady ###
+ * @brief Called when SpeechRec is ready for use
  * %cb% the SpeechRec object is ready for use.
  * $$ spr.SetOnReady(callback) $$
  * @param {fnc_json} callback {}
@@ -82,6 +87,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 /** ### SetOnResult ###
+ * @brief Called when text was recognized
  * %cb% a text was successfully recognized
  * $$ spr.SetOnResult(callback) $$
  * @param {fnc_json} callback {"pNames":["result"],"pTypes":["str"]}
@@ -89,6 +95,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 /** ### Stop ###
+ * @brief Stop recording and start recognition
  * Stop speech recording and start recognizing.
  * $$ spr.Stop() $$
  */

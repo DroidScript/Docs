@@ -31,6 +31,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setOnLoad ###
+ * @brief setOnLoad
  * Adds a event handler for onload event *  *  * The example above will call the function `Hello` defined in the WebView passing * the three arguments which is a text, number and a boolean *  * 
  * $$ web.setOnLoad(callback) $$
  * @param {} callback 
@@ -38,6 +39,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds a callback handler when the component is touch *  * 
  * $$ web.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
@@ -45,6 +47,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ web.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -52,6 +55,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ web.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -60,6 +64,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ web.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -68,30 +73,35 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ web.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ web.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ web.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ web.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ web.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -100,6 +110,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ web.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -108,6 +119,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ web.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -119,6 +131,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ web.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -130,6 +143,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ web.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -139,6 +153,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ web.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -148,6 +163,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the component *  * 
  * $$ web.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
@@ -159,6 +175,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ web.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -166,6 +183,7 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ web.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

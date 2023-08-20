@@ -39,6 +39,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 /** @extern ClearFocus */
 
 /** ### Execute ###
+ * @brief Execute code inside the GameView
  * Execute some code inside the GameView.
  * $$ gmv.Execute(js) $$
  * @param {str_jsc} js 
@@ -102,6 +103,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 /** @extern SetFile */
 
 /** ### SetFrameRate ###
+ * @brief Change the target framerate
  * Change the targeted framerate.
  * $$ gmv.SetFrameRate(fps) $$
  * @param {num_fps} fps 

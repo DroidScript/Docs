@@ -81,6 +81,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern GetHeight */
 
 /** ### GetItem ###
+ * @brief Returns item data by a title.
  * Returns item data of an item with a specific title.
  * $$ lst.GetItem(title) $$
  * @param {str} title 
@@ -89,6 +90,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### GetItemByIndex ###
+ * @brief Returns item data by an index.
  * Returns item data of an item on a specific index.
  * $$ lst.GetItemByIndex(index) $$
  * @param {num_int} index 
@@ -99,6 +101,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern GetLeft */
 
 /** ### GetLength ###
+ * @brief Returns the list length
  * Returns the amount of items in the lists.
  * $$ lst.GetLength() $$
  * @returns num_int
@@ -106,6 +109,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### GetList ###
+ * @brief Returns the whole list as object
  * When passing no argument it returns the full list data as a list of objects. Otherwise it will return a string list instead.
  * $$ lst.GetList(delim) $$
  * @param {str} delim 
@@ -137,6 +141,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern Hide */
 
 /** ### InsertItem ###
+ * @brief Inserts an item into the list
  * Inserts an item at s specific index in the list.
  * $$ lst.InsertItem(index, title, body, image) $$
  * @param {num_int} index 
@@ -155,12 +160,14 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern Method */
 
 /** ### RemoveAll ###
+ * @brief Clears the list
  * Removes all entries of the list.
  * $$ lst.RemoveAll() $$
  */
 
 
 /** ### RemoveItem ###
+ * @brief Removes an item by its title
  * Removes an item with a specific title from the list.
  * $$ lst.RemoveItem(title) $$
  * @param {str} title 
@@ -168,6 +175,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### RemoveItemByIndex ###
+ * @brief Removes an item by its index
  * Removes an item on a specific index from the list
  * $$ lst.RemoveItemByIndex(index) $$
  * @param {num_int} index 
@@ -175,6 +183,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### ScrollToItem ###
+ * @brief Scrolls to an item by its title
  * Scrolls the list to an item with a specific title.
  * $$ lst.ScrollToItem(title, body) $$
  * @param {str} title 
@@ -183,6 +192,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### ScrollToItemByIndex ###
+ * @brief Scrolls the list to a specific index
  * Scrolls the list to an item on a specific index.
  * $$ lst.ScrollToItemByIndex(index) $$
  * @param {num_int} index 
@@ -190,6 +200,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SelectItem ###
+ * @brief Highlight an item by its title and body
  * Highlights an item with a specific title.
  * $$ lst.SelectItem(title, body, scroll) $$
  * @param {str} title 
@@ -199,6 +210,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SelectItemByIndex ###
+ * @brief Highlight an item by its index
  * Highlights an item on a specific index.
  * $$ lst.SelectItemByIndex(index, scroll) $$
  * @param {num_int} index 
@@ -219,6 +231,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetColorFilter */
 
 /** ### SetColumnWidths ###
+ * @brief Change coloumn widths
  * Changes the coloumn withs for title, body and icon. Often used with the “Horiz” option.
  * $$ lst.SetColumnWidths(icon, title, body, mode) $$
  * @param {num_frc} icon 
@@ -229,6 +242,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetDivider ###
+ * @brief Changes the divider style
  * Changes the item divider height and color.
  * $$ lst.SetDivider(height, color) $$
  * @param {num_frc} height 
@@ -239,6 +253,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetEllipsize */
 
 /** ### SetEllipsize1 ###
+ * @brief Auto-crop titles to fit in control
  * Will cause the element titles to be broken with ... at the start or the end if it cannot fit in the control.
  * $$ lst.SetEllipsize1(mode) $$
  * @param {str} mode start|middle|end
@@ -246,6 +261,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetEllipsize2 ###
+ * @brief Auto-crop bodys to fit in control
  * Will cause the element bodies to be broken with ... at the start or the end if it cannot fit in the control.
  * $$ lst.SetEllipsize2(mode) $$
  * @param {str} mode start|middle|end
@@ -259,6 +275,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetFontFile */
 
 /** ### SetHiTextColor1 ###
+ * @brief Change selected title highlight color
  * Change the highlight color of titles when selected.
  * $$ lst.SetHiTextColor1(color) $$
  * @param {str_col} color 
@@ -266,6 +283,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetHiTextColor2 ###
+ * @brief Change selected body highlight color
  * Change the highlight color of bodies when selected.
  * $$ lst.SetHiTextColor2(color) $$
  * @param {str_col} color 
@@ -273,6 +291,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetIconMargins ###
+ * @brief Change icon margins
  * Change the outer icon border distance.
  * $$ lst.SetIconMargins(left, top, right, bottom, mode) $$
  * @param {num_frc} left 
@@ -284,6 +303,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetIconSize ###
+ * @brief Change the icon size
  * Changes the icon size.
  * $$ lst.SetIconSize(size, mode) $$
  * @param {num} size 
@@ -292,6 +312,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetItem ###
+ * @brief Change the content of an element by its title
  * Change the content of an element with a specific title.
  * $$ lst.SetItem(title, newTitle, newBody, newImage) $$
  * @param {str} title 
@@ -302,6 +323,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetItemByIndex ###
+ * @brief Change the content of an element by its index
  * Change the content of an element on a specific index.
  * $$ lst.SetItemByIndex(index, newTitle, newBody, newImage) $$
  * @param {num_int} index 
@@ -312,6 +334,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetItemColor ###
+ * @brief Set item color
  * Set the color of a list item.
  * $$ lst.SetItemColor(name, textClr, backClr) $$
  * @param {str} name 
@@ -321,6 +344,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetItemColorByIndex ###
+ * @brief Set item color by index
  * Set the color of a list item by its index.
  * $$ lst.SetItemColorByIndex(index, textClr, backClr) $$
  * @param {num_int} index 
@@ -340,6 +364,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetMargins */
 
 /** ### SetOnLongTouch ###
+ * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches a list item.
  * $$ lst.SetOnLongTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["title","body","icon","index"],"pTypes":["str","str","str","num_int"]}
@@ -347,6 +372,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetOnTouch ###
+ * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches a list item.
  * $$ lst.SetOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["title","body","icon","index"],"pTypes":["str","str","str","num_int"]}
@@ -378,6 +404,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetTextMargins ###
+ * @brief Define distances to other controls
  * Define a distance to other controls on each side of the control.
  * $$ lst.SetTextMargins(left, top, right, bottom, mode, options) $$
  * @param {num} left 
@@ -392,6 +419,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetTextShadow */
 
 /** ### SetTextShadow1 ###
+ * @brief Apply shadow to titles
  * Apply text shadows to titles.
  * $$ lst.SetTextShadow1(radius, dx, dy, color) $$
  * @param {num_deg} radius 
@@ -402,6 +430,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetTextShadow2 ###
+ * @brief Apply shadow to bodies
  * Apply text shadows to bodies.
  * $$ lst.SetTextShadow2(radius, dx, dy, color) $$
  * @param {num_deg} radius 
@@ -414,6 +443,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 /** @extern SetTextSize */
 
 /** ### SetTextSize1 ###
+ * @brief Set title text size
  * Change the text size for titles.
  * $$ lst.SetTextSize1(size, mode) $$
  * @param {num} size 
@@ -422,6 +452,7 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 
 /** ### SetTextSize2 ###
+ * @brief Set body text size
  * Change the text size for bodies.
  * $$ lst.SetTextSize2(size, mode) $$
  * @param {num} size 

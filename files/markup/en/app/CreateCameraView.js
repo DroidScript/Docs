@@ -44,6 +44,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern Animate */
 
 /** ### AutoCapture ###
+ * @brief Takes a picture if a motion was detected
  * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}. * The first # in the filename is a placeholder for numbers increasing for every taken picture.
  * $$ cam.AutoCapture(path, fileName, maxCount) $$
  * @param {str_ptd} path 
@@ -57,6 +58,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern ClearFocus */
 
 /** ### FindFaces ###
+ * @brief Find faces in the current camera view
  * Finds faces in the current camera view.
  * $$ cam.FindFaces(maxCount) $$
  * @param {num_int} maxCount 
@@ -71,6 +73,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern GetAbsWidth */
 
 /** ### GetCameraCount ###
+ * @brief Returns the device camera count
  * Returns the amount of cameras built in to the device.
  * $$ cam.GetCameraCount() $$
  * @returns num_int
@@ -78,6 +81,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### GetColorEffects ###
+ * @brief Returns a new list of available color effects
  * Returns a list of available color effects for the camera.
  * $$ cam.GetColorEffects() $$
  * @returns str-none,mono,negative,solarize,sepia,posterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon
@@ -87,6 +91,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern GetHeight */
 
 /** ### GetImageHeight ###
+ * @brief Returns the camera height
  * Returns the camera capture height in pixels.
  * $$ cam.GetImageHeight() $$
  * @returns num_frc
@@ -94,6 +99,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### GetImageWidth ###
+ * @brief Returns the camera width
  * Returns the camera capture width in pixels.
  * $$ cam.GetImageWidth() $$
  * @returns num_frc
@@ -110,6 +116,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### GetParameters ###
+ * @brief Get camera parameters
  * Get properties, possible values and settings of the camera as “key=value; pairs.
  * $$ cam.GetParameters() $$
  * @returns str_smc-key1=value1;key2=value2;...
@@ -119,6 +126,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern GetParent */
 
 /** ### GetPictureSizes ###
+ * @brief Returns a new list of possible picture dimensions
  * Returns a list of possible picture dimensions.
  * $$ cam.GetPictureSizes() $$
  * @returns str_com-w1 x h1\,w2 x h2\,...
@@ -126,6 +134,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### GetPixelData ###
+ * @brief Returns base64 pixel data as raw bitmap, png or jpg format
  * Returns the current camera's raw, png or jpg image datas encoded as base64.
  * $$ cam.GetPixelData(format, left, top, width, height) $$
  * @param {str} format GrayScale:fastest|JSON:"slowest&colon; “ARGB&comma;ARGB&comma;...”"|"&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"|rawbase64|pngbase64|jpgbase64
@@ -162,6 +171,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern Gone */
 
 /** ### HasFlash ###
+ * @brief Returns if the current camera supports flashlight
  * Checks if the currently used camera has a camera flash.
  * $$ cam.HasFlash() $$
  * @returns bin
@@ -175,6 +185,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern IsOverlap */
 
 /** ### IsRecording ###
+ * @brief Returns if the camera is currently recording
  * Returns a boolea indicating whether the camera is currently recording a video.
  * $$ cam.IsRecording() $$
  * @returns bin
@@ -186,6 +197,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern Method */
 
 /** ### MotionMosaic ###
+ * @brief Define a raster for motion detection
  * Defines a raster which is used for motion detection. * Use AutoCapture to take pictures if a motion was detected.
  * $$ cam.MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) $$
  * @param {num_int} xtiles 
@@ -197,6 +209,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### Record ###
+ * @brief Start recording video
  * Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().
  * $$ cam.Record(file, seconds) $$
  * @param {str_ptf} file 
@@ -205,6 +218,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### ReportColors ###
+ * @brief Keeps tracks of the average color around a given point
  * Keeps tracks of the average color around a given point.
  * $$ cam.ReportColors(list, callback, sampSize, maxRate) $$
  * @param {str_pip} list x1:num_frc\,y1:num_frc\|x2:num_frc\,y2:num_frc\|...
@@ -236,6 +250,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetDescription */
 
 /** ### SetDuplicateImage ###
+ * @brief Define two camera view duplicate targets
  * Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.
  * $$ cam.SetDuplicateImage(image1, image2) $$
  * @param {dso} image1 CreateImage
@@ -246,6 +261,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetEnabled */
 
 /** ### SetFlash ###
+ * @brief En-/Disables the camera flash
  * En- or disables the camera flash if available.
  * $$ cam.SetFlash(onoff) $$
  * @param {bin} onoff 
@@ -253,6 +269,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### SetFocusMode ###
+ * @brief Change focus mode
  * Change the cameras focus mode depending  on the purpose.
  * $$ cam.SetFocusMode(mode) $$
  * @param {str} mode Auto|Picture:for taking pictures|Video:for recording videos|Macro|EDOF:Extended Depth Of Field for continuous digital focusing|Fixed|Infinity
@@ -264,6 +281,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetOnFocus */
 
 /** ### SetOnPicture ###
+ * @brief Called when cam.AutoCapture took a picture
  * Defines a callback function which is called if cam.AutoCapture took a picture. The _file_ parameter contains the path to the image file.
  * $$ cam.SetOnPicture(callback) $$
  * @param {fnc_json} callback {"pNames":["file"],"pTypes":["str_pth"]}
@@ -271,6 +289,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### SetOnReady ###
+ * @brief Called if the camera is ready for use
  * Defines a callback function which is called when the camera is ready for use.
  * $$ cam.SetOnReady(callback) $$
  * @param {fnc_json} callback {}
@@ -287,6 +306,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetPadding */
 
 /** ### SetParameter ###
+ * @brief Change camera properties
  * Change property values of the camera. * See GetProperties to get a full list of available keys.
  * $$ cam.SetParameter(name, value) $$
  * @param {str} name 
@@ -305,6 +325,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetPosition */
 
 /** ### SetPostRotation ###
+ * @brief Rotate the captured image
  * Rotates captured image in any desired angle in degrees.
  * $$ cam.SetPostRotation(angle) $$
  * @param {num_deg} angle 
@@ -312,6 +333,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### SetPreviewImage ###
+ * @brief Define a preview image for captured pictures
  * Defines an image control which will show the captured picture automatically when taken.
  * $$ cam.SetPreviewImage(image) $$
  * @param {dso} image CreateImage
@@ -323,6 +345,7 @@ More samples can be found in the samples section of DroidScript.
 /** @extern SetSize */
 
 /** ### SetSound ###
+ * @brief n-/Disables the camera sound
  * En-/Disables the camera sound playing when taking pictures.
  * $$ cam.SetSound(enabled) $$
  * @param {bin} enabled 
@@ -330,6 +353,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### SetVideoSize ###
+ * @brief Define custom video recording size
  * Define a custom video recording size in pixels.
  * $$ cam.SetVideoSize(width, height) $$
  * @param {num_pxl} width 
@@ -355,6 +379,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### Stop ###
+ * @brief Stop recording video
  * Stop recording a video.
  * $$ cam.Stop() $$
  */
@@ -378,6 +403,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 /** ### TakePicture ###
+ * @brief Save the current camera view to a file
  * Takes a picture of the current view and saves it to a file.
  * $$ cam.TakePicture(file) $$
  * @param {str_ptf} file 

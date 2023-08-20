@@ -32,6 +32,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setOnChange ###
+ * @brief setOnChange
  * Sets a callback function when the value of the tab changes *  * 
  * $$ .setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["name ","index "],"pTypes":["str-The tab name.","num-The index of the corresponding tab."]}
@@ -39,6 +40,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Add a callback function when a tab item i click *  * 
  * $$ .setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["name ","The "],"pTypes":["str-The tab name text.","num-tab item index."]}
@@ -46,6 +48,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setTabs ###
+ * @brief setTabs
  * Sets the tab titles array *  * 
  * $$ .setTabs(tabs) $$
  * @param {lst} tabs The tab titles array. See examples for format.
@@ -53,6 +56,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### addTab ###
+ * @brief addTab
  * Add or insert a tab to the Tabs Component *  * 
  * $$ .addTab(name, icon, index) $$
  * @param {str} name The name of the tab.
@@ -62,6 +66,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setTitleText ###
+ * @brief setTitleText
  * Sets a new title for the corresponding tab *  * 
  * $$ .setTitleText(index, title) $$
  * @param {num} index Index of the tab.
@@ -70,6 +75,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setIcon ###
+ * @brief setIcon
  * Sets an icon to a corresponding tab title *  * 
  * $$ .setIcon(index, icon) $$
  * @param {num} index The index of the tab.
@@ -78,6 +84,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### removeTabByIndex ###
+ * @brief removeTabByIndex
  * Removes a tab item by its corresponding index *  * 
  * $$ .removeTabByIndex(index) $$
  * @param {num} index The index of the corresponding tab to remove.
@@ -85,6 +92,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### removeTabByName ###
+ * @brief removeTabByName
  * Removes a tab item by its corresponding name *  * 
  * $$ .removeTabByName(name) $$
  * @param {str} name The name of the corresponding tab to remove.
@@ -92,6 +100,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### getLayout ###
+ * @brief getLayout
  * Returns the layout of the corresponding tab. You can then add components into the returned layout *  * 
  * $$ .getLayout(name) $$
  * @param {str} name The name of the tab. You can also pass the index of the tab.
@@ -100,6 +109,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### showTab ###
+ * @brief showTab
  * Show a tab panel by its corresponding name. This will make the tab in active state *  * 
  * $$ .showTab(name) $$
  * @param {str} name The name of the tab to be shown.
@@ -107,6 +117,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### showTabByIndex ###
+ * @brief showTabByIndex
  * Show a tab panel by its corresponding name. This will make the tab in active state *  * 
  * $$ .showTabByIndex(index) $$
  * @param {num} index The index of the tab to be shown.
@@ -114,6 +125,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setEnabled ###
+ * @brief setEnabled
  * Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled * Pass `index` as Boolean, if you want to disable the entire Tabs component *  * 
  * $$ .setEnabled(index, value) $$
  * @param {num} index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
@@ -122,6 +134,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### getEnabled ###
+ * @brief getEnabled
  * Get the enabled state of a tab *  * 
  * $$ .getEnabled(index) $$
  * @param {num} index The index of the corresponding tab.
@@ -130,6 +143,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setEnabledByName ###
+ * @brief setEnabledByName
  * Enable or disable a tab by its name *  * 
  * $$ .setEnabledByName(name, value) $$
  * @param {str} name The name of the tab.
@@ -138,6 +152,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### getEnabledByName ###
+ * @brief getEnabledByName
  * Get the enabled state of a tab by its name *  * 
  * $$ .getEnabledByName(name) $$
  * @param {str} name The name of the tab.
@@ -146,6 +161,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### showScrollButton ###
+ * @brief showScrollButton
  * Determines the behavior of scroll buttons when tabs are set to `scrollable *  * 
  * $$ .showScrollButton(mode) $$
  * @param {str} mode Values can be \n `auto` : will only present them when not all the items are visible \n `desktop` : will only present them on medium and larger viewports \n `on` : will always present them \n `off` : will never present them.
@@ -153,6 +169,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### getLayoutIndex ###
+ * @brief getLayoutIndex
  * Get the index of the corresponding layout *  * 
  * $$ .getLayoutIndex(layout) $$
  * @param {obj} layout The layout to check.
@@ -161,6 +178,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ .setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The text of the tab item.","num-The index of the corresponding tab item.","obj-The pointer event object."]}
@@ -168,6 +186,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the tab *  * 
  * $$ .setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
@@ -179,6 +198,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setIndicatorStyle ###
+ * @brief setIndicatorStyle
  * Add a custom styling to the indicator color *  * 
  * $$ .setIndicatorStyle(width, thickness, color, radius) $$
  * @param {num} width Fraction of the tab item width. This works only on `fullWidth` tab.
@@ -189,6 +209,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setTabPadding ###
+ * @brief setTabPadding
  * Sets the padding of the tab items *  * 
  * $$ .setTabPadding(left, top, right, bottom, mode) $$
  * @param {num} left The tab-item left padding.
@@ -200,6 +221,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ .animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -208,6 +230,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ .setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -216,30 +239,35 @@ Adds a Tabs Component into your layout.
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ .show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ .hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ .gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ .destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ .setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -248,6 +276,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ .getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -256,6 +285,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ .setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -267,6 +297,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ .setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -278,6 +309,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ .setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -287,6 +319,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ .setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -296,6 +329,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ .bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -303,6 +337,7 @@ Adds a Tabs Component into your layout.
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ .sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

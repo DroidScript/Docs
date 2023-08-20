@@ -84,6 +84,7 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern Method */
 
 /** ### SelectItem ###
+ * @brief Change current shown item
  * Change the current shown item * <deprecated Use SetText instead>
  * $$ spn.SelectItem(item) $$
  * @param {str} item 
@@ -107,6 +108,7 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern SetEnabled */
 
 /** ### SetList ###
+ * @brief Change spinner list
  * Change the item list of the spinner.
  * $$ spn.SetList(list, delim) $$
  * @param {str_com} list 
@@ -117,6 +119,7 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern SetMargins */
 
 /** ### SetOnChange ###
+ * @brief Called when value changed by the user
  * Called when the spinner value has been changed by the user.
  * $$ spn.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["item","index"],"pTypes":["str","num_int"]}
@@ -124,6 +127,7 @@ Use the **SelectItem** method to select a particular item in code.
 
 
 /** ### SetOnTouch ###
+ * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches the control. * <deprecated Use SetOnChange instead>
  * $$ spn.SetOnTouch(callback) $$
  * @param {fnc_json} callback {}
@@ -139,6 +143,7 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern SetSize */
 
 /** ### SetText ###
+ * @brief Change current shown item
  * Change the current shown item
  * $$ spn.SetText(item) $$
  * @param {str} item 

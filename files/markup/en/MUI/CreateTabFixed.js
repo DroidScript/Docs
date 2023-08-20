@@ -55,6 +55,7 @@ To add a callback when the user selects a tab use the **SetOnSelect** method.
 
 
 /** ### SetOnSelect ###
+ * @brief Calls a function when the tab is click.
  * Calls a function when the tab is click.
  * $$ tbf.SetOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str","num_int"]}

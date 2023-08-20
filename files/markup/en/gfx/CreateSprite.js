@@ -45,6 +45,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 /** ### added
  * @prop
+ * @brief incicates if added to game
  * Indicates if the sprite has been added to the game
  * @returns bin
  */
@@ -56,6 +57,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 /** ### aspect
  * @prop
+ * @brief sprite aspect ratio
  * The aspect ratio of the sprite
  * @returns num
  */
@@ -66,6 +68,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** @extern data */
 
 /** ### Flip ###
+ * @brief Flip sprite
  * Flips the sprite on the horizontal and/or the vertical axis.
  * $$ spr.Flip(horiz, vert) $$
  * @param {bin} horiz 
@@ -74,6 +77,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### GetFrame ###
+ * @brief Get current frame
  * Returns the current frame
  * $$ spr.GetFrame() $$
  * @returns num_int
@@ -81,6 +85,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### Goto ###
+ * @brief go to animation frame
  * Displays a specific frame of an animation
  * $$ spr.Goto(frame) $$
  * @param {num_int} frame 
@@ -98,6 +103,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** @extern pivotY */
 
 /** ### Play ###
+ * @brief play sprite animation
  * Start playing the sprite animation
  * $$ spr.Play(startFrame, speed, loop) $$
  * @param {num_int} startFrame 
@@ -107,6 +113,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### PlayRange ###
+ * @brief play range of animation frames
  * Start playing the sprite animation in a given frame range
  * $$ spr.PlayRange(firstFrame, lastFrame, speed, loop) $$
  * @param {num_int} firstFrame 
@@ -117,6 +124,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### PlayTo ###
+ * @brief play to animation frame
  * Play the animation until a specific frame is reached
  * $$ spr.PlayTo(frame) $$
  * @param {num_int} frame 
@@ -130,6 +138,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** @extern scaleY */
 
 /** ### SetLoop ###
+ * @brief Set animation looping
  * Define if the animation should loop or stop at the end
  * $$ spr.SetLoop(loop) $$
  * @param {bin} loop 
@@ -139,6 +148,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** @extern SetMatrix */
 
 /** ### SetPlaySpeed ###
+ * @brief Set animation speed
  * Define at which speed the animation will play. 1 equals to 60 fps
  * $$ spr.SetPlaySpeed(speed) $$
  * @param {num} speed 
@@ -146,6 +156,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### SetRange ###
+ * @brief Set animation frame range
  * Define the frame range the animation should show.
  * $$ spr.SetRange(firstFrame, lastFrame, loop, play, speed) $$
  * @param {num_int} firstFrame 
@@ -157,6 +168,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### SetSize ###
+ * @brief Set sprite size
  * Set the sprite size on the screen
  * $$ spr.SetSize(w, h) $$
  * @param {num_frc} w 
@@ -165,6 +177,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### SetSpriteSheet ###
+ * @brief Change animation
  * Change the animation to another.
  * $$ spr.SetSpriteSheet(sheet) $$
  * @param {gvo} sheet CreateSpriteSheet
@@ -172,6 +185,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 /** ### SetTexture ###
+ * @brief Change sprite texture
  * Change the sprite texture to another.
  * $$ spr.SetTexture(tx) $$
  * @param {gvo} tx CreateTexture
@@ -185,12 +199,14 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** @extern StepTween */
 
 /** ### Stop ###
+ * @brief Stop animation
  * Stop playin the animation.
  * $$ spr.Stop() $$
  */
 
 
 /** ### StopAt ###
+ * @brief Stop animation on frame
  * Causes the animation to stop playing at a specific frame
  * $$ spr.StopAt(frame) $$
  * @param {num_int} frame 

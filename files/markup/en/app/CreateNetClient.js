@@ -27,6 +27,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### AutoReceive ###
+ * @brief Calls the OnReceive callback for incoming TCP data
  * Receive TCP received data automatically by calling the OnReceive callback.
  * $$ net.AutoReceive(server, port, mode) $$
  * @param {str_url} server 
@@ -44,6 +45,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### Connect ###
+ * @brief Connect to a server
  * Connect the NetClient to a server.
  * $$ net.Connect(address, port) $$
  * @param {str_url} address 
@@ -52,6 +54,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### Disconnect ###
+ * @brief Disconnect from server
  * Disconnect the NetClient from the server.
  * $$ net.Disconnect() $$
  */
@@ -79,6 +82,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### IsConnected ###
+ * @brief Get NetClient connected state
  * Checks if the NetClient is connected to a server.
  * $$ net.IsConnected() $$
  */
@@ -106,6 +110,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### ReceiveDatagrams ###
+ * @brief Receive UDP datagrams
  * Receive datagrams over UDP and calls the OnReceive callback for each one.
  * $$ net.ReceiveDatagrams(port, mode, options) $$
  * @param {num_int} port 
@@ -124,6 +129,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### ReceiveText ###
+ * @brief Receive text over TCP
  * Receive text from TCP connection.
  * $$ net.ReceiveText(mode) $$
  * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
@@ -132,6 +138,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### ReceiveVideoStream ###
+ * @brief Receive video over UDP
  * Receive video from TCP connection. *  * <premium>
  * $$ net.ReceiveVideoStream(port, img) $$
  * @param {num} port 
@@ -160,6 +167,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetDataMode ###
+ * @brief Define data format for outgoing data
  * Enable sending data in several modes.
  * $$ net.SetDataMode(mode) $$
  * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
@@ -167,6 +175,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetSplitMode ###
+ * @brief Specify how to split received data
  * Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls. * p2 and p3 have different purposes for different modes: * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ net.SetSplitMode(mode, p2, p3) $$
  * @param {str} mode End|Start-End|Size
@@ -184,6 +193,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetOnConnect ###
+ * @brief Called when TCP connected or failed to connect to a server.
  * %cb% a TCP connection could be established or if it failed to connect to the server. The _connected_ state is passed as first argument.
  * $$ net.SetOnConnect(callback) $$
  * @param {fnc_json} callback {"pNames":["connected"],"pTypes":["bin"]}
@@ -191,6 +201,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetOnDownload ###
+ * @brief called when a file download has finished
  * %cb% a TCP file download has finished.
  * $$ net.SetOnDownload(callback) $$
  * @param {fnc_json} callback {"pNames":["something"],"pTypes":["num_int"]}
@@ -198,6 +209,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetOnReceive ###
+ * @brief Called when a TCP NetClient received some data via AutoReceive
  * %cb% a TCP NetClient received some data when AutoReceive was set.
  * $$ net.SetOnReceive(callback) $$
  * @param {fnc_json} callback {"pNames":["address"],"pTypes":["str"]}
@@ -205,6 +217,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### SetTimeout ###
+ * @brief Timeout between two receive checks
  * Define an interval in which the client should check for new messages.
  * $$ net.SetTimeout(seconds) $$
  * @param {num_sec} seconds 
@@ -212,6 +225,7 @@ Note: A few routers block fast UDP messages by default
 
 
 /** ### WakeOnLan ###
+ * @brief Wake up devices if they are configured to
  * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it. *  * <premium>
  * $$ net.WakeOnLan(ip, mac) $$
  * @param {str} ip 

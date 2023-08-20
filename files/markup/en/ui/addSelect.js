@@ -41,6 +41,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setOnChange ###
+ * @brief setOnChange
  * Sets a callback function when the value changes *  * 
  * $$ sel.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The value of the select input."]}
@@ -48,6 +49,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setOnOpen ###
+ * @brief setOnOpen
  * Sets a callback function when the menu is open *  * 
  * $$ sel.setOnOpen(callback) $$
  * @param {} callback 
@@ -55,6 +57,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setOnClose ###
+ * @brief setOnClose
  * Sets a callback function when the menu dialog is close *  * 
  * $$ sel.setOnClose(callback) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The value of the select input."]}
@@ -62,6 +65,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### addItem ###
+ * @brief addItem
  * Adds an item on the select component options list *  * 
  * $$ sel.addItem(item, index) $$
  * @param {str} item A new item to be added.
@@ -70,6 +74,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### removeItemByIndex ###
+ * @brief removeItemByIndex
  * Removes an item in the select component item list by its index *  * 
  * $$ sel.removeItemByIndex(index) $$
  * @param {num} index The index of the corresponding item to remove.
@@ -77,6 +82,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### removeItemByName ###
+ * @brief removeItemByName
  * Removes an item in the select component item list by its name *  * 
  * $$ sel.removeItemByName(name) $$
  * @param {str} name The name of the item to remove.
@@ -84,18 +90,21 @@ Adds a Select Component to a given layout.
 
 
 /** ### shifItem ###
+ * @brief shifItem
  * Removes an item at the beginning of the list items *  * 
  * $$ sel.shifItem() $$
  */
 
 
 /** ### popItem ###
+ * @brief popItem
  * Removes an item at the end of the list items *  * 
  * $$ sel.popItem() $$
  */
 
 
 /** ### getItem ###
+ * @brief getItem
  * Returns the item at a given index *  * 
  * $$ sel.getItem(index) $$
  * @param {num} index The index of the item.
@@ -103,6 +112,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setList ###
+ * @brief setList
  * Sets the list items in the menu popup *  * 
  * $$ sel.setList(items) $$
  * @param {obj} items A comma separated string or array of options
@@ -110,6 +120,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setEnabled ###
+ * @brief setEnabled
  * Enable or disable the select component *  * 
  * $$ sel.setEnabled(index, value) $$
  * @param {num} index Can be `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
@@ -118,6 +129,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### getEnabled ###
+ * @brief getEnabled
  * Get the enabled state of an item in the select menu *  * 
  * $$ sel.getEnabled(index) $$
  * @param {num} index The index of the corresponding item in the select menu.
@@ -126,6 +138,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setEnabledByName ###
+ * @brief setEnabledByName
  * Enable or disable an item in the menu popup *  * 
  * $$ sel.setEnabledByName(name, value) $$
  * @param {str} name The name of the menu item.
@@ -134,6 +147,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### getEnabledByName ###
+ * @brief getEnabledByName
  * Get the enabled state of an item in the menu popup *  * 
  * $$ sel.getEnabledByName(name) $$
  * @param {str} name The name of the menu item.
@@ -142,6 +156,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Adds a callback handler when the component is touch *  * 
  * $$ sel.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
@@ -149,6 +164,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ sel.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
@@ -156,6 +172,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ sel.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -164,6 +181,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ sel.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -172,30 +190,35 @@ Adds a Select Component to a given layout.
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ sel.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ sel.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ sel.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ sel.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ sel.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -204,6 +227,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ sel.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -212,6 +236,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ sel.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -223,6 +248,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ sel.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -234,6 +260,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ sel.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -243,6 +270,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ sel.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -252,6 +280,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the component *  * 
  * $$ sel.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
@@ -263,6 +292,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ sel.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -270,6 +300,7 @@ Adds a Select Component to a given layout.
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ sel.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.

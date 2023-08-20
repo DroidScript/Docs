@@ -29,6 +29,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 /** @extern Batch */
 
 /** ### GetBearingTo ###
+ * @brief Calculate bearing between current and given position
  * Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.
  * $$ loc.GetBearingTo(latitude, longitude) $$
  * @param {num} latitude 
@@ -38,6 +39,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 /** ### GetDistanceTo ###
+ * @brief Calculate distance between current and given position in meters
  * Returns the approximate distance in meters between this location and the given location.
  * $$ loc.GetDistanceTo(latitude, longitude) $$
  * @param {num} latitude 
@@ -54,6 +56,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 /** ### SetOnChange ###
+ * @brief Called when some of the values changed
  * Define a function which is called when some of the values changed.
  * $$ loc.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["data","time"],"pTypes":["obj-{ provider:str&comma; latitude:num&comma; longitude:num&comma; speed:num&comma; bearing:num&comma; altitude:num&comma; accuracy:num_met }","num_mls"]}
@@ -61,6 +64,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 /** ### SetRate ###
+ * @brief Locator update frequency in seconds
  * Set Locator update frequency in seconds
  * $$ loc.SetRate(rate) $$
  * @param {num_sec} rate 
@@ -68,12 +72,14 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 /** ### Start ###
+ * @brief Start locator
  * Start the locator.
  * $$ loc.Start() $$
  */
 
 
 /** ### Stop ###
+ * @brief Stop locator
  * Stop the locator.
  * $$ loc.Stop() $$
  */

@@ -44,6 +44,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern GetAbsWidth */
 
 /** ### GetCurrentTabName ###
+ * @brief get current tab name
  * Returns the currently displayed tab name
  * $$ tab.GetCurrentTabName() $$
  * @returns str
@@ -53,6 +54,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern GetHeight */
 
 /** ### GetLayout ###
+ * @brief Get tab content layout
  * Returns the content layout of a given tab.
  * $$ tab.GetLayout(name) $$
  * @param {str} name 
@@ -92,6 +94,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern Method */
 
 /** ### parent.AddTab ###
+ * @brief Add a new tab
  * Adds a new tab to the tabs control.
  * $$ tab.parent.AddTab(name) $$
  * @param {str} name 
@@ -111,6 +114,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern SetColorFilter */
 
 /** ### SetCornerRadius ###
+ * @brief Apply corner radius to card layouts's
  * Applies a corner radius to card layouts.
  * $$ tab.SetCornerRadius(radius) $$
  * @param {num_pxl} radius 
@@ -124,6 +128,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern SetMargins */
 
 /** ### SetOnChange ###
+ * @brief Called when current tab changed
  * %cb% the tab has been changed by the user.
  * $$ tab.SetOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["name"],"pTypes":["str"]}
@@ -131,6 +136,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 
 /** ### SetOnChildChange ###
+ * @brief Called when the user changed a control content
  * Defines a callback function which is called when the content of a child control has been changed by the user.
  * $$ tab.SetOnChildChange(callback) $$
  * @param {fnc_json} callback {"pNames":["src"],"pTypes":["dso"]}
@@ -160,6 +166,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern SetTouchable */
 
 /** ### SetTouchThrough ###
+ * @brief Enable touch event forwarding
  * Define whether the layout should forward OnTouch events to underlying controls.
  * $$ tab.SetTouchThrough(through) $$
  * @param {bin} through 
@@ -171,6 +178,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern Show */
 
 /** ### ShowTab ###
+ * @brief Switch current tab
  * Switch to a given tab name
  * $$ tab.ShowTab(name) $$
  * @param {str} name 

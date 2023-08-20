@@ -40,12 +40,14 @@ In case the user cancels the wizard the index is **-1**.
 /** @extern Dismiss */
 
 /** ### Finish ###
+ * @brief Indicate that wizard finished
  * Indicate that the Wizard is going to finish on the next page.
  * $$ wiz.Finish() $$
  */
 
 
 /** ### GetButtons ###
+ * @brief Returns list of wiz control buttons
  * Returns the list of the three control buttons at the bottom of the wizard.
  * $$ wiz.GetButtons() $$
  * @returns lst_obj-[ btnCancel:dso-CreateButton, btnPrev:dso-CreateButton, btnNext:dso-CreateButton ]
@@ -53,6 +55,7 @@ In case the user cancels the wizard the index is **-1**.
 
 
 /** ### GetDialog ###
+ * @brief Get wiz dialog object
  * Returns the dialog:dso-"CreateDialog" object of the wizard.
  * $$ wiz.GetDialog() $$
  * @returns dso-CreateDialog
@@ -60,6 +63,7 @@ In case the user cancels the wizard the index is **-1**.
 
 
 /** ### GetLayout ###
+ * @brief Get wiz content layout
  * Return s the content layout:dso-"CreateLayout" object of the wizard.
  * $$ wiz.GetLayout() $$
  * @returns dso-CreateLayout

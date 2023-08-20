@@ -49,6 +49,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 
 
 /** ### SetOnSelect ###
+ * @brief Calls a function when an item in the list is select.
  * Calls a function when an item in the list is select. List must be selectable.
  * $$ lsm.SetOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["index","isSelected"],"pTypes":["num_int","bin"]}

@@ -31,6 +31,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setOnTouch ###
+ * @brief setOnTouch
  * Sets a callback function when the checkbox item is touch *  * 
  * $$ ckb.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["value ","text ","index ","event "],"pTypes":["bin-The checked state of the checkbox item.","str-The checkbox label text.","num-The index of the corresponding checkbox.","obj-The click event."]}
@@ -38,6 +39,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setOnChange ###
+ * @brief setOnChange
  * Adds a callback function to be called whent there is a change of value *  * 
  * $$ ckb.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["values "],"pTypes":["lst-An array of indexes corresponding to the checked checkbox items."]}
@@ -45,6 +47,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setIcon ###
+ * @brief setIcon
  * Sets the checked icon and unchecked icon *  * 
  * $$ ckb.setIcon(checked, unchecked) $$
  * @param {str} checked Material icon font
@@ -53,6 +56,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getIcon ###
+ * @brief getIcon
  * Get the checked and unchecked icon of the checkbox group *  * 
  * $$ ckb.getIcon() $$
  * @returns obj
@@ -60,6 +64,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setCheckedByIndex ###
+ * @brief setCheckedByIndex
  * Checked or unchecked a given item by its index *  * 
  * $$ ckb.setCheckedByIndex(item, bool) $$
  * @param {num} item The item or index of the item.
@@ -68,6 +73,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setCheckedByName ###
+ * @brief setCheckedByName
  * Checked or unchecked a given item by its name *  * 
  * $$ ckb.setCheckedByName(name, bool) $$
  * @param {str} name The item or index of the item.
@@ -76,6 +82,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getCheckedItems ###
+ * @brief getCheckedItems
  * Get the list of all checked items *  * 
  * $$ ckb.getCheckedItems() $$
  * @returns str
@@ -83,6 +90,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getCheckedByIndex ###
+ * @brief getCheckedByIndex
  * Get the current value of the item in the list *  * 
  * $$ ckb.getCheckedByIndex(index) $$
  * @param {num} index The index of the corresponding item.
@@ -91,6 +99,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getCheckedByName ###
+ * @brief getCheckedByName
  * Get the current value of the item in the list *  * 
  * $$ ckb.getCheckedByName(name) $$
  * @param {str} name The index of the corresponding item.
@@ -99,6 +108,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setTextByIndex ###
+ * @brief setTextByIndex
  * Sets a new text to a given item by its index *  * 
  * $$ ckb.setTextByIndex(index, val) $$
  * @param {num} index The index of the item.
@@ -107,6 +117,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setTextByName ###
+ * @brief setTextByName
  * Sets a new text to a given item by its name *  * 
  * $$ ckb.setTextByName(name, val) $$
  * @param {str} name The name of the item
@@ -115,6 +126,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getText ###
+ * @brief getText
  * Get the text of the item in a given index *  * 
  * $$ ckb.getText(index) $$
  * @param {num} index The index of the list
@@ -123,6 +135,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setList ###
+ * @brief setList
  * Sets a new list of item in the checkbox group *  * 
  * $$ ckb.setList(list) $$
  * @param {obj} list The new list items for the checkbox group.
@@ -130,6 +143,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setEnabled ###
+ * @brief setEnabled
  * Enable or disable an item in the checkbox group *  * 
  * $$ ckb.setEnabled(index, value) $$
  * @param {num} index The index of the checkbox item.
@@ -138,6 +152,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getEnabled ###
+ * @brief getEnabled
  * Get the enabled state of a checkbox item *  * 
  * $$ ckb.getEnabled(index) $$
  * @param {num} index The index of the checkbox item.
@@ -146,6 +161,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setEnabledByName ###
+ * @brief setEnabledByName
  * Enable or disable a checkbox item by its name *  * 
  * $$ ckb.setEnabledByName(name, value) $$
  * @param {str} name The name of the checkbox item.
@@ -154,6 +170,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getEnabledByName ###
+ * @brief getEnabledByName
  * Get the enabled state of a checkbox item by its name *  * 
  * $$ ckb.getEnabledByName(name) $$
  * @param {str} name The checkbox item.
@@ -162,6 +179,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### addItem ###
+ * @brief addItem
  * Add or insert an item in the checkbox group *  * 
  * $$ ckb.addItem(text, index) $$
  * @param {str} text The text label for the checkbox.
@@ -170,6 +188,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### removeItemByIndex ###
+ * @brief removeItemByIndex
  * Removes an item in the checkbox group by its corresponding index *  * 
  * $$ ckb.removeItemByIndex(index) $$
  * @param {num} index The index of the corresponding item to remove.
@@ -177,6 +196,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### removeItemByName ###
+ * @brief removeItemByName
  * Removes an item in the checkbox group by its title name *  * 
  * $$ ckb.removeItemByName(title) $$
  * @param {str} title The title text of the corresponding checkbox item.
@@ -184,18 +204,21 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### popItem ###
+ * @brief popItem
  * Removes the last item in the checkbox group *  * 
  * $$ ckb.popItem() $$
  */
 
 
 /** ### shiftItem ###
+ * @brief shiftItem
  * Removes the first item in the checkbox group *  * 
  * $$ ckb.shiftItem() $$
  */
 
 
 /** ### setOnContextMenu ###
+ * @brief setOnContextMenu
  * Adds a callback function on right click *  * 
  * $$ ckb.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["label ","index ","event "],"pTypes":["str-The checkbox item label text.","num-The index of the corresponding item.","obj-The pointer event object."]}
@@ -203,6 +226,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setCornerRadius ###
+ * @brief setCornerRadius
  * Sets the corner radius of the checkbox group *  * 
  * $$ ckb.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
@@ -214,6 +238,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### animate ###
+ * @brief animate
  * Animate the component *  * 
  * $$ ckb.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
@@ -222,6 +247,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setSize ###
+ * @brief setSize
  * Sets the size of the component *  * 
  * $$ ckb.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
@@ -230,30 +256,35 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### show ###
+ * @brief show
  * Show the component *  * 
  * $$ ckb.show() $$
  */
 
 
 /** ### hide ###
+ * @brief hide
  * Hide the component *  * 
  * $$ ckb.hide() $$
  */
 
 
 /** ### gone ###
+ * @brief gone
  * Destroy the component *  * 
  * $$ ckb.gone() $$
  */
 
 
 /** ### destroy ###
+ * @brief destroy
  * Destroy the component *  * 
  * $$ ckb.destroy() $$
  */
 
 
 /** ### setScale ###
+ * @brief setScale
  * Sets the x and y scaling of the component *  * 
  * $$ ckb.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
@@ -262,6 +293,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### getPosition ###
+ * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
  * $$ ckb.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
@@ -270,6 +302,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setMargins ###
+ * @brief setMargins
  * Sets the margin of the component *  * 
  * $$ ckb.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
@@ -281,6 +314,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setPadding ###
+ * @brief setPadding
  * Sets the padding component container *  * 
  * $$ ckb.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
@@ -292,6 +326,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setPosition ###
+ * @brief setPosition
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ ckb.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
@@ -301,6 +336,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### setBorder ###
+ * @brief setBorder
  * Sets the border line for the component container *  * 
  * $$ ckb.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
@@ -310,6 +346,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### bringForward ###
+ * @brief bringForward
  * Bring this component forward by a given z-index *  * 
  * $$ ckb.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
@@ -317,6 +354,7 @@ Adds a CheckboxGroup to a given layout.
 
 
 /** ### sendBackward ###
+ * @brief sendBackward
  * Bring this component backward by a given z-index *  * 
  * $$ ckb.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
