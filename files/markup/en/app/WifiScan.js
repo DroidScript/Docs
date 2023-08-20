@@ -5,6 +5,7 @@
  * @brief Scan for any available Wifi networks
  * Scans the surroundings for any available Wifi networks.
  * $$ app.WifiScan(callback, options) $$ 
+ * @param {fnc_json} callback {"pNames":["ssids"],"pTypes":["str_pip||lst"]}
  * @param {str} options detail
 */
 

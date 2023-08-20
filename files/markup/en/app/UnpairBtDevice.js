@@ -8,6 +8,7 @@
  * See Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial
  * $$ app.UnpairBtDevice(address, callback) $$ 
  * @param {str} address 
+ * @param {fnc_json} callback {}
 */
 
 

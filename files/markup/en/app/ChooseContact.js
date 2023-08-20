@@ -6,6 +6,7 @@
  * ChooseContact opens the Contacts app so that the user can select the name and either the phone number or email address of a user.
  * $$ app.ChooseContact(type, callback) $$ 
  * @param {str} type Phone|Email
+ * @param {fnc_json} callback {"pNames":["name","data"],"pTypes":["str","str"]}
 */
 
 

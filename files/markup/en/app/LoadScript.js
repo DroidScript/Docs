@@ -8,6 +8,7 @@
  * See Also: @Script
  * $$ app.LoadScript(path, callback) $$ 
  * @param {str_pth} path 
+ * @param {fnc_json} callback {"pNames":["info"],"pTypes":["obj-{ isTrusted:bin }"]}
 */
 
 

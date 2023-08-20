@@ -9,8 +9,9 @@
  * $$ app.ChooseFile(message, type, callback, fldr, options) $$ 
  * @param {str} message 
  * @param {str} type mimetype
+ * @param {fnc_json} callback {"pNames":["path","name"],"pTypes":["str_pth||str_uri","str"]}
  * @param {str_pth} fldr 
- * @param {str:persist} options keep file permission after reboot,nodownload
+ * @param {str:persist} options keep file permission after reboot,nodownload-prevents file downloads
 */
 
 

@@ -11,8 +11,9 @@
  * @param {str} category android.intent.category.*
  * @param {str_uri} uri 
  * @param {str_mim} type 
- * @param {lst} extras [{ name:str&comma; type:str
+ * @param {lst} extras [{ name:str&comma; type:str-"string|float|int|long|bool|list|file|uri|keydown|keyup"&comma; value:str }]
  * @param {str_com} options result,cleartask
+ * @param {fnc_json} callback {"pNames":["resultCode","data"],"pTypes":["num_int--1|0|1","obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]}
 */
 
 

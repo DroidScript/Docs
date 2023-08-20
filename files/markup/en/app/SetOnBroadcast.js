@@ -9,6 +9,7 @@
  * 
  * See also: @Broadcast
  * $$ app.SetOnBroadcast(callback, action) $$ 
+ * @param {fnc_json} callback {"pNames":["type","msg"],"pTypes":["str","str"]}
  * @param {str} action 
 */
 

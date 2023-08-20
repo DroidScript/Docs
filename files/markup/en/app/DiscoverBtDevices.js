@@ -6,6 +6,8 @@
  * 
  * $$ app.DiscoverBtDevices(filter, onFound, onComplete) $$ 
  * @param {str} filter 
+ * @param {fnc_json} onFound {"pNames":["name","address"],"pTypes":["str","str"]}
+ * @param {fnc_json} onComplete {}
 */
 
 

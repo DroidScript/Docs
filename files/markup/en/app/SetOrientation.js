@@ -8,6 +8,7 @@
  * See Also: @GetOrientation
  * $$ app.SetOrientation(orient, callback) $$ 
  * @param {str} orient Default|Landscape|ReverseLandscape|Portrait|ReversePortrait
+ * @param {fnc_json} callback {}
 */
 
 

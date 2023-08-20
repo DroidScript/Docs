@@ -9,8 +9,8 @@
  * @param {obj} parent The parent layout where to add the prgress component.
  * @param {num} value the initial value of the progress component.
  * @param {str} options A comma separated option for progress component. Options can be \n Color: `Primary` `Secondary` \n Type: `Circular` `Linear` \n Variant: `Determinate` `Indeterminate`
- * @param {num} width Fraction of the screen width. [0
- * @param {num} height Fraction fo the screen height. [0
+ * @param {num} width Fraction of the screen width. [0-1]
+ * @param {num} height Fraction fo the screen height. [0-1]
  * @returns obj-Progress Component
 */
 
@@ -59,8 +59,8 @@ Adds a progress component into your app.
 /** ### setSize ###
  * Sets the size of the component *  * 
  * $$ prg.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  */
 
 
@@ -91,8 +91,8 @@ Adds a progress component into your app.
 /** ### setScale ###
  * Sets the x and y scaling of the component *  * 
  * $$ prg.setScale(x, y) $$
- * @param {num} x The x
- * @param {num} y The y
+ * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+ * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
 
 
@@ -119,9 +119,9 @@ Adds a progress component into your app.
  * Sets the padding component container *  * 
  * $$ prg.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0
- * @param {num} right Fraction of the component width. [0
- * @param {num} bottom Fraction of the component height. [0
+ * @param {num} top Fraction of the component height. [0-1]
+ * @param {num} right Fraction of the component width. [0-1]
+ * @param {num} bottom Fraction of the component height. [0-1]
  * @param {str} mode The size thickness mode. Can be `px`
  */
 
@@ -129,8 +129,8 @@ Adds a progress component into your app.
 /** ### setPosition ###
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ prg.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0
- * @param {num} top Fraction of the screen height. [0
+ * @param {num} left Fraction of the parent width. [0-1]
+ * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
@@ -138,19 +138,19 @@ Adds a progress component into your app.
 /** ### setBorder ###
  * Sets the border line for the component container *  * 
  * $$ prg.setBorder(width, clr, style) $$
- * @param {num} width Border
+ * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border
+ * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
 /** ### setCornerRadius ###
  * Sets the corner radius of the component *  * 
  * $$ prg.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top
- * @param {num} tr Top
- * @param {num} bl Bottom
- * @param {num} br Bottom
+ * @param {num} tl Top-Left border radius in pixels.
+ * @param {num} tr Top-Right border radius in pixels.
+ * @param {num} bl Bottom-Left border radius in pixels.
+ * @param {num} br Bottom-Right border radius in pixels.
  * @param {str} mode Unit. Values are `px` `rem` or `%`.
  */
 
@@ -158,14 +158,14 @@ Adds a progress component into your app.
 /** ### bringForward ###
  * Bring this component forward by a given z-index *  * 
  * $$ prg.bringForward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
 
 /** ### sendBackward ###
  * Bring this component backward by a given z-index *  * 
  * $$ prg.sendBackward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
 

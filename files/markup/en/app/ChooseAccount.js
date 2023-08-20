@@ -7,6 +7,7 @@
  * 
  * See Also: @GetAccounts
  * $$ app.ChooseAccount(callback) $$ 
+ * @param {fnc_json} callback {"pNames":["account"],"pTypes":["str-email"]}
 */
 
 

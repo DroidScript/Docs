@@ -7,12 +7,32 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "generate",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "jsdoc-parser",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/files/jsdoc-parser.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "markup-generator",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/markup-generator.js"
         }
     ]
 }

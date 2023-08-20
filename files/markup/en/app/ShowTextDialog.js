@@ -7,6 +7,7 @@
  * $$ app.ShowTextDialog(title, default, callback) $$ 
  * @param {str} title 
  * @param {str} default 
+ * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str"]}
 */
 
 

@@ -9,7 +9,7 @@
  * @param {str} text 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str_com} options FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto
+ * @param {str_com} options FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound
  * @returns dso-Button
 */
 

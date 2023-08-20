@@ -64,7 +64,7 @@
 /** ### ReadText ###
  * Read data from the file as text.
  * $$ fil.ReadText(type) $$
- * @param {str} type UTF:read UTF
+ * @param {str} type UTF:read UTF-8 string with 2 byte header,Line:"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n"|Char:read big-endian 16-bit character
  * @returns str
  */
 
@@ -72,7 +72,7 @@
 /** ### ReadTextAsync ###
  * Asynchronously reads a single character or a line as text.
  * $$ fil.ReadTextAsync(type, callback) $$
- * @param {str} type Line:"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n"|Char:read big
+ * @param {str} type Line:"read one line terminated by &bsol;&bsol;n&comma; &bsol;&bsol;r or &bsol;&bsol;r&bsol;&bsol;n"|Char:read big-endian 16-bit character
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["str"]}
  */
 
@@ -101,7 +101,7 @@
 /** ### WriteData ###
  * Write data to the file.
  * $$ fil.WriteData(data, mode) $$
- * @param {str} data FA\,FB\,FC|250\,251\,252|abc46:low order 8
+ * @param {str} data FA\,FB\,FC|250\,251\,252|abc46:low order 8-bit bytes
  * @param {str} mode Hex|Int|Text
  */
 
@@ -118,7 +118,7 @@
  * writes text to file
  * $$ fil.WriteText(data, type) $$
  * @param {str||lst} data [ bytes:num_int ]
- * @param {str} type UTF:write UTF
+ * @param {str} type UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters
  */
 
 

@@ -5,6 +5,7 @@
  * @brief Catch key events fired in your app
  * 
  * $$ app.SetOnKey(callback) $$ 
+ * @param {fnc_json} callback {"pNames":["action","name","keycode","extrakeys"],"pTypes":["str-DOWN|UP","str-ENTER,VOLUME_DOWN,VOLUME_UP,BACK,MENU,...","num_int","str-Shift,Ctrl,Alt,Meta"]}
 */
 
 

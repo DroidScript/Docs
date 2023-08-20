@@ -31,7 +31,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
  * $$ pls.GetBillingInfo(prodIDs, callback, options) $$
  * @param {str} prodIDs 
  * @param {fnc_json} callback {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
- * @param {str} options IAP:In
+ * @param {str} options IAP:In-App purchases|SUBS:subscriptions
  */
 
 

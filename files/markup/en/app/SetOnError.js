@@ -7,6 +7,7 @@
  * 
  * See also: @Error
  * $$ app.SetOnError(callback) $$ 
+ * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}
 */
 
 

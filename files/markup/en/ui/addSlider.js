@@ -7,9 +7,9 @@
  * 
  * $$ sld = ui.addSlider(parent, value, options, width, height) $$ 
  * @param {obj} parent The layout where to add the Slider Component.
- * @param {num} value The initial value of the Slider. Value must be between 0
+ * @param {num} value The initial value of the Slider. Value must be between 0-100, the default min and max values.
  * @param {str} options A comma separated options for the Slider Component. Options can be \n Color: `Primary` `Secondary` \n Orienation: `Horizontal` `Vertical` \n Track: `Normal` `Inverted` `False`
- * @param {num} width Fraction of the screen width. [0
+ * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height.
  * @returns obj-Slider Component.
 */
@@ -95,8 +95,8 @@ Adds a Slider Component into your App.
 /** ### setSize ###
  * Sets the size of the component *  * 
  * $$ sld.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  */
 
 
@@ -127,8 +127,8 @@ Adds a Slider Component into your App.
 /** ### setScale ###
  * Sets the x and y scaling of the component *  * 
  * $$ sld.setScale(x, y) $$
- * @param {num} x The x
- * @param {num} y The y
+ * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+ * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
 
 
@@ -155,9 +155,9 @@ Adds a Slider Component into your App.
  * Sets the padding component container *  * 
  * $$ sld.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0
- * @param {num} right Fraction of the component width. [0
- * @param {num} bottom Fraction of the component height. [0
+ * @param {num} top Fraction of the component height. [0-1]
+ * @param {num} right Fraction of the component width. [0-1]
+ * @param {num} bottom Fraction of the component height. [0-1]
  * @param {str} mode The size thickness mode. Can be `px`
  */
 
@@ -165,8 +165,8 @@ Adds a Slider Component into your App.
 /** ### setPosition ###
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ sld.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0
- * @param {num} top Fraction of the screen height. [0
+ * @param {num} left Fraction of the parent width. [0-1]
+ * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
@@ -174,19 +174,19 @@ Adds a Slider Component into your App.
 /** ### setBorder ###
  * Sets the border line for the component container *  * 
  * $$ sld.setBorder(width, clr, style) $$
- * @param {num} width Border
+ * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border
+ * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
 /** ### setCornerRadius ###
  * Sets the corner radius of the component *  * 
  * $$ sld.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top
- * @param {num} tr Top
- * @param {num} bl Bottom
- * @param {num} br Bottom
+ * @param {num} tl Top-Left border radius in pixels.
+ * @param {num} tr Top-Right border radius in pixels.
+ * @param {num} bl Bottom-Left border radius in pixels.
+ * @param {num} br Bottom-Right border radius in pixels.
  * @param {str} mode Unit. Values are `px` `rem` or `%`.
  */
 
@@ -194,14 +194,14 @@ Adds a Slider Component into your App.
 /** ### bringForward ###
  * Bring this component forward by a given z-index *  * 
  * $$ sld.bringForward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
 
 /** ### sendBackward ###
  * Bring this component backward by a given z-index *  * 
  * $$ sld.sendBackward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
 

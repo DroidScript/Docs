@@ -47,7 +47,7 @@
  * Build a hash of a string for one-way encryption.
  * $$ crp.Hash(text, mode, options) $$
  * @param {str} text 
- * @param {str} mode MD5|SHA|SHA
+ * @param {str} mode MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512
  * @param {str} options Wrap
  */
 

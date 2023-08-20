@@ -9,6 +9,7 @@
  * @param {str} title 
  * @param {num_frc} width 
  * @param {num_frc} height 
+ * @param {fnc_json} callback {"pNames":["layout","page"],"pTypes":["dso-CreateLayout","num_int"]}
  * @param {str_com} options AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch
 */
 

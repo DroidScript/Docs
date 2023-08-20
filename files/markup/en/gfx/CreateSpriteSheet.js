@@ -9,6 +9,7 @@
  * See Also: @CreateSprite
  * $$ sht = gfx.CreateSpriteSheet(file, callback) $$ 
  * @param {str_ptf} file 
+ * @param {fnc_json} callback {}
  * @returns gvo-SpriteSheet
 */
 

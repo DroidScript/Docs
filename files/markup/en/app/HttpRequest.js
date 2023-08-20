@@ -11,6 +11,7 @@
  * @param {str_url} baseUrl 
  * @param {str} path 
  * @param {str} params 
+ * @param {fnc_json} callback {"pNames":["error","reply","status"],"pTypes":["bin","str","num_int"]}
  * @param {str} headers 
 */
 

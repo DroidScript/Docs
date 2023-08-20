@@ -8,6 +8,7 @@
  * $$ srv = app.CreateService(packageName, className, callback, options) $$ 
  * @param {str} packageName this|&lt;package&gt;
  * @param {str} className this|&lt;class&gt;
+ * @param {fnc_json} callback {}
  * @param {str_com} options Persist:attempts to force restart if service killed
  * @returns dso-Service
 */

@@ -7,6 +7,7 @@
  * 
  * See Also: @WifiConnect, @WifiScan
  * $$ app.SetOnWifiChange(callback) $$ 
+ * @param {fnc_json} callback {"pNames":["state","ssid"],"pTypes":["str-CONNECTING|CONNECTED|DISCONNECTED","str"]}
 */
 
 

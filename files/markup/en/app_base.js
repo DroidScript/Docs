@@ -11,9 +11,9 @@
 /** ### AdjustColor
  * Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.
  * $$ obj.AdjustColor(hue, saturation, brightness, contrast) $$
- * @param {num} hue 
- * @param {num} saturation 
- * @param {num} brightness 
+ * @param {num} hue -180..180
+ * @param {num} saturation -100..100
+ * @param {num} brightness -100..100
  * @param {num} contrast 0..100
  */
 
@@ -21,7 +21,7 @@
 /** ### Batch
  * Batch method calls to be able to set all object's properties at once. * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out) * Inherited methods can be called by appending an underscore to the function name (ie. <js nobox>txt.Batch({ SetBackColor_: [“red”] })</js>
  * $$ obj.Batch(properties) $$
- * @param {obj} properties { COMMAND:lst
+ * @param {obj} properties { COMMAND:lst-args }
  */
 
 
@@ -201,7 +201,7 @@
  * @param {str_col} color1 
  * @param {str_col} color2 
  * @param {?} color3 
- * @param {str} options left
+ * @param {str} options left-right|right-left|top-bottom|bottom-top|bl-tr|br-tl|tl-br|tr-bl
  */
 
 
@@ -423,7 +423,7 @@
 /** ### Tween
  * Performs an animation on the control. * The `target` object is for the position, size and rotation that the control has at the end of the animation. *  * The `type` specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation. *  * With the amount of `repeat`s you can control how many times you want to play the animation. *  * If you have `jojo` activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation. *  * Finally the `callback` function will be called after the animation has finished. Well, it's about time!
  * $$ obj.Tween(target, duration, type, repeat, yoyo, callback) $$
- * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc
+ * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }
  * @param {num_mls} duration 
  * @param {str} type Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out
  * @param {num_int} repeat 

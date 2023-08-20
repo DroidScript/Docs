@@ -58,7 +58,7 @@
  * $$ nxt.Drive(motors, power, rotations, options) $$
  * @param {str} motors A,B,C|ABC
  * @param {num_prc} power 
- * @param {num_prc} rotations 
+ * @param {num_prc} rotations -100..100
  * @param {num_flt} options 0|rotations
  */
 
@@ -199,7 +199,7 @@
  * Reads the sound pressure level of the surrounding.
  * $$ nxt.ReadSoundSensor(input, mode) $$
  * @param {num_int} input 1..4
- * @param {str} mode DB:Decibels|DbA:A
+ * @param {str} mode DB:Decibels|DbA:A-weighted Decibels
  * @returns num_flt
  */
 

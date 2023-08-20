@@ -30,7 +30,7 @@
  * $$ sms.Send(number, message, options) $$
  * @param {str} number 
  * @param {str} message 
- * @param {str} options MultiPart:multi
+ * @param {str} options MultiPart:multi-part SMS messaging
  */
 
 

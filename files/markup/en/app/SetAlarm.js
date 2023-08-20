@@ -7,6 +7,7 @@
  * $$ app.SetAlarm(type, id, callback, time, interval, options) $$ 
  * @param {str} type Set|Repeat|Cancel
  * @param {str||num_int} id 
+ * @param {fnc_json} callback {"pNames":["id"],"pTypes":["str||num_int"]}
  * @param {num_dat} time 
  * @param {num_mls} interval 
  * @param {str_com} options ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service

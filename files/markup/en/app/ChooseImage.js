@@ -8,6 +8,7 @@
  * See Also: @CreateImage
  * $$ app.ChooseImage(options, callback) $$ 
  * @param {str_com} options |internal|external
+ * @param {fnc_json} callback {"pNames":["path"],"pTypes":["str_pth"]}
 */
 
 

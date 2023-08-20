@@ -33,22 +33,15 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
         if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
         if (data.shortDesc) info += ` * @brief ${data.shortDesc}`;
 
+
         str += `
 /** # ${key} #
 ${info}
  * ${_desc}
- * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${(data.pNames && data.pNames.length) ? data.pNames.join(", ") : ""}) $$ \n`;
+ * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${(data.pNames && data.pNames.length) ? data.pNames.join(", ") : ""}) $$ 
+`;
 
-        if (data.pNames && data.pTypes && data.pNames.length) {
-            for (let i = 0; i < data.pNames.length; i++) {
-                let pDesc = "", pType = "", pDef = data.pTypes[i];
-                if (typeof (pDef) == "string") {
-                    pType = pDef.split("-")[0];
-                    pDesc = pDef.split("-")[1] || "";
-                    str += ` * @param {${pType}} ${data.pNames[i]} ${pDesc}\n`
-                }
-            }
-        }
+        str += extractParams(data);
 
         if (data.retval) {
             str += ` * @returns ${data.retval}\n`;
@@ -77,8 +70,7 @@ ${info}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * @returns ${methodData.retval}
  */
-
-                    `;
+\n                    `;
                 }
 
                 else if (typeof methodData == "string") {
@@ -91,21 +83,10 @@ ${info}
                     str += `
 /** ### ${method} ###
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
- * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$\n`;
+ * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
+`;
 
-                    if (methodData.pNames && methodData.pTypes) {
-                        for (let i = 0; i < methodData.pNames.length; i++) {
-                            let pDesc = "", pType = "", pDef = methodData.pTypes[i];
-                            if (typeof pDef == "string") {
-                                pType = pDef.split("-")[0];
-                                pDesc = pDef.split("-")[1] || "";
-                            } else if (typeof pDef == "object") {
-                                pType = "fnc_json";
-                                pDesc = JSON.stringify(pDef);
-                            }
-                            str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc}\n`
-                        }
-                    }
+                    str += extractParams(methodData);
 
                     if (methodData.retval) {
                         str += ` * @returns ${methodData.retval}\n`
@@ -138,21 +119,10 @@ ${info}
         baseStr += `
 /** ### ${method}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
- * $$ obj.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$\n`;
+ * $$ obj.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
+`;
 
-        if (methodData.pNames && methodData.pTypes) {
-            for (let i = 0; i < methodData.pNames.length; i++) {
-                let pDesc = "", pType = "", pDef = methodData.pTypes[i];
-                if (typeof pDef == "string") {
-                    pType = pDef.split("-")[0];
-                    pDesc = pDef.split("-")[1] || "";
-                } else if (typeof pDef == "object") {
-                    pType = "fnc_json";
-                    pDesc = JSON.stringify(pDef);
-                }
-                baseStr += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc}\n`
-            }
-        }
+        baseStr += extractParams(methodData);
 
         if (methodData.retval) {
             baseStr += ` * @returns ${methodData.retval}\n`
@@ -162,9 +132,31 @@ ${info}
 
     if (baseStr) {
         let _baseFile = "_base.js";
-        let _baseOutFile = folder + _baseFile;
+        let _baseOutFile = folder.slice(0, -1) + _baseFile;
         fs.writeFileSync(_baseOutFile, baseStr);
     }
+}
+
+const split0 = (s = '', t = '') => s.substring(0, s.indexOf(t)) || s;
+const split1 = (s = '', t = '') => s.slice(s.indexOf(t)).substring(1);
+
+/** @param {DSFunction} methodData */
+function extractParams(methodData) {
+    let str = ""
+    if (methodData.pNames && methodData.pTypes) {
+        for (let i = 0; i < methodData.pNames.length; i++) {
+            let pDesc = "", pType = "", pDef = methodData.pTypes[i];
+            if (typeof pDef == "string") {
+                pType = split0(pDef, "-");
+                pDesc = split1(pDef, "-");
+            } else if (typeof pDef == "object") {
+                pType = "fnc_json";
+                pDesc = JSON.stringify(pDef);
+            }
+            str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc}\n`
+        }
+    }
+    return str;
 }
 
 /** @param {string} raw */
@@ -177,7 +169,6 @@ function renderSamples(raw) {
             let name = samp.substring(samp.indexOf("<sample") + 7, samp.indexOf(">")).trim();
             let cod = samp.substring(samp.indexOf(">") + 1).trim();
             cod = cod.replace(/\*\//g, "*_");
-            if (raw.includes("Hello from wallpaper")) console.log([samp, name, cod]);
             str += `
     
 /**

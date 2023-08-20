@@ -184,7 +184,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetBlockedUrls ###
  * Define a list of urls that are blocked for loading.
  * $$ web.SetBlockedUrls(urls) $$
- * @param {lst} urls [ urls:str ]||str
+ * @param {lst} urls [ urls:str ]||str-urls
  */
 
 

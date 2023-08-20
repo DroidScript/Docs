@@ -9,8 +9,8 @@
  * @param {obj} parent The parent layout where to add the ButtonGroup
  * @param {lst} list The item to be displayed on the buttn group.
  * @param {str} options A comma separated options. Can be one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n Color: `Primary` `Secondary` `Default` \n Size: `Small` `Medium` `Large` \n Orientation: `Horizontal` `Vertical` \n Util: `Icon` `NoElevation`
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  * @returns obj-ButtonGroup Component
 */
 
@@ -96,7 +96,7 @@ Adds a button group into your app.
  * Adds a tooltip to the ButtonGroup items *  * 
  * $$ btg.setToolTip(titles, pos) $$
  * @param {lst} titles The titles for each item in the ButtonGroup.
- * @param {str} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom
+ * @param {str} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
  */
 
 
@@ -150,8 +150,8 @@ Adds a button group into your app.
 /** ### setSize ###
  * Sets the size of the component *  * 
  * $$ btg.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  */
 
 
@@ -182,8 +182,8 @@ Adds a button group into your app.
 /** ### setScale ###
  * Sets the x and y scaling of the component *  * 
  * $$ btg.setScale(x, y) $$
- * @param {num} x The x
- * @param {num} y The y
+ * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+ * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
 
 
@@ -210,9 +210,9 @@ Adds a button group into your app.
  * Sets the padding component container *  * 
  * $$ btg.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0
- * @param {num} right Fraction of the component width. [0
- * @param {num} bottom Fraction of the component height. [0
+ * @param {num} top Fraction of the component height. [0-1]
+ * @param {num} right Fraction of the component width. [0-1]
+ * @param {num} bottom Fraction of the component height. [0-1]
  * @param {str} mode The size thickness mode. Can be `px`
  */
 
@@ -220,8 +220,8 @@ Adds a button group into your app.
 /** ### setPosition ###
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ btg.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0
- * @param {num} top Fraction of the screen height. [0
+ * @param {num} left Fraction of the parent width. [0-1]
+ * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
@@ -229,19 +229,19 @@ Adds a button group into your app.
 /** ### setBorder ###
  * Sets the border line for the component container *  * 
  * $$ btg.setBorder(width, clr, style) $$
- * @param {num} width Border
+ * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border
+ * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
 /** ### setCornerRadius ###
  * Sets the corner radius of the component *  * 
  * $$ btg.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top
- * @param {num} tr Top
- * @param {num} bl Bottom
- * @param {num} br Bottom
+ * @param {num} tl Top-Left border radius in pixels.
+ * @param {num} tr Top-Right border radius in pixels.
+ * @param {num} bl Bottom-Left border radius in pixels.
+ * @param {num} br Bottom-Right border radius in pixels.
  * @param {str} mode Unit. Values are `px` `rem` or `%`.
  */
 
@@ -249,14 +249,14 @@ Adds a button group into your app.
 /** ### bringForward ###
  * Bring this component forward by a given z-index *  * 
  * $$ btg.bringForward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
 
 /** ### sendBackward ###
  * Bring this component backward by a given z-index *  * 
  * $$ btg.sendBackward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
 

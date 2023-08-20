@@ -8,7 +8,7 @@
  * @param {str} message 
  * @param {str} title 
  * @param {str_com} options NoDim,NoFocus
- * @param {num_int} hue 
+ * @param {num_int} hue -180..180
 */
 
 

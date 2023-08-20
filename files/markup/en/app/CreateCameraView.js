@@ -227,7 +227,7 @@ More samples can be found in the samples section of DroidScript.
 /** ### SetColorEffect ###
  * Applies a color effect to the camera.
  * $$ cam.SetColorEffect(effect) $$
- * @param {str} effect none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage
+ * @param {str} effect none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon
  */
 
 

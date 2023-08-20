@@ -7,7 +7,7 @@
  * Creates a more customizable list dialog
  * $$ lsd = MUI.CreateListDialog(title, list, color, bottom) $$ 
  * @param {str} title 
- * @param {lst} list An array of objects of the form {name: 'string', icon: 'material
+ * @param {lst} list An array of objects of the form {name: 'string', icon: 'material-icon', color: 'string'}
  * @param {str_col} color 
  * @param {bin} bottom 
  * @returns obj

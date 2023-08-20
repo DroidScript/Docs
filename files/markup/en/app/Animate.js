@@ -5,6 +5,7 @@
  * @brief Similar to setInterval
  * 
  * $$ app.Animate(callback, fps) $$ 
+ * @param {fnc_json} callback {"pNames":["time","dtime"],"pTypes":["num_mls","num_mls"]}
  * @param {num_fps} fps 
 */
 

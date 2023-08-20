@@ -7,6 +7,7 @@
  * 
  * See Also: @ShowKeyboard, @HideKeyboard
  * $$ app.SetOnShowKeyboard(callback) $$ 
+ * @param {fnc_json} callback {"pNames":["shown"],"pTypes":["bin"]}
 */
 
 

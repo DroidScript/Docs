@@ -44,8 +44,8 @@
  * $$ phs.ApplyImpulse(x, y, offsetX, offsetY) $$
  * @param {num} x 
  * @param {num} y 
- * @param {num} offsetX 
- * @param {num} offsetY 
+ * @param {num} offsetX -1..1
+ * @param {num} offsetY -1..1
  */
 
 

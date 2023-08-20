@@ -10,6 +10,7 @@
  * @param {num} fontSize 
  * @param {str_ptf} fontFile 
  * @param {str} align left|center|right
+ * @param {fnc_json} callback {}
  * @returns gvo-Text
 */
 

@@ -6,7 +6,7 @@
 
  * A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>
  * $$ crd = MUI.CreateCard(options) $$ 
- * @param {obj} options {title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str
+ * @param {obj} options {title:str, body:str, image:str_ptf, buttonText:str_com, color:str, width:num_frc, dividerAvatar:bin, dividerBody:bin, avatar:str_pth, avatarOnTop:bin, buttonType:str-"raised|raisedoutline|round|roundoutline|flat"}
  * @returns obj
 */
 

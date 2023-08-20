@@ -8,6 +8,7 @@
  * See Also: @CheckPermission
  * $$ app.GetPermission(type, callback) $$ 
  * @param {str_com} type Camera|ExtSDcard|External|Internal|Network|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\:<pid:num>
+ * @param {fnc_json} callback {"pNames":["ungranted"],"pTypes":["str_com||str_uri"]}
 */
 
 

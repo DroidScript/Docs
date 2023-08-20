@@ -8,6 +8,7 @@
  * See Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices
  * $$ app.PairBtDevice(address, callback) $$ 
  * @param {str} address 
+ * @param {fnc_json} callback {}
 */
 
 

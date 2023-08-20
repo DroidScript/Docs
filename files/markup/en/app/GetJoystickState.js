@@ -6,7 +6,7 @@
  * 
  * $$ app.GetJoystickState(id, key) $$ 
  * @param {num_int} id 
- * @param {str} key A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis
+ * @param {str} key A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12
  * @returns num
 */
 

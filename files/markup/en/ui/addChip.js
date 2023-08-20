@@ -9,8 +9,8 @@
  * @param {obj} parent The parent layout where to add the Chip.
  * @param {str} text The text on the chip.
  * @param {str} options A comma separated option. \n Color: `Primary` `Secondary` `Default` \n Size: `Small` `Medium` \n Variant: `Outlined` `Default` \n Util: `Touchable`
- * @param {num} width Fraction of the screen width. [0
- * @param {num} height Fraction of the screen height. [0
+ * @param {num} width Fraction of the screen width. [0-1]
+ * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Chip Component
 */
 
@@ -49,10 +49,10 @@ Adds a chip into your app.
 /** ### setCornerRadius ###
  * Sets the corner radius of the chip *  * 
  * $$ chp.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top
- * @param {num} tr Top
- * @param {num} bl Bottom
- * @param {num} br Bottom
+ * @param {num} tl Top-left corner radius.
+ * @param {num} tr Top-right corner radius.
+ * @param {num} bl Bottom-left corner radius.
+ * @param {num} br Bottom-right corner radius.
  * @param {str} mode Unit. Values are `px` `rem` or `%`.
  */
 
@@ -82,8 +82,8 @@ Adds a chip into your app.
 /** ### setSize ###
  * Sets the size of the component *  * 
  * $$ chp.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  */
 
 
@@ -114,8 +114,8 @@ Adds a chip into your app.
 /** ### setScale ###
  * Sets the x and y scaling of the component *  * 
  * $$ chp.setScale(x, y) $$
- * @param {num} x The x
- * @param {num} y The y
+ * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+ * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
 
 
@@ -142,9 +142,9 @@ Adds a chip into your app.
  * Sets the padding component container *  * 
  * $$ chp.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0
- * @param {num} right Fraction of the component width. [0
- * @param {num} bottom Fraction of the component height. [0
+ * @param {num} top Fraction of the component height. [0-1]
+ * @param {num} right Fraction of the component width. [0-1]
+ * @param {num} bottom Fraction of the component height. [0-1]
  * @param {str} mode The size thickness mode. Can be `px`
  */
 
@@ -152,8 +152,8 @@ Adds a chip into your app.
 /** ### setPosition ###
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ chp.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0
- * @param {num} top Fraction of the screen height. [0
+ * @param {num} left Fraction of the parent width. [0-1]
+ * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
@@ -161,23 +161,23 @@ Adds a chip into your app.
 /** ### setBorder ###
  * Sets the border line for the component container *  * 
  * $$ chp.setBorder(width, clr, style) $$
- * @param {num} width Border
+ * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border
+ * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
 /** ### bringForward ###
  * Bring this component forward by a given z-index *  * 
  * $$ chp.bringForward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
 
 /** ### sendBackward ###
  * Bring this component backward by a given z-index *  * 
  * $$ chp.sendBackward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
 

@@ -7,6 +7,7 @@
  * 
  * See also: @Debug, @SetDebug
  * $$ app.SetOnDebug(callback) $$ 
+ * @param {fnc_json} callback {}
 */
 
 

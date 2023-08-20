@@ -7,8 +7,8 @@
  * Creates a materialize date picker dialog.
  * $$ dtp = MUI.CreateDatePicker(yyyy, mm, dd, color) $$ 
  * @param {num_int} yyyy Full year
- * @param {num_int} mm [0
- * @param {num_int} dd [1
+ * @param {num_int} mm [0-11]
+ * @param {num_int} dd [1-31]
  * @param {str_col} color 
  * @returns obj
 */

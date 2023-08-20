@@ -44,7 +44,7 @@ async function LoopFiles(SOURCE_DIR) {
     if (!fs.existsSync(outputSamples)) fs.mkdirSync(outputSamples, { recursive: true })
     if (!fs.existsSync(outputDesc)) fs.mkdirSync(outputDesc, { recursive: true })
 
-    const baseFile = path.join(SOURCE_DIR, "_base.js");
+    const baseFile = SOURCE_DIR + "_base.js";
     /** @type {Obj<DSFunction>} */
     let baseJson = {};
     if (fs.existsSync(baseFile)) baseJson = getBaseMethods(baseFile);
@@ -90,7 +90,7 @@ async function LoopFiles(SOURCE_DIR) {
     /** @type {Obj<DSFunction>} */
     const rObjJson = JSON.parse(JSON.stringify(objJson));
     /** @param {DSFunction} o */
-    const descOnly = o => String(Object.keys(o)) === 'desc' && (!o.desc||/^#.*\.md$/.test(o.desc));
+    const descOnly = o => String(Object.keys(o)) === 'desc' && (!o.desc || /^#.*\.md$/.test(o.desc));
     if (Object.values(rObjJson).every(o => descOnly(o))) return;
 
     if (Object.keys(objJson).length) {
@@ -132,7 +132,6 @@ function tos(o, intd, m) {
             var okeys = Object.keys(o).filter(k => o[k] !== undefined);
             switch (okeys.length) {
                 case 0: return "{}";
-                case 1: return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], "", false)} }`;
                 default:
                     s += "{\n";
                     for (var i = 0; i < okeys.length; i++) {
@@ -345,7 +344,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                         let _l = line.split("@param")[1].trim();
                         let p = extractParams(_l);
                         let isFunc = false, _d;
-                        p[2] = p[2].replace(/\\n/g, '\n') //.replace(pattern, replacement);
+                        //p[2] = p[2].replace(/\\n/g, '\n') //.replace(pattern, replacement);
                         if (p[2].includes("--->") || p[0].includes("unction")) {
                             _d = formatDef(p[2].split("--->")[1] || "");
                             p[2] = p[2].split("--->")[0];
@@ -357,7 +356,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                             _d = JSON.parse(p[2]);
                         }
                         else {
-                            let k = p[0].split(/[_-]/)[0];
+                            let k = p[0].split(/[_:-]/)[0];
                             if (types[p[0]]) _d = types[p[0]];
                             else if (typx.includes(k)) _d = p[0];
                             else _d = "obj"

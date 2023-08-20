@@ -55,7 +55,7 @@ The default constructor values are:
 /** ### SetDataMode ###
  * Enable sending data in several modes.
  * $$ usb.SetDataMode(mode) $$
- * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF
+ * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
  */
 
 
@@ -97,7 +97,7 @@ The default constructor values are:
 /** ### SetSplitMode ###
  * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls. * p2 and p3 have different purposes for different modes: * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ usb.SetSplitMode(mode, p2, p3) $$
- * @param {str} mode End|Start
+ * @param {str} mode End|Start-End|Size
  * @param {str||num_int} p2 
  * @param {str||num_int} p3 
  */
@@ -126,7 +126,7 @@ The default constructor values are:
  * Send data over the USB serial connection to the other device.
  * $$ usb.Write(text, encoding) $$
  * @param {str} text 
- * @param {str} encoding US
+ * @param {str} encoding US-ASCII|UTF16L/BE
  */
 
 

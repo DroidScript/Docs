@@ -7,7 +7,7 @@
  * 
  * See Also: @GetVolume
  * $$ app.SetVolume(stream, level, options) $$ 
- * @param {str} stream Alarm|DTMF:Dual Tone Multi
+ * @param {str} stream Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall
  * @param {num_frc} level 
  * @param {str} options ShowUI
 */

@@ -9,7 +9,7 @@
  * @param {str} text 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str_com} options AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto
+ * @param {str_com} options AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y
  * @returns dso-Text
 */
 

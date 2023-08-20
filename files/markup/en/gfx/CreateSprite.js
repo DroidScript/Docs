@@ -8,6 +8,7 @@
  * $$ spr = gfx.CreateSprite(file, group, callback) $$ 
  * @param {str_ptf} file 
  * @param {str} group 
+ * @param {fnc_json} callback {}
  * @returns gvo-CreateSprite
 */
 

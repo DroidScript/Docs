@@ -8,6 +8,7 @@
  * @param {str_url} url 
  * @param {str_ptf} file 
  * @param {str} name 
+ * @param {fnc_json} callback {}
 */
 
 

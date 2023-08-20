@@ -9,8 +9,8 @@
  * @param {obj} parent The layout where to add the button.
  * @param {str} text The button text or the material icon text.
  * @param {str} options A comma separated options. Can be one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n Color: `Primary` `Secondary` `Default` \n Size: `Small` `Medium` `Large` \n Util: `Icon` `NoRipple` `Upload` \n In case of upload, you can specify `Multiple` to accept multiple files.
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  * @returns obj-Button Component
 */
 
@@ -43,7 +43,7 @@ Adds a button control into your app.
  * Sets a tooltip when the button is hovered *  * 
  * $$ btn.setToolTip(title, pos) $$
  * @param {str} title The text of the tooltip
- * @param {str} pos Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom
+ * @param {str} pos Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
  */
 
 
@@ -51,8 +51,8 @@ Adds a button control into your app.
  * Sets a text-shadow to the button text *  * 
  * $$ btn.setTextShadow(radius, dx, dy, color) $$
  * @param {num} radius The radius in pixels
- * @param {num} dx The x
- * @param {num} dy The y
+ * @param {num} dx The x-offset in pixels
+ * @param {num} dy The y-offset in pixels
  * @param {str} color The color in hexadecimal `#rrggbb`
  */
 
@@ -71,10 +71,10 @@ Adds a button control into your app.
 /** ### setCornerRadius ###
  * Sets the corner radius of the button *  * 
  * $$ btn.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top
- * @param {num} tr Top
- * @param {num} bl Bottom
- * @param {num} br Bottom
+ * @param {num} tl Top-left corner radius.
+ * @param {num} tr Top-right corner radius.
+ * @param {num} bl Bottom-left corner radius.
+ * @param {num} br Bottom-right corner radius.
  * @param {str} mode Unit. Values are `px` `rem` or `%`.
  */
 
@@ -104,8 +104,8 @@ Adds a button control into your app.
 /** ### setSize ###
  * Sets the size of the component *  * 
  * $$ btn.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0
- * @param {num} height Fraction of the parent height. [0
+ * @param {num} width Fraction of the parent width. [0-1]
+ * @param {num} height Fraction of the parent height. [0-1]
  */
 
 
@@ -136,8 +136,8 @@ Adds a button control into your app.
 /** ### setScale ###
  * Sets the x and y scaling of the component *  * 
  * $$ btn.setScale(x, y) $$
- * @param {num} x The x
- * @param {num} y The y
+ * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+ * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
 
 
@@ -163,8 +163,8 @@ Adds a button control into your app.
 /** ### setPosition ###
  * Sets the position of the component relative to its parent dimensions *  * 
  * $$ btn.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0
- * @param {num} top Fraction of the screen height. [0
+ * @param {num} left Fraction of the parent width. [0-1]
+ * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
@@ -172,23 +172,23 @@ Adds a button control into your app.
 /** ### setBorder ###
  * Sets the border line for the component container *  * 
  * $$ btn.setBorder(width, clr, style) $$
- * @param {num} width Border
+ * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border
+ * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
 /** ### bringForward ###
  * Bring this component forward by a given z-index *  * 
  * $$ btn.bringForward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
 
 /** ### sendBackward ###
  * Bring this component backward by a given z-index *  * 
  * $$ btn.sendBackward(zIndex) $$
- * @param {num} zIndex The z
+ * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
 

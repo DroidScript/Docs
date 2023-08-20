@@ -8,7 +8,7 @@
  * <premium>
  * <xfeature>
  * $$ app.SetKioskMode(mode, enable, options, packages) $$ 
- * @param {str_com} mode Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un
+ * @param {str_com} mode Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning
  * @param {bin} enable 
  * @param {str_com} options Black,Tasks:prevents recent tasks button working
  * @param {str} packages 

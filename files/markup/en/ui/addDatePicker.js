@@ -6,7 +6,7 @@
  * @brief addDatePicker
  * 
  * $$ dtp = ui.addDatePicker(date, options) $$ 
- * @param {str} date A default date value to which the datepicker begins. Format `YYYY
+ * @param {str} date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
  * @param {str} options A comma separated options for the date picker. Can be `Portrait` `Landscape`
  * @returns obj-DatePicker Component
 */
@@ -42,8 +42,8 @@ Adds a date picker component to the app.
 /** ### setLimits ###
  * Set a limit to which the date picker dialog can render a date *  * 
  * $$ dtp.setLimits(past, future) $$
- * @param {str} past Date in the past of the form `YYYY
- * @param {str} future Date in the future of the form `YYYY
+ * @param {str} past Date in the past of the form `YYYY-MM-DD`
+ * @param {str} future Date in the future of the form `YYYY-MM-DD`
  */
 
 
@@ -57,7 +57,7 @@ Adds a date picker component to the app.
 /** ### setFormat ###
  * Sets the format of the date to be passed into the onSelect callback *  * 
  * $$ dtp.setFormat(format) $$
- * @param {str} format A date format. Can be `YYYY
+ * @param {str} format A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`
  */
 
 

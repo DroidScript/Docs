@@ -8,6 +8,7 @@
  * @param {str} text 
  * @param {num} pitch 
  * @param {num} rate 
+ * @param {fnc_json} callback {}
  * @param {str} stream music
  * @param {str} locale 
  * @param {str} engine 
