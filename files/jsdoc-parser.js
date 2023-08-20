@@ -87,12 +87,21 @@ async function LoopFiles(SOURCE_DIR) {
         }
     }
 
-    let objJsonFile = path.join(outputFolder, "obj.json");
-    fs.writeFileSync(objJsonFile, tos(objJson));
+    /** @type {Obj<DSFunction>} */
+    const rObjJson = JSON.parse(JSON.stringify(objJson));
+    /** @param {DSFunction} o */
+    const descOnly = o => String(Object.keys(o)) === 'desc' && (!o.desc||/^#.*\.md$/.test(o.desc));
+    if (Object.values(rObjJson).every(o => descOnly(o))) return;
 
-    let navsJsonFile = path.join(outputFolder, "navs.json");
-    fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
+    if (Object.keys(objJson).length) {
+        let objJsonFile = path.join(outputFolder, "obj.json");
+        fs.writeFileSync(objJsonFile, tos(objJson));
+    }
 
+    if (Object.keys(navs).length) {
+        let navsJsonFile = path.join(outputFolder, "navs.json");
+        fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
+    }
 }
 
 // converts a variable to indented string
