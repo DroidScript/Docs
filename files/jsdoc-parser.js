@@ -266,7 +266,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
 
     tokens.forEach((c, i) => {
         if (c.type == "BlockComment") {
-            let mt = c.value.match(/[@#](ex|s)ample *-? *(.*)/i);
+            let mt = c.value.match(/@(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 let t = mt[2].trim() || '';
                 let cod = c.value.substring(c.value.indexOf('\n', mt.index)).trim();
@@ -277,19 +277,19 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
             else if (c.value.includes('```')) { }
 
             // Description.md
-            else if (/[#@]\s*[Dd]escription/.test(c.value)) {
+            else if (/@\s*[Dd]escription/.test(c.value)) {
                 func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
             // Sample.txt
-            else if (/[#@]\s*[Ss]ample/.test(c.value)) {
+            else if (/@\s*[Ss]ample/.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
                 samples += `\n\n${_samp}\n\n`
             }
 
             // Base method
-            else if (/[#@]\s*[Ee]xtern/.test(c.value)) {
-                const r = /[#@]\s*[Ee]xtern([\s\S]*)/;
+            else if (/@\s*[Ee]xtern/.test(c.value)) {
+                const r = /@\s*[Ee]xtern([\s\S]*)/;
                 const _m = r.exec(c.value);
                 if (_m) {
                     const _n = _m[1].trim();
@@ -298,8 +298,8 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
             }
 
             // Category
-            else if (/[#@]\s*[Cc]ategory/.test(c.value)) {
-                const _m = /[#@]\s*[Cc]ategory([\s\S]*)/.exec(c.value);
+            else if (/@\s*[Cc]ategory/.test(c.value)) {
+                const _m = /@\s*[Cc]ategory([\s\S]*)/.exec(c.value);
                 if (_m) {
                     const _n = _m[1].trim();
                     if (_n) categories.push(_n);

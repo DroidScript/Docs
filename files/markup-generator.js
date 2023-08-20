@@ -26,7 +26,7 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
         const data = obj[key];
 
         let _desc = data.desc || "";
-        if (!_desc.includes(".md")) _desc = _desc.replace(/\n/g, "\n * ")
+        if (!/^#.*.md$/.test(_desc)) _desc = _desc.replace(/\n/g, "\n * ").replace(/\*\//g, '*\\/')
         else _desc = "";
 
         let info = "";
@@ -171,9 +171,9 @@ ${info}
 function renderSamples(raw) {
     if (!raw) return;
     let str = "";
-    const strArr = raw.split("</sample>");
+    const strArr = raw.split(/<\/sample( [^>]+)?>/);
     strArr.forEach(samp => {
-        if (samp.trim()) {
+        if (samp && samp.trim()) {
             let name = samp.substring(samp.indexOf("<sample") + 7, samp.indexOf(">")).trim();
             let cod = samp.substring(samp.indexOf(">") + 1).trim();
             cod = cod.replace(/\*\//g, "*_");
@@ -196,10 +196,18 @@ async function GetFolders(folder = "") {
     for (const fld of folders.filter(d => d.isDirectory())) {
         const path = folder + "/" + fld.name + "/";
         const files = ["obj.json", "base.json", "navs.json"];
+        const descPath = path + "desc/";
         try {
             const fileDataPromises = files.map((f) => fsp.readFile(path + f, 'utf8').catch(e => '{}'));
             const fileData = await Promise.all(fileDataPromises);
             const [obj, base, navs] = fileData.map(data => JSON.parse(data));
+
+            if (!fs.existsSync(path + files[0]) && fs.existsSync(descPath)) {
+                const descFiles = await fsp.readdir(descPath);
+                for (const descFile of descFiles) {
+                    obj[descFile.replace('.md', '')] = { desc: '#' + descFile };
+                }
+            }
             await GenerateJSFile(fld.name, path, obj, base, navs);
         } catch (err) {
             console.error(err.message);

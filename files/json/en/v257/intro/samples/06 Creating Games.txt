@@ -1,6 +1,4 @@
-
 <sample Tic Tac Toe>
-
 var btns = [], round = 1;
 var wh = app.GetDisplayWidth() / app.GetDisplayHeight();
 
@@ -81,11 +79,9 @@ function EndGame(player)
         round = 0;
     }, 2000 );
 }
-
 </sample>
 
 <sample Pong>
-
 // User variables
 var x1 = 0.5, x2 = 0.5, p1 = 0, p2 = 0;
 
@@ -170,5 +166,4 @@ function Score()
         dy = Math.sin( a + PI/4 );
     }, 1000 );
 }
-
 </sample>

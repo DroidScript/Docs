@@ -1,3 +1,16 @@
+// ------------- HEADER SECTION ------------- 
+
+
+/** # _00 Resources #
+
+ * 
+ * $$ intro._00 Resources() $$ 
+*/
+
+
+// ------------- LONG DESCRIPTION ------------- 
+
+/** @Description
 ### Official Websites
 - [Website](http://droidscript.org)
 - [Wiki](https://droidscript.org/wiki/doku.php)
@@ -33,3 +46,9 @@
 	Sharing platform for DroidScript Projects (SPKs) and Plugins
 - [Symbroson's DroidScript Blog](https://symbroson.blogspot.com) (inactive)
 	A blog about DroidScript and coding (contains Plugin creation tutorials)
+ */
+
+
+
+// ------------- SAMPLES ------------- 
+
