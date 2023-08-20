@@ -39,7 +39,6 @@ Setting the width and height to _-1_ whilst using the “FillX” option will al
 
 You can customize the visual look in many ways by either using one of the existing style **options** “Alum” or “Gray”, or you can use “Custom” and define a custom style with the **SetStyle** method.
 <sample Change Style>
-
  */
 
 

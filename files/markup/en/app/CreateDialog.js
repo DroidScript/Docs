@@ -27,7 +27,6 @@ dlg.AddLayout( layDlg );
 If you have added all your controls to the dialog layout you can use the **Show** method to show the dialog.
 
 Normally the user can cancel the dialog by pressing the _BACK_ button of the device, but you can disable that option by using the “NoCancel” **option**. In order to close the dialog now, you have to call **Dismiss**.
-
  */
 
 

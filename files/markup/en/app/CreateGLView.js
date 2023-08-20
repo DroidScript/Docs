@@ -42,7 +42,6 @@ If you need to want to simulate OnTouch for a GLView Image, you will need to kee
 GLView supports the use of Sprite Sheets. The DrawSprite method can be used to draw part of an image to the GLView.
 The following example uses a sprite sheet containing 8 stages of a character running. The DrawSprite method is used to draw each of the 8 sections in turn to give the effect of the character continuously running:
 <sample Sprite Sheet Animation>
-
  */
 
 

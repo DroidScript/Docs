@@ -22,7 +22,6 @@ Use the **SetOnTouch** method of the ListDialog object to set the name of a func
 
 ou can use the “Multi” **option** to create a ListDialog with check boxes against each item. This allows multiple list items to be selected. An extra parameter isChecked is passed to the OnTouch callback function when a check box is checked or unchecked.
 <Example Multi>
-
  */
 
 

@@ -41,7 +41,6 @@ To select a color and shading choose the right property of the base color object
 <js noinl>MUI.colors.brown</js>
 <js noinl>MUI.colors.gray</js>
 <js noinl>MUI.colors.blueGray</js>
-
  */
 
 

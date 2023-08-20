@@ -32,7 +32,6 @@ But it provides advanced image processing functions as well. These are color rep
 <sample Motion Detector>
 
 More samples can be found in the samples section of DroidScript.
-
  */
 
 

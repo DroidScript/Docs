@@ -28,7 +28,6 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 **Phaser:** a sound filter which creates a series of peaks and troughs in the frequency spectrum
 **VoltageControlledAmplifier:** (Variable-Gain Amplifier) electronic amplifier that varies its gain
 **Voltage-Controlled Filter:** electronic amplifier that varies the frequency
-
  */
 
 

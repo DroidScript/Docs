@@ -26,7 +26,6 @@ The callback data depends on the type:
 <smp>“SignalStrength” : **number:** _float_</smp>
 <smp>“CallForwarding” : **boolean**</smp>
 <smp>“MessageWaiting” : **boolean**</smp>
-
  */
 
 

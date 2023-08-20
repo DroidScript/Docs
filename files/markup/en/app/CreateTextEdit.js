@@ -28,7 +28,6 @@ You can change the look of a TextEdit using the **SetBackColor** and **SetTextCo
 <sample Blue on White>
 
 You can also set a background image/pattern or background gradient for the List using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.
-
  */
 
 

@@ -22,7 +22,6 @@ The _filter_ **parameter** is an can be used to specify a filter pattern. For ex
 The You can also **option**ally sort the list in alphabetica order with the “alphasort” option.
 
 See Also: @WalkFolder, @IsFolder, @CreateList
-
  */
 
 

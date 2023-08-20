@@ -59,7 +59,6 @@ Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which 
 source: [metageek.com](https://www.metageek.com/training/resources/understanding-rssi.html)
 
 See Also: @SetWifiEnabled, @IsWifiEnabled
-
  */
 
 

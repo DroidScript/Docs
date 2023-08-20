@@ -42,7 +42,6 @@ Absolute layouts ignore all alignment options and allow the absolute positioning
 ### Card Layouts
 Card Layouts are just like frame layouts, but with rounded corners and a shadow by default.
 They may be used to display offers with an image and optional info text.
-
  */
 
 

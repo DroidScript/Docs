@@ -20,7 +20,6 @@ It automatically disabled WiFi if it was enabled.
 <red>**This method is available for Android 6 or older only!**</red>
 
 See Also: @IsWifiApEnabled, @IsWifiEnabled
-
  */
 
 

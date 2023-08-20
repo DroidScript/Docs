@@ -23,7 +23,6 @@ When the SpeechRec object has started listening, the **OnReady** callback functi
 If the SpeechRec object recognizes speech, the **OnResult** callback function will be called. The results are passed to the OnResult callback function as an array, with the most probable result at the front. Use the **SetOnResult** method to set the name of your OnResult callback function.
 
 If the SpeechRec object does not recognize anything, the **OnError** callback function will be called. Use the **SetOnError** method to set the name of your OnError callback function.
-
  */
 
 

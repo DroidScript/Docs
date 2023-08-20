@@ -270,7 +270,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
             if (mt) {
                 let t = mt[2].trim() || '';
                 let cod = c.value.substring(c.value.indexOf('\n', mt.index)).trim();
-                samples += `\n\n<sample${t&&' '+t}>\n`
+                samples += `\n\n<sample${t && ' ' + t}>\n`
                 samples += cod.replace(/\*\_/g, '*/');
                 samples += "\n</sample>";
             }
@@ -463,20 +463,20 @@ function extractParams(str) {
  * @param {string} str
  */
 function extractBacktickStrings(str) {
-    let finalStr = str + '';
+    if (!extraFormat) return str;
     const regex = /`([^`]*)`/g;
     const matches = str.matchAll(regex);
     const style = "color:#fb8c00; font-size:100%; padding:0px 2px;";
     for (const match of matches) {
-        //match[1]
-        finalStr = finalStr.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
+        str = str.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
     }
-    if (extraFormat) finalStr = finalStr.replace(/,/gm, "&#44;");
-    return finalStr;
+    str = str.replace(/,/gm, "&#44;");
+    return str;
 }
 
 /** @param {string} str */
 function extractBacktickStringsDesc(str) {
+    if (!extraFormat) return str;
     let finalStr = str + '';
     const regex = /`([^`]*)`/g;
     const matches = str.matchAll(regex);

@@ -19,7 +19,6 @@ The Downloader component can be used to download a file straight from the intern
 Once the Download method has been called, it show a progress bar with the current download progress. But you can disable this behavior with the “NoDialog” **option**.
 
 If you want to know when the download process has finished (or failed) you can define a callback functioni with the **SetOnComplete** method: <js>dload.SetOnComplete( callback );</js>
-
  */
 
 

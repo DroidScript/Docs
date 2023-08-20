@@ -35,7 +35,6 @@ zombie = gfx.CreateSprite( "Img/Zombie\_strip35\_1400x1000x7x5", "zombie" );
 </js>
 
 The second way is to create a SpriteSheet using the @CreateSpriteSheet method which might come handy if a single sprite has multiple animations or if a sprite is reused but using a different sprite sheet.
-
  */
 
 

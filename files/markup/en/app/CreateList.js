@@ -42,7 +42,6 @@ You can also create lists items that look like buttons by using one of the follo
 <sample Orange Buttons>
 
 Or create lists with Gradient backgrounds like this:<sample Gradient Background>
-
  */
 
 

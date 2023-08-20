@@ -32,7 +32,6 @@ Additionally Gmail has came up with the concept of 'less secure' apps which is b
 To prevent having login issues you should either use XOAUTH2 (see details [here](https://nodemailer.com/smtp/#authentication)) or use another provider and preferably a dedicated one like [Mailgun](https://www.mailgun.com/) or [SendGrid](https://sendgrid.com) or any other. Usually these providers have free plans available that are comparable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one To and one Cc address counts as two messages since it has two recipients) for @gmail.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.“_
 
 See Also: @SendSMS, @SendFile
-
  */
 
 

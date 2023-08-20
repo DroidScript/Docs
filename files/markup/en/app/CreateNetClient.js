@@ -19,7 +19,6 @@ NetClients can be used to communicate with servers on the web. You can choose be
 	The connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.
 
 Note: A few routers block fast UDP messages by default
-
  */
 
 

@@ -59,7 +59,6 @@ If you have many draw operations to perform at runtime (ie. for games) you might
 Another way to increase the animation speed is using the _NoDom_ configuration. This will disable html and js Dom elements in your app that consume a lot of resources, but app functions can still be used.
 For animations you can then use the **Animate** function of the app object which calls a function for a given amount per second. Note that the canvas still needs some time to refresh - so going over 60 fps makes no sense at all.
 <sample Advanced Clock Animating>
-
  */
 
 

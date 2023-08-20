@@ -22,7 +22,6 @@ After that you can **Start** the recording: <js>rec.Start();</js>
 The recorded audio will then be written to the specified file.
 
 Finally you can also **Stop** the recording: <js>rec.Stop();</js>
-
  */
 
 

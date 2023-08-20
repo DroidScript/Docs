@@ -25,7 +25,6 @@ You can find references of GameView scripting here:
 
 ### GameView in web browsers
 If you prefer to work on a PC you can even run and debug your GameView code in a regular web-browser. Check out these demos to see how it works: [](http://androidscript.org/beta/GameViewWeb)
-
  */
 
 

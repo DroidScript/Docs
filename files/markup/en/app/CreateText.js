@@ -29,7 +29,6 @@ Text can be shortened using ellipsis (...) when the size of the control is too s
 <sample Ellipsize>
 
 You can also set a background image/pattern or background gradient for the Text using the **SetBackground** and **SetBackGradient** functions. See [Layouts](CreateLayout.htm) for examples of how to use these functions.
-
  */
 
 

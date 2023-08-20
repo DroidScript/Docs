@@ -48,7 +48,6 @@ Adding services to your application is best done working with the WiFi editor (b
 <sample Services>
 
 Inspect the debug console and see the log messages from the service in gray.
-
  */
 
 

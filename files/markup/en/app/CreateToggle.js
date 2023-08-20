@@ -24,7 +24,6 @@ You can allow the toggle button to auto-size by leaving out the dimensions or yo
 Use the **SetOnTouch** method of your button object to set the name of a function you want to be called when the button is touched.
 
 You can get the state of the toggle button at any time using the **GetChecked** method. The button state is also passed into your OnTouch callback function as a parameter every time the button is touched.
-
  */
 
 

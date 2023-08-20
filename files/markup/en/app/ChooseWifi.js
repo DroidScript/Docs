@@ -26,7 +26,6 @@ You can set the _force_ option so that the dialog cannot be closed until the use
 Finally you can add extra items as pipe “|” separated string - ie. to add a default “[None]” entry to select no wifi network.
 
 See Also:  @WifiConnect
-
  */
 
 

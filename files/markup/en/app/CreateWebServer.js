@@ -49,7 +49,6 @@ Web sockets can be used for broadcast purposes, for example sending the same mes
 
 The following example demonstrates web sockets being used to receive messages from and broadcasting messages to connected devices.
 <sample Send and Receive messages>
-
  */
 
 

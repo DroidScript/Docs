@@ -21,7 +21,6 @@ Without the NoDim option the background behind the dialog will be darkened.
 See Also:
 
 See Also: @Error, @ShowTextDialog, @CreateYesNoDialog.
-
  */
 
 

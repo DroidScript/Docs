@@ -41,7 +41,6 @@ your app**.
 For extra security, you can split your key string into 2 or 3 parts (use obscurely
 named global variables or functions) and put them in separate parts of your code, then
 combine the parts only when making CloudStore API calls.
-
  */
 
 

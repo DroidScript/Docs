@@ -22,7 +22,6 @@ SetDebug lets you control the debugging level. The available modes are:
 Note that debugging is disabled in apk release mode by default. Otherwise it is always enabled at start.
 
 See Also: @Debug, @IsDebugging
-
  */
 
 
