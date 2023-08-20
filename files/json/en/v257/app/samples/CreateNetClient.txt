@@ -80,7 +80,6 @@ function OnReceive( s )
 </sample>
 
 <sample UDP Messaging>
-
 function OnStart()
 {
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );

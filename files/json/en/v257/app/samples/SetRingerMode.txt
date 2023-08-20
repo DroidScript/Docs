@@ -24,4 +24,5 @@ function Notify()
     var ntf = app.CreateNotification();
     ntf.SetMessage( "RingerMode Demo", "RingerMode Demo notifies:", "Helo World" );
     ntf.Notify();
-}</sample>
+}
+</sample>

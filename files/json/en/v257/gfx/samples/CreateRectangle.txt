@@ -1,5 +1,4 @@
 <sample>
-
 cfg.Game;
 
 function OnLoad()
@@ -12,5 +11,4 @@ function OnReady()
     gfx.AddGraphic( rect, 0.3, 0.2 );
     gfx.Play();
 }
-
 </sample>

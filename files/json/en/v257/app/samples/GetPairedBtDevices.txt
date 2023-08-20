@@ -1,4 +1,4 @@
-<sample Show >
+<sample Show>
 var itv;
 
 function OnStart()

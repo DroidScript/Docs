@@ -1,5 +1,4 @@
 <sample Demo>
-
 function OnStart()
 {
 	dlg = app.CreateDialog( "Custom Dialog" );

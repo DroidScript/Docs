@@ -7,6 +7,7 @@ function OnStart() {
     app.Alert( computeNum(), "computed number: " );
 }
 </sample>
+
 <sample Inline Loading>
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
 

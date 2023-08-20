@@ -20,4 +20,4 @@ function OnStart()
     scr.AddChild( lay2 )
     app.AddLayout( lay )
 }
-</sample> 
+</sample>

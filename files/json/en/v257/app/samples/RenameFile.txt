@@ -5,4 +5,5 @@ function OnStart()
     var newfile = "test2.txt";
 	app.WriteFile( file, "Created: " + new Date() );
 	<b>app.RenameFile( file, "/sdcard/wftest2.txt" );</b>
-}</sample>
+}
+</sample>

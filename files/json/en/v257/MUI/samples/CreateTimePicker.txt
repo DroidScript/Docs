@@ -30,8 +30,6 @@ function OnSelect(time, hh, mm, pos)
 }
 </sample>
 
-
-
 <sample Custom Time>
 cfg.Dark
 cfg.MUI

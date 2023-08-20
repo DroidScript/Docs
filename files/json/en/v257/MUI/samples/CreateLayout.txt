@@ -16,7 +16,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample Dark Layout with Card>
 cfg.Dark
 cfg.MUI

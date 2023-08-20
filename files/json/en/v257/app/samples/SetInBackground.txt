@@ -1,3 +1,4 @@
+<sample>
 var serviceJS = `
 function OnStart()
 {
@@ -31,3 +32,4 @@ function tgl_OnTouch( fg )
     if( fg ) svc.SendMessage( "fg" );
     else svc.SendMessage( "bg" );
 }
+</sample>

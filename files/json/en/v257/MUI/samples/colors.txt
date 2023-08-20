@@ -38,6 +38,7 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
+
 <sample Change Layout Background>
 cfg.Light
 cfg.MUI

@@ -105,7 +105,6 @@ function GetSelectedItems()
 }
 </sample>
 
-
 <sample CreateListInitialIcon>
 cfg.Dark
 cfg.MUI
@@ -129,7 +128,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample CreateListMaterialIcon>
 cfg.Dark
@@ -171,7 +169,6 @@ function GetSelectedItems()
 }
 </sample>
 
-
 <sample CreateListWithAvatar>
 cfg.Light
 cfg.MUI
@@ -211,9 +208,6 @@ function GetSelectedItems()
     }
 }
 </sample>
-
-
-
 
 <sample RemoveItems>
 cfg.Dark

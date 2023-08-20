@@ -1,4 +1,4 @@
-<samples>
+<sample s>
 cfg.Landscape;
 
 function OnStart()
@@ -17,3 +17,4 @@ function OnStart()
     app.AddLayout( lay );
 }
 </samples>
+</sample>

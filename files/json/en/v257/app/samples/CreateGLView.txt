@@ -84,7 +84,8 @@ function DrawFrame()
 
 	glview.Render();
 	frameCount++;
-}</sample>
+}
+</sample>
 
 <sample Sprite Touch>
 objects = [];

@@ -1,5 +1,3 @@
-
-
 <sample Textfield variants>
 class Main extends App
 {

@@ -1,5 +1,4 @@
 <sample Check Started>
-
 setTimeout('app.Alert( app.IsStarted(), "Started in global:" );');
 
 function OnStart()

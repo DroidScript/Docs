@@ -36,7 +36,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample Sample page>
 cfg.Light
 cfg.MUI
@@ -85,8 +84,6 @@ function OnMenuTouch()
 }
 </sample>
 
-
-
 <sample Complete controls>
 cfg.Light
 cfg.MUI
@@ -116,7 +113,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample Dark mode>
 cfg.Dark

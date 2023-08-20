@@ -209,7 +209,7 @@ async function GetFolders(folder = "") {
             const navsJson = JSON.parse(navsData);
             await GenerateJSFile(fld, path, objJson, baseJson, navsJson);
         } catch (err) {
-            console.error(err);
+            console.error(err.message);
         }
     }
 }

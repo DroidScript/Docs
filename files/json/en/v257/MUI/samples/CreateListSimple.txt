@@ -28,8 +28,6 @@ function OnTouch(title, index, icon, badge)
 }
 </sample>
 
-
-
 <sample With Icon & Color>
 cfg.Light
 cfg.MUI
@@ -53,8 +51,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
-
 
 <sample With Icon, Color & Badge>
 cfg.Light
@@ -103,7 +99,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample Dark With Divider>
 cfg.Dark

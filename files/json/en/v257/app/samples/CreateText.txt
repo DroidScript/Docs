@@ -8,7 +8,8 @@ function OnStart()
 	lay.AddChild( txt );</b>
 
 	app.AddLayout( lay );
-}</sample>
+}
+</sample>
 
 <sample Multi line>
 function OnStart()

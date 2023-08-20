@@ -1,3 +1,4 @@
+<sample>
 function OnStart()
 {
     app.MakeFolder("myFolder");
@@ -8,3 +9,4 @@ function OnStart()
     else
 	    app.ShowPopup("myFolder does not exist in /sdcard/!");
 }
+</sample>

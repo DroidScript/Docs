@@ -34,6 +34,7 @@ function CloseAlert()
     alr.Hide()
 }
 </sample>
+
 <sample On close function>
 cfg.Dark
 cfg.MUI

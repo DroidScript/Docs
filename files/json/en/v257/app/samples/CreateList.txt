@@ -1,6 +1,4 @@
-
 <sample Simple>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -25,7 +23,6 @@ function lst_OnLongTouch( title, body, icon, index )
 </sample>
 
 <sample Gray on White>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -46,7 +43,6 @@ function lst_OnTouch( title, body, type, index )
 </sample>
 
 <sample Title + Icon>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -66,7 +62,6 @@ function lst_OnTouch( title, body, type, index )
 </sample>
 
 <sample Title + Body>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -87,7 +82,6 @@ function lst_OnTouch( title, body, type, index )
 </sample>
 
 <sample Orange Buttons>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
@@ -109,7 +103,6 @@ function lst_OnTouch( title, body, type, index )
 </sample>
 
 <sample Gradient Background>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );

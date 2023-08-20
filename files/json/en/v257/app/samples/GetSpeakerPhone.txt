@@ -3,4 +3,5 @@ function OnStart()
 {
     var speaker = app.GetSpeakerPhone();
     app.Alert( speaker );
-}</sample>
+}
+</sample>

@@ -16,8 +16,6 @@ function OnStart()
 }
 </sample>
 
-
-
 <sample RightIcon>
 cfg.Dark
 cfg.MUI
@@ -36,7 +34,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample Small>
 cfg.Light
 cfg.MUI
@@ -54,7 +51,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample Border>
 cfg.Dark

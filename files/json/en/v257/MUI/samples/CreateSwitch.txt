@@ -22,7 +22,6 @@ function OnTouch(value)
 }
 </sample>
 
-
 <sample With Value & Color>
 cfg.Light
 cfg.MUI

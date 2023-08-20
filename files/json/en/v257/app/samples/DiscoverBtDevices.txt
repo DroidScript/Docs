@@ -1,5 +1,4 @@
 <sample Discover Bluetooth Devices>
-
 function OnStart()
 {
     app.SetBluetoothEnabled(true);

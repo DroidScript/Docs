@@ -12,9 +12,8 @@ function OnStart(){
 function btn_OnTouch()
 {
     <b>app.PlaySound( "/Sys/Snd/Trill.ogg" );</b>
-}</sample>
-
-<!--https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3-->
+}
+</sample>
 
 <sample Play Remote Sound File>
 function OnStart(){
@@ -30,4 +29,5 @@ function OnStart(){
 function btn_OnTouch()
 {
     <b>app.PlaySound( "https://sgarman.net/silly.mp3" );</b>
-}</sample>
+}
+</sample>

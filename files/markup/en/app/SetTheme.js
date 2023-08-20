@@ -56,7 +56,6 @@ function spin_OnChange( item )
     app.SetTheme( theme );
     CreateLayout();
 }
-</theme>
  */
     
             

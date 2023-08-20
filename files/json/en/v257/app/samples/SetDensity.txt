@@ -1,5 +1,4 @@
 <sample Demonstration>
-
 function OnStart() {
 	var dens = app.GetScreenDensity();
 

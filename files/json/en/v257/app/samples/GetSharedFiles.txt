@@ -5,4 +5,5 @@ function OnStart()
 
 	if( files ) app.Alert( files.join( "\n" ) );
 	else app.ShowPopup( "No shared files received." );
-}</sample>
+}
+</sample>

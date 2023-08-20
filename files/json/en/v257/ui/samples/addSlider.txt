@@ -1,7 +1,5 @@
-
-
 <sample Marks array>
-    var marks = [
+var marks = [
         { label: "First stop", value: 10 },
         { label: "Second stop", value: 30 },
         { label: "Third stop", value: 70 }

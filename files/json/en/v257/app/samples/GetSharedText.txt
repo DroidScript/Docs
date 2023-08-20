@@ -5,4 +5,5 @@ function OnStart()
 
 	if( text ) app.Alert( text );
 	else app.ShowPopup( "No shared text received." );
-}</sample>
+}
+</sample>

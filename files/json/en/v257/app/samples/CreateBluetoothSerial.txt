@@ -1,5 +1,4 @@
 <sample Connect to Device>
-
 function OnStart()
 {
     app.ShowProgress( "Enabling Bluetooth" );

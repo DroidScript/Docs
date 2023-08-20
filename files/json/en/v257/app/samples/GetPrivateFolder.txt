@@ -1,4 +1,4 @@
-<sample Show >
+<sample Show>
 function OnStart()
 {
     <b>var path = app.GetPrivateFolder( "temp" );</b>

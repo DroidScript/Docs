@@ -41,7 +41,6 @@ function OnChoose( path )
 
     app.Alert( lst.join( "\n" ), path );
 }
-<sample>
  */
     
             

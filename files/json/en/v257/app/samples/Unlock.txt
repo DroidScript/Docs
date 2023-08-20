@@ -1,5 +1,4 @@
 <sample Demo>
-
 function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" );

@@ -1,5 +1,4 @@
 <sample Billiard>
-
 cfg.Game;
 
 function OnLoad()
@@ -28,7 +27,6 @@ function OnReady()
 </sample>
 
 <sample Collision>
-
 cfg.Game;
 
 function OnLoad()
@@ -55,5 +53,4 @@ function OnReady()
     if( a.group == "bunnies" )
         squeak.Play( false, 0, 0 );
 }</b>
-
 </sample>

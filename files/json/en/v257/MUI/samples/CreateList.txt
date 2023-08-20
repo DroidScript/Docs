@@ -23,8 +23,6 @@ function OnTouch(title)
 }
 </sample>
 
-
-
 <sample With-Icon>
 cfg.Light
 cfg.MUI
@@ -49,7 +47,6 @@ function OnTouch(title)
     app.ShowPopup(title)
 }
 </sample>
-
 
 <sample Dark With Body & Icon>
 cfg.Dark

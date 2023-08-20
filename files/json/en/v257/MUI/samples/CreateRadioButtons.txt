@@ -17,8 +17,6 @@ function OnStart()
 }
 </sample>
 
-
-
 <sample With callback>
 cfg.Light
 cfg.MUI

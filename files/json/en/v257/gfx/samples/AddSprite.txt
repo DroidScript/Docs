@@ -1,5 +1,4 @@
 <sample>
-
 cfg.Game;
 
 function OnLoad()

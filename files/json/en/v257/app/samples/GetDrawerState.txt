@@ -1,3 +1,4 @@
+<sample>
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
@@ -34,3 +35,4 @@ function btn_OnTouch()
     else // "Open"
         app.CloseDrawer( "left" );</b>
 }
+</sample>

@@ -31,8 +31,6 @@ function OnSelect(choice)
 }
 </sample>
 
-
-
 <sample Dark & Bottom,Right>
 cfg.Dark
 cfg.MUI
@@ -64,4 +62,4 @@ function OnSelect(choice)
 {
     app.ShowPopup(choice)
 }
-</sample> 
+</sample>

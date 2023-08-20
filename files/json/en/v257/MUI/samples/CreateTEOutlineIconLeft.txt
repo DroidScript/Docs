@@ -16,7 +16,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample Dark With Label>
 cfg.Dark
 cfg.MUI
@@ -52,7 +51,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample SetOnEnter Callback>
 cfg.Light

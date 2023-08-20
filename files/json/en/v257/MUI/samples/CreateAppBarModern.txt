@@ -1,4 +1,4 @@
- <sample Basic>
+<sample Basic>
 cfg.Light
 cfg.MUI
 
@@ -27,7 +27,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample Sample page>
 cfg.Light
@@ -71,7 +70,6 @@ function OnCtrlTouch()
     app.ShowPopup("You click for more options.")
 }
 </sample>
-
 
 <sample Dark mode>
 cfg.Dark

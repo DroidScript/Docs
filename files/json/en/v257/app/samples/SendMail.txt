@@ -3,4 +3,5 @@ function OnStart()
 {
     app.CopyFile( "/Sys/Img/Hello.png", "/sdcard/Hello.png" );
     <b>app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png" );</b>
-}</sample>
+}
+</sample>

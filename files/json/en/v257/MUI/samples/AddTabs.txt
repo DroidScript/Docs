@@ -10,4 +10,4 @@ function OnStart()
     
     app.AddLayout( lay )
 }
-</sample> 
+</sample>

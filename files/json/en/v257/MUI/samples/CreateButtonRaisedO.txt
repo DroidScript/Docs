@@ -22,7 +22,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample Dark>
 cfg.Dark
 cfg.MUI

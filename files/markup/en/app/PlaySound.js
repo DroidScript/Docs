@@ -38,10 +38,7 @@ function btn_OnTouch()
             
     
 /**
-@sample >
-
-<sample
-<sample Play Remote Sound File>
+@sample Play Remote Sound File
 function OnStart(){
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 

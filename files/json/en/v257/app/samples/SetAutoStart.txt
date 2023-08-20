@@ -13,4 +13,3 @@ function OnStart()
     app.ShowPopup( "Autostart unset." );
 }
 </sample>
-

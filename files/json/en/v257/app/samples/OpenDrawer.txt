@@ -35,6 +35,4 @@ function btn_OnTouch()
     else // "Open"
         app.CloseDrawer( "left" );
 }
-
-
 </sample>

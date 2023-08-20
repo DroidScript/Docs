@@ -16,4 +16,3 @@ function ShowSelection( item )
 	app.ShowPopup( "Selected = " + item );
 }
 </sample>
-

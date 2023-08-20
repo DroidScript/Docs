@@ -22,7 +22,8 @@
 
     
 /**
-@sample rviceJS = `
+@sample 
+var serviceJS = `
 function OnStart()
 {
     var i = 0;
@@ -31,8 +32,7 @@ function OnStart()
 
 function OnMessage( msg)
 {
-    <b
-if( msg == "fg" ) app.SetInForeground( "My Service", "Service is running", "/Sys/Img/Hello.png", "/Sys/Img/Icon.png", "low");
+    <b>if( msg == "fg" ) app.SetInForeground( "My Service", "Service is running", "/Sys/Img/Hello.png", "/Sys/Img/Icon.png", "low");
     else if( msg == "bg" ) app.SetInBackground();</b>
 }`;
 

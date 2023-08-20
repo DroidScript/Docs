@@ -16,7 +16,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample SetOnEnter Callback>
 cfg.Dark
 cfg.MUI

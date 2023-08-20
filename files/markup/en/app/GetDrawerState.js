@@ -19,7 +19,8 @@
 
     
 /**
-@sample on OnStart()
+@sample 
+function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
 
@@ -50,8 +51,7 @@
 
 function btn_OnTouch()
 {
-    <b
-if(app.GetDrawerState("left") == "Closed")
+    <b>if(app.GetDrawerState("left") == "Closed")
         app.OpenDrawer( "left" );
     else // "Open"
         app.CloseDrawer( "left" );</b>

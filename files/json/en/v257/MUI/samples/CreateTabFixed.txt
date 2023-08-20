@@ -29,7 +29,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample With Slide Animation>
 cfg.Light
 cfg.MUI
@@ -60,7 +59,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample With Callback>
 cfg.Light

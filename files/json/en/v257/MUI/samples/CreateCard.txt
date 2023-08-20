@@ -22,7 +22,6 @@ function OnStart()
 }
 </sample>
 
-
 <sample With-image, No-Avatar>
 cfg.Light
 cfg.MUI
@@ -47,7 +46,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample With Image, With Avatar>
 cfg.Light
@@ -74,7 +72,6 @@ function OnStart()
     app.AddLayout(lay)
 }
 </sample>
-
 
 <sample Complete>
 cfg.Dark

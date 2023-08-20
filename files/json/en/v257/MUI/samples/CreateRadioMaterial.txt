@@ -17,8 +17,6 @@ function OnStart()
 }
 </sample>
 
-
-
 <sample With callback>
 cfg.Light
 cfg.MUI
@@ -43,7 +41,6 @@ function OnTouch(name, index)
     app.ShowPopup(name+" : "+index)
 }
 </sample>
-
 
 <sample Horizontal>
 cfg.Dark

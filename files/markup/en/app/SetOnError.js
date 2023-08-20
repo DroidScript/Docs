@@ -36,25 +36,3 @@ function OnStart()
  */
     
             
-    
-/**
-@sample sample Catch JS Errors
-function OnStart()
-{
-    app.SetOnError( OnError );
-    throw "My thrown error";
-}
-
-<b>function OnError( msg, line, file )
-{
-    var text = `
-Message: "${msg}"
-Line: ${line}
-File: "${decodeURI(file)}"`;
-
-    app.Alert( text, "Received error message:" );
-}<b>
-</sample-->
- */
-    
-            

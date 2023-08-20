@@ -22,7 +22,6 @@ function OnTouch(text, value)
 }
 </sample>
 
-
 <sample More Settings>
 cfg.Dark
 cfg.MUI
@@ -55,4 +54,4 @@ function OnTouch(text, value)
 {
     app.ShowPopup(text+" : "+value)
 }
-</sample> 
+</sample>
