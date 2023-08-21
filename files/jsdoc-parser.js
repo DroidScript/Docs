@@ -112,38 +112,17 @@ async function LoopFiles(SOURCE_DIR) {
 /**
  * @param {any} o
  * @param {string} [intd]
- * @param {boolean} [m]
  * @returns {string}
  */
-function tos(o, intd, m) {
-    if (intd == undefined) intd = "";
-    if (m == undefined) m = true;
-    var s = m ? intd : "";
-
+function tos(o, intd = "") {
     if (o === null || o === undefined) return "null";
-    else switch (o.constructor.name) {
-        case "String": case "Number": case "Boolean":
-            return s + JSON.stringify(o);
-        case "Array":
-            s += "[";
-            for (var i = 0; i < o.length; i++) {
-                s += tos(o[i], intd, false);
-                if (i < o.length - 1) s += ", ";
-            }
-            return s + "]";
-        default:
-            var okeys = Object.keys(o).filter(k => o[k] !== undefined);
-            switch (okeys.length) {
-                case 0: return "{}";
-                default:
-                    s += "{\n";
-                    for (var i = 0; i < okeys.length; i++) {
-                        s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
-                        if (i < okeys.length - 1) s += ",\n";
-                    }
-                    return s + `\n${intd}}`;
-            }
+    if (Array.isArray(o)) return "[" + o.map(e => tos(e, intd)).join(', ') + "]";
+    if (typeof o == "object") {
+        var okeys = Object.keys(o).filter(k => o[k] !== undefined);
+        if (!okeys.length) return "{}"
+        return "{\n" + okeys.map(k => intd + `\t"${k}": ${tos(o[k], intd + "\t")}`).join(",\n") + `\n${intd}}`;
     }
+    return JSON.stringify(o);
 }
 
 /**
@@ -238,11 +217,13 @@ function getBaseMethods(filePath) {
 
 /** @returns {DSFunction} */
 const newDSFunc = () => ({
+    name: undefined,
     abbrev: undefined,
     desc: "",
     isval: undefined,
     pNames: undefined,
     pTypes: undefined,
+    params: undefined,
     retval: undefined,
     shortDesc: undefined,
 });
@@ -394,7 +375,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     else if (line.trim() == "*/" || !line.trim()) { }
                     else {
                         if (isCA) obj.desc += "\n";
-                        obj.desc += line.trim().replace(/^\* */, '');
+                        obj.desc += line.trim().replace(/^\* */, '').replace(/[* ]+$/, '');
                     }
                 }
             }

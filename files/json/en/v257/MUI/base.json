@@ -69,8 +69,8 @@
 	},
 	"#2349867342": { "name": "GetIcon",
 		"desc": "Returns the icons of the form { checkIcon, uncheckedIcon }",
-		"shortDesc": "Returns the icon information",
-		"retval": "obj-{ checkIcon, uncheckedIcon }"
+		"retval": "obj-{ checkIcon, uncheckedIcon }",
+		"shortDesc": "Returns the icon information"
 	},
 	"#2530918945": { "name": "GetTextSize",
 		"desc": "Returns the current size of the contained text. If the **px** option is given the size will be retured in pixels.",

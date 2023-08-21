@@ -191,9 +191,27 @@ ${cod}
     return str;
 }
 
+// converts a variable to indented string
+// supports Boolean, Number, String, Array and Object
+/**
+ * @param {any} o
+ * @param {string} [intd]
+ * @returns {string}
+ */
+function tos(o, intd = "") {
+    if (o === null || o === undefined) return "null";
+    if (Array.isArray(o)) return "[" + o.map(e => tos(e, intd)).join(', ') + "]";
+    if (typeof o == "object") {
+        var okeys = Object.keys(o).filter(k => o[k] !== undefined);
+        if (!okeys.length) return "{}"
+        return "{\n" + okeys.map(k => intd + `\t"${k}": ${tos(o[k], intd + "\t")}`).join(",\n") + `\n${intd}}`;
+    }
+    return JSON.stringify(o);
+}
+
 async function GetFolders(folder = "") {
     const folders = await fsp.readdir(folder, { withFileTypes: true });
-    for (const fld of folders.filter(d => d.isDirectory())) {
+    for (const fld of folders.filter(d => /[a-z]/.test(d.name[0]) && d.isDirectory())) {
         const path = folder + "/" + fld.name + "/";
         const files = ["obj.json", "base.json", "navs.json"];
         const descPath = path + "desc/";
@@ -201,6 +219,11 @@ async function GetFolders(folder = "") {
             const fileDataPromises = files.map((f) => fsp.readFile(path + f, 'utf8').catch(e => '{}'));
             const fileData = await Promise.all(fileDataPromises);
             const [obj, base, navs] = fileData.map(data => JSON.parse(data));
+
+            if (fs.existsSync(path + files[0]))
+                fs.writeFileSync(path + files[0], tos(obj));
+            if (fs.existsSync(path + files[1]))
+                fs.writeFileSync(path + files[1], tos(base).replace(/\s+"name": "/g, ' "name": "'));
 
             if (!fs.existsSync(path + files[0]) && fs.existsSync(descPath)) {
                 const descFiles = await fsp.readdir(descPath);
@@ -210,7 +233,8 @@ async function GetFolders(folder = "") {
             }
             await GenerateJSFile(fld.name, path, obj, base, navs);
         } catch (err) {
-            console.error(err.message);
+            console.error("While generating " + fld.name);
+            console.error(err.stack || err.message);
         }
     }
 }

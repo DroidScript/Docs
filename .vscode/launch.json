@@ -33,6 +33,17 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/files/markup-generator.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "adjustJson",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/adjustJson.js",
+            "args": ["-b", "-s", "-n", "-x", "-pt", "-nm", "app", "gfx", "MUI", "ui"]
         }
     ]
 }

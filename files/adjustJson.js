@@ -45,26 +45,50 @@ function checkNav(p) {
 	}
 }
 
+/** @returns {DSFunction} */
+const newDSFunc = () => ({
+	name: undefined,
+	abbrev: undefined,
+	desc: "",
+	isval: undefined,
+	pNames: undefined,
+	pTypes: undefined,
+	params: undefined,
+	retval: undefined,
+	shortDesc: undefined,
+});
+
 var curp = '', curf = '', curm = '';
 /** @param {string} p */
 function checkObj(p) {
 	curp = p;
-	var o = JSON.parse(fs.readFileSync(p, 'utf8'))
+	const o = JSON.parse(fs.readFileSync(p, 'utf8'))
+	/** @type {Obj<DSFunction>} */
+	const no = {}
 
-	for (var fn in o) {
-		var f = o[fn];
-		curf = f.name; curm = "";
-		if (handle(f, fn)) delete o[fn];
+	for (const fn in o) {
+		const f = o[fn];
+		const nf = no[fn] = newDSFunc();
+		// @ts-ignore
+		for (const k in f) nf[k] = JSON.parse(JSON.stringify(f[k]));
+		curf = f.name || ''; curm = "";
+		if (handle(nf, fn)) delete no[fn];
 
 		if (!f.subf) continue;
-		for (var mn in f.subf) {
-			var m = f.subf[mn];
-			curm = m.name;
-			if (handle(m, mn)) delete f.subf[mn];
+		for (const mn in nf.subf) {
+			const m = f.subf[mn];
+			const nm = nf.subf[mn] = newDSFunc();
+			if (typeof m == "string") nf.subf[mn] = f.subf[mn];
+			else {
+				// @ts-ignore
+				for (const k in f.subf[mn]) nm[k] = JSON.parse(JSON.stringify(m[k]));
+				curm = m.name || '';
+				if (handle(nm, mn)) delete nf.subf[mn];
+			}
 		}
 	}
 
-	var s = tos(o);
+	var s = tos(no);
 	if (p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
 	if (opt.save) fs.writeFileSync(p, s);
 	else console.log(s);
@@ -76,8 +100,11 @@ function checkObj(p) {
  */
 function handle(f, name) {
 	if (opt.strip && (regHide.test(name) || f.name && regHide.test(f.name))) return true;
-	if (opt.pathtypes) keys(f.pTypes).forEach((f, i) => checkType(f, i));
 	if (opt.names) if (f.name == name) delete f.name;
+	if (opt.names) if (!f.desc) delete f.desc; else f.desc = f.desc.trim();
+	if (opt.pathtypes) if (!f.pNames?.length) delete f.pNames;
+	if (opt.pathtypes) if (!f.pTypes?.length) delete f.pTypes;
+	if (opt.pathtypes) keys(f.pTypes).forEach((f, i) => checkType(f, i));
 }
 
 /**
@@ -117,9 +144,9 @@ function isnum(c) { return c >= '0' && c <= '9'; }
 /** @type {(l:string|string[], v:string) => boolean} */
 function has(l, v) { return !!l && l.indexOf(v) > -1; }
 /** @ts-ignore @type {<T extends object>(O: T) => T[keyof T][]} */
-function values(o) { return Object.values(o); }
+function values(o) { return Object.values(o || []); }
 /** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
-function keys(o) { return Object.keys(o); }
+function keys(o) { return Object.keys(o || []); }
 /** @param {any} v */
 function d(v) { console.log(v); return v; }
 /**
@@ -138,40 +165,17 @@ function sortAsc(a, b) {
 /**
  * @param {any} o
  * @param {string} [intd]
- * @param {boolean} [m]
  * @returns {string}
  */
-function tos(o, intd, m) {
-	if (intd == undefined) intd = "";
-	if (m == undefined) m = true;
-	var s = m ? intd : "";
-
+function tos(o, intd = "") {
 	if (o === null || o === undefined) return "null";
-	else switch (o.constructor.name) {
-		case "String": case "Number": case "Boolean":
-			return s + JSON.stringify(o);
-		case "Array":
-			var n = o.length < 2 || (typeof o[0] != "object");
-			s += n ? "[" : "[\n";
-			for (var i = 0; i < o.length; i++) {
-				s += tos(o[i], intd + (n ? "" : "\t"), !n);
-				if (i < o.length - 1) s += n ? ", " : ",\n";
-			}
-			return s + (n ? "" : "\n" + intd) + "]";
-		default:
-			var okeys = keys(o);
-			switch (okeys.length) {
-				case 0: return "{}";
-				default:
-					s += "{\n";
-					for (var i = 0; i < okeys.length; i++) {
-						if (o[okeys[i]] === undefined) continue;
-						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], intd + "\t", false)}`;
-						if (i < okeys.length - 1) s += ",\n";
-					}
-					return s + `\n${intd}}`;
-			}
+	if (Array.isArray(o)) return "[" + o.map(e => tos(e, intd)).join(', ') + "]";
+	if (typeof o == "object") {
+		var okeys = Object.keys(o).filter(k => o[k] !== undefined);
+		if (!okeys.length) return "{}"
+		return "{\n" + okeys.map(k => intd + `\t"${k}": ${tos(o[k], intd + "\t")}`).join(",\n") + `\n${intd}}`;
 	}
+	return JSON.stringify(o);
 }
 
 ///////////////// arg parsing /////////////////////

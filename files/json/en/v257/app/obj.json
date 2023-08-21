@@ -132,13 +132,10 @@
 	"Animate": {
 		"desc": "#Animate.md",
 		"pNames": ["callback", "fps"],
-		"pTypes": [
-			{
-				"pNames": ["time", "dtime"],
-				"pTypes": ["num_mls", "num_mls"]
-			},
-			"num_fps"
-		],
+		"pTypes": [{
+			"pNames": ["time", "dtime"],
+			"pTypes": ["num_mls", "num_mls"]
+		}, "num_fps"],
 		"shortDesc": "Similar to setInterval"
 	},
 	"Broadcast": {
@@ -1608,75 +1605,75 @@
 				"shortDesc": "returns the glv context"
 			},
 			"GetContext.ctx.capture": {
-				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
 				"name": "ctx.capture",
+				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
 				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:path relative to “/sdcard”", "fnc", "fnc"],
 				"shortDesc": "Captures the canvas to a png image"
 			},
 			"GetContext.ctx.clearRect": {
-				"desc": "<deprecated does nothing. ctx is automatically cleared after render()>",
 				"name": "ctx.clearRect",
+				"desc": "<deprecated does nothing. ctx is automatically cleared after render()>",
 				"pNames": ["x", "y", "width", "height"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"]
 			},
 			"GetContext.ctx.drawImage": {
-				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
 				"name": "ctx.drawImage",
+				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
 				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
 				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
 				"shortDesc": "Draws part of a sprite to the context"
 			},
 			"GetContext.ctx.render": {
-				"desc": "render the draw commands to the context",
 				"name": "ctx.render",
+				"desc": "render the draw commands to the context",
 				"shortDesc": "render draw commands"
 			},
 			"GetContext.ctx.resetTransform": {
-				"desc": "Reset all transformations to default",
-				"name": "ctx.resetTransform"
+				"name": "ctx.resetTransform",
+				"desc": "Reset all transformations to default"
 			},
 			"GetContext.ctx.restore": {
-				"desc": "Restore a previously saved context state",
 				"name": "ctx.restore",
+				"desc": "Restore a previously saved context state",
 				"shortDesc": "Restore saved context"
 			},
 			"GetContext.ctx.rotate": {
-				"desc": "Rotates the current applied transformation",
 				"name": "ctx.rotate",
+				"desc": "Rotates the current applied transformation",
 				"pNames": ["angle"],
 				"pTypes": ["num_rad"],
 				"shortDesc": "Rotates the transformation matrix"
 			},
 			"GetContext.ctx.save": {
-				"desc": "Saves the current context state",
 				"name": "ctx.save",
+				"desc": "Saves the current context state",
 				"shortDesc": "Saves current context"
 			},
 			"GetContext.ctx.scale": {
-				"desc": "Scales the current applied transformation matrix",
 				"name": "ctx.scale",
+				"desc": "Scales the current applied transformation matrix",
 				"pNames": ["a", "d"],
 				"pTypes": ["num_frc", "num_frc"],
 				"shortDesc": "Scale the transformation matrix"
 			},
 			"GetContext.ctx.setTransform": {
-				"desc": "Set the current transformation matrix",
 				"name": "ctx.setTransform",
+				"desc": "Set the current transformation matrix",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
 				"shortDesc": "Set current matrix"
 			},
 			"GetContext.ctx.transform": {
-				"desc": "Apply an other transformation matrix to the current one",
 				"name": "ctx.transform",
+				"desc": "Apply an other transformation matrix to the current one",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
 				"shortDesc": "Transform the current matrix"
 			},
 			"GetContext.ctx.translate": {
-				"desc": "'Moves' the current applied transformation matrix",
 				"name": "ctx.translate",
+				"desc": "'Moves' the current applied transformation matrix",
 				"pNames": ["tx", "ty"],
 				"pTypes": ["num_pxl", "num_pxl"],
 				"shortDesc": "'Move' the transformation matrix"
@@ -2658,8 +2655,8 @@
 		}
 	},
 	"CreateMusic": {
-		"desc": "Add music to your app. See the @../Music/Music.html page for more details",
 		"abbrev": "mus",
+		"desc": "Add music to your app. See the @../Music/Music.html page for more details",
 		"retval": "dso-Music"
 	},
 	"CreateNetClient": {
@@ -2972,8 +2969,8 @@
 				"shortDesc": "Checks if NXT is connected"
 			},
 			"IsEnabled": {
-				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
 				"name": "IsBluetoothEnabled",
+				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
 				"retval": "bin",
 				"shortDesc": "Checks if bt is enabled"
 			},
@@ -3184,13 +3181,10 @@
 			"GetPurchases": {
 				"desc": "Get product info of purchased items from Google Play.",
 				"pNames": ["callback", "options"],
-				"pTypes": [
-					{
-						"pNames": ["items"],
-						"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]
-					},
-					"str-SUBS"
-				],
+				"pTypes": [{
+					"pNames": ["items"],
+					"pTypes": ["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]
+				}, "str-SUBS"],
 				"shortDesc": "Get purchased items from Google Play."
 			},
 			"GetType": {
@@ -3674,7 +3668,6 @@
 			"SetSize": "#1296070870",
 			"SetText": {
 				"desc": "Change the current shown item",
-				"name": "SetText",
 				"pNames": ["item"],
 				"pTypes": ["str"],
 				"shortDesc": "Change current shown item"
@@ -6195,16 +6188,13 @@
 			"close": {
 				"desc": "Close the database\n<deprecated Use Close instead>",
 				"pNames": ["success", "error"],
-				"pTypes": [
-					{
-						"pNames": ["msg"],
-						"pTypes": ["str"]
-					},
-					{
-						"pNames": ["msg"],
-						"pTypes": ["str"]
-					}
-				],
+				"pTypes": [{
+					"pNames": ["msg"],
+					"pTypes": ["str"]
+				}, {
+					"pNames": ["msg"],
+					"pTypes": ["str"]
+				}],
 				"shortDesc": "Close the database"
 			},
 			"Close": {
@@ -6255,32 +6245,25 @@
 			"open": {
 				"desc": "Opens the database\n<deprecated>",
 				"pNames": ["success", "error"],
-				"pTypes": [
-{},
-					{
-						"pNames": ["msg"],
-						"pTypes": ["str"]
-					}
-				],
+				"pTypes": [{}, {
+					"pNames": ["msg"],
+					"pTypes": ["str"]
+				}],
 				"shortDesc": "Open database"
 			},
 			"readTransaction": {
 				"desc": "readTransaction\n<deprecated Use ExecuteSql instead>",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": [
-					{
-						"pNames": ["tx"],
-						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
-					},
-					{
-						"pNames": ["err"],
-						"pTypes": ["str"]
-					},
-					{
-						"pNames": ["tx", "res"],
-						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"]
-					}
-				]
+				"pTypes": [{
+					"pNames": ["tx"],
+					"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
+				}, {
+					"pNames": ["err"],
+					"pTypes": ["str"]
+				}, {
+					"pNames": ["tx", "res"],
+					"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }", "obj-{ rows.item(i): { id:num, data:all, data_num:num } }"]
+				}]
 			},
 			"startNextTransaction": {
 				"desc": "startNextTransaction\n<deprecated Use ExecuteSql instead>"
@@ -6288,26 +6271,19 @@
 			"transaction": {
 				"desc": "transaction\n<deprecated Use ExecuteSql instead>",
 				"pNames": ["fn", "error", "success"],
-				"pTypes": [
-					{
+				"pTypes": [{
+					"pNames": ["tx"],
+					"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
+				}, {
+					"pNames": ["err"],
+					"pTypes": ["str"]
+				}, {
+					"pNames": ["fnc", "res"],
+					"pTypes": [{
 						"pNames": ["tx"],
 						"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
-					},
-					{
-						"pNames": ["err"],
-						"pTypes": ["str"]
-					},
-					{
-						"pNames": ["fnc", "res"],
-						"pTypes": [
-							{
-								"pNames": ["tx"],
-								"pTypes": ["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]
-							},
-							"obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"
-						]
-					}
-				]
+					}, "obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]
+				}]
 			}
 		}
 	},
@@ -6651,13 +6627,10 @@
 	"SetOnBroadcast": {
 		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\\_actions.txt)\n\n\nSee also: @Broadcast",
 		"pNames": ["callback", "action"],
-		"pTypes": [
-			{
-				"pNames": ["type", "msg"],
-				"pTypes": ["str", "str"]
-			},
-			"str"
-		],
+		"pTypes": [{
+			"pNames": ["type", "msg"],
+			"pTypes": ["str", "str"]
+		}, "str"],
 		"shortDesc": "Called on incoming Broadcasts"
 	},
 	"SetOnDebug": {
@@ -7021,13 +6994,10 @@
 	"WifiScan": {
 		"desc": "Scans the surroundings for any available Wifi networks.",
 		"pNames": ["callback", "options"],
-		"pTypes": [
-			{
-				"pNames": ["ssids"],
-				"pTypes": ["str_pip||lst"]
-			},
-			"str-detail"
-		],
+		"pTypes": [{
+			"pNames": ["ssids"],
+			"pTypes": ["str_pip||lst"]
+		}, "str-detail"],
 		"shortDesc": "Scan for any available Wifi networks"
 	},
 	"WriteFile": {

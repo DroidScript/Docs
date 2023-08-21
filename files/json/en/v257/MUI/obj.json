@@ -4274,7 +4274,7 @@
 	},
 	"CreateTextH2": {
 		"abbrev": "txh",
-		"desc": "Creates a heading text ",
+		"desc": "Creates a heading text",
 		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
 		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",

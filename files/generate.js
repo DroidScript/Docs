@@ -1259,7 +1259,7 @@ function values(o) { return Object.values(o); }
 function keys(o) { return Object.keys(o); }
 /** @param {any} v */
 function d(v) { console.log(v); return v; }
-function saveScope() { app.WriteFile(getSrcDir(D_SCOPE, "obj.json"), tos(scope, true)); }
+function saveScope() { app.WriteFile(getSrcDir(D_SCOPE, "obj.json"), tos(scope)); }
 /**
  * @param {any} a
  * @param {any} b
@@ -1325,46 +1325,18 @@ function mergeObject(a, b) {
 // supports Boolean, Number, String, Array and Object
 /**
  * @param {any} o
- * @param {boolean} [nosort]
  * @param {string} [intd]
- * @param {boolean} [m]
  * @returns {string}
  */
-function tos(o, nosort, intd, m) {
-	if (intd == undefined) intd = "";
-	if (m == undefined) m = true;
-	var s = m ? intd : "";
-
+function tos(o, intd = "") {
 	if (o === null || o === undefined) return "null";
-	else switch (o.constructor.name) {
-		case "String": case "Number": case "Boolean":
-			return s + JSON.stringify(o);
-		case "Array":
-			var n = o.length < 2 || (typeof o[0] != "object");
-			s += n ? "[" : "[\n";
-			for (var i = 0; i < o.length; i++) {
-				s += tos(o[i], nosort, intd + (n ? "" : "\t"), !n);
-				if (i < o.length - 1) s += n ? ", " : ",\n";
-			}
-			return s + (n ? "" : "\n" + intd) + "]";
-		default:
-			var okeys = keys(o);
-			if (!nosort) okeys = okeys.sort(sortAsc);
-			switch (okeys.length) {
-				case 0: return "{}";
-				case 1:
-					if (o[okeys[0]] === undefined) return "{}";
-					return s += `{ "${okeys[0]}": ${tos(o[okeys[0]], nosort, "", false)} }`;
-				default:
-					s += "{\n";
-					for (var i = 0; i < okeys.length; i++) {
-						if (o[okeys[i]] === undefined) continue;
-						s += intd + `\t"${okeys[i]}": ${tos(o[okeys[i]], nosort, intd + "\t", false)}`;
-						if (i < okeys.length - 1) s += ",\n";
-					}
-					return s + `\n${intd}}`;
-			}
+	if (Array.isArray(o)) return "[" + o.map(e => tos(e, intd)).join(', ') + "]";
+	if (typeof o == "object") {
+		var okeys = Object.keys(o).filter(k => o[k] !== undefined);
+		if (!okeys.length) return "{}"
+		return "{\n" + okeys.map(k => intd + `\t"${k}": ${tos(o[k], intd + "\t")}`).join(",\n") + `\n${intd}}`;
 	}
+	return JSON.stringify(o);
 }
 
 /**
@@ -1493,7 +1465,7 @@ if (typeof app == "undefined") {
 		Object.assign(conf.langs, addcfg.langs);
 		Object.assign(conf.scopes, addcfg.scopes);
 
-		app.WriteFile("conf.json", tos(conf, true));
+		app.WriteFile("conf.json", tos(conf));
 	}
 
 	if (!nogen) Generate(patFunc, /** @type {ScopeKeys | ""} */(patScope), /** @type {LangKeys | ""} */(patLang));
