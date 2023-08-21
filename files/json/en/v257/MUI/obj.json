@@ -1834,7 +1834,7 @@
 				"pNames": ["color"],
 				"pTypes": ["str_col-"]
 			},
-			"GetIcon": "#2387569276",
+			"GetIcon": "#2349867342",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
@@ -1888,7 +1888,7 @@
 				"pNames": ["color"],
 				"pTypes": ["str_col-"]
 			},
-			"GetIcon": "#2387569276",
+			"GetIcon": "#2349867342",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {
@@ -1942,7 +1942,7 @@
 				"pNames": ["color"],
 				"pTypes": ["str_col-"]
 			},
-			"GetIcon": "#2387569276",
+			"GetIcon": "#2349867342",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
 			"data": {

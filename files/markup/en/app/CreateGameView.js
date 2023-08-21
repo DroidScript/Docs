@@ -100,7 +100,13 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 
 /** @extern SetEnabled */
 
-/** @extern SetFile */
+/** ### SetFile ###
+ * @brief Define the game source file
+ * Loads a GameView script file.
+ * $$ gmv.SetFile(file) $$
+ * @param {str_ptf} file 
+ */
+
 
 /** ### SetFrameRate ###
  * @brief Change the target framerate

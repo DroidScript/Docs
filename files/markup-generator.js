@@ -19,6 +19,9 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
     if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
     if (fs.existsSync(path + 'navs.json')) fs.copyFileSync(path + 'navs.json', outDir + scope + '-navs.json');
 
+    /** @type {Obj<string>} */
+    const usedIDs = {}
+
     for (let key in obj) {
         let str = "// ------------- HEADER SECTION ------------- \n\n";
         const fileName = key + ".js";
@@ -38,7 +41,7 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
 /** # ${key} #
 ${info}
  * ${_desc}
- * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${(data.pNames && data.pNames.length) ? data.pNames.join(", ") : ""}) $$ 
+ * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
 `;
 
         str += extractParams(data);
@@ -63,7 +66,14 @@ ${info}
             for (let method in data.subf) {
                 let methodData = data.subf[method];
 
-                if (typeof methodData == "object" && methodData.isval) {
+                if (typeof methodData == "string") {
+                    if (!methodData.startsWith("#")) throw "Unexpected subf string " + methodData;
+                    const addId = usedIDs[method] && usedIDs[method] != methodData || '';
+                    str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
+                    usedIDs[method] ||= methodData;
+                }
+
+                else if (methodData.isval) {
                     const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
                     str += `
 /** ### ${method}
@@ -72,11 +82,6 @@ ${info}
  * @returns ${methodData.retval}
  */
 \n                    `;
-                }
-
-                else if (typeof methodData == "string") {
-                    if (!methodData.startsWith("#")) throw "Unexpected subf string " + methodData;
-                    str += `\n/** @extern ${method} */\n`;
                 }
 
                 else {
@@ -115,10 +120,11 @@ ${info}
     for (let key in base) {
 
         let methodData = base[key];
-        let method = methodData.name;
+        let method = methodData.name || '';
+        const addId = usedIDs[method] && usedIDs[method] != key;
 
         baseStr += `
-/** ### ${method}
+/** ### ${addId ? key.replace('#', '') : method}
  * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
  * $$ obj.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;

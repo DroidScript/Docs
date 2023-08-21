@@ -255,7 +255,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** ### SetOnUrl ###
  * @brief Called when link klicked

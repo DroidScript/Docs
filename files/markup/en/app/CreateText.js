@@ -172,7 +172,7 @@ You can also set a background image/pattern or background gradient for the Text 
 
 /** @extern SetOnLongTouch */
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** @extern SetOnTouchDown */
 

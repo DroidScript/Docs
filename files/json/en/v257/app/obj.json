@@ -1539,7 +1539,12 @@
 			"SetColorFilter": "#1096996086",
 			"SetDescription": "#0937259723",
 			"SetEnabled": "#1602385882",
-			"SetFile": "#0897234673",
+			"SetFile": {
+				"desc": "Loads a GameView script file.",
+				"pNames": ["file"],
+				"pTypes": ["str_ptf"],
+				"shortDesc": "Define the game source file"
+			},
 			"SetFrameRate": {
 				"desc": "Change the targeted framerate.",
 				"pNames": ["fps"],

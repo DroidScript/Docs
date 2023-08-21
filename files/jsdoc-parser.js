@@ -45,11 +45,12 @@ async function LoopFiles(SOURCE_DIR) {
     if (!fs.existsSync(outputDesc)) fs.mkdirSync(outputDesc, { recursive: true })
 
     const baseFile = SOURCE_DIR + "_base.js";
-    /** @type {Obj<DSFunction>} */
+    /** @type {Obj<DSFunction|string>} */
     let baseJson = {};
     if (fs.existsSync(baseFile)) baseJson = getBaseMethods(baseFile);
 
     const files = await fs.readdir(SOURCE_DIR);
+    files.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1)
 
     /** @type {Obj<DSFunction>} */
     const objJson = {}
@@ -59,8 +60,7 @@ async function LoopFiles(SOURCE_DIR) {
     if (fs.existsSync(navsJson))
         navs = JSON.parse(fs.readFileSync(navsJson, 'utf8'));
 
-    for (let i = 0; i < files.length; i++) {
-        const file = files[i]
+    for (const file of files) {
         const folderPath = path.join(SOURCE_DIR, file);
         const stats = fs.statSync(folderPath)
         if (stats.isFile()) {
@@ -146,7 +146,7 @@ function tos(o, intd, m) {
 /**
  * @param {string} filePath
  * @param {Obj<DSFunction>} objJson
- * @param {Obj<DSFunction>} baseJson
+ * @param {Obj<DSFunction|string>} baseJson
  * @param {Obj<string[]>} navs
  */
 function renderFile(filePath, objJson, baseJson, navs) {
@@ -172,17 +172,7 @@ function renderFile(filePath, objJson, baseJson, navs) {
 
     let popups = ""
     const props = data.props
-
-    // bubble sort TODO: use array.sort()
-    for (let o = 0; o < props.length - 1; o++) {
-        for (let p = o + 1; p < props.length; p++) {
-            if (props[p][1] < props[o][1]) {
-                let tmp = props[p]
-                props[p] = props[o]
-                props[o] = tmp
-            }
-        }
-    }
+    props.sort((a, b) => a[1] < b[1] ? -1 : 1);
 
     if (props.length) {
         desc += "<h3>Properties</h3>"
@@ -247,6 +237,7 @@ function getBaseMethods(filePath) {
 const newDSFunc = () => ({
     abbrev: undefined,
     desc: "",
+    isval: undefined,
     pNames: undefined,
     pTypes: undefined,
     retval: undefined,
@@ -254,27 +245,28 @@ const newDSFunc = () => ({
 });
 
 /**
- * @param {Obj<DSFunction>} objJson
+ * @param {Obj<DSFunction | string>} objJson
  * @param {import('esprima').Token[]} tokens
  * @param {boolean} cmp
- * @param {string} [name]
- * @param {Obj<DSFunction>} baseJson
+ * @param {string} name
+ * @param {Obj<DSFunction|string>} baseJson
  */
-function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
-    objJson[name] = {};
-    let func = objJson[name];
+function RenderComments(objJson, tokens, cmp, name, baseJson) {
+    /** @type {DSFunction} */
+    let func = {};
+    objJson[name] = func;
 
     let samples = "";
     /** @type {string[][]} */
     let props = [];
     /** @type {string[]} */
     let categories = [];
-    /** @type {Obj<DSFunction>} */
+    /** @type {Obj<DSFunction|string>} */
     let json = {};
 
     tokens.forEach((c, i) => {
         if (c.type == "BlockComment") {
-            let mt = c.value.match(/@(ex|s)ample *-? *(.*)/i);
+            let mt = c.value.match(/@\s*(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 let t = mt[2].trim() || '';
                 let cod = c.value.substring(c.value.indexOf('\n', mt.index)).trim();
@@ -285,33 +277,29 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
             else if (c.value.includes('```')) { }
 
             // Description.md
-            else if (/@\s*[Dd]escription/.test(c.value)) {
+            else if (/@\s*description/i.test(c.value)) {
                 func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
             // Sample.txt
-            else if (/@\s*[Ss]ample/.test(c.value)) {
+            else if (/@\s*sample/i.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
                 samples += `\n\n${_samp}\n\n`
+                console.log("reached @sample despite /(ex|s)ample/")
             }
 
             // Base method
-            else if (/@\s*[Ee]xtern/.test(c.value)) {
-                const r = /@\s*[Ee]xtern([\s\S]*)/;
-                const _m = r.exec(c.value);
-                if (_m) {
-                    const _n = _m[1].trim();
-                    if (_n && baseJson[_n]) json[_n] = baseJson[_n];
-                }
+            else if (/@\s*extern/i.test(c.value)) {
+                const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s*#(\S+))?/i) || [];
+                if (!baseJson[_k || _n])
+                    throw Error(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
+                json[_n] = '#' + _n;
             }
 
             // Category
-            else if (/@\s*[Cc]ategory/.test(c.value)) {
-                const _m = /@\s*[Cc]ategory([\s\S]*)/.exec(c.value);
-                if (_m) {
-                    const _n = _m[1].trim();
-                    if (_n) categories.push(_n);
-                }
+            else if (/@\s*category/i.test(c.value)) {
+                const _n = c.value.split(/@\s*category/i)[1].trim();
+                if (_n) categories.push(_n);
             }
 
             else {
@@ -326,7 +314,8 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                     if (line.includes("###")) {
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
                         json[method] = met = newDSFunc();
-                        if (c.value.includes("@prop")) isval = true;
+                        if (c.value.includes("@prop"))
+                            isval = met.isval = true;
                     }
 
                     else if (line.includes("##")) {
@@ -335,6 +324,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
 
                     // isCA = false
                     else if (line.includes("@prop")) {
+                        obj.isval = true;
                         if (!isval)
                             props.push(extractParamDef(line));
                     }
@@ -384,7 +374,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
                     }
 
                     else if (line.includes("@return")) {
-                        let f = line.split("returns")[1].trim(), g = f.split(/[_\s-]/)[0], v;
+                        let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], v;
                         if (types[g]) v = types[g];
                         else if (typx.includes(g)) v = f;
                         else console.log("unknown type " + g), v = "obj-" + f;
@@ -429,7 +419,7 @@ function RenderComments(objJson, tokens, cmp, name = "", baseJson = {}) {
 
 /** @param {string} str */
 function extractParamDef(str) {
-    let s = str.split("}").map((/** @type {string} */ l) => { return l.trim() })
+    let s = str.split("}").map((l) => l.trim())
     let n = s[1].slice(0, s[1].trim().indexOf(' ') + 1)
     let d = s[1].slice(n.length)
     let t = s[0].split("{")[1].trim()
@@ -444,7 +434,7 @@ function formatDef(sline) {
     /** @type {string[]} */
     let pTypes = [];
     let line = sline.split("@arg");
-    line.map(function (/** @type {string} */ l) {
+    line.forEach((l) => {
         if (!l.trim()) return;
         let r = extractParamDef(l);
         pNames.push(r[1]);

@@ -207,7 +207,7 @@ They may be used to display offers with an image and optional info text.
 
 /** @extern SetOnLongTouch */
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** @extern SetOnTouchDown */
 

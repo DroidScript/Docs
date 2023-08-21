@@ -145,7 +145,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 /** @extern SetOnLongTouch */
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** @extern SetPadding */
 

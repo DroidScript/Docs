@@ -300,7 +300,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** @extern SetMargins */
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** @extern SetOnTouchDown */
 

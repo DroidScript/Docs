@@ -392,7 +392,7 @@ For animations you can then use the **Animate** function of the app object which
 
 /** @extern SetOnLongTouch */
 
-/** @extern SetOnTouch */
+/** @extern SetOnTouch #2088093920 */
 
 /** @extern SetOnTouchDown */
 
