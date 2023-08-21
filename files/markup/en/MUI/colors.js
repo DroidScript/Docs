@@ -2,6 +2,7 @@
 
 
 /** # colors #
+ * @prop
 
  * 
  * $$ MUI.colors() $$ 

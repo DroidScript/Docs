@@ -99,7 +99,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### Func ###
  * Call functions defined inside a webview
  * $$ web.Func(name, args...) $$
- * @param {string} name 
+ * @param {str} name 
  * @param {all} args... 
  */
 

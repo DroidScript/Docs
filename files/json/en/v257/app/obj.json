@@ -5048,7 +5048,7 @@
 			"Func": {
 				"desc": "Call functions defined inside a webview",
 				"pNames": ["name", "args..."],
-				"pTypes": ["string", "all"]
+				"pTypes": ["str", "all"]
 			},
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
@@ -5484,7 +5484,7 @@
 	"Func": {
 		"desc": "Call main app functions from inside a webview",
 		"pNames": ["name", "args..."],
-		"pTypes": ["string", "all"]
+		"pTypes": ["str", "all"]
 	},
 	"GA": {
 		"desc": "#GA.md",
@@ -6545,7 +6545,7 @@
 	"SetAutoBoot": {
 		"desc": "Causes the current running APK or its Service to be started automatically when your device boots.\n\nSee Also: @SetAutoStart",
 		"pNames": ["auto"],
-		"pTypes": ["string-App|Service|None"],
+		"pTypes": ["str-App|Service|None"],
 		"shortDesc": "Autostart APK when device boots"
 	},
 	"SetAutoStart": {

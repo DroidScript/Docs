@@ -7,7 +7,7 @@
  * 
  * See Also: @SetAutoStart
  * $$ app.SetAutoBoot(auto) $$ 
- * @param {string} auto App|Service|None
+ * @param {str} auto App|Service|None
 */
 
 

@@ -2,6 +2,7 @@
 
 
 /** # width #
+ * @prop
 
  * display width
  * $$ gfx.width() $$ 

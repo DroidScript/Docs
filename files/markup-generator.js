@@ -33,6 +33,8 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
         else _desc = "";
 
         let info = "";
+        // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
+        if (data.isval) info += ` * @prop\n`;
         if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
         if (data.shortDesc) info += ` * @brief ${data.shortDesc}`;
 

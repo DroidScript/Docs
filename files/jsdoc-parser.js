@@ -19,6 +19,9 @@ const types = {
     Array: "lst",
     Any: "all",
     AppObject: "dso",
+    GameObject: "gvo",
+    JSObject: "jso",
+    SmartWatchObject: "swo",
     unknown: "?"
 }
 
@@ -305,7 +308,6 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             else {
                 let isCA = false, afterCmpParam = false;
                 let met = newDSFunc();
-                let isval = false;
 
                 for (let line of c.value.split(/\r?\n/)) {
                     line = line.trim();
@@ -314,8 +316,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     if (line.includes("###")) {
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
                         json[method] = met = newDSFunc();
-                        if (c.value.includes("@prop"))
-                            isval = met.isval = true;
+                        if (c.value.includes("@prop")) met.isval = true;
                     }
 
                     else if (line.includes("##")) {
@@ -325,9 +326,8 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     // isCA = false
                     else if (line.includes("@prop")) {
                         obj.isval = true;
-                        if (!isval)
-                            props.push(extractParamDef(line));
                     }
+
                     else if (line.includes("@brief")) obj.shortDesc = line.substring(line.indexOf("@brief") + 6).trim();
 
                     else if (line.includes("@param")) {
@@ -346,14 +346,11 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                             _d = JSON.parse(p[2]);
                         }
                         else {
-                            let k = p[0].split(/[_:-]/)[0];
-                            if (types[p[0]]) _d = types[p[0]];
-                            else if (typx.includes(k)) _d = p[0];
-                            else _d = "obj"
-                            if (p[2]) {
-                                p[2] = extractBacktickStrings(p[2]);
-                                _d += "-" + p[2];
-                            }
+                            let ts = p[0].split('||').map(t => types[p[0]] || t);
+                            if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0])))
+                                throw Error(`unknown param type ${line} in ${name}`);
+                            _d = ts.join('||');
+                            if (p[2]) _d += "-" + p[2]
                         }
 
                         if (isCA) afterCmpParam = true;
@@ -377,7 +374,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], v;
                         if (types[g]) v = types[g];
                         else if (typx.includes(g)) v = f;
-                        else console.log("unknown type " + g), v = "obj-" + f;
+                        else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + f;
                         obj.retval = v;
                     }
 
@@ -438,6 +435,7 @@ function formatDef(sline) {
         if (!l.trim()) return;
         let r = extractParamDef(l);
         pNames.push(r[1]);
+        if (!types[r[0]]) console.log(`unknown def type ${r[0]}`);
         pTypes.push(types[r[0]] ? types[r[0]] + "-" + r[2] : "obj-" + r[2]);
     });
     return { pNames, pTypes };

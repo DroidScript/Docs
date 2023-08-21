@@ -252,7 +252,7 @@
 			"Play": {
 				"desc": "Start the playback of the current loaded audio file.",
 				"pNames": ["loop", "delay", "gap"],
-				"pTypes": ["bool", "num_mls-delay before playback start", "num_mls-time gap between two loops"],
+				"pTypes": ["bin", "num_mls-delay before playback start", "num_mls-time gap between two loops"],
 				"shortDesc": "Play the soundtrack"
 			}
 		}

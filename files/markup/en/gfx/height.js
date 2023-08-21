@@ -2,6 +2,7 @@
 
 
 /** # height #
+ * @prop
 
  * Display height in pixels
  * $$ gfx.height() $$ 

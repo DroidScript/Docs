@@ -35,7 +35,7 @@
  * @brief Play the soundtrack
  * Start the playback of the current loaded audio file.
  * $$ snd.Play(loop, delay, gap) $$
- * @param {bool} loop 
+ * @param {bin} loop 
  * @param {num_mls} delay delay before playback start
  * @param {num_mls} gap time gap between two loops
  */

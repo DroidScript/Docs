@@ -2,6 +2,7 @@
 
 
 /** # data #
+ * @prop
 
  * GameView custom data
  * $$ gfx.data() $$ 

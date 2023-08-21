@@ -5,7 +5,7 @@
 
  * Call main app functions from inside a webview
  * $$ app.Func(name, args...) $$ 
- * @param {string} name 
+ * @param {str} name 
  * @param {all} args... 
 */
 
