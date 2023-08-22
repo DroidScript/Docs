@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-- [Editing Docs using raw JSON files](#editing-docs-using-raw-json-files)
+- [Docs JSON Format Documentation](#docs-json-format-documentation)
 	- [Table of Contents](#table-of-contents)
 	- [File Structure](#file-structure)
 		- [Source Files](#source-files)
@@ -65,7 +65,7 @@ Note: in fact, no file is reqired all the times. Following rules apply:
 - **obj.json**:
 	The main generation source in [JSON Format](#JSON-Format)
 - **base.json**:
-	Template definitions for often needed members or parameters. The keys are 10 digit IDs starting with a '#' which are used in obj.json to avoid duplicated definitions. (See [Note 2](#JSON-Format-Note2))
+	Template definitions for often needed members or parameters. The keys are usually the method name - but it can be any unique identifier. They are used in _obj.json_ prefixed with an '#' to reference _base.json_ and avoid duplicated definitions. (See [Note 2](#JSON-Format-Note2))
 - **navs.json**:
 	A structure representing navigators to make it easy for users to quickly find a certain method of the scope. There will always be a 'All' category added which includes all scope members.<br>
     You can use one level of categorization using `"catname": ["subcat"]` or `"catname":"url"` pairs:
@@ -162,9 +162,9 @@ from [gfx/obj.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 SetTween from [gfx/base.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7bd78474ac21813f8931fd/files/en/gfx/base.json#L101)
 ```json
 {
-    "#8929387454": {
+    "SetTween": {
         "desc": "Sets up tween methods and properties without playing it.",
-        "params": "#2114624769",
+        "params": "#Tween",
         "shortDesc": "Setup tween methods"
     }
 }
@@ -185,8 +185,8 @@ from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 		"retval": "dso-Button",
 		"shortDesc": "Creates a button control",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
             /* ... */
 			"GetType": {
 				"desc": "Returns the control class name.",
@@ -201,8 +201,8 @@ from [gfx/app.json](https://github.com/SymDSTools/Docs/blob/db2a9f192295eb4f5a7b
 				"shortDesc": "Called when the button was long pressed"
 			},
             /* ... */
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	}
 }

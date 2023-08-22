@@ -24,6 +24,40 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
     /** @type {Obj<string>} */
     const usedIDs = {}
 
+    let baseStr = "";
+    for (let key in base) {
+        let methodData = base[key];
+        let method = methodData.name || '';
+        const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != key;
+        const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : "";
+        usedIDs[method] ||= key;
+
+        let info = "";
+        // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
+        if (methodData.name || addId) info += ` * @name ${methodData.name || key}\n`;
+        if (methodData.isval) info += ` * @prop\n`;
+        if (methodData.abbrev) info += ` * @abbrev ${methodData.abbrev}\n`;
+        if (methodData.shortDesc) info += ` * @brief ${methodData.shortDesc}\n`;
+
+        baseStr += `
+/** ### ${addId ? key.replace('#', '') : method}
+${info} * ${_desc}
+`;
+
+        baseStr += extractParams(methodData, usedIDs);
+
+        if (methodData.retval) {
+            baseStr += ` * @returns ${methodData.retval}\n`
+        }
+        baseStr += ` */\n\n`
+    }
+
+    if (baseStr) {
+        let _baseFile = "_base.js";
+        let _baseOutFile = folder.slice(0, -1) + _baseFile;
+        fs.writeFileSync(_baseOutFile, baseStr);
+    }
+
     for (let key in obj) {
         let str = "// ------------- HEADER SECTION ------------- \n\n";
         const fileName = key + ".js";
@@ -48,7 +82,7 @@ ${info} * ${_desc}
  * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
 `;
 
-        str += extractParams(data);
+        str += extractParams(data, usedIDs);
 
         if (data.retval) {
             str += ` * @returns ${data.retval}\n`;
@@ -72,6 +106,7 @@ ${info} * ${_desc}
 
                 if (typeof methodData == "string") {
                     if (!methodData.startsWith("#")) throw "Unexpected subf string " + methodData;
+                    if (/[a-z]/i.test(methodData[1])) methodData = methodData.slice(1);
                     const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != methodData || '';
                     str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
                     usedIDs[method] ||= methodData;
@@ -96,7 +131,7 @@ ${info} * ${_desc}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;
 
-                    str += extractParams(methodData);
+                    str += extractParams(methodData, usedIDs);
 
                     if (methodData.retval) {
                         str += ` * @returns ${methodData.retval}\n`
@@ -119,48 +154,14 @@ ${info} * ${_desc}
 
         await fsp.writeFile(outputFile, str);
     }
-
-    let baseStr = "";
-    for (let key in base) {
-
-        let methodData = base[key];
-        let method = methodData.name || '';
-        const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != key;
-        const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : "";
-
-        let info = "";
-        // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
-        if (methodData.name || addId) info += ` * @name ${methodData.name || key}\n`;
-        if (methodData.isval) info += ` * @prop\n`;
-        if (methodData.abbrev) info += ` * @abbrev ${methodData.abbrev}\n`;
-        if (methodData.shortDesc) info += ` * @brief ${methodData.shortDesc}\n`;
-
-        baseStr += `
-/** ### ${addId ? key.replace('#', '') : method}
-${info} * ${_desc}
-`;
-
-        baseStr += extractParams(methodData);
-
-        if (methodData.retval) {
-            baseStr += ` * @returns ${methodData.retval}\n`
-        }
-        baseStr += ` */\n\n`
-    }
-
-    if (baseStr) {
-        let _baseFile = "_base.js";
-        let _baseOutFile = folder.slice(0, -1) + _baseFile;
-        fs.writeFileSync(_baseOutFile, baseStr);
-    }
 }
 
 const split0 = (s = '', t = '') => s.substring(0, s.indexOf(t)) || s;
 const split1 = (s = '', t = '') => s.slice(s.indexOf(t)).substring(1);
 
-/** @param {DSFunction} methodData */
-function extractParams(methodData) {
-    if (methodData.params) return ` * @param ${methodData.params}\n`;
+/** @type {(methodData:DSFunction, usedIDs:Obj<string>) => string} */
+function extractParams(methodData, usedIDs) {
+    if (methodData.params) return ` * @param ${usedIDs[methodData.params] || methodData.params}\n`;
 
     let str = ""
     if (methodData.pNames && methodData.pTypes) {

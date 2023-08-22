@@ -330,9 +330,10 @@ function generateTips(scope) {
 			tips[s.abbrev] = tctrl;
 
 			for (var j of keys(tsubf).filter(nothidden)) {
-				const t = tsubf[j];
+				let t = tsubf[j];
 				if (typeof t === "string") {
 					if (!t.startsWith('#')) Throw(Error(`md ref must have '#' prefix, got '${t}'`))
+					if (/[a-z]/i.test(t[1])) t = t.slice(1);
 					if (base && base[t]) {
 						const b = base[t];
 						if (b.shortDesc) tctrl[j] = b.shortDesc;
@@ -634,9 +635,10 @@ function getDocData(f, useAppPop = false) {
 		var met = f.subf[mkeys[k]], retval = "", type;
 
 		// load base func
-		if (typeof met === "string") {
+		while (typeof met === "string") {
+			if (!met.startsWith('#')) Throw(Error(`basefunc must have # prefix. got '${met}'`)), process.exit();
+			if (/[a-z]/i.test(met[1])) met = met.slice(1);
 			if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!")), process.exit();
-			if (!met.startsWith('#')) Throw(Error(`md link must have # prefix. got '${met}'`)), process.exit();
 			met = base[met];
 		}
 
@@ -645,11 +647,14 @@ function getDocData(f, useAppPop = false) {
 		//if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 
 		// load params from base
-		while (typeof met.params == "string" && met.params.startsWith('#')) {
-			if (!base || !base[met.params]) Throw(Error("basefunc " + met.params + " not found!")), process.exit();
+		while (typeof met.params == "string") {
+			if (!met.params.startsWith('#')) Throw(Error(`params must have # prefix. got '${met}'`)), process.exit();
+			if (/[a-z]/i.test(met.params[1])) met.params = met.params.slice(1);
+			if (!base || !base[met.params])
+				Throw(Error("params " + met.params + " not found!")), process.exit();
 			met.pNames = base[met.params].pNames || [];
 			met.pTypes = base[met.params].pTypes || [];
-			met.params = "";
+			met.params = base[met.params].params || undefined;
 		}
 
 		if (hidden(curSubf)) continue;

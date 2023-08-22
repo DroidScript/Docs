@@ -147,7 +147,7 @@
  * @name SetTween
  * @brief Setup tween methods
  * Sets up tween methods and properties without playing it.
- * @param #2114624769
+ * @param #Tween
  */
 
 

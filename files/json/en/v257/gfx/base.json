@@ -95,7 +95,7 @@
 	},
 	"SetTween": { "name": "SetTween",
 		"desc": "Sets up tween methods and properties without playing it.",
-		"params": "#2114624769",
+		"params": "#Tween",
 		"shortDesc": "Setup tween methods"
 	},
 	"StartTween": { "name": "StartTween",
