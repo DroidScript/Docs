@@ -49,6 +49,28 @@
 		<strong>Note:</strong> <span class="token function">CopyFolder</span><span class="token punctuation">(</span>fld1<span class="token punctuation">,</span> fld2<span class="token punctuation">)</span> will copy the <strong>contents</strong> of <i>fld1</i> to <i>fld2</i>.<br>
 		<br>
 		See Also: <a href="RenameFolder.htm" data-ajax="false">RenameFolder</a>, <a href="DeleteFolder.htm" data-ajax="false">DeleteFolder</a>, <a href="FolderExists.htm" data-ajax="false">FolderExists</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">MakeFolder</span><span class="token punctuation">(</span><span class="token string">"myFolder"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">CopyFolder</span><span class="token punctuation">(</span><span class="token string">"myFolder"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myFolder"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FolderExists</span><span class="token punctuation">(</span><span class="token string">"/sdcard/myFolder"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder exists in /sdcard/!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"myFolder does not exist in /sdcard/!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 

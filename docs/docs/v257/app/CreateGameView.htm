@@ -62,6 +62,36 @@
 		</span></p>
 		<h3>GameView in web browsers</h3>
 		<p>If you prefer to work on a PC you can even run and debug your GameView code in a regular web-browser. Check out these demos to see how it works: <a href="http://androidscript.org/beta/GameViewWeb" onclick="return OpenUrl(this.href);">http://androidscript.org/beta/GameViewWeb</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - s</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Landscape<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">PreventScreenLock</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Vertical,FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <b id="snip1" style="font-size:100%">gam <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateGameView</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    gam<span class="token punctuation">.</span><span class="token function">SetFile</span><span class="token punctuation">(</span> <span class="token string">"script.js"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    gam<span class="token punctuation">.</span><span class="token function">SetFrameRate</span><span class="token punctuation">(</span> <span class="token number">40</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> gam <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>samples<span class="token operator">></span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>GameView</strong> object:</p>
 
@@ -202,8 +232,8 @@
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetEllipsize</a>(
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetFile</a>(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetFrameRate</a>(
@@ -215,7 +245,7 @@
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
@@ -223,7 +253,7 @@
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
@@ -242,11 +272,11 @@
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">options</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
-			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
@@ -255,7 +285,7 @@
 			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
 			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">target</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
-			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">type</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>,
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
@@ -286,11 +316,10 @@
 	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“repeat”</docstr></div>
 	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“color”</docstr> or <docstr>“color_burn”</docstr> or <docstr>“color_dodge”</docstr> or <docstr>“difference”</docstr> or <docstr>“exclusion”</docstr> or <docstr>“hard_light”</docstr> or <docstr>“hue”</docstr> or <docstr>“luminosity”</docstr> or <docstr>“modulate”</docstr> or <docstr>“saturation”</docstr> or <docstr>“soft_light”</docstr> or <docstr>“src”</docstr> or <docstr>“dst”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“start”</docstr> or <docstr>“middle”</docstr> or <docstr>“end”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">h</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
@@ -324,7 +353,7 @@
 	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>gmv.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
 	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>gmv.SetDescription</b><br>Set a control description for accessibility</div>
 	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>gmv.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>gmv.SetEllipsize</b><br>Will cause the inner text to be broken with ... at the start or the end if it cannot fit in the control.</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>gmv.SetFile</b><br>Loads a GameView script file.</div>
 	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>gmv.SetFrameRate</b><br>Change the targeted framerate.</div>
 	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>gmv.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
 	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>gmv.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>

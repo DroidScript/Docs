@@ -43,13 +43,7 @@
 			</span><br>
 		</div>
 
-		<p>Lists are continuous, vertical indexes of text or images<br>
-		They are used to group together related pieces of data or informations to highlight association with each other and easy to read<br>
-		They are frequently used for navigation as well as displaying general content<br>
-		<br>
-		<br>
-		Add a list to your app by calling the <kbd>addList</kbd> method of the <kbd>ui</kbd> object<br>
-		If <kbd>Icon</kbd> option is passed, the list must be of the form <kbd>[icon, title, body, secondary]</kbd>.</p>
+		<p>Lists are continuous, vertical indexes of text or images.</p>
 
 		<div class="samp">
 		lst = ui.addList(
@@ -61,76 +55,90 @@
 			→ <b>Object:</b> List Component
 		</div>
 
-		<p>To display an image avatar, passed and additional <kbd>Avatar</kbd> option and the list must be of the form <kbd>[image, title, body, secondary<br>
-		If no </kbd>Icon<kbd> option is passed, the list is treated as </kbd>[title, body, secondary]<kbd> by default<br>
-		The secondary action is an icon button by default, to display as a text passed </kbd>secondarytext<kbd> option</p>
+		<p>They are used to group together related pieces of data or informations to highlight association with each other and easy to read. They are frequently used for navigation as well as displaying general content.<br>
+		<br>
+		Add a list to your app by calling the <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">addList</span> method of the <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">ui</span> object.<br>
+		<br>
+		If <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Icon</span> option is passed, the list must be of the form <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">[icon, title, body, secondary]</span>. To display an image avatar, passed and additional <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Avatar</span> option and the list must be of the form <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">[image, title, body, secondary]</span><br>
+		<br>
+		If no <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Icon</span> option is passed, the list is treated as <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">[title, body, secondary]</span> by default.<br>
+		<br>
+		The secondary action is an icon button by default, to display as a text passed <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">secondarytext</span> option.<br>
+		<br>
+		Adding a <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">selectable</span> list will disregard the <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">icon</span> option.<br>
+		<br>
+		<style>.samp { margin-top: 2px; } </style></p>
 		<h3>Properties</h3>
-		<p>These are the setter and getter properties for the addList Component.<div class="samp" style="margin-top:2px;"><a href="#absheight-0" data-transition="pop" data-rel="popup" class="ui-link">absHeight </a></div><div class="samp" style="margin-top:2px;"><a href="#absleft-5" data-transition="pop" data-rel="popup" class="ui-link">absLeft </a></div><div class="samp" style="margin-top:2px;"><a href="#abstop-10" data-transition="pop" data-rel="popup" class="ui-link">absTop </a></div><div class="samp" style="margin-top:2px;"><a href="#abswidth-15" data-transition="pop" data-rel="popup" class="ui-link">absWidth </a></div><div class="samp" style="margin-top:2px;"><a href="#avatarsize-20" data-transition="pop" data-rel="popup" class="ui-link">avatarSize </a></div><div class="samp" style="margin-top:2px;"><a href="#avatarvariant-25" data-transition="pop" data-rel="popup" class="ui-link">avatarVariant </a></div><div class="samp" style="margin-top:2px;"><a href="#backcolor-30" data-transition="pop" data-rel="popup" class="ui-link">backColor </a></div><div class="samp" style="margin-top:2px;"><a href="#backimage-35" data-transition="pop" data-rel="popup" class="ui-link">backImage </a></div><div class="samp" style="margin-top:2px;"><a href="#border-40" data-transition="pop" data-rel="popup" class="ui-link">border </a></div><div class="samp" style="margin-top:2px;"><a href="#bordercolor-45" data-transition="pop" data-rel="popup" class="ui-link">borderColor </a></div><div class="samp" style="margin-top:2px;"><a href="#checkboxcolor-50" data-transition="pop" data-rel="popup" class="ui-link">checkboxColor </a></div><div class="samp" style="margin-top:2px;"><a href="#cornerradius-55" data-transition="pop" data-rel="popup" class="ui-link">cornerRadius </a></div><div class="samp" style="margin-top:2px;"><a href="#disabled-60" data-transition="pop" data-rel="popup" class="ui-link">disabled </a></div><div class="samp" style="margin-top:2px;"><a href="#elevation-65" data-transition="pop" data-rel="popup" class="ui-link">elevation </a></div><div class="samp" style="margin-top:2px;"><a href="#fontfile-70" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp" style="margin-top:2px;"><a href="#fontfile-75" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp" style="margin-top:2px;"><a href="#height-80" data-transition="pop" data-rel="popup" class="ui-link">height </a></div><div class="samp" style="margin-top:2px;"><a href="#iconcolor-85" data-transition="pop" data-rel="popup" class="ui-link">iconColor </a></div><div class="samp" style="margin-top:2px;"><a href="#iconsize-90" data-transition="pop" data-rel="popup" class="ui-link">iconSize </a></div><div class="samp" style="margin-top:2px;"><a href="#isvisible-95" data-transition="pop" data-rel="popup" class="ui-link">isVisible </a></div><div class="samp" style="margin-top:2px;"><a href="#label-100" data-transition="pop" data-rel="popup" class="ui-link">label </a></div><div class="samp" style="margin-top:2px;"><a href="#left-105" data-transition="pop" data-rel="popup" class="ui-link">left </a></div><div class="samp" style="margin-top:2px;"><a href="#margins-110" data-transition="pop" data-rel="popup" class="ui-link">margins </a></div><div class="samp" style="margin-top:2px;"><a href="#opacity-115" data-transition="pop" data-rel="popup" class="ui-link">opacity </a></div><div class="samp" style="margin-top:2px;"><a href="#options-120" data-transition="pop" data-rel="popup" class="ui-link">options </a></div><div class="samp" style="margin-top:2px;"><a href="#outlined-125" data-transition="pop" data-rel="popup" class="ui-link">outlined </a></div><div class="samp" style="margin-top:2px;"><a href="#padding-130" data-transition="pop" data-rel="popup" class="ui-link">padding </a></div><div class="samp" style="margin-top:2px;"><a href="#parent-135" data-transition="pop" data-rel="popup" class="ui-link">parent </a></div><div class="samp" style="margin-top:2px;"><a href="#position-140" data-transition="pop" data-rel="popup" class="ui-link">position </a></div><div class="samp" style="margin-top:2px;"><a href="#rotation-145" data-transition="pop" data-rel="popup" class="ui-link">rotation </a></div><div class="samp" style="margin-top:2px;"><a href="#selectable-150" data-transition="pop" data-rel="popup" class="ui-link">selectable </a></div><div class="samp" style="margin-top:2px;"><a href="#textcolor-155" data-transition="pop" data-rel="popup" class="ui-link">textColor </a></div><div class="samp" style="margin-top:2px;"><a href="#textcolor1-160" data-transition="pop" data-rel="popup" class="ui-link">textColor1 </a></div><div class="samp" style="margin-top:2px;"><a href="#textcolor2-165" data-transition="pop" data-rel="popup" class="ui-link">textColor2 </a></div><div class="samp" style="margin-top:2px;"><a href="#textsize-170" data-transition="pop" data-rel="popup" class="ui-link">textSize </a></div><div class="samp" style="margin-top:2px;"><a href="#textsize1-175" data-transition="pop" data-rel="popup" class="ui-link">textSize1 </a></div><div class="samp" style="margin-top:2px;"><a href="#textsize2-180" data-transition="pop" data-rel="popup" class="ui-link">textSize2 </a></div><div class="samp" style="margin-top:2px;"><a href="#top-185" data-transition="pop" data-rel="popup" class="ui-link">top </a></div><div class="samp" style="margin-top:2px;"><a href="#type-190" data-transition="pop" data-rel="popup" class="ui-link">type </a></div><div class="samp" style="margin-top:2px;"><a href="#visibility-195" data-transition="pop" data-rel="popup" class="ui-link">visibility </a></div><div class="samp" style="margin-top:2px;"><a href="#width-200" data-transition="pop" data-rel="popup" class="ui-link">width </a></div><br>
+		<p>These are the setter and getter properties for the addList Component.<br>
+		<div class="samp"><a href="#absheight-0" data-transition="pop" data-rel="popup" class="ui-link">absHeight </a></div><div class="samp"><a href="#absleft-5" data-transition="pop" data-rel="popup" class="ui-link">absLeft </a></div><div class="samp"><a href="#abstop-10" data-transition="pop" data-rel="popup" class="ui-link">absTop </a></div><div class="samp"><a href="#abswidth-15" data-transition="pop" data-rel="popup" class="ui-link">absWidth </a></div><div class="samp"><a href="#avatarsize-20" data-transition="pop" data-rel="popup" class="ui-link">avatarSize </a></div><div class="samp"><a href="#avatarvariant-25" data-transition="pop" data-rel="popup" class="ui-link">avatarVariant </a></div><div class="samp"><a href="#backcolor-30" data-transition="pop" data-rel="popup" class="ui-link">backColor </a></div><div class="samp"><a href="#backimage-35" data-transition="pop" data-rel="popup" class="ui-link">backImage </a></div><div class="samp"><a href="#border-40" data-transition="pop" data-rel="popup" class="ui-link">border </a></div><div class="samp"><a href="#bordercolor-45" data-transition="pop" data-rel="popup" class="ui-link">borderColor </a></div><div class="samp"><a href="#borderstyle-50" data-transition="pop" data-rel="popup" class="ui-link">borderStyle </a></div><div class="samp"><a href="#checkboxcolor-55" data-transition="pop" data-rel="popup" class="ui-link">checkboxColor </a></div><div class="samp"><a href="#cornerradius-60" data-transition="pop" data-rel="popup" class="ui-link">cornerRadius </a></div><div class="samp"><a href="#disabled-65" data-transition="pop" data-rel="popup" class="ui-link">disabled </a></div><div class="samp"><a href="#elevation-70" data-transition="pop" data-rel="popup" class="ui-link">elevation </a></div><div class="samp"><a href="#fontfile-75" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp"><a href="#height-80" data-transition="pop" data-rel="popup" class="ui-link">height </a></div><div class="samp"><a href="#iconcolor-85" data-transition="pop" data-rel="popup" class="ui-link">iconColor </a></div><div class="samp"><a href="#iconsize-90" data-transition="pop" data-rel="popup" class="ui-link">iconSize </a></div><div class="samp"><a href="#isvisible-95" data-transition="pop" data-rel="popup" class="ui-link">isVisible </a></div><div class="samp"><a href="#itempadding-100" data-transition="pop" data-rel="popup" class="ui-link">itemPadding </a></div><div class="samp"><a href="#label-105" data-transition="pop" data-rel="popup" class="ui-link">label </a></div><div class="samp"><a href="#left-110" data-transition="pop" data-rel="popup" class="ui-link">left </a></div><div class="samp"><a href="#margins-115" data-transition="pop" data-rel="popup" class="ui-link">margins </a></div><div class="samp"><a href="#opacity-120" data-transition="pop" data-rel="popup" class="ui-link">opacity </a></div><div class="samp"><a href="#options-125" data-transition="pop" data-rel="popup" class="ui-link">options </a></div><div class="samp"><a href="#outlined-130" data-transition="pop" data-rel="popup" class="ui-link">outlined </a></div><div class="samp"><a href="#padding-135" data-transition="pop" data-rel="popup" class="ui-link">padding </a></div><div class="samp"><a href="#parent-140" data-transition="pop" data-rel="popup" class="ui-link">parent </a></div><div class="samp"><a href="#position-145" data-transition="pop" data-rel="popup" class="ui-link">position </a></div><div class="samp"><a href="#rotation-150" data-transition="pop" data-rel="popup" class="ui-link">rotation </a></div><div class="samp"><a href="#selectable-155" data-transition="pop" data-rel="popup" class="ui-link">selectable </a></div><div class="samp"><a href="#textcolor-160" data-transition="pop" data-rel="popup" class="ui-link">textColor </a></div><div class="samp"><a href="#textcolor1-165" data-transition="pop" data-rel="popup" class="ui-link">textColor1 </a></div><div class="samp"><a href="#textcolor2-170" data-transition="pop" data-rel="popup" class="ui-link">textColor2 </a></div><div class="samp"><a href="#textsize-175" data-transition="pop" data-rel="popup" class="ui-link">textSize </a></div><div class="samp"><a href="#textsize1-180" data-transition="pop" data-rel="popup" class="ui-link">textSize1 </a></div><div class="samp"><a href="#textsize2-185" data-transition="pop" data-rel="popup" class="ui-link">textSize2 </a></div><div class="samp"><a href="#top-190" data-transition="pop" data-rel="popup" class="ui-link">top </a></div><div class="samp"><a href="#type-195" data-transition="pop" data-rel="popup" class="ui-link">type </a></div><div class="samp"><a href="#visibility-200" data-transition="pop" data-rel="popup" class="ui-link">visibility </a></div><div class="samp"><a href="#width-205" data-transition="pop" data-rel="popup" class="ui-link">width </a></div><br>
 		<div data-role="popup" id="absheight-0" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
 		Returns the absolute height of the control in pixels.</p></div><div data-role="popup" id="absleft-5" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
 		Returns the absolute distance of the control from the left in pixels.</p></div><div data-role="popup" id="abstop-10" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
 		Returns the absolute distance of the control from the top in pixels.</p></div><div data-role="popup" id="abswidth-15" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
 		Returns the absolute width of the control in pixels.</p></div><div data-role="popup" id="avatarsize-20" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the size of the avatar. Values can be </kbd>Small<kbd> </kbd>Medium<kbd> </kbd>Large<kbd></p></div><div data-role="popup" id="avatarvariant-25" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the variant of the avatar. Values can be </kbd>Square<kbd> </kbd>Round<kbd> or </kbd>Circle<kbd></p></div><div data-role="popup" id="backcolor-30" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the size of the avatar. Values can be <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Small</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Medium</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Large</span></p></div><div data-role="popup" id="avatarvariant-25" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the variant of the avatar. Values can be <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Square</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Round</span> or <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Circle</span></p></div><div data-role="popup" id="backcolor-30" class="ui-content"><p><span style="color:#4c4;">String</span><br>
 		Sets or returns the background color in a hexadecimal format.</p></div><div data-role="popup" id="backimage-35" class="ui-content"><p><span style="color:#4c4;">String</span><br>
 		The path to your image file.</p></div><div data-role="popup" id="border-40" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the border thickness in pixels.</p></div><div data-role="popup" id="bordercolor-45" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the border color. Color is in hexadecimal form </kbd>#rrggbb<kbd></p></div><div data-role="popup" id="checkboxcolor-50" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the theme color of the checkbox when </kbd>Selectable<kbd> option is enabled. Vaues can be </kbd>Default<kbd> </kbd>Primary<kbd> or </kbd>Secondary<kbd></p></div><div data-role="popup" id="cornerradius-55" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the corner radius in pixels.</p></div><div data-role="popup" id="disabled-60" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Sets or returns the </kbd>disbaled<kbd> state of the control.</p></div><div data-role="popup" id="elevation-65" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the depth of the list container. Values range from 0 to 24.</p></div><div data-role="popup" id="fontfile-70" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the font file use.</p></div><div data-role="popup" id="fontfile-75" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the path to the font-family use.</p></div><div data-role="popup" id="height-80" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the height of the control.</p></div><div data-role="popup" id="iconcolor-85" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the border thickness in pixels.</p></div><div data-role="popup" id="bordercolor-45" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">#rrggbb</span></p></div><div data-role="popup" id="borderstyle-50" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">dotted</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">dashed</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">solid</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">double</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">groove</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">ridge</span>&#44; <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">solid</span>.</p></div><div data-role="popup" id="checkboxcolor-55" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the theme color of the checkbox when <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Selectable</span> option is enabled. Vaues can be <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Default</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Primary</span> or <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Secondary</span></p></div><div data-role="popup" id="cornerradius-60" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the corner radius in pixels.</p></div><div data-role="popup" id="disabled-65" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Sets or returns the <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">disabled</span> state of the control.</p></div><div data-role="popup" id="elevation-70" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the depth of the list container. Values range from 0 to 24.</p></div><div data-role="popup" id="fontfile-75" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">relative</span> path to the font-family use.</p></div><div data-role="popup" id="height-80" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the height of the control as a fraction of the parent control.</p></div><div data-role="popup" id="iconcolor-85" class="ui-content"><p><span style="color:#4c4;">String</span><br>
 		Sets or returns the icon color in a hexadecimal format.</p></div><div data-role="popup" id="iconsize-90" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
 		Sets or returns the size of the icon text.</p></div><div data-role="popup" id="isvisible-95" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Returns whether the control is visible or not.</p></div><div data-role="popup" id="label-100" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the label text.</p></div><div data-role="popup" id="left-105" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the distance of the control from the left.</p></div><div data-role="popup" id="margins-110" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
-		Sets or returns the margin of the control. Works on controls with </kbd>Linear<kbd> parent only. You can also pass a number to set equal margins for all sides.</p></div><div data-role="popup" id="opacity-115" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the opacity of the control.</p></div><div data-role="popup" id="options-120" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the </kbd>options<kbd> of the control.</p></div><div data-role="popup" id="outlined-125" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Sets or returns whether the container is outlined or elevated.</p></div><div data-role="popup" id="padding-130" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
-		Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</p></div><div data-role="popup" id="parent-135" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
-		Returns the parent layout control.</p></div><div data-role="popup" id="position-140" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
-		Returns the position of the control. The returned object has </kbd>left<kbd> </kbd>top<kbd> </kbd>right<kbd> and </kbd>bottom` props.</p></div><div data-role="popup" id="rotation-145" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the angle of rotation in degrees.</p></div><div data-role="popup" id="selectable-150" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Sets or returns a boolean whether the list is selectable or not.</p></div><div data-role="popup" id="textcolor-155" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the color of the text.</p></div><div data-role="popup" id="textcolor1-160" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the color of the title text in hexadecimal format.</p></div><div data-role="popup" id="textcolor2-165" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the color of the body text in hexadecimal format.</p></div><div data-role="popup" id="textsize-170" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the size of the text within the control.</p></div><div data-role="popup" id="textsize1-175" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the size of the title text.</p></div><div data-role="popup" id="textsize2-180" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the size of the body text.</p></div><div data-role="popup" id="top-185" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the distance of the control from the top.</p></div><div data-role="popup" id="type-190" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Returns the type of the control.</p></div><div data-role="popup" id="visibility-195" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the visibility of the control.</p></div><div data-role="popup" id="width-200" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the width of the control.</p></div></p>
+		Returns whether the control is visible or not.</p></div><div data-role="popup" id="itempadding-100" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
+		Sets or returns the padding of each list item. See also <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">setItemPadding</span> method.</p></div><div data-role="popup" id="label-105" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the label text.</p></div><div data-role="popup" id="left-110" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the distance of the control from the left.</p></div><div data-role="popup" id="margins-115" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
+		Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</p></div><div data-role="popup" id="opacity-120" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the opacity of the control.</p></div><div data-role="popup" id="options-125" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">options</span> of the control.</p></div><div data-role="popup" id="outlined-130" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Sets or returns whether the container is outlined or elevated.</p></div><div data-role="popup" id="padding-135" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
+		Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</p></div><div data-role="popup" id="parent-140" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
+		Returns the parent layout control.</p></div><div data-role="popup" id="position-145" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
+		Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">bottom</span> props.</p></div><div data-role="popup" id="rotation-150" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the angle of rotation in degrees.</p></div><div data-role="popup" id="selectable-155" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
+		Sets or returns a boolean whether the list is selectable or not.</p></div><div data-role="popup" id="textcolor-160" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the color of the text.</p></div><div data-role="popup" id="textcolor1-165" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the color of the title text in hexadecimal format.</p></div><div data-role="popup" id="textcolor2-170" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the color of the body text in hexadecimal format.</p></div><div data-role="popup" id="textsize-175" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the size of the text within the control.</p></div><div data-role="popup" id="textsize1-180" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the size of the title text.</p></div><div data-role="popup" id="textsize2-185" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the size of the body text.</p></div><div data-role="popup" id="top-190" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Returns the distance of the control from the top.</p></div><div data-role="popup" id="type-195" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Returns the type of the control.</p></div><div data-role="popup" id="visibility-200" class="ui-content"><p><span style="color:#4c4;">String</span><br>
+		Sets or returns the visibility of the control.</p></div><div data-role="popup" id="width-205" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
+		Sets or returns the width of the control as a fraction of the parent control.</p></div></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Basic List</h3>
+			<h3>Example - Basic list</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span> <span class="token punctuation">]</span><br>
-				            <br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token comment">// Adds a callback to the list</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token function">onTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> title<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        <span class="token comment">// Initialize the list items to show</span><br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add a list control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a callback handler when the list is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> action<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> title<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
@@ -140,42 +148,46 @@
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - With Icon & Body</h3>
+			<h3>Example - List with icon and body</h3>
 			<div id="examp2" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><br>
-				            <span class="token punctuation">]</span><br>
-				            <br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token comment">// Adds a callback to the list</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token comment">// change the icon color</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Change Icon Color"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeIconColor <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token function">onTouch</span><span class="token punctuation">(</span> <span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> title<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Initialize the list items to show</span><br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
 				        <br>
-				        <span class="token function">changeIconColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#e91e63"</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        <span class="token comment">// Add a list control with icon to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a callback handler when the list is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Change Icon Color"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler to change the icon color when the button is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeIconColor <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> action<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> <span class="token string">"Short"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">changeIconColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#e91e63"</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
@@ -185,28 +197,37 @@
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Contacts</h3>
+			<h3>Example - Contacts list</h3>
 			<div id="examp3" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><br>
-				             <br>
-				             <span class="token comment">// Image url</span><br>
-				            <span class="token keyword">var</span> avatar <span class="token operator">=</span> <span class="token string">"https://static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"</span><br>
-				            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				                <span class="token punctuation">[</span> avatar<span class="token punctuation">,</span> <span class="token string">"Frodo"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> avatar<span class="token punctuation">,</span> <span class="token string">"Bilbo"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> avatar<span class="token punctuation">,</span> <span class="token string">"Well"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span> <span class="token punctuation">]</span><br>
-				            <span class="token punctuation">]</span><br>
-				            <br>
-				            <span class="token comment">// Adds an avatar list</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Avatar"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Avatar url</span><br>
+				        <span class="token keyword">var</span> avatar <span class="token operator">=</span> <span class="token string">"https://static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the contact items to show</span><br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span>avatar<span class="token punctuation">,</span> <span class="token string">"Frodo"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span>avatar<span class="token punctuation">,</span> <span class="token string">"Bilbo"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span>avatar<span class="token punctuation">,</span> <span class="token string">"Well"</span><span class="token punctuation">,</span> <span class="token string">"+0123456789"</span><span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add a list control with avatar to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Avatar"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a callback handler when the list is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> action<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span>title <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span>body<span class="token punctuation">,</span> <span class="token string">"Short"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
@@ -216,27 +237,40 @@
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Elevated List</h3>
+			<h3>Example - Elevated list</h3>
 			<div id="examp4" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><br>
-				            <span class="token punctuation">]</span><br>
-				            <br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon,Elevated"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>elevation <span class="token operator">=</span> <span class="token number">5</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"This is a label text"</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the list items to show</span><br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add an elevated list control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon,Elevated"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Set the elevation depth to 5</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>elevation <span class="token operator">=</span> <span class="token number">5</span><br>
+				        <br>
+				        <span class="token comment">// Set the list label</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"This is a label text"</span><br>
+				        <br>
+				        <span class="token comment">// Adds a callback handler when the list is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> action<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span>title <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span>body<span class="token punctuation">,</span> <span class="token string">"Short"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
@@ -249,27 +283,85 @@
 			<h3>Example - Outlined List</h3>
 			<div id="examp5" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span> <span class="token punctuation">)</span><br>
-				            <br>
-				            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				                <span class="token punctuation">[</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span> <span class="token punctuation">]</span><br>
-				            <span class="token punctuation">]</span><br>
-				            <br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon,Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"This is a label text"</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the list items to show</span><br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">,</span> <span class="token string">"This is a sample body text."</span><span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add an outlined list control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">"Icon,Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Set the list label</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"My awesome list"</span><br>
+				        <br>
+				        <span class="token comment">// Set the corner radius to 12</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">12</span><br>
+				        <br>
+				        <span class="token comment">// Adds a callback handler when the list is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> action<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span>title <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span>body<span class="token punctuation">,</span> <span class="token string">"Short"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Selectable List</h3>
+			<div id="examp6" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Javascript"</span><span class="token punctuation">,</span> <span class="token string">"Java"</span><span class="token punctuation">,</span> <span class="token string">"Python"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add a list control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> list<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Set the list label</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Long press any item to select"</span><br>
+				        <br>
+				        <span class="token comment">// Add on long touch event and set the list to selectable</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnLongTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onLongTouch   <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add `onSelect` event listener to the list</span><br>
+				        <span class="token comment">// and display the selected item in the popup</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span><span class="token function">setOnSelect</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onLongTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lst<span class="token punctuation">.</span>selectable <span class="token operator">=</span> <span class="token boolean">true</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> i<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span> <span class="token function">showPopup</span><span class="token punctuation">(</span>title <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
 			</div>
 		</div>
 
@@ -521,43 +613,43 @@
 		<a href="" onclick="app.ShowPopup('String: “The list item title text.”')">title </a>,
 		<a href="" onclick="app.ShowPopup('Number: The index of the selected list item.')">index </a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>lst.addItem</b><br>Adds an item in the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>lst.animate</b><br>Animate the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>lst.bringForward</b><br>Bring this component forward by a given z-index<br><br></div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>lst.deselectAll</b><br>Clears all selection in the list if the list is selectable<br><br></div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>lst.destroy</b><br>Destroy the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>lst.getItem</b><br>Get the item in the list by its correspding title<br><br></div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>lst.getItemByIndex</b><br>Get the item in a list by its corresponding index<br><br></div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>lst.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom<br><br></div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>lst.getSelectedItems</b><br>Returns an array of indexes of the selected items<br><br></div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>lst.getSelectedTitles</b><br>Returns an array of titles of selected items<br><br></div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>lst.gone</b><br>Destroy the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>lst.hide</b><br>Hide the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>lst.popItem</b><br>Removes the last item in the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>lst.removeItemByIndex</b><br>Removes an element from the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>lst.removeItemByName</b><br>Removes an item in the list by its title<br><br></div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>lst.selectItemByIndex</b><br>Selects an item in the list by its index and marked the checkbox. List must be selectable<br><br></div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lst.sendBackward</b><br>Bring this component backward by a given z-index<br><br></div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lst.setBodyText</b><br>Sets a new secondary text to a corresponding item in a list<br><br></div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lst.setBorder</b><br>Sets the border line for the component container<br><br></div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lst.setCornerRadius</b><br>Sets the corner radius of the list container<br><br></div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lst.setIcon</b><br>Updates an icon in a list by its corresponding index<br><br></div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lst.setItem</b><br>Updates an item in the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>lst.setItemByIndex</b><br>Change the content of an item in a list<br><br></div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>lst.setList</b><br>Updtes the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>lst.setMargins</b><br>Sets the margin of the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>lst.setOnAction</b><br>Sets a callback handler when an action icon is click<br><br></div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>lst.setOnContextMenu</b><br>Adds a callback function on right click<br><br></div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>lst.setOnSelect</b><br>Sets a callback handler when an item in the list is selected<br><br></div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>lst.setOnTouch</b><br>Adds a callback function when the list item is click<br><br></div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>lst.setPadding</b><br>Sets the padding component container<br><br></div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lst.setPosition</b><br>Sets the position of the component relative to its parent dimensions<br><br></div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>lst.setScale</b><br>Sets the x and y scaling of the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>lst.setSelectable</b><br>Make the list selectable or not<br><br></div>
-	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>lst.setSize</b><br>Sets the size of the component<br><br></div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>lst.setTitleText</b><br>Sets a new title text to a corresponding item in a list<br><br></div>
-	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>lst.shiftItem</b><br>Removes the first item the list<br><br></div>
-	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>lst.show</b><br>Show the component<br><br></div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>lst.addItem</b><br>Adds an item in the list</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>lst.animate</b><br>Animate the component</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>lst.bringForward</b><br>Bring this component forward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>lst.deselectAll</b><br>Clears all selection in the list if the list is selectable</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>lst.destroy</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>lst.getItem</b><br>Get the item in the list by its correspding title</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>lst.getItemByIndex</b><br>Get the item in a list by its corresponding index</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>lst.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>lst.getSelectedItems</b><br>Returns an array of indexes of the selected items</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>lst.getSelectedTitles</b><br>Returns an array of titles of selected items</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>lst.gone</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>lst.hide</b><br>Hide the component</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>lst.popItem</b><br>Removes the last item in the list</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>lst.removeItemByIndex</b><br>Removes an element from the list</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>lst.removeItemByName</b><br>Removes an item in the list by its title</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>lst.selectItemByIndex</b><br>Selects an item in the list by its index and marked the checkbox. List must be selectable</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lst.sendBackward</b><br>Bring this component backward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lst.setBodyText</b><br>Sets a new secondary text to a corresponding item in a list</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lst.setBorder</b><br>Sets the border line for the component container</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lst.setCornerRadius</b><br>Sets the corner radius of the list container</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lst.setIcon</b><br>Updates an icon in a list by its corresponding index</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lst.setItem</b><br>Updates an item in the list</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>lst.setItemByIndex</b><br>Change the content of an item in a list</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>lst.setList</b><br>Updtes the list</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>lst.setMargins</b><br>Sets the margin of the component</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>lst.setOnAction</b><br>Sets a callback handler when an action icon is click</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>lst.setOnContextMenu</b><br>Adds a callback function on right click</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>lst.setOnSelect</b><br>Sets a callback handler when an item in the list is selected</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>lst.setOnTouch</b><br>Adds a callback function when the list item is click</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>lst.setPadding</b><br>Sets the padding component container</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lst.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>lst.setScale</b><br>Sets the x and y scaling of the component</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>lst.setSelectable</b><br>Make the list selectable or not</div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>lst.setSize</b><br>Sets the size of the component</div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>lst.setTitleText</b><br>Sets a new title text to a corresponding item in a list</div>
+	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>lst.shiftItem</b><br>Removes the first item the list</div>
+	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>lst.show</b><br>Show the component</div>
 </div>
 </body>
 

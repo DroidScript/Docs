@@ -1,42 +1,4 @@
 {
-	"bck": {
-		"loaded": "Indicates if ready for use",
-		"Scroll": "Scroll Background"
-	},
-	"cir": {
-		"alpha": "The alpha value",
-		"angle": "The rotation fraction",
-		"Contains": "Check if the sprite contains a point",
-		"data": "Extra properties",
-		"graphic": "PIXI graphic",
-		"group": "The object's group",
-		"height": "The objects height",
-		"pivotX": "Rotation x pivot",
-		"pivotY": "Rotation y pivot",
-		"scaleX": "Horizontal scaling",
-		"scaleY": "Vertical scaling",
-		"SetMatrix": "Set 2d transformation",
-		"Update": "Updates internal properties",
-		"visible": "Visibility state",
-		"width": "Object width"
-	},
-	"elp": {
-		"alpha": "The alpha value",
-		"angle": "The rotation fraction",
-		"Contains": "Check if the sprite contains a point",
-		"data": "Extra properties",
-		"graphic": "PIXI graphic",
-		"group": "The object's group",
-		"height": "The objects height",
-		"pivotX": "Rotation x pivot",
-		"pivotY": "Rotation y pivot",
-		"scaleX": "Horizontal scaling",
-		"scaleY": "Vertical scaling",
-		"SetMatrix": "Set 2d transformation",
-		"Update": "Updates internal properties",
-		"visible": "Visibility state",
-		"width": "Object width"
-	},
 	"gfx": {
 		"AddBackground": "Adds a background to the game",
 		"AddGraphic": "Adds a basic shape object to the game.\nSee Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon",
@@ -104,6 +66,44 @@
 		"SetVelocity": "Set the object velocity",
 		"UpdatePhysics": "Update internal physics properties"
 	},
+	"bck": {
+		"Scroll": "Scroll Background",
+		"loaded": "Indicates if ready for use"
+	},
+	"cir": {
+		"alpha": "The alpha value",
+		"angle": "The rotation fraction",
+		"Contains": "Check if the sprite contains a point",
+		"data": "Extra properties",
+		"graphic": "PIXI graphic",
+		"group": "The object's group",
+		"height": "The objects height",
+		"pivotX": "Rotation x pivot",
+		"pivotY": "Rotation y pivot",
+		"scaleX": "Horizontal scaling",
+		"scaleY": "Vertical scaling",
+		"SetMatrix": "Set 2d transformation",
+		"Update": "Updates internal properties",
+		"visible": "Visibility state",
+		"width": "Object width"
+	},
+	"elp": {
+		"alpha": "The alpha value",
+		"angle": "The rotation fraction",
+		"Contains": "Check if the sprite contains a point",
+		"data": "Extra properties",
+		"graphic": "PIXI graphic",
+		"group": "The object's group",
+		"height": "The objects height",
+		"pivotX": "Rotation x pivot",
+		"pivotY": "Rotation y pivot",
+		"scaleX": "Horizontal scaling",
+		"scaleY": "Vertical scaling",
+		"SetMatrix": "Set 2d transformation",
+		"Update": "Updates internal properties",
+		"visible": "Visibility state",
+		"width": "Object width"
+	},
 	"pol": {
 		"alpha": "The alpha value",
 		"angle": "The rotation fraction",
@@ -137,10 +137,6 @@
 		"Update": "Updates internal properties",
 		"visible": "Visibility state",
 		"width": "Object width"
-	},
-	"sht": {
-		"data": "Extra properties",
-		"loaded": "Loaded indicator"
 	},
 	"snd": {
 		"file": "The file url",
@@ -186,6 +182,10 @@
 		"width": "Object width",
 		"x": "X-position on the screen",
 		"y": "Y-position on the screen"
+	},
+	"sht": {
+		"data": "Extra properties",
+		"loaded": "Loaded indicator"
 	},
 	"txt": {
 		"align": "Multiline text alignment",

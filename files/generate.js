@@ -124,6 +124,12 @@ function generateVersion(ver) {
 				Throw(e);
 			}
 		});
+
+	// update version number
+	var v = 1000 * (Date.now() / 864e5 | 0);
+	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000;
+	if (updateVer) vn++;
+	app.WriteFile("version.txt", (v + vn).toString());
 }
 
 /** @param {ScopeKeys} name */
@@ -166,11 +172,6 @@ function generateScope(name) {
 
 	generateDocs(scope);
 
-	// update version number
-	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000;
-	if (updateVer) vn++;
-	app.WriteFile("version.txt", (v + vn).toString());
 	app.HideProgressBar();
 }
 
