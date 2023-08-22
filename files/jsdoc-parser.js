@@ -5,7 +5,7 @@ const path = require("path");
 const getComment = require("esprima-extract-comments");
 
 /** @type {0 | 1 | 2 | 3} off | error | warn | more */
-const verbose = 1;
+let verbose = 1;
 const extraFormat = false;
 const version = "v257";
 const SRC = "markup/en";
@@ -92,7 +92,7 @@ async function LoopFiles(SOURCE_DIR) {
             //console.log( "Sub-folder is not rendered" )
         }
     }
-    Throw(SOURCE_DIR);
+    Throw(null, SOURCE_DIR);
 
     /** @type {Obj<DSFunction>} */
     const rObjJson = JSON.parse(JSON.stringify(objJson));
@@ -221,19 +221,18 @@ function getBaseMethods(filePath) {
     const strComments = getComment.file(filePath, {});
     const name = file.slice(0, -3);
     const objData = RenderComments({}, strComments, true, name, {});
-    Throw(filePath);
+    Throw(null, filePath);
     return objData.json;
 }
 
 let _errors = 0;
-/** @param {Error | string} [e] */
-function Throw(e = '') {
-    if (!verbose) return;
-    if (e instanceof Error) {
+/** @param {string | null} e */
+function Throw(e, path = '') {
+    if (e) {
         _errors++;
-        console.error(`\x1b[31me.message\x1b[37m`);
+        if (verbose) console.error(`\x1b[31m${e}\x1b[37m`);
     } else if (_errors) {
-        const msg = `Errors detected${e && ' in ' + e}. Fix all of them to continue.`;
+        const msg = `Errors detected${path && ' in ' + path}. Fix all of them to continue.`;
         throw Object.assign(Error(msg), { stack: '' });
     }
 }
@@ -304,7 +303,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             else if (/@\s*extern/i.test(c.value)) {
                 const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+))?/i) || [];
                 if (!baseJson[_k || _n])
-                    Throw(Error(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`));
+                    Throw(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
                 json[_n] = _k || '#' + _n;
             }
 
@@ -368,7 +367,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         else {
                             let ts = p[0].split('||').map(t => types[p[0]] || t);
                             if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0])))
-                                Throw(Error(`unknown param type ${line} in ${name}`));
+                                Throw(`unknown param type ${line} in ${name}`);
                             _d = ts.join('||');
                             if (p[2]) _d += "-" + p[2]
                         }
@@ -422,13 +421,20 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
     });
 
     if (cmp && Object.keys(json).length) func.subf = json;
-    
+
+    if (!name.endsWith("_base")) {
+        func.desc = func.desc?.trim() || undefined;
+        func.shortDesc = func.shortDesc?.trim() || undefined;
+        if (!func.desc) Warn(`empty desc in ${name}`);
+        if (!func.shortDesc) Warn(`empty shortDesc in ${name}`, 3);
+    }
+
     for (const [k, v] of Object.entries(json)) {
         if (typeof v == "string") continue;
         v.desc = v.desc?.trim() || undefined;
         v.shortDesc = v.shortDesc?.trim() || undefined;
-        if (!v.desc) Warn(`empty description in ${name}.${k}`);
-        if (!v.shortDesc) Warn(`empty short description in ${name}.${k}`, 3);
+        if (!v.desc) Warn(`empty desc in ${name}.${k}`);
+        if (!v.shortDesc) Warn(`empty shortDesc in ${name}.${k}`, 3);
     };
 
     return {
@@ -505,8 +511,7 @@ function extractBacktickStringsDesc(str) {
     const matches = str.matchAll(regex);
     const style = "color:#4c4; font-size:100%; padding:0px 2px;";
     for (const match of matches) {
-        //match[1]
-        finalStr = finalStr.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
+        finalStr = finalStr.replace(`\`${match[1]}\``, `<span style="${style}">${match[1]}</span>`);
     }
     return finalStr;
 }
@@ -514,9 +519,12 @@ function extractBacktickStringsDesc(str) {
 async function GetFolders() {
     const files = fs.readdirSync(path.join(__dirname, SRC), { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
-    const folders = files.filter(file => file.isDirectory());
+    const folders = files.filter(file => /[a-z]/i.test(file.name[0]) && file.isDirectory());
     for (const folder of folders)
         LoopFiles(path.join(SRC, folder.name));
 }
 
+if (process.argv.includes('-q')) verbose = 0;
+if (process.argv.includes('-v')) verbose = 2;
+if (process.argv.includes('-vv')) verbose = 3;
 GetFolders();
