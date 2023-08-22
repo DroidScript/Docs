@@ -1,7 +1,0 @@
-<sample GetType>
-function OnStart()
-{
-    <b>var type = app.GetType();</b>
-    app.Alert( type, "Type" );
-}
-</sample>

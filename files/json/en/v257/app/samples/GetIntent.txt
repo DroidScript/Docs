@@ -1,7 +1,0 @@
-<sample Get received intent data>
-function OnStart()
-{
-    <b>var int = app.GetIntent();</b>
-    app.Alert( JSON.stringify( int ));
-}
-</sample>

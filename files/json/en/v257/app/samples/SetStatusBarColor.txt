@@ -1,5 +1,0 @@
-<sample Set StatusBar Color>
-function OnStart() {
-    <b>app.SetStatusBarColor("green");</b>
-}
-</sample>

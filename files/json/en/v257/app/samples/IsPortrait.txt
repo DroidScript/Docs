@@ -1,7 +1,0 @@
-<sample Check Portrait>
-function OnStart()
-{
-    <b>var isPortrait = app.IsPortrait();</b>
-    app.Alert( isPortrait, "is Portrait:" );
-}
-</sample>

@@ -1,7 +1,0 @@
-<sample Show SSID>
-function OnStart()
-{
-    var ssid = app.GetSSID();
-    app.Alert( ssid );
-}
-</sample>

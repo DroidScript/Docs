@@ -1,7 +1,0 @@
-<sample Show App Path>
-function OnStart()
-{
-    <b>var usr = app.GetPath();</b>
-    app.Alert( usr, "Active User:" );
-}
-</sample>

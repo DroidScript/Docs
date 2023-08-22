@@ -1,6 +1,0 @@
-<sample Example>
-function OnStart()
-{
-    <b>app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" );</b>
-}
-</sample>

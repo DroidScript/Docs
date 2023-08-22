@@ -1,7 +1,0 @@
-<sample Show External Folder>
-function OnStart()
-{
-    <b>var dir = app.GetExternalFolder();</b>
-    app.Alert( dir );
-}
-</sample>

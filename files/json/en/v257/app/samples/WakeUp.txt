@@ -1,7 +1,0 @@
-<sample Sleep and Wake>
-function OnStart()
-{
-    app.GoToSleep();
-    <b>setTimeout("app.WakeUp()", 5000)</b>
-}
-</sample>

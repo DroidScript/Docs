@@ -1,9 +1,0 @@
-<sample Example>
-var defaultUserAgent = navigator.userAgent;
-var myUserAgent = defaultUserAgent;
-
-function OnStart()
-{
-    app.SetUserAgent( myUserAgent );
-}
-</sample>

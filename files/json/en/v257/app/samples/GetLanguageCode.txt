@@ -1,7 +1,0 @@
-<sample Show User Language Code>
-function OnStart()
-{
-    <b>var code = app.GetLanguageCode();</b>
-    app.Alert( code );
-}
-</sample>
