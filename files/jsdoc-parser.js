@@ -4,10 +4,13 @@ const fs = require("fs-extra");
 const path = require("path");
 const getComment = require("esprima-extract-comments");
 
+/** @type {0 | 1 | 2 | 3} off | error | warn | more */
+const verbose = 1;
 const extraFormat = false;
 const version = "v257";
 const SRC = "markup/en";
 const DST = "json/en/" + version;
+
 const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
 const types = {
@@ -72,23 +75,24 @@ async function LoopFiles(SOURCE_DIR) {
 
                 // write description.md file
                 const descFile = path.join(outputDesc, data.name + ".md")
-                if (data.desc) fs.writeFileSync(descFile, data.desc)
+                if (data.desc && !_errors) fs.writeFileSync(descFile, data.desc)
 
                 // write sample.txt file
                 const sampleFile = path.join(outputSamples, data.name + ".txt")
-                fs.writeFileSync(sampleFile, data.samples)
+                if (!_errors) fs.writeFileSync(sampleFile, data.samples)
             }
             else if (file.endsWith(".md")) {
                 const data = renderMdFile(folderPath, objJson);
                 // write description.md file
                 const descFile = path.join(outputDesc, data.name + ".md");
-                fs.writeFileSync(descFile, data.desc);
+                if (!_errors) fs.writeFileSync(descFile, data.desc);
             }
         }
         else {
             //console.log( "Sub-folder is not rendered" )
         }
     }
+    Throw(SOURCE_DIR);
 
     /** @type {Obj<DSFunction>} */
     const rObjJson = JSON.parse(JSON.stringify(objJson));
@@ -99,6 +103,11 @@ async function LoopFiles(SOURCE_DIR) {
     if (Object.keys(objJson).length) {
         let objJsonFile = path.join(outputFolder, "obj.json");
         fs.writeFileSync(objJsonFile, tos(objJson));
+    }
+
+    if (Object.keys(baseJson).length) {
+        let baseJsonFile = path.join(outputFolder, "base.json");
+        fs.writeFileSync(baseJsonFile, tos(baseJson).replace(/\s+"name": /g, ' "name": '));
     }
 
     if (Object.keys(navs).length) {
@@ -212,7 +221,26 @@ function getBaseMethods(filePath) {
     const strComments = getComment.file(filePath, {});
     const name = file.slice(0, -3);
     const objData = RenderComments({}, strComments, true, name, {});
+    Throw(filePath);
     return objData.json;
+}
+
+let _errors = 0;
+/** @param {Error | string} [e] */
+function Throw(e = '') {
+    if (!verbose) return;
+    if (e instanceof Error) {
+        _errors++;
+        console.error(`\x1b[31me.message\x1b[37m`);
+    } else if (_errors) {
+        const msg = `Errors detected${e && ' in ' + e}. Fix all of them to continue.`;
+        throw Object.assign(Error(msg), { stack: '' });
+    }
+}
+
+/** @type {(msg:string, lvl?:typeof verbose) => void} */
+function Warn(msg, lvl = 2) {
+    if (verbose >= lvl) console.warn(`\x1b[30mWarning: ${msg}\x1b[37m`)
 }
 
 /** @returns {DSFunction} */
@@ -274,10 +302,10 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
             // Base method
             else if (/@\s*extern/i.test(c.value)) {
-                const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s*#(\S+))?/i) || [];
+                const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+))?/i) || [];
                 if (!baseJson[_k || _n])
-                    throw Error(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
-                json[_n] = '#' + _n;
+                    Throw(Error(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`));
+                json[_n] = _k || '#' + _n;
             }
 
             // Category
@@ -296,7 +324,8 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
                     if (line.includes("###")) {
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
-                        json[method] = met = newDSFunc();
+                        const ref = /\d/.test(method[0]) ? '#' : '';
+                        json[ref + method] = met = newDSFunc();
                         if (c.value.includes("@prop")) met.isval = true;
                     }
 
@@ -309,7 +338,17 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         obj.isval = true;
                     }
 
-                    else if (line.includes("@brief")) obj.shortDesc = line.substring(line.indexOf("@brief") + 6).trim();
+                    else if (line.includes("@name")) {
+                        obj.name = line.substring(line.indexOf("@name") + 5).trim();
+                    }
+
+                    else if (line.includes("@brief")) {
+                        obj.shortDesc = line.substring(line.indexOf("@brief") + 6).trim();
+                    }
+
+                    else if (/@param\s+#/.test(line)) {
+                        obj.params = line.split("@param")[1].trim();
+                    }
 
                     else if (line.includes("@param")) {
                         let _l = line.split("@param")[1].trim();
@@ -324,12 +363,12 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         }
                         else if (p[0] == "fnc_json") {
                             isFunc = true;
-                            _d = JSON.parse(p[2]);
+                            _d = p[2] && JSON.parse(p[2]);
                         }
                         else {
                             let ts = p[0].split('||').map(t => types[p[0]] || t);
                             if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0])))
-                                throw Error(`unknown param type ${line} in ${name}`);
+                                Throw(Error(`unknown param type ${line} in ${name}`));
                             _d = ts.join('||');
                             if (p[2]) _d += "-" + p[2]
                         }
@@ -375,16 +414,23 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     else if (line.trim() == "*/" || !line.trim()) { }
                     else {
                         if (isCA) obj.desc += "\n";
-                        obj.desc += line.trim().replace(/^\* */, '').replace(/[* ]+$/, '');
+                        obj.desc += line.trim().replace(/^\* +| \* /g, '\n').trim();
                     }
                 }
             }
         }
     });
 
-    if (cmp && Object.keys(json).length) {
-        func.subf = { ...func.subf, ...json };
-    }
+    if (cmp && Object.keys(json).length) func.subf = json;
+    
+    for (const [k, v] of Object.entries(json)) {
+        if (typeof v == "string") continue;
+        v.desc = v.desc?.trim() || undefined;
+        v.shortDesc = v.shortDesc?.trim() || undefined;
+        if (!v.desc) Warn(`empty description in ${name}.${k}`);
+        if (!v.shortDesc) Warn(`empty short description in ${name}.${k}`, 3);
+    };
+
     return {
         json,
         name,

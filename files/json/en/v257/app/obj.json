@@ -418,8 +418,10 @@
 				"shortDesc": "Specify how to split received data"
 			},
 			"SetTimeout": {
+				"desc": "Set a timeout after which the connection will canceled when no communication happened",
 				"pNames": ["milliseconds"],
-				"pTypes": ["num_mls"]
+				"pTypes": ["num_mls"],
+				"shortDesc": "Set idle disconnect timeout"
 			},
 			"Write": {
 				"desc": "Send data over the Bluetooth serial connection to the other device.",

@@ -89,7 +89,7 @@ function checkObj(p) {
 	}
 
 	var s = tos(no);
-	if (p.endsWith("base.json")) s = s.replace(/: {\n\t\t"name": /g, ': { "name": ');
+	if (p.endsWith("base.json")) s = s.replace(/\s+"name": /g, ' "name": ');
 	if (opt.save) fs.writeFileSync(p, s);
 	else console.log(s);
 }

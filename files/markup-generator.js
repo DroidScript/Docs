@@ -7,6 +7,8 @@ const ver = "v257";
 const dir = "json/en/" + ver;
 const outDir = "markup/en/";
 
+const baseIDAlways = true;
+
 /**
  * @param {String} scope 
  * @param {String} path Path to the scope
@@ -34,15 +36,15 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
 
         let info = "";
         // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
+        if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
         if (data.isval) info += ` * @prop\n`;
         if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
-        if (data.shortDesc) info += ` * @brief ${data.shortDesc}`;
+        if (data.shortDesc) info += ` * @brief ${data.shortDesc}\n`;
 
 
         str += `
 /** # ${key} #
-${info}
- * ${_desc}
+${info} * ${_desc}
  * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
 `;
 
@@ -70,7 +72,7 @@ ${info}
 
                 if (typeof methodData == "string") {
                     if (!methodData.startsWith("#")) throw "Unexpected subf string " + methodData;
-                    const addId = usedIDs[method] && usedIDs[method] != methodData || '';
+                    const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != methodData || '';
                     str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
                     usedIDs[method] ||= methodData;
                 }
@@ -80,7 +82,7 @@ ${info}
                     str += `
 /** ### ${method}
  * @prop${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ") : ""}
  * @returns ${methodData.retval}
  */
 \n                    `;
@@ -90,7 +92,7 @@ ${info}
                     const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
                     str += `
 /** ### ${method} ###${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ") : ""}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;
 
@@ -123,12 +125,19 @@ ${info}
 
         let methodData = base[key];
         let method = methodData.name || '';
-        const addId = usedIDs[method] && usedIDs[method] != key;
+        const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != key;
+        const _desc = methodData.desc ? methodData.desc.replace(/\n/g, " * ") : "";
+
+        let info = "";
+        // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;
+        if (methodData.name || addId) info += ` * @name ${methodData.name || key}\n`;
+        if (methodData.isval) info += ` * @prop\n`;
+        if (methodData.abbrev) info += ` * @abbrev ${methodData.abbrev}\n`;
+        if (methodData.shortDesc) info += ` * @brief ${methodData.shortDesc}\n`;
 
         baseStr += `
 /** ### ${addId ? key.replace('#', '') : method}
- * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ").replace(/\*\*/g, "`") : ""}
- * $$ obj.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
+${info} * ${_desc}
 `;
 
         baseStr += extractParams(methodData);
@@ -151,16 +160,18 @@ const split1 = (s = '', t = '') => s.slice(s.indexOf(t)).substring(1);
 
 /** @param {DSFunction} methodData */
 function extractParams(methodData) {
+    if (methodData.params) return ` * @param ${methodData.params}\n`;
+
     let str = ""
     if (methodData.pNames && methodData.pTypes) {
         for (let i = 0; i < methodData.pNames.length; i++) {
-            let pDesc = "", pType = "", pDef = methodData.pTypes[i];
-            if (typeof pDef == "string") {
+            let pDesc = "", pType = "", pName = methodData.pNames[i], pDef = methodData.pTypes[i];
+            if (typeof pDef == "object" || pName == "callback" && !pDef) {
+                pType = "fnc_json";
+                pDesc = pDef && JSON.stringify(pDef);
+            } else if (typeof pDef == "string") {
                 pType = split0(pDef, "-");
                 pDesc = split1(pDef, "-");
-            } else if (typeof pDef == "object") {
-                pType = "fnc_json";
-                pDesc = JSON.stringify(pDef);
             }
             str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc}\n`
         }
@@ -211,7 +222,7 @@ function tos(o, intd = "") {
 
 async function GetFolders(folder = "") {
     const folders = await fsp.readdir(folder, { withFileTypes: true });
-    for (const fld of folders.filter(d => /[a-z]/.test(d.name[0]) && d.isDirectory())) {
+    for (const fld of folders.filter(d => /[a-z]/i.test(d.name[0]) && d.isDirectory())) {
         const path = folder + "/" + fld.name + "/";
         const files = ["obj.json", "base.json", "navs.json"];
         const descPath = path + "desc/";
