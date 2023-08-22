@@ -12,7 +12,18 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "args": ["-c"],
             "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "updatePages",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/updatePages.js"
         },
         {
             "type": "node",
