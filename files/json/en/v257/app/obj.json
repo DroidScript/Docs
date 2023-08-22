@@ -161,7 +161,7 @@
 		"shortDesc": "Cancel background job"
 	},
 	"CheckLicense": {
-		"desc": "will trigger a standard Google Play license check for the running application (if it is a paid App).\nThe key can be found under “Development Tools > Services and API's” in the GooglePlay developer console.\nIf the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.",
+		"desc": "#CheckLicense.md",
 		"pNames": ["key"],
 		"pTypes": ["str_b64-GPlay license key"],
 		"shortDesc": "Checks if app is licensed with Google Play"
@@ -225,7 +225,7 @@
 		"shortDesc": "Clears saved web cookies"
 	},
 	"ClearData": {
-		"desc": "ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SetData, \n\nSee Also: @GetData",
+		"desc": "ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.\n\nSee Also: @SetData,\n\nSee Also: @GetData",
 		"pNames": ["file"],
 		"pTypes": ["str_ptf"],
 		"shortDesc": "Deletes app.Save*() storage"
@@ -248,7 +248,7 @@
 		"shortDesc": "Copies a file to a given destination"
 	},
 	"CopyFolder": {
-		"desc": "CopyFolder copies a folder and its contents to a given destination. If an item already exists in the destination it will not be overwritten unless overwrite is true.\n\n**Note:** <js nobox>CopyFolder(fld1, fld2)</js> will copy the **contents** of _fld1_ to _fld2_.\n\nSee Also: @RenameFolder, @DeleteFolder, @FolderExists",
+		"desc": "#CopyFolder.md",
 		"pNames": ["source", "destination", "overwrite", "filter"],
 		"pTypes": ["str_pth", "str_pth", "bin", "str-pattern"],
 		"shortDesc": "Copies a folder to a given destination"
@@ -866,7 +866,7 @@
 				"pTypes": ["str_ptf", "str", {
 					"pNames": ["error", "result", "status"],
 					"pTypes": ["bin", "obj-{data:all,error:str}", "num_int"]
-				}, "str"],
+				}],
 				"shortDesc": "Loads data from the cloud."
 			},
 			"Merge": {
@@ -1104,9 +1104,6 @@
 			}
 		}
 	},
-	"CreateCustomTabs": {
-		"desc": "Creates a CustomTab control.\nSee the @../Plugins page for details"
-	},
 	"CreateCrypt": {
 		"abbrev": "crp",
 		"desc": "The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.",
@@ -1140,6 +1137,9 @@
 			},
 			"SetDescription": "#0937259723"
 		}
+	},
+	"CreateCustomTabs": {
+		"desc": "Creates a CustomTab control.\nSee the @../Plugins page for details"
 	},
 	"CreateDebug": {
 		"desc": "CreateDebug is used to show the console as overlay above the app in order to see the debug logs.\n\nSee Also: @SetDebug, @Debug",
@@ -1607,74 +1607,62 @@
 				"shortDesc": "returns the glv context"
 			},
 			"GetContext.ctx.capture": {
-				"name": "ctx.capture",
 				"desc": "Captures the current cached context to a png image.\nThe path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”",
 				"pNames": ["x", "y", "w", "h", "fileName", "successCallback", "errorCallback"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl", "str:path relative to “/sdcard”", "fnc", "fnc"],
 				"shortDesc": "Captures the canvas to a png image"
 			},
 			"GetContext.ctx.clearRect": {
-				"name": "ctx.clearRect",
 				"desc": "<deprecated does nothing. ctx is automatically cleared after render()>",
 				"pNames": ["x", "y", "width", "height"],
 				"pTypes": ["num_pxl", "num_pxl", "num_pxl", "num_pxl"]
 			},
 			"GetContext.ctx.drawImage": {
-				"name": "ctx.drawImage",
 				"desc": "Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.",
 				"pNames": ["image", "sx", "sy", "sw", "sh", "dx", "dy", "dw", "dh"],
 				"pTypes": ["obj-glv Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_pxl"],
 				"shortDesc": "Draws part of a sprite to the context"
 			},
 			"GetContext.ctx.render": {
-				"name": "ctx.render",
 				"desc": "render the draw commands to the context",
 				"shortDesc": "render draw commands"
 			},
 			"GetContext.ctx.resetTransform": {
-				"name": "ctx.resetTransform",
 				"desc": "Reset all transformations to default"
 			},
 			"GetContext.ctx.restore": {
-				"name": "ctx.restore",
 				"desc": "Restore a previously saved context state",
 				"shortDesc": "Restore saved context"
 			},
 			"GetContext.ctx.rotate": {
-				"name": "ctx.rotate",
 				"desc": "Rotates the current applied transformation",
 				"pNames": ["angle"],
 				"pTypes": ["num_rad"],
 				"shortDesc": "Rotates the transformation matrix"
 			},
 			"GetContext.ctx.save": {
-				"name": "ctx.save",
 				"desc": "Saves the current context state",
 				"shortDesc": "Saves current context"
 			},
 			"GetContext.ctx.scale": {
-				"name": "ctx.scale",
 				"desc": "Scales the current applied transformation matrix",
 				"pNames": ["a", "d"],
 				"pTypes": ["num_frc", "num_frc"],
 				"shortDesc": "Scale the transformation matrix"
 			},
 			"GetContext.ctx.setTransform": {
-				"name": "ctx.setTransform",
 				"desc": "Set the current transformation matrix",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
 				"shortDesc": "Set current matrix"
 			},
 			"GetContext.ctx.transform": {
-				"name": "ctx.transform",
 				"desc": "Apply an other transformation matrix to the current one",
 				"pNames": ["a", "b", "c", "d", "tx", "ty"],
 				"pTypes": ["num", "num", "num", "num", "num", "num"],
 				"shortDesc": "Transform the current matrix"
 			},
 			"GetContext.ctx.translate": {
-				"name": "ctx.translate",
 				"desc": "'Moves' the current applied transformation matrix",
 				"pNames": ["tx", "ty"],
 				"pTypes": ["num_pxl", "num_pxl"],
@@ -2971,7 +2959,6 @@
 				"shortDesc": "Checks if NXT is connected"
 			},
 			"IsEnabled": {
-				"name": "IsBluetoothEnabled",
 				"desc": "Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.",
 				"retval": "bin",
 				"shortDesc": "Checks if bt is enabled"
@@ -4857,7 +4844,7 @@
 		"shortDesc": "Returns a new WebServer object",
 		"subf": {
 			"AddRedirect": {
-				"desc": "Redirects a url pattern (with * wildcards) to a target location",
+				"desc": "Redirects a url pattern (with \\* wildcards) to a target location",
 				"pNames": ["pattern", "location"],
 				"pTypes": ["str_url", "str_url"],
 				"shortDesc": "Redirect urls"
@@ -5500,6 +5487,18 @@
 		"desc": "GetActivities returns a list of object of currently running activities.\n\nSee Also: @GetRunningApps, @GetRunningServices",
 		"retval": "lst-[{ label:str&comma; packageName:str&comma; className:str }]"
 	},
+	"GetAppLangCode": {
+		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.\n\nSee Also: @GetLanguage",
+		"pNames": ["name"],
+		"pTypes": ["str"],
+		"retval": "str",
+		"shortDesc": "Convert language name to its code or get current language code"
+	},
+	"GetAppLanguages": {
+		"desc": "Returns the available translation languages specified in your lang.json file.\n\nSee Also: @SetAppLanguage",
+		"retval": "lst-[code:str]",
+		"shortDesc": "Get translation languages"
+	},
 	"GetAppName": {
 		"desc": "Returns the name of the current app.",
 		"retval": "str",
@@ -5548,7 +5547,7 @@
 		"shortDesc": "Get latest clipboard text"
 	},
 	"GetCountry": {
-		"desc": "Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)\n\nSee Also: @GetCountryCode, \n\nSee Also: @GetLanguage",
+		"desc": "Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)\n\nSee Also: @GetCountryCode,\n\nSee Also: @GetLanguage",
 		"retval": "str",
 		"shortDesc": "Get user country name"
 	},
@@ -5682,11 +5681,6 @@
 		"desc": "GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).\n%c\n\nSee Also: @GetLanguageCode, @GetCountry",
 		"retval": "str",
 		"shortDesc": "Get device language"
-	},
-	"GetAppLanguages": {
-		"desc": "Returns the available translation languages specified in your lang.json file.\n\nSee Also: @SetAppLanguage",
-		"retval": "lst-[code:str]",
-		"shortDesc": "Get translation languages"
 	},
 	"GetLanguageCode": {
 		"desc": "GetLanguageCode returns the user language code (ie&period; “en” or “de”).\n\nSee Also: @GetLanguage, @GetCountryCode",
@@ -5846,11 +5840,6 @@
 		"retval": "str",
 		"shortDesc": "Get value of shared text"
 	},
-	"GetSpeechEngines": {
-		"desc": "Returns a list of installed tts engines.\n\nSee Also: @TextToSpeech",
-		"retval": "lst-[ engines:str ]",
-		"shortDesc": "Get tts engines"
-	},
 	"GetSpeakerPhone": {
 		"desc": "Checks if the speaker is enabled for phone calls. Returns false if no call is active.\n\nSee also: @SetSpeakerPhone.",
 		"retval": "bin"
@@ -5861,6 +5850,11 @@
 		"pTypes": ["str-DCIM|Pictures|Movies|Downloads|Documents|Music"],
 		"retval": "str_pth",
 		"shortDesc": "Get full path to a special media folder"
+	},
+	"GetSpeechEngines": {
+		"desc": "Returns a list of installed tts engines.\n\nSee Also: @TextToSpeech",
+		"retval": "lst-[ engines:str ]",
+		"shortDesc": "Get tts engines"
 	},
 	"GetSSID": {
 		"desc": "Returns the name (SSID) of the current network the user is connected with. If WiFi is disabled “<unknown ssid>” is returned.\n\nSee Also: @IsWifiEnabled, @SetWifiEnabled, @WifiConnect",
@@ -5938,7 +5932,7 @@
 		"shortDesc": "Hide progress bar dialog"
 	},
 	"HttpRequest": {
-		"desc": "HttpRequest sends a request to a server. baseUrl and path will just be added to one string to get the address.\nMultiple parameters are available using pipes:\n\t“param1=value1|param2=value2”",
+		"desc": "HttpRequest sends a request to a server. baseUrl and path will just be added to one string to get the address.\nMultiple parameters are available using pipes:\n“param1=value1|param2=value2”",
 		"pNames": ["type", "baseUrl", "path", "params", "callback", "headers"],
 		"pTypes": ["str-GET:retrieve data|POST:submit data|JSON:post json data|PUT:replace target resource|DELETE:deletes the resource|HEAD:omit body", "str_url", "str", "str", {
 			"pNames": ["error", "reply", "status"],
@@ -5947,6 +5941,7 @@
 		"shortDesc": "Send Http request"
 	},
 	"InIDE": {
+		"desc": "",
 		"retval": "bin"
 	},
 	"InstallApp": {
@@ -5972,7 +5967,7 @@
 		"shortDesc": "Check if package is installed"
 	},
 	"IsBluetoothEnabled": {
-		"desc": "Return whether bluetooth was enabled. \n\nSee Also: @SetBluetoothEnabled",
+		"desc": "Return whether bluetooth was enabled.\n\nSee Also: @SetBluetoothEnabled",
 		"retval": "bin",
 		"shortDesc": "Check bluetooth enabled"
 	},
@@ -6092,13 +6087,6 @@
 		"pTypes": ["num_int"],
 		"shortDesc": "Kill an app by its pid"
 	},
-	"GetAppLangCode": {
-		"desc": "Convert the user language name to it's 2 character long language code. If no argument is passed, the current language code is returned.\n\nSee Also: @GetLanguage",
-		"pNames": ["name"],
-		"pTypes": ["str"],
-		"retval": "str",
-		"shortDesc": "Convert language name to its code or get current language code"
-	},
 	"LaunchApp": {
 		"desc": "Launches an app if installed or search for it on GooglePlay otherwise.",
 		"pNames": ["packageName", "noPlay"],
@@ -6125,19 +6113,19 @@
 		"retval": "bin",
 		"shortDesc": "Load saved boolean value"
 	},
-	"LoadNumber": {
-		"desc": "Load a saved number value to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
-		"pNames": ["name", "default", "file"],
-		"pTypes": ["str", "num", "str_ptf"],
-		"retval": "num",
-		"shortDesc": "Load saved boolean value"
-	},
 	"LoadJson": {
 		"desc": "Load a saved json object to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
 		"pNames": ["name", "default", "file"],
 		"pTypes": ["str", "obj", "str_ptf"],
 		"retval": "obj",
 		"shortDesc": "Load saved json object"
+	},
+	"LoadNumber": {
+		"desc": "Load a saved number value to remember varibale values between multiple app starts.\n\nSee also: @SaveNumber.",
+		"pNames": ["name", "default", "file"],
+		"pTypes": ["str", "num", "str_ptf"],
+		"retval": "num",
+		"shortDesc": "Load saved boolean value"
 	},
 	"LoadPlugin": {
 		"desc": "#LoadPlugin.md",
@@ -6306,17 +6294,17 @@
 		"pTypes": ["str_url", "str_mim", "str"],
 		"shortDesc": "Allow user to open an url with an external app"
 	},
+	"PairBtDevice": {
+		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
+		"pNames": ["address", "callback"],
+		"pTypes": ["str", {}]
+	},
 	"Path2Uri": {
 		"desc": "Returns a content:// path for images and videos",
 		"pNames": ["path"],
 		"pTypes": ["str_pth"],
 		"retval": "str_ptc-content://[uri]",
 		"shortDesc": "Convert file path to content uri"
-	},
-	"PairBtDevice": {
-		"desc": "Pairs a bluetooth device with yours.\n\nSee Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices",
-		"pNames": ["address", "callback"],
-		"pTypes": ["str", {}]
 	},
 	"PinScreen": {
 		"desc": "Pins the app on the screen",
@@ -6426,17 +6414,17 @@
 		"desc": "Saves cookies for webviews or html apps.\n\nSee also: @ClearCookies",
 		"shortDesc": "Save web cookies"
 	},
-	"SaveNumber": {
-		"desc": "Save a number value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
-		"pNames": ["name", "value", "file"],
-		"pTypes": ["str", "num", "str_ptf"],
-		"shortDesc": "Save a number value across multiple starts"
-	},
 	"SaveJson": {
 		"desc": "Save a json object to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
 		"pNames": ["name", "value", "file"],
 		"pTypes": ["str", "obj", "str_ptf"],
 		"shortDesc": "Save a json object across multiple starts"
+	},
+	"SaveNumber": {
+		"desc": "Save a number value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadNumber.",
+		"pNames": ["name", "value", "file"],
+		"pTypes": ["str", "num", "str_ptf"],
+		"shortDesc": "Save a number value across multiple starts"
 	},
 	"SaveText": {
 		"desc": "Save a text value to remember varibale values between multiple app starts and updates.\n\nSee also: @LoadText.",
@@ -6450,19 +6438,19 @@
 		"pTypes": ["str_ptf"],
 		"shortDesc": "Adds media files to phone gallery"
 	},
+	"ScheduleJob": {
+		"desc": "Schedules background jobs defined in a Job.js file\n\nSee Also: @CancelJob",
+		"pNames": ["delay", "options"],
+		"pTypes": ["num_mls", "str"]
+	},
 	"ScreenShot": {
 		"desc": "Takes a screen shot of your app and saves it to the specified path. Quality is an **option**al percentage value for jpg files defaulting to 95.\n\nSee also: @GetMediaFile",
 		"pNames": ["fileName", "quality"],
 		"pTypes": ["str_ptf", "num_prc"],
 		"shortDesc": "Take a screen shot of your app"
 	},
-	"ScheduleJob": {
-		"desc": "Schedules background jobs defined in a Job.js file\n\nSee Also: @CancelJob",
-		"pNames": ["delay", "options"],
-		"pTypes": ["num_mls", "str"]
-	},
 	"Script": {
-		"desc": "Loads a local JavaScript file to your app to make its functionality available in your app.\nBy default it is loaded just before OnStart is being called unless you set “NoDefer” to <js>true</js> which forces inline loading.\nThis is to ensure errors are highlighted correctly in external source files.\n\nSee Also: @LoadScript",
+		"desc": "#Script.md",
 		"pNames": ["file", "noDefer"],
 		"pTypes": ["str_ptf", "bin:load script inline"],
 		"shortDesc": "import an external JavaScript file"
@@ -6474,7 +6462,7 @@
 		"shortDesc": "Send a file to a remote target"
 	},
 	"SendImage": {
-		"desc": "#SendImage.md",
+		"desc": "Send an image to a remote target, ie. via Email or a messenger. The **choose** text will be displayed when the user selects the target app. Default may be something like _'Complete action using'_.\n\nSee Also: @SendFile, @SendText, @SendMail",
 		"pNames": ["file", "choose"],
 		"pTypes": ["str_pfa", "str"],
 		"shortDesc": "Send an image to a remote target"
@@ -6519,6 +6507,12 @@
 			"pTypes": ["str||num_int"]
 		}, "num_dat", "num_mls", "str_com-ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service"],
 		"shortDesc": "Set alarm to open your app at a specific time"
+	},
+	"SetAppLanguage": {
+		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetAppLanguages",
+		"pNames": ["name"],
+		"pTypes": ["str"],
+		"shortDesc": "Load the language code from lang.json"
 	},
 	"SetAutoBoot": {
 		"desc": "Causes the current running APK or its Service to be started automatically when your device boots.\n\nSee Also: @SetAutoStart",
@@ -6596,23 +6590,17 @@
 		"pTypes": ["str_com-Power,Status,Nav,NavRight,LockTask:COSU kiosk,Pin:task un-/pinning", "bin", "str_com-Black,Tasks:prevents recent tasks button working", "str"],
 		"shortDesc": "Blocks android functionality outside your app"
 	},
-	"SetAppLanguage": {
-		"desc": "Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).\n\nSee Also: @GetAppLanguages",
-		"pNames": ["name"],
-		"pTypes": ["str"],
-		"shortDesc": "Load the language code from lang.json"
+	"SetMargins": {
+		"desc": "Set the default margins settings for controls",
+		"pNames": ["left", "top", "right", "bottom", "mode"],
+		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
+		"shortDesc": "Set default margins"
 	},
 	"SetMenu": {
 		"desc": "Set the app menu fields. When a menu entry is touched, the global _OnMenu_ event will be called.\n\nSee Also: @ShowMenu",
 		"pNames": ["list", "iconPath"],
 		"pTypes": ["str_com", "str_ptf"],
 		"shortDesc": "Set app menu"
-	},
-	"SetMargins": {
-		"desc": "Set the default margins settings for controls",
-		"pNames": ["left", "top", "right", "bottom", "mode"],
-		"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt"],
-		"shortDesc": "Set default margins"
 	},
 	"SetMockLocation": {
 		"desc": "Emulates a GPS location on the device.\n\n<premium>",
@@ -6627,7 +6615,7 @@
 		"shortDesc": "Set NavBar color"
 	},
 	"SetOnBroadcast": {
-		"desc": "Define a callback function for incoming Broadcast messages.\nYou can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\\_actions.txt)\n\n\nSee also: @Broadcast",
+		"desc": "#SetOnBroadcast.md",
 		"pNames": ["callback", "action"],
 		"pTypes": [{
 			"pNames": ["type", "msg"],

@@ -31,7 +31,7 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
         const data = obj[key];
 
         let _desc = data.desc || "";
-        if (!/^#.*.md$/.test(_desc)) _desc = _desc.replace(/\n/g, "\n * ").replace(/\*\//g, '*\\/')
+        if (!/^#.*.md$/.test(_desc)) _desc = _desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ").replace(/\*\//g, '*\\/')
         else _desc = "";
 
         let info = "";
@@ -82,7 +82,7 @@ ${info} * ${_desc}
                     str += `
 /** ### ${method}
  * @prop${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : ""}
  * @returns ${methodData.retval}
  */
 \n                    `;
@@ -92,7 +92,7 @@ ${info} * ${_desc}
                     const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
                     str += `
 /** ### ${method} ###${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/\n/g, " * ") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : ""}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;
 
@@ -126,7 +126,7 @@ ${info} * ${_desc}
         let methodData = base[key];
         let method = methodData.name || '';
         const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != key;
-        const _desc = methodData.desc ? methodData.desc.replace(/\n/g, " * ") : "";
+        const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : "";
 
         let info = "";
         // if (data.name && data.name != key) info += ` * @name ${data.name}\n`;

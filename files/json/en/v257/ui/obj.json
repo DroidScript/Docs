@@ -1345,21 +1345,6 @@
 			}
 		}
 	},
-	"showColorPicker": {
-		"abbrev": "",
-		"desc": "#showColorPicker.md",
-		"pNames": ["value", "options", "onSelect"],
-		"pTypes": ["str-A hexadecimal default value for the color picker.", "str-A comma separated color picker options. Values can be \\n `Alpha` Includes an alpha", ""],
-		"retval": "obj-ColorPicker Component",
-		"shortDesc": "showColorPicker",
-		"subf": {
-			"getValue": {
-				"desc": "Returns the hexadecimal string color value of the color picker",
-				"retval": "str",
-				"shortDesc": "getValue"
-			}
-		}
-	},
 	"addDatePicker": {
 		"abbrev": "dtp",
 		"desc": "#addDatePicker.md",
@@ -1404,25 +1389,6 @@
 			}
 		}
 	},
-	"showDateTimePicker": {
-		"abbrev": "dtp",
-		"desc": "#showDateTimePicker.md",
-		"pNames": ["callback", "date", "time", "format"],
-		"pTypes": ["", "str-Default value for date of the form \"MM/DD/YYYY\"", "str-Default value for time of the form \"HH/MM/SS\"", "str-The format value that will be pass to callback. Formats can be of the form \\n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`"],
-		"retval": "obj-DateTimePicker Component",
-		"shortDesc": "showDateTimePicker",
-		"subf": {
-			"setOnSelect": {
-				"desc": "Sets a callback function on select date and time",
-				"pNames": ["callback"],
-				"pTypes": [{
-					"pNames": ["value "],
-					"pTypes": ["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]
-				}],
-				"shortDesc": "setOnSelect"
-			}
-		}
-	},
 	"addDialog": {
 		"abbrev": "dlg",
 		"desc": "#addDialog.md",
@@ -1457,7 +1423,6 @@
 		}
 	},
 	"addDivider": {
-		"abbrev": "",
 		"desc": "#addDivider.md",
 		"pNames": ["parent", "width", "options"],
 		"pTypes": ["obj-The layour where to add the divider.", "num-Fraction of the screen width. Default is 1.", "str-A comma separated Divider options. Values can be `Inset`"],
@@ -2702,56 +2667,6 @@
 			}
 		}
 	},
-	"showPopover": {
-		"abbrev": "",
-		"desc": "#showPopover.md",
-		"pNames": ["parent", "text", "position", "width", "height"],
-		"pTypes": ["obj-UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.", "str-The text to de displayed. For displaying more data, pass a `Layout`", "str-A comma separated values representing the `anchorOrigin,transformOrigin` \\n `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. \\n `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`", "num-Fraction of the screen width.", "num-Fraction of the screen height."],
-		"retval": "obj-Popover Component.",
-		"shortDesc": "showPopover",
-		"subf": {}
-	},
-	"showPopup": {
-		"abbrev": "pop",
-		"desc": "#showPopup.md",
-		"pNames": ["msg", "options", "duration", "action"],
-		"pTypes": ["str-The message to display on the pop-up.", "str-A comma separated Menu options. Values can be \\n Duration: `Short` `Long` \\n Vertical Alignment: `Top` `Bottom` \\n Horizontal Alignment: `Left` `Center` `Right` \\n Action options: `Icon` or `HideOnAction` \\n Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`", "num-Time in milliseconds. Pass this, if you don't want the default auto hide duration.", "str-Action button text."],
-		"retval": "obj-Popup Component.",
-		"shortDesc": "showPopup",
-		"subf": {
-			"setOnClose": {
-				"desc": "Adds an onClose callback to your popup",
-				"pNames": ["callback"],
-				"pTypes": [""],
-				"shortDesc": "setOnClose"
-			},
-			"setOnAction": {
-				"desc": "Adds an action callback when the user touches the action button. The `btnText` param must\nbe provided in order to create an action button",
-				"pNames": ["callback"],
-				"pTypes": [""],
-				"shortDesc": "setOnAction"
-			},
-			"show": {
-				"desc": "Show the popup",
-				"shortDesc": "show"
-			},
-			"hide": {
-				"desc": "Hide the popup",
-				"shortDesc": "hide"
-			},
-			"setPosition": {
-				"desc": "Updates the position of the popup",
-				"pNames": ["vertical", "horizontal"],
-				"pTypes": ["str-Vertical alignment. Values can be `Top` `Bottom`", "str-Horizontal alignment. Values can be `Left` `Center` and `Right`"],
-				"shortDesc": "setPosition"
-			},
-			"getPosition": {
-				"desc": "Returns the position of the popup. The returned object is of the form `{ vertical, horizontal",
-				"retval": "obj",
-				"shortDesc": "getPosition"
-			}
-		}
-	},
 	"addProgress": {
 		"abbrev": "prg",
 		"desc": "#addProgress.md",
@@ -2860,30 +2775,6 @@
 				"pNames": ["zIndex"],
 				"pTypes": ["num-The z-index. A positve value behaves like `bringForward` method."],
 				"shortDesc": "sendBackward"
-			}
-		}
-	},
-	"showProgressDialog": {
-		"abbrev": "prd",
-		"desc": "#showProgressDialog.md",
-		"pNames": ["text", "options"],
-		"pTypes": ["str-The text message of the progress dialog. Options can be \\n `AutoCancel` to close the dialog when backdrop is click.", "str-A comma separated options for Progress Dialog."],
-		"retval": "obj-ProgressDialog",
-		"shortDesc": "showProgressDialog",
-		"subf": {
-			"show": {
-				"desc": "Show the progress dialog component",
-				"shortDesc": "show"
-			},
-			"hide": {
-				"desc": "Hides the dialog component",
-				"shortDesc": "hide"
-			},
-			"setOnClose": {
-				"desc": "Adds a callback handler method on close event",
-				"pNames": ["callback"],
-				"pTypes": [""],
-				"shortDesc": "setOnClose"
 			}
 		}
 	},
@@ -3872,7 +3763,6 @@
 		}
 	},
 	"addTabs": {
-		"abbrev": "",
 		"desc": "#addTabs.md",
 		"pNames": ["parent", "list", "options", "width", "height"],
 		"pTypes": ["obj-The parent layout where to add the Tabs Component.", "lst-An array of tab names.", "str-A comma separated options for Tabs. \\n Enable swipe: `Swipeable` \\n Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` \\n Variant: `Standard` `Scrollable` `FullWidth` \\n Layout: `Linear`, `Absolute` \\nUtils: `Icon` `Center` `Paper`", "num-Fraction of the screen width. [0-1]", "num-Fraction of the screen height. [0-1]"],
@@ -4667,6 +4557,111 @@
 				"pNames": ["zIndex"],
 				"pTypes": ["num-The z-index. A positve value behaves like `bringForward` method."],
 				"shortDesc": "sendBackward"
+			}
+		}
+	},
+	"showColorPicker": {
+		"desc": "#showColorPicker.md",
+		"pNames": ["value", "options", ""],
+		"pTypes": ["str-A hexadecimal default value for the color picker.", "str-A comma separated color picker options. Values can be \\n `Alpha` Includes an alpha", ""],
+		"retval": "obj-ColorPicker Component",
+		"shortDesc": "showColorPicker",
+		"subf": {
+			"getValue": {
+				"desc": "Returns the hexadecimal string color value of the color picker",
+				"retval": "str",
+				"shortDesc": "getValue"
+			}
+		}
+	},
+	"showDateTimePicker": {
+		"abbrev": "dtp",
+		"desc": "#showDateTimePicker.md",
+		"pNames": ["callback", "date", "time", "format"],
+		"pTypes": ["", "str-Default value for date of the form \"MM/DD/YYYY\"", "str-Default value for time of the form \"HH/MM/SS\"", "str-The format value that will be pass to callback. Formats can be of the form \\n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`"],
+		"retval": "obj-DateTimePicker Component",
+		"shortDesc": "showDateTimePicker",
+		"subf": {
+			"setOnSelect": {
+				"desc": "Sets a callback function on select date and time",
+				"pNames": ["callback"],
+				"pTypes": [{
+					"pNames": ["value "],
+					"pTypes": ["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]
+				}],
+				"shortDesc": "setOnSelect"
+			}
+		}
+	},
+	"showPopover": {
+		"desc": "#showPopover.md",
+		"pNames": ["parent", "text", "position", "width", "height"],
+		"pTypes": ["obj-UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.", "str-The text to de displayed. For displaying more data, pass a `Layout`", "str-A comma separated values representing the `anchorOrigin,transformOrigin` \\n `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. \\n `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`", "num-Fraction of the screen width.", "num-Fraction of the screen height."],
+		"retval": "obj-Popover Component.",
+		"shortDesc": "showPopover"
+	},
+	"showPopup": {
+		"abbrev": "pop",
+		"desc": "#showPopup.md",
+		"pNames": ["msg", "options", "duration", "action"],
+		"pTypes": ["str-The message to display on the pop-up.", "str-A comma separated Menu options. Values can be \\n Duration: `Short` `Long` \\n Vertical Alignment: `Top` `Bottom` \\n Horizontal Alignment: `Left` `Center` `Right` \\n Action options: `Icon` or `HideOnAction` \\n Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`", "num-Time in milliseconds. Pass this, if you don't want the default auto hide duration.", "str-Action button text."],
+		"retval": "obj-Popup Component.",
+		"shortDesc": "showPopup",
+		"subf": {
+			"setOnClose": {
+				"desc": "Adds an onClose callback to your popup",
+				"pNames": ["callback"],
+				"pTypes": [""],
+				"shortDesc": "setOnClose"
+			},
+			"setOnAction": {
+				"desc": "Adds an action callback when the user touches the action button. The `btnText` param must\nbe provided in order to create an action button",
+				"pNames": ["callback"],
+				"pTypes": [""],
+				"shortDesc": "setOnAction"
+			},
+			"show": {
+				"desc": "Show the popup",
+				"shortDesc": "show"
+			},
+			"hide": {
+				"desc": "Hide the popup",
+				"shortDesc": "hide"
+			},
+			"setPosition": {
+				"desc": "Updates the position of the popup",
+				"pNames": ["vertical", "horizontal"],
+				"pTypes": ["str-Vertical alignment. Values can be `Top` `Bottom`", "str-Horizontal alignment. Values can be `Left` `Center` and `Right`"],
+				"shortDesc": "setPosition"
+			},
+			"getPosition": {
+				"desc": "Returns the position of the popup. The returned object is of the form `{ vertical, horizontal",
+				"retval": "obj",
+				"shortDesc": "getPosition"
+			}
+		}
+	},
+	"showProgressDialog": {
+		"abbrev": "prd",
+		"desc": "#showProgressDialog.md",
+		"pNames": ["text", "options"],
+		"pTypes": ["str-The text message of the progress dialog. Options can be \\n `AutoCancel` to close the dialog when backdrop is click.", "str-A comma separated options for Progress Dialog."],
+		"retval": "obj-ProgressDialog",
+		"shortDesc": "showProgressDialog",
+		"subf": {
+			"show": {
+				"desc": "Show the progress dialog component",
+				"shortDesc": "show"
+			},
+			"hide": {
+				"desc": "Hides the dialog component",
+				"shortDesc": "hide"
+			},
+			"setOnClose": {
+				"desc": "Adds a callback handler method on close event",
+				"pNames": ["callback"],
+				"pTypes": [""],
+				"shortDesc": "setOnClose"
 			}
 		}
 	}
