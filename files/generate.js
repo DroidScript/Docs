@@ -4,8 +4,9 @@
 const baseDir = "json/", outDir = "../out/";
 var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var curVer = "", curDoc = "", curSubf = "", pattern = "";
-var warnEnbl = false, dbg = false, clean = false, force = false, updateVer = false;
+var warnEnbl = false, dbg = false, clear = false, force = false, updateVer = false;
 var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
+
 /** @type {DSConfig} */    var conf;
 /** @type {DSBase|null} */ var base;
 /** @type {DSNavs} */      var navs;
@@ -47,9 +48,9 @@ function Generate(patFunc, patScope, patLang) {
 	pattern = patFunc;
 
 	if (patLang && !conf.langs[patLang])
-		Throw(new Error(`language ${patLang} not specified in conf.json`));
+		Throw(Error(`language ${patLang} not specified in conf.json`));
 	if (patScope && !conf.scopes[patScope])
-		Throw(new Error(`scope ${patScope} not specified in conf.json`));
+		Throw(Error(`scope ${patScope} not specified in conf.json`));
 
 	const dstDir = getDstDir(D_BASE);
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
@@ -63,6 +64,7 @@ function Generate(patFunc, patScope, patLang) {
 	// 404 page
 	app.CopyFolder('404.html', dstDir + '404.html');
 
+	// update forward.js version map
 	/** @type {Obj<string>} */
 	const latest = {};
 	const forwardjs = app.ReadFile('docs-base/js/forward.js');
@@ -73,12 +75,8 @@ function Generate(patFunc, patScope, patLang) {
 	});
 	app.WriteFile('docs-base/js/forward.js', forwardjs.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
 
-	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => {
-		// delete old generated files
-		if (patScope + patFunc == "")
-			if (clean) app.DeleteFolder("docs" + getl());
-		generateLang(l);
-	});
+	// generate all languages
+	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => generateLang(l));
 }
 
 /** @param {LangKeys} l */
@@ -89,13 +87,20 @@ function generateLang(l) {
 	scope = {};
 	base = {};
 
+	// clear lang folder
 	if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
-	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
-	if (clean || !app.FolderExists(dstDir + "font-awesome")) app.CopyFolder("font-awesome", dstDir + "font-awesome");
-	if (clean || !app.FileExists(dstDir + "app.js")) app.CopyFolder("app.js", dstDir + "app.js");
-	if (clean || !app.FolderExists(dstDir + "css")) app.CopyFolder("docs-base/css", dstDir + "css");
-	if (clean || !app.FolderExists(dstDir + "js")) app.CopyFolder("docs-base/js", dstDir + "js");
-	if (clean || !app.FileExists(dstDir + "index.html")) app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
+	if (app.FolderExists(dstDir) && clear) {
+		console.log("deleting " + lang);
+		app.DeleteFolder(dstDir);
+	} else console.log("overwriting " + lang);
+
+	// update base files
+	if (clear || !app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+	app.CopyFolder("font-awesome", dstDir + "font-awesome");
+	app.CopyFolder("app.js", dstDir + "app.js");
+	app.CopyFolder("docs-base/css", dstDir + "css");
+	app.CopyFolder("docs-base/js", dstDir + "js");
+	app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
 	const versions = app.ListFolder(langDir).sort();
 
 	// version index page
@@ -104,6 +109,7 @@ function generateLang(l) {
 		.replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/');
 	app.WriteFile(dstDir + "Docs.htm", index);
 
+	// generate all versions
 	for (const v of versions) generateVersion(v);
 }
 
@@ -111,10 +117,9 @@ function generateLang(l) {
 function generateVersion(ver) {
 	curVer = ver;
 	const curDir = getDstDir(D_VER);
+	app.CopyFolder("docs-base", curDir);
 
-	if (clean || !app.FolderExists(curDir))
-		app.CopyFolder("docs-base", curDir);
-
+	// generate all scopes
 	keys(conf.scopes)
 		.filter(s => s.match(patScope) != null)
 		.forEach(scope => {
@@ -145,36 +150,34 @@ function generateScope(name) {
 	if (!app.FolderExists(scopeDir + "samples")) app.MakeFolder(scopeDir + "samples");
 
 	// check file dates for update
-	if (!force && !clean && newestFileDate(dstDir) > newestFileDate(scopeDir, "generate.js"))
+	if (!force && !clear && newestFileDate(dstDir) > newestFileDate(scopeDir, "generate.js"))
 		return console.log(`Skipped ${lang}.${curVer}.${name}.${pattern || '*'}`);
 
 	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${pattern || '*'}`);
 	parseInput();
 
-	if (!clean) {
+	// clear nav & scope folder for generating
+	if (!clear) {
 		const verDir = getDstDir(D_VER);
-		// delete navs
-		if ("navs".match(regGen))
-			app.ListFolder(verDir).map((f) =>
-				f.startsWith(name + "_") && app.DeleteFile(verDir + f));
-		// delete docs
-		else app.DeleteFolder(dstDir);
+		if (!"navs".match(regGen)) app.DeleteFolder(dstDir);
+		for (const f of app.ListFolder(verDir))
+			f.startsWith(name + "_") && app.DeleteFile(verDir + f);
 	}
-
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
-	// start generating
+	// generate nav pages
 	if ("navs".match(regGen)) {
 		generateNavigators(navs, conf.scopes[curScope] || curScope);
 		var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
 		if (base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
 	}
 
+	// generate doc pages
 	generateDocs(scope);
-
 	app.HideProgressBar();
 }
 
+// read all input json files
 function parseInput() {
 	var newScope = scope, newBase = base;
 
@@ -290,7 +293,6 @@ function generateNavigators(navs, name, pfx) {
 	app.WriteFile(curDoc, htmlNavi(name, addcontent, nav, !nofilter));
 }
 
-//generates doc files
 /** @param {DSScope} scope */
 function generateDocs(scope) {
 	curDoc = getSrcDir(D_SCOPE);
@@ -1369,9 +1371,10 @@ OPTIONS:
                          	adds a language to conf.json
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                                 adds a scope to conf.json
-	-c  --clean            	regenerate the docs completely
+	-c  --clear            	regenerate the docs completely
 	-u  --update           	update the docs version number
 	-f  --force             force generation of otherwise skipped
+	-C  --clean            	delete temp files (out/ files/json/*/)
 	-n  --nogen             don't generate
 	-s  --server            start webserver after generating
 	-v  --verbose           print more debug logs
@@ -1429,7 +1432,7 @@ if (typeof app == "undefined") {
 	var patLang = "", patScope = "", patFunc = "";
 	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>}} */
 	var addcfg = { add: false, langs: {}, scopes: {} };
-	var nogen = false, startServer = false;
+	var nogen = false, startServer = false, clean = false;
 
 	for (var spat of process.argv.slice(2)) {
 		if (spat.startsWith("-")) {
@@ -1438,7 +1441,8 @@ if (typeof app == "undefined") {
 				case "-l": case "--lang": lang = /** @type {LangKeys} */ (pat[1]); break;
 				case "-n": case "--nogen": nogen = true; break;
 				case "-v": case "--verbose": dbg = true; break;
-				case "-c": case "--clean": clean = true; break;
+				case "-c": case "--clear": clear = true; break;
+				case "-C": case "--clean": clean = true; break;
 				case "-u": case "--update": updateVer = true; break;
 				case "-f": case "--force": force = true; break;
 				case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
@@ -1462,6 +1466,18 @@ if (typeof app == "undefined") {
 			patScope = p[3];
 			patFunc = p[5];
 		}
+	}
+
+	if (clean) {
+		const glob = require('glob').sync;
+		for (const dir of glob(baseDir + '*/')) {
+			console.log(`Deleting ${l} ...`);
+			app.DeleteFolder(dir);
+		}
+		console.log(`Deleting ${outDir} ...`);
+		app.DeleteFolder(outDir);
+		console.log("done.");
+		process.exit();
 	}
 
 	if (addcfg.add) {

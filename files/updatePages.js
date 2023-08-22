@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const path = require('path');
 const fs = require('fs-extra');
 const rimraf = require('rimraf').sync;

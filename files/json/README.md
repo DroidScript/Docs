@@ -344,8 +344,12 @@ OPTIONS:
                             adds a language to conf.json
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                             adds a scope to conf.json
-	-c  --clean             regenerate the docs completely
+	-c  --clear             regenerate the docs completely
+	-u  --update            update the docs version number
+	-f  --force             force generation of otherwise skipped
+	-C  --clean             delete temp files (out/ files/json/*/)
 	-n  --nogen             don't generate
+	-s  --server            start webserver after generating
 	-v  --verbose           print more debug logs
 	-h  --help              this help
 
@@ -361,19 +365,7 @@ MEMBER-PATTERN:             RegEx pattern
 
 ## Update Github Pages
 
-To publish the generated html files on GitHub Pages execute the `updatePages.sh` script
-```shell
-./updatePages.sh
-```
-Alternatively update them manually with a file-browser of your choice, based on these commands:
-```shell
-# delete old docs
-rm -r ../docs/docs/
-
-# copy new docs and version
-cp -r docs/ version.txt ../docs/
-
-# edit Docs.htm, search for 'Docs version:' and
-# increment the number (last 3 digits of version.txt)
-nano ../docs/Docs.htm
+To publish the generated html files on GitHub Pages execute the `updatePages` script
+```sh
+npm run updatePages
 ```
