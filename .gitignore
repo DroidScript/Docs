@@ -8,7 +8,9 @@ node_modules/
 /files/out/
 /files/version.txt
 /files/generate_dsuikit.js
+/out/
 /app/
+/version.txt
 
 # hidden files
 _*.htm

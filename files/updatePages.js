@@ -9,8 +9,8 @@ main();
 function main() {
     const base = path.join(__dirname, '..') + path.sep;
 
-    const version = fs.readFileSync(base + "files/version.txt", 'utf8').slice(-3);
-    for (const file of glob(path.join(base, 'files/out/*/*/Docs.htm'))) {
+    const version = fs.readFileSync(base + "out/version.txt", 'utf8').slice(-3);
+    for (const file of glob(path.join(base, 'out/*/*/Docs.htm'))) {
         const content = fs.readFileSync(file, 'utf8');
         fs.writeFileSync(file, content.replace(/Docs version:\ [0-9]*/, `Docs version: ${version}`));
     }
@@ -20,8 +20,8 @@ function main() {
 
     console.log("copying new docs");
     fs.mkdirSync(base + "docs");
-    fs.copy(base + "files/out", base + "docs");
-    fs.copy(base + "files/version.txt", base + "docs/version.txt");
+    fs.copySync(base + "out", base + "docs");
+    fs.copySync(base + "out/version.txt", base + "docs/version.txt");
 
     console.log('done');
 }

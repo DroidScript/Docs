@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
-const baseDir = "json/", outDir = "out/";
+const baseDir = "json/", outDir = "../out/";
 var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
 var curVer = "", curDoc = "", curSubf = "", pattern = "";
 var warnEnbl = false, dbg = false, clean = false, force = false, updateVer = false;
@@ -129,7 +129,7 @@ function generateVersion(ver) {
 	var v = 1000 * (Date.now() / 864e5 | 0);
 	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000;
 	if (updateVer) vn++;
-	app.WriteFile("version.txt", (v + vn).toString());
+	app.WriteFile(outDir + "version.txt", (v + vn).toString());
 }
 
 /** @param {ScopeKeys} name */
