@@ -4,8 +4,8 @@ const fs = require('fs');
 const fsp = require('fs').promises;
 
 const ver = "v257";
-const dir = "json/en/" + ver;
-const outDir = "markup/en/";
+const dir = __dirname + "/json/en/" + ver;
+const outDir = __dirname + "/markup/en/";
 
 const baseIDAlways = false;
 

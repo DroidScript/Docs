@@ -8,8 +8,8 @@ const getComment = require("esprima-extract-comments");
 let verbose = 1;
 const extraFormat = false;
 const version = "v257";
-const SRC = "markup/en";
-const DST = "json/en/" + version;
+const SRC = __dirname + "/markup/en";
+const DST = __dirname + "/json/en/" + version;
 
 const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
@@ -517,7 +517,7 @@ function extractBacktickStringsDesc(str) {
 }
 
 async function GetFolders() {
-    const files = fs.readdirSync(path.join(__dirname, SRC), { withFileTypes: true });
+    const files = fs.readdirSync(SRC, { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => /[a-z]/i.test(file.name[0]) && file.isDirectory());
     for (const folder of folders)

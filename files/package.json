@@ -3,12 +3,19 @@
     "repository": {},
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
+    "scripts": {
+        "docs": "node generate.js",
+        "markup": "node markup-generator.js",
+        "json": "node jsdoc-parser.js",
+        "generate": "npm-run-all -s json docs"
+    },
     "dependencies": {
+        "esprima-extract-comments": "^1.1.0",
         "express": "^4.17.2",
         "fs-extra": "^10.0.0",
         "node-fetch": "^2.0",
+        "npm-run-all": "^4.1.5",
         "prismjs": "^1.26.0",
-        "rimraf": "^3.0.2",
-        "esprima-extract-comments": "^1.1.0"
+        "rimraf": "^3.0.2"
     }
 }
