@@ -3,7 +3,6 @@
 
 /** # CreateTextEditFilledA #
  * @abbrev tef
-
  * Creates an active filled material text input.
  * $$ tef = MUI.CreateTextEditFilledA(width, options, hint, label, color) $$ 
  * @param {num} width 

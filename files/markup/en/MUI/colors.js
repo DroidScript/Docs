@@ -3,7 +3,6 @@
 
 /** # colors #
  * @prop
-
  * 
  * $$ MUI.colors() $$ 
  * @returns obj

@@ -3,7 +3,6 @@
 
 /** # CreateModal #
  * @abbrev mdl
-
  * 
  * $$ mdl = MUI.CreateModal(title, body, okTxt, cancelTxt, show, options) $$ 
  * @param {str} title 

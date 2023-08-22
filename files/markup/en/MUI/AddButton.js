@@ -3,7 +3,6 @@
 
 /** # AddButton #
  * @abbrev btn
-
  * Adds a MUI button to a given layout. See @CreateButtonElegant, @CreateButtonFlat, @CreateButtonRaised, @CreateButtonRaisedO, @CreateButtonRound, and @CreateButtonRoundO for full documentation
  * $$ btn = MUI.AddButton(parent, text, width, height, options) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

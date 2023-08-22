@@ -2,7 +2,6 @@
 
 
 /** # ListPermissions #
-
  * Returns a list of granted permissions
  * $$ app.ListPermissions(type) $$ 
  * @param {str} type storage

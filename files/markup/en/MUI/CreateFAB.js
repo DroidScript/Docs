@@ -3,7 +3,6 @@
 
 /** # CreateFAB #
  * @abbrev fab
-
  * Creates a floating action button
  * $$ fab = MUI.CreateFAB(icon, color) $$ 
  * @param {str} icon Material icon fonts

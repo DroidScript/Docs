@@ -3,7 +3,6 @@
 
 /** # AddTextH4 #
  * @abbrev txh
-
  * Adds an H4 text to a layout. See @CreateTextH4 for full documentation.
  * $$ txh = MUI.AddTextH4(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

@@ -3,7 +3,6 @@
 
 /** # CreateDialog #
  * @abbrev dlg
-
  * Creates a customizable materialize dialog.
  * $$ dlg = MUI.CreateDialog(title, body, okText, cancelText, divider) $$ 
  * @param {str} title Title

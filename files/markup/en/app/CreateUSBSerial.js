@@ -63,7 +63,7 @@ The default constructor values are:
 
 /** ### SetDTR ###
  * @brief Raises the DTR state
- * Raises the `D`ata `T`erminal `R`eady state.
+ * Raises the **D**ata **T**erminal **R**eady state.
  * $$ usb.SetDTR(onOff) $$
  * @param {bin} onOff 
  */
@@ -95,7 +95,7 @@ The default constructor values are:
 
 /** ### SetRTS ###
  * @brief Raises the RTS state
- * Raises the `R`equest `T`o `S`end state.
+ * Raises the **R**equest **T**o **S**end state.
  * $$ usb.SetRTS(onOff) $$
  * @param {bin} onOff 
  */

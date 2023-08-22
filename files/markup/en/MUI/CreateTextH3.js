@@ -3,7 +3,6 @@
 
 /** # CreateTextH3 #
  * @abbrev txh
-
  * Creates a heading text 3
  * $$ txh = MUI.CreateTextH3(text, width, height, options, color, fontWeight) $$ 
  * @param {str} text 

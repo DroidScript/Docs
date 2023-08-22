@@ -3,8 +3,7 @@
 
 /** # AddRadio #
  * @abbrev rd
-
- * Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRadioMaterial for a full documentation. The param p1 depends on the type of an MUI button. It can be a color for normal radio or orientation 'vertical or horizontal' for material and button type.
+ * 
  * $$ rd = MUI.AddRadio(parent, list, width, height, options, p1, color, backColor) $$ 
  * @param {obj} parent MUI Layout or DS Layout control
  * @param {str_com} list strings
@@ -17,6 +16,12 @@
  * @returns obj
 */
 
+
+// ------------- LONG DESCRIPTION ------------- 
+
+/** @Description
+Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRadioMaterial for a full documentation. The param p1 depends on the type of an MUI button. It can be a color for normal radio or orientation 'vertical or horizontal' for material and button type.
+ */
 
 
 

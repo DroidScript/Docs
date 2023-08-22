@@ -3,7 +3,6 @@
 
 /** # AddText #
  * @abbrev txt
-
  * Adds a mui text control to the layout. See @CreateTextH1, @CreateTextH2, @CreateTextH3, @CreateTextH4, @CreateTextH5, @CreateTextH6, @CreateTextJumbo, @CreateTextParagraph and @CreateTextSecondary for full documentation on each type of mui typhography.
  * $$ txt = MUI.AddText(parent, text, width, height, options, color) $$ 
  * @param {obj} parent MUI Layout or DS layout control

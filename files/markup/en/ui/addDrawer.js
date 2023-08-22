@@ -29,7 +29,7 @@ Adds a drawer into your app.
 
 /** ### addLayout ###
  * @brief addLayout
- * Adds a layout into the drawer *  * 
+ * Adds a layout into the drawer
  * $$ drw.addLayout(lay) $$
  * @param {obj} lay Layout component.
  */
@@ -37,7 +37,7 @@ Adds a drawer into your app.
 
 /** ### disableSwipeToOpen ###
  * @brief disableSwipeToOpen
- * Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature *  * 
+ * Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature
  * $$ drw.disableSwipeToOpen(value) $$
  * @param {bin} value Values can be `true` or `false`.
  */
@@ -45,7 +45,7 @@ Adds a drawer into your app.
 
 /** ### disableBackdropTransition ###
  * @brief disableBackdropTransition
- * Disable the backdrop transition. This can improve the FPS on low-end devices *  * 
+ * Disable the backdrop transition. This can improve the FPS on low-end devices
  * $$ drw.disableBackdropTransition(value) $$
  * @param {bin} value Values can be `true` or `false`.
  */
@@ -53,7 +53,7 @@ Adds a drawer into your app.
 
 /** ### disableDiscovery ###
  * @brief disableDiscovery
- * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture *  * 
+ * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture
  * $$ drw.disableDiscovery(value) $$
  * @param {bin} value Values can be `true` or `false`.
  */
@@ -61,23 +61,23 @@ Adds a drawer into your app.
 
 /** ### setOnOpen ###
  * @brief setOnOpen
- * Adds a callback function when the drawer is opened *  * 
+ * Adds a callback function when the drawer is opened
  * $$ drw.setOnOpen(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### setOnClose ###
  * @brief setOnClose
- * Adds a callback function when the drawer is closed *  * 
+ * Adds a callback function when the drawer is closed
  * $$ drw.setOnClose(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### show ###
  * @brief show
- * Open the drawer dynamically *  * 
+ * Open the drawer dynamically
  * $$ drw.show(anchor) $$
  * @param {str} anchor Open position. Can be `left` or `right`. Default is `left`
  */
@@ -85,7 +85,7 @@ Adds a drawer into your app.
 
 /** ### hide ###
  * @brief hide
- * Close the drawer dynamically *  * 
+ * Close the drawer dynamically
  * $$ drw.hide() $$
  */
 

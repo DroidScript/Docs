@@ -3,7 +3,6 @@
 
 /** # CreateTimePicker #
  * @abbrev tmp
-
  * Creates a material design time picker.
  * $$ tmp = MUI.CreateTimePicker(hour, minute, color) $$ 
  * @param {num} hour [0-24]

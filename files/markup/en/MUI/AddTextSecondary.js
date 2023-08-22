@@ -3,7 +3,6 @@
 
 /** # AddTextSecondary #
  * @abbrev txp
-
  * Adds a secondary text to a layout. See @CreateTextSecondary for full documentation.
  * $$ txp = MUI.AddTextSecondary(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

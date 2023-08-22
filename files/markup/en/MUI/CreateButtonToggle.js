@@ -3,7 +3,6 @@
 
 /** # CreateButtonToggle #
  * @abbrev btt
-
  * 
  * $$ btt = MUI.CreateButtonToggle(text, width, height, value, callback, color, backColor) $$ 
  * @param {str} text 

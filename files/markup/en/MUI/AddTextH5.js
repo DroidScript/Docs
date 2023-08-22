@@ -3,7 +3,6 @@
 
 /** # AddTextH5 #
  * @abbrev txh
-
  * Adds an H5 text to a layout. See @CreateTextH5 for full documentation.
  * $$ txh = MUI.AddTextH5(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

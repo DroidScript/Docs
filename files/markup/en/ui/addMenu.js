@@ -46,7 +46,7 @@ Adds a pop-up menu into your components.
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the menu is touch *  * 
+ * Adds a callback handler when the menu is touch
  * $$ men.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["item ","icon ","index "],"pTypes":["str-The menu item text.","str-The menu item icon.","num-The menu item index."]}
  */
@@ -54,7 +54,7 @@ Adds a pop-up menu into your components.
 
 /** ### show ###
  * @brief show
- * Show the menu pop-up * If you passed a parent on initialization, then the menu si anchored on that component *  * 
+ * Show the menu pop-up * If you passed a parent on initialization, then the menu si anchored on that component
  * $$ men.show(parent) $$
  * @param {obj} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
  */
@@ -62,14 +62,14 @@ Adds a pop-up menu into your components.
 
 /** ### hide ###
  * @brief hide
- * Hide the pop-up menu *  * 
+ * Hide the pop-up menu
  * $$ men.hide() $$
  */
 
 
 /** ### setList ###
  * @brief setList
- * Updates the list items on the menu *  * 
+ * Updates the list items on the menu
  * $$ men.setList(list) $$
  * @param {lst} list The list items to show.
  */
@@ -77,7 +77,7 @@ Adds a pop-up menu into your components.
 
 /** ### addItem ###
  * @brief addItem
- * Adds an item in the menu list *  * 
+ * Adds an item in the menu list
  * $$ men.addItem(name, index) $$
  * @param {str} name The new item to be added.
  * @param {num} index The index at which to add the item.
@@ -86,7 +86,7 @@ Adds a pop-up menu into your components.
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes an item in the menu items list by its index *  * 
+ * Removes an item in the menu items list by its index
  * $$ men.removeItemByIndex(index) $$
  * @param {num} index The index of the item to remove.
  */
@@ -94,7 +94,7 @@ Adds a pop-up menu into your components.
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes an item in the menu items list by its name *  * 
+ * Removes an item in the menu items list by its name
  * $$ men.removeItemByName(name) $$
  * @param {str} name The name of the item to remove.
  */
@@ -102,21 +102,21 @@ Adds a pop-up menu into your components.
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item *  * 
+ * Removes the last item
  * $$ men.popItem() $$
  */
 
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item *  * 
+ * Removes the first item
  * $$ men.shiftItem() $$
  */
 
 
 /** ### setPosition ###
  * @brief setPosition
- * Set the position of the menu from the left and top of the anchor component *  * 
+ * Set the position of the menu from the left and top of the anchor component
  * $$ men.setPosition(left, top) $$
  * @param {num} left The position of the menu from the left of the parent or anchor component. The unit is in pixels.
  * @param {num} top The position of the menu from the top of the parent or anchor component. The unit is in pixels.
@@ -125,7 +125,7 @@ Adds a pop-up menu into your components.
 
 /** ### setAutoFocus ###
  * @brief setAutoFocus
- * Sets the autofocus value of the menu items *  * 
+ * Sets the autofocus value of the menu items
  * $$ men.setAutoFocus(bool) $$
  * @param {bin} bool Value can be `true` or `false`
  */
@@ -133,7 +133,7 @@ Adds a pop-up menu into your components.
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable an item in the menu popup *  * 
+ * Enable or disable an item in the menu popup
  * $$ men.setEnabled(index, value) $$
  * @param {num} index The index of the item.
  * @param {bin} value Values can be `true` or `false`. `false` to disable.
@@ -142,7 +142,7 @@ Adds a pop-up menu into your components.
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of an item the menu popup *  * 
+ * Get the enabled state of an item the menu popup
  * $$ men.getEnabled(index) $$
  * @param {num} index The index of the item.
  * @returns bin
@@ -151,7 +151,7 @@ Adds a pop-up menu into your components.
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enable or disable an item in the menu popup by its name *  * 
+ * Enable or disable an item in the menu popup by its name
  * $$ men.setEnabledByName(name, value) $$
  * @param {str} name The name of the corresping item the menu.
  * @param {bin} value Values can be `true` or `false`. `false` to disable an item.
@@ -160,7 +160,7 @@ Adds a pop-up menu into your components.
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of an item in the menu popup *  * 
+ * Get the enabled state of an item in the menu popup
  * $$ men.getEnabledByName(name) $$
  * @param {str} name The name of the item.
  * @returns bin
@@ -169,7 +169,7 @@ Adds a pop-up menu into your components.
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ men.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
  */
@@ -177,7 +177,7 @@ Adds a pop-up menu into your components.
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ men.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -186,7 +186,7 @@ Adds a pop-up menu into your components.
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ men.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -195,21 +195,21 @@ Adds a pop-up menu into your components.
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ men.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ men.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ men.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -218,7 +218,7 @@ Adds a pop-up menu into your components.
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ men.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -227,7 +227,7 @@ Adds a pop-up menu into your components.
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ men.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -239,7 +239,7 @@ Adds a pop-up menu into your components.
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ men.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -251,7 +251,7 @@ Adds a pop-up menu into your components.
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ men.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -261,7 +261,7 @@ Adds a pop-up menu into your components.
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ men.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -273,7 +273,7 @@ Adds a pop-up menu into your components.
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ men.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -281,7 +281,7 @@ Adds a pop-up menu into your components.
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ men.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

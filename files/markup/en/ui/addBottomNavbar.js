@@ -40,7 +40,7 @@ var navs = [
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ bmn.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index.","obj-The pointer event object."]}
  */
@@ -48,7 +48,7 @@ var navs = [
 
 /** ### setList ###
  * @brief setList
- * Sets the navigation actions list *  * 
+ * Sets the navigation actions list
  * $$ bmn.setList(navs) $$
  * @param {lst} navs The navigation actions array. See `navs` param above for format.
  */
@@ -56,7 +56,7 @@ var navs = [
 
 /** ### getList ###
  * @brief getList
- * Returns the navigation actions list *  * 
+ * Returns the navigation actions list
  * $$ bmn.getList() $$
  * @returns lst
  */
@@ -64,7 +64,7 @@ var navs = [
 
 /** ### selectItem ###
  * @brief selectItem
- * Sets navigation action to active by its name. If you are providing a wrong name, no action will be active *  * 
+ * Sets navigation action to active by its name. If you are providing a wrong name, no action will be active
  * $$ bmn.selectItem(name) $$
  * @param {str} name The name to be set to active
  */
@@ -72,7 +72,7 @@ var navs = [
 
 /** ### selectItemByIndex ###
  * @brief selectItemByIndex
- * Sets a botttom navigation action to active by its index *  * 
+ * Sets a botttom navigation action to active by its index
  * $$ bmn.selectItemByIndex(index) $$
  * @param {num} index The index of the bottom navigation action to be selected
  */
@@ -80,14 +80,14 @@ var navs = [
 
 /** ### clearSelection ###
  * @brief clearSelection
- * Clears the selected navigation action *  * 
+ * Clears the selected navigation action
  * $$ bmn.clearSelection() $$
  */
 
 
 /** ### setItemByIndex ###
  * @brief setItemByIndex
- * Updates a navigation action by its index *  * 
+ * Updates a navigation action by its index
  * $$ bmn.setItemByIndex(index, newName, newIcon) $$
  * @param {num} index The index to update
  * @param {str} newName The name of the navigation action
@@ -97,7 +97,7 @@ var navs = [
 
 /** ### setIcon ###
  * @brief setIcon
- * Updates the icon of the given index *  * 
+ * Updates the icon of the given index
  * $$ bmn.setIcon(index, newIcon) $$
  * @param {num} index The index of the navigation action to update
  * @param {str} newIcon Material icon
@@ -106,7 +106,7 @@ var navs = [
 
 /** ### addItem ###
  * @brief addItem
- * Adds a navigation action *  * 
+ * Adds a navigation action
  * $$ bmn.addItem(name, icon, index) $$
  * @param {str} name The name of the navigation action
  * @param {str} icon Material icon
@@ -116,7 +116,7 @@ var navs = [
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes a navigation action by its given index *  * 
+ * Removes a navigation action by its given index
  * $$ bmn.removeItemByIndex(index) $$
  * @param {num} index The index of the navigation action to be remove
  */
@@ -124,7 +124,7 @@ var navs = [
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes a navigation action by its given name *  * 
+ * Removes a navigation action by its given name
  * $$ bmn.removeItemByName(name) $$
  * @param {str} name The name of the navigation action to be remove.
  */
@@ -132,21 +132,21 @@ var navs = [
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first navigation action *  * 
+ * Removes the first navigation action
  * $$ bmn.shiftItem() $$
  */
 
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last navigation action *  * 
+ * Removes the last navigation action
  * $$ bmn.popItem() $$
  */
 
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Sets a callback function to execute when bottom navbar value changes *  * 
+ * Sets a callback function to execute when bottom navbar value changes
  * $$ bmn.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index "],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index."]}
  */
@@ -154,7 +154,7 @@ var navs = [
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead *  * 
+ * Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead
  * $$ bmn.setEnabled(index, value) $$
  * @param {num} index The index of the navigation action.
  * @param {bin} value Values can be `true` or `false`.
@@ -163,7 +163,7 @@ var navs = [
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of a navigation action *  * 
+ * Get the enabled state of a navigation action
  * $$ bmn.getEnabled(index) $$
  * @param {num} index The index of the navigation action.
  * @returns bin
@@ -172,7 +172,7 @@ var navs = [
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enabled or disable a bottom navigation action by its name *  * 
+ * Enabled or disable a bottom navigation action by its name
  * $$ bmn.setEnabledByName(name, value) $$
  * @param {str} name The name of the bottom navigation action.
  * @param {bin} value Values can be `true` or `false`
@@ -181,7 +181,7 @@ var navs = [
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of the bottom navigation action by its name *  * 
+ * Get the enabled state of the bottom navigation action by its name
  * $$ bmn.getEnabledByName(name) $$
  * @param {str} name The name of the bottom navigation action.
  * @returns bin
@@ -190,21 +190,21 @@ var navs = [
 
 /** ### showLabels ###
  * @brief showLabels
- * Shows the text label of the bottom navigation action *  * 
+ * Shows the text label of the bottom navigation action
  * $$ bmn.showLabels() $$
  */
 
 
 /** ### hideLabels ###
  * @brief hideLabels
- * Hides the text label of the bottom navigation action *  * 
+ * Hides the text label of the bottom navigation action
  * $$ bmn.hideLabels() $$
  */
 
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the component is touch *  * 
+ * Adds a callback handler when the component is touch
  * $$ bmn.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
  */
@@ -212,7 +212,7 @@ var navs = [
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ bmn.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -221,7 +221,7 @@ var navs = [
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ bmn.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -230,35 +230,35 @@ var navs = [
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ bmn.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ bmn.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ bmn.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ bmn.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ bmn.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -267,7 +267,7 @@ var navs = [
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ bmn.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -276,7 +276,7 @@ var navs = [
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ bmn.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -288,7 +288,7 @@ var navs = [
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ bmn.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -300,7 +300,7 @@ var navs = [
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ bmn.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -310,7 +310,7 @@ var navs = [
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ bmn.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -320,7 +320,7 @@ var navs = [
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ bmn.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -332,7 +332,7 @@ var navs = [
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ bmn.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -340,7 +340,7 @@ var navs = [
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ bmn.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

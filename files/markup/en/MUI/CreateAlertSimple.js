@@ -3,7 +3,6 @@
 
 /** # CreateAlertSimple #
  * @abbrev als
-
  * Create a simple alert with a single button.
  * $$ als = MUI.CreateAlertSimple(text, btnText, color) $$ 
  * @param {str} text Text of the alert

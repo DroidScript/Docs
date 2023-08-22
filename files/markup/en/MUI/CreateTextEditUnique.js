@@ -3,7 +3,6 @@
 
 /** # CreateTextEditUnique #
  * @abbrev teu
-
  * Creates a unique textedit customization.
  * $$ teu = MUI.CreateTextEditUnique(width, hint, icon, iconCOlor) $$ 
  * @param {num} width 

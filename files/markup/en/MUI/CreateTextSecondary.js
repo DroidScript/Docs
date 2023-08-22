@@ -3,7 +3,6 @@
 
 /** # CreateTextSecondary #
  * @abbrev txs
-
  * Creates a secondary text
  * $$ txs = MUI.CreateTextSecondary(text, width, height, options, color, fontWeight) $$ 
  * @param {str} text 

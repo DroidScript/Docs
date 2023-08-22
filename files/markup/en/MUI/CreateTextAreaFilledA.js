@@ -3,7 +3,6 @@
 
 /** # CreateTextAreaFilledA #
  * @abbrev taf
-
  * Creates an active filled textarea.
  * $$ taf = MUI.CreateTextAreaFilledA(width, height, hint, label, color) $$ 
  * @param {num} width 

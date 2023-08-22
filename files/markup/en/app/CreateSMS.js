@@ -3,7 +3,6 @@
 
 /** # CreateSMS #
  * @abbrev sms
-
  * Returns a new SMS object to send and retreive SMS messages.
  * <xfeature>
  * $$ sms = app.CreateSMS() $$ 

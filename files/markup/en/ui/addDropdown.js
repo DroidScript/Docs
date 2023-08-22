@@ -32,7 +32,7 @@ Adds a dropdown component into your layout.
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Adds a callback function on change event *  * 
+ * Adds a callback function on change event
  * $$ dpd.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["The ","index "],"pTypes":["obj-item text.","num-The index of the corresponding item."]}
  */
@@ -40,15 +40,15 @@ Adds a dropdown component into your layout.
 
 /** ### setOnClose ###
  * @brief setOnClose
- * Adds a callback function on close event *  * 
+ * Adds a callback function on close event
  * $$ dpd.setOnClose(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### setList ###
  * @brief setList
- * Sets the list items on the dropdown *  * 
+ * Sets the list items on the dropdown
  * $$ dpd.setList(val) $$
  * @param {lst} val The list of new items t display.
  */
@@ -56,7 +56,7 @@ Adds a dropdown component into your layout.
 
 /** ### setItemByIndex ###
  * @brief setItemByIndex
- * Updates the text of the corresponding item in the dropdown *  * 
+ * Updates the text of the corresponding item in the dropdown
  * $$ dpd.setItemByIndex(item, index) $$
  * @param {str} item The new item text.
  * @param {num} index The index of the item to update.
@@ -65,7 +65,7 @@ Adds a dropdown component into your layout.
 
 /** ### getItemByIndex ###
  * @brief getItemByIndex
- * Returns a dropdown item by its corresponding index *  * 
+ * Returns a dropdown item by its corresponding index
  * $$ dpd.getItemByIndex(index) $$
  * @param {num} index The index of corresponding item.
  * @returns str
@@ -74,7 +74,7 @@ Adds a dropdown component into your layout.
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable an item in the dropdown *  * 
+ * Enable or disable an item in the dropdown
  * $$ dpd.setEnabled(index, value) $$
  * @param {num} index The index of the item.
  * @param {bin} value Values can be `true` `false`.
@@ -83,7 +83,7 @@ Adds a dropdown component into your layout.
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of an item in the dropdown menu *  * 
+ * Get the enabled state of an item in the dropdown menu
  * $$ dpd.getEnabled(index) $$
  * @param {num} index The index of the item.
  * @returns bin
@@ -92,7 +92,7 @@ Adds a dropdown component into your layout.
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enable or disable an item in the dropdown *  * 
+ * Enable or disable an item in the dropdown
  * $$ dpd.setEnabledByName(name, value) $$
  * @param {str} name The name of the item.
  * @param {bin} value Values can be `true` `false`.
@@ -101,7 +101,7 @@ Adds a dropdown component into your layout.
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of a menu item by its name *  * 
+ * Get the enabled state of a menu item by its name
  * $$ dpd.getEnabledByName(name) $$
  * @param {str} name The name of the corresponding menu item.
  * @returns bin
@@ -110,7 +110,7 @@ Adds a dropdown component into your layout.
 
 /** ### addItem ###
  * @brief addItem
- * Add or insert a menu item in the dropdown list *  * 
+ * Add or insert a menu item in the dropdown list
  * $$ dpd.addItem(name, index) $$
  * @param {str} name The name of the menu.
  * @param {num} index The index in which to insert the menu item.
@@ -119,7 +119,7 @@ Adds a dropdown component into your layout.
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes a menu item in the dropdown by its index *  * 
+ * Removes a menu item in the dropdown by its index
  * $$ dpd.removeItemByIndex(index) $$
  * @param {num} index The index of the menu item to remove.
  */
@@ -127,7 +127,7 @@ Adds a dropdown component into your layout.
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes a menu item in the dropdown by its name *  * 
+ * Removes a menu item in the dropdown by its name
  * $$ dpd.removeItemByName(name) $$
  * @param {str} name The name of the menu item.
  */
@@ -135,21 +135,21 @@ Adds a dropdown component into your layout.
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item in the dropdown menu *  * 
+ * Removes the first item in the dropdown menu
  * $$ dpd.shiftItem() $$
  */
 
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item in the dropdown menu *  * 
+ * Removes the last item in the dropdown menu
  * $$ dpd.popItem() $$
  */
 
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the dropdown *  * 
+ * Sets the corner radius of the dropdown
  * $$ dpd.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
@@ -161,7 +161,7 @@ Adds a dropdown component into your layout.
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the component is touch *  * 
+ * Adds a callback handler when the component is touch
  * $$ dpd.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
  */
@@ -169,7 +169,7 @@ Adds a dropdown component into your layout.
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ dpd.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
  */
@@ -177,7 +177,7 @@ Adds a dropdown component into your layout.
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ dpd.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -186,7 +186,7 @@ Adds a dropdown component into your layout.
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ dpd.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -195,35 +195,35 @@ Adds a dropdown component into your layout.
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ dpd.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ dpd.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ dpd.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ dpd.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ dpd.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -232,7 +232,7 @@ Adds a dropdown component into your layout.
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ dpd.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -241,7 +241,7 @@ Adds a dropdown component into your layout.
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ dpd.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -253,7 +253,7 @@ Adds a dropdown component into your layout.
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ dpd.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -265,7 +265,7 @@ Adds a dropdown component into your layout.
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ dpd.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -275,7 +275,7 @@ Adds a dropdown component into your layout.
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ dpd.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -285,7 +285,7 @@ Adds a dropdown component into your layout.
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ dpd.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -293,7 +293,7 @@ Adds a dropdown component into your layout.
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ dpd.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

@@ -6,7 +6,7 @@
  * @brief showDateTimePicker
  * 
  * $$ dtp = ui.showDateTimePicker(callback, date, time, format) $$ 
- * @param {} callback 
+ * @param {fnc_json} callback 
  * @param {str} date Default value for date of the form "MM/DD/YYYY"
  * @param {str} time Default value for time of the form "HH/MM/SS"
  * @param {str} format The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`
@@ -31,7 +31,7 @@ Show a DateTimePicker where the user can select a date and time.
 
 /** ### setOnSelect ###
  * @brief setOnSelect
- * Sets a callback function on select date and time *  * 
+ * Sets a callback function on select date and time
  * $$ dtp.setOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]}
  */

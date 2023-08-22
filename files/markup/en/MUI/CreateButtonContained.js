@@ -3,7 +3,6 @@
 
 /** # CreateButtonContained #
  * @abbrev btc
-
  * An contained material button.
  * $$ btc = MUI.CreateButtonContained(text, width, height) $$ 
  * @param {str} text 

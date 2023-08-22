@@ -3,7 +3,6 @@
 
 /** # AddAppBarModern #
  * @abbrev abm
-
  * Adds a modern appbar on a given layout. See @CreateAppBarModern for a full documentation.
  * $$ abm = MUI.AddAppBarModern(parent, hint, controlIcon, options, color) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

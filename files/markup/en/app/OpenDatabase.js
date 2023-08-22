@@ -3,7 +3,6 @@
 
 /** # OpenDatabase #
  * @abbrev db
-
  * OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time.
  * $$ db = app.OpenDatabase(name) $$ 
  * @param {str} name 

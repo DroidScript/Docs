@@ -3,7 +3,6 @@
 
 /** # AddButtonOutlined #
  * @abbrev bto
-
  * An outlined material button. See @CreateButtonOutlined for full documentation
  * $$ bto = MUI.AddButtonOutlined(parent, text, width, height) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

@@ -34,7 +34,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Call a function when the value of the radio group has changed *  * 
+ * Call a function when the value of the radio group has changed
  * $$ rdg.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["index "],"pTypes":["num-The index of the selected item."]}
  */
@@ -42,7 +42,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback function when an item is click *  * 
+ * Adds a callback function when an item is click
  * $$ rdg.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["checked ","label ","index ","event "],"pTypes":["bin-The checked state of the radio item.","str-The radio item label text.","num- The index of the radio item.","obj-The click event object."]}
  */
@@ -50,7 +50,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setList ###
  * @brief setList
- * Sets the the radiogroup list items *  * 
+ * Sets the the radiogroup list items
  * $$ rdg.setList(val) $$
  * @param {str} val A comma separated items
  */
@@ -58,7 +58,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setItemByIndex ###
  * @brief setItemByIndex
- * Sets an item in the radiogroup component *  * 
+ * Sets an item in the radiogroup component
  * $$ rdg.setItemByIndex(item, index) $$
  * @param {str} item The new item name to be displayed
  * @param {num} index The index to of the item to be updated
@@ -67,7 +67,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setItemByName ###
  * @brief setItemByName
- * Updates an item in the list by its corresponding name *  * 
+ * Updates an item in the list by its corresponding name
  * $$ rdg.setItemByName(name, text) $$
  * @param {str} name The name of the item.
  * @param {str} text The new text to replaced the name of the item.
@@ -76,7 +76,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### addItem ###
  * @brief addItem
- * Adds an item in the radio group list *  * 
+ * Adds an item in the radio group list
  * $$ rdg.addItem(name, index) $$
  * @param {str} name The new item to be added.
  * @param {num} index The index in which to add the item.
@@ -85,7 +85,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes an item in the radiogroup items list by its index *  * 
+ * Removes an item in the radiogroup items list by its index
  * $$ rdg.removeItemByIndex(index) $$
  * @param {num} index The index of the item to remove.
  */
@@ -93,7 +93,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes an item in the radiogroup items list by its name *  * 
+ * Removes an item in the radiogroup items list by its name
  * $$ rdg.removeItemByName(name) $$
  * @param {str} name The name of the item to remove.
  */
@@ -101,21 +101,21 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item in the radiogroup *  * 
+ * Removes the last item in the radiogroup
  * $$ rdg.popItem() $$
  */
 
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item in the radiogroup *  * 
+ * Removes the first item in the radiogroup
  * $$ rdg.shiftItem() $$
  */
 
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable the radiogroup or an item in the radiogroup *  * 
+ * Enable or disable the radiogroup or an item in the radiogroup
  * $$ rdg.setEnabled(index, value) $$
  * @param {num} index The index of the item.
  * @param {bin} value Values can be `true` or `false`. If `false`, the item will be disabled.
@@ -124,7 +124,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of an item in the radio group *  * 
+ * Get the enabled state of an item in the radio group
  * $$ rdg.getEnabled(index) $$
  * @param {num} index The index of the corresponding item.
  * @returns bin
@@ -133,7 +133,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enable or disable a radiogroup item by its name *  * 
+ * Enable or disable a radiogroup item by its name
  * $$ rdg.setEnabledByName(name, value) $$
  * @param {str} name The radiogroup text.
  * @param {bin} value Values can be `true` or `false`.
@@ -142,7 +142,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of a radiogroup item by its name *  * 
+ * Get the enabled state of a radiogroup item by its name
  * $$ rdg.getEnabledByName(name) $$
  * @param {str} name The radiogroup text.
  * @returns bin
@@ -151,7 +151,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ rdg.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["label ","index ","event "],"pTypes":["str-The list item label text.","num-The index of the corresponding radio item.","obj-The pointer event object."]}
  */
@@ -159,7 +159,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the radiogroup container *  * 
+ * Sets the corner radius of the radiogroup container
  * $$ rdg.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
@@ -171,7 +171,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ rdg.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -180,7 +180,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ rdg.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -189,35 +189,35 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ rdg.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ rdg.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ rdg.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ rdg.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ rdg.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -226,7 +226,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ rdg.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -235,7 +235,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ rdg.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -247,7 +247,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ rdg.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -259,7 +259,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ rdg.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -269,7 +269,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ rdg.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -279,7 +279,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ rdg.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -287,7 +287,7 @@ Adds a radiogroup component into your app. A radiogroup is a type of select list
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ rdg.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

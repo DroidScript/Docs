@@ -3,7 +3,6 @@
 
 /** # AddTESearchElegant #
  * @abbrev tes
-
  * Adds an elegant search textedit on a given layout. See @CreateTESearchElegant for full documentation.
  * $$ tes = MUI.AddTESearchElegant(parent, width, hint, icon, iconPos, color, option) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

@@ -3,7 +3,6 @@
 
 /** # AddFAB #
  * @abbrev fab
-
  * Adds a floating action button. See @CreateFAB, @CreateFABElegant and @CreateFABOutline for a full documentation.
  * $$ fab = MUI.AddFAB(parent, icon, color, options) $$ 
  * @param {obj} parent MUI Layout or DS layout contorl

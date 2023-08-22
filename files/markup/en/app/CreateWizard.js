@@ -3,7 +3,6 @@
 
 /** # CreateWizard #
  * @abbrev wiz
-
  * 
  * $$ wiz = app.CreateWizard(title, width, height, callback, options) $$ 
  * @param {str} title 

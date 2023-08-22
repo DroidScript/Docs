@@ -3,7 +3,6 @@
 
 /** # CreateAppBarModern #
  * @abbrev abm
-
  * A modern appbar with a search input, leading icon and trailing icon
  * $$ abm = MUI.CreateAppBarModern(hint, controlIcon, options, color) $$ 
  * @param {str} hint Hint text for the search input

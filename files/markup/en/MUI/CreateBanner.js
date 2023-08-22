@@ -3,7 +3,6 @@
 
 /** # CreateBanner #
  * @abbrev bnr
-
  * A banner dialog is a nice popup that slides from the top of your current page
  * $$ bnr = MUI.CreateBanner(text, okText, cancelText) $$ 
  * @param {str} text 

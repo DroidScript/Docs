@@ -3,7 +3,6 @@
 
 /** # CreateButtonElegant #
  * @abbrev bte
-
  * An elegant button
  * $$ bte = MUI.CreateButtonElegant(text, width, height, color) $$ 
  * @param {str} text 

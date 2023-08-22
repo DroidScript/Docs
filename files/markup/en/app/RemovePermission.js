@@ -2,7 +2,6 @@
 
 
 /** # RemovePermission #
-
  * Removes a granted permission
  * $$ app.RemovePermission(uri) $$ 
  * @param {str_uri} uri 

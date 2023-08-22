@@ -3,7 +3,6 @@
 
 /** # CreateLayout #
  * @abbrev lay
-
  * 
  * $$ lay = MUI.CreateLayout(type, options) $$ 
  * @param {str} type Linear|Absolute|Frame|Card

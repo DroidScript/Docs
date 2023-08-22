@@ -3,7 +3,6 @@
 
 /** # CreateButtonOutlined #
  * @abbrev bto
-
  * An outlined material button
  * $$ bto = MUI.CreateButtonOutlined(text, width, height) $$ 
  * @param {str} text 

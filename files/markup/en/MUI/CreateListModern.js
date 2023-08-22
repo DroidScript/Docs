@@ -3,7 +3,6 @@
 
 /** # CreateListModern #
  * @abbrev lsm
-
  * 
  * $$ lsm = MUI.CreateListModern(list, width, height, options) $$ 
  * @param {lst} list An array of object elements. See list example

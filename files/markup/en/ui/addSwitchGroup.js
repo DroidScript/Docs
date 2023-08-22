@@ -32,7 +32,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Sets a callback function when the switch item is touch *  * 
+ * Sets a callback function when the switch item is touch
  * $$ swg.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["value ","text ","index ","event "],"pTypes":["bin-The checked state of the switch item.","str-The switch item label text.","num-The index of the corresponding switch item.","obj-The click event."]}
  */
@@ -40,7 +40,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Adds a callback function to be called whent there is a change of value *  * 
+ * Adds a callback function to be called whent there is a change of value
  * $$ swg.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["values "],"pTypes":["lst-An array of indexes corresponding to the checked switch items."]}
  */
@@ -48,7 +48,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setValueByIndex ###
  * @brief setValueByIndex
- * Sets the value of the corresponding item in the list *  * 
+ * Sets the value of the corresponding item in the list
  * $$ swg.setValueByIndex(index, val) $$
  * @param {num} index The index of the corresponding item.
  * @param {bin} val A Values can be `true` or `false`
@@ -57,7 +57,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### getValueByIndex ###
  * @brief getValueByIndex
- * Returns whether an item is check or unchecked *  * 
+ * Returns whether an item is check or unchecked
  * $$ swg.getValueByIndex(index) $$
  * @param {num} index The index of the corresponding item.
  * @returns bin
@@ -66,7 +66,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setList ###
  * @brief setList
- * Updates the list on the switchgroup component *  * 
+ * Updates the list on the switchgroup component
  * $$ swg.setList(lst) $$
  * @param {obj} lst The list array or a comma separated list.
  */
@@ -74,7 +74,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### addItem ###
  * @brief addItem
- * Adds or insert an item in the SwitchGroup list *  * 
+ * Adds or insert an item in the SwitchGroup list
  * $$ swg.addItem(title, icon, value, index) $$
  * @param {str} title The title text.
  * @param {str} icon Material icon font.
@@ -85,7 +85,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes an item in the SwitchGroup by its index *  * 
+ * Removes an item in the SwitchGroup by its index
  * $$ swg.removeItemByIndex(index) $$
  * @param {num} index The index of the corresponding item to remove.
  */
@@ -93,7 +93,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes an item in the SwitchGroup component by its title name *  * 
+ * Removes an item in the SwitchGroup component by its title name
  * $$ swg.removeItemByName(title) $$
  * @param {str} title The title text of the SwitchGroup item.
  */
@@ -101,21 +101,21 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item in the SwitchGroup list *  * 
+ * Removes the last item in the SwitchGroup list
  * $$ swg.popItem() $$
  */
 
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item in SwitchGroup list *  * 
+ * Removes the first item in SwitchGroup list
  * $$ swg.shiftItem() $$
  */
 
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable an item in the switchgroup component *  * 
+ * Enable or disable an item in the switchgroup component
  * $$ swg.setEnabled(index, value) $$
  * @param {num} index The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.
  * @param {bin} value Values can be `true` or `false`.
@@ -124,7 +124,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of an item in the switch group *  * 
+ * Get the enabled state of an item in the switch group
  * $$ swg.getEnabled(index) $$
  * @param {num} index The index of the corresponding item in the switch group.
  * @returns bin
@@ -133,7 +133,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ swg.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The label text of the switchgroup item.","num-The index of the corresponding switchgroup item.","obj-The pointer event object."]}
  */
@@ -141,7 +141,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the switchgroup container *  * 
+ * Sets the corner radius of the switchgroup container
  * $$ swg.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
@@ -153,7 +153,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ swg.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -162,7 +162,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ swg.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -171,35 +171,35 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ swg.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ swg.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ swg.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ swg.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ swg.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -208,7 +208,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ swg.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -217,7 +217,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ swg.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -229,7 +229,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ swg.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -241,7 +241,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ swg.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -251,7 +251,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ swg.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -261,7 +261,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ swg.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -269,7 +269,7 @@ Adds a SwitchGroup Component into your layout. A switchgroup is a list whose ite
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ swg.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

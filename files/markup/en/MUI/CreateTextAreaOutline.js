@@ -3,7 +3,6 @@
 
 /** # CreateTextAreaOutline #
  * @abbrev tao
-
  * Creates an outlined material textarea.
  * $$ tao = MUI.CreateTextAreaOutline(width, height, hint, label, color, backColor) $$ 
  * @param {num} width 

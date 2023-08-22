@@ -3,7 +3,6 @@
 
 /** # AddListModern #
  * @abbrev lsm
-
  * Adds a ListModern control on a given layout. See @CreateListModern for a full documentation.
  * $$ lsm = MUI.AddListModern(parent, list, width, height, options) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

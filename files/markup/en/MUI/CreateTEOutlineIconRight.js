@@ -3,7 +3,6 @@
 
 /** # CreateTEOutlineIconRight #
  * @abbrev teo
-
  * Creates a material outlined text input with icon on the right.
  * $$ teo = MUI.CreateTEOutlineIconRight(width, options, icon, hint, label, color, backColor) $$ 
  * @param {num} width 

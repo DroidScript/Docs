@@ -7,7 +7,7 @@ const ver = "v257";
 const dir = "json/en/" + ver;
 const outDir = "markup/en/";
 
-const baseIDAlways = true;
+const baseIDAlways = false;
 
 /**
  * @param {String} scope 

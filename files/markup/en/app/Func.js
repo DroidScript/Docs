@@ -2,7 +2,6 @@
 
 
 /** # Func #
-
  * Call main app functions from inside a webview
  * $$ app.Func(name, args...) $$ 
  * @param {str} name 

@@ -128,7 +128,8 @@
 
 
 /** ### SetTimeout ###
- * 
+ * @brief Set idle disconnect timeout
+ * Set a timeout after which the connection will canceled when no communication happened
  * $$ bls.SetTimeout(milliseconds) $$
  * @param {num_mls} milliseconds 
  */

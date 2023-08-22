@@ -29,21 +29,21 @@ Adds a date picker component to the app.
 
 /** ### show ###
  * @brief show
- * Show the date picker the dialog *  * 
+ * Show the date picker the dialog
  * $$ dtp.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the date picker dialog *  * 
+ * Hide the date picker dialog
  * $$ dtp.hide() $$
  */
 
 
 /** ### setLimits ###
  * @brief setLimits
- * Set a limit to which the date picker dialog can render a date *  * 
+ * Set a limit to which the date picker dialog can render a date
  * $$ dtp.setLimits(past, future) $$
  * @param {str} past Date in the past of the form `YYYY-MM-DD`
  * @param {str} future Date in the future of the form `YYYY-MM-DD`
@@ -52,7 +52,7 @@ Adds a date picker component to the app.
 
 /** ### setOnSelect ###
  * @brief setOnSelect
- * Sets a callback function to execute when date picker dialog is submitted *  * 
+ * Sets a callback function to execute when date picker dialog is submitted
  * $$ dtp.setOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["date "],"pTypes":["str-The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property."]}
  */
@@ -60,7 +60,7 @@ Adds a date picker component to the app.
 
 /** ### setFormat ###
  * @brief setFormat
- * Sets the format of the date to be passed into the onSelect callback *  * 
+ * Sets the format of the date to be passed into the onSelect callback
  * $$ dtp.setFormat(format) $$
  * @param {str} format A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`
  */
@@ -68,7 +68,7 @@ Adds a date picker component to the app.
 
 /** ### isVisible ###
  * @brief isVisible
- * Get the current visibility of the date picker *  * 
+ * Get the current visibility of the date picker
  * $$ dtp.isVisible() $$
  * @returns bin
  */

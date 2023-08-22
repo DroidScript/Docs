@@ -58,7 +58,7 @@ The following example demonstrates web sockets being used to receive messages fr
 
 /** ### AddRedirect ###
  * @brief Redirect urls
- * Redirects a url pattern (with * wildcards) to a target location
+ * Redirects a url pattern (with \* wildcards) to a target location
  * $$ sock.AddRedirect(pattern, location) $$
  * @param {str_url} pattern 
  * @param {str_url} location 

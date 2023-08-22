@@ -4,7 +4,7 @@
 /** # CreateTextH2 #
  * @abbrev txh
  * @brief Creates a heading text 2
- * Creates a heading text 
+ * Creates a heading text
  * $$ txh = MUI.CreateTextH2(text, width, height, options, color, fontWeight) $$ 
  * @param {str} text 
  * @param {num} width 

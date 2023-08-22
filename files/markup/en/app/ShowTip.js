@@ -2,7 +2,6 @@
 
 
 /** # ShowTip #
-
  * Shows a tooltip message on the screen.
  * $$ app.ShowTip(message, left, top, timeOut, options) $$ 
  * @param {str} message 

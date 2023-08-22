@@ -259,7 +259,7 @@
 		"retval": "dso-AudioRecorder",
 		"shortDesc": "Returns an AudioRecorder object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetData": {
 				"desc": "Returns a list of frequency values. The amount is dependent on the set frequency.",
 				"retval": "lst-[ frequencies:num_int ]",
@@ -316,7 +316,7 @@
 		"retval": "dso-BluetoothList",
 		"shortDesc": "Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-BluetoothList"
@@ -340,7 +340,7 @@
 		"retval": "dso-BluetoothSerial",
 		"shortDesc": "Communicate with other Bluetooth devices",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Clear": {
 				"desc": "Clears the Bluetooth buffer of the serial connection."
 			},
@@ -379,7 +379,7 @@
 				"pTypes": ["bin"],
 				"shortDesc": "Listen <s>or stop listening</s> for incoming messages"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"RequestEnable": {
 				"desc": "If Bluetooth is disabled, shows an android dialog which asks the user to enable bluetooth connection. If granted, bluetooth will be enabled automatically. No callback fired.",
 				"shortDesc": "Ask user to enable Bluetooth"
@@ -439,68 +439,68 @@
 		"retval": "dso-Button",
 		"shortDesc": "Creates a button control",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Button"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEllipsize": "#0897234673",
-			"SetEnabled": "#1602385882",
-			"SetFontFile": "#0197498372",
-			"SetHtml": "#8753208754",
-			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEllipsize": "#SetEllipsize",
+			"SetEnabled": "#SetEnabled",
+			"SetFontFile": "#SetFontFile",
+			"SetHtml": "#SetHtml",
+			"SetMargins": "#SetMargins",
+			"SetOnTouch": "#SetOnTouch",
 			"SetOnLongTouch": {
 				"desc": "%cb% the button has been long pressed.",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when the button was long pressed"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetStyle": {
 				"desc": "Customize the look of the button.",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
 				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
 				"shortDesc": "Customize the button looks"
 			},
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextShadow": "#1093247031",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextShadow": "#SetTextShadow",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateCameraView": {
@@ -511,16 +511,16 @@
 		"retval": "dso-CameraView",
 		"shortDesc": "Returns a new CameraView object to access the device camera",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
 			"AutoCapture": {
 				"desc": "Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.\nThe first # in the filename is a placeholder for numbers increasing for every taken picture.",
 				"pNames": ["path", "fileName", "maxCount"],
 				"pTypes": ["str_ptd", "str-File_n#_motion", "num_int"],
 				"shortDesc": "Takes a picture if a motion was detected"
 			},
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"FindFaces": {
 				"desc": "Finds faces in the current camera view.",
 				"pNames": ["maxCount"],
@@ -528,9 +528,9 @@
 				"retval": "obj-{ confidence:num_frc&comma; eyeDistance:num&comma; midPoint:obj:{x:num&comma; y:num}&comma; pose:num_int }",
 				"shortDesc": "Find faces in the current camera view"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetCameraCount": {
 				"desc": "Returns the amount of cameras built in to the device.",
 				"retval": "num_int",
@@ -541,7 +541,7 @@
 				"retval": "str-none,mono,negative,solarize,sepia,posterize,whiteboard,blackboard,aqua,vage-cold,point-blue,point-red-yellow,emboss,sketch,neon",
 				"shortDesc": "Returns a new list of available color effects"
 			},
-			"GetHeight": "#2576212953",
+			"GetHeight": "#GetHeight",
 			"GetImageHeight": {
 				"desc": "Returns the camera capture height in pixels.",
 				"retval": "num_frc",
@@ -552,7 +552,7 @@
 				"retval": "num_frc",
 				"shortDesc": "Returns the camera width"
 			},
-			"GetLeft": "#1237814406",
+			"GetLeft": "#GetLeft",
 			"GetMaxZoom": {
 				"desc": "Returns the hightst possible zoom value.",
 				"retval": "num"
@@ -562,7 +562,7 @@
 				"retval": "str_smc-key1=value1;key2=value2;...",
 				"shortDesc": "Get camera parameters"
 			},
-			"GetParent": "#3557841648",
+			"GetParent": "#GetParent",
 			"GetPictureSizes": {
 				"desc": "Returns a list of possible picture dimensions.",
 				"retval": "str_com-w1 x h1\\,w2 x h2\\,...",
@@ -575,34 +575,34 @@
 				"retval": "str_b64",
 				"shortDesc": "Returns base64 pixel data as raw bitmap, png or jpg format"
 			},
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-CameraView"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
 			"GetZoom": {
 				"desc": "Returns the curent zoom value.",
 				"retval": "num"
 			},
-			"Gone": "#5528553362",
+			"Gone": "#Gone",
 			"HasFlash": {
 				"desc": "Checks if the currently used camera has a camera flash.",
 				"retval": "bin",
 				"shortDesc": "Returns if the current camera supports flashlight"
 			},
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
 			"IsRecording": {
 				"desc": "Returns a boolea indicating whether the camera is currently recording a video.",
 				"retval": "bin",
 				"shortDesc": "Returns if the camera is currently recording"
 			},
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"MotionMosaic": {
 				"desc": "Defines a raster which is used for motion detection.\nUse AutoCapture to take pictures if a motion was detected.",
 				"pNames": ["xtiles", "ytiles", "sensitivity", "minPeriod", "image"],
@@ -624,25 +624,25 @@
 				}, "num_pxl", "num_mls"],
 				"shortDesc": "Keeps tracks of the average color around a given point"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetColorEffect": {
 				"desc": "Applies a color effect to the camera.",
 				"pNames": ["effect"],
 				"pTypes": ["str-none|mono|negative|solarize|sepia|posterize|whiteboard|blackboard|aqua|vage-cold|point-blue|point-red-yellow|emboss|sketch|neon"]
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
 			"SetDuplicateImage": {
 				"desc": "Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.",
 				"pNames": ["image1", "image2"],
 				"pTypes": ["dso-CreateImage", "dso-CreateImage"],
 				"shortDesc": "Define two camera view duplicate targets"
 			},
-			"SetEnabled": "#1602385882",
+			"SetEnabled": "#SetEnabled",
 			"SetFlash": {
 				"desc": "En- or disables the camera flash if available.",
 				"pNames": ["onoff"],
@@ -655,8 +655,8 @@
 				"pTypes": ["str-Auto|Picture:for taking pictures|Video:for recording videos|Macro|EDOF:Extended Depth Of Field for continuous digital focusing|Fixed|Infinity"],
 				"shortDesc": "Change focus mode"
 			},
-			"SetMargins": "#1741900074",
-			"SetOnFocus": "#9283752301",
+			"SetMargins": "#SetMargins",
+			"SetOnFocus": "#SetOnFocus",
 			"SetOnPicture": {
 				"desc": "Defines a callback function which is called if cam.AutoCapture took a picture. The _file_ parameter contains the path to the image file.",
 				"pNames": ["callback"],
@@ -677,7 +677,7 @@
 				"pNames": ["angle"],
 				"pTypes": ["num_deg-0|90|180|270"]
 			},
-			"SetPadding": "#1923105617",
+			"SetPadding": "#SetPadding",
 			"SetParameter": {
 				"desc": "Change property values of the camera.\nSee GetProperties to get a full list of available keys.",
 				"pNames": ["name", "value"],
@@ -689,7 +689,7 @@
 				"pNames": ["width", "height"],
 				"pTypes": ["num_pxl", "num_pxl"]
 			},
-			"SetPosition": "#1425862386",
+			"SetPosition": "#SetPosition",
 			"SetPostRotation": {
 				"desc": "Rotates captured image in any desired angle in degrees.",
 				"pNames": ["angle"],
@@ -702,8 +702,8 @@
 				"pTypes": ["dso-CreateImage"],
 				"shortDesc": "Define a preview image for captured pictures"
 			},
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetSound": {
 				"desc": "En-/Disables the camera sound playing when taking pictures.",
 				"pNames": ["enabled"],
@@ -716,13 +716,13 @@
 				"pTypes": ["num_pxl", "num_pxl"],
 				"shortDesc": "Define custom video recording size"
 			},
-			"SetVisibility": "#1004824195",
+			"SetVisibility": "#SetVisibility",
 			"SetZoom": {
 				"desc": "Change the zoom value of the camera.",
 				"pNames": ["level"],
 				"pTypes": ["num"]
 			},
-			"Show": "#1243391562",
+			"Show": "#Show",
 			"StartPreview": {
 				"desc": "Start the camera preview on the display."
 			},
@@ -744,7 +744,7 @@
 				"pTypes": ["str_ptf"],
 				"shortDesc": "Save the current camera view to a file"
 			},
-			"Tween": "#2114624769"
+			"Tween": "#Tween"
 		}
 	},
 	"CreateCanvas": {
@@ -762,52 +762,52 @@
 		"retval": "dso-CheckBox",
 		"shortDesc": "Returns a new CheckBox object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetChecked": {
 				"desc": "Checks if the checkbox is currently checked or not.",
 				"retval": "bin",
 				"shortDesc": "Get current checked state"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-CheckBox"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetChecked": {
 				"desc": "Changes the current checked state of the CheckBox.",
 				"pNames": ["checked"],
 				"pTypes": ["bin"],
 				"shortDesc": "Changes the ckecked state"
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches the CheckBox.",
 				"pNames": ["callback"],
@@ -817,16 +817,16 @@
 				}],
 				"shortDesc": "Called when the CheckBox was touched"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateCloudStore": {
@@ -837,7 +837,7 @@
 		"retval": "dso-CloudStore",
 		"shortDesc": "Returns a new CloudStore object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-CloudStore"
@@ -887,7 +887,7 @@
 				}, "str"],
 				"shortDesc": "Saves data in the cloud."
 			},
-			"SetDescription": "#0937259723",
+			"SetDescription": "#SetDescription",
 			"Upload": {
 				"desc": "Upload a file to the cloud.",
 				"pNames": ["data", "name", "type", "callback", "password"],
@@ -906,10 +906,10 @@
 		"retval": "dso-CodeEdit",
 		"shortDesc": "Returns a new CodeEdit object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history."
 			},
@@ -921,9 +921,9 @@
 				"desc": "Cut selected text and copies it to the device clipboard.",
 				"shortDesc": "Cut selected text to the clipboard"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetCursorLine": {
 				"desc": "Returns the current line index where the cursor is located.",
 				"retval": "num_int",
@@ -934,8 +934,8 @@
 				"retval": "num_int",
 				"shortDesc": "Get the cursor position in the text"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
 			"GetLineStart": {
 				"desc": "Returns at which character in the text a certain line begins.",
 				"pNames": ["line"],
@@ -943,8 +943,8 @@
 				"retval": "num_int",
 				"shortDesc": "Get the start character index of a line"
 			},
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
 			"GetSelectedText": {
 				"desc": "Returns the currently selected text.",
 				"retval": "str",
@@ -965,16 +965,16 @@
 				"retval": "bin",
 				"shortDesc": "Get current selection state"
 			},
-			"GetText": "#2387569276",
-			"GetTop": "#1981028136",
+			"GetText": "#GetText",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-CodeEdit"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
 			"HighlightLine": {
 				"desc": "Highlights a specific line in the text with a thin red underline.",
 				"pNames": ["line"],
@@ -987,10 +987,10 @@
 				"pTypes": ["str"],
 				"shortDesc": "Insert text at the cursor"
 			},
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"Paste": {
 				"desc": "Paste text from the clipboard at the current cursor position.",
 				"shortDesc": "Paste clipboard to the current cursor position"
@@ -1025,12 +1025,12 @@
 				"desc": "Selects the whole text.",
 				"shortDesc": "Select the whole text"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
 			"SetColorScheme": {
 				"desc": "Changes the color scheme of the CodeEdit.",
 				"pNames": ["scheme"],
@@ -1041,22 +1041,22 @@
 				"pNames": ["position"],
 				"pTypes": ["num_int"]
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetHtml": "#8753208754",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetHtml": "#SetHtml",
 			"SetLanguage": {
 				"desc": "Change the highlighted language syntax.",
 				"pNames": ["ext"],
 				"pTypes": ["str-.js,.java,.php,.c,.cpp,.cs,.rb,.m,.py,.txt"]
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetNavigationMethod": {
 				"desc": "Select between navigating using the Yoyo or standard touch.",
 				"pNames": ["method"],
 				"pTypes": ["str-Yoyo|Touch"],
 				"shortDesc": "Select between Yoyo or Touch mode"
 			},
-			"SetOnChange": "#2137502353",
+			"SetOnChange": "#SetOnChange",
 			"SetOnDoubleTap": {
 				"desc": "Defines a callback function which is called when the user double-taps the Yoyo.",
 				"pNames": ["callback"],
@@ -1072,9 +1072,9 @@
 				}],
 				"shortDesc": "Define a key-event callback function"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
 			"SetSelection": {
 				"desc": "Selects part of the text in a given range.",
 				"pNames": ["start", "stop"],
@@ -1086,19 +1086,19 @@
 				"pTypes": ["bin"],
 				"shortDesc": "En/Disable cursor selection mode"
 			},
-			"SetSize": "#1296070870",
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
+			"SetSize": "#SetSize",
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
 			"SetUseKeyboard": {
 				"desc": "En/Disable usage of the device keyboard.",
 				"pNames": ["onOff"],
 				"pTypes": ["bin"],
 				"shortDesc": "En/Disable device keyboard"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween",
 			"Undo": {
 				"desc": "Undo an action."
 			}
@@ -1112,7 +1112,7 @@
 		"retval": "dso-Crypt",
 		"shortDesc": "Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Decrypt": {
 				"desc": "Decrypt text with a key.",
 				"pNames": ["text", "password"],
@@ -1135,7 +1135,7 @@
 				"pTypes": ["str", "str-MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512", "str-Wrap"],
 				"shortDesc": "Get a hash from a string"
 			},
-			"SetDescription": "#0937259723"
+			"SetDescription": "#SetDescription"
 		}
 	},
 	"CreateCustomTabs": {
@@ -1159,60 +1159,60 @@
 				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Add content layout"
 			},
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Dismiss": "#1924613953",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Dismiss": "#Dismiss",
 			"EnableBackKey": {
 				"desc": "En/Disables the device back key to hide the dialog.",
 				"pNames": ["enable"],
 				"pTypes": ["bin"],
 				"shortDesc": "En/Disables hiding via presing the back key"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
 			"GetTitleHeight": {
 				"desc": "Returns the height of the title bar.",
 				"retval": "num_pxl",
 				"shortDesc": "Get title bar height"
 			},
-			"GetTop": "#1981028136",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Dialog"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"RemoveLayout": {
 				"desc": "Removes a content layout.",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"]
 			},
-			"SetBackAlpha": "#1162431318",
+			"SetBackAlpha": "#SetBackAlpha",
 			"SetBackColor": {
 				"desc": "Changes the background color of the control.",
 				"pNames": ["color", "radius"],
 				"pTypes": ["str_col", "num_pxl"],
 				"shortDesc": "Change the background color"
 			},
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnBack": {
 				"desc": "%cb% the device's back button was pressed while the dialog was on front.",
 				"pNames": ["callback"],
@@ -1226,10 +1226,10 @@
 				"shortDesc": "Called when the dialog is cancelled"
 			},
 			"SetOnTouch": "#2088093920",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetTitle": {
 				"desc": "Changes the title of the dialog.",
 				"pNames": ["title"],
@@ -1264,9 +1264,9 @@
 				"pTypes": ["num", "str-px|sp|dip|mm|pt"],
 				"shortDesc": "Changes the title text size"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateDownloader": {
@@ -1277,7 +1277,7 @@
 		"retval": "dso-Downloader",
 		"shortDesc": "Returns a new Downloader object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Download": {
 				"desc": "Start downloading one or multiple files.",
 				"pNames": ["url", "fldr", "name", "headers"],
@@ -1303,7 +1303,7 @@
 				"retval": "bin",
 				"shortDesc": "Get download completed state"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"SetOnCancel": {
 				"desc": "%cb% download is cancelled.",
 				"pNames": ["callback"],
@@ -1347,7 +1347,7 @@
 		"retval": "dso-Email",
 		"shortDesc": "Returns an Email object for user to send emails",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Email"
@@ -1401,7 +1401,7 @@
 		"retval": "dso-File",
 		"shortDesc": "Returns a new File object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Close": {
 				"desc": "Close File"
 			},
@@ -1502,42 +1502,42 @@
 		"pNames": ["width", "height", "options"],
 		"pTypes": ["num_frc", "num_frc", "str_com"],
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"Execute": {
 				"desc": "Execute some code inside the GameView.",
 				"pNames": ["js"],
 				"pTypes": ["str_jsc"],
 				"shortDesc": "Execute code inside the GameView"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name."
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetFile": {
 				"desc": "Loads a GameView script file.",
 				"pNames": ["file"],
@@ -1550,14 +1550,14 @@
 				"pTypes": ["num_fps"],
 				"shortDesc": "Change the target framerate"
 			},
-			"SetMargins": "#1741900074",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetMargins": "#SetMargins",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateGLView": {
@@ -1573,13 +1573,13 @@
 				"isval": true,
 				"retval": "num_flt"
 			},
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"canvas": {
 				"desc": "[HTMLDivElement]",
 				"isval": true,
 				"retval": "obj"
 			},
-			"ClearFocus": "#1362225380",
+			"ClearFocus": "#ClearFocus",
 			"CreateImage": {
 				"desc": "Create a sprite object which can be drawn on the GLView",
 				"pNames": ["file", "callback"],
@@ -1598,9 +1598,9 @@
 				"pTypes": ["obj-GLV Image", "num_pxl", "num_pxl", "num_pxl", "num_pxl", "num_frc", "num_frc", "num_frc", "num_frc", "num_deg"],
 				"shortDesc": "Draw part of a sprite to the canvas"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetContext": {
 				"desc": "Returns the current FastCanvas context",
 				"retval": "obj-ctx",
@@ -1668,50 +1668,50 @@
 				"pTypes": ["num_pxl", "num_pxl"],
 				"shortDesc": "'Move' the transformation matrix"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-GLView"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
 			"height": {
 				"isval": true,
 				"retval": "num_int"
 			},
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"Render": {
 				"desc": "Render all draw commands to the canvas",
 				"shortDesc": "Render draw commands"
 			},
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnTouch": "#2088093920",
-			"SetOnTouchDown": "#2938578932",
-			"SetOnTouchMove": "#2039582034",
-			"SetOnTouchUp": "#9861324731",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetTouchable": "#2562918782",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769",
+			"SetOnTouchDown": "#SetOnTouchDown",
+			"SetOnTouchMove": "#SetOnTouchMove",
+			"SetOnTouchUp": "#SetOnTouchUp",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetTouchable": "#SetTouchable",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween",
 			"width": {
 				"isval": true,
 				"retval": "num_int"
@@ -1726,14 +1726,14 @@
 		"retval": "dso-Image",
 		"shortDesc": "Returns a new Image object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
 			"Clear": {
 				"desc": "Clears everything on the image except the background.",
 				"shortDesc": "Clears the image content"
 			},
-			"ClearFocus": "#1362225380",
+			"ClearFocus": "#ClearFocus",
 			"DrawArc": {
 				"desc": "Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.",
 				"pNames": ["x1", "y1", "x2", "y2", "start", "sweep"],
@@ -1791,16 +1791,16 @@
 				"desc": "Applies certain modifications to the image data, such as translate, scale, skew or alpha.",
 				"shortDesc": "Applies modifications to the image data"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
 			"GetName": {
 				"desc": "Returns the name set via SetName.",
 				"retval": "str"
 			},
-			"GetParent": "#3557841648",
+			"GetParent": "#GetParent",
 			"GetPixelColor": {
 				"desc": "Returns the [r,g,b] values from a pixel on the image.",
 				"pNames": ["x", "y"],
@@ -1815,19 +1815,19 @@
 				"retval": "str_b64",
 				"shortDesc": "Returns base64 encoded image data"
 			},
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Image"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
 			"MeasureText": {
 				"desc": "Measure width and height of a given text with the current image settings.",
 				"pNames": ["txt"],
@@ -1835,7 +1835,7 @@
 				"retval": "obj-{ width:num_frc&comma; height:num_frc }",
 				"shortDesc": "Measures the size of a given text"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"Move": {
 				"desc": "Moves the content of the image to the specified position.",
 				"pNames": ["x", "y"],
@@ -1873,21 +1873,21 @@
 				"pTypes": ["bin"],
 				"shortDesc": "En/Disables automatic view updates"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetColor": {
 				"desc": "Fills the image with a specific color.",
 				"pNames": ["color"],
 				"pTypes": ["str_col"],
 				"shortDesc": "Fills the image with a color"
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetFontFile": "#0197498372",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetFontFile": "#SetFontFile",
 			"SetImage": {
 				"desc": "Set the content to an image:dso-\"CreateImage\" control or specify a path to an image which will then be loaded.",
 				"pNames": ["image", "width", "height", "options"],
@@ -1900,7 +1900,7 @@
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Change the stroke width"
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetMaxRate": {
 				"desc": "Set a minimum timeout between two touch 'move' actions fired.",
 				"pNames": ["milliseconds"],
@@ -1921,12 +1921,12 @@
 				}],
 				"shortDesc": "Called when image has loaded asynchronously"
 			},
-			"SetOnLongTouch": "#2735982374",
+			"SetOnLongTouch": "#SetOnLongTouch",
 			"SetOnTouch": "#2088093920",
-			"SetOnTouchDown": "#2938578932",
-			"SetOnTouchMove": "#2039582034",
-			"SetOnTouchUp": "#9861324731",
-			"SetPadding": "#1923105617",
+			"SetOnTouchDown": "#SetOnTouchDown",
+			"SetOnTouchMove": "#SetOnTouchMove",
+			"SetOnTouchUp": "#SetOnTouchUp",
+			"SetPadding": "#SetPadding",
 			"SetPaintColor": {
 				"desc": "Change the current paint color for drawing methods.",
 				"pNames": ["color"],
@@ -1951,18 +1951,18 @@
 				"pTypes": ["bin"],
 				"shortDesc": "Change the pixel mode for drawing methods"
 			},
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetTextSize": {
 				"desc": "Change the size of drawn text.",
 				"pNames": ["size"],
 				"pTypes": ["num"],
 				"shortDesc": "Change the drawn text size"
 			},
-			"SetTouchable": "#2562918782",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
+			"SetTouchable": "#SetTouchable",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
 			"Skew": {
 				"desc": "Skews the content.",
 				"pNames": ["x", "y"],
@@ -1974,7 +1974,7 @@
 				"pTypes": ["lst"],
 				"shortDesc": "Applies a transformation matrix to the content"
 			},
-			"Tween": "#2114624769",
+			"Tween": "#Tween",
 			"Update": {
 				"desc": "Update the view in disabled AutoUpdate mode."
 			}
@@ -1994,59 +1994,59 @@
 				"pTypes": ["dso", "num_int"],
 				"shortDesc": "Add a control to the layout"
 			},
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
 			"ChildToFront": {
 				"desc": "Moves a child in front of all other children.",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
 				"shortDesc": "Moves a child to the layout front"
 			},
-			"ClearFocus": "#1362225380",
+			"ClearFocus": "#ClearFocus",
 			"DestroyChild": {
 				"desc": "Destroys and removes a child from the layout.",
 				"pNames": ["child"],
 				"pTypes": ["dso"]
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetChildOrder": {
 				"desc": "Returns the z order of a child.",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
 				"retval": "num_int"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Layout"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"RemoveChild": {
 				"desc": "Removes a child from the layout.",
 				"pNames": ["child"],
 				"pTypes": ["dso"],
 				"shortDesc": "Remove a child from the layout"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
 			"SetChildMargins": {
 				"desc": "Set margins of top-level children.",
 				"pNames": ["left", "top", "right", "bottom", "mode"],
@@ -2070,14 +2070,14 @@
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply shadow to card layouts's"
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetGravity": {
 				"desc": "Adjust the placing of contained children.",
 				"pNames": ["gravity"],
 				"pTypes": ["str-Left,Top,Right,Bottom,VCenter,HCenter,FillX,FillY,FillXY"]
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetOnChildChange": {
 				"desc": "Defines a callback function which is called when the content of a child control has been changed by the user.",
 				"pNames": ["callback"],
@@ -2087,30 +2087,30 @@
 				}],
 				"shortDesc": "Called when the user changed a control content"
 			},
-			"SetOnLongTouch": "#2735982374",
+			"SetOnLongTouch": "#SetOnLongTouch",
 			"SetOnTouch": "#2088093920",
-			"SetOnTouchDown": "#2938578932",
-			"SetOnTouchMove": "#2039582034",
-			"SetOnTouchUp": "#9861324731",
+			"SetOnTouchDown": "#SetOnTouchDown",
+			"SetOnTouchMove": "#SetOnTouchMove",
+			"SetOnTouchUp": "#SetOnTouchUp",
 			"SetOrientation": {
 				"desc": "Change the children orientation.",
 				"pNames": ["orient"],
 				"pTypes": ["str-Horizontal|Vertical"]
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetTouchable": "#2562918782",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetTouchable": "#SetTouchable",
 			"SetTouchThrough": {
 				"desc": "Define whether the layout should forward OnTouch events to underlying controls.",
 				"pNames": ["through"],
 				"pTypes": ["bin"],
 				"shortDesc": "Enable touch event forwarding"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateList": {
@@ -2126,17 +2126,17 @@
 				"pNames": ["title", "body", "image"],
 				"pTypes": ["str", "str", "str||str_ptf"]
 			},
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"Expand": {
 				"desc": "?"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
 			"GetItem": {
 				"desc": "Returns item data of an item with a specific title.",
 				"pNames": ["title"],
@@ -2151,7 +2151,7 @@
 				"retval": "obj-{ title:str&comma; body:str&comma; image:str_pth }",
 				"shortDesc": "Returns item data by an index."
 			},
-			"GetLeft": "#1237814406",
+			"GetLeft": "#GetLeft",
 			"GetLength": {
 				"desc": "Returns the amount of items in the lists.",
 				"retval": "num_int",
@@ -2164,28 +2164,28 @@
 				"retval": "lst_obj-[{ title:str&comma; body:str&comma; image:str_pth }]||str-title1[DELIM]title2[DELIM]...",
 				"shortDesc": "Returns the whole list as object"
 			},
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-List"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
 			"InsertItem": {
 				"desc": "Inserts an item at s specific index in the list.",
 				"pNames": ["index", "title", "body", "image"],
 				"pTypes": ["num_int", "str", "str", "str||str_ptf"],
 				"shortDesc": "Inserts an item into the list"
 			},
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"RemoveAll": {
 				"desc": "Removes all entries of the list.",
 				"shortDesc": "Clears the list"
@@ -2226,12 +2226,12 @@
 				"pTypes": ["num_int", "bin"],
 				"shortDesc": "Highlight an item by its index"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
 			"SetColumnWidths": {
 				"desc": "Changes the coloumn withs for title, body and icon. Often used with the “Horiz” option.",
 				"pNames": ["icon", "title", "body", "mode"],
@@ -2244,7 +2244,7 @@
 				"pTypes": ["num_frc", "str_col"],
 				"shortDesc": "Changes the divider style"
 			},
-			"SetEllipsize": "#0897234673",
+			"SetEllipsize": "#SetEllipsize",
 			"SetEllipsize1": {
 				"desc": "Will cause the element titles to be broken with ... at the start or the end if it cannot fit in the control.",
 				"pNames": ["mode"],
@@ -2257,9 +2257,9 @@
 				"pTypes": ["str-start|middle|end"],
 				"shortDesc": "Auto-crop bodys to fit in control"
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetFontFile": "#0197498372",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetFontFile": "#SetFontFile",
 			"SetHiTextColor1": {
 				"desc": "Change the highlight color of titles when selected.",
 				"pNames": ["color"],
@@ -2313,7 +2313,7 @@
 				"pNames": ["list", "delim"],
 				"pTypes": ["str_lst-title|title&colon;icon|title&colon;body&colon;icon", "str"]
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetOnLongTouch": {
 				"desc": "Define a callback function that is called when the user touches a list item.",
 				"pNames": ["callback"],
@@ -2332,11 +2332,11 @@
 				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetTextColor": "#0175303923",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetTextColor": "#SetTextColor",
 			"SetTextColor1": {
 				"desc": "Change the default text color of titles.",
 				"pNames": ["color"],
@@ -2353,7 +2353,7 @@
 				"pTypes": ["num", "num", "num", "num_frc", "str-px|sp|dip|mm|pt", "str-inner:around each individual title and body|outer:around both title and body together"],
 				"shortDesc": "Define distances to other controls"
 			},
-			"SetTextShadow": "#1093247031",
+			"SetTextShadow": "#SetTextShadow",
 			"SetTextShadow1": {
 				"desc": "Apply text shadows to titles.",
 				"pNames": ["radius", "dx", "dy", "color"],
@@ -2366,7 +2366,7 @@
 				"pTypes": ["num_deg", "num_int", "num_int", "str_col"],
 				"shortDesc": "Apply shadow to bodies"
 			},
-			"SetTextSize": "#5019790423",
+			"SetTextSize": "#SetTextSize",
 			"SetTextSize1": {
 				"desc": "Change the text size for titles.",
 				"pNames": ["size", "mode"],
@@ -2379,9 +2379,9 @@
 				"pTypes": ["num", "str_com-px|sp|dip|mm|pt"],
 				"shortDesc": "Set body text size"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateListDialog": {
@@ -2392,17 +2392,17 @@
 		"retval": "dso-ListDialog",
 		"shortDesc": "Returns a new ListDialog object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
-			"Dismiss": "#1924613953",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
+			"Dismiss": "#Dismiss",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-ListDialog"
 			},
-			"Hide": "#5372805812",
-			"Method": "#1023663567",
-			"SetBackColor": "#3857861627",
-			"SetBackground": "#1239127541",
+			"Hide": "#Hide",
+			"Method": "#Method",
+			"SetBackColor": "#SetBackColor",
+			"SetBackground": "#SetBackground",
 			"SetOnTouch": {
 				"desc": "Define a callback function that is called when the user touches a list item.",
 				"pNames": ["callback"],
@@ -2412,14 +2412,14 @@
 				}],
 				"shortDesc": "Define a callback function for touch events"
 			},
-			"SetSize": "#1296070870",
-			"SetTextColor": "#0175303923",
+			"SetSize": "#SetSize",
+			"SetTextColor": "#SetTextColor",
 			"SetTitle": {
 				"desc": "Change the dialog title.",
 				"pNames": ["title"],
 				"pTypes": ["str"]
 			},
-			"Show": "#1243391562"
+			"Show": "#Show"
 		}
 	},
 	"CreateLocator": {
@@ -2430,7 +2430,7 @@
 		"retval": "dso-Locator",
 		"shortDesc": "Returns a new Locator object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetBearingTo": {
 				"desc": "Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.",
 				"pNames": ["latitude", "longitude"],
@@ -2480,7 +2480,7 @@
 		"retval": "dso-MediaPlayer",
 		"shortDesc": "Returns a new MediaPlayer object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Close": {
 				"desc": "Close the media player and thus make it unuseable for further use.",
 				"shortDesc": "Close the media player."
@@ -2581,7 +2581,7 @@
 		"retval": "dso-MediaStore",
 		"shortDesc": "Returns a new MediaStore object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetAlbumArt": {
 				"desc": "Loads the album image to an existing image:dso-CreateImage.",
 				"pNames": ["image", "id", "options"],
@@ -2663,7 +2663,7 @@
 				"pTypes": ["str_url", "num_int", "str-US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16"],
 				"shortDesc": "Calls the OnReceive callback for incoming TCP data"
 			},
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Close": {
 				"desc": "Closes the NetClient socket."
 			},
@@ -2694,7 +2694,7 @@
 				"desc": "Checks if the NetClient is connected to a server.",
 				"shortDesc": "Get NetClient connected state"
 			},
-			"IsEnabled": "#1744802827",
+			"IsEnabled": "#IsEnabled",
 			"ReceiveBytes": {
 				"desc": "Receive data as bytes.",
 				"pNames": ["mode"],
@@ -2815,7 +2815,7 @@
 		"retval": "dso-Notification",
 		"shortDesc": "Returns a new Notification object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Cancel": {
 				"desc": "Cancel a notification with a specific id.",
 				"pNames": ["id"],
@@ -2876,7 +2876,7 @@
 		"retval": "dso-Nxt",
 		"shortDesc": "Returns a new Nxt object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Beep": {
 				"desc": "Play tone with given frequency for a given time in milliseconds.",
 				"pNames": ["frequency", "duration"],
@@ -3102,8 +3102,8 @@
 				"pTypes": ["dso-CreateLayout", "num_frc", "num_frc", "str-px"],
 				"shortDesc": "Adds layout to overlay"
 			},
-			"Batch": "#2357239857",
-			"GetParent": "#3557841648",
+			"Batch": "#Batch",
+			"GetParent": "#GetParent",
 			"GetType": {
 				"desc": "Returns the control class name."
 			},
@@ -3129,7 +3129,7 @@
 		"retval": "dso-PhoneState",
 		"shortDesc": "Returns a new PhoneState object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-PhoneState"
@@ -3157,7 +3157,7 @@
 		"retval": "dso-PlayStore",
 		"shortDesc": "Returns a new PlayStore object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetBillingInfo": {
 				"desc": "Get product info of paid items from Google Play.",
 				"pNames": ["prodIDs", "callback", "options"],
@@ -3205,23 +3205,23 @@
 				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Add a layout control"
 			},
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"DestroyChild": {
 				"desc": "Removes and releases a child object.",
 				"pNames": ["layout"],
 				"pTypes": ["dso-CreateLayout"],
 				"shortDesc": "Devil rises and takes a child with him to hell"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
 			"GetScrollX": {
 				"desc": "Returns the horizontal scroll bar position.",
 				"retval": "num_frc",
@@ -3232,19 +3232,19 @@
 				"retval": "num_frc",
 				"shortDesc": "Get vertical scroll bar position"
 			},
-			"GetTop": "#1981028136",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Scroller"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"RemoveChild": {
 				"desc": "Removes a scroller layout from the scroller.",
 				"pNames": ["child"],
@@ -3263,22 +3263,22 @@
 				"pTypes": ["num_frc", "num_frc"],
 				"shortDesc": "Scrolls to a given position"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateSeekBar": {
@@ -3289,18 +3289,18 @@
 		"retval": "dso-SeekBar",
 		"shortDesc": "Returns a new SeekBar object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-SeekBar"
@@ -3310,28 +3310,28 @@
 				"retval": "num",
 				"shortDesc": "Get current value"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetColorFilter": {
 				"desc": "Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).",
 				"pNames": ["color", "mode", "options"],
 				"pTypes": ["str_col", "str-Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over", "str"],
 				"shortDesc": "Adjust the visual color effect with different BlendModes"
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetMaxRate": {
 				"desc": "Change the minimum timeout in milliseconds between two OnChange calls.",
 				"pNames": ["rate"],
@@ -3347,25 +3347,25 @@
 				}],
 				"shortDesc": "Called when content was changed by the user"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
 			"SetRange": {
 				"desc": "Change the value which represents 100% of the seek bar. Default is 100",
 				"pNames": ["range"],
 				"pTypes": ["num"],
 				"shortDesc": "Set value range."
 			},
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetValue": {
 				"desc": "Change the current seekbar value in the defined range.",
 				"pNames": ["val"],
 				"pTypes": ["num"],
 				"shortDesc": "Set current seekbar value"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateSensor": {
@@ -3376,7 +3376,7 @@
 		"retval": "dso-Sensor",
 		"shortDesc": "Returns a new Sensor object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetAzimuth": {
 				"desc": "Returns the first/x/azimuth value of a sensor.",
 				"retval": "num",
@@ -3405,7 +3405,7 @@
 				"retval": "lst-[ time:num_mls, first:num, second:num, third:num ]",
 				"shortDesc": "Get all values from sensor"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"SetMaxRate": {
 				"desc": "Define a minimum timeout between two OnChage calls.",
 				"pNames": ["rate"],
@@ -3445,7 +3445,7 @@
 		"retval": "dso-Service",
 		"shortDesc": "Returns a new Service object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Service"
@@ -3490,7 +3490,7 @@
 		"desc": "Returns a new SMS object to send and retreive SMS messages.\n<xfeature>",
 		"retval": "dso-SMS",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-SMS"
@@ -3528,7 +3528,7 @@
 		"retval": "dso-SpeechRec",
 		"shortDesc": "Returns a new SpeechRec object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Cancel": {
 				"desc": "Stop recognizing speech and break other processes.",
 				"shortDesc": "Stop recognition"
@@ -3546,7 +3546,7 @@
 				"retval": "bin",
 				"shortDesc": "Check whether SpeechRec is listening"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"Recognize": {
 				"desc": "Start recognizing speech.",
 				"shortDesc": "Start speech recognition"
@@ -3589,53 +3589,53 @@
 		"retval": "dso-Spinner",
 		"shortDesc": "Returns a new Spinner object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Spinner"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"SelectItem": {
 				"desc": "Change the current shown item\n<deprecated Use SetText instead>",
 				"pNames": ["item"],
 				"pTypes": ["str"],
 				"shortDesc": "Change current shown item"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetList": {
 				"desc": "Change the item list of the spinner.",
 				"pNames": ["list", "delim"],
 				"pTypes": ["str_com", "str"],
 				"shortDesc": "Change spinner list"
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetOnChange": {
 				"desc": "Called when the spinner value has been changed by the user.",
 				"pNames": ["callback"],
@@ -3651,21 +3651,21 @@
 				"pTypes": [{}],
 				"shortDesc": "Define a callback function for touch events"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetText": {
 				"desc": "Change the current shown item",
 				"pNames": ["item"],
 				"pTypes": ["str"],
 				"shortDesc": "Change current shown item"
 			},
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateSwitch": {
@@ -3676,52 +3676,52 @@
 		"retval": "dso-Switch",
 		"shortDesc": "Creates a switch control",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetChecked": {
 				"desc": "Returns whether the switch is currently activated",
 				"retval": "bin",
 				"shortDesc": "Checks if switch is activated"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Switch"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetChecked": {
 				"desc": "Change the current checked state of the switch.",
 				"pNames": ["checked"],
 				"pTypes": ["bin"],
 				"shortDesc": "Change the checked state"
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnTouch": {
 				"desc": "Called when the control has been clicked by the user.",
 				"pNames": ["callback"],
@@ -3731,22 +3731,22 @@
 				}],
 				"shortDesc": "Called when user touched the control"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetStyle": {
 				"desc": "Customize the look of the toggle.",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
 				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
 				"shortDesc": "Customize the button looks"
 			},
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateSynth": {
@@ -3757,7 +3757,7 @@
 		"retval": "dso-Synth",
 		"shortDesc": "Returns a new Synth object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Synth"
@@ -3949,7 +3949,7 @@
 		"retval": "dso-SysProc",
 		"shortDesc": "Returns a new SysProc object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Err": {
 				"desc": "Read data from stderr",
 				"pNames": ["maxLines", "options"],
@@ -3966,7 +3966,7 @@
 				"pTypes": ["num_int", "str_com-nowait:dont wait for input"],
 				"shortDesc": "Read from stdin"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"Out": {
 				"desc": "Writes a command to stdout. A trailing linebreak will execute it.",
 				"pNames": ["command"],
@@ -4014,19 +4014,19 @@
 		"retval": "dso-Tabs",
 		"shortDesc": "Returns a new Tabs object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetCurrentTabName": {
 				"desc": "Returns the currently displayed tab name",
 				"retval": "str",
 				"shortDesc": "get current tab name"
 			},
-			"GetHeight": "#2576212953",
+			"GetHeight": "#GetHeight",
 			"GetLayout": {
 				"desc": "Returns the content layout of a given tab.",
 				"pNames": ["name"],
@@ -4034,43 +4034,43 @@
 				"retval": "dso-CreateLayout",
 				"shortDesc": "Get tab content layout"
 			},
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Tabs"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"parent.AddTab": {
 				"desc": "Adds a new tab to the tabs control.",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"shortDesc": "Add a new tab"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
 			"SetCornerRadius": {
 				"desc": "Applies a corner radius to card layouts.",
 				"pNames": ["radius"],
 				"pTypes": ["num_pxl"],
 				"shortDesc": "Apply corner radius to card layouts's"
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnChange": {
 				"desc": "%cb% the tab has been changed by the user.",
 				"pNames": ["callback"],
@@ -4089,32 +4089,32 @@
 				}],
 				"shortDesc": "Called when the user changed a control content"
 			},
-			"SetOnLongTouch": "#2735982374",
+			"SetOnLongTouch": "#SetOnLongTouch",
 			"SetOnTouch": "#2088093920",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetTextSize": {
 				"pNames": ["size", "mode"],
 				"pTypes": ["num", "str-px|sp|dip|mm|pt"]
 			},
-			"SetTouchable": "#2562918782",
+			"SetTouchable": "#SetTouchable",
 			"SetTouchThrough": {
 				"desc": "Define whether the layout should forward OnTouch events to underlying controls.",
 				"pNames": ["through"],
 				"pTypes": ["bin"],
 				"shortDesc": "Enable touch event forwarding"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
 			"ShowTab": {
 				"desc": "Switch to a given tab name",
 				"pNames": ["name"],
 				"pTypes": ["str"],
 				"shortDesc": "Switch current tab"
 			},
-			"Tween": "#2114624769"
+			"Tween": "#Tween"
 		}
 	},
 	"CreateText": {
@@ -4125,20 +4125,20 @@
 		"retval": "dso-Text",
 		"shortDesc": "Returns a new Text object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
 			"GetHtml": {
 				"desc": "Returns the html formatted content.",
 				"retval": "str_htm",
 				"shortDesc": "Return html formatted text"
 			},
-			"GetLeft": "#1237814406",
+			"GetLeft": "#GetLeft",
 			"GetLineCount": {
 				"desc": "Returns the amount of lines in the text even with html formatting",
 				"retval": "num_int",
@@ -4163,64 +4163,64 @@
 				"retval": "num_int",
 				"shortDesc": "Get amount of lines fitting in the control"
 			},
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Text"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
 			"Log": {
 				"desc": "Append a string to the text separated with a line break",
 				"pNames": ["message", "options"],
 				"pTypes": ["str", "str_com-Clear:Clears the log before writing,Red|Green|Blue"],
 				"shortDesc": "Append line to the text"
 			},
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetEllipsize": "#0897234673",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetFontFile": "#0197498372",
-			"SetHtml": "#8753208754",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetEllipsize": "#SetEllipsize",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetFontFile": "#SetFontFile",
+			"SetHtml": "#SetHtml",
 			"SetLog": {
 				"desc": "Define a maximum amount of log lines",
 				"pNames": ["maxLines"],
 				"pTypes": ["num_int"],
 				"shortDesc": "Set maximum log length"
 			},
-			"SetMargins": "#1741900074",
-			"SetOnLongTouch": "#2735982374",
+			"SetMargins": "#SetMargins",
+			"SetOnLongTouch": "#SetOnLongTouch",
 			"SetOnTouch": "#2088093920",
-			"SetOnTouchDown": "#2938578932",
-			"SetOnTouchMove": "#2039582034",
-			"SetOnTouchUp": "#9861324731",
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextShadow": "#1093247031",
-			"SetTextSize": "#5019790423",
-			"SetTouchable": "#2562918782",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetOnTouchDown": "#SetOnTouchDown",
+			"SetOnTouchMove": "#SetOnTouchMove",
+			"SetOnTouchUp": "#SetOnTouchUp",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextShadow": "#SetTextShadow",
+			"SetTextSize": "#SetTextSize",
+			"SetTouchable": "#SetTouchable",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateTextEdit": {
@@ -4231,17 +4231,17 @@
 		"retval": "dso-TextEdit",
 		"shortDesc": "Returns a new TextEdit object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
 			"ClearHistory": {
 				"desc": "Clears the undo/redo history.",
 				"shortDesc": "Clear undo/redo history"
 			},
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetCursorLine": {
 				"desc": "Returns the current line index where the cursor is located.",
 				"retval": "num_int",
@@ -4252,13 +4252,13 @@
 				"retval": "num_int",
 				"shortDesc": "Get the cursor position in the text"
 			},
-			"GetHeight": "#2576212953",
+			"GetHeight": "#GetHeight",
 			"GetHtml": {
 				"desc": "Returns the html formatted content.",
 				"retval": "str_htm",
 				"shortDesc": "Return html formatted text"
 			},
-			"GetLeft": "#1237814406",
+			"GetLeft": "#GetLeft",
 			"GetLineCount": {
 				"desc": "Returns the amount of lines in the text even with html formatting",
 				"retval": "num_int",
@@ -4283,8 +4283,8 @@
 				"retval": "num_int",
 				"shortDesc": "Get amount of lines fitting in the control"
 			},
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
 			"GetSelectedText": {
 				"desc": "Returns the currently selected text.",
 				"retval": "str",
@@ -4300,27 +4300,27 @@
 				"retval": "num_int",
 				"shortDesc": "Get selection start position"
 			},
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-TextEdit"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
 			"InsertText": {
 				"desc": "Inserts a string at a given position.",
 				"pNames": ["text", "start"],
 				"pTypes": ["str", "num_int"],
 				"shortDesc": "Insert text at a given position"
 			},
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"Redo": {
 				"desc": "Redo an undone action."
 			},
@@ -4330,12 +4330,12 @@
 				"pTypes": ["str", "num_int", "num_int"],
 				"shortDesc": "Replace a range of the text with a string"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
 			"SetCursorColor": {
 				"desc": "Changes the cursor color.",
 				"pNames": ["color"],
@@ -4347,24 +4347,24 @@
 				"pNames": ["position"],
 				"pTypes": ["num_int"]
 			},
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetHint": {
 				"desc": "Set a grey default which is shown when the edit is empty",
 				"pNames": ["text"],
 				"pTypes": ["str"],
 				"shortDesc": "Shows a grey default text"
 			},
-			"SetHtml": "#8753208754",
-			"SetMargins": "#1741900074",
-			"SetOnChange": "#2137502353",
+			"SetHtml": "#SetHtml",
+			"SetMargins": "#SetMargins",
+			"SetOnChange": "#SetOnChange",
 			"SetOnEnter": {
 				"desc": "%cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)\nAlong with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_",
 				"pNames": ["callback"],
 				"pTypes": [{}],
 				"shortDesc": "Called when user pressed 'Done' or 'Enter'"
 			},
-			"SetOnFocus": "#9283752301",
+			"SetOnFocus": "#SetOnFocus",
 			"SetSelectColor": {
 				"desc": "Set the background color for selected text.",
 				"pNames": ["col"],
@@ -4377,13 +4377,13 @@
 				"pTypes": ["num_int", "num_int"],
 				"shortDesc": "Select text in a given range"
 			},
-			"SetSize": "#1296070870",
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769",
+			"SetSize": "#SetSize",
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween",
 			"Undo": {
 				"desc": "Undo an action."
 			}
@@ -4397,15 +4397,15 @@
 		"retval": "dso-Theme",
 		"shortDesc": "Returns a new Theme object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Theme"
 			},
-			"Method": "#1023663567",
-			"SetBackColor": "#3857861627",
-			"SetBackground": "#1239127541",
+			"Method": "#Method",
+			"SetBackColor": "#SetBackColor",
+			"SetBackground": "#SetBackground",
 			"SetBtnTextColor": {
 				"desc": "Define the standard text color of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).",
 				"pNames": ["color"],
@@ -4554,52 +4554,52 @@
 		"retval": "dso-Toggle",
 		"shortDesc": "Returns a new Toggle object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetChecked": {
 				"desc": "Returns whether the toggle is currently activated",
 				"retval": "bin",
 				"shortDesc": "Checks if toggle is activated"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetText": "#2387569276",
-			"GetTextSize": "#2530918945",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetText": "#GetText",
+			"GetTextSize": "#GetTextSize",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-Toggle"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetChecked": {
 				"desc": "Change the current checked state of the toggle.",
 				"pNames": ["checked"],
 				"pTypes": ["bin"],
 				"shortDesc": "Change the checked state"
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
+			"SetMargins": "#SetMargins",
 			"SetOnTouch": {
 				"desc": "Called when the control has been clicked by the user.",
 				"pNames": ["callback"],
@@ -4609,22 +4609,22 @@
 				}],
 				"shortDesc": "Called when user touched the control"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetStyle": {
 				"desc": "Costomize the look of the toggle.",
 				"pNames": ["color1", "color2", "radius", "strokeClr", "strokeWidth", "shadow"],
 				"pTypes": ["str_col", "str_col", "num_pxl", "str_col", "num_pxl", "num_frc"],
 				"shortDesc": "Customize the button looks"
 			},
-			"SetText": "#8207502354",
-			"SetTextColor": "#0175303923",
-			"SetTextSize": "#5019790423",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"Tween": "#2114624769"
+			"SetText": "#SetText",
+			"SetTextColor": "#SetTextColor",
+			"SetTextSize": "#SetTextSize",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
+			"Tween": "#Tween"
 		}
 	},
 	"CreateUSBSerial": {
@@ -4635,7 +4635,7 @@
 		"retval": "dso-USBSerial",
 		"shortDesc": "Returns a new USBSerial object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-USBSerial"
@@ -4645,7 +4645,7 @@
 				"retval": "bin",
 				"shortDesc": "Checks if a USB device is connected"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"SetDataMode": {
 				"desc": "Enable sending data in several modes.",
 				"pNames": ["mode"],
@@ -4719,32 +4719,32 @@
 		"retval": "dso-VideoView",
 		"shortDesc": "Returns a new VideoView object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
-			"ClearFocus": "#1362225380",
-			"Focus": "#7324472769",
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
+			"ClearFocus": "#ClearFocus",
+			"Focus": "#Focus",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
 			"GetDuration": {
 				"desc": "Retunrs the video duration in seconds.",
 				"retval": "num_flt",
 				"shortDesc": "Get video duration in seconds"
 			},
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-VideoView"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
 			"IsPlaying": {
 				"desc": "Returns whether the VideoView is currently playing a video",
 				"retval": "bin",
@@ -4755,8 +4755,8 @@
 				"retval": "bin",
 				"shortDesc": "Check if the video is ready for playback"
 			},
-			"IsVisible": "#1814300863",
-			"Method": "#1023663567",
+			"IsVisible": "#IsVisible",
+			"Method": "#Method",
 			"Pause": {
 				"desc": "Pauses the video.",
 				"shortDesc": "Pause the video"
@@ -4771,21 +4771,21 @@
 				"pTypes": ["num_int"],
 				"shortDesc": "Seek to a given playback time"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetFile": {
 				"desc": "Set the video file path or url",
 				"pNames": ["file"],
 				"pTypes": ["str_pth||str_url-http(s)://url"],
 				"shortDesc": "Set video source"
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetOnComplete": {
 				"desc": "%cb% the playback has finished playing",
 				"pNames": ["callback"],
@@ -4810,29 +4810,29 @@
 				"pTypes": [{}],
 				"shortDesc": "Called when subtitle text changed"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetSubtitles": {
 				"desc": "Set a subtitle file where to retreive the video subtitles from.",
 				"pNames": ["file"],
 				"pTypes": ["str_ptf"],
 				"shortDesc": "Set a subtitle source"
 			},
-			"SetVisibility": "#1004824195",
+			"SetVisibility": "#SetVisibility",
 			"SetVolume": {
 				"desc": "Change the video player volume",
 				"pNames": ["left", "right"],
 				"pTypes": ["num_prc", "num_prc"],
 				"shortDesc": "Change the playback volume"
 			},
-			"Show": "#1243391562",
+			"Show": "#Show",
 			"Stop": {
 				"desc": "Stop the video playback.",
 				"shortDesc": "Stop video playback."
 			},
-			"Tween": "#2114624769"
+			"Tween": "#Tween"
 		}
 	},
 	"CreateWebServer": {
@@ -4858,7 +4858,7 @@
 				}],
 				"shortDesc": "Called when servlet received a message"
 			},
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Disconnect": {
 				"desc": "Disconnects a client from the WebServer.",
 				"pNames": ["ip", "id"],
@@ -4874,7 +4874,7 @@
 				"retval": "lst_obj-[{ remoteAddress:str, id:num_int }]",
 				"shortDesc": "Get connected clients"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"SendText": {
 				"desc": "Sends a message to a specific client.\nIf no id is given, all clients of the specified ip are notified.\nIf neither ip nor id is given, the message will be sent to all connected clients.",
 				"pNames": ["txt", "ip", "id"],
@@ -4934,7 +4934,7 @@
 		"retval": "dso-WebSocket",
 		"shortDesc": "Returns a new WebSocket object",
 		"subf": {
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Close": {
 				"desc": "Close the web socket.",
 				"shortDesc": "Close web socket"
@@ -4986,13 +4986,13 @@
 		"retval": "dso-WebView",
 		"shortDesc": "Returns a new WebView object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Animate": "#8294739481",
+			"AdjustColor": "#AdjustColor",
+			"Animate": "#Animate",
 			"Back": {
 				"desc": "Loads the previous page from history.",
 				"shortDesc": "Load previous page"
 			},
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"CanGoBack": {
 				"desc": "Check whether the user can travel back in history.",
 				"retval": "bin",
@@ -5009,7 +5009,7 @@
 				"pTypes": ["str_ptf"],
 				"shortDesc": "Capture WebView as png"
 			},
-			"ClearFocus": "#1362225380",
+			"ClearFocus": "#ClearFocus",
 			"ClearHistory": {
 				"desc": "Clears the page history for Back() and Forward()"
 			},
@@ -5022,7 +5022,7 @@
 				}],
 				"shortDesc": "Execute JS code inside the WebView"
 			},
-			"Focus": "#7324472769",
+			"Focus": "#Focus",
 			"Forward": {
 				"desc": "Loads the following page from history.",
 				"shortDesc": "Load following page"
@@ -5032,13 +5032,13 @@
 				"pNames": ["name", "args..."],
 				"pTypes": ["str", "all"]
 			},
-			"GetAbsHeight": "#1197564340",
-			"GetAbsWidth": "#1128215329",
-			"GetHeight": "#2576212953",
-			"GetLeft": "#1237814406",
-			"GetParent": "#3557841648",
-			"GetPosition": "#1605064214",
-			"GetTop": "#1981028136",
+			"GetAbsHeight": "#GetAbsHeight",
+			"GetAbsWidth": "#GetAbsWidth",
+			"GetHeight": "#GetHeight",
+			"GetLeft": "#GetLeft",
+			"GetParent": "#GetParent",
+			"GetPosition": "#GetPosition",
+			"GetTop": "#GetTop",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-WebView"
@@ -5048,13 +5048,13 @@
 				"retval": "str_url",
 				"shortDesc": "Get current url"
 			},
-			"GetVisibility": "#1672373665",
-			"GetWidth": "#1321469131",
-			"Gone": "#5528553362",
-			"Hide": "#5372805812",
-			"IsEnabled": "#1744802827",
-			"IsOverlap": "#1785728721",
-			"IsVisible": "#1814300863",
+			"GetVisibility": "#GetVisibility",
+			"GetWidth": "#GetWidth",
+			"Gone": "#Gone",
+			"Hide": "#Hide",
+			"IsEnabled": "#IsEnabled",
+			"IsOverlap": "#IsOverlap",
+			"IsVisible": "#IsVisible",
 			"LoadHtml": {
 				"desc": "Loads html code to the WebView.",
 				"pNames": ["html", "baseFolder", "options"],
@@ -5067,7 +5067,7 @@
 				"pTypes": ["str_url", "str_com-AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:\"force page using “wide” viewport\",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser"],
 				"shortDesc": "Load url to WebView"
 			},
-			"Method": "#1023663567",
+			"Method": "#Method",
 			"Print": {
 				"desc": "Print current page via the builtin android printer dialog.\n\nNote: Available since Android 4.4 KitKat",
 				"shortDesc": "Print webpage via anddroid printer dialog"
@@ -5076,27 +5076,27 @@
 				"desc": "Reloads the current page",
 				"shortDesc": "Reload current page"
 			},
-			"SetBackAlpha": "#1162431318",
-			"SetBackColor": "#3857861627",
-			"SetBackGradient": "#7112142192",
-			"SetBackGradientRadial": "#1101641465",
-			"SetBackground": "#1239127541",
+			"SetBackAlpha": "#SetBackAlpha",
+			"SetBackColor": "#SetBackColor",
+			"SetBackGradient": "#SetBackGradient",
+			"SetBackGradientRadial": "#SetBackGradientRadial",
+			"SetBackground": "#SetBackground",
 			"SetBlockedUrls": {
 				"desc": "Define a list of urls that are blocked for loading.",
 				"pNames": ["urls"],
 				"pTypes": ["lst-[ urls:str ]||str-urls"],
 				"shortDesc": "Block urls from loading"
 			},
-			"SetColorFilter": "#1096996086",
-			"SetDescription": "#0937259723",
-			"SetEnabled": "#1602385882",
+			"SetColorFilter": "#SetColorFilter",
+			"SetDescription": "#SetDescription",
+			"SetEnabled": "#SetEnabled",
 			"SetErrorPage": {
 				"desc": "Define a url loaded when an error occured.",
 				"pNames": ["url"],
 				"pTypes": ["str_url"],
 				"shortDesc": "Define error page"
 			},
-			"SetMargins": "#1741900074",
+			"SetMargins": "#SetMargins",
 			"SetTextZoom": {
 				"desc": "Scales the html text by a given factor.",
 				"pNames": ["zoom"],
@@ -5148,16 +5148,16 @@
 				}],
 				"shortDesc": "Called when link klicked"
 			},
-			"SetPadding": "#1923105617",
-			"SetPosition": "#1425862386",
+			"SetPadding": "#SetPadding",
+			"SetPosition": "#SetPosition",
 			"SetRedirect": {
 				"desc": "Add a url redirection rule.",
 				"pNames": ["urlFrom", "urlTo"],
 				"pTypes": ["str_url", "str_url"],
 				"shortDesc": "Add url redirection rule"
 			},
-			"SetScale": "#1990464376",
-			"SetSize": "#1296070870",
+			"SetScale": "#SetScale",
+			"SetSize": "#SetSize",
 			"SetTouchMode": {
 				"desc": "Set the control in touch mode.",
 				"pNames": ["mode"],
@@ -5176,8 +5176,8 @@
 				"pTypes": ["str", "str"],
 				"shortDesc": "Set authentication/login data"
 			},
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
+			"SetVisibility": "#SetVisibility",
+			"Show": "#Show",
 			"SimulateKey": {
 				"desc": "Simulates a key event on an app object.\n\nYou can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).",
 				"pNames": ["keyName", "modifiers", "pause"],
@@ -5188,7 +5188,7 @@
 				"desc": "Stops any web loading.",
 				"shortDesc": "Stop loading processes"
 			},
-			"Tween": "#2114624769"
+			"Tween": "#Tween"
 		}
 	},
 	"CreateWizard": {
@@ -5200,8 +5200,8 @@
 			"pTypes": ["dso-CreateLayout", "num_int"]
 		}, "str_com-AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch"],
 		"subf": {
-			"Batch": "#2357239857",
-			"Dismiss": "#1924613953",
+			"Batch": "#Batch",
+			"Dismiss": "#Dismiss",
 			"Finish": {
 				"desc": "Indicate that the Wizard is going to finish on the next page.",
 				"shortDesc": "Indicate that wizard finished"
@@ -5224,9 +5224,9 @@
 			"GetType": {
 				"desc": "Returns the control class name."
 			},
-			"Hide": "#5372805812",
-			"IsVisible": "#1814300863",
-			"Show": "#1243391562"
+			"Hide": "#Hide",
+			"IsVisible": "#IsVisible",
+			"Show": "#Show"
 		}
 	},
 	"CreateYesNoDialog": {
@@ -5237,22 +5237,22 @@
 		"retval": "dso-YesNoDialog",
 		"shortDesc": "Returns a new YesNoDialog object",
 		"subf": {
-			"AdjustColor": "#1794786072",
-			"Batch": "#2357239857",
-			"Dismiss": "#1924613953",
+			"AdjustColor": "#AdjustColor",
+			"Batch": "#Batch",
+			"Dismiss": "#Dismiss",
 			"GetType": {
 				"desc": "Returns the control class name.",
 				"retval": "str-YesNoDialog"
 			},
-			"Hide": "#5372805812",
-			"Method": "#1023663567",
+			"Hide": "#Hide",
+			"Method": "#Method",
 			"SetBackColor": {
 				"desc": "Changes the background color of the control.",
 				"pNames": ["color", "radius"],
 				"pTypes": ["str_col", "num_pxl"],
 				"shortDesc": "Change the background color"
 			},
-			"SetBackground": "#1239127541",
+			"SetBackground": "#SetBackground",
 			"SetButtonText": {
 				"desc": "Changes the texts of the two Yes/No buttons.",
 				"pNames": ["yes", "no"],
@@ -5268,8 +5268,8 @@
 				}],
 				"shortDesc": "Called when user selects Yes or No"
 			},
-			"SetSize": "#1296070870",
-			"Show": "#1243391562"
+			"SetSize": "#SetSize",
+			"Show": "#Show"
 		}
 	},
 	"CreateZipUtil": {
@@ -5292,7 +5292,7 @@
 				"pTypes": ["str:zip path", "str"],
 				"shortDesc": "Add text to the zip"
 			},
-			"Batch": "#2357239857",
+			"Batch": "#Batch",
 			"Close": {
 				"desc": "Closes the zip util.",
 				"shortDesc": "Close ZipUtil"

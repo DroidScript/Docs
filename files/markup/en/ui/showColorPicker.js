@@ -4,10 +4,10 @@
 /** # showColorPicker #
  * @brief showColorPicker
  * 
- * $$ ui.showColorPicker(value, options, onSelect) $$ 
+ * $$ ui.showColorPicker(value, options, ) $$ 
  * @param {str} value A hexadecimal default value for the color picker.
  * @param {str} options A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
- * @param {} onSelect 
+ * @param {}  
  * @returns obj-ColorPicker Component
 */
 
@@ -29,8 +29,8 @@ Shows a color picker. Customize a color or choose from the presets of color care
 
 /** ### getValue ###
  * @brief getValue
- * Returns the hexadecimal string color value of the color picker *  * 
- * $$ .getValue() $$
+ * Returns the hexadecimal string color value of the color picker
+ * $$ undefined.getValue() $$
  * @returns str
  */
 

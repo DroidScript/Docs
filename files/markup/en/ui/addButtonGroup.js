@@ -32,7 +32,7 @@ Adds a button group into your app.
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the button is touch *  * 
+ * Adds a callback handler when the button is touch
  * $$ btg.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The button text.","num-The index of the correspoding button.","obj-The pointer click event object."]}
  */
@@ -40,7 +40,7 @@ Adds a button group into your app.
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ btg.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-Button text.","num-The index of the corresponding button.","obj-The pointer event object."]}
  */
@@ -48,7 +48,7 @@ Adds a button group into your app.
 
 /** ### setList ###
  * @brief setList
- * Sets the new list of the button group *  * 
+ * Sets the new list of the button group
  * $$ btg.setList(items) $$
  * @param {str} items A comma separated list or an array
  */
@@ -56,7 +56,7 @@ Adds a button group into your app.
 
 /** ### setItemByIndex ###
  * @brief setItemByIndex
- * Sets a new text for the item in the button group *  * 
+ * Sets a new text for the item in the button group
  * $$ btg.setItemByIndex(item, index) $$
  * @param {str} item The new text
  * @param {num} index The index of the item.
@@ -65,7 +65,7 @@ Adds a button group into your app.
 
 /** ### addItem ###
  * @brief addItem
- * Adds an additional item in the button group *  * 
+ * Adds an additional item in the button group
  * $$ btg.addItem(item) $$
  * @param {str} item The additional item.
  */
@@ -73,7 +73,7 @@ Adds a button group into your app.
 
 /** ### removeItemIndex ###
  * @brief removeItemIndex
- * Removes an item in the button group by its index *  * 
+ * Removes an item in the button group by its index
  * $$ btg.removeItemIndex(index) $$
  * @param {num} index The index of the item to be remove.
  */
@@ -81,7 +81,7 @@ Adds a button group into your app.
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes an item in the button group by its name *  * 
+ * Removes an item in the button group by its name
  * $$ btg.removeItemByName(name) $$
  * @param {str} name The name of the item to be remove.
  */
@@ -89,21 +89,21 @@ Adds a button group into your app.
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item of the button group *  * 
+ * Removes the last item of the button group
  * $$ btg.popItem() $$
  */
 
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item in the button group *  * 
+ * Removes the first item in the button group
  * $$ btg.shiftItem() $$
  */
 
 
 /** ### setToolTip ###
  * @brief setToolTip
- * Adds a tooltip to the ButtonGroup items *  * 
+ * Adds a tooltip to the ButtonGroup items
  * $$ btg.setToolTip(titles, pos) $$
  * @param {lst} titles The titles for each item in the ButtonGroup.
  * @param {str} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
@@ -112,7 +112,7 @@ Adds a button group into your app.
 
 /** ### enableElevation ###
  * @brief enableElevation
- * Enable of disable the elevation of the button group *  * 
+ * Enable of disable the elevation of the button group
  * $$ btg.enableElevation(enable) $$
  * @param {bin} enable Can be `true` or `false`
  */
@@ -120,7 +120,7 @@ Adds a button group into your app.
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable a button item in the button group *  * 
+ * Enable or disable a button item in the button group
  * $$ btg.setEnabled(index, value) $$
  * @param {num} index The index of the button item.
  * @param {bin} value Values can be `true` or `false`.
@@ -129,7 +129,7 @@ Adds a button group into your app.
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of the button item in the button group *  * 
+ * Get the enabled state of the button item in the button group
  * $$ btg.getEnabled(index) $$
  * @param {num} index The index of the button item in the button group.
  * @returns bin
@@ -138,7 +138,7 @@ Adds a button group into your app.
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enable or disable a button item by its name *  * 
+ * Enable or disable a button item by its name
  * $$ btg.setEnabledByName(name, value) $$
  * @param {str} name The button text.
  * @param {bin} value Values can be `true` or `false`.
@@ -147,7 +147,7 @@ Adds a button group into your app.
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of button item in the button group *  * 
+ * Get the enabled state of button item in the button group
  * $$ btg.getEnabledByName(name) $$
  * @param {str} name The button text.
  * @returns bin
@@ -156,7 +156,7 @@ Adds a button group into your app.
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ btg.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -165,7 +165,7 @@ Adds a button group into your app.
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ btg.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -174,35 +174,35 @@ Adds a button group into your app.
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ btg.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ btg.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ btg.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ btg.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ btg.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -211,7 +211,7 @@ Adds a button group into your app.
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ btg.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -220,7 +220,7 @@ Adds a button group into your app.
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ btg.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -232,7 +232,7 @@ Adds a button group into your app.
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ btg.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -244,7 +244,7 @@ Adds a button group into your app.
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ btg.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -254,7 +254,7 @@ Adds a button group into your app.
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ btg.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -264,7 +264,7 @@ Adds a button group into your app.
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ btg.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -276,7 +276,7 @@ Adds a button group into your app.
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ btg.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -284,7 +284,7 @@ Adds a button group into your app.
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ btg.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

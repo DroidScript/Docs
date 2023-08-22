@@ -3,7 +3,6 @@
 
 /** # AddListSimple #
  * @abbrev lss
-
  * Adds a simple list for navigation purposes. See @CreateListSimple for a full documentation.
  * $$ lss = MUI.AddListSimple(parent, list, width, height, options) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

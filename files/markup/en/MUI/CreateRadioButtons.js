@@ -3,7 +3,6 @@
 
 /** # CreateRadioButtons #
  * @abbrev rdb
-
  * Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.
  * $$ rdb = MUI.CreateRadioButtons(list, width, height, orientation, color, backColor) $$ 
  * @param {lst} list A comma separated strings

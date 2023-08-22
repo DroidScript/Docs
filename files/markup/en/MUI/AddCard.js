@@ -3,7 +3,6 @@
 
 /** # AddCard #
  * @abbrev crd
-
  * Adds a card on a given layout. See @CreateCard for a full documentation.
  * $$ crd = MUI.AddCard(parent, options) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

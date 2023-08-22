@@ -2,7 +2,6 @@
 
 
 /** # SetWifiEnabled #
-
  * En/Disable Wifi on the device.
  * 
  * See Also: @SetWifiEnabled, @IsWifiApEnabled, @WifiScan

@@ -3,7 +3,6 @@
 
 /** # CreateDatePicker #
  * @abbrev dtp
-
  * Creates a materialize date picker dialog.
  * $$ dtp = MUI.CreateDatePicker(yyyy, mm, dd, color) $$ 
  * @param {num_int} yyyy Full year

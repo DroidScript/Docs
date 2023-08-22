@@ -2,7 +2,6 @@
 
 
 /** # InIDE #
-
  * 
  * $$ app.InIDE() $$ 
  * @returns bin

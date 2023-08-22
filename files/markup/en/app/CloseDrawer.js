@@ -2,7 +2,6 @@
 
 
 /** # CloseDrawer #
-
  * Closes the drawer layout on the given side with slide animation.
  * 
  * See Also: @OpenDrawer

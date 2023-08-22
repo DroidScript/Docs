@@ -3,7 +3,6 @@
 
 /** # CreateGameView #
  * @abbrev gmv
-
  * 
  * $$ gmv = app.CreateGameView(width, height, options) $$ 
  * @param {num_frc} width 

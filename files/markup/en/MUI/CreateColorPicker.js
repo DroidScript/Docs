@@ -3,7 +3,6 @@
 
 /** # CreateColorPicker #
  * @abbrev clp
-
  * Creates a color picker dialog where you can select a range of MUI predefined colors.
  * $$ clp = MUI.CreateColorPicker(title) $$ 
  * @param {str} title 

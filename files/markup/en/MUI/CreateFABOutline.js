@@ -3,7 +3,6 @@
 
 /** # CreateFABOutline #
  * @abbrev fab
-
  * Creates an outlined floating action button
  * $$ fab = MUI.CreateFABOutline(icon, color, backColor) $$ 
  * @param {str} icon Material icon font

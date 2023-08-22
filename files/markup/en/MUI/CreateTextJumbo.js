@@ -3,7 +3,6 @@
 
 /** # CreateTextJumbo #
  * @abbrev txj
-
  * Creates an extra large text
  * $$ txj = MUI.CreateTextJumbo(text, width, height, options, color) $$ 
  * @param {str} text 

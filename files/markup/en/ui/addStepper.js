@@ -38,15 +38,15 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setOnComplete ###
  * @brief setOnComplete
- * Adds a callback function to be called when the stepper is complete *  * 
+ * Adds a callback function to be called when the stepper is complete
  * $$ stp.setOnComplete(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Adds a callback function to be called when the stepper has changed step *  * 
+ * Adds a callback function to be called when the stepper has changed step
  * $$ stp.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["index "],"pTypes":["num-The index of the active step."]}
  */
@@ -54,21 +54,21 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### nextStep ###
  * @brief nextStep
- * Go to the next step *  * 
+ * Go to the next step
  * $$ stp.nextStep() $$
  */
 
 
 /** ### previousStep ###
  * @brief previousStep
- * Go to the previous step *  * 
+ * Go to the previous step
  * $$ stp.previousStep() $$
  */
 
 
 /** ### getLayout ###
  * @brief getLayout
- * Returns the layout of the corresponding step layout where you can add controls *  * 
+ * Returns the layout of the corresponding step layout where you can add controls
  * $$ stp.getLayout(index) $$
  * @param {num} index The index of the corresponing stepper layout
  * @returns obj-Layout
@@ -77,7 +77,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### getLayoutIndex ###
  * @brief getLayoutIndex
- * Get the index of the corresponding layout *  * 
+ * Get the index of the corresponding layout
  * $$ stp.getLayoutIndex(layout) $$
  * @param {obj} layout The layout to check.
  * @returns num
@@ -86,7 +86,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### removeStep ###
  * @brief removeStep
- * Removes a corresponding step by its index *  * 
+ * Removes a corresponding step by its index
  * $$ stp.removeStep(index) $$
  * @param {num} index The index of the step to remove.
  */
@@ -94,7 +94,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setTitleText ###
  * @brief setTitleText
- * Sets a new title for the corresponding step by its index *  * 
+ * Sets a new title for the corresponding step by its index
  * $$ stp.setTitleText(index, title) $$
  * @param {num} index The index of the Stepper.
  * @param {str} title The new title text.
@@ -103,7 +103,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the component is touch *  * 
+ * Adds a callback handler when the component is touch
  * $$ stp.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
  */
@@ -111,7 +111,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ stp.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
  */
@@ -119,7 +119,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ stp.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -128,7 +128,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ stp.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -137,35 +137,35 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ stp.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ stp.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ stp.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ stp.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ stp.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -174,7 +174,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ stp.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -183,7 +183,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ stp.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -195,7 +195,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ stp.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -207,7 +207,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ stp.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -217,7 +217,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ stp.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -227,7 +227,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ stp.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -239,7 +239,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ stp.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -247,7 +247,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ stp.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

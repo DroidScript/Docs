@@ -3,7 +3,6 @@
 
 /** # AddCheckList #
  * @abbrev chl
-
  * Adds an MUI checklist dialog. See @CreateCheckList for a full documentation.
  * $$ chl = MUI.AddCheckList(textEdit, title, list, color, bottom) $$ 
  * @param {obj} textEdit MUI TextEdit control or DS TextEdit control

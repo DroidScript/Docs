@@ -32,7 +32,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### getLayout ###
  * @brief getLayout
- * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse *  * 
+ * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse
  * $$ acc.getLayout(index) $$
  * @param {num} index The index of the accordion. You can also pass accordion title.
  * @returns obj-Layout Component
@@ -41,7 +41,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setTitleText ###
  * @brief setTitleText
- * Update the accordion title by passing its corresponding index *  * 
+ * Update the accordion title by passing its corresponding index
  * $$ acc.setTitleText(index, title) $$
  * @param {num} index The index of the corresponding title to updates.
  * @param {str} title The new title text.
@@ -50,7 +50,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setSecondaryText ###
  * @brief setSecondaryText
- * Adds a secondary text on the accordion *  * 
+ * Adds a secondary text on the accordion
  * $$ acc.setSecondaryText(text, index) $$
  * @param {obj} text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n Array: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
  * @param {num} index If `index` is provided, the corresponding index will be updated with the new text.
@@ -59,7 +59,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setExpandIcon ###
  * @brief setExpandIcon
- * Sets the expand icon at the right of the accordion *  * 
+ * Sets the expand icon at the right of the accordion
  * $$ acc.setExpandIcon(icon) $$
  * @param {str} icon A material icon
  */
@@ -67,7 +67,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### addItem ###
  * @brief addItem
- * Adds an item to the accordion *  * 
+ * Adds an item to the accordion
  * $$ acc.addItem(title, secondaryText, index) $$
  * @param {str} title Accordion title
  * @param {str} secondaryText Accordion secondary text
@@ -77,7 +77,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes accordion item by its index *  * 
+ * Removes accordion item by its index
  * $$ acc.removeItemByIndex(index) $$
  * @param {num} index The index of the corresponding accordion to remove.
  */
@@ -85,7 +85,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes accordion item by its title name *  * 
+ * Removes accordion item by its title name
  * $$ acc.removeItemByName(title) $$
  * @param {str} title The title of the corresponding accordion to remove.
  */
@@ -93,21 +93,21 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first accordion item *  * 
+ * Removes the first accordion item
  * $$ acc.shiftItem() $$
  */
 
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last accordion item *  * 
+ * Removes the last accordion item
  * $$ acc.popItem() $$
  */
 
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable the accordion component or an item in the accordion component *  * 
+ * Enable or disable the accordion component or an item in the accordion component
  * $$ acc.setEnabled(index, value) $$
  * @param {num} index The index of the corresponding accordion.
  * @param {bin} value Values can be `true` or `false`.
@@ -116,7 +116,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### getEnabled ###
  * @brief getEnabled
- * Get the enabled state of an accordion item by its index *  * 
+ * Get the enabled state of an accordion item by its index
  * $$ acc.getEnabled(index) $$
  * @param {num} index The index of the accordion item.
  * @returns bin
@@ -125,7 +125,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setEnabledByName ###
  * @brief setEnabledByName
- * Enable or disable an accordion item by its name *  * 
+ * Enable or disable an accordion item by its name
  * $$ acc.setEnabledByName(name, value) $$
  * @param {str} name The title of the accordion
  * @param {bin} value Values can be `true` or `false`.
@@ -134,7 +134,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### getEnabledByName ###
  * @brief getEnabledByName
- * Get the enabled state of an accordion item by its name *  * 
+ * Get the enabled state of an accordion item by its name
  * $$ acc.getEnabledByName(name) $$
  * @param {str} name The title of the accordion.
  * @returns bin
@@ -143,7 +143,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### getLayoutIndex ###
  * @brief getLayoutIndex
- * Get the index of the corresponding layout *  * 
+ * Get the index of the corresponding layout
  * $$ acc.getLayoutIndex(layout) $$
  * @param {obj} layout The layout to check.
  * @returns num
@@ -152,7 +152,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Sets a callback function when the accordion is touch *  * 
+ * Sets a callback function when the accordion is touch
  * $$ acc.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["index ","expand "],"pTypes":["num-The index of the corresponding accordion item.","bin-The expanded state of the accordion."]}
  */
@@ -160,7 +160,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ acc.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["title ","index ","event "],"pTypes":["str-The accordion title text.","num-The index of the corresponding accordion item.","obj-The pointer event object."]}
  */
@@ -168,7 +168,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setTextColor ###
  * @brief setTextColor
- * Sets the color of the title and the secondary text respectively *  * 
+ * Sets the color of the title and the secondary text respectively
  * $$ acc.setTextColor(color1, color2) $$
  * @param {str} color1 Color of the title text in hexadecimal format `#rrggbb`
  * @param {str} color2 Color of the secondary text in hexadecimal format `#rrggbb`
@@ -177,7 +177,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the top and bottom accordion panels *  * 
+ * Sets the corner radius of the top and bottom accordion panels
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
@@ -189,7 +189,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ acc.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -198,7 +198,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ acc.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -207,35 +207,35 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ acc.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ acc.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ acc.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ acc.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ acc.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -244,7 +244,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ acc.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -253,7 +253,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ acc.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -265,7 +265,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ acc.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -277,7 +277,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ acc.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -287,7 +287,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ acc.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -297,7 +297,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ acc.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -305,7 +305,7 @@ Adds an accordion or expansion panel into your app. This is very useful to displ
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ acc.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

@@ -3,7 +3,6 @@
 
 /** # CreateAppBarElegant #
  * @abbrev abe
-
  * A more elegant appbar implementation
  * $$ abe = MUI.CreateAppBarElegant(title, leadingIcon, options) $$ 
  * @param {str} title Title text

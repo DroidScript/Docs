@@ -3,7 +3,6 @@
 
 /** # CreateTEFilledIconRight #
  * @abbrev tef
-
  * Creates a filled text input with icon on the right
  * $$ tef = MUI.CreateTEFilledIconRight(width, options, icon, hint, label, color) $$ 
  * @param {num} width 

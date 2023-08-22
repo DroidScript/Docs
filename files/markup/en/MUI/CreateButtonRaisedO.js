@@ -3,7 +3,6 @@
 
 /** # CreateButtonRaisedO #
  * @abbrev bro
-
  * An outlined material raised button.
  * $$ bro = MUI.CreateButtonRaisedO(text, width, height, color, backColor) $$ 
  * @param {str} text 

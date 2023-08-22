@@ -3,7 +3,6 @@
 
 /** # CreateGame #
  * @abbrev gam
-
  * 
  * $$ gam = app.CreateGame(file, orient) $$ 
  * @param {str_ptf} file 

@@ -3,7 +3,6 @@
 
 /** # CreateList #
  * @abbrev lst
-
  * A manipulation of the DroidScript list object.
  * $$ lst = MUI.CreateList(list, width, height, options) $$ 
  * @param {str} list 

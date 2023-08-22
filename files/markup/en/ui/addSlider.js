@@ -36,7 +36,7 @@ Adds a Slider Component into your App.
 
 /** ### setOnChange ###
  * @brief setOnChange
- * Sets a callback function when the value of the Slider Component changes *  * 
+ * Sets a callback function when the value of the Slider Component changes
  * $$ sld.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["num-The value of the Slider component."]}
  */
@@ -44,7 +44,7 @@ Adds a Slider Component into your App.
 
 /** ### setOnSelect ###
  * @brief setOnSelect
- * Sets a callback function when a final value is selected. This is equal to submit value event *  * 
+ * Sets a callback function when a final value is selected. This is equal to submit value event
  * $$ sld.setOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["value "],"pTypes":["num-The value of the Slider component."]}
  */
@@ -52,7 +52,7 @@ Adds a Slider Component into your App.
 
 /** ### setRange ###
  * @brief setRange
- * Sets a range value for the Slider Component *  * 
+ * Sets a range value for the Slider Component
  * $$ sld.setRange(min, max) $$
  * @param {num} min Minimum value of the slider.
  * @param {num} max Maximum value of the slider.
@@ -61,7 +61,7 @@ Adds a Slider Component into your App.
 
 /** ### setMarks ###
  * @brief setMarks
- * Sets the marks of the Slider Component * If value is `Boolean` the marks is base on the step * If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range *  * 
+ * Sets the marks of the Slider Component * If value is `Boolean` the marks is base on the step * If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range
  * $$ sld.setMarks(val) $$
  * @param {obj} val The marks on the Slider Component.
  */
@@ -69,7 +69,7 @@ Adds a Slider Component into your App.
 
 /** ### getMarks ###
  * @brief getMarks
- * Returns the step marks of the Slider Component. See `setMarks` methods for possible values *  * 
+ * Returns the step marks of the Slider Component. See `setMarks` methods for possible values
  * $$ sld.getMarks() $$
  * @returns bin
  */
@@ -77,7 +77,7 @@ Adds a Slider Component into your App.
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the component is touch *  * 
+ * Adds a callback handler when the component is touch
  * $$ sld.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
  */
@@ -85,7 +85,7 @@ Adds a Slider Component into your App.
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ sld.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
  */
@@ -93,7 +93,7 @@ Adds a Slider Component into your App.
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ sld.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -102,7 +102,7 @@ Adds a Slider Component into your App.
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ sld.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -111,35 +111,35 @@ Adds a Slider Component into your App.
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ sld.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ sld.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ sld.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ sld.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ sld.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -148,7 +148,7 @@ Adds a Slider Component into your App.
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ sld.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -157,7 +157,7 @@ Adds a Slider Component into your App.
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ sld.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -169,7 +169,7 @@ Adds a Slider Component into your App.
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ sld.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -181,7 +181,7 @@ Adds a Slider Component into your App.
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ sld.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -191,7 +191,7 @@ Adds a Slider Component into your App.
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ sld.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -201,7 +201,7 @@ Adds a Slider Component into your App.
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ sld.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -213,7 +213,7 @@ Adds a Slider Component into your App.
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ sld.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -221,7 +221,7 @@ Adds a Slider Component into your App.
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ sld.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

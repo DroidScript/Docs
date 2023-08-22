@@ -3,7 +3,6 @@
 
 /** # AddTextH2 #
  * @abbrev txh
-
  * Adds an H2 text to a layout. See @CreateTextH2 for full documentation.
  * $$ txh = MUI.AddTextH2(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

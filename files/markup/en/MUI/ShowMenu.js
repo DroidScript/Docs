@@ -3,7 +3,6 @@
 
 /** # ShowMenu #
  * @abbrev smu
-
  * Show a menu on a given control.
  * $$ smu = MUI.ShowMenu(control, list, width) $$ 
  * @param {dso} control 

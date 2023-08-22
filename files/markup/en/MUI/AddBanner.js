@@ -3,7 +3,6 @@
 
 /** # AddBanner #
  * @abbrev bnr
-
  * Adds a banner dialog. See @CreateBanner for a full documentation.
  * $$ bnr = MUI.AddBanner(text, okText, cancelText) $$ 
  * @param {str} text 

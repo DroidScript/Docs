@@ -3,7 +3,6 @@
 
 /** # AddLayout #
  * @abbrev lay
-
  * Adds a layout. See @CreateLayout for a full documentation.
  * $$ lay = MUI.AddLayout(parent, type, options) $$ 
  * @param {obj} parent MUI Layout or DS layout contorl

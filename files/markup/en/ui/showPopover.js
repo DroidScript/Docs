@@ -26,10 +26,6 @@ Show a popover on any <span style="color:#4c4; font-family:Courier, monospace; f
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-
 // ------------- SAMPLES ------------- 
 
 

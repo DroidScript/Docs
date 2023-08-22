@@ -3,7 +3,6 @@
 
 /** # CreateTESearchElegant #
  * @abbrev tes
-
  * 
  * $$ tes = MUI.CreateTESearchElegant(width, hint, icon, iconPos, color, option) $$ 
  * @param {num} width 

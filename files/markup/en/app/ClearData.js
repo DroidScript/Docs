@@ -5,7 +5,7 @@
  * @brief Deletes app.Save*() storage
  * ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.
  * 
- * See Also: @SetData, 
+ * See Also: @SetData,
  * 
  * See Also: @GetData
  * $$ app.ClearData(file) $$ 

@@ -3,7 +3,6 @@
 
 /** # AddTextH1 #
  * @abbrev txh
-
  * Adds an H1 text to a layout. See @CreateTextH1 for full documentation.
  * $$ txh = MUI.AddTextH1(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

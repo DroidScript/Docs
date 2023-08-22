@@ -3,7 +3,6 @@
 
 /** # CreateListDialog #
  * @abbrev lsd
-
  * Creates a more customizable list dialog
  * $$ lsd = MUI.CreateListDialog(title, list, color, bottom) $$ 
  * @param {str} title 

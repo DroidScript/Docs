@@ -3,11 +3,7 @@
 
 /** # CopyFolder #
  * @brief Copies a folder to a given destination
- * CopyFolder copies a folder and its contents to a given destination. If an item already exists in the destination it will not be overwritten unless overwrite is true.
  * 
- * **Note:** <js nobox>CopyFolder(fld1, fld2)</js> will copy the **contents** of _fld1_ to _fld2_.
- * 
- * See Also: @RenameFolder, @DeleteFolder, @FolderExists
  * $$ app.CopyFolder(source, destination, overwrite, filter) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
@@ -15,6 +11,16 @@
  * @param {str} filter pattern
 */
 
+
+// ------------- LONG DESCRIPTION ------------- 
+
+/** @Description
+CopyFolder copies a folder and its contents to a given destination. If an item already exists in the destination it will not be overwritten unless overwrite is true.
+
+**Note:** <js nobox>CopyFolder(fld1, fld2)</js> will copy the **contents** of _fld1_ to _fld2_.
+
+See Also: @RenameFolder, @DeleteFolder, @FolderExists
+ */
 
 
 

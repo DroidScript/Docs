@@ -2,7 +2,6 @@
 
 
 /** # WifiConnect #
-
  * Connect to a WiFi network by specifying the ssid and a password. See Also: @WifiScan, @SetOnWifiChange, @SetWifiApEnabled
  * $$ app.WifiConnect(ssid, key) $$ 
  * @param {str} ssid 

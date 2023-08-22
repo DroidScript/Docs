@@ -2,7 +2,6 @@
 
 
 /** # ScheduleJob #
-
  * Schedules background jobs defined in a Job.js file
  * 
  * See Also: @CancelJob

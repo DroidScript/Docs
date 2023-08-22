@@ -5,7 +5,7 @@
  * @brief Get user country name
  * Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)
  * 
- * See Also: @GetCountryCode, 
+ * See Also: @GetCountryCode,
  * 
  * See Also: @GetLanguage
  * $$ app.GetCountry() $$ 

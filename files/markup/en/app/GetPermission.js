@@ -2,7 +2,6 @@
 
 
 /** # GetPermission #
-
  * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.
  * 
  * See Also: @CheckPermission

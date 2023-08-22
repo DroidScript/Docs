@@ -3,7 +3,6 @@
 
 /** # AddTextH3 #
  * @abbrev txh
-
  * Adds an H3 text to a layout. See @CreateTextH3 for full documentation.
  * $$ txh = MUI.AddTextH3(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

@@ -3,7 +3,6 @@
 
 /** # AddCheckbox #
  * @abbrev chc
-
  * Adds an MUI Checkbox on a given layout. See @CreateCheckbox for a full documentation.
  * $$ chc = MUI.AddCheckbox(parent, list, width, height, color) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

@@ -140,21 +140,21 @@
 		"retval": "gvo-Circle",
 		"shortDesc": "Creates a circle",
 		"subf": {
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
-			"Contains": "#9612465132",
-			"data": "#2865983653",
-			"graphic": "#5017981624",
-			"group": "#5193861923",
-			"height": "#0162475314",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
-			"SetMatrix": "#1789264812",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716"
+			"alpha": "#alpha",
+			"angle": "#angle",
+			"Contains": "#Contains",
+			"data": "#data",
+			"graphic": "#graphic",
+			"group": "#group",
+			"height": "#height",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
+			"SetMatrix": "#SetMatrix",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width"
 		}
 	},
 	"CreateEllipse": {
@@ -165,21 +165,21 @@
 		"retval": "gvo-Ellipse",
 		"shortDesc": "Creates an ellipse",
 		"subf": {
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
-			"Contains": "#9612465132",
-			"data": "#2865983653",
-			"graphic": "#5017981624",
-			"group": "#5193861923",
-			"height": "#0162475314",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
-			"SetMatrix": "#1789264812",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716"
+			"alpha": "#alpha",
+			"angle": "#angle",
+			"Contains": "#Contains",
+			"data": "#data",
+			"graphic": "#graphic",
+			"group": "#group",
+			"height": "#height",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
+			"SetMatrix": "#SetMatrix",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width"
 		}
 	},
 	"CreatePolygon": {
@@ -189,21 +189,21 @@
 		"pTypes": ["lst-[ x1:num_frc,y1:num_frc, x2:num_frc,y2:num_frc, ... ]", "num_frc", "num_frc", "num_col", "num_pxl", "num_col", "num_frc", "str"],
 		"retval": "gvo-Polygon",
 		"subf": {
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
-			"Contains": "#9612465132",
-			"data": "#2865983653",
-			"graphic": "#5017981624",
-			"group": "#5193861923",
-			"height": "#0162475314",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
-			"SetMatrix": "#1789264812",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716"
+			"alpha": "#alpha",
+			"angle": "#angle",
+			"Contains": "#Contains",
+			"data": "#data",
+			"graphic": "#graphic",
+			"group": "#group",
+			"height": "#height",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
+			"SetMatrix": "#SetMatrix",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width"
 		}
 	},
 	"CreateRectangle": {
@@ -214,21 +214,21 @@
 		"retval": "gvo-Rectangle",
 		"shortDesc": "Creates a rectangle",
 		"subf": {
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
-			"Contains": "#9612465132",
-			"data": "#2865983653",
-			"graphic": "#5017981624",
-			"group": "#5193861923",
-			"height": "#0162475314",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
-			"SetMatrix": "#1789264812",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716"
+			"alpha": "#alpha",
+			"angle": "#angle",
+			"Contains": "#Contains",
+			"data": "#data",
+			"graphic": "#graphic",
+			"group": "#group",
+			"height": "#height",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
+			"SetMatrix": "#SetMatrix",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width"
 		}
 	},
 	"CreateSound": {
@@ -271,16 +271,16 @@
 				"retval": "bin",
 				"shortDesc": "incicates if added to game"
 			},
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
+			"alpha": "#alpha",
+			"angle": "#angle",
 			"aspect": {
 				"desc": "The aspect ratio of the sprite",
 				"isval": true,
 				"retval": "num",
 				"shortDesc": "sprite aspect ratio"
 			},
-			"Contains": "#9612465132",
-			"data": "#2865983653",
+			"Contains": "#Contains",
+			"data": "#data",
 			"Flip": {
 				"desc": "Flips the sprite on the horizontal and/or the vertical axis.",
 				"pNames": ["horiz", "vert"],
@@ -298,11 +298,11 @@
 				"pTypes": ["num_int"],
 				"shortDesc": "go to animation frame"
 			},
-			"group": "#5193861923",
-			"height": "#0162475314",
-			"PauseTween": "#8798237593",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
+			"group": "#group",
+			"height": "#height",
+			"PauseTween": "#PauseTween",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
 			"Play": {
 				"desc": "Start playing the sprite animation",
 				"pNames": ["startFrame", "speed", "loop"],
@@ -321,16 +321,16 @@
 				"pTypes": ["num_int"],
 				"shortDesc": "play to animation frame"
 			},
-			"PlayTween": "#9832987464",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
+			"PlayTween": "#PlayTween",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
 			"SetLoop": {
 				"desc": "Define if the animation should loop or stop at the end",
 				"pNames": ["loop"],
 				"pTypes": ["bin"],
 				"shortDesc": "Set animation looping"
 			},
-			"SetMatrix": "#1789264812",
+			"SetMatrix": "#SetMatrix",
 			"SetPlaySpeed": {
 				"desc": "Define at which speed the animation will play. 1 equals to 60 fps",
 				"pNames": ["speed"],
@@ -361,9 +361,9 @@
 				"pTypes": ["gvo-CreateTexture"],
 				"shortDesc": "Change sprite texture"
 			},
-			"SetTween": "#8929387454",
-			"StartTween": "#1234231242",
-			"StepTween": "#9872394872",
+			"SetTween": "#SetTween",
+			"StartTween": "#StartTween",
+			"StepTween": "#StepTween",
 			"Stop": {
 				"desc": "Stop playin the animation.",
 				"shortDesc": "Stop animation"
@@ -374,10 +374,10 @@
 				"pTypes": ["num_int"],
 				"shortDesc": "Stop animation on frame"
 			},
-			"Tween": "#2114624769",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716",
+			"Tween": "#Tween",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width",
 			"x": {
 				"desc": "X-position on the screen.",
 				"isval": true,
@@ -398,7 +398,7 @@
 		"retval": "gvo-SpriteSheet",
 		"shortDesc": "Returns a new SpriteSheet object",
 		"subf": {
-			"data": "#2865983653",
+			"data": "#data",
 			"loaded": {
 				"desc": "indicates if the sheet is already loaded.",
 				"isval": true,
@@ -421,9 +421,9 @@
 				"retval": "str-left|center|right",
 				"shortDesc": "Multiline text alignment"
 			},
-			"alpha": "#2974510528",
-			"angle": "#1034034325",
-			"Contains": "#9612465132",
+			"alpha": "#alpha",
+			"angle": "#angle",
+			"Contains": "#Contains",
 			"file": {
 				"desc": "Path to the source file.",
 				"isval": true,
@@ -436,15 +436,15 @@
 				"retval": "num_pxl",
 				"shortDesc": "pixel font size"
 			},
-			"height": "#0162475314",
-			"pivotX": "#2983519836",
-			"pivotY": "#9812693423",
-			"scaleX": "#1246873531",
-			"scaleY": "#7124535139",
-			"SetMatrix": "#1789264812",
-			"Update": "#1274618924",
-			"visible": "#1584619232",
-			"width": "#9182648716"
+			"height": "#height",
+			"pivotX": "#pivotX",
+			"pivotY": "#pivotY",
+			"scaleX": "#scaleX",
+			"scaleY": "#scaleY",
+			"SetMatrix": "#SetMatrix",
+			"Update": "#Update",
+			"visible": "#visible",
+			"width": "#width"
 		}
 	},
 	"CreateTexture": {

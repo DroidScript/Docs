@@ -3,7 +3,6 @@
 
 /** # CreateAlert #
  * @abbrev alr
-
  * A nice pop-up at the top of your current layout
  * $$ alr = MUI.CreateAlert(text, icon, color) $$ 
  * @param {str} text Popup text

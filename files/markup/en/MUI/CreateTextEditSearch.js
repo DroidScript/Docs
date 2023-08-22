@@ -3,7 +3,6 @@
 
 /** # CreateTextEditSearch #
  * @abbrev tes
-
  * Creates a customize search style text input.
  * $$ tes = MUI.CreateTextEditSearch(width, options, hint, color, backColor) $$ 
  * @param {num} width 

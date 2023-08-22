@@ -3,7 +3,6 @@
 
 /** # AddModal #
  * @abbrev mdl
-
  * Adds a modal. See @CreateModal for a full documentation.
  * $$ mdl = MUI.AddModal(title, body, okTxt, cancelTxt, options) $$ 
  * @param {str} title 

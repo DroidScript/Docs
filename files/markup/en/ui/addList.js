@@ -42,7 +42,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### addItem ###
  * @brief addItem
- * Adds an item in the list *  * 
+ * Adds an item in the list
  * $$ lst.addItem(title, body, image, index) $$
  * @param {str} title The title of the item.
  * @param {str} body The text description of the item.
@@ -53,7 +53,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback function when the list item is click *  * 
+ * Adds a callback function when the list item is click
  * $$ lst.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["title ","body ","icon ","index ","event "],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
  */
@@ -61,7 +61,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setOnSelect ###
  * @brief setOnSelect
- * Sets a callback handler when an item in the list is selected *  * 
+ * Sets a callback handler when an item in the list is selected
  * $$ lst.setOnSelect(callback) $$
  * @param {fnc_json} callback {"pNames":["title ","index "],"pTypes":["str-The list item title text.","num-The index of the selected list item."]}
  */
@@ -69,7 +69,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setOnAction ###
  * @brief setOnAction
- * Sets a callback handler when an action icon is click *  * 
+ * Sets a callback handler when an action icon is click
  * $$ lst.setOnAction(callback) $$
  * @param {fnc_json} callback {"pNames":["icon ","index "],"pTypes":["str-The icon text.","num-The index of the corresponding secondary action."]}
  */
@@ -77,7 +77,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ lst.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["title ","body ","icon ","index ","event "],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
  */
@@ -85,21 +85,21 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### getSelectedItems ###
  * @brief getSelectedItems
- * Returns an array of indexes of the selected items *  * 
+ * Returns an array of indexes of the selected items
  * $$ lst.getSelectedItems() $$
  */
 
 
 /** ### getSelectedTitles ###
  * @brief getSelectedTitles
- * Returns an array of titles of selected items *  * 
+ * Returns an array of titles of selected items
  * $$ lst.getSelectedTitles() $$
  */
 
 
 /** ### setList ###
  * @brief setList
- * Updtes the list *  * 
+ * Updtes the list
  * $$ lst.setList(list) $$
  * @param {lst} list A comma separated list of items or an array. See the list format above.
  */
@@ -107,7 +107,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setSelectable ###
  * @brief setSelectable
- * Make the list selectable or not *  * 
+ * Make the list selectable or not
  * $$ lst.setSelectable(selectable) $$
  * @param {bin} selectable If true, make the list selectable. Otherwise, list is not selectable
  */
@@ -115,7 +115,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setItemByIndex ###
  * @brief setItemByIndex
- * Change the content of an item in a list *  * 
+ * Change the content of an item in a list
  * $$ lst.setItemByIndex(index, newTitle, newBody, newImage) $$
  * @param {num} index The index of the item to update
  * @param {str} newTitle The new title of the item
@@ -126,7 +126,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### getItemByIndex ###
  * @brief getItemByIndex
- * Get the item in a list by its corresponding index *  * 
+ * Get the item in a list by its corresponding index
  * $$ lst.getItemByIndex(index) $$
  * @param {num} index Returns the item in a list as an object of the following format { title, body, image }
  */
@@ -134,7 +134,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setItem ###
  * @brief setItem
- * Updates an item in the list *  * 
+ * Updates an item in the list
  * $$ lst.setItem(title, newTitle, newBody, newImage) $$
  * @param {str} title The title of the list item to update.
  * @param {str} newTitle The new title of the list item.
@@ -145,7 +145,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### getItem ###
  * @brief getItem
- * Get the item in the list by its correspding title *  * 
+ * Get the item in the list by its correspding title
  * $$ lst.getItem(title) $$
  * @param {str} title Returns the item in a list as an object of the following format { title, body, image }
  */
@@ -153,7 +153,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### removeItemByIndex ###
  * @brief removeItemByIndex
- * Removes an element from the list *  * 
+ * Removes an element from the list
  * $$ lst.removeItemByIndex(index) $$
  * @param {num} index The index of the item to remove
  */
@@ -161,7 +161,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### removeItemByName ###
  * @brief removeItemByName
- * Removes an item in the list by its title *  * 
+ * Removes an item in the list by its title
  * $$ lst.removeItemByName(name) $$
  * @param {str} name The title of the list to remove.
  */
@@ -169,28 +169,28 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### shiftItem ###
  * @brief shiftItem
- * Removes the first item the list *  * 
+ * Removes the first item the list
  * $$ lst.shiftItem() $$
  */
 
 
 /** ### popItem ###
  * @brief popItem
- * Removes the last item in the list *  * 
+ * Removes the last item in the list
  * $$ lst.popItem() $$
  */
 
 
 /** ### deselectAll ###
  * @brief deselectAll
- * Clears all selection in the list if the list is selectable *  * 
+ * Clears all selection in the list if the list is selectable
  * $$ lst.deselectAll() $$
  */
 
 
 /** ### selectItemByIndex ###
  * @brief selectItemByIndex
- * Selects an item in the list by its index and marked the checkbox. List must be selectable *  * 
+ * Selects an item in the list by its index and marked the checkbox. List must be selectable
  * $$ lst.selectItemByIndex(index) $$
  * @param {num} index The index to be selected.
  */
@@ -198,7 +198,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setTitleText ###
  * @brief setTitleText
- * Sets a new title text to a corresponding item in a list *  * 
+ * Sets a new title text to a corresponding item in a list
  * $$ lst.setTitleText(index, title) $$
  * @param {num} index The index of the corresponding list item.
  * @param {str} title The new title text.
@@ -207,7 +207,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setBodyText ###
  * @brief setBodyText
- * Sets a new secondary text to a corresponding item in a list *  * 
+ * Sets a new secondary text to a corresponding item in a list
  * $$ lst.setBodyText(index, newText) $$
  * @param {num} index The index of the list whose secondary text to be changed.
  * @param {str} newText The new secondary text.
@@ -216,7 +216,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setIcon ###
  * @brief setIcon
- * Updates an icon in a list by its corresponding index *  * 
+ * Updates an icon in a list by its corresponding index
  * $$ lst.setIcon(index, icon) $$
  * @param {num} index The index of the corresponding list item.
  * @param {str} icon Material icon font.
@@ -225,7 +225,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the list container *  * 
+ * Sets the corner radius of the list container
  * $$ lst.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
@@ -237,7 +237,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ lst.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -246,7 +246,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ lst.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -255,35 +255,35 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### show ###
  * @brief show
- * Show the component *  * 
+ * Show the component
  * $$ lst.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ lst.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ lst.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ lst.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ lst.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -292,7 +292,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ lst.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -301,7 +301,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ lst.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -313,7 +313,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ lst.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -325,7 +325,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ lst.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -335,7 +335,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ lst.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -345,7 +345,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ lst.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -353,7 +353,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ lst.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

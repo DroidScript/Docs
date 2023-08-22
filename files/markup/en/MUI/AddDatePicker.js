@@ -3,7 +3,6 @@
 
 /** # AddDatePicker #
  * @abbrev dtp
-
  * Adds a date picker dialog. See @CreateDatePicker for a full documentation.
  * $$ dtp = MUI.AddDatePicker(textEdit, yyyy, mm, dd, color) $$ 
  * @param {obj} textEdit MUI TextEdit or DS TextEdit control

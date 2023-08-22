@@ -2,7 +2,6 @@
 
 
 /** # PairBtDevice #
-
  * Pairs a bluetooth device with yours.
  * 
  * See Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices

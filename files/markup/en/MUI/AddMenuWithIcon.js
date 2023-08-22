@@ -3,7 +3,6 @@
 
 /** # AddMenuWithIcon #
  * @abbrev mwi
-
  * MUI menu with material icon font. See @CreateMenuWithIcon for a full documentation.
  * $$ mwi = MUI.AddMenuWithIcon(list, width, height, position) $$ 
  * @param {lst} list str

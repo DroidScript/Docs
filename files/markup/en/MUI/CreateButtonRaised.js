@@ -3,7 +3,6 @@
 
 /** # CreateButtonRaised #
  * @abbrev btr
-
  * The basic type of material button
  * $$ btr = MUI.CreateButtonRaised(text, width, height, color, txtcolor) $$ 
  * @param {str} text 

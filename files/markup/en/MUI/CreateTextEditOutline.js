@@ -3,7 +3,6 @@
 
 /** # CreateTextEditOutline #
  * @abbrev teo
-
  * Creates an outlined material text input.
  * $$ teo = MUI.CreateTextEditOutline(width, options, hint, label, color, backColor) $$ 
  * @param {num} width 

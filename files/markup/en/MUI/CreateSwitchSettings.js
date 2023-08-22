@@ -3,7 +3,6 @@
 
 /** # CreateSwitchSettings #
  * @abbrev sws
-
  * Creates a switchable settings that can be toggled on and off.
  * $$ sws = MUI.CreateSwitchSettings(text, width, height, value, color, backColor) $$ 
  * @param {str} text 

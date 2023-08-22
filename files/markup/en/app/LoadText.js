@@ -2,7 +2,6 @@
 
 
 /** # LoadText #
-
  * Load saved text value to remember varibale values between multiple app starts.
  * 
  * See also: @SaveText.

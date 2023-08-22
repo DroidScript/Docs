@@ -3,7 +3,6 @@
 
 /** # CreateTabFixed #
  * @abbrev tbf
-
  * 
  * $$ tbf = MUI.CreateTabFixed(title, width, height, options, color, animation) $$ 
  * @param {str_com} title titles

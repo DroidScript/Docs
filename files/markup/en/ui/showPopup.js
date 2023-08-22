@@ -31,37 +31,37 @@ Shows a popup into your app.
 
 /** ### setOnClose ###
  * @brief setOnClose
- * Adds an onClose callback to your popup *  * 
+ * Adds an onClose callback to your popup
  * $$ pop.setOnClose(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### setOnAction ###
  * @brief setOnAction
- * Adds an action callback when the user touches the action button. The `btnText` param must * be provided in order to create an action button *  * 
+ * Adds an action callback when the user touches the action button. The `btnText` param must * be provided in order to create an action button
  * $$ pop.setOnAction(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### show ###
  * @brief show
- * Show the popup *  * 
+ * Show the popup
  * $$ pop.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the popup *  * 
+ * Hide the popup
  * $$ pop.hide() $$
  */
 
 
 /** ### setPosition ###
  * @brief setPosition
- * Updates the position of the popup *  * 
+ * Updates the position of the popup
  * $$ pop.setPosition(vertical, horizontal) $$
  * @param {str} vertical Vertical alignment. Values can be `Top` `Bottom`
  * @param {str} horizontal Horizontal alignment. Values can be `Left` `Center` and `Right`
@@ -70,7 +70,7 @@ Shows a popup into your app.
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the popup. The returned object is of the form `{ vertical, horizontal *  * 
+ * Returns the position of the popup. The returned object is of the form `{ vertical, horizontal
  * $$ pop.getPosition() $$
  * @returns obj
  */

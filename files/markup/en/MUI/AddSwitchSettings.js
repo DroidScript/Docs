@@ -3,7 +3,6 @@
 
 /** # AddSwitchSettings #
  * @abbrev sws
-
  * Adds an MUI SwitchSettings to a given layout. See @CreateSwitchSettings for a full documentation.
  * $$ sws = MUI.AddSwitchSettings(parent, text, width, height, value, color, backColor) $$ 
  * @param {obj} parent MUI Layout or DS Layout control

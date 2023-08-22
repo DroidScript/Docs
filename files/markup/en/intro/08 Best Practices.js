@@ -2,7 +2,6 @@
 
 
 /** # 08 Best Practices #
-
  * 
  * $$ intro.08 Best Practices() $$ 
 */

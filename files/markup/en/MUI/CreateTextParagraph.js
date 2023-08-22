@@ -3,7 +3,6 @@
 
 /** # CreateTextParagraph #
  * @abbrev txp
-
  * Creates a paragraph text
  * $$ txp = MUI.CreateTextParagraph(text, width, height, options, color, fontWeight) $$ 
  * @param {str} text 

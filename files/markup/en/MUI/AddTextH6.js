@@ -3,7 +3,6 @@
 
 /** # AddTextH6 #
  * @abbrev txh
-
  * Adds an H6 text to a layout. See @CreateTextH6 for full documentation.
  * $$ txh = MUI.AddTextH6(parent, text, width, height, options, color, fontWeight) $$ 
  * @param {obj} parent MUI Layout or DS layout control

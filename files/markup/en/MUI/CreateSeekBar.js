@@ -3,7 +3,6 @@
 
 /** # CreateSeekBar #
  * @abbrev skb
-
  * An MUI implementation of a basic seekbar.
  * $$ skb = MUI.CreateSeekBar(value, range, width, color) $$ 
  * @param {num} value Must be between 0 and range

@@ -64,7 +64,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setChildMargins ###
  * @brief setChildMargins
- * Sets a default margins for the children of the layout component *  * 
+ * Sets a default margins for the children of the layout component
  * $$ lay.setChildMargins(left, top, right, bottom, mode) $$
  * @param {num} left Left margin.
  * @param {num} top Top margin.
@@ -76,14 +76,14 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### show ###
  * @brief show
- * Makes the layout visible *  * 
+ * Makes the layout visible
  * $$ lay.show() $$
  */
 
 
 /** ### goto ###
  * @brief goto
- * Transition to the given index *  * 
+ * Transition to the given index
  * $$ lay.goto(index) $$
  * @param {num} index Index of a given layout.
  */
@@ -91,7 +91,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### getCurrentSlide ###
  * @brief getCurrentSlide
- * Returns the index of the current Slide Layout *  * 
+ * Returns the index of the current Slide Layout
  * $$ lay.getCurrentSlide() $$
  * @returns num
  */
@@ -99,21 +99,21 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### next ###
  * @brief next
- * Transition to the next slide *  * 
+ * Transition to the next slide
  * $$ lay.next() $$
  */
 
 
 /** ### previous ###
  * @brief previous
- * Transition to the previous slide *  * 
+ * Transition to the previous slide
  * $$ lay.previous() $$
  */
 
 
 /** ### getChildOrder ###
  * @brief getChildOrder
- * Returns the index of the child from the layout children stack in order *  * 
+ * Returns the index of the child from the layout children stack in order
  * $$ lay.getChildOrder(child) $$
  * @param {obj} child The child component of the layout.
  * @returns num
@@ -122,7 +122,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### childToFront ###
  * @brief childToFront
- * Move the child to the front *  * 
+ * Move the child to the front
  * $$ lay.childToFront(child) $$
  * @param {obj} child The child object of the layout.
  */
@@ -130,7 +130,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### hasChild ###
  * @brief hasChild
- * Check whether a component is a child of this layout *  * 
+ * Check whether a component is a child of this layout
  * $$ lay.hasChild(child) $$
  * @param {obj} child The child component to check.
  * @returns bin
@@ -139,7 +139,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### removeChild ###
  * @brief removeChild
- * Removes a child from this layout *  * 
+ * Removes a child from this layout
  * $$ lay.removeChild(child) $$
  * @param {obj} child The child component to be remove.
  */
@@ -147,7 +147,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setOnTouch ###
  * @brief setOnTouch
- * Adds a callback handler when the component is touch *  * 
+ * Adds a callback handler when the component is touch
  * $$ lay.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
  */
@@ -155,7 +155,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
- * Adds a callback function on right click *  * 
+ * Adds a callback function on right click
  * $$ lay.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
  */
@@ -163,7 +163,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### animate ###
  * @brief animate
- * Animate the component *  * 
+ * Animate the component
  * $$ lay.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
@@ -172,7 +172,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setSize ###
  * @brief setSize
- * Sets the size of the component *  * 
+ * Sets the size of the component
  * $$ lay.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
@@ -181,28 +181,28 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### hide ###
  * @brief hide
- * Hide the component *  * 
+ * Hide the component
  * $$ lay.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
- * Destroy the component *  * 
+ * Destroy the component
  * $$ lay.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
- * Destroy the component *  * 
+ * Destroy the component
  * $$ lay.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
- * Sets the x and y scaling of the component *  * 
+ * Sets the x and y scaling of the component
  * $$ lay.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
@@ -211,7 +211,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### getPosition ###
  * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom *  * 
+ * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
  * $$ lay.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
@@ -220,7 +220,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setMargins ###
  * @brief setMargins
- * Sets the margin of the component *  * 
+ * Sets the margin of the component
  * $$ lay.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
@@ -232,7 +232,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setPadding ###
  * @brief setPadding
- * Sets the padding component container *  * 
+ * Sets the padding component container
  * $$ lay.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
@@ -244,7 +244,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setPosition ###
  * @brief setPosition
- * Sets the position of the component relative to its parent dimensions *  * 
+ * Sets the position of the component relative to its parent dimensions
  * $$ lay.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
@@ -254,7 +254,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setBorder ###
  * @brief setBorder
- * Sets the border line for the component container *  * 
+ * Sets the border line for the component container
  * $$ lay.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
@@ -264,7 +264,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
- * Sets the corner radius of the component *  * 
+ * Sets the corner radius of the component
  * $$ lay.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
@@ -276,7 +276,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### bringForward ###
  * @brief bringForward
- * Bring this component forward by a given z-index *  * 
+ * Bring this component forward by a given z-index
  * $$ lay.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
@@ -284,7 +284,7 @@ Adds a layout into your app. A layout is the basic ui component of an app. It is
 
 /** ### sendBackward ###
  * @brief sendBackward
- * Bring this component backward by a given z-index *  * 
+ * Bring this component backward by a given z-index
  * $$ lay.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */

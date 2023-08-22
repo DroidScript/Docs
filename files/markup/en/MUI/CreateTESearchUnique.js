@@ -3,7 +3,6 @@
 
 /** # CreateTESearchUnique #
  * @abbrev tes
-
  * Creates a unique text input
  * $$ tes = MUI.CreateTESearchUnique(width, hint, icon, iconColor) $$ 
  * @param {num} width 

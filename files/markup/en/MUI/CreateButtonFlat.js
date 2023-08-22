@@ -3,7 +3,6 @@
 
 /** # CreateButtonFlat #
  * @abbrev btf
-
  * Just a flat button.
  * $$ btf = MUI.CreateButtonFlat(text, width, height, color, backColor) $$ 
  * @param {str} text 

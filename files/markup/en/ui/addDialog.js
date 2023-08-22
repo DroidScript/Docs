@@ -31,7 +31,7 @@ Adds a dialog into your app.
 
 /** ### setOnAction ###
  * @brief setOnAction
- * Adds a callback function when the action buttons are click *  * 
+ * Adds a callback function when the action buttons are click
  * $$ dlg.setOnAction(callback) $$
  * @param {fnc_json} callback {"pNames":["text ","index "],"pTypes":["str-The dialog action text.","num-The index of the corresponding dialog action."]}
  */
@@ -39,22 +39,22 @@ Adds a dialog into your app.
 
 /** ### setOnClose ###
  * @brief setOnClose
- * Adds a callback function when the dialog is close *  * 
+ * Adds a callback function when the dialog is close
  * $$ dlg.setOnClose(callback) $$
- * @param {} callback 
+ * @param {fnc_json} callback 
  */
 
 
 /** ### show ###
  * @brief show
- * Show the dialog *  * 
+ * Show the dialog
  * $$ dlg.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
- * Hide the dialog *  * 
+ * Hide the dialog
  * $$ dlg.hide() $$
  */
 

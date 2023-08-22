@@ -2,7 +2,6 @@
 
 
 /** # AddGraphic #
-
  * Adds a basic shape object to the game.
  * See Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon
  * $$ gfx.AddGraphic(obj, x, y, w, h, angle, alpha) $$ 
