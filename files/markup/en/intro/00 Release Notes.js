@@ -1328,7 +1328,7 @@
 - Added 'Drawer Menu' sample.
 - Added app.DownloadFile() method (uses Android download manager).
 - Added .SetEnabled() method for all controls.
-- Added app.ChooseFile("Choose a file", "\*/\*", OnFileChoose) method.
+- Added app.ChooseFile("Choose a file", "\*\/\*", OnFileChoose) method.
 - Added app.ChooseContact() method.
 - Added new "Choose" sample (get user to choose files or contacts).
 - Added support for Remix Mini (runs in desktop mode).

@@ -8,8 +8,8 @@ const getComment = require("esprima-extract-comments");
 let verbose = 1;
 const extraFormat = false;
 const version = "v257";
-const SRC = __dirname + "/markup/en";
-const DST = __dirname + "/json/en/" + version;
+const SRC = path.normalize(__dirname + "/markup/en");
+const DST = path.normalize(__dirname + "/json/en/" + version);
 
 const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
@@ -42,8 +42,6 @@ async function LoopFiles(SOURCE_DIR) {
     let outputSamples = path.join(outputFolder, "samples");
     let outputDesc = path.join(outputFolder, "desc");
 
-    let navsJson = path.join(SOURCE_DIR.substring(0, SOURCE_DIR.lastIndexOf("/")), folder + "-navs.json");
-
     // parent methods
     // let parent = false
     if (!fs.existsSync(outputFolder)) fs.mkdirSync(outputFolder, { recursive: true })
@@ -63,8 +61,9 @@ async function LoopFiles(SOURCE_DIR) {
 
     /** @type {Obj<string[]>} */
     let navs = {};
-    if (fs.existsSync(navsJson))
-        navs = JSON.parse(fs.readFileSync(navsJson, 'utf8'));
+    let navsPath = path.join(SOURCE_DIR, "..", folder + "-navs.json");
+    if (fs.existsSync(navsPath))
+        navs = JSON.parse(fs.readFileSync(navsPath, 'utf8'));
 
     for (const file of files) {
         const folderPath = path.join(SOURCE_DIR, file);
@@ -101,18 +100,24 @@ async function LoopFiles(SOURCE_DIR) {
     if (Object.values(rObjJson).every(o => descOnly(o))) return;
 
     if (Object.keys(objJson).length) {
-        let objJsonFile = path.join(outputFolder, "obj.json");
+        const objJsonFile = path.join(outputFolder, "obj.json");
         fs.writeFileSync(objJsonFile, tos(objJson));
     }
 
     if (Object.keys(baseJson).length) {
-        let baseJsonFile = path.join(outputFolder, "base.json");
+        const baseJsonFile = path.join(outputFolder, "base.json");
         fs.writeFileSync(baseJsonFile, tos(baseJson).replace(/\s+"name": /g, ' "name": '));
     }
 
     if (Object.keys(navs).length) {
-        let navsJsonFile = path.join(outputFolder, "navs.json");
+        const navsJsonFile = path.join(outputFolder, "navs.json");
         fs.writeFileSync(navsJsonFile, JSON.stringify(navs, null, '\t'));
+    }
+
+    const scopePath = path.join(SOURCE_DIR, "..", folder + ".js");
+    if (fs.existsSync(scopePath)) {
+        const scopeJSFile = path.join(outputFolder, folder + ".js");
+        fs.copyFileSync(scopePath, scopeJSFile);
     }
 }
 
