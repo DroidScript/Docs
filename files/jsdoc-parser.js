@@ -466,7 +466,7 @@ function extractBacktickStringsDesc(str) {
 }
 
 async function GetFolders() {
-    const files = await fs.readdir(SRC, { withFileTypes: true });
+    const files = fs.readdirSync(path.join(__dirname, SRC), { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => file.isDirectory());
     for (const folder of folders)
