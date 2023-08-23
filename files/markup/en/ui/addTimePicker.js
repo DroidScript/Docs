@@ -17,9 +17,10 @@
 /** @Description
 Adds a time picker component to the app.
 
-<style>.samp { margin-top: 2px; } </style><h3>Properties</h3>These are the setter and getter properties for the addTimePicker Component.
-<div class="samp"><a href="#format-0" data-transition="pop" data-rel="popup" class="ui-link">format </a></div>
-<div data-role="popup" id="format-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>Sets or returns the time format. Can be of the form \n Hour formats \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">H</span> : 0 1 ... 22 23 \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">HH</span> : 	00 01 ... 22 23 \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">h</span> : 1 2 ... 11 12 \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">hh</span> : 	01 02 ... 11 12 \n Minute formats \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">m</span> : 	0 1 ... 58 59 \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">mm</span> : 00 01 ... 58 59 \n AM/PM \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">A</span> : AM or PM \n <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">a</span> : am pm</p></div>
+### Properties
+These are the setter and getter properties for the addTimePicker Component.
+<smp noinl>format:"str:'Sets or returns the time format. Can be of the form \n Hour formats \n <col nobox #fb8c00>H</col> : 0 1 ... 22 23 \n <col nobox #fb8c00>HH</col> : 	00 01 ... 22 23 \n <col nobox #fb8c00>h</col> : 1 2 ... 11 12 \n <col nobox #fb8c00>hh</col> : 	01 02 ... 11 12 \n Minute formats \n <col nobox #fb8c00>m</col> : 	0 1 ... 58 59 \n <col nobox #fb8c00>mm</col> : 00 01 ... 58 59 \n AM/PM \n <col nobox #fb8c00>A</col> : AM or PM \n <col nobox #fb8c00>a</col> : am pm'"</smp>
+
  */
 
 

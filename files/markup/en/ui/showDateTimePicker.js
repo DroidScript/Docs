@@ -19,9 +19,9 @@
 /** @Description
 Show a DateTimePicker where the user can select a date and time.
 
- If you want a date picker only see <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">DatePicker</span> or if you want time picker only see <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">TimePicker</span>
+ If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
 
-<style>.samp { margin-top: 2px; } </style>
+
  */
 
 

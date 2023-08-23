@@ -55,72 +55,200 @@
 			→ <b>Object:</b> Progress Component
 		</div>
 
-		<p>If you pass a null value on initialization and you won't passed a variant option, the default variant will be <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">indeterminate</span>.<br>
+		<p>If you pass a null value on initialization and you won't passed a variant option, the default variant will be <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">indeterminate</span>.<br>
 		<br>
-		Otherwise if there's no variant option and the value is not null, it will automatically be a <span style="color:#4c4; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">determinate</span> variant.<br>
-		<br>
-		<style>.samp { margin-top: 2px; } </style></p>
+		Otherwise if there's no variant option and the value is not null, it will automatically be a <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">determinate</span> variant.</p>
 		<h3>Properties</h3>
-		<p>These are the setter and getter properties for the addProgress Component.<br>
-		<div class="samp"><a href="#absheight-0" data-transition="pop" data-rel="popup" class="ui-link">absHeight </a></div><div class="samp"><a href="#absleft-5" data-transition="pop" data-rel="popup" class="ui-link">absLeft </a></div><div class="samp"><a href="#abstop-10" data-transition="pop" data-rel="popup" class="ui-link">absTop </a></div><div class="samp"><a href="#abswidth-15" data-transition="pop" data-rel="popup" class="ui-link">absWidth </a></div><div class="samp"><a href="#backcolor-20" data-transition="pop" data-rel="popup" class="ui-link">backColor </a></div><div class="samp"><a href="#backimage-25" data-transition="pop" data-rel="popup" class="ui-link">backImage </a></div><div class="samp"><a href="#border-30" data-transition="pop" data-rel="popup" class="ui-link">border </a></div><div class="samp"><a href="#bordercolor-35" data-transition="pop" data-rel="popup" class="ui-link">borderColor </a></div><div class="samp"><a href="#borderstyle-40" data-transition="pop" data-rel="popup" class="ui-link">borderStyle </a></div><div class="samp"><a href="#circlesize-45" data-transition="pop" data-rel="popup" class="ui-link">circleSize </a></div><div class="samp"><a href="#color-50" data-transition="pop" data-rel="popup" class="ui-link">color </a></div><div class="samp"><a href="#cornerradius-55" data-transition="pop" data-rel="popup" class="ui-link">cornerRadius </a></div><div class="samp"><a href="#disabled-60" data-transition="pop" data-rel="popup" class="ui-link">disabled </a></div><div class="samp"><a href="#fontfile-65" data-transition="pop" data-rel="popup" class="ui-link">fontFile </a></div><div class="samp"><a href="#height-70" data-transition="pop" data-rel="popup" class="ui-link">height </a></div><div class="samp"><a href="#isvisible-75" data-transition="pop" data-rel="popup" class="ui-link">isVisible </a></div><div class="samp"><a href="#left-80" data-transition="pop" data-rel="popup" class="ui-link">left </a></div><div class="samp"><a href="#margins-85" data-transition="pop" data-rel="popup" class="ui-link">margins </a></div><div class="samp"><a href="#opacity-90" data-transition="pop" data-rel="popup" class="ui-link">opacity </a></div><div class="samp"><a href="#options-95" data-transition="pop" data-rel="popup" class="ui-link">options </a></div><div class="samp"><a href="#padding-100" data-transition="pop" data-rel="popup" class="ui-link">padding </a></div><div class="samp"><a href="#parent-105" data-transition="pop" data-rel="popup" class="ui-link">parent </a></div><div class="samp"><a href="#position-110" data-transition="pop" data-rel="popup" class="ui-link">position </a></div><div class="samp"><a href="#rotation-115" data-transition="pop" data-rel="popup" class="ui-link">rotation </a></div><div class="samp"><a href="#textcolor-120" data-transition="pop" data-rel="popup" class="ui-link">textColor </a></div><div class="samp"><a href="#textsize-125" data-transition="pop" data-rel="popup" class="ui-link">textSize </a></div><div class="samp"><a href="#thickness-130" data-transition="pop" data-rel="popup" class="ui-link">thickness </a></div><div class="samp"><a href="#top-135" data-transition="pop" data-rel="popup" class="ui-link">top </a></div><div class="samp"><a href="#type-140" data-transition="pop" data-rel="popup" class="ui-link">type </a></div><div class="samp"><a href="#value-145" data-transition="pop" data-rel="popup" class="ui-link">value </a></div><div class="samp"><a href="#variant-150" data-transition="pop" data-rel="popup" class="ui-link">variant </a></div><div class="samp"><a href="#visibility-155" data-transition="pop" data-rel="popup" class="ui-link">visibility </a></div><div class="samp"><a href="#width-160" data-transition="pop" data-rel="popup" class="ui-link">width </a></div><br>
-		<div data-role="popup" id="absheight-0" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the absolute height of the control in pixels.</p></div><div data-role="popup" id="absleft-5" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the absolute distance of the control from the left in pixels.</p></div><div data-role="popup" id="abstop-10" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the absolute distance of the control from the top in pixels.</p></div><div data-role="popup" id="abswidth-15" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the absolute width of the control in pixels.</p></div><div data-role="popup" id="backcolor-20" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">#rrggbb</span></p></div><div data-role="popup" id="backimage-25" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		The path to your image file.</p></div><div data-role="popup" id="border-30" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the border thickness in pixels.</p></div><div data-role="popup" id="bordercolor-35" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">#rrggbb</span></p></div><div data-role="popup" id="borderstyle-40" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">solid</span>.</p></div><div data-role="popup" id="circlesize-45" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the size of the circular progress control. This will assume a pixel unit.</p></div><div data-role="popup" id="color-50" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the theme color. Values can be <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Default</span> <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Primary</span> or <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Secondary</span></p></div><div data-role="popup" id="cornerradius-55" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the corner radius in pixels.</p></div><div data-role="popup" id="disabled-60" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Sets or returns the <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">disabled</span> state of the control.</p></div><div data-role="popup" id="fontfile-65" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">relative</span> path to the font-family use.</p></div><div data-role="popup" id="height-70" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the height of the control as a fraction of the parent control.</p></div><div data-role="popup" id="isvisible-75" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>
-		Returns whether the control is visible or not.</p></div><div data-role="popup" id="left-80" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the distance of the control from the left.</p></div><div data-role="popup" id="margins-85" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
-		Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</p></div><div data-role="popup" id="opacity-90" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the opacity of the control.</p></div><div data-role="popup" id="options-95" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">options</span> of the control.</p></div><div data-role="popup" id="padding-100" class="ui-content"><p><span style="color:#4c4;">Array</span><br>
-		Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</p></div><div data-role="popup" id="parent-105" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
-		Returns the parent layout control.</p></div><div data-role="popup" id="position-110" class="ui-content"><p><span style="color:#4c4;">Object</span><br>
-		Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">bottom</span> props.</p></div><div data-role="popup" id="rotation-115" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the angle of rotation in degrees.</p></div><div data-role="popup" id="textcolor-120" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the color of the text.</p></div><div data-role="popup" id="textsize-125" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the size of the text within the control.</p></div><div data-role="popup" id="thickness-130" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the thickness of the circular stroke.</p></div><div data-role="popup" id="top-135" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Returns the distance of the control from the top.</p></div><div data-role="popup" id="type-140" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the type of the Progress Component. Values can be <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Linear</span> or <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Circular</span></p></div><div data-role="popup" id="value-145" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the value of the progress control.</p></div><div data-role="popup" id="variant-150" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the variant of the progress component. Values can be <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Determinate</span> or <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">Indeterminate</span>.</p></div><div data-role="popup" id="visibility-155" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-		Sets or returns the visibility of the control.</p></div><div data-role="popup" id="width-160" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-		Sets or returns the width of the control as a fraction of the parent control.</p></div></p>
+		<p>These are the setter and getter properties for the addProgress Component.</p>
+
+		<div class="samp">
+		<a href="#pop_num_01a" data-transition="pop" data-rel="popup">absHeight</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01b" data-transition="pop" data-rel="popup">absLeft</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01c" data-transition="pop" data-rel="popup">absTop</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01d" data-transition="pop" data-rel="popup">absWidth</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00a" data-transition="pop" data-rel="popup">backColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00b" data-transition="pop" data-rel="popup">backImage</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01e" data-transition="pop" data-rel="popup">border</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00c" data-transition="pop" data-rel="popup">borderColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00d" data-transition="pop" data-rel="popup">borderStyle</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01f" data-transition="pop" data-rel="popup">circleSize</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00e" data-transition="pop" data-rel="popup">color</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_020" data-transition="pop" data-rel="popup">cornerRadius</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_001" data-transition="pop" data-rel="popup">disabled</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00f" data-transition="pop" data-rel="popup">fontFile</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_021" data-transition="pop" data-rel="popup">height</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_002" data-transition="pop" data-rel="popup">isVisible</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_022" data-transition="pop" data-rel="popup">left</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_001" data-transition="pop" data-rel="popup">margins</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_023" data-transition="pop" data-rel="popup">opacity</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_010" data-transition="pop" data-rel="popup">options</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_002" data-transition="pop" data-rel="popup">padding</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_004" data-transition="pop" data-rel="popup">parent</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_005" data-transition="pop" data-rel="popup">position</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_024" data-transition="pop" data-rel="popup">rotation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_011" data-transition="pop" data-rel="popup">textColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_025" data-transition="pop" data-rel="popup">textSize</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_026" data-transition="pop" data-rel="popup">thickness</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_027" data-transition="pop" data-rel="popup">top</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_012" data-transition="pop" data-rel="popup">type</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_028" data-transition="pop" data-rel="popup">value</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_013" data-transition="pop" data-rel="popup">variant</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_014" data-transition="pop" data-rel="popup">visibility</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_029" data-transition="pop" data-rel="popup">width</a>
+		</div>
+
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Progress control implementation</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
 				        <br>
-				        <span class="token comment">// Indeterminate Linear</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Indeterminate Linear</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Determinate Linear</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Linear,Secondary,indeterminate"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Determinate Linear</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Linear,Secondary,indeterminate"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Determinate Circular</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog3 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"Circular"</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Determinate Circular</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog3 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"Circular"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Indeterminate Circular, enlarge and secondary</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog4 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Circular,Secondary,indeterminate"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog4<span class="token punctuation">.</span>circleSize <span class="token operator">=</span> <span class="token number">100</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Indeterminate Circular, enlarge and secondary</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog4 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Circular,Secondary,indeterminate"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog4<span class="token punctuation">.</span>circleSize <span class="token operator">=</span> <span class="token number">100</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -133,36 +261,36 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Setting progress value</h3>
 			<div id="examp2" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
 				        <br>
-				        <span class="token comment">// Add an indeterminate linear progress control to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Add an indeterminate linear progress control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prog <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addProgress</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a button control to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Increment"</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Add a button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Increment"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Increment the value of the progress control by 10</span><br>
-				        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> <span class="token number">100</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">+=</span> <span class="token number">10</span><br>
-				        <span class="token punctuation">}</span><br>
-				        <span class="token keyword">else</span><br>
-				        <span class="token punctuation">{</span><br>
-				            ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Progress is complete!"</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Increment the value of the progress control by 10</span><br>
+				        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> <span class="token number">100</span> <span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">+=</span> <span class="token number">10</span><br>
+				        <span class="token punctuation">}</span><br>
+				        <span class="token keyword">else</span><br>
+				        <span class="token punctuation">{</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Progress is complete!"</span> <span class="token punctuation">)</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -262,6 +390,8 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</i></div>
+	<div data-role="popup" id="pop_bin_002" class="ui-content"><b>Boolean:</b> <i>Returns whether the control is visible or not.</i></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> the initial value of the progress component.</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> Fraction fo the screen height. [0-1]</div>
@@ -283,6 +413,22 @@
 	<div data-role="popup" id="pop_num_016" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
 	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
 	<div data-role="popup" id="pop_num_019" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_01a" class="ui-content"><b>Number:</b> <i>Returns the absolute height of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01b" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the left in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01c" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the top in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> <i>Returns the absolute width of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> <i>Sets or returns the border thickness in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01f" class="ui-content"><b>Number:</b> <i>Sets or returns the size of the circular progress control. This will assume a pixel unit.</i></div>
+	<div data-role="popup" id="pop_num_020" class="ui-content"><b>Number:</b> <i>Sets or returns the corner radius in pixels.</i></div>
+	<div data-role="popup" id="pop_num_021" class="ui-content"><b>Number:</b> <i>Sets or returns the height of the control as a fraction of the parent control.</i></div>
+	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the left.</i></div>
+	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> <i>Sets or returns the opacity of the control.</i></div>
+	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> <i>Sets or returns the angle of rotation in degrees.</i></div>
+	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> <i>Sets or returns the size of the text within the control.</i></div>
+	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> <i>Sets or returns the thickness of the circular stroke.</i></div>
+	<div data-role="popup" id="pop_num_027" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the top.</i></div>
+	<div data-role="popup" id="pop_num_028" class="ui-content"><b>Number:</b> <i>Sets or returns the value of the progress control.</i></div>
+	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the control as a fraction of the parent control.</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated option for progress component. Options can be <br> Color: `Primary` `Secondary` <br> `Type: `Circular` `Linear` <br> `Variant: `Determinate` `Indeterminate`”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
@@ -292,9 +438,24 @@
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
 	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
 	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <i>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <i>The path to your image file.</i></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <i>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <i>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</i></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <i>Sets or returns the theme color. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Default</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Primary</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Secondary</span></i></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</i></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</i></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <i>Sets or returns the color of the text.</i></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <i>Sets or returns the type of the Progress Component. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Circular</span></i></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <i>Sets or returns the variant of the progress component. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Determinate</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Indeterminate</span>.</i></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <i>Sets or returns the visibility of the control.</i></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add the prgress component.</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The pointer event object.</div>
 	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The click event object.</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> <i>Returns the parent layout control.</i></div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> <i>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</i></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> <i>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</i></div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> <i>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</i></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">event </a>
 	)</div>

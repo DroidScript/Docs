@@ -55,6 +55,16 @@
             ],
             "program": "${workspaceFolder}/files/adjustJson.js",
             "args": ["-b", "-s", "-n", "-x", "-pt", "-nm", "app", "gfx", "MUI", "ui"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "transformPopups",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/transformPopups.js",
         }
     ]
 }

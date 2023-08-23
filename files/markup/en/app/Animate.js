@@ -19,8 +19,7 @@ You can not have multiple animation loops at once.
 When using _cfg.NoDom_; you cannot use JavaScripts _setInterval_ but only the _Animate_ function.
 <red>Note: The _NoDom_ option is currently not available due to GooglePlays 64bit requirement since August 2019.</red>
 
-<h3>Comparison</h3>
-
+### Comparison
 **normal**:
 	_setInterval_: about 242 calls per second
 	_app.Animate_: about 217 calls per second

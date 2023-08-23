@@ -374,7 +374,7 @@ function generateDoc(name) {
 
 	// get description from external file
 	if (ps.desc && ps.desc.startsWith('#')) {
-		desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "");
+		desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
 		if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
 	}
 
@@ -479,14 +479,12 @@ function adjustDoc(html, name) {
 
 	// replace <js> and <bash> tags with sample
 	html = html.replace(
-		/(\s|<br>)*<(js|bash|smp|java|json)\b(( |nobox|noinl)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
+		/(\s|<br>)*<(js|bash|smp|txt|java|json|col)\b(( |nobox|noinl|#[0-9a-f]+)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 		function (m, w1, /** @type {string} */ lang, /** @type {string} */ soptions, _1, _2, /** @type {string} */ code, _3, w2, _4) {
 			const options = soptions.split(" ");
 			if (w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
 			if (Prism.languages[lang]) {
-				/**
-				 * @type {any[]}
-				 */
+				/** @type {string[]} */
 				var tags = [];
 				code = code
 					.replace(/<br>/g, "")
@@ -499,9 +497,15 @@ function adjustDoc(html, name) {
 					.replace(/(<span.*em;">)<br>/g, '<br>$1');
 			}
 
-			if (has(options, "nobox")) return `${w1 || ''}${code}${w2 || ''}`;
+			const col = soptions.match(/#[0-9a-f]+/) || [''];
+			const spanStyle = col[0] && ` style="color:${col[0]}; font-family:Courier,monospace; padding:0px 2px;"`;
+			let spanClass = '';
+
+			if (has(options, "nobox")) spanClass = '';
 			else if (has(code, "<br>") || has(options, "noinl")) return `</p>\n${newCode(code)}\t\t<p>`
-			else return `${w1 || ''}<span class="samp samp-inline">${code}</span>${w2 || ''}`;
+			else spanClass = ' class="samp samp-inline"';
+			if (spanClass || spanStyle) code = `<span${spanClass}${spanStyle}>${code}</span>`
+			return `${w1 || ''}${code}${w2 || ''}`;
 		});
 
 	//.replace(/(\n\t+(    )+)(<b .*?>)?([^]*?)(<\/b>)?<br>/g, (m, w, _, b1, t, b2) =>
@@ -696,7 +700,7 @@ function getDocData(f, useAppPop = false) {
 // read and return html converted example snippets file
 /** @param {string} name */
 function getSamples(name) {
-	var sampcnt = 0, s = ReadFile(getSrcDir(D_SCOPE, `samples/${name}.txt`), " ", !scope[name].isval);
+	var sampcnt = 0, s = ReadFile(getSrcDir(D_SCOPE, `samples/${name}.txt`), " ", !scope[name].isval).replace(/\r/g, '');
 	/** @type {Obj<string>} */
 	var samples = {};
 
@@ -732,7 +736,7 @@ function toHtmlSamp(code, name, index, options) {
 function getAddClass(m) {
 	if (!m || typeof m.desc != "string") return '';
 	if (m.desc.startsWith('#')) {
-		m.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + m.desc.slice(1)), "");
+		m.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + m.desc.slice(1)), "").replace(/\r/g, '');
 		if (!m.desc) return '';
 	}
 
@@ -827,7 +831,9 @@ function toArgPop(name, stypes, doSwitch) {
 		(		/** @type {string} */ type) => [type.slice(0, 3)]
 			.concat(type
 				// custom type desc
-				.replace(/^(...):([^-]*)/, (m, /** @type {string} */ btype, desc) =>
+				.replace(/^(...):'([^']*)'/, (m, /** @type {string} */ btype, desc) =>
+					(tDesc[btype + "_tmp"] = desc, btype + "_tmp"))
+				.replace(/^(...):([^-']*)/, (m, /** @type {string} */ btype, desc) =>
 					(tDesc[btype + "_tmp"] = desc, btype + "_tmp"))
 				// sample vals
 				.replace(/-/, '\x01').split('\x01')
@@ -997,7 +1003,7 @@ function addMarkdown(s) {
 			script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
 			return white + `<a href="" onclick="${script}">${name}</a>`;
 		})
-		.replace(/(<br>|^)(#+) ([^<]*)\r?/g, (_, /** @type {string} */ white, /** @type {string | any[]} */ h, /** @type {string} */ title) =>		// ## headline
+		.replace(/(<br>|^)(#+) ([^<]*)/g, (_, /** @type {string} */ white, /** @type {string | any[]} */ h, /** @type {string} */ title) =>		// ## headline
 			white + `<h${h.length}>${title.replace(/ (\(.+?\))/, "<sup>$1</sup>")}</h${h.length}>`)
 		//.replace(/([^\\]|^)\*\*(\s*[a-z][^]*?[^\\])\*\*/gi, "$1<strong>$2</strong>")
 		.replace(/([^\\]|^)\*\*([a-z]{3,}?[^\\])\*\*/gi, "$1<strong>$2</strong>")   // **bold**

@@ -17,9 +17,13 @@
 /** @Description
 Adds a drawer into your app.
 
-<style>.samp { margin-top: 2px; } </style><h3>Properties</h3>These are the setter and getter properties for the addDrawer Component.
-<div class="samp"><a href="#anchor-0" data-transition="pop" data-rel="popup" class="ui-link">anchor </a></div><div class="samp"><a href="#disabled-5" data-transition="pop" data-rel="popup" class="ui-link">disabled </a></div><div class="samp"><a href="#swipeareawidth-10" data-transition="pop" data-rel="popup" class="ui-link">swipeAreaWidth </a></div><div class="samp"><a href="#width-15" data-transition="pop" data-rel="popup" class="ui-link">width </a></div>
-<div data-role="popup" id="anchor-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>Sets or returns the anchor position of the drawer. Values can be <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">left</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">top</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">right</span>, <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">bottom</span>.</p></div><div data-role="popup" id="disabled-5" class="ui-content"><p><span style="color:#4c4;">Boolean</span><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">disabled</span> state of the drawer.</p></div><div data-role="popup" id="swipeareawidth-10" class="ui-content"><p><span style="color:#4c4;">Number</span><br>Sets or returns the width of the swipeable area of the Drawer.</p></div><div data-role="popup" id="width-15" class="ui-content"><p><span style="color:#4c4;">Number</span><br>Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">[0-1]</span>.</p></div>
+### Properties
+These are the setter and getter properties for the addDrawer Component.
+<smp noinl>anchor:"str:'Sets or returns the anchor position of the drawer. Values can be <col nobox #fb8c00>left</col>, <col nobox #fb8c00>top</col>, <col nobox #fb8c00>right</col>, <col nobox #fb8c00>bottom</col>.'"</smp>
+<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer.'"</smp>
+<smp noinl>swipeAreaWidth:"num:'Sets or returns the width of the swipeable area of the Drawer.'"</smp>
+<smp noinl>width:"num:'Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>.'"</smp>
+
  */
 
 

@@ -74,7 +74,7 @@ async function LoopFiles(SOURCE_DIR) {
 
                 // write description.md file
                 const descFile = path.join(outputDesc, data.name + ".md")
-                if (data.desc && !_errors) fs.writeFileSync(descFile, data.desc)
+                if (data.desc && !_errors) fs.writeFileSync(descFile, data.desc.replace(/<br>/g, '\n'))
 
                 // write sample.txt file
                 const sampleFile = path.join(outputSamples, data.name + ".txt")
@@ -84,7 +84,7 @@ async function LoopFiles(SOURCE_DIR) {
                 const data = renderMdFile(folderPath, objJson);
                 // write description.md file
                 const descFile = path.join(outputDesc, data.name + ".md");
-                if (!_errors) fs.writeFileSync(descFile, data.desc);
+                if (!_errors) fs.writeFileSync(descFile, data.desc.replace(/<br>/g, '\n'));
             }
         }
         else {
