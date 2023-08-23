@@ -8,7 +8,7 @@
  * $$ web = ui.addWebView(parent, url, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the WebView component.
  * @param {str} url The url of the website.
- * @param {str} options A comma separated options for WebView.
+ * @param {str_com} options 
  * @param {num} width Fraction of the parent width.
  * @param {num} height Fraction of the parent height.
  * @returns obj-WebView Component

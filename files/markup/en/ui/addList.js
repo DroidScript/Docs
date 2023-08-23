@@ -8,7 +8,7 @@
  * $$ lst = ui.addList(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout
  * @param {lst} list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
- * @param {str} options A comma separated options for list styling and behaviours. Options can be \n Media: `Icon` `Avatar` \n `Styling: `Dense` `Inset` \n `Util: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
+ * @param {str_com} options Media: `Icon` `Avatar` \n `Styling: `Dense` `Inset` \n `Util: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-List Component

@@ -8,7 +8,7 @@
  * $$ acc = ui.addAccordion(parent, titles, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the text.
  * @param {obj} titles An array of accordion titles.
- * @param {str} options A comma separated options. Can be one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
+ * @param {str_com} options one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
  * @param {num} width Fraction of the screen width: [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Accordion Component

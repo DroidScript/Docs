@@ -7,7 +7,7 @@
  * $$ ui.addTabs(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the Tabs Component.
  * @param {lst} list An array of tab names.
- * @param {str} options A comma separated options for Tabs. \n Enable swipe: `Swipeable` \n `Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant: `Standard` `Scrollable` `FullWidth` \n `Layout: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
+ * @param {str_com} options Enable swipe: `Swipeable` \n `Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant: `Standard` `Scrollable` `FullWidth` \n `Layout: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Tabs Component

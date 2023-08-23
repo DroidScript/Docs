@@ -8,7 +8,7 @@
  * $$ prg = ui.addProgress(parent, value, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the prgress component.
  * @param {num} value the initial value of the progress component.
- * @param {str} options A comma separated option for progress component. Options can be \n Color: `Primary` `Secondary` \n `Type: `Circular` `Linear` \n `Variant: `Determinate` `Indeterminate`
+ * @param {str_com} options Color: `Primary` `Secondary` \n `Type: `Circular` `Linear` \n `Variant: `Determinate` `Indeterminate`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction fo the screen height. [0-1]
  * @returns obj-Progress Component

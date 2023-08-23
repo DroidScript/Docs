@@ -8,7 +8,7 @@
  * $$ fab = ui.addFAB(parent, icon, options, text) $$ 
  * @param {obj} parent The parent layout where to add the fab
  * @param {str} icon The string icon of the FAB
- * @param {str} options A comma separated option for the layout. Can be `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
+ * @param {str_com} options `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
  * @param {str} text Text to show for extended FABs.
  * @returns obj-FAB Component
 */

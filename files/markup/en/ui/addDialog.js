@@ -9,7 +9,7 @@
  * @param {str} title The dialog title text.
  * @param {str} body The dialog message to be shown.
  * @param {str} actions A comma separated text for action buttons.
- * @param {str} options A comma separated options for Dialog. Options are \n Colors: `Primary` `Secondary` \n `Util: `NoCancel` prevents the dialog from closing on action.
+ * @param {str_com} options Colors: `Primary` `Secondary` \n `Util: `NoCancel` prevents the dialog from closing on action.
  * @returns obj-Dialog Component
 */
 

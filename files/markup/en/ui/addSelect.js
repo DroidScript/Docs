@@ -8,7 +8,7 @@
  * $$ sel = ui.addSelect(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the control
  * @param {lst} list The list of items for the Select options
- * @param {str} options A comma separated options. Can be \n Sizes: `Small` `Medium` \n `Variant: `Filled` `Outlined` `Standard` \n `Margin: `Dense` `Normal` \n `Utils: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
+ * @param {str_com} options Sizes: `Small` `Medium` \n `Variant: `Filled` `Outlined` `Standard` \n `Margin: `Dense` `Normal` \n `Utils: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Select Component

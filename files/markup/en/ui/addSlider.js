@@ -8,7 +8,7 @@
  * $$ sld = ui.addSlider(parent, value, options, width, height) $$ 
  * @param {obj} parent The layout where to add the Slider Component.
  * @param {num} value The initial value of the Slider. Value must be between 0-100, the default min and max values.
- * @param {str} options A comma separated options for the Slider Component. Options can be \n Color: `Primary` `Secondary` \n `Orienation: `Horizontal` `Vertical` \n `Track: `Normal` `Inverted` `False`
+ * @param {str_com} options Color: `Primary` `Secondary` \n `Orienation: `Horizontal` `Vertical` \n `Track: `Normal` `Inverted` `False`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height.
  * @returns obj-Slider Component.

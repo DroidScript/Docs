@@ -8,7 +8,7 @@
  * $$ swg = ui.addSwitchGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the SwitchGroup Component.
  * @param {obj} list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
- * @param {str} options A comma separated options for the SwitchGroup. Options can be \n Icon: `Icon` \n `Color: `Primary` or `Secondary` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n`Divider`
+ * @param {str_com} options Icon: `Icon` \n `Color: `Primary` or `Secondary` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n`Divider`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-SwitchGroup Component

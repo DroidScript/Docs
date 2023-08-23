@@ -10,7 +10,7 @@
  * @param {lst} values An array of strings of the form Val1:Val2:Val3...
  * @param {num} width Fraction of the screen width
  * @param {num} height Fraction of the screen height
- * @param {str} options A comma separated options. Can be Selectable
+ * @param {str_com} options Selectable
  * @returns obj
 */
 

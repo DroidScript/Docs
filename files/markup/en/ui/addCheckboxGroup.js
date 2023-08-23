@@ -8,7 +8,7 @@
  * $$ ckb = ui.addCheckboxGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the CheckboxGroup.
  * @param {lst} list The items to be displayed.
- * @param {str} options A comma separated options. \n Colors: `Default` `Primary` `Secondary` \n `Sizes: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corners : `Square`
+ * @param {str_com} options Colors: `Default` `Primary` `Secondary` \n `Sizes: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corners : `Square`
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
  * @returns obj-CheckboxGroup Component
