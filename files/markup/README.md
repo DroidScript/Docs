@@ -1,14 +1,14 @@
 # DroidScript Markup
 
-This folder contains all the markup files for each controls, methods, and components of the **DroidScript**'s **app** object. Each file is a javascript file that resembles a codebase with all the codes removed and only the **comments** are left.
+This folder contains all the markup files for all controls, methods, and components of **DroidScript**'s **app** object. Each file is a JavaScript file that resembles a codebase with all the code removed and only the **comments** left.
 
-## Why Javascript `.js` and NOT Markdown `.md`?
+## Why JavaScript `.js` and NOT Markdown `.md`?
 
-It allows easy editing of comments especially when working on function definitions. Also, when working on Code Editors such as VS Code, the syntax highlighting and autocompletion makes writing the comments more easy and fun.
+It allows easy editing of comments especially when working on function definitions. Also, when working in Code Editors such as VS Code, the syntax highlighting and autocompletion makes writing the comments more easy and fun.
 
 ## Parts
 
-These are the parts of the DroidScript Docs page.
+These are the parts of each DroidScript Doc page, n their required order. Parts may be missing or added later, as long as they are in the correct order.
 
 - Header
 - Long Description
@@ -17,23 +17,13 @@ These are the parts of the DroidScript Docs page.
 
 ## Header
 
-The header contains information about the **Control Name**, **Short Description**, and **Initialization**.The **Initialization** also contains information about parameter description and the return data type.
+The header contains information about the **Control Name**, **Short Description**, and **Initialization**. The **Initialization** also contains information about parameters and the return data type.
 
-Example: Header Part of Call method.
+Example: Header of Call method.
 
 ![Header part](https://drive.google.com/uc?id=1RAkKFr7M_y9Lq-useFzRliqrRtIdUmNj)
 
-The markup comments will look like this
-
-```javascript
-/** # Call #
- * Call is used to call the given phone number.
- * @param {str} number
- * @returns obj
- */
-```
-
-Furthermore, you will notice on the files that the markup comments has additional initialization code like this
+The markup comments will look like this:
 
 ```javascript
 /** # Call #
@@ -43,23 +33,23 @@ Furthermore, you will notice on the files that the markup comments has additiona
  * @returns obj
  */
 ```
-Though the line `$$app.Call(number)$$` can be omitted, it is provided for some reference on the parameter descriptions.
+The line `$$ app.Call(number) $$` can be omitted, it is provided for reference for the parameter descriptions.
 
-> Each line must have the asterisk (*) at the beginning.
+Each line must have the asterisk (*) at the beginning.
 
-For more information about the parameter descriptions, see the [parameter section](#parameter-description) below.
+For more information about parameter descriptions, see the [parameter section](#parameter-description) below.
 
 ## Long Description
 
-Some documentations on DroidScript has a long description below the header or after the **Initialization** part.
+Some documentation files have a long description below the header or after the **Initialization** part.
 
-You can find the _Long Description_ on the file just below the Header part in a block comment with the **@Description** tag in it.
+You can find the _Long Description_ in the file just below the Header part in a block comment with the **@Description** tag in it.
 
 Example: Long Description for Checkbox.
 
 ![Long Description Part](https://drive.google.com/uc?id=1Bo-7Z_SkDgDfNsrIDptvpLvUO8Yd4PEt)
 
-> The description starts after the initialization starting from the paragraph _"They consist of a ticker box on the left ..."_ until the Example at the bottom.
+The description starts after the initialization starting from the paragraph _"They consist of a ticker box on the left ..."_ until the Example at the bottom.
 
 The markup comments will look like this
 
@@ -76,12 +66,12 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 ```
 
-> You can remove the description in the Header Part and prepend it in this Long Description markup. The result will still be the same. This is recommended and thus you can see this in all Controls and Components with this long description part.
+You can remove the description from the Header and prepend it in this Long Description markup. The result will still be the same. This is recommended and thus you can see this in all Controls and Components with this long description part.
 
-## Examples
-The examples can be found at the bottom of the files. They are enclose in a block comment with a tag **@Sample** in it.
+## Samples
+Code samples are placed below the long description, if any, enclosed in a block comment with the word **@Sample**. See below.
 
-Each sample is with the `sample` tag. Any string after the `sample` tag is treated as a sample title.
+Each sample is wrapped with `sample` tags. Any string after the word `sample` in the opening tag is treated as the sample title.
 
 Example:
 
@@ -127,15 +117,13 @@ function SayHello()
 */
 ```
 
-The above markup includes two sample codes with the titles **Default Size** and **Fixed Size**.
-
-All these samples are appended just below the long desription above the methods section.
+The above markup includes two samples with the titles **Default Size** and **Fixed Size**.
 
 ## Methods
 
-The methods can be found just below the Long Description (if any) or below the Header Part (if there is no Long Description).
-
-Each methods is a function definition which has the same markup comments as the Header Part except the method name is now enclosed in three (3) consecutive hash (#).
+Method documentation follows samples, if any.  
+..tg 
+Each method is a function definition which has the same markup comments as the Header Part except the method name is now enclosed in three (3) consecutive hash (#).
 
 And since it has the same markup format as the Header Part, each method definition contains information about the **Method Name**, **Method Description**, and **Initialization**. The **Initialization** also contains information about parameter description and the return data type.
 
@@ -174,7 +162,8 @@ Example 2: Method definition of SetSize method.
  * @param {str} options px|sp|dip|dp|mm|pt
  */
 ```
-> As stated above, the lines that includes `$$ txt.SetText(text) $$` and `$$ txt.SetSize(width, height, options) $$` is not necessary but it is provided for reference to the parameter description.
+
+As stated above, the lines that includes `$$ txt.SetText(text) $$` and `$$ txt.SetSize(width, height, options) $$` is not necessary but it is provided for reference to the parameter description.
 
 For more information on parameter descriptions especially data types, see the [Parameter Section](#parameter-description) below.
 
