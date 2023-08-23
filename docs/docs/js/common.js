@@ -118,6 +118,14 @@ $(document).live( 'pageshow',function(event, ui)
 		$('.onlyinclude a:not(data-ajax)').attr("data-ajax", "false");
 		$("a#extLink").attr("onclick", "return OpenUrl(this.href);");
 
+		// sequential popups
+		var nextPop = null, updated = false;
+		$("a[data-rel=popup]").click(function () { nextPop = this; updated = 2; })
+		$(window).click(function () { updated--; $("div.ui-popup-active > div").popup("close"); })
+		$("div[data-role=popup]").on({
+			popupafterclose: function () { if (updated > 0) nextPop?.click(); }
+		});
+		
 		//Ask parent for DS adddress
 		if( !isMobileIDE ) {
 			parent.postMessage( "getaddress:", "*" )
