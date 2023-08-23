@@ -174,7 +174,7 @@ function extractParams(methodData, usedIDs) {
                 pType = split0(pDef, "-");
                 pDesc = split1(pDef, "-");
             }
-            str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc}\n`
+            str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc.replace(/\n/g, "\\n")}\n`
         }
     }
     return str;

@@ -483,7 +483,7 @@ function extractParams(str) {
     if (matches) {
         const word1 = matches[1];
         const word2 = matches[2];
-        const word3 = matches[3] ? matches[3].trim() : '';
+        const word3 = matches[3] ? matches[3].trim().replace(/\\n/g, '\n') : '';
         return [word1, word2, word3];
     } else {
         return ['', '', ''];
@@ -501,7 +501,7 @@ function extractBacktickStrings(str) {
     for (const match of matches) {
         str = str.replace('`' + match[1] + '`', `<span style="${style}">${match[1]}</span>`);
     }
-    str = str.replace(/,/gm, "&#44;");
+    str = str.replace(/,/gm, ",");
     return str;
 }
 

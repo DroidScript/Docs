@@ -64,25 +64,25 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
 			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Create a fullscreen layout with objects vertically centered.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add button control to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Add button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Display popup on the Top with transition Grow</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello from popup!"</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display popup on the Top with transition Grow</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello from popup!"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -95,34 +95,34 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Popups with transitions</h3>
 			<div id="examp2" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Adds first button to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Top &amp; Grow"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch1 <span class="token punctuation">)</span><br>
+				        <span class="token comment">// Adds first button to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Top &amp; Grow"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch1 <span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Adds second button to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Bottom and Slide"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch2 <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Adds second button to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Bottom and Slide"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch2 <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">onTouch1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Display popup on the Top with transition Grow</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello world."</span><span class="token punctuation">,</span> <span class="token string">"Top,Grow"</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span class="token function">onTouch1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display popup on the Top with transition Grow</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello world."</span><span class="token punctuation">,</span> <span class="token string">"Top,Grow"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">onTouch2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Display popup on the Bottom with transition Slide in 1.5 seconds.</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello world."</span><span class="token punctuation">,</span> <span class="token string">"Bottom,Slide"</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span class="token function">onTouch2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display popup on the Bottom with transition Slide in 1.5 seconds.</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Hello world."</span><span class="token punctuation">,</span> <span class="token string">"Bottom,Slide"</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -135,35 +135,35 @@
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - With Transition</h3>
 			<div id="examp3" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Create a fullscreen layout with objects vertically centered</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>layMain <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layMain <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a button control to the main layout</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layMain<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">// Add a button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layMain<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showMessage <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showMessage <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">showMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Show a popup with additional action</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Please login to continue"</span><span class="token punctuation">,</span> <span class="token string">"Bottom,Center"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Login"</span><span class="token punctuation">)</span><br>
+				    <span class="token function">showMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Show a popup with additional action</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Please login to continue"</span><span class="token punctuation">,</span> <span class="token string">"Bottom,Center"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Login"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// Add a callback handler when the action is touched</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar<span class="token punctuation">.</span><span class="token function">setOnAction</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onAction <span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				        <span class="token comment">// Add a callback handler when the action is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar<span class="token punctuation">.</span><span class="token function">setOnAction</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onAction <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				    <br>
-				    <span class="token function">onAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Hide the popup when the action button is click</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Login is click. Show login Page."</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
+				    <span class="token function">onAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Hide the popup when the action button is click</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snackbar<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Login is click. Show login Page."</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -204,7 +204,7 @@
 	<div data-role="popup" id="pop_std_" class="ui-content"><b>undefined</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Time in milliseconds. Pass this,  if you don't want the default auto hide duration.</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The message to display on the pop-up.”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated Menu options. Values can be n Duration: `Short` `Long` n Vertical Alignment: `Top` `Bottom` n Horizontal Alignment: `Left` `Center` `Right` n Action options: `Icon` or `HideOnAction` n Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated Menu options. Values can be <br> Duration: `Short` `Long` <br> `Vertical Alignment: `Top` `Bottom` <br> `Horizontal Alignment: `Left` `Center` `Right` <br> `Action options: `Icon` or `HideOnAction` <br> `Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Action button text.”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Vertical alignment. Values can be `Top` `Bottom`”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Horizontal alignment. Values can be `Left` `Center` and `Right`”</docstr></div>

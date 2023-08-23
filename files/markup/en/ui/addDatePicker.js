@@ -19,7 +19,7 @@ Adds a date picker component to the app.
 
 <style>.samp { margin-top: 2px; } </style><h3>Properties</h3>These are the setter and getter properties for the addDatePicker Component.
 <div class="samp"><a href="#format-0" data-transition="pop" data-rel="popup" class="ui-link">format </a></div>
-<div data-role="popup" id="format-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>Sets or returns the format of the selected date. Values are <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">YYYY-MM-DD</span> <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">MM-DD-YYYY</span> or <span style="color:#fb8c00; font-family:Courier&#44; monospace; font-size:100%; padding:0px 2px;">DD-MM-YYYY</span></p></div>
+<div data-role="popup" id="format-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>Sets or returns the format of the selected date. Values are <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">YYYY-MM-DD</span> <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">MM-DD-YYYY</span> or <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">DD-MM-YYYY</span></p></div>
  */
 
 
