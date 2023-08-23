@@ -435,7 +435,7 @@ function adjustDoc(html, name) {
 				else return isnum(a[4]) ? 1 : -1;
 			}
 			else return order.indexOf(a.slice(0, 3)) < order.indexOf(b.slice(0, 3)) ? -1 : 1;
-		}).join("\n\t");
+		}).join("\n\t").replace(/\$n\$/g, '\\n');
 
 	var toc = [];
 	html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function (m, /** @type {number} */ i, /** @type {string} */ t) {
@@ -618,8 +618,10 @@ function getDocData(f, useAppPop = false) {
 			mArgs.push(newAppPopup(f.pNames[i], typeDesc(f.pTypes[i]))
 				.replace(/<\/?\w+?>/g, ""));
 		}
-		else
-			mArgs.push(toArgPop(f.pNames[i], f.pTypes[i]));
+		else {
+			let type = f.pTypes[i];
+			mArgs.push(toArgPop(f.pNames[i], type));
+		}
 	}
 
 	const smArgs = mArgs.length ? String(mArgs) + " " : "";
@@ -921,13 +923,11 @@ function toArgAppPop(name, stypes) {
 //replace whitespace with html syntax whitespace
 /**
  * @param {string} s
- * @param {boolean} [n]
  */
-function replW(s, n) {
-	if (n == undefined) n = true;
+function replW(s, n = true) {
 	return s
 		.replace(/\\\/\\\//g, '#')
-		.replace(/\n/g, n ? "<br>" : "\n")
+		.replace(/\n|\\n/g, n ? "<br>" : "\n")
 		.replace(/\t/g, "    ")
 		.replace(/  /g, "&#160;&#160;");
 }
@@ -972,7 +972,7 @@ function replaceTypes(s, useAppPop) {
 			if (useAppPop || tapop) {
 				if (type && !desc) r = toArgAppPop(name, type);
 				else r = newAppPopup(name, type ? tName[type.slice(0, 3)] +
-					(tDesc[type] ? ": " + tDesc[type] : "") : desc);
+					(tDesc[type] ? ": " + tDesc[type] : "") : desc.replace(/\\n|\n/g, '$n$'));
 			}
 			else if (type) r = toArgPop(name, type);
 			else r = newPopup("dsc", name, desc);
@@ -1021,31 +1021,41 @@ function addMarkdown(s) {
 		.replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
 
-// convert int to 3-digit hex
+/** @type {Obj<string>} */
+const special = {
+	'n': '\n',
+	'r': '\r',
+	't': '\t',
+	'b': '\b',
+	'f': '\f'
+};
+
+/** convert int to 3-digit hex
 /** @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
-//returns the type name or description of a value or the value itself
-/** @param {string} v */
+/** returns the type name or description of a value or the value itself
+ * @param {string} v */
 function getv(v) { return tDesc[v] || tName[v] || v; }
-//returns a comma separated list of object keys
-/** @param {any} o */
+/** returns a comma separated list of object keys
+ * @param {any} o */
 function skeys(o) { return "" + keys(o); }
-//replaces \ paceholders with its placeholder 'name'
-/** @param {string} s */
+/** replaces \ paceholders with its placeholder 'name'
+ * @param {string} s */
 function reprs(s) { return s.replace(/\n/g, "\\n").replace(/\t/g, "\\t"); }
-//replace "&" and "|" operators with "and" and "or"
-/**
+/** replace "&" and "|" operators with "and" and "or"
  * @param {string} s
  * @param {boolean} [n]
  */
 function rplop(s, n) {
-	return replW((n ? `“${s}”` : s)
-		.replace(/\\(.)/g, (m, /** @type {string} */ c) => `§${c.charCodeAt(0)}§`)
+	s = s
+		.replace(/\\(.)/g, (m, /** @type {string} */ c) =>
+			`§${(special[c] || c).charCodeAt(0)}§`)
 		.replace(/\|/g, n ? "” or “" : " or ")
 		//.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
 		.replace(/,/g, n ? "”, “" : ", ")
-		.replace(/§(\d+)§/g, (m, /** @type {number} */ c) => `${String.fromCharCode(c)}`)
-	);
+		.replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
+			String.fromCharCode(Number(c)));
+	return replW(n ? '“' + s + '”' : s);
 }
 /**
  * @param {string | Error} e

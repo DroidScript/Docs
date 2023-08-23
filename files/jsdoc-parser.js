@@ -483,7 +483,7 @@ function extractParams(str) {
     if (matches) {
         const word1 = matches[1];
         const word2 = matches[2];
-        const word3 = matches[3] ? matches[3].trim().replace(/\\n/g, '\n') : '';
+        const word3 = matches[3] ? matches[3].trim() : '';
         return [word1, word2, word3];
     } else {
         return ['', '', ''];
