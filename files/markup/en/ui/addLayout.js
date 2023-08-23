@@ -84,7 +84,6 @@ These are the setter and getter properties for the addLayout Component.
 <smp noinl>verticalAlignment:"str:'Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be <col nobox #fb8c00>Top</col> <col nobox #fb8c00>VCenter</col> or <col nobox #fb8c00>Bottom</col>'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

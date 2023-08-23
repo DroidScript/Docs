@@ -326,14 +326,14 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     line = line.trim();
                     const obj = isCA ? func : met;
 
-                    if (line.includes("###")) {
+                    if (line.includes("###") && !isCA) {
                         const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
                         const ref = /\d/.test(method[0]) ? '#' : '';
                         json[ref + method] = met = newDSFunc();
                         if (c.value.includes("@prop")) met.isval = true;
                     }
 
-                    else if (line.includes("##")) {
+                    else if (line.includes("##") && !isCA) {
                         // met += line;
                     }
 

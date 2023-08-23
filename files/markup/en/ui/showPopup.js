@@ -23,7 +23,6 @@ Shows a popup into your app.
 These are the setter and getter properties for the showPopup Component.
 <smp noinl>duration:"num:'Sets or returns the duration of the popup in milliseconds.'"</smp>
 <smp noinl>text:"str:'Sets or returns the text of the popup.'"</smp>
-
  */
 
 

@@ -60,7 +60,6 @@ These are the setter and getter properties for the addSwitch Component.
 <smp noinl>value:"bin:'Sets or returns the value of the switch toggle.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

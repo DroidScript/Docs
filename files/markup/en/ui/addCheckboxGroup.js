@@ -62,7 +62,6 @@ These are the setter and getter properties for the addCheckboxGroup Component.
 <smp noinl>uncheckIcon:"str:'Sets or returns the material icon font for uncheck state.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

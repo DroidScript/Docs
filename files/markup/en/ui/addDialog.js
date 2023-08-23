@@ -25,7 +25,6 @@ These are the setter and getter properties for the addDialog Component.
 <smp noinl>text:"str:'Sets or returns the dialog text.'"</smp>
 <smp noinl>titleColor:"str:'Sets or returns the title text color in hexadecimal format.'"</smp>
 <smp noinl>titleText:"str:'Sets or returns the dialog title text.'"</smp>
-
  */
 
 

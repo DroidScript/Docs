@@ -57,7 +57,6 @@ These are the setter and getter properties for the addWebView Component.
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
 <smp noinl>window:"obj:'A reference to the webview`s window object.'"</smp>
-
  */
 
 

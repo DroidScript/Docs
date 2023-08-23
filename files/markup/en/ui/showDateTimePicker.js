@@ -4,7 +4,9 @@
 /** # showDateTimePicker #
  * @abbrev dtp
  * @brief showDateTimePicker
+ * Show a DateTimePicker where the user can select a date and time.
  * 
+ *  If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
  * $$ dtp = ui.showDateTimePicker(callback, date, time, format) $$ 
  * @param {fnc_json} callback 
  * @param {str} date Default value for date of the form "MM/DD/YYYY"
@@ -13,16 +15,6 @@
  * @returns obj-DateTimePicker Component
 */
 
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Show a DateTimePicker where the user can select a date and time.
-
- If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
-
-
- */
 
 
 

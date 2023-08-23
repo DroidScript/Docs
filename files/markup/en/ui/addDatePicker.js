@@ -20,7 +20,6 @@ Adds a date picker component to the app.
 ### Properties
 These are the setter and getter properties for the addDatePicker Component.
 <smp noinl>format:"str:'Sets or returns the format of the selected date. Values are <col nobox #fb8c00>YYYY-MM-DD</col> <col nobox #fb8c00>MM-DD-YYYY</col> or <col nobox #fb8c00>DD-MM-YYYY</col>'"</smp>
-
  */
 
 

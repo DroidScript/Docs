@@ -23,7 +23,6 @@ These are the setter and getter properties for the addDrawer Component.
 <smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer.'"</smp>
 <smp noinl>swipeAreaWidth:"num:'Sets or returns the width of the swipeable area of the Drawer.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>.'"</smp>
-
  */
 
 

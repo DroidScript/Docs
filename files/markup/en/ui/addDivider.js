@@ -48,7 +48,6 @@ These are the setter and getter properties for the addDivider Component.
 <smp noinl>type:"str:'Returns the type of the control.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

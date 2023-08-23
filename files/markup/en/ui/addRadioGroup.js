@@ -64,7 +64,6 @@ These are the setter and getter properties for the addRadioGroup Component.
 <smp noinl>value:"str:'Sets or returns the value of the RadioGroup Component. This must be equal to one of the item in the list.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

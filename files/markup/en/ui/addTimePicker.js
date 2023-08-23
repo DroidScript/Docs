@@ -20,7 +20,6 @@ Adds a time picker component to the app.
 ### Properties
 These are the setter and getter properties for the addTimePicker Component.
 <smp noinl>format:"str:'Sets or returns the time format. Can be of the form \n Hour formats \n <col nobox #fb8c00>H</col> : 0 1 ... 22 23 \n <col nobox #fb8c00>HH</col> : 	00 01 ... 22 23 \n <col nobox #fb8c00>h</col> : 1 2 ... 11 12 \n <col nobox #fb8c00>hh</col> : 	01 02 ... 11 12 \n Minute formats \n <col nobox #fb8c00>m</col> : 	0 1 ... 58 59 \n <col nobox #fb8c00>mm</col> : 00 01 ... 58 59 \n AM/PM \n <col nobox #fb8c00>A</col> : AM or PM \n <col nobox #fb8c00>a</col> : am pm'"</smp>
-
  */
 
 

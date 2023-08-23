@@ -64,7 +64,6 @@ These are the setter and getter properties for the addTabs Component.
 <smp noinl>variant:"str:'Sets or returns the variant of the Tabs Component. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Scrollable</col> or <col nobox #fb8c00>FullWidth</col>'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

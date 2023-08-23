@@ -63,7 +63,6 @@ These are the setter and getter properties for the addSlider Component.
 <smp noinl>valueLabelDisplay:"str:'Sets or returns the value label display type. Values can be <col nobox #fb8c00>on</col> <col nobox #fb8c00>auto</col> <col nobox #fb8c00>off</col>. If <col nobox #fb8c00>on</col>, value label will always be shown. If <col nobox #fb8c00>auto</col>, value label will be shown when sliding is active. If <col nobox #fb8c00>false</col>, value label display will not be shown.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 

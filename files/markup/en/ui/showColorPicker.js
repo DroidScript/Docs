@@ -20,7 +20,6 @@ Shows a color picker. Customize a color or choose from the presets of color care
 ### Properties
 These are the setter and getter properties for the showColorPicker Component.
 <smp noinl>value:"str:'Returns the value of the chosen color.'"</smp>
-
  */
 
 

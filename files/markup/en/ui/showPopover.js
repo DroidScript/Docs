@@ -23,7 +23,6 @@ Show a popover on any <col nobox #4c4>UI Components</col> except Dialogs and Pop
 These are the setter and getter properties for the showPopover Component.
 <smp noinl>backImage:"str:'Sets or returns the path to the background image.'"</smp>
 <smp noinl>fontFile:"str:'Sets or returns the font file use for the Popover.'"</smp>
-
  */
 
 

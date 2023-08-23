@@ -4,24 +4,17 @@
 /** # showProgressDialog #
  * @abbrev prd
  * @brief showProgressDialog
+ * Shows a progress dialog component into your app.
  * 
+ * ### Properties
+ * These are the setter and getter properties for the showProgressDialog Component.
+ * <smp noinl>text:"str:'Sets or returns the ProgressDialog text.'"</smp>
  * $$ prd = ui.showProgressDialog(text, options) $$ 
  * @param {str} text The text message of the progress dialog. Options can be \n `AutoCancel` to close the dialog when backdrop is click.
  * @param {str_com} options 
  * @returns obj-ProgressDialog
 */
 
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Shows a progress dialog component into your app.
-
-### Properties
-These are the setter and getter properties for the showProgressDialog Component.
-<smp noinl>text:"str:'Sets or returns the ProgressDialog text.'"</smp>
-
- */
 
 
 

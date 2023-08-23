@@ -63,7 +63,6 @@ These are the setter and getter properties for the addBottomNavbar Component.
 <smp noinl>value:"num:'Sets or returns the current value of the BottomNavbar. This is the index of the corresponding selected action.'"</smp>
 <smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
 <smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-
  */
 
 
