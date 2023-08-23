@@ -126,7 +126,8 @@ Adds a Tabs Component into your layout.
 
 /** ### setEnabled ###
  * @brief setEnabled
- * Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled * Pass `index` as Boolean, if you want to disable the entire Tabs component
+ * Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled
+ * Pass `index` as Boolean, if you want to disable the entire Tabs component
  * $$ undefined.setEnabled(index, value) $$
  * @param {num} index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
  * @param {bin} value Values can be `true` or `false`.

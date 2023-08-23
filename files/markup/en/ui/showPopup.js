@@ -39,7 +39,7 @@ Shows a popup into your app.
 
 /** ### setOnAction ###
  * @brief setOnAction
- * Adds an action callback when the user touches the action button. The `btnText` param must * be provided in order to create an action button
+ * Adds an action callback when the user touches the action button. The `btnText` param must be provided in order to create an action button
  * $$ pop.setOnAction(callback) $$
  * @param {fnc_json} callback 
  */

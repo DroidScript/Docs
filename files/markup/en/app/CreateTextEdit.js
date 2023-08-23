@@ -247,7 +247,8 @@ You can also set a background image/pattern or background gradient for the List 
 
 /** ### SetOnEnter ###
  * @brief Called when user pressed 'Done' or 'Enter'
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter) * Along with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_
+ * %cb% the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)
+ * Along with the “SingleLine” option it changes the keyboards _'Enter'_ key to _'Done'_ or _'Ok'_
  * $$ edt.SetOnEnter(callback) $$
  * @param {fnc_json} callback {}
  */

@@ -170,7 +170,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** ### Print ###
  * @brief Print webpage via anddroid printer dialog
- * Print current page via the builtin android printer dialog. *  * Note: Available since Android 4.4 KitKat
+ * Print current page via the builtin android printer dialog.
+ * 
+ * Note: Available since Android 4.4 KitKat
  * $$ web.Print() $$
  */
 
@@ -313,7 +315,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** ### SimulateKey ###
  * @brief Simulate key event
- * Simulates a key event on an app object. *  * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
+ * Simulates a key event on an app object.
+ * 
+ * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
  * $$ web.SimulateKey(keyName, modifiers, pause) $$
  * @param {str} keyName 
  * @param {str} modifiers META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON

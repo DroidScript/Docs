@@ -96,7 +96,13 @@
 
 
 /** ### SetOnConnect ###
- * If the device has sent the connection request * 	name is of type boolean (true if the connection was established successful) * 	and address is your BluetoothSerial object *  * if the device has received the connection request * 	name is a string with the clients bluetooth name * 	and address includes the bluetooth address.
+ * If the device has sent the connection request
+ * 	name is of type boolean (true if the connection was established successful)
+ * 	and address is your BluetoothSerial object
+ * 
+ * if the device has received the connection request
+ * 	name is a string with the clients bluetooth name
+ * 	and address includes the bluetooth address.
  * $$ bls.SetOnConnect(callback) $$
  * @param {fnc_json} callback {"pNames":["name","address"],"pTypes":["str","str"]}
  */
@@ -119,7 +125,9 @@
 
 /** ### SetSplitMode ###
  * @brief Specify how to split received data
- * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls. * p2 and p3 have different purposes for different modes: * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
+ * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.
+ * p2 and p3 have different purposes for different modes:
+ * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ bls.SetSplitMode(mode, p2, p3) $$
  * @param {str} mode End|Start-End|Size
  * @param {str||num_int} p2 

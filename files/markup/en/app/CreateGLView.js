@@ -122,7 +122,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** ### GetContext.ctx.capture ###
  * @brief Captures the canvas to a png image
- * Captures the current cached context to a png image. * The path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”
+ * Captures the current cached context to a png image.
+ * The path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”
  * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback, errorCallback) $$
  * @param {num_pxl} x 
  * @param {num_pxl} y 

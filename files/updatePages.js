@@ -17,10 +17,10 @@ function main() {
     }
 
     console.log("removing old docs");
-    try { rimraf(base + "docs"); } catch(e) { console.error(e.message); }
+    try { rimraf(base + "docs"); } catch (e) { console.error(e.message); }
 
     console.log("copying new docs");
-    fs.mkdirSync(base + "docs");
+    if (!fs.existsSync(base + "docs")) fs.mkdirSync(base + "docs");
     fs.copySync(base + "out", base + "docs");
     fs.copySync(base + "out/version.txt", base + "docs/version.txt");
 

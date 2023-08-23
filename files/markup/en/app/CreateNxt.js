@@ -175,7 +175,11 @@
 
 
 /** ### ReadColorSensor ###
- * Read a color sensor value on the input where the sensor is plugged into. *  * In “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”. * You can use the ToColorName function to convert from these six values to a color name. * All other modes return a value between 0 and 1023.
+ * Read a color sensor value on the input where the sensor is plugged into.
+ * 
+ * In “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.
+ * You can use the ToColorName function to convert from these six values to a color name.
+ * All other modes return a value between 0 and 1023.
  * $$ nxt.ReadColorSensor(input, mode) $$
  * @param {num_int} input 1
  * @param {str} mode ColorDetect|LightSense|RedSense|GreenSense|BlueSense

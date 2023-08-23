@@ -32,7 +32,10 @@ Adds a webview into your app. A webview is a component where you can display a w
 
 /** ### setOnLoad ###
  * @brief setOnLoad
- * Adds a event handler for onload event *  *  * The example above will call the function `Hello` defined in the WebView passing * the three arguments which is a text, number and a boolean
+ * Adds a event handler for onload event
+ * 
+ * The example above will call the function `Hello` defined in the WebView passing
+ * the three arguments which is a text, number and a boolean
  * $$ web.setOnLoad(callback) $$
  * @param {fnc_json} callback 
  */

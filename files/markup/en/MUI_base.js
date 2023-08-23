@@ -2,7 +2,12 @@
 /** ### Animate
  * @name Animate
  * @brief Animates a control
- * Animates the control. *  * There are * 	“in”-Animations which are used to show objects from hidden state * 	“out”-animations which are used to hide objects in visible state and * 	“static”-animations which keep the visible state.
+ * Animates the control.
+ * 
+ * There are
+ * 	“in”-Animations which are used to show objects from hidden state
+ * 	“out”-animations which are used to hide objects in visible state and
+ * 	“static”-animations which keep the visible state.
  * @param {str} type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
  * @param {fnc_json} callback {"pNames":["type"],"pTypes":["str"]}
  * @param {num_mls} time 
@@ -86,7 +91,9 @@
 /** ### GetPosition
  * @name GetPosition
  * @brief Returns data about position and size
- * Returns data about the position and size of the control. * If the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control. * The **px** options turns the relative values into pixels.
+ * Returns data about the position and size of the control.
+ * If the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control.
+ * The **px** options turns the relative values into pixels.
  * @param {str} options screen,px
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
@@ -136,7 +143,10 @@
 /** ### GetVisibility
  * @name GetVisibility
  * @brief Returns the current visibility state
- * Returns the current visibility state of the control. The Values are: * **Show**: visible * **Hide**: invisible but still consuming space * **Gone**: invisible and not consuming space
+ * Returns the current visibility state of the control. The Values are:
+ * **Show**: visible
+ * **Hide**: invisible but still consuming space
+ * **Gone**: invisible and not consuming space
  * @returns str-Show|Hide|Gone
  */
 
@@ -193,7 +203,9 @@
 /** ### Method
  * @name Method
  * @brief Access Java object methods via reflection
- * Allows access to other functions defined on the object in Java via reflection. *  * <premium>
+ * Allows access to other functions defined on the object in Java via reflection.
+ * 
+ * <premium>
  * @param {str} name 
  * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
  * @param {str} p1 
@@ -256,7 +268,8 @@
 /** ### SetBackground
  * @name SetBackground
  * @brief Change the background to an image
- * Changes the background to an image which can be repeated using the **repeat** option. * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
+ * Changes the background to an image which can be repeated using the **repeat** option.
+ * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
  * @param {str_ptf} file 
  * @param {str} options repeat
  */
@@ -433,7 +446,8 @@
 /** ### SetTextShadow
  * @name SetTextShadow
  * @brief Define a shadow around the control
- * Define a shadow displayed around the control. * The sun is always shining so there has to be one. Always.
+ * Define a shadow displayed around the control.
+ * The sun is always shining so there has to be one. Always.
  * @param {num_int} radius 
  * @param {num_int} dx 
  * @param {num_int} dy 
@@ -460,7 +474,10 @@
 /** ### SetVisibility
  * @name SetVisibility
  * @brief Change the visibility mode
- * Change the visibility of the control to one of the available modes: * **Show:** visible * **Hide:** invisible but still consuming space * **Gone:** invisible and not consuming space
+ * Change the visibility of the control to one of the available modes:
+ * **Show:** visible
+ * **Hide:** invisible but still consuming space
+ * **Gone:** invisible and not consuming space
  * @param {str} mode Show|Hide|Gone
  */
 
@@ -475,7 +492,16 @@
 /** ### Tween
  * @name Tween
  * @brief Animates the control
- * Performs an animation on the control. * The **target** object is for the position, size and rotation that the control has at the end of the animation. *  * The **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation. *  * With the amount of **repeat**s you can control how many times you want to play the animation. *  * If you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation. *  * Finally the **callback** function will be called after the animation has finished. Well, it's about time!
+ * Performs an animation on the control.
+ * The **target** object is for the position, size and rotation that the control has at the end of the animation.
+ * 
+ * The **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.
+ * 
+ * With the amount of **repeat**s you can control how many times you want to play the animation.
+ * 
+ * If you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.
+ * 
+ * Finally the **callback** function will be called after the animation has finished. Well, it's about time!
  * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }
  * @param {num_mls} duration 
  * @param {str} type Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out

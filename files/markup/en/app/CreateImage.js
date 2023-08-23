@@ -111,7 +111,8 @@ For animations you can then use the **Animate** function of the app object which
 
 
 /** ### DrawImage ###
- * Draws an Image:dso-CreateImage. * See [Android Developers](https://developer.android.com/reference/android/graphics/PorterDuff.Mode#enum-values_1) for 'mode' info
+ * Draws an Image:dso-CreateImage.
+ * See [Android Developers](https://developer.android.com/reference/android/graphics/PorterDuff.Mode#enum-values_1) for 'mode' info
  * $$ img.DrawImage(image, x, y, w, h, angle, mode) $$
  * @param {dso} image CreateImage
  * @param {num} x 
@@ -162,7 +163,9 @@ For animations you can then use the **Animate** function of the app object which
 
 /** ### DrawSamples ###
  * @brief Draws a vertically centered sample graph
- * Draws a vertically centered graph in relation to the specified range in both direction. * The sample value _0_ would be vertically centered, _-range_ at the top and _range_ at the bottom. * The sample x positions are evenly distributed over the whole image width.
+ * Draws a vertically centered graph in relation to the specified range in both direction.
+ * The sample value _0_ would be vertically centered, _-range_ at the top and _range_ at the bottom.
+ * The sample x positions are evenly distributed over the whole image width.
  * $$ img.DrawSamples(data, range) $$
  * @param {lst} data [ data:num_int ]
  * @param {num} range 

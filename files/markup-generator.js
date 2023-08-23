@@ -29,7 +29,7 @@ async function GenerateJSFile(scope, path, obj, base = {}, navs = {}) {
         let methodData = base[key];
         let method = methodData.name || '';
         const addId = baseIDAlways || usedIDs[method] && usedIDs[method] != key;
-        const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : "";
+        const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
         usedIDs[method] ||= key;
 
         let info = "";
@@ -117,7 +117,7 @@ ${info} * ${_desc}
                     str += `
 /** ### ${method}
  * @prop${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
  * @returns ${methodData.retval}
  */
 \n                    `;
@@ -127,7 +127,7 @@ ${info} * ${_desc}
                     const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
                     str += `
 /** ### ${method} ###${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, " * ") : ""}
+ * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;
 

@@ -85,7 +85,8 @@ Use the **SelectItem** method to select a particular item in code.
 
 /** ### SelectItem ###
  * @brief Change current shown item
- * Change the current shown item * <deprecated Use SetText instead>
+ * Change the current shown item
+ * <deprecated Use SetText instead>
  * $$ spn.SelectItem(item) $$
  * @param {str} item 
  */
@@ -128,7 +129,8 @@ Use the **SelectItem** method to select a particular item in code.
 
 /** ### SetOnTouch ###
  * @brief Define a callback function for touch events
- * Define a callback function that is called when the user touches the control. * <deprecated Use SetOnChange instead>
+ * Define a callback function that is called when the user touches the control.
+ * <deprecated Use SetOnChange instead>
  * $$ spn.SetOnTouch(callback) $$
  * @param {fnc_json} callback {}
  */

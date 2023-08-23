@@ -45,7 +45,8 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### AutoCapture ###
  * @brief Takes a picture if a motion was detected
- * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}. * The first # in the filename is a placeholder for numbers increasing for every taken picture.
+ * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.
+ * The first # in the filename is a placeholder for numbers increasing for every taken picture.
  * $$ cam.AutoCapture(path, fileName, maxCount) $$
  * @param {str_ptd} path 
  * @param {str} fileName File_n#_motion
@@ -198,7 +199,8 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### MotionMosaic ###
  * @brief Define a raster for motion detection
- * Defines a raster which is used for motion detection. * Use AutoCapture to take pictures if a motion was detected.
+ * Defines a raster which is used for motion detection.
+ * Use AutoCapture to take pictures if a motion was detected.
  * $$ cam.MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) $$
  * @param {num_int} xtiles 
  * @param {num_int} ytiles 
@@ -307,7 +309,8 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### SetParameter ###
  * @brief Change camera properties
- * Change property values of the camera. * See GetProperties to get a full list of available keys.
+ * Change property values of the camera.
+ * See GetProperties to get a full list of available keys.
  * $$ cam.SetParameter(name, value) $$
  * @param {str} name 
  * @param {num||str} value 

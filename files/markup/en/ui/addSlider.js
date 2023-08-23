@@ -61,7 +61,9 @@ Adds a Slider Component into your App.
 
 /** ### setMarks ###
  * @brief setMarks
- * Sets the marks of the Slider Component * If value is `Boolean` the marks is base on the step * If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range
+ * Sets the marks of the Slider Component
+ * If value is `Boolean` the marks is base on the step
+ * If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range
  * $$ sld.setMarks(val) $$
  * @param {obj} val The marks on the Slider Component.
  */

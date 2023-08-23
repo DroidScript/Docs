@@ -104,7 +104,9 @@ The following example demonstrates web sockets being used to receive messages fr
 
 /** ### SendText ###
  * @brief Send message to client(s)
- * Sends a message to a specific client. * If no id is given, all clients of the specified ip are notified. * If neither ip nor id is given, the message will be sent to all connected clients.
+ * Sends a message to a specific client.
+ * If no id is given, all clients of the specified ip are notified.
+ * If neither ip nor id is given, the message will be sent to all connected clients.
  * $$ sock.SendText(txt, ip, id) $$
  * @param {str} txt 
  * @param {str} ip 

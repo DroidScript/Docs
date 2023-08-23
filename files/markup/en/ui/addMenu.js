@@ -54,7 +54,8 @@ Adds a pop-up menu into your components.
 
 /** ### show ###
  * @brief show
- * Show the menu pop-up * If you passed a parent on initialization, then the menu si anchored on that component
+ * Show the menu pop-up
+ * If you passed a parent on initialization, then the menu si anchored on that component
  * $$ men.show(parent) $$
  * @param {obj} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
  */

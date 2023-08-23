@@ -416,10 +416,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     else if (line.includes("@abbrev")) func.abbrev = line.split("abbrev")[1].trim();
                     else if (line.trim() == "*") obj.desc += "\n";
                     else if (line.trim() == "*/" || !line.trim()) { }
-                    else {
-                        if (isCA) obj.desc += "\n";
-                        obj.desc += line.trim().replace(/^\* +| \* /g, '\n').trim();
-                    }
+                    else obj.desc += line.trim().replace(/^\* | \* /g, '\n');
                 }
             }
         }

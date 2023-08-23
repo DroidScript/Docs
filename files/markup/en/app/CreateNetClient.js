@@ -139,7 +139,9 @@ Note: A few routers block fast UDP messages by default
 
 /** ### ReceiveVideoStream ###
  * @brief Receive video over UDP
- * Receive video from TCP connection. *  * <premium>
+ * Receive video from TCP connection.
+ * 
+ * <premium>
  * $$ net.ReceiveVideoStream(port, img) $$
  * @param {num} port 
  * @param {dso} img CreateImage
@@ -176,7 +178,9 @@ Note: A few routers block fast UDP messages by default
 
 /** ### SetSplitMode ###
  * @brief Specify how to split received data
- * Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls. * p2 and p3 have different purposes for different modes: * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
+ * Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls.
+ * p2 and p3 have different purposes for different modes:
+ * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ net.SetSplitMode(mode, p2, p3) $$
  * @param {str} mode End|Start-End|Size
  * @param {str||num_int} p2 
@@ -226,7 +230,9 @@ Note: A few routers block fast UDP messages by default
 
 /** ### WakeOnLan ###
  * @brief Wake up devices if they are configured to
- * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it. *  * <premium>
+ * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.
+ * 
+ * <premium>
  * $$ net.WakeOnLan(ip, mac) $$
  * @param {str} ip 
  * @param {str} mac 

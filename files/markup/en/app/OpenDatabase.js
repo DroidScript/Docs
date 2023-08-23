@@ -16,7 +16,8 @@
 
 
 /** ### addTransaction ###
- * addTransaction * <deprecated Use ExecuteSQL instead>
+ * addTransaction
+ * <deprecated Use ExecuteSQL instead>
  * $$ db.addTransaction(transaction) $$
  * @param {obj:JS SQLitePluginTransaction} transaction 
  */
@@ -24,7 +25,8 @@
 
 /** ### close ###
  * @brief Close the database
- * Close the database * <deprecated Use Close instead>
+ * Close the database
+ * <deprecated Use Close instead>
  * $$ db.close(success, error) $$
  * @param {fnc_json} success {"pNames":["msg"],"pTypes":["str"]}
  * @param {fnc_json} error {"pNames":["msg"],"pTypes":["str"]}
@@ -45,7 +47,8 @@
 
 /** ### executeSql ###
  * @brief Execute SQL query
- * Executes a SQL query * <deprecated Use ExecuteSql instead>
+ * Executes a SQL query
+ * <deprecated Use ExecuteSql instead>
  * $$ db.executeSql(statement, params, success, error) $$
  * @param {str_sql} statement 
  * @param {lst} params 
@@ -83,14 +86,16 @@
 /** ### name
  * @prop
  * @brief database name
- * The database name * <deprecated use GetName instead>
+ * The database name
+ * <deprecated use GetName instead>
  * @returns str
  */
 
                     
 /** ### open ###
  * @brief Open database
- * Opens the database * <deprecated>
+ * Opens the database
+ * <deprecated>
  * $$ db.open(success, error) $$
  * @param {fnc_json} success {}
  * @param {fnc_json} error {"pNames":["msg"],"pTypes":["str"]}
@@ -98,7 +103,8 @@
 
 
 /** ### readTransaction ###
- * readTransaction * <deprecated Use ExecuteSql instead>
+ * readTransaction
+ * <deprecated Use ExecuteSql instead>
  * $$ db.readTransaction(fn, error, success) $$
  * @param {fnc_json} fn {"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]}
  * @param {fnc_json} error {"pNames":["err"],"pTypes":["str"]}
@@ -107,13 +113,15 @@
 
 
 /** ### startNextTransaction ###
- * startNextTransaction * <deprecated Use ExecuteSql instead>
+ * startNextTransaction
+ * <deprecated Use ExecuteSql instead>
  * $$ db.startNextTransaction() $$
  */
 
 
 /** ### transaction ###
- * transaction * <deprecated Use ExecuteSql instead>
+ * transaction
+ * <deprecated Use ExecuteSql instead>
  * $$ db.transaction(fn, error, success) $$
  * @param {fnc_json} fn {"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]}
  * @param {fnc_json} error {"pNames":["err"],"pTypes":["str"]}
