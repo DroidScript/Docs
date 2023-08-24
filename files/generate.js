@@ -101,7 +101,7 @@ function generateLang(l) {
 	app.CopyFolder("docs-base/css", dstDir + "css");
 	app.CopyFolder("docs-base/js", dstDir + "js");
 	app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
-	const versions = app.ListFolder(langDir).sort();
+	const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
 
 	// version index page
 	const nav = versions.map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)/, "$1.$2")));
