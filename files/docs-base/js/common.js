@@ -120,7 +120,7 @@ $(document).live('pageshow', function (event, ui) {
 		$(window).click(function () { updated--; $("div.ui-popup-active > div").popup("close"); })
 		$("div[data-role=popup]").on({
 			popupafterclose: function () { if (updated > 0) nextPop?.click(); }
-		}).click(function (e) { e.preventDefault(); });
+		}).click(function (e) { e.stopPropagation(); e.preventDefault(); });
 
 		//Ask parent for DS adddress
 		if (!isMobileIDE) {
