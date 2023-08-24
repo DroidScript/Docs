@@ -1899,11 +1899,12 @@ _RemovePermissions = function() {}
 _AddOptions = function() {}
 _AddPlugins = function() {}
 
+if( typeof _bridge=='undefined' ) prompt = function() { };
 if( typeof navigator=="undefined" ) { navigator = {userAgent:"Android"} };
 if( navigator.userAgent.indexOf("Android")>-1 )
 {
 	//Init app.
-	//prompt( "#", "_Init" );
+	prompt( "#", "_Init" );
 }
 
 

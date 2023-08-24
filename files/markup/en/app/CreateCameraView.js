@@ -8,7 +8,7 @@
  * $$ cam = app.CreateCameraView(width, height, options) $$ 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str_com} options Front,UseBitmap,UseABGR,NoRotate,"&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"
+ * @param {str_com} options Front,UseBitmap,UseABGR,NoRotate,"&lt;id&gt;":"“front,back,cam0,cam1,cam2,cam3”","&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"
  * @returns dso-CameraView
 */
 
