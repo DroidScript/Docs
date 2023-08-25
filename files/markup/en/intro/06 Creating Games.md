@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 06 Creating Games #
- * 
- * $$ intro.06 Creating Games() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 ## Introduction
 Something many coding beginners dream of is creating their own game. And not infrequently they think of a fancy 3D MMO shooter with eyecatching graphics, many levels, quests, characters and an exciting tears moving story on top of that.
 The reality looks a bit different but that's actually not a bad thing.
@@ -60,45 +48,6 @@ The following sample is a Tic Tac Toe implementation using button controls.
 It also demonstrates how UI controls can be animated using the Tween method.
 
 <sample Tic Tac Toe>
-
-## Games with Images
-The most basic graphics container is the [Image](../app/CreateImage.htm) control. It also provides the most functionality for drawing like basic shapes, paint style and color, image drawing and even 2D matrix transformations.
-Despite the fact that the picture view is very powerful, it is not particularly fast.
-
-You should definitely use [<js>img.SetAutoUpdate(false);</js>](../app/CreateImage.htm#SetAutoUpdate) to be able to control when to update the canvas.
-
-By default you can achieve a maximum framerate of 60 fps, however the framerate decreases relatively fast the more draw commands you use.
-
-The following sample is a simple two-player Pong implementation using basic shapes only.
-It also demonstrates how you can handle multiple touches, and how a game can be made fps independent, so that collision detection on low fps is no problem any more.
-An [advanced version](https://dspk.justplayer.de/browse/view/69) is available on the dspk store.
-
-<sample Pong>
-
-## Games with GLView
-The third option you have is the so called GLView which is based on the [FastCanvas Plugin](https://github.com/phonegap/phonegap-plugin-fast-canvas)
-
-The GLView has 2 unique properties:
-	- Your application runs a full screen canvas
-	- Use of the 2D canvas API is limited to transforms and drawing images (see: [FastCanvas API](https://github.com/phonegap/phonegap-plugin-fast-canvas/blob/master/README.md#fastcanvas-api))
-
-That does not mean the GLView is bad. The GLView can render an enormous amount of sprites on a acceptable framerate. (Ie. on my device 500 rendered sprites produced a framerate of about 45 fps).
-This makes it perfect for games using images and sprite sheets only.
-Additionally the GameView will also run on older devices unlike the last graphic container you'll experience now.
-
-## The GameView
-
-[https://dsgameview.wixsite.com/gameview]()
- */
-
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
-/**
-@sample Tic Tac Toe
 var btns = [], round = 1;
 var wh = app.GetDisplayWidth() / app.GetDisplayHeight();
 
@@ -179,12 +128,21 @@ function EndGame(player)
         round = 0;
     }, 2000 );
 }
- */
-    
-            
-    
-/**
-@sample Pong
+</sample Tic Tac Toe>
+
+## Games with Images
+The most basic graphics container is the [Image](../app/CreateImage.htm) control. It also provides the most functionality for drawing like basic shapes, paint style and color, image drawing and even 2D matrix transformations.
+Despite the fact that the picture view is very powerful, it is not particularly fast.
+
+You should definitely use [<js>img.SetAutoUpdate(false);</js>](../app/CreateImage.htm#SetAutoUpdate) to be able to control when to update the canvas.
+
+By default you can achieve a maximum framerate of 60 fps, however the framerate decreases relatively fast the more draw commands you use.
+
+The following sample is a simple two-player Pong implementation using basic shapes only.
+It also demonstrates how you can handle multiple touches, and how a game can be made fps independent, so that collision detection on low fps is no problem any more.
+An [advanced version](https://dspk.justplayer.de/browse/view/69) is available on the dspk store.
+
+<sample Pong>
 // User variables
 var x1 = 0.5, x2 = 0.5, p1 = 0, p2 = 0;
 
@@ -269,6 +227,19 @@ function Score()
         dy = Math.sin( a + PI/4 );
     }, 1000 );
 }
- */
-    
-            
+</sample Pong>
+
+## Games with GLView
+The third option you have is the so called GLView which is based on the [FastCanvas Plugin](https://github.com/phonegap/phonegap-plugin-fast-canvas)
+
+The GLView has 2 unique properties:
+	- Your application runs a full screen canvas
+	- Use of the 2D canvas API is limited to transforms and drawing images (see: [FastCanvas API](https://github.com/phonegap/phonegap-plugin-fast-canvas/blob/master/README.md#fastcanvas-api))
+
+That does not mean the GLView is bad. The GLView can render an enormous amount of sprites on a acceptable framerate. (Ie. on my device 500 rendered sprites produced a framerate of about 45 fps).
+This makes it perfect for games using images and sprite sheets only.
+Additionally the GameView will also run on older devices unlike the last graphic container you'll experience now.
+
+## The GameView
+
+[https://dsgameview.wixsite.com/gameview]()

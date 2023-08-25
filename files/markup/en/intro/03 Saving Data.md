@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 03 Saving Data #
- * 
- * $$ intro.03 Saving Data() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 In many cases you need to store user specific data like app settings on the users device.
 DroidScript provides some functions which makes it easier to handle this.
 <grey>Note: All explained methods are listed in the [Database](../app_Database.htm) section.</grey>
@@ -85,9 +73,3 @@ Using JSON objects is more practicable and performant in most cases.
 DroidScript provides an extra @../app/OpenDatabase component for databases which uses the SQLitePlugin [cordova-sqlite-storage](https://github.com/xpbrew/cordova-sqlite-storage).
 
 For a demo Have a look at the [Database]{OpenSample("Database")} example.
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

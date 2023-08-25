@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 01 Overview #
- * 
- * $$ intro.01 Overview() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 ### Scripting Framework
 The **DroidScript** App contains a scripting framework which allows anyone with a bit of JavaScript knowledge to easily write Apps for their mobile phone or tablet. You can write very simple Apps with just a few buttons, or more complex ones which include dynamic graphical interfaces such as the DroidScript application itself, which is written using the very same framework.
 
@@ -31,9 +19,3 @@ In order to maintain the scale of graphical objects in devices with different sc
 
 ### Getting Started
 Before starting to write your own Apps it's a good idea to read the documentation explaining '[Layouts](../app/CreateLayout.htm)' as these are a fundamental part of every DroidScript App.
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

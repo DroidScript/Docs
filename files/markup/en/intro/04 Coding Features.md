@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 04 Coding Features #
- * 
- * $$ intro.04 Coding Features() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 DroidScript provides some methods and flags in the sourcecode which are not available in regular JavaScript code but are interpreted internally by DroidScript.
 You don't necessarily need to use these features but they are still pretty useful in some cases.
 
@@ -178,9 +166,3 @@ function NewButton2(name, lay)
 }
 
 </sample Using this.data>
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

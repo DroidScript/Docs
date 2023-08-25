@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 07 File Structure #
- * 
- * $$ intro.07 File Structure() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 ## DroidScript Folder
 
 <code>"/sdcard/DroidScript":"DroidScript root folder"/
@@ -111,9 +99,3 @@ The '**debuggable**' setting is intended for advanced users and allows your inst
 	}
 }
 </sample minimal build.json>
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

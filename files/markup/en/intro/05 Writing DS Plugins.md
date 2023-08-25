@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 05 Writing DS Plugins #
- * 
- * $$ intro.05 Writing DS Plugins() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 DroidScript can't do everything imaginable. But you can help it to come closer to that by writing plugins.
 
 There are basically two types of plugins: **JavaScript** plugins which will behave like an extra included JS source script and
@@ -74,9 +62,3 @@ On the Java side following functions in <java nobox>public class MyPlugin { }</j
 <java noinl>public String CallPlugin:"Called by plg.SendObj"( Bundle b:"obj-{ cmd:str, p1:any, p2:any, p3:any, p4:any, p5:any, p6:any, p7:any, p8:any }", Object obj )</java>
 <java noinl>public Object CreateObject:"Called by plg.CreateObj"( Bundle b:"obj-{ type:str, p1:any, p2:any, p3:any, p4:any, p5:any, p6:any, p7:any, p8:any }" )</java>
 <!--java noinl>public void CallScript(Bundle b, String webViewId)</java-->
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

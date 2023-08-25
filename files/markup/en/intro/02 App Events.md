@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 02 App Events #
- * 
- * $$ intro.02 App Events() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 In your app you can use various event functions which will be automatically called by DroidScript.
 
 ### OnStart()
@@ -204,9 +192,3 @@ function OnData( isStartUp )
 When the user opens or closes a drawer the OnDrawer callback is called.
 state can be “Open” or “Closed”
 side can be “Left” or “Right”
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

@@ -1,15 +1,5 @@
-// ------------- HEADER SECTION ------------- 
+<!-- /[^\\]([_*])/\\$1/ /:/&colon;/ -->
 
-
-/** # 00 Release Notes #
- * 
- * $$ intro.00 Release Notes() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 ## DS 2.61 (23-Mar-2023)
 - Updated UI plugin to v0.22
 
@@ -1327,7 +1317,7 @@
 - Added 'Drawer Menu' sample.
 - Added app.DownloadFile() method (uses Android download manager).
 - Added .SetEnabled() method for all controls.
-- Added app.ChooseFile("Choose a file", "\*\/\*", OnFileChoose) method.
+- Added app.ChooseFile("Choose a file", "\*/\*", OnFileChoose) method.
 - Added app.ChooseContact() method.
 - Added new "Choose" sample (get user to choose files or contacts).
 - Added support for Remix Mini (runs in desktop mode).
@@ -1771,9 +1761,3 @@
 - Added JavaScript Beginners guide.
 - Various other bug fixes.
 - More samples added.
- */
-
-
-
-// ------------- SAMPLES ------------- 
-

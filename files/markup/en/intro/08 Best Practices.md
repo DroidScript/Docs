@@ -1,15 +1,3 @@
-// ------------- HEADER SECTION ------------- 
-
-
-/** # 08 Best Practices #
- * 
- * $$ intro.08 Best Practices() $$ 
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
 ## General
 
 - Use the cfg object to enter specific app modes immediately (See @04CodingFeatures for more details)
@@ -50,16 +38,6 @@
   - Consider putting together a minimal demo showcasing your issue
 
 <sample GetDeviceSpecs>
- */
-
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
-/**
-@sample GetDeviceSpecs
 // https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels
 var allBuilds = JSON.parse('{' +
     '"1":{"level":1,"codename":"(no code name)","version":"1.0"}, ' +
@@ -208,7 +186,7 @@ function getDeviceSpecs()
     "language=" + app.GetLanguage() + "\n" +
     "wifi=" + app.GetIPAddress() + "\n" +
     "userAgent='" + navigator.userAgent + "'\n" +
-    "*_";
+    "*/";
     return(s);
 }
     
@@ -228,6 +206,4 @@ function OnConfig()
     scroller.SetSize( wid,high );
     txt.SetSize( wid, high  );
 }
- */
-    
-            
+</sample>
