@@ -2,6 +2,8 @@
 
 This folder contains all the markup files for each controls, methods, and components of **DroidScript**'s **app** object. Each file is a javascript file that resembles a codebase with all the codes removed and only the **comments** are left.
 
+> DroidScript Docs has a VS Code Extension that enables you to Generate docs and view them live in the browser. Install it [here](https://marketplace.visualstudio.com/items?itemName=droidscript.droidscript-docs).
+
 ## Javascript `.js` vs Markdown `.md`
 
 ### For **`API`** documentation, use **`Javascript`** file.
