@@ -1495,8 +1495,8 @@ if (typeof app == "undefined") {
 	if (startServer) {
 		var express = require('express');
 		var server = express();
-		server.use("/", express.static("."));
+		server.use("/", express.static("../out"));
 		server.listen(8081);
-		console.log("started on http://localhost:8081/docs");
+		console.log("webserver started on http://localhost:8081");
 	}
 }
