@@ -357,8 +357,8 @@ function generateTsx(scope) {
 	// TODO
 }
 
-// generates one document by function name
-/** @param {string} name */
+/** generates one document by function name 
+ * @param {string} name */
 function generateDoc(name) {
 	/** @type {DSFunction | string} */
 	var ps = scope[name];
@@ -530,8 +530,7 @@ function adjustDoc(html, name) {
 	return html;
 }
 
-// returns an html formatted description of a function
-/**
+/** returns an html formatted description of a function
  * @param {string} desc
  * @param {any} name
  * @param {boolean} hasData
@@ -600,8 +599,8 @@ function fillMissingFuncProps(f) {
 	return /** @type {DSMethod} */ (f);
 }
 
-// converts a function object into an html snippets object
-/** @param {DSMethod} f */
+/** converts a function object into an html snippets object 
+ * @param {DSMethod} f */
 function getDocData(f, useAppPop = false) {
 	/** @type {string[]} */
 	var mArgs = [];
@@ -699,8 +698,8 @@ function getDocData(f, useAppPop = false) {
 	return { args: String(mArgs) + " ", mets: methods, ret: fretval }
 }
 
-// read and return html converted example snippets file
-/** @param {string} name */
+/** read and return html converted example snippets file 
+ * @param {string} name */
 function getSamples(name) {
 	var sampcnt = 0, s = ReadFile(getSrcDir(D_SCOPE, `samples/${name}.txt`), " ", !scope[name].isval).replace(/\r/g, '');
 	/** @type {Obj<string>} */
@@ -713,8 +712,7 @@ function getSamples(name) {
 	return samples;
 }
 
-// convert a sample to html code
-/**
+/** convert a sample to html code
  * @param {string} code
  * @param {string} name
  * @param {number} index
@@ -748,8 +746,8 @@ function getAddClass(m) {
 	return '';
 }
 
-// returns a formatted description of a type - used for subfunction return values
-/** @param {string} stypes */
+/** returns a formatted description of a type - used for subfunction return values
+ * @param {string} stypes */
 function typeDesc(stypes) {
 	const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
 		.concat(type
@@ -798,8 +796,7 @@ function typeDesc(stypes) {
 	return ss;
 }
 
-//nearly equal to typeDesc, but returns an app.popup for arguments
-/**
+/** nearly equal to typeDesc, but returns an app.popup for arguments
  * @param {string} name
  * @param {DSFunction | string} stypes
  * @param {boolean} [doSwitch]
@@ -920,8 +917,7 @@ function toArgAppPop(name, stypes) {
 	);
 }
 
-//replace whitespace with html syntax whitespace
-/**
+/** replace whitespace with html syntax whitespace
  * @param {string} s
  */
 function replW(s, n = true) {
@@ -932,8 +928,7 @@ function replW(s, n = true) {
 		.replace(/  /g, "&#160;&#160;");
 }
 
-//increase special popup counters and returns its id
-/**
+/** increase special popup counters and returns its id
  * @param {string} type
  * @param {number} i
  */
@@ -942,15 +937,14 @@ function incpop(type, i) {
 	return hex(spop[type] || 0);
 }
 
-// accept formats: "name":"desc" name:type name:"types" name:"type-values"
-// using name:'...' will force app popups
-/**
+/** accept formats: "name":"desc" name:type name:"types" name:"type-values"
+ * using name:'...' will force app popups
  * @param {string} s
  * @param {boolean} [useAppPop]
  */
 function replaceTypes(s, useAppPop) {
 	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
-	_s.replace(/(\b([\w_.#-]+)|"(.*?)"):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\.|[^.|:,”}\]\n])*)?['"]?/g,
+	_s.replace(/(\b([\w_.#-]+)|"(.*?)"):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
 		function (m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type, _2, /** @type {string} */ desc) {
 			var r, space = '', tapop = false;
 			if (!name) name = aname;
@@ -984,8 +978,8 @@ function replaceTypes(s, useAppPop) {
 	return s;
 }
 
-// convert markdown symbols to html
-/** @param {string} s */
+/** convert markdown symbols to html
+ * @param {string} s */
 function addMarkdown(s) {
 	return s
 		// links
@@ -1022,16 +1016,10 @@ function addMarkdown(s) {
 }
 
 /** @type {Obj<string>} */
-const special = {
-	'n': '\n',
-	'r': '\r',
-	't': '\t',
-	'b': '\b',
-	'f': '\f'
-};
-
+const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
+ 
 /** convert int to 3-digit hex
-/** @param {number} v */
+ * @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
 /** returns the type name or description of a value or the value itself
  * @param {string} v */
@@ -1048,8 +1036,8 @@ function reprs(s) { return s.replace(/\n/g, "\\n").replace(/\t/g, "\\t"); }
  */
 function rplop(s, n) {
 	s = s
-		.replace(/\\(.)/g, (m, /** @type {string} */ c) =>
-			`§${(special[c] || c).charCodeAt(0)}§`)
+		.replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
+			`${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
 		.replace(/\|/g, n ? "” or “" : " or ")
 		//.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
 		.replace(/,/g, n ? "”, “" : ", ")
@@ -1057,9 +1045,7 @@ function rplop(s, n) {
 			String.fromCharCode(Number(c)));
 	return replW(n ? '“' + s + '”' : s);
 }
-/**
- * @param {string | Error} e
- */
+/** @param {string | Error} e */
 function Throw(e) { throw e; }
 /** @param {string} msg */
 function Warn(msg) { if (warnEnbl) console.error("Warning: " + msg); }
@@ -1084,7 +1070,7 @@ function newDefPopup(id, text) { return defPopup.replace("%s", id).replace("%s",
  * @param {string} name
  * @param {string} desc
  */
-function newAppPopup(name, desc) { return appPopup.replace("%s", desc).replace("%s", name); }
+function newAppPopup(name, desc) { return appPopup.replace("%s", desc.replace(/\n|<br>/g, '\\n')).replace("%s", name); }
 /**
  * @param {string} target
  * @param {string} text
@@ -1345,9 +1331,8 @@ function mergeObject(a, b) {
 	return b;
 }
 
-// converts a variable to indented string
-// supports Boolean, Number, String, Array and Object
-/**
+/** converts a variable to indented string
+ * supports Boolean, Number, String, Array and Object
  * @param {any} o
  * @param {string} [intd]
  * @returns {string}

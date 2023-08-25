@@ -1,5 +1,5 @@
 #!/bin/bash
-DOCS=`dirname "$0"`/docs/
+DOCS=`dirname "$0"`/../docs/
 
 declare -A MYCACHE
 

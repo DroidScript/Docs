@@ -3,7 +3,33 @@
 - [JSON Format Documentation](json/README.md)
 - [Markup Format Documentation](markup/README.md)
 
-### Command Palette
+### File Structure
+```bash
+files/
+├─ json/         # intermediate json docs definitons
+├─ markup/       # markup docs definitons
+├─ docs-base/    # docs template folder for every language/version
+├─ font-awesome/ # belongs to docs-base
+│
+├─ conf.json     # general generation info (languages, scopes, type defs, ...)
+├─ generate.js   # convert json/ to out/ html docs
+├─ updatePages.js      # copy temporary out/ to public docs/
+├─ jsdoc-parser.js     # convert markup/ to json/
+├─ markup-generator.js # convert json/ to markup/ (verify bidirectional conversion)
+├─ testLinks.sh        # check all docs-internal links valid
+├─ adjustJson.js       # cleanup JSON files (trim(), remove empty, sort keys, ...)
+├─ transformPopups.js  # convert html popups in markup/ files
+│
+├─ ReleaseNotes.txt    # incremental ReleaseNotes
+├─ animate.png   # used by app.Animate doc
+│
+├─ types.d.ts    # DS and generator type definitions for vscode
+├─ jsconfig.json # vscode js/ts linter settings
+└─ package.json  # script npm package dependencies
+```
+
+
+### NPM Command Palette
 
 Install dependencies
 - `npm i` 

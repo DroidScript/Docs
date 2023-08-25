@@ -37,9 +37,7 @@ The generator has a specific file structure you have to use to be able to genera
 	the generation sources for a specific scope
 
 ```bash
-files/
-├─ conf.json    # general generation info (languages and scopes)
-├─ docs-base/   # the html/css/js source basis for every language
+json/
 └─ <lang>/      # encapsulate sources for a specific language
    └─ <ver>/      # encapsulate sources for a specific version
       └─ <scope>/   # the generation sources for a specific scope
@@ -48,7 +46,7 @@ files/
 Each scope in the `<lang>/<ver>/<scope>` directory can have following source files:
 
 ```bash
-files/<lang>/<ver>/<scope>/
+json/<lang>/<ver>/<scope>/
 ├─ obj.json    # method definitions
 ├─ base.json   # template definitions
 ├─ navs.json   # scope categories for navigation
@@ -280,6 +278,7 @@ name:"type"        # "quotes" uses jQuery popups and app popups as needed
 name:"type-values"
 name:'type'        # 'ticks' forces app popups
 name:'type-values'
+name:"type:'desc'"
 "name":"desc"      # for non-alphanumerical names
 ```
 
