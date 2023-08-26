@@ -39,6 +39,7 @@ setTheme(curTheme ? curTheme[1] : getCookie("dsDocsTheme", "dark"));
 //Hook into cross frame messaging
 window.addEventListener("message", function (event) {
 	console.log("msg: " + event)
+	if (typeof event.data != "string") return;
 	var params = event.data.split("|");
 	var cmd = params[0];
 	console.log("cmd: " + cmd)
@@ -120,7 +121,7 @@ $(document).live('pageshow', function (event, ui) {
 		$(window).click(function () { updated--; $("div.ui-popup-active > div").popup("close"); })
 		$("div[data-role=popup]").on({
 			popupafterclose: function () { if (updated > 0) nextPop?.click(); }
-		}).click(function (e) { e.preventDefault(); e.stopPropagation(); });
+		}).click(function (e) { e.stopPropagation(); e.preventDefault(); });
 
 		//Ask parent for DS adddress
 		if (!isMobileIDE) {
@@ -287,6 +288,52 @@ function setTheme(theme, holo) {
 
 	var lnkPrism = document.getElementById('themePrism');
 	if (lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
+}
+
+var indexContent = [];
+function fetchIndex(cb) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onload = function () {
+		indexContent = xmlHttp.responseText.split("\n");
+		cb();
+	}
+	xmlHttp.open("get", "index.txt", true);
+	xmlHttp.send();
+}
+
+//Get list from device.
+function searchDocs(filterName, filterContent, fetched) {
+	if (fetched && !indexContent) return;
+	if (!indexContent.length) {
+		fetchIndex(function () {
+			searchDocs(filterName, filterContent, true)
+		});
+		return;
+	}
+
+	var nameFilter = $("#nameFilter").css("border-color", "");
+	var contentFilter = $("#contentFilter").css("border-color", "");
+	if (!filterName) filterName = nameFilter.val();
+	if (!filterContent) filterContent = contentFilter.val();
+	if (!filterName && !filterContent) return;
+
+	try { RegExp(filterName); }
+	catch (e) { nameFilter.css("border-color", "red"); return; }
+	try { RegExp(filterContent); }
+	catch (e) { contentFilter.css("border-color", "red"); return; }
+
+	var max = 100;
+	var items = indexContent
+		.filter(s => !filterContent || s.match(filterContent))
+		.map(s => s.slice(0, s.indexOf(" := ")))
+		.filter(s => !filterName || s.match(filterName))
+		.map(url => `<li><a href='${url}'>${url.replace('.htm', '')}</a></li>`);
+
+	var list = $("#listview");
+	if (!items.length) return $("#results").text("Results: 0");
+	$("#results").text(`Results: ${Math.min(items.length, max)} of ${items.length}`);
+
+	list.empty().append(items.join('\n')).listview("refresh");
 }
 
 //Shortcut for string.contains

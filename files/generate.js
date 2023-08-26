@@ -116,6 +116,8 @@ function generateVersion(ver) {
 	const curDir = getDstDir(D_VER);
 	app.CopyFolder("docs-base", curDir);
 
+	app.WriteFile(curDir + "index.txt", "");
+
 	// generate all scopes
 	keys(conf.scopes)
 		.filter(s => s.match(patScope) != null)
@@ -399,7 +401,17 @@ function generateDoc(name) {
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " generate description");
 	const html = htmlDoc(name, formatDesc(desc, name, !!data), subfuncs, funcLine);
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " adjusting");
-	app.WriteFile(curDoc, adjustDoc(html, name));
+	const docHtml = adjustDoc(html, name);
+	app.WriteFile(curDoc, docHtml);
+
+	const indexText = docHtml
+		.replace(/<div data-role="popup".*?<\/div>/g, "")
+		.replace(/<[^>]+>/g, "")
+		.replace(/(\s+|&[a-z]{2,6};)+/g, " ");
+	const verDir = getDstDir(D_VER);
+	fs.appendFileSync(absPth(verDir + "index.txt"), `${curDoc.replace(verDir, "").replace(/\\/g, '/')} := `);
+	fs.appendFileSync(absPth(verDir + "index.txt"), indexText.trim() + '\n');
+
 	if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " done");
 }
 
