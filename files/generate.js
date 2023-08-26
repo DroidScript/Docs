@@ -1369,9 +1369,11 @@ OPTIONS:
 	-f  --force             force generation of otherwise skipped
 	-C  --clean            	delete temp files (out/ files/json/*/)
 	-al --addlang=<LANG-CODE>=<LANG-NAME>
-                         	adds a language to conf.json
+	                        adds a language to conf.json
 	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
-                                adds a scope to conf.json
+	                        adds a scope to conf.json
+	-av --addversion=<VERSION>
+	                        adds a version number to conf.json
 	-n  --nogen             don't generate
 	-s  --server            start webserver after generating
 	-V  --verbose           print more debug logs
@@ -1421,13 +1423,13 @@ if (typeof app == "undefined") {
 		SetDebug: (d) => dbg = d,
 		ShowProgressBar: (t) => console.log(t + "\n"),
 		UpdateProgressBar: (i, t) => console.log("\x1b[1A\x1b[K" + `${i}% ${t || 'Initializing'}`),
-		HideProgressBar: () => console.log("\x1b[1A\x1b[K100% done."),
+		HideProgressBar: () => console.log("\n\x1b[1A\x1b[K100% done."),
 		ShowPopup: console.log,
 		Alert: console.log
 	}
 
-	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>}} */
-	var addcfg = { add: false, langs: {}, scopes: {} };
+	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>, vers:string[]}} */
+	var addcfg = { add: false, langs: {}, scopes: {}, vers: [] };
 	var nogen = false, startServer = false, clean = false;
 
 	for (var spat of process.argv.slice(2)) {
@@ -1453,6 +1455,12 @@ if (typeof app == "undefined") {
 					if (pat[2].length < 3) Throw(Error("scope code must have at least 3 digits"));
 					addcfg.add = true;
 					addcfg.scopes[pat[1]] = pat[2];
+					break;
+				case "-av": case "--addversion":
+					if (pat.length < 2) Throw(Error("missing option args. expected <code> <name>"));
+					if (!/v\d{0,3}/.test(pat[2])) Throw(Error("version must start with a v and at most 3 digits"));
+					addcfg.add = true;
+					addcfg.vers.push(pat[1]);
 					break;
 				default: Throw(Error("Unknown option " + pat[0]));
 			}
@@ -1484,6 +1492,9 @@ if (typeof app == "undefined") {
 
 		Object.assign(conf.langs, addcfg.langs);
 		Object.assign(conf.scopes, addcfg.scopes);
+		for (const v of addcfg.vers)
+			if (!conf.vers.includes(v))
+				conf.vers.push(v)
 
 		app.WriteFile("conf.json", tos(conf));
 	}

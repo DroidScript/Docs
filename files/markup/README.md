@@ -1,20 +1,20 @@
 # DroidScript Markup
 
-This folder contains all the markup files for each controls, methods, and components of **DroidScript**'s **app** object. Each file is a javascript file that resembles a codebase with all the codes removed and only the **comments** are left.
+This folder contains all the markup files for all controls, methods, and components of **DroidScript**'s **app** object. Each file is a JavaScript file that resembles a codebase with all the code removed and only the **comments** left.
 
-> DroidScript Docs has a VS Code Extension that enables you to Generate docs and view them live in the browser. Install it [here](https://marketplace.visualstudio.com/items?itemName=droidscript.droidscript-docs).
+> There is a VS Code Extension that generates docs on-the-fly and displays a preview live in the editor. Install it [here](https://marketplace.visualstudio.com/items?itemName=droidscript.droidscript-docs).
 
-## Javascript `.js` vs Markdown `.md`
+## Why JavaScript `.js` and NOT Markdown `.md`?
 
 ### For **`API`** documentation, use **`Javascript`** file.
-It allows easy editing of documentation through markup comments in a **jsdoc** format especially when working on function definitions. Also, when working on Code Editors such as VS Code, the syntax highlighting and autocompletion makes writing the comments more easy and fun.
+It allows easy editing of documentation through markup comments in **jsdoc** format especially when working on function definitions. Also, when working on Code Editors such as VS Code, the syntax highlighting and autocompletion makes writing the comments more easy and fun.
 
-### For general purpose documentation, use **`Markdown`** file.
+### For general purpose documentation use the **`Markdown`** file format.
 See **`"en/intro"`** folder for reference.
 
 ## Parts
 
-These are the parts of the DroidScript Docs page.
+These are the parts of each DroidScript Doc page, in their required order. Parts may be missing or added later, as long as they are in the correct order.
 
 - Header
 - Long Description
@@ -23,34 +23,34 @@ These are the parts of the DroidScript Docs page.
 
 ### Header
 
-The header contains information about the **Control Name**, **Short Description**, and **Initialization**. The **Initialization** also contains information about parameter description and the return data type.
+The header contains information about the **Control Name**, **Short Description**, and **Initialization**. The **Initialization** also contains information about parameters and the return data type.
 
-Example: Header Part of Call method.
+Example: Header of the app.Call method.
 
 ![Header part](https://drive.google.com/uc?id=1RAkKFr7M_y9Lq-useFzRliqrRtIdUmNj)
 
-In the **`Call.js`** file, the markup comments will look like this
+The markup comments will look like this:
 
 ```js
 /** # Call #
  * @brief Calls a phone number
  * Call is used to call the given phone number.
- * $$ app.Call(number) $$ 
+ * $$ app.Call(number) $$
  * @param {str} number
-*/
+ */
 ```
 
-Though the line `$$ app.Call(number) $$` can be omitted, it is provided for some reference on the parameter names.
+The line `$$ app.Call(number) $$` can be omitted, it is provided for reference for the parameter descriptions.
 
 You will notice the `@brief` tag which is a custom jsdoc annotation for DroidScript Docs markup. See [custom tags](#custom-tags) section below.
 
-Furthermore, you can see in the **_`"str"`_** data type. It is a DroidScript Docs custom data types that addition description in the final documentation. For more information about the parameter data types, see the [parameter section](#parameter-description) below.
+Furthermore, you can see the **_`"str"`_** data type. It is a custom data types which adds an extra description in the final documentation. They will be autocompleted by the vscode extension too. For more information about the available types, see the [parameter section](#parameter-description) below.
 
 ## Long Description
 
-Some documentations on DroidScript has a long description below the header or after the **Initialization** part.
+Some documentation files have a long description below the header or after the **Initialization** part.
 
-You can find the _Long Description_ on the file just below the Header part in a block comment with the **@Description** tag in it.
+You can find the _Long Description_ in the file just below the Header part in a block comment with the **@Description** tag in it.
 
 Example: Long Description for Checkbox.
 
@@ -73,9 +73,14 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 ```
 
-You can remove the description in the Header Part and prepend it in this Long Description markup. The result will still be the same. This is recommended and thus you can see this in all Controls and Components with this long description part.
+You can remove the description from the Header and prepend it in this Long Description markup. The result will still be the same. This is recommended and thus you can see this in all Controls and Components with this long description part.
 
-> When writing the long description, you use markdown formatting. From the example above, the `"**SetChecked**"` text will be rendered as bold text in DroidScript Docs.
+> When writing the long description, you can use the same markdown formatting. From the example above, the `"**SetChecked**"` text will be rendered as bold text in the final Docs.
+
+## Samples
+Code samples are placed below the long description, if any, enclosed in a block comment with the word **@Sample**. See below.
+
+Each sample is wrapped with `sample` tags. Any string after the word `sample` in the opening tag is treated as the sample title.
 
 ## Examples
 The examples can be found at the bottom of each file. They are enclose in a block comment with a tag **@sample** in it followed by the title of the sample.
@@ -117,13 +122,13 @@ function SayHello()
  */
 ```
 
-The above markup includes two sample codes with the titles **Zip Folder** and **Fixed Size**.
+The above markup includes two samples with the titles **Zip Folder** and **Fixed Size**.
 
 ## Methods
 
-The methods can be found just below the Long Description (if any) or below the Header Part (if there is no Long Description).
+The methods are defined after the Header section and after the Long Description, if present.
 
-Each methods is a function definition which has the same markup comments as the Header Part except the method name is now enclosed in three (3) consecutive hash (#).
+Each method is a function definition which has the same markup comments as the Header Part except the method name is now enclosed in three (3) consecutive hash (#).
 
 And since it has the same markup format as the Header Part, each method definition contains information about the **Method Name**, **Method Description**, and **Initialization**. The **Initialization** also contains information about parameter description and the return data type.
 

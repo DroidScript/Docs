@@ -1,5 +1,4 @@
 {
-    "vers": ["v257"],
 	"scopes": {
 		"intro": "Introduction",
 		"app": "Reference",
@@ -10,6 +9,7 @@
 	"langs": {
 		"en": "English"
 	},
+	"vers": ["v257"],
 	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
