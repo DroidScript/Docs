@@ -1446,19 +1446,19 @@ if (typeof app == "undefined") {
 				case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
 				case "-al": case "--addlang":
 					if (pat.length != 3) Throw(Error("missing option args. expected <code> <name>"));
-					if (pat[2].length != 2) Throw(Error("lang code must have 2 digits"));
+					if (pat[1].length != 2) Throw(Error("lang code must have 2 digits"));
 					addcfg.add = true;
 					addcfg.langs[pat[1]] = pat[2];
 					break;
 				case "-as": case "--addscope":
 					if (pat.length < 3) Throw(Error("missing option args. expected <code> <name>"));
-					if (pat[2].length < 3) Throw(Error("scope code must have at least 3 digits"));
+					if (pat[1].length < 3) Throw(Error("scope code must have at least 3 digits"));
 					addcfg.add = true;
 					addcfg.scopes[pat[1]] = pat[2];
 					break;
 				case "-av": case "--addversion":
 					if (pat.length < 2) Throw(Error("missing option args. expected <code> <name>"));
-					if (!/v\d{0,3}/.test(pat[2])) Throw(Error("version must start with a v and at most 3 digits"));
+					if (!/v\d{0,3}/.test(pat[1])) Throw(Error("version must start with a v and at most 3 digits"));
 					addcfg.add = true;
 					addcfg.vers.push(pat[1]);
 					break;
@@ -1494,7 +1494,7 @@ if (typeof app == "undefined") {
 		Object.assign(conf.scopes, addcfg.scopes);
 		for (const v of addcfg.vers)
 			if (!conf.vers.includes(v))
-				conf.vers.push(v)
+				conf.vers.push(v);
 
 		app.WriteFile("conf.json", tos(conf));
 	}
