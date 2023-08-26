@@ -2,8 +2,10 @@
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 const baseDir = "json/", outDir = "../out/";
-var lang = /** @type {keyof (typeof conf)["langs"]} */ ("");
-var curVer = "", curDoc = "", curSubf = "", pattern = "";
+var lang = /** @type {LangKeys} */ ("");
+var curVer = "", curDoc = "", curSubf = "";
+var patFunc = "", patScope = /**@type {ScopeKeys}*/("");
+var patVer = "", patLang = /** @type {LangKeys} */("");
 var warnEnbl = false, dbg = false, clear = false, force = false, updateVer = false;
 var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
 
@@ -34,18 +36,13 @@ function getDstDir(level, file = "") {
 	return outDir + dir.slice(0, level).join('/') + '/' + file;
 }
 
-/**
- * @param {LangKeys | ""} patLang optional RegEx pattern
- * @param {ScopeKeys | ""} patScope optional RegEx pattern
- * @param {string} patFunc optional RegEx pattern
- */
-function Generate(patFunc, patScope, patLang) {
+
+function Generate() {
 	conf = JSON.parse(ReadFile("conf.json", '{"langs":{},"scopes":{}}', true));
 	regHide = RegExp(conf.regHide);
 	regControl = RegExp(conf.regControl);
 	tDesc = conf.tdesc;
 	tName = conf.tname;
-	pattern = patFunc;
 
 	if (patLang && !conf.langs[patLang])
 		Throw(Error(`language ${patLang} not specified in conf.json`));
@@ -110,7 +107,7 @@ function generateLang(l) {
 	app.WriteFile(dstDir + "Docs.htm", index);
 
 	// generate all versions
-	for (const v of versions) generateVersion(v);
+	for (const v of versions) if (new RegExp(patVer || '.*').test(v)) generateVersion(v);
 }
 
 /** @param {string} ver */
@@ -142,7 +139,7 @@ function generateScope(name) {
 	curScope = name;
 	const scopeDir = getSrcDir(D_SCOPE);
 	const dstDir = getDstDir(D_SCOPE);
-	regGen = RegExp(pattern || ".*");
+	regGen = RegExp(patFunc || ".*");
 
 	if (!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
 		Throw(Error(`'${scopeDir}' doesn't exist.`));
@@ -151,9 +148,9 @@ function generateScope(name) {
 
 	// check file dates for update
 	if (!force && !clear && newestFileDate(dstDir) > newestFileDate(scopeDir, "generate.js"))
-		return console.log(`Skipped ${lang}.${curVer}.${name}.${pattern || '*'}`);
+		return console.log(`Skipped ${lang}.${curVer}.${name}.${patFunc || '*'}`);
 
-	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${pattern || '*'}`);
+	app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${patFunc || '*'}`);
 	parseInput();
 
 	// clear nav & scope folder for generating
@@ -1017,7 +1014,7 @@ function addMarkdown(s) {
 
 /** @type {Obj<string>} */
 const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
- 
+
 /** convert int to 3-digit hex
  * @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -1366,19 +1363,18 @@ function newestFileDate(p) {
 
 var help = `${process.argv.slice(0, 2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
-	-l  --lang=<LANG-CODE>	2 digit code, ie. en de fr pt es ..
-                         	defaults to 'en'
-	-al --addlang=<LANG-CODE>=<LANG-NAME>
-                         	adds a language to conf.json
-	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
-                                adds a scope to conf.json
+	-v  --version=<PATTERN>	version filter pattern
 	-c  --clear            	regenerate the docs completely
 	-u  --update           	update the docs version number
 	-f  --force             force generation of otherwise skipped
 	-C  --clean            	delete temp files (out/ files/json/*/)
+	-al --addlang=<LANG-CODE>=<LANG-NAME>
+                         	adds a language to conf.json
+	-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
+                                adds a scope to conf.json
 	-n  --nogen             don't generate
 	-s  --server            start webserver after generating
-	-v  --verbose           print more debug logs
+	-V  --verbose           print more debug logs
 	-h  --help              this help
 
 PATTERN:
@@ -1430,7 +1426,6 @@ if (typeof app == "undefined") {
 		Alert: console.log
 	}
 
-	var patLang = "", patScope = "", patFunc = "";
 	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>}} */
 	var addcfg = { add: false, langs: {}, scopes: {} };
 	var nogen = false, startServer = false, clean = false;
@@ -1439,21 +1434,23 @@ if (typeof app == "undefined") {
 		if (spat.startsWith("-")) {
 			const pat = spat.split("=");
 			switch (pat[0]) {
-				case "-l": case "--lang": lang = /** @type {LangKeys} */ (pat[1]); break;
 				case "-n": case "--nogen": nogen = true; break;
-				case "-v": case "--verbose": dbg = true; break;
+				case "-v": case "--version": patVer = pat[1]; break;
+				case "-V": case "--verbose": dbg = true; break;
 				case "-c": case "--clear": clear = true; break;
 				case "-C": case "--clean": clean = true; break;
 				case "-u": case "--update": updateVer = true; break;
 				case "-f": case "--force": force = true; break;
 				case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
 				case "-al": case "--addlang":
-					if (pat.length < 3) Throw(Error("missing option args. expected 2"));
+					if (pat.length != 3) Throw(Error("missing option args. expected <code> <name>"));
+					if (pat[2].length != 2) Throw(Error("lang code must have 2 digits"));
 					addcfg.add = true;
 					addcfg.langs[pat[1]] = pat[2];
 					break;
 				case "-as": case "--addscope":
-					if (pat.length < 3) Throw(Error("missing option args. expected 2"));
+					if (pat.length < 3) Throw(Error("missing option args. expected <code> <name>"));
+					if (pat[2].length < 3) Throw(Error("scope code must have at least 3 digits"));
 					addcfg.add = true;
 					addcfg.scopes[pat[1]] = pat[2];
 					break;
@@ -1463,8 +1460,8 @@ if (typeof app == "undefined") {
 		else {
 			var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
 			if (!p) throw Error("invalid pattern " + spat);
-			patLang = p[1];
-			patScope = p[3];
+			patLang = /** @type {LangKeys} */ (p[1]);
+			patScope = /** @type {ScopeKeys} */ (p[3]);
 			patFunc = p[5];
 		}
 	}
@@ -1491,7 +1488,7 @@ if (typeof app == "undefined") {
 		app.WriteFile("conf.json", tos(conf));
 	}
 
-	if (!nogen) Generate(patFunc, /** @type {ScopeKeys | ""} */(patScope), /** @type {LangKeys | ""} */(patLang));
+	if (!nogen) Generate();
 	if (startServer) {
 		var express = require('express');
 		var server = express();
