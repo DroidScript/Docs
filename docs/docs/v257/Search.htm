@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +5,10 @@
 	<title>Search</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css"/>
-	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
-	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css"/>
-	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css"/>
+	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css" />
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css" />
+	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css" />
 
 	<script src="js/forward.js"></script>
 	<script src="js/energize-min.js"></script>
@@ -21,26 +20,36 @@
 </head>
 
 <body>
-<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
-	<div data-role="header" data-position="fixed">
-		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-		<h1>Search</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
-	</div><!-- /header -->
+		<div data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+			<h1>Search</h1>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div><!-- /header -->
 
-	
 
-	<div data-role="content">
-		Filter Content:
-		<input type="text" id="contentFilter" placeholder="Content Filter" onfocus="searchDocs()" oninput="searchDocs()">
-		Filter Name:
-		<input type="text" id="nameFilter" placeholder="Name Filter" onfocus="searchDocs()" oninput="searchDocs()">
-		<h3 style="margin-bottom: 1em;" id="results">Results:</h3>
-		<ul data-role="listview" data-inset="true" id="listview">
-		
-		</ul>
-	</div><!-- /content -->
-</div><!-- /page -->
+
+		<div data-role="content">
+			<div style="display: flex;">
+				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="margin-left: auto;">
+					<input type="checkbox" name="regex-toggle" id="regex-toggle" title="Use Regular Expressions">
+					<label for="regex-toggle">RegEx</label>
+					<input type="checkbox" name="case-toggle" id="case-toggle" title="Match Case">
+					<label for="case-toggle">Aa</label>
+				</fieldset>
+			</div>
+			<span>Filter Content:</span>
+			<input type="text" id="contentFilter" placeholder="Content Filter" onfocus="searchDocs()"
+				oninput="searchDocs()">
+			<span>Filter Name:</span>
+			<input type="text" id="nameFilter" placeholder="Name Filter" onfocus="searchDocs()" oninput="searchDocs()">
+			<h3 style="margin-bottom: 1em;" id="results">Results:</h3>
+			<ul data-role="listview" data-inset="true" id="listview">
+
+			</ul>
+		</div><!-- /content -->
+	</div><!-- /page -->
 </body>
+
 </html>

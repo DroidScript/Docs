@@ -317,16 +317,28 @@ function searchDocs(filterName, filterContent, fetched) {
 	if (!filterContent) filterContent = contentFilter.val();
 	if (!filterName && !filterContent) return;
 
-	try { RegExp(filterName); }
-	catch (e) { nameFilter.css("border-color", "red"); return; }
-	try { RegExp(filterContent); }
-	catch (e) { contentFilter.css("border-color", "red"); return; }
+	var useReg = $("#regex-toggle").prop("checked");
+	var useCase = $("#case-toggle").prop("checked");
+
+	if (useReg) {
+		try { RegExp(filterName); }
+		catch (e) { nameFilter.css("border-color", "red"); return; }
+		try { RegExp(filterContent); }
+		catch (e) { contentFilter.css("border-color", "red"); return; }
+	}
+
+	function match(s, m) {
+		if (!m) return true;
+		if (useReg) return s.match(RegExp(m, useCase ? "i" : ""))
+		if (useCase) return s.includes(m);
+		return s.toLowerCase().includes(m.toLowerCase());
+	}
 
 	var max = 100;
 	var items = indexContent
-		.filter(s => !filterContent || s.match(filterContent))
+		.filter(s => match(s, filterContent))
 		.map(s => s.slice(0, s.indexOf(" := ")))
-		.filter(s => !filterName || s.match(filterName))
+		.filter(s => match(s, filterName))
 		.map(url => `<li><a href='${url}'>${url.replace('.htm', '')}</a></li>`);
 
 	var list = $("#listview");
