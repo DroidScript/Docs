@@ -166,12 +166,12 @@ function generateScope(name) {
 	parseInput();
 
 	// clear nav & scope folder for generating
-	if (!clear) {
+	/* if (!clear) {
 		const verDir = getDstDir(D_VER);
 		if (!"navs".match(regGen)) app.DeleteFolder(dstDir);
 		for (const f of app.ListFolder(verDir))
 			f.startsWith(name + "_") && app.DeleteFile(verDir + f);
-	}
+	} */
 	if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
 	// generate nav pages
