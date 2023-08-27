@@ -2,14 +2,14 @@
 
 const fs = require("fs-extra");
 const path = require("path");
+const conf = require("conf.json");
 const getComment = require("esprima-extract-comments");
 
 /** @type {0 | 1 | 2 | 3} off | error | warn | more */
 let verbose = 1;
 const extraFormat = false;
-const version = "v257";
 const SRC = path.normalize(__dirname + "/markup/en");
-const DST = path.normalize(__dirname + "/json/en/" + version);
+const DST = path.normalize(__dirname + "/json/en/" + conf.version);
 
 const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
@@ -526,7 +526,7 @@ async function GetFolders() {
         LoopFiles(path.join(SRC, folder.name));
 }
 
-if (process.argv.includes('-q')) verbose = 0;
 if (process.argv.includes('-v')) verbose = 2;
 if (process.argv.includes('-vv')) verbose = 3;
+if (process.argv.includes('-q')) verbose = 0;
 GetFolders();

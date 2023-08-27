@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+const fs = require("fs-extra");
+const rimraf = require("rimraf");
+const Prism = require('prismjs');
+conf = require("./conf.json");
+// @ts-ignore
+require('prismjs/components/prism-java.min.js');
+
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 const baseDir = "json/", outDir = "../out/";
 var lang = /** @type {LangKeys} */ ("");
@@ -20,8 +27,11 @@ var regGen = RegExp(""), regHide = RegExp(""), regControl, progress = 0;
 
 // @ts-ignore
 if (typeof OnStart == 'undefined') OnStart = g_OnStart;
-
 function g_OnStart() { }
+
+/** @param {string} p */
+function absPth(p) { return p.startsWith("/") ? p : path + p; }
+
 
 const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
 /** @param {0|1|2|3} level */
@@ -1409,17 +1419,6 @@ EXAMPLES:
 	generate.js app.^C	generate all docs starting with 'C'`;
 
 if (typeof app == "undefined") {
-	var fs = require("fs-extra");
-	var rimraf = require("rimraf");
-	var Prism = require('prismjs');
-	// @ts-ignore
-	require('prismjs/components/prism-java.min.js');
-
-	/**
-	 * @param {string} p
-	 */
-	function absPth(p) { return p.startsWith("/") ? p : path + p; }
-
 	app = {
 		ReadFile: (p) => fs.readFileSync(absPth(p), "utf8"),
 		WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
@@ -1441,9 +1440,7 @@ if (typeof app == "undefined") {
 		Alert: console.log
 	}
 
-	/** @type {{add: boolean, langs: Obj<string>, scopes: Obj<string>, vers:string[]}} */
-	var addcfg = { add: false, langs: {}, scopes: {}, vers: [] };
-	var nogen = false, startServer = false, clean = false;
+	var nogen = false, startServer = false, clean = false, addcfg = false;
 
 	for (var spat of process.argv.slice(2)) {
 		if (spat.startsWith("-")) {
@@ -1460,20 +1457,32 @@ if (typeof app == "undefined") {
 				case "-al": case "--addlang":
 					if (pat.length != 3) Throw(Error("missing option args. expected <code> <name>"));
 					if (pat[1].length != 2) Throw(Error("lang code must have 2 digits"));
-					addcfg.add = true;
-					addcfg.langs[pat[1]] = pat[2];
+					addcfg = true;
+					//@ts-ignore
+					conf.langs[pat[1]] = pat[2];
 					break;
 				case "-as": case "--addscope":
 					if (pat.length < 3) Throw(Error("missing option args. expected <code> <name>"));
 					if (pat[1].length < 3) Throw(Error("scope code must have at least 3 digits"));
-					addcfg.add = true;
-					addcfg.scopes[pat[1]] = pat[2];
+					addcfg = true;
+					//@ts-ignore
+					conf.scopes[pat[1]] = pat[2];
 					break;
 				case "-av": case "--addversion":
-					if (pat.length < 2) Throw(Error("missing option args. expected <code> <name>"));
-					if (!/v\d{0,3}/.test(pat[1])) Throw(Error("version must start with a v and at most 3 digits"));
-					addcfg.add = true;
-					addcfg.vers.push(pat[1]);
+					if (pat.length < 2) Throw(Error("missing option args. expected version"));
+					// supports alpha, beta and patch versions, although noone might ever use those
+					if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
+					addcfg = true;
+					if (!conf.vers.includes(pat[1]))
+						conf.vers.push(pat[1]);
+					break;
+				case "-sv": case "--setversion":
+					if (pat.length < 2) Throw(Error("missing option args. expected version"));
+					// supports alpha, beta and patch versions, although noone might ever use those
+					if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
+					if (!conf.vers.includes(pat[1])) Throw(Error("unregistered version. add with --addversion=" + pat[1]));
+					addcfg = true;
+					conf.version = pat[1];
 					break;
 				default: Throw(Error("Unknown option " + pat[0]));
 			}
@@ -1499,18 +1508,7 @@ if (typeof app == "undefined") {
 		process.exit();
 	}
 
-	if (addcfg.add) {
-		var conf = /** @type {DSConfig} */ (JSON.parse(app.ReadFile("conf.json")));
-		if (!conf) Throw(Error("conf.json not readable."));
-
-		Object.assign(conf.langs, addcfg.langs);
-		Object.assign(conf.scopes, addcfg.scopes);
-		for (const v of addcfg.vers)
-			if (!conf.vers.includes(v))
-				conf.vers.push(v);
-
-		app.WriteFile("conf.json", tos(conf));
-	}
+	if (addcfg) app.WriteFile("conf.json", tos(conf));
 
 	if (!nogen) Generate();
 	if (startServer) {
