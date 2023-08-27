@@ -203,6 +203,24 @@ ${cod}
     return str;
 }
 
+/**
+ * @param {String} scope scope
+ * @param {String} path Path
+ */
+async function GenerateMDFile(scope, path) {
+    let folder = path.replace(dir, outDir);
+    if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true });
+    const srcPath = path + "/desc";
+    try {
+        const descFiles = fs.readdirSync( srcPath );
+        for(const descFile of descFiles) {
+            fs.copyFileSync(srcPath+"/"+descFile, folder+"/"+descFile);
+        }
+    } catch( err ) {
+        console.log("Error in " + scope, err.message);
+    }
+}
+
 // converts a variable to indented string
 // supports Boolean, Number, String, Array and Object
 /**
@@ -231,6 +249,7 @@ async function GetFolders(folder = "") {
             const fileDataPromises = files.map((f) => fsp.readFile(path + f, 'utf8').catch(e => '{}'));
             const fileData = await Promise.all(fileDataPromises);
             const [obj, base, navs] = fileData.map(data => JSON.parse(data));
+            let md = false;
 
             if (fs.existsSync(path + files[0]))
                 fs.writeFileSync(path + files[0], tos(obj));
@@ -239,11 +258,13 @@ async function GetFolders(folder = "") {
 
             if (!fs.existsSync(path + files[0]) && fs.existsSync(descPath)) {
                 const descFiles = await fsp.readdir(descPath);
-                for (const descFile of descFiles) {
-                    obj[descFile.replace('.md', '')] = { desc: '#' + descFile };
-                }
+                md = true;
+                // for (const descFile of descFiles) {
+                //     obj[descFile.replace('.md', '')] = { desc: '#' + descFile };
+                // }
             }
-            await GenerateJSFile(fld.name, path, obj, base, navs);
+            if( md ) await GenerateMDFile(fld.name, path);
+            else await GenerateJSFile(fld.name, path, obj, base, navs, md);
         } catch (err) {
             console.error("While generating " + fld.name);
             console.error(err.stack || err.message);
