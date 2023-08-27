@@ -1176,6 +1176,7 @@ function getHead(title = "", d = 0) {
 	<script src="js/forward.js"></script>
 	<script src="js/energize-min.js"></script>
 	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery.mark.es6.min.js"></script>
 	<script src="../app.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/example.js"></script>

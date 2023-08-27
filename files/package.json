@@ -21,5 +21,8 @@
         "node-fetch": "^2.0",
         "prismjs": "^1.26.0",
         "rimraf": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/mark.js": "^8.11.8"
     }
 }

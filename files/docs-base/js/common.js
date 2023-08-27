@@ -235,6 +235,21 @@ $(window).load(function () {
 	//Jump to html anchors from url
 	var anchor = location.href.match(/(#|\ba=)([\w%]+)/i);
 	if (anchor) jumpTo(decodeURI(anchor[2]));
+
+	var search = location.href.match(/(#|\bsearch=)([^&#]+)/i);
+	var flags = location.href.match(/(#|\bflags=)(\d+)/i) || 0;
+	if (search) {
+		search = decodeURIComponent(search[2]);
+		flags &&= Number(flags[2]);
+		console.log("search", search, flags)
+		/** @type {import("mark.js").MarkOptions} */
+		const options = {
+			acrossElements: true, caseSensitive: flags & 1, ignoreJoiners: true,
+			ignorePunctuation: ":;.,-–—‒_(){}[]!'\"+=".split("")
+		};
+		if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
+		else $(".ui-content").mark(search, options);
+	}
 });
 
 function jumpTo(contains) {
@@ -339,13 +354,14 @@ function searchDocs(filterName, filterContent, fetched) {
 		.filter(s => match(s, filterContent))
 		.map(s => s.slice(0, s.indexOf(" := ")))
 		.filter(s => match(s, filterName))
-		.map(url => `<li><a href='${url}'>${url.replace('.htm', '')}</a></li>`);
+		.map(url => [url, `?search=${encodeURIComponent(filterContent)}&flags=${2 * useReg + useCase}`])
+		.map(([url, flags]) => `<li><a href='${url}${flags}'>${url.replace('.htm', '')}</a></li>`);
 
 	var list = $("#listview");
 	if (!items.length) return $("#results").text("Results: 0");
 	$("#results").text(`Results: ${Math.min(items.length, max)} of ${items.length}`);
 
-	list.empty().append(items.join('\n')).listview("refresh");
+	list.empty().append(items.slice(0, max).join('\n')).listview("refresh");
 }
 
 //Shortcut for string.contains
