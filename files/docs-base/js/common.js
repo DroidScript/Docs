@@ -128,6 +128,22 @@ $(document).live('pageshow', function (event, ui) {
 			parent.postMessage("getaddress:", "*")
 			setTimeout(function () { parent.postMessage("getaddress:", "*") }, 3000) //<-- needed for first time load.
 		}
+
+		var search = location.href.match(/(\bsearch=)([^&#]+)/i);
+		var flags = location.href.match(/(\bflags=)(\d+)/i) || 0;
+		
+		if (search) {
+			search = decodeURIComponent(search[2]);
+			flags &&= Number(flags[2]);
+			console.log("search", search, flags)
+			/** @type {import("mark.js").MarkOptions} */
+			const options = {
+				acrossElements: true, caseSensitive: flags & 1, ignoreJoiners: true,
+				ignorePunctuation: ":;.,-–—‒_(){}[]!'\"+=".split("")
+			};
+			if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
+			else $(".ui-content").mark(search, options);
+		}
 	}
 	//catch( e ) {}
 });
@@ -233,23 +249,8 @@ function ShowExtensionsPage() {
 
 $(window).load(function () {
 	//Jump to html anchors from url
-	var anchor = location.href.match(/(#|\ba=)([\w%]+)/i);
+	var anchor = location.href.match(/.*(#|\ba=)([\w%]+)/i);
 	if (anchor) jumpTo(decodeURI(anchor[2]));
-
-	var search = location.href.match(/(#|\bsearch=)([^&#]+)/i);
-	var flags = location.href.match(/(#|\bflags=)(\d+)/i) || 0;
-	if (search) {
-		search = decodeURIComponent(search[2]);
-		flags &&= Number(flags[2]);
-		console.log("search", search, flags)
-		/** @type {import("mark.js").MarkOptions} */
-		const options = {
-			acrossElements: true, caseSensitive: flags & 1, ignoreJoiners: true,
-			ignorePunctuation: ":;.,-–—‒_(){}[]!'\"+=".split("")
-		};
-		if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
-		else $(".ui-content").mark(search, options);
-	}
 });
 
 function jumpTo(contains) {
