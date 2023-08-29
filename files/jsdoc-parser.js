@@ -2,14 +2,15 @@
 
 const fs = require("fs-extra");
 const path = require("path");
-const conf = require("conf.json");
+const conf = require("./conf.json");
 const getComment = require("esprima-extract-comments");
 
 /** @type {0 | 1 | 2 | 3} off | error | warn | more */
 let verbose = 1;
 const extraFormat = false;
-const SRC = path.normalize(__dirname + "/markup/en");
-const DST = path.normalize(__dirname + "/json/en/" + conf.version);
+const LANG = "en";
+const SRC = path.normalize(__dirname + "/markup/"+LANG);
+const DST = path.normalize(__dirname + "/json/"+LANG+"/"+conf.version);
 
 const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
 /** @type {Obj<string>} */
@@ -32,8 +33,11 @@ const types = {
 const pattern = /`([^`]*)`/g; // Matches any text between backticks
 const replacement = '“$1”'; // Replaces backticks with slash before and after the matched text
 
-/** @param {string} SOURCE_DIR */
-async function LoopFiles(SOURCE_DIR) {
+/**
+ * @param {string} SOURCE_DIR
+ * @param {string} fn Filename
+ */
+async function LoopFiles(SOURCE_DIR, fn) {
     // console.log("<---- Generating json for "+SOURCE_DIR+" ----->";
     if (!fs.existsSync(SOURCE_DIR)) return console.log(SOURCE_DIR + " does not exist!");
 
@@ -53,11 +57,20 @@ async function LoopFiles(SOURCE_DIR) {
     let baseJson = {};
     if (fs.existsSync(baseFile)) baseJson = getBaseMethods(baseFile);
 
-    const files = await fs.readdir(SOURCE_DIR);
-    files.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1)
-
     /** @type {Obj<DSFunction>} */
-    const objJson = {}
+    let objJson = {}
+
+    let files = await fs.readdir(SOURCE_DIR);
+    // TODO: Support regex for this "file filtering" method in the future
+    if( fn ) {
+        files = files.filter(m => m.includes(fn));
+        if( !files.length ) return console.log("Empty files for '" + fn + "' filter");
+        const objPath = path.join(__dirname, "json", LANG, conf.version, folder, "obj.json");
+        if( fs.existsSync(objPath) ) {
+            objJson = require( objPath ) || {};
+        }
+    }
+    files.sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1)
 
     /** @type {Obj<string[]>} */
     let navs = {};
@@ -518,15 +531,33 @@ function extractBacktickStringsDesc(str) {
     return finalStr;
 }
 
-async function GetFolders() {
+async function GetFolders( m="" ) {
+    let mp = SRC;
+    let fn = "";
+    if( m ) {
+        fn = m.split(".")[1];
+        mp = path.join(SRC, m.split(".")[0]);
+        if( !fs.existsSync(mp) ) return console.log("Path " + m + " does not exist!");
+        // Assumes <scope>.<member> e.g. "app.CreateButton"
+        // TODO: Add <lang> and <version> in the future
+        // Something like <lang>.<version>.<scope>.<member> e.g. "en.v257.app.CreateButton"
+    }
     const files = fs.readdirSync(SRC, { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => /[a-z]/i.test(file.name[0]) && file.isDirectory());
-    for (const folder of folders)
-        LoopFiles(path.join(SRC, folder.name));
+    for (const folder of folders) {
+        let fld = path.join(SRC, folder.name);
+        if((m && mp.includes(fld)) || !m)
+            LoopFiles(fld, fn);
+    }
 }
 
 if (process.argv.includes('-v')) verbose = 2;
 if (process.argv.includes('-vv')) verbose = 3;
 if (process.argv.includes('-q')) verbose = 0;
-GetFolders();
+
+// path argument
+const arg = process.argv.filter(a => (a.includes("-p=") || a.includes("--path=")))
+let p = "";
+if( arg.length ) p = arg[0].split("=")[1];
+GetFolders( p );
