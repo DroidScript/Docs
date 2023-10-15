@@ -383,7 +383,7 @@ function generateDoc(name) {
 
 	// get description from external file
 	if (ps.desc && ps.desc.startsWith('#')) {
-		desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
+		desc = ps.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
 		if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
 	}
 
