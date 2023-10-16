@@ -88,7 +88,7 @@ function OnPause()
 </sample Detect Pause>
 
 ### OnResume()
-The OnPause event will be called when the user returns to your app after sending it to the background.
+The OnResume event will be called when the user returns to your app after sending it to the background.
 
 <sample Detect Resume>
 

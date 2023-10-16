@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs-extra");
+const path = require("path");
 const rimraf = require("rimraf");
 const Prism = require('prismjs');
 conf = require("./conf.json");
@@ -30,8 +31,7 @@ if (typeof OnStart == 'undefined') OnStart = g_OnStart;
 function g_OnStart() { }
 
 /** @param {string} p */
-function absPth(p) { return p.startsWith("/") ? p : path + p; }
-
+function absPth(p) { return path.resolve(rootPath, p); }
 
 const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
 /** @param {0|1|2|3} level */
@@ -1268,7 +1268,7 @@ var
 	// html char placeholders
 	_htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', verbar: '|', "#160": " ", nbsp: " ", ldquo: "“", rdquo: "”" },
 	// cwd
-	path = __dirname + "/";
+	rootPath = __dirname + "/";
 
 
 /** @param {string} [l] */
@@ -1384,7 +1384,7 @@ function newestFileDate(p) {
 // ---------------------------- nodejs app wrapper -----------------------------
 
 
-var help = `${process.argv.slice(0, 2).join(" ").replace(path, "")} [OPTIONS] [PATTERNS]
+var help = `${process.argv.slice(0, 2).join(" ").replace(rootPath, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
 	-v  --version=<PATTERN>	version filter pattern
 	-c  --clear            	regenerate the docs completely
