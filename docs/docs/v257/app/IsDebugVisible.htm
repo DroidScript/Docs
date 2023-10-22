@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>ShowDebug</title>
+	<title>IsDebugVisible</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -26,7 +26,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>ShowDebug</h1>
+		<h1>IsDebugVisible</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -35,15 +35,13 @@
 	</div>
 
 	<div data-role="content">
-		<p>Show/Hide the debug console as overlay in your app, after calling <a href="CreateDebug.htm" data-ajax="false">CreateDebug</a>.</p>
+		<p>Returns if the debug view is currently visible to the user.</p>
 
 		<div class="samp">
-		app.ShowDebug(
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">show</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+		app.IsDebugVisible() → <b>Boolean</b>
 		</div>
 
-		<p>See Also: <a href="Debug.htm" data-ajax="false">Debug</a>, <a href="IsDebugVisible.htm" data-ajax="false">IsDebugVisible</a></p>
+		<p>See Also: <a href="Debug.htm" data-ajax="false">Debug</a>, <a href="ShowDebug.htm" data-ajax="false">ShowDebug</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Toggle Debug</h3>
 			<div id="examp1" style="font-size:70%">
@@ -63,7 +61,9 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">ShowDebug</span><span class="token punctuation">(</span> <span class="token parameter">show</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowDebug</span><span class="token punctuation">(</span> show <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowDebug</span><span class="token punctuation">(</span> show <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> vis <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsDebugVisible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> vis <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -77,8 +77,7 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“dialog”</docstr> or <docstr>“clear-Clear content before showing”</docstr></div>
+
 </div>
 </body>
 

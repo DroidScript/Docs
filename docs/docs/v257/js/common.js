@@ -131,7 +131,7 @@ $(document).live('pageshow', function (event, ui) {
 
 		var search = location.href.match(/(\bsearch=)([^&#]+)/i);
 		var flags = location.href.match(/(\bflags=)(\d+)/i) || 0;
-
+		
 		if (search) {
 			search = decodeURIComponent(search[2]);
 			flags &&= Number(flags[2]);

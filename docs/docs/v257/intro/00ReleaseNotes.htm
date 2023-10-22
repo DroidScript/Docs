@@ -38,6 +38,13 @@
 
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 2.64b1(05-Oct 2023)')">DS 2.64b1</a><sup>(05-Oct 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.63b1(21-Sep 2023)')">DS 2.63b1</a><sup>(21-Sep 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.62b3')">DS 2.62b3</a><br>
+				- <a href="" onclick="jumpTo('DS 2.62b2(23-Jul 2023)')">DS 2.62b2</a><sup>(23-Jul 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.62b1(15-Jun 2023)')">DS 2.62b1</a><sup>(15-Jun 2023)</sup><br>
+			</span><br>
 		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 2.61(23-Mar-2023)')">DS 2.61</a><sup>(23-Mar-2023)</sup><br>
 			<span style="display:inline-block;padding-left:1em;">
@@ -107,7 +114,77 @@
 		</span><br>
 		</div>
 
-		<p><!-- /<a href="[_*]" data-ajax="false">^\\</a>/\\$1/ /:/:/ --></p>
+		<p><!-- /([^\\])([_<i>])/$1\\$2/ /:/:/ --></p>
+		<h3>DS 2.64b1<sup>(05-Oct 2023)</sup></h3>
+		<p>- Added usb.GetDTR(), usb.GetRTS(), usb.GetCD() methods.<br>
+		- Changed to usb.IsConnected() method to actively check for device presence.<br>
+		- Fixed AAB builds ignoring build.json on scoped storage.<br>
+		- Added webview 'Persist' option, keeps file cache, history and form data between re-loads/startups.<br>
+		- Added webview 'ClearCookies' option, clears cookies at startup.<br>
+		- Added webview.ClearCookies() method.<br>
+		- Added webview.SetInject( file ) injects a script immediately after page load.<br>
+		- Added warning about non-latin chars on package name.<br>
+		- Fixed AAB building with non-latin chars in app title.<br>
+		- Fixed Saving/Loading of SPKs with non-latin names.<br>
+		- Added 'spk' option to app.ZipFolder() method, creates an SPK from a DS project folder.<br>
+		- Added support for showing Img/app-icon.png in device IDE apps list.<br>
+		- Removed image file case sensitivity check in APKs (for speed).<br>
+		- Added warning about non-latin file names during apk/aab builds.<br>
+		- Fixed issue with "No Permissions" on Android 13 APK installs.</p>
+		<h3>DS 2.63b1<sup>(21-Sep 2023)</sup></h3>
+		<p>- Default AAB/APK target API is now 33.<br>
+		- Upgraded app.CreatePlayStore() to use Android Billing library 6.0.1<br>
+		- Added 'version' field to getinfo end-point response (for wifi ide).<br>
+		- Added 'ScratchPad' extension to device IDE.<br>
+		- Updated UI libs/Layout editor to v0.26 (for experiments mode)<br>
+		- Added 'local' option to webview, loads urls starting with / from /Storage/[AppName]/ instead.<br>
+		- Added READ_SMS permission to X version of DS.<br>
+		- Added Python support under 'experiments' mode.</p>
+		<h3>DS 2.62b3</h3>
+		<p>- Added app.IsDebugVisible() method.<br>
+		- Added 'dialog' and 'clear' options to app.ShowDebug() method.<br>
+		- Added ext.Post( extName, msg ) method for posting between IDE extensions.<br>
+		- Added 'add' option to web/app.SetUserAgent() appends to default user agent.<br>
+		- Added support for Img/app-icon.png as alternative source of app icon.<br>
+		- Small bugfix in XMLHttpRequest polyfill for V8/cgf.Fast mode.<br>
+		- Added new cfg.Serv option, serves html/hybrid apps from a built-in http server.<br>
+		- Prevented _Init function being called from app.js when not in DS webview.<br>
+		- Fixed docs/samps animation flicker after disconnecting wifi editor.<br>
+		- Stopped the 'Blocked a frame' error on Hybrid i-frames with CORS.<br>
+		- Changed app.Alert to use standard alert() function if no title specified.<br>
+		- Prevented screen lock while app is running inside IDE.<br>
+		- Debug overlay now shown before OnStart() is called.<br>
+		- Added new ext.isConnected() method + ext_OnConnect/ext_OnDisconnect callbacks for extensions.<br>
+		- Added new ext_OnProject callback, called when new project is loaded by IDE.<br>
+		- Fixed CodeEdit control calling OnChange when the SetText method is called.<br>
+		- Fixed app.CreateNode() missing error logging issue.<br>
+		- Added new cfg.Console option, shows console instead of GUI (drawers still work).<br>
+		- Added new app.GetDebug() method to return the current debug switches.<br>
+		- Added web.LoadFailed() method to detect WebView page load errors.<br>
+		- Added web.GetHomeUrl() to get starting url.<br>
+		- Updated DroidStore to use Justin's latest minimal dark version.</p>
+		<h3>DS 2.62b2<sup>(23-Jul 2023)</sup></h3>
+		<p>- Added 'NoCors' option to app.SetOptions() for Hybrid apps.<br>
+		- Enabled 'NoCors' option by default for Hybrid apps.<br>
+		- Update UI components to version 0.24.<br>
+		- Fixed DS 'Light' Theme not working when phone in dark-mode.<br>
+		- Allowed users to build APK even if builder is out of date.<br>
+		- Fixed Job scheduler not working in APKs.<br>
+		- Updated the extension.js to support ext_OnOpen.<br>
+		- Added 'NoAccel' option to WebView (allow use on OrangePi 3).</p>
+		<h3>DS 2.62b1<sup>(15-Jun 2023)</sup></h3>
+		<p>- Added support for full screen mode in WebView.<br>
+		- Added 'NoScrollbar' option to ScrollView.<br>
+		- Added webView.SetContextMenus( "Copy URL,Open URL", "Download Image" )<br>
+		- Added webView.SetOnContextMenu callback (=> item, url, img, type )<br>
+		- Removed 'annoying' dot from debug output of NodeJs.<br>
+		- Added optional 'newPaths' parameter to node.Run method (sets new module search folders).<br>
+		- Changed Node component not to use named pipes for messaging (use 'legacy' option to revert).<br>
+		- Enabled DS extensions to run server side node scripts (/Extensions/Test/Server/node_Test.js)<br>
+		- Added 'DS_DIR' environment variable for DS extensions to get full path to DS folder.<br>
+		- Added 'NoCors' option to webview (attempts to disable CORS and i-frame restrictions)<br>
+		- Fixed issue with css and json files with the same name as app being renamed to _main_</i>.<br>
+		- Added 'ShowWhenLocked', 'TurnScreenOn' and 'KeepScreenOn' options to app.CreateOverlay method.</p>
 		<h2>DS 2.61<sup>(23-Mar-2023)</sup></h2>
 		<p>- Updated UI plugin to v0.22</p>
 		<h4>DS 2.60b_p4<sup>(21-Mar-2023)</sup></h4>
