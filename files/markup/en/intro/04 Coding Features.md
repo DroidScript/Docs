@@ -30,6 +30,12 @@ The _Game_ configuration will let your app immediately run in [GameView](../app/
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
 
+#### cfg.Serv
+The _Serv_ flag will serve any HTML or Hybrid app over a builtin HTTP server.
+
+#### cfg.Console
+This will show the console as main page instead of the GUI. Drawers will still work with this config.
+
 <!--
 #### cfg.NoSwapify
 This option prevents function name swapping during obfuscation

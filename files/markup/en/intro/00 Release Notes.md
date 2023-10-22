@@ -1,4 +1,78 @@
-<!-- /[^\\]([_*])/\\$1/ /:/&colon;/ -->
+<!-- /([^\\])([_*])/$1\\$2/ /:/&colon;/ -->
+### DS 2.64b1 (05-Oct 2023)
+- Added usb.GetDTR(), usb.GetRTS(), usb.GetCD() methods.
+- Changed to usb.IsConnected() method to actively check for device presence.
+- Fixed AAB builds ignoring build.json on scoped storage.
+- Added webview 'Persist' option, keeps file cache, history and form data between re-loads/startups.
+- Added webview 'ClearCookies' option, clears cookies at startup.
+- Added webview.ClearCookies() method.
+- Added webview.SetInject( file ) injects a script immediately after page load.
+- Added warning about non-latin chars on package name.
+- Fixed AAB building with non-latin chars in app title.
+- Fixed Saving/Loading of SPKs with non-latin names.
+- Added 'spk' option to app.ZipFolder() method, creates an SPK from a DS project folder.
+- Added support for showing Img/app-icon.png in device IDE apps list.
+- Removed image file case sensitivity check in APKs (for speed).
+- Added warning about non-latin file names during apk/aab builds.
+- Fixed issue with "No Permissions" on Android 13 APK installs.
+
+### DS 2.63b1 (21-Sep 2023)
+- Default AAB/APK target API is now 33.
+- Upgraded app.CreatePlayStore() to use Android Billing library 6.0.1
+- Added 'version' field to getinfo end-point response (for wifi ide).
+- Added 'ScratchPad' extension to device IDE.
+- Updated UI libs/Layout editor to v0.26 (for experiments mode)
+- Added 'local' option to webview, loads urls starting with / from /Storage/[AppName]/ instead.
+- Added READ\_SMS permission to X version of DS.
+- Added Python support under 'experiments' mode.
+
+### DS 2.62b3
+- Added app.IsDebugVisible() method.
+- Added 'dialog' and 'clear' options to app.ShowDebug() method.
+- Added ext.Post( extName, msg ) method for posting between IDE extensions.
+- Added 'add' option to web/app.SetUserAgent() appends to default user agent.
+- Added support for Img/app-icon.png as alternative source of app icon.
+- Small bugfix in XMLHttpRequest polyfill for V8/cgf.Fast mode.
+- Added new cfg.Serv option, serves html/hybrid apps from a built-in http server.
+- Prevented \_Init function being called from app.js when not in DS webview.
+- Fixed docs/samps animation flicker after disconnecting wifi editor.
+- Stopped the 'Blocked a frame' error on Hybrid i-frames with CORS.
+- Changed app.Alert to use standard alert() function if no title specified.
+- Prevented screen lock while app is running inside IDE.
+- Debug overlay now shown before OnStart() is called.
+- Added new ext.isConnected() method + ext\_OnConnect/ext\_OnDisconnect callbacks for extensions.
+- Added new ext\_OnProject callback, called when new project is loaded by IDE.
+- Fixed CodeEdit control calling OnChange when the SetText method is called.
+- Fixed app.CreateNode() missing error logging issue.
+- Added new cfg.Console option, shows console instead of GUI (drawers still work).
+- Added new app.GetDebug() method to return the current debug switches.
+- Added web.LoadFailed() method to detect WebView page load errors.
+- Added web.GetHomeUrl() to get starting url.
+- Updated DroidStore to use Justin's latest minimal dark version.
+
+### DS 2.62b2 (23-Jul 2023)
+- Added 'NoCors' option to app.SetOptions() for Hybrid apps.
+- Enabled 'NoCors' option by default for Hybrid apps.
+- Update UI components to version 0.24.
+- Fixed DS 'Light' Theme not working when phone in dark-mode.
+- Allowed users to build APK even if builder is out of date.
+- Fixed Job scheduler not working in APKs.
+- Updated the extension.js to support ext\_OnOpen.
+- Added 'NoAccel' option to WebView (allow use on OrangePi 3).
+
+### DS 2.62b1 (15-Jun 2023)
+- Added support for full screen mode in WebView.
+- Added 'NoScrollbar' option to ScrollView.
+- Added webView.SetContextMenus( "Copy URL,Open URL", "Download Image" )
+- Added webView.SetOnContextMenu callback (=> item, url, img, type )
+- Removed 'annoying' dot from debug output of NodeJs.
+- Added optional 'newPaths' parameter to node.Run method (sets new module search folders).
+- Changed Node component not to use named pipes for messaging (use 'legacy' option to revert).
+- Enabled DS extensions to run server side node scripts (/Extensions/Test/Server/node\_Test.js)
+- Added 'DS\_DIR' environment variable for DS extensions to get full path to DS folder.
+- Added 'NoCors' option to webview (attempts to disable CORS and i-frame restrictions)
+- Fixed issue with css and json files with the same name as app being renamed to \_main\_*.
+- Added 'ShowWhenLocked', 'TurnScreenOn' and 'KeepScreenOn' options to app.CreateOverlay method.
 
 ## DS 2.61 (23-Mar-2023)
 - Updated UI plugin to v0.22

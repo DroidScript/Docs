@@ -1,14 +1,13 @@
 // ------------- HEADER SECTION ------------- 
 
 
-/** # ShowDebug #
- * @brief Show the in-app debug console
- * Show/Hide the debug console as overlay in your app, after calling @CreateDebug.
+/** # IsDebugVisible #
+ * @brief Check if debug view is currently shown
+ * Returns if the debug view is currently visible to the user.
  * 
- * See Also: @Debug, @IsDebugVisible
- * $$ app.ShowDebug(show, options) $$ 
- * @param {bin} show 
- * @param {str} options dialog|clear-Clear content before showing
+ * See Also: @Debug, @ShowDebug
+ * $$ app.IsDebugVisible(show, options) $$ 
+ * @returns bin
 */
 
 
@@ -36,7 +35,9 @@ function OnStart()
 
 function ShowDebug( show )
 {
-    <b>app.ShowDebug( show );</b>
+	app.ShowDebug( show );
+	<b>var vis = app.IsDebugVisible();</b>
+    app.ShowPopup( vis );
 }
  */
     

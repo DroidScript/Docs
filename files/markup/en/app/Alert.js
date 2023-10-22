@@ -18,7 +18,7 @@
 Alert shows a simple text dialog with a colored title and a 'Ok' button to exit. If title was not given the dialog looks like a normal alert box.
 Without the NoDim option the background behind the dialog will be darkened.
 
-See Also:
+**Note:** If no (or a falsy) title is specified the method will use the standard DOM alert() method, which will block the code's execution until closed.
 
 See Also: @Error, @ShowTextDialog, @CreateYesNoDialog.
  */

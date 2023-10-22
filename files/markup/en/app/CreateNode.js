@@ -6,7 +6,7 @@
  * 
  * $$ nod = app.CreateNode(paths, options) $$ 
  * @param {str_pth} paths NODE_PATH env variable
- * @param {str} options extended:allow app.* methods
+ * @param {str} options extended:allow app.* methods,legacy:don't use named pipes for messaging
 */
 
 

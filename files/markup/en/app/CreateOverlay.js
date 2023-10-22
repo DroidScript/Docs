@@ -8,7 +8,7 @@
  * 
  * <premium>
  * $$ ovl = app.CreateOverlay(options) $$ 
- * @param {str_com} options 
+ * @param {str_com} options ShowWhenLocked,TurnScreenOn,KeepScreenOn
 */
 
 

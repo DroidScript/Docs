@@ -7,7 +7,7 @@
  * 
  * See Also: @GetOptions
  * $$ app.SetOptions(options) $$ 
- * @param {str_com} options UseBrowser,NoKeys|ShowKeys,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn
+ * @param {str_com} options UseBrowser,NoKeys|ShowKeys,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoCors,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn
 */
 
 
