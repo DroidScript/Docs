@@ -71,12 +71,12 @@
 		<p>Enables builtin material component support through the MUI object.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
 		<h4>cfg.Game</h4>
-		<p>The <i>Game</i> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
+		<p>The <kbd>Game</kbd> configuration will let your app immediately run in <a href="../app/CreateGameView.htm" data-ajax="false">GameView</a> mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.</p>
 		<h4>cfg.Transparent</h4>
 		<p>This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.<br>
 		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></p>
 		<h4>cfg.Serv</h4>
-		<p>The <i>Serv</i> flag will serve any HTML or Hybrid app over a builtin HTTP server.</p>
+		<p>The <kbd>Serv</kbd> flag will serve any HTML or Hybrid app over a builtin HTTP server on port <kbd>3033</kbd>.</p>
 		<h4>cfg.Console</h4>
 		<p>This will show the console as main page instead of the GUI. Drawers will still work with this config.<br>
 		<br>
@@ -90,7 +90,9 @@
 		<p>The Fast config will make use of <a href="https://eclipsesource.com/j2v8" onclick="return OpenUrl(this.href);">the J2V8 engine</a> which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.<br>
 		<br>
 		The drawback of this method is that all default WebView DOM objects are not available any more.<br>
-		This includes methods like setInterval and setTimeout which should be converted to <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a></b> respectively.</p>
+		This includes methods like setInterval and setTimeout which should be converted to <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a></b> respectively.<br>
+		<br>
+		<strong>Note:</strong> The same effect can be observed when running in a Node.js environment (using the <kbd>cfg.Node</kbd> flag)</p>
 		<h2>app.eventSource</h2>
 		<p>In callback functions of controls you can use app<span class="token punctuation">.</span>eventSource to access the callee control object without having to assign the control to a specific variable. Previously this could be achieved by using the <span class="token keyword">this</span> keyword. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:</p>
 

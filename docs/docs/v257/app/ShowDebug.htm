@@ -35,7 +35,7 @@
 	</div>
 
 	<div data-role="content">
-		<p>Show/Hide the debug console as overlay in your app, after calling <a href="CreateDebug.htm" data-ajax="false">CreateDebug</a>.</p>
+		<p>Show/Hide the debug console as black overlay in your app.</p>
 
 		<div class="samp">
 		app.ShowDebug(
@@ -45,18 +45,14 @@
 
 		<p>See Also: <a href="Debug.htm" data-ajax="false">Debug</a>, <a href="IsDebugVisible.htm" data-ajax="false">IsDebugVisible</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - Toggle Debug</h3>
+			<h3>Example - Debug Overlay</h3>
 			<div id="examp1" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    app<span class="token punctuation">.</span><span class="token function">CreateDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    <br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateToggle</span><span class="token punctuation">(</span> <span class="token string">"WiFi Access Point"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddToggle</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Toggle Debug"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    tgl<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> ShowDebug <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    tgl<span class="token punctuation">.</span><span class="token function">SetChecked</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> tgl <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
@@ -74,11 +70,46 @@
 		</div>
 
 
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Debug Dialog</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddButton</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Show Debug Dialog"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    tgl<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> ShowDebug <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowDebug</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ShowDebug</span><span class="token punctuation">(</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">"dialog"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Press [BACK] to close."</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">IsDebugVisible</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">ShowDebug</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 
 	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“dialog”</docstr> or <docstr>“clear-Clear content before showing”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“dialog-Show the debug log as black overlay dialog”</docstr> or <docstr>“clear-Clear content before showing”</docstr></div>
 </div>
 </body>
 
