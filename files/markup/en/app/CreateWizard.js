@@ -21,6 +21,7 @@ These can be settings and usage terms on first startup or an installation proces
 %c
 The callback function will be called each time the user changes the wizard page.
 The functions gets the current wizard layout and the page index (starting from 1) to identify the current progress.
+<premium>
 
 ### Page Initialisation
 On the very first call the page index is **0** which means 'initialisation'.
@@ -72,6 +73,7 @@ In case the user cancels the wizard the index is **-1**.
 /** ### GetType ###
  * Returns the control class name.
  * $$ wiz.GetType() $$
+ * @returns str-Wizard
  */
 
 

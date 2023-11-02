@@ -6,12 +6,12 @@
  * @brief Returns a new Tabs object
  * 
  * $$ tab = app.CreateTabs(list, width, height, options) $$ 
- * @param {str_com} list 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options NoMargins|Fade|FontAwesome
+ * @param {str_com} list
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str} options Fade,FontAwesome,NoMargins,VCenter
  * @returns dso-Tabs
-*/
+ */
 
 
 // ------------- LONG DESCRIPTION ------------- 

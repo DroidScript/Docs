@@ -172,30 +172,32 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetTitleColor ###
- * Changes the color of the title divider.
+ * Changes the color of the dialog title. Only works with "Old" option.
  * $$ dlg.SetTitleColor(clr) $$
  * @param {str_col} clr 
  */
 
 
 /** ### SetTitleDividerColor ###
- * @brief Changes the title divider height
- * Changes the title divider color of the dialog.
+ * @brief Changes the title divider height for "Old" dialogs
+ * Changes the title divider color of the dialog. Only works with "Old" option.
  * $$ dlg.SetTitleDividerColor(color) $$
  * @param {str_col} color 
  */
 
 
 /** ### SetTitleDividerHeight ###
- * Changes the divider height of the dialog.
- * $$ dlg.SetTitleDividerHeight(height) $$
+ * @brief Change height of the title divider for "Old" dialogs
+ * Changes the divider height of the dialog. Only works with "Old" option.
+ * $$ dlg.SetTitleDividerHeight(height, options) $$
  * @param {num_pxl} height 
+ * @param {str} options px|sp|dip|mm|pt
  */
 
 
 /** ### SetTitleHeight ###
- * @brief Change height of the title bar
- * Changes the height of the title bar.
+ * @brief Change height of the title bar for "Old" dialogs
+ * Changes the height of the title bar. Only works with "Old" option.
  * $$ dlg.SetTitleHeight(height, options) $$
  * @param {num_pxl} height 
  * @param {str_com} options px|sp|dip|mm|pt
@@ -203,8 +205,8 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 
 /** ### SetTitleTextSize ###
- * @brief Changes the title text size
- * Changes the text size of the dialog title.
+ * @brief Changes the title text size for "Old" dialogs
+ * Changes the text size of the dialog title. Only works with "Old" option.
  * $$ dlg.SetTitleTextSize(size, options) $$
  * @param {num} size 
  * @param {str} options px|sp|dip|mm|pt

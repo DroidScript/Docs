@@ -44,7 +44,6 @@ function OnStart() {
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
 
 function OnStart() {
-    app.WriteFile( "script.js", scriptJS );
     <b>app.Script( "script.js", true );</b>
 
     // without noDefer true computeNum won't be defined

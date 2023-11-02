@@ -24,8 +24,8 @@ function OnStart()
 {
 	var oldfile = "test.txt";
     var newfile = "test2.txt";
-	app.WriteFile( file, "Created: " + new Date() );
-	<b>app.RenameFile( file, "/sdcard/wftest2.txt" );</b>
+	app.WriteFile( oldfile, "Created: " + new Date() );
+	<b>app.RenameFile( oldfile, newfile );</b>
 }
  */
     
