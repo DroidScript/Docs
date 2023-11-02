@@ -163,10 +163,10 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern IsVisible */
 
 /** ### LoadFailed ###
- * @brief Called when a page failed to load
- * %cb% when the page failed loading.
- * $$ web.LoadFailed(cb) $$
- * @param {fnc_json} callback {}
+ * @brief Returns if the page failed to load
+ * Returns if the currently loaded page had a loading error.
+ * $$ web.LoadFailed() $$
+ * @returns bin
  */
 
 
@@ -228,9 +228,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetContextMenus ###
  * @brief Define context menus to listen for
  * Define which context menus are available for SetOnContextMenu.
- * $$ web.SetContextMenus(urls) $$
- * @param {str} urls Copy URL\,Open URL
- * @param {str} downloads Download Image
+ * $$ web.SetContextMenus(links, images) $$
+ * @param {str} links Copy URL\,Open URL
+ * @param {str} images Download Image
  */
 
 

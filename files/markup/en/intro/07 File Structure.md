@@ -17,7 +17,8 @@
     ├── Snd:"sound files"/
     ├── Misc:"miscellaneous files"/
     └── Img:"image files"/
-        └── "&lt;PROJECT\_NAME&gt;.png":"Project icon"
+        ├── "app-icon.png":"Project icon"
+        └── <gray>"&lt;PROJECT\_NAME&gt;.png":"Project icon" (deprecated)</gray>
 </code>
 
 ### lang.json

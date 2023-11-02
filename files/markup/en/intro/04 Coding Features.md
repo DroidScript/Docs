@@ -24,14 +24,14 @@ Enables builtin material component support through the MUI object.
 <premium>
 
 #### cfg.Game
-The _Game_ configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
+The `Game` configuration will let your app immediately run in [GameView](../app/CreateGameView.htm) mode. This way you can write your game code directly in the main script without bothering about creating the GameView container.
 
 #### cfg.Transparent
 This will let your app run transparently on the HomeScreen and it will stay on top of everything even if the user launches an other app.
 <premium>
 
 #### cfg.Serv
-The _Serv_ flag will serve any HTML or Hybrid app over a builtin HTTP server.
+The `Serv` flag will serve any HTML or Hybrid app over a builtin HTTP server on port `3033`.
 
 #### cfg.Console
 This will show the console as main page instead of the GUI. Drawers will still work with this config.
@@ -49,6 +49,8 @@ The Fast config will make use of [the J2V8 engine](https://eclipsesource.com/j2v
 
 The drawback of this method is that all default WebView DOM objects are not available any more.
 This includes methods like setInterval and setTimeout which should be converted to **app.@../app/Animate** respectively.
+
+**Note:** The same effect can be observed when running in a Node.js environment (using the `cfg.Node` flag)
 
 
 ## app.eventSource

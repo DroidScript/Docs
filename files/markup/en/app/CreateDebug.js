@@ -6,7 +6,8 @@
  * CreateDebug is used to show the console as overlay above the app in order to see the debug logs.
  * 
  * See Also: @SetDebug, @Debug
- * $$ app.CreateDebug() $$ 
+ * $$ app.CreateDebug(options) $$ 
+ * @param {str} options dialog-Show the debug log as black overlay dialog|clear-Clear content before showing
 */
 
 

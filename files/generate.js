@@ -1370,7 +1370,7 @@ function tos(o, intd = "") {
 
 /**
  * @param {string} p
- * @return {number}
+ * @returns {number}
  */
 function newestFileDate(p) {
 	var files;

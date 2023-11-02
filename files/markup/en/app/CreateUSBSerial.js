@@ -36,6 +36,27 @@ The default constructor values are:
 
 /** @extern Batch */
 
+/** ### GetDTR ###
+ * @brief Get the 'Data Terminal Ready' state
+ * Get the **D**ata **T**erminal **R**eady state.
+ * $$ usb.GetDTR() $$
+ */
+
+
+/** ### GetRTS ###
+ * @brief Get the 'Request To Send' state
+ * Get the **R**equest **T**o **S**end state.
+ * $$ usb.GetRTS() $$
+ */
+
+
+/** ### GetCD ###
+ * @brief Get the 'Clear To Send' state
+ * Raises the **C**lear **T**o **S**end state.
+ * $$ usb.GetCD() $$
+ */
+
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ usb.GetType() $$
@@ -44,8 +65,8 @@ The default constructor values are:
 
 
 /** ### IsConnected ###
- * @brief Checks if a USB device is connected
- * Returns whether a USB serial device is connected.
+ * @brief Actively checks if a USB device is connected
+ * Returns whether a USB serial device is connected by actively checking the presence of a device.
  * $$ usb.IsConnected() $$
  * @returns bin
  */
@@ -62,7 +83,7 @@ The default constructor values are:
 
 
 /** ### SetDTR ###
- * @brief Raises the DTR state
+ * @brief Raises the Data Terminal Ready state
  * Raises the **D**ata **T**erminal **R**eady state.
  * $$ usb.SetDTR(onOff) $$
  * @param {bin} onOff 
@@ -94,7 +115,7 @@ The default constructor values are:
 
 
 /** ### SetRTS ###
- * @brief Raises the RTS state
+ * @brief Raises the Request To Send state
  * Raises the **R**equest **T**o **S**end state.
  * $$ usb.SetRTS(onOff) $$
  * @param {bin} onOff 

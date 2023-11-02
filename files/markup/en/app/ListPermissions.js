@@ -3,8 +3,10 @@
 
 /** # ListPermissions #
  * Returns a list of granted permissions
+ * 
+ * See Also: @GetPermission @CheckPermission @RemovePermission
  * $$ app.ListPermissions(type) $$ 
- * @param {str} type storage
+ * @param {str} type Camera|Storage|ExtSDcard|Network|Notify|Location|SMS|Calendar|Body|Contacts|Record|Biometric|Phone|Accounts|License
  * @returns lst-[perm:str_uri]
 */
 

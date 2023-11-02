@@ -9,7 +9,8 @@
  * $$ app.ZipFile(source, destination) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
-*/
+ * @param {str} options spk-Create SPK from File
+ */
 
 
 

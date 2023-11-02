@@ -407,7 +407,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         // }
                     }
 
-                    else if (line.includes("@return")) {
+                    else if (line.includes("@returns")) {
                         let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], v;
                         if (types[g]) v = types[g];
                         else if (typx.includes(g)) v = f;
