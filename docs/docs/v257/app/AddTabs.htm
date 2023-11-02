@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>SetOptions</title>
+	<title>AddTabs</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
@@ -26,7 +26,7 @@
 
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
-		<h1>SetOptions</h1>
+		<h1>AddTabs</h1>
 		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
 	</div>
 
@@ -35,18 +35,24 @@
 	</div>
 
 	<div data-role="content">
-		<p>Define some global options for the app.</p>
+		<p>Creates and adds a Tabs control to a Layout.</p>
 
 		<div class="samp">
-		app.SetOptions(
+		app.AddTabs(
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">list</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>app object:</b> Tabs
 		</div>
 
-		<p>See Also: <a href="GetOptions.htm" data-ajax="false">GetOptions</a></p>
+		<p>See <a href="CreateTabs.htm" data-ajax="false">CreateTabs</a> for full documentation.</p>
 
 	</div>
 
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“UseBrowser”</docstr>, <docstr>“NoKeys”</docstr> or <docstr>“ShowKeys”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('dont pause when not in foreground')">NoPause</a>”</docstr>, <docstr>“NoThemeAlerts”</docstr>, <docstr>“IgnoreSslErrors”</docstr>, <docstr>“TouchModal”</docstr>, <docstr>“NoCors”</docstr>, <docstr>“NoTouch”</docstr>, <docstr>“NoFocus”</docstr>, <docstr>“Secure”</docstr>, <docstr>“ShowLocked”</docstr>, <docstr>“WakeScreen”</docstr>, <docstr>“ScreenOn”</docstr></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Fade”</docstr>, <docstr>“FontAwesome”</docstr>, <docstr>“NoMargins”</docstr>, <docstr>“VCenter”</docstr></div>
 </div>
 </body>
 

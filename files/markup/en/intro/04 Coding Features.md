@@ -15,10 +15,6 @@ Note that only Light and Dark theme can be exchanged securely, Holo might cause 
 #### cfg.Node
 Runs the app in NodeJS mode.
 
-#### cfg.Hybrid
-Allows you to use MaterialUI controls in an html app.
-<deprecated auto detected since DS2.57>
-
 #### cfg.MUI
 Enables builtin material component support through the MUI object.
 <premium>
