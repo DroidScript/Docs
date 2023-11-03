@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>App Types</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>App Types</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('Overview')">Overview</a><br>
+			• <a href="" onclick="jumpTo('Html')">Html</a><br>
+			• <a href="" onclick="jumpTo('Native')">Native</a><br>
+			• <a href="" onclick="jumpTo('Node Native')">Node Native</a><br>
+			• <a href="" onclick="jumpTo('Hybrid')">Hybrid</a><br>
+		</span><br>
+		</div>
+
+		<h2>Overview</h2>
+		<p><div style="overflow-x: scroll"></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature <kbd>\</kbd>   App Type</th>
+                    <th>HTML</th>
+                    <th>Native</th>
+                    <th>Node Native</th>
+                    <th>Hybrid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>HTML</th>
+                    <td>yes</td>
+                    <td><a href="../app/CreateWebView.htm" data-ajax="false">CreateWebView</a></td>
+                    <td><a href="../app/CreateWebView.htm" data-ajax="false">CreateWebView</a></td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <th>App Object</th>
+                    <td><green>"ds:/Sys/app.js"<green></td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>DS only<br>
+		(no cross platform)</td>
+                </tr>
+                <tr>
+                    <th>Native Android UI</th>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <th>Node.js</th>
+                    <td><a href="../app/CreateNode.htm" data-ajax="false">CreateNode</a><br>
+		(no app object)</td>
+                    <td><a href="../app/CreateNode.htm" data-ajax="false">CreateNode</a><br>
+		(no app object)</td>
+                    <td>yes</td>
+                    <td>DS only<br>
+		(no cross platform)</td>
+                </tr>
+                <tr>
+                    <th>Environment</th>
+                    <td>WebView</td>
+                    <td>WebView<br>
+		cfg.Fast: v8</td>
+                    <td>NodeJS</td>
+                    <td>WebView</td>
+                </tr>
+                <tr>
+                    <th>Memory Footprint</th>
+                    <td>low (4MB)</td>
+                    <td>low (4MB)</td>
+                    <td>high (30MB)</td>
+                    <td>moderate (10MB)</td>
+                </tr>
+                <tr>
+                    <th>MUI</th>
+                    <td><green>"ds:/Sys/mui.js"</green></td>
+                    <td>cfg.MUI</td>
+                    <td>cfg.MUI</td>
+                    <td>no</td>
+                </tr>
+            </tbody>
+        </table>
+		<p></div></p>
+		<h2>Html</h2>
+		<p>An <b>'HTML' app</b> is simply a foreground Android Webview showing a standard HTML/CSS/JS (web style) user interface. It can make app.* native Android calls via the JavaScript→Native bridge.<br>
+		<br>
+		<u>Advantages:</u><br>
+		- standard web technologies and libraries to create UI.<br>
+		→ well documented in the web (W3Schools)<br>
+		- Small APK size and memory usage<br>
+		<br>
+		<u>Disadvantages:</u><br>
+		- More time consuming to develop, HTML/CSS experience required<br>
+		- No native 'look and feel' of Android</p>
+		<h2>Native</h2>
+		<p>A <b>'Native' app</b> uses an invisible Android Webview to run the main JavaScript code, but the app's user interface is created with native Android controls via calls across the JS→Native bridge.<br>
+		<br>
+		<u>Advantages:</u><br>
+		- Simple to use<br>
+		- Direct access to browser features as Android WebView evolves (i.E. WebBluetooth, Canvas, WebAssembly, WebRTC)<br>
+		- Small APK size and memory usage<br>
+		<br>
+		<u>Disadvantages:</u><br>
+		- The performance is slower for complex UI (can be improved with <a href="04CodingFeatures.htm#Fast" data-ajax="false">cfg.Fast</a> at the loss of DOM objects)<br>
+		- Modern browser features might not work on older phones</p>
+		<h2>Node Native</h2>
+		<p>A <b>'Node Native' app</b> runs the main JavaScript code inside a standard NodeJS instance instead of the WebView. User interface is made using native Android controls which are accessed using app.* methods. These native calls run via a custom NodeJS extension instead of the Js→Native bridge.<br>
+		<br>
+		<u>Advantages:</u><br>
+		- Native UI + powerful server/IOT functionality all in one<br>
+		- Access to many thousands of free 'npm' modules for extending app functionality<br>
+		- Higher performance when creating complex native user interfaces<br>
+		<br>
+		<u>Disadvantage:</u><br>
+		- Large APK size, more memory usage</p>
+		<h2>Hybrid</h2>
+		<p>A <b>'Hybrid' app</b> runs the main JavaScript code inside a foreground Android WebView,  the users creates the UI programatically like with 'Native' apps, but it's rendered inside the same WebView using HTML/CSS instead of using native Android controls across the bridge.<br>
+		<br>
+		<u>Advantages:</u><br>
+		- Simple and fast to use<br>
+		- WYSIWYG editor available<br>
+		- Industry standard 'Material' look and feel<br>
+		- Low memory usage, Smaller APK<br>
+		- Cross-Platform compatible, since it is just HTML/CSS in the background<br>
+		- No JS→Native bridge required for rendering UI (build complex UI faster)<br>
+		- Switch between light and dark theme at runtime<br>
+		<br>
+		<u>Disadvantages:</u><br>
+		- Fewer customization options for look and feel<br>
+		- app.* and NodeJS features break cross-platform compatibility</p>
+
+	</div>
+
+
+</div>
+</body>
+
+</html>

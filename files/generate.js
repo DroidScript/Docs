@@ -101,13 +101,20 @@ function generateLang(l) {
 		app.DeleteFolder(dstDir);
 	} else console.log("overwriting " + lang);
 
-	// update base files
-	if (clear || !app.FolderExists(dstDir)) app.MakeFolder(dstDir);
-	app.CopyFolder("font-awesome", dstDir + "font-awesome");
-	app.CopyFolder("app.js", dstDir + "app.js");
-	app.CopyFolder("docs-base/css", dstDir + "css");
-	app.CopyFolder("docs-base/js", dstDir + "js");
-	app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
+	try {
+		// update base files
+		if (clear || !app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+		app.CopyFolder("font-awesome", dstDir + "font-awesome");
+		app.CopyFolder("app.js", dstDir + "app.js");
+		app.CopyFolder("docs-base/css", dstDir + "css");
+		app.CopyFolder("docs-base/js", dstDir + "js");
+		app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
+	} catch (e) {
+		console.error(e);
+		console.error("HINT: Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again.");
+		process.exit(1);
+	}
+
 	const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
 
 	// version index page

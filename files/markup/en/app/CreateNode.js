@@ -2,9 +2,9 @@
 
 
 /** # CreateNode #
- * @abbrev nod
+ * @abbrev node
  * 
- * $$ nod = app.CreateNode(paths, options) $$ 
+ * $$ node = app.CreateNode(paths, options) $$ 
  * @param {str_pth} paths NODE_PATH env variable
  * @param {str} options extended:allow app.* methods,legacy:don't use named pipes for messaging
 */
@@ -33,3 +33,30 @@ For more details have a look at the Node docs in the @../Plugins page
 
 // ------------- SAMPLES ------------- 
 
+/**
+@sample Basic
+
+var nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
+
+function OnStart()
+{
+    app.WriteFile("node_script.js", nodeJs);
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+    txt = app.AddText(lay, "Debug Log:", 1, 1, "Log");
+
+    <b>node = app.CreateNode();
+    node.SetOnOutput((msg) => { txt.Log(msg); });
+    node.SetOnError((msg) => { txt.Log(msg, "red"); });
+    node.SetOnMessage((msg) => { txt.Log(msg); });
+    node.SetOnReady(node_OnReady);</b>
+
+    app.AddLayout(lay);
+}
+
+function node_OnReady()
+{
+    node.Run("node_script.js");
+}
+</sample>
+*/

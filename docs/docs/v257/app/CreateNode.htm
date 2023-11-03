@@ -38,7 +38,7 @@
 		<p>Creates a NodeJS background process with all the functionality of common node.js.</p>
 
 		<div class="samp">
-		nod = app.CreateNode(
+		node = app.CreateNode(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">paths</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
 		</div>
@@ -55,6 +55,40 @@
 		</div>
 
 		<p>For more details have a look at the Node docs in the <a href="../Plugins.htm" data-ajax="false">Plugins</a> page</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">var</span> nodeJs <span class="token operator">=</span> <span class="token string">'console.log("Hello World");\nconsole.error("Hello Error");\n'</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">"node_script.js"</span><span class="token punctuation">,</span> nodeJs<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Debug Log:"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Log"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <b id="snip1" style="font-size:100%">node <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    node<span class="token punctuation">.</span><span class="token function">SetOnOutput</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    node<span class="token punctuation">.</span><span class="token function">SetOnError</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    node<span class="token punctuation">.</span><span class="token function">SetOnMessage</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> txt<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    node<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span>node_OnReady<span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">node_OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    node<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token string">"node_script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
 
 	</div>
 
