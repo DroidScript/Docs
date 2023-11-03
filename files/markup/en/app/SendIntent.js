@@ -11,7 +11,7 @@
  * @param {str_uri} uri 
  * @param {str_mim} type 
  * @param {lst} extras [{ name:str&comma; type:str-"string|float|int|long|bool|list|file|uri|keydown|keyup"&comma; value:str }]
- * @param {str_com} options result,cleartask
+ * @param {str_com} options Result:expect a result to be passed to the callback function,ClearTask
  * @param {fnc_json} callback {"pNames":["resultCode","data"],"pTypes":["num_int--1|0|1","obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]}
 */
 
@@ -28,7 +28,8 @@ If you expect a **callback** you have to pass the “result” **option**. The *
 	1: _user-defined activity results_
 	0: _operation canceled_
 
-You can find some common used examples for that in the [DroidScript Wiki]( https://droidscript.org/wiki/doku.php?id=intents:start)
+Many common usage examples are shown in @../intro/09AppIntents.
+
 For more information visit the [Android Developer Page](https://developer.android.com/reference/android/content/Intent.html). There you can find informations about the [activity](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions), [category](https://developer.android.com/reference/android/content/Intent.html#standard-categories) and [extra](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data).
 
 See Also: @GetIntent

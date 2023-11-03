@@ -38,21 +38,21 @@ The default constructor values are:
 
 /** ### GetDTR ###
  * @brief Get the 'Data Terminal Ready' state
- * Get the **D**ata **T**erminal **R**eady state.
+ * Get the **D**ata **T**erminal **R**eady state which indicates the terminal is ready for communications and may initiate a communication channel.
  * $$ usb.GetDTR() $$
  */
 
 
 /** ### GetRTS ###
  * @brief Get the 'Request To Send' state
- * Get the **R**equest **T**o **S**end state.
+ * Get the **R**equest **T**o **S**end state that indicates that you may send data to the target device.
  * $$ usb.GetRTS() $$
  */
 
 
 /** ### GetCD ###
- * @brief Get the 'Clear To Send' state
- * Raises the **C**lear **T**o **S**end state.
+ * @brief Get the 'Carrier Detect' state
+ * Raises the **C**arrier **D**etect bit from the unterlying UART protocol. It can usually be used to detect if a serial device is connected or has been terminated.
  * $$ usb.GetCD() $$
  */
 
@@ -84,7 +84,7 @@ The default constructor values are:
 
 /** ### SetDTR ###
  * @brief Raises the Data Terminal Ready state
- * Raises the **D**ata **T**erminal **R**eady state.
+ * Raises the **D**ata **T**erminal **R**eady state to indicate that you may now receive data from the target device.
  * $$ usb.SetDTR(onOff) $$
  * @param {bin} onOff 
  */
@@ -116,7 +116,7 @@ The default constructor values are:
 
 /** ### SetRTS ###
  * @brief Raises the Request To Send state
- * Raises the **R**equest **T**o **S**end state.
+ * Raises the **R**equest **T**o **S**end state to indicate that you want to send data to the target device.
  * $$ usb.SetRTS(onOff) $$
  * @param {bin} onOff 
  */
