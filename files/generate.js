@@ -91,17 +91,19 @@ function generateLang(l) {
 	lang = l;
 	const langDir = getSrcDir(D_LANG);
 	const dstDir = getDstDir(D_LANG);
+	let hadError = false;
 	scope = {};
 	base = {};
 
 	// clear lang folder
 	if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
-	if (app.FolderExists(dstDir) && clear) {
-		console.log("deleting " + lang);
-		app.DeleteFolder(dstDir);
-	} else console.log("overwriting " + lang);
 
 	try {
+		if (app.FolderExists(dstDir) && clear) {
+			console.log("deleting " + lang);
+			app.DeleteFolder(dstDir);
+		} else console.log("overwriting " + lang);
+
 		// update base files
 		if (clear || !app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 		app.CopyFolder("font-awesome", dstDir + "font-awesome");
@@ -111,8 +113,7 @@ function generateLang(l) {
 		app.CopyFolder("docs-base/Index.htm", dstDir + "index.html");
 	} catch (e) {
 		console.error(e);
-		console.error("HINT: Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again.");
-		process.exit(1);
+		hadError = true;
 	}
 
 	const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
@@ -125,13 +126,20 @@ function generateLang(l) {
 
 	// generate all versions
 	for (const v of versions) if (new RegExp(patVer || '.*').test(v)) generateVersion(v);
+	if (hadError) console.warn("Warning: Copy docs-base failed for docs-" + l + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
 
 /** @param {string} ver */
 function generateVersion(ver) {
 	curVer = ver;
 	const curDir = getDstDir(D_VER);
-	app.CopyFolder("docs-base", curDir);
+	let hadError = true;
+	try {
+		app.CopyFolder("docs-base", curDir);
+	} catch (e) {
+		console.error(e);
+		hadError = true;
+	}
 
 	app.WriteFile(curDir + "index.txt", "");
 
@@ -145,6 +153,8 @@ function generateVersion(ver) {
 				Throw(e);
 			}
 		});
+
+	if (hadError) console.warn("Warning: Copy docs-base failed for " + ver + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);

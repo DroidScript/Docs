@@ -14,52 +14,52 @@
     <tbody>
         <tr>
             <th>HTML</th>
-            <td>yes</td>
-            <td>@../app/CreateWebView</td>
-            <td>@../app/CreateWebView</td>
-            <td>yes</td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-green">@../app/CreateWebView</td>
+            <td class="tint-green">@../app/CreateWebView</td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
         </tr>
         <tr>
             <th>App Object</th>
-            <td><green>"ds:/Sys/app.js"<green></td>
-            <td>yes</td>
-            <td>yes</td>
-            <td>DS only<br>(no cross platform)</td>
+            <td class="tint-green"><green>"ds:/Sys/app.js"<green></td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-yellow">DS only<br>(no cross platform)</td>
         </tr>
         <tr>
             <th>Native Android UI</th>
-            <td>no</td>
-            <td>yes</td>
-            <td>yes</td>
-            <td>no</td>
+            <td class="tint-red"><i class="fa fa-remove"></i></td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-red"><i class="fa fa-remove"></i></td>
         </tr>
         <tr>
             <th>Node.js</th>
-            <td>@../app/CreateNode<br>(no app object)</td>
-            <td>@../app/CreateNode<br>(no app object)</td>
-            <td>yes</td>
-            <td>DS only<br>(no cross platform)</td>
+            <td class="tint-yellow">@../app/CreateNode<br>(no app object)</td>
+            <td class="tint-yellow">@../app/CreateNode<br>(no app object)</td>
+            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <td class="tint-yellow">DS only<br>(no cross platform)</td>
         </tr>
         <tr>
             <th>Environment</th>
-            <td>WebView</td>
-            <td>WebView<br>cfg.Fast: v8</td>
-            <td>NodeJS</td>
-            <td>WebView</td>
+            <td class="tint-green">WebView</td>
+            <td class="tint-green">WebView<br>cfg.Fast: v8</td>
+            <td class="tint-green">NodeJS</td>
+            <td class="tint-green">WebView</td>
         </tr>
         <tr>
             <th>Memory Footprint</th>
-            <td>low (4MB)</td>
-            <td>low (4MB)</td>
-            <td>high (30MB)</td>
-            <td>moderate (10MB)</td>
+            <td class="tint-green">low (4MB)</td>
+            <td class="tint-green">low (4MB)</td>
+            <td class="tint-red">high (30MB)</td>
+            <td class="tint-yellow">moderate (10MB)</td>
         </tr>
         <tr>
             <th>MUI</th>
-            <td><green>"ds:/Sys/mui.js"</green></td>
-            <td>cfg.MUI</td>
-            <td>cfg.MUI</td>
-            <td>no</td>
+            <td class="tint-green"><green>"ds:/Sys/mui.js"</green></td>
+            <td class="tint-green">cfg.MUI</td>
+            <td class="tint-green">cfg.MUI</td>
+            <td class="tint-red"><i class="fa fa-remove"></i></td>
         </tr>
     </tbody>
 </table>
