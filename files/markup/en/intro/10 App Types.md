@@ -1,6 +1,6 @@
 ## Overview
 
-<div style="overflow-x: scroll">
+<div style='overflow-x: scroll'>
 <table>
     <thead>
         <tr>
@@ -13,53 +13,60 @@
     </thead>
     <tbody>
         <tr>
-            <th>HTML</th>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-green">@../app/CreateWebView</td>
-            <td class="tint-green">@../app/CreateWebView</td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
+            <th>"Native Methods":"app.\* Methods"</th>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <xml nobox><​script src=\"ds:/Sys/app.js\"></xml>"</td>
+            <td><i class='fa fa-check green'></i></td>
+            <td><i class='fa fa-check green'></i></td>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Not Cross-Platform"</td>
         </tr>
         <tr>
-            <th>App Object</th>
-            <td class="tint-green"><green>"ds:/Sys/app.js"<green></td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-yellow">DS only<br>(no cross platform)</td>
+            <th>"Native UI":"Android UI from app.Create\* and app.Show\* methods"</th>
+            <td><i class='fa fa-remove red'></i></td>
+            <td><i class='fa fa-check green'></i></td>
+            <td><i class='fa fa-check green'></i></td>
+            <td><i class='fa fa-remove red'></i></td>
         </tr>
         <tr>
-            <th>Native Android UI</th>
-            <td class="tint-red"><i class="fa fa-remove"></i></td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-red"><i class="fa fa-remove"></i></td>
+            <th>HTML / CSS UI</th>
+            <td><i class='fa fa-check green'></i></td>
+            <td class='tint-green'>via [WebView](../app/CreateWebView.htm) Component</td>
+            <td class='tint-green'>via [WebView](../app/CreateWebView.htm) Component</td>
+            <td><i class='fa fa-check green'></i></td>
+        </tr>
+        <tr>
+            <th class='premHint'>MUI "<i class='fa fa-info-circle'></i>":"<premium>" Components</th>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <xml nobox><​script src=\"ds:/Sys/mui.js\"></xml>"</td>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
+            <td><i class='fa fa-remove red'></i></td>
         </tr>
         <tr>
             <th>Node.js</th>
-            <td class="tint-yellow">@../app/CreateNode<br>(no app object)</td>
-            <td class="tint-yellow">@../app/CreateNode<br>(no app object)</td>
-            <td class="tint-green"><i class="fa fa-check"></i></td>
-            <td class="tint-yellow">DS only<br>(no cross platform)</td>
+            <td class='tint-green'>via [NodeJS](../app/CreateNode.htm) Component</td>
+            <td class='tint-green'>via [NodeJS](../app/CreateNode.htm) Component</td>
+            <td><i class='fa fa-check green'></i></td>
+            <td class='tint-green'>via [NodeJS](../app/CreateNode.htm) Component</td>
+        </tr>
+        <tr>
+            <th>Cross "<i class='fa fa-info-circle'></i>":"Cannot use Native Methods, Native UI, MUI and Node.js" Platform</th>
+            <td><i class='fa fa-check green'></i></td>
+            <td><i class='fa fa-remove red'></i></td>
+            <td><i class='fa fa-remove red'></i></td>
+            <td><i class='fa fa-check green'></i></td>
         </tr>
         <tr>
             <th>Environment</th>
-            <td class="tint-green">WebView</td>
-            <td class="tint-green">WebView<br>cfg.Fast: v8</td>
-            <td class="tint-green">NodeJS</td>
-            <td class="tint-green">WebView</td>
+            <td class='tint-green'>Android WebView</td>
+            <td class='tint-green'>Android WebView</td>
+            <td class='tint-green'>NodeJS</td>
+            <td class='tint-green'>Android WebView</td>
         </tr>
         <tr>
-            <th>Memory Footprint</th>
-            <td class="tint-green">low (4MB)</td>
-            <td class="tint-green">low (4MB)</td>
-            <td class="tint-red">high (30MB)</td>
-            <td class="tint-yellow">moderate (10MB)</td>
-        </tr>
-        <tr>
-            <th>MUI</th>
-            <td class="tint-green"><green>"ds:/Sys/mui.js"</green></td>
-            <td class="tint-green">cfg.MUI</td>
-            <td class="tint-green">cfg.MUI</td>
-            <td class="tint-red"><i class="fa fa-remove"></i></td>
+            <th>Minimum APK Size</th>
+            <td class='tint-green'>low (4MB)</td>
+            <td class='tint-green'>low (4MB)</td>
+            <td class='tint-yellow'>high (30MB)</td>
+            <td class='tint-green'>moderate (10MB)</td>
         </tr>
     </tbody>
 </table>

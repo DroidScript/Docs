@@ -48,7 +48,7 @@
 		</div>
 
 		<h2>Overview</h2>
-		<p><div style="overflow-x: scroll"></p>
+		<p><div style='overflow-x: scroll'></p>
         <table>
             <thead>
                 <tr>
@@ -61,58 +61,69 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>HTML</th>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-green"><a href="../app/CreateWebView.htm" data-ajax="false">CreateWebView</a></td>
-                    <td class="tint-green"><a href="../app/CreateWebView.htm" data-ajax="false">CreateWebView</a></td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
+                    <th>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Native Methods</a></th>
+                    <td><i class='fa fa-check green'></i>
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a></td>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td><i class='fa fa-check green'></i>
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a></td>
                 </tr>
                 <tr>
-                    <th>App Object</th>
-                    <td class="tint-green"><green>"ds:/Sys/app.js"<green></td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-yellow">DS only<br>
-		(no cross platform)</td>
+                    <th>
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Native UI</a></th>
+                    <td><i class='fa fa-remove red'></i></td>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td><i class='fa fa-remove red'></i></td>
                 </tr>
                 <tr>
-                    <th>Native Android UI</th>
-                    <td class="tint-red"><i class="fa fa-remove"></i></td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-red"><i class="fa fa-remove"></i></td>
+                    <th>HTML / CSS UI</th>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td class='tint-green'>via <a href="../app/CreateWebView.htm" data-ajax="false">WebView</a> Component</td>
+                    <td class='tint-green'>via <a href="../app/CreateWebView.htm" data-ajax="false">WebView</a> Component</td>
+                    <td><i class='fa fa-check green'></i></td>
+                </tr>
+                <tr>
+                    <th class='premHint'>MUI
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a> Components</th>
+                    <td><i class='fa fa-check green'></i>
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a></td>
+                    <td><i class='fa fa-check green'></i>
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a></td>
+                    <td><i class='fa fa-check green'></i>
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a></td>
+                    <td><i class='fa fa-remove red'></i></td>
                 </tr>
                 <tr>
                     <th>Node.js</th>
-                    <td class="tint-yellow"><a href="../app/CreateNode.htm" data-ajax="false">CreateNode</a><br>
-		(no app object)</td>
-                    <td class="tint-yellow"><a href="../app/CreateNode.htm" data-ajax="false">CreateNode</a><br>
-		(no app object)</td>
-                    <td class="tint-green"><i class="fa fa-check"></i></td>
-                    <td class="tint-yellow">DS only<br>
-		(no cross platform)</td>
+                    <td class='tint-green'>via <a href="../app/CreateNode.htm" data-ajax="false">NodeJS</a> Component</td>
+                    <td class='tint-green'>via <a href="../app/CreateNode.htm" data-ajax="false">NodeJS</a> Component</td>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td class='tint-green'>via <a href="../app/CreateNode.htm" data-ajax="false">NodeJS</a> Component</td>
+                </tr>
+                <tr>
+                    <th>Cross
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup"><i class='fa fa-info-circle'></i></a> Platform</th>
+                    <td><i class='fa fa-check green'></i></td>
+                    <td><i class='fa fa-remove red'></i></td>
+                    <td><i class='fa fa-remove red'></i></td>
+                    <td><i class='fa fa-check green'></i></td>
                 </tr>
                 <tr>
                     <th>Environment</th>
-                    <td class="tint-green">WebView</td>
-                    <td class="tint-green">WebView<br>
-		cfg.Fast: v8</td>
-                    <td class="tint-green">NodeJS</td>
-                    <td class="tint-green">WebView</td>
+                    <td class='tint-green'>Android WebView</td>
+                    <td class='tint-green'>Android WebView</td>
+                    <td class='tint-green'>NodeJS</td>
+                    <td class='tint-green'>Android WebView</td>
                 </tr>
                 <tr>
-                    <th>Memory Footprint</th>
-                    <td class="tint-green">low (4MB)</td>
-                    <td class="tint-green">low (4MB)</td>
-                    <td class="tint-red">high (30MB)</td>
-                    <td class="tint-yellow">moderate (10MB)</td>
-                </tr>
-                <tr>
-                    <th>MUI</th>
-                    <td class="tint-green"><green>"ds:/Sys/mui.js"</green></td>
-                    <td class="tint-green">cfg.MUI</td>
-                    <td class="tint-green">cfg.MUI</td>
-                    <td class="tint-red"><i class="fa fa-remove"></i></td>
+                    <th>Minimum APK Size</th>
+                    <td class='tint-green'>low (4MB)</td>
+                    <td class='tint-green'>low (4MB)</td>
+                    <td class='tint-yellow'>high (30MB)</td>
+                    <td class='tint-green'>moderate (10MB)</td>
                 </tr>
             </tbody>
         </table>
@@ -167,7 +178,14 @@
 
 	</div>
 
-
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">app.* Methods</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">Included via <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>​script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ds:/Sys/app.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Not Cross-Platform</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">Android UI from app.Create* and app.Show* methods</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content">Included via <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>​script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ds:/Sys/mui.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content">Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a></div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content">Cannot use Native Methods, Native UI, MUI and Node.js</div>
 </div>
 </body>
 
