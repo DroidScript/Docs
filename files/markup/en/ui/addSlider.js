@@ -43,7 +43,7 @@ These are the setter and getter properties for the addSlider Component.
 <smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
 <smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
 <smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>marks:"bin:'Sets or returns the marks on the Slider Component. The marks will be base on the <col nobox #fb8c00>step</col> property. To add a custom labels in each mark, pass an array with an object element with properties <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">label<String></span> and <span style="color:#fb8c00; font-family:Courier, monospace; font-size:100%; padding:0px 2px;">value<Number></span>. See marks array example below.'"</smp>
+<smp noinl>marks:"bin:'Sets or returns the marks on the Slider Component. The marks will be base on the <col nobox #fb8c00>step</col> property. To add a custom labels in each mark, pass an array with an object element with properties <col nobox #fb8c00>label</col> and <col nobox #fb8c00>value</col>. See marks array example below.'"</smp>
 <smp noinl>maxValue:"num:'Sets or returns the maximum value.'"</smp>
 <smp noinl>minValue:"num:'Sets or returns the minimum value.'"</smp>
 <smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>

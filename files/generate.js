@@ -133,7 +133,7 @@ function generateLang(l) {
 function generateVersion(ver) {
 	curVer = ver;
 	const curDir = getDstDir(D_VER);
-	let hadError = true;
+	let hadError = false;
 	try {
 		app.CopyFolder("docs-base", curDir);
 	} catch (e) {
@@ -515,7 +515,7 @@ function adjustDoc(html, name) {
 
 	// replace <js> and <bash> tags with sample
 	html = html.replace(
-		/(\s|<br>)*<(js|bash|smp|txt|java|json|col)\b(( |nobox|noinl|#[0-9a-f]+)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
+		/(\s|<br>)*<(js|bash|smp|txt|java|json|xml|col)\b(( |nobox|noinl|#[0-9a-f]+)*)>(\s|<br>)*([^]*?)(\s|<br>)*<\/\2>((\s|<br>)*)/g,
 		function (m, w1, /** @type {string} */ lang, /** @type {string} */ soptions, _1, _2, /** @type {string} */ code, _3, w2, _4) {
 			const options = soptions.split(" ");
 			if (w1) w1 = m.slice(0, m.indexOf(`<${lang}`));
@@ -525,7 +525,7 @@ function adjustDoc(html, name) {
 				code = code
 					.replace(/<br>/g, "")
 					.replace(/&#160;/g, "§s§")
-					.replace(/\s*<.*?>/g, (m) => (tags.push(m), "§t§"));
+					.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), "§t§"));
 				code = Prism.highlight(code, Prism.languages[lang], lang)
 					.replace(/\n/g, "<br>\n")
 					.replace(/§t§(<\/span>)?/g, (m, s) => (s || '') + tags.shift())
@@ -979,16 +979,19 @@ function incpop(type, i) {
  * @param {boolean} [useAppPop]
  */
 function replaceTypes(s, useAppPop) {
-	var _s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
-	_s.replace(/(\b([\w_.#-]+)|"(.*?)"):([a-z]{3}(_[a-z]{3})?\b)?-?("[^"]*|'[^']*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
+	var tags = /** @type {string[]} */ ([]);
+	if (useAppPop) s = s.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
+	else s = s.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), `§t${tags.length - 1}§`));
+
+	s = s.replace(/(\b([\w_.#-]+)|"([^"]*)"):([a-z]{3}(_[a-z]{3})?\b)?-?("(\\"|[^"])*|'(\\'|[^'])*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
 		function (m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type, _2, /** @type {string} */ desc) {
 			var r, space = '', tapop = false;
 			if (!name) name = aname;
-			if (!type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return '';
+			if (!type && (!desc || desc[0] == ' ') || name.startsWith("Note")) return m;
 
 			if (desc) {
 				if (desc.endsWith(' ')) space = ' ';
-				desc = desc.slice(Number(desc[0] == '"'), space ? -1 : undefined);
+				desc = desc.replace(/\\(["'])/g, "$1").slice(Number(desc[0] == '"'), space ? -1 : undefined);
 				if (desc[0] == "'") tapop = true, desc = desc.slice(1);
 				if (tName[desc.slice(0, 3)] && (!desc[4] || !desc[4].match(/[a-z]/i))) type = desc, desc = '';
 			}
@@ -1004,14 +1007,13 @@ function replaceTypes(s, useAppPop) {
 				else r = newAppPopup(name, type ? tName[type.slice(0, 3)] +
 					(tDesc[type] ? ": " + tDesc[type] : "") : desc.replace(/\\n|\n/g, '$n$'));
 			}
-			else if (type) r = toArgPop(name, type);
-			else r = newPopup("dsc", name, desc);
+			else if (type) r = toArgPop(name, type.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]));
+			else r = newPopup("dsc", name, desc.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]));
 
-			s = s.replace(m, r + space);
-			return '';
+			return r + space;
 		}
 	);
-	return s;
+	return s.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]);
 }
 
 /** convert markdown symbols to html
@@ -1505,11 +1507,11 @@ if (typeof app == "undefined") {
 			}
 		}
 		else {
-			var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{3,})?(\.|$)(.*)?/);
+			var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{2,})?(\.|$)(.*)?/);
 			if (!p) throw Error("invalid pattern " + spat);
-			patLang = /** @type {LangKeys} */ (p[1]);
-			patScope = /** @type {ScopeKeys} */ (p[3]);
-			patFunc = p[5];
+			patLang = /** @type {LangKeys} */ (p[5] && p[1]);
+			patScope = /** @type {ScopeKeys} */ (p[5] ? p[3] : p[1]);
+			patFunc = p[5] || p[3];
 		}
 	}
 

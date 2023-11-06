@@ -4,6 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const conf = require("./conf.json");
 const getComment = require("esprima-extract-comments");
+const rimraf = require("rimraf");
 
 /** @type {0 | 1 | 2 | 3} off | error | warn | more */
 let verbose = 1;
@@ -542,6 +543,9 @@ async function GetFolders( m="" ) {
         // TODO: Add <lang> and <version> in the future
         // Something like <lang>.<version>.<scope>.<member> e.g. "en.v257.app.CreateButton"
     }
+    rimraf.sync(DST);
+    fs.mkdirSync(DST);
+
     const files = fs.readdirSync(SRC, { withFileTypes: true });
     // Filter the files to only include directories (subdirectories)
     const folders = files.filter(file => /[a-z]/i.test(file.name[0]) && file.isDirectory());
