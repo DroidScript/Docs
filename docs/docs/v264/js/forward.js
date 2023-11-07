@@ -1,4 +1,4 @@
-const versions = {"en":"v257"};
+const versions = {"en":"v264"};
 (function () {
     const oldHost = 'symdstools.github.io', newHost = 'droidscript.github.io';
     if (location.host == oldHost) return moveSite();

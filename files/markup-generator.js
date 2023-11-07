@@ -2,9 +2,9 @@
 
 const fs = require('fs');
 const fsp = require('fs').promises;
+const conf = require('./conf.json');
 
-const ver = "v257";
-const dir = __dirname + "/json/en/" + ver;
+const dir = __dirname + "/json/en/" + conf.version;
 const outDir = __dirname + "/markup/en/";
 
 const baseIDAlways = false;
@@ -264,7 +264,7 @@ async function GetFolders(folder = "") {
                 // }
             }
             if( md ) await GenerateMDFile(fld.name, path);
-            else await GenerateJSFile(fld.name, path, obj, base, navs, md);
+            else await GenerateJSFile(fld.name, path, obj, base, navs);
         } catch (err) {
             console.error("While generating " + fld.name);
             console.error(err.stack || err.message);

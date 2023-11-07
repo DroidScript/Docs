@@ -65,7 +65,8 @@ function Generate() {
 	// language index page
 	const nav = keys(conf.langs).map(l => newNaviItem(`docs${getl(l)}/Docs.htm`, conf.langs[l]));
 	const index = htmlNavi("Available languages:", "", nav.join(''))
-		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/');
+		.replace(/(href|src)="(?!http|\/)(?!docs)(\.\.\/)?/g, '$1="docs/')
+		.replace(/<script .*forward.js"><\/script>\s+/g, '');
 	app.WriteFile(dstDir + "index.html", index);
 
 	// 404 page
@@ -113,15 +114,15 @@ function generateLang(l) {
 		hadError = true;
 	}
 
-	const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
-
 	// version index page
-	const nav = versions.map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)/, "$1.$2")));
+	const nav = conf.vers.sort().map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)(\.\d+)?/, "$1.$2$3")));
 	const index = htmlNavi("Available versions:", "", nav.join(''))
-		.replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/');
+		.replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/')
+		.replace(/<script .*forward.js"><\/script>\s+/g, '');
 	app.WriteFile(dstDir + "Docs.htm", index);
 
 	// generate all versions
+	const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
 	for (const v of versions) if (new RegExp(patVer || '.*').test(v)) generateVersion(v);
 	if (hadError) console.warn("Warning: Copy docs-base failed for docs-" + l + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
