@@ -99,13 +99,10 @@ function generateLang(l) {
 	if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
 
 	try {
-		if (app.FolderExists(dstDir) && clear) {
-			console.log("deleting " + lang);
-			app.DeleteFolder(dstDir);
-		} else console.log("overwriting " + lang);
-
 		// update base files
-		if (clear || !app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+		if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
+		else console.log("overwriting " + lang);
+
 		app.CopyFolder("font-awesome", dstDir + "font-awesome");
 		app.CopyFolder("app.js", dstDir + "app.js");
 		app.CopyFolder("docs-base/css", dstDir + "css");
@@ -134,7 +131,12 @@ function generateVersion(ver) {
 	curVer = ver;
 	const curDir = getDstDir(D_VER);
 	let hadError = false;
+
 	try {
+		if (clear && app.FolderExists(curDir)) {
+			console.log(`deleting ${lang}/${ver}`);
+			app.DeleteFolder(curDir);
+		}
 		app.CopyFolder("docs-base", curDir);
 	} catch (e) {
 		console.error(e);
@@ -1517,7 +1519,7 @@ if (typeof app == "undefined") {
 
 	if (clean) {
 		const glob = require('glob').sync;
-		for (const dir of glob(baseDir + '*/')) {
+		for (const dir of glob(baseDir + '*/' + conf.version)) {
 			console.log(`Deleting ${l} ...`);
 			app.DeleteFolder(dir);
 		}

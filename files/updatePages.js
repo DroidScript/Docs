@@ -3,7 +3,8 @@
 const path = require('path');
 const fs = require('fs-extra');
 const rimraf = require('rimraf').sync;
-const glob = require('glob/sync')
+const glob = require('glob/sync');
+const conf = require('./conf.json')
 
 main();
 
@@ -17,7 +18,7 @@ function main() {
     }
 
     console.log("removing old docs");
-    try { rimraf(base + "docs"); } catch (e) { console.error(e.message); }
+    try { rimraf(base + "docs/" + conf.version); } catch (e) { console.error(e.message); }
 
     console.log("copying new docs");
     if (!fs.existsSync(base + "docs")) fs.mkdirSync(base + "docs");

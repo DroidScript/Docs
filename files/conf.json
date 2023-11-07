@@ -9,8 +9,8 @@
 	"langs": {
 		"en": "English"
 	},
-	"vers": ["v257"],
-	"version": "v257",
+	"vers": ["v257", "v265"],
+	"version": "v265",
 	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
