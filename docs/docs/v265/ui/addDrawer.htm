@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addDrawer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addDrawer</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a drawer into your app.</p>
+
+		<div class="samp">
+		drw = ui.addDrawer(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">lay</a>,
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object:</b> Drawer Component
+		</div>
+
+		<h3>Properties</h3>
+		<p>These are the setter and getter properties for the addDrawer Component.</p>
+
+		<div class="samp">
+		<a href="#pop_str_002" data-transition="pop" data-rel="popup">anchor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_004" data-transition="pop" data-rel="popup">disabled</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_001" data-transition="pop" data-rel="popup">swipeAreaWidth</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_002" data-transition="pop" data-rel="popup">width</a>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Drawer Implementation</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a fixed appbar with menu icon to the main layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addAppBar</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">"Menu,Fixed"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler for `onMenu` event of the AppBar control.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>apb<span class="token punctuation">.</span><span class="token function">setOnMenu</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>openDrawer <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a text control to the main layout.</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"&lt;---- Swipe left ----->"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        <span class="token comment">// Create a linear layout for the drawer.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the drawer by passing the drawer layout above.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addDrawer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler for `onClose` event on the Drawer component.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">setOnClose</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onClose <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> lst1 <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"movie"</span><span class="token punctuation">,</span> <span class="token string">"Videos"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"insert_drive_file"</span><span class="token punctuation">,</span> <span class="token string">"Documents"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Adds a list to the drawer layout. See List control for customization.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> lst1<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler for `onSelect` event on the list.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a divider into the drawer layout.</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addDivider</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> lst2 <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"mail"</span><span class="token punctuation">,</span> <span class="token string">"All Mail"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"inbox"</span><span class="token punctuation">,</span> <span class="token string">"Inbox"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"drafts"</span><span class="token punctuation">,</span> <span class="token string">"Outbox"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"send"</span><span class="token punctuation">,</span> <span class="token string">"Sent"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Adds another list to the drawer layout. See List control for customization.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> lst2<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Secondary navigation"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">openDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span><span class="token parameter">title</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>apb<span class="token punctuation">.</span>text <span class="token operator">=</span> title<br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> title <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onClose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">'Drawer is close'</span><span class="token punctuation">,</span> <span class="token string">"bottom"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Drawer Anchor Positions</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a select control to the main layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addSelect</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token string">"Right"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Radio,Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select anchor position"</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler for `onChange` event of the select control.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sel<span class="token punctuation">.</span><span class="token function">setOnChange</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>onSelect<span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Creates a linear layout for the drawer.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the drawer by passing the drawer layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addDrawer</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> <span class="token string">"left"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> lst1 <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"movie"</span><span class="token punctuation">,</span> <span class="token string">"Videos"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"insert_drive_file"</span><span class="token punctuation">,</span> <span class="token string">"Documents"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Adds a list to the drawer layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> lst1<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>closeDrawer <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu1<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
+				        <br>
+				        <span class="token comment">// Adds a divider into the drawer layout.</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addDivider</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> lst2 <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"mail"</span><span class="token punctuation">,</span> <span class="token string">"All Mail"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"inbox"</span><span class="token punctuation">,</span> <span class="token string">"Inbox"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"drafts"</span><span class="token punctuation">,</span> <span class="token string">"Outbox"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"send"</span><span class="token punctuation">,</span> <span class="token string">"Sent"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Adds another list to the drawer layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addList</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawerLay<span class="token punctuation">,</span> lst2<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Secondary navigation"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lstMenu2<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>closeDrawer <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">openDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">closeDrawer</span><span class="token punctuation">(</span> <span class="token parameter">title</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> title <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Set the drawer anchor first</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>anchor <span class="token operator">=</span> value<br>
+				        <br>
+				        <span class="token comment">// Set the drawer width depending on anchor position</span><br>
+				        <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token string">"Top"</span> <span class="token operator">||</span> value <span class="token operator">==</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">0.5</span><br>
+				        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token number">0.7</span><br>
+				        <span class="token punctuation">}</span><br>
+				        <br>
+				        <span class="token comment">// Open the drawer</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>drawer<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Drawer</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">addLayout</a>(
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">lay</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">disableBackdropTransition</a>(
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">disableDiscovery</a>(
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">disableSwipeToOpen</a>(
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">setOnClose</a>(
+			<a href="#pop_std_" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">setOnOpen</a>(
+			<a href="#pop_std_" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">show</a>(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">anchor</a> )
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> Values can be `true` or `false`.</div>
+	<div data-role="popup" id="pop_bin_004" class="ui-content"><b>Boolean:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the drawer.</i></div>
+	<div data-role="popup" id="pop_std_" class="ui-content"><b>undefined</b></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the swipeable area of the Drawer.</i></div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">[0-1]</span>.</i></div>
+	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Open position. Can be `left` or `right`. Default is `left`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>Sets or returns the anchor position of the drawer. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span>.</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The drawer layout.</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> Layout component.</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>drw.addLayout</b><br>Adds a layout into the drawer</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>drw.disableBackdropTransition</b><br>Disable the backdrop transition. This can improve the FPS on low-end devices</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>drw.disableDiscovery</b><br>If <kbd>true</kbd>, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>drw.disableSwipeToOpen</b><br>Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>drw.hide</b><br>Close the drawer dynamically</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>drw.setOnClose</b><br>Adds a callback function when the drawer is closed</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>drw.setOnOpen</b><br>Adds a callback function when the drawer is opened</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>drw.show</b><br>Open the drawer dynamically</div>
+</div>
+</body>
+
+</html>

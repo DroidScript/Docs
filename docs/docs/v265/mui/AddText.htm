@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddText</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddText</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Adds a mui text control to the layout.</p>
+
+		<div class="samp">
+		txt = MUI.AddText(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+			→ <b>Object</b>
+		</div>
+
+		<p>See <a href="CreateTextH1.htm" data-ajax="false">CreateTextH1</a>, <a href="CreateTextH2.htm" data-ajax="false">CreateTextH2</a>, <a href="CreateTextH3.htm" data-ajax="false">CreateTextH3</a>, <a href="CreateTextH4.htm" data-ajax="false">CreateTextH4</a>, <a href="CreateTextH5.htm" data-ajax="false">CreateTextH5</a>, <a href="CreateTextH6.htm" data-ajax="false">CreateTextH6</a>, <a href="CreateTextJumbo.htm" data-ajax="false">CreateTextJumbo</a>, <a href="CreateTextParagraph.htm" data-ajax="false">CreateTextParagraph</a> and <a href="CreateTextSecondary.htm" data-ajax="false">CreateTextSecondary</a> for full documentation on each type of mui typhography.</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - All Typography</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor set amit"</span><br>
+				        h1 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h1,Medium"</span><span class="token punctuation">)</span><br>
+				        h2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h2,Bold"</span><span class="token punctuation">)</span><br>
+				        h3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h3,Light"</span><span class="token punctuation">)</span><br>
+				        h4 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h4,Regular"</span><span class="token punctuation">)</span><br>
+				        h5 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h5,Medium"</span><span class="token punctuation">)</span><br>
+				        h6 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h6"</span><span class="token punctuation">)</span><br>
+				        p <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"paragraph,thin"</span><span class="token punctuation">)</span><br>
+				        j <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"h1,Medium"</span><span class="token punctuation">)</span><br>
+				        s <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddText</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"secondary,light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_col" class="ui-content"><b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“DS text options with addition Thin”</docstr> or <docstr>“Light”</docstr> or <docstr>“Regular”</docstr> or <docstr>“Medium”</docstr> or <docstr>“Bold”</docstr>, <docstr>“h1”</docstr> or <docstr>“h2”</docstr> or <docstr>“h3”</docstr> or <docstr>“h4”</docstr> or <docstr>“h5”</docstr> or <docstr>“h6”</docstr> or <docstr>“secondary”</docstr> or <docstr>“jumbo”</docstr> or <docstr>“paragraph”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> MUI Layout or DS layout control</div>
+</div>
+</body>
+
+</html>

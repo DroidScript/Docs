@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Material UI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css"/>
+
+	<script src="js/forward.js"></script>
+	<script src="js/energize-min.js"></script>
+	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery.mark.es6.min.js"></script>
+	<script src="../app.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/example.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Material UI</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div><!-- /header -->
+
+	<br>
+	<div style='align-items: center; text-align: center;'>
+		<a href='#' data-role='button' data-mini='false' data-inline='true'  onclick='run( "/assets/demos/mui/DroidScript_UI_Kit.js" )'> Run Demos </a>
+	</div>
+	<br>
+
+
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="true">
+		
+			<li><a href="MUI_All.htm">All</a></li>
+			<li><a href="https://gineerslife.com/droidscript-ui-kit" onclick="return OpenUrl(this.href);">Website</a></li>
+			<li><a href="MUIDocs.htm">Overview</a></li>
+			<li><a href="MUI_Layout.htm">Layout</a></li>
+			<li><a href="MUI_Buttons.htm">Buttons</a></li>
+			<li><a href="MUI_AppBar.htm">AppBar</a></li>
+			<li><a href="MUI_Cards.htm">Cards</a></li>
+			<li><a href="MUI_Dialogs.htm">Dialogs</a></li>
+			<li><a href="MUI_ListDialogs.htm">ListDialogs</a></li>
+			<li><a href="MUI_FABs.htm">FABs</a></li>
+			<li><a href="MUI_Lists.htm">Lists</a></li>
+			<li><a href="MUI_Menus.htm">Menus</a></li>
+			<li><a href="MUI_Pickers.htm">Pickers</a></li>
+			<li><a href="MUI_Table.htm">Table</a></li>
+			<li><a href="MUI_Texts.htm">Texts</a></li>
+			<li><a href="MUI_TextEdits.htm">TextEdits</a></li>
+			<li><a href="MUI_TextAreas.htm">TextAreas</a></li>
+			<li><a href="MUI_Checkboxes.htm">Checkboxes</a></li>
+			<li><a href="MUI_Radios.htm">Radios</a></li>
+			<li><a href="MUI_Seekbars.htm">Seekbars</a></li>
+			<li><a href="MUI_Spinner.htm">Spinner</a></li>
+			<li><a href="MUI_Switches.htm">Switches</a></li>
+			<li><a href="MUI_Tabs.htm">Tabs</a></li>
+			<li><a href="MUI_Miscellaneous.htm">Miscellaneous</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>
