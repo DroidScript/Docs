@@ -158,7 +158,7 @@ function generateVersion(ver) {
 
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000;
+	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 | 0;
 	if (updateVer) vn++;
 	app.WriteFile(outDir + "version.txt", (v + vn).toString());
 }
