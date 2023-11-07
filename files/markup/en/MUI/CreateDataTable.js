@@ -73,7 +73,7 @@ You can also add a footer into your table if you want controls associated with t
 /** ### SetOnSelectionStatus ###
  * Calls a function when the selection status of the table changes.
  * $$ tbl.SetOnSelectionStatus(callback) $$
- * @param {fnc_json} callback {"pNames":["isTrue"],"pTypes":["bin-True if there's an active selection, false otherwise."]}
+ * @param {fnc_json} callback {"pNames":["isTrue"],"pTypes":["bin-True if there is an active selection, false otherwise."]}
  */
 
 

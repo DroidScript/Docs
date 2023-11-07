@@ -1110,7 +1110,7 @@ function newDefPopup(id, text) { return defPopup.replace("%s", id).replace("%s",
  * @param {string} name
  * @param {string} desc
  */
-function newAppPopup(name, desc) { return appPopup.replace("%s", desc.replace(/\n|<br>/g, '\\n')).replace("%s", name); }
+function newAppPopup(name, desc) { return appPopup.replace("%s", desc.replace(/\n|<br>/g, '\\n').replace(/'/g, "\\\\'")).replace("%s", name); }
 /**
  * @param {string} target
  * @param {string} text
