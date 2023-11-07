@@ -160,9 +160,9 @@ function generateVersion(ver) {
 
 	// update version number
 	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = Number(ReadFile("../docs/version.txt", "0")) % 1000 | 0;
-	if (updateVer) vn++;
-	app.WriteFile(outDir + "version.txt", (v + vn).toString());
+	var vn = ReadFile("../docs/version.txt", "0").split('.').map(Number);
+	if (updateVer) vn[1] = (vn[1] | 0) + 1;
+	app.WriteFile(outDir + "version.txt", (v + vn[0] % 1000) + (vn[1] ? "." + vn[1] : ""));
 }
 
 /** @param {ScopeKeys} name */
@@ -1495,7 +1495,8 @@ if (typeof app == "undefined") {
 					if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
 					addcfg = true;
 					if (!conf.vers.includes(pat[1]))
-						conf.vers.push(pat[1]);
+						conf.vers.unshift(pat[1]);
+					conf.vers.sort().reverse();
 					break;
 				case "-sv": case "--setversion":
 					if (pat.length < 2) Throw(Error("missing option args. expected version"));

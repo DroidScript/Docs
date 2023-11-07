@@ -29,7 +29,7 @@ $(window).load(function () {
         localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3) + '.' + app.GetDSBuild();
         const docsHtm = app.ReadFile(docsPath + "docs/Docs.htm") + "";
         const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
-        installedVer = docsVer.slice(0, docsVer.indexOf("<br>"));
+        installedVer = docsVer.slice(0, docsVer.indexOf("<"));
         OnRemoteVersion(); // for safety
     } catch (e) {
         alert(e);
