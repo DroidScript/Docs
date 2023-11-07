@@ -35,7 +35,7 @@
         </tr>
         <tr>
             <th class='premHint'>MUI "<i class='fa fa-info-circle'></i>":"<premium>" Components</th>
-            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <xml nobox><​script src=\"ds:/Sys/mui.js\"></xml>"</td>
+            <td><i class='fa fa-remove red'></i></td>
             <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
             <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
             <td><i class='fa fa-remove red'></i></td>
@@ -78,7 +78,7 @@ An **'HTML' app** is simply a foreground Android Webview showing a standard HTML
 
 __Advantages:__
 - standard web technologies and libraries to create UI.
-→ well documented in the web (W3Schools)
+- well documented in the web (W3Schools)
 - Small APK size and memory usage
 
 __Disadvantages:__
@@ -97,7 +97,7 @@ __Advantages:__
 
 __Disadvantages:__
 - The performance is slower for complex UI (can be improved with [cfg.Fast](04CodingFeatures.htm#Fast) at the loss of DOM objects)
-- Modern browser features might not work on older phones
+- Modern browser features might not work with older WebView versions
 
 
 ## Node Native

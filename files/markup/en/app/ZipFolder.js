@@ -9,7 +9,7 @@
  * $$ app.ZipFolder(source, destination, options) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {str} options spk-Create SPK from DS project folder
+ * @param {str} options spk:Create SPK from DS project folder
 */
 
 
