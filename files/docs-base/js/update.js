@@ -15,7 +15,7 @@ function HttpRequest(method, host, path, header, cb) {
     xmlHttp.send();
 }
 
-let localVer = -1, remoteVer = -1, installedVer = -1;
+let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
 const docsPath = app.GetPath() + "/.edit/";
 
@@ -30,18 +30,19 @@ $(window).load(function () {
         const docsHtm = app.ReadFile(docsPath + "docs/Docs.htm") + "";
         const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
         installedVer = docsVer.slice(0, docsVer.indexOf("<"));
+        [_, vinstalled] = docsHtm.match(/version.txt: ([\d.]+)/) || [];
         OnRemoteVersion(); // for safety
     } catch (e) {
         alert(e);
     }
 });
 
-function OnRemoteVersion(remote) {
+function OnRemoteVersion(vremote) {
     try {
-        if (remote) remoteVer = remote.replace(/^.*(\d\d\d(\.\d+)?$)/, "$1");
-        if (remoteVer === -1 || installedVer === -1) return;
-        console.log(`got installed ${installedVer} - local ${localVer} - remote ${remoteVer}`);
-        if (remoteVer === installedVer || remoteVer !== localVer) return;
+        if (vremote) remoteVer = vremote.replace(/^.*(\d\d\d(\.\d+)?$)/, "$1");
+        if (!remoteVer || !installedVer) return;
+        console.log(`got installed ${installedVer} - local ${localVer} - remote ${remoteVer} (${vinstalled} - ${vremote})`);
+        if ((remoteVer === installedVer && vremote <= vinstalled) || remoteVer !== localVer) return;
 
         $('#popupDialog').popup("open");
         $('#popupDialog a').on("click", function (e) {

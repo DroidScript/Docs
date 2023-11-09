@@ -4,6 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const rimraf = require("rimraf");
 const Prism = require('prismjs');
+const _glob = require('glob');
 conf = require("./conf.json");
 // @ts-ignore
 require('prismjs/components/prism-java.min.js');
@@ -85,6 +86,21 @@ function Generate() {
 
 	// generate all languages
 	keys(conf.langs).filter(l => l.match(patLang) != null).forEach(l => generateLang(l));
+
+	// update version number
+	var verDate = Date.now() / 864e5 | 0;
+	var verNum = ReadFile("../docs/version.txt", "0").split('.').map(Number);
+	if (updateVer) verNum[1] = (verNum[1] | 0) + 1;
+	verNum[0] = verNum[0] % 1000;
+	app.WriteFile(outDir + "version.txt", verDate + verNum.join('.'));
+
+	for (const file of _glob.sync(outDir + '*/*/Docs.htm', { cwd: __dirname })) {
+		const content = app.ReadFile(file)
+		.replace(/version.txt:\ [0-9.]*/, `version.txt: ${verDate + verNum.join('.')}`)
+		.replace(/Docs version:\ [0-9.]*/, `Docs version: ${verNum.join('.')}`)
+			.replace(/\(\d\d\/\d\d\/\d\d\d\d\)/, `(${new Date().toLocaleDateString()})`);
+		app.WriteFile(file, content);
+	}
 }
 
 /** @param {LangKeys} l */
@@ -158,12 +174,6 @@ function generateVersion(ver) {
 		});
 
 	if (hadError) console.warn("Warning: Copy docs-base failed for " + ver + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
-
-	// update version number
-	var v = 1000 * (Date.now() / 864e5 | 0);
-	var vn = ReadFile("../docs/version.txt", "0").split('.').map(Number);
-	if (updateVer) vn[1] = (vn[1] | 0) + 1;
-	app.WriteFile(outDir + "version.txt", (v + vn[0] % 1000) + (vn[1] ? "." + vn[1] : ""));
 }
 
 /** @param {ScopeKeys} name */
