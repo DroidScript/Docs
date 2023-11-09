@@ -96,8 +96,8 @@ function Generate() {
 
 	for (const file of _glob.sync(outDir + '*/*/Docs.htm', { cwd: __dirname })) {
 		const content = app.ReadFile(file)
-		.replace(/version.txt:\ [0-9.]*/, `version.txt: ${verDate + verNum.join('.')}`)
-		.replace(/Docs version:\ [0-9.]*/, `Docs version: ${verNum.join('.')}`)
+			.replace(/version.txt:\ [0-9.]+/, `version.txt: ${verDate + verNum.join('.')}`)
+			.replace(/Docs version:\ [0-9.]*/, `Docs version: ${verNum.join('.')}`)
 			.replace(/\(\d\d\/\d\d\/\d\d\d\d\)/, `(${new Date().toLocaleDateString()})`);
 		app.WriteFile(file, content);
 	}
