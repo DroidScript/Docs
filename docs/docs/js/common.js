@@ -131,7 +131,7 @@ $(document).live('pageshow', function (event, ui) {
 
 		var search = location.href.match(/(\bsearch=)([^&#]+)/i);
 		var flags = location.href.match(/(\bflags=)(\d+)/i) || 0;
-		
+
 		if (search) {
 			search = decodeURIComponent(search[2]);
 			flags &&= Number(flags[2]);
@@ -166,10 +166,10 @@ function OnAddress() {
 }
 
 
-function makeLink(name, path) {
-	var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="RemovePlugin(\'$1\')"></a>';
+function makeLink(name, path, ext) {
+	var btnRem = '<a href="#" data-icon="delete" data-iconpos="notext" onclick="Remove' + (ext ? 'Extension' : 'Plugin') + '(\'$1\')"></a>';
 	var link = '<a href="$1">$2</a>';
-	return "<li>" + link.replace("$2", name).replace("$1", path) +
+	return "<li>" + link.replace("$2", name).replace("$1", ext ? "#" : path) +
 		btnRem.replace("$1", name) + "</li>\n"
 }
 
@@ -178,12 +178,13 @@ function addList(parent, list, getPath) {
 
 	for (var i in list)
 		if (list[i])
-			html += makeLink(list[i], getPath(list[i]));
+			html += makeLink(list[i], getPath(list[i]), parent == '#divExts');
 
 	html += "</ul>";
 	$(parent).html(html);
 	$(parent).trigger("create");
 }
+
 
 //Get list from device.
 function getIdeList(cmd, cb) {
@@ -193,7 +194,7 @@ function getIdeList(cmd, cb) {
 		//Extract plugins list.
 		var data = JSON.parse(xmlHttp.responseText);
 		if (data.status == "access denied") data.status = "IDE not connected";
-		if (!data.plugins) return app.ShowPopup(data.status || xmlHttp.responseText);
+		if (!data.plugins && !data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
 		cb(data);
 	};
 	xmlHttp.open("get", "/ide?cmd=" + cmd, true);

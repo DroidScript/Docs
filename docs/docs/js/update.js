@@ -17,7 +17,7 @@ function HttpRequest(method, host, path, header, cb) {
 
 let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
-const docsPath = app.GetPath() + "/.edit/";
+const docsPath = "/sdcard/DroidScript/.edit/";
 
 $(window).load(function () {
     if (!isMobileIDE) return;

@@ -5,7 +5,9 @@ const versions = {"en":"v265"};
 
     const pathname = location.pathname;
     const getLink = (m, add, lang = 'en') => `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;
-    const newPath = pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink);
+    const newPath = 
+        pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink)
+        .replace(/intro\/\d+/, 'intro/');
     console.log("suggested " + newPath);
 
     if (pathname === newPath || pathname === "/Docs/404.html") return;
