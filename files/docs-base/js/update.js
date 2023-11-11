@@ -18,12 +18,13 @@ function HttpRequest(method, host, path, header, cb) {
 let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
 const docsPath = "/sdcard/DroidScript/.edit/";
+const repo = true ? "DroidScript" : "SymDTools";
 
 $(window).load(function () {
     if (!isMobileIDE) return;
     try {
-        HttpRequest("get", "https://raw.githubusercontent.com",
-            "/DroidScript/Docs/master/docs/version.txt",
+        HttpRequest("get", "https://raw.githubusercontent.com/",
+            repo + "/Docs/master/docs/version.txt",
             null, OnRemoteVersion);
 
         localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3) + '.' + app.GetDSBuild();
@@ -62,7 +63,7 @@ function InstallUpdate() {
         dl.SetOnCancel(function (f) { app.ShowPopup("Download aborted"); });
         dl.SetOnError(app.ShowPopup);
 
-        const url = "https://github.com/DroidScript/Docs/archive/master.zip";
+        const url = `https://github.com/${repo}/Docs/archive/master.zip`;
         dl.Download(url, tmpPath, "docs-master.zip");
         dl.SetOnDownload(ExtractDocs);
     } catch (e) {

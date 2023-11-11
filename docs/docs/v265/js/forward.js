@@ -1,7 +1,7 @@
 const versions = {"en":"v265"};
-(function () {
+(function Forward(move = true) {
     const oldHost = 'symdstools.github.io', newHost = 'droidscript.github.io';
-    if (location.host == oldHost) return moveSite();
+    if (location.host === oldHost && move) return moveSite();
 
     const pathname = location.pathname;
     const getLink = (m, add, lang = 'en') => `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;
@@ -27,7 +27,7 @@ const versions = {"en":"v265"};
 
             if (timer > 0) {
                 div.innerHTML += `\n<br><big>You are being forwarded automatically in ${timer}...</big> <a id="stay" href="#">[stay here]</div>`;
-                div.querySelector("#stay").onclick = () => (clearInterval(itvMove), timer = 0, moveTimer());
+                div.querySelector("#stay").onclick = () => (clearInterval(itvMove), timer = 0, moveTimer(), Forward(false));
             }
             if (timer) return moveTimer;
             clearInterval(itvMove);
