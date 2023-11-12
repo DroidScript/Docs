@@ -1,7 +1,10 @@
 const versions = {"en":"v265"};
 (function Forward(move = true) {
     const oldHost = 'symdstools.github.io', newHost = 'droidscript.github.io';
-    if (location.host === oldHost && move) return moveSite();
+    move &&= sessionStorage.getItem("moveDocs") !== "false";
+    move &&= !location.search.includes('move=false');
+    if (!move) sessionStorage.setItem("moveDocs", "false");
+    if (move && location.host === oldHost) return moveSite();
 
     const pathname = location.pathname;
     const getLink = (m, add, lang = 'en') => `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;

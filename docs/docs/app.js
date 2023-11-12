@@ -1,19 +1,21 @@
 
+_IsDS = (typeof _bridge!='undefined' || typeof __vm!='undefined');
+_isV8=false; _isNode=false; _isIDE=false;
+
 _dbg = _dbgSave = true; _map = []; _scripts = [];
-_languages = null; _curLang = "en"; _started=false; _isIDE=false;
-_cbMap = []; _cbId=0; _docs = false; _busy=false; _isV8=false; _isNode=false;
+_languages = null; _curLang = "en"; _started=false;
+_cbMap = []; _cbId=0; _docs = false; _busy=false;
 _btl = null; _lvw = null; _ldg = null;
 _ynd = null; _nxt = null; _smw = null;
 _inf = null; _rec = null; _pst = null;
 _sms = null; _eml = null; _wpr = null;
 _crp = null; _spr = null;
 
-
-function App()
+function DsApp()
 {
 	this.data = {};
-	this.typeId = "App"
-	/*#app*/ this.GetType = function() { return "App"; }
+	this.typeId = "DsApp"
+	/*#app*/ this.GetType = function() { return "DsApp"; }
 	/*#app*/ this.GetObjects = function() { return _GetObjects(); }
 	/*#app*/ this.IsStarted = function() { return prompt( "#", "App.IsStarted(" )=="true"; }
 	/*#app*/ this.Exit = function( kill ) { prompt( "#", "App.Exit("+kill ); }
@@ -22,6 +24,7 @@ function App()
 	/*#app*/ this.ToFront = function() { prompt( "#", "App.ToFront(" ); }
 	/*#app*/ this.Hide = function() { prompt( "#", "App.Hide(" ); }
 	/*#app*/ this.Show = function() { prompt( "#", "App.Show(" ); }
+	/*#app*/ this.UpdateUI = function( ms ) { prompt( "#", "_DoEvents(\f"+ms ); }
 	/*#app*/ this.Execute = function( js ) { prompt( "#", "App.Execute("+js ); }
 	/*#app*/ this.StartApp = function( file,options,intent ) { prompt( "#", "App.StartApp(\f"+file+"\f"+options+"\f"+intent ); }
 	/*#app*/ this.StopApp = function( name ) { prompt( "#", "App.StopApp("+name ); }
@@ -59,6 +62,7 @@ function App()
 	/*#app*/ this.GetAppPath = function() { return prompt( "#", "App.GetAppPath(" ); }
 	/*#app*/ this.GetVersion = function() { return parseFloat(prompt( "#", "App.GetVersion(" )); }
 	/*#app*/ this.GetDSVersion = function() { return parseFloat(prompt( "#", "App.GetDSVersion(" )); }
+	/*#app*/ this.GetDSBuild = function() { return parseInt(prompt( "#", "App.GetDSBuild(" )); }
 	/*#app*/ this.IsNewVersion = function() { return prompt( "#", "App.IsNewVersion(" )=="true"; }
 	/*#app*/ this.InIDE = function() { return prompt( "#", "App.InIDE(" )=="true"; }
 	/*#app*/ this.IsAPK = function() { return prompt( "#", "App.IsAPK(" )=="true"; }
@@ -106,6 +110,7 @@ function App()
 	/*#app*/ this.DisableTouch = function( disable ) { prompt( "#", "App.DisableTouch(\f"+disable ); }
 	/*#app*/ this.GetIPAddress = function() { return prompt( "#", "App.GetIPAddress(" ); }
 	/*#app*/ this.GetMacAddress = function() { return prompt( "#", "App.GetMacAddress(" ); }
+	/*#app*/ this.GetRouterAddress = function() { return prompt( "#", "App.GetRouterAddress(" ); }
 	/*#app*/ this.GetSSID = function() { return prompt( "#", "App.GetSSID(" ); }
 	/*#app*/ this.GetRSSI = function() { return parseInt(prompt( "#", "App.GetRSSI(" )); }
 	/*#app*/ this.Broadcast = function( type,msg ) { prompt( "#", "App.Broadcast("+type+"\f"+msg ); }
@@ -116,20 +121,22 @@ function App()
 	/*#app*/ this.GetClipboardText = function() { return prompt( "#", "App.GetClipboardText(" ); }
 	/*#app*/ this.EnableBackKey = function( enable ) { prompt( "#", "App.EnableBackKey("+enable ); }
 	/*#app*/ this.Wait = function( secs,doEvents ) { prompt( "#", "App.Wait(\f"+secs+"\f"+doEvents ); }
-	/*#app*/ this.Alert = function( msg,title,options,hue ) { prompt( "#", "App.Alert(\f"+msg+"\f"+title+"\f"+options+"\f"+hue ); }
+	/*#app*/ this.Alert = function( msg,title,options,hue ) { if(title) prompt( "#", "App.Alert(\f"+msg+"\f"+title+"\f"+options+"\f"+hue ); else alert(msg); }
 	/*#app*/ this.HideKeyboard = function() { prompt( "#", "App.HideKeyboard(" ); }
 	/*#app*/ this.ShowKeyboard = function( obj ) { return prompt( "#", "App.ShowKeyboard(\f"+obj.id )=="true"; }
 	/*#app*/ this.IsKeyboardShown = function() { return prompt( "#", "App.IsKeyboardShown(" )=="true"; }
 	/*#app*/ this.GetKeyboardHeight = function() { return parseInt(prompt( "#", "App.GetKeyboardHeight(" )); }
 	/*#app*/ this.TextToSpeech = function( text,pitch,rate,callback,stream,locale,engine ) { prompt( "#", "App.TextToSpeech(\f"+text+"\f"+pitch+"\f"+rate+"\f"+_Cbm(callback)+"\f"+stream+"\f"+locale+"\f"+engine ); }
-	/*#app*/ this.Debug = function( msg ) { prompt( "#", "App.Debug(\f"+msg ); }
+	/*#app*/ this.Debug = function( msg ) { prompt( "#", "App.Debug(\f"+(typeof msg=='object'?JSON.stringify(msg):msg) ); }
 	/*#app*/ this.Error = function( msg,line,file,quit ) { prompt( "#", "App.Error(\f"+msg+"\f"+line+"\f"+file+"\f"+quit ); }
 	/*#app*/ this.SetDebugEnabled = function( enable ) { prompt( "#", "_UseDbg(\f"+enable ); _dbg=enable; }
 	/*#app*/ this.SetDebug = function( switches ) { prompt( "#", "_UseDbg(\f"+switches ); _dbg=switches; }
+	/*#app*/ this.GetDebug = function() { return prompt( "#", "_GetDbg(\f" ); }
 	/*#app*/ this.IsDebugEnabled = function() { return _dbg?true:false; }
 	/*#app*/ this.IsDebugging = function() { return prompt( "#", "App.IsDebugging(" )=="true"; }
-	/*#app*/ this.CreateDebug = function() { prompt( "#", "App.CreateDebug(" ); }
-	/*#app*/ this.ShowDebug = function( show ) { prompt( "#", "App.ShowDebug("+show ); }
+	/*#app*/ this.IsDebugVisible = function() { return prompt( "#", "App.IsDebugVisible(" )=="true"; }
+	/*#app*/ this.CreateDebug = function( options ) { prompt( "#", "App.CreateDebug(\f"+options ); }
+	/*#app*/ this.ShowDebug = function( show,options ) { prompt( "#", "App.ShowDebug(\f"+show+"\f"+options ); }
 	/*#app*/ this.SendMail = function( address,subject,body,attach,type,options ) { prompt( "#", "App.SendMail(\f"+address+"\f"+subject+"\f"+body+"\f"+attach+"\f"+type+"\f"+options ); }
 	/*#app*/ this.SendFile = function( file,subject,text,choose ) { prompt( "#", "App.SendFile(\f"+file+"\f"+subject+"\f"+text+"\f"+choose ); }
 	/*#app*/ this.SendText = function( text,subject,choose ) { prompt( "#", "App.SendText(\f"+text+"\f"+subject+"\f"+choose ); }
@@ -145,7 +152,7 @@ function App()
 	/*#app*/ this.ShowProgress = function( msg,options ) { prompt( "#", "App.ShowProgress(\f"+msg+"\f"+options ); }
 	/*#app*/ this.HideProgress = function() { prompt( "#", "App.HideProgress(" ); }
 	/*#app*/ this.ShowProgressBar = function( title,percent,options ) { prompt( "#", "App.ShowProgressBar(\f"+title+"\f"+percent+"\f"+options ); }
-	/*#app*/ this.UpdateProgressBar = function( percent ) { prompt( "#", "App.UpdateProgressBar(\f"+percent ); }
+	/*#app*/ this.UpdateProgressBar = function( percent,options ) { prompt( "#", "App.UpdateProgressBar(\f"+percent+"\f"+options ); }
 	/*#app*/ this.HideProgressBar = function() { prompt( "#", "App.HideProgressBar(" ); }
 	/*#app*/ this.LoadText = function( name,dflt,file ) { return prompt( "#", "App.LoadText("+name+"\f"+dflt+"\f"+file ); }
 	/*#app*/ this.LoadNumber = function( name,dflt,file ) { return parseFloat(prompt( "#", "App.LoadNumber("+name+"\f"+dflt+"\f"+file )); }
@@ -154,7 +161,7 @@ function App()
 	/*#app*/ this.SaveText = function( name,value,file ) { prompt( "#", "App.SaveText("+name+"\f"+value+"\f"+file ); }
 	/*#app*/ this.SaveNumber = function( name,value,file ) { prompt( "#", "App.SaveNumber("+name+"\f"+value+"\f"+file ); }
 	/*#app*/ this.SaveBoolean = function( name,value,file ) { prompt( "#", "App.SaveBoolean("+name+"\f"+value+"\f"+file ); }
-	/*#app*/ this.SaveJson = function(name,json,file) { if (typeof json=="object") { prompt("#","App.SaveText("+name+"\f"+JSON.stringify(json)+"\f"+file); } else { app.Debug("WARNING: app.SaveJson Failed: Bad JSON"); } }
+	/*#app*/ this.SaveJson = function(name,data,file) { try { prompt("#","App.SaveText("+name+"\f"+JSON.stringify(data)+"\f"+file); } catch(e) { app.Debug("WARNING: app.SaveJson Failed: "+e); } }
 	/*#app*/ this.ClearData = function( file ) { prompt( "#", "App.ClearData(\f"+file ); }
 	/*#app*/ this.ClearValue = function( name,file ) { prompt( "#", "App.ClearValue(\f"+name+"\f"+file ); }
 	/*#app*/ this.GetTop = function() { return parseFloat(prompt( "#", "App.GetTop(" )); }
@@ -171,7 +178,9 @@ function App()
 	/*#app*/ this.SetOrientation = function( orient,callback ) { prompt( "#", "App.SetOrientation(\f"+orient+"\f"+_Cbm(callback) ); }
 	/*#app*/ this.GetRotation = function() { return parseInt(prompt( "#", "App.GetRotation(" )); }
 	/*#app*/ this.GetBatteryLevel = function() { return parseFloat(prompt( "#", "App.GetBatteryLevel(\f" )); }
+	/*#app*/ this.IsBatteryOptimized = function() { return prompt( "#", "App.IsBatteryOptimized(" )=="true"; }
 	/*#app*/ this.IsCharging = function() { return prompt( "#", "App.IsCharging(" )=="true"; }
+	/*#app*/ this.ShowBatterySettings = function() { prompt( "#", "App.ShowBatterySettings(" ); }
 	/*#app*/ this.GetChargeType = function() { return prompt( "#", "App.GetChargeType(\f" ); }
 	/*#app*/ this.PreventScreenLock = function( mode ) { prompt( "#", "App.PreventScreenLock("+mode ); }
 	/*#app*/ this.PreventWifiSleep = function() { prompt( "#", "App.PreventWifiSleep(" ); }
@@ -216,6 +225,8 @@ function App()
 	/*#app*/ this.GetDrawerState = function( side ) { return prompt( "#", "App.GetDrawerState(\f"+side ); }
 	/*#app*/ this.MakeFolder = function( fldr ) { prompt( "#", "App.MakeFolder("+fldr ); }
 	/*#app*/ this.GetPrivateFolder = function( name,options ) { return prompt( "#", "App.GetPrivateFolder(\f"+name+"\f"+options ); }
+	/*#app*/ this.GetPublicFolder = function() { return prompt( "#", "App.GetPublicFolder(" ); }
+	/*#app*/ this.GetTempFolder = function() { return prompt( "#", "App.GetTempFolder(" ); }
 	/*#app*/ this.GetDatabaseFolder = function() { return prompt( "#", "App.GetDatabaseFolder(" ); }
 	/*#app*/ this.DeleteDatabase = function( name ) { prompt( "#", "App.DeleteDatabase(\f"+name); }
 	/*#app*/ this.FolderExists = function( fldr ) { return prompt( "#", "App.FolderExists("+fldr )=="true"; }
@@ -227,15 +238,17 @@ function App()
 	/*#app*/ this.GetInternalFolder = function() { return prompt( "#", "App.GetInternalFolder(" ); }
 	/*#app*/ this.GetSpecialFolder = function( name ) { return prompt( "#", "App.GetSpecialFolder(\f"+name ); }
 	/*#app*/ this.GetEnv = function( name ) { return prompt( "#", "App.GetEnv(\f"+name ); }
-	/*#app*/ this.GetPermission = function( type,callback ) { prompt( "#", "App.GetPermission(\f"+type+"\f"+_Cbm(callback) ); }
-	/*#app*/ this.CheckPermission = function( type ) { return prompt( "#", "App.CheckPermission(\f"+type ); }
+	/*#app*/ this.GetPermission = function( name,callback ) { prompt( "#", "App.GetPermission(\f"+name+"\f"+_Cbm(callback) ); }
+	/*#app*/ this.CheckPermission = function( name ) { return prompt( "#", "App.CheckPermission(\f"+name ); }
+	/*#app*/ this.RemovePermission = function( uri ) { return prompt( "#", "App.RemovePermission(\f"+uri ); }
+	/*#app*/ this.ListPermissions = function( type ) { return prompt( "#", "App.ListPermissions(\f"+type ); }
 	/*#app*/ this.ReadFile = function( file,encoding ) { return prompt( "#", "App.ReadFile(\f"+file+"\f"+encoding ); }
 	/*#app*/ this.ReadFileData = function( file,mode ) { return JSON.parse(prompt( "#", "App.ReadFileData(\f"+file+"\f"+mode )); }
 	/*#app*/ this.WriteFile = function( file,text,mode,encoding ) { prompt( "#", "App.WriteFile(\f"+file+"\f"+text+"\f"+mode+"\f"+encoding ); }
 	/*#app*/ this.OpenFile = function( file,type,choose ) { prompt( "#", "App.OpenFile(\f"+file+"\f"+type+"\f"+choose ); }
 	/*#app*/ this.OpenUrl = function( url,type,choose ) { prompt( "#", "App.OpenUrl(\f"+url+"\f"+type+"\f"+choose ); }
 	/*#app*/ this.DownloadFile = function( src,dest,title,desc,options ) { prompt( "#", "App.DownloadFile(\f"+src+"\f"+dest+"\f"+title+"\f"+desc+"\f"+options ); }
-	/*#app*/ this.ChooseFile = function( msg,type,callback,fldr ) { prompt( "#", "App.ChooseFile(\f"+msg+"\f"+type+"\f"+_Cbm(callback)+"\f"+fldr ); }
+	/*#app*/ this.ChooseFile = function( msg,type,callback,fldr,options ) { prompt( "#", "App.ChooseFile(\f"+msg+"\f"+type+"\f"+_Cbm(callback)+"\f"+fldr+"\f"+options ); }
 	/*#app*/ this.ChooseContact = function( type,callback ) { prompt( "#", "App.ChooseContact(\f"+type+"\f"+_Cbm(callback) ); }
 	/*#app*/ this.ChooseImage = function( options,callback ) { prompt( "#", "App.ChooseImage(\f"+options+"\f"+_Cbm(callback) ); }
 	/*#app*/ this.ChooseAccount = function( callback ) { prompt( "#", "App.ChooseAccount(\f"+_Cbm(callback) ); }
@@ -246,9 +259,9 @@ function App()
 	/*#app*/ this.RenameFile = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
 	/*#app*/ this.RenameFolder = function( src,dest ) { prompt( "#", "App.RenameFile(\f"+src+"\f"+dest); }
 	/*#app*/ this.ReplaceInFile = function( file,txt,rep,options ) { prompt( "#", "App.ReplaceInFile(\f"+file+"\f"+txt+"\f"+rep+"\f"+options); }
-	/*#app*/ this.UnzipFile = function( src,dest ) { prompt( "#", "App.UnzipFile(\f"+src+"\f"+dest); }
-	/*#app*/ this.ZipFile = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
-	/*#app*/ this.ZipFolder = function( src,dest ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest); }
+	/*#app*/ this.UnzipFile = function( src,dest,options ) { prompt( "#", "App.UnzipFile(\f"+src+"\f"+dest+"\f"+options); }
+	/*#app*/ this.ZipFile = function( src,dest,options ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest+"\f"+options); }
+	/*#app*/ this.ZipFolder = function( src,dest,options ) { prompt( "#", "App.ZipFile(\f"+src+"\f"+dest+"\f"+options); }
 	/*#app*/ this.GetFreeSpace = function( mode ) { return parseFloat(prompt( "#", "App.GetFreeSpace(\f"+mode)); }
 	/*#app*/ this.GetFileDate = function( file ) { var d = parseInt(prompt( "#", "App.GetFileDate(\f"+file)); if( d ) return new Date(d); else return null; }
 	/*#app*/ this.GetFileSize = function( file ) { return parseInt(prompt( "#", "App.GetFileSize(\f"+file)); }
@@ -284,11 +297,11 @@ function App()
 	/*#app*/ this.HttpRequest = function( type,baseUrl,path,params,callback,headers ) { prompt( "#", "App.HttpRequest(\f"+type+"\f"+baseUrl+"\f"+path+"\f"+params+"\f"+_Cbm(callback)+"\f"+headers); }
 	/*#app*/ this.UploadFile = function( url,file,name,callback ) { prompt( "#", "App.UploadFile(\f"+url+"\f"+file+"\f"+name+"\f"+_Cbm(callback) ); }
 	/*#app*/ this.SaveCookies = function() { prompt( "#", "App.SaveCookies(" ); }
-	/*#app*/ this.ClearCookies = function( session ) { prompt( "#", "App.ClearCookies(\f"+session ); }
-	/*#app*/ this.SetUserAgent = function( agent ) { prompt( "#", "App.SetUserAgent(\f"+agent ); }
+	/*#app*/ this.ClearCookies = function() { prompt( "#", "App.ClearCookies(" ); }
+	/*#app*/ this.SetUserAgent = function( agent,options ) { prompt( "#", "App.SetUserAgent(\f"+agent+"\f"+options ); }
     /*#app*/ this.SetUserCreds = function( name,password ) { prompt( "#", "App.SetUserCreds(\f"+name+"\f"+password ); }
     /*#app*/ this.QueryContent = function( uri,columns,select,args,sort ) { return eval(prompt( "#", "App.QueryContent(\f"+uri+"\f"+columns+"\f"+select+"\f"+args+"\f"+sort)); }
-	/*#app*/ this.Uri2Path = function( uri ) { return prompt( "#", "App.Uri2Path(\f"+uri); }
+	/*#app*/ this.Uri2Path = function( uri,options ) { return prompt( "#", "App.Uri2Path(\f"+uri+"\f"+options); }
 	/*#app*/ this.Path2Uri = function( path ) { return prompt( "#", "App.Path2Uri(\f"+path); }
 	/*#app*/ this.RealPath = function( path ) { return prompt( "#", "App.RealPath(\f"+path); }
 	/*#app*/ this.ScreenShot = function( fileName,quality ) { prompt( "#", "App.ScreenShot(\f"+fileName+"\f"+quality ); }
@@ -372,19 +385,29 @@ function App()
 	/*#app*/ this.CreateNotification = function( options ) { var ret = prompt( "#", "App.CreateNotification(\f"+options ); if( ret ) return new Not(ret); else return null; }
 	/*#app*/ this.CreateFile = function( file,mode ) { var ret = prompt( "#", "App.CreateFile(\f"+file+"\f"+mode ); if( ret ) return new Fil(ret); else return null; }
 
-	//Special methods.
-	this.Start = function() { if(typeof OnStart=='function') { OnStart(); prompt("#","_Start"); _started=true; } }
+	//----- Special methods ---------------------
 
-	/*#app*/ this.CreateObject = function( name, type )
-	{
+	this.Start = function() {
+	    if(typeof OnStart=='function') {
+	        _dbg = app.GetDebug(); OnStart(); prompt("#","_Start"); _started=true;
+	    }
+	}
+
+	/*#app*/ this.CreateObject = function( name, type ) {
 		if( !type ) try { return eval( "new "+name+"()" ); } catch(e) { return null; }
 		else { var ret = prompt( "#", "_Obj(\f"+type+"\f"+name ); if( ret ) return new SObj(ret); else return null; }
 	}
 
+    /*#app*/ this.Func = function( name, args ) {
+        for( var a in arguments )
+            if( typeof arguments[a]=='function' ) arguments[a] = _Cbm(arguments[a])
+        app.Execute( "_OnFunc('"+btoa2(JSON.stringify(Array.from(arguments)))+"')", function(){} )
+    }
+
 	/*#app*/ this.GA = function( cmd )
 	{
+	    var dbg = _dbg; _UseDbg( false );
 		try {
-			var dbg = _dbg; _UseDbg( false );
 			if( app.FileExists("/Sys/ga.js") )
 			{
 				if( cmd.toLowerCase()=='create' ) {
@@ -395,9 +418,9 @@ function App()
 				}
 				else ga.apply( this, arguments );
 			}
-			_UseDbg( dbg );
 		}
-		catch(e){}
+		catch(e) {}
+		finally{  _UseDbg( dbg ) }
 	}
 
 	var _anim_t = 0;
@@ -436,7 +459,7 @@ function App()
 	//Helper classes.
 	/*#app*/ this.CreateNxt = function() { var nxtHelp = new _NxtHelp(); return nxtHelp.nxt_CreateNxt(); }
 	/*#app*/ this.CreateTabs = function( list,width,height,options ) { return new _Tabs( list,width,height,options ); }
-	/*#app*/ this.CreateWebSocket = function( id,ip,port,options ) { return new _WebSock( id,ip,port,options ); }
+	/*#app*/ this.CreateWebSocket = function( address,id,retry,options ) { return new _WebSock( address,id,retry,options ); }
 	/*#app*/ this.CreateWizard = function( title,width,height,callback,options ) { return new _Wizard( title,width,height,callback,options ) }
 	/*#app*/ this.CreateGame = function( file,orient ) { return new _Game( file,orient ) }
 
@@ -893,6 +916,7 @@ function Txe( id )
     /*#txe*/ obj.GetLineTop = function( line ) { return parseFloat(prompt( obj.id, "Txe.GetLineTop("+line )); }
     /*#txe*/ obj.GetLineStart = function( line ) { return parseInt(prompt( obj.id, "Txe.GetLineStart("+line )); }
     /*#txe*/ obj.SetCursorColor = function( color ) { prompt( obj.id, "Txe.SetCursorColor(\f"+color ); }
+    /*#txe*/ obj.SetSelectColor = function( color ) { prompt( obj.id, "Txe.SetSelectColor(\f"+color ); }
     /*#txe*/ obj.SetCursorPos = function( pos ) { prompt( obj.id, "Txe.SetCursorPos(\f"+pos ); }
     /*#txe*/ obj.GetCursorPos = function() { return parseInt(prompt( obj.id, "Txe.GetCursorPos(")); }
     /*#txe*/ obj.GetCursorLine = function() { return parseInt(prompt( obj.id, "Txe.GetCursorLine(")); }
@@ -994,6 +1018,7 @@ function Lst( id )
     /*#lst*/ obj.SetDivider = function( height,color ) { prompt( obj.id, "Lst.SetDivider(\f"+height+"\f"+color ); }
     /*#lst*/ obj.SetFontFile = function( file ) { prompt( obj.id, "Lst.SetFontFile(\f"+file ); }
 	/*#lst*/ obj.AdjustColor = function( hue,sat,bright,cont ) { prompt( obj.id, "Lst.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
+	/*#lst*/ obj.Expand = function() { prompt( obj.id, "Lst.Expand(" ); }
     return obj;
 }
 
@@ -1004,24 +1029,28 @@ function Web( id )
     /*#web*/ obj.SetOnProgress = function( callback ) { prompt( obj.id, "Web.SetOnProgress("+_Cbm(callback) ); }
     /*#web*/ obj.SetOnError = function( callback ) { prompt( obj.id, "Web.SetOnError(\f"+_Cbm(callback) ); }
     /*#web*/ obj.SetOnConsole = function( callback ) { prompt( obj.id, "Web.SetOnConsole(\f"+_Cbm(callback) ); }
-    /*#web*/ obj.LoadHtml = function( html,base,options ) { prompt(obj.id,"Web.LoadHtml(\f"+html+"\f"+base+"\f"+options); }
-    /*#web*/ obj.LoadUrl = function( url,options ) { prompt(obj.id,"Web.LoadUrl(\f"+url+"\f"+options); }
-    /*#web*/ obj.Reload = function() { prompt(obj.id,"Web.Reload(" ); }
+    /*#web*/ obj.LoadHtml = function( html,base,options ) { if(options&&options.toLowerCase().includes("ignoreerrors")) global.__ignoreErrors=true; prompt(obj.id,"Web.LoadHtml(\f"+html+"\f"+base+"\f"+options); global.__ignoreErrors=false; }
+    /*#web*/ obj.LoadUrl = function( url,options ) { if(options&&options.toLowerCase().includes("ignoreerrors")) global.__ignoreErrors=true; prompt(obj.id,"Web.LoadUrl(\f"+url+"\f"+options); global.__ignoreErrors=false; }
+    /*#web*/ obj.Reload = function() { if(options&&options.toLowerCase().includes("ignoreerrors")) global.__ignoreErrors=true; prompt(obj.id,"Web.Reload(" ); global.__ignoreErrors=false; }
+    /*#web*/ obj.LoadFailed = function() { return prompt( obj.id, "Web.LoadFailed(" )=="true"; }
     /*#web*/ obj.Stop = function() { prompt(obj.id,"Web.Stop(" ); }
     /*#web*/ obj.Back = function() { prompt(obj.id,"Web.Back(" ); }
     /*#web*/ obj.Forward = function() { prompt(obj.id,"Web.Forward(" ); }
     /*#web*/ obj.CanGoBack = function() { return prompt( obj.id, "Web.CanGoBack(" )=="true"; }
     /*#web*/ obj.CanGoForward = function() { return prompt( obj.id, "Web.CanGoForward(" )=="true"; }
     /*#web*/ obj.SetErrorPage = function( url ) { prompt(obj.id,"Web.SetErrorPage(\f"+url); }
+    /*#web*/ obj.SetInject = function( file ) { prompt(obj.id,"Web.SetInject(\f"+file); }
     /*#web*/ obj.Execute = function( code,callback ) { return prompt( obj.id, "Web.Execute(\f"+code+"\f"+_Cbm(callback) ); }
     /*#web*/ obj.ClearHistory = function() { prompt(obj.id,"Web.ClearHistory(" ); }
+    /*#web*/ obj.ClearCookies = function() { prompt(obj.id,"Web.ClearCookies(" ); }
     /*#web*/ obj.GetUrl = function() { return prompt(obj.id,"Web.GetUrl(" ); }
+    /*#web*/ obj.GetHomeUrl = function() { return prompt(obj.id,"Web.GetHomeUrl(" ); }
     /*#web*/ obj.GetTitle = function() { return prompt(obj.id,"Web.GetTitle(" ); }
     /*#web*/ obj.Capture = function( file ) { prompt( obj.id, "Web.Capture(\f"+file ); }
     /*#web*/ obj.Print = function() { prompt( obj.id, "Web.Print(\f" ); }
     /*#web*/ obj.SetZoom = function( zoom ) { prompt( obj.id, "Web.SetZoom(\f"+zoom ); }
     /*#web*/ obj.SetTextZoom = function( zoom ) { prompt( obj.id, "Web.SetTextZoom(\f"+zoom ); }
-    /*#web*/ obj.SetUserAgent = function( agent ) { prompt( obj.id, "Web.SetUserAgent(\f"+agent ); }
+    /*#web*/ obj.SetUserAgent = function( agent,options ) { prompt( obj.id, "Web.SetUserAgent(\f"+agent+"\f"+options ); }
     /*#web*/ obj.SetUserCreds = function( name,password ) { prompt( obj.id, "Web.SetUserCreds(\f"+name+"\f"+password ); }
     /*#web*/ obj.SimulateKey = function( keyName,modifiers,pause ) { prompt( obj.id, "Web.SimulateKey(\f"+keyName+"\f"+modifiers+"\f"+pause ); }
     /*#web*/ obj.SetRedirect = function( urlFrom, urlTo ) { prompt( obj.id, "Web.SetRedirect(\f"+urlFrom+"\f"+urlTo ); }
@@ -1030,6 +1059,14 @@ function Web( id )
     /*#web*/ obj.SetOnUrl = function( callback ) { prompt( obj.id, "Web.SetOnUrl(\f"+_Cbm(callback) ); }
     /*#web*/ obj.SetOnRequest = function( callback ) { prompt( obj.id, "Web.SetOnRequest(\f"+_Cbm(callback) ); }
     /*#web*/ obj.SetBlockedUrls = function( urls ) { prompt( obj.id, "Web.SetBlockedUrls(\f"+urls ); }
+    /*#web*/ obj.SetOnContextMenu = function( callback ) { prompt( obj.id, "Web.SetOnContextMenu(\f"+_Cbm(callback) ); }
+    /*#web*/ obj.SetContextMenus = function( links,images ) { prompt( obj.id, "Web.SetContextMenus(\f"+links+"\f"+images ); }
+
+    /*#web*/ obj.Func = function( name, args ) {
+        for( var a in arguments )
+            if( typeof arguments[a]=='function' ) arguments[a] = _Cbm(arguments[a])
+        obj.Execute( "_OnFunc('"+btoa2(JSON.stringify(Array.from(arguments)))+"')", function(){} )
+    }
     return obj;
 }
 
@@ -1187,6 +1224,8 @@ function Aud( id )
     /*#aud*/ obj.GetType = function() { return "MediaPlayer"; }
     /*#aud*/ obj.SetFile = function( file ) { prompt( obj.id, "Aud.SetFile("+file ); }
     /*#aud*/ obj.SetLooping = function( loop ) { prompt( obj.id, "Aud.SetLooping(\f"+loop ); }
+    /*#aud*/ obj.SetSpeed = function( speed ) { prompt( obj.id, "Aud.SetSpeed(\f"+speed ); }
+    /*#aud*/ obj.SetPitch = function( pitch ) { prompt( obj.id, "Aud.SetPitch(\f"+pitch ); }
     /*#aud*/ obj.Close = function() { prompt( obj.id, "Aud.Close(" ); }
     /*#aud*/ obj.Release = function() { prompt( obj.id, "Aud.Release(" ); _map[obj.id] = null; }
     /*#aud*/ obj.Destroy = function() { prompt( obj.id, "Aud.Release(" ); _map[obj.id] = null; }
@@ -1594,7 +1633,10 @@ function Usb( id )
     /*#usb*/ obj.Write = function( txt,encoding ) { prompt( obj.id, "Usb.Write(\f"+txt+"\f"+encoding ); }
     /*#usb*/ obj.SetOnReceive = function( callback ) { prompt( obj.id, "Usb.SetOnReceive("+_Cbm(callback) ); }
     /*#usb*/ obj.SetDTR = function( onOff ) { prompt( obj.id, "Usb.SetDTR(\f"+onOff ); }
+    /*#usb*/ obj.GetDTR = function( onOff ) { return prompt( obj.id, "Usb.GetDTR(" )=="true"; }
     /*#usb*/ obj.SetRTS = function( onOff ) { prompt( obj.id, "Usb.SetRTS(\f"+onOff ); }
+    /*#usb*/ obj.GetRTS = function( onOff ) { return prompt( obj.id, "Usb.GetRTS(" )=="true"; }
+    /*#usb*/ obj.GetCD = function( onOff ) { return prompt( obj.id, "Usb.GetCD(" )=="true"; }
     /*#usb*/ obj.SetMaxRead = function( bytes ) { prompt( obj.id, "Usb.SetMaxRead(\f"+bytes ); }
     /*#usb*/ obj.SetMaxWrite = function( bytes ) { prompt( obj.id, "Usb.SetMaxWrite(\f"+bytes ); }
     /*#usb*/ obj.SetTimeout = function( ms ) { prompt( obj.id, "Usb.SetTimeout(\f"+ms ); }
@@ -1733,7 +1775,7 @@ DW = function(){ return app.GetDisplayWidth() }
 DH = function(){ return app.GetDisplayHeight() }
 
 _Try = function( p1,p2,p3,p4 ) { return prompt( "#", "App.Try(\f"+p1+"\f"+p2+"\f"+p3+"\f"+p4 ); }
-_Call = function( id, func, params ) { if( func ) func.apply( _map[id], params ); }
+_Call = function( id, func, params ) { app.eventSource=_map[id]; if( func ) func.apply( _map[id], params ); }
 _Cb = function( obj, func ) { return new _ObjCb(obj, func); }
 _ObjCb = function( obj, func ) { _cbMap[++_cbId] = obj; this.name = "_cbMap['"+_cbId+"']."+func; }
 _hash = function( str ) { var hash=5381, i=str.length; while(i) { hash=(hash*33)^str.charCodeAt(--i); } return hash>>>0; }
@@ -1750,13 +1792,12 @@ _GetMain = function() { return prompt( "#", "_GetMain(\f" ); }
 _ExecV8 = function( file ) { return prompt( "#", "_ExecV8(\f"+file ); }
 _Thread = function( file ) { return prompt( "#", "_Thread(\f"+file ); }
 _IdeCmd = function( cmd ) { return prompt( "#", "_IdeCmd(\f"+cmd ); }
-_DoEvents = function( ms ) { return prompt( "#", "_DoEvents(\f"+ms ); }
+_DoEvents = function( ms ) { prompt( "#", "_DoEvents(\f"+ms ); }
 _CreateCP = function( service ) { return prompt( "#", "_CreateCP(\f"+service ); }
-_ExecCP = function( callbackId,service,action,argsJson ) {
-	return prompt( "#", "_ExecCP(\f"+callbackId+"\f"+service+"\f"+action+"\f"+argsJson );
-}
+_ExecCP = function( callbackId,service,action,argsJson ) { return prompt( "#", "_ExecCP(\f"+callbackId+"\f"+service+"\f"+action+"\f"+argsJson ); }
+_OnFunc = function( json ) { var args=JSON.parse(atob2(json)); return eval(args[0]).apply(window,args.splice(1)) }
 
-_LoadScript = function( url, callback )
+_LoadScript = function( url, callback, type, id )
 {
     if( _scripts[url] ) {
 		if( callback ) callback(); return;
@@ -1768,10 +1809,15 @@ _LoadScript = function( url, callback )
 	        (app.IsAPK?"\n\n(Note: Assets are case sensitive)":"") );
 	_UseDbg( dbg );
 	if( _isV8 ) _ExecV8(url);
+	else if( _isNode ) {
+	    require( app.RealPath(url.replace("/Sys/","/Node/")) );
+	    if( callback ) callback();
+	}
 	else {
 		var head = document.getElementsByTagName('head')[0];
 		var script = document.createElement('script');
-		script.type = 'text/javascript';
+		script.type = type ? type : 'text/javascript';
+		if( id ) script.id = id
 		script.src = app.RealPath(url);
 		script.onload = callback;
 		head.appendChild(script);
@@ -1779,29 +1825,49 @@ _LoadScript = function( url, callback )
     _scripts[url] = true;
 }
 
-_LoadScriptSync = function( url, defer )
+_LoadScriptSync = function( url, defer, type, id )
 {
     if( _scripts[url] ) return;
     if( url.slice(-4)==".dsj" ) url += ".js";
     var dbg = _dbg; _UseDbg( false );
     if( url.indexOf(":")<0 && !app.FileExists(url) )
-	    alert("Error: "+url+" not found!" + (app.IsAPK?"\n\n(Note: Assets are case sensitive)":"") );
-	_UseDbg( dbg );
+        alert("Error: "+url+" not found!" + (app.IsAPK?"\n\n(Note: Assets are case sensitive)":"") );
+    _UseDbg( dbg );
     if( _isV8 ) _ExecV8(url);
-	else {
-		var head = document.getElementsByTagName('head')[0];
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
+    else if( _isNode ) require( app.RealPath(url.replace("/Sys/","/Node/")) );
+    else {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = type ? type : 'text/javascript';
+        if( id ) script.id = id
 
-		if( defer ) { script.defer = true; script.src = app.RealPath(url) }
-		else {
-		    var dbg = _dbg; _UseDbg( false );
+        if( defer ) { script.defer = true; script.src = app.RealPath(url) }
+        else {
+            var dbg = _dbg; _UseDbg( false );
             script.text = app.ReadFile( url );
             _UseDbg( dbg );
-		}
-		head.appendChild(script);
+        }
+        head.appendChild(script);
     }
     _scripts[url] = true;
+}
+
+
+include = function( file, noDefer ) {
+    _LoadScriptSync( file, noDefer?false:true );
+}
+
+atob2 = function(str) {
+    return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+}
+
+btoa2 = function(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }));
 }
 
 _LoadPlugin = function( name )
@@ -1836,22 +1902,19 @@ _Boost = function( on )
     else window.prompt = window._prompt
 }
 
-_Batch = function( ctrl, vals )
-{
+_Batch = function( ctrl, vals ) {
     var cmd = ""
-    for( v in vals )
-    {
+    for( var v in vals ) {
         if( cmd ) cmd += "|"
         if( v.endsWith("_")) cmd += "Obj."+v
         else cmd += ctrl.typeId + "." + v
         var params = vals[v]
-        for( p in params ) cmd += "\f"+(v.startsWith("SetOn")?_Cbm(params[p]):params[p])
+        for( var p in params ) cmd += "\f"+(v.startsWith("SetOn")?_Cbm(params[p]):params[p])
     }
     _bridge.batch( ctrl.id, cmd )
 }
 
-T = function( id, lang )
-{
+T = function( id, lang ) {
 	var tr = _languages ? _languages.trans[id] : null;
 	if( tr ) tr = tr[lang?lang:_curLang]; else return id;
 	return (tr ? tr : _languages.trans[id]["en"]);
@@ -1859,9 +1922,10 @@ T = function( id, lang )
 
 OnCreate = function(extract,debug,game)
 {
+    _dbg = app.GetDebug();
+	if( debug ) app.CreateDebug();
 	if( game ) { app.CreateGame(); prompt("#","_Start"); _started=true; }
 	else if(typeof OnStart=='function') { OnStart(); prompt("#","_Start"); _started=true; }
-	if( debug ) app.CreateDebug();
 }
 
 _GetObjects = function()
@@ -1873,23 +1937,35 @@ _GetObjects = function()
 
 
 ide = {}
-ide.MakePlugin = function(name){ _LoadScriptSync("/Sys/ide/makeplugin.js"); ide.MakePlugin(name) }
+ide.MakePlugin = function( name ){ _LoadScriptSync("/Sys/ide/makeplugin.js"); ide.MakePlugin(name) }
 ide.SetAutoWifi = function( auto ) { prompt( "#", "App.SetAutoWifi(\f"+auto); }
 ide.SetAutoStart = function( appName ) { prompt( "#", "App.SetAutoStart(\f"+appName); }
+
+ide.Obfuscate = function( src,dest,options ) {
+    if( app.InIDE() ) app.Broadcast( "!obfuscate", app.RealPath(src)+"|"+app.RealPath(dest)+"|"+options )
+}
+
+ide.Export = function( type,src,dest ) {
+    if( app.InIDE() ) app.Broadcast( "!export", type+"|"+app.RealPath(src)+"|"+app.RealPath(dest) )
+}
 
 ide.AddModule = function( name, overwrite )
 {
     if( !app.InIDE() ) return
-    if( overwrite || !app.FolderExists(app.GetAppPath()+"/node_modules/"+name) ) {
+    if( glob.addingModule ) return
+
+    if( overwrite || !app.FolderExists(app.GetAppPath()+"/node_modules/"+name.split("@")[0]) ) {
         app.Broadcast( "!addmodule", name )
         OnStart = function(){}
+        glob.addingModule = true
         app.Exit()
     }
 }
 
 glob = {};
-app = new App()
-cfg = {Game:0, Landscape:0, Portrait:0, Transparent:0, Share:0, USB:0, Light:0, Dark:0, Holo:0, MUI:0, Node:0 }
+app = new DsApp()
+cfg = { Game:0, Landscape:0, Portrait:0, Transparent:0, Share:0, USB:0, Light:0, Dark:0,
+        Holo:0, MUI:0, Node:0, NodeESM:0, Fast:0, Serv:0, Console:0 }
 
 _Log = function( msg ) { app.Debug( msg ); }
 _Err = function( msg ) { app.Debug( "ERROR: " + msg ); }
@@ -1899,12 +1975,6 @@ _RemovePermissions = function() {}
 _AddOptions = function() {}
 _AddPlugins = function() {}
 
-if( typeof _bridge=='undefined' ) prompt = function() { };
+if( typeof global=="undefined" && typeof window!='undefined' ) global = window
 if( typeof navigator=="undefined" ) { navigator = {userAgent:"Android"} };
-if( navigator.userAgent.indexOf("Android")>-1 )
-{
-	//Init app.
-	prompt( "#", "_Init" );
-}
-
-
+if( _IsDS ) prompt( "#", "_Init" )

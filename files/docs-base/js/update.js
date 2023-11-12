@@ -27,7 +27,10 @@ $(window).load(function () {
             repo + "/Docs/master/docs/version.txt",
             null, OnRemoteVersion);
 
-        localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3) + '.' + app.GetDSBuild();
+        const localBuild = app.GetDSBuild();
+        localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3);
+        if (localBuild) localVer += '.' + localBuild;
+        
         const docsHtm = app.ReadFile(docsPath + "docs/Docs.htm") + "";
         const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
         installedVer = docsVer.slice(0, docsVer.indexOf("<"));
