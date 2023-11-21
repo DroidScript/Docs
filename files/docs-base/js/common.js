@@ -29,6 +29,8 @@ var isMobileIDE = isDS && isAndroid;
 var curPage = "";
 var serverAddress = "";
 
+var curMode = location.href.match(/\bmode=([-\w]*)/);
+
 // set current theme
 var curTheme = location.href.match(/\btheme=([-\w]*)/);
 if (curTheme && history.replaceState)
@@ -50,6 +52,8 @@ window.addEventListener("message", function (event) {
 	}
 	else if (cmd == "setTheme")
 		setTheme(params[1]);
+	else if (cmd == "setMode")
+		setMode(params[1]);
 });
 
 //Change defaults.
@@ -100,6 +104,9 @@ $(document).live('pageshow', function (event, ui) {
 
 		//Get current page id.
 		curPage = $.mobile.activePage.attr('id');
+
+		// set language mode
+		setMode(curMode ? curMode[1] : getCookie("dsDocsMode", "js"));
 
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
@@ -316,6 +323,28 @@ function setTheme(theme, holo) {
 
 	var lnkPrism = document.getElementById('themePrism');
 	if (lnkPrism) lnkPrism.href = lnkPrism.href.replace(/(.*\/).*/, "$1" + theme + ".min.css");
+}
+
+//Toggles between js and py mode
+function tglMode() {
+	var mode = getCookie("dsDocsMode", "js");
+	setMode(mode == "js" ? "py" : "js");
+}
+
+//Set the current code mode "js" or "py"
+function setMode(mode) {
+	if (curMode == mode) return;
+
+	console.log("setMode('" + mode + "')");
+	setCookie("dsDocsMode", curMode = mode);
+
+	if (mode === "py") {
+		$('.code-js').hide();
+		$('.code-py').show();
+	} else {
+		$('.code-js').show();
+		$('.code-py').hide();
+	}
 }
 
 var indexContent = [];

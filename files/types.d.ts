@@ -22,25 +22,32 @@ declare class App {
 }
 
 declare global {
-    
+
     declare class DSMethod {
         name?: string;
         desc: string;
         shortDesc: string;
         pNames: string[];
-        pTypes: (string|DSFunction)[];
+        pTypes: (string | DSFunction)[];
         retval?: string;
         hasNav?: boolean;
         isval?: boolean;
         noCon?: boolean;
         abbrev?: string;
         params?: string;
-        subf?: Obj<DSFunction|string>
+        subf?: Obj<DSFunction | string>
+    }
+
+    type Sample = {
+        name: string;
+        code: string;
+        opt: string;
+        index: number;
     }
 
     type UndefinedPartial<T> = {
         [K in keyof T]?: T[K] | undefined;
-      };
+    };
 
     type DSFunction = UndefinedPartial<DSMethod>;
     type PopMap = { fnc: number, dsc: number, mul: number, std: number, ukn: number }
@@ -50,13 +57,13 @@ declare global {
     type LangKeys = keyof DSConfig["langs"];
 
     interface Obj<T> {
-        [x:string]: T;
+        [x: string]: T;
     }
 
     type DSScopeRaw = Obj<DSFunction | string>;
     type DSScope = Obj<DSFunction>;
     type DSBase = Obj<DSFunction>;
-    type DSNavs = (string[] | Obj<string | DSNavs>) & {_nofilter?: boolean}
+    type DSNavs = (string[] | Obj<string | DSNavs>) & { _nofilter?: boolean }
     var app: App;
     var OnStart: () => void;
 }

@@ -6,13 +6,19 @@ const rimraf = require("rimraf");
 const Prism = require('prismjs');
 const _glob = require('glob');
 conf = require("./conf.json");
+
+// prism default languages:
+//   plain,plaintext,text,txt,extend,insertBefore,DFS,markup,
+//   html,mathml,svg,xml,ssml,atom,rss,css,clike,javascript,js
 // @ts-ignore
 require('prismjs/components/prism-java.min.js');
+// @ts-ignore
+require('prismjs/components/prism-python.min.js');
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 const baseDir = "json/", outDir = "../out/";
 var lang = /** @type {LangKeys} */ ("");
-var curVer = "", curDoc = "", curSubf = "";
+var curVer = "", curDoc = "", curFunc = "", curSubf = "";
 var patFunc = "", patScope = /**@type {ScopeKeys}*/("");
 var patVer = "", patLang = /** @type {LangKeys} */("");
 var warnEnbl = false, dbg = false, clear = false, force = false, updateVer = false;
@@ -399,12 +405,14 @@ function generateTsx(scope) {
 /** generates one document by function name 
  * @param {string} name */
 function generateDoc(name) {
+	curFunc = name;
+
 	/** @type {DSFunction | string} */
 	var ps = scope[name];
 	if (typeof ps == "string")
 		scope[name] = ps = { name, desc: ps, noCon: true };
 	else ps.name = ps.name || name;
-	if (typeof ps == "string" || !ps.name) return;
+	if (!ps.name) return;
 
 	curDoc = getDstDir(D_SCOPE, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
 	resetGlobals();
@@ -587,14 +595,18 @@ function adjustDoc(html, name) {
 function formatDesc(desc, name, hasData) {
 	desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
-	var samples = getSamples(name), s;
-	var sampcnt = keys(samples).length;
+	const samplesJs = getSamples(name);
+	const samplesPy = getSamples(name, "-py");
+	let s, sampcnt = keys(samplesJs).length;
 	if (!has(desc, '.')) desc += '.';
 
-	desc = desc.replace(/(\s|<br>)*<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\2?>/g,
-		function (m, _, _1, /** @type {string} */ t, opt, _2, c) {
-			samples[_ = t || sampcnt + 1] = toHtmlSamp(c, t, ++sampcnt, opt);
-			return `<sample ${_}>`;
+	desc = desc.replace(/(\s|<br>)*<sample( Python| (.*?))?(( |norun)*)>([^]*?)<\/sample\2?>/g,
+		(m, _, py, name, opt, _1, code) => {
+			sampcnt++;
+			name ||= sampcnt + 1;
+			(py.includes('Python') ? samplesPy : samplesJs)[name] =
+				{ code, name, index: sampcnt, opt };
+			return `<sample ${name}>`;
 		});
 
 	desc = `<p>${replaceTypes(addMarkdown(replW(desc)))} </p>`;
@@ -612,11 +624,10 @@ function formatDesc(desc, name, hasData) {
 		// format html code on linebreaks
 		.replace(/\s*<br>\s*/g, "<br>\n\t\t")
 		// expandable samples (per <sample name> tag or add to desc)
-		.replace(/<sample (.*?)>/g, (m, /** @type {string} */ t) => (s = samples[t]) ?
-			(delete samples[t], `</p>\n\t\t${s}<p>`) :
-			(Throw(Error(`sample ${t} not found for ${name}. Have ${keys(samples) + "" || "none"}.`)), ''))
+		.replace(/<sample (.*?)>/g, (m, /** @type {string} */ t) =>
+			`</p>\n\t\t${toHtmlSamp(t, samplesJs[t], samplesPy[t]) + (delete samplesJs[t], '')}<p>`)
 		.replace(/(“.*?”)/g, "<docstr>$1</docstr>")
-		+ values(samples).concat("").reduce((a, b) => a + b);
+		+ keys(samplesJs).map(t => toHtmlSamp(t, samplesJs[t], samplesPy[t])).join("");
 }
 
 /** 
@@ -748,36 +759,66 @@ function getDocData(f, useAppPop = false) {
 }
 
 /** read and return html converted example snippets file 
- * @param {string} name */
-function getSamples(name) {
-	var sampcnt = 0, s = ReadFile(getSrcDir(D_SCOPE, `samples/${name}.txt`), " ", !scope[name].isval).replace(/\r/g, '');
-	/** @type {Obj<string>} */
+ * @param {string} func 
+ * @param {string} ext
+ */
+function getSamples(func, ext = "") {
+	/** @type {Obj<Sample>} */
 	var samples = {};
+	var index = 0;
 
-	s.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
-		(m, _, name, opt, _1, c) => samples[name || sampcnt + 1] = toHtmlSamp(c, name, ++sampcnt, opt)
+	let source = ReadFile(getSrcDir(D_SCOPE, `samples/${func}${ext}.txt`), " ", !scope[func].isval).replace(/\r/g, '');
+	source.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
+		(m, py, name, opt, _1, code) => {
+			index++;
+			name ||= index + 1;
+			samples[name] = { code, name, index, opt };
+			return "";
+		}
 	);
 
 	return samples;
 }
 
-/** convert a sample to html code
- * @param {string} code
- * @param {string} name
- * @param {number} index
- * @param {string} options
- */
-function toHtmlSamp(code, name, index, options) {
-	var hasBold = has(code, "<b>") && code.indexOf("</b>") > code.indexOf("<b>");
-	if (!hasBold) Warn(`${curDoc} sample "${name || ''}" has no bold area\n`);
-
+/** @param {string} code */
+function formatCode(code, lang = "javascript") {
 	code = code.trim().replace(/<\/?b>/g, "§b§");
-	code = Prism.highlight(code, Prism.languages.javascript, 'javascript')
+	code = Prism.highlight(code, Prism.languages[lang], lang)
 		.replace(/\t/g, "    ")
 		.replace(/    /g, "&#160;&#160;&#160;&#160;")
-		.replace(/\n/g, "<br>\n\t\t\t\t")
+		.replace(/\n/g, "<br>\n\t\t\t\t");
+	return code;
+}
 
-	return htmlSample(name, String(index), code, hasBold, !has(options, "norun"));
+/** convert a sample to html code
+ * @param {string} name
+ * @param {Sample} jsSample
+ * @param {Sample} pySample
+ */
+function toHtmlSamp(name, jsSample, pySample) {
+	if (!pySample) { // test
+		pySample = { ...jsSample };
+		pySample.code = pySample.code
+			.replace(/\s*[{};] *(\n)?/g, '$1')
+			.replace(/function (\w+\([^\n]*\))/g, 'def $1:')
+			.replace(/\/\/([^\n]*)/g, '# $1:')
+			.replace(/\/\*(.*?)\*\//g, '"""$1"""')
+			.replace(/else\s+if\s*\(([^\n]*)\) */g, 'elif $1:')
+			.replace(/(if|for|while)\s*\(([^\n]*)\) */g, '$1 $2:')
+			.replace(/catch\s*\(([^\n]*)\) */g, 'except $1:')
+			.replace(/(else|try) */g, '$1:')
+	}
+	if (!jsSample) Throw(Error(`Js sample '${name}' not found for '${curFunc}'.`));
+	if (!pySample) Throw(Error(`Py sample '${name}' not found for '${curFunc}'.`));
+
+	const jsCode = formatCode(jsSample.code);
+	const pyCode = formatCode(pySample.code, "python");
+
+	const run = !has(jsSample.opt, "norun");
+	const hasBold = has(jsSample.code, "<b>") && jsSample.code.indexOf("</b>") > jsSample.code.indexOf("<b>");
+	if (!hasBold) Warn(`${curDoc} sample "${name || ''}" has no bold area\n`);
+
+	return htmlSample(name, String(jsSample.index), jsCode, pyCode, hasBold, run);
 }
 
 
@@ -1186,20 +1227,29 @@ var		// subfunction
 		deprecated: "<div class='deprHint'><strong>Note: This function is deprecated.%s</strong></div>",
 		premium: "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>",
 		xfeature: "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>",
-	};
+	},
+	htmlToggles = `<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>`;
 
-function htmlSample(title = "", id = "", code = "", bold = false, run = false) {
-	if (bold) code = code.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" style="font-size:100%">$1</b>`);
+function htmlSample(title = "", id = "", codeJs = "", codePy = "", bold = false, run = false) {
+	if (bold) codeJs = codeJs.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" class="code-js" style="font-size:100%">$1</b>`);
+	if (bold) codePy = codePy.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" class="code-py" style="font-size:100%">$1</b>`);
 	return `
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example${title && ' - ' + title}</h3>
-			<div id="examp${id}" style="font-size:70%">
-				${code}
+			<div id="examp${id}" class="code-js" style="font-size:70%">
+				${codeJs}
+			</div>
+			<div id="examp${id}" class="code-py" style="font-size:70%">
+				${codePy}
 			</div>
 			<div name="divCopy" align="right">
-			${bold ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip${id} )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
-			` : ''}<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp${id} )">Copy All</a>
-			${run ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp${id} )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
+			${bold ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip${id}' )">&#160;&#160;&#160;&#160;Copy&#160;&#160;&#160;&#160;</a>
+			` : ''}<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp${id}' )">Copy All</a>
+			${run ? `<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp${id}' )">&#160;&#160;&#160;&#160;&#160;&#160;Run&#160;&#160;&#160;&#160;&#160;&#160;</a>
 			` : ''}</div>
 		</div>\n\n\t\t`.replace(/%i/g, id).replace(/%t/g, title);
 }
@@ -1239,7 +1289,7 @@ ${getHead(title, 0)}
 	<div data-role="header" data-position="fixed">
 		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
 		<h1>${title}</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		${htmlToggles}
 	</div><!-- /header -->
 
 	${content}
@@ -1268,7 +1318,7 @@ ${getHead(title, 1)}
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>${title}</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		${htmlToggles}
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">

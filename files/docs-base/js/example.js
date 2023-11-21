@@ -6,7 +6,9 @@ function hidecopy() {
 	$("div[name=divCopy] > a:contains(Copy)").hide();
 }
 
-function copy(div) {
+function copy(id) {
+	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
+	var div = document.querySelector('#' + id + codeClass);
 	var txt = div.innerText || div.textContent;
 	txt = txt.replace(/\xa0/g, " ");
 	if (navigator.userAgent.indexOf("Android") > -1) //
@@ -18,8 +20,10 @@ function copy(div) {
 		copyToClipboard(txt);
 }
 
-function demo(div) {
+function demo(id) {
 	var fld = "/sdcard/DroidScript/~DocSamp/";
+	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
+	var div = document.querySelector('#' + id + codeClass);
 	if (isMobileIDE) {
 		if (!app.FolderExists(fld)) app.MakeFolder(fld);
 		app.WriteFile(fld + "~DocSamp.js", div.innerText || div.textContent);

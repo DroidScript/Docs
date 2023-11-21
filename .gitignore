@@ -9,6 +9,7 @@ node_modules/
 /out/
 /app/
 /version.txt
+samples*.txt
 
 # hidden files
 _*.htm

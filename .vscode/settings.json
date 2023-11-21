@@ -1,4 +1,5 @@
 {
+    "editor.formatOnSave": true,
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "livePreview.serverKeepAliveAfterEmbeddedPreviewClose": 1
 }
