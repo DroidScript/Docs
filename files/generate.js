@@ -799,14 +799,18 @@ function toHtmlSamp(name, jsSample, pySample) {
 	if (!pySample) { // test
 		pySample = { ...jsSample };
 		pySample.code = pySample.code
-			.replace(/\s*[{};] *(\n)?/g, '$1')
-			.replace(/function (\w+\([^\n]*\))/g, 'def $1:')
-			.replace(/\/\/([^\n]*)/g, '# $1:')
+			.replace(/\s*[{}] *(\n)?/g, '$1')
+			.replace(/\bfunction\b (\w+\([^\n]*\))/g, 'def $1: ')
+			.replace(/\/\/([^\n]*)/g, '# $1')
 			.replace(/\/\*(.*?)\*\//g, '"""$1"""')
 			.replace(/else\s+if\s*\(([^\n]*)\) */g, 'elif $1:')
-			.replace(/(if|for|while)\s*\(([^\n]*)\) */g, '$1 $2:')
-			.replace(/catch\s*\(([^\n]*)\) */g, 'except $1:')
-			.replace(/(else|try) */g, '$1:')
+			.replace(/\b(if|for|while)\b\s*\(([^())]*|[^()]*\([^()]*\)[^()]*) *\) *(;?)/g, '$1 $2: $3')
+			.replace(/\bcatch\b\s*\(([^\n]*)\) */g, 'except $1:')
+			.replace(/\b(else|try|do)\b */g, '$1: ')
+			.replace(/\b(var|let|const)\b (\w+)/g, '$2')
+			.replace(/:;\n/g, ': pass\n')
+			.replace(/; *(<\/b>|\n)/g, '$1')
+			.replace(/: +\n/g, ':\n')
 	}
 	if (!jsSample) Throw(Error(`Js sample '${name}' not found for '${curFunc}'.`));
 	if (!pySample) Throw(Error(`Py sample '${name}' not found for '${curFunc}'.`));
