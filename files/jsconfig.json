@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true
   },
-  "include": ["*.js", "*.d.ts"]
+  "include": ["*.js", "**/*.d.ts"]
 }

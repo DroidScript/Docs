@@ -3,6 +3,9 @@
     "repository": {},
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
+    "engines": {
+        "node": ">=8.3.0"
+    },
     "scripts": {
         "docs": "node generate.js -c",
         "docs-lazy": "node generate.js",
@@ -18,11 +21,15 @@
         "esprima-extract-comments": "^1.1.0",
         "express": "^4.17.2",
         "fs-extra": "^10.0.0",
+        "glob": "^10.3.10",
         "node-fetch": "^2.0",
         "prismjs": "^1.26.0",
         "rimraf": "^3.0.2"
     },
     "devDependencies": {
-        "@types/mark.js": "^8.11.8"
+        "@types/mark.js": "^8.11.8",
+        "eslint": "^8.54.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-security": "^1.7.1"
     }
 }

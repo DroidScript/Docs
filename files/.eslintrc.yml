@@ -1,0 +1,135 @@
+env: { commonjs: true, node: true, es6: true }
+#  plugins: [prettier]
+extends:
+  - eslint:recommended
+  - plugin:node/recommended
+  - plugin:security/recommended
+parserOptions: { ecmaVersion: 2022, project: "jsconfig.json" }
+rules:
+  # prettier/prettier:
+  #   [
+  #     error,
+  #     {
+  #       printWidth: 100,
+  #       tabWidth: 4,
+  #       singleQuote: true,
+  #       bracketSameLine: false,
+  #       arrowParens: avoid,
+  #     },
+  #   ]
+
+  no-unused-vars:
+    [
+      warn,
+      {
+        args: after-used,
+        argsIgnorePattern: ^_,
+        destructuredArrayIgnorePattern: ^_,
+      },
+    ]
+  no-undef: error
+  no-empty: [warn, { allowEmptyCatch: true }]
+  no-constant-binary-expression: error
+  no-constructor-return: error
+  no-unmodified-loop-condition: error
+  no-unused-private-class-members: warn
+  no-use-before-define: [error, nofunc]
+  require-atomic-updates: [warn, { allowProperties: true }]
+
+  block-scoped-var: error
+  camelcase: [warn, { allow: ["^[a-z]+_on|^g_"] }]
+  capitalized-comments: off
+  consistent-return: error
+  consistent-this: [error, self]
+  curly: [warn, multi-or-nest, consistent]
+  default-case-last: error
+  default-case: error
+  default-param-last: error
+  dot-notation: warn
+  eqeqeq: [warn, smart]
+  func-names: [warn, as-needed]
+  # max-depth: [error, 3]
+  # max-nested-callbacks: [error, 2]
+  # max-params: [warn, 3]
+  no-case-declarations: error
+  no-confusing-arrow: warn
+  no-div-regex: warn
+  no-else-return: warn
+  no-eq-null: warn
+  no-eval: error
+  no-extra-bind: error
+  no-extra-label: error
+  no-implicit-coercion: warn
+  no-implied-eval: error
+  no-invalid-this: error
+  no-label-var: error
+  no-lone-blocks: warn
+  no-lonely-if: warn
+  no-loop-func: error
+  no-new-wrappers: warn
+  no-shadow: warn
+  no-throw-literal: error
+  no-unneeded-ternary: warn
+  no-unused-expressions: [warn, { allowTernary: true }]
+  no-useless-call: error
+  no-useless-computed-key: warn
+  no-useless-concat: warn
+  no-useless-return: warn
+  object-shorthand: warn
+  operator-assignment: [warn, always]
+  prefer-const: error
+  prefer-rest-params: error
+  require-await: error
+  yoda: [warn, never, { exceptRange: true }]
+
+  array-bracket-spacing: [warn, never]
+  arrow-spacing: warn
+  block-spacing: warn
+  brace-style: [off, allman, { allowSingleLine: true }]
+  comma-spacing: warn
+  comma-style: warn
+  computed-property-spacing: warn
+  dot-location: [error, property]
+  eol-last: warn
+  func-call-spacing: warn
+  indent: [warn, 4, { SwitchCase: 1 }]
+  key-spacing: warn
+  keyword-spacing: warn
+  linebreak-style: [warn, unix]
+  new-parens: warn
+  no-multi-spaces: [warn, { ignoreEOLComments: true }]
+  no-multiple-empty-lines: warn
+  # no-tabs: off
+  no-irregular-whitespace: off
+  no-whitespace-before-property: warn
+  no-trailing-spaces: [warn, { skipBlankLines: true }]
+  object-curly-spacing: [warn, always]
+  quotes: [off, double, { avoidEscape: true }]
+  semi: [error, always]
+  semi-spacing: warn
+  space-before-blocks: warn
+  space-before-function-paren: [warn, { named: never }]
+  space-in-parens: warn
+  no-process-exit: off
+  
+  node/file-extension-in-import: warn
+  node/prefer-global/buffer: error
+  node/prefer-global/console: error
+  node/prefer-promises/fs: error
+  node/no-missing-require: [error, { allowModules: [electron] }]
+
+  security/detect-non-literal-fs-filename: off
+  security/detect-object-injection: off
+  security/detect-child-process: off
+  security/detect-unsafe-regex: off
+
+  # "@typescript-eslint/no-var-requires": off
+  # "@typescript-eslint/no-unused-vars": off
+  # "@typescript-eslint/ban-ts-comment": [warn, {ts-ignore: allow-with-description}]
+  # "@typescript-eslint/triple-slash-reference": [error, {path: always}]
+  # "@typescript-eslint/no-this-alias": off
+
+  # "@typescript-eslint/unbound-method": off
+  # "@typescript-eslint/no-unsafe-return": off
+  # "@typescript-eslint/no-unsafe-assignment": off
+  # "@typescript-eslint/no-unsafe-argument": off
