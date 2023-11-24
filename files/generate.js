@@ -102,8 +102,8 @@ function Generate(genPattern) {
     keys(conf.langs).filter(l => l.match(genPattern.lang) !== null).forEach(l => generateLang(l, state, genPattern));
 
     // update version number
-    var verDate = Date.now() / 864e5 | 0;
-    var verNum = ReadFile("../docs/version.txt", "0").split('.').map(Number);
+    const verDate = Date.now() / 864e5 | 0;
+    const verNum = ReadFile("../docs/version.txt", "0").split('.').map(Number);
     if (updateVer) verNum[1] = (verNum[1] | 0) + 1;
     verNum[0] %= 1000;
     app.WriteFile(outDir + "version.txt", verDate + verNum.join('.'));
@@ -234,7 +234,7 @@ function generateScope(name, state, genPattern) {
     // generate nav pages
     if ("navs".match(regGen)) {
         generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
-        var missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+        const missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
         if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
     }
 
@@ -295,7 +295,7 @@ function parseInput(state) {
         // add files from scope folder to be generated
         newScope = {}; base = null; navs = [];
 
-        for (var n of app.ListFolder(scopeDir + "desc")) {
+        for (let n of app.ListFolder(scopeDir + "desc")) {
             n = n.slice(0, n.lastIndexOf("."));
             navs.push(n.replace(/^\s+/, ""));
             // @ts-ignore
@@ -317,27 +317,26 @@ function parseInput(state) {
 function generateNavigators(scope, navs, name, state, pfx) {
     state.curDoc = getDstDir(D_VER, state, `${pfx || ''}${name.replace(/\s+/g, '')}.htm`);
     pfx = `${pfx || state.curScope}_`;
-    var nav = '', addcontent = '';
+    let nav = '', addcontent = '';
 
     // function list
     if (navs instanceof Array) {
-        for (var func of navs = navs.filter(nothidden)) {
+        for (const func of navs = navs.filter(nothidden)) {
             if (!func) { nav += "<li></li>"; }
-            else
-                if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
-                else if (!scope[func]) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
-                else {
-                    if (name !== 'All') scope[func].hasNav = true;
-                    nav += newNaviItem(
-                        state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
-                        func.replace(/^\d+\s*/, ''), getAddClass(scope[func], state));
-                }
+            else if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
+            else if (!scope[func]) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
+            else {
+                scope[func].hasNav ||= (name !== 'All');
+                nav += newNaviItem(
+                    state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
+                    func.replace(/^\d+\s*/, ''), getAddClass(scope[func], state));
+            }
         }
     }
     // name:target.htm or scope:categories association
     else if (navs instanceof Object) {
-        for (var cat of keys(navs).filter(nothidden)) {
-            var val = navs[cat];
+        for (const cat of keys(navs).filter(nothidden)) {
+            let val = navs[cat];
             if (cat === '_nofilter') continue;
             if (cat.startsWith("+html")) {
                 addcontent += val;
@@ -347,9 +346,9 @@ function generateNavigators(scope, navs, name, state, pfx) {
 
             // targtet file
             if (typeof val === "string") {
-                var m = val.match(state.curScope + "\\/(\\w+).htm(#(.*))?");
+                const m = val.match(state.curScope + "\\/(\\w+).htm(#(.*))?");
                 /** @type {DSFunction|string|undefined} */
-                var f, add = "";
+                let f, add = "";
                 if (val.startsWith("http")) add += ' onclick="return OpenUrl(this.href);"';
                 if (m && scope[m[1]]) f = m[3] ? (scope[m[1]].subf || {})[m[3]] : scope[m[1]];
                 if (f && typeof f !== "string") { add += getAddClass(f, state); f.hasNav = true; }
@@ -358,7 +357,7 @@ function generateNavigators(scope, navs, name, state, pfx) {
             else // new category
             {
                 nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat === "Premium" ? getAddClass({ desc: "<premium>" }, state) : undefined);
-                var tdoc = state.curDoc;
+                const tdoc = state.curDoc;
                 generateNavigators(scope, val, cat, state, pfx);
                 state.curDoc = tdoc;
             }
@@ -376,9 +375,9 @@ function generateNavigators(scope, navs, name, state, pfx) {
  */
 function generateDocs(inpt, state) {
     state.curDoc = getSrcDir(D_SCOPE, state);
-    var lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
+    const lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
 
-    for (var i = 0; i < lst.length; i++) {
+    for (let i = 0; i < lst.length; i++) {
         state.progress = Math.floor(100 * i / lst.length);
         app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
         //console.log('\n:'+i+':'+lst[i]+'\n');
@@ -395,41 +394,44 @@ function generateDocs(inpt, state) {
 function generateTips({ base, scope, state }) {
     state.curDoc = getSrcDir(D_VER, state, state.curScope + '-tips.json');
     /** @type {DSScopeRaw} */
-    var tsubf;
+    let tsubf;
     /** @type {Obj<Obj<string>>} */
-    var tips = { [state.curScope]: {} };
+    const tips = { [state.curScope]: {} };
 
-    for (var name of keys(scope).filter(nothidden)) {
+    for (const name of keys(scope).filter(nothidden)) {
         const s = scope[name];
-        if (s.shortDesc)
-            tips[state.curScope][name] = s.shortDesc;
-        else continue;
+        if (!s.shortDesc || !s.subf || !s.abbrev) continue;
+        tips[state.curScope][name] = s.shortDesc;
 
-        if (s.subf && s.abbrev) {
-            tsubf = s.subf;
-            /** @type {Obj<string>} */
-            var tctrl = {};
-            tips[s.abbrev] = tctrl;
+        tsubf = s.subf;
+        /** @type {Obj<string>} */
+        const tctrl = {};
+        tips[s.abbrev] = tctrl;
 
-            for (var j of keys(tsubf).filter(nothidden)) {
-                let t = tsubf[j];
-                if (typeof t === "string") {
-                    if (!t.startsWith('#')) Throw(Error(`md ref must have '#' prefix, got '${t}'`));
-                    if (/[a-z]/i.test(t[1])) t = t.slice(1);
-                    if (base && base[t]) {
-                        const b = base[t];
-                        if (b.shortDesc) tctrl[j] = b.shortDesc;
-                    }
-                    else { Throw(Error(`basefunc ${t} not found!`)); }
-                }
-                else if (t.shortDesc) { tctrl[j] = t.shortDesc; }
-            }
+        for (const j of keys(tsubf).filter(nothidden)) {
+            const t = unwrapBaseFunc(tsubf[j], 'md ref', base);
+            if (t.shortDesc) tctrl[j] = t.shortDesc;
         }
     }
 
     const stips = tos(tips);
     if (stips.lastIndexOf("}") !== 25)
         app.WriteFile(state.curDoc, stips);
+}
+
+/**
+ * @param {string | UndefinedPartial<DSMethod>} met
+ * @param {string} type
+ * @param {DSBase | null} base
+ */
+function unwrapBaseFunc(met, type, base) {
+    while (typeof met === "string") {
+        if (!met.startsWith('#')) Throw(Error(`${type} must have # prefix. got '${met}'`));
+        if (/[a-z]/i.test(met[1])) met = met.slice(1);
+        if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!"));
+        met = base[met];
+    }
+    return met;
 }
 
 /** @param {DSInput} _inpt */
@@ -445,7 +447,7 @@ function generateDoc(inpt, name, state) {
     state.curFunc = name;
 
     /** @type {DSFunction | string} */
-    var ps = inpt.scope[name];
+    let ps = inpt.scope[name];
     if (typeof ps === "string")
         inpt.scope[name] = ps = { name, desc: ps, noCon: true };
     else ps.name = ps.name || name;
@@ -454,13 +456,12 @@ function generateDoc(inpt, name, state) {
     state.curDoc = getDstDir(D_SCOPE, state, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
     resetGlobals();
 
-    var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
+    let data, funcLine = "", subfuncs = "", desc = ps.desc || "";
 
     // get description from external file
-    if (ps.desc && ps.desc.startsWith('#')) {
-        desc = ps.desc = ReadFile(getSrcDir(D_SCOPE, state, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
-        if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
-    }
+    desc = unwrapDesc(ps.desc, state);
+    if (ps.desc && !desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
+    ps.desc = desc;
 
     // get function specific data
     if (!ps.noCon) {
@@ -504,9 +505,9 @@ function generateDoc(inpt, name, state) {
 /*----------------------------------------------------------------------------*/
 
 /** @type {Obj<string>} */
-var popDefs;
+let popDefs;
 /** @type {Obj<number>} */
-var spop;
+let spop;
 
 // reset globals
 function resetGlobals() {
@@ -521,8 +522,8 @@ function resetGlobals() {
  * @param {GenState} state
  */
 function adjustDoc(html, name, state) {
-    var order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
-    var popList = keys(popDefs)
+    const order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
+    const popList = keys(popDefs)
         .map((d) => newDefPopup(popDefs[d], d))
         .sort(function sortPops(a, b) {
             a = a.slice(31, 38); b = b.slice(31, 38);
@@ -533,7 +534,7 @@ function adjustDoc(html, name, state) {
             return order.indexOf(a.slice(0, 3)) < order.indexOf(b.slice(0, 3)) ? -1 : 1;
         }).join("\n\t").replace(/\$n\$/g, '\\n');
 
-    var toc = [];
+    const toc = [];
     html.replace(/\n\t\t<h(\d)>(.*)<\/h\1>/g, function makeToc(m, /** @type {number} */ i, /** @type {string} */ t) {
         if (!name.endsWith(t) && i < 4) {
             toc.push(
@@ -584,7 +585,7 @@ function adjustDoc(html, name, state) {
             if (w1) w1 = m.slice(0, m.indexOf(`<${langId}`));
             if (Prism.languages[langId]) {
                 /** @type {string[]} */
-                var tags = [];
+                const tags = [];
                 code = code
                     .replace(/<br>/g, "")
                     .replace(/&#160;/g, "§s§")
@@ -707,8 +708,8 @@ function fillMissingFuncProps(f) {
 function getDocData(inpt, f, useAppPop = false) {
     const { base, state } = inpt;
     /** @type {string[]} */
-    var mArgs = [];
-    var i, fretval = "";
+    const mArgs = [];
+    let i, fretval = "";
 
     // abbrev for controls
     if (f.name && isControl(inpt.scope, f.name) && !f.abbrev)
@@ -737,21 +738,16 @@ function getDocData(inpt, f, useAppPop = false) {
     if (!f.subf || !keys(f.subf).length)
         return { args: smArgs, ret: fretval, mets: "" };
 
-    var k, methods = "",
-        // function list
-        mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
+    let k, methods = "";
+    // function list
+    const mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
     if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + f.name + " generate subfunctions");
     for (k = 0; k < mkeys.length; k++) {
-        var met = f.subf[mkeys[k]], retval = "";
+        let met = f.subf[mkeys[k]], retval = "";
 
         // load base func
-        while (typeof met === "string") {
-            if (!met.startsWith('#')) Throw(Error(`basefunc must have # prefix. got '${met}'`));
-            if (/[a-z]/i.test(met[1])) met = met.slice(1);
-            if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!"));
-            met = base[met];
-        }
+        met = unwrapBaseFunc(met, "basefunc", base);
 
         state.curSubf = met.name = met.name || mkeys[k];
         // force use of entry name
@@ -777,10 +773,11 @@ function getDocData(inpt, f, useAppPop = false) {
             retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, m.retval);
 
         //convert function types
-        var mdesc = m.desc || "";
+        let mdesc = m.desc || "";
         if (!m.isval) mdesc = `<b>${f.abbrev}.${state.curSubf}</b><br>` + mdesc;
 
-        var args = [], metpop = newPopup("dsc", state.curSubf,
+        const args = [];
+        let metpop = newPopup("dsc", state.curSubf,
             addMarkdown(replaceTypes(inpt, replW(mdesc), true)),
             getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) ? ' class="baseFunc"' : ""));
 
@@ -809,8 +806,8 @@ function getDocData(inpt, f, useAppPop = false) {
  */
 function getSamples({ scope, state }, func, ext = "") {
     /** @type {Obj<Sample>} */
-    var samples = {};
-    var index = 0;
+    const samples = {};
+    let index = 0;
 
     const source = ReadFile(getSrcDir(D_SCOPE, state, `samples/${func}${ext}.txt`), " ", !scope[func].isval).replace(/\r/g, '');
     source.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
@@ -871,6 +868,14 @@ function toHtmlSamp(name, jsSample, pySample, state) {
     return htmlSample(name, String(jsSample.index), jsCode, pyCode, hasBold, run);
 }
 
+/**
+ * @param {string | undefined} desc
+ * @param {GenState} state
+ */
+function unwrapDesc(desc, state) {
+    if (!desc || !desc.startsWith('#')) return desc || '';
+    return ReadFile(getSrcDir(D_SCOPE, state, 'desc/' + desc.slice(1)), "").replace(/\r/g, '');
+}
 
 /**
  * @param {DSFunction} m
@@ -878,14 +883,12 @@ function toHtmlSamp(name, jsSample, pySample, state) {
  */
 function getAddClass(m, state) {
     if (!m || typeof m.desc !== "string") return '';
-    if (m.desc.startsWith('#')) {
-        m.desc = ReadFile(getSrcDir(D_SCOPE, state, 'desc/' + m.desc.slice(1)), "").replace(/\r/g, '');
-        if (!m.desc) return '';
-    }
+    const desc = unwrapDesc(m.desc, state);
+    if (!desc) return '';
 
-    if (has(m.desc, "<deprecated")) return ' class="deprHint"';
-    if (has(m.desc, "<xfeature")) return ' class="xfeatHint"';
-    if (has(m.desc, "<premium")) return ' class="premHint"';
+    if (has(desc, "<deprecated")) return ' class="deprHint"';
+    if (has(desc, "<xfeature")) return ' class="xfeatHint"';
+    if (has(desc, "<premium")) return ' class="premHint"';
     return '';
 }
 
@@ -905,15 +908,15 @@ function typeDesc(inpt, stypes) {
         )
     );
 
-    var last = "";
-    var s = types.map(
+    let last = "";
+    const s = types.map(
         (/** @type {any[]} */ type, _i) => ((last = "</b>", tName[type[0]]) ?
             "<b>" + tName[type[0]] + (tDesc[type[1]] ?
                 (last = "</i>", ":</b> <i>" + tDesc[type[1]]) : ""
             ) + (type[2] ? `:${last} ` : last) : "")
     );
 
-    var ss = types.map(
+    let ss = types.map(
         function formatTypePop(type, i) {
             if (s[i] && type.length === 3) {
                 //allow limited values for parameters
@@ -955,7 +958,7 @@ function toArgPop(inpt, name, stypes, doSwitch) {
     // function callbacks
     if (typeof stypes === "object") {
         if (stypes.pNames === undefined) stypes.pNames = [];
-        var s1 = newPopup("fnc", name,
+        let s1 = newPopup("fnc", name,
             ("<b>function</b>(\n\t\t" + stypes.pNames.map(
                 function makeFuncPop(n, i) {
                     if (Array.isArray(stypes) || !stypes.pTypes) return "";
@@ -972,7 +975,7 @@ function toArgPop(inpt, name, stypes, doSwitch) {
     }
 
     // multiple types
-    var types = stypes.split("||").map(
+    const types = stypes.split("||").map(
         (/** @type {string} */ type) => [type.slice(0, 3)]
             .concat(type
                 // custom type desc
@@ -987,8 +990,8 @@ function toArgPop(inpt, name, stypes, doSwitch) {
 
     // start of type desc string. (tips: [optional], [:] if followed by value)
     // <b>type[:]</b> [[<i>desc[:]</i>] values]
-    var last = "";
-    var s2 = types
+    let last = "";
+    const s2 = types
         .map((/** @type {any[]} */ type, _i) => "<b>" + tName[type[0]] +
             (last = "</b>", tDesc[type[1]] ?
                 (last = "</i>", ":</b> <i>" + tDesc[type[1]]) : ""
@@ -996,7 +999,7 @@ function toArgPop(inpt, name, stypes, doSwitch) {
         );
 
     // add formatted possible values
-    var str = types.map(function formatTypePop(type, i) {
+    const str = types.map(function formatTypePop(type, i) {
         if (type.length === 3) {
             switch (type[0]) {
                 case "num":
@@ -1024,16 +1027,16 @@ function toArgPop(inpt, name, stypes, doSwitch) {
     // build popup id, "std_type" for common or "type_index" for individual popups
     // save popup definition and return popup text (= link)
     if (types.length === 1) {
-        var type = types[0];
+        const type = types[0];
         if (type[1].endsWith("_tmp")) type[2] = "true";
-        var popId =
+        const popId =
             (type[1].match("_") || type[2] ? "" : "std_") +
             (!type[2] ? type[1].replace("?", "ukn") :
                 type[0] + "_" + incpop(type[0], 1)
             );
         if (popId.match(/[^_\w]/)) Throw(Error("invalid popup id " + popId));
 
-        var s3 = newPopup(popId, name, str[0].replace(/ShowPopup\('.*?'\)/g,
+        let s3 = newPopup(popId, name, str[0].replace(/ShowPopup\('.*?'\)/g,
             (/** @type {string} */ m) => m.replace(/“/g, "&ldquo;").replace(/”/g, "&rdquo;")), "");
         if (doSwitch) s3 = s3.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
         return s3;
@@ -1049,7 +1052,7 @@ function toArgAppPop(name, stypes) {
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
-    var types = stypes.split("||")
+    const types = stypes.split("||")
         .map((/** @type {string} */ type) => [type.slice(0, 3)]
             .concat(type.replace('-', '\x01')
                 .split('\x01'))
@@ -1094,13 +1097,13 @@ function replaceTypes(inpt, descStr, useAppPop) {
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
-    var tags = /** @type {string[]} */ ([]);
+    const tags = /** @type {string[]} */ ([]);
     if (useAppPop) descStr = descStr.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
     else descStr = descStr.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), `§t${tags.length - 1}§`));
 
     descStr = descStr.replace(/(\b([\w_.#-]+)|"([^"]*)"):([a-z]{3}(_[a-z]{3})?\b)?-?("(\\"|[^"])*|'(\\'|[^'])*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
         function formatDescType(m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type, _2, /** @type {string} */ desc) {
-            var r, space = '', tapop = false;
+            let r, space = '', tapop = false;
             if (!name) name = aname;
             if (!type && (!desc || desc[0] === ' ') || name.startsWith("Note")) return m;
 
@@ -1246,7 +1249,7 @@ function newPopup(type, name, desc, addClass) {
     if (addClass !== false) desc = desc.replace(/(“.*?”)/g, "<docstr>$1</docstr>");
 
     desc = desc.trim();
-    var popId = popDefs[desc];
+    let popId = popDefs[desc];
     if (!popId) {
         popId = spop[type] === undefined ? type : popId = type + "_" + incpop(type, 1);
         popDefs[desc] = popId;
@@ -1432,7 +1435,7 @@ function keys(o) { return Object.keys(o); }
 function sortAsc(a, b) {
     const sa = String(a).replace(/[^a-z0-9]/gi, "") || String(a);
     const sb = String(b).replace(/[^a-z0-9]/gi, "") || String(b);
-    var la = sa.toLowerCase(), lb = sb.toLowerCase();
+    const la = sa.toLowerCase(), lb = sb.toLowerCase();
     return la === lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
 }
 
@@ -1443,7 +1446,7 @@ function isControl(scope, name) { return Boolean(scope[name].subf); }
 
 /** @param {string} s */
 function getAbbrev(s) {
-    var count = 0;
+    let count = 0;
     // remove 'Create'
     return s.slice(6)
         // count uppercases
@@ -1498,7 +1501,7 @@ function tos(o, intd = "") {
     if (o === null || o === undefined) return "null";
     if (Array.isArray(o)) return "[" + o.map(e => tos(e, intd)).join(', ') + "]";
     if (typeof o === "object") {
-        var okeys = Object.keys(o).filter(k => o[k] !== undefined);
+        const okeys = Object.keys(o).filter(k => o[k] !== undefined);
         if (!okeys.length) return "{}";
         return "{\n" + okeys.map(k => intd + `\t"${k}": ${tos(o[k], intd + "\t")}`).join(",\n") + `\n${intd}}`;
     }
@@ -1511,7 +1514,7 @@ function tos(o, intd = "") {
  * @returns {number}
  */
 function newestFileDate(p, ...rest) {
-    var files;
+    let files;
     if (rest.length) files = [p, ...rest];
     else if (!p.endsWith('/') && app.FileExists(p)) return app.GetFileDate(p).getTime();
     else if (!app.FolderExists(p)) return 0;
@@ -1522,7 +1525,7 @@ function newestFileDate(p, ...rest) {
 // ---------------------------- nodejs app wrapper -----------------------------
 
 
-var help = `${process.argv.slice(0, 2).join(" ").replace(rootPath, "")} [OPTIONS] [PATTERNS]
+const help = `${process.argv.slice(0, 2).join(" ").replace(rootPath, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
     -v  --version=<PATTERN>	version filter pattern
     -c  --clear            	regenerate the docs completely
@@ -1582,62 +1585,61 @@ function getApp() {
 }
 
 function main() {
-    var nogen = false, startServer = false, clean = false, addcfg = false;
+    let nogen = false, startServer = false, clean = false, addcfg = false;
     /** @type {GenPattern} */
     const genPattern = { ver: "", lang: "", scope: "", func: "" };
 
-    for (var spat of process.argv.slice(2)) {
-        if (spat.startsWith("-")) {
-            const pat = spat.split("=");
-            switch (pat[0]) {
-                case "-n": case "--nogen": nogen = true; break;
-                case "-v": case "--version": genPattern.ver = pat[1]; break;
-                case "-V": case "--verbose": dbg = true; break;
-                case "-c": case "--clear": clear = true; break;
-                case "-C": case "--clean": clean = true; break;
-                case "-u": case "--update": updateVer = true; break;
-                case "-f": case "--force": force = true; break;
-                case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
-                case "-al": case "--addlang":
-                    if (pat.length !== 3) Throw(Error("missing option args. expected <code> <name>"));
-                    if (pat[1].length !== 2) Throw(Error("state.lang code must have 2 digits"));
-                    addcfg = true;
-                    //@ts-ignore
-                    conf.langs[pat[1]] = pat[2];
-                    break;
-                case "-as": case "--addscope":
-                    if (pat.length < 3) Throw(Error("missing option args. expected <code> <name>"));
-                    if (pat[1].length < 3) Throw(Error("scope code must have at least 3 digits"));
-                    addcfg = true;
-                    //@ts-ignore
-                    conf.scopes[pat[1]] = pat[2];
-                    break;
-                case "-av": case "--addversion":
-                    if (pat.length < 2) Throw(Error("missing option args. expected version"));
-                    // supports alpha, beta and patch versions, although noone might ever use those
-                    if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
-                    addcfg = true;
-                    if (!conf.vers.includes(pat[1]))
-                        conf.vers.unshift(pat[1]);
-                    conf.vers.sort().reverse();
-                    break;
-                case "-sv": case "--setversion":
-                    if (pat.length < 2) Throw(Error("missing option args. expected version"));
-                    // supports alpha, beta and patch versions, although noone might ever use those
-                    if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
-                    if (!conf.vers.includes(pat[1])) Throw(Error("unregistered version. add with --addversion=" + pat[1]));
-                    addcfg = true;
-                    conf.version = pat[1];
-                    break;
-                default: Throw(Error("Unknown option " + pat[0]));
-            }
-        }
-        else {
-            var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{2,})?(\.|$)(.*)?/);
+    for (const spat of process.argv.slice(2)) {
+        if (!spat.startsWith("-")) {
+            const p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{2,})?(\.|$)(.*)?/);
             if (!p) throw Error("invalid pattern " + spat);
             genPattern.lang = /** @type {LangKeys} */ (p[5] && p[1]);
             genPattern.scope = /** @type {ScopeKeys} */ (p[5] ? p[3] : p[1]);
             genPattern.func = p[5] || p[3];
+            continue;
+        }
+        const pat = spat.split("=");
+        switch (pat[0]) {
+            case "-n": case "--nogen": nogen = true; break;
+            case "-v": case "--version": genPattern.ver = pat[1]; break;
+            case "-V": case "--verbose": dbg = true; break;
+            case "-c": case "--clear": clear = true; break;
+            case "-C": case "--clean": clean = true; break;
+            case "-u": case "--update": updateVer = true; break;
+            case "-f": case "--force": force = true; break;
+            case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
+            case "-al": case "--addlang":
+                if (pat.length !== 3) Throw(Error("missing option args. expected <code> <name>"));
+                if (pat[1].length !== 2) Throw(Error("state.lang code must have 2 digits"));
+                addcfg = true;
+                //@ts-ignore
+                conf.langs[pat[1]] = pat[2];
+                break;
+            case "-as": case "--addscope":
+                if (pat.length < 3) Throw(Error("missing option args. expected <code> <name>"));
+                if (pat[1].length < 3) Throw(Error("scope code must have at least 3 digits"));
+                addcfg = true;
+                //@ts-ignore
+                conf.scopes[pat[1]] = pat[2];
+                break;
+            case "-av": case "--addversion":
+                if (pat.length < 2) Throw(Error("missing option args. expected version"));
+                // supports alpha, beta and patch versions, although noone might ever use those
+                if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
+                addcfg = true;
+                if (!conf.vers.includes(pat[1]))
+                    conf.vers.unshift(pat[1]);
+                conf.vers.sort().reverse();
+                break;
+            case "-sv": case "--setversion":
+                if (pat.length < 2) Throw(Error("missing option args. expected version"));
+                // supports alpha, beta and patch versions, although noone might ever use those
+                if (!/^v\d{3}([ab]\d(_p\d)?)?$/.test(pat[1])) Throw(Error("version must start with a v and 3 digits"));
+                if (!conf.vers.includes(pat[1])) Throw(Error("unregistered version. add with --addversion=" + pat[1]));
+                addcfg = true;
+                conf.version = pat[1];
+                break;
+            default: Throw(Error("Unknown option " + pat[0]));
         }
     }
 
@@ -1657,8 +1659,8 @@ function main() {
 
     if (!nogen) Generate(genPattern);
     if (startServer) {
-        var express = require('express');
-        var server = express();
+        const express = require('express');
+        const server = express();
         server.use("/", express.static("../out"));
         server.listen(8081);
         console.log("webserver started on http://localhost:8081");

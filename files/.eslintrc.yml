@@ -48,8 +48,8 @@ rules:
   dot-notation: warn
   eqeqeq: [warn, smart]
   func-names: [warn, as-needed]
-  # max-depth: [error, 3]
-  # max-nested-callbacks: [error, 2]
+  max-depth: [error, 3]
+  max-nested-callbacks: [error, 2]
   # max-params: [warn, 3]
   no-case-declarations: error
   no-confusing-arrow: warn
@@ -77,8 +77,8 @@ rules:
   no-useless-return: warn
   object-shorthand: warn
   operator-assignment: [warn, always]
-  prefer-const: error
-  prefer-rest-params: error
+  prefer-const: warn
+  prefer-rest-params: warn
   require-await: error
   yoda: [warn, never, { exceptRange: true }]
 
