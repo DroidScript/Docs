@@ -19,32 +19,24 @@ require('prismjs/components/prism-python.min.js');
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 const baseDir = "json/", outDir = "../out/";
-var lang = /** @type {LangKeys} */ ("");
-var curVer = "", curDoc = "", curFunc = "", curSubf = "";
-var patFunc = "", patScope = /**@type {ScopeKeys}*/("");
-var patVer = "", patLang = /** @type {LangKeys} */("");
-var warnEnbl = false, dbg = false, clear = false, force = false, updateVer = false;
-var regGen = RegExp(""), regHide = RegExp(""), progress = 0;
+/** @type {GenState} */
+const dfltState = { lang: "en", curVer: "", curDoc: "", curScope: "app", curFunc: "", curSubf: "", progress: 0 };
+const warnEnbl = false;
+let dbg = false, clear = false, force = false, updateVer = false;
+let regGen = RegExp(""), regHide = RegExp("");
 
 const app = getApp();
 const rootPath = __dirname + "/";
 // constructor name prefixes
-var regConPrefix = /^(Create|Open|Add)/i;
+const regConPrefix = /^(Create|Open|Add)/i;
 // html char placeholders
-var _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', verbar: '|', "#160": " ", nbsp: " ", ldquo: "“", rdquo: "”" };
+const _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', verbar: '|', "#160": " ", nbsp: " ", ldquo: "“", rdquo: "”" };
 
 // html templates
-var [subfBase, naviItem, switchPop, appPopup, codeBase,
+let [subfBase, naviItem, switchPop, appPopup, codeBase,
     txtPopup, defPopup, subfHead, htmlToggles] = "";
 /** @type {Obj<string>} */
-var hints = {};
-
-/** @type {DSBase|null} */ var base;
-/** @type {DSScope} */ var scope;
-/** @type {ScopeKeys} */ var curScope;
-/** @type {string[]} */ var allKeys = [];
-/** @type {Obj<string>} */ var tDesc;
-/** @type {Obj<string>} */ var tName;
+let hints = {};
 
 // eslint-disable-next-line no-undef
 if (typeof OnStart === 'undefined') OnStart = g_OnStart;
@@ -54,30 +46,35 @@ function g_OnStart() { }
 function absPth(p) { return path.resolve(rootPath, p); }
 
 const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
-/** @param {0|1|2|3} level */
-function getSrcDir(level, file = "") {
-    const dir = [lang, curVer, curScope];
+/**
+ * @param {0|1|2|3} level
+ * @param {GenState} state
+ */
+function getSrcDir(level, state, file = "") {
+    const dir = [state.lang, state.curVer, state.curScope];
     return baseDir + dir.slice(0, level).join('/') + '/' + file;
 }
 
-/** @param {0|1|2|3} level */
-function getDstDir(level, file = "") {
-    const dir = ['docs' + getl(), curVer, curScope];
+/**
+ * @param {0|1|2|3} level
+ * @param {GenState} state
+ */
+function getDstDir(level, state, file = "") {
+    const dir = ['docs' + getl(state.lang), state.curVer, state.curScope];
     return outDir + dir.slice(0, level).join('/') + '/' + file;
 }
 
-
-function Generate() {
+/** @param {GenPattern} genPattern */
+function Generate(genPattern) {
     regHide = RegExp(conf.regHide);
-    tDesc = conf.tdesc;
-    tName = conf.tname;
+    const state = dfltState;
 
-    if (patLang && !conf.langs[patLang])
-        Throw(Error(`language ${patLang} not specified in conf.json`));
-    if (patScope && !conf.scopes[patScope])
-        Throw(Error(`scope ${patScope} not specified in conf.json`));
+    if (genPattern.lang && !conf.langs[genPattern.lang])
+        Throw(Error(`language ${genPattern.lang} not specified in conf.json`));
+    if (genPattern.scope && !conf.scopes[genPattern.scope])
+        Throw(Error(`scope ${genPattern.scope} not specified in conf.json`));
 
-    const dstDir = getDstDir(D_BASE);
+    const dstDir = getDstDir(D_BASE, state);
     if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
     // language index page
@@ -95,14 +92,14 @@ function Generate() {
     const latest = {};
     const forwardjs = app.ReadFile('docs-base/js/forward.js');
     keys(conf.langs).map(l => {
-        lang = l;
-        const versions = app.ListFolder(getSrcDir(D_LANG)).sort();
-        latest[lang] = versions[versions.length - 1];
+        state.lang = l;
+        const versions = app.ListFolder(getSrcDir(D_LANG, state)).sort();
+        latest[state.lang] = versions[versions.length - 1];
     });
     app.WriteFile('docs-base/js/forward.js', forwardjs.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
 
     // generate all languages
-    keys(conf.langs).filter(l => l.match(patLang) !== null).forEach(l => generateLang(l));
+    keys(conf.langs).filter(l => l.match(genPattern.lang) !== null).forEach(l => generateLang(l, state, genPattern));
 
     // update version number
     var verDate = Date.now() / 864e5 | 0;
@@ -120,22 +117,24 @@ function Generate() {
     }
 }
 
-/** @param {LangKeys} l */
-function generateLang(l) {
-    lang = l;
-    const langDir = getSrcDir(D_LANG);
-    const dstDir = getDstDir(D_LANG);
+/**
+ * @param {LangKeys} l
+ * @param {GenState} state
+ * @param {GenPattern} genPattern
+*/
+function generateLang(l, state, genPattern) {
+    state.lang = l;
+    const langDir = getSrcDir(D_LANG, state);
+    const dstDir = getDstDir(D_LANG, state);
     let hadError = false;
-    scope = {};
-    base = {};
 
-    // clear lang folder
-    if (!app.FolderExists(langDir)) Throw(Error(`Language '${lang}' doesn't exist.`));
+    // clear state.lang folder
+    if (!app.FolderExists(langDir)) Throw(Error(`Language '${state.lang}' doesn't exist.`));
 
     try {
         // update base files
         if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
-        else console.log("overwriting " + lang);
+        else console.log("overwriting " + state.lang);
 
         app.CopyFolder("font-awesome", dstDir + "font-awesome");
         app.CopyFolder("app.js", dstDir + "app.js");
@@ -158,19 +157,23 @@ function generateLang(l) {
     // generate all versions
     const versions = app.ListFolder(langDir).sort().filter(v => !v.startsWith("."));
     // eslint-disable-next-line security/detect-non-literal-regexp
-    for (const v of versions) if (new RegExp(patVer || '.*').test(v)) generateVersion(v);
+    for (const v of versions) if (new RegExp(genPattern.ver || '.*').test(v)) generateVersion(v, state, genPattern);
     if (hadError) console.warn("Warning: Copy docs-base failed for docs-" + l + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
 
-/** @param {string} ver */
-function generateVersion(ver) {
-    curVer = ver;
-    const curDir = getDstDir(D_VER);
+/**
+ * @param {string} ver
+ * @param {GenState} state
+ * @param {GenPattern} genPattern
+ */
+function generateVersion(ver, state, genPattern) {
+    state.curVer = ver;
+    const curDir = getDstDir(D_VER, state);
     let hadError = false;
 
     try {
         if (clear && app.FolderExists(curDir)) {
-            console.log(`deleting ${lang}/${ver}`);
+            console.log(`deleting ${state.lang}/${ver}`);
             app.DeleteFolder(curDir);
         }
         app.CopyFolder("docs-base", curDir);
@@ -184,11 +187,11 @@ function generateVersion(ver) {
 
     // generate all scopes
     keys(conf.scopes)
-        .filter(s => s.match(patScope) !== null)
+        .filter(s => s.match(genPattern.scope) !== null)
         .forEach(scopeName => {
-            try { generateScope(scopeName); }
+            try { generateScope(scopeName, state, genPattern); }
             catch (e) {
-                console.error(/*\x1b[31m*/ `while generating ${curScope} ${curDoc || ''}: ${curSubf || ''}`);
+                console.error(/*\x1b[31m*/ `while generating ${state.curScope} ${state.curDoc || ''}: ${state.curSubf || ''}`);
                 Throw(e);
             }
         });
@@ -196,12 +199,16 @@ function generateVersion(ver) {
     if (hadError) console.warn("Warning: Copy docs-base failed for " + ver + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
 
-/** @param {ScopeKeys} name */
-function generateScope(name) {
-    curScope = name;
-    const scopeDir = getSrcDir(D_SCOPE);
-    const dstDir = getDstDir(D_SCOPE);
-    regGen = RegExp(patFunc || ".*");
+/**
+ * @param {ScopeKeys} name
+ * @param {GenState} state
+ * @param {GenPattern} genPattern
+ */
+function generateScope(name, state, genPattern) {
+    state.curScope = name;
+    const scopeDir = getSrcDir(D_SCOPE, state);
+    const dstDir = getDstDir(D_SCOPE, state);
+    regGen = RegExp(genPattern.func || ".*");
 
     if (!app.FolderExists(scopeDir) || !(app.FileExists(scopeDir + "obj.json") || app.FolderExists(scopeDir + "desc")))
         Throw(Error(`'${scopeDir}' doesn't exist.`));
@@ -210,14 +217,14 @@ function generateScope(name) {
 
     // check file dates for update
     if (!force && !clear && newestFileDate(dstDir) > newestFileDate(scopeDir, "generate.js"))
-        return console.log(`Skipped ${lang}.${curVer}.${name}.${patFunc || '*'}`);
+        return console.log(`Skipped ${state.lang}.${state.curVer}.${name}.${genPattern.func || '*'}`);
 
-    app.ShowProgressBar(`Generating ${lang}.${curVer}.${name}.${patFunc || '*'}`);
-    const inpt = parseInput();
+    app.ShowProgressBar(`Generating ${state.lang}.${state.curVer}.${name}.${genPattern.func || '*'}`);
+    const inpt = parseInput(state);
 
     // clear nav & scope folder for generating
     /* if (!clear) {
-        const verDir = getDstDir(D_VER);
+        const verDir = getDstDir(D_VER, state);
         if (!"navs".match(regGen)) app.DeleteFolder(dstDir);
         for (const f of app.ListFolder(verDir))
             f.startsWith(name + "_") && app.DeleteFile(verDir + f);
@@ -226,52 +233,56 @@ function generateScope(name) {
 
     // generate nav pages
     if ("navs".match(regGen)) {
-        generateNavigators(inpt.navs, conf.scopes[curScope] || curScope);
-        var missNavs = Object.entries(scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
-        if (base && missNavs.length > 0) console.log(`missing navigators in ${curScope}: ${missNavs.join(", ")}\n`);
+        generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
+        var missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+        if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
     }
 
     // generate doc pages
-    generateDocs(scope);
+    generateDocs(inpt, state);
     return app.HideProgressBar();
 }
 
-// read all input json files
-function parseInput() {
-/** @type {DSNavs} */ var navs;
-
-    var newScope = scope, newBase = base;
+/** read all input json files
+ * @param {GenState} state
+ * @returns {DSInput}
+ */
+function parseInput(state) {
+    /** @type {DSNavs} */ let navs;
+    /** @type {DSBase|null} */ let base = {}, newBase;
+    /** @type {DSScope} */ let scope = {}, newScope;
+    /** @type {string[]} */ let baseKeys = [];
 
     // read categories
-    const scopeDir = getSrcDir(D_SCOPE);
-    curDoc = scopeDir + "navs.json";
-    navs = JSON.parse(ReadFile(curDoc, "{}"));
+    const scopeDir = getSrcDir(D_SCOPE, state);
+    state.curDoc = scopeDir + "navs.json";
+    navs = JSON.parse(ReadFile(state.curDoc, "{}"));
 
     // read scope members
-    curDoc = scopeDir + "obj.json";
-    if (app.FileExists(curDoc)) {
-        newScope = JSON.parse(ReadFile(curDoc, "false"));
+    state.curDoc = scopeDir + "obj.json";
+    if (app.FileExists(state.curDoc)) {
+        newScope = JSON.parse(ReadFile(state.curDoc, "false"));
         scope = mergeObject(scope, newScope);
         if (!keys(navs).length) navs = keys(scope);
         // @ts-ignore
         else navs.All = keys(scope);
 
         // read base functions used in scope
-        curDoc = scopeDir + "base.json";
-        newBase = JSON.parse(ReadFile(curDoc, "false"));
+        state.curDoc = scopeDir + "base.json";
+        newBase = JSON.parse(ReadFile(state.curDoc, "false"));
         base = mergeObject(base, newBase);
         if (base) {
             // additionally, read /*#obj*/ marked functions from .js file if exists
-            if (!app.FileExists(scopeDir + curScope + ".js")) { allKeys = keys(base).map(k => base && base[k].name || k); }
+            if (!app.FileExists(scopeDir + state.curScope + ".js")) { baseKeys = keys(base).map(k => base && base[k].name || k); }
             else {
-                allKeys = app.ReadFile(scopeDir + curScope + ".js")
+                baseKeys = app.ReadFile(scopeDir + state.curScope + ".js")
                     .split("/*#obj*/ self.").slice(1)
                     .map((v) => v.slice(0, v.indexOf(" ")));
             }
 
             // additionally, read Obj.prototype functions from utils.js if exists
-            if (curScope === "app" && app.FileExists(scopeDir + "util.js")) {
-                allKeys.concat(app.ReadFile(scopeDir + "util.js")
+            if (state.curScope === "app" && app.FileExists(scopeDir + "util.js")) {
+                baseKeys.concat(app.ReadFile(scopeDir + "util.js")
                     .split("Obj.prototype.").slice(1)
                     .map((v) => v.slice(0, v.indexOf(" "))));
             }
@@ -293,17 +304,19 @@ function parseInput() {
         scope = mergeObject(scope, newScope);
     }
 
-    return { navs };
+    return { navs, scope, base, baseKeys, state };
 }
 
 /**
+ * @param {DSScope} scope
  * @param {DSNavs} navs
  * @param {string} name
+ * @param {GenState} state
  * @param {string} [pfx]
  */
-function generateNavigators(navs, name, pfx) {
-    curDoc = getDstDir(D_VER, `${pfx || ''}${name.replace(/\s+/g, '')}.htm`);
-    pfx = `${pfx || curScope}_`;
+function generateNavigators(scope, navs, name, state, pfx) {
+    state.curDoc = getDstDir(D_VER, state, `${pfx || ''}${name.replace(/\s+/g, '')}.htm`);
+    pfx = `${pfx || state.curScope}_`;
     var nav = '', addcontent = '';
 
     // function list
@@ -312,12 +325,12 @@ function generateNavigators(navs, name, pfx) {
             if (!func) { nav += "<li></li>"; }
             else
                 if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
-                else if (!scope[func]) { Throw(`nav to deleted method ${curScope}.${func}`); }
+                else if (!scope[func]) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
                 else {
                     if (name !== 'All') scope[func].hasNav = true;
                     nav += newNaviItem(
-                        curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
-                        func.replace(/^\d+\s*/, ''), getAddClass(scope[func]));
+                        state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
+                        func.replace(/^\d+\s*/, ''), getAddClass(scope[func], state));
                 }
         }
     }
@@ -330,63 +343,66 @@ function generateNavigators(navs, name, pfx) {
                 addcontent += val;
                 continue;
             }
-            if (!val) val = curScope + "/" + cat + ".htm";
+            if (!val) val = state.curScope + "/" + cat + ".htm";
 
             // targtet file
             if (typeof val === "string") {
-                var m = val.match(curScope + "\\/(\\w+).htm(#(.*))?");
+                var m = val.match(state.curScope + "\\/(\\w+).htm(#(.*))?");
                 /** @type {DSFunction|string|undefined} */
                 var f, add = "";
                 if (val.startsWith("http")) add += ' onclick="return OpenUrl(this.href);"';
                 if (m && scope[m[1]]) f = m[3] ? (scope[m[1]].subf || {})[m[3]] : scope[m[1]];
-                if (f && typeof f !== "string") { add += getAddClass(f); f.hasNav = true; }
+                if (f && typeof f !== "string") { add += getAddClass(f, state); f.hasNav = true; }
                 nav += newNaviItem(val, cat, add);
             }
             else // new category
             {
-                nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat === "Premium" ? getAddClass({ desc: "<premium>" }) : undefined);
-                var tdoc = curDoc;
-                generateNavigators(val, cat, pfx);
-                curDoc = tdoc;
+                nav += newNaviItem(`${pfx + cat.replace(/\s+/g, '')}.htm`, cat, cat === "Premium" ? getAddClass({ desc: "<premium>" }, state) : undefined);
+                var tdoc = state.curDoc;
+                generateNavigators(scope, val, cat, state, pfx);
+                state.curDoc = tdoc;
             }
         }
     }
     else { Throw(Error("Wrong catlist datatype: " + typeof navs)); }
 
     const nofilter = keys(navs).length < 15 || (navs instanceof Object && navs._nofilter);
-    app.WriteFile(curDoc, htmlNavi(name, addcontent, nav, !nofilter));
+    app.WriteFile(state.curDoc, htmlNavi(name, addcontent, nav, !nofilter));
 }
 
-/** @param {DSScope} scope */
-function generateDocs(scope) {
-    curDoc = getSrcDir(D_SCOPE);
-    var lst = keys(scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
+/**
+ * @param {DSInput} inpt
+ * @param {GenState} state
+ */
+function generateDocs(inpt, state) {
+    state.curDoc = getSrcDir(D_SCOPE, state);
+    var lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
 
     for (var i = 0; i < lst.length; i++) {
-        progress = Math.floor(100 * i / lst.length);
-        app.UpdateProgressBar(progress, curScope + '.' + lst[i]);
+        state.progress = Math.floor(100 * i / lst.length);
+        app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
         //console.log('\n:'+i+':'+lst[i]+'\n');
-        generateDoc(lst[i]);
+        generateDoc(inpt, lst[i], state);
     }
 
     if (!"tips".match(regGen)) return;
 
-    generateTips(scope);
-    generateTsx(scope);
+    generateTips(inpt);
+    generateTsx(inpt);
 }
 
-/** @param {DSScope} scope */
-function generateTips(scope) {
-    curDoc = getSrcDir(D_VER, curScope + '-tips.json');
+/** @param {DSInput} scope */
+function generateTips({ base, scope, state }) {
+    state.curDoc = getSrcDir(D_VER, state, state.curScope + '-tips.json');
     /** @type {DSScopeRaw} */
     var tsubf;
     /** @type {Obj<Obj<string>>} */
-    var tips = { [curScope]: {} };
+    var tips = { [state.curScope]: {} };
 
     for (var name of keys(scope).filter(nothidden)) {
         const s = scope[name];
         if (s.shortDesc)
-            tips[curScope][name] = s.shortDesc;
+            tips[state.curScope][name] = s.shortDesc;
         else continue;
 
         if (s.subf && s.abbrev) {
@@ -413,51 +429,53 @@ function generateTips(scope) {
 
     const stips = tos(tips);
     if (stips.lastIndexOf("}") !== 25)
-        app.WriteFile(curDoc, stips);
+        app.WriteFile(state.curDoc, stips);
 }
 
-/** @param {DSScope} _scope */
-function generateTsx(_scope) {
+/** @param {DSInput} _inpt */
+function generateTsx(_inpt) {
     // TODO
 }
 
 /** generates one document by function name
- * @param {string} name */
-function generateDoc(name) {
-    curFunc = name;
+ * @param {DSInput} inpt
+ * @param {string} name
+ * @param {GenState} state */
+function generateDoc(inpt, name, state) {
+    state.curFunc = name;
 
     /** @type {DSFunction | string} */
-    var ps = scope[name];
+    var ps = inpt.scope[name];
     if (typeof ps === "string")
-        scope[name] = ps = { name, desc: ps, noCon: true };
+        inpt.scope[name] = ps = { name, desc: ps, noCon: true };
     else ps.name = ps.name || name;
     if (!ps.name) return;
 
-    curDoc = getDstDir(D_SCOPE, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
+    state.curDoc = getDstDir(D_SCOPE, state, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
     resetGlobals();
 
     var data, funcLine = "", subfuncs = "", desc = ps.desc || "";
 
     // get description from external file
     if (ps.desc && ps.desc.startsWith('#')) {
-        desc = ps.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
+        desc = ps.desc = ReadFile(getSrcDir(D_SCOPE, state, 'desc/' + ps.desc.slice(1)), "").replace(/\r/g, '');
         if (!desc) Throw(Error(`description file ${ps.desc.slice(1)} linked but doesn't exist.`));
     }
 
     // get function specific data
     if (!ps.noCon) {
-        if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " get data");
+        if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " get data");
 
         const m = fillMissingFuncProps(ps);
-        data = getDocData(m);
+        data = getDocData(inpt, m);
         desc = m.desc;
 
         // function line with popups
         if (m.abbrev) funcLine = m.abbrev + " = ";
-        funcLine += `${curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
+        funcLine += `${state.curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
 
         // subfunctions of controls with popups
-        if (isControl(name) && data.mets) {
+        if (isControl(inpt.scope, name) && data.mets) {
             subfuncs = subfHead
                 .replace(/%t/g, name.replace(regConPrefix, ''))
                 .replace("%f", data.mets);
@@ -466,21 +484,21 @@ function generateDoc(name) {
     // if (!desc) console.log(m);
 
     // insert data to html base
-    if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " generate description");
-    const html = htmlDoc(name, formatDesc(desc, name, Boolean(data)), subfuncs, funcLine);
-    if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " adjusting");
-    const docHtml = adjustDoc(html, name);
-    app.WriteFile(curDoc, docHtml);
+    if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " generate description");
+    const html = htmlDoc(name, formatDesc(inpt, desc, name, Boolean(data)), subfuncs, funcLine);
+    if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " adjusting");
+    const docHtml = adjustDoc(html, name, state);
+    app.WriteFile(state.curDoc, docHtml);
 
     const indexText = docHtml
         .replace(/<div data-role="popup".*?<\/div>/g, "")
         .replace(/<[^>]+>/g, "")
         .replace(/(\s+|&[a-z]{2,6};)+/g, " ");
-    const verDir = getDstDir(D_VER);
-    fs.appendFileSync(absPth(verDir + "index.txt"), `${curDoc.replace(verDir, "").replace(/\\/g, '/')} := `);
+    const verDir = getDstDir(D_VER, state);
+    fs.appendFileSync(absPth(verDir + "index.txt"), `${state.curDoc.replace(verDir, "").replace(/\\/g, '/')} := `);
     fs.appendFileSync(absPth(verDir + "index.txt"), indexText.trim() + '\n');
 
-    if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " done");
+    if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " done");
 }
 
 /*----------------------------------------------------------------------------*/
@@ -500,8 +518,9 @@ function resetGlobals() {
 /**
  * @param {string} html
  * @param {string} name
+ * @param {GenState} state
  */
-function adjustDoc(html, name) {
+function adjustDoc(html, name, state) {
     var order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
     var popList = keys(popDefs)
         .map((d) => newDefPopup(popDefs[d], d))
@@ -606,20 +625,21 @@ function adjustDoc(html, name) {
         // remove trailing whitespace
         .replace(/[ \t]+\n/g, "\n");
 
-    if (dbg) app.UpdateProgressBar(progress, curScope + '.' + name + " write changes");
+    if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " write changes");
     return html;
 }
 
 /** returns an html formatted description of a function
+ * @param {DSInput} inpt
  * @param {string} desc
  * @param {any} name
  * @param {boolean} hasData
  */
-function formatDesc(desc, name, hasData) {
+function formatDesc(inpt, desc, name, hasData) {
     desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
-    const samplesJs = getSamples(name);
-    const samplesPy = getSamples(name, "-py");
+    const samplesJs = getSamples(inpt, name);
+    const samplesPy = getSamples(inpt, name, "-py");
     let sampcnt = keys(samplesJs).length;
     if (!has(desc, '.')) desc += '.';
 
@@ -632,7 +652,7 @@ function formatDesc(desc, name, hasData) {
             return `<sample ${title}>`;
         });
 
-    desc = `<p>${replaceTypes(addMarkdown(replW(desc)))} </p>`;
+    desc = `<p>${replaceTypes(inpt, addMarkdown(replW(desc)))} </p>`;
 
     if (hasData) {
         // replace %c with constructor if existent, otherwise insert after first dot
@@ -648,9 +668,9 @@ function formatDesc(desc, name, hasData) {
         .replace(/\s*<br>\s*/g, "<br>\n\t\t")
         // expandable samples (per <sample name> tag or add to desc)
         .replace(/<sample (.*?)>/g, (m, /** @type {string} */ t) =>
-            `</p>\n\t\t${toHtmlSamp(t, samplesJs[t], samplesPy[t]) + (delete samplesJs[t], '')}<p>`)
+            `</p>\n\t\t${toHtmlSamp(t, samplesJs[t], samplesPy[t], inpt.state) + (delete samplesJs[t], '')}<p>`)
         .replace(/(“.*?”)/g, "<docstr>$1</docstr>")
-        + keys(samplesJs).map(t => toHtmlSamp(t, samplesJs[t], samplesPy[t])).join("");
+        + keys(samplesJs).map(t => toHtmlSamp(t, samplesJs[t], samplesPy[t], inpt.state)).join("");
 }
 
 /**
@@ -682,14 +702,16 @@ function fillMissingFuncProps(f) {
 }
 
 /** converts a function object into an html snippets object
+ * @param {DSInput} inpt
  * @param {DSMethod} f */
-function getDocData(f, useAppPop = false) {
+function getDocData(inpt, f, useAppPop = false) {
+    const { base, state } = inpt;
     /** @type {string[]} */
     var mArgs = [];
     var i, fretval = "";
 
     // abbrev for controls
-    if (f.name && isControl(f.name) && !f.abbrev)
+    if (f.name && isControl(inpt.scope, f.name) && !f.abbrev)
         f.abbrev = getAbbrev(f.name);
 
     // convert constructor line
@@ -701,7 +723,7 @@ function getDocData(f, useAppPop = false) {
         }
         else {
             const type = f.pTypes[i];
-            mArgs.push(toArgPop(f.pNames[i], type));
+            mArgs.push(toArgPop(inpt, f.pNames[i], type));
         }
     }
 
@@ -709,7 +731,7 @@ function getDocData(f, useAppPop = false) {
 
     // convert return value
     if (f.retval)
-        fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(f.retval);
+        fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, f.retval);
 
     // return data if there are no subfunction
     if (!f.subf || !keys(f.subf).length)
@@ -719,7 +741,7 @@ function getDocData(f, useAppPop = false) {
         // function list
         mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
-    if (dbg) app.UpdateProgressBar(progress, curScope + '.' + f.name + " generate subfunctions");
+    if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + f.name + " generate subfunctions");
     for (k = 0; k < mkeys.length; k++) {
         var met = f.subf[mkeys[k]], retval = "";
 
@@ -731,7 +753,7 @@ function getDocData(f, useAppPop = false) {
             met = base[met];
         }
 
-        curSubf = met.name = met.name || mkeys[k];
+        state.curSubf = met.name = met.name || mkeys[k];
         // force use of entry name
         //if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 
@@ -746,50 +768,51 @@ function getDocData(f, useAppPop = false) {
             met.params = base[met.params].params || undefined;
         }
 
-        if (hidden(curSubf)) continue;
+        if (hidden(state.curSubf)) continue;
 
         const m = fillMissingFuncProps(met);
 
         //convert return value
         if (m.retval)
-            retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(m.retval);
+            retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, m.retval);
 
         //convert function types
         var mdesc = m.desc || "";
-        if (!m.isval) mdesc = `<b>${f.abbrev}.${curSubf}</b><br>` + mdesc;
+        if (!m.isval) mdesc = `<b>${f.abbrev}.${state.curSubf}</b><br>` + mdesc;
 
-        var args = [], metpop = newPopup("dsc", curSubf,
-            addMarkdown(replaceTypes(replW(mdesc), true)),
-            getAddClass(m) || (has(allKeys, curSubf) ? ' class="baseFunc"' : ""));
+        var args = [], metpop = newPopup("dsc", state.curSubf,
+            addMarkdown(replaceTypes(inpt, replW(mdesc), true)),
+            getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) ? ' class="baseFunc"' : ""));
 
         if (!m.isval) {
             for (i in m.pNames)
-                args.push(toArgPop(m.pNames[i], m.pTypes[i]));
+                args.push(toArgPop(inpt, m.pNames[i], m.pTypes[i]));
 
             metpop += args.length ? `(${args.join(",")} )` : "()";
 
-            if (has(curSubf, '.'))
-                metpop = curSubf.split(".").fill("  ").join("") + metpop.italics();
+            if (has(state.curSubf, '.'))
+                metpop = state.curSubf.split(".").fill("  ").join("") + metpop.italics();
 
             methods += subfBase.replace("%s", metpop + retval);
         }
         else { methods += subfBase.replace("\n\t\t", "").replace("%s", metpop.trim() + retval); }
     }
-    curSubf = "";
+    state.curSubf = "";
 
     return { args: String(mArgs) + " ", mets: methods, ret: fretval };
 }
 
 /** read and return html converted example snippets file
+ * @param {DSInput} inpt
  * @param {string} func
  * @param {string} ext
  */
-function getSamples(func, ext = "") {
+function getSamples({ scope, state }, func, ext = "") {
     /** @type {Obj<Sample>} */
     var samples = {};
     var index = 0;
 
-    const source = ReadFile(getSrcDir(D_SCOPE, `samples/${func}${ext}.txt`), " ", !scope[func].isval).replace(/\r/g, '');
+    const source = ReadFile(getSrcDir(D_SCOPE, state, `samples/${func}${ext}.txt`), " ", !scope[func].isval).replace(/\r/g, '');
     source.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
         (m, py, name, opt, _1, code) => {
             index++;
@@ -816,8 +839,9 @@ function formatCode(code, langId = "js") {
  * @param {string} name
  * @param {Sample} jsSample
  * @param {Sample} pySample
+ * @param {GenState} state
  */
-function toHtmlSamp(name, jsSample, pySample) {
+function toHtmlSamp(name, jsSample, pySample, state) {
     if (!pySample) { // test
         pySample = { ...jsSample };
         pySample.code = pySample.code
@@ -834,25 +858,28 @@ function toHtmlSamp(name, jsSample, pySample) {
             .replace(/; *(<\/b>|\n)/g, '$1')
             .replace(/: +\n/g, ':\n');
     }
-    if (!jsSample) Throw(Error(`Js sample '${name}' not found for '${curFunc}'.`));
-    if (!pySample) Throw(Error(`Py sample '${name}' not found for '${curFunc}'.`));
+    if (!jsSample) Throw(Error(`Js sample '${name}' not found for '${state.curFunc}'.`));
+    if (!pySample) Throw(Error(`Py sample '${name}' not found for '${state.curFunc}'.`));
 
     const jsCode = formatCode(jsSample.code);
     const pyCode = formatCode(pySample.code, "python");
 
     const run = !has(jsSample.opt, "norun");
     const hasBold = has(jsSample.code, "<b>") && jsSample.code.indexOf("</b>") > jsSample.code.indexOf("<b>");
-    if (!hasBold) Warn(`${curDoc} sample "${name || ''}" has no bold area\n`);
+    if (!hasBold) Warn(`${state.curDoc} sample "${name || ''}" has no bold area\n`);
 
     return htmlSample(name, String(jsSample.index), jsCode, pyCode, hasBold, run);
 }
 
 
-/** @param {DSFunction} m */
-function getAddClass(m) {
+/**
+ * @param {DSFunction} m
+ * @param {GenState} state
+ */
+function getAddClass(m, state) {
     if (!m || typeof m.desc !== "string") return '';
     if (m.desc.startsWith('#')) {
-        m.desc = ReadFile(getSrcDir(D_SCOPE, 'desc/' + m.desc.slice(1)), "").replace(/\r/g, '');
+        m.desc = ReadFile(getSrcDir(D_SCOPE, state, 'desc/' + m.desc.slice(1)), "").replace(/\r/g, '');
         if (!m.desc) return '';
     }
 
@@ -863,8 +890,11 @@ function getAddClass(m) {
 }
 
 /** returns a formatted description of a type - used for subfunction return values
+ * @param {DSInput} inpt
  * @param {string} stypes */
-function typeDesc(stypes) {
+function typeDesc(inpt, stypes) {
+    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+    const { tname: tName, tdesc: tDesc } = conf;
     const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
         .concat(type
             // custom type desc
@@ -892,13 +922,13 @@ function typeDesc(stypes) {
                     case "str": return s[i] + rplop(type[2], true);
                     case "lst":
                     case "obj":
-                    case "jso": return s[i] + replaceTypes(type[2], false);
+                    case "jso": return s[i] + replaceTypes(inpt, type[2], false);
                     default:
                         if (!type[0].endsWith("o"))
                             Throw(Error("unknown typex " + type[1]));
-                        if (curDoc.endsWith(type[2] + ".htm"))
+                        if (inpt.state.curDoc.endsWith(type[2] + ".htm"))
                             return s[i] + type[2];
-                        if (!type[2].startsWith("@") && !scope[type[2]])
+                        if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                             Throw(Error("link required for " + type[2]));
                         return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
                             type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
@@ -912,12 +942,15 @@ function typeDesc(stypes) {
 }
 
 /** nearly equal to typeDesc, but returns an app.popup for arguments
+ * @param {DSInput} inpt
  * @param {string} name
  * @param {DSFunction | string} stypes
  * @param {boolean} [doSwitch]
  */
-function toArgPop(name, stypes, doSwitch) {
+function toArgPop(inpt, name, stypes, doSwitch) {
     if (Array.isArray(stypes)) return "";
+    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+    const { tname: tName, tdesc: tDesc } = conf;
 
     // function callbacks
     if (typeof stypes === "object") {
@@ -929,7 +962,7 @@ function toArgPop(name, stypes, doSwitch) {
                     const val = stypes.pTypes[i];
                     if (typeof val === "object" || has("lst,obj", val.slice(0, 3)))
                         // for lists and objects in callback parameters switch popups
-                        return toArgPop(n, val, true);
+                        return toArgPop(inpt, n, val, true);
                     return toArgAppPop(n, val);
                 }
             ).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
@@ -970,16 +1003,16 @@ function toArgPop(name, stypes, doSwitch) {
                 case "str":
                 case "bin":
                     if (type.length === 3 && has(type[2], ':'))
-                        type[2] = replaceTypes(type[2], true);
+                        type[2] = replaceTypes(inpt, type[2], true);
                     return s2[i] + rplop(type[2], type[0] === "str");
                 case "lst":
-                case "obj": return s2[i] + replaceTypes(replW(type[2]), true);
+                case "obj": return s2[i] + replaceTypes(inpt, replW(type[2]), true);
                 default:
                     if (!type[0].endsWith("o"))
                         Throw(Error("unknown typex " + type[1]));
-                    if (curDoc.endsWith(type[2] + ".htm"))
+                    if (inpt.state.curDoc.endsWith(type[2] + ".htm"))
                         return s2[i] + type[2];
-                    if (!type[2].startsWith("@") && !scope[type[2]])
+                    if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                         Throw(Error("link required for " + type[2]));
                     return s2[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
                         type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
@@ -1013,6 +1046,9 @@ function toArgPop(name, stypes, doSwitch) {
  * @param {string} stypes
  */
 function toArgAppPop(name, stypes) {
+    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+    const { tname: tName, tdesc: tDesc } = conf;
+
     var types = stypes.split("||")
         .map((/** @type {string} */ type) => [type.slice(0, 3)]
             .concat(type.replace('-', '\x01')
@@ -1050,10 +1086,14 @@ function incpop(type, i) {
 
 /** accept formats: "name":"desc" name:type name:"types" name:"type-values"
  * using name:'...' will force app popups
+ * @param {DSInput} inpt
  * @param {string} descStr
  * @param {boolean} [useAppPop]
  */
-function replaceTypes(descStr, useAppPop) {
+function replaceTypes(inpt, descStr, useAppPop) {
+    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+    const { tname: tName, tdesc: tDesc } = conf;
+
     var tags = /** @type {string[]} */ ([]);
     if (useAppPop) descStr = descStr.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');
     else descStr = descStr.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), `§t${tags.length - 1}§`));
@@ -1083,7 +1123,7 @@ function replaceTypes(descStr, useAppPop) {
                         (tDesc[type] ? ": " + tDesc[type] : "") : desc.replace(/\\n|\n/g, '$n$'));
                 }
             }
-            else if (type) { r = toArgPop(name, type.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
+            else if (type) { r = toArgPop(inpt, name, type.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
             else { r = newPopup("dsc", name, desc.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
 
             return r + space;
@@ -1369,8 +1409,8 @@ ${getHead(title, 1)}
 // ---------------------------- top globs --------------------------------------
 
 
-/** @param {string} [l] */
-function getl(l) { if (l === undefined) l = lang; return l === "en" ? "" : "-" + l; }
+/** @param {string} l */
+function getl(l) { return l === "en" ? "" : "-" + l; }
 /** @param {string} s */
 // function l(s) { console.log(`-----${s}-----`); return s; }
 /** @param {string} name */
@@ -1396,8 +1436,10 @@ function sortAsc(a, b) {
     return la === lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
 }
 
-/** @param {string} name */
-function isControl(name) { return Boolean(scope[name].subf); }
+/**
+ * @param {DSScope} scope
+ * @param {string} name */
+function isControl(scope, name) { return Boolean(scope[name].subf); }
 
 /** @param {string} s */
 function getAbbrev(s) {
@@ -1482,27 +1524,27 @@ function newestFileDate(p, ...rest) {
 
 var help = `${process.argv.slice(0, 2).join(" ").replace(rootPath, "")} [OPTIONS] [PATTERNS]
 OPTIONS:
-\t-v  --version=<PATTERN>\tversion filter pattern
-\t-c  --clear            \tregenerate the docs completely
-\t-u  --update           \tupdate the docs version number
-\t-f  --force            \tforce generation of otherwise skipped
-\t-C  --clean            \tdelete temp files (out/ files/json/*/)
-\t-al --addlang=<LANG-CODE>=<LANG-NAME>
-\t                       \tadds a language to conf.json
-\t-as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
-\t                       \tadds a scope to conf.json
-\t-av --addversion=<VERSION>
-\t                       \tadds a version number to conf.json
-\t-n  --nogen            \tdon't generate
-\t-s  --server           \tstart webserver after generating
-\t-V  --verbose          \tprint more debug logs
-\t-h  --help             \tthis help
+    -v  --version=<PATTERN>	version filter pattern
+    -c  --clear            	regenerate the docs completely
+    -u  --update           	update the docs version number
+    -f  --force             force generation of otherwise skipped
+    -C  --clean            	delete temp files (out/ files/json/*/)
+    -al --addlang=<LANG-CODE>=<LANG-NAME>
+                            adds a language to conf.json
+    -as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
+                            adds a scope to conf.json
+    -av --addversion=<VERSION>
+                            adds a version number to conf.json
+    -n  --nogen             don't generate
+    -s  --server            start webserver after generating
+    -V  --verbose           print more debug logs
+    -h  --help              this help
 
 PATTERN:
-\tgenerates a scope in each defined language:
-\t<SCOPE>[.<MEMBER-PATTERN>]
-\twith specified language:
-\t<LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
+    generates a scope in each defined language:
+    <SCOPE>[.<MEMBER-PATTERN>]
+    with specified language:
+    <LANG-CODE>[.<SCOPE>[.<MEMBER-PATTERN>]]
 
 MEMBER-PATTERN:
 \t                  \tRegEx pattern
@@ -1541,13 +1583,15 @@ function getApp() {
 
 function main() {
     var nogen = false, startServer = false, clean = false, addcfg = false;
+    /** @type {GenPattern} */
+    const genPattern = { ver: "", lang: "", scope: "", func: "" };
 
     for (var spat of process.argv.slice(2)) {
         if (spat.startsWith("-")) {
             const pat = spat.split("=");
             switch (pat[0]) {
                 case "-n": case "--nogen": nogen = true; break;
-                case "-v": case "--version": patVer = pat[1]; break;
+                case "-v": case "--version": genPattern.ver = pat[1]; break;
                 case "-V": case "--verbose": dbg = true; break;
                 case "-c": case "--clear": clear = true; break;
                 case "-C": case "--clean": clean = true; break;
@@ -1556,7 +1600,7 @@ function main() {
                 case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
                 case "-al": case "--addlang":
                     if (pat.length !== 3) Throw(Error("missing option args. expected <code> <name>"));
-                    if (pat[1].length !== 2) Throw(Error("lang code must have 2 digits"));
+                    if (pat[1].length !== 2) Throw(Error("state.lang code must have 2 digits"));
                     addcfg = true;
                     //@ts-ignore
                     conf.langs[pat[1]] = pat[2];
@@ -1591,9 +1635,9 @@ function main() {
         else {
             var p = spat.match(/(^[a-z]{2})?(\.|^|$)([a-zA-Z]{2,})?(\.|$)(.*)?/);
             if (!p) throw Error("invalid pattern " + spat);
-            patLang = /** @type {LangKeys} */ (p[5] && p[1]);
-            patScope = /** @type {ScopeKeys} */ (p[5] ? p[3] : p[1]);
-            patFunc = p[5] || p[3];
+            genPattern.lang = /** @type {LangKeys} */ (p[5] && p[1]);
+            genPattern.scope = /** @type {ScopeKeys} */ (p[5] ? p[3] : p[1]);
+            genPattern.func = p[5] || p[3];
         }
     }
 
@@ -1611,7 +1655,7 @@ function main() {
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
 
-    if (!nogen) Generate();
+    if (!nogen) Generate(genPattern);
     if (startServer) {
         var express = require('express');
         var server = express();
