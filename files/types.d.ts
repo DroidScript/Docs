@@ -66,7 +66,11 @@ declare global {
     type DSBase = Obj<DSFunction>;
     type DSNavs = (string[] | Obj<string | DSNavs>) & { _nofilter?: boolean }
     type DSInput = { base: DSBase | null, baseKeys: string[], scope: DSScope, navs: DSNavs, state: GenState };
-    type GenState = { lang: LangKeys, curVer: string, curDoc: string, curScope: ScopeKeys, curFunc: string, curSubf: string; progress: number; };
+    type GenState = {
+        lang: LangKeys, curVer: string, curDoc: string;
+        curScope: ScopeKeys, curFunc: string, curSubf: string;
+        progress: number; popDefs: Obj<string>, spop: Obj<number>;
+    };
     type GenPattern = {
         ver: string, lang: LangKeys | "", scope: ScopeKeys | "", func: string
     };

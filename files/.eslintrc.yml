@@ -4,7 +4,7 @@ extends:
   - eslint:recommended
   - plugin:node/recommended
   - plugin:security/recommended
-parserOptions: { ecmaVersion: 2022, project: "jsconfig.json" }
+parserOptions: { ecmaVersion: 2022, project: "files/jsconfig.json" }
 rules:
   # prettier/prettier:
   #   [

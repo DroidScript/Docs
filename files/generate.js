@@ -20,7 +20,11 @@ require('prismjs/components/prism-python.min.js');
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 const baseDir = "json/", outDir = "../out/";
 /** @type {GenState} */
-const dfltState = { lang: "en", curVer: "", curDoc: "", curScope: "app", curFunc: "", curSubf: "", progress: 0 };
+const dfltState = {
+    lang: "en", curVer: "", curDoc: "",
+    curScope: "app", curFunc: "", curSubf: "",
+    progress: 0, popDefs: {}, spop: {}
+};
 const warnEnbl = false;
 let dbg = false, clear = false, force = false, updateVer = false;
 let regGen = RegExp(""), regHide = RegExp("");
@@ -381,7 +385,7 @@ function generateDocs(inpt, state) {
         state.progress = Math.floor(100 * i / lst.length);
         app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
         //console.log('\n:'+i+':'+lst[i]+'\n');
-        generateDoc(inpt, lst[i], state);
+        generateDoc(state, inpt, lst[i]);
     }
 
     if (!"tips".match(regGen)) return;
@@ -440,10 +444,11 @@ function generateTsx(_inpt) {
 }
 
 /** generates one document by function name
+ * @param {GenState} state
  * @param {DSInput} inpt
  * @param {string} name
- * @param {GenState} state */
-function generateDoc(inpt, name, state) {
+ */
+function generateDoc(state, inpt, name) {
     state.curFunc = name;
 
     /** @type {DSFunction | string} */
@@ -454,7 +459,7 @@ function generateDoc(inpt, name, state) {
     if (!ps.name) return;
 
     state.curDoc = getDstDir(D_SCOPE, state, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
-    resetGlobals();
+    resetGlobals(state);
 
     let data, funcLine = "", subfuncs = "", desc = ps.desc || "";
 
@@ -486,9 +491,9 @@ function generateDoc(inpt, name, state) {
 
     // insert data to html base
     if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " generate description");
-    const html = htmlDoc(name, formatDesc(inpt, desc, name, Boolean(data)), subfuncs, funcLine);
+    const html = htmlDoc(name, formatDesc(inpt, state, desc, name, Boolean(data)), subfuncs, funcLine);
     if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " adjusting");
-    const docHtml = adjustDoc(html, name, state);
+    const docHtml = adjustDoc(state, html, name);
     app.WriteFile(state.curDoc, docHtml);
 
     const indexText = docHtml
@@ -504,27 +509,22 @@ function generateDoc(inpt, name, state) {
 
 /*----------------------------------------------------------------------------*/
 
-/** @type {Obj<string>} */
-let popDefs;
-/** @type {Obj<number>} */
-let spop;
-
-// reset globals
-function resetGlobals() {
-    popDefs = {};
-    spop = { fnc: 0, dsc: 0, mul: 0, std: 0, ukn: 0 };
-    keys(conf.tname).map(k => spop[k] = 0);
+/** @param {GenState} state reset globals */
+function resetGlobals(state) {
+    state.popDefs = {};
+    state.spop = { fnc: 0, dsc: 0, mul: 0, std: 0, ukn: 0 };
+    keys(conf.tname).map(k => state.spop[k] = 0);
 }
 
 /**
+ * @param {GenState} state
  * @param {string} html
  * @param {string} name
- * @param {GenState} state
  */
-function adjustDoc(html, name, state) {
+function adjustDoc(state, html, name) {
     const order = "std,num,str,mul,obj,dso,lst,fnc,dsc";
-    const popList = keys(popDefs)
-        .map((d) => newDefPopup(popDefs[d], d))
+    const popList = keys(state.popDefs)
+        .map((d) => newDefPopup(state.popDefs[d], d))
         .sort(function sortPops(a, b) {
             a = a.slice(31, 38); b = b.slice(31, 38);
             if (a.slice(0, 3) === b.slice(0, 3)) {
@@ -632,11 +632,12 @@ function adjustDoc(html, name, state) {
 
 /** returns an html formatted description of a function
  * @param {DSInput} inpt
+ * @param {GenState} state
  * @param {string} desc
  * @param {any} name
  * @param {boolean} hasData
  */
-function formatDesc(inpt, desc, name, hasData) {
+function formatDesc(inpt, state, desc, name, hasData) {
     desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
     const samplesJs = getSamples(inpt, name);
@@ -653,7 +654,7 @@ function formatDesc(inpt, desc, name, hasData) {
             return `<sample ${title}>`;
         });
 
-    desc = `<p>${replaceTypes(inpt, addMarkdown(replW(desc)))} </p>`;
+    desc = `<p>${replaceTypes(inpt, state, addMarkdown(replW(desc)))} </p>`;
 
     if (hasData) {
         // replace %c with constructor if existent, otherwise insert after first dot
@@ -724,7 +725,7 @@ function getDocData(inpt, f, useAppPop = false) {
         }
         else {
             const type = f.pTypes[i];
-            mArgs.push(toArgPop(inpt, f.pNames[i], type));
+            mArgs.push(toArgPop(inpt, state, f.pNames[i], type));
         }
     }
 
@@ -732,7 +733,7 @@ function getDocData(inpt, f, useAppPop = false) {
 
     // convert return value
     if (f.retval)
-        fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, f.retval);
+        fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, state, f.retval);
 
     // return data if there are no subfunction
     if (!f.subf || !keys(f.subf).length)
@@ -770,20 +771,20 @@ function getDocData(inpt, f, useAppPop = false) {
 
         //convert return value
         if (m.retval)
-            retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, m.retval);
+            retval = (!m.isval && m.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, state, m.retval);
 
         //convert function types
         let mdesc = m.desc || "";
         if (!m.isval) mdesc = `<b>${f.abbrev}.${state.curSubf}</b><br>` + mdesc;
 
         const args = [];
-        let metpop = newPopup("dsc", state.curSubf,
-            addMarkdown(replaceTypes(inpt, replW(mdesc), true)),
+        let metpop = newPopup(state, "dsc", state.curSubf,
+            addMarkdown(replaceTypes(inpt, state, replW(mdesc), true)),
             getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) ? ' class="baseFunc"' : ""));
 
         if (!m.isval) {
             for (i in m.pNames)
-                args.push(toArgPop(inpt, m.pNames[i], m.pTypes[i]));
+                args.push(toArgPop(inpt, state, m.pNames[i], m.pTypes[i]));
 
             metpop += args.length ? `(${args.join(",")} )` : "()";
 
@@ -893,9 +894,10 @@ function getAddClass(m, state) {
 }
 
 /** returns a formatted description of a type - used for subfunction return values
+ * @param {GenState} state
  * @param {DSInput} inpt
  * @param {string} stypes */
-function typeDesc(inpt, stypes) {
+function typeDesc(inpt, state, stypes) {
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
     const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
@@ -925,7 +927,7 @@ function typeDesc(inpt, stypes) {
                     case "str": return s[i] + rplop(type[2], true);
                     case "lst":
                     case "obj":
-                    case "jso": return s[i] + replaceTypes(inpt, type[2], false);
+                    case "jso": return s[i] + replaceTypes(inpt, state, type[2], false);
                     default:
                         if (!type[0].endsWith("o"))
                             Throw(Error("unknown typex " + type[1]));
@@ -946,11 +948,12 @@ function typeDesc(inpt, stypes) {
 
 /** nearly equal to typeDesc, but returns an app.popup for arguments
  * @param {DSInput} inpt
+ * @param {GenState} state
  * @param {string} name
  * @param {DSFunction | string} stypes
  * @param {boolean} [doSwitch]
  */
-function toArgPop(inpt, name, stypes, doSwitch) {
+function toArgPop(inpt, state, name, stypes, doSwitch) {
     if (Array.isArray(stypes)) return "";
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
@@ -958,14 +961,14 @@ function toArgPop(inpt, name, stypes, doSwitch) {
     // function callbacks
     if (typeof stypes === "object") {
         if (stypes.pNames === undefined) stypes.pNames = [];
-        let s1 = newPopup("fnc", name,
+        let s1 = newPopup(state, "fnc", name,
             ("<b>function</b>(\n\t\t" + stypes.pNames.map(
                 function makeFuncPop(n, i) {
                     if (Array.isArray(stypes) || !stypes.pTypes) return "";
                     const val = stypes.pTypes[i];
                     if (typeof val === "object" || has("lst,obj", val.slice(0, 3)))
                         // for lists and objects in callback parameters switch popups
-                        return toArgPop(inpt, n, val, true);
+                        return toArgPop(inpt, state, n, val, true);
                     return toArgAppPop(n, val);
                 }
             ).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
@@ -1006,10 +1009,10 @@ function toArgPop(inpt, name, stypes, doSwitch) {
                 case "str":
                 case "bin":
                     if (type.length === 3 && has(type[2], ':'))
-                        type[2] = replaceTypes(inpt, type[2], true);
+                        type[2] = replaceTypes(inpt, state, type[2], true);
                     return s2[i] + rplop(type[2], type[0] === "str");
                 case "lst":
-                case "obj": return s2[i] + replaceTypes(inpt, replW(type[2]), true);
+                case "obj": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
                 default:
                     if (!type[0].endsWith("o"))
                         Throw(Error("unknown typex " + type[1]));
@@ -1032,16 +1035,16 @@ function toArgPop(inpt, name, stypes, doSwitch) {
         const popId =
             (type[1].match("_") || type[2] ? "" : "std_") +
             (!type[2] ? type[1].replace("?", "ukn") :
-                type[0] + "_" + incpop(type[0], 1)
+                type[0] + "_" + incpop(state, type[0], 1)
             );
         if (popId.match(/[^_\w]/)) Throw(Error("invalid popup id " + popId));
 
-        let s3 = newPopup(popId, name, str[0].replace(/ShowPopup\('.*?'\)/g,
+        let s3 = newPopup(state, popId, name, str[0].replace(/ShowPopup\('.*?'\)/g,
             (/** @type {string} */ m) => m.replace(/“/g, "&ldquo;").replace(/”/g, "&rdquo;")), "");
         if (doSwitch) s3 = s3.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
         return s3;
     }
-    return newPopup("mul", name, str.join("<br>"));
+    return newPopup(state, "mul", name, str.join("<br>"));
 }
 
 /**
@@ -1079,21 +1082,23 @@ function replW(s, n = true) {
 }
 
 /** increase special popup counters and returns its id
+ * @param {GenState} state
  * @param {string} type
  * @param {number} i
  */
-function incpop(type, i) {
-    if (i) spop[type] += i;
-    return hex(spop[type] || 0);
+function incpop(state, type, i) {
+    if (i) state.spop[type] += i;
+    return hex(state.spop[type] || 0);
 }
 
 /** accept formats: "name":"desc" name:type name:"types" name:"type-values"
  * using name:'...' will force app popups
  * @param {DSInput} inpt
+ * @param {GenState} state
  * @param {string} descStr
  * @param {boolean} [useAppPop]
  */
-function replaceTypes(inpt, descStr, useAppPop) {
+function replaceTypes(inpt, state, descStr, useAppPop) {
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
@@ -1126,8 +1131,8 @@ function replaceTypes(inpt, descStr, useAppPop) {
                         (tDesc[type] ? ": " + tDesc[type] : "") : desc.replace(/\\n|\n/g, '$n$'));
                 }
             }
-            else if (type) { r = toArgPop(inpt, name, type.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
-            else { r = newPopup("dsc", name, desc.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
+            else if (type) { r = toArgPop(inpt, state, name, type.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
+            else { r = newPopup(state, "dsc", name, desc.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])); }
 
             return r + space;
         }
@@ -1240,19 +1245,20 @@ function newLink(target, text) { return `<a href="${target}" data-ajax="false">$
 function newCode(code) { return codeBase.replace("%s", code); }
 
 /**
+ * @param {GenState} state
  * @param {string} type
  * @param {string} name
  * @param {string} desc
  * @param {string | false} [addClass]
  */
-function newPopup(type, name, desc, addClass) {
+function newPopup(state, type, name, desc, addClass) {
     if (addClass !== false) desc = desc.replace(/(“.*?”)/g, "<docstr>$1</docstr>");
 
     desc = desc.trim();
-    let popId = popDefs[desc];
+    let popId = state.popDefs[desc];
     if (!popId) {
-        popId = spop[type] === undefined ? type : popId = type + "_" + incpop(type, 1);
-        popDefs[desc] = popId;
+        popId = state.spop[type] === undefined ? type : popId = type + "_" + incpop(state, type, 1);
+        state.popDefs[desc] = popId;
     }
 
     return newTxtPopup(popId, name, addClass);
