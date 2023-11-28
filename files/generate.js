@@ -290,7 +290,7 @@ function generateNavigators(navs, name, pfx) {
 				else {
 					if (name != 'All') scope[func].hasNav = true;
 					nav += newNaviItem(
-						curScope + `/${func.replace(/[\s\d]+/g, '')}.htm`,
+						curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
 						func.replace(/^\d+\s*/, ''), getAddClass(scope[func]));
 				}
 			}
@@ -406,7 +406,7 @@ function generateDoc(name) {
 	else ps.name = ps.name || name;
 	if (typeof ps == "string" || !ps.name) return;
 
-	curDoc = getDstDir(D_SCOPE, ps.name.replace(/[\s\d]+/g, '') + '.htm');
+	curDoc = getDstDir(D_SCOPE, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
 	resetGlobals();
 
 	var data, funcLine = "", subfuncs = "", desc = ps.desc || "";

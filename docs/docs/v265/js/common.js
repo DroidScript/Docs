@@ -219,7 +219,7 @@ function ShowPluginsPage() {
 		}
 		//If on PC.
 		else {
-			getplugins("getplugins", data =>
+			getIdeList("getplugins", data =>
 				addList('#divPlugs', data.plugins.split(","), getPath)
 			);
 		}
@@ -240,7 +240,7 @@ function ShowExtensionsPage() {
 		//If on PC.
 		else {
 			var getPath = name => "/Extensions/" + name + "/Docs.html";
-			getplugins("getextensions", data =>
+			getIdeList("getextensions", data =>
 				addList('#divExts', data.extensions.split(","), getPath)
 			);
 		}

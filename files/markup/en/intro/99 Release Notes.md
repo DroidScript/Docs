@@ -1,4 +1,34 @@
 <!-- /([^\\])([_*])/$1\\$2/ /:/&colon;/ -->
+### DS 2.65b1 (27-Nov 2023)
+- Added 'Bound' class, auto-binds methods of classes that extend it.
+- Fixed Notification 'No Permissions' issue for < API33.
+- Enabled docs to be updated via a plugin.
+- Fixed version code on AABs not matching version name.
+- Updated Docs, including new full text search facility and app types info.
+- Enabled Hybrid by default (not just in experiments mode).
+- Fixed app icons not showing up at startup on slow devices.
+- Added obj.Resize() to resize a control after device rotation (keeps original width/height ratios).
+- Added 'AutoSize' option to all layouts - Resizes itself and child controls after device rotation.
+- Fixed app.DisplayWidth() reporting wrong size with SoftNav and status bar visible.
+- Prevented webview 'UseBrowser' option taking affect during redirects.
+- Added web.SetUseBrowser( urlFilter ) method for fine control over urls that open a browser.
+- Docs are no longer chopped off at bottom on device IDE.
+- Removed full screen notification sample (now restricted on Android).
+- Enhanced app.Check/GetPermission() to support individual "android.permission.\*" strings.
+- Added app.GetShortcuts() method, returns list of shortcuts associated with current app.
+
+### DS 2.64b2 (28-Oct 2023)
+- Fixed missing callback on app.LoadScript() when using cfg.Node.
+- Added USB Drive SAF support + Updated 'Storage Access' sample.
+- Enabled editing of Python apps in Wifi IDE (but not creating).
+- Disabled AndroidTV mode in IDE (was not working properly).
+- *.Batch calls can now have the optional params left out.
+- app.Tween() is now available to cfg.Node apps.
+- Fixed 'IgnoreErrors' in WebViews for cfg.Node.
+- Added support for new notification permissions in Android 13.
+- Added new 'Notify' permission keyword.
+- Fixed shortcuts to Python apps.
+
 ### DS 2.64b1 (05-Oct 2023)
 - Added usb.GetDTR(), usb.GetRTS(), usb.GetCD() methods.
 - Changed to usb.IsConnected() method to actively check for device presence.
@@ -71,7 +101,7 @@
 - Enabled DS extensions to run server side node scripts (/Extensions/Test/Server/node\_Test.js)
 - Added 'DS\_DIR' environment variable for DS extensions to get full path to DS folder.
 - Added 'NoCors' option to webview (attempts to disable CORS and i-frame restrictions)
-- Fixed issue with css and json files with the same name as app being renamed to \_main\_*.
+- Fixed issue with css and json files with the same name as app being renamed to \_main\_\*.
 - Added 'ShowWhenLocked', 'TurnScreenOn' and 'KeepScreenOn' options to app.CreateOverlay method.
 
 ## DS 2.61 (23-Mar-2023)

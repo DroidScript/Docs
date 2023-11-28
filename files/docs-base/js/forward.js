@@ -1,8 +1,8 @@
 const versions = {"en":"v265"};
 (function Forward(move = true) {
     const oldHost = 'symdstools.github.io', newHost = 'droidscript.github.io';
-    move &&= sessionStorage.getItem("moveDocs") !== "false";
-    move &&= !location.search.includes('move=false');
+    move = move && sessionStorage.getItem("moveDocs") !== "false";
+    move = move && !location.search.includes('move=false');
     if (!move) sessionStorage.setItem("moveDocs", "false");
     if (move && location.host === oldHost) return moveSite();
 
