@@ -12,25 +12,33 @@ To clear stored data use **app.@../app/ClearData**.
 Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.
 To clear a saved value use the **app.@../app/ClearValue** method.
 <table>
-	<tr>
-		<th width="10%">Save</th>
-		<td width="15%">@../app/SaveBoolean</td>
-		<td width="15%">@../app/SaveNumber</td>
-		<td width="15%">@../app/SaveText</td>
-	</tr>
-	<tr>
-		<th>Load</th>
-		<td>@../app/LoadBoolean</td>
-		<td>@../app/LoadNumber</td>
-		<td>@../app/LoadText</td>
-	</tr>
-	<tr>
-		<th>Type</th>
-		<td>Boolean</td>
-		<td>Number</td>
-		<td>String</td>
-	</tr>
+  <tr>
+    <th>Type</th>
+    <th>Save</th>
+    <th>Load</th>
+  </tr>
+  <tr>
+    <td>Boolean</td>
+    <td width="10%">@../app/SaveBoolean</td>
+    <td>@../app/LoadBoolean</td>
+  </tr>
+  <tr>
+    <td>Number</td>
+    <td width="15%">@../app/SaveNumber</td>
+    <td>@../app/LoadNumber</td>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td width="15%">@../app/SaveText</td>
+    <td>@../app/LoadText</td>
+  </tr>
+  <tr>
+    <td>JSON (any)</td>
+    <td width="15%">@../app/SaveJson</td>
+    <td>@../app/LoadJson</td>
+  </tr>
 </table>
+
 
 If you have many properties to save you can use an object structure instead of saving each value on their own.
 Load settings: <js>var conf = JSON.parse( app.LoadText( "settings", "{}" ));</js>

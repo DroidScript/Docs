@@ -58,6 +58,9 @@
 		<p>The default constructor values are:<br>
 		<span style="display:inline-block;padding-left:1em;">
 			baudrate: 9600<br>
+			dataBits: 8<br>
+			stopBits: 1<br>
+			parity: 0<br>
 			To find out more about RTD and DTR or USB serial at all visit <a href="https://en.wikipedia.org/wiki/RS-232#Data_and_control_signals" onclick="return OpenUrl(this.href);">Wikipedia: RS-232</a><br>
 		</span><br>
 		<br>
@@ -152,7 +155,7 @@
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> <i>integer:</i> 5 or 6 or 7 or 8</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> <i>integer:</i> 1 or 2 or 15</div>
 	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> <i>integer:</i> <a href="" onclick="app.ShowPopup('none')">0</a> or <a href="" onclick="app.ShowPopup('odd')">1</a> or <a href="" onclick="app.ShowPopup('even')">2</a> or <a href="" onclick="app.ShowPopup('mark')">3</a> or <a href="" onclick="app.ShowPopup('space')">4</a></div>
-	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> pid</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> Product ID from Device Magager > Hardware IDs</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“US-ASCII”</docstr> or <docstr>“UTF16L/BE”</docstr></div>

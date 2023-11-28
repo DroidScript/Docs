@@ -57,24 +57,31 @@
 		<p>Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.<br>
 		To clear a saved value use the <b>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></b> method.</p>
         <table>
-            <tr>
-                <th width="10%">Save</th>
-                <td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
-                <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
-                <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
-            </tr>
-            <tr>
-                <th>Load</th>
-                <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
-                <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
-                <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>Boolean</td>
-                <td>Number</td>
-                <td>String</td>
-            </tr>
+          <tr>
+            <th>Type</th>
+            <th>Save</th>
+            <th>Load</th>
+          </tr>
+          <tr>
+            <td>Boolean</td>
+            <td width="10%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
+            <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
+          </tr>
+          <tr>
+            <td>Number</td>
+            <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
+            <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
+          </tr>
+          <tr>
+            <td>String</td>
+            <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
+            <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
+          </tr>
+          <tr>
+            <td>JSON (any)</td>
+            <td width="15%"><a href="../app/SaveJson.htm" data-ajax="false">SaveJson</a></td>
+            <td><a href="../app/LoadJson.htm" data-ajax="false">LoadJson</a></td>
+          </tr>
         </table>
 		<p>If you have many properties to save you can use an object structure instead of saving each value on their own.<br>
 		Load settings: <span class="samp samp-inline"><span class="token keyword">var</span> conf <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>

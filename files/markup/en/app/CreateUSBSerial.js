@@ -10,7 +10,7 @@
  * @param {num_int} dataBits 5|6|7|8
  * @param {num_int} stopBits 1|2|15
  * @param {num_int} parity 0:none|1:odd|2:even|3:mark|4:space
- * @param {num} device pid
+ * @param {num} device Product ID from Device Magager > Hardware IDs
  * @returns dso-USBSerial
 */
 
@@ -22,6 +22,9 @@ The USBSerial component can be used to communicate with other USB devices connec
 
 The default constructor values are:
 	baudrate: 9600
+	dataBits: 8
+	stopBits: 1
+	parity: 0
 	To find out more about RTD and DTR or USB serial at all visit [Wikipedia: RS-232](https://en.wikipedia.org/wiki/RS-232#Data\_and\_control\_signals)
 
 <red>Note: this application only works on devices that support OTG and allow access to external serial devices.</red>
