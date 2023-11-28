@@ -117,11 +117,11 @@ $(document).live('pageshow', function (event, ui) {
 
 		// sequential popups
 		var nextPop = null, updated = false;
-		$("a[data-rel=popup]").click(function () { nextPop = this; updated = 2; })
-		$(window).click(function () { updated--; $("div.ui-popup-active > div").popup("close"); })
-		$("div[data-role=popup]").on({
-			popupafterclose: function () { if (updated > 0) nextPop?.click(); }
-		}).click(function (e) { e.stopPropagation(); e.preventDefault(); });
+		$("a[data-rel=popup]").on("click", function () { nextPop = this; updated = 2; });
+		$(window).off("click").on("click", function () { updated--; $("div.ui-popup-active > div").popup("close"); });
+		$("div[data-role=popup]")
+			.on("click", function (e) { e.stopPropagation(); e.preventDefault(); })
+			.on("popupafterclose", function () { if (updated > 0) nextPop?.click(); });
 
 		//Ask parent for DS adddress
 		if (!isMobileIDE) {
