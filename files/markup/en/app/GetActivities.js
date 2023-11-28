@@ -1,24 +1,30 @@
-// ------------- HEADER SECTION -------------
+// ------------- HEADER SECTION ------------- 
 
 
 /** # GetActivities #
- * GetActivities returns a list of object of currently running activities.
- *
- * <deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.> \
- * See [Android Package Visibility](https://developer.android.com/training/package-visibility) for more information.
- *
- * See Also: @GetRunningApps, @GetRunningServices
- * $$ app.GetActivities() $$
+ * 
+ * $$ app.GetActivities() $$ 
  * @returns lst-[{ label:str&comma; packageName:str&comma; className:str }]
 */
 
+
+// ------------- LONG DESCRIPTION ------------- 
+
+/** @Description
+GetActivities returns a list of object of currently running activities.
+
+<deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.> \
+See [Android Package Visibility](https://developer.android.com/training/package-visibility) for more information.
+
+See Also: @GetRunningApps, @GetRunningServices
+ */
 
 
 
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Show Activities
 function OnStart()
@@ -42,4 +48,5 @@ function OnStart()
     app.HideProgress();
 }
  */
-
+    
+            

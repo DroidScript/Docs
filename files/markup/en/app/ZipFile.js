@@ -6,11 +6,11 @@
  * Compresses a local file to a zip file.
  * 
  * See Also: @ZipFolder
- * $$ app.ZipFile(source, destination) $$ 
+ * $$ app.ZipFile(source, destination, options) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
  * @param {str} options spk:Create SPK from File
- */
+*/
 
 
 

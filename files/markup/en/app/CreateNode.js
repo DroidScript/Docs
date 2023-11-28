@@ -30,171 +30,169 @@ For more details have a look at the Node docs in the @../Plugins page
  */
 
 
+
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** ### GetVersion ###
  * Returns the plugin version
  * $ node.GetVersion() $
+ * $$ node.GetVersion() $$
  * @returns num
  */
-
 
 
 /** ### Start ###
  * Start the main Node process
  * $ node.Start(args, paths) $
+ * $$ node.Start(args, paths) $$
  * @param {lst} args argument array
- * @param {lst} paths
+ * @param {lst} paths 
  */
-
 
 
 /** ### SetOnReady ###
  * %cb% the Node component is ready for use.
  * $ node.SetOnReady(cb) $
+ * $$ node.SetOnReady(cb) $$
  * @param {fnc_json} cb {}
  */
-
 
 
 /** ### SetOnDone ###
  * %cb% the node process has exited.
  * $ node.SetOnDone(cb) $
+ * $$ node.SetOnDone(cb) $$
  * @param {fnc_json} cb {}
  */
-
 
 
 /** ### SetOnOutput ###
  * %cb% the node process prints to stdout.
  * $ node.SetOnOutput(cb) $
+ * $$ node.SetOnOutput(cb) $$
  * @param {fnc_json} cb {"pNames":["stdout"],"pTypes":["str:newline delimeted"]}
  */
-
 
 
 /** ### SetOnError ###
  * %cb% the node process prints to stderr.
  * $ node.SetOnError(cb) $
+ * $$ node.SetOnError(cb) $$
  * @param {fnc_json} cb {"pNames":["msg"],"pTypes":["str:newline delimeted"]}
  */
-
 
 
 /** ### SetOnMessage ###
  * %cb% a system/pipe message was received from the node process.
  * $ node.SetOnMessage(cb) $
+ * $$ node.SetOnMessage(cb) $$
  * @param {fnc_json} cb {"pNames":["msg"],"pTypes":["str"]}
  */
-
-
 
 
 /** ### SetEnv ###
  * Set a process environment variable.
  * $ node.SetEnv(name, val) $
- * @param {str} name
- * @param {str} val
+ * $$ node.SetEnv(name, val) $$
+ * @param {str} name 
+ * @param {str} val 
  */
-
 
 
 /** ### GetEnv ###
  * Get a process environment variable.
  * $ node.GetEnv(name) $
- * @param {str} name
+ * $$ node.GetEnv(name) $$
+ * @param {str} name 
  * @returns str
  */
 
 
-
-/** ### _OpenMsgPipe ###
+/** ### OpenMsgPipe ###
  * Open a message pipe
  * $ node.OpenMsgPipe(isCmd) $
- * @param {bin} isCmd
+ * $$ node.OpenMsgPipe(isCmd) $$
+ * @param {bin} isCmd 
  */
 
 
-
-/** ### _CloseMsgPipe ###
+/** ### CloseMsgPipe ###
  * Close a message pipe
  * $ node.CloseMsgPipe(isCmd) $
- * @param {bin} isCmd
+ * $$ node.CloseMsgPipe(isCmd) $$
+ * @param {bin} isCmd 
  */
 
 
-
-/** ### _SendPipeMsg ###
+/** ### SendPipeMsg ###
  * Send a message over the message pipe
  * $ node.SendPipeMsg(msg, isCmd) $
- * @param {str} msg
- * @param {bin} isCmd
+ * $$ node.SendPipeMsg(msg, isCmd) $$
+ * @param {str} msg 
+ * @param {bin} isCmd 
  */
-
-
 
 
 /** ### SendMessage ###
  * Send a message to the running node process. Calls cb of parent.SetOnMessage
  * $ node.SendMessage(msg) $
- * @param {str} msg
+ * $$ node.SendMessage(msg) $$
+ * @param {str} msg 
  */
-
 
 
 /** ### IsReady ###
  * Returns if the Node component is ready for use
  * $ node.IsReady() $
+ * $$ node.IsReady() $$
  * @returns bin
  */
-
 
 
 /** ### IsDone ###
  * Returns if the node process exited
  * $ node.IsDone() $
+ * $$ node.IsDone() $$
  * @returns bin
  */
-
-
 
 
 /** ### Run ###
  * Run a NodeJS source file. Use id to run in a new context
  * $ node.Run(file, id, newPaths) $
- * @param {str_pth} file
- * @param {str:Context ID} id
- * @param {str_lst} newPaths
+ * $$ node.Run(file, id, newPaths) $$
+ * @param {str_pth} file 
+ * @param {str:Context ID} id 
+ * @param {str_lst} newPaths 
  */
-
 
 
 /** ### Execute ###
  * Execute a line of code in the node process.
  * $ node.Execute(js, id) $
- * @param {str_jsc} js
- * @param {str:Context ID} id
+ * $$ node.Execute(js, id) $$
+ * @param {str_jsc} js 
+ * @param {str:Context ID} id 
  */
-
 
 
 /** ### AddModule ###
  * Install a node module from npmjs.org
  * $ node.AddModule(name, dir) $
+ * $$ node.AddModule(name, dir) $$
  * @param {str} name name|name^ver
- * @param {str:optional target directory} dir
+ * @param {str:optional target directory} dir 
  */
-
-
 
 
 
 // ------------- SAMPLES ------------- 
 
+
+    
 /**
 @sample Basic
-
 var nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
 
 function OnStart()
@@ -217,5 +215,6 @@ function node_OnReady()
 {
     node.Run("node_script.js");
 }
-</sample>
-*/
+ */
+    
+            

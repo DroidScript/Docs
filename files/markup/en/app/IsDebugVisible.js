@@ -6,7 +6,7 @@
  * Returns if the debug view is currently visible to the user.
  * 
  * See Also: @Debug, @ShowDebug
- * $$ app.IsDebugVisible(show, options) $$ 
+ * $$ app.IsDebugVisible() $$ 
  * @returns bin
 */
 

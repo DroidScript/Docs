@@ -33,7 +33,7 @@ If you want to know when the download process has finished (or failed) you can d
  * Start downloading one or multiple files.
  * $$ dwn.Download(url, fldr, name, headers) $$
  * @param {str_url||lst} url [urls:str_url]
- * @param {str_pth-must not have a trailing slash} fldr 
+ * @param {str_pth} fldr must not have a trailing slash
  * @param {str} name 
  * @param {str} headers 
  */

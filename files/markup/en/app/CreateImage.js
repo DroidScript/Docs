@@ -585,59 +585,59 @@ function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-    // clock pointer
-    ptr = app.CreateImage( null, 0.1, 0.1, "fix,alias", 30, 30 );
-    ptr.SetTextSize( 4.3 );
+	// clock pointer
+	ptr = app.CreateImage( null, 0.1, 0.1, "fix,alias", 30, 30 );
+	ptr.SetTextSize( 4.3 );
 
-    // image aspect ratio for drawing square images
-    wh = ptr.GetAbsWidth() / ptr.GetAbsHeight();
+	// image aspect ratio for drawing square images
+	wh = ptr.GetAbsWidth() / ptr.GetAbsHeight();
 
-    // main canvas
+	// main canvas
 	img = app.CreateImage( null, 1, 1, "alias" );
-    img.SetPaintStyle( "line" );
+	img.SetPaintStyle( "line" );
 	img.SetAutoUpdate( false );
-    img.SetLineWidth( 15 );
+	img.SetLineWidth( 15 );
 	lay.AddChild( img );
 
 	app.AddLayout( lay );
 
-    app.SetDebug( "console" );
-    app.Animate( OnAnimate, 40 );
+	app.SetDebug( "console" );
+	app.Animate( OnAnimate, 40 );
 }
 
 function OnAnimate( time, dtime )
 {
-    time = Date.now();
+	time = Date.now();
 
-    // calculate pointer position from current time
-    var secs = time / 1000;
-    var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));
-    var px = 0.5 + 0.5 * Math.cos( angle );
-    var py = 0.5 + 0.5 * Math.sin( angle );
+	// calculate pointer position from current time
+	var secs = time / 1000;
+	var angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ));
+	var px = 0.5 + 0.5 * Math.cos( angle );
+	var py = 0.5 + 0.5 * Math.sin( angle );
 
-    // get current datetime
-    var hrs = Math.floor( secs / 3600 ) % 60;
-    var min = Math.floor( secs / 60 ) % 60;
-    var sec = Math.floor( secs ) % 60;
-    var time = min + ":" + sec;
+	// get current datetime
+	var hrs = Math.floor( secs / 3600 ) % 60;
+	var min = Math.floor( secs / 60 ) % 60;
+	var sec = Math.floor( secs ) % 60;
+	var time = min + ":" + sec;
 
-    // measure text dimensions for centering
-    var tsize = ptr.MeasureText( time );
-    var tx = (1 - tsize.width ) / 2;
-    var ty = (1 + tsize.height) / 2;
+	// measure text dimensions for centering
+	var tsize = ptr.MeasureText( time );
+	var tx = (1 - tsize.width ) / 2;
+	var ty = (1 + tsize.height) / 2;
 
-    // draw pointer and datetime text
-    ptr.Clear();
-    ptr.SetPaintColor( "red" );
-    ptr.DrawLine( .5, .5, px, py );
-    ptr.SetPaintColor( "white" );
-    ptr.DrawText( time, tx, ty );
+	// draw pointer and datetime text
+	ptr.Clear();
+	ptr.SetPaintColor( "red" );
+	ptr.DrawLine( .5, .5, px, py );
+	ptr.SetPaintColor( "white" );
+	ptr.DrawText( time, tx, ty );
 
-    // render
-    img.Clear();
-    img.DrawCircle( .5, .5, .48 );
-    img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh );
-    img.Update();
+	// render
+	img.Clear();
+	img.DrawCircle( .5, .5, .48 );
+	img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh );
+	img.Update();
 }
  */
     
@@ -650,7 +650,7 @@ function OnStart()
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
 	btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" );
-    btn.SetOnTouchUp( btn_OnTouch );
+	btn.SetOnTouchUp( btn_OnTouch );
 	lay.AddChild( btn );
 
 	app.AddLayout( lay );

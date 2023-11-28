@@ -7,7 +7,7 @@
  * 
  * See Also: @Debug, @IsDebugVisible
  * $$ app.ShowDebug(show, options) $$ 
- * @param {bin} show
+ * @param {bin} show 
  * @param {str} options dialog-Show the debug log as black overlay dialog|clear-Clear content before showing
 */
 
@@ -17,7 +17,7 @@
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Debug Overlay
 function OnStart()
@@ -34,8 +34,10 @@ function ShowDebug( show )
 {
     <b>app.ShowDebug( show );</b>
 }
-*/
-
+ */
+    
+            
+    
 /**
 @sample Debug Dialog
 function OnStart()
@@ -61,4 +63,6 @@ function OnBack()
 	    app.ShowDebug( false );
 	}
 }
-*/
+ */
+    
+            
