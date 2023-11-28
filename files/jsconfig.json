@@ -19,5 +19,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["*.js", "**/*.d.ts"]
+  "include": ["*.js", "**/*.d.ts"],
+  "exclude": ["markup/**/*"]
 }

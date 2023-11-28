@@ -5,6 +5,7 @@ extends:
   - plugin:node/recommended
   - plugin:security/recommended
 parserOptions: { ecmaVersion: 2022, project: "files/jsconfig.json" }
+exclude: [markup/**/*.js]
 rules:
   # prettier/prettier:
   #   [
