@@ -38,7 +38,7 @@ const _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', ver
 
 // html templates
 let [subfBase, naviItem, switchPop, appPopup, codeBase,
-    txtPopup, defPopup, subfHead, htmlToggles] = "";
+    txtPopup, defPopup, subfHead] = "";
 /** @type {Obj<string>} */
 let hints = {};
 
@@ -1302,11 +1302,6 @@ hints = {
     premium: "<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div>",
     xfeature: "<div class='xfeatHint'><strong>ATTENTION: This function is available in the DS X-Versions only as it doesn't meet the GooglePlay security requirements. APKs built with X-Versions are for private use only.</strong></div>",
 };
-htmlToggles = `<div class="ui-btn-right" style="font-size:50%">
-			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
-			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
-			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
-		</div>`;
 
 function htmlSample(title = "", id = "", codeJs = "", codePy = "", bold = false, run = false) {
     if (bold) codeJs = codeJs.replace(/§b§([^]+?)§b§/g, `<b id="snip${id}" class="code-js" style="font-size:100%">$1</b>`);
@@ -1613,7 +1608,9 @@ function main() {
             case "-C": case "--clean": clean = true; break;
             case "-u": case "--update": updateVer = true; break;
             case "-f": case "--force": force = true; break;
-            case "-h": case "--help": app.Alert(help); process.exit(0); case "-s": startServer = true; break;
+            case "-h": case "--help": app.Alert(help); process.exit(0);
+            // eslint-disable-next-line no-fallthrough
+            case "-s": startServer = true; break;
             case "-al": case "--addlang":
                 if (pat.length !== 3) Throw(Error("missing option args. expected <code> <name>"));
                 if (pat[1].length !== 2) Throw(Error("state.lang code must have 2 digits"));

@@ -5,7 +5,7 @@ extends:
   - plugin:node/recommended
   - plugin:security/recommended
 parserOptions: { ecmaVersion: 2022, project: "files/jsconfig.json" }
-exclude: [markup/**/*.js]
+ignorePatterns: markup/
 rules:
   # prettier/prettier:
   #   [
@@ -112,7 +112,7 @@ rules:
   space-before-function-paren: [warn, { named: never }]
   space-in-parens: warn
   no-process-exit: off
-  
+
   node/file-extension-in-import: warn
   node/prefer-global/buffer: error
   node/prefer-global/console: error
