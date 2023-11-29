@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>AddDrawer</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -50,7 +54,7 @@
 		See Also: <a href="OpenDrawer.htm" data-ajax="false">OpenDrawer</a>, <a href="CloseDrawer.htm" data-ajax="false">CloseDrawer</a>, <a href="RemoveDrawer.htm" data-ajax="false">RemoveDrawer</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - left</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -68,13 +72,32 @@
 				    txt2<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">40</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    layDrawer<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> txt2 <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">AddDrawer</span><span class="token punctuation">(</span> layDrawer<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">AddDrawer</span><span class="token punctuation">(</span> layDrawer<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    txt1 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">"&lt;-- swipe"</span> <span class="token punctuation">)</span><br>
+				    txt1<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">30</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt1 <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    layDrawer <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span> <span class="token punctuation">)</span><br>
+				    layDrawer<span class="token punctuation">.</span>SetBackground<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/BlueBack.jpg"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    txt2 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">"Hello"</span> <span class="token punctuation">)</span><br>
+				    txt2<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">40</span> <span class="token punctuation">)</span><br>
+				    layDrawer<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt2 <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>AddDrawer<span class="token punctuation">(</span> layDrawer<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span></b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addAccordion</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -256,7 +260,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Complete accordion implementation</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -303,16 +307,57 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen main layout.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>accords <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Accordion 1"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 2"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 3"</span> <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Adds an accordion to the main layout</span><br>
+				        this<span class="token punctuation">.</span>acc <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAccordion<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> this<span class="token punctuation">.</span>accords<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Secondary text to display</span><br>
+				        secTxt <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token string">"This is the secondary text 1"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"This is the secondary text 2"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"This is the secondary text 3"</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  sets the secondary text</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>setSecondaryText<span class="token punctuation">(</span> secTxt <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add ontouch event handler to the accordion</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add controls to the first accordion layout</span><br>
+				        this<span class="token punctuation">.</span>lay1 <span class="token operator">=</span> this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay1<span class="token punctuation">,</span> <span class="token string">"This is a text in the first layout."</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add controls to the second layout</span><br>
+				        this<span class="token punctuation">.</span>lay2 <span class="token operator">=</span> this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay2<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add controls to the third layout</span><br>
+				        this<span class="token punctuation">.</span>lay3 <span class="token operator">=</span> this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay3<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter some text"</span><br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span>index<span class="token punctuation">,</span> expand<span class="token punctuation">)</span><br>
+				        msg <span class="token operator">=</span> `$this<span class="token punctuation">.</span>accords<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token keyword">is</span> $expand ? <span class="token string">"open"</span> <span class="token punctuation">:</span> <span class="token string">"close"</span>`<br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> msg <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Items manipulation</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -362,16 +407,56 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">1</span><br>
+				        <br>
+				        <span class="token comment">#  Creates a fullscreen main layout.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				        <br>
+				        accords <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">"Accordion 1"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 2"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 3"</span> <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Adds an accordion to the main layout</span><br>
+				        this<span class="token punctuation">.</span>acc <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAccordion<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> accords<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>lay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>lay<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"evenly"</span><br>
+				        <br>
+				        <span class="token comment">#  add a button controls to add or remove accordion item</span><br>
+				        this<span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span> this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Append Item"</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>btn1_onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span> this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Add Item in index 1"</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>btn2_onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span> this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Remove Item"</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>  this<span class="token punctuation">.</span>btn3_onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    btn1_onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  add an item at the bottom of the accordion</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>addItem<span class="token punctuation">(</span> <span class="token string">"New Bottom Title"</span><span class="token punctuation">,</span> <span class="token string">"New secondary text"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    btn2_onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        title <span class="token operator">=</span> <span class="token string">"New Title "</span> <span class="token operator">+</span> this<span class="token punctuation">.</span>count<span class="token operator">+</span><span class="token operator">+</span><br>
+				        <span class="token comment">#  insert item in the second index</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>addItem<span class="token punctuation">(</span> title<span class="token punctuation">,</span> <span class="token string">"New secondary text"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    btn3_onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>removeItemByIndex<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Second item is removed"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Custom styles</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -405,9 +490,39 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen main layout.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Accordion 1"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 2"</span><span class="token punctuation">,</span> <span class="token string">"Accordion 3"</span><span class="token punctuation">]</span><br>
+				        texts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Description for item 1"</span><span class="token punctuation">,</span> <span class="token string">"Description for item 2"</span><span class="token punctuation">,</span> <span class="token string">"Description for item 3"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Adds an accordion to the main layout</span><br>
+				        this<span class="token punctuation">.</span>acc <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAccordion<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>setSecondaryText<span class="token punctuation">(</span> texts <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Sets the background color</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#b2dfdb"</span><br>
+				        <br>
+				        <span class="token comment">#  Sets the text-sizes</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>textSize1 <span class="token operator">=</span> <span class="token number">18</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>textSize2 <span class="token operator">=</span> <span class="token number">14</span><br>
+				        <br>
+				        <span class="token comment">#  Sets the text colors</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>textColor1 <span class="token operator">=</span> <span class="token string">"#00695c"</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>textColor2 <span class="token operator">=</span> <span class="token string">"#009688"</span><br>
+				        <br>
+				        <span class="token comment">#  Sets the corner radius</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">14</span><br>
+				        <br>
+				        <span class="token comment">#  Sets the expand icon</span><br>
+				        this<span class="token punctuation">.</span>acc<span class="token punctuation">.</span>expandIcon <span class="token operator">=</span> <span class="token string">"favorite"</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 

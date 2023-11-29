@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addTextField</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -300,7 +304,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Textfield variants</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -337,16 +341,47 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a default textfield control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>tfd1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd1<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter text"</span><br>
+				        <br>
+				        <span class="token comment">#  Handle textfield value changes</span><br>
+				        this<span class="token punctuation">.</span>tfd1<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a filled textfield control</span><br>
+				        this<span class="token punctuation">.</span>tfd2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Filled,Primary,Number"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd2<span class="token punctuation">.</span>label <span class="token operator">=</span>  <span class="token string">"Enter number"</span><br>
+				        this<span class="token punctuation">.</span>tfd2<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add an outlined textfield control</span><br>
+				        this<span class="token punctuation">.</span>tfd3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Email"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd3<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter email"</span><br>
+				        this<span class="token punctuation">.</span>tfd3<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>popup <span class="token operator">=</span> ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onChange<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>text <span class="token operator">=</span> value<br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Callbacks</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -394,16 +429,54 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a default textfield control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter text"</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the value changes</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler on submit event</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setOnEnter<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onEnter <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a button control to the main layout that will get the value</span><br>
+				        <span class="token comment">#  of the textfield when clicked</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Get value"</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>btn_onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Initialize a popup to display values</span><br>
+				        this<span class="token punctuation">.</span>popup <span class="token operator">=</span> ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onChange<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"Change : "</span> <span class="token operator">+</span> value<br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onEnter<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"Enter : "</span> <span class="token operator">+</span> value<br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    btn_onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"Value : "</span> <span class="token operator">+</span> this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>text<br>
+				        this<span class="token punctuation">.</span>popup<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Multiline textfield</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -422,16 +495,31 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a text control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is a multiline type of TextField input"</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>txt<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a Multiline textfield control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Multiline"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter description"</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setRows<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Advance textfield</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -488,9 +576,56 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,ScrollY,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Start and end adornment</span><br>
+				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span>  <span class="token string">"Click the eye icon to show password."</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Password"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter password"</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setStartAdornment<span class="token punctuation">(</span><span class="token string">"lock"</span><span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setEndAdornment<span class="token punctuation">(</span><span class="token string">"visibility_off"</span><span class="token punctuation">,</span> <span class="token string">"Icon,Touchable"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setEndAdornmentOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>togglePasswordVisibility <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Start Adornment text</span><br>
+				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span>  <span class="token string">"Start text adornment"</span><span class="token punctuation">,</span> <span class="token string">"Left,Overline"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Number"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd1<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter mass"</span> <br>
+				        this<span class="token punctuation">.</span>tfd1<span class="token punctuation">.</span>setStartAdornment<span class="token punctuation">(</span><span class="token string">"KG"</span><span class="token punctuation">,</span> <span class="token string">"Text"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Start Adornment icon</span><br>
+				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span>  <span class="token string">"Start icon adornment"</span><span class="token punctuation">,</span> <span class="token string">"Left,Overline"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd2<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter username"</span><br>
+				        this<span class="token punctuation">.</span>tfd2<span class="token punctuation">.</span>setStartAdornment<span class="token punctuation">(</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  End Adornment text</span><br>
+				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span>  <span class="token string">"End text adornment"</span><span class="token punctuation">,</span> <span class="token string">"Left,Overline"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Number"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd3<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter amount"</span><br>
+				        this<span class="token punctuation">.</span>tfd3<span class="token punctuation">.</span>setEndAdornment<span class="token punctuation">(</span><span class="token string">"$"</span><span class="token punctuation">,</span> <span class="token string">"Text"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  End Adornment icon</span><br>
+				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span>  <span class="token string">"End icon adornment"</span><span class="token punctuation">,</span> <span class="token string">"Left,Overline"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd4 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary,Password"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd4<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Enter password"</span><br>
+				        this<span class="token punctuation">.</span>tfd4<span class="token punctuation">.</span>setEndAdornment<span class="token punctuation">(</span><span class="token string">"lock"</span><span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    togglePasswordVisibility<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">if</span> this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>endAdornment <span class="token operator">==</span> <span class="token string">"visibility_off"</span><span class="token punctuation">:</span><br>
+				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setEndAdornment<span class="token punctuation">(</span><span class="token string">"visibility_on"</span><span class="token punctuation">,</span> <span class="token string">"icon,touchable"</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>inputType <span class="token operator">=</span> <span class="token string">'text'</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>setEndAdornment<span class="token punctuation">(</span><span class="token string">"visibility_off"</span><span class="token punctuation">,</span> <span class="token string">"icon,touchable"</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>inputType <span class="token operator">=</span> <span class="token string">'password'</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 

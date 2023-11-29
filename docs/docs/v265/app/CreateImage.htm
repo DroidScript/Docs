@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateImage</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -63,12 +67,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Original Size</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
@@ -81,10 +85,24 @@
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Ouch!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip1" class="code-py" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> ev <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span>  ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Ouch!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
@@ -92,12 +110,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Maintain Aspect</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip3" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip3" class="code-js" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
@@ -110,10 +128,24 @@
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> ev<span class="token punctuation">.</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip3" class="code-py" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> ev <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span>  ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> ev<span class="token punctuation">.</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> ev<span class="token punctuation">.</span>y<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip3' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
@@ -121,12 +153,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Stretched</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip2" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip2" class="code-js" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    img<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
@@ -139,10 +171,24 @@
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Aaaargh!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip2" class="code-py" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> img_OnTouch <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">img_OnTouch</span><span class="token punctuation">(</span> ev <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span>  ev<span class="token punctuation">.</span>action<span class="token operator">==</span><span class="token string">"Down"</span> <span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Aaaargh!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip2' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
@@ -150,7 +196,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Button</h3>
-			<div id="examp6" style="font-size:70%">
+			<div id="examp6" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -168,9 +214,23 @@
 				    app<span class="token punctuation">.</span><span class="token function">Vibrate</span><span class="token punctuation">(</span> <span class="token string">"0,100,30,100,50,300"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp6" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"button"</span> <span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>SetOnTouchUp<span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> btn <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>Vibrate<span class="token punctuation">(</span> <span class="token string">"0,100,30,100,50,300"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp6' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp6' )">      Run      </a>
 			</div>
 		</div>
 
@@ -195,12 +255,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Draw Shapes</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip4" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip4" class="code-js" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateImage</span><span class="token punctuation">(</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> img <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
 				    img<span class="token punctuation">.</span><span class="token function">SetColor</span><span class="token punctuation">(</span> <span class="token string">"#8888ff"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -211,10 +271,24 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip4" class="code-py" style="font-size:100%">img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> null<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span><br>
+				    <br>
+				    img<span class="token punctuation">.</span>SetColor<span class="token punctuation">(</span> <span class="token string">"#8888ff"</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetPaintColor<span class="token punctuation">(</span> <span class="token string">"#ff0000"</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>DrawCircle<span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>DrawRectangle<span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.75</span> <span class="token punctuation">)</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip4 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip4' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 
@@ -226,7 +300,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Advanced Clock Animating</h3>
-			<div id="examp5" style="font-size:70%">
+			<div id="examp5" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>No_Dom<span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Portrait<span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">var</span> wh<span class="token punctuation">;</span><br>
@@ -290,9 +364,69 @@
 				    img<span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp5" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>No_Dom<span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				wh<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  clock pointer</span><br>
+				    ptr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> null<span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token string">"fix,alias"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">30</span> <span class="token punctuation">)</span><br>
+				    ptr<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">4.3</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  image aspect ratio for drawing square images</span><br>
+				    wh <span class="token operator">=</span> ptr<span class="token punctuation">.</span>GetAbsWidth<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> ptr<span class="token punctuation">.</span>GetAbsHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  main canvas</span><br>
+				    img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> null<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"alias"</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetPaintStyle<span class="token punctuation">(</span> <span class="token string">"line"</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetAutoUpdate<span class="token punctuation">(</span> false <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetLineWidth<span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span> <span class="token string">"console"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>Animate<span class="token punctuation">(</span> OnAnimate<span class="token punctuation">,</span> <span class="token number">40</span> <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span> time<span class="token punctuation">,</span> dtime <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    time <span class="token operator">=</span> Date<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  calculate pointer position from current time</span><br>
+				    secs <span class="token operator">=</span> time <span class="token operator">/</span> <span class="token number">1000</span><br>
+				    angle <span class="token operator">=</span> Math<span class="token punctuation">.</span>PI <span class="token operator">*</span> secs <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token builtin">abs</span><span class="token punctuation">(</span> Math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI <span class="token operator">*</span> secs <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    px <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span> angle <span class="token punctuation">)</span><br>
+				    py <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span> angle <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  get current datetime</span><br>
+				    hrs <span class="token operator">=</span> Math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">3600</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><br>
+				    <span class="token builtin">min</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span> secs <span class="token operator">/</span> <span class="token number">60</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><br>
+				    sec <span class="token operator">=</span> Math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span> secs <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">60</span><br>
+				    time <span class="token operator">=</span> <span class="token builtin">min</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> sec<br>
+				    <br>
+				    <span class="token comment">#  measure text dimensions for centering</span><br>
+				    tsize <span class="token operator">=</span> ptr<span class="token punctuation">.</span>MeasureText<span class="token punctuation">(</span> time <span class="token punctuation">)</span><br>
+				    tx <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> tsize<span class="token punctuation">.</span>width <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><br>
+				    ty <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> tsize<span class="token punctuation">.</span>height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><br>
+				    <br>
+				    <span class="token comment">#  draw pointer and datetime text</span><br>
+				    ptr<span class="token punctuation">.</span>Clear<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    ptr<span class="token punctuation">.</span>SetPaintColor<span class="token punctuation">(</span> <span class="token string">"red"</span> <span class="token punctuation">)</span><br>
+				    ptr<span class="token punctuation">.</span>DrawLine<span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> px<span class="token punctuation">,</span> py <span class="token punctuation">)</span><br>
+				    ptr<span class="token punctuation">.</span>SetPaintColor<span class="token punctuation">(</span> <span class="token string">"white"</span> <span class="token punctuation">)</span><br>
+				    ptr<span class="token punctuation">.</span>DrawText<span class="token punctuation">(</span> time<span class="token punctuation">,</span> tx<span class="token punctuation">,</span> ty <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">#  render</span><br>
+				    img<span class="token punctuation">.</span>Clear<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>DrawCircle<span class="token punctuation">(</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.5</span><span class="token punctuation">,</span> <span class="token number">.48</span> <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>DrawImage<span class="token punctuation">(</span> ptr<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> wh<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> wh <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>Update<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp5' )">      Run      </a>
 			</div>
 		</div>
 

@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateZipUtil</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -54,7 +58,7 @@
 		<p>You can even add files or texts to existing zip files, list their contents and extract single files from them.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - List Contents</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> name <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAppName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -67,16 +71,27 @@
 				    zip<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    name <span class="token operator">=</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">"/sdcard/"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">".zip"</span><br>
+				    <br>
+				    <span class="token builtin">zip</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateZipUtil<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token builtin">zip</span><span class="token punctuation">.</span>Open<span class="token punctuation">(</span> <span class="token builtin">file</span> <span class="token punctuation">)</span><br>
+				    <span class="token builtin">list</span> <span class="token operator">=</span> <span class="token builtin">zip</span><span class="token punctuation">.</span>List<span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">",\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <span class="token builtin">zip</span><span class="token punctuation">.</span>Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Compress</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> name <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetAppName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -93,7 +108,7 @@
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"saved to "</span> <span class="token operator">+</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip2" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">AddFolder</span><span class="token punctuation">(</span> <span class="token parameter">zip<span class="token punctuation">,</span> name<span class="token punctuation">,</span> fldr</span> <span class="token punctuation">)</span><br>
+				<b id="snip2" class="code-js" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">AddFolder</span><span class="token punctuation">(</span> <span class="token parameter">zip<span class="token punctuation">,</span> name<span class="token punctuation">,</span> fldr</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> list <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ListFolder</span><span class="token punctuation">(</span> fldr<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><br>
@@ -106,10 +121,35 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    name <span class="token operator">=</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    fldr <span class="token operator">=</span> app<span class="token punctuation">.</span>GetPath<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> name<br>
+				    <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">"/sdcard/"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">".zip"</span><br>
+				    app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token builtin">zip</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateZipUtil<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token builtin">zip</span><span class="token punctuation">.</span>Create<span class="token punctuation">(</span> <span class="token builtin">file</span> <span class="token punctuation">)</span><br>
+				    AddFolder<span class="token punctuation">(</span> <span class="token builtin">zip</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> fldr <span class="token punctuation">)</span><br>
+				    <span class="token builtin">zip</span><span class="token punctuation">.</span>Close<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>HideProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"saved to "</span> <span class="token operator">+</span> <span class="token builtin">file</span> <span class="token punctuation">)</span><br>
+				<br>
+				<b id="snip2" class="code-py" style="font-size:100%"><span class="token keyword">def</span> AddFolder<span class="token punctuation">(</span> <span class="token builtin">zip</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> fldr <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token builtin">list</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>ListFolder<span class="token punctuation">(</span> fldr<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">for</span>  i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token builtin">list</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">:</span><br>
+				        title <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><br>
+				        <span class="token keyword">if</span>  !app<span class="token punctuation">.</span>IsFolder<span class="token punctuation">(</span> fldr <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> title <span class="token punctuation">)</span> <span class="token punctuation">:</span><br>
+				            <span class="token builtin">zip</span><span class="token punctuation">.</span>AddFile<span class="token punctuation">(</span> name <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> title<span class="token punctuation">,</span> fldr <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> title <span class="token punctuation">)</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            AddFolder<span class="token punctuation">(</span> <span class="token builtin">zip</span><span class="token punctuation">,</span> name <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> title<span class="token punctuation">,</span> fldr <span class="token operator">+</span> <span class="token string">"/"</span><span class="token operator">+</span>title <span class="token punctuation">)</span><br>
+				</b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip2' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 

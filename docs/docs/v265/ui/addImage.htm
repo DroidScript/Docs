@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addImage</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -256,7 +260,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic Image</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -279,16 +283,33 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        image <span class="token operator">=</span> <span class="token string">"https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"</span><br>
+				        <br>
+				        <span class="token comment">#  Add an image control to the main layout with a width of 7/10 of the parent width</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> image<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add callback handler for `onTouch` event on the image control</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You touched the mango!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Avatar</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -312,16 +333,34 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        image <span class="token operator">=</span> <span class="token string">"https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"</span><br>
+				        <br>
+				        <span class="token comment">#  Add an image control to the main layout.</span><br>
+				        <span class="token comment">#  Avatar option will ignore the width of the image control.</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> image<span class="token punctuation">,</span> <span class="token string">"Avatar"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add callback handler for `onTouch` event on the image control</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You touched the mango!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Button</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -345,16 +384,34 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        image <span class="token operator">=</span> <span class="token string">"https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"</span><br>
+				        <br>
+				        <span class="token comment">#  Add an image control to the main layout.</span><br>
+				        <span class="token comment">#  `Button` option will add touch effect when image is click.</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> image<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add callback handler for `onTouch` event on the image control</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You touched the mango!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Drawings</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -395,16 +452,53 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add an image control into the main layout.</span><br>
+				        <span class="token comment">#  Pass canvas option to enable drawings on the image</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineCap <span class="token operator">=</span> <span class="token string">"round"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineJoin <span class="token operator">=</span> <span class="token string">"round"</span><br>
+				        <br>
+				        <span class="token comment">#  Draw a line from (130, 40) to (300, 500)</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawLine<span class="token punctuation">(</span> <span class="token number">130</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"#009688"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw a square from (320, 200) with a side of 200</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawSquare<span class="token punctuation">(</span> <span class="token number">320</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token string">"#683ab7"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw a circle centered at (400, 300) with a radius of 300</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawCircle<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">250</span><span class="token punctuation">,</span> <span class="token string">"#00000000"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw an arc centered at (800, 200) with a radius of 100</span><br>
+				        <span class="token comment">#  from 40 degrees to 270 degrees</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawArc<span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">270</span><span class="token punctuation">,</span> <span class="token string">"#44009688"</span><span class="token punctuation">,</span> <span class="token string">"#009688"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw a polyline from the given set of points below.</span><br>
+				        points <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineCap <span class="token operator">=</span> <span class="token string">"square"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineJoin <span class="token operator">=</span> <span class="token string">"miter"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawPolyline<span class="token punctuation">(</span> points<span class="token punctuation">,</span> <span class="token string">"blue"</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Text and Shapes</h3>
-			<div id="examp5" style="font-size:70%">
+			<div id="examp5" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -434,16 +528,39 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp5" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  create a main layout with object vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  add a canvas image</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span><span class="token punctuation">,</span> <span class="token string">"500px"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  draw rectangle</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawRectangle<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token string">"#fff"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  draw polygon</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawPolygon<span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>x<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">500</span><br>
+				        <span class="token punctuation">]</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  draw text</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>textSize <span class="token operator">=</span> <span class="token number">100</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>textWeight <span class="token operator">=</span> <span class="token string">"bold"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>fillColor <span class="token operator">=</span> <span class="token string">"white"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawText<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">225</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawText<span class="token punctuation">(</span><span class="token string">"World"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">325</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp5' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Analog Clock</h3>
-			<div id="examp6" style="font-size:70%">
+			<div id="examp6" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -529,16 +646,93 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp6" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a linear layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Analog Clock"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Create a canvas image</span><br>
+				        this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Set the initial line styles</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineCap <span class="token operator">=</span> <span class="token string">"round"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineWidth <span class="token operator">=</span> <span class="token number">4</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>strokeColor <span class="token operator">=</span> <span class="token string">"#009688"</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineJoin <span class="token operator">=</span> <span class="token string">"round"</span><br>
+				        <br>
+				        <span class="token comment">#  Create a text to display the time</span><br>
+				        this<span class="token punctuation">.</span>time <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"00:00:00"</span><span class="token punctuation">,</span> <span class="token string">"h6,bold"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>time<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Call the draw function every second</span><br>
+				        setInterval<span class="token punctuation">(</span> this<span class="token punctuation">.</span>draw<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>this<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><br>
+				    <br>
+				    draw<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Clear all the drawings first in the canvas</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <br>
+				        x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> n<br>
+				        <br>
+				        <span class="token comment">#  Draw the 12 dot for every hour</span><br>
+				        <span class="token keyword">for</span>  n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> n<span class="token operator">&lt;=</span><span class="token number">12</span><span class="token punctuation">;</span> n<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">:</span><br>
+				            x <span class="token operator">=</span> <span class="token number">130</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span>PI<span class="token operator">/</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				            y <span class="token operator">=</span> <span class="token number">130</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span> n <span class="token operator">*</span> <span class="token punctuation">(</span>Math<span class="token punctuation">.</span>PI<span class="token operator">/</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            x <span class="token operator">+=</span> <span class="token number">150</span><br>
+				            y <span class="token operator">+=</span> <span class="token number">150</span><br>
+				            <br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawCircle<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"#311b92"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        date <span class="token operator">=</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Get the hour, minutes and seconds</span><br>
+				        hour <span class="token operator">=</span> date<span class="token punctuation">.</span>getHours<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">12</span> ? date<span class="token punctuation">.</span>getHours<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">12</span> <span class="token punctuation">:</span> date<span class="token punctuation">.</span>getHours<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        minutes <span class="token operator">=</span> date<span class="token punctuation">.</span>getMinutes<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        seconds <span class="token operator">=</span> date<span class="token punctuation">.</span>getSeconds<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Calculate the corresponding angles</span><br>
+				        hourAngle <span class="token operator">=</span> hour <span class="token operator">*</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI<span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        minAngle <span class="token operator">=</span> minutes <span class="token operator">*</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">30</span> <span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI<span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        secAngle <span class="token operator">=</span> seconds <span class="token operator">*</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">30</span> <span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span> Math<span class="token punctuation">.</span>PI<span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw each hand by calling the drawHand function</span><br>
+				        this<span class="token punctuation">.</span>drawHand<span class="token punctuation">(</span>hourAngle<span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">"#311b92"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>drawHand<span class="token punctuation">(</span>minAngle<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"#1e88e5"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>drawHand<span class="token punctuation">(</span>secAngle<span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"#d81b60"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Draw the black cirlce in the center</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawCircle<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">"#000"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Display the time</span><br>
+				        this<span class="token punctuation">.</span>time<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token punctuation">(</span>`$hour`<span class="token punctuation">.</span>padStart<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":"</span><span class="token operator">+</span><br>
+				            <span class="token punctuation">(</span>`$minutes`<span class="token punctuation">.</span>padStart<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">":"</span> <span class="token operator">+</span><br>
+				            <span class="token punctuation">(</span>`$seconds`<span class="token punctuation">.</span>padStart<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>date<span class="token punctuation">.</span>getHours<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">12</span> ? <span class="token string">" PM"</span> <span class="token punctuation">:</span> <span class="token string">" AM"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    drawHand<span class="token punctuation">(</span> angle<span class="token punctuation">,</span> length<span class="token punctuation">,</span> width<span class="token punctuation">,</span> color <span class="token punctuation">)</span><br>
+				        x<span class="token punctuation">,</span> y<br>
+				        <br>
+				        x <span class="token operator">=</span> length <span class="token operator">*</span> Math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span> angle <span class="token punctuation">)</span><br>
+				        y <span class="token operator">=</span> length <span class="token operator">*</span> Math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span> angle <span class="token punctuation">)</span><br>
+				        <br>
+				        x <span class="token operator">+=</span> <span class="token number">150</span><br>
+				        y <span class="token operator">+=</span> <span class="token number">150</span><br>
+				        <br>
+				        <span class="token comment">#  Draw the hand</span><br>
+				        this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawLine<span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> color<span class="token punctuation">,</span> width <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp6' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp6' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Scratch Pad</h3>
-			<div id="examp7" style="font-size:70%">
+			<div id="examp7" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				    <span class="token punctuation">{</span><br>
 				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -579,9 +773,44 @@
 				        <span class="token punctuation">}</span><br>
 				    <span class="token punctuation">}</span>
 			</div>
+			<div id="examp7" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				        onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"#000000"</span><br>
+				            this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				            <br>
+				            lay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,Center,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				            lay<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				            <br>
+				            colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"#009688"</span><span class="token punctuation">,</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#e53935"</span><span class="token punctuation">,</span> <span class="token string">"#1e88e5"</span><span class="token punctuation">]</span><br>
+				            <br>
+				            ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><br>
+				            <span class="token keyword">for</span>  i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>colors<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">:</span><br>
+				                btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"48px"</span><span class="token punctuation">,</span> <span class="token string">"48px"</span> <span class="token punctuation">)</span><br>
+				                btn<span class="token punctuation">.</span>backColor <span class="token operator">=</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><br>
+				                btn<span class="token punctuation">.</span>setCornerRadius<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><br>
+				                btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>changeColor<span class="token punctuation">.</span>bind<span class="token punctuation">(</span>this<span class="token punctuation">,</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Thickness"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>sld <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSlider<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>sld<span class="token punctuation">.</span>setRange<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">15</span><br>
+				            <br>
+				            this<span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>fill <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouchMove<span class="token punctuation">(</span> this<span class="token punctuation">.</span>draw <span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouchDown<span class="token punctuation">(</span> this<span class="token punctuation">.</span>draw <span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>draw <span class="token punctuation">)</span><br>
+				        <br>
+				        changeColor<span class="token punctuation">(</span> color <span class="token punctuation">)</span>this<span class="token punctuation">.</span>color <span class="token operator">=</span> color<br>
+				        <br>
+				        draw<span class="token punctuation">(</span> e <span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>img<span class="token punctuation">.</span>drawCircle<span class="token punctuation">(</span> e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>y<span class="token punctuation">,</span> this<span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value<span class="token punctuation">,</span> this<span class="token punctuation">.</span>color<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp7 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp7 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp7' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp7' )">      Run      </a>
 			</div>
 		</div>
 

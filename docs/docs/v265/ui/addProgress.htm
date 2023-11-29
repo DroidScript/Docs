@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addProgress</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -228,7 +232,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Progress control implementation</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -252,16 +256,36 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
+				        <br>
+				        <span class="token comment">#  Indeterminate Linear</span><br>
+				        this<span class="token punctuation">.</span>prog1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addProgress<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Determinate Linear</span><br>
+				        this<span class="token punctuation">.</span>prog2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addProgress<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Linear,Secondary,indeterminate"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Determinate Circular</span><br>
+				        this<span class="token punctuation">.</span>prog3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addProgress<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"Circular"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Indeterminate Circular, enlarge and secondary</span><br>
+				        this<span class="token punctuation">.</span>prog4 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addProgress<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Circular,Secondary,indeterminate"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>prog4<span class="token punctuation">.</span>circleSize <span class="token operator">=</span> <span class="token number">100</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Setting progress value</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -294,9 +318,32 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Even"</span><br>
+				        <br>
+				        <span class="token comment">#  Add an indeterminate linear progress control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>prog <span class="token operator">=</span> ui<span class="token punctuation">.</span>addProgress<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a button control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Increment"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the button is touched</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Increment the value of the progress control by 10</span><br>
+				        <span class="token keyword">if</span>  this<span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">&lt;</span> <span class="token number">100</span> <span class="token punctuation">:</span><br>
+				            this<span class="token punctuation">.</span>prog<span class="token punctuation">.</span>value <span class="token operator">+=</span> <span class="token number">10</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Progress is complete!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 

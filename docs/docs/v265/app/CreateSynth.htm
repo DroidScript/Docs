@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateSynth</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -79,7 +83,7 @@
 		<b>Voltage-Controlled Filter:</b> electronic amplifier that varies the frequency</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Tetris Theme</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    syn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -96,16 +100,31 @@
 				    <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    syn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetNoteLength<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    syn<span class="token punctuation">.</span>PlayMidiTune<span class="token punctuation">(</span><br>
+				        <span class="token string">"76:4,71:8,72:8,74:4,72:8,71:8,69:4,69:8,72:8,76:4,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:8,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"69:8,71:8,72:8,74:8,74:4,77:8,81:4,79:8,77:8,76:8,76:4,72:8,76:4,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:4"</span><br>
+				    <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Multiple Synths Song</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    synth1 <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSynth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -132,9 +151,34 @@
 				    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    synth1 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span> <span class="token number">500</span> <span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    synth2 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span> <span class="token number">300</span> <span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    <br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 

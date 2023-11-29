@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addWebView</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -236,7 +240,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - EnjineIO homepage</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -257,16 +261,31 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Create a webview and load the EnjineIO homepage</span><br>
+				        this<span class="token punctuation">.</span>web <span class="token operator">=</span> ui<span class="token punctuation">.</span>addWebView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"https:# enjine.io/"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the website is loaded</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>setOnLoad<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onLoad <span class="token punctuation">)</span><br>
+				    <br>
+				    onLoad<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Website is loaded!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Call a function inside the webview</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -303,16 +322,47 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Create a webview and pass </span><br>
+				        this<span class="token punctuation">.</span>web <span class="token operator">=</span> ui<span class="token punctuation">.</span>addWebView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the page is loaded</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>setOnLoad<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onLoad <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Load a webpage from a string</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>html <span class="token operator">=</span> <span class="token string">'&lt;html>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;head>'</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;script>'</span> <span class="token operator">+</span><br>
+				                <span class="token string">'def callFunc( name ): '</span> <span class="token operator">+</span><br>
+				                    <span class="token string">'alert("Hi " + name + " webview!")'</span> <span class="token operator">+</span><br>
+				                <span class="token string">''</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;\/script>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/head>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;body>'</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;h2>This is an html.&lt;\/h2>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/body>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/html>'</span><br>
+				    <br>
+				    onLoad<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Call the function `callFunc` inside the webpage</span><br>
+				        <span class="token comment">#  when the page is loaded</span><br>
+				        x <span class="token operator">=</span> this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>window<span class="token punctuation">.</span>callFunc<span class="token punctuation">(</span> <span class="token string">"John Doe"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Getting returned values from a function in a webview</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -352,16 +402,50 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Create a webview and pass </span><br>
+				        this<span class="token punctuation">.</span>web <span class="token operator">=</span> ui<span class="token punctuation">.</span>addWebView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the page is loaded</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>setOnLoad<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onLoad <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Load a webpage from a string</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>html <span class="token operator">=</span> <span class="token string">'&lt;html>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;head>'</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;script>'</span> <span class="token operator">+</span><br>
+				                <span class="token string">'def getProduct(num1, num2): '</span> <span class="token operator">+</span><br>
+				                <span class="token string">''</span> <span class="token operator">+</span><br>
+				                    <span class="token string">'return num1 * num2'</span> <span class="token operator">+</span><br>
+				                <span class="token string">''</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;\/script>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/head>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;body>'</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;h2>Get some product here!&lt;\/h2>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/body>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;\/html>'</span><br>
+				    <br>
+				    onLoad<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Call the function `getProduct` inside the webview</span><br>
+				        <span class="token comment">#  when the page is loaded and display the answer</span><br>
+				        prod <span class="token operator">=</span> this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>window<span class="token punctuation">.</span>getProduct<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"The product is "</span> <span class="token operator">+</span> prod <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Manipulate dom inside the webview</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -422,9 +506,60 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>loaded <span class="token operator">=</span> false<br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Create a webview and pass </span><br>
+				        this<span class="token punctuation">.</span>web <span class="token operator">=</span> ui<span class="token punctuation">.</span>addWebView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler when the page is loaded</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>setOnLoad<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onLoad <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Load a webpage from a string</span><br>
+				        this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>html <span class="token operator">=</span> <span class="token string">'&lt;html>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;head>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;/head>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;body>'</span> <span class="token operator">+</span><br>
+				            <span class="token string">'&lt;h2 id="my-text">Hi from webview!&lt;/h2>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;/body>'</span> <span class="token operator">+</span><br>
+				        <span class="token string">'&lt;/html>'</span><br>
+				        <br>
+				        <span class="token comment">#  Add a button control to the main layout</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Change background color"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    onLoad<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>loaded <span class="token operator">=</span> true<br>
+				    <br>
+				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Check first if webview is loaded</span><br>
+				        <span class="token keyword">if</span>  this<span class="token punctuation">.</span>loaded <span class="token punctuation">:</span><br>
+				            <span class="token comment">#  Get a reference to the document object of the webview</span><br>
+				            dom <span class="token operator">=</span> this<span class="token punctuation">.</span>web<span class="token punctuation">.</span>document<br>
+				            <br>
+				            <span class="token comment">#  or `dom = this.web.window.document`</span><br>
+				            <br>
+				            <span class="token comment">#  Set the background-color of the body to green</span><br>
+				            dom<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">"green"</span><br>
+				            <br>
+				            <span class="token comment">#  Get a reference to the h2 element by its id</span><br>
+				            h2 <span class="token operator">=</span> dom<span class="token punctuation">.</span>getElementById<span class="token punctuation">(</span><span class="token string">"my-text"</span><span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">#  Set the text</span><br>
+				            h2<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">"New text from parent!"</span><br>
+				            <br>
+				            <span class="token comment">#  Set the text color to white</span><br>
+				            h2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"white"</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Webview is not yet loaded!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 

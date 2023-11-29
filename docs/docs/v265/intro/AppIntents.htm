@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>App Intents</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -56,7 +60,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Default Apps</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> categories <span class="token operator">=</span> <span class="token punctuation">[</span><br>
 				    <span class="token string">"android.intent.category.APP_BROWSER"</span><span class="token punctuation">,</span>    <span class="token comment">// browser</span><br>
 				    <span class="token string">"android.intent.category.APP_MUSIC"</span><span class="token punctuation">,</span>      <span class="token comment">// music</span><br>
@@ -71,9 +75,24 @@
 				<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.intent.action.MAIN"</span><span class="token punctuation">,</span> categories<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				categories <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				    <span class="token string">"android.intent.category.APP_BROWSER"</span><span class="token punctuation">,</span>    <span class="token comment">#  browser</span><br>
+				    <span class="token string">"android.intent.category.APP_MUSIC"</span><span class="token punctuation">,</span>      <span class="token comment">#  music</span><br>
+				    <span class="token string">"android.intent.category.APP_CALCULATOR"</span><span class="token punctuation">,</span> <span class="token comment">#  calculator</span><br>
+				    <span class="token string">"android.intent.category.APP_CONTACTS"</span><span class="token punctuation">,</span>   <span class="token comment">#  contacts</span><br>
+				    <span class="token string">"android.intent.category.APP_EMAIL"</span><span class="token punctuation">,</span>      <span class="token comment">#  email</span><br>
+				    <span class="token string">"android.intent.category.APP_MAPS"</span><span class="token punctuation">,</span>       <span class="token comment">#  maps</span><br>
+				    <span class="token string">"android.intent.category.APP_GALLERY"</span><span class="token punctuation">,</span>    <span class="token comment">#  gallery</span><br>
+				    <span class="token string">"android.intent.category.APP_CALENDAR"</span><span class="token punctuation">,</span>   <span class="token comment">#  calendar</span><br>
+				    <span class="token string">"android.intent.category.APP_MARKET"</span><span class="token punctuation">,</span>     <span class="token comment">#  market</span><br>
+				    <span class="token string">"android.intent.category.APP_MESSAGING"</span><span class="token punctuation">,</span>  <span class="token comment">#  messaging</span><br>
+				<span class="token punctuation">]</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.intent.action.MAIN"</span><span class="token punctuation">,</span> categories<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
@@ -92,7 +111,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Create Email in GMail App</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> packageName <span class="token operator">=</span> <span class="token string">"com.google.android.gm"</span><span class="token punctuation">;</span><br>
 				<span class="token keyword">var</span> className <span class="token operator">=</span> <span class="token string">"com.google.android.gm.ComposeActivityGmail"</span><span class="token punctuation">;</span><br>
 				<span class="token keyword">var</span> action <span class="token operator">=</span> <span class="token string">"android.intent.action.VIEW"</span><span class="token punctuation">;</span><br>
@@ -108,9 +127,22 @@
 				<br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> className<span class="token punctuation">,</span> action<span class="token punctuation">,</span> category<span class="token punctuation">,</span> uri<span class="token punctuation">,</span> type<span class="token punctuation">,</span> extras<span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				packageName <span class="token operator">=</span> <span class="token string">"com.google.android.gm"</span><br>
+				className <span class="token operator">=</span> <span class="token string">"com.google.android.gm.ComposeActivityGmail"</span><br>
+				action <span class="token operator">=</span> <span class="token string">"android.intent.action.VIEW"</span><br>
+				category <span class="token operator">=</span> null<br>
+				uri <span class="token operator">=</span> <span class="token string">"myfriend@gmail.com"</span><br>
+				<span class="token builtin">type</span> <span class="token operator">=</span> <span class="token string">"message/rfc822"</span><br>
+				<br>
+				extras <span class="token operator">=</span> JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span><span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">"android.intent.extra.EMAIL"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"list"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"fred@gmail.com"</span><span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"android.intent.extra.SUBJECT"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"My subject"</span><span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"android.intent.extra.TEXT"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"Hello!"</span><br>
+				<span class="token punctuation">]</span><span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> className<span class="token punctuation">,</span> action<span class="token punctuation">,</span> category<span class="token punctuation">,</span> uri<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">,</span> extras<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
@@ -119,7 +151,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic Maps</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> lat <span class="token operator">=</span> <span class="token string">"51.5117"</span><span class="token punctuation">;</span><br>
@@ -136,16 +168,29 @@
 				    app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> className<span class="token punctuation">,</span> action<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> uri<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lat <span class="token operator">=</span> <span class="token string">"51.5117"</span><br>
+				    lng <span class="token operator">=</span> <span class="token string">"-0.1275"</span><br>
+				    simpleMap<span class="token punctuation">(</span>lat<span class="token punctuation">,</span> lng<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">simpleMap</span><span class="token punctuation">(</span>latitude<span class="token punctuation">,</span> longitude<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    packageName <span class="token operator">=</span> <span class="token string">"com.google.android.apps.maps"</span><br>
+				    className <span class="token operator">=</span> null<br>
+				    action <span class="token operator">=</span> <span class="token string">"android.intent.action.VIEW"</span><br>
+				    uri <span class="token operator">=</span> <span class="token string">"geo:"</span> <span class="token operator">+</span> latitude <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> longitude<br>
+				    app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> className<span class="token punctuation">,</span> action<span class="token punctuation">,</span> null<span class="token punctuation">,</span> uri<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Maps Turn by Turn Navigation</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token parameter">latitude<span class="token punctuation">,</span> longitude</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> packageName <span class="token operator">=</span> <span class="token string">"com.google.android.apps.maps"</span><span class="token punctuation">;</span><br>
@@ -158,16 +203,27 @@
 				        app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span><span class="token string">"maps app not installed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">navigateTo</span><span class="token punctuation">(</span>latitude<span class="token punctuation">,</span> longitude<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    packageName <span class="token operator">=</span> <span class="token string">"com.google.android.apps.maps"</span><br>
+				    className <span class="token operator">=</span> null<br>
+				    action <span class="token operator">=</span> <span class="token string">"android.intent.action.VIEW"</span><br>
+				    uri <span class="token operator">=</span> <span class="token string">"google.navigation:q="</span> <span class="token operator">+</span> latitude <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> longitude<br>
+				    <span class="token keyword">if</span> app<span class="token punctuation">.</span>IsAppInstalled<span class="token punctuation">(</span>packageName<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>packageName<span class="token punctuation">,</span> className<span class="token punctuation">,</span> action<span class="token punctuation">,</span> null<span class="token punctuation">,</span> uri<span class="token punctuation">)</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span><span class="token string">"maps app not installed"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Maps Location</h3>
-			<div id="examp5" style="font-size:70%">
+			<div id="examp5" class="code-js" style="font-size:70%">
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><br>
 				  <span class="token string">"com.google.android.apps.maps"</span><span class="token punctuation">,</span><br>
 				  <span class="token keyword">null</span><span class="token punctuation">,</span><br>
@@ -176,9 +232,18 @@
 				  <span class="token string">"geo:0,0?q=34.5678,123.4567 (Placename)"</span>   <span class="token comment">// uri argument</span><br>
 				<span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp5" class="code-py" style="font-size:70%">
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span><br>
+				  <span class="token string">"com.google.android.apps.maps"</span><span class="token punctuation">,</span><br>
+				  null<span class="token punctuation">,</span><br>
+				  <span class="token string">"android.intent.action.VIEW"</span><span class="token punctuation">,</span><br>
+				  <span class="token string">"android.intent.category.DEFAULT"</span><span class="token punctuation">,</span><br>
+				  <span class="token string">"geo:0,0?q=34.5678,123.4567 (Placename)"</span>   <span class="token comment">#  uri argument</span><br>
+				<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp5' )">      Run      </a>
 			</div>
 		</div>
 
@@ -187,7 +252,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Phone Call</h3>
-			<div id="examp6" style="font-size:70%">
+			<div id="examp6" class="code-js" style="font-size:70%">
 				<span class="token comment">/* Some devices may display the Dialer app for both `DIAL` and `CALL`.<br>
 				 *   `CALL` requires `PHONE` permission and `DIAL` does not<br>
 				 *   `DIAL` does not allow emergency calls<br>
@@ -200,9 +265,22 @@
 				<span class="token comment">// Direct Call</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.intent.action.CALL"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"tel&amp;colon;5551237654"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp6" class="code-py" style="font-size:70%">
+				<span class="token operator">/</span><span class="token operator">*</span> Some devices may display the Dialer app <span class="token keyword">for</span> both `DIAL` <span class="token keyword">and</span> `CALL`<span class="token punctuation">.</span><br>
+				 <span class="token operator">*</span>   `CALL` requires `PHONE` permission <span class="token keyword">and</span> `DIAL` does <span class="token keyword">not</span><br>
+				 <span class="token operator">*</span>   `DIAL` does <span class="token keyword">not</span> allow emergency calls<br>
+				 <span class="token operator">*</span>   `DIAL` suppresses some special characters such <span class="token keyword">as</span> <span class="token comment"># to prevent abuse</span><br>
+				 <span class="token operator">*</span><span class="token operator">/</span><br>
+				<br>
+				<span class="token comment">#  Launch Dialer app</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.intent.action.DIAL"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"tel&amp;colon;5551237654"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment">#  Direct Call</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.intent.action.CALL"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"tel&amp;colon;5551237654"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp6' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp6' )">      Run      </a>
 			</div>
 		</div>
 
@@ -210,7 +288,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic SMS</h3>
-			<div id="examp7" style="font-size:70%">
+			<div id="examp7" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> number <span class="token operator">=</span> <span class="token string">"0123456789"</span><span class="token punctuation">;</span><br>
 				<span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">"my message"</span><span class="token punctuation">;</span><br>
 				<br>
@@ -222,9 +300,20 @@
 				        <span class="token literal-property property">value</span><span class="token operator">:</span> message<br>
 				    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp7" class="code-py" style="font-size:70%">
+				number <span class="token operator">=</span> <span class="token string">"0123456789"</span><br>
+				message <span class="token operator">=</span> <span class="token string">"my message"</span><br>
+				<br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.intent.action.SENDTO"</span><span class="token punctuation">,</span><br>
+				    null<span class="token punctuation">,</span> <span class="token string">'smsto:'</span> <span class="token operator">+</span> number<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <br>
+				    JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span><span class="token punctuation">[</span><br>
+				        name<span class="token punctuation">:</span> <span class="token string">"sms_body"</span><span class="token punctuation">,</span><br>
+				        <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span><br>
+				        value<span class="token punctuation">:</span> message<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp7 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp7 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp7' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp7' )">      Run      </a>
 			</div>
 		</div>
 
@@ -232,7 +321,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Camera Modes</h3>
-			<div id="examp8" style="font-size:70%">
+			<div id="examp8" class="code-js" style="font-size:70%">
 				<span class="token comment">// Launch a camera in still image mode.</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.media.action.STILL_IMAGE_CAMERA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
@@ -244,9 +333,21 @@
 				<span class="token comment">// Launch a camera in video recording mode.</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.media.action.VIDEO_CAMERA"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 			</div>
+			<div id="examp8" class="code-py" style="font-size:70%">
+				<span class="token comment">#  Launch a camera in still image mode.</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.media.action.STILL_IMAGE_CAMERA"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment">#  Launch secure photo mode without attaching personal info</span><br>
+				<span class="token comment">#  previous snaps/videos, gallery, etc. link won't work</span><br>
+				<span class="token comment">#  used when device is secured (pin, password, etc), recommended use in locker apps.</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.media.action.STILL_IMAGE_CAMERA_SECURE"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment">#  Launch a camera in video recording mode.</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.media.action.VIDEO_CAMERA"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp8 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp8 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp8' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp8' )">      Run      </a>
 			</div>
 		</div>
 
@@ -255,15 +356,21 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Settings</h3>
-			<div id="examp9" style="font-size:70%">
+			<div id="examp9" class="code-js" style="font-size:70%">
 				<span class="token comment">// Bluetooth</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.settings.BLUETOOTH_SETTINGS"</span> <span class="token punctuation">)</span><br>
 				<span class="token comment">// WiFi</span><br>
 				app<span class="token punctuation">.</span><span class="token function">SendIntent</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"android.settings.WIFI_SETTINGS"</span> <span class="token punctuation">)</span>
 			</div>
+			<div id="examp9" class="code-py" style="font-size:70%">
+				<span class="token comment">#  Bluetooth</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.settings.BLUETOOTH_SETTINGS"</span> <span class="token punctuation">)</span><br>
+				<span class="token comment">#  WiFi</span><br>
+				app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.settings.WIFI_SETTINGS"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp9 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp9 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp9' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp9' )">      Run      </a>
 			</div>
 		</div>
 
@@ -271,7 +378,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Add Calendar Event</h3>
-			<div id="examp10" style="font-size:70%">
+			<div id="examp10" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">cal_si_insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> today <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -289,16 +396,27 @@
 				        <span class="token string">"android.intent.Events.CONTENT_URI"</span><span class="token punctuation">,</span> <span class="token string">"vnd.android.cursor.item/event"</span><span class="token punctuation">,</span> extras<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp10" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">cal_si_insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    today <span class="token operator">=</span> Date<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    extras <span class="token operator">=</span> <span class="token punctuation">[</span>name<span class="token punctuation">:</span> <span class="token string">"description"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"DS SendIntent Description"</span><span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"DS SendIntent Title"</span><span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"beginTime"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> today<span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"eventLocation"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> <span class="token string">"DS SendIntent Address"</span><span class="token punctuation">,</span>name<span class="token punctuation">:</span> <span class="token string">"endTime"</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">:</span> <span class="token string">"long"</span><span class="token punctuation">,</span> value<span class="token punctuation">:</span> today <span class="token operator">+</span> <span class="token number">3600000</span><span class="token punctuation">,</span><br>
+				    <span class="token punctuation">]</span><br>
+				    extras <span class="token operator">=</span> JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span>extras<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>SendIntent<span class="token punctuation">(</span>null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"android.intent.action.INSERT"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span><br>
+				        <span class="token string">"android.intent.Events.CONTENT_URI"</span><span class="token punctuation">,</span> <span class="token string">"vnd.android.cursor.item/event"</span><span class="token punctuation">,</span> extras<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp10 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp10 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp10' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp10' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Receive Broadcasts</h3>
-			<div id="examp11" style="font-size:70%">
+			<div id="examp11" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -349,9 +467,56 @@
 				<span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> app<span class="token punctuation">.</span><span class="token function">ToFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> app<span class="token punctuation">.</span><span class="token function">ToFront</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 			</div>
+			<div id="examp11" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>EnableBackKey<span class="token punctuation">(</span>false<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.intent.action.HEADSET_PLUG"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.intent.action.SOUND_SETTINGS"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.media.VOLUME_CHANGED_ACTION"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.intent.action.TIME_TICK"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.AccessibilityService.FINGERPRINT_GESTURE_SWIPE_DOWN"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.action.CAMERA_BUTTON"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.action.MEDIA_BUTTON"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.a2dp.profile.action.CONNECTION_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    <span class="token comment"># app.SetOnBroadcast( rb ,"android.bluetooth.a2dp.profile.action.PLAYING_STATE_CHANGED")</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.DISCOVERY_FINISHED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.DISCOVERY_STARTED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.LOCAL_NAME_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.SCAN_MODE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.adapter.action.STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.ACL_CONNECTED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.ACL_DISCONNECTED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.BOND_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.CLASS_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.FOUND"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.NAME_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.device.action.UUID"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.devicepicker.action.DEVICE_SELECTED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.devicepicker.action.LAUNCH"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.headset.action.VENDOR_SPECIFIC_HEADSET_EVENT"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.input.profile.action.CONNECTION_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetOnBroadcast<span class="token punctuation">(</span>rb<span class="token punctuation">,</span> <span class="token string">"android.bluetooth.pan.profile.action.CONNECTION_STATE_CHANGED"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">rb</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    alert<span class="token punctuation">(</span>JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <span class="token comment"># alert(JSON.stringify(msg))</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">handleReply</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span> reply<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    alert<span class="token punctuation">(</span>JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    alert<span class="token punctuation">(</span>JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span>reply<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>app<span class="token punctuation">.</span>ToFront<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>app<span class="token punctuation">.</span>ToFront<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp11 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp11 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp11' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp11' )">      Run      </a>
 			</div>
 		</div>
 

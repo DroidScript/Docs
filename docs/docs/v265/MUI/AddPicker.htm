@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>AddPicker</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,7 +51,7 @@
 		<p>See <a href="CreateDatePicker.htm" data-ajax="false">CreateDatePicker</a>, <a href="CreateTimePicker.htm" data-ajax="false">CreateTimePicker</a> and <a href="CreateColorPicker.htm" data-ajax="false">CreateColorPicker</a> for a full documentation.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - AddPicker</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -86,9 +90,40 @@
 				    cPkr<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    ttime <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddTextEdit<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token string">"outline"</span><span class="token punctuation">,</span> <span class="token string">"Enter time"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				    ttime<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> ShowTimePicker <span class="token punctuation">)</span><br>
+				    <br>
+				    tdate <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddTextEdit<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token string">"outline"</span><span class="token punctuation">,</span> <span class="token string">"Enter date"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				    tdate<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> ShowDatePicker <span class="token punctuation">)</span><br>
+				    <br>
+				    tcolor <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddTextEdit<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token string">"outline"</span><span class="token punctuation">,</span> <span class="token string">"Enter color"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				    tcolor<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> ShowColorPicker <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    tPkr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddPicker<span class="token punctuation">(</span>ttime<span class="token punctuation">,</span> <span class="token string">"time"</span><span class="token punctuation">)</span><br>
+				    dPkr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddPicker<span class="token punctuation">(</span>tdate<span class="token punctuation">,</span> <span class="token string">"date"</span><span class="token punctuation">)</span><br>
+				    cPkr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddPicker<span class="token punctuation">(</span>tcolor<span class="token punctuation">,</span> <span class="token string">"color"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">ShowTimePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    tPkr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">ShowDatePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    dPkr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">ShowColorPicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    cPkr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

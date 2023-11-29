@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreatePolygon</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -59,13 +63,13 @@
 		</div>
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example</h3>
-			<div id="examp1" style="font-size:70%">
+			<h3>Example - 2</h3>
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">polygon <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreatePolygon</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0x33ff55</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">0xcc1122</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">polygon <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreatePolygon</span><span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0x33ff55</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">0xcc1122</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -74,10 +78,20 @@
 				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <b id="snip1" class="code-py" style="font-size:100%">polygon <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreatePolygon<span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0x33ff55</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">0xcc1122</span> <span class="token punctuation">)</span></b><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    gfx<span class="token punctuation">.</span>AddGraphic<span class="token punctuation">(</span> polygon<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.7</span> <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

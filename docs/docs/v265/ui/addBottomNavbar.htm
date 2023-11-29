@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addBottomNavbar</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -236,23 +240,30 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Sample navs array.</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> navs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
 				        <span class="token punctuation">[</span> <span class="token string">"Favorites"</span><span class="token punctuation">,</span> <span class="token string">"favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
 				        <span class="token punctuation">[</span> <span class="token string">"Groups"</span><span class="token punctuation">,</span> <span class="token string">"person"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
 				        <span class="token punctuation">[</span> <span class="token string">"Folder"</span><span class="token punctuation">,</span> <span class="token string">"folder"</span> <span class="token punctuation">]</span><br>
 				    <span class="token punctuation">]</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				navs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span> <span class="token string">"Favorites"</span><span class="token punctuation">,</span> <span class="token string">"favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span> <span class="token string">"Groups"</span><span class="token punctuation">,</span> <span class="token string">"person"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span> <span class="token string">"Folder"</span><span class="token punctuation">,</span> <span class="token string">"folder"</span> <span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -280,16 +291,38 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        navs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Favorites"</span><span class="token punctuation">,</span> <span class="token string">"favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Groups"</span><span class="token punctuation">,</span> <span class="token string">"person"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Folder"</span><span class="token punctuation">,</span> <span class="token string">"folder"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Creates a BottomNavbar control</span><br>
+				        this<span class="token punctuation">.</span>bmn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addBottomNavbar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> navs<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `onChange` event</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				    <br>
+				    onChange<span class="token punctuation">(</span>text<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> text <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Hide or show labels</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -335,16 +368,52 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        navs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Favorites"</span><span class="token punctuation">,</span> <span class="token string">"favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Groups"</span><span class="token punctuation">,</span> <span class="token string">"person"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Folder"</span><span class="token punctuation">,</span> <span class="token string">"folder"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Creates a BottomNavbar control</span><br>
+				        this<span class="token punctuation">.</span>bmn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addBottomNavbar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> navs<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `onChange` event</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Button to show the labels</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Labels"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showLabels <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Button to hide the labels</span><br>
+				        this<span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Hide Labels"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>hideLabels <span class="token punctuation">)</span><br>
+				    <br>
+				    showLabels<span class="token punctuation">(</span> <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>showLabels<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    hideLabels<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>hideLabels<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onChange<span class="token punctuation">(</span>text<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> text <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Custom styles</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -373,9 +442,34 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        navs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Favorites"</span><span class="token punctuation">,</span> <span class="token string">"favorites"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Groups"</span><span class="token punctuation">,</span> <span class="token string">"person"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span> <span class="token string">"Folder"</span><span class="token punctuation">,</span> <span class="token string">"folder"</span> <span class="token punctuation">]</span><br>
+				        <span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">#  Creates a BottomNavbar control</span><br>
+				        this<span class="token punctuation">.</span>bmn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addBottomNavbar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> navs<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Hide the labels when not active</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>labels <span class="token operator">=</span> false<br>
+				        <br>
+				        <span class="token comment">#  Set the color of the text and icons</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
+				        <br>
+				        <span class="token comment">#  Set the icon size</span><br>
+				        this<span class="token punctuation">.</span>bmn<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token string">"2rem"</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 

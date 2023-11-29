@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateBluetoothSerial</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -53,7 +57,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Connect to Device</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowProgress</span><span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -63,7 +67,7 @@
 				    <span class="token keyword">while</span><span class="token punctuation">(</span> <span class="token operator">!</span>app<span class="token punctuation">.</span><span class="token function">IsBluetoothOn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token number">.4</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">HideProgress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%">bt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothSerial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">bt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateBluetoothSerial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    bt<span class="token punctuation">.</span><span class="token function">SetOnConnect</span><span class="token punctuation">(</span> bt_OnConnect <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    bt<span class="token punctuation">.</span><span class="token function">SetSplitMode</span><span class="token punctuation">(</span> <span class="token string">"End"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    bt<span class="token punctuation">.</span><span class="token function">Listen</span><span class="token punctuation">(</span> <span class="token boolean">true</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
@@ -93,10 +97,43 @@
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span> <span class="token string">"Enabling Bluetooth"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span>  !app<span class="token punctuation">.</span>IsBluetoothEnabled<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>SetBluetoothEnabled<span class="token punctuation">(</span> true <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">while</span>  !app<span class="token punctuation">.</span>IsBluetoothOn<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> app<span class="token punctuation">.</span>Wait<span class="token punctuation">(</span><span class="token number">.4</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>HideProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip1" class="code-py" style="font-size:100%">bt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateBluetoothSerial<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    bt<span class="token punctuation">.</span>SetOnConnect<span class="token punctuation">(</span> bt_OnConnect <span class="token punctuation">)</span><br>
+				    bt<span class="token punctuation">.</span>SetSplitMode<span class="token punctuation">(</span> <span class="token string">"End"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span> <span class="token punctuation">)</span><br>
+				    bt<span class="token punctuation">.</span>Listen<span class="token punctuation">(</span> true <span class="token punctuation">)</span></b><br>
+				    <br>
+				    lst <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateBluetoothList<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    lst<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>lst_OnTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">lst_OnTouch</span><span class="token punctuation">(</span> name<span class="token punctuation">,</span> address <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span> <span class="token string">"Connecting..."</span> <span class="token punctuation">)</span><br>
+				    bt<span class="token punctuation">.</span>Connect<span class="token punctuation">(</span> address <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">bt_OnConnect</span><span class="token punctuation">(</span> ok<span class="token punctuation">,</span> data <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>HideProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">if</span>  ok <span class="token punctuation">:</span><br>
+				        <span class="token keyword">if</span>  typeof data <span class="token operator">==</span> <span class="token string">"object"</span> <span class="token punctuation">:</span><br>
+				            app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Connected!"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            alert<span class="token punctuation">(</span> <span class="token string">"Connected to "</span> <span class="token operator">+</span> ok <span class="token operator">+</span> <span class="token string">" ("</span> <span class="token operator">+</span> data <span class="token operator">+</span> <span class="token string">")"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        bt<span class="token punctuation">.</span>Write<span class="token punctuation">(</span><span class="token string">"hello from "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetBluetoothName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Failed to connect!"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

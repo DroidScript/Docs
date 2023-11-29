@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateBackground</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -54,7 +58,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Scroll</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -70,13 +74,26 @@
 				<br>
 				<span class="token keyword">function</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span><span class="token parameter">t<span class="token punctuation">,</span>dt</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip1" style="font-size:100%">sky<span class="token punctuation">.</span><span class="token function">Scroll</span><span class="token punctuation">(</span><span class="token operator">-</span>dt<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">sky<span class="token punctuation">.</span><span class="token function">Scroll</span><span class="token punctuation">(</span><span class="token operator">-</span>dt<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateBackground<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    gfx<span class="token punctuation">.</span>AddBackground<span class="token punctuation">(</span> sky <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>dt<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <b id="snip1" class="code-py" style="font-size:100%">sky<span class="token punctuation">.</span>Scroll<span class="token punctuation">(</span><span class="token operator">-</span>dt<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span></b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

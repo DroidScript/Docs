@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateDialog</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -57,7 +61,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic & Light</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -83,16 +87,38 @@
 				    dlg<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    colors <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>colors<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonRaised<span class="token punctuation">(</span><span class="token string">"SHOW DIALOG"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>ShowDialog<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    text <span class="token operator">=</span> <span class="token string">"You can undone this process."</span><br>
+				    dlg <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDialog<span class="token punctuation">(</span><span class="token string">"Remove message"</span><span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"REMOVE"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    dlg<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Customize & Dark</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Dark<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -127,9 +153,38 @@
 				        app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"You decline the confirmation."</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Dark<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    colors <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>colors<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonRaised<span class="token punctuation">(</span><span class="token string">"SHOW DIALOG"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>ShowDialog<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    text <span class="token operator">=</span> <span class="token string">"You can undone this process."</span><br>
+				    dlg <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDialog<span class="token punctuation">(</span><span class="token string">"Remove message"</span><span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"REMOVE"</span><span class="token punctuation">,</span> <span class="token string">"CLOSE"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				    dlg<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>OnTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">ShowDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    dlg<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnTouch</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> btnTxt<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> val <span class="token operator">&amp;</span><span class="token operator">&amp;</span> btnTxt <span class="token operator">==</span> <span class="token string">"REMOVE"</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Confirmed. Proceed an action"</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"You decline the confirmation."</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 

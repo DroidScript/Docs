@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>SetAppLanguage</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -47,7 +51,7 @@
 		See Also: <a href="GetAppLanguages.htm" data-ajax="false">GetAppLanguages</a></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Switch Language</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> langJson <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 				{<br>
 				    "langs": [ "English", "Español" ],<br>
@@ -85,9 +89,41 @@
 				    <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				langJson <span class="token operator">=</span> `<br>
+				    <span class="token string">"langs"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				    <span class="token string">"codes"</span><span class="token punctuation">:</span><span class="token string">"english"</span><span class="token punctuation">:</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token string">"español"</span><span class="token punctuation">:</span><span class="token string">"es"</span><span class="token punctuation">,</span><br>
+				    <span class="token string">"trans"</span> <span class="token punctuation">:</span><br>
+				        <span class="token string">"SelectLang"</span> <span class="token punctuation">:</span><br>
+				            <span class="token string">"en"</span><span class="token punctuation">:</span><span class="token string">"Please select your prefered language from the 'Settings' menu"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"es"</span><span class="token punctuation">:</span><span class="token string">"Selecciona tu idioma preferido en el menú 'Configuración'"</span><br>
+				<br>
+				`<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"lang.json"</span><span class="token punctuation">,</span> langJson <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetAppLanguage<span class="token punctuation">(</span> <span class="token string">"English"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    spinLang <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSpinner<span class="token punctuation">(</span> <span class="token string">"English,Español"</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><br>
+				    spinLang<span class="token punctuation">.</span>SetOnChange<span class="token punctuation">(</span> spinLang_OnChange <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> spinLang <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span>T<span class="token punctuation">(</span> <span class="token string">"SelectLang"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">spinLang_OnChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    language <span class="token operator">=</span> spinLang<span class="token punctuation">.</span>GetText<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetAppLanguage<span class="token punctuation">(</span> language <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>DestroyLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    OnStart<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

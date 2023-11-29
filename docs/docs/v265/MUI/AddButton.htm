@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>AddButton</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -50,7 +54,7 @@
 		<p>See <a href="CreateButtonElegant.htm" data-ajax="false">CreateButtonElegant</a>, <a href="CreateButtonFlat.htm" data-ajax="false">CreateButtonFlat</a>, <a href="CreateButtonRaised.htm" data-ajax="false">CreateButtonRaised</a>, <a href="CreateButtonRaisedO.htm" data-ajax="false">CreateButtonRaisedO</a>, <a href="CreateButtonRound.htm" data-ajax="false">CreateButtonRound</a>, and <a href="CreateButtonRoundO.htm" data-ajax="false">CreateButtonRoundO</a> for full documentation</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - AddButton</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -73,9 +77,30 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 1"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"raised"</span><span class="token punctuation">)</span><br>
+				        btn2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 2"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"raisedo"</span><span class="token punctuation">)</span><br>
+				        btn3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 3"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"round"</span><span class="token punctuation">)</span><br>
+				        btn4 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 4"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"roundo"</span><span class="token punctuation">)</span><br>
+				        btn5 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 5"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"elegant"</span><span class="token punctuation">)</span><br>
+				        btn6 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 6"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"outlined"</span><span class="token punctuation">)</span><br>
+				        btn7 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 7"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"contained"</span><span class="token punctuation">)</span><br>
+				        btn8 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 8"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">)</span><br>
+				        btn9 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Button 9"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"flat"</span><span class="token punctuation">)</span><br>
+				        btn10 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"[fa-android] Android"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"text"</span><span class="token punctuation">)</span><br>
+				        btn11 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"[fa-folder] Folder"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"flat"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

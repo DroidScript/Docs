@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>App Events</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -58,10 +62,10 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnStart</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token function">setTimeout</span><span class="token punctuation">(</span>OnLoad<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<br>
-				<b id="snip1" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<b id="snip1" class="code-js" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnStart\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b><br>
@@ -71,10 +75,19 @@
 				    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"called OnLoad\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">IsStarted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				setTimeout<span class="token punctuation">(</span>OnLoad<span class="token punctuation">)</span><br>
+				<br>
+				<b id="snip1" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnStart<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    alert<span class="token punctuation">(</span><span class="token string">"called OnStart\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>IsStarted<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></b><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    alert<span class="token punctuation">(</span><span class="token string">"called OnLoad\nApp Started: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>IsStarted<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
@@ -84,10 +97,10 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnMenu</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
-				    <b id="snip2" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <b id="snip2" class="code-js" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SetMenu</span><span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
@@ -103,10 +116,25 @@
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> item<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <b id="snip2" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>SetMenu<span class="token punctuation">(</span> <span class="token string">"Start,Stop,Pause"</span> <span class="token punctuation">)</span></b><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span> <span class="token string">"[fa-gear]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontawesome"</span> <span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> app<span class="token punctuation">.</span>ShowMenu <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> btn <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnMenu</span><span class="token punctuation">(</span> item <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> item<span class="token punctuation">,</span> <span class="token string">"Short"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip2' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
@@ -116,7 +144,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Confirm Exit</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">EnableBackKey</span><span class="token punctuation">(</span> <span class="token boolean">false</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -132,15 +160,30 @@
 				    <span class="token keyword">if</span><span class="token punctuation">(</span>reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">)</span> app<span class="token punctuation">.</span><span class="token function">Exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip3" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<b id="snip3" class="code-js" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    yndExit<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>EnableBackKey<span class="token punctuation">(</span> false <span class="token punctuation">)</span><br>
+				    <br>
+				    yndExit <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateYesNoDialog<span class="token punctuation">(</span><span class="token string">"Exit App?"</span><span class="token punctuation">)</span><br>
+				    yndExit<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> yndExit_OnTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Press the back button"</span> <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">yndExit_OnTouch</span><span class="token punctuation">(</span>reply<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> reply <span class="token operator">==</span> <span class="token string">"Yes"</span><span class="token punctuation">:</span> app<span class="token punctuation">.</span>Exit<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<b id="snip3" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnBack<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    yndExit<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span></b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip3 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip3' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
@@ -149,16 +192,21 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Detect Pause</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token comment">//Called when application is paused.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnPause"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token comment"># Called when application is paused.</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"OnPause"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 
@@ -167,16 +215,21 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Detect Resume</h3>
-			<div id="examp5" style="font-size:70%">
+			<div id="examp5" class="code-js" style="font-size:70%">
 				<span class="token comment">//Called when application is resumed.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp5" class="code-py" style="font-size:70%">
+				<span class="token comment"># Called when application is resumed.</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnResume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"OnResume"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp5 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp5 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp5' )">      Run      </a>
 			</div>
 		</div>
 
@@ -185,7 +238,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Layout Orientation</h3>
-			<div id="examp6" style="font-size:70%">
+			<div id="examp6" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -202,7 +255,7 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span><br>
 				<br>
-				<b id="snip6" style="font-size:100%"><span class="token comment">//Called when screen rotates</span><br>
+				<b id="snip6" class="code-js" style="font-size:100%"><span class="token comment">//Called when screen rotates</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> orient <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOrientation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -215,10 +268,36 @@
 				    txt2<span class="token punctuation">.</span><span class="token function">SetText</span><span class="token punctuation">(</span> orient <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
+			<div id="examp6" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    txt1 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><br>
+				    txt1<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt1 <span class="token punctuation">)</span><br>
+				    <br>
+				    txt2 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">""</span> <span class="token punctuation">)</span><br>
+				    txt2<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt2 <span class="token punctuation">)</span><br>
+				    OnConfig<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<b id="snip6" class="code-py" style="font-size:100%"><span class="token comment"># Called when screen rotates</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    orient <span class="token operator">=</span> app<span class="token punctuation">.</span>GetOrientation<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    txt1<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span>orient<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">if</span> orient <span class="token operator">==</span> <span class="token string">"Portrait"</span><span class="token punctuation">:</span> orient <span class="token operator">=</span> <span class="token string">"Vertical"</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span> orient <span class="token operator">=</span> <span class="token string">"Horizontal"</span><br>
+				    <br>
+				    lay<span class="token punctuation">.</span>SetOrientation<span class="token punctuation">(</span> orient <span class="token punctuation">)</span><br>
+				    txt2<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> orient <span class="token punctuation">)</span></b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip6 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp6 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp6 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip6' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp6' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp6' )">      Run      </a>
 			</div>
 		</div>
 
@@ -227,7 +306,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - OnAlarm</h3>
-			<div id="examp7" style="font-size:70%">
+			<div id="examp7" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token keyword">var</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -238,15 +317,27 @@
 				<br>
 				<span class="token comment">//Called when alarm is triggered.</span><br>
 				<span class="token comment">//(Even if your app is closed)</span><br>
-				<b id="snip7" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
+				<b id="snip7" class="code-js" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnAlarm</span><span class="token punctuation">(</span> <span class="token parameter">id</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> id <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span></b>
 			</div>
+			<div id="examp7" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    now <span class="token operator">=</span> Date<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetAlarm<span class="token punctuation">(</span> <span class="token string">"Set"</span><span class="token punctuation">,</span> <span class="token number">1234</span><span class="token punctuation">,</span> OnAlarm<span class="token punctuation">,</span> Date<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3000</span> <span class="token punctuation">)</span><br>
+				    <span class="token comment">#  app.ToBack()</span><br>
+				    <span class="token comment">#  app.Exit()</span><br>
+				<br>
+				<span class="token comment"># Called when alarm is triggered.</span><br>
+				<span class="token comment"># (Even if your app is closed)</span><br>
+				<b id="snip7" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnAlarm<span class="token punctuation">(</span> <span class="token builtin">id</span> <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Got Alarm: id = "</span> <span class="token operator">+</span> <span class="token builtin">id</span> <span class="token punctuation">)</span></b>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip7 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp7 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp7 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip7' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp7' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp7' )">      Run      </a>
 			</div>
 		</div>
 
@@ -255,7 +346,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Received Intent Data</h3>
-			<div id="examp8" style="font-size:70%">
+			<div id="examp8" class="code-js" style="font-size:70%">
 				<span class="token comment">//Handle data sent from other apps.</span><br>
 				<span class="token keyword">function</span> <span class="token function">OnData</span><span class="token punctuation">(</span> <span class="token parameter">isStartUp</span> <span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
@@ -277,9 +368,27 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp8" class="code-py" style="font-size:70%">
+				<span class="token comment"># Handle data sent from other apps.</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnData</span><span class="token punctuation">(</span> isStartUp <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Display intent data.</span><br>
+				    intent <span class="token operator">=</span> app<span class="token punctuation">.</span>GetIntent<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span>  intent <span class="token punctuation">:</span><br>
+				        <span class="token comment"># Extract main data.</span><br>
+				        s <span class="token operator">=</span> <span class="token string">"action: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>action <span class="token operator">+</span> <span class="token string">"\n"</span><br>
+				        s <span class="token operator">+=</span> <span class="token string">"type: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span><span class="token builtin">type</span> <span class="token operator">+</span> <span class="token string">"\n"</span><br>
+				        s <span class="token operator">+=</span> <span class="token string">"data: "</span> <span class="token operator">+</span> intent<span class="token punctuation">.</span>data <span class="token operator">+</span> <span class="token string">"\n\n"</span><br>
+				        <br>
+				        <span class="token comment"># Extract extras.</span><br>
+				        s <span class="token operator">+=</span> <span class="token string">"extras:\n"</span><br>
+				        <span class="token keyword">for</span>  key <span class="token keyword">in</span> intent<span class="token punctuation">.</span>extras <span class="token punctuation">:</span><br>
+				            s <span class="token operator">+=</span> key<span class="token operator">+</span><span class="token string">": "</span><span class="token operator">+</span>intent<span class="token punctuation">.</span>extras<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\n"</span><br>
+				        <br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> s<span class="token punctuation">,</span> <span class="token string">"OnData"</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp8 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp8 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp8' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp8' )">      Run      </a>
 			</div>
 		</div>
 

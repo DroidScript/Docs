@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>addDialog</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -79,7 +83,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -105,16 +109,36 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add button to the main layout to show the dialog when clicked.</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Contained,Primary"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showDialog <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Message to be displayed in the Dialog component</span><br>
+				        bodyText <span class="token operator">=</span> <span class="token string">"Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."</span><br>
+				        <br>
+				        <span class="token comment">#  Initialize the Dialog component with `Agree` and `Disagree` action buttons</span><br>
+				        this<span class="token punctuation">.</span>dlg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDialog<span class="token punctuation">(</span><span class="token string">"Use Google's location service?"</span><span class="token punctuation">,</span> bodyText<span class="token punctuation">,</span> <span class="token string">"Disagree,Agree"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    showDialog<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Show the Dialog component when the button is click.</span><br>
+				        this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - NoCancel</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -158,16 +182,48 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a button to the main layout.</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Contained,Primary"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `onTouch` event on the button.</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showDialog <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Message to display</span><br>
+				        bodyText <span class="token operator">=</span> <span class="token string">"Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."</span><br>
+				        <br>
+				        <span class="token comment">#  Initialize the Dialog component and pass a `NoCancel` option.</span><br>
+				        this<span class="token punctuation">.</span>dlg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDialog<span class="token punctuation">(</span> <span class="token string">"Use Google's location service?"</span><span class="token punctuation">,</span> bodyText<span class="token punctuation">,</span> <span class="token string">"Close,Agree"</span><span class="token punctuation">,</span> <span class="token string">"NoCancel"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `onAction` event on the Dialog component</span><br>
+				        this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>setOnAction<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onAction <span class="token punctuation">)</span><br>
+				    <br>
+				    showDialog<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Show the Dialog component when button is click</span><br>
+				        this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onAction<span class="token punctuation">(</span> action <span class="token punctuation">)</span><br>
+				        <span class="token keyword">if</span> action <span class="token operator">==</span> <span class="token string">"Close"</span><span class="token punctuation">:</span><br>
+				            ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"There you go."</span><span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Oops! You can't close me here."</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Adding controls to the dialog</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
 				<span class="token punctuation">{</span><br>
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -215,9 +271,47 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Adds a text control to the main layout.</span><br>
+				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Email: "</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Adds a button to show the dialog.</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Contained,Primary"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `ontouch` event on the button control</span><br>
+				        <span class="token comment">#  to show the Dialog component</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showDialog <span class="token punctuation">)</span><br>
+				        <br>
+				        bodyText <span class="token operator">=</span> <span class="token string">"To subscribe to this website, please enter your email address here. We will send updates occasionally."</span><br>
+				        <br>
+				        <span class="token comment">#  Initialize the dialog.</span><br>
+				        this<span class="token punctuation">.</span>dlg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDialog<span class="token punctuation">(</span><span class="token string">"Subscribe"</span><span class="token punctuation">,</span> bodyText<span class="token punctuation">,</span> <span class="token string">"Cancel,Subscribe"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a callback handler for `onaction` event on the Dialog componenti</span><br>
+				        this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>setOnAction<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onAction <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Adding textfield to the main layout</span><br>
+				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Filled"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Email Address"</span><br>
+				    <br>
+				    showDialog<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>dlg<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onAction<span class="token punctuation">(</span> action <span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Check the button that is click.</span><br>
+				        <span class="token keyword">if</span>  action <span class="token operator">==</span> <span class="token string">"Subscribe"</span> <span class="token punctuation">:</span><br>
+				            <span class="token comment">#  Change the text of the text control.</span><br>
+				            this<span class="token punctuation">.</span>txt<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"Email : "</span> <span class="token operator">+</span> this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>text
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 

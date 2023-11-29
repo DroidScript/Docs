@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>Func</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -45,7 +49,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - WebView Greeter</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
 				&lt;html><br>
 				&lt;head><br>
@@ -89,9 +93,46 @@
 				    web<span class="token punctuation">.</span><span class="token function">Func</span><span class="token punctuation">(</span><span class="token string">"greetWeb"</span><span class="token punctuation">,</span> <span class="token string">"App"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				html <span class="token operator">=</span> `<br>
+				<span class="token operator">&lt;</span>html<span class="token operator">></span><br>
+				<span class="token operator">&lt;</span>head<span class="token operator">></span><br>
+				    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width"</span><span class="token operator">></span><br>
+				    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">'file:# /android_asset/app.js'</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><br>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><br>
+				<br>
+				<span class="token operator">&lt;</span>script<span class="token operator">></span><br>
+				<span class="token keyword">def</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the WebView"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">greetApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>Func<span class="token punctuation">(</span><span class="token string">"greetApp"</span><span class="token punctuation">,</span> <span class="token string">"WebView"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnRequest</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    alert<span class="token punctuation">(</span>s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"\\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><br>
+				<br>
+				<span class="token operator">&lt;</span><span class="token builtin">input</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token string">"button"</span> onclick<span class="token operator">=</span><span class="token string">"greetApp()"</span> value<span class="token operator">=</span><span class="token string">"Greet App"</span><span class="token operator">/</span><span class="token operator">></span><br>
+				<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><br>
+				`<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    web <span class="token operator">=</span> app<span class="token punctuation">.</span>AddWebView<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				    web<span class="token punctuation">.</span>LoadHtml<span class="token punctuation">(</span>html<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>AddButton<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Greet WebView"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>greetWeb<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">greetApp</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the App"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    web<span class="token punctuation">.</span>Func<span class="token punctuation">(</span><span class="token string">"greetWeb"</span><span class="token punctuation">,</span> <span class="token string">"App"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 

@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateCameraView</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -61,12 +65,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Show Camera Preview</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip1" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCameraView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCameraView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    cam<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> cam_OnReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> cam <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
@@ -77,10 +81,23 @@
 				  cam<span class="token punctuation">.</span><span class="token function">StartPreview</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip1" class="code-py" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateCameraView<span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span> cam_OnReady <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> cam <span class="token punctuation">)</span></b><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">cam_OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				  cam<span class="token punctuation">.</span>StartPreview<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
@@ -88,12 +105,12 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Take pictures</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    <br>
-				    <b id="snip2" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCameraView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip2" class="code-js" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateCameraView</span><span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    cam<span class="token punctuation">.</span><span class="token function">SetOnReady</span><span class="token punctuation">(</span> cam_OnReady <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> cam <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
 				    <br>
@@ -115,17 +132,39 @@
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Picture saved"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <b id="snip2" class="code-py" style="font-size:100%">cam <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateCameraView<span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span> cam_OnReady <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> cam <span class="token punctuation">)</span></b><br>
+				    <br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span> <span class="token string">"Snap"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> Snap <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> btn <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">cam_OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    cam<span class="token punctuation">.</span>SetPictureSize<span class="token punctuation">(</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">768</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>StartPreview<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">Snap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    cam<span class="token punctuation">.</span>TakePicture<span class="token punctuation">(</span> <span class="token string">"/sdcard/MyPic.jpg"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Picture saved"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip2 )">    Copy    </a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip2' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Record Video</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">SetOrientation</span><span class="token punctuation">(</span><span class="token string">"Landscape"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -166,9 +205,40 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>SetOrientation<span class="token punctuation">(</span><span class="token string">"Landscape"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,FillXY,VCenter"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    cam <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateCameraView<span class="token punctuation">(</span> <span class="token number">.9</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span> cam_OnReady <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> cam <span class="token punctuation">)</span><br>
+				    <br>
+				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateToggle<span class="token punctuation">(</span> <span class="token string">"Rec"</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
+				    tgl<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> Record <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> tgl <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    recFolder <span class="token operator">=</span> <span class="token string">"/sdcard/Videos"</span><br>
+				    app<span class="token punctuation">.</span>MakeFolder<span class="token punctuation">(</span> recFolder <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">cam_OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    cam<span class="token punctuation">.</span>SetFocusMode<span class="token punctuation">(</span> <span class="token string">"Video"</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>StartPreview<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">Record</span><span class="token punctuation">(</span> start <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span>  start <span class="token punctuation">:</span><br>
+				        cam<span class="token punctuation">.</span>Record<span class="token punctuation">(</span> recFolder <span class="token operator">+</span> <span class="token string">"/test.mp4"</span> <span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Recording"</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        cam<span class="token punctuation">.</span>Stop<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Saved to "</span> <span class="token operator">+</span> recFolder <span class="token operator">+</span> <span class="token string">"/test.mp4"</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 
@@ -176,7 +246,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Motion Detector</h3>
-			<div id="examp4" style="font-size:70%">
+			<div id="examp4" class="code-js" style="font-size:70%">
 				<span class="token keyword">var</span> sensitivity <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">// motion threshold</span><br>
 				<span class="token keyword">var</span> minPeriod <span class="token operator">=</span> <span class="token number">500</span><span class="token punctuation">;</span>  <span class="token comment">// millisecs</span><br>
 				<span class="token keyword">var</span> snapFolder <span class="token operator">=</span> <span class="token string">"/sdcard/Snaps"</span><span class="token punctuation">;</span><br>
@@ -210,9 +280,39 @@
 				    cam<span class="token punctuation">.</span><span class="token function">StartPreview</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				sensitivity <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment">#  motion threshold</span><br>
+				minPeriod <span class="token operator">=</span> <span class="token number">500</span><span class="token punctuation">;</span>  <span class="token comment">#  millisecs</span><br>
+				snapFolder <span class="token operator">=</span> <span class="token string">"/sdcard/Snaps"</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>SetOrientation<span class="token punctuation">(</span> <span class="token string">"Landscape"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"fillxy,VCenter"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    layCam <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"Frame"</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> layCam <span class="token punctuation">)</span><br>
+				    <br>
+				    cam <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateCameraView<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"front"</span> <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span> StartDetection <span class="token punctuation">)</span><br>
+				    layCam<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> cam <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">StartDetection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    w <span class="token operator">=</span> cam<span class="token punctuation">.</span>GetImageWidth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    h <span class="token operator">=</span> cam<span class="token punctuation">.</span>GetImageHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span> null<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Fix"</span><span class="token punctuation">,</span> w<span class="token punctuation">,</span> h <span class="token punctuation">)</span><br>
+				    img<span class="token punctuation">.</span>SetAlpha<span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><br>
+				    layCam<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> img <span class="token punctuation">)</span><br>
+				    <br>
+				    cam<span class="token punctuation">.</span>MotionMosaic<span class="token punctuation">(</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> sensitivity<span class="token punctuation">,</span> minPeriod<span class="token punctuation">,</span> img <span class="token punctuation">)</span><br>
+				    cam<span class="token punctuation">.</span>StartPreview<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
 			</div>
 		</div>
 

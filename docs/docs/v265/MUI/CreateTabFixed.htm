@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreateTabFixed</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -60,7 +64,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -90,9 +94,37 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tab <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTabFixed<span class="token punctuation">(</span><span class="token string">"Songs,Albums,Artists"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        songsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Songs"</span><span class="token punctuation">)</span><br>
+				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonRaisedO<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">)</span><br>
+				        songsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				        <br>
+				        albumsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Albums"</span><span class="token punctuation">)</span><br>
+				        ted <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTextEditFilled<span class="token punctuation">(</span><span class="token number">0.75</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Text hint"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				        albumsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>ted<span class="token punctuation">)</span><br>
+				        <br>
+				        artistLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Artists"</span><span class="token punctuation">)</span><br>
+				        img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><br>
+				        artistLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>img<span class="token punctuation">)</span><br>
+				        <br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>tab<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
@@ -100,7 +132,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - With Slide Animation</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -130,9 +162,37 @@
 				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tab <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTabFixed<span class="token punctuation">(</span><span class="token string">"Songs,Albums,Artists"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">,</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				        <br>
+				        songsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Songs"</span><span class="token punctuation">)</span><br>
+				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonRaisedO<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">)</span><br>
+				        songsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				        <br>
+				        albumsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Albums"</span><span class="token punctuation">)</span><br>
+				        ted <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTextEditFilled<span class="token punctuation">(</span><span class="token number">0.75</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Text hint"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				        albumsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>ted<span class="token punctuation">)</span><br>
+				        <br>
+				        artistLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Artists"</span><span class="token punctuation">)</span><br>
+				        img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><br>
+				        artistLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>img<span class="token punctuation">)</span><br>
+				        <br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>tab<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
@@ -140,7 +200,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - With Callback</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				cfg<span class="token punctuation">.</span>Light<br>
 				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
 				<br>
@@ -176,9 +236,41 @@
 				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>name<span class="token operator">+</span><span class="token string">" : "</span><span class="token operator">+</span>index<span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span>MUI<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        tab <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTabFixed<span class="token punctuation">(</span><span class="token string">"Songs,Albums,Artists"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">,</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				        tab<span class="token punctuation">.</span>SetOnSelect<span class="token punctuation">(</span>OnSelect<span class="token punctuation">)</span><br>
+				        <br>
+				        songsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Songs"</span><span class="token punctuation">)</span><br>
+				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonRaisedO<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">)</span><br>
+				        songsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				        <br>
+				        albumsLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Albums"</span><span class="token punctuation">)</span><br>
+				        ted <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTextEditFilled<span class="token punctuation">(</span><span class="token number">0.75</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Text hint"</span><span class="token punctuation">,</span> true<span class="token punctuation">)</span><br>
+				        albumsLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>ted<span class="token punctuation">)</span><br>
+				        <br>
+				        artistLay <span class="token operator">=</span> tab<span class="token punctuation">.</span>GetLayout<span class="token punctuation">(</span><span class="token string">"Artists"</span><span class="token punctuation">)</span><br>
+				        img <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateImage<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Droid1.png"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><br>
+				        artistLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>img<span class="token punctuation">)</span><br>
+				        <br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>tab<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnSelect</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span>name<span class="token operator">+</span><span class="token string">" : "</span><span class="token operator">+</span>index<span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 

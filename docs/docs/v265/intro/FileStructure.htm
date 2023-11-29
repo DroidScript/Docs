@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>File Structure</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -96,7 +100,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - lang.json</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
 				    <span class="token string-property property">"langs"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Deutsch"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
 				    <br>
@@ -118,8 +122,24 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token string">"langs"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Deutsch"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				    <br>
+				    <span class="token string">"codes"</span><span class="token punctuation">:</span><span class="token string">"english"</span><span class="token punctuation">:</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token string">"deutsch"</span><span class="token punctuation">:</span><span class="token string">"de"</span><span class="token punctuation">,</span> <span class="token string">"español"</span><span class="token punctuation">:</span><span class="token string">"es"</span><span class="token punctuation">,</span><br>
+				    <br>
+				    <span class="token string">"trans"</span> <span class="token punctuation">:</span><br>
+				        <span class="token string">"SelectLang"</span> <span class="token punctuation">:</span><br>
+				            <span class="token string">"en"</span><span class="token punctuation">:</span><span class="token string">"Please select your prefered language from the 'Settings' menu"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"de"</span><span class="token punctuation">:</span><span class="token string">"Bitte wähle deine Sprache in den 'Einstellungen' aus"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"es"</span><span class="token punctuation">:</span><span class="token string">"Selecciona tu idioma preferido en el menú 'Settings'"</span><span class="token punctuation">,</span><br>
+				        <br>
+				        <span class="token string">"PrivacyPolicy"</span> <span class="token punctuation">:</span><br>
+				            <span class="token string">"en"</span><span class="token punctuation">:</span><span class="token string">"Privacy Policy"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"de"</span><span class="token punctuation">:</span><span class="token string">"Datenschutzerklärung"</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"es"</span><span class="token punctuation">:</span><span class="token string">"Política de Privacidad"</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
 			</div>
 		</div>
 
@@ -133,7 +153,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - build.json</h3>
-			<div id="examp2" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
 				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
 				    <span class="token punctuation">{</span><br>
@@ -148,9 +168,20 @@
 				    <span class="token string-property property">"autoPermissions"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token string">"manifest"</span><span class="token punctuation">:</span><br>
+				        <span class="token string">"minSdkVersion"</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"targetSdkVersion"</span><span class="token punctuation">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"debuggable"</span><span class="token punctuation">:</span> false<span class="token punctuation">,</span><br>
+				        <span class="token string">"removePermissions"</span><span class="token punctuation">:</span> <span class="token string">"WRITE\_EXTERNAL\_STORAGE"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"homeScreen"</span><span class="token punctuation">:</span> false<span class="token punctuation">,</span><br>
+				        <span class="token string">"noPermsAction"</span><span class="token punctuation">:</span> <span class="token string">"default"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"pathPattern"</span><span class="token punctuation">:</span> <span class="token string">".*\.png,.*\.jpg"</span><span class="token punctuation">,</span><br>
+				    <span class="token string">"autoPermissions"</span><span class="token punctuation">:</span> true
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
@@ -172,7 +203,7 @@
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - minimal build.json</h3>
-			<div id="examp3" style="font-size:70%">
+			<div id="examp3" class="code-js" style="font-size:70%">
 				<span class="token punctuation">{</span><br>
 				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
 				    <span class="token punctuation">{</span><br>
@@ -181,9 +212,14 @@
 				    <span class="token punctuation">}</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token string">"manifest"</span><span class="token punctuation">:</span><br>
+				        <span class="token string">"minSdkVersion"</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"targetSdkVersion"</span><span class="token punctuation">:</span> <span class="token number">28</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
 			</div>
 		</div>
 

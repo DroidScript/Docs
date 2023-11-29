@@ -27,7 +27,11 @@
 	<div data-role="header" data-position="fixed">
 		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
 		<h1>CreatePhoneState</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
 	</div>
 
 	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
@@ -69,7 +73,7 @@
 		<span class="samp samp-inline"><docstr>“MessageWaiting”</docstr> : <strong>boolean</strong></span></p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Demo</h3>
-			<div id="examp1" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
@@ -95,9 +99,31 @@
 				    txt<span class="token punctuation">.</span><span class="token function">SetHtml</span><span class="token punctuation">(</span> log<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">,</span> <span class="token string">"multiline,left"</span> <span class="token punctuation">)</span><br>
+				    txt<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">14</span> <span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt <span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    <br>
+				    types <span class="token operator">=</span> <span class="token string">"CellLocation,DataConnection,DataActivity,CallState,"</span><br>
+				        <span class="token operator">+</span> <span class="token string">"ServiceState,SignalStrength,CallForwarding,MessageWaiting"</span><br>
+				    <br>
+				    state <span class="token operator">=</span> app<span class="token punctuation">.</span>CreatePhoneState<span class="token punctuation">(</span> types <span class="token punctuation">)</span><br>
+				    state<span class="token punctuation">.</span>SetOnChange<span class="token punctuation">(</span> state_OnChange <span class="token punctuation">)</span><br>
+				    state<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				log <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>
+				<span class="token keyword">def</span> <span class="token function">state_OnChange</span><span class="token punctuation">(</span> <span class="token builtin">type</span><span class="token punctuation">,</span> data <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    log<span class="token punctuation">.</span>push<span class="token punctuation">(</span> <span class="token builtin">type</span><span class="token punctuation">.</span>bold<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">":&lt;br>\t"</span> <span class="token operator">+</span> JSON<span class="token punctuation">.</span>stringify<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				    txt<span class="token punctuation">.</span>SetHtml<span class="token punctuation">(</span> log<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"&lt;br>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
