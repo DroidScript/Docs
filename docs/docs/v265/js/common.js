@@ -102,8 +102,8 @@ $(document).live('pageshow', function (event, ui) {
 		curPage = $.mobile.activePage.attr('id');
 
 		//Show plugins list if 'plugins' page is loading.
-		if (curPage == "plugins") ShowPluginsPage();
-		else if (curPage == "extensions") ShowExtensionsPage();
+		if (curPage == "plugins") ShowPluginsPage()
+		else if (curPage == "extensions") ShowExtensionsPage()
 
 		//Append popup div in plugin docs if not exists
 		if (!$(".androidPopup").parent().is(":visible"))
@@ -152,6 +152,7 @@ function highlightSearch() {
 		};
 		if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
 		else $(".ui-content").mark(search, options);
+		jumpToElement($('mark:first'));
 	}
 }
 
@@ -265,27 +266,30 @@ function jumpTo(contains) {
 	//Control popup
 	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if (popup.length) {
-		$("html").clearQueue()
-			.animate({ scrollTop: popup.offset().top - 100 }, 300)
-			.delay(350).queue(_ => popup.click());
+		jumpToElement(popup, 100).delay(350).queue(_ => popup.click());
 		return false;
 	}
 
 	//Header
 	var header = $(":header:contains(" + contains + ")");
 	if (header.length) {
-		$("html").clearQueue()
-			.animate({ scrollTop: header.offset().top - 50 }, 300);
+		jumpToElement(header);
 
-		if (has(header[0].className, "ui-collapsible-heading-collapsed"))
-			header.click();
-		else
-			header.clearQueue().delay(100)
-				.animate({ opacity: 0.1 }, 400)
-				.animate({ opacity: 1.0 }, 400);
+		header.clearQueue().delay(100)
+			.animate({ opacity: 0.1 }, 400)
+			.animate({ opacity: 1.0 }, 400);
 
 		return false;
 	}
+}
+
+function jumpToElement(el, offset = 50) {
+	el = $(el);
+	if (has(el[0].className, "ui-collapsible-heading-collapsed"))
+		el.click();
+
+	return $("html").clearQueue()
+		.animate({ scrollTop: el.offset().top - offset }, 300);
 }
 
 //Toggles between dark and default theme
@@ -363,7 +367,7 @@ function searchDocs(filterName, filterContent, fetched) {
 		.filter(s => match(s, filterContent))
 		.map(s => s.slice(0, s.indexOf(" := ")))
 		.filter(s => match(s, filterName))
-		.map(url => [url, `?search=${encodeURIComponent(filterContent)}&flags=${2 * useReg + useCase}`])
+		.map(url => [url, `?search=${encodeURIComponent(filterContent || filterName)}&flags=${2 * useReg + useCase}`])
 		.map(([url, flags]) => `<li><a href='${url}${flags}'>${url.replace('.htm', '')}</a></li>`);
 
 	var resultText = `Results: ${Math.min(items.length, max)}`;
