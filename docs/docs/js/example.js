@@ -41,7 +41,8 @@ function copyToClipboard(text) {
 	if (window.clipboardData) window.clipboardData.setData("Text", text); //IE
 	else if (window.unsafeWindow) {
 		unsafeWindow.netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-		const clipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper;1"].getService(Components.interfaces.nsIClipboardHelper);
+		const clipboardHelperClass = Components.classes["@mozilla.org/widget/clipboardhelper;1"]
+		const clipboardHelper = clipboardHelperClass.getService(Components.interfaces.nsIClipboardHelper);
 		clipboardHelper.copyString(text);
 	}
 	else if (navigator.clipboard && navigator.clipboard.writeText)
@@ -64,7 +65,7 @@ function fallbackCopyTextToClipboard(text) {
 	_cbTA.select();
 
 	try {
-		var status = document.execCommand('copy');
+		const status = document.execCommand('copy');
 		if (status) ShowPopup("Text copied to clipboard");
 		else ShowPopup('Copying was unsuccessful');
 		return status;

@@ -72,9 +72,6 @@ $(document).on("mobileinit", function () {
 	if (!isMobileIDE) app.ShowPopup = ShowPopup;
 });
 
-$(document).ready(function () {
-});
-
 $(document).live('pageshow', function (event, ui) {
 	//try
 	{
@@ -112,41 +109,52 @@ $(document).live('pageshow', function (event, ui) {
 		if (!$(".androidPopup").parent().is(":visible"))
 			$(".ui-content").append($(".androidPopup:first").parent().clone());
 
+		initSequentialPopups();
+		highlightSearch();
+
 		$('.onlyinclude a:not(data-ajax)').attr("data-ajax", "false");
 		$("a#extLink").attr("onclick", "return OpenUrl(this.href);");
-
-		// sequential popups
-		var nextPop = null, updated = false;
-		$("a[data-rel=popup]").on("click", function () { nextPop = this; updated = 2; });
-		$(window).off("click").on("click", function () { updated--; $("div.ui-popup-active > div").popup("close"); });
-		$("div[data-role=popup]")
-			.on("click", function (e) { e.stopPropagation(); e.preventDefault(); })
-			.on("popupafterclose", function () { if (updated > 0) nextPop?.click(); });
 
 		//Ask parent for DS adddress
 		if (!isMobileIDE) {
 			parent.postMessage("getaddress:", "*")
 			setTimeout(function () { parent.postMessage("getaddress:", "*") }, 3000) //<-- needed for first time load.
 		}
-
-		var search = location.href.match(/(\bsearch=)([^&#]+)/i);
-		var flags = location.href.match(/(\bflags=)(\d+)/i) || 0;
-
-		if (search) {
-			search = decodeURIComponent(search[2]);
-			flags &&= Number(flags[2]);
-			console.log("search", search, flags)
-			/** @type {import("mark.js").MarkOptions} */
-			const options = {
-				acrossElements: true, caseSensitive: flags & 1, ignoreJoiners: true,
-				ignorePunctuation: ":;.,-–—‒_(){}[]!'\"+=".split("")
-			};
-			if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
-			else $(".ui-content").mark(search, options);
-		}
 	}
 	//catch( e ) {}
 });
+
+function initSequentialPopups() {
+	var nextPop = null, updated = false;
+	// store next popup
+	$("a[data-rel=popup]").on("click", function () { nextPop = this; updated = 2; });
+	// close popup on window clicks
+	$(window).off("click").on("click", function () { updated--; $("div.ui-popup-active > div").popup("close"); });
+	$("div[data-role=popup]")
+		// prevent default popup behaviour
+		.on("click", function (e) { e.stopPropagation(); e.preventDefault(); })
+		// trigger next popup after close
+		.on("popupafterclose", function () { if (updated > 0 && nextPop) nextPop.click(); });
+}
+
+function highlightSearch() {
+	var search = location.href.match(/(\bsearch=)([^&#]+)/i);
+	var flags = location.href.match(/(\bflags=)(\d+)/i) || 0;
+
+	if (search) {
+		search = decodeURIComponent(search[2]);
+		flags = flags && Number(flags[2]);
+		console.log("search", search, flags)
+		/** @type {import("mark.js").MarkOptions} */
+		var options = {
+			acrossElements: true, caseSensitive: flags & 1, ignoreJoiners: true,
+			ignorePunctuation: ":;.,-–—‒_(){}[]!'\"+=".split("")
+		};
+		if (flags & 2) $(".ui-content").markRegExp(RegExp(search, flags & 1 ? "sui" : "su"), options);
+		else $(".ui-content").mark(search, options);
+		jumpToElement($('mark:first'));
+	}
+}
 
 //Handle address message (Wifi ide)
 function OnAddress() {
@@ -189,10 +197,10 @@ function addList(parent, list, getPath) {
 //Get list from device.
 function getIdeList(cmd, cb) {
 	//Get list from device.
-	xmlHttp = new XMLHttpRequest();
+	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onload = function () {
 		//Extract plugins list.
-		var data = JSON.parse(xmlHttp.responseText);
+		const data = JSON.parse(xmlHttp.responseText);
 		if (data.status == "access denied") data.status = "IDE not connected";
 		if (!data.plugins && !data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
 		cb(data);
@@ -203,15 +211,15 @@ function getIdeList(cmd, cb) {
 
 //Dynamically create plugins page.
 function ShowPluginsPage() {
-	var getPath = name => "plugins/" + name.toLowerCase() + "/" + name + ".html";
+	const getPath = name => "plugins/" + name.toLowerCase() + "/" + name + ".html";
 	try {
 		//If on device.
 		if (isMobileIDE) {
-			var list = app.ListFolder(pluginFolder, null, null, "folders");
+			const list = app.ListFolder(pluginFolder, null, null, "folders");
 
-			for (var i in list) {
+			for (const i in list) {
 				//Get main docs file
-				var files = app.ListFolder(pluginFolder + list[i],
+				const files = app.ListFolder(pluginFolder + list[i],
 					"(?i)" + list[i] + "\\.html", null, "RegExp");
 				list[i] = list[i] && files.length > 0 ? files[0].slice(0, -5) : false;
 			}
@@ -232,14 +240,14 @@ function ShowExtensionsPage() {
 	try {
 		//If on device.
 		if (isMobileIDE) {
-			var fldr = "/sdcard/DroidScript/Extensions";
-			var list = app.ListFolder(fldr, null, null, "folders");
-			var getPath = name => "/sdcard/DroidScript/Extensions/" + name + "/Docs.html";
+			const fldr = "/sdcard/DroidScript/Extensions";
+			const list = app.ListFolder(fldr, null, null, "folders");
+			const getPath = name => fldr + "/" + name + "/Docs.html";
 			addList('#divExts', list, getPath);
 		}
 		//If on PC.
 		else {
-			var getPath = name => "/Extensions/" + name + "/Docs.html";
+			const getPath = name => "/Extensions/" + name + "/Docs.html";
 			getIdeList("getextensions", data =>
 				addList('#divExts', data.extensions.split(","), getPath)
 			);
@@ -258,27 +266,30 @@ function jumpTo(contains) {
 	//Control popup
 	var popup = $("div.samp > a.ui-link:contains(" + contains + ")");
 	if (popup.length) {
-		$("html").clearQueue()
-			.animate({ scrollTop: popup.offset().top - 100 }, 300)
-			.delay(350).queue(_ => popup.click());
+		jumpToElement(popup, 100).delay(350).queue(_ => popup.click());
 		return false;
 	}
 
 	//Header
 	var header = $(":header:contains(" + contains + ")");
 	if (header.length) {
-		$("html").clearQueue()
-			.animate({ scrollTop: header.offset().top - 50 }, 300);
+		jumpToElement(header);
 
-		if (has(header[0].className, "ui-collapsible-heading-collapsed"))
-			header.click();
-		else
-			header.clearQueue().delay(100)
-				.animate({ opacity: 0.1 }, 400)
-				.animate({ opacity: 1.0 }, 400);
+		header.clearQueue().delay(100)
+			.animate({ opacity: 0.1 }, 400)
+			.animate({ opacity: 1.0 }, 400);
 
 		return false;
 	}
+}
+
+function jumpToElement(el, offset = 50) {
+	el = $(el);
+	if (has(el[0].className, "ui-collapsible-heading-collapsed"))
+		el.click();
+
+	return $("html").clearQueue()
+		.animate({ scrollTop: el.offset().top - offset }, 300);
 }
 
 //Toggles between dark and default theme
@@ -351,19 +362,19 @@ function searchDocs(filterName, filterContent, fetched) {
 		return s.toLowerCase().includes(m.toLowerCase());
 	}
 
-	var max = 100;
+	const max = 100;
 	var items = indexContent
 		.filter(s => match(s, filterContent))
 		.map(s => s.slice(0, s.indexOf(" := ")))
 		.filter(s => match(s, filterName))
-		.map(url => [url, `?search=${encodeURIComponent(filterContent)}&flags=${2 * useReg + useCase}`])
+		.map(url => [url, `?search=${encodeURIComponent(filterContent || filterName)}&flags=${2 * useReg + useCase}`])
 		.map(([url, flags]) => `<li><a href='${url}${flags}'>${url.replace('.htm', '')}</a></li>`);
 
-	var list = $("#listview");
-	if (!items.length) return $("#results").text("Results: 0");
-	$("#results").text(`Results: ${Math.min(items.length, max)} of ${items.length}`);
+	var resultText = `Results: ${Math.min(items.length, max)}`;
+	if (items.length > max) resultText += ` of ${items.length}`;
+	$("#results").text(resultText);
 
-	list.empty().append(items.slice(0, max).join('\n')).listview("refresh");
+	if (items.length) $("#listview").empty().append(items.slice(0, max).join('\n')).listview("refresh");
 }
 
 //Shortcut for string.contains
@@ -405,7 +416,7 @@ function OpenSample(name) {
 	if (isMobileIDE)
 		app.Execute("if(typeof lstSamp_OnTouch == 'function') lstSamp_OnTouch('" + name + "', '', 'x')");
 	else if (isWebIDE) {
-		var e = parent.$("#samplesContentList > div:contains(" + name + ") > a")
+		const e = parent.$("#samplesContentList > div:contains(" + name + ") > a")
 		if (e.length) e.click();
 	}
 	else IsApp();
@@ -419,7 +430,7 @@ function RemovePlugin(plugName) {
 	else if (isWebIDE)
 		RemoteExec('ide', "RemovePlugin('" + plugName + "')")
 
-	setTimeout(function () { location.reload() }, 1000)
+	setTimeout(ShowPluginsPage, 1000)
 }
 
 function RemoveExtension(extName) {
@@ -428,7 +439,7 @@ function RemoveExtension(extName) {
 	else if (isWebIDE)
 		RemoteExec('ide', "RemoveExtension('" + extName + "')")
 
-	setTimeout(function () { location.reload() }, 1000)
+	setTimeout(ShowExtensionsPage, 1000)
 }
 
 //Execute code on the connected device.
