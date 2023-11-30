@@ -4,7 +4,7 @@
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
     "engines": {
-        "node": ">=8.3.0"
+        "node": ">=9"
     },
     "scripts": {
         "docs": "node generate.js -c",

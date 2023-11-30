@@ -29,9 +29,6 @@ const types = {
     unknown: "?"
 };
 
-// Replace backticks with forward slashes around text inside them
-const pattern = /`([^`]*)`/g; // Matches any text between backticks
-const replacement = '“$1”'; // Replaces backticks with slash before and after the matched text
 let _errors = 0;
 
 /**

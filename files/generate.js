@@ -116,7 +116,7 @@ function Generate(genPattern) {
         const content = app.ReadFile(file)
             .replace(/version.txt: [0-9.]+/, `version.txt: ${verDate + verNum.join('.')}`)
             .replace(/Docs version: [0-9.]*/, `Docs version: ${verNum.join('.')}`)
-            .replace(/\(\d\d\/\d\d\/\d\d\d\d\)/, `(${new Date().toLocaleDateString()})`);
+            .replace(/\(\d\d\/\d\d\/\d\d\d\d\)/, `(${new Date().toLocaleDateString("en-GB", { timeZone: "UTC" })})`);
         app.WriteFile(file, content);
     }
 }

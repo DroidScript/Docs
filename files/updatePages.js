@@ -1,9 +1,8 @@
-#!/usr/bin/node
 
 const path = require('path');
 const fs = require('fs-extra');
 const rimraf = require('rimraf').sync;
-const conf = require('./conf.json')
+const conf = require('./conf.json');
 
 main();
 
