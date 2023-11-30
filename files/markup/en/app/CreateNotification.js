@@ -85,7 +85,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
  * @param {str} ticker 
  * @param {str} title 
  * @param {str} text 
- * @param {str} extra 
+ * @param {str} extra Add multiline text in your notification.
  */
 
 
