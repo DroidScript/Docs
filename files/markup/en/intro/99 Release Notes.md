@@ -1,4 +1,16 @@
 <!-- /([^\\])([_*])/$1\\$2/ /:/&colon;/ -->
+
+### DS 2.65b2 (30-Nov 2023)
+- Removed Premium signup email box, to improve app privacy.
+- Modified Premium subs description.
+- Updated Hybrid/AppBar and Drawer template.
+- Fixed docs back button issues after removing plugins or func params popup.
+- Fixed issue with Hybrid UI docs not being available till app restart.
+- Fixed issue with landscape display height not taking account of status bar.
+- Add more app demos on fresh install (not just 'Hello World').
+- Removed MUI link from main docs page (deprecated).
+- Removed CreateCloudStore from Premium docs page (deprecated).
+
 ### DS 2.65b1 (27-Nov 2023)
 - Added 'Bound' class, auto-binds methods of classes that extend it.
 - Fixed Notification 'No Permissions' issue for < API33.
@@ -22,7 +34,7 @@
 - Added USB Drive SAF support + Updated 'Storage Access' sample.
 - Enabled editing of Python apps in Wifi IDE (but not creating).
 - Disabled AndroidTV mode in IDE (was not working properly).
-- *.Batch calls can now have the optional params left out.
+- \*.Batch calls can now have the optional params left out.
 - app.Tween() is now available to cfg.Node apps.
 - Fixed 'IgnoreErrors' in WebViews for cfg.Node.
 - Added support for new notification permissions in Android 13.
