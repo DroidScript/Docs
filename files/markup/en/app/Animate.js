@@ -1,16 +1,16 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # Animate #
  * @brief Similar to setInterval
- * 
- * $$ app.Animate(callback, fps) $$ 
+ *
+ * $$ app.Animate(callback, fps) $$
  * @param {fnc_json} callback {"pNames":["time","dtime"],"pTypes":["num_mls","num_mls"]}
- * @param {num_fps} fps 
+ * @param {num_fps} fps
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.
@@ -21,14 +21,20 @@ When using _cfg.NoDom_; you cannot use JavaScripts _setInterval_ but only the _A
 
 ### Comparison
 **normal**:
-	_setInterval_: about 242 calls per second
-	_app.Animate_: about 217 calls per second
+    _setInterval_: about 242 calls per second
+    _app.Animate_: about 217 calls per second
 
 **with “NoDom” option**:
-	_setInterval_: error
-	_app.Animate_: up to 1000 calls per second
+    _setInterval_: error
+    _app.Animate_: up to 1000 calls per second
+ */
 
-<sample Multiple Animation loops>
+
+
+// ------------- SAMPLES ------------- 
+
+/**
+@sample Multiple Animation loops
 function OnStart()
 {
     lay = app.CreateLayout("Linear");
@@ -63,15 +69,8 @@ function loop(t, dt)
         t2 = t;
     }
 }
-</sample>
  */
 
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
 /**
 @sample Digital Clock
 function OnStart()
@@ -95,9 +94,9 @@ function OnAnimate( time, dtime )
     txt.SetText( new Date().toLocaleString() + "\n" + time );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SpeedTest
 cfg.No_Dom;
@@ -126,5 +125,4 @@ function OnAnimate( time, dtime )
     }
 }
  */
-    
-            
+
