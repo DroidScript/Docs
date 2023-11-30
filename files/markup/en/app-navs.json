@@ -2,7 +2,6 @@
 	"_nofilter": true,
 	"All": [],
 	"Premium": {
-		"CreateCloudStore": "",
 		"CreateCodeEdit": "",
 		"CreateOverlay": "",
 		"CreatePlayStore": "",
@@ -213,7 +212,6 @@
 		"SaveJson",
 		"ClearValue",
 		"",
-		"CreateCloudStore",
 		"DeleteDatabase",
 		"GetDatabaseFolder",
 		"OpenDatabase",
@@ -430,7 +428,6 @@
 		"SaveCookies",
 		"ClearCookies",
 		"",
-		"CreateCloudStore",
 		"CreateEmail",
 		"CreateNetClient",
 		"CreateWebSocket",
