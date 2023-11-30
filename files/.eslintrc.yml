@@ -96,7 +96,6 @@ rules:
   indent: [warn, 4, { SwitchCase: 1 }]
   key-spacing: warn
   keyword-spacing: warn
-  linebreak-style: [warn, unix]
   new-parens: warn
   no-multi-spaces: [warn, { ignoreEOLComments: true }]
   no-multiple-empty-lines: warn

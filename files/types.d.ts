@@ -65,7 +65,7 @@ declare global {
     type DSScope = Obj<DSFunction>;
     type DSBase = Obj<DSFunction>;
     type DSNavs = (string[] | Obj<string | DSNavs>) & { _nofilter?: boolean }
-    type DSInput = { base: DSBase | null, baseKeys: string[], scope: DSScope, navs: DSNavs, state: GenState };
+    type DSInput = { base: DSBase | null, baseKeys: string[], scope: DSScope, navs: DSNavs };
     type GenState = {
         lang: LangKeys, curVer: string, curDoc: string;
         curScope: ScopeKeys, curFunc: string, curSubf: string;

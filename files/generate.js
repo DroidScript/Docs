@@ -308,7 +308,7 @@ function parseInput(state) {
         scope = mergeObject(scope, newScope);
     }
 
-    return { navs, scope, base, baseKeys, state };
+    return { navs, scope, base, baseKeys };
 }
 
 /**
@@ -390,12 +390,15 @@ function generateDocs(inpt, state) {
 
     if (!"tips".match(regGen)) return;
 
-    generateTips(inpt);
+    generateTips(inpt, state);
     generateTsx(inpt);
 }
 
-/** @param {DSInput} scope */
-function generateTips({ base, scope, state }) {
+/**
+ * @param {DSInput} scope
+ * @param {GenState} state
+ */
+function generateTips({ base, scope }, state) {
     state.curDoc = getSrcDir(D_VER, state, state.curScope + '-tips.json');
     /** @type {DSScopeRaw} */
     let tsubf;
@@ -473,7 +476,7 @@ function generateDoc(state, inpt, name) {
         if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + name + " get data");
 
         const m = fillMissingFuncProps(ps);
-        data = getDocData(inpt, m);
+        data = getDocData(inpt, state, m);
         desc = m.desc;
 
         // function line with popups
@@ -640,8 +643,8 @@ function adjustDoc(state, html, name) {
 function formatDesc(inpt, state, desc, name, hasData) {
     desc = desc.charAt(0).toUpperCase() + desc.slice(1);
 
-    const samplesJs = getSamples(inpt, name);
-    const samplesPy = getSamples(inpt, name, "-py");
+    const samplesJs = getSamples(inpt.scope, state, name);
+    const samplesPy = getSamples(inpt.scope, state, name, "-py");
     let sampcnt = keys(samplesJs).length;
     if (!has(desc, '.')) desc += '.';
 
@@ -670,9 +673,9 @@ function formatDesc(inpt, state, desc, name, hasData) {
         .replace(/\s*<br>\s*/g, "<br>\n\t\t")
         // expandable samples (per <sample name> tag or add to desc)
         .replace(/<sample (.*?)>/g, (m, /** @type {string} */ t) =>
-            `</p>\n\t\t${toHtmlSamp(t, samplesJs[t], samplesPy[t], inpt.state) + (delete samplesJs[t], '')}<p>`)
+            `</p>\n\t\t${toHtmlSamp(t, samplesJs[t], samplesPy[t], state) + (delete samplesJs[t], '')}<p>`)
         .replace(/(“.*?”)/g, "<docstr>$1</docstr>")
-        + keys(samplesJs).map(t => toHtmlSamp(t, samplesJs[t], samplesPy[t], inpt.state)).join("");
+        + keys(samplesJs).map(t => toHtmlSamp(t, samplesJs[t], samplesPy[t], state)).join("");
 }
 
 /**
@@ -705,9 +708,10 @@ function fillMissingFuncProps(f) {
 
 /** converts a function object into an html snippets object
  * @param {DSInput} inpt
+ * @param {GenState} state
  * @param {DSMethod} f */
-function getDocData(inpt, f, useAppPop = false) {
-    const { base, state } = inpt;
+function getDocData(inpt, state, f, useAppPop = false) {
+    const { base } = inpt;
     /** @type {string[]} */
     const mArgs = [];
     let i, fretval = "";
@@ -801,11 +805,12 @@ function getDocData(inpt, f, useAppPop = false) {
 }
 
 /** read and return html converted example snippets file
- * @param {DSInput} inpt
+ * @param {DSScope} scope
+ * @param {GenState} state
  * @param {string} func
  * @param {string} ext
  */
-function getSamples({ scope, state }, func, ext = "") {
+function getSamples(scope, state, func, ext = "") {
     /** @type {Obj<Sample>} */
     const samples = {};
     let index = 0;
@@ -931,7 +936,7 @@ function typeDesc(inpt, state, stypes) {
                     default:
                         if (!type[0].endsWith("o"))
                             Throw(Error("unknown typex " + type[1]));
-                        if (inpt.state.curDoc.endsWith(type[2] + ".htm"))
+                        if (state.curDoc.endsWith(type[2] + ".htm"))
                             return s[i] + type[2];
                         if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                             Throw(Error("link required for " + type[2]));
@@ -1016,7 +1021,7 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
                 default:
                     if (!type[0].endsWith("o"))
                         Throw(Error("unknown typex " + type[1]));
-                    if (inpt.state.curDoc.endsWith(type[2] + ".htm"))
+                    if (state.curDoc.endsWith(type[2] + ".htm"))
                         return s2[i] + type[2];
                     if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                         Throw(Error("link required for " + type[2]));
