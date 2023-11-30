@@ -35,7 +35,11 @@
  */
 
 
-/** @extern GetIcon */
+/** ### GetIcon
+ *  Returns the icon.
+ * $$ fab.GetIcon() $$
+ * @returns str-Material icon font
+ */
 
 /** @extern Animate */
 
