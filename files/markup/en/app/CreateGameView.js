@@ -3,11 +3,11 @@
 
 /** # CreateGameView #
  * @abbrev gmv
- * 
- * $$ gmv = app.CreateGameView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options 
+ *
+ * $$ gmv = app.CreateGameView(width, height, options) $$
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str_com} options
 */
 
 
@@ -19,7 +19,7 @@ The GameView is a blindingly fast container for game development with a physics 
 Starting from DS 2.05 the GameView supports the same options as @CreateGame.
 
 You can find references of GameView scripting here:
-	- official [DS GameView tutorials](https://dsgameview.wixsite.com/gameview) (Start with [lesson 1](https://dsgameview.wixsite.com/gameview/copy-of-lesson-1-anatomy-of-the-gam); [Sample SPK](https://ds.justplayer.de/uploads/41))
+    - official [DS GameView tutorials](https://dsgameview.wixsite.com/gameview) (Start with [lesson 1](https://dsgameview.wixsite.com/gameview/copy-of-lesson-1-anatomy-of-the-gam); [Sample SPK](https://ds.justplayer.de/uploads/41))
 
 
 ### GameView in web browsers
@@ -41,7 +41,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Execute code inside the GameView
  * Execute some code inside the GameView.
  * $$ gmv.Execute(js) $$
- * @param {str_jsc} js 
+ * @param {str_jsc} js
  */
 
 
@@ -103,7 +103,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Define the game source file
  * Loads a GameView script file.
  * $$ gmv.SetFile(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -111,7 +111,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Change the target framerate
  * Change the targeted framerate.
  * $$ gmv.SetFrameRate(fps) $$
- * @param {num_fps} fps 
+ * @param {num_fps} fps
  */
 
 
@@ -135,9 +135,9 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 // ------------- SAMPLES ------------- 
 
 
-    
+
 /**
-@sample s
+@sample Script
 cfg.Landscape;
 
 function OnStart()
@@ -155,7 +155,5 @@ function OnStart()
 
     app.AddLayout( lay );
 }
-</samples>
  */
-    
-            
+
