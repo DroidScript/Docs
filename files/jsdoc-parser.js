@@ -409,11 +409,12 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                     }
 
                     else if (line.includes("@returns")) {
-                        let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], v;
+                        let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], h = f.substring(g.length).trim() || "", v;
+                        if(h && h.startsWith("-")) h = h.substring(1);
                         if (types[g]) v = types[g];
                         else if (typx.includes(g)) v = f;
                         else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + f;
-                        obj.retval = v;
+                        obj.retval = v + (h ? "-"+h : "");
                     }
 
                     else if (line.includes("@img")) { }
