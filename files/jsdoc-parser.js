@@ -347,6 +347,9 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         if (c.value.includes("@prop")) met.isval = true;
                     }
 
+                    // exclude these lines
+                    else if( line.includes("@jdocs") ) {}
+
                     else if (line.includes("##") && !isCA) {
                         // met += line;
                     }
