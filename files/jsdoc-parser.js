@@ -13,7 +13,7 @@ const LANG = "en";
 const SRC = path.normalize(__dirname + "/markup/" + LANG);
 const DST = path.normalize(__dirname + "/json/" + LANG + "/" + conf.version);
 
-const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
+const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?,uio";
 /** @type {Obj<string>} */
 const types = {
     String: "str",
@@ -27,7 +27,8 @@ const types = {
     GameObject: "gvo",
     JSObject: "jso",
     SmartWatchObject: "swo",
-    unknown: "?"
+    unknown: "?",
+    UIObject: "uio"
 }
 
 // Replace backticks with forward slashes around text inside them
