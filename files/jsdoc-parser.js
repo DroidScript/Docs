@@ -357,7 +357,25 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
                     // isCA = false
                     else if (line.includes("@prop")) {
-                        obj.isval = true;
+                        if( line.includes("{") ) {
+                            const l = line.split("@prop")[1].trim(),
+                                p = extractParams(l),
+                                ts = p[0].split('||').map(t => types[p[0]] || t);
+                            if( ts.find(t => !typx.includes(t.split(/[_:-]/)[0])) ) Throw(`unknown param type ${line} in ${name}`);
+                            let d = ts.join('||');
+                            if( p[2] ) d += "-" + p[2];
+                            const ref = /\d/.test(p[1][0]) ? '#' : '';
+                            json[ref + p[1]] = met = newDSFunc();
+                            met.isval = true;
+                            met.desc = p[2];
+
+                            let g = p[0].split(/[_\s:-]/)[0], v;
+                            if( types[g] ) v = types[g];
+                            else if( typx.includes(g) ) v = p[0];
+                            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p[0];
+                            met.retval = v;
+                        }
+                        else obj.isval = true;
                     }
 
                     else if (line.includes("@name")) {
