@@ -1,5 +1,7 @@
 <sample Check Connected>
+from native import app
+
 def OnStart():
-    <b>isConnected = app.IsConnected()</b>
-    app.Alert( isConnected, "is Connected:" )
+    isConnected = app.IsConnected()
+    app.Alert(isConnected, "is Connected:")
 </sample>

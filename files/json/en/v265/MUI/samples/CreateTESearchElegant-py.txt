@@ -1,63 +1,63 @@
 <sample Basic>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTESearchElegant(0.8, "Search for music", "music_note")
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>
 
 <sample RightIcon>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right")
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>
 
 <sample Small>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", "#673ab7", "Small")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", "#673ab7", "Small")
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>
 
 <sample Border>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", null, "Small,Border")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", None, "Small,Border")
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>

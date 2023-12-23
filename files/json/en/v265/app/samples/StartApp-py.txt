@@ -1,4 +1,6 @@
 <sample Example>
+from native import app
+
 def OnStart():
-    <b>app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" )</b>
+    app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" )
 </sample>

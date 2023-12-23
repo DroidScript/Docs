@@ -1,12 +1,14 @@
 <sample SetPosition>
+from native import app
+
 def OnStart():
-	<b>app.SetPosition( 0.2, 0.2, .6, .6 )</b>
+    app.SetPosition(0.2, 0.2, .6, .6)
 
-	lay = app.CreateLayout( "linear", "VCenter,fillxy" )
-	lay.SetBackColor("blue")
+    lay = app.CreateLayout("linear", "VCenter,fillxy")
+    lay.SetBackColor("blue")
 
-	btn = app.CreateButton( "Hello World", 0.3, 0.1 ); #  1, 1 will overflow
-	lay.AddChild( btn )
+    btn = app.CreateButton("Hello World", 0.3, 0.1)
+    lay.AddChild(btn)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 </sample>

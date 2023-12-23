@@ -1,33 +1,40 @@
 <sample Themes Demo>
-lay = null
+from native import app
+
+lay = None
 themeName = "Default"
 
 def OnStart():
     CreateLayout()
 
 def CreateLayout():
-    if  lay : app.DestroyLayout( lay )
+    global lay
 
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    if lay:
+        app.DestroyLayout(lay)
 
-    txt = app.CreateText( "Theme" )
-    txt.SetTextSize( 30 )
-    lay.AddChild( txt )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-    spin = app.CreateSpinner( "Default,Dark,Light", 0.4, 0.1 )
-    spin.SetMargins( 0, 0.05, 0, 0.05 )
-    spin.SetOnTouch( spin_OnChange )
-    spin.SetText( themeName )
-    lay.AddChild( spin )
+    txt = app.CreateText("Theme")
+    txt.SetTextSize(30)
+    lay.AddChild(txt)
 
-    tgl = app.CreateButton( "Button", .3, .1 )
-    lay.AddChild( tgl )
+    spin = app.CreateSpinner("Default,Dark,Light", 0.4, 0.1)
+    spin.SetMargins(0, 0.05, 0, 0.05)
+    spin.SetOnTouch(spin_OnChange)
+    spin.SetText(themeName)
+    lay.AddChild(spin)
 
-    app.AddLayout( lay )
+    tgl = app.CreateButton("Button", .3, .1)
+    lay.AddChild(tgl)
 
-def spin_OnChange( item ):
+    app.AddLayout(lay)
+
+def spin_OnChange(item):
+    global themeName
+
     themeName = item
-    theme = app.CreateTheme( themeName )
-    app.SetTheme( theme )
+    theme = app.CreateTheme(themeName)
+    app.SetTheme(theme)
     CreateLayout()
 </sample>

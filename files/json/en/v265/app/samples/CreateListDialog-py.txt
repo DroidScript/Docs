@@ -1,19 +1,25 @@
 <sample Basic>
+from native import app
+
 def OnStart():
-	<b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" )
-	dlg.SetOnTouch( dlg_OnTouch )
-	dlg.Show()</b>
+    dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" )
+    dlg.SetOnTouch( dlg_OnTouch )
+    dlg.Show()
 
 def dlg_OnTouch( item ):
-	app.ShowPopup( item )
+    app.ShowPopup( item )
+
 </sample>
 
 <sample Multi>
+from native import app
+
 def OnStart():
-	<b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" )
-	dlg.SetOnTouch( dlg_OnTouch )
-	dlg.Show()</b>
+    dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" )
+    dlg.SetOnTouch( dlg_OnTouch )
+    dlg.Show()
 
 def dlg_OnTouch( item, isChecked ):
-	app.ShowPopup( item + " isChecked = " + isChecked )
+    app.ShowPopup( item + " isChecked = " + str(isChecked) )
+
 </sample>

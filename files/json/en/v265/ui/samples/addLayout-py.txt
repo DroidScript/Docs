@@ -1,95 +1,114 @@
 <sample Main layout>
-class Main extends App
-    onStart()
-        #  Create a fullscreen linear layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+from native import app
+from native import gfx
+from native import ui
 
-        #  Add a callback hanlder when the layout is touched
-        this.main.setOnTouch( this.onTouch )
+class Main(app.App):
+    def onStart(self):
+        # Create a fullscreen linear layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Add a button control to the main layout
-        this.btn = ui.addButton(this.main, "Button", "primary")
+        # Add a callback hanlder when the layout is touched
+        self.main.setOnTouch(self.onTouch)
 
-        #  Add a callback handler when the button is touched
-        this.btn.setOnTouch( this.btnTouch )
+        # Add a button control to the main layout
+        self.btn = ui.addButton(self.main, "Button", "primary")
 
-    onTouch()
-        ui.showPopup( "You click the layout!" )
+        # Add a callback handler when the button is touched
+        self.btn.setOnTouch(self.btnTouch)
 
-    btnTouch()
-        if this.main.backColor == "yellow":
-            this.main.backColor = "white"
+    def onTouch(self):
+        ui.showPopup("You click the layout!")
+
+    def btnTouch(self):
+        if self.main.backColor == "yellow":
+            self.main.backColor = "white"
         else:
-            this.main.backColor = "yellow"
+            self.main.backColor = "yellow"
 
-
+app.Run(Main)
 </sample>
 
 <sample Bottom aligned with margins>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen main layout with objects aligned at the bottom
-        this.main = ui.addLayout("main", "Linear", "Bottom,FillXY")
+from native import app
+from native import gfx
+from native import ui
 
-        #  Set margins for children controls
-        this.main.setChildMargins(0, 0.05, 0, 0.05)
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen main layout with objects aligned at the bottom
+        self.main = ui.addLayout("main", "Linear", "Bottom,FillXY")
 
-        #  Add buttons to the main layout
-        this.btn1 = ui.addButton( this.main, "Button 1", "Primary" )
-        this.btn2 = ui.addButton( this.main, "Button 2", "Secondary" )
-        this.btn3 = ui.addButton( this.main, "Button 3", "Primary,Outlined" )
+        # Set margins for children controls
+        self.main.setChildMargins(0, 0.05, 0, 0.05)
 
+        # Add buttons to the main layout
+        self.btn1 = ui.addButton(self.main, "Button 1", "Primary")
+        self.btn2 = ui.addButton(self.main, "Button 2", "Secondary")
+        self.btn3 = ui.addButton(self.main, "Button 3", "Primary,Outlined")
+
+app.Run(Main)
 </sample>
 
 <sample Orientation and spacing>
-class Main extends App
-    onStart()
-        #  Create a fullscreen main layout with objects centered horizontally
-        this.main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
+from native import app
+from native import gfx
+from native import ui
 
-        #  Set the children spacing
-        this.main.childSpacing = "even"
+class Main(app.App):
+    def onStart(self):
+        # Create a fullscreen main layout with objects centered horizontally
+        self.main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
 
-        #  Add buttons to the main layout.
-        this.btn1 = ui.addButton(this.main, "Button 1", "Primary")
-        this.btn2 = ui.addButton(this.main, "Button 2", "Secondary")
-        this.btn3 = ui.addButton(this.main, "Button 3", "Primary,Outlined")
+        # Set the children spacing
+        self.main.childSpacing = "even"
 
+        # Add buttons to the main layout.
+        self.btn1 = ui.addButton(self.main, "Button 1", "Primary")
+        self.btn2 = ui.addButton(self.main, "Button 2", "Secondary")
+        self.btn3 = ui.addButton(self.main, "Button 3", "Primary,Outlined")
+
+app.Run(Main)
 </sample>
 
 <sample Slide Layout>
-class Main extends App
-    onStart()
-        #  Create a fullscreen slide layout with objects vertically centered
-        #  You can pass `Vertical` option to make a vertical slide
-        this.main = ui.addLayout( "main", "Slide", "VCenter,FillXY" )
-        
-        #  Adds an onSlide event handler to the layout
-        this.main.setOnSlide( this.onSlide )
+from native import app
+from native import gfx
+from native import ui
 
-        #  Adds a yellow-colored Linear first layout to the slide
-        lay1 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+class Main(app.App):
+    def onStart(self):
+        # Create a fullscreen slide layout with objects vertically centered
+        # You can pass `Vertical` option to make a vertical slide
+        self.main = ui.addLayout("main", "Slide", "VCenter,FillXY")
+
+        # Adds an onSlide event handler to the layout
+        self.main.setOnSlide(self.onSlide)
+
+        # Adds a yellow-colored Linear first layout to the slide
+        lay1 = ui.addLayout(self.main, "Linear", "VCenter", 0.8, 0.5)
         lay1.backColor = "yellow"
         ui.addText(lay1, "First Page")
 
-        #  Adds a green-colored Linear second layout to the slide
-        lay2 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        # Adds a green-colored Linear second layout to the slide
+        lay2 = ui.addLayout(self.main, "Linear", "VCenter", 0.8, 0.5)
         lay2.backColor = "green"
         ui.addText(lay2, "Second Page")
 
-        #  Adds a red-colored Linear third layout to the slide
-        lay3 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        # Adds a red-colored Linear third layout to the slide
+        lay3 = ui.addLayout(self.main, "Linear", "VCenter", 0.8, 0.5)
         lay3.backColor = "red"
         ui.addText(lay3, "Third Page")
 
-        #  Adds a blue-colored Linear fourth layout to the slide
-        lay4 = ui.addLayout(this.main, "Linear", "VCenter", 0.8, 0.5)
+        # Adds a blue-colored Linear fourth layout to the slide
+        lay4 = ui.addLayout(self.main, "Linear", "VCenter", 0.8, 0.5)
         lay4.backColor = "blue"
         ui.addText(lay4, "Fourth Page")
 
-        ui.showPopup("Swipe horizontally", "Long")
+        ui.showPopup("Swipe horizontally", "Long");
 
-    onSlide( ctrl, index )
-        ui.showPopup( index, "", 350 )
+    def onSlide(self, ctrl, index):
+        ui.showPopup(index, "", 350)
 
+app.Run(Main)
 </sample>

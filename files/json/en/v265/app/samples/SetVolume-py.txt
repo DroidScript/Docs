@@ -1,15 +1,17 @@
 <sample Set Volume>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-	skb = app.CreateSeekBar( 1 )
-	skb.SetRange( 1 )
-	skb.SetOnChange( SetVolume )
-	lay.AddChild( skb )
+    skb = app.CreateSeekBar(1)
+    skb.SetRange(1)
+    skb.SetOnChange(SetVolume)
+    lay.AddChild(skb)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
-def SetVolume( value ):
-    <b>app.SetVolume( "Music", value )</b>
-    app.PlaySound( "/Sys/Snd/Poing.ogg" )
+def SetVolume(value):
+    app.SetVolume("Music", value)
+    app.PlaySound("/Sys/Snd/Poing.ogg")
 </sample>

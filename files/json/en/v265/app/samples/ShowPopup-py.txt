@@ -1,9 +1,13 @@
 <sample Top>
+from native import app
+
 def OnStart():
-	<b>app.ShowPopup( "Hello World!" )</b>
+    app.ShowPopup("Hello World!")
 </sample>
 
 <sample Bottom>
+from native import app
+
 def OnStart():
-	<b>app.ShowPopup( "Hello World!", "Bottom,Short" )</b>
+    app.ShowPopup("Hello World!", "Bottom,Short")
 </sample>

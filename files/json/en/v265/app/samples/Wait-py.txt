@@ -1,6 +1,8 @@
 <sample Synchronous delay>
+from native import app
+
 def OnStart():
-    alert( "Press Ok to start the delay." )
-    <b>app.Wait( 5 )</b>
-    app.ShowPopup( "Done." )
+    app.Alert("Press Ok to start the delay.")
+    app.Wait(5)
+    app.ShowPopup("Done.")
 </sample>

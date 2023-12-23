@@ -1,37 +1,49 @@
-<sample List Contents>
-def OnStart():
-	name = app.GetAppName()
-	file = "/sdcard/" + name + ".zip"
+Here is the translated XML page with JavaScript code converted to Python:
 
-	zip = app.CreateZipUtil()
-	zip.Open( file )
-	list = zip.List("").split(",")
-	app.Alert(list.join(",\n"))
-	zip.Close()
+```xml
+<sample List Contents>
+<![CDATA[
+def OnStart():
+    from native import app
+    name = app.GetAppName()
+    file = "/sdcard/" + name + ".zip"
+
+    zip = app.CreateZipUtil()
+    zip.Open(file)
+    list = zip.List("").split(",")
+    app.Alert("\n".join(list))
+    zip.Close()
+]]>
 </sample>
 
 <sample Compress>
+<![CDATA[
 def OnStart():
-	name = app.GetAppName()
-	fldr = app.GetPath() + "/" + name
-	file = "/sdcard/" + name + ".zip"
-	app.ShowProgress()
+    from native import app
+    name = app.GetAppName()
+    fldr = app.GetPath() + "/" + name
+    file = "/sdcard/" + name + ".zip"
+    app.ShowProgress()
 
-	zip = app.CreateZipUtil()
-	zip.Create( file )
-	AddFolder( zip, name, fldr )
-	zip.Close()
+    zip = app.CreateZipUtil()
+    zip.Create(file)
+    AddFolder(zip, name, fldr)
+    zip.Close()
 
-	app.HideProgress()
-	app.ShowPopup( "saved to " + file )
+    app.HideProgress()
+    app.ShowPopup("saved to " + file)
 
-<b>def AddFolder( zip, name, fldr ):
-	list = app.ListFolder( fldr,"")
-	for  i = 0; i < list.length; i++ :
-		title = list[i]
-		if  !app.IsFolder( fldr + "/" + title ) :
-			zip.AddFile( name + "/" + title, fldr + "/" + title )
-		else:
-			AddFolder( zip, name + "/" + title, fldr + "/"+title )
-</b>
+def AddFolder(zip, name, fldr):
+    from native import app
+    list = app.ListFolder(fldr, "")
+    for i in range(len(list)):
+        title = list[i]
+        if not app.IsFolder(fldr + "/" + title):
+            zip.AddFile(name + "/" + title, fldr + "/" + title)
+        else:
+            AddFolder(zip, name + "/" + title, fldr + "/" + title)
+]]>
 </sample>
+```
+
+Please note that the `<sample>` tags are preserved and the Python code is included inside `<![CDATA[ ... ]]>` sections to ensure proper XML formatting.

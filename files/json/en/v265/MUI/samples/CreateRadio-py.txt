@@ -3,14 +3,16 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        list  = "Apple, Mango, Banana"
-        rad = MUI.CreateRadio(list)
-        lay.AddChild(rad)
+    list = "Apple, Mango, Banana"
+    rad = ui.CreateRadio(list)
+    lay.AddChild(rad)
 
     app.AddLayout(lay)
 </sample>
@@ -20,18 +22,20 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        list  = "Apple, Mango, Banana"
-        rad = MUI.CreateRadio(list)
-        rad.SetOnTouch(OnTouch)
-        lay.AddChild(rad)
+    list = "Apple, Mango, Banana"
+    rad = ui.CreateRadio(list)
+    rad.SetOnTouch(OnTouch)
+    lay.AddChild(rad)
 
     app.AddLayout(lay)
 
 def OnTouch(name, index):
-    app.ShowPopup(name+" : "+index)
+    app.ShowPopup(name + " : " + str(index))
 </sample>

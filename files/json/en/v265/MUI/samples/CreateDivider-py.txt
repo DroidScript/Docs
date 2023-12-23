@@ -2,17 +2,19 @@
 cfg.Light
 cfg.MUI
 
+from native import app
+
 def OnStart():
-    colors = MUI.colors.teal
+    colors = app.gfx.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = app.ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        div = MUI.CreateDivider()
+        div = app.ui.CreateDivider()
         lay.AddChild(div)
 
     app.AddLayout(lay)
 
-    text = "You can undone this process."
-    dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
+    var text = "You can undone this process."
+    dlg = app.ui.CreateDialog("Remove message", text, "REMOVE")
 </sample>

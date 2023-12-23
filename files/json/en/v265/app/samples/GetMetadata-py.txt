@@ -1,18 +1,21 @@
 <sample Retreive all Metadata>
-def OnStart():
-    app.ChooseFile( "Choose an audio file", "audio/mpeg", OnChoose )
+from native import app
 
-def OnChoose( path ):
-    <b>keys = (
+def OnStart():
+    app.ChooseFile("Choose an audio file", "audio/mpeg", OnChoose)
+
+def OnChoose(path):
+    keys = (
         "album,artist,genre,title,composer," +
         "author,duration"
-        ).split(",")
+    ).split(",")
 
-    data = app.GetMetadata( path, keys )
-    data = data.slice(1).split(",")</b>
+    data = app.GetMetadata(path, keys)
+    data = data.slice(1).split(",")
 
     lst = []
-    for i in keys: lst.push(keys[i] + ": " + data[i])
+    for i in range(len(keys)):
+        lst.append(keys[i] + ": " + data[i])
 
-    app.Alert( lst.join( "\n" ), path )
+    app.Alert("\n".join(lst), path)
 </sample>

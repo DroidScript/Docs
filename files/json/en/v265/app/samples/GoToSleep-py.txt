@@ -1,5 +1,9 @@
-<sample Sleep and Wake>
+<sample>
+from native import app
+import time
+
 def OnStart():
-    <b>app.GoToSleep()</b>
-    setTimeout("app.WakeUp()", 5000)
+    app.GoToSleep()
+    time.sleep(5)
+    app.WakeUp()
 </sample>

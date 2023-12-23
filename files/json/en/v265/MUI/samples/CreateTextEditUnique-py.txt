@@ -2,13 +2,15 @@
 cfg.Light
 cfg.MUI
 
+from native import app
+
 def OnStart():
-    color = MUI.colors.teal
+    color = app.gfx.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = app.ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditUnique(0.8, "Left", "Search for something")
+        tef = app.ui.CreateTextEditUnique(0.8, "Left", "Search for something")
         lay.AddChild(tef)
 
     app.AddLayout(lay)

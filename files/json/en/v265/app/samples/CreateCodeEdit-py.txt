@@ -1,12 +1,18 @@
+<code>
 <sample dark scheme>
+
+from native import app, ui
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	<b>cde = app.CreateCodeEdit( "", 1, 1 )
-	cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
-	cde.SetLanguage(".js")
-	cde.SetColorScheme( "dark" )
-	lay.AddChild( cde )</b>
+    cde = ui.CodeEdit("", 1, 1)
+    cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
+    cde.SetLanguage(".js")
+    cde.SetColorScheme("dark")
+    lay.AddChild(cde)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
+
 </sample>
+</code>

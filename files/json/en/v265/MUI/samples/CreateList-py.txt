@@ -1,4 +1,7 @@
 <sample Basic>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -8,10 +11,10 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = ["Downloads", "Images", "Videos"]
-        lst = MUI.CreateList(list, 0.95, 0.4)
-        lst.SetOnTouch(OnTouch)
-        lay.AddChild(lst)
+    list = ["Downloads", "Images", "Videos"]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 
@@ -20,6 +23,9 @@ def OnTouch(title):
 </sample>
 
 <sample With-Icon>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -29,10 +35,10 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY")
 
-        list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play]"]
-        lst = MUI.CreateList(list, 0.95, 0.4)
-        lst.SetOnTouch(OnTouch)
-        lay.AddChild(lst)
+    list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play]"]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 
@@ -41,6 +47,9 @@ def OnTouch(title):
 </sample>
 
 <sample Dark With Body & Icon>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Dark
 cfg.MUI
 
@@ -50,14 +59,14 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [
-            "Downloads:Some body text:[fa-cloud-download]",
-            "Images:Some body text:[fa-image]",
-            "Videos:Some body text:[fa-youtube-play]"
-        ]
-        lst = MUI.CreateList(list, 0.95, 0.4)
-        lst.SetOnTouch(OnTouch)
-        lay.AddChild(lst)
+    list = [
+        "Downloads:Some body text:[fa-cloud-download]",
+        "Images:Some body text:[fa-image]",
+        "Videos:Some body text:[fa-youtube-play]"
+    ]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 

@@ -1,4 +1,6 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	 <b>app.OpenUrl( "http:# droidscript.org" )</b>
+    app.OpenUrl("http://droidscript.org")
 </sample>

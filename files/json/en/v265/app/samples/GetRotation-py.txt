@@ -1,20 +1,23 @@
 <sample Repeatedly Show Rotation>
+from native import app
+
 def OnStart():
-    app.Animate( ShowRotation, 2 )
+    app.Animate(ShowRotation, 2)
 
 def ShowRotation():
-    <b>mode = app.GetRotation()</b>
-    app.ShowPopup( mode )
+    mode = app.GetRotation()
+    app.ShowPopup(mode)
 </sample>
 
 <sample Show Rotation and switch Orientation>
-cfg.Portrait
+from native import app
 
 def OnStart():
-    app.Animate( ShowRotation, 2 )
-    setTimeout( 'app.SetOrientation("landscape")', 5000 )
+    app.Animate(ShowRotation, 2)
+    setTimeout('app.SetOrientation("landscape")', 5000)
 
 def ShowRotation():
-    <b>mode = app.GetRotation()</b>
-    app.ShowPopup( mode )
+    mode = app.GetRotation()
+    app.ShowPopup(mode)
+cfg.Portrait
 </sample>

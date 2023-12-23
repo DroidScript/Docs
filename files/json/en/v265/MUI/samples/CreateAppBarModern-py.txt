@@ -1,4 +1,6 @@
 <sample Basic>
+from native import app, gfx, ui
+
 cfg.Light
 cfg.MUI
 
@@ -8,25 +10,27 @@ def OnStart():
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBarModern("Search for games", "more_vert")
-        apbHeight = apb.GetHeight()
+    apb = MUI.CreateAppBarModern("Search for games", "more_vert")
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-            pageLay = MUI.CreateLayout("Linear", "VCenter")
-            pageLay.SetSize(1, 1.2)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Sample page>
+from native import app, gfx, ui
+
 cfg.Light
 cfg.MUI
 
@@ -36,23 +40,23 @@ def OnStart():
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBarModern("Search for games", "more_vert", "Round")
-        apb.SetOnMenuTouch(OnMenuTouch)
-        apb.SetOnControlTouch(OnCtrlTouch)
+    apb = MUI.CreateAppBarModern("Search for games", "more_vert", "Round")
+    apb.SetOnMenuTouch(OnMenuTouch)
+    apb.SetOnControlTouch(OnCtrlTouch)
 
-        apbHeight = apb.GetHeight()
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-            pageLay = MUI.CreateLayout("Linear", "VCenter")
-            pageLay.SetSize(1, 1.2)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 
@@ -64,6 +68,8 @@ def OnCtrlTouch():
 </sample>
 
 <sample Dark mode>
+from native import app, gfx, ui
+
 cfg.Dark
 cfg.MUI
 
@@ -73,20 +79,20 @@ def OnStart():
 
     lay = MUI.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBarModern("My Title", "menu", "search,more_vert")
-        apbHeight = apb.GetHeight()
+    apb = MUI.CreateAppBarModern("My Title", "menu", "search,more_vert")
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-            pageLay = MUI.CreateLayout("Linear", "VCenter")
-            pageLay.SetSize(1, 1.2)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 </sample>

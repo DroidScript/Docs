@@ -1,22 +1,19 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,ScrollY", 1, 1 )
+from native import app
+from native import gfx
+from native import ui
 
-        #  button to show time picker
-        this.btn = ui.addButton( this.main, "Show Time Picker", "Outlined,Secondary", 0.2 )
-        this.btn.setOnTouch( this.showTimePicker )
-        
-        #  Initialize time picker
-        this.tpk = ui.addTimePicker()
-        this.tpk.setOnSelect( this.onSelect )
+class Main(app.App):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
+        self.btn = ui.addButton(self.main, "Show Time Picker", "Outlined,Secondary", 0.2)
+        self.btn.setOnTouch(self.showTimePicker)
+        self.tpk = ui.addTimePicker()
+        self.tpk.setOnSelect(self.onSelect)
 
-    showTimePicker()
-        #  show time picker dialog
-        this.tpk.show()
+    def showTimePicker(self):
+        self.tpk.show()
 
-    onSelect( value )
-        console.log( value )
-
+    def onSelect(self, value):
+        print(value)
 </sample>

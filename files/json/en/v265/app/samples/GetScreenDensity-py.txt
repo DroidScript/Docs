@@ -1,5 +1,7 @@
 <sample Show Screen Density>
+from native import app
+
 def OnStart():
     <b>dens = app.GetScreenDensity()</b>
-    app.Alert( dens )
+    app.Alert(dens)
 </sample>

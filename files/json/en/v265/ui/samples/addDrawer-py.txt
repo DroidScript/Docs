@@ -1,130 +1,166 @@
-<sample Drawer Implementation>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+<xml>
+    <sample Basic usage>
+        cfg.Light
+        cfg.MUI
 
-        #  Add a fixed appbar with menu icon to the main layout.
-        this.apb = ui.addAppBar(this.main, "My App", "Menu,Fixed")
+        from native import app
+        from native import ui
 
-        #  Add a callback handler for `onMenu` event of the AppBar control.
-        this.apb.setOnMenu( this.openDrawer )
+        class Main(App):
+            def onStart(self):
+                lay = ui.createLayout("Linear", "VCenter,FillXY")
 
-        #  Add a text control to the main layout.
-        ui.addText(this.main, "<---- Swipe left ----->", "Center")
+                btn = ui.createFabOutline("more_vert")
+                btn.setOnTouch(self.btn_OnTouch)
+                lay.addChild(btn)
+                app.addLayout(lay)
 
-        #  Create a linear layout for the drawer.
-        this.drawerLay = ui.addLayout(null, "Linear")
+            def btn_OnTouch(self):
+                menu = ui.showMenu(self, "Item 1, Item 2, Item 3")
+                menu.setOnSelect(self.menu_OnSelect)
 
-        #  Initialize the drawer by passing the drawer layout above.
-        this.drawer = ui.addDrawer(this.drawerLay, "left", 0.7)
+            def menu_OnSelect(self, item):
+                app.showPopup(item)
+    </sample>
 
-        #  Add a callback handler for `onClose` event on the Drawer component.
-        this.drawer.setOnClose( this.onClose )
+    <sample Basic>
+        from native import app
+        from native import ui
 
-        lst1 = [
-            [ "music_note", "Audios" ],
-            [ "movie", "Videos" ],
-            [ "insert_drive_file", "Documents" ]
-        ]
+        class Main(App):
+            def onStart(self):
+                self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Adds a list to the drawer layout. See List control for customization.
-        this.lstMenu1 = ui.addList( this.drawerLay, lst1, "Icon", 1 )
-        this.lstMenu1.label = "Main navigation"
+                self.items = [
+                    "Checkbox item 1",
+                    "Checkbox item 2",
+                    "Checkbox item 3"
+                ]
 
-        #  Add a callback handler for `onSelect` event on the list.
-        this.lstMenu1.setOnTouch( this.onSelect )
+                self.ckg = ui.addCheckboxGroup(self.main, self.items)
+                self.ckg.setOnTouch(self.onTouch)
 
-        #  Adds a divider into the drawer layout.
-        ui.addDivider( this.drawerLay, 1 )
+            def onTouch(self, value, item, index):
+                ui.showPopup(f"Value of {item} is {value}")
+    </sample>
 
-        lst2 = [
-            [ "mail", "All Mail" ],
-            [ "inbox", "Inbox" ],
-            [ "drafts", "Outbox" ],
-            [ "send", "Sent" ]
-        ]
+    <sample Colors>
+        from native import app
+        from native import ui
 
-        #  Adds another list to the drawer layout. See List control for customization.
-        this.lstMenu2 = ui.addList( this.drawerLay, lst2, "Icon", 1 )
-        this.lstMenu2.label = "Secondary navigation"
-        this.lstMenu2.setOnTouch( this.onSelect )
+        class Main(App):
+            def onStart(self):
+                self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+                self.main.setChildSpacing("evenly")
 
-    openDrawer()
-        this.drawer.show()
+                list = [
+                    "Checkbox item 1",
+                    "Checkbox item 2",
+                    "Checkbox item 3"
+                ]
 
-    onSelect(title)
-        this.apb.text = title
-        ui.showPopup( title )
-        this.drawer.hide()
+                self.ckg1 = ui.addCheckboxGroup(self.main, list)
+                self.ckg1.setOnTouch(self.onTouch)
 
-    onClose()
-        ui.showPopup('Drawer is close', "bottom")
+                self.ckg2 = ui.addCheckboxGroup(self.main, list, "Primary")
+                self.ckg2.setOnTouch(self.onTouch)
 
-</sample>
+                self.ckg3 = ui.addCheckboxGroup(self.main, list, "Secondary")
+                self.ckg3.setOnTouch(self.onTouch)
 
-<sample Drawer Anchor Positions>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+            def onTouch(self, value, item, index):
+                ui.showPopup(f"Value of {item} is {value}")
+    </sample>
 
-        #  Adds a select control to the main layout.
-        this.sel = ui.addSelect(this.main, ["Left", "Top", "Right", "Bottom"], "Radio,Outlined", 0.7)
-        this.sel.label = "Select anchor position"
+    <sample Elevated>
+        from native import app
+        from native import ui
 
-        #  Add a callback handler for `onChange` event of the select control.
-        this.sel.setOnChange(this.onSelect)
+        class Main(App):
+            def onStart(self):
+                self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Creates a linear layout for the drawer.
-        this.drawerLay = ui.addLayout( null, "Linear" )
+                list = [
+                    "Checkbox item 1",
+                    "Checkbox item 2",
+                    "Checkbox item 3"
+                ]
 
-        #  Initialize the drawer by passing the drawer layout.
-        this.drawer = ui.addDrawer( this.drawerLay, "left" )
+                self.ckg = ui.addCheckboxGroup(self.main, list, "Elevated,Secondary", 0.6)
 
-        lst1 = [
-            [ "music_note", "Audios" ],
-            [ "movie", "Videos" ],
-            [ "insert_drive_file", "Documents" ]
-        ]
+                self.ckg.setLabel("Select as many as you can")
 
-        #  Adds a list to the drawer layout.
-        this.lstMenu1 = ui.addList( this.drawerLay, lst1, "Icon", 1 )
-        this.lstMenu1.setOnTouch( this.closeDrawer )
-        this.lstMenu1.label = "Main navigation"
+                self.ckg.setElevation(4)
+                self.ckg.setOnTouch(self.onTouch)
 
-        #  Adds a divider into the drawer layout.
-        ui.addDivider( this.drawerLay, 1 )
+            def onTouch(self, value, item, index):
+                ui.showPopup(f"Value of {item} is {value}")
+    </sample>
 
-        lst2 = [
-            [ "mail", "All Mail" ],
-            [ "inbox", "Inbox" ],
-            [ "drafts", "Outbox" ],
-            [ "send", "Sent" ]
-        ]
+    <sample Outlined>
+        from native import app
+        from native import ui
 
-        #  Adds another list to the drawer layout.
-        this.lstMenu2 = ui.addList( this.drawerLay, lst2, "Icon", 1 )
-        this.lstMenu2.label = "Secondary navigation"
-        this.lstMenu2.setOnTouch( this.closeDrawer )
+        class Main(App):
+            def onStart(self):
+                self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-    openDrawer()
-        this.drawer.show()
+                list = [
+                    "Checkbox item 1",
+                    "Checkbox item 2",
+                    "Checkbox item 3"
+                ]
 
-    closeDrawer( title )
-        ui.showPopup( title )
-        this.drawer.hide()
+                self.ckg = ui.addCheckboxGroup(self.main, list, "Outlined,Secondary", 0.9)
+                self.ckg.setOnTouch(self.onTouch)
 
-    onSelect( value )
-        #  Set the drawer anchor first
-        this.drawer.anchor = value
+                self.ckg.setLabel("Select as many as you can")
 
-        #  Set the drawer width depending on anchor position
-        if value == "Top" || value == "Bottom":
-            this.drawer.width = 0.5else
-            this.drawer.width = 0.7
-        
-        #  Open the drawer
-        this.drawer.show()
+                self.ckg.setCornerRadius(20)
 
-</sample>
+            def onTouch(self, value, item, index):
+                ui.showPopup(f"Value of {item} is {value}")
+    </sample>
+
+    <sample Drawer Implementation>
+        from native import app
+        from native import ui
+
+        class Main(App):
+            def onStart(self):
+                self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+                self.apb = ui.addAppBar(self.main, "My App", "Menu,Fixed")
+                self.apb.setOnMenu(self.openDrawer)
+
+                ui.addText(self.main, "<---- Swipe left ----->", "Center")
+
+                self.drawerLay = ui.addLayout(None, "Linear")
+                self.drawer = ui.addDrawer(self.drawerLay, "left", 0.7)
+                self.drawer.setOnClose(self.onClose)
+
+                lst1 = [
+                    ["music_note", "Audios"],
+                    ["movie", "Videos"],
+                    ["insert_drive_file", "Documents"]
+                ]
+                self.lstMenu1 = ui.addList(self.drawerLay, lst1, "Icon", 1)
+                self.lstMenu1.label = "Main navigation"
+                self.lstMenu1.setOnTouch(self.onSelect)
+
+                ui.addDivider(self.drawerLay, 1)
+
+                lst2 = [
+                    ["mail", "All Mail"],
+                    ["inbox", "Inbox"],
+                    ["drafts", "Outbox"],
+                    ["send", "Sent"]
+                ]
+                self.lstMenu2 = ui.addList(self.drawerLay, lst2, "Icon", 1)
+                self.lstMenu2.label = "Secondary navigation"
+                self.lstMenu2.setOnTouch(self.onSelect)
+            
+            def openDrawer(self):
+                self.drawer.show()
+
+            def onSelect(self

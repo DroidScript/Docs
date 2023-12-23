@@ -1,6 +1,9 @@
 <sample Example>
+from native import app
+
 def OnStart():
-    <b>if app.FileExists("myFile.txt"):
-        app.ShowPopup("myFile exists!");else:
-        app.ShowPopup("myFile does not exist!")</b>
+    if app.FileExists("myFile.txt"):
+        app.ShowPopup("myFile exists!")
+    else:
+        app.ShowPopup("myFile does not exist!")
 </sample>

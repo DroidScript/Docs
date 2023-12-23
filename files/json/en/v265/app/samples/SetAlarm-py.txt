@@ -1,10 +1,12 @@
 <sample Set Alarm>
+from native import app
+
 def OnStart():
     <b>now = Date.now()
-    app.SetAlarm( "Set", 1234, OnAlarm, Date.now() + 3000 )</b>
-    #  app.ToBack()
-    #  app.Exit()
+    app.SetAlarm("Set", 1234, OnAlarm, Date.now() + 3000)</b>
+    # app.ToBack()
+    # app.Exit()
 
-def OnAlarm( id ):
-    app.ShowPopup( "Got Alarm: id = " + id )
+def OnAlarm(id):
+    app.ShowPopup("Got Alarm: id = " + str(id))
 </sample>

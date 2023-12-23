@@ -1,7 +1,11 @@
 <sample Show Shared Files>
-def OnStart():
-	<b>files = app.GetSharedFiles()</b>
+from native import app
 
-	if  files : app.Alert( files.join( "\n" ) )
-	else: app.ShowPopup( "No shared files received." )
+def OnStart():
+    files = app.GetSharedFiles()
+
+    if files:
+        app.Alert("\n".join(files))
+    else:
+        app.ShowPopup("No shared files received.")
 </sample>

@@ -1,4 +1,7 @@
 <sample Default Time>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -8,9 +11,9 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER")
-        btn.SetOnTouch(ShowPicker)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW PICKER")
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
@@ -20,11 +23,14 @@ def OnStart():
 def ShowPicker():
     tmp.Show()
 
-def OnSelect(time, hh, mm, pos):
+def OnSelect(time, hh, mm, pos): 
     app.ShowPopup(hh+":"+mm+":"+pos)
 </sample>
 
 <sample Custom Time>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Dark
 cfg.MUI
 
@@ -34,9 +40,9 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER")
-        btn.SetOnTouch(ShowPicker)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW PICKER")
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
@@ -46,6 +52,6 @@ def OnStart():
 def ShowPicker():
     tmp.Show()
 
-def OnSelect(time, hh, mm, pos):
+def OnSelect(time, hh, mm, pos): 
     app.ShowPopup(hh+":"+mm+":"+pos)
 </sample>

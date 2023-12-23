@@ -1,16 +1,18 @@
 <sample Sample>
 cfg.Light
+from native import gfx
+from native import ui
+from native import app
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        h4 = MUI.AddText(lay, "Some Heading", 0.8, 0.2, "h4,Medium,Multiline")
+    h4 = gfx.MUI.AddText(lay, "Some Heading", 0.8, 0.2, "h4,Medium,Multiline")
 
-        h4 = MUI.AddTextH4(lay, "Some Heading", 0.8, 0.2, "Multiline", null, "Medium")
+    h4 = gfx.MUI.AddTextH4(lay, "Some Heading", 0.8, 0.2, "Multiline", None, "Medium")
 
-        h4 = MUI.CreateTextH4("Some Heading", 0.8, 0.2, "Multiline", null, "Medium")
-        lay.AddChild(h4)
+    h4 = gfx.MUI.CreateTextH4("Some Heading", 0.8, 0.2, "Multiline", None, "Medium")
+    lay.AddChild(h4)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>

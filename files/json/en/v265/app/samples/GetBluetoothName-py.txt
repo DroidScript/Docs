@@ -1,5 +1,7 @@
 <sample Show Bluetooth Name>
+from native import app
+
 def OnStart():
-    <b>name = app.GetBluetoothName()</b>
+    name = app.GetBluetoothName()
     app.Alert( name )
 </sample>

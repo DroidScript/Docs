@@ -1,5 +1,7 @@
 <sample Show build number>
+from native import app
+
 def OnStart():
-    <b>num = app.GetBuildNum()</b>
-    app.Alert( num )
+    num = app.GetBuildNum()
+    app.Alert(num)
 </sample>

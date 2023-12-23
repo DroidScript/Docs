@@ -1,4 +1,6 @@
 <sample Change NavBar Color>
+from native import app, ui
+
 def OnStart():
-    <b>app.SetNavBarColor("green")</b>
+    app.SetNavBarColor("green")
 </sample>

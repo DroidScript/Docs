@@ -1,100 +1,173 @@
-<sample Marks array>
-marks = [label: "First stop", value: 10,label: "Second stop", value: 30,label: "Third stop", value: 70
-    ]
+<sample Button variants>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+        
+        # Contained
+        self.btn1 = ui.addButton(self.main, "Button", "Contained")
+
+        # Add a callback handler for onTouch event
+        self.btn1.setOnTouch(self.onTouch)
+
+        # Outlined
+        self.btn2 = ui.addButton(self.main, "Button", "Outlined")
+        self.btn2.setOnTouch(self.onTouch)
+
+        # Text
+        self.btn3 = ui.addButton(self.main, "Button", "Text")
+        self.btn3.setOnTouch(self.onTouch)
+
+    def onTouch(self):
+        ui.showPopup("Button is touch!")
 </sample>
 
-<sample Basic slider>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-        #  Add a slider control to the main layout with an initial value of 10
-        this.sld = ui.addSlider(this.main, 10, "", 0.7)
-
-        #  Add a callback handler when the value of the slider changes
-        this.sld.setOnChange( this.onChange )
-
-        #  Create a popup where to display values
-        this.popup = ui.showPopup( 10 )
-
-    onChange( value )
-        this.popup.text = value
-        this.popup.show()
-
+<sample Button theme colors>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+        
+        # Add primary button to the main layout
+        self.btn1 = ui.addButton(self.main, "Primary", "Contained,Primary")
+        
+        # Add a callback handler for onTouch event
+        self.btn1.setOnTouch(self.onTouch)
+        
+        # Add secondary button to the main layout
+        self.btn2 = ui.addButton(self.main, "Secondary", "Outlined,Secondary")
+        self.btn2.setOnTouch(self.onTouch)
+        
+        # Add default button to the main layout
+        self.btn3 = ui.addButton(self.main, "Default", "Text,Default")
+        self.btn3.setOnTouch(self.onTouch)
+        
+    def onTouch(self):
+        ui.showPopup("Button is touch!")
 </sample>
 
-<sample Slider steps and marks>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-        #  Add a slider control to the main layout with an initial value of 10
-        this.sld = ui.addSlider(this.main, 10, "", 0.7)
-
-        #  Set the step to 10
-        this.sld.step = 10
-
-        #  Add marks for every step
-        this.sld.marks = true
-
-        #  Add a callback handler when the value of the slider changes
-        this.sld.setOnSelect( this.onSelect )
-
-        #  Add a text control to show the selected value
-        this.txt = ui.addText(this.main, "Value is 10")
-
-    onSelect( value )
-        this.txt.text = "Value is " + value
-
+<sample Button sizes>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+        
+        # Add a small size button to the main layout
+        self.btn1 = ui.addButton(self.main, "Small", "Contained,Primary,Small")
+        
+        # Add a callback handler for onTouch event
+        self.btn1.setOnTouch(self.onTouch)
+        
+        # Add a medium/default size button to the main layout
+        self.btn2 = ui.addButton(self.main, "Medium", "Contained,Primary,Medium")
+        
+        # Add a large size button to the main layout
+        self.btn3 = ui.addButton(self.main, "Large", "Contained,Primary,Large")
+        
+    def onTouch(self):
+        ui.showPopup("Button is touch!")
 </sample>
 
-<sample Slider with custom step marks>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-        #  Add a slider control to the main layout with an initial value of 10
-        this.sld = ui.addSlider(this.main, 10, "Primary", 0.7)
-
-        #  Set the step to 10
-        this.sld.step = 10
-
-        #  Add custom marks for values at 10, 40 and 60
-        this.sld.marks = [label: "First", value: 10,label: "Second", value: 40,label: "Third", value: 60
-        ]
-
-        #  Add a callback handler when the value of the slider changes
-        this.sld.setOnSelect( this.onSelect )
-
-        #  Add a text control to show the selected value
-        this.txt = ui.addText(this.main, "Value is 10")
-        this.txt.margins = 0.02
-
-    onSelect( value )
-        this.txt.text = "Value is " + value
-
+<sample Button tooltips>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0, 0.05, 0, 0.05)
+        
+        # Add a button to the main layout and add a tooltip to the left of the button
+        self.btn1 = ui.addButton(self.main, "Left", "Contained,Primary")
+        self.btn1.setToolTip("Tooltip on the left", "left")
+        
+        # Add a button to the main layout and add a tooltip to the top of the button
+        self.btn2 = ui.addButton(self.main, "Top", "Contained,Primary")
+        self.btn2.setToolTip("Tooltip on the top", "top")
+        
+        # Add a button to the main layout and add a tooltip to the right of the button
+        self.btn3 = ui.addButton(self.main, "Right", "Contained,Primary")
+        self.btn3.setToolTip("Tooltip on the right", "right")
+        
+        # Add a button to the main layout and add a tooltip to the bottom of the button
+        self.btn4 = ui.addButton(self.main, "Bottom", "Contained,Primary")
+        self.btn4.setToolTip("Tooltip on the bottom", "bottom")
 </sample>
 
-<sample Vertical slider>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-        #  Add a vertical slider control to the main layout
-        this.sld = ui.addSlider(this.main, 10, "Vertical,Primary", 0.2, 0.7)
-
-        #  Add a callback handler when the value of the slider changes
-        this.sld.setOnChange( this.onChange )
-
-        #  Create a popup where to display values
-        this.popup = ui.showPopup( 10 )
-
-    onChange( value )
-        this.popup.text = value
-        this.popup.show()
-
+<sample Button with icons>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins("12px", "12px", "12px", "12px")
+        
+        # Add a primary contained button and set its leading icon to `send`
+        self.btn1 = ui.addButton(self.main, "Send", "Primary")
+        self.btn1.icon = "send"
+        
+        # Add a secondary contained button and set its leading icon to `shopping_cart`
+        self.btn2 = ui.addButton(self.main, "Add to cart", "Secondary")
+        self.btn2.icon = "shopping_cart"
+        
+        # Add an `android` primary icon button to the main layout
+        self.btn3 = ui.addButton(self.main, "android", "Primary,Icon")
+        
+        # Add a `settings` secondary icon button to the main layout
+        self.btn4 = ui.addButton(self.main, "settings", "Secondary,Icon")
 </sample>
+
+<sample Buttons with badges>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main" ,"Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+        
+        # Add an android icon button to the main layout
+        self.btn1 = ui.addButton(self.main, "android", "Primary,Icon")
+        
+        # Add a setting icon button to the main layout and set the badge to `5`
+        self.btn2 = ui.addButton(self.main, "settings", "Primary,Icon")
+        self.btn2.setBadge(5)
+        
+        # Add a contained button to the main layout and set the badge to `New` with a `Primary` background color
+        self.btn3  = ui.addButton(self.main, "With Badge", "Secondary,Outlined")
+        self.btn3.setBadge("New", "Primary")
+</sample>
+
+<sample Upload button>
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
+        
+        # Creates a fullscreen layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        
+        # Add a primary

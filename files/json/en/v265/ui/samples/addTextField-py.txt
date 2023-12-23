@@ -1,139 +1,138 @@
 <sample Textfield variants>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0, 1, 0, 1, "rem")
+from native import app
+from native import ui
 
-        #  Add a default textfield control to the main layout
-        this.tfd1 = ui.addTextField( this.main )
-        this.tfd1.label = "Enter text"
+class Main(app):
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.main.setChildMargins(0, 1, 0, 1, "rem")
 
-        #  Handle textfield value changes
-        this.tfd1.setOnChange( this.onChange )
+        # Add a default textfield control to the main layout
+        self.tfd1 = ui.addTextField(self.main)
+        self.tfd1.label = "Enter text"
 
-        #  Add a filled textfield control
-        this.tfd2 = ui.addTextField(this.main, "", "Filled,Primary,Number")
-        this.tfd2.label =  "Enter number"
-        this.tfd2.setOnChange( this.onChange )
+        # Handle textfield value changes
+        self.tfd1.setOnChange(self.onChange)
 
-        #  Add an outlined textfield control
-        this.tfd3 = ui.addTextField(this.main, "", "Outlined,Secondary,Email")
-        this.tfd3.label = "Enter email"
-        this.tfd3.setOnChange( this.onChange )
+        # Add a filled textfield control
+        self.tfd2 = ui.addTextField(self.main, "", "Filled,Primary,Number")
+        self.tfd2.label = "Enter number"
+        self.tfd2.setOnChange(self.onChange)
 
-        this.popup = ui.showPopup( "" )
-        this.popup.hide()
+        # Add an outlined textfield control
+        self.tfd3 = ui.addTextField(self.main, "", "Outlined,Secondary,Email")
+        self.tfd3.label = "Enter email"
+        self.tfd3.setOnChange(self.onChange)
 
-    onChange( value )
-        this.popup.text = value
-        this.popup.show()
+        self.popup = ui.showPopup("")
+        self.popup.hide()
 
+    def onChange(self, value):
+        self.popup.text = value
+        self.popup.show()
+
+main = Main()
+main.onStart()
 </sample>
 
 <sample Callbacks>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0.01, 0.01, 0.01, 0.05)
+from native import app
+from native import ui
 
-        #  Add a default textfield control to the main layout
-        this.tfd = ui.addTextField(this.main, "", "Outlined,Secondary")
-        this.tfd.label = "Enter text"
+class Main(app):
+    def onStart(self):
+        # Creates a layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.05)
 
-        #  Add a callback handler when the value changes
-        this.tfd.setOnChange( this.onChange )
+        # Add a default textfield control to the main layout
+        self.tfd = ui.addTextField(self.main, "", "Outlined,Secondary")
+        self.tfd.label = "Enter text"
 
-        #  Add a callback handler on submit event
-        this.tfd.setOnEnter( this.onEnter )
+        # Add a callback handler when the value changes
+        self.tfd.setOnChange(self.onChange)
 
-        #  Add a button control to the main layout that will get the value
-        #  of the textfield when clicked
-        this.btn = ui.addButton(this.main, "Get value", "Outlined,Secondary")
-        this.btn.setOnTouch( this.btn_onTouch )
+        # Add a callback handler on submit event
+        self.tfd.setOnEnter(self.onEnter)
 
-        #  Initialize a popup to display values
-        this.popup = ui.showPopup( "" )
-        this.popup.hide()
+        # Add a button control to the main layout that will get the value
+        # of the textfield when clicked
+        self.btn = ui.addButton(self.main, "Get value", "Outlined,Secondary")
+        self.btn.setOnTouch(self.btn_onTouch)
 
-    onChange( value )
-        this.popup.text = "Change : " + value
-        this.popup.show()
+        # Initialize a popup to display values
+        self.popup = ui.showPopup("")
+        self.popup.hide()
 
-    onEnter( value )
-        this.popup.text = "Enter : " + value
-        this.popup.show()
+    def onChange(self, value):
+        self.popup.text = "Change : " + value
+        self.popup.show()
 
-    btn_onTouch()
-        this.popup.text = "Value : " + this.tfd.text
-        this.popup.show()
+    def onEnter(self, value):
+        self.popup.text = "Enter : " + value
+        self.popup.show()
 
+    def btn_onTouch(self):
+        self.popup.text = "Value : " + self.tfd.text
+        self.popup.show()
+
+main = Main()
+main.onStart()
 </sample>
 
 <sample Multiline textfield>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from native import ui
+
+class Main(app):
+    def onStart(self):
+        # Creates a layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
         
-        #  Add a text control to the main layout
-        this.txt = ui.addText(this.main, "This is a multiline type of TextField input", "Left", 0.8)
-        this.txt.setMargins(0, 0, 0, 0.05)
+        # Add a text control to the main layout
+        self.txt = ui.addText(self.main, "This is a multiline type of TextField input", "Left", 0.8)
+        self.txt.setMargins(0, 0, 0, 0.05)
 
-        #  Add a Multiline textfield control to the main layout
-        this.tfd = ui.addTextField(this.main, "", "Outlined,Secondary,Multiline", 0.8)
-        this.tfd.label = "Enter description"
-        this.tfd.setRows(3, 6)
+        # Add a Multiline textfield control to the main layout
+        self.tfd = ui.addTextField(self.main, "", "Outlined,Secondary,Multiline", 0.8)
+        self.tfd.label = "Enter description"
+        self.tfd.setRows(3, 6)
 
+main = Main()
+main.onStart()
 </sample>
 
 <sample Advance textfield>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,ScrollY,FillXY")
-        this.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+from native import app
+from native import ui
 
-        #  Start and end adornment
-        ui.addText(this.main,  "Click the eye icon to show password.", "Left", 0.7)
-        this.tfd = ui.addTextField(this.main, "", "Outlined,Secondary,Password", 0.7)
-        this.tfd.label = "Enter password"
-        this.tfd.setStartAdornment("lock", "Icon")
-        this.tfd.setEndAdornment("visibility_off", "Icon,Touchable")
-        this.tfd.setEndAdornmentOnTouch( this.togglePasswordVisibility )
+class Main(app):
+    def onStart(self):
+        # Creates a layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY,FillXY")
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        #  Start Adornment text
-        ui.addText(this.main,  "Start text adornment", "Left,Overline", 0.7)
-        this.tfd1 = ui.addTextField(this.main, "", "Outlined,Secondary,Number", 0.7)
-        this.tfd1.label = "Enter mass" 
-        this.tfd1.setStartAdornment("KG", "Text")
+        # Start and end adornment
+        ui.addText(self.main, "Click the eye icon to show password.", "Left", 0.7)
+        self.tfd = ui.addTextField(self.main, "", "Outlined,Secondary,Password", 0.7)
+        self.tfd.label = "Enter password"
+        self.tfd.setStartAdornment("lock", "Icon")
+        self.tfd.setEndAdornment("visibility_off", "Icon,Touchable")
+        self.tfd.setEndAdornmentOnTouch(self.togglePasswordVisibility)
 
-        #  Start Adornment icon
-        ui.addText(this.main,  "Start icon adornment", "Left,Overline", 0.7)
-        this.tfd2 = ui.addTextField(this.main, "", "Outlined,Secondary", 0.7)
-        this.tfd2.label = "Enter username"
-        this.tfd2.setStartAdornment("person", "Icon")
+        # Start Adornment text
+        ui.addText(self.main,  "Start text adornment", "Left,Overline", 0.7)
+        self.tfd1 = ui.addTextField(self.main, "", "Outlined,Secondary,Number", 0.7)
+        self.tfd1.label = "Enter mass" 
+        self.tfd1.setStartAdornment("KG", "Text")
 
-        #  End Adornment text
-        ui.addText(this.main,  "End text adornment", "Left,Overline", 0.7)
-        this.tfd3 = ui.addTextField(this.main, "", "Outlined,Secondary,Number", 0.7)
-        this.tfd3.label = "Enter amount"
-        this.tfd3.setEndAdornment("$", "Text")
+        # Start Adornment icon
+        ui.addText(self.main,  "Start icon adornment", "Left,Overline", 0.7)
+        self.tfd2 = ui.addTextField(self.main, "", "Outlined,Secondary", 0.7)
+        self.tfd2.label = "Enter username"
+        self.tfd2.setStartAdornment("person", "Icon")
 
-        #  End Adornment icon
-        ui.addText(this.main,  "End icon adornment", "Left,Overline", 0.7)
-        this.tfd4 = ui.addTextField(this.main, "", "Outlined,Secondary,Password", 0.7)
-        this.tfd4.label = "Enter password"
-        this.tfd4.setEndAdornment("lock", "Icon")
-
-    togglePasswordVisibility()
-        if this.tfd.endAdornment == "visibility_off":
-            this.tfd.setEndAdornment("visibility_on", "icon,touchable")
-            this.tfd.inputType = 'text'
-        else:
-            this.tfd.setEndAdornment("visibility_off", "icon,touchable")
-            this.tfd.inputType = 'password'
-
-
-</sample>
+        # End Adornment text
+        ui.addText(self.main,  "End text adornment", "Left,Overline", 0.7)
+        self.tfd3 = ui.addTextField(self.main, "", "Outlined,Secondary,

@@ -1,71 +1,72 @@
 <sample Just a title>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Absolute", "FillXY")
+    lay = ui.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBar("My Title")
-        apbHeight = apb.GetHeight()
+    apb = ui.CreateAppBar("My Title")
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    pageLay = ui.CreateLayout("Linear")
+    pageLay.SetSize(1, 1.5)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(ui.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 
-    /*
+    '''
     * We add the app bar after the scroller to make sure
     * that the app bar will stay on top of 
     * the page layout
     *
     * Btw, apb.GetHeight() is a function that returns the exact height of the appbar
-    */
-</sample>
+    '''</sample>
 
 <sample Sample page>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    layHome = MUI.CreateLayout("Linear", "VCenter,FillXY")
-        btn = MUI.CreateButtonRaised("SHOW PAGE", 0.5)
-        btn.SetOnTouch(ShowPage)
-        layHome.AddChild(btn)
+    layHome = ui.CreateLayout("Linear", "VCenter,FillXY")
+    btn = ui.CreateButtonRaised("SHOW PAGE", 0.5)
+    btn.SetOnTouch(ShowPage)
+    layHome.AddChild(btn)
     app.AddLayout(layHome)
 
-    lay = MUI.CreateLayout("Absolute", "FillXY")
+    lay = ui.CreateLayout("Absolute", "FillXY")
     lay.Hide()
 
-        apb = MUI.CreateAppBar("My Title", "arrow_back", "search")
-        apb.SetOnMenuTouch(OnMenuTouch)
+    apb = ui.CreateAppBar("My Title", "arrow_back", "search")
+    apb.SetOnMenuTouch(OnMenuTouch)
 
-        apbHeight = apb.GetHeight()
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        lay.AddChild(scr)
-        
-        lay.AddChild(apb)
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
+    pageLay = ui.CreateLayout("Linear")
+    pageLay.SetSize(1, 1.5)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(ui.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+    lay.AddChild(scr)
+
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 
@@ -73,64 +74,63 @@ def ShowPage():
     lay.Animate("SlideFromBottom")
 
 def OnMenuTouch():
-    lay.Animate("SlideToBottom")
-</sample>
+    lay.Animate("SlideToBottom")</sample>
 
 <sample Complete controls>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Absolute", "FillXY")
+    lay = ui.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
-        apbHeight = apb.GetHeight()
+    apb = ui.CreateAppBar("My Title", "menu", "search,more_vert")
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-            pageLay = MUI.CreateLayout("Linear", "VCenter")
-            pageLay.SetSize(1, 1.2)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    pageLay = ui.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(ui.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
 
-    app.AddLayout(lay)
-</sample>
+    lay.AddChild(scr)
+    lay.AddChild(apb)
+
+    app.AddLayout(lay)</sample>
 
 <sample Dark mode>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Absolute", "FillXY")
+    lay = ui.CreateLayout("Absolute", "FillXY")
 
-        apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
-        apb.SetOnMenuTouch(OnMenuTouch)
-        apb.SetOnControlTouch(OnControlTouch)
-        
+    apb = ui.CreateAppBar("My Title", "menu", "search,more_vert")
+    apb.SetOnMenuTouch(OnMenuTouch)
+    apb.SetOnControlTouch(OnControlTouch)
 
-        apbHeight = apb.GetHeight()
+    apbHeight = apb.GetHeight()
 
-        scr = app.CreateScroller(1, 1, "NoScrollBar")
-            pageLay = MUI.CreateLayout("Linear")
-            pageLay.SetSize(1, 1.5)
-            pageLay.SetPadding(0, 0, apbHeight, 0)
-                txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."
-                pageLay.AddChild( MUI.CreateTextParagraph(txt) )
-            scr.AddChild(pageLay)
-        
-        lay.AddChild(scr)
-        lay.AddChild(apb)
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
+    pageLay = ui.CreateLayout("Linear")
+    pageLay.SetSize(1, 1.5)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(ui.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
 
     app.AddLayout(lay)
 
@@ -138,5 +138,4 @@ def OnMenuTouch():
     app.ShowPopup("You click the menu. Might as well display a drawer.")
 
 def OnControlTouch(text, index):
-    app.ShowPopup("You click " + text + ": Control index = "+index)
-</sample>
+    app.ShowPopup("You click " + text + ": Control index = "+index)</sample>

@@ -1,5 +1,7 @@
 <sample Show Bluetooth Address>
+from native import app
+
 def OnStart():
-    <b>addr = app.GetBluetoothAddress()</b>
+    addr = app.GetBluetoothAddress()
     app.Alert( addr )
 </sample>

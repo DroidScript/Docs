@@ -1,9 +1,14 @@
 <sample Check Screen On>
+from native import app
+
 def OnStart():
-    app.ShowPopup( "You may now disable your screen." )
-    setTimeout( checkScreenOn, 5000 )
+    app.ShowPopup("You may now disable your screen.")
+    app.SetScreenBrightness(-1)  # Disable screen timeout
+    app.SetScreenOrientation("portrait")  # Set screen orientation to portrait
+    app.SetScreenOn()  # Keep screen on
+    app.SetOnScreenOff(checkScreenOn)
 
 def checkScreenOn():
-    <b>screenOn = app.IsScreenOn()</b>
-    app.ShowPopup( screenOn, "Screen On:" )
+    screenOn = app.IsScreenOn()
+    app.ShowPopup(screenOn, "Screen On:")
 </sample>

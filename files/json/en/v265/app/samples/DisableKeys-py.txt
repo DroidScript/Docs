@@ -1,8 +1,10 @@
 <sample Surprise>
-prev
+from native import app
+
+var prev
 
 def OnStart():
-    <b>app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )</b>
+    app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )
 
     lay = app.CreateLayout( "Linear", "FillX" )
     lay.SetPadding( 0, .85 )
@@ -17,8 +19,10 @@ def OnStart():
     app.SetOnKey( OnKey )
 
 def OnKey(action, name, code, extra):
-    if  action != prev :
-        if  action == "Down" : lay.Animate( "SlideFromBottom", null, 300 )
-        if  action ==   "Up" : lay.Animate( "SlideToBottom"  , null, 300 )
+    if action != prev:
+        if action == "Down":
+            lay.Animate( "SlideFromBottom", None, 300 )
+        if action == "Up":
+            lay.Animate( "SlideToBottom"  , None, 300 )
     prev = action
 </sample>

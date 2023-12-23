@@ -1,5 +1,7 @@
 <sample Show Android API Level>
+from native import app
+
 def OnStart():
-	<b>version = app.GetOSVersion()</b>
-	app.Alert( version )
+    version = app.GetOSVersion()
+    app.Alert(version)
 </sample>

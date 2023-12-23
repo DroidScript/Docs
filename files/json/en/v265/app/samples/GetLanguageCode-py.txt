@@ -1,5 +1,7 @@
 <sample Show User Language Code>
+from native import app
+
 def OnStart():
-    <b>code = app.GetLanguageCode()</b>
-    app.Alert( code )
+    code = app.GetLanguageCode()
+    app.Alert(code)
 </sample>

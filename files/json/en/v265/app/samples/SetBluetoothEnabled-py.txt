@@ -1,64 +1,70 @@
 <sample Enabling Bluetooth>
+from native import app
+
 def OnStart():
     app.ShowProgress( "Enabling Bluetooth" )
-    <b>if  !app.IsBluetoothEnabled() :
-        app.SetBluetoothEnabled( true )</b>
+    if not app.IsBluetoothEnabled():
+        app.SetBluetoothEnabled( True )
 
     cnt = 0
-    while  !app.IsBluetoothOn() && ++cnt < 10 : app.Wait( 0.3 )
+    while not app.IsBluetoothOn() and cnt < 10:
+        app.Wait( 0.3 )
+        cnt += 1
     app.HideProgress()
 </sample>
 
 <sample En/Disable Bluetooth>
+from native import app
+
 itv = 0
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     btnSave = app.CreateButton( "Enable", 0.5, 0.1 )
-	btnSave.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btnSave )
+    btnSave.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btnSave )
 
     btnLoad = app.CreateButton( "Disable", 0.5, 0.1 )
-	btnLoad.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btnLoad )
+    btnLoad.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btnLoad )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
 def btn_OnTouch():
-    if  itv : return
+    global itv
+    if itv:
+        return
     op = this.GetText()
 
-	if  op == "Enable" :
-	    app.ShowProgress( "Enabling Bluetooth" )
+    if op == "Enable":
+        app.ShowProgress( "Enabling Bluetooth" )
 
-        if  !app.IsBluetoothEnabled() :
-            app.SetBluetoothEnabled( true )
+        if not app.IsBluetoothEnabled():
+            app.SetBluetoothEnabled( True )
 
-        itv = setInterval( checkBtOn, 200 )
-	else:
-	    app.ShowProgress( "Disabling Bluetooth" )
+        itv = app.SetInterval( checkBtOn, 200 )
+    else:
+        app.ShowProgress( "Disabling Bluetooth" )
 
-        if  app.IsBluetoothEnabled() :
-	        app.SetBluetoothEnabled( false )
+        if app.IsBluetoothEnabled():
+            app.SetBluetoothEnabled( False )
 
-        itv = setInterval( checkBtOff, 200 )
-
+        itv = app.SetInterval( checkBtOff, 200 )
 
 def checkBtOn():
-    if  app.IsBluetoothOn() :
+    global itv
+    if app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is on" )
-        clearInterval( itv )
+        app.ClearInterval( itv )
         itv = 0
-
-
 
 def checkBtOff():
-    if  !app.IsBluetoothOn() :
+    global itv
+    if not app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is off" )
-        clearInterval( itv )
+        app.ClearInterval( itv )
         itv = 0
-
 </sample>

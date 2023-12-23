@@ -1,68 +1,49 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Create a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app, gfx, ui
 
-        #  Add button control to the main layout
-        this.btn1 = ui.addButton(this.main, "Show Popup")
+class Main(app.App):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.btn1 = ui.addButton(self.main, "Show Popup")
+        self.btn1.setOnTouch(self.onTouch)
 
-        #  Add a callback handler when the button is touched
-        this.btn1.setOnTouch( this.onTouch )
-
-    onTouch()
-        #  Display popup on the Top with transition Grow
+    def onTouch(self):
         ui.showPopup("Hello from popup!")
-
 </sample>
 
 <sample Popups with transitions>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0, 0, 0, 0.02)
+from native import app, gfx, ui
 
-        #  Adds first button to the main layout
-        this.btn1 = ui.addButton(this.main, "Top & Grow", "Primary")
-        this.btn1.setOnTouch( this.onTouch1 )
+class Main(app.App):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.main.setChildMargins(0, 0, 0, 0.02)
+        self.btn1 = ui.addButton(self.main, "Top & Grow", "Primary")
+        self.btn1.setOnTouch(self.onTouch1)
+        self.btn2 = ui.addButton(self.main, "Bottom and Slide", "Secondary")
+        self.btn2.setOnTouch(self.onTouch2)
 
-        #  Adds second button to the main layout
-        this.btn2 = ui.addButton(this.main, "Bottom and Slide", "Secondary")
-        this.btn2.setOnTouch( this.onTouch2 )
-
-    onTouch1()
-        #  Display popup on the Top with transition Grow
+    def onTouch1(self):
         ui.showPopup("Hello world.", "Top,Grow")
 
-    onTouch2()
-        #  Display popup on the Bottom with transition Slide in 1.5 seconds.
+    def onTouch2(self):
         ui.showPopup("Hello world.", "Bottom,Slide", 1500)
-
 </sample>
 
 <sample With Transition>
-class Main extends App
-    onStart()
-        #  Create a fullscreen layout with objects vertically centered
-        this.layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app, gfx, ui
 
-        #  Add a button control to the main layout
-        this.btn = ui.addButton(this.layMain, "Show Popup")
+class Main(app.App):
+    def onStart(self):
+        self.layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.btn = ui.addButton(self.layMain, "Show Popup")
+        self.btn.setOnTouch(self.showMessage)
 
-        #  Add a callback handler when the button is touched
-        this.btn.setOnTouch( this.showMessage )
+    def showMessage(self):
+        self.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
+        self.snackbar.setOnAction(self.onAction)
 
-    showMessage()
-        #  Show a popup with additional action
-        this.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
-        
-        #  Add a callback handler when the action is touched
-        this.snackbar.setOnAction( this.onAction )
-
-    onAction()
-        #  Hide the popup when the action button is click
-        this.snackbar.hide()
+    def onAction(self):
+        self.snackbar.hide()
         ui.showPopup("Login is click. Show login Page.")
-
 </sample>

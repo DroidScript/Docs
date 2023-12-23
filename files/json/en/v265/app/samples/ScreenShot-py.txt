@@ -1,12 +1,14 @@
 <sample Take Screenshot>
-def OnStart():
-    lay = app.CreateLayout( "linear" )
-    img = app.CreateImage( null, 1, 1 )
-    img.SetPaintColor( "green" )
-    img.DrawCircle( 0.5, 0.5, 0.3 )
-    lay.AddChild( img )
-    app.AddLayout( lay )
+from native import app
 
-    <b>app.ScreenShot( "/sdcard/file.jpg" )</b>
-    img.SetImage( "/sdcard/file.jpg" )
+def OnStart():
+    lay = app.CreateLayout("linear")
+    img = app.CreateImage(None, 1, 1)
+    img.SetPaintColor("green")
+    img.DrawCircle(0.5, 0.5, 0.3)
+    lay.AddChild(img)
+    app.AddLayout(lay)
+
+    app.ScreenShot("/sdcard/file.jpg")
+    img.SetImage("/sdcard/file.jpg")
 </sample>

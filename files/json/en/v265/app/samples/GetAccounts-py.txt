@@ -1,10 +1,12 @@
 <sample Get Accounts>
+from native import app
+
 def OnStart():
-    <b>accounts = app.GetAccounts()</b>
-	dlg = app.CreateListDialog( "Select an account:", accounts )
+    accounts = app.GetAccounts()
+    dlg = app.CreateListDialog( "Select an account:", accounts )
     dlg.SetOnTouch( dlg_OnTouch )
-	dlg.Show()
+    dlg.Show()
 
 def dlg_OnTouch( account ):
-	app.ShowPopup( "Selected Account: " + account )
+    app.ShowPopup( "Selected Account: " + account )
 </sample>

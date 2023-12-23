@@ -1,13 +1,15 @@
 <sample Detect First Start>
+from native import app
+
 file = "demofile"
 
 def OnStart():
-	first = app.LoadBoolean( "first", true, file )
+    first = app.LoadBoolean( "first", True, file )
 
-	if first:
+    if first:
         app.ShowPopup( "You ran this demo for the first time!" )
     else:
         app.ShowPopup( "This is not the first time you have run this demo." )
 
-	<b>app.SaveBoolean( "first", false, file )</b>
+    app.SaveBoolean( "first", False, file )
 </sample>

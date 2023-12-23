@@ -1,11 +1,13 @@
 <sample Redirect Assets>
+from native import app
+
 def OnStart():
-    <b>app.RedirectAssets("/sdcard/DroidScript/Hello World/")</b>
+    app.RedirectAssets("/sdcard/DroidScript/Hello World/")
 
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-    img = app.CreateImage( "Img/Hello World.png" )
-    lay.AddChild( img )
+    img = app.CreateImage("Img/Hello World.png")
+    lay.AddChild(img)
 
-    app.AddLayout( lay )
+    app.AddLayout(lay)
 </sample>

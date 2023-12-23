@@ -1,5 +1,7 @@
 <sample Check IDE>
+from native import app
+
 def OnStart():
-    <b>inIDE = app.InIDE()</b>
+    inIDE = app.InIDE()
     app.Alert( inIDE, "Is in IDE:" )
 </sample>

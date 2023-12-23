@@ -1,27 +1,31 @@
 <sample Play Local Sound File>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-	btn = app.CreateButton( "Press Me", 0.3, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btn )
+    btn = app.CreateButton("Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
 def btn_OnTouch():
-    <b>app.PlaySound( "/Sys/Snd/Trill.ogg" )</b>
+    app.PlaySound("/Sys/Snd/Trill.ogg")
 </sample>
 
 <sample Play Remote Sound File>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-	btn = app.CreateButton( "Press Me", 0.3, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btn )
+    btn = app.CreateButton("Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
 def btn_OnTouch():
-    <b>app.PlaySound( "https:# sgarman.net/silly.mp3" )</b>
+    app.PlaySound("https://sgarman.net/silly.mp3")
 </sample>

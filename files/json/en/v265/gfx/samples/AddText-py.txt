@@ -1,10 +1,12 @@
 <sample>
+from native import gfx
+
 cfg.Game
 
 def OnLoad():
-    text = gfx.CreateText( "Hello World", 40, "/Sys/Img/Desyrel.xml" )
+    text = gfx.CreateText("Hello World", 40, "/Sys/Img/Desyrel.xml")
 
 def OnReady():
-    <b>gfx.AddText( text, 0.2, 0.4, 0.2 )</b>
+    gfx.AddText(text, 0.2, 0.4, 0.2)
     gfx.Play()
 </sample>

@@ -1,4 +1,6 @@
 <sample>
+from native import gfx
+
 cfg.Game
 
 def OnLoad():

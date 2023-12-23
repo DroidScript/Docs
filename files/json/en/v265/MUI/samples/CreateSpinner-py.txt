@@ -2,13 +2,15 @@
 cfg.Light
 cfg.MUI
 
+from native import app
+
 def OnStart():
-    color = MUI.colors.teal
+    color = app.gfx.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = app.ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        spn = MUI.CreateSpinner("Item 1, Item 2, Item 3", 0.6, 0.1)
+        spn = app.ui.CreateSpinner("Item 1, Item 2, Item 3", 0.6, 0.1)
         spn.SetOnChange(OnChange)
         lay.AddChild(spn)
 

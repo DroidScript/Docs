@@ -1,10 +1,14 @@
+<code>
 <sample Save, Load and Clear Data>
-file = "demofile"
+
+from native import app
+
+var file = "demofile"
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    text = getValues()
+    var text = getValues()
     txtValues = app.CreateText( text, .5, -1, "multiline,left" )
     lay.AddChild( txtValues )
 
@@ -23,5 +27,7 @@ def getValues():
     return (
         "saved Text: " + app.LoadText( "value", "No Value stored.", file ) + "\n" +
         "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
-        "first start: " + app.LoadBoolean( "first", true, file ) + "\n")
+        "first start: " + app.LoadBoolean( "first", True, file ) + "\n")
+
 </sample>
+</code>

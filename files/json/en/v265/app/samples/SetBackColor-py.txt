@@ -1,4 +1,6 @@
 <sample Blue Background>
+from native import app
+
 def OnStart():
-    app.SetBackColor( "blue" )
+    app.SetBackColor("blue")
 </sample>

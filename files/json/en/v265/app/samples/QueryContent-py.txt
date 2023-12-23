@@ -1,18 +1,20 @@
 <sample Show Contacts>
-def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
-	lst = app.CreateList( "", 1, 1 )
-	lay.AddChild( lst )
-	app.AddLayout( lay )
+from native import app
 
-    uri = "content:# com.android.contacts/data"
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+    lst = app.CreateList("", 1, 1)
+    lay.AddChild(lst)
+    app.AddLayout(lay)
+
+    uri = "content://com.android.contacts/data"
     columns = "display_name,data1"
     select = "mimetype='vnd.android.cursor.item/phone_v2'"
-    rows = app.QueryContent( uri, columns, select, null, "display_name" )
+    rows = app.QueryContent(uri, columns, select, None, "display_name")
 
-    list = []
-    for i in rows:
-        list.push( rows[i].display_name + ":" + rows[i].data1 + ": " )
+    contact_list = []
+    for row in rows:
+        contact_list.append(row.display_name + ":" + row.data1 + ": ")
 
-    lst.SetList( list )
+    lst.SetList(contact_list)
 </sample>

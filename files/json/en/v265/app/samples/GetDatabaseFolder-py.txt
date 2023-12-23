@@ -1,5 +1,7 @@
 <sample Show>
+from native import app
+
 def OnStart():
-    <b>dir = app.GetDatabaseFolder()</b>
-    app.Alert( dir )
+    dir = app.GetDatabaseFolder()
+    app.Alert(dir)
 </sample>

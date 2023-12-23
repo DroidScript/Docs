@@ -1,12 +1,14 @@
-<sample Check Bluetooth Status>
+<sample>
+from native import app
+
 def OnStart():
-    <b>status = app.IsBluetoothEnabled()</b>
+    status = app.IsBluetoothEnabled()
     state = app.IsBluetoothOn()
 
     app.ShowPopup(
         "Bluetooth is " +
-        (status ? "enabled" : "disabled") +
-        (status == state ? " and " : " but ") +
-        (state ? "on" : "off")
+        ("enabled" if status else "disabled") +
+        (" and " if status == state else " but ") +
+        ("on" if state else "off")
     )
 </sample>

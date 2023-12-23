@@ -1,5 +1,7 @@
-<sample Get Pictures folder>
+<sample>
+from native import app
+
 def OnStart():
-    fld = app.GetSpecialFolder( "Pictures" )
-    app.Alert( fld )
+    fld = app.GetSpecialFolder("Pictures")
+    app.Alert(fld)
 </sample>

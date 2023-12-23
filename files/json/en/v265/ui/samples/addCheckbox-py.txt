@@ -1,91 +1,111 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+from native import app
+from native import ui
 
-        #  Add a checkbox control to the main layout
-        this.ckb = ui.addCheckbox(this.main, "This is checkbox label")
+class Main(app):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Add a callback handler for `onTouch` event
-        this.ckb.setOnTouch( this.onTouch )
+        # Add a checkbox control to the main layout
+        self.ckb = ui.addCheckbox(self.main, "This is checkbox label")
 
-    onTouch( value )
-        ui.showPopup( `Value is $value` )
+        # Add a callback handler for `onTouch` event
+        self.ckb.setOnTouch(self.onTouch)
 
+    def onTouch(self, value):
+        ui.showPopup(f"Value is {value}")
+
+main = Main()
+main.onStart()
 </sample>
 
 <sample Colors>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0, 0.05, 0, 0.05)
+from native import app
+from native import ui
 
-        #  Add a default checkbox control to the main layout
-        this.ckb1 = ui.addCheckbox(this.main, "This is checkbox label")
-        this.ckb1.setOnTouch( this.onTouch )
+class Main(app):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0, 0.05, 0, 0.05)
 
-        #  Add a primary checkbox control to the main layout
-        this.ckb2 = ui.addCheckbox(this.main, "This is checkbox label", "Primary")
-        this.ckb2.setOnTouch( this.onTouch )
+        # Add a default checkbox control to the main layout
+        self.ckb1 = ui.addCheckbox(self.main, "This is checkbox label")
+        self.ckb1.setOnTouch(self.onTouch)
 
-        #  Add a secondary checkbox control to the main layout
-        #  and set its value to `true`
-        this.ckb3 = ui.addCheckbox(this.main, "This is checkbox label", "Secondary")
-        this.ckb3.value = true
-        this.ckb3.setOnTouch( this.onTouch )
+        # Add a primary checkbox control to the main layout
+        self.ckb2 = ui.addCheckbox(self.main, "This is checkbox label", "Primary")
+        self.ckb2.setOnTouch(self.onTouch)
 
-    onTouch( value )
-        ui.showPopup( `Value is $value` )
+        # Add a secondary checkbox control to the main layout
+        # and set its value to `True`
+        self.ckb3 = ui.addCheckbox(self.main, "This is checkbox label", "Secondary")
+        self.ckb3.value = True
+        self.ckb3.setOnTouch(self.onTouch)
 
+    def onTouch(self, value):
+        ui.showPopup(f"Value is {value}")
+
+main = Main()
+main.onStart()
 </sample>
 
 <sample Text positions>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0, 0.05, 0, 0.05)
+from native import app
+from native import ui
 
-        #  Add a checkbox with label on the right. 
-        this.ckb1 = ui.addCheckbox(this.main, "Checkbox on the left", "Left")
-        this.ckb1.setOnTouch( this.onTouch )
+class Main(app):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0, 0.05, 0, 0.05)
 
-        #  Add a checkbox with label on the bottom.
-        this.ckb2 = ui.addCheckbox(this.main, "Checkbox on the top", "Primary,Top")
-        this.ckb2.setOnTouch( this.onTouch )
+        # Add a checkbox with label on the right. 
+        self.ckb1 = ui.addCheckbox(self.main, "Checkbox on the left", "Left")
+        self.ckb1.setOnTouch(self.onTouch)
 
-        #  Add a checkbox with label on the left.
-        this.ckb3 = ui.addCheckbox(this.main, "Checkbox on the right", "Secondary,Right")
-        this.ckb3.setOnTouch( this.onTouch )
+        # Add a checkbox with label on the bottom.
+        self.ckb2 = ui.addCheckbox(self.main, "Checkbox on the top", "Primary,Top")
+        self.ckb2.setOnTouch(self.onTouch)
 
-        #  Add a checkbox with label on top.
-        this.ckb4 = ui.addCheckbox(this.main, "Checkbox on the bottom", "Secondary,Bottom")
-        this.ckb4.setOnTouch( this.onTouch )
+        # Add a checkbox with label on the left.
+        self.ckb3 = ui.addCheckbox(self.main, "Checkbox on the right", "Secondary,Right")
+        self.ckb3.setOnTouch(self.onTouch)
 
-    onTouch( value )
-        ui.showPopup( `Value is $value` )
+        # Add a checkbox with label on top.
+        self.ckb4 = ui.addCheckbox(self.main, "Checkbox on the bottom", "Secondary,Bottom")
+        self.ckb4.setOnTouch(self.onTouch)
 
+    def onTouch(self, value):
+        ui.showPopup(f"Value is {value}")
+
+main = Main()
+main.onStart()
 </sample>
 
 <sample Adding custom checkbox icon>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+from native import app
+from native import ui
 
-        #  Adds checkbox control to the main layout
-        this.ckb = ui.addCheckbox(this.main, "This is checkbox label", "Left,Secondary")
+class Main(app):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Set the checked icon to `favorite`
-        #  and uncheck icon to `person`
-        this.ckb.setIcon("favorite", "person")
+        # Adds checkbox control to the main layout
+        self.ckb = ui.addCheckbox(self.main, "This is checkbox label", "Left,Secondary")
 
-        #  Add a callback handler for `onTouch` event
-        this.ckb.setOnTouch( this.onTouch )
+        # Set the checked icon to `favorite`
+        # and uncheck icon to `person`
+        self.ckb.setIcon("favorite", "person")
 
-    onTouch( value )
-        ui.showPopup( `Value is $value` )
+        # Add a callback handler for `onTouch` event
+        self.ckb.setOnTouch(self.onTouch)
 
+    def onTouch(self, value):
+        ui.showPopup(f"Value is {value}")
+
+main = Main()
+main.onStart()
 </sample>

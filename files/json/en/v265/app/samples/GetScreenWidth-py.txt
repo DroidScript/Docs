@@ -1,5 +1,7 @@
-<sample Show Screen Width>
+<sample>
+from native import app
+
 def OnStart():
-    <b>width = app.GetScreenWidth()</b>
-    app.Alert( width )
+    width = app.GetScreenWidth()
+    app.Alert(width)
 </sample>

@@ -1,9 +1,11 @@
 <sample Create folder>
-def OnStart():
-    <b>app.MakeFolder("myFolder")</b>
+from native import app
 
-	if app.FolderExists("myFolder"):
-	    app.ShowPopup("myFolder exists!")
+def OnStart():
+    app.MakeFolder("myFolder")
+
+    if app.FolderExists("myFolder"):
+        app.ShowPopup("myFolder exists!")
     else:
-	    app.ShowPopup("myFolder does not exist!")
+        app.ShowPopup("myFolder does not exist!")
 </sample>

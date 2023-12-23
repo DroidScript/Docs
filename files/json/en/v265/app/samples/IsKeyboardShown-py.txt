@@ -1,5 +1,7 @@
 <sample Is Keyboard Shown>
+from native import app
+
 def OnStart():
-    <b>kbShown = app.IsKeyboardShown()</b>
-    app.Alert( kbShown, "Is Keyboard Shown:" )
+    kbShown = app.IsKeyboardShown()
+    app.Alert(kbShown, "Is Keyboard Shown:")
 </sample>

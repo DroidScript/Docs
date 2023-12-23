@@ -1,4 +1,6 @@
 <sample Basic>
+from native import app
+
 nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
 
 def OnStart():
@@ -7,14 +9,25 @@ def OnStart():
     lay = app.CreateLayout("linear", "VCenter, FillXY")
     txt = app.AddText(lay, "Debug Log:", 1, 1, "Log")
 
-    <b>node = app.CreateNode()
-    node.SetOnOutput((msg) =>txt.Log(msg);)
-    node.SetOnError((msg) =>txt.Log(msg, "red");)
-    node.SetOnMessage((msg) =>txt.Log(msg);)
-    node.SetOnReady(node_OnReady)</b>
+    node = app.CreateNode()
+    
+    def onOutput(msg):
+        txt.Log(msg)
+
+    def onError(msg):
+        txt.Log(msg, "red")
+
+    def onMessage(msg):
+        txt.Log(msg)
+
+    node.SetOnOutput(onOutput)
+    node.SetOnError(onError)
+    node.SetOnMessage(onMessage)
+    node.SetOnReady(node_OnReady)
 
     app.AddLayout(lay)
 
 def node_OnReady():
     node.Run("node_script.js")
+
 </sample>

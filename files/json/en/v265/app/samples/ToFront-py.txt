@@ -1,4 +1,6 @@
 <sample Hide and Peek>
+from native import app
+
 def OnStart():
     app.ToBack()
     setTimeout("app.ToFront()", 5000)

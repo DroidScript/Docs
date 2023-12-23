@@ -1,4 +1,6 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	<b>app.PreventScreenLock( true )</b>
+    app.PreventScreenLock( True )
 </sample>

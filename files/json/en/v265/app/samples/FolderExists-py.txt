@@ -1,7 +1,9 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	<b>if app.FolderExists("myFolder"):
-	    app.ShowPopup("myFolder exists!")
+    if app.FolderExists("myFolder"):
+        app.ShowPopup("myFolder exists!")
     else:
-	    app.ShowPopup("myFolder does not exist!")</b>
+        app.ShowPopup("myFolder does not exist!")
 </sample>

@@ -1,22 +1,26 @@
 <sample Get Saved Data>
+from native import app
+
 def OnStart():
-    app.SetData( "myvar", "Hello World!" )
-    <b>data = app.GetData("myvar")</b>
-    app.Alert( data, "Saved Data:" )
+    app.SetData("myvar", "Hello World!")
+    data = app.GetData("myvar")
+    app.Alert(data, "Saved Data:")
 </sample>
 
 <sample Random Value>
+import math
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-	btn = app.AddButton( lay, "Press Me", 0.3, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
+    btn = app.AddButton(lay, "Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
 def btn_OnTouch():
-	app.SetData( "number", 100 * Math.random() | 0 )
-
-    <b>data = app.GetData( "number" )</b>
-	app.ShowPopup( "Data: " + data)
+    app.SetData("number", str(int(100 * math.random())))
+    data = app.GetData("number")
+    app.ShowPopup("Data: " + data)
 </sample>

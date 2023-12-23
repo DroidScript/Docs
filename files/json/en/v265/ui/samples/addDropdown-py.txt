@@ -1,49 +1,55 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Create a fullscreen linear layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from ui import ui
 
-        #  Initialize items to show in the dropdown
+class Main(app.App):
+    def onStart(self):
+        # Create a fullscreen linear layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Initialize items to show in the dropdown
         items = ["Item 1", "Item 2", "Item 3"]
 
-        #  Add Dropdown control to the main layout.
-        this.dpd = ui.addDropdown(this.main, items)
+        # Add Dropdown control to the main layout.
+        self.dpd = ui.addDropdown(self.main, items)
 
-        #  Add a callback handler for `onChange` event on the Dropdown control
-        this.dpd.setOnChange( this.onChange )
+        # Add a callback handler for `onChange` event on the Dropdown control
+        self.dpd.setOnChange(self.onChange)
 
-    onChange(text, index)
-        ui.showPopup( "Value is " + text )
+    def onChange(self, text, index):
+        ui.showPopup("Value is " + text)
 
 </sample>
 
 <sample Custom styles>
-class Main extends App
-    onStart()
-        #  Create a fullscreen linear layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from ui import ui
 
-        #  Initialize dropdown items
+class Main(app.App):
+    def onStart(self):
+        # Create a fullscreen linear layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Initialize dropdown items
         items = ["Item 1", "Item 2", "Item 3"]
 
-        #  Add a Dropdown control to the main layout
-        #  and pass `Outlined` and `Primary` options for styling
-        this.dpd = ui.addDropdown( this.main, items, "Outlined,Primary" )
+        # Add a Dropdown control to the main layout
+        # and pass `Outlined` and `Primary` options for styling
+        self.dpd = ui.addDropdown(self.main, items, "Outlined,Primary")
 
-        #  Set the label property of the Dropdown
-        this.dpd.label = "Choose and item"
+        # Set the label property of the Dropdown
+        self.dpd.label = "Choose an item"
 
-        #  Set the corner radius to 16px
-        this.dpd.cornerRadius = 16
+        # Set the corner radius to 16px
+        self.dpd.cornerRadius = 16
 
-        #  Set the text size to 18
-        this.dpd.textSize = 18
+        # Set the text size to 18
+        self.dpd.textSize = 18
 
-        #  Add a callback handler for `onChange` event of the Dropdown control
-        this.dpd.setOnChange( this.onChange )
+        # Add a callback handler for `onChange` event of the Dropdown control
+        self.dpd.setOnChange(self.onChange)
 
-    onChange(text, index)
-        ui.showPopup( "Value is " + text )
+    def onChange(self, text, index):
+        ui.showPopup("Value is " + text)
 
 </sample>

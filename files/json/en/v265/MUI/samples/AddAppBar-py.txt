@@ -1,12 +1,18 @@
 <sample AddAppBar>
+
+from native import MUI
+from native import app
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-        apb1 = MUI.AddAppBar(lay, "My Appbar", "menu", "search,more_vert", "Default")
-        apb2 = MUI.AddAppBar(lay, "My Appbar", "menu", "search,more_vert", "Elegant")
-        apb3 = MUI.AddAppBar(lay, "Search product", "search", null, "Modern,Round")
-        apb3 = MUI.AddAppBar(lay, "Search product", "search", null, "Modern,Rectangle")
+
+    apb1 = MUI.AddAppBar(lay, "My Appbar", "menu", "search,more_vert", "Default")
+    apb2 = MUI.AddAppBar(lay, "My Appbar", "menu", "search,more_vert", "Elegant")
+    apb3 = MUI.AddAppBar(lay, "Search product", "search", None, "Modern,Round")
+    apb4 = MUI.AddAppBar(lay, "Search product", "search", None, "Modern,Rectangle")
+
     app.AddLayout(lay)
 </sample>

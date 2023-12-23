@@ -1,35 +1,41 @@
 <sample Search>
-cfg.Light
-cfg.MUI
+from native import app
+from gfx import MUI
 
 def OnStart():
+    from native import app
+    from gfx import MUI
+
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
-        lay.AddChild(tef)
+    tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample SetOnEnter Callback>
-cfg.Dark
-cfg.MUI
+from native import app
+from gfx import MUI
 
 def OnStart():
+    from native import app
+    from gfx import MUI
+
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 
 def OnEnter():
-    app.ShowPopup(this.GetText())
+    app.ShowPopup(tef.GetText())
 </sample>

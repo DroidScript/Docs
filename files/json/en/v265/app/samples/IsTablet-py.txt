@@ -1,5 +1,7 @@
 <sample Check Tablet>
+from native import app
+
 def OnStart():
-	<b>tablet = app.IsTablet()</b>
-	app.ShowPopup( tablet, "Is Tablet:" )
+    tablet = app.IsTablet()
+    app.ShowPopup(str(tablet), "Is Tablet:")
 </sample>

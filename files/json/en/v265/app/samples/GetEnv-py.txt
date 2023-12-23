@@ -1,5 +1,7 @@
 <sample Show PATH environment variable>
+from native import app
+
 def OnStart():
-    <b>envPath = app.GetEnv("PATH")</b>
-    app.Alert( envPath )
+    envPath = app.GetEnv("PATH")
+    app.Alert(envPath)
 </sample>

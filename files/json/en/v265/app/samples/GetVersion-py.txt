@@ -1,5 +1,7 @@
 <sample Show App Version>
+from native import app
+
 def OnStart():
-    <b>version = app.GetVersion()</b>
+    version = app.GetVersion()
     app.Alert( version, "App Version:" )
 </sample>

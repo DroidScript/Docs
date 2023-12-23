@@ -1,10 +1,14 @@
 <sample Square>
-cfg.Game
+from native import app
+
+cfg.Game;
 
 def OnLoad():
-    square = gfx.CreateRectangle( 0.4, 0.4*gfx.aspect, 0x2255ff )
+    gfx = app.get_gfx()
+    square = gfx.CreateRectangle(0.4, 0.4*gfx.aspect, 0x2255ff)
 
 def OnReady():
-    gfx.AddGraphic( square, 0.3, 0.2 )
+    gfx = app.get_gfx()
+    gfx.AddGraphic(square, 0.3, 0.2)
     gfx.Play()
 </sample>

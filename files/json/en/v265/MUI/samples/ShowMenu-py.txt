@@ -1,17 +1,20 @@
 <sample Basic usage>
 cfg.Light
+from native import gfx
+from native import ui
+from native import app
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        btn = MUI.CreateFabOutline("more_vert")
-        btn.SetOnTouch(btn_OnTouch)
-        lay.AddChild(btn)
+    btn = gfx.MUI.CreateFabOutline("more_vert")
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    menu = MUI.ShowMenu(this, "Item 1, Item 2, Item 3")
-    menu.SetOnSelect(function(item)
-        app.ShowPopup(item))
+    menu = gfx.MUI.ShowMenu(this, "Item 1, Item 2, Item 3")
+    menu.SetOnSelect(lambda item: app.ShowPopup(item))
 </sample>

@@ -1,5 +1,7 @@
 <sample Show Internal Storage Path>
+from native import app
+
 def OnStart():
-    <b>dir = app.GetInternalFolder()</b>
+    dir = app.GetInternalFolder()
     app.Alert( dir )
 </sample>

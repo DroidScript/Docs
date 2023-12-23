@@ -1,4 +1,7 @@
 <sample No Label>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -8,13 +11,16 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name")
-        lay.AddChild(tef)
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With Label>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -24,13 +30,16 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
-        lay.AddChild(tef)
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample SetOnEnter Callback>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Dark
 cfg.MUI
 
@@ -40,12 +49,13 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    # Create the text area
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 
 def OnEnter():
-    app.ShowPopup(this.GetText())
+    app.ShowPopup(tef.GetText())
 </sample>

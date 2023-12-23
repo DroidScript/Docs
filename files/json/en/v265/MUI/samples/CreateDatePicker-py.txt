@@ -1,20 +1,24 @@
 <sample Default>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    colors = MUI.colors.teal
+    colors = ui.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
-        btn.SetOnTouch(ShowDatePicker)
-        lay.AddChild(btn)
+    btn = ui.CreateButtonRaised("SHOW PICKER", 0.5)
+    btn.SetOnTouch(ShowDatePicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    pck = MUI.CreateDatePicker()
+    pck = ui.CreateDatePicker()
     pck.SetOnSelect(OnSelect)
 
 def ShowDatePicker():
@@ -25,23 +29,27 @@ def OnSelect(date, yyyy, mm, dd):
 </sample>
 
 <sample With Custom Date>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    colors = MUI.colors.teal
+    colors = ui.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
-        btn.SetOnTouch(ShowDatePicker)
-        lay.AddChild(btn)
+    btn = ui.CreateButtonRaised("SHOW PICKER", 0.5)
+    btn.SetOnTouch(ShowDatePicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     # September 1, 2020
-    pck = MUI.CreateDatePicker(2020, 8, 1)
+    pck = ui.CreateDatePicker(2020, 8, 1)
     pck.SetOnSelect(OnSelect)
 
 def ShowDatePicker():

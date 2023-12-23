@@ -1,23 +1,27 @@
 <sample WebView Greeter>
-html = `
+from native import app
+
+html = """
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
-    <script src='file:# /android_asset/app.js'></script>
+    <script src='file:///android_asset/app.js'>
 </head>
 
-<script>
+
 def greetWeb(name):
     app.ShowPopup("Hello " + name + ", I'm the WebView")
+
 def greetApp():
     app.Func("greetApp", "WebView")
+
 def OnRequest(err, s):
-    alert(s.split("\\n").join("\\n"))
-</script>
+    app.alert(s.split("\\n").join("\\n"))
+
 
 <input type="button" onclick="greetApp()" value="Greet App"/>
 </html>
-`
+"""
 
 def OnStart():
     lay = app.CreateLayout("linear", "FillXY,VCenter")
@@ -32,6 +36,7 @@ def OnStart():
 
 def greetApp(name):
     app.ShowPopup("Hello " + name + ", I'm the App")
+
 def greetWeb():
     web.Func("greetWeb", "App")
 </sample>

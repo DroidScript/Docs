@@ -1,5 +1,7 @@
-<sample Show Default Orientation>
+<sample>
+from native import app
+
 def OnStart():
-    <b>orient = app.GetDefaultOrientation()</b>
-    app.Alert( orient )
+    orient = app.GetDefaultOrientation()
+    app.Alert(orient)
 </sample>

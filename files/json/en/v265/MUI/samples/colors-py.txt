@@ -1,38 +1,41 @@
 <sample All Colors From Green>
 cfg.Light
 cfg.MUI
+from native import app
+from native import gfx
+from native import ui
 
 def OnStart():
-    color = MUI.colors.green
+    color = ui.colors.green
 
-    lay = MUI.CreateLayout("Linear", "VCenter, FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter, FillXY")
 
-        btn1 = MUI.CreateButtonRaised("LIGHTEN4", 0.35, null, color.lighten4)
-        lay.AddChild(btn1)
+    btn1 = ui.CreateButtonRaised("LIGHTEN4", 0.35, None, color.lighten4)
+    lay.AddChild(btn1)
 
-        btn2 = MUI.CreateButtonRaised("LIGHTEN3", 0.35, null, color.lighten3)
-        lay.AddChild(btn2)
+    btn2 = ui.CreateButtonRaised("LIGHTEN3", 0.35, None, color.lighten3)
+    lay.AddChild(btn2)
 
-        btn3 = MUI.CreateButtonRaised("LIGHTEN2", 0.35, null, color.lighten2)
-        lay.AddChild(btn3)
+    btn3 = ui.CreateButtonRaised("LIGHTEN2", 0.35, None, color.lighten2)
+    lay.AddChild(btn3)
 
-        btn4 = MUI.CreateButtonRaised("LIGHTEN1", 0.35, null, color.lighten1)
-        lay.AddChild(btn4)
+    btn4 = ui.CreateButtonRaised("LIGHTEN1", 0.35, None, color.lighten1)
+    lay.AddChild(btn4)
 
-        btn5 = MUI.CreateButtonRaised("GREEN", 0.35, null, color.green)
-        lay.AddChild(btn5)
+    btn5 = ui.CreateButtonRaised("GREEN", 0.35, None, color.green)
+    lay.AddChild(btn5)
 
-        btn6 = MUI.CreateButtonRaised("DARKEN1", 0.35, null, color.darken1)
-        lay.AddChild(btn6)
+    btn6 = ui.CreateButtonRaised("DARKEN1", 0.35, None, color.darken1)
+    lay.AddChild(btn6)
 
-        btn7 = MUI.CreateButtonRaised("DARKEN2", 0.35, null, color.darken2)
-        lay.AddChild(btn7)
+    btn7 = ui.CreateButtonRaised("DARKEN2", 0.35, None, color.darken2)
+    lay.AddChild(btn7)
 
-        btn8 = MUI.CreateButtonRaised("DARKEN3", 0.35, null, color.darken3)
-        lay.AddChild(btn8)
+    btn8 = ui.CreateButtonRaised("DARKEN3", 0.35, None, color.darken3)
+    lay.AddChild(btn8)
 
-        btn9 = MUI.CreateButtonRaised("DARKEN4", 0.35, null, color.darken4)
-        lay.AddChild(btn9)
+    btn9 = ui.CreateButtonRaised("DARKEN4", 0.35, None, color.darken4)
+    lay.AddChild(btn9)
 
     app.AddLayout(lay)
 </sample>
@@ -40,21 +43,33 @@ def OnStart():
 <sample Change Layout Background>
 cfg.Light
 cfg.MUI
+from native import app
+from native import gfx
+from native import ui
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
 
-    lay = MUI.CreateLayout("linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("Choose Color", 0.4)
-        btn.SetOnTouch(ShowDialog)
-        lay.AddChild(btn)
+    btn = ui.CreateButtonRaised("Choose Color", 0.4)
+    btn.SetOnTouch(ShowDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    choices = [name: "lighten4",name: "lighten3",name: "lighten2",name: "lighten1",name: "teal",name: "darken1",name: "darken2",name: "darken3",name: "darken4"
+    choices = [
+        {"name": "lighten4"},
+        {"name": "lighten3"},
+        {"name": "lighten2"},
+        {"name": "lighten1"},
+        {"name": "teal"},
+        {"name": "darken1"},
+        {"name": "darken2"},
+        {"name": "darken3"},
+        {"name": "darken4"}
     ]
-    lsd = MUI.CreateListDialog("Select Color", choices)
+    lsd = ui.CreateListDialog("Select Color", choices)
     lsd.SetOnSelect(OnSelect)
 
 def ShowDialog():

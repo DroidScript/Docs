@@ -3,13 +3,15 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilled(0.8, "Left", "Type your name")
-        lay.AddChild(tef)
+    tef = ui.CreateTextEditFilled(0.8, "Left", "Type your name")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -19,13 +21,15 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilled(0.8, "Left", "Username", true)
-        lay.AddChild(tef)
+    tef = ui.CreateTextEditFilled(0.8, "Left", "Username", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -35,14 +39,16 @@ cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilled(0.8, "Left", "Type your name", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = ui.CreateTextEditFilled(0.8, "Left", "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 

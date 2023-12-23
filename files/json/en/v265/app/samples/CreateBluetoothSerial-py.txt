@@ -1,16 +1,21 @@
+<code>
 <sample Connect to Device>
+
+from native import app
+
 def OnStart():
     app.ShowProgress( "Enabling Bluetooth" )
-    if  !app.IsBluetoothEnabled() :
+    if( !app.IsBluetoothEnabled() ):
         app.SetBluetoothEnabled( true )
 
-	while  !app.IsBluetoothOn() : app.Wait(.4)
-	app.HideProgress()
+    while( !app.IsBluetoothOn() ):
+        app.Wait(.4)
+    app.HideProgress()
 
-    <b>bt = app.CreateBluetoothSerial()
+    bt = app.CreateBluetoothSerial()
     bt.SetOnConnect( bt_OnConnect )
     bt.SetSplitMode( "End", "\n" )
-    bt.Listen( true )</b>
+    bt.Listen( true )
 
     lst = app.CreateBluetoothList()
     lst.SetOnTouch(lst_OnTouch)
@@ -22,12 +27,15 @@ def lst_OnTouch( name, address ):
 def bt_OnConnect( ok, data ):
     app.HideProgress()
 
-    if  ok :
-        if  typeof data == "object" :
+    if( ok ):
+        if( typeof data == "object" ):
             app.ShowPopup( "Connected!" )
         else:
             alert( "Connected to " + ok + " (" + data + ")" )
 
-        bt.Write("hello from " + app.GetBluetoothName());else:
+        bt.Write("hello from " + app.GetBluetoothName())
+    else:
         app.ShowPopup( "Failed to connect!" )
+
 </sample>
+</code>

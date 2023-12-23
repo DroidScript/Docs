@@ -1,8 +1,10 @@
 <sample Hackers Theme>
+from native import app
+
 def OnStart():
     SetHackerTheme()
 
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
     skb = app.CreateSeekBar( .8 )
     skb.SetValue( 50 )
@@ -12,8 +14,8 @@ def OnStart():
     spn.SetMargins( 0, .05, 0, .05 )
     lay.AddChild( spn )
 
-	tgl = app.CreateToggle( "Toggle", .3, .1 )
-	lay.AddChild( tgl )
+    tgl = app.CreateToggle( "Toggle", .3, .1 )
+    lay.AddChild( tgl )
 
     edt = app.CreateTextEdit( "Hello World", .8 )
     edt.SetMargins( 0, .05, 0, .05 )
@@ -22,16 +24,16 @@ def OnStart():
     chk = app.CreateCheckBox( "Check me", .3 )
     lay.AddChild( chk )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
-	app.Alert( "My Text", "Custom theme" )
+    app.Alert( "My Text", "Custom theme" )
 
 def SetHackerTheme():
-    <b>theme = app.CreateTheme("dark")
+    theme = app.CreateTheme("dark")
     theme.SetBtnTextColor( "green" )
     theme.SetTitleColor( "green" )
     theme.SetDialogBtnTxtColor( "green" )
     theme.SetTextColor( "green" )
     theme.AdjustColor( -76 )
-    app.SetTheme( theme )</b>
+    app.SetTheme( theme )
 </sample>

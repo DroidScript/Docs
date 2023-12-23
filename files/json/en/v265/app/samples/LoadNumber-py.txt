@@ -1,18 +1,23 @@
 <sample Click Counter>
-clicks = 0, file = "demofile"
+from native import app
+
+clicks = 0
+file = "demofile"
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    <b>clicks = app.LoadNumber( "clicks", 0, file )</b>
+    clicks = app.LoadNumber("clicks", 0, file)
 
-    btn = app.CreateButton( "Click Me", 0.5, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btn )
+    btn = app.CreateButton("Click Me", 0.5, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
 def btn_OnTouch():
-	app.SaveNumber( "clicks", ++clicks, file )
-	app.ShowPopup( "Clicks: " + clicks )
+    global clicks
+    clicks += 1
+    app.SaveNumber("clicks", clicks, file)
+    app.ShowPopup("Clicks: " + str(clicks))
 </sample>

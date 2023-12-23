@@ -1,5 +1,7 @@
-<sample Check Wifi Enabled>
+<sample>
+from native import app
+
 def OnStart():
-    <b>wifiEnabled = app.IsWifiEnabled()</b>
-    app.Alert( wifiEnabled, "Wifi Enabled:" )
+    wifiEnabled = app.IsWifiEnabled()
+    app.Alert(wifiEnabled, "Wifi Enabled:")
 </sample>

@@ -1,4 +1,7 @@
 <sample Basic>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Light
 cfg.MUI
 
@@ -8,14 +11,14 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
-        btn.SetOnTouch(ShowMenu)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     list = "Find, Edit, Share, Settings, About"
-    lst = MUI.CreateMenu(list, null, null, "Top, Right")
+    lst = MUI.CreateMenu(list, None, None, "Top, Right")
     lst.SetOnSelect(OnSelect)
 
 def ShowMenu():
@@ -26,6 +29,9 @@ def OnSelect(choice):
 </sample>
 
 <sample Dark & Bottom,Right>
+from native import app, cfg
+from native import ui as MUI
+
 cfg.Dark
 cfg.MUI
 
@@ -35,14 +41,14 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
-        btn.SetOnTouch(ShowMenu)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     list = "Find, Edit, Share, Settings, About"
-    lst = MUI.CreateMenu(list, null, null, "Bottom, Right")
+    lst = MUI.CreateMenu(list, None, None, "Bottom, Right")
     lst.SetOnSelect(OnSelect)
 
 def ShowMenu():

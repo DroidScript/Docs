@@ -1,15 +1,16 @@
 <sample No Label>
 cfg.Light
 cfg.MUI
+from native import app, gfx, ui
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -17,15 +18,16 @@ def OnStart():
 <sample With Label>
 cfg.Light
 cfg.MUI
+from native import app, gfx, ui
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name", true)
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -33,16 +35,17 @@ def OnStart():
 <sample SetOnEnter Callback>
 cfg.Dark
 cfg.MUI
+from native import app, gfx, ui
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextAreaFilledA(0.8, 0.2, "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 

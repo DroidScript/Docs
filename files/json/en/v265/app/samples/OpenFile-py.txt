@@ -1,5 +1,7 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	 app.WriteFile( "/sdcard/test.txt", "Hello" )
-	 <b>app.OpenFile( "/sdcard/test.txt", "text/plain", "Choose Editor" )</b>
+    app.WriteFile("/sdcard/test.txt", "Hello")
+    app.OpenFile("/sdcard/test.txt", "text/plain", "Choose Editor")
 </sample>

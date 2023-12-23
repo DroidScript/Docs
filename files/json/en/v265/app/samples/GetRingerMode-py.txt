@@ -1,5 +1,7 @@
-<sample Show Current Ringer Mode>
+<sample>
+from native import app
+
 def OnStart():
-    <b>mode = app.GetRingerMode()</b>
-    app.Alert( mode )
+    mode = app.GetRingerMode()
+    app.Alert(mode)
 </sample>

@@ -1,5 +1,7 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	<b>orient = app.GetOrientation()
-	app.Alert( orient )</b>
+    orient = app.GetOrientation()
+    app.Alert(orient)
 </sample>

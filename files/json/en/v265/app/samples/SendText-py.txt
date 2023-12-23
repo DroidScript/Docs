@@ -1,4 +1,6 @@
 <sample Demo>
+from native import app
+
 def OnStart():
-    <b>app.SendText("Hello World", "My Subject", "Choose an app")</b>
+    app.SendText("Hello World", "My Subject", "Choose an app")
 </sample>

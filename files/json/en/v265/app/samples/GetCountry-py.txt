@@ -1,5 +1,7 @@
 <sample Show Country>
+from native import app
+
 def OnStart():
-    <b>name = app.GetCountry()</b>
-    app.Alert( name )
+    name = app.GetCountry()
+    app.Alert(name)
 </sample>

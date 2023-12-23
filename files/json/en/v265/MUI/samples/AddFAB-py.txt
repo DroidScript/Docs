@@ -1,13 +1,16 @@
 <sample AddFAB>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
-    fab1 = MUI.AddFAB(lay, "favorite", null, "default")
-    fab2 = MUI.AddFAB(lay, "favorite", MUI.colors.deepPurple.lighten1, "outline")
-    fab3 = MUI.AddFAB(lay, "favorite", MUI.colors.teal.darken1, "elegant")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+        
+    fab1 = ui.AddFAB(lay, "favorite", None, "default")
+    fab2 = ui.AddFAB(lay, "favorite", ui.colors.deepPurple.lighten1, "outline")
+    fab3 = ui.AddFAB(lay, "favorite", ui.colors.teal.darken1, "elegant")
 
     app.AddLayout(lay)
-</sample>

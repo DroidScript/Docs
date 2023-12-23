@@ -1,4 +1,6 @@
 <sample>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
@@ -6,14 +8,14 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Absolute", "FillXY,VCenter")
+    lay = ui.CreateLayout("Absolute", "FillXY,VCenter")
 
-        fab = MUI.CreateFAB("add")
-        fab.SetOnTouch(OnClick)
-        lay.AddChild(fab)
+    fab = ui.CreateFAB("add")
+    fab.SetOnTouch(OnClick)
+    lay.AddChild(fab)
 
     app.AddLayout(lay)
 
 def OnClick():
-    app.ShowPopup("You click FAB")
+    app.ShowPopup("You clicked FAB")
 </sample>

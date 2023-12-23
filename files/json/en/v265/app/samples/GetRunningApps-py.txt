@@ -1,4 +1,6 @@
 <sample Show Running Apps>
+from native import app
+
 def OnStart():
     app.ShowProgress()
 
@@ -8,15 +10,11 @@ def OnStart():
     lst.SetTextSize1( 15 )
     lay.AddChild( lst )
 
-    <b>list = app.GetRunningApps()
+    list = app.GetRunningApps()
 
-    for  i in list :
-        a = list[i]
-        body =
-            "user: " + a.user +
-            "\npid: " + a.pid +
-            "\nforeground: " + a.foreground
-        lst.AddItem( a.name, body )</b>
+    for a in list:
+        body = f"user: {a.user}\npid: {a.pid}\nforeground: {a.foreground}"
+        lst.AddItem(a.name, body)
 
     app.AddLayout( lay )
 
@@ -24,16 +22,18 @@ def OnStart():
 </sample>
 
 <sample Is In Foreground>
+from native import app
+
 def OnStart():
     app.Animate(CheckForeground, 0.2)
 
 def CheckForeground():
     apps = app.GetRunningApps()
     name = app.GetPackageName()
-    if !app.IsAPK(): name += ":NewActivityProcess"
+    if not app.IsAPK(): 
+        name += ":NewActivityProcess"
 
-    for i in apps:
-        if apps[i].name == name:
-            app.ShowPopup("In Foreground: " + apps[i].foreground)
-
+    for a in apps:
+        if a.name == name:
+            app.ShowPopup("In Foreground: " + str(a.foreground))
 </sample>

@@ -1,228 +1,164 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
-        this.main.backColor = "#e0e0e0"
+from native import app
+import ui
 
-        #  Initialize tab names array
-        tabs = ["Tab 1", "Tab 2", "Tab 3"]
+class Main(app.App):
+    
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
+        self.main.backColor = "#e0e0e0"
 
-        #  Adds a tab component to the main layout.
-        this.tabs = ui.addTabs(this.main, tabs, "", 0.8, 0.8)
+        # Add text control to the main layout
+        text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
+        ui.addText(self.main, text, "Justify", 0.8)
 
-        #  Handle tab changes
-        this.tabs.setOnChange( this.onChange )
+        # Add divider control to the main layout
+        self.div = ui.addDivider(self.main, 0.8)
 
-        #  get the first tab and add a button control
-        this.tab1 = this.tabs.getLayout(0)
-        this.tab1.options = "VCenter"
-        this.btn = ui.addButton(this.tab1, "Button", "Secondary", 0.5)
+        # Add more text control to the main layout
+        ui.addText(self.main, text, "Justify", 0.8)
+        
+        # Add an inset divider to the main layout
+        self.div = ui.addDivider(self.main, 0.8, "inset")
 
-        #  get the second tab and add a text control.
-        this.tab2 = this.tabs.getLayout(1)
-        this.tab2.options = "VCenter"
-        this.txt = ui.addText(this.tab2, "Lorem ipsum dolor set amit", "Center", 1)
-
-        #  get the third tab and add a checkbox control
-        this.tab3 = this.tabs.getLayout(2)
-        this.tab3.options = "VCenter"
-        this.ckb = ui.addCheckbox(this.tab3, "Check me", "Secondary")
-
-    onChange(tab, index)
-        ui.showPopup( tab + " : Index " + index)
-
+        ui.addText(self.main, text, "Justify", 0.8) 
 </sample>
 
 <sample With Icon>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
-        this.main.backColor = "#e0e0e0"
+from native import app
+import ui
 
-        #  Initialize tabs array with leading icons
+class Main(app.App):
+    
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
+        self.main.backColor = "#e0e0e0"
+
+        # Initialize tabs array with leading icons
         tabs = [
             ["favorite", "Favorites"],
             ["bluetooth", "Bluetooth"],
             ["wifi", "Connection"]
         ]
 
-        #  Adds a tab component to the main layout and passing the `icon` option
-        this.tabs = ui.addTabs(this.main, tabs, "Icon", 0.8, 0.8)
+        # Adds a tab component to the main layout and passing the `icon` option
+        self.tabs = ui.addTabs(self.main, tabs, "Icon", 0.8, 0.8)
 
-        #  Handle tab changes
-        this.tabs.setOnChange( this.onChange )
+        # Handle tab changes
+        self.tabs.setOnChange( self.onChange )
 
-        #  get the first tab and add a button control
-        this.tab1 = this.tabs.getLayout(0)
-        this.tab1.options = "VCenter"
-        this.btn = ui.addButton(this.tab1, "Button", "Secondary", 0.5)
+        # get the first tab and add a button control
+        self.tab1 = self.tabs.getLayout(0)
+        self.tab1.options = "VCenter"
+        self.btn = ui.addButton(self.tab1, "Button", "Secondary", 0.5)
 
-        #  get the second tab and add a text control.
-        this.tab2 = this.tabs.getLayout(1)
-        this.tab2.options = "VCenter"
-        this.txt = ui.addText(this.tab2, "Lorem ipsum dolor set amit", "Center", 1)
+        # get the second tab and add a text control.
+        self.tab2 = self.tabs.getLayout(1)
+        self.tab2.options = "VCenter"
+        self.txt = ui.addText(self.tab2, "Lorem ipsum dolor set amit", "Center", 1)
 
-        #  get the third tab and add a checkbox control
-        this.tab3 = this.tabs.getLayout(2)
-        this.tab3.options = "VCenter"
-        this.ckb = ui.addCheckbox(this.tab3, "Check me", "Secondary")
-
-    onChange(tab, index)
-        ui.showPopup( tab + " : Index " + index)
-
+        # get the third tab and add a checkbox control
+        self.tab3 = self.tabs.getLayout(2)
+        self.tab3.options = "VCenter"
+        self.ckb = ui.addCheckbox(self.tab3, "Check me", "Secondary")
+    
+    def onChange(self, tab, index):
+        ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Swipeable tabs>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
-        this.main.backColor = "#e0e0e0"
+from native import app
+import ui
 
-        #  Initialize tabs names array
+class Main(app.App):
+    
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
+        self.main.backColor = "#e0e0e0"
+
+        # Initialize tabs names array
         tabs = ["Tab 1", "Tab 2", "Tab 3"]
 
-        #  Adds a tab component to the main layout and passing the `swipeable` option
-        #  to enable swiping gesture
-        this.tabs = ui.addTabs( this.main, tabs, "Swipeable", 0.8, 0.8)
+        # Adds a tab component to the main layout and passing the `swipeable` option
+        # to enable swiping gesture
+        self.tabs = ui.addTabs( self.main, tabs, "Swipeable", 0.8, 0.8)
 
-        #  Handle tab changes
-        this.tabs.setOnChange( this.onChange )
+        # Handle tab changes
+        self.tabs.setOnChange( self.onChange )
 
-        #  get the first tab and add a text control
-        this.tab1 = this.tabs.getLayout(0)
-        this.tab1.options = "VCenter"
-        this.tab1.backColor = "yellow"
-        this.txt = ui.addText(this.tab1, "<--- Swipe to the left", "Center", 1)
+        # get the first tab and add a text control
+        self.tab1 = self.tabs.getLayout(0)
+        self.tab1.options = "VCenter"
+        self.tab1.backColor = "yellow"
+        self.txt = ui.addText(self.tab1, "<--- Swipe to the left", "Center", 1)
         
-        #  get the second tab and add a button control.
-        this.tab2 = this.tabs.getLayout(1)
-        this.tab2.backColor = "green"
+        # get the second tab and add a button control.
+        self.tab2 = self.tabs.getLayout(1)
+        self.tab2.backColor = "green"
 
-        #  get the third tab and add a checkbox control
-        this.tab3 = this.tabs.getLayout(2)
-        this.tab3.backColor = "blue"
+        # get the third tab and add a checkbox control
+        self.tab3 = self.tabs.getLayout(2)
+        self.tab3.backColor = "blue"
 
-    onChange(tab, index)
-        ui.showPopup( tab + " : Index " + index)
-
+    def onChange(self, tab, index):
+        ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Open tabs dynamically>
-class Main extends App
-    onStart()
-        #  Set the primary and secondary theme colors
+from native import app
+import ui
+
+class Main(app.App):
+    
+    def onStart(self):
+        # Set the primary and secondary theme colors
         ui.setThemeColor("#673ab7", "#ffc107")
 
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
-        this.main.backColor = "#e0e0e0"
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
+        self.main.backColor = "#e0e0e0"
 
-        #  Initialize tabs names array with leading icons
+        # Initialize tabs names array with leading icons
         tabs = [
             ["favorite", "Favorites"],
             ["bluetooth", "Bluetooth"],
             ["wifi", "Connection"]
         ]
 
-        #  Adds a tab component to the main layout
-        this.tabs = ui.addTabs(this.main, tabs, "Icon,Center,Primary", 0.8, 0.8)
+        # Adds a tab component to the main layout
+        self.tabs = ui.addTabs(self.main, tabs, "Icon,Center,Primary", 0.8, 0.8)
 
-        #  Handle tab changes
-        this.tabs.setOnChange( this.onChange )
+        # Handle tab changes
+        self.tabs.setOnChange( self.onChange )
 
-        #  get the first tab and add a button control
-        #  to open the second tab by its index
-        this.tab1 = this.tabs.getLayout(0)
-        this.tab1.options = "VCenter"
-        this.btn1 = ui.addButton(this.tab1, "Open next")
-        this.btn1.setOnTouch(() =>
-            this.tabs.showTabByIndex( 1 ))
+        # get the first tab and add a button control
+        # to open the second tab by its index
+        self.tab1 = self.tabs.getLayout(0)
+        self.tab1.options = "VCenter"
+        self.btn1 = ui.addButton(self.tab1, "Open next")
+        self.btn1.setOnTouch(lambda: self.tabs.showTabByIndex(1))
 
-        #  get the second tab and add a button control
-        #  to open the last tab by its index
-        this.tab2 = this.tabs.getLayout(1)
-        this.tab2.options = "VCenter"
-        this.btn2 = ui.addButton(this.tab2, "Open next", "Primary")
-        this.btn2.setOnTouch(() =>
-            this.tabs.showTabByIndex( 2 ))
+        # get the second tab and add a button control
+        # to open the last tab by its index
+        self.tab2 = self.tabs.getLayout(1)
+        self.tab2.options = "VCenter"
+        self.btn2 = ui.addButton(self.tab2, "Open next", "Primary")
+        self.btn2.setOnTouch(lambda: self.tabs.showTabByIndex(2))
 
-        #  get the third tab and add a button control 
-        #  to open the first tab by its tab name
-        this.tab3 = this.tabs.getLayout(2)
-        this.tab3.options = "VCenter"
-        this.btn3 = ui.addButton(this.tab3, "Open previous", "Secondary")
-        this.btn3.setOnTouch(() =>
-            this.tabs.showTab( "Favorites" ))
+        # get the third tab and add a button control 
+        # to open the first tab by its tab name
+        self.tab3 = self.tabs.getLayout(2)
+        self.tab3.options = "VCenter"
+        self.btn3 = ui.addButton(self.tab3, "Open previous", "Secondary")
+        self.btn3.setOnTouch(lambda: self.tabs.showTab("Favorites"))
 
-    onChange(tab, index)
-        ui.showPopup( tab + " : Index " + index)
-
+    def onChange(self, tab, index):
+        ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Icon only>
-class Main extends App
-    onStart()
-        #  Set the primary and secondary theme colors
-        ui.setTheme( "dark" )
-
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
-
-        #  Initialize tabs array with icons only
-        tabs = ["favorite", "person", "wifi"]
-
-        #  Adds a tab component to the main layout
-        this.tabs = ui.addTabs(this.main, tabs, "Icon", 1, 1)
-
-        #  Set the tab height to 40px
-        this.tabs.tabHeight = 40
-
-        #  Handle tab changes
-        this.tabs.setOnChange( this.onChange )
-
-        #  get the first tab and add a button control
-        this.tab1 = this.tabs.getLayout(0)
-        this.tab1.options = "VCenter"
-        this.btn = ui.addButton(this.tab1, "Button", "Secondary", 0.5)
-
-        #  get the second tab and add a text control.
-        this.tab2 = this.tabs.getLayout(1)
-        this.tab2.options = "VCenter"
-        this.txt = ui.addText(this.tab2, "Lorem ipsum dolor set amit", "Center", 1)
-
-        #  get the third tab and add a checkbox control
-        this.tab3 = this.tabs.getLayout(2)
-        this.tab3.options = "VCenter"
-        this.ckb = ui.addCheckbox(this.tab3, "Check me", "Secondary")
-
-    onChange(tab, index)
-        ui.showPopup(tab + " : Index " + index, "Bottom")
-
-</sample>
-
-<sample Custom colors and sizes>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered
-        this.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
-
-        #  Initialize tabs array with leading icons
-        tabs = [
-            ["favorite", "Favorites"],
-            ["bluetooth", "Bluetooth"],
-            ["wifi", "Connection"]
-        ]
-
-        #  Adds a tab component to the main layout
-        #  add some styling to the backColor, textColor, iconColor, iconSize and indicatorColor
-        this.tabs = ui.addTabs(this.main, tabs, "Icon", 0.8, 0.8)
-        this.tabs.backColor = "#ffccbc"
-        this.tabs.textColor = "#f4511e"
-        this.tabs.iconColor = "#f4511e"
-        this.tabs.iconSize = "1.5rem"
-        this.tabs.indicatorColor = "#f4511e"
-
-</sample>
+from native import app
+import ui

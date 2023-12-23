@@ -1,4 +1,8 @@
+<code>
 <sample Save, Load and Clear Data>
+
+from native import app
+
 file = "demofile"
 
 def OnStart():
@@ -27,10 +31,12 @@ def btnSave_OnTouch():
 	app.ShowPopup( "Value Saved." )
 
 def btnLoad_OnTouch():
-    value = app.LoadText( "value", "no value stored", file )
+    var value = app.LoadText( "value", "no value stored", file )
 	app.ShowPopup( value )
 
 def btnClear_OnTouch():
 	<b>app.ClearData( file )</b>
 	app.ShowPopup( "Data Cleared." )
+
 </sample>
+</code>

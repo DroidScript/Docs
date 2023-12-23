@@ -1,15 +1,21 @@
 <sample AddTextEdit>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-        ted1 = MUI.AddTextEdit(lay, 0.8, "filled", "Enter Name", true)
-        ted1 = MUI.AddTextEdit(lay, 0.8, "filled,active,password", "Enter password", true)
-        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,number", "Enter Number", true)
-        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,active", "Enter PIN", true)
-        ted1 = MUI.AddTextEdit(lay, 0.8, "elegant", "Enter name")
-        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,icon,left", "person", "Enter name", true)
-        ted1 = MUI.AddTextEdit(lay, 0.8, "outline,icon,right", "password", "Enter password", true)
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    ted1 = ui.AddTextEdit(lay, 0.8, "filled", "Enter Name", True)
+    ted2 = ui.AddTextEdit(lay, 0.8, "filled,active,password", "Enter password", True)
+    ted3 = ui.AddTextEdit(lay, 0.8, "outline,number", "Enter Number", True)
+    ted4 = ui.AddTextEdit(lay, 0.8, "outline,active", "Enter PIN", True)
+    ted5 = ui.AddTextEdit(lay, 0.8, "elegant", "Enter name")
+    ted6 = ui.AddTextEdit(lay, 0.8, "outline,icon,left", "person", "Enter name", True)
+    ted7 = ui.AddTextEdit(lay, 0.8, "outline,icon,right", "password", "Enter password", True)
+    
     app.AddLayout(lay)
 </sample>

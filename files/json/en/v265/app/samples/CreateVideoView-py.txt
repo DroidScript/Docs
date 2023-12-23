@@ -1,24 +1,28 @@
 <sample Video Stream>
+from native import app
+
 def OnStart():
-    lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
+    lay = app.CreateLayout("Linear", "FillXY,VCenter")
 
-    app.ShowProgress( "Buffering..." )
+    app.ShowProgress("Buffering...")
 
-    player = app.CreateVideoView( 0.9, 0.4 )
-    player.SetOnReady( playerOnReady )
-    player.SetOnError( player_OnError )
-    lay.AddChild( player )
+    player = app.CreateVideoView(0.9, 0.4)
+    player.SetOnReady(playerOnReady)
+    player.SetOnError(player_OnError)
+    lay.AddChild(player)
 
-    <b>player.SetFile( "https:# file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4" )</b>
+    player.SetFile("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4")
 
-    app.AddLayout( lay )
+    app.AddLayout(lay)
+
 
 def playerOnReady():
     app.HideProgress()
-    app.ShowPopup( "Ready" )
+    app.ShowPopup("Ready")
     player.Play()
+
 
 def player_OnError(e):
     app.HideProgress()
-    app.ShowPopup( "Error" )
+    app.ShowPopup("Error")
 </sample>

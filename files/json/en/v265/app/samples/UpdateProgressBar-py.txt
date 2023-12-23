@@ -1,9 +1,11 @@
 <sample Progress Bar>
+from native import app
+
 def OnStart():
-	<b>app.ShowProgressBar( "Loading..." )
+    app.ShowProgressBar("Loading...")
 
-	for  prog = 0; prog < 100; prog++ :
-	    app.UpdateProgressBar( prog )
+    for prog in range(100):
+        app.UpdateProgressBar(prog)
 
-	app.HideProgressBar()</b>
+    app.HideProgressBar()
 </sample>

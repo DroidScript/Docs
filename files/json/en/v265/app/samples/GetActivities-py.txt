@@ -1,4 +1,6 @@
 <sample Show Activities>
+from native import app
+
 def OnStart():
     app.ShowProgress()
 
@@ -11,7 +13,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-    for i in list:
+    for i in range(len(list)):
         a = list[i]
         lst.AddItem(a.label, a.packageName)
 

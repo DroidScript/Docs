@@ -1,30 +1,32 @@
 <sample Basic>
+from native import app
+
 def OnStart():
     ip = app.GetIPAddress()
 
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-    txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,log" )
-    txt.SetTextSize( 22 )
-    lay.AddChild( txt )
+    txt = app.CreateText("No connected clients.", 0.8, 0.3, "AutoScale,log")
+    txt.SetTextSize(22)
+    lay.AddChild(txt)
 
-    app.AddLayout( lay )
+    app.AddLayout(lay)
 
-    serv = app.CreateWebServer( 8080 )
-    serv.SetFolder( app.GetAppPath() )
-    serv.SetOnReceive( serv_OnReceive )
+    serv = app.CreateWebServer(8080)
+    serv.SetFolder(app.GetAppPath())
+    serv.SetOnReceive(serv_OnReceive)
     serv.Start()
 
-    <b>sock = app.CreateWebSocket( "sock1", ip, 8080 )
-    sock.SetOnOpen( OnSockOpen )
-    sock.SetOnClose( OnSockClose )</b>
+    sock = app.CreateWebSocket("sock1", ip, 8080)
+    sock.SetOnOpen(OnSockOpen)
+    sock.SetOnClose(OnSockClose)
 
 def OnSockOpen():
-    app.ShowPopup( "Connected" )
+    app.ShowPopup("Connected")
     clients = serv.GetWebSockClients()
     for i in clients:
-        txt.Log( clients[i].id + ": " + clients[i].remoteAddress )
+        txt.Log(clients[i].id + ": " + clients[i].remoteAddress)
 
 def OnSockClose():
-    app.ShowPopup( "Disconnected" )
+    app.ShowPopup("Disconnected")
 </sample>

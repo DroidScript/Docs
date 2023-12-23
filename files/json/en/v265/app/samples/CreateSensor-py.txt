@@ -1,57 +1,69 @@
 <sample GetNames>
+from native import app
+
 def OnStart():
     sns = app.CreateSensor()
-    <b>names = sns.GetNames()
-    app.Alert(names.replace(/,/g, ",\n"), "Sensor Names")</b>
+    names = sns.GetNames()
+    app.Alert(names.replace(",", ",\n"), "Sensor Names")
+
 </sample>
 
 <sample Accelerometer>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" )
-	lay.AddChild( txt )
-	app.AddLayout( lay )
+    txt = app.CreateText("", 0.8, 0.3, "Multiline")
+    lay.AddChild(txt)
+    app.AddLayout(lay)
 
-	<b>sns = app.CreateSensor( "Accelerometer" )
-	sns.SetOnChange( sns_OnChange )
-	sns.Start()</b>
+    sns = app.CreateSensor("Accelerometer")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
 
-def sns_OnChange( x, y, z, time ):
-	txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z )
+def sns_OnChange(x, y, z, time):
+    txt.SetText("x=" + str(x) + "\n y=" + str(y) + "\n z=" + str(z))
+
 </sample>
 
 <sample Orientation>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" )
-	lay.AddChild( txt )
-	app.AddLayout( lay )
+    txt = app.CreateText("", 0.8, 0.3, "Multiline")
+    lay.AddChild(txt)
+    app.AddLayout(lay)
 
-	<b>sns = app.CreateSensor( "Orientation" )
-	sns.SetOnChange( sns_OnChange )
-	sns.Start()</b>
+    sns = app.CreateSensor("Orientation")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
 
-def sns_OnChange( azimuth, pitch, roll, time ):
-	msg = " azimuth = " + azimuth.toFixed(1)
-	msg += "\n pitch = " + pitch.toFixed(1)
-	msg += "\n roll = " + roll.toFixed(1)
-	txt.SetText( msg )
+def sns_OnChange(azimuth, pitch, roll, time):
+    msg = " azimuth = " + str(azimuth)
+    msg += "\n pitch = " + str(pitch)
+    msg += "\n roll = " + str(roll)
+    txt.SetText(msg)
+
 </sample>
 
 <sample Light>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-	txt = app.CreateText( "", 0.8, 0.3 )
-	lay.AddChild( txt )
-	app.AddLayout( lay )
+    txt = app.CreateText("", 0.8, 0.3)
+    lay.AddChild(txt)
+    app.AddLayout(lay)
 
-	<b>sns = app.CreateSensor( "Light" )
-	sns.SetOnChange( sns_OnChange )
-	sns.Start()</b>
+    sns = app.CreateSensor("Light")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
 
-def sns_OnChange( lux ):
-	txt.SetText( "level = " + lux + " lux" )
+def sns_OnChange(lux):
+    txt.SetText("level = " + str(lux) + " lux")
+
 </sample>

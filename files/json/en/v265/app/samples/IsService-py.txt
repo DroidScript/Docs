@@ -1,5 +1,7 @@
-<sample Check if App is Service>
+<sample>
+from native import app
+
 def OnStart():
-    <b>isSvc = app.IsService()</b>
-    app.Alert( isSvc, "IsService" )
+    isSvc = app.IsService()
+    app.Alert(isSvc, "IsService")
 </sample>

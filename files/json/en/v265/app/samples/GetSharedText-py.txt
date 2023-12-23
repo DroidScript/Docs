@@ -1,7 +1,11 @@
 <sample Show Shared Text>
-def OnStart():
-	<b>text = app.GetSharedText()</b>
+from native import app
 
-	if  text : app.Alert( text )
-	else: app.ShowPopup( "No shared text received." )
+def OnStart():
+    text = app.GetSharedText()
+
+    if text:
+        app.Alert(text)
+    else:
+        app.ShowPopup("No shared text received.")
 </sample>

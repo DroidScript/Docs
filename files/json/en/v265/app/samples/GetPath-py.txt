@@ -1,5 +1,7 @@
 <sample Show App Path>
+from native import app
+
 def OnStart():
-    <b>path = app.GetPath()</b>
-    app.Alert( path )
+    path = app.GetPath()
+    app.Alert(path)
 </sample>

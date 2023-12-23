@@ -1,11 +1,15 @@
 <sample Set Auto Boot>
+from native import app
+
 def OnStart():
-    app.SetAutoBoot( true )
+    app.SetAutoBoot( True )
     app.ShowPopup( "You may reboot your phone now." )
 </sample>
 
 <sample Unset Auto Boot>
+from native import app
+
 def OnStart():
-    app.SetAutoBoot( false )
+    app.SetAutoBoot( False )
     app.ShowPopup( "AutoBoot Disabled." )
 </sample>

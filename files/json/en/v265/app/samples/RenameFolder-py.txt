@@ -1,9 +1,13 @@
 <sample Rename>
+from native import app
+
 def OnStart():
-	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/YourFolder" )</b>
+    <b>app.RenameFolder("/sdcard/MyFolder", "/sdcard/YourFolder")</b>
 </sample>
 
 <sample Move>
+from native import app
+
 def OnStart():
-	<b>app.RenameFolder( "/sdcard/MyFolder", "/sdcard/DroidScript/MyFolder" )</b>
+    <b>app.RenameFolder("/sdcard/MyFolder", "/sdcard/DroidScript/MyFolder")</b>
 </sample>

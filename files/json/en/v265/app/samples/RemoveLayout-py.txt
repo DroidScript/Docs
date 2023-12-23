@@ -1,16 +1,18 @@
 <sample Vertical>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
 
-	txt = app.CreateText( "Hello" )
-	txt.SetTextSize( 50 )
-	lay.AddChild( txt )
+    txt = app.CreateText( "Hello" )
+    txt.SetTextSize( 50 )
+    lay.AddChild( txt )
 
-	btn = app.CreateButton( "Remove" )
-	btn.SetOnTouch( RemoveDrawer )
-	lay.AddChild( btn )
+    btn = app.CreateButton( "Remove" )
+    btn.SetOnTouch( RemoveDrawer )
+    lay.AddChild( btn )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
 def RemoveDrawer():
     <b>app.RemoveLayout( lay )</b>

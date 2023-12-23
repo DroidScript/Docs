@@ -1,6 +1,8 @@
-<sample Discover Bluetooth Devices>
+<sample>
+from native import app
+
 def OnStart():
-    app.SetBluetoothEnabled(true)
+    app.SetBluetoothEnabled(True)
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     lst = app.CreateList( "", 0.8, 0.4 )
@@ -10,8 +12,8 @@ def OnStart():
     app.AddLayout( lay )
 
     app.ShowProgress()
-    
-    <b>app.DiscoverBtDevices( "", OnFound, OnComplete )</b>
+
+    app.DiscoverBtDevices( "", OnFound, OnComplete )
 
 def OnFound( name, address):
     lst.AddItem( name, address )

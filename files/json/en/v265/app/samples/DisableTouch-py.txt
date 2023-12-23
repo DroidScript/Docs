@@ -1,14 +1,18 @@
 <sample Demo>
+<!--[CDATA[
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" )
+    lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" )
 
-	btn = app.CreateButton( "Disable", 0.3, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btn )
+    btn = app.CreateButton( "Disable", 0.3, 0.1 )
+    btn.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btn )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
 def btn_OnTouch():
-	<b>app.DisableTouch( true )</b>
-	app.ShowPopup( "Touch Disabled." )
+    app.DisableTouch( True )
+    app.ShowPopup( "Touch Disabled." )
+]]>
 </sample>

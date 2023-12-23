@@ -1,4 +1,6 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	<b>app.TextToSpeech( "DroidScript is awesome!", 1.0, 1.0 )</b>
+    app.TextToSpeech("DroidScript is awesome!", 1.0, 1.0)
 </sample>

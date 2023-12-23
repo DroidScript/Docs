@@ -1,58 +1,70 @@
 <sample Basic>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        list  = "Apps, Games, Movies, Books"
-        rad = MUI.CreateRadioMaterial(list)
-        lay.AddChild(rad)
+    list = "Apps, Games, Movies, Books"
+    rad = ui.CreateRadioMaterial(list)
+    lay.AddChild(rad)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With callback>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        list  = "Apps, Games, Movies, Books"
-        rad = MUI.CreateRadioMaterial(list, 1, null, "Vertical")
-        rad.SetOnTouch(OnTouch)
-        lay.AddChild(rad)
+    list = "Apps, Games, Movies, Books"
+    rad = ui.CreateRadioMaterial(list, 1, None, "Vertical")
+    rad.SetOnTouch(OnTouch)
+    lay.AddChild(rad)
 
     app.AddLayout(lay)
 
 def OnTouch(name, index):
-    app.ShowPopup(name+" : "+index)
+    app.ShowPopup(name + " : " + str(index))
 </sample>
 
 <sample Horizontal>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        list  = "Apps, Games, Movies, Books"
-        rad = MUI.CreateRadioMaterial(list, 1, null, "Horizontal")
-        rad.SetOnTouch(OnTouch)
-        lay.AddChild(rad)
+    list = "Apps, Games, Movies, Books"
+    rad = ui.CreateRadioMaterial(list, 1, None, "Horizontal")
+    rad.SetOnTouch(OnTouch)
+    lay.AddChild(rad)
 
     app.AddLayout(lay)
 
 def OnTouch(name, index):
-    app.ShowPopup(name+" : "+index)
+    app.ShowPopup(name + " : " + str(index))
 </sample>

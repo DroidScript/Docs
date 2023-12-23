@@ -1,5 +1,10 @@
-<sample Get Media File>
-def OnStart():
-    <b>path = app.GetMediaFile("Hello World", ".png")</b>
-    app.Alert( path )
-</sample>
+<?xml version="1.0"?>
+<xml>
+    <sample Get Media File>
+    from native import app
+
+    def OnStart():
+        path = app.GetMediaFile("Hello World", ".png")
+        app.Alert(path)
+    </sample>
+</xml>

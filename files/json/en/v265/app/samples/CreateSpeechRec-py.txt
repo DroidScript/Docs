@@ -1,28 +1,29 @@
-<sample Example>
+<sample>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-	btn = app.CreateButton( "Talk To Me", 0.3, 0.1 )
-	btn.SetOnTouch( btn_OnTouch )
-	lay.AddChild( btn )
+    btn = app.CreateButton( "Talk To Me", 0.3, 0.1 )
+    btn.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btn )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
-<b>	speech = app.CreateSpeechRec()
-	speech.SetOnReady( speech_OnReady )
-	speech.SetOnResult( speech_OnResult )
-	speech.SetOnError( speech_OnError )
-</b>
+    speech = app.CreateSpeechRec()
+    speech.SetOnReady( speech_OnReady )
+    speech.SetOnResult( speech_OnResult )
+    speech.SetOnError( speech_OnError )
 
 def btn_OnTouch():
-	speech.Recognize()
+    speech.Recognize()
 
 def speech_OnReady():
-	app.ShowPopup( "Listening...", "Short" )
+    app.ShowPopup( "Listening...", "Short" )
 
 def speech_OnResult( results ):
-	app.ShowPopup( results[0] )
+    app.ShowPopup( results[0] )
 
 def speech_OnError():
-	app.ShowPopup( "Please speak more clearly!" )
+    app.ShowPopup( "Please speak more clearly!" )
 </sample>

@@ -1,5 +1,7 @@
 <sample List Permissions>
-def OnStart(perms):
+from native import app
+
+def OnStart():
     perms = app.ListPermissions("storage")
     app.Alert(perms, "Permissions:")
 </sample>

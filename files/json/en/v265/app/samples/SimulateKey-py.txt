@@ -1,4 +1,6 @@
 <sample Infinite Monkey>
+from native import app
+
 def OnStart():
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 	edt = app.CreateTextEdit( "", 0.8, 0.3, "nokeyboard" )

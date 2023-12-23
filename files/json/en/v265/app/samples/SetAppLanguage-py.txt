@@ -1,32 +1,37 @@
 <sample Switch Language>
-langJson = `
+from native import app, ui
+
+langJson = """
+{
     "langs": [ "English", "Español" ],
-    "codes":"english":"en", "español":"es",
-    "trans" :
-        "SelectLang" :
-            "en":"Please select your prefered language from the 'Settings' menu",
+    "codes": { "english":"en", "español":"es" },
+    "trans" : {
+        "SelectLang" : {
+            "en":"Please select your preferred language from the 'Settings' menu",
             "es":"Selecciona tu idioma preferido en el menú 'Configuración'"
+        }
+    }
+}
+"""
 
-`
- 
 def OnStart():
-    app.WriteFile( "lang.json", langJson )
-    app.SetAppLanguage( "English" )
+    app.WriteFile("lang.json", langJson)
+    app.SetAppLanguage("English")
 
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-    spinLang = app.CreateSpinner( "English,Español", 0.4 )
-    spinLang.SetOnChange( spinLang_OnChange )
-    lay.AddChild( spinLang )
+    spinLang = app.CreateSpinner("English,Español", 0.4)
+    spinLang.SetOnChange(spinLang_OnChange)
+    lay.AddChild(spinLang)
 
-    app.AddLayout( lay )
+    app.AddLayout(lay)
 
-    app.ShowPopup(T( "SelectLang" ))
+    app.ShowPopup(T("SelectLang"))
 
 def spinLang_OnChange():
     language = spinLang.GetText()
-    app.SetAppLanguage( language )
+    app.SetAppLanguage(language)
 
-    app.DestroyLayout( lay )
+    app.DestroyLayout(lay)
     OnStart()
 </sample>

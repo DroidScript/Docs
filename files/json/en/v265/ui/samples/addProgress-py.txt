@@ -1,47 +1,179 @@
-<sample Progress control implementation>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.childSpacing = "Even"
+<sample Basic Image>
+from native import app, ui
 
-        #  Indeterminate Linear
-        this.prog1 = ui.addProgress(this.main, 40, "linear", 0.7)
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Determinate Linear
-        this.prog2 = ui.addProgress(this.main, null, "Linear,Secondary,indeterminate", 0.7)
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        #  Determinate Circular
-        this.prog3 = ui.addProgress(this.main, 50, "Circular")
+        # Add an image control to the main layout with a width of 7/10 of the parent width
+        self.img = ui.addImage(self.main, image, "", 0.5)
 
-        #  Indeterminate Circular, enlarge and secondary
-        this.prog4 = ui.addProgress(this.main, null, "Circular,Secondary,indeterminate")
-        this.prog4.circleSize = 100
+        # Add callback handler for `onTouch` event on the image control
+        self.img.setOnTouch(self.onTouch)
 
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
 </sample>
 
-<sample Setting progress value>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.childSpacing = "Even"
+<sample Avatar>
+from native import app, ui
 
-        #  Add an indeterminate linear progress control to the main layout
-        this.prog = ui.addProgress(this.main, 0, "Linear", 0.7)
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add a button control to the main layout
-        this.btn = ui.addButton(this.main, "Increment")
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        #  Add a callback handler when the button is touched
-        this.btn.setOnTouch( this.onTouch )
+        # Add an image control to the main layout.
+        # Avatar option will ignore the width of the image control.
+        self.img = ui.addImage(self.main, image, "Avatar")
 
-    onTouch()
-        #  Increment the value of the progress control by 10
-        if  this.prog.value < 100 :
-            this.prog.value += 10
-        else:
-            ui.showPopup( "Progress is complete!" )
+        # Add callback handler for `onTouch` event on the image control
+        self.img.setOnTouch(self.onTouch)
 
-
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
 </sample>
+
+<sample Button>
+from native import app, ui
+
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+        # Add an image control to the main layout.
+        # `Button` option will add touch effect when image is click.
+        self.img = ui.addImage(self.main, image, "Button", 0.5)
+
+        # Add callback handler for `onTouch` event on the image control
+        self.img.setOnTouch(self.onTouch)
+
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
+</sample>
+
+<sample Drawings>
+from native import app, ui
+
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+        # Add an image control into the main layout.
+        # Pass canvas option to enable drawings on the image
+        self.img = ui.addImage(self.main, "", "canvas", 1, 1)
+        self.img.lineCap = "round"
+        self.img.lineJoin = "round"
+
+        # Draw a line from (130, 40) to (300, 500)
+        self.img.drawLine(130, 40, 300, 500, "#009688", 10)
+
+        # Draw a square from (320, 200) with a side of 200
+        self.img.drawSquare(320, 200, 200, "#683ab7")
+
+        # Draw a circle centered at (400, 300) with a radius of 300
+        self.img.drawCircle(400, 300, 250, "#00000000", "", 20)
+
+        # Draw an arc centered at (800, 200) with a radius of 100
+        # from 40 degrees to 270 degrees
+        self.img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
+
+        # Draw a polyline from the given set of points below.
+        points = [
+            [0, 0],
+            [400, 40],
+            [20, 40],
+            [300, 340],
+            [140, 500]
+        ]
+        self.img.lineCap = "square"
+        self.img.lineJoin = "miter"
+        self.img.drawPolyline(points, "blue", 10)
+</sample>
+
+<sample Text and Shapes>
+from native import app, ui
+
+class Main(app.App):
+    def onStart(self):
+        # create a main layout with object vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+        # add a canvas image
+        self.img = ui.addImage(self.main, "", "canvas", "300px", "500px")
+
+        # draw rectangle
+        self.img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
+
+        # draw polygon
+        self.img.drawPolygon([
+            {"x": 300, "y": 0},
+            {"x": 300, "y": 500},
+            {"x": 0, "y": 500}
+        ])
+
+        # draw text
+        self.img.textSize = 100
+        self.img.textWeight = "bold"
+        self.img.fillColor = "white"
+        self.img.drawText("Hello", 30, 225, "", "", 3)
+        self.img.drawText("World", 10, 325, "", "", 3)
+</sample>
+
+<sample Analog Clock>
+from native import app, ui
+import math
+
+class Main(app.App):
+    def onStart(self):
+        # Create a linear layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+        ui.addAppBar(self.main, "Analog Clock")
+
+        # Create a canvas image
+        self.img = ui.addImage(self.main, "", "canvas", "300px", "300px")
+
+        # Set the initial line styles
+        self.img.lineCap = "round"
+        self.img.lineWidth = 4
+        self.img.strokeColor = "#009688"
+        self.img.lineJoin = "round"
+
+        # Create a text to display the time
+        self.time = ui.addText(self.main, "00:00:00", "h6,bold")
+        self.time.setMargins(0, 0.05, 0, 0)
+
+        # Call the draw function every second
+        setInterval(self.draw.bind(self), 1000)
+    
+    def draw(self):
+        # Clear all the drawings first in the canvas
+        self.img.clear()
+
+        x, y, n = 0, 0, 0
+
+        # Draw the 12 dot for every hour
+        for n in range(1, 13):
+            x = 130 * math.cos(n * (math.pi / 6))
+            y = 130 * math.sin(n * (math.pi / 6))
+
+            x += 150
+            y += 150
+
+            self.img.drawCircle(x, y, 4, "#311b92")
+
+        date = new Date()
+
+        # Get the hour, minutes and seconds
+        hour = date.getHours() if date.getHours() <= 12 else date.getHours() - 12
+        minutes = date.getMinutes()

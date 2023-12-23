@@ -1,5 +1,7 @@
 <sample Demonstration>
-app.DisableKeys( 'VOLUME_DOWN,VOLUME_UP,BACK' )
+from native import app
+
+app.DisableKeys( "VOLUME_DOWN,VOLUME_UP,BACK" )
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -12,24 +14,21 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    <b>app.SetOnKey( OnKey )</b>
+    app.SetOnKey( OnKey )
 
     edt.Focus()
     app.ShowKeyboard( edt )
     edt.Gone()
 
 def OnKey(action, name, code, extra):
-    text =
-        "action:" + action +
-        "\nname  :" + name +
-        "\ncode  :" + code +
-        "\nextra :" + extra
-
+    text = "action:" + action + "\nname  :" + name + "\ncode  :" + code + "\nextra :" + extra
     txt.SetText( text )
 </sample>
 
 <sample Surprise>
-prev
+from native import app
+
+var prev
 
 def OnStart():
     app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )
@@ -44,11 +43,14 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    <b>app.SetOnKey( OnKey )</b>
+    app.SetOnKey( OnKey )
 
 def OnKey(action, name, code, extra):
-    if  action != prev :
-        if  action == "Down" : lay.Animate( "SlideFromBottom", null, 300 )
-        if  action ==   "Up" : lay.Animate( "SlideToBottom"  , null, 300 )
+    global prev
+    if action != prev:
+        if action == "Down":
+            lay.Animate( "SlideFromBottom", None, 300 )
+        if action == "Up":
+            lay.Animate( "SlideToBottom", None, 300 )
     prev = action
 </sample>

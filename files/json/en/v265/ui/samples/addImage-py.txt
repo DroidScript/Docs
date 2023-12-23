@@ -1,238 +1,199 @@
 <sample Basic Image>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+from native import app, ui
 
-        image = "https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add an image control to the main layout with a width of 7/10 of the parent width
-        this.img = ui.addImage(this.main, image, "", 0.5)
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        #  Add callback handler for `onTouch` event on the image control
-        this.img.setOnTouch( this.onTouch )
+        self.img = ui.addImage(self.main, image, "", 0.5)
 
-    onTouch()
-        ui.showPopup( "You touched the mango!" )
+        self.img.setOnTouch(self.onTouch)
 
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Avatar>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+from native import app, ui
 
-        image = "https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add an image control to the main layout.
-        #  Avatar option will ignore the width of the image control.
-        this.img = ui.addImage(this.main, image, "Avatar")
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        #  Add callback handler for `onTouch` event on the image control
-        this.img.setOnTouch( this.onTouch )
+        self.img = ui.addImage(self.main, image, "Avatar")
 
-    onTouch()
-        ui.showPopup( "You touched the mango!" )
+        self.img.setOnTouch(self.onTouch)
 
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Button>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+from native import app, ui
 
-        image = "https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add an image control to the main layout.
-        #  `Button` option will add touch effect when image is click.
-        this.img = ui.addImage(this.main, image, "Button", 0.5)
+        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        #  Add callback handler for `onTouch` event on the image control
-        this.img.setOnTouch( this.onTouch )
+        self.img = ui.addImage(self.main, image, "Button", 0.5)
 
-    onTouch()
-        ui.showPopup( "You touched the mango!" )
+        self.img.setOnTouch(self.onTouch)
 
+    def onTouch(self):
+        ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Drawings>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+from native import app, ui
 
-        #  Add an image control into the main layout.
-        #  Pass canvas option to enable drawings on the image
-        this.img = ui.addImage( this.main, "", "canvas", 1, 1 )
-        this.img.lineCap = "round"
-        this.img.lineJoin = "round"
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Draw a line from (130, 40) to (300, 500)
-        this.img.drawLine( 130, 40, 300, 500, "#009688", 10)
+        self.img = ui.addImage(self.main, "", "canvas", 1, 1)
+        self.img.lineCap = "round"
+        self.img.lineJoin = "round"
 
-        #  Draw a square from (320, 200) with a side of 200
-        this.img.drawSquare( 320, 200, 200, "#683ab7")
+        self.img.drawLine(130, 40, 300, 500, "#009688", 10)
 
-        #  Draw a circle centered at (400, 300) with a radius of 300
-        this.img.drawCircle(400, 300, 250, "#00000000", "", 20)
+        self.img.drawSquare(320, 200, 200, "#683ab7")
 
-        #  Draw an arc centered at (800, 200) with a radius of 100
-        #  from 40 degrees to 270 degrees
-        this.img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
+        self.img.drawCircle(400, 300, 250, "#00000000", "", 20)
 
-        #  Draw a polyline from the given set of points below.
+        self.img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
+
         points = [
-            [0,0],
-            [400,40],
+            [0, 0],
+            [400, 40],
             [20, 40],
             [300, 340],
             [140, 500]
         ]
-        this.img.lineCap = "square"
-        this.img.lineJoin = "miter"
-        this.img.drawPolyline( points, "blue", 10 )
-
+        self.img.lineCap = "square"
+        self.img.lineJoin = "miter"
+        self.img.drawPolyline(points, "blue", 10)
 </sample>
 
 <sample Text and Shapes>
-class Main extends App
-    onStart()
-        #  create a main layout with object vertically centered
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+from native import app, ui
 
-        #  add a canvas image
-        this.img = ui.addImage( this.main, "", "canvas", "300px", "500px")
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  draw rectangle
-        this.img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
+        self.img = ui.addImage(self.main, "", "canvas", "300px", "500px")
 
-        #  draw polygon
-        this.img.drawPolygon([x: 300, y: 0,x: 300, y: 500,x: 0, y: 500
+        self.img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
+
+        self.img.drawPolygon([
+            {"x": 300, "y": 0},
+            {"x": 300, "y": 500},
+            {"x": 0, "y": 500}
         ])
 
-        #  draw text
-        this.img.textSize = 100
-        this.img.textWeight = "bold"
-        this.img.fillColor = "white"
-        this.img.drawText("Hello", 30, 225, "", "", 3)
-        this.img.drawText("World", 10, 325, "", "", 3)
-
+        self.img.textSize = 100
+        self.img.textWeight = "bold"
+        self.img.fillColor = "white"
+        self.img.drawText("Hello", 30, 225, "", "", 3)
+        self.img.drawText("World", 10, 325, "", "", 3)
 </sample>
 
 <sample Analog Clock>
-class Main extends App
-    onStart()
-        #  Create a linear layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+from native import app, ui
+import math
 
-        ui.addAppBar( this.main, "Analog Clock" )
+class Main(app):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Create a canvas image
-        this.img = ui.addImage( this.main, "", "canvas", "300px", "300px" )
+        ui.addAppBar(self.main, "Analog Clock")
 
-        #  Set the initial line styles
-        this.img.lineCap = "round"
-        this.img.lineWidth = 4
-        this.img.strokeColor = "#009688"
-        this.img.lineJoin = "round"
+        self.img = ui.addImage(self.main, "", "canvas", "300px", "300px")
 
-        #  Create a text to display the time
-        this.time = ui.addText(this.main, "00:00:00", "h6,bold")
-        this.time.setMargins(0, 0.05, 0, 0)
+        self.img.lineCap = "round"
+        self.img.lineWidth = 4
+        self.img.strokeColor = "#009688"
+        self.img.lineJoin = "round"
 
-        #  Call the draw function every second
-        setInterval( this.draw.bind(this), 1000)
+        self.time = ui.addText(self.main, "00:00:00", "h6,bold")
+        self.time.setMargins(0, 0.05, 0, 0)
 
-    draw()
-        #  Clear all the drawings first in the canvas
-        this.img.clear()
+        self.draw()
+        setInterval(self.draw.bind(self), 1000)
 
-        x, y, n
+    def draw(self):
+        self.img.clear()
 
-        #  Draw the 12 dot for every hour
-        for  n=1; n<=12; n++ :
-            x = 130 * Math.cos( n * (Math.PI/6) )
-            y = 130 * Math.sin( n * (Math.PI/6) )
+        x, y, n = 0, 0, 0
+
+        for n in range(1, 13):
+            x = 130 * math.cos(n * (math.pi / 6))
+            y = 130 * math.sin(n * (math.pi / 6))
 
             x += 150
             y += 150
 
-            this.img.drawCircle(x, y, 4, "#311b92")
+            self.img.drawCircle(x, y, 4, "#311b92")
 
-        date = new Date()
+        date = datetime.datetime.now()
 
-        #  Get the hour, minutes and seconds
-        hour = date.getHours() > 12 ? date.getHours()-12 : date.getHours()
-        minutes = date.getMinutes()
-        seconds = date.getSeconds()
+        hour = date.hour if date.hour <= 12 else date.hour - 12
+        minutes = date.minute
+        seconds = date.second
 
-        #  Calculate the corresponding angles
-        hourAngle = hour * ( Math.PI / 6) - ( Math.PI/2 )
-        minAngle = minutes * ( Math.PI / 30 ) - ( Math.PI/2 )
-        secAngle = seconds * ( Math.PI / 30 ) - ( Math.PI/2 )
+        hourAngle = hour * (math.pi / 6) - (math.pi / 2)
+        minAngle = minutes * (math.pi / 30) - (math.pi / 2)
+        secAngle = seconds * (math.pi / 30) - (math.pi / 2)
 
-        #  Draw each hand by calling the drawHand function
-        this.drawHand(hourAngle, 80, 7, "#311b92")
-        this.drawHand(minAngle, 100, 4, "#1e88e5")
-        this.drawHand(secAngle, 110, 2, "#d81b60")
+        self.drawHand(hourAngle, 80, 7, "#311b92")
+        self.drawHand(minAngle, 100, 4, "#1e88e5")
+        self.drawHand(secAngle, 110, 2, "#d81b60")
 
-        #  Draw the black cirlce in the center
-        this.img.drawCircle(150, 150, 8, "#000")
+        self.img.drawCircle(150, 150, 8, "#000")
 
-        #  Display the time
-        this.time.text = (`$hour`.padStart(2, '0')) + ":"+
-            (`$minutes`.padStart(2, '0'))+":" +
-            (`$seconds`.padStart(2, '0')) + (date.getHours() > 12 ? " PM" : " AM")
+        self.time.text = (
+            str(hour).zfill(2) + ":" +
+            str(minutes).zfill(2) + ":" +
+            str(seconds).zfill(2) +
+            " " +
+            ("PM" if date.hour > 12 else "AM")
+        )
 
-    drawHand( angle, length, width, color )
-        x, y
-
-        x = length * Math.cos( angle )
-        y = length * Math.sin( angle )
+    def drawHand(self, angle, length, width, color):
+        x = length * math.cos(angle)
+        y = length * math.sin(angle)
 
         x += 150
         y += 150
 
-        #  Draw the hand
-        this.img.drawLine(150, 150, x, y, color, width )
-
+        self.img.drawLine(150, 150, x, y, color, width)
 </sample>
 
 <sample Scratch Pad>
-class Main extends App
-        onStart()
-            this.color = "#000000"
-            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
-            this.main.setChildMargins(0, 0.01, 0, 0.01)
+from native import app, ui
 
-            lay = ui.addLayout( this.main, "Linear", "Horizontal,Center,VCenter", 1)
-            lay.setChildMargins(0.01, 0, 0.01, 0)
+class Main(app):
+    def onStart(self):
+        self.color = "#000000"
+        self.main = ui.addLayout("main", "Linear", "Top", 1, 1)
+        self.main.setChildMargins(0, 0.01, 0, 0.01)
 
-            colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
+        lay = ui.addLayout(self.main, "Linear", "Horizontal,Center,VCenter", 1)
+        lay.setChildMargins(0.01, 0, 0.01, 0)
 
-            ui.addText( lay, "Color", "H5")
-            for  i=0; i<colors.length; i++ :
-                btn = ui.addLayout( lay, "Linear", "", "48px", "48px" )
-                btn.backColor = colors[i]
-                btn.setCornerRadius(8,8,8,8)
-                btn.setOnTouch( this.changeColor.bind(this, colors[i]) )
+        colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
 
-            ui.addText( this.main, "Thickness", "H5")
-            this.sld = ui.addSlider( this.main, 5, "", 0.9)
-            this.sld.setRange(5, 25)
-            this.sld.value = 15
+        ui.addText(lay, "Color", "H5")
+        for color in colors:
+            btn = ui.addButton(lay, "", color)
+            btn.onClick = self.changeColor
 
-            this.img = ui.addImage( this.main, "", "canvas", 0.96, 0.7)
-            this.img.fill = "#e0e0e0"
-            this.img.setOnTouchMove( this.draw )
-            this.img.setOnTouchDown( this.draw )
-            this.img.setOnTouch( this.draw )
-
-        changeColor( color )this.color = color
-
-        draw( e )
-            this.img.drawCircle( e.x, e.y, this.sld.value, this.color, "", 0 )
-
+    def changeColor(self):
+        self.color = self.sender.backgroundColor
 </sample>

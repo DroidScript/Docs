@@ -1,15 +1,16 @@
 <sample DateTimePicker>
-class Main extends App
-    onStart()
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+from native import app
 
-        this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
-        this.btn.setOnTouch( this.btn_onTouch )
-
-    btn_onTouch()
-        ui.showDateTimePicker( this.onDateTime )
-
-    onDateTime( val )
-        ui.showPopup( val )
-
+class Main(app.App):
+    def onStart(self):
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        
+        self.btn = ui.addButton(self.main, "Show Date Time Picker", "Primary")
+        self.btn.setOnTouch(self.btn_onTouch)
+        
+    def btn_onTouch(self):
+        ui.showDateTimePicker(self.onDateTime)
+        
+    def onDateTime(self, val):
+        ui.showPopup(val)
 </sample>

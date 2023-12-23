@@ -1,57 +1,69 @@
 <sample Light>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonElegant("BUTTON", 0.35)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("BUTTON", 0.35)
+    lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonElegant("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("[fa-android] ANDROID", 0.35)
+    lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonElegant("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("CUSTOM COLOR", 0.5, 0.1, ui.colors.blue.blue)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Dark>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonElegant("BUTTON", 0.35)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("BUTTON", 0.35)
+    lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonElegant("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("[fa-android] ANDROID", 0.35)
+    lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonElegant("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+    btn = ui.CreateButtonElegant("CUSTOM COLOR", 0.5, 0.1, ui.colors.blue.blue)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Add Method>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
     
-        btn1 = MUI.AddButtonElegant(lay, "BUTTON 1", 0.35)
-        btn2 = MUI.AddButtonElegant(lay, "[fa-heart] BUTTON 2", 0.35)
-        btn3 = MUI.AddButtonElegant(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
+    btn1 = ui.AddButtonElegant(lay, "BUTTON 1", 0.35)
+    btn2 = ui.AddButtonElegant(lay, "[fa-heart] BUTTON 2", 0.35)
+    btn3 = ui.AddButtonElegant(lay, "BUTTON 3", 0.35, 0.1, ui.colors.green.darken2)
 
     app.AddLayout(lay)
 </sample>

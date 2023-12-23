@@ -1,4 +1,6 @@
 <sample Basic>
+from native import app, ui
+
 cfg.Light
 cfg.MUI
 
@@ -6,16 +8,16 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
-        btn.SetOnTouch(ShowMenu)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     list = ["Settings:settings", "Location:location_on", "Camera:camera", "Account:person"]
-    lst = MUI.CreateMenuWithIcon(list, null, null, "Top, Right")
+    lst = MUI.CreateMenuWithIcon(list, None, None, "Top, Right")
     lst.SetOnSelect(OnSelect)
 
 def ShowMenu():
@@ -26,6 +28,8 @@ def OnSelect(choice):
 </sample>
 
 <sample Dark & Bottom,Right>
+from native import app, ui
+
 cfg.Light
 cfg.MUI
 
@@ -33,21 +37,21 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
-        btn.SetOnTouch(ShowMenu)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     list = ["Settings:settings", "Location:location_on", "Camera:camera", "Account:person"]
-    lst = MUI.CreateMenuWithIcon(list, null, null, "Bottom, Right")
+    lst = MUI.CreateMenuWithIcon(list, None, None, "Bottom, Right")
     lst.SetOnSelect(OnSelect)
 
 def ShowMenu():
     lst.Show()
 
 def OnSelect(choice, index):
-    app.ShowPopup(choice+" : "+index)
+    app.ShowPopup(choice + " : " + str(index))
 </sample>

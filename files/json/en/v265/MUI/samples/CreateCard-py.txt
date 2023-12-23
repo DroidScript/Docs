@@ -1,103 +1,117 @@
 <sample No-image, No-Avatar>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal, "Light")
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        options =
-            title: "Card Title",
-            body: "Lorem ipsum dolor set amit consectetur elit",
-            buttonText: "SEE MORE",
-            width: 0.94
-        card = UI.CreateCard(options)
-        lay.AddChild(card)
+    options = {
+        "title": "Card Title",
+        "body": "Lorem ipsum dolor set amit consectetur elit",
+        "buttonText": "SEE MORE",
+        "width": 0.94
+    }
+    card = ui.CreateCard(options)
+    lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With-image, No-Avatar>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        options =
-            title: "Card Title",
-            body: "Lorem ipsum dolor set amit consectetur elit",
-            buttonText: "LINKS,SEE MORE",
-            image: "/Sys/Img/Sky.jpg",
-            width: 0.94
-        card = UI.CreateCard(options)
-        lay.AddChild(card)
+    options = {
+        "title": "Card Title",
+        "body": "Lorem ipsum dolor set amit consectetur elit",
+        "buttonText": "LINKS,SEE MORE",
+        "image": "/Sys/Img/Sky.jpg",
+        "width": 0.94
+    }
+    card = ui.CreateCard(options)
+    lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With Image, With Avatar>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        options =
-            title: "Card Title",
-            body: "Lorem ipsum dolor set amit consectetur elit",
-            buttonText: "LINKS,SEE MORE",
-            image: "/Sys/Img/Sky.jpg",
-            width: 0.94,
-            avatar: "/Sys/Img/Droid1.png"
-        card = UI.CreateCard(options)
-        lay.AddChild(card)
+    options = {
+        "title": "Card Title",
+        "body": "Lorem ipsum dolor set amit consectetur elit",
+        "buttonText": "LINKS,SEE MORE",
+        "image": "/Sys/Img/Sky.jpg",
+        "width": 0.94,
+        "avatar": "/Sys/Img/Droid1.png"
+    }
+    card = ui.CreateCard(options)
+    lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Complete>
+from native import app, cfg, ui
+
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-        scrl = app.CreateScroller(1, 1, "NoScrollBar")
-            lay2 = MUI.CreateLayout("Linear", "VCenter")
-            lay2.SetPadding(0, 0.02, 0, 0.02)
-            lay2.SetSize(1)
-                options =
-                    title: "Card Title",
-                    body: "Lorem ipsum dolor set amit consectetur elit",
-                    buttonText: "LINKS,SEE MORE",
-                    image: "/Sys/Img/Sky.jpg",
-                    width: 0.94,
-                    avatar: "/Sys/Img/Droid1.png",
-                    avatarOnTop: true,
-                    divider1: true,
-                    divider2: true
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    scrl = app.CreateScroller(1, 1, "NoScrollBar")
+    lay2 = ui.CreateLayout("Linear", "VCenter")
+    lay2.SetPadding(0, 0.02, 0, 0.02)
+    lay2.SetSize(1)
 
-                options.name = "my-card1"
-                card1 = UI.CreateCard(options)
-                lay2.AddChild(card1)
-                card1.SetOnButtonTouch(OnBtnTouch)
+    options = {
+        "title": "Card Title",
+        "body": "Lorem ipsum dolor set amit consectetur elit",
+        "buttonText": "LINKS,SEE MORE",
+        "image": "/Sys/Img/Sky.jpg",
+        "width": 0.94,
+        "avatar": "/Sys/Img/Droid1.png",
+        "avatarOnTop": True,
+        "divider1": True,
+        "divider2": True
+    }
 
-                options.name = "my-card2"
-                options.buttonType = "raised"
-                card2 = UI.CreateCard(options)
-                card2.SetMargins(0, 0.02, 0, 0)
-                lay2.AddChild(card2)
-                card2.SetOnButtonTouch(OnBtnTouch)
-            scrl.AddChild(lay2)
-        lay.AddChild(scrl)
+    options["name"] = "my-card1"
+    card1 = ui.CreateCard(options)
+    lay2.AddChild(card1)
+    card1.SetOnButtonTouch(OnBtnTouch)
+
+    options["name"] = "my-card2"
+    options["buttonType"] = "raised"
+    card2 = ui.CreateCard(options)
+    card2.SetMargins(0, 0.02, 0, 0)
+    lay2.AddChild(card2)
+    card2.SetOnButtonTouch(OnBtnTouch)
+
+    scrl.AddChild(lay2)
+    lay.AddChild(scrl)
     app.AddLayout(lay)
 
 def OnBtnTouch(btnText, cardName):

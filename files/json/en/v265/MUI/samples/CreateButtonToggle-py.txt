@@ -3,13 +3,15 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.darken1)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
-    	btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
-    	lay.AddChild(btn)
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = ui.CreateButtonToggle("BUTTON", 0.35, None, False, OnToggle)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 

@@ -1,112 +1,124 @@
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from ui import ui
 
-        #  Initialize checkbox items
-        this.items = [
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Initialize checkbox items
+        self.items = [
             "Checkbox item 1",
             "Checkbox item 2",
             "Checkbox item 3"
         ]
 
-        #  Add a checkbox group to the main layout.
-        this.ckg = ui.addCheckboxGroup(this.main, this.items)
+        # Add a checkbox group to the main layout.
+        self.ckg = ui.addCheckboxGroup(self.main, self.items)
 
-        #  Add a callback handler for `onTouch` event
-        this.ckg.setOnTouch( this.onTouch )
+        # Add a callback handler for `onTouch` event
+        self.ckg.setOnTouch(self.onTouch)
 
-    onTouch(value, item, index)
-        ui.showPopup( `Value of $itemis $value` )
+    def onTouch(self, value, item, index):
+        ui.showPopup(f"Value of {item} is {value}")
 
 </sample>
 
 <sample Colors>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.childSpacing = "evenly"
+from native import app
+from ui import ui
 
-        #  Initialize the checkbox items
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.main.childSpacing = "evenly"
+
+        # Initialize the checkbox items
         list = [
             "Checkbox item 1",
             "Checkbox item 2",
             "Checkbox item 3"
         ]
 
-        #  Add a default CheckboxGroup to the main layout
-        this.ckg1 = ui.addCheckboxGroup(this.main, list)
-        this.ckg1.setOnTouch( this.onTouch )
+        # Add a default CheckboxGroup to the main layout
+        self.ckg1 = ui.addCheckboxGroup(self.main, list)
+        self.ckg1.setOnTouch(self.onTouch)
 
-        #  Add a primary CheckboxGroup to the main layout
-        this.ckg2 = ui.addCheckboxGroup(this.main, list, "Primary")
-        this.ckg2.setOnTouch( this.onTouch )
+        # Add a primary CheckboxGroup to the main layout
+        self.ckg2 = ui.addCheckboxGroup(self.main, list, "Primary")
+        self.ckg2.setOnTouch(self.onTouch)
 
-        #  Add a secondary CheckboxGroup to the main layout
-        this.ckg3 = ui.addCheckboxGroup(this.main, list, "Secondary")
-        this.ckg3.setOnTouch( this.onTouch )
+        # Add a secondary CheckboxGroup to the main layout
+        self.ckg3 = ui.addCheckboxGroup(self.main, list, "Secondary")
+        self.ckg3.setOnTouch(self.onTouch)
 
-    onTouch(value, item, index)
-        ui.showPopup( `Value of $itemis $value` )
+    def onTouch(self, value, item, index):
+        ui.showPopup(f"Value of {item} is {value}")
 
 </sample>
 
 <sample Elevated>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from ui import ui
 
-        #  Initialize the checkbox list items
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Initialize the checkbox list items
         list = [
             "Checkbox item 1",
             "Checkbox item 2",
             "Checkbox item 3"
         ]
 
-        #  Add an elevated checkbox group to the main layout.
-        this.ckg = ui.addCheckboxGroup( this.main, list, "Elevated,Secondary", 0.6)
+        # Add an elevated checkbox group to the main layout.
+        self.ckg = ui.addCheckboxGroup(self.main, list, "Elevated,Secondary", 0.6)
 
-        #  Set the label of the CheckboxGroup
-        this.ckg.label = "Select as many as you can"
+        # Set the label of the CheckboxGroup
+        self.ckg.label = "Select as many as you can"
 
-        #  Set the elevation of the CheckboxGroup container
-        this.ckg.elevation = 4
+        # Set the elevation of the CheckboxGroup container
+        self.ckg.elevation = 4
 
-        #  Add a callback handler for `onTouch` event
-        this.ckg.setOnTouch( this.onTouch )
+        # Add a callback handler for `onTouch` event
+        self.ckg.setOnTouch(self.onTouch)
 
-    onTouch(value, item, index)
-        ui.showPopup( `Value of $itemis $value` )
+    def onTouch(self, value, item, index):
+        ui.showPopup(f"Value of {item} is {value}")
 
 </sample>
 
 <sample Outlined>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from ui import ui
 
-        #  Initialize the checkbox items
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Initialize the checkbox items
         list = [
             "Checkbox item 1",
             "Checkbox item 2",
             "Checkbox item 3"
         ]
 
-        #  Add an outlined checkbox group to the main layout.
-        this.ckg = ui.addCheckboxGroup( this.main, list, "Outlined,Secondary", 0.9 )
-        this.ckg.setOnTouch( this.onTouch )
+        # Add an outlined checkbox group to the main layout.
+        self.ckg = ui.addCheckboxGroup(self.main, list, "Outlined,Secondary", 0.9)
+        self.ckg.setOnTouch(self.onTouch)
 
-        #  Set the label of the CheckboxGroup items
-        this.ckg.label = "Select as many as you can"
+        # Set the label of the CheckboxGroup items
+        self.ckg.label = "Select as many as you can"
 
-        #  Set the cornerRadius to `20`
-        this.ckg.cornerRadius = 20
+        # Set the cornerRadius to `20`
+        self.ckg.cornerRadius = 20
 
-    onTouch(value, item, index)
-        ui.showPopup( `Value of $itemis $value` )
+    def onTouch(self, value, item, index):
+        ui.showPopup(f"Value of {item} is {value}")
 
 </sample>

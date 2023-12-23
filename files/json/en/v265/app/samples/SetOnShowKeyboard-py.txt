@@ -1,22 +1,26 @@
 <sample Toggle Keyboard>
+from native import app
+
 def OnStart():
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-	tgl = app.CreateToggle( "Keyboard", 0.3, 0.1 )
-	tgl.SetOnTouch( tgl_OnTouch )
-	lay.AddChild( tgl )
+    tgl = app.CreateToggle( "Keyboard", 0.3, 0.1 )
+    tgl.SetOnTouch( tgl_OnTouch )
+    lay.AddChild( tgl )
 
-	edt = app.CreateTextEdit( "Text", .8, .1 )
+    edt = app.CreateTextEdit( "Text", .8, .1 )
     edt.Focus()
-	lay.AddChild(edt)
+    lay.AddChild(edt)
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
-	app.SetOnShowKeyboard( OnKeyboardShown )
+    app.SetOnShowKeyboard( OnKeyboardShown )
 
 def tgl_OnTouch( show ):
-	if  show : app.ShowKeyboard( edt )
-	else: app.HideKeyboard()
+    if( show ):
+        app.ShowKeyboard( edt )
+    else:
+        app.HideKeyboard()
 
 <b>def OnKeyboard( shown ):
     app.ShowPopup( "Keyboard shown: " + shown )</b>

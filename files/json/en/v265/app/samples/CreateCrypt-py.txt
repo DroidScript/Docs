@@ -1,10 +1,14 @@
+<code>
 <sample Basic>
+
+from native import app
+
 def OnStart():
     text = "Hello World!"
-    <b>crpt = app.CreateCrypt()
+    crpt = app.CreateCrypt()
     encr = crpt.Encrypt(text, "key")
     decr = crpt.Decrypt(encr, "key")
-    hash = crpt.Hash(text)</b>
+    hash = crpt.Hash(text)
 
     app.Alert(
         'text: "' + text + '"\n' +
@@ -13,29 +17,34 @@ def OnStart():
         'hash: "' + hash + '"\n' ,
         "Data"
     )
+
 </sample>
 
 <sample Encrypt using device id>
-def OnStart():
-	crp = app.CreateCrypt()
-	ShowDialog( "Hello World" )
 
-def ShowDialog( data ):
+from native import app
+
+def OnStart():
+    crp = app.CreateCrypt()
+    ShowDialog("Hello World")
+
+def ShowDialog(data):
     app.ShowTextDialog("input text", data, OnText)
 
-def OnText( text ):
-	dlg = app.CreateYesNoDialog( "Choose option", "NoCancel" )
-	dlg.SetOnTouch( OnAction )
-	dlg.data.text = text
+def OnText(text):
+    dlg = app.CreateYesNoDialog("Choose option", "NoCancel")
+    dlg.SetOnTouch(OnAction)
+    dlg.data = {"text": text}
     dlg.Show()
-	dlg.SetButtonText( "Encrypt", "Decrypt" )
+    dlg.SetButtonText("Encrypt", "Decrypt")
 
-def OnAction( result ):
-    if  result == "Yes" :
-        result = crp.Encrypt( this.data.text, app.GetDeviceId() )
-        ShowDialog( result )
-    elif  result == "No" :
-        result = crp.Decrypt( this.data.text, app.GetDeviceId() )
-        ShowDialog( result )
+def OnAction(result):
+    if(result == "Yes"):
+        result = crp.Encrypt(this.data["text"], app.GetDeviceId())
+        ShowDialog(result)
+    elif(result == "No"):
+        result = crp.Decrypt(this.data["text"], app.GetDeviceId())
+        ShowDialog(result)
 
 </sample>
+</code>

@@ -1,171 +1,145 @@
 <sample Button variants>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-        this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Contained
-        this.btn1 = ui.addButton( this.main, "Button", "Contained" )
+        self.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        self.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
 
-        #  Add a callback handler for onTouch event
-        this.btn1.setOnTouch( this.onTouch )
+        self.btn1 = ui.addButton( self.main, "Button", "Contained" )
+        self.btn1.setOnTouch( self.onTouch )
 
-        #  Outlined
-        this.btn2 = ui.addButton( this.main, "Button", "Outlined" )
-        this.btn2.setOnTouch( this.onTouch )
+        self.btn2 = ui.addButton( self.main, "Button", "Outlined" )
+        self.btn2.setOnTouch( self.onTouch )
 
-        #  Text
-        this.btn3 = ui.addButton( this.main, "Button", "Text" )
-        this.btn3.setOnTouch( this.onTouch )
+        self.btn3 = ui.addButton( self.main, "Button", "Text" )
+        self.btn3.setOnTouch( self.onTouch )
 
-    onTouch()
+    def onTouch(self):
         ui.showPopup( "Button is touch!" )
-
 </sample>
 
 <sample Button theme colors>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add primary button to the main layout
-        this.btn1 = ui.addButton(this.main, "Primary", "Contained,Primary")
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        #  Add a callback handler for onTouch event
-        this.btn1.setOnTouch( this.onTouch )
+        self.btn1 = ui.addButton(self.main, "Primary", "Contained,Primary")
+        self.btn1.setOnTouch( self.onTouch )
 
-        #  Add secondary button to the main layout
-        this.btn2 = ui.addButton(this.main, "Secondary", "Outlined,Secondary")
-        this.btn2.setOnTouch( this.onTouch )
+        self.btn2 = ui.addButton(self.main, "Secondary", "Outlined,Secondary")
+        self.btn2.setOnTouch( self.onTouch )
 
-        #  Add default button to the main layout
-        this.btn3 = ui.addButton(this.main, "Default", "Text,Default")
-        this.btn3.setOnTouch( this.onTouch )
+        self.btn3 = ui.addButton(self.main, "Default", "Text,Default")
+        self.btn3.setOnTouch( self.onTouch )
 
-    onTouch()
+    def onTouch(self):
         ui.showPopup( "Button is touch!" )
-
 </sample>
 
 <sample Button sizes>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add a small size button to the main layout
-        this.btn1 = ui.addButton(this.main, "Small", "Contained,Primary,Small")
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        #  Add a callback handler for onTouch event
-        this.btn1.setOnTouch( this.onTouch )
+        self.btn1 = ui.addButton(self.main, "Small", "Contained,Primary,Small")
+        self.btn1.setOnTouch( self.onTouch )
 
-        #  Add a medium/default size button to the main layout
-        this.btn2 = ui.addButton(this.main, "Medium", "Contained,Primary,Medium")
+        self.btn2 = ui.addButton(self.main, "Medium", "Contained,Primary,Medium")
 
-        #  Add a large size button to the main layout
-        this.btn3 = ui.addButton(this.main, "Large", "Contained,Primary,Large")
+        self.btn3 = ui.addButton(self.main, "Large", "Contained,Primary,Large")
 
-    onTouch()
+    def onTouch(self):
         ui.showPopup( "Button is touch!" )
-
 </sample>
 
 <sample Button tooltips>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0, 0.05, 0, 0.05)
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add a button to the main layout
-        #  and add a tooltip to the left of the button
-        this.btn1 = ui.addButton(this.main, "Left", "Contained,Primary")
-        this.btn1.setToolTip("Tooltip on the left", "left")
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0, 0.05, 0, 0.05)
 
-        #  Add a button to the main layout
-        #  and add a tooltip to the top of the button
-        this.btn2 = ui.addButton(this.main, "Top", "Contained,Primary")
-        this.btn2.setToolTip("Tooltip on the top", "top")
+        self.btn1 = ui.addButton(self.main, "Left", "Contained,Primary")
+        self.btn1.setToolTip("Tooltip on the left", "left")
 
-        #  // Add a button to the main layout
-        #  and add a tooltip to the right of the button
-        this.btn3 = ui.addButton(this.main, "Right", "Contained,Primary")
-        this.btn3.setToolTip("Tooltip on the right", "right")
+        self.btn2 = ui.addButton(self.main, "Top", "Contained,Primary")
+        self.btn2.setToolTip("Tooltip on the top", "top")
 
-        #  // Add a button to the main layout
-        #  and add a tooltip to the bottom of the button
-        this.btn4 = ui.addButton(this.main, "Bottom", "Contained,Primary")
-        this.btn4.setToolTip("Tooltip on the bottom", "bottom")
+        self.btn3 = ui.addButton(self.main, "Right", "Contained,Primary")
+        self.btn3.setToolTip("Tooltip on the right", "right")
 
+        self.btn4 = ui.addButton(self.main, "Bottom", "Contained,Primary")
+        self.btn4.setToolTip("Tooltip on the bottom", "bottom")
 </sample>
 
 <sample Button with icons>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-        this.main.setChildMargins("12px", "12px", "12px", "12px")
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add a primary contained button and
-        #  set its leading icon to `send`
-        this.btn1 = ui.addButton(this.main, "Send", "Primary")
-        this.btn1.icon = "send"
+        self.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        self.main.setChildMargins("12px", "12px", "12px", "12px")
 
-        #  Add a secondary contained button and
-        #  set its leading icon to `shopping_cart`
-        this.btn2 = ui.addButton(this.main, "Add to cart", "Secondary")
-        this.btn2.icon = "shopping_cart"
+        self.btn1 = ui.addButton(self.main, "Send", "Primary")
+        self.btn1.icon = "send"
 
-        #  Add an `android` primary icon button to the main layout
-        this.btn3 = ui.addButton(this.main, "android", "Primary,Icon")
+        self.btn2 = ui.addButton(self.main, "Add to cart", "Secondary")
+        self.btn2.icon = "shopping_cart"
 
-        #  Add a `settings` secondary icon button to the main layout
-        this.btn4 = ui.addButton(this.main, "settings", "Secondary,Icon")
+        self.btn3 = ui.addButton(self.main, "android", "Primary,Icon")
 
+        self.btn4 = ui.addButton(self.main, "settings", "Secondary,Icon")
 </sample>
 
 <sample Buttons with badges>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        this.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add an android icon button to the main layout
-        this.btn1 = ui.addButton(this.main, "android", "Primary,Icon")
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        #  Add a setting icon button to the main layout and
-        #  set the badge to `5`
-        this.btn2 = ui.addButton(this.main, "settings", "Primary,Icon")
-        this.btn2.setBadge( 5 )
+        self.btn1 = ui.addButton(self.main, "android", "Primary,Icon")
 
-        #  Add a contained button to the main layout and
-        #  set the badge to `New` with a `Primary` background color
-        this.btn3 = ui.addButton(this.main, "With Badge", "Secondary,Outlined")
-        this.btn3.setBadge("New", "Primary")
+        self.btn2 = ui.addButton(self.main, "settings", "Primary,Icon")
+        self.btn2.setBadge( 5 )
 
+        self.btn3 = ui.addButton(self.main, "With Badge", "Secondary,Outlined")
+        self.btn3.setBadge("New", "Primary")
 </sample>
 
 <sample Upload button>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+class Main(App):
+    def onStart(self):
+        from native import app
+        from native import gfx
+        from native import ui
 
-        #  Add a primary upload button with upload icon
-        this.btn = ui.addButton(this.main, "Upload File", "Primary,Upload")
-        this.btn.icon = "backup"
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        #  Add a callback handler for `onFileSelect` event
-        this.btn.setOnFileSelect( this.onFileSelect )
+        self.btn = ui.addButton(self.main, "Upload File", "Primary,Upload")
+        self.btn.icon = "backup"
 
-    onFileSelect( files )
-        #  Get the first file and display its file name
-        file = files[ 0 ]
-        ui.showPopup( `$file.nameis selected.` )
-
-</sample>
+    def onFileSelect(self, files):
+        file = files[0]
+        ui.showPopup( f"{file.name} is selected." )

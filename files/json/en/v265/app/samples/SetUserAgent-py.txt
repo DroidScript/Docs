@@ -1,7 +1,9 @@
 <sample Example>
+from native import app
+
 defaultUserAgent = navigator.userAgent
 myUserAgent = defaultUserAgent
 
 def OnStart():
-    app.SetUserAgent( myUserAgent )
+    app.SetUserAgent(myUserAgent)
 </sample>

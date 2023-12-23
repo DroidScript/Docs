@@ -1,26 +1,30 @@
 <sample Simple>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
     text = "This is a sample alert text."
-    als = MUI.CreateAlertSimple(text)
+    als = ui.CreateAlertSimple(text)
     als.Show()
 </sample>
 
 <sample Custom>
+from native import app, cfg, ui
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
     text = "This is a sample alert text."
-    als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
+    als = ui.CreateAlertSimple(text, "GOT IT", color.darken2)
     als.Show()
 
     setTimeout(CloseAlert, 4000)
@@ -30,23 +34,25 @@ def CloseAlert():
 </sample>
 
 <sample Dark>
+from native import app, cfg, ui
+
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = ui.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        btnShow = MUI.CreateButtonRound("SHOW ALERT")
-        btnShow.SetOnTouch(ShowAlert)
-        lay.AddChild(btnShow)
+    btnShow = ui.CreateButtonRound("SHOW ALERT")
+    btnShow.SetOnTouch(ShowAlert)
+    lay.AddChild(btnShow)
 
     app.AddLayout(lay)
 
     text = "This is a sample alert text."
-    als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+    als = ui.CreateAlertSimple(text, "GOT IT", ui.colors.green.darken2)
     als.SetOnTouch(AlertOnTouch)
 
 def ShowAlert():

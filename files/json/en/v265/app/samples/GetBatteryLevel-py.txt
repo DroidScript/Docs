@@ -1,5 +1,7 @@
 <sample Show Battery Level>
+from native import app
+
 def OnStart():
-    <b>lvl = app.GetBatteryLevel()</b>
+    lvl = app.GetBatteryLevel()
     app.Alert( lvl )
 </sample>

@@ -1,77 +1,97 @@
 <sample Chips>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0, 0.025, 0, 0.025)
+from native import app
+from native import ui
 
-        #  Add a default chip to the main layout
-        this.chip1 = ui.addChip(this.main, "Basic Chip")
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        self.main.setChildMargins(0, 0.025, 0, 0.025)
 
-        #  Add a callback handler for `onTouch` event.
-        this.chip1.setOnTouch( this.onTouch )
+        # Add a default chip to the main layout
+        self.chip1 = ui.addChip(self.main, "Basic Chip")
 
-        #  Add a small primary chip
-        this.chip2 = ui.addChip(this.main, "Small Primary Chip", "Primary,Small")
-        this.chip2.setOnTouch( this.onTouch )
+        # Add a callback handler for `onTouch` event.
+        self.chip1.setOnTouch(self.onTouch)
 
-        #  Add a touchable secondary chip
-        this.chip3 = ui.addChip(this.main, "Secondary Chip", "Secondary,Touchable")
-        this.chip2.setOnTouch( this.onTouch )
+        # Add a small primary chip
+        self.chip2 = ui.addChip(self.main, "Small Primary Chip", "Primary,Small")
+        self.chip2.setOnTouch(self.onTouch)
 
-    onTouch()
-        ui.showPopup( "You touched the chip!" )
+        # Add a touchable secondary chip
+        self.chip3 = ui.addChip(self.main, "Secondary Chip", "Secondary,Touchable")
+        self.chip3.setOnTouch(self.onTouch)
 
+    def onTouch(self):
+        ui.showPopup("You touched the chip!")
+
+sample = Main()
+sample.start()
 </sample>
 
 <sample Deletable chip>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from native import ui
 
-        #  Add a touchable and deletable chip
-        this.chip = ui.addChip(this.main, 'Deletable', 'Secondary,Touchable')
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add callback hanlder for `onDelete` event.
-        #  This will also add a delete icon to the chip.
-        this.chip.setOnDelete( this.onDelete )
+        # Add a touchable and deletable chip
+        self.chip = ui.addChip(self.main, 'Deletable', 'Secondary,Touchable')
 
-    onDelete()
-        ui.showPopup( "Chip is deleted!" )
+        # Add callback hanlder for `onDelete` event.
+        # This will also add a delete icon to the chip.
+        self.chip.setOnDelete(self.onDelete)
 
+    def onDelete(self):
+        ui.showPopup("Chip is deleted!")
+
+sample = Main()
+sample.start()
 </sample>
 
 <sample Custom styles>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from native import ui
 
-        #  Add a chip control to the main layout
-        this.chip = ui.addChip(this.main, "Shopping Cart")
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add a leading icon to the chip control
-        this.chip.icon = "shopping_cart"
+        # Add a chip control to the main layout
+        self.chip = ui.addChip(self.main, "Shopping Cart")
 
-        #  Sets the icon color of the chip control
-        this.chip.iconColor = "#673ab7"
+        # Add a leading icon to the chip control
+        self.chip.icon = "shopping_cart"
 
-        #  Sets the text size of the chip control
-        this.chip.textSize = 14
+        # Sets the icon color of the chip control
+        self.chip.iconColor = "#673ab7"
 
+        # Sets the text size of the chip control
+        self.chip.textSize = 14
+
+sample = Main()
+sample.start()
 </sample>
 
 <sample Avatar>
-class Main extends App
-    onStart()
-        #  Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import app
+from native import ui
 
-        #  Add a chip control to the main layout
-        this.chip = ui.addChip(this.main, "Character Avatar")
+class Main(app.App):
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Set the avatar property of the main layout
-        this.chip.avatar = "https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+        # Add a chip control to the main layout
+        self.chip = ui.addChip(self.main, "Character Avatar")
 
+        # Set the avatar property of the main layout
+        self.chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+sample = Main()
+sample.start()
 </sample>

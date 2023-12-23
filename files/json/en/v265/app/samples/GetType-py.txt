@@ -1,5 +1,7 @@
-<sample GetType>
+<sample>
+from native import app
+
 def OnStart():
-    <b>type = app.GetType()</b>
-    app.Alert( type, "Type" )
+    type = app.GetType()
+    app.Alert(type, "Type")
 </sample>

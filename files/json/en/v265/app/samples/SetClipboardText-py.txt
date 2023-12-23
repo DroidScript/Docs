@@ -1,4 +1,6 @@
 <sample Example>
+from native import app
+
 def OnStart():
-	<b>app.SetClipboardText( "Sample Text" )</b>
+    app.SetClipboardText("Sample Text")
 </sample>

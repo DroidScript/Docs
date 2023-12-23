@@ -1,5 +1,7 @@
-<sample Show Devide ID>
+<sample>
+from native import app
+
 def OnStart():
-    <b>id = app.GetDeviceId()</b>
-    app.Alert( id )
+    id = app.GetDeviceId()
+    app.Alert(id)
 </sample>

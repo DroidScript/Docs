@@ -1,4 +1,6 @@
 <sample Basic & Light>
+from native import app, ui
+
 cfg.Light
 cfg.MUI
 
@@ -6,11 +8,11 @@ def OnStart():
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
-        btn.SetOnTouch(ShowDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+    btn.SetOnTouch(ShowDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
@@ -22,6 +24,8 @@ def ShowDialog():
 </sample>
 
 <sample Customize & Dark>
+from native import app, ui
+
 cfg.Dark
 cfg.MUI
 
@@ -29,23 +33,23 @@ def OnStart():
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
-        btn.SetOnTouch(ShowDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+    btn.SetOnTouch(ShowDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
     text = "You can undone this process."
-    dlg = MUI.CreateDialog("Remove message", text, "REMOVE", "CLOSE", true)
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE", "CLOSE", True)
     dlg.SetOnTouch(OnTouch)
 
 def ShowDialog():
     dlg.Show()
 
 def OnTouch(val, btnTxt):
-    if val && btnTxt == "REMOVE":
+    if val and btnTxt == "REMOVE":
         app.ShowPopup("Confirmed. Proceed an action")
     else:
         app.ShowPopup("You decline the confirmation.")

@@ -1,5 +1,7 @@
 <sample Show app name>
+from native import app
+
 def OnStart():
-    <b>name = app.GetAppName()</b>
+    name = app.GetAppName()
     app.Alert( name )
 </sample>

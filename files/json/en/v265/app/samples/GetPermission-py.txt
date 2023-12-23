@@ -1,7 +1,9 @@
 <sample Get ExtSDCard Permission and User-Selected Path>
-def OnStart():
-    <b>path = app.GetPermission( "extsdcard", OnPermission )</b>
+from native import app
 
-def OnPermission( pathURI ):
-    app.Alert( pathURI )
+def OnStart():
+    path = app.GetPermission("extsdcard", OnPermission)
+
+def OnPermission(pathURI):
+    app.Alert(pathURI)
 </sample>

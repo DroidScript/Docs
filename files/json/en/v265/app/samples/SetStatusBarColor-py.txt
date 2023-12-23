@@ -1,4 +1,6 @@
 <sample Set StatusBar Color>
+from native import app
+
 def OnStart():
-    <b>app.SetStatusBarColor("green")</b>
+    app.SetStatusBarColor("green")
 </sample>

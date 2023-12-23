@@ -1,4 +1,7 @@
 <sample No Label>
+from native import app
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -6,15 +9,18 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilledA(0.8, "Left", "Type your name")
-        lay.AddChild(tef)
+    tef = MUI.CreateTextEditFilledA(0.8, "Left", "Type your name")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With Label>
+from native import app
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -22,15 +28,18 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilledA(0.8, "Left", "Username", true)
-        lay.AddChild(tef)
+    tef = MUI.CreateTextEditFilledA(0.8, "Left", "Username", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample SetOnEnter Callback>
+from native import app
+from native import ui
+
 cfg.Dark
 cfg.MUI
 
@@ -38,11 +47,11 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditFilledA(0.8, "Left", "Type your name", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = MUI.CreateTextEditFilledA(0.8, "Left", "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 

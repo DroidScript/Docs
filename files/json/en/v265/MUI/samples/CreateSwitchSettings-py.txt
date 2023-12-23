@@ -1,47 +1,47 @@
 <sample Basic>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        skb = MUI.CreateSwitchSettings("Enable Sound", 1)
-        skb.SetOnTouch(OnTouch)
-        lay.AddChild(skb)
+    skb = gfx.MUI.CreateSwitchSettings("Enable Sound", 1)
+    skb.SetOnTouch(OnTouch)
+    lay.AddChild(skb)
 
     app.AddLayout(lay)
 
 def OnTouch(text, value):
-    app.ShowPopup(text+" : "+value)
-</sample>
+    app.ShowPopup(text+" : "+value)</sample>
 
 <sample More Settings>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        settings = [
-            "Enable sound",
-            "Enable dark mode",
-            "Disable full screen"
-        ]
+    settings = [
+        "Enable sound",
+        "Enable dark mode",
+        "Disable full screen"
+    ]
 
-        for i=0; i<settings.length; i++:
-            skb = MUI.CreateSwitchSettings(settings[i], 1)
-            skb.SetOnTouch(OnTouch)
-            lay.AddChild(skb)
-            lay.AddChild(MUI.CreateDivider())
+    for setting in settings:
+        skb = gfx.MUI.CreateSwitchSettings(setting, 1)
+        skb.SetOnTouch(OnTouch)
+        lay.AddChild(skb)
+        lay.AddChild(gfx.MUI.CreateDivider())
 
     app.AddLayout(lay)
 
 def OnTouch(text, value):
-    app.ShowPopup(text+" : "+value)
-</sample>
+    app.ShowPopup(text+" : "+value)</sample>

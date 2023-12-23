@@ -1,7 +1,9 @@
 <sample Check Started>
+from native import app
+
 setTimeout('app.Alert( app.IsStarted(), "Started in global:" );')
 
 def OnStart():
-    <b>started = app.IsStarted()</b>
+    started = app.IsStarted()
     app.Alert( started, "Started in OnStart:" )
 </sample>

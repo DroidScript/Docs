@@ -1,5 +1,10 @@
-<sample Show MAC Address>
-def OnStart():
-	<b>mac = app.GetMacAddress()</b>
-	app.ShowPopup( mac )
-</sample>
+<?xml version="1.0"?>
+<xml>
+    <sample Show MAC Address>
+    from native import app
+
+    def OnStart():
+        mac = app.GetMacAddress()
+        app.ShowPopup(mac)
+    </sample>
+</xml>

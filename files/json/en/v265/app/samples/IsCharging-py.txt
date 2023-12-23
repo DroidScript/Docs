@@ -1,5 +1,7 @@
 <sample Check Charging State>
+from native import app
+
 def OnStart():
-    <b>charging = app.IsCharging()</b>
-    app.Alert( charging, "is charging:" )
+    charging = app.IsCharging()
+    app.Alert(charging, "is charging:")
 </sample>

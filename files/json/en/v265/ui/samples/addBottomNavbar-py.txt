@@ -1,96 +1,95 @@
 <sample Sample navs array.>
-navs = [
-        [ "Favorites", "favorites" ],
-        [ "Groups", "person" ],
-        [ "Folder", "folder" ]
-    ]
+from native import app, cfg
+
+navs = [ 
+    ["Favorites", "favorites"],
+    ["Groups", "person"],
+    ["Folder", "folder"]
+]
 </sample>
 
 <sample Basic>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-        this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+class Main(App):
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
         navs = [
-            [ "Favorites", "favorites" ],
-            [ "Groups", "person" ],
-            [ "Folder", "folder" ]
+            ["Favorites", "favorites"],
+            ["Groups", "person"],
+            ["Folder", "folder"]
         ]
 
-        #  Creates a BottomNavbar control
-        this.bmn = ui.addBottomNavbar(this.main, navs, "", 1)
+        # Creates a BottomNavbar control
+        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-        #  Add a callback handler for `onChange` event
-        this.bmn.setOnChange( this.onChange )
+        # Add a callback handler for `onChange` event
+        self.bmn.setOnChange(self.onChange)
 
-    onChange(text, index)
-        ui.showPopup( text )
-
+    def onChange(self, text, index):
+        ui.showPopup(text)
 </sample>
 
 <sample Hide or show labels>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
-        this.main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+class Main(App):
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
         navs = [
-            [ "Favorites", "favorites" ],
-            [ "Groups", "person" ],
-            [ "Folder", "folder" ]
+            ["Favorites", "favorites"],
+            ["Groups", "person"],
+            ["Folder", "folder"]
         ]
 
-        #  Creates a BottomNavbar control
-        this.bmn = ui.addBottomNavbar(this.main, navs, "", 1)
+        # Creates a BottomNavbar control
+        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-        #  Add a callback handler for `onChange` event
-        this.bmn.setOnChange( this.onChange )
+        # Add a callback handler for `onChange` event
+        self.bmn.setOnChange(self.onChange)
 
-        #  Button to show the labels
-        this.btn = ui.addButton(this.main, "Show Labels")
-        this.btn.setOnTouch( this.showLabels )
+        # Button to show the labels
+        self.btn = ui.addButton(self.main, "Show Labels")
+        self.btn.setOnTouch(self.showLabels)
 
-        #  Button to hide the labels
-        this.btn1 = ui.addButton(this.main, "Hide Labels")
-        this.btn1.setOnTouch( this.hideLabels )
+        # Button to hide the labels
+        self.btn1 = ui.addButton(self.main, "Hide Labels")
+        self.btn1.setOnTouch(self.hideLabels)
 
-    showLabels( )
-        this.bmn.showLabels()
+    def showLabels(self):
+        self.bmn.showLabels()
 
-    hideLabels()
-        this.bmn.hideLabels()
+    def hideLabels(self):
+        self.bmn.hideLabels()
 
-    onChange(text, index)
-        ui.showPopup( text )
-
+    def onChange(self, text, index):
+        ui.showPopup(text)
 </sample>
 
 <sample Custom styles>
-class Main extends App
-    onStart()
-        #  Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+class Main(App):
+    def onStart(self):
+        # Creates a layout with objects vertically centered
+        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
         navs = [
-            [ "Favorites", "favorites" ],
-            [ "Groups", "person" ],
-            [ "Folder", "folder" ]
+            ["Favorites", "favorites"],
+            ["Groups", "person"],
+            ["Folder", "folder"]
         ]
 
-        #  Creates a BottomNavbar control
-        this.bmn = ui.addBottomNavbar(this.main, navs, "", 1)
+        # Creates a BottomNavbar control
+        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-        #  Hide the labels when not active
-        this.bmn.labels = false
+        # Hide the labels when not active
+        self.bmn.labels = False
 
-        #  Set the color of the text and icons
-        this.bmn.textColor = "#673ab7"
-        this.bmn.iconColor = "#673ab7"
+        # Set the color of the text and icons
+        self.bmn.textColor = "#673ab7"
+        self.bmn.iconColor = "#673ab7"
 
-        #  Set the icon size
-        this.bmn.iconSize = "2rem"
-
+        # Set the icon size
+        self.bmn.iconSize = "2rem"
 </sample>

@@ -3,13 +3,15 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left", "person", "Type your name")
-        lay.AddChild(tef)
+    tef = ui.CreateTEOutlineIconLeft(0.8, "Left", "person", "Type your name")
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -19,13 +21,15 @@ cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Password", "lock", "Type your password", true)
-        lay.AddChild(tef)
+    tef = ui.CreateTEOutlineIconLeft(0.8, "Left,Password", "lock", "Type your password", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -35,13 +39,15 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Number,Round", "call", "Type your number", true)
-        lay.AddChild(tef)
+    tef = ui.CreateTEOutlineIconLeft(0.8, "Left,Number,Round", "call", "Type your number", True)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
@@ -51,14 +57,16 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    from native import app, gfx, ui
+
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTEOutlineIconLeft(0.8, "Left,Number", "call", "Type your number", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = ui.CreateTEOutlineIconLeft(0.8, "Left,Number", "call", "Type your number", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 

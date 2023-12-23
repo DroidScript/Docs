@@ -1,4 +1,7 @@
 <sample AddPicker>
+from native import MUI
+from native import app
+
 cfg.Light
 cfg.MUI
 
@@ -8,14 +11,14 @@ def OnStart():
     scr = app.AddScroller(lay, 1, 1, "")
     lay2 = MUI.CreateLayout("Linear")
 
-        lst = "Orange,Banana,Mango,Apple"
+    lst = "Orange,Banana,Mango,Apple"
 
-        rad1 = MUI.AddRadio(lay, lst, 0.75, null, "Default")
-        rad2 = MUI.AddRadio(lay, lst, 0.75, null, "Material")
-        rad3 = MUI.AddRadio(lay, lst, 0.75, null, "Material", true)
-        rad4 = MUI.AddRadio(lay, lst, 0.75, null, "Button")
-        rad5 = MUI.AddRadio(lay, lst, 0.75, null, "Button", true)
+    rad1 = MUI.AddRadio(lay, lst, 0.75, None, "Default")
+    rad2 = MUI.AddRadio(lay, lst, 0.75, None, "Material")
+    rad3 = MUI.AddRadio(lay, lst, 0.75, None, "Material", True)
+    rad4 = MUI.AddRadio(lay, lst, 0.75, None, "Button")
+    rad5 = MUI.AddRadio(lay, lst, 0.75, None, "Button", True)
 
-    scr.AddChild( lay2 )
-    app.AddLayout( lay )
+    scr.AddChild(lay2)
+    app.AddLayout(lay)
 </sample>

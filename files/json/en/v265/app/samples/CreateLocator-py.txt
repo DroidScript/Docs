@@ -1,11 +1,14 @@
 <sample Get Location Updates>
+from native import app
+
 def OnStart():
-	<b>loc = app.CreateLocator("GPS,Network")
-	loc.SetOnChange(loc_OnChange)
-	loc.Start()
-	app.ShowPopup("Locating")</b>
+    loc = app.CreateLocator("GPS,Network")
+    loc.SetOnChange(loc_OnChange)
+    loc.Start()
+    app.ShowPopup("Locating")
 
 def loc_OnChange(pos):
-	msg = pos.latitude + ", " + pos.longitude
-	app.ShowPopup( msg )
+    msg = str(pos.latitude) + ", " + str(pos.longitude)
+    app.ShowPopup(msg)
+
 </sample>

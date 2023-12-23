@@ -1,48 +1,54 @@
+Here is the translated XML page with all the translated JavaScript code in Python:
+
+```xml
 <sample Open Termux and pass arguments>
+from native import app
+
 def OnStart():
-    app.WriteFile( "/sdcard/termux/scripts/hello.sh", "echo Hello $1 and $2" )
-    <b>err = app.ExtExec( "termux", "hello.sh", 'World "' + app.GetUser() + '"', "" )</b>
-    if  err : app.Alert( "Termux Error:" + err )
+    app.WriteFile("/sdcard/termux/scripts/hello.sh", "echo Hello $1 and $2")
+    err = app.ExtExec("termux", "hello.sh", 'World "' + app.GetUser() + '"', "")
+    if err:
+        app.Alert("Termux Error:" + err)
 </sample>
 
-<sample Execute in Background and retreive output>
+<sample Execute in Background and retrieve output>
+from native import app
+
 itv, lock = "/sdcard/.termuxlock"
-script = `# this is a comment
+script = """
+{  # this is a comment
     echo This is a message  # prints to stdout
     sleep 1  # waits 1 second
-    echo This is an error  1>&2  # prints to stderr1>/sdcard/out.txt 2>/sdcard/err.txt; # forward stdout and stderr to files
-rm ` + lock; #  remove script lock file
+    echo This is an error  1>&2  # prints to stderr
+} 1>/sdcard/out.txt 2>/sdcard/err.txt; # forward stdout and stderr to files
+rm """ + lock  # remove script lock file
 
 def OnStart():
-    app.WriteFile( "/sdcard/termux/scripts/hello.sh", script )
-    app.WriteFile( lock, "" )
+    app.WriteFile("/sdcard/termux/scripts/hello.sh", script)
+    app.WriteFile(lock, "")
 
-    app.ShowProgress( "Script is running" )
-    <b>err = app.ExtExec( "termux", "hello.sh", "", "hide" )</b>
+    app.ShowProgress("Script is running")
+    err = app.ExtExec("termux", "hello.sh", "", "hide")
     if err: app.Alert(err)
 
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    txt = app.CreateText("", 0.8, 0.8, "monospace,multiline,left")
+    lay.AddChild(txt)
 
-    txt = app.CreateText( "", .8, .8, "monospace,multiline,left" )
-    lay.AddChild( txt )
-
-    app.AddLayout( lay )
-
-    itv = setInterval( CheckReady, 100 )
+    app.AddLayout(lay)
+    
+    itv = setInterval(CheckReady, 100)
 
 def CheckReady():
-    if  !app.FileExists( lock ):
+    if not app.FileExists(lock):
         app.HideProgress()
         clearInterval(itv)
 
-        stdout = app.ReadFile( "/sdcard/out.txt" )
-        stderr = app.ReadFile( "/sdcard/err.txt" )
+        stdout = app.ReadFile("/sdcard/out.txt")
+        stderr = app.ReadFile("/sdcard/err.txt")
 
-        text =
-            "stdout:\n" + stdout + "\n\n" +
-            "stderr:\n" + stderr
+        text = "stdout:\n" + stdout + "\n\n" + "stderr:\n" + stderr
 
-        txt.SetText( text )
-
+        txt.SetText(text)
 </sample>

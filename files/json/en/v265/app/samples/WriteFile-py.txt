@@ -1,8 +1,10 @@
 <sample Append file and get line count>
+from native import app
+
 def OnStart():
-    <b>app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" )</b>
+    app.WriteFile("myFile.txt", "Hello World from Write\n", "Append")
 
     txt = app.ReadFile("myFile.txt")
-    length = txt.split("\n").length
-    app.ShowPopup("myFile contains " + length + " lines")
+    length = len(txt.split("\n"))
+    app.ShowPopup("myFile contains " + str(length) + " lines")
 </sample>

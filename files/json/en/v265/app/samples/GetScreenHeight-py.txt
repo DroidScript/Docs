@@ -1,5 +1,7 @@
 <sample Show Screen Height>
+from native import app
+
 def OnStart():
-    <b>height = app.GetScreenHeight()</b>
-    app.Alert( height )
+    height = app.GetScreenHeight()
+    app.Alert(str(height))
 </sample>

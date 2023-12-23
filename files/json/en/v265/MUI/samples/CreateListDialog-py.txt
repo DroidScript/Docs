@@ -1,4 +1,5 @@
 <sample Basic>
+from native import app, gfx, ui
 cfg.Light
 cfg.MUI
 
@@ -8,13 +9,17 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
-        btn.SetOnTouch(ShowListDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
+    btn.SetOnTouch(ShowListDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    list = [name: "Choice 1",name: "Choice 2",name: "Choice 3",name: "Choice 4"
+    list = [
+        {"name": "Choice 1"},
+        {"name": "Choice 2"},
+        {"name": "Choice 3"},
+        {"name": "Choice 4"}
     ]
     lsd = MUI.CreateListDialog("Choices Title", list)
     lsd.SetOnSelect(OnTouch)
@@ -27,6 +32,7 @@ def OnTouch(name):
 </sample>
 
 <sample With Icon>
+from native import app, gfx, ui
 cfg.Light
 cfg.MUI
 
@@ -36,13 +42,17 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
-        btn.SetOnTouch(ShowListDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
+    btn.SetOnTouch(ShowListDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    list = [name: "Choice 1", icon: "person",name: "Choice 2", icon: "room",name: "Choice 3", icon: "account_circle",name: "Choice 4", icon: "email"
+    list = [
+        {"name": "Choice 1", "icon": "person"},
+        {"name": "Choice 2", "icon": "room"},
+        {"name": "Choice 3", "icon": "account_circle"},
+        {"name": "Choice 4", "icon": "email"}
     ]
     lsd = MUI.CreateListDialog("Choices Title", list)
     lsd.SetOnSelect(OnTouch)
@@ -55,6 +65,7 @@ def OnTouch(name):
 </sample>
 
 <sample With Icon & Colors>
+from native import app, gfx, ui
 cfg.Light
 cfg.MUI
 
@@ -64,13 +75,17 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
-        btn.SetOnTouch(ShowListDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
+    btn.SetOnTouch(ShowListDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    list = [name: "Choice 1", icon: "person", color: "#f44336",name: "Choice 2", icon: "room", color: "#9c27b0",name: "Choice 3", icon: "account_circle", color: "#4285f4",name: "Choice 4", icon: "email", color: "#009688"
+    list = [
+        {"name": "Choice 1", "icon": "person", "color": "#f44336"},
+        {"name": "Choice 2", "icon": "room", "color": "#9c27b0"},
+        {"name": "Choice 3", "icon": "account_circle", "color": "#4285f4"},
+        {"name": "Choice 4", "icon": "email", "color": "#009688"}
     ]
     lsd = MUI.CreateListDialog("Choices Title", list)
     lsd.SetOnSelect(OnTouch)
@@ -83,6 +98,7 @@ def OnTouch(name):
 </sample>
 
 <sample Dark Bottom>
+from native import app, gfx, ui
 cfg.Dark
 cfg.MUI
 
@@ -92,15 +108,19 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
-        btn.SetOnTouch(ShowListDialog)
-        lay.AddChild(btn)
+    btn = MUI.CreateButtonRaised("SHOW LISTDIALOG", 0.6)
+    btn.SetOnTouch(ShowListDialog)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    list = [name: "Choice 1", icon: "person", color: "#f44336",name: "Choice 2", icon: "room", color: "#9c27b0",name: "Choice 3", icon: "account_circle", color: "#4285f4",name: "Choice 4", icon: "email", color: "#009688"
+    list = [
+        {"name": "Choice 1", "icon": "person", "color": "#f44336"},
+        {"name": "Choice 2", "icon": "room", "color": "#9c27b0"},
+        {"name": "Choice 3", "icon": "account_circle", "color": "#4285f4"},
+        {"name": "Choice 4", "icon": "email", "color": "#009688"}
     ]
-    lsd = MUI.CreateListDialog("Choices Title", list, null, true)
+    lsd = MUI.CreateListDialog("Choices Title", list, None, True)
     lsd.SetOnSelect(OnTouch)
 
 def ShowListDialog():

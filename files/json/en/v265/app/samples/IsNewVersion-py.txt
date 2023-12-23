@@ -1,5 +1,7 @@
-<sample Check Version Number increased>
+<sample>
+from native import app
+
 def OnStart():
-    <b>newVersion = app.IsNewVersion()</b>
-    app.Alert( newVersion, "Is new version:" )
+    newVersion = app.IsNewVersion()
+    app.Alert(newVersion, "Is new version:")
 </sample>

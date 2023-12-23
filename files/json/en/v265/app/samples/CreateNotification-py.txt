@@ -1,12 +1,16 @@
+<code>
 <sample Notification>
+from native import app, ui
+
 def OnStart():
-	app.ShowPopup( "Sending notification" )
-	<b>notify = app.CreateNotification()
-	notify.SetMessage( "Ticker", "Title", "Text" )
-	notify.Notify( "testID" )
-	setTimeout( cancel, 5000 )</b>
+    app.ShowPopup("Sending notification")
+    <b>notify = ui.Notification()
+    notify.SetMessage("Ticker", "Title", "Text")
+    notify.Notify("testID")
+    app.SetTimeout(5000, cancel)</b>
 
 def cancel():
-	notify.Cancel( "testID" )
-	app.ShowPopup( "Notification cancelled" )
+    notify.Cancel("testID")
+    app.ShowPopup("Notification cancelled")
 </sample>
+</code>

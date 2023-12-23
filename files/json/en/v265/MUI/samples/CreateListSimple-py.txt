@@ -1,4 +1,8 @@
 <sample Basic>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -8,11 +12,15 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [title: "Downloads",title: "Folders",title: "Images",title: "Videos"
-        ]
-        lst = MUI.CreateListSimple(list, 1)
-        lst.SetOnTouch()
-        lay.AddChild(lst)
+    list = [
+        {title: "Downloads"},
+        {title: "Folders"},
+        {title: "Images"},
+        {title: "Videos"}
+    ]
+    lst = MUI.CreateListSimple(list, 1)
+    lst.SetOnTouch()
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 
@@ -21,6 +29,10 @@ def OnTouch(title, index, icon, badge):
 </sample>
 
 <sample With Icon & Color>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -30,15 +42,23 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [title: "Downloads", icon: "play_for_work", color:"#673ab7",title: "Folders", icon: "folder", color:"#009688",title: "Images", icon: "photo", color:"#1e88e5",title: "Videos", icon: "subscriptions", color:"#e53935"
-        ]
-        lst = MUI.CreateListSimple(list, 1)
-        lay.AddChild(lst)
+    list = [
+        {title: "Downloads", icon: "play_for_work", color:"#673ab7"},
+        {title: "Folders", icon: "folder", color:"#009688"},
+        {title: "Images", icon: "photo", color:"#1e88e5"},
+        {title: "Videos", icon: "subscriptions", color:"#e53935"}
+    ]
+    lst = MUI.CreateListSimple(list, 1)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With Icon, Color & Badge>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -48,15 +68,23 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7",title: "Folders", icon: "folder", badge: 11, color:"#009688",title: "Images", icon: "photo", badge: 2, color:"#1e88e5",title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"
-        ]
-        lst = MUI.CreateListSimple(list, 1)
-        lay.AddChild(lst)
+    list = [
+        {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+        {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+        {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+        {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+    ]
+    lst = MUI.CreateListSimple(list, 1)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Badge Color>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Light
 cfg.MUI
 
@@ -66,15 +94,23 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7",title: "Folders", icon: "folder", badge: 11, color:"#009688",title: "Images", icon: "photo", badge: 2, color:"#1e88e5",title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"
-        ]
-        lst = MUI.CreateListSimple(list, 1)
-        lay.AddChild(lst)
+    list = [
+        {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+        {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+        {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+        {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+    ]
+    lst = MUI.CreateListSimple(list, 1)
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Dark With Divider>
+from native import app
+from native import gfx
+from native import ui
+
 cfg.Dark
 cfg.MUI
 
@@ -84,10 +120,14 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
-        list = [title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7",title: "Folders", icon: "folder", badge: 11, color:"#009688",title: "Images", icon: "photo", badge: 2, color:"#1e88e5",title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"
-        ]
-        lst = MUI.CreateListSimple(list, 1, null, "Divider")
-        lay.AddChild(lst)
+    list = [
+        {title: "Downloads", icon: "play_for_work", badge: 9, color:"#673ab7"},
+        {title: "Folders", icon: "folder", badge: 11, color:"#009688"},
+        {title: "Images", icon: "photo", badge: 2, color:"#1e88e5"},
+        {title: "Videos", icon: "subscriptions", badge: 24, color:"#e53935"}
+    ]
+    lst = MUI.CreateListSimple(list, 1, None, "Divider")
+    lay.AddChild(lst)
 
     app.AddLayout(lay)
 </sample>

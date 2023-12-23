@@ -1,4 +1,6 @@
 <sample Create Thumbnail>
+from native import app
+
 def OnStart():
     lay = app.CreateLayout( "absolute" )
 

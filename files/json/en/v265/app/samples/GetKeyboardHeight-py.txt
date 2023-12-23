@@ -1,18 +1,20 @@
 <sample Show Keyboard Height>
+from native import app, ui
+
 def OnStart():
-	lay = app.CreateLayout( "linear" )
+    lay = app.CreateLayout("linear")
 
-    txt = app.CreateText( "Keyboard Height: ", .8, -1, "left" )
-	lay.AddChild( txt )
+    txt = app.CreateText("Keyboard Height: ", .8, -1, "left")
+    lay.AddChild(txt)
 
-    edt = app.CreateTextEdit( "Hello World", .8, .4 )
-	lay.AddChild( edt )
+    edt = app.CreateTextEdit("Hello World", .8, .4)
+    lay.AddChild(edt)
 
-	app.SetOnShowKeyboard( OnKeyboardShow )
+    app.SetOnShowKeyboard(OnKeyboardShow)
 
-	app.AddLayout( lay )
+    app.AddLayout(lay)
 
 def OnKeyboardShow():
-    <b>height = app.GetKeyboardHeight()</b>
-    txt.SetText( "Keyboard Height: " + height + "px" )
+    height = app.GetKeyboardHeight()
+    txt.SetText("Keyboard Height: " + str(height) + "px")
 </sample>

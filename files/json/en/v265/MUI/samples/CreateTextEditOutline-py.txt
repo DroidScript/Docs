@@ -1,51 +1,51 @@
 <sample No Label>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditOutline(0.8, "Left", "Type your name")
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextEditOutline(0.8, "Left", "Type your name")
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>
 
 <sample With Label>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditOutline(0.8, "Left", "Username", true)
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextEditOutline(0.8, "Left", "Username", True)
+    lay.AddChild(tef)
 
-    app.AddLayout(lay)
-</sample>
+    app.AddLayout(lay)</sample>
 
 <sample SetOnEnter Callback>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = MUI.CreateTextEditOutline(0.8, "Left", "Type your name", true)
-        tef.SetOnEnter(OnEnter)
-        lay.AddChild(tef)
+    tef = gfx.MUI.CreateTextEditOutline(0.8, "Left", "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
 
     app.AddLayout(lay)
 
 def OnEnter():
-    app.ShowPopup(this.GetText())
-</sample>
+    app.ShowPopup(tef.GetText())</sample>

@@ -1,51 +1,51 @@
 <sample Light>
+from native import app
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("PICKER", 0.35)
-        btn.SetOnTouch(ShowPicker)
-        lay.AddChild(btn)
+    btn = ui.CreateButtonRaised("PICKER", 0.35)
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    clr = MUI.CreateColorPicker("Choose Color")
+    clr = gfx.MUI.CreateColorPicker("Choose Color")
     clr.SetOnSelect(OnSelect)
 
 def ShowPicker():
     clr.Show()
 
 def OnSelect(color):
-    app.ShowPopup(color)
-</sample>
+    app.ShowPopup(color)</sample>
 
 <sample Dark>
+from native import app
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = MUI.colors.teal
+    color = gfx.MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
 
-        btn = MUI.CreateButtonRaised("PICKER", 0.35)
-        btn.SetOnTouch(ShowPicker)
-        lay.AddChild(btn)
+    btn = ui.CreateButtonRaised("PICKER", 0.35)
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
 
     app.AddLayout(lay)
 
-    clr = MUI.CreateColorPicker("Choose Color")
+    clr = gfx.MUI.CreateColorPicker("Choose Color")
     clr.SetOnSelect(OnSelect)
 
 def ShowPicker():
     clr.Show()
 
 def OnSelect(color):
-    app.ShowPopup(color)
-</sample>
+    app.ShowPopup(color)</sample>

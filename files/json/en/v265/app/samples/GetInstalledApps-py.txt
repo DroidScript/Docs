@@ -1,19 +1,21 @@
 <sample Show installed apps>
+from native import app
+
 def OnStart():
     app.ShowProgress()
 
-    lay = app.CreateLayout( "linear" )
+    lay = app.CreateLayout("linear")
 
     list = app.GetInstalledApps()
 
-	lst = app.CreateList( "", 1, 1 )
-	lay.AddChild( lst )
+    lst = app.CreateList("", 1, 1)
+    lay.AddChild(lst)
 
-    for i in list:
+    for i in range(len(list)):
         a = list[i]
         lst.AddItem(a.packageName)
 
-	app.AddLayout(lay)
+    app.AddLayout(lay)
 
     app.HideProgress()
 </sample>

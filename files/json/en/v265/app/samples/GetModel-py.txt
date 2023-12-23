@@ -1,5 +1,7 @@
-<sample Get Device Model>
+<sample>
+from native import app
+
 def OnStart():
-	<b>model = app.GetModel()</b>
-	app.ShowPopup( model )
+    model = app.GetModel()
+    app.ShowPopup( model )
 </sample>
