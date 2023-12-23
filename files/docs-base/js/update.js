@@ -18,7 +18,7 @@ function HttpRequest(method, host, path, header, cb) {
 let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
 const docsPath = "/sdcard/DroidScript/.edit/";
-const repo = true ? "DroidScript" : "SymDTools";
+const repo = true ? "DroidScript" : "SymDSTools";
 
 $(window).load(function () {
     if (!isMobileIDE) return;
@@ -30,7 +30,7 @@ $(window).load(function () {
         const localBuild = app.GetDSBuild();
         localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3);
         if (localBuild) localVer += '.' + localBuild;
-        
+
         const docsHtm = app.ReadFile(docsPath + "docs/Docs.htm") + "";
         const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
         installedVer = docsVer.slice(0, docsVer.indexOf("<"));
@@ -63,12 +63,11 @@ function InstallUpdate() {
         console.log(`installing ${remoteVer} over ${installedVer}`);
 
         const dl = app.CreateDownloader();
-        dl.SetOnCancel(function (f) { app.ShowPopup("Download aborted"); });
-        dl.SetOnError(app.ShowPopup);
+        dl.SetOnCancel(P(function (f) { app.ShowPopup("Download aborted"); }));
 
         const url = `https://github.com/${repo}/Docs/archive/master.zip`;
         dl.Download(url, tmpPath, "docs-master.zip");
-        dl.SetOnDownload(ExtractDocs);
+        dl.SetOnDownload(P(ExtractDocs));
     } catch (e) {
         alert(e);
     }
@@ -95,12 +94,12 @@ function ExtractLang(file) {
     if (!app.FolderExists(verDir)) {
         const latest = app.ListFolder(file, "v", null, "Folders,AlphaSort");
         const ynd = app.CreateYesNoDialog(`v${localVer} ${name} not found. Latest docs is ${latest[latest.length - 1]}. Install?`);
-        ynd.SetOnTouch(function (res) {
+        ynd.SetOnTouch(P(function (res) {
             if (res !== "Yes") return Updated();
             localVer = latest.pop().slice(1);
             cntDocs--;
             ExtractLang(file);
-        });
+        }));
         return ynd.Show();
     }
 
@@ -117,4 +116,11 @@ function Updated(force = false) {
     app.HideProgress();
     app.ShowPopup("Done.");
     location.reload();
+}
+
+function P(func) {
+    var name = _Cbm(func).replace(/_cbMap\['(.*)'\]/g, '_cb$1');
+    if (!useWebIDE || window == window.parent) return func;
+    window.parent[name] = window[name] = func.bind();
+    return { name };
 }

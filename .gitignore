@@ -3,7 +3,12 @@
 node_modules/
 
 # stuff
-/files/json/*/
+/files/json/**/*.md
+/files/json/**/*.js
+/files/json/**/*.json
+/files/json/**/samples/*.txt
+!/files/json/**/samples/*-py.txt
+
 /files/version.txt
 /files/generate_dsuikit.js
 /out/
@@ -14,3 +19,6 @@ samples*.txt
 # hidden files
 _*.htm
 ~*
+*.key
+*-test*
+

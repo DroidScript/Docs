@@ -4,7 +4,7 @@
     "homepage": "https://github.com/SymDSTools/Docs",
     "license": "Apache-2.0",
     "engines": {
-        "node": ">=9"
+        "node": ">=8.3.0"
     },
     "scripts": {
         "docs": "node generate.js -c",
@@ -18,11 +18,13 @@
         "updateVersion": "npm run update && npm run updatePages"
     },
     "dependencies": {
+        "cli-progress": "^3.12.0",
         "esprima-extract-comments": "^1.1.0",
         "express": "^4.17.2",
         "fs-extra": "^10.0.0",
         "glob": "^10.3.10",
         "node-fetch": "^2.0",
+        "openai": "^4.24.1",
         "prismjs": "^1.26.0",
         "rimraf": "^3.0.2"
     },
