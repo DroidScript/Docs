@@ -1,5 +1,5 @@
 <sample Basic>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -8,7 +8,7 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
     btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
     btn.SetOnTouch(ShowMenu)
@@ -28,7 +28,7 @@ def OnSelect(choice):
 </sample>
 
 <sample Dark & Bottom,Right>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -37,7 +37,7 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
     btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
     btn.SetOnTouch(ShowMenu)

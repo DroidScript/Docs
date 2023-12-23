@@ -1,6 +1,5 @@
 <sample Basic>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -22,8 +21,7 @@ def OnTouch(value):
 </sample>
 
 <sample With Value & Color>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI

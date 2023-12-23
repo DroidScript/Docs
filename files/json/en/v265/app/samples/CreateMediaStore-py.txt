@@ -22,7 +22,6 @@ def media_OnArtistsResult(result):
         lst.AddItem(m["artist"], s[:-1], "")
 
     app.HideProgress()
-
 </sample>
 
 <sample Query Albums>
@@ -51,7 +50,6 @@ def media_OnAlbumsResult(result):
         lst.AddItem(m["album"], s[:-1], "audio" if m["albumArt"] == "null" else m["albumArt"])
 
     app.HideProgress()
-
 </sample>
 
 <sample Query Media>
@@ -78,5 +76,4 @@ def media_OnMediaResult(result):
         lst.AddItem(m["title"], s[:-1], "")
 
     app.HideProgress()
-
 </sample>

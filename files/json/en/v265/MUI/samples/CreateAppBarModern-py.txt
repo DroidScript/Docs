@@ -1,5 +1,5 @@
 <sample Basic>
-from native import app, gfx, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -29,7 +29,7 @@ def OnStart():
 </sample>
 
 <sample Sample page>
-from native import app, gfx, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -68,7 +68,7 @@ def OnCtrlTouch():
 </sample>
 
 <sample Dark mode>
-from native import app, gfx, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI

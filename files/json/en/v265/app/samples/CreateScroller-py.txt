@@ -14,5 +14,4 @@ def OnStart():
     layScroll.AddChild(img)
 
     app.AddLayout(lay)
-
 </sample>

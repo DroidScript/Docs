@@ -78,6 +78,8 @@ def DrawFrame():
 </sample>
 
 <sample Sprite Touch>
+from native import app
+
 objects = []
 
 def OnStart():

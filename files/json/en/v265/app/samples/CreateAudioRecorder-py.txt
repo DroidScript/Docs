@@ -1,6 +1,4 @@
-<code>
 <sample Example>
-
 from native import app
 
 file = "/sdcard/demofile.wav"
@@ -20,6 +18,4 @@ def StopRecording():
     ply = app.CreateMediaPlayer()
     ply.SetFile( file )
     ply.SetOnReady( ply.Play )
-
 </sample>
-</code>

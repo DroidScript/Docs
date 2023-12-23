@@ -1,19 +1,16 @@
 <sample Basic>
-from native import app
-from native import gfx
 from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
-        self.btn = ui.addButton(self.main, "Show Time Picker", "Outlined,Secondary", 0.2)
-        self.btn.setOnTouch(self.showTimePicker)
-        self.tpk = ui.addTimePicker()
-        self.tpk.setOnSelect(self.onSelect)
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
+    self.btn = ui.addButton(self.main, "Show Time Picker", "Outlined,Secondary", 0.2)
+    self.btn.setOnTouch(self.showTimePicker)
+    self.tpk = ui.addTimePicker()
+    self.tpk.setOnSelect(self.onSelect)
 
-    def showTimePicker(self):
-        self.tpk.show()
+def showTimePicker(self):
+    self.tpk.show()
 
-    def onSelect(self, value):
-        print(value)
+def onSelect(self, value):
+    print(value)
 </sample>

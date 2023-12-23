@@ -1,57 +1,15 @@
-<sample Light>
-from native import app
-cfg.Light
-cfg.MUI
-
-def OnStart():
-    color = gfx.MUI.colors.teal
-    app.InitializeUIKit(color.lighten1)
-
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
-
-    btn = ui.CreateButtonRound("BUTTON", 0.35)
-    lay.AddChild(btn)
-
-    btn = ui.CreateButtonRound("[fa-android] ANDROID", 0.35)
-    lay.AddChild(btn)
-
-    btn = ui.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, gfx.MUI.colors.blue.blue)
-    lay.AddChild(btn)
-
-    app.AddLayout(lay)</sample>
-
-<sample Dark>
-from native import app
-cfg.Dark
-cfg.MUI
-
-def OnStart():
-    color = gfx.MUI.colors.teal
-    app.InitializeUIKit(color.lighten1)
-
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
-
-    btn = ui.CreateButtonRound("BUTTON", 0.35)
-    lay.AddChild(btn)
-
-    btn = ui.CreateButtonRound("[fa-android] ANDROID", 0.35)
-    lay.AddChild(btn)
-
-    btn = ui.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, gfx.MUI.colors.blue.blue)
-    lay.AddChild(btn)
-
-    app.AddLayout(lay)</sample>
-
 <sample Add Method>
-from native import app
+from native import MUI, app
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-    btn1 = gfx.MUI.AddButtonRound(lay, "BUTTON 1", 0.35)
-    btn2 = gfx.MUI.AddButtonRound(lay, "[fa-heart] BUTTON 2", 0.35)
-    btn3 = gfx.MUI.AddButtonRound(lay, "BUTTON 3", 0.35, 0.1, gfx.MUI.colors.green.darken2)
+    btn1 = MUI.AddButtonRound(lay, "BUTTON 1", 0.35)
+    btn2 = MUI.AddButtonRound(lay, "[fa-heart] BUTTON 2", 0.35)
+    btn3 = MUI.AddButtonRound(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
 
     app.AddLayout(lay)</sample>
+</sample>

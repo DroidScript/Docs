@@ -1,23 +1,24 @@
 <sample AddPicker>
-from native import app
+from native import MUI, app
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     
-    tlsd = ui.AddTextEdit(lay, 0.7, "outline", "Enter time", True)
+    tlsd = MUI.AddTextEdit(lay, 0.7, "outline", "Enter time", True)
     tlsd.SetOnTouch(ShowListDialog)
     
-    tckl = ui.AddTextEdit(lay, 0.7, "outline", "Enter date", True)
+    tckl = MUI.AddTextEdit(lay, 0.7, "outline", "Enter date", True)
     tckl.SetOnTouch(ShowChecklist)
     
     # using buttons
     
-    btn1 = ui.AddButton(lay, "Show ListDialog", None, None, "Outline")
+    btn1 = MUI.AddButton(lay, "Show ListDialog", None, None, "Outline")
     btn1.SetOnTouch(ShowListDialog)
     
-    btn2 = ui.AddButton(lay, "Show Checklist", None, None, "Outline")
+    btn2 = MUI.AddButton(lay, "Show Checklist", None, None, "Outline")
     btn2.SetOnTouch(ShowChecklist)
     
     app.AddLayout(lay)
@@ -28,8 +29,8 @@ def OnStart():
         {"name": "Choice 3"},
         {"name": "Choice 4"}
     ]
-    lsd = ui.AddListDialog(tlsd, "List Title", lst, None, "ListDialog")
-    ckl = ui.AddListDialog(tckl, "List Title", lst, "#673ab7", "checklist")
+    lsd = MUI.AddListDialog(tlsd, "List Title", lst, None, "ListDialog")
+    ckl = MUI.AddListDialog(tckl, "List Title", lst, "#673ab7", "checklist")
 
 def ShowListDialog():
     lsd.Show()

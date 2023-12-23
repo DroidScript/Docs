@@ -1,5 +1,5 @@
 <sample Just a title>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -8,14 +8,14 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY")
+    lay = MUI.CreateLayout("Absolute", "FillXY")
 
     apb = MUI.CreateAppBarElegant("My Title")
     apbHeight = apb.GetHeight()
 
     scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-    pageLay = ui.CreateLayout("Linear", "VCenter")
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
     pageLay.SetSize(1, 1.2)
     pageLay.SetPadding(0, 0, apbHeight, 0)
     txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
@@ -29,7 +29,7 @@ def OnStart():
 </sample>
 
 <sample Sample page>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -38,7 +38,7 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY")
+    lay = MUI.CreateLayout("Absolute", "FillXY")
 
     apb = MUI.CreateAppBar("My Title", "arrow_back", "search")
     apb.SetOnMenuTouch(OnMenuTouch)
@@ -47,7 +47,7 @@ def OnStart():
 
     scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-    pageLay = ui.CreateLayout("Linear", "VCenter")
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
     pageLay.SetSize(1, 1.2)
     pageLay.SetPadding(0, 0, apbHeight, 0)
     txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
@@ -64,7 +64,7 @@ def OnMenuTouch():
 </sample>
 
 <sample Complete controls>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -73,14 +73,14 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY")
+    lay = MUI.CreateLayout("Absolute", "FillXY")
 
     apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
     apbHeight = apb.GetHeight()
 
     scr = app.CreateScroller(1, 1, "NoScrollBar")
 
-    pageLay = ui.CreateLayout("Linear", "VCenter")
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
     pageLay.SetSize(1, 1.2)
     pageLay.SetPadding(0, 0, apbHeight, 0)
     txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
@@ -94,7 +94,7 @@ def OnStart():
 </sample>
 
 <sample Dark mode>
-from native import app, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
@@ -103,7 +103,7 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY")
+    lay = MUI.CreateLayout("Absolute", "FillXY")
 
     apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
     apb.SetOnMenuTouch(OnMenuTouch)
@@ -113,7 +113,7 @@ def OnStart():
 
     scr=app.CreateScroller(1, 1, "NoScrollBar")
 
-    pageLay = ui.CreateLayout("Linear", "VCenter")
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
     pageLay.SetSize(1, 1.2)
     pageLay.SetPadding(0, 0, apbHeight, 0)
     txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."

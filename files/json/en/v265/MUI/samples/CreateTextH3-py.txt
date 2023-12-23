@@ -1,7 +1,5 @@
 <sample Sample>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI

@@ -1,5 +1,7 @@
 <sample Demo>
-    def OnStart():
+from native import app
+
+def OnStart():
         app.CopyFile("/assets/samples/Game_Bounce.js", "script.js")
         app.CreateGame("script.js", "landscape")
 </sample>

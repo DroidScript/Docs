@@ -1,9 +1,10 @@
 <sample All Headings>
-from native import app
+from native import MUI, app
+
 from gfx import MUI
 
 def OnStart():
-    from native import app
+   
     from gfx import MUI
 
     color = MUI.colors.teal
@@ -11,7 +12,7 @@ def OnStart():
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-    var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
     sec1 = MUI.AddText(lay, text, 0.9, None, "Secondary,Multiline,Light")
 

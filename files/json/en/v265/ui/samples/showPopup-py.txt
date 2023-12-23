@@ -1,49 +1,46 @@
 <sample Basic>
-from native import app, gfx, ui
+from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.btn1 = ui.addButton(self.main, "Show Popup")
-        self.btn1.setOnTouch(self.onTouch)
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.btn1 = ui.addButton(self.main, "Show Popup")
+    self.btn1.setOnTouch(self.onTouch)
 
-    def onTouch(self):
-        ui.showPopup("Hello from popup!")
+def onTouch(self):
+    ui.showPopup("Hello from popup!")
 </sample>
 
 <sample Popups with transitions>
-from native import app, gfx, ui
+from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.setChildMargins(0, 0, 0, 0.02)
-        self.btn1 = ui.addButton(self.main, "Top & Grow", "Primary")
-        self.btn1.setOnTouch(self.onTouch1)
-        self.btn2 = ui.addButton(self.main, "Bottom and Slide", "Secondary")
-        self.btn2.setOnTouch(self.onTouch2)
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.main.setChildMargins(0, 0, 0, 0.02)
+    self.btn1 = ui.addButton(self.main, "Top & Grow", "Primary")
+    self.btn1.setOnTouch(self.onTouch1)
+    self.btn2 = ui.addButton(self.main, "Bottom and Slide", "Secondary")
+    self.btn2.setOnTouch(self.onTouch2)
 
-    def onTouch1(self):
-        ui.showPopup("Hello world.", "Top,Grow")
+def onTouch1(self):
+    ui.showPopup("Hello world.", "Top,Grow")
 
-    def onTouch2(self):
-        ui.showPopup("Hello world.", "Bottom,Slide", 1500)
+def onTouch2(self):
+    ui.showPopup("Hello world.", "Bottom,Slide", 1500)
 </sample>
 
 <sample With Transition>
-from native import app, gfx, ui
+from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        self.layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.btn = ui.addButton(self.layMain, "Show Popup")
-        self.btn.setOnTouch(self.showMessage)
+def onStart(self):
+    self.layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.btn = ui.addButton(self.layMain, "Show Popup")
+    self.btn.setOnTouch(self.showMessage)
 
-    def showMessage(self):
-        self.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
-        self.snackbar.setOnAction(self.onAction)
+def showMessage(self):
+    self.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
+    self.snackbar.setOnAction(self.onAction)
 
-    def onAction(self):
-        self.snackbar.hide()
-        ui.showPopup("Login is click. Show login Page.")
+def onAction(self):
+    self.snackbar.hide()
+    ui.showPopup("Login is click. Show login Page.")
 </sample>

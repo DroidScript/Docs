@@ -1,26 +1,27 @@
 <sample Basic>
+from native import ui
+
 import ui
 
-from native import app
 
-class Main(app.App):
+
+
+def onStart(self):
+    # Create a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add text control to the main layout
+    text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
+    ui.addText(self.main, text, "Justify", 0.8)
+
+    # Add divider control to the main layout
+    self.div = ui.addDivider(self.main, 0.8)
+
+    # Add more text control to the main layout
+    ui.addText(self.main, text, "Justify", 0.8)
     
-    def onStart(self):
-        # Create a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    # Add an inset divider to the main layout
+    self.div = ui.addDivider(self.main, 0.8, "inset")
 
-        # Add text control to the main layout
-        text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
-        ui.addText(self.main, text, "Justify", 0.8)
-
-        # Add divider control to the main layout
-        self.div = ui.addDivider(self.main, 0.8)
-
-        # Add more text control to the main layout
-        ui.addText(self.main, text, "Justify", 0.8)
-        
-        # Add an inset divider to the main layout
-        self.div = ui.addDivider(self.main, 0.8, "inset")
-
-        ui.addText(self.main, text, "Justify", 0.8)    
+    ui.addText(self.main, text, "Justify", 0.8)
 </sample>

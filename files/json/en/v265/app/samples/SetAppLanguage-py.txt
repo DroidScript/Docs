@@ -1,5 +1,5 @@
 <sample Switch Language>
-from native import app, ui
+from native import app
 
 langJson = """
 {

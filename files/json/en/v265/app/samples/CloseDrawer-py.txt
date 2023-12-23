@@ -1,6 +1,4 @@
-<code>
 <sample Open and Close Drawer via Button>
-
 from native import app
 
 def OnStart():
@@ -35,6 +33,4 @@ def btnOpen_OnTouch():
 
 def btnClose_OnTouch():
     <b>app.CloseDrawer( "left" )</b>
-
 </sample>
-</code>

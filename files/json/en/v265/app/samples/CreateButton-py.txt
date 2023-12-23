@@ -1,6 +1,4 @@
-<code>
 <sample Default Size>
-
 from native import app
 
 def OnStart():
@@ -14,11 +12,9 @@ def OnStart():
 
 def SayHello():
     app.ShowPopup("Hello World!")
-
 </sample>
 
 <sample Fixed Size>
-
 from native import app
 
 def OnStart():
@@ -32,11 +28,9 @@ def OnStart():
 
 def SayHello():
     app.ShowPopup("Hello World!")
-
 </sample>
 
 <sample Fill Layout Width>
-
 from native import app
 
 def OnStart():
@@ -51,11 +45,9 @@ def OnStart():
 
 def SayHello():
     app.ShowPopup("Hello World!")
-
 </sample>
 
 <sample Change Style>
-
 from native import app
 
 def OnStart():
@@ -72,6 +64,4 @@ def OnStart():
     lay.AddChild( b3 )
 
     app.AddLayout( lay )
-
 </sample>
-</code>

@@ -1,40 +1,36 @@
 <sample Basic>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
     list = "Apps, Games, Movies, Books"
-    rad = ui.CreateRadioMaterial(list)
+    rad = MUI.CreateRadioMaterial(list)
     lay.AddChild(rad)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With callback>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
     list = "Apps, Games, Movies, Books"
-    rad = ui.CreateRadioMaterial(list, 1, None, "Vertical")
+    rad = MUI.CreateRadioMaterial(list, 1, None, "Vertical")
     rad.SetOnTouch(OnTouch)
     lay.AddChild(rad)
 
@@ -45,21 +41,19 @@ def OnTouch(name, index):
 </sample>
 
 <sample Horizontal>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
 
     list = "Apps, Games, Movies, Books"
-    rad = ui.CreateRadioMaterial(list, 1, None, "Horizontal")
+    rad = MUI.CreateRadioMaterial(list, 1, None, "Horizontal")
     rad.SetOnTouch(OnTouch)
     lay.AddChild(rad)
 

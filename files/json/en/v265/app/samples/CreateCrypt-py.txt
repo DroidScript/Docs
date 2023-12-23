@@ -1,6 +1,4 @@
-<code>
 <sample Basic>
-
 from native import app
 
 def OnStart():
@@ -17,11 +15,9 @@ def OnStart():
         'hash: "' + hash + '"\n' ,
         "Data"
     )
-
 </sample>
 
 <sample Encrypt using device id>
-
 from native import app
 
 def OnStart():
@@ -45,6 +41,4 @@ def OnAction(result):
     elif(result == "No"):
         result = crp.Decrypt(this.data["text"], app.GetDeviceId())
         ShowDialog(result)
-
 </sample>
-</code>

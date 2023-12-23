@@ -1,5 +1,5 @@
 <sample Square>
-from native import app
+from native import gfx, app
 
 cfg.Game;
 

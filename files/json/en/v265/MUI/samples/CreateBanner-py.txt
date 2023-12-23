@@ -1,34 +1,34 @@
 <sample Light>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.blue
+    color = MUI.colors.blue
     app.InitializeUIKit(color.lighten1)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     app.AddLayout(lay)
 
-    ban = ui.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
     ban.Show()
 </sample>
 
 <sample Dark>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.blue
+    color = MUI.colors.blue
     app.InitializeUIKit(color.lighten1)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     app.AddLayout(lay)
 
-    ban = ui.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
     ban.SetOnTouch(OnTouch)
     ban.Show()
 

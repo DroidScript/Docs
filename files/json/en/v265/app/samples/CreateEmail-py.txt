@@ -1,6 +1,4 @@
-<code>
 <sample Example>
-
 from native import app
 
 def OnStart():
@@ -14,6 +12,4 @@ def OnStart():
 def email_OnStatus( status ):
     app.HideProgress()
     app.ShowPopup( status )
-
 </sample>
-</code>

@@ -1,131 +1,125 @@
 <sample Complete accordion implementation>
-from native import app
 from native import ui
 
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen main layout.
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+def onStart(self):
+    # Creates a fullscreen main layout.
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        self.accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
+    self.accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
 
-        # Adds an accordion to the main layout
-        self.acc = ui.addAccordion(self.main, self.accords, "", 0.9)
+    # Adds an accordion to the main layout
+    self.acc = ui.addAccordion(self.main, self.accords, "", 0.9)
 
-        # Secondary text to display
-        secTxt = [
-            "This is the secondary text 1",
-            "This is the secondary text 2",
-            "This is the secondary text 3"
-        ]
+    # Secondary text to display
+    secTxt = [
+        "This is the secondary text 1",
+        "This is the secondary text 2",
+        "This is the secondary text 3"
+    ]
 
-        # sets the secondary text
-        self.acc.setSecondaryText(secTxt)
+    # sets the secondary text
+    self.acc.setSecondaryText(secTxt)
 
-        # Add ontouch event handler to the accordion
-        self.acc.setOnTouch(self.onTouch)
+    # Add ontouch event handler to the accordion
+    self.acc.setOnTouch(self.onTouch)
 
-        # Add controls to the first accordion layout
-        self.lay1 = self.acc.getLayout(0)
-        self.txt = ui.addText(self.lay1, "This is a text in the first layout.")
+    # Add controls to the first accordion layout
+    self.lay1 = self.acc.getLayout(0)
+    self.txt = ui.addText(self.lay1, "This is a text in the first layout.")
 
-        # Add controls to the second layout
-        self.lay2 = self.acc.getLayout(1)
-        self.btn = ui.addButton(self.lay2, "Button", "Primary")
+    # Add controls to the second layout
+    self.lay2 = self.acc.getLayout(1)
+    self.btn = ui.addButton(self.lay2, "Button", "Primary")
 
-        # Add controls to the third layout
-        self.lay3 = self.acc.getLayout(2)
-        self.tfd = ui.addTextField(self.lay3, "", "Outlined", 0.3)
-        self.tfd.label = "Enter some text"
+    # Add controls to the third layout
+    self.lay3 = self.acc.getLayout(2)
+    self.tfd = ui.addTextField(self.lay3, "", "Outlined", 0.3)
+    self.tfd.label = "Enter some text"
 
-    def onTouch(self, index, expand):
-        msg = f"{self.accords[index]} is {'open' if expand else 'close'}"
-        ui.showPopup(msg)
+def onTouch(self, index, expand):
+    msg = f"{self.accords[index]} is {'open' if expand else 'close'}"
+    ui.showPopup(msg)
 
 main = Main()
 main.onStart()
 </sample>
 
 <sample Items manipulation>
-from native import app
 from native import ui
 
-class Main(App):
-    def onStart(self):
-        self.count = 1
+def onStart(self):
+    self.count = 1
 
-        # Creates a fullscreen main layout.
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        self.main.setChildMargins(0, 0.01, 0, 0.01)
+    # Creates a fullscreen main layout.
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    self.main.setChildMargins(0, 0.01, 0, 0.01)
 
-        accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
+    accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
 
-        # Adds an accordion to the main layout
-        self.acc = ui.addAccordion(self.main, accords, "", 0.9)
+    # Adds an accordion to the main layout
+    self.acc = ui.addAccordion(self.main, accords, "", 0.9)
 
-        self.lay = ui.addLayout(self.main, "Linear", "Horizontal", 0.9)
-        self.lay.childSpacing = "evenly"
+    self.lay = ui.addLayout(self.main, "Linear", "Horizontal", 0.9)
+    self.lay.childSpacing = "evenly"
 
-        # add a button controls to add or remove accordion item
-        self.btn1 = ui.addButton(self.lay, "Append Item")
-        self.btn1.setOnTouch(self.btn1_onTouch)
+    # add a button controls to add or remove accordion item
+    self.btn1 = ui.addButton(self.lay, "Append Item")
+    self.btn1.setOnTouch(self.btn1_onTouch)
 
-        self.btn2 = ui.addButton(self.lay, "Add Item in index 1")
-        self.btn2.setOnTouch(self.btn2_onTouch)
+    self.btn2 = ui.addButton(self.lay, "Add Item in index 1")
+    self.btn2.setOnTouch(self.btn2_onTouch)
 
-        self.btn3 = ui.addButton(self.lay, "Remove Item")
-        self.btn3.setOnTouch(self.btn3_onTouch)
+    self.btn3 = ui.addButton(self.lay, "Remove Item")
+    self.btn3.setOnTouch(self.btn3_onTouch)
 
-    def btn1_onTouch(self):
-        # add an item at the bottom of the accordion
-        self.acc.addItem("New Bottom Title", "New secondary text")
+def btn1_onTouch(self):
+    # add an item at the bottom of the accordion
+    self.acc.addItem("New Bottom Title", "New secondary text")
 
-    def btn2_onTouch(self):
-        title = "New Title " + str(self.count)
-        # insert item in the second index
-        self.acc.addItem(title, "New secondary text", 1)
-        self.count += 1
+def btn2_onTouch(self):
+    title = "New Title " + str(self.count)
+    # insert item in the second index
+    self.acc.addItem(title, "New secondary text", 1)
+    self.count += 1
 
-    def btn3_onTouch(self):
-        self.acc.removeItemByIndex(2)
-        ui.showPopup("Second item is removed")
+def btn3_onTouch(self):
+    self.acc.removeItemByIndex(2)
+    ui.showPopup("Second item is removed")
 
 main = Main()
 main.onStart()
 </sample>
 
 <sample Custom styles>
-from native import app
 from native import ui
 
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen main layout.
-        self.main = ui.addLayout("main", "Linear", "VCenter")
+def onStart(self):
+    # Creates a fullscreen main layout.
+    self.main = ui.addLayout("main", "Linear", "VCenter")
 
-        items = ["Accordion 1", "Accordion 2", "Accordion 3"]
-        texts = ["Description for item 1", "Description for item 2", "Description for item 3"]
+    items = ["Accordion 1", "Accordion 2", "Accordion 3"]
+    texts = ["Description for item 1", "Description for item 2", "Description for item 3"]
 
-        # Adds an accordion to the main layout
-        self.acc = ui.addAccordion(self.main, items, "", 0.9)
-        self.acc.setSecondaryText(texts)
+    # Adds an accordion to the main layout
+    self.acc = ui.addAccordion(self.main, items, "", 0.9)
+    self.acc.setSecondaryText(texts)
 
-        # Sets the background color
-        self.acc.backColor = "#b2dfdb"
+    # Sets the background color
+    self.acc.backColor = "#b2dfdb"
 
-        # Sets the text-sizes
-        self.acc.textSize1 = 18
-        self.acc.textSize2 = 14
+    # Sets the text-sizes
+    self.acc.textSize1 = 18
+    self.acc.textSize2 = 14
 
-        # Sets the text colors
-        self.acc.textColor1 = "#00695c"
-        self.acc.textColor2 = "#009688"
+    # Sets the text colors
+    self.acc.textColor1 = "#00695c"
+    self.acc.textColor2 = "#009688"
 
-        # Sets the corner radius
-        self.acc.cornerRadius = 14
+    # Sets the corner radius
+    self.acc.cornerRadius = 14
 
-        # Sets the expand icon
-        self.acc.expandIcon = "favorite"
+    # Sets the expand icon
+    self.acc.expandIcon = "favorite"
 
 main = Main()
 main.onStart()

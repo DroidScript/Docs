@@ -1,5 +1,5 @@
 <sample Pairing and Unpairing bluetooth devices>
-from native import app, ui
+from native import app
 
 def OnStart():
     app.ShowProgress("enabling Bluetooth")

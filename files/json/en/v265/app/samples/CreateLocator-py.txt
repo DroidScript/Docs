@@ -10,5 +10,4 @@ def OnStart():
 def loc_OnChange(pos):
     msg = str(pos.latitude) + ", " + str(pos.longitude)
     app.ShowPopup(msg)
-
 </sample>

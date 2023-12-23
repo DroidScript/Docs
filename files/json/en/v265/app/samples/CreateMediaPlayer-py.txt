@@ -12,5 +12,4 @@ def Play():
 
 def player_OnComplete():
     app.ShowPopup("OnComplete")
-
 </sample>

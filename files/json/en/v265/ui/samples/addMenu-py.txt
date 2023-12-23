@@ -1,144 +1,136 @@
 <sample Basic menu>
-from native import app
 from native import ui
 
-class Main(app):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered.
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a button control to the layout
-        self.btn = ui.addButton(self.main, "Show Menu", "Primary")
-        self.btn.setOnTouch(self.onTouch)
+    # Adds a button control to the layout
+    self.btn = ui.addButton(self.main, "Show Menu", "Primary")
+    self.btn.setOnTouch(self.onTouch)
 
-        # Menu items to display in the popup
-        items = ["Item 1", "Item 2", "Item 3"]
+    # Menu items to display in the popup
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Adds a menu passing the button control as anchor
-        self.menu = ui.addMenu(self.btn, items)
+    # Adds a menu passing the button control as anchor
+    self.menu = ui.addMenu(self.btn, items)
 
-        # Add a callback handler when a menu is touched
-        self.menu.setOnTouch(self.menuTouch)
+    # Add a callback handler when a menu is touched
+    self.menu.setOnTouch(self.menuTouch)
 
-    def onTouch(self):
-        # show the menu
-        self.menu.show()
+def onTouch(self):
+    # show the menu
+    self.menu.show()
 
-    def menuTouch(self, item):
-        ui.showPopup(item)
+def menuTouch(self, item):
+    ui.showPopup(item)
 
 main = Main()
 main.onStart()
 </sample>
 
 <sample Changing anchor component>
-from native import app
 from native import ui
 
-class Main(app):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.setChildSpacing("Evenly")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.main.setChildSpacing("Evenly")
 
-        # Add a first button control to the layout
-        self.btn1 = ui.addButton(self.main, "Button 1", "Primary")
-        self.btn1.setOnTouch(self.onTouch1)
+    # Add a first button control to the layout
+    self.btn1 = ui.addButton(self.main, "Button 1", "Primary")
+    self.btn1.setOnTouch(self.onTouch1)
 
-        # Add a second button control to the layout
-        self.btn2 = ui.addButton(self.main, "Button 2", "Secondary")
-        self.btn2.setOnTouch(self.onTouch2)
+    # Add a second button control to the layout
+    self.btn2 = ui.addButton(self.main, "Button 2", "Secondary")
+    self.btn2.setOnTouch(self.onTouch2)
 
-        # Menu items to display the menu popup
-        items = ["Item 1", "Item 2", "Item 3"]
+    # Menu items to display the menu popup
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Adds a menu without anchor component
-        self.menu = ui.addMenu(None, items)
+    # Adds a menu without anchor component
+    self.menu = ui.addMenu(None, items)
 
-        # Add a callback handler when a menu is touched
-        self.menu.setOnTouch(self.menuTouch)
+    # Add a callback handler when a menu is touched
+    self.menu.setOnTouch(self.menuTouch)
 
-    def onTouch1(self):
-        # Show the menu on button 1
-        self.menu.show(self.btn1)
+def onTouch1(self):
+    # Show the menu on button 1
+    self.menu.show(self.btn1)
 
-    def onTouch2(self):
-        # Show the menu on button 2
-        self.menu.show(self.btn2)
+def onTouch2(self):
+    # Show the menu on button 2
+    self.menu.show(self.btn2)
 
-    def menuTouch(self, item):
-        ui.showPopup(item)
+def menuTouch(self, item):
+    ui.showPopup(item)
 
 main = Main()
 main.onStart()
 </sample>
 
 <sample With icons and disabled items>
-from native import app
 from native import ui
 
-class Main(app):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Add a button control to the main layout
-        self.btn = ui.addButton(self.main, "Show Menu", "Primary")
-        self.btn.setOnTouch(self.onTouch)
+    # Add a button control to the main layout
+    self.btn = ui.addButton(self.main, "Show Menu", "Primary")
+    self.btn.setOnTouch(self.onTouch)
 
-        # List items with icons
-        items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
+    # List items with icons
+    items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
 
-        # Add a menu passing the btn as anchor component
-        self.menu = ui.addMenu(self.btn, items, "Icons,Primary,Dense")
+    # Add a menu passing the btn as anchor component
+    self.menu = ui.addMenu(self.btn, items, "Icons,Primary,Dense")
 
-        # Disable the second menu item
-        self.menu.setEnabled(1, False)
+    # Disable the second menu item
+    self.menu.setEnabled(1, False)
 
-        # Add a callback handler when a menu is touched
-        self.menu.setOnTouch(self.menuTouch)
+    # Add a callback handler when a menu is touched
+    self.menu.setOnTouch(self.menuTouch)
 
-    def onTouch(self):
-        # show the menu
-        self.menu.show()
+def onTouch(self):
+    # show the menu
+    self.menu.show()
 
-    def menuTouch(self, item):
-        # display the selected item
-        ui.showPopup(item)
+def menuTouch(self, item):
+    # display the selected item
+    ui.showPopup(item)
 
 main = Main()
 main.onStart()
 </sample>
 
 <sample Anchor position on mouse>
-from native import app
 from native import ui
 
-class Main(app):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.setOnContextMenu(self.onMenu)
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.main.setOnContextMenu(self.onMenu)
 
-        # Add a text control to the layout
-        self.txt = ui.addText(self.main, "Right click anywhere on the screen.")
+    # Add a text control to the layout
+    self.txt = ui.addText(self.main, "Right click anywhere on the screen.")
 
-        # List items with icons
-        items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
+    # List items with icons
+    items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
 
-        # Add menu passing the btn as anchor component
-        self.menu = ui.addMenu(None, items, "Icons,Dense")
+    # Add menu passing the btn as anchor component
+    self.menu = ui.addMenu(None, items, "Icons,Dense")
 
-        # Add a callback handler when a menu is touched
-        self.menu.setOnTouch(self.menuTouch)
+    # Add a callback handler when a menu is touched
+    self.menu.setOnTouch(self.menuTouch)
 
-    def onMenu(self, pos):
-        # show the menu on the position of the mouse
-        self.menu.show(pos.x, pos.y)
+def onMenu(self, pos):
+    # show the menu on the position of the mouse
+    self.menu.show(pos.x, pos.y)
 
-    def menuTouch(self, item):
-        # display the selected item
-        ui.showPopup(item)
+def menuTouch(self, item):
+    # display the selected item
+    ui.showPopup(item)
 
 main = Main()
 main.onStart()

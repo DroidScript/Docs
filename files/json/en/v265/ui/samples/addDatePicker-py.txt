@@ -1,5 +1,6 @@
 <sample Default>
-<![CDATA[
+from native import ui
+
 class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
@@ -16,11 +17,11 @@ class Main extends App:
     def showDatePicker(self):
         # Display the date picker dialog
         self.dtp.show()
-]]>
 </sample>
 
 <sample Default>
-<![CDATA[
+from native import ui
+
 class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
@@ -37,11 +38,11 @@ class Main extends App:
     def showDatePicker(self):
         # Display the date picker dialog
         self.dtp.show()
-]]>
 </sample>
 
 <sample With initial value & portrait>
-<![CDATA[
+from native import ui
+
 class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
@@ -58,11 +59,11 @@ class Main extends App:
     def showDatePicker(self):
         # Display the date picker dialog
         self.dtp.show()
-]]>
 </sample>
 
 <sample With limits & callback>
-<![CDATA[
+from native import ui
+
 class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
@@ -83,5 +84,4 @@ class Main extends App:
 
     def onSelect(self, value):
         console.log(value)
-]]>
 </sample>

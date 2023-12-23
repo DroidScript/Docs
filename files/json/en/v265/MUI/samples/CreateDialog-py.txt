@@ -1,5 +1,5 @@
 <sample Basic & Light>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -8,7 +8,7 @@ def OnStart():
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
     btn.SetOnTouch(ShowDialog)
@@ -24,7 +24,7 @@ def ShowDialog():
 </sample>
 
 <sample Customize & Dark>
-from native import app, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
@@ -33,7 +33,7 @@ def OnStart():
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
     btn.SetOnTouch(ShowDialog)

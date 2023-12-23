@@ -1,6 +1,7 @@
 <sample Demo>
-<!--[CDATA[
 from native import app
+
+<!--[CDATA[
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" )

@@ -1,6 +1,4 @@
-<code>
 <sample Demo>
-
 from native import app
 
 def OnStart():
@@ -22,6 +20,4 @@ def OnStart():
 
 def btnDlg_OnTouch():
     dlg.Dismiss()
-
 </sample>
-</code>

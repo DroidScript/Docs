@@ -1,30 +1,32 @@
 <sample No icon>
+from native import MUI, app
+
 cfg.Light
 cfg.MUI
 
-from native import app
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color)
 
     text = "This is a sample text for the popup."
-    alr = ui.MUI.CreateAlert(text)
+    alr = MUI.MUI.CreateAlert(text)
     alr.Show()
 </sample>
 
 <sample With icon>
+from native import MUI, app
+
 cfg.Light
 cfg.MUI
 
-from native import app
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color)
 
     text = "This is a sample text for the popup."
-    alr = ui.MUI.CreateAlert(text, "message")
+    alr = MUI.MUI.CreateAlert(text, "message")
     alr.Show()
 
     app.SetTimeout(CloseAlert, 4000)
@@ -34,17 +36,18 @@ def CloseAlert():
 </sample>
 
 <sample On close function>
+from native import MUI, app
+
 cfg.Dark
 cfg.MUI
 
-from native import app
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color)
 
     text = "This is a sample text for the popup."
-    alr = ui.MUI.CreateAlert(text, "message", gfx.MUI.colors.blue.darken2)
+    alr = MUI.MUI.CreateAlert(text, "message", MUI.colors.blue.darken2)
     alr.SetOnClose(AlertOnClose)
     alr.Show()
 

@@ -1,6 +1,3 @@
-Here is the translated XML page with all the translated JavaScript code in Python:
-
-```xml
 <sample Open Termux and pass arguments>
 from native import app
 

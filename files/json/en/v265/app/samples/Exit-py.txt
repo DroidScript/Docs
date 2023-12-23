@@ -1,5 +1,6 @@
 <sample Exit dialog>
-<![CDATA[
+from native import app
+
 def OnStart():
     app.EnableBackKey(False)
     app.ShowPopup("Press the back key")
@@ -11,5 +12,4 @@ def OnBack():
 def yesNo_OnTouch(result):
     if(result == "Yes"):
         app.Exit()
-]]>
 </sample>

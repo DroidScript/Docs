@@ -1,5 +1,6 @@
 <sample Basic>
-from native import app, gfx, ui
+from native import app, MUI
+
 cfg.Light
 cfg.MUI
 
@@ -32,7 +33,8 @@ def OnTouch(name):
 </sample>
 
 <sample With Icon>
-from native import app, gfx, ui
+from native import app, MUI
+
 cfg.Light
 cfg.MUI
 
@@ -65,7 +67,8 @@ def OnTouch(name):
 </sample>
 
 <sample With Icon & Colors>
-from native import app, gfx, ui
+from native import app, MUI
+
 cfg.Light
 cfg.MUI
 
@@ -98,7 +101,8 @@ def OnTouch(name):
 </sample>
 
 <sample Dark Bottom>
-from native import app, gfx, ui
+from native import app, MUI
+
 cfg.Dark
 cfg.MUI
 

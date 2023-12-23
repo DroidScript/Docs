@@ -1,5 +1,5 @@
 <sample Check Paired>
-from native import app, ui
+from native import app
 
 def OnStart():
     app.ShowProgress("enabling Bluetooth")
@@ -16,7 +16,7 @@ def OnStart():
 </sample>
 
 <sample Check Paired from Available>
-from native import app, ui
+from native import app
 
 def OnStart():
     app.ShowProgress("enabling Bluetooth")
@@ -37,7 +37,7 @@ def bt_OnComplete():
 </sample>
 
 <sample Pairing and Unpairing bluetooth devices>
-from native import app, ui
+from native import app
 
 def OnStart():
     app.ShowProgress("enabling Bluetooth")

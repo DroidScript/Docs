@@ -1,7 +1,7 @@
 <sample Deferred Loading (recommended)>
 from native import app
 
-app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" )
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum() { return 6 * num; }" )
 app.LoadScript( "script.js" )
 
 def OnStart():
@@ -12,7 +12,7 @@ def OnStart():
 <sample Inline Loading>
 from native import app
 
-app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" )
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum() { return 6 * num; }" )
 
 def OnStart():
     app.LoadScript( "script.js", True )

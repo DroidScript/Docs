@@ -1,6 +1,4 @@
-<code>
 <sample Example>
-
 from native import app
 
 def OnStart():
@@ -14,6 +12,4 @@ def OnStart():
 
 def ShowState( isChecked ):
     app.ShowPopup( "Checked = " + str(isChecked), "Short" )
-
 </sample>
-</code>

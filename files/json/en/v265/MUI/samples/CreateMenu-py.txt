@@ -1,6 +1,5 @@
 <sample Basic>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -29,8 +28,7 @@ def OnSelect(choice):
 </sample>
 
 <sample Dark & Bottom,Right>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI

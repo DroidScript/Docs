@@ -1,148 +1,155 @@
 <sample Basic>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize the list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        self.sel = ui.addSelect(self.main, items, "", 0.6)
+    # Initialize the list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Set the label text
-        self.sel.label = "Select an item"
+    # Adds a select control to the main layout
+    self.sel = ui.addSelect(self.main, items, "", 0.6)
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Set the label text
+    self.sel.label = "Select an item"
 
-    def onChange(self, text, index):
-        ui.showPopup("You choose " + text)
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, text, index):
+    ui.showPopup("You choose " + text)
 </sample>
 
 <sample Group title>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize the list items to show
-        # The leading colon in each item will render it as group tile
-        items = [":Choices", "Item 1", "Item 2", "Item 3"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        self.sel = ui.addSelect(self.main, items, "", 0.6)
+    # Initialize the list items to show
+    # The leading colon in each item will render it as group tile
+    items = [":Choices", "Item 1", "Item 2", "Item 3"]
 
-        # Set the label text
-        self.sel.label = "Select an item"
+    # Adds a select control to the main layout
+    self.sel = ui.addSelect(self.main, items, "", 0.6)
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Set the label text
+    self.sel.label = "Select an item"
 
-    def onChange(self, text, index):
-        ui.showPopup("You choose " + text)
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, text, index):
+    ui.showPopup("You choose " + text)
 </sample>
 
 <sample Multiple selection>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        # Passing `Multiple` option will allow more than one selection
-        self.sel = ui.addSelect(self.main, items, "Multiple", 0.6)
-        self.sel.label = "Select an item"
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Adds a select control to the main layout
+    # Passing `Multiple` option will allow more than one selection
+    self.sel = ui.addSelect(self.main, items, "Multiple", 0.6)
+    self.sel.label = "Select an item"
 
-    def onChange(self, items, index):
-        ui.showPopup("You choose " + ", ".join(items))
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, items, index):
+    ui.showPopup("You choose " + ", ".join(items))
 </sample>
 
 <sample Outlined and small>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        # Passing `Outlined` option will add a border
-        # Passing `Small` option will make the control smaller
-        self.sel = ui.addSelect(self.main, items, "Outlined,Small,Secondary", 0.6)
-        self.sel.label = "Select an item"
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Adds a select control to the main layout
+    # Passing `Outlined` option will add a border
+    # Passing `Small` option will make the control smaller
+    self.sel = ui.addSelect(self.main, items, "Outlined,Small,Secondary", 0.6)
+    self.sel.label = "Select an item"
 
-    def onChange(self, item, index):
-        ui.showPopup("You choose " + item)
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, item, index):
+    ui.showPopup("You choose " + item)
 </sample>
 
 <sample Radiogroup items>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        # Passing `Radio` option will render the items as radiogroup
-        self.sel = ui.addSelect(self.main, items, "Filled,Radio", 0.6)
-        self.sel.label = "Select an item"
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Adds a select control to the main layout
+    # Passing `Radio` option will render the items as radiogroup
+    self.sel = ui.addSelect(self.main, items, "Filled,Radio", 0.6)
+    self.sel.label = "Select an item"
 
-    def onChange(self, item, index):
-        ui.showPopup("You choose " + item)
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, item, index):
+    ui.showPopup("You choose " + item)
 </sample>
 
 <sample Grouped list items>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize list items to show with group tiles
-        items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        self.sel = ui.addSelect(self.main, items, "Filled", 0.6)
-        self.sel.label = "Select an item"
+    # Initialize list items to show with group tiles
+    items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Adds a select control to the main layout
+    self.sel = ui.addSelect(self.main, items, "Filled", 0.6)
+    self.sel.label = "Select an item"
 
-    def onChange(self, item, index):
-        ui.showPopup("You choose " + item)
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, item, index):
+    ui.showPopup("You choose " + item)
 </sample>
 
 <sample Multiple radiogroup with titles>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from native import ui
 
-        # Initialize list items to show with group tiles
-        items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Adds a select control to the main layout
-        self.sel = ui.addSelect(self.main, items, "Outlined,Radio,Multiple", 0.6)
-        self.sel.label = "Select an item"
+    # Initialize list items to show with group tiles
+    items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
 
-        # Add a callback handler when an item is selected
-        self.sel.setOnChange(self.onChange)
+    # Adds a select control to the main layout
+    self.sel = ui.addSelect(self.main, items, "Outlined,Radio,Multiple", 0.6)
+    self.sel.label = "Select an item"
 
-    def onChange(self, items, index):
-        ui.showPopup("You choose " + ", ".join(items))
+    # Add a callback handler when an item is selected
+    self.sel.setOnChange(self.onChange)
+
+def onChange(self, items, index):
+    ui.showPopup("You choose " + ", ".join(items))
 </sample>

@@ -1,199 +1,194 @@
 <sample Basic Image>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        self.img = ui.addImage(self.main, image, "", 0.5)
+    self.img = ui.addImage(self.main, image, "", 0.5)
 
-        self.img.setOnTouch(self.onTouch)
+    self.img.setOnTouch(self.onTouch)
 
-    def onTouch(self):
-        ui.showPopup("You touched the mango!")
+def onTouch(self):
+    ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Avatar>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        self.img = ui.addImage(self.main, image, "Avatar")
+    self.img = ui.addImage(self.main, image, "Avatar")
 
-        self.img.setOnTouch(self.onTouch)
+    self.img.setOnTouch(self.onTouch)
 
-    def onTouch(self):
-        ui.showPopup("You touched the mango!")
+def onTouch(self):
+    ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Button>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-        self.img = ui.addImage(self.main, image, "Button", 0.5)
+    self.img = ui.addImage(self.main, image, "Button", 0.5)
 
-        self.img.setOnTouch(self.onTouch)
+    self.img.setOnTouch(self.onTouch)
 
-    def onTouch(self):
-        ui.showPopup("You touched the mango!")
+def onTouch(self):
+    ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Drawings>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        self.img = ui.addImage(self.main, "", "canvas", 1, 1)
-        self.img.lineCap = "round"
-        self.img.lineJoin = "round"
+    self.img = ui.addImage(self.main, "", "canvas", 1, 1)
+    self.img.lineCap = "round"
+    self.img.lineJoin = "round"
 
-        self.img.drawLine(130, 40, 300, 500, "#009688", 10)
+    self.img.drawLine(130, 40, 300, 500, "#009688", 10)
 
-        self.img.drawSquare(320, 200, 200, "#683ab7")
+    self.img.drawSquare(320, 200, 200, "#683ab7")
 
-        self.img.drawCircle(400, 300, 250, "#00000000", "", 20)
+    self.img.drawCircle(400, 300, 250, "#00000000", "", 20)
 
-        self.img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
+    self.img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
 
-        points = [
-            [0, 0],
-            [400, 40],
-            [20, 40],
-            [300, 340],
-            [140, 500]
-        ]
-        self.img.lineCap = "square"
-        self.img.lineJoin = "miter"
-        self.img.drawPolyline(points, "blue", 10)
+    points = [
+        [0, 0],
+        [400, 40],
+        [20, 40],
+        [300, 340],
+        [140, 500]
+    ]
+    self.img.lineCap = "square"
+    self.img.lineJoin = "miter"
+    self.img.drawPolyline(points, "blue", 10)
 </sample>
 
 <sample Text and Shapes>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        self.img = ui.addImage(self.main, "", "canvas", "300px", "500px")
+    self.img = ui.addImage(self.main, "", "canvas", "300px", "500px")
 
-        self.img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
+    self.img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
 
-        self.img.drawPolygon([
-            {"x": 300, "y": 0},
-            {"x": 300, "y": 500},
-            {"x": 0, "y": 500}
-        ])
+    self.img.drawPolygon([
+        {"x": 300, "y": 0},
+        {"x": 300, "y": 500},
+        {"x": 0, "y": 500}
+    ])
 
-        self.img.textSize = 100
-        self.img.textWeight = "bold"
-        self.img.fillColor = "white"
-        self.img.drawText("Hello", 30, 225, "", "", 3)
-        self.img.drawText("World", 10, 325, "", "", 3)
+    self.img.textSize = 100
+    self.img.textWeight = "bold"
+    self.img.fillColor = "white"
+    self.img.drawText("Hello", 30, 225, "", "", 3)
+    self.img.drawText("World", 10, 325, "", "", 3)
 </sample>
 
 <sample Analog Clock>
-from native import app, ui
+from native import ui
+
 import math
 
-class Main(app):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        ui.addAppBar(self.main, "Analog Clock")
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        self.img = ui.addImage(self.main, "", "canvas", "300px", "300px")
+    ui.addAppBar(self.main, "Analog Clock")
 
-        self.img.lineCap = "round"
-        self.img.lineWidth = 4
-        self.img.strokeColor = "#009688"
-        self.img.lineJoin = "round"
+    self.img = ui.addImage(self.main, "", "canvas", "300px", "300px")
 
-        self.time = ui.addText(self.main, "00:00:00", "h6,bold")
-        self.time.setMargins(0, 0.05, 0, 0)
+    self.img.lineCap = "round"
+    self.img.lineWidth = 4
+    self.img.strokeColor = "#009688"
+    self.img.lineJoin = "round"
 
-        self.draw()
-        setInterval(self.draw.bind(self), 1000)
+    self.time = ui.addText(self.main, "00:00:00", "h6,bold")
+    self.time.setMargins(0, 0.05, 0, 0)
 
-    def draw(self):
-        self.img.clear()
+    self.draw()
+    setInterval(self.draw.bind(self), 1000)
 
-        x, y, n = 0, 0, 0
+def draw(self):
+    self.img.clear()
 
-        for n in range(1, 13):
-            x = 130 * math.cos(n * (math.pi / 6))
-            y = 130 * math.sin(n * (math.pi / 6))
+    x, y, n = 0, 0, 0
 
-            x += 150
-            y += 150
-
-            self.img.drawCircle(x, y, 4, "#311b92")
-
-        date = datetime.datetime.now()
-
-        hour = date.hour if date.hour <= 12 else date.hour - 12
-        minutes = date.minute
-        seconds = date.second
-
-        hourAngle = hour * (math.pi / 6) - (math.pi / 2)
-        minAngle = minutes * (math.pi / 30) - (math.pi / 2)
-        secAngle = seconds * (math.pi / 30) - (math.pi / 2)
-
-        self.drawHand(hourAngle, 80, 7, "#311b92")
-        self.drawHand(minAngle, 100, 4, "#1e88e5")
-        self.drawHand(secAngle, 110, 2, "#d81b60")
-
-        self.img.drawCircle(150, 150, 8, "#000")
-
-        self.time.text = (
-            str(hour).zfill(2) + ":" +
-            str(minutes).zfill(2) + ":" +
-            str(seconds).zfill(2) +
-            " " +
-            ("PM" if date.hour > 12 else "AM")
-        )
-
-    def drawHand(self, angle, length, width, color):
-        x = length * math.cos(angle)
-        y = length * math.sin(angle)
+    for n in range(1, 13):
+        x = 130 * math.cos(n * (math.pi / 6))
+        y = 130 * math.sin(n * (math.pi / 6))
 
         x += 150
         y += 150
 
-        self.img.drawLine(150, 150, x, y, color, width)
+        self.img.drawCircle(x, y, 4, "#311b92")
+
+    date = datetime.datetime.now()
+
+    hour = date.hour if date.hour <= 12 else date.hour - 12
+    minutes = date.minute
+    seconds = date.second
+
+    hourAngle = hour * (math.pi / 6) - (math.pi / 2)
+    minAngle = minutes * (math.pi / 30) - (math.pi / 2)
+    secAngle = seconds * (math.pi / 30) - (math.pi / 2)
+
+    self.drawHand(hourAngle, 80, 7, "#311b92")
+    self.drawHand(minAngle, 100, 4, "#1e88e5")
+    self.drawHand(secAngle, 110, 2, "#d81b60")
+
+    self.img.drawCircle(150, 150, 8, "#000")
+
+    self.time.text = (
+        str(hour).zfill(2) + ":" +
+        str(minutes).zfill(2) + ":" +
+        str(seconds).zfill(2) +
+        " " +
+        ("PM" if date.hour > 12 else "AM")
+    )
+
+def drawHand(self, angle, length, width, color):
+    x = length * math.cos(angle)
+    y = length * math.sin(angle)
+
+    x += 150
+    y += 150
+
+    self.img.drawLine(150, 150, x, y, color, width)
 </sample>
 
 <sample Scratch Pad>
-from native import app, ui
+from native import ui
 
-class Main(app):
-    def onStart(self):
-        self.color = "#000000"
-        self.main = ui.addLayout("main", "Linear", "Top", 1, 1)
-        self.main.setChildMargins(0, 0.01, 0, 0.01)
+def onStart(self):
+    self.color = "#000000"
+    self.main = ui.addLayout("main", "Linear", "Top", 1, 1)
+    self.main.setChildMargins(0, 0.01, 0, 0.01)
 
-        lay = ui.addLayout(self.main, "Linear", "Horizontal,Center,VCenter", 1)
-        lay.setChildMargins(0.01, 0, 0.01, 0)
+    lay = ui.addLayout(self.main, "Linear", "Horizontal,Center,VCenter", 1)
+    lay.setChildMargins(0.01, 0, 0.01, 0)
 
-        colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
+    colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
 
-        ui.addText(lay, "Color", "H5")
-        for color in colors:
-            btn = ui.addButton(lay, "", color)
-            btn.onClick = self.changeColor
+    ui.addText(lay, "Color", "H5")
+    for color in colors:
+        btn = ui.addButton(lay, "", color)
+        btn.onClick = self.changeColor
 
-    def changeColor(self):
-        self.color = self.sender.backgroundColor
+def changeColor(self):
+    self.color = self.sender.backgroundColor
 </sample>

@@ -1,6 +1,4 @@
 <sample Sample navs array.>
-from native import app, cfg
-
 navs = [ 
     ["Favorites", "favorites"],
     ["Groups", "person"],
@@ -9,87 +7,90 @@ navs = [
 </sample>
 
 <sample Basic>
-class Main(App):
-    def onStart(self):
-        # Creates a layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+from native import ui
 
-        navs = [
-            ["Favorites", "favorites"],
-            ["Groups", "person"],
-            ["Folder", "folder"]
-        ]
+def onStart(self):
+    # Creates a layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        # Creates a BottomNavbar control
-        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
+    navs = [
+        ["Favorites", "favorites"],
+        ["Groups", "person"],
+        ["Folder", "folder"]
+    ]
 
-        # Add a callback handler for `onChange` event
-        self.bmn.setOnChange(self.onChange)
+    # Creates a BottomNavbar control
+    self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-    def onChange(self, text, index):
-        ui.showPopup(text)
+    # Add a callback handler for `onChange` event
+    self.bmn.setOnChange(self.onChange)
+
+def onChange(self, text, index):
+    ui.showPopup(text)
 </sample>
 
 <sample Hide or show labels>
-class Main(App):
-    def onStart(self):
-        # Creates a layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-        self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+from native import ui
 
-        navs = [
-            ["Favorites", "favorites"],
-            ["Groups", "person"],
-            ["Folder", "folder"]
-        ]
+def onStart(self):
+    # Creates a layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-        # Creates a BottomNavbar control
-        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
+    navs = [
+        ["Favorites", "favorites"],
+        ["Groups", "person"],
+        ["Folder", "folder"]
+    ]
 
-        # Add a callback handler for `onChange` event
-        self.bmn.setOnChange(self.onChange)
+    # Creates a BottomNavbar control
+    self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-        # Button to show the labels
-        self.btn = ui.addButton(self.main, "Show Labels")
-        self.btn.setOnTouch(self.showLabels)
+    # Add a callback handler for `onChange` event
+    self.bmn.setOnChange(self.onChange)
 
-        # Button to hide the labels
-        self.btn1 = ui.addButton(self.main, "Hide Labels")
-        self.btn1.setOnTouch(self.hideLabels)
+    # Button to show the labels
+    self.btn = ui.addButton(self.main, "Show Labels")
+    self.btn.setOnTouch(self.showLabels)
 
-    def showLabels(self):
-        self.bmn.showLabels()
+    # Button to hide the labels
+    self.btn1 = ui.addButton(self.main, "Hide Labels")
+    self.btn1.setOnTouch(self.hideLabels)
 
-    def hideLabels(self):
-        self.bmn.hideLabels()
+def showLabels(self):
+    self.bmn.showLabels()
 
-    def onChange(self, text, index):
-        ui.showPopup(text)
+def hideLabels(self):
+    self.bmn.hideLabels()
+
+def onChange(self, text, index):
+    ui.showPopup(text)
 </sample>
 
 <sample Custom styles>
-class Main(App):
-    def onStart(self):
-        # Creates a layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+from native import ui
 
-        navs = [
-            ["Favorites", "favorites"],
-            ["Groups", "person"],
-            ["Folder", "folder"]
-        ]
+def onStart(self):
+    # Creates a layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-        # Creates a BottomNavbar control
-        self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
+    navs = [
+        ["Favorites", "favorites"],
+        ["Groups", "person"],
+        ["Folder", "folder"]
+    ]
 
-        # Hide the labels when not active
-        self.bmn.labels = False
+    # Creates a BottomNavbar control
+    self.bmn = ui.addBottomNavbar(self.main, navs, "", 1)
 
-        # Set the color of the text and icons
-        self.bmn.textColor = "#673ab7"
-        self.bmn.iconColor = "#673ab7"
+    # Hide the labels when not active
+    self.bmn.labels = False
 
-        # Set the icon size
-        self.bmn.iconSize = "2rem"
+    # Set the color of the text and icons
+    self.bmn.textColor = "#673ab7"
+    self.bmn.iconColor = "#673ab7"
+
+    # Set the icon size
+    self.bmn.iconSize = "2rem"
 </sample>

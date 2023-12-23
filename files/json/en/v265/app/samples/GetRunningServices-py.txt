@@ -1,5 +1,5 @@
 <sample Show Running Services>
-from native import app, ui
+from native import app
 
 def OnStart():
     app.ShowProgress()

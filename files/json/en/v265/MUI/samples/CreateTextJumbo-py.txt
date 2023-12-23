@@ -1,18 +1,17 @@
 <sample Sample>
-from native import app
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     jum = MUI.AddText(lay, "Some jumbo text", 0.8, 0.3, "Jumbo,Multiline")
 
     jum = MUI.AddTextJumbo(lay, "Some jumbo text", 0.8, 0.3, "Multiline", None, "Medium")
 
-    jum = ui.CreateText("Some jumbo text", 0.8, 0.3, "Multiline", None, "Medium")
+    jum = MUI.CreateText("Some jumbo text", 0.8, 0.3, "Multiline", None, "Medium")
     lay.AddChild(jum)
 
     app.AddLayout(lay)

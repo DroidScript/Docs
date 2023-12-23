@@ -1,6 +1,4 @@
-<code>
 <sample>
-
 from native import app
 
 def OnStart():
@@ -11,6 +9,4 @@ def OnStart():
         app.ShowPopup("myFolder exists in /sdcard/!")
     else:
         app.ShowPopup("myFolder does not exist in /sdcard/!")
-
 </sample>
-</code>

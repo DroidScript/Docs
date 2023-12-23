@@ -1,15 +1,16 @@
 <sample>
-from native import app
+from native import MUI, app
+
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Absolute", "FillXY,VCenter")
 
-    fab = gfx.MUI.CreateFABOutline("add")
+    fab = MUI.CreateFABOutline("add")
     fab.SetOnTouch(OnClick)
     lay.AddChild(fab)
 
@@ -17,3 +18,4 @@ def OnStart():
 
 def OnClick():
     app.ShowPopup("You click FAB")</sample>
+</sample>

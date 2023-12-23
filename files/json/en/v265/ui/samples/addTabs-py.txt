@@ -1,4 +1,6 @@
 <sample Basic>
+from native import ui
+
 class Main:
     def onStart(self):
         # Creates a layout with objects verticaly centered
@@ -37,6 +39,8 @@ Main().onStart()
 </sample>
 
 <sample With Icon>
+from native import ui
+
 class Main:
     def onStart(self):
         # Creates a layout with objects verticaly centered
@@ -79,6 +83,8 @@ Main().onStart()
 </sample>
 
 <sample Swipeable tabs>
+from native import ui
+
 class Main:
     def onStart(self):
         # Creates a layout with objects verticaly centered
@@ -117,6 +123,8 @@ Main().onStart()
 </sample>
 
 <sample Open tabs dynamically>
+from native import ui
+
 class Main:
     def onStart(self):
         # Set the primary and secondary theme colors
@@ -168,6 +176,8 @@ Main().onStart()
 </sample>
 
 <sample Icon only>
+from native import ui
+
 class Main:
     def onStart(self):
         # Set the primary and secondary theme colors
@@ -211,6 +221,8 @@ Main().onStart()
 </sample>
 
 <sample Custom colors and sizes>
+from native import ui
+
 class Main:
     def onStart(self):
         # Creates a layout with objects verticaly centered
@@ -234,3 +246,4 @@ class Main:
 
 
 Main().on
+</sample>

@@ -1,20 +1,20 @@
 <sample All Typography>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     text = "Lorem ipsum dolor set amit"
-    h1 = ui.AddText(lay, "text", 0.8, None, "h1,Medium")
-    h2 = ui.AddText(lay, "text", 0.8, None, "h2,Bold")
-    h3 = ui.AddText(lay, "text", 0.8, None, "h3,Light")
-    h4 = ui.AddText(lay, "text", 0.8, None, "h4,Regular")
-    h5 = ui.AddText(lay, "text", 0.8, None, "h5,Medium")
-    h6 = ui.AddText(lay, "text", 0.8, None, "h6")
-    p = ui.AddText(lay, "text", 0.8, None, "paragraph,thin")
-    j = ui.AddText(lay, "text", 0.8, None, "h1,Medium")
-    s = ui.AddText(lay, "text", 0.8, None, "secondary,light")
+    h1 = MUI.AddText(lay, "text", 0.8, None, "h1,Medium")
+    h2 = MUI.AddText(lay, "text", 0.8, None, "h2,Bold")
+    h3 = MUI.AddText(lay, "text", 0.8, None, "h3,Light")
+    h4 = MUI.AddText(lay, "text", 0.8, None, "h4,Regular")
+    h5 = MUI.AddText(lay, "text", 0.8, None, "h5,Medium")
+    h6 = MUI.AddText(lay, "text", 0.8, None, "h6")
+    p = MUI.AddText(lay, "text", 0.8, None, "paragraph,thin")
+    j = MUI.AddText(lay, "text", 0.8, None, "h1,Medium")
+    s = MUI.AddText(lay, "text", 0.8, None, "secondary,light")
     app.AddLayout(lay)
 </sample>

@@ -1,9 +1,10 @@
 <sample Search>
-from native import app
+from native import MUI, app
+
 from gfx import MUI
 
 def OnStart():
-    from native import app
+   
     from gfx import MUI
 
     color = MUI.colors.teal
@@ -18,11 +19,12 @@ def OnStart():
 </sample>
 
 <sample SetOnEnter Callback>
-from native import app
+from native import MUI, app
+
 from gfx import MUI
 
 def OnStart():
-    from native import app
+   
     from gfx import MUI
 
     color = MUI.colors.teal

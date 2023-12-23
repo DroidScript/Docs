@@ -1,4 +1,6 @@
 <sample Button variants>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -18,6 +20,8 @@ class Main:
 </sample>
 
 <sample Button theme colors>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -37,6 +41,8 @@ class Main:
 </sample>
 
 <sample Button sizes>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -55,6 +61,8 @@ class Main:
 </sample>
 
 <sample Button tooltips>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -74,6 +82,8 @@ class Main:
 </sample>
 
 <sample Button with icons>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -91,6 +101,8 @@ class Main:
 </sample>
 
 <sample Buttons with badges>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -106,6 +118,8 @@ class Main:
 </sample>
 
 <sample Upload button>
+from native import ui
+
 class Main:
     def onStart(self):
         self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)

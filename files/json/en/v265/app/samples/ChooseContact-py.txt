@@ -15,7 +15,6 @@ def btnChoose_OnTouch():
 
 def OnPhoneChoose( name, number ):
     app.ShowPopup( name + " " + number )
-
 </sample>
 
 <sample Choose Email Address>

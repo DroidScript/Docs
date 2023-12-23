@@ -1,6 +1,5 @@
 <sample Basic>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -19,8 +18,7 @@ def OnStart():
 </sample>
 
 <sample With callback>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI

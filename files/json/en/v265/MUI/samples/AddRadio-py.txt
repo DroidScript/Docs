@@ -1,6 +1,5 @@
 <sample AddPicker>
-from native import MUI
-from native import app
+from native import app, MUI
 
 cfg.Light
 cfg.MUI

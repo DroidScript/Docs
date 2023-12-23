@@ -34,7 +34,6 @@ def OnStart():
 
 def lst_OnTouch( title, body, type, index ):
     app.ShowPopup( "Touched Item = " + title )
-
 </sample>
 
 <sample Title + Icon>
@@ -52,7 +51,6 @@ def OnStart():
 
 def lst_OnTouch( title, body, type, index ):
     app.ShowPopup( "Touched Item = " + title )
-
 </sample>
 
 <sample Title + Body>
@@ -71,7 +69,6 @@ def OnStart():
 
 def lst_OnTouch( title, body, type, index ):
     app.ShowPopup( "Touched Item = " + title )
-
 </sample>
 
 <sample Orange Buttons>
@@ -91,7 +88,6 @@ def OnStart():
 
 def lst_OnTouch( title, body, type, index ):
     app.ShowPopup( "Touched Item = " + title )
-
 </sample>
 
 <sample Gradient Background>
@@ -116,5 +112,4 @@ def OnStart():
 
 def lst_OnTouch( title, body, type, index ):
     app.ShowPopup( "Touched Item = " + title )
-
 </sample>

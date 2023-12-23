@@ -29,5 +29,4 @@ def OnStart():
 
 def node_OnReady():
     node.Run("node_script.js")
-
 </sample>

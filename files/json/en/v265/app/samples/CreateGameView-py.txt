@@ -1,8 +1,8 @@
-<code>
 <sample Script>
+from native import app
+
 cfg.Landscape
 
-from native import app
 
 def OnStart():
     app.PreventScreenLock(True)
@@ -17,6 +17,4 @@ def OnStart():
     lay.AddChild(gam)</b>
 
     app.AddLayout(lay)
-
 </sample>
-</code>

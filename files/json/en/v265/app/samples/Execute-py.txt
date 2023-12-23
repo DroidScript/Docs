@@ -1,12 +1,14 @@
 <sample Execute code from WebView>
-    html = '''
+from native import app
+
+html = '''
     <html>
     <head>
         <script src='file:///android_asset/app.js'>
     </head>
 
     
-        var source = "html";
+        source = "html";
         function btn_OnTouch()
         {
             app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );

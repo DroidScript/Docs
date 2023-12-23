@@ -2,6 +2,10 @@
 cfg.Light
 cfg.MUI
 
+
+
+from native import MUI, app
+
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
         

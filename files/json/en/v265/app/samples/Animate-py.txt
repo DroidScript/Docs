@@ -1,4 +1,6 @@
 <sample Digital Clock>
+from native import app
+
 def OnStart():
     app.SetOrientation( "Portrait" )
     app.SetDebugEnabled( False )
@@ -19,6 +21,9 @@ def OnAnimate( time, dtime ):
 
 <sample SpeedTest>
 cfg.No_Dom
+
+
+from native import app
 
 ltime = time.monotonic()
 c = 0

@@ -1,14 +1,14 @@
 <sample No-image, No-Avatar>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Light")
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     options = {
         "title": "Card Title",
@@ -16,23 +16,23 @@ def OnStart():
         "buttonText": "SEE MORE",
         "width": 0.94
     }
-    card = ui.CreateCard(options)
+    card = MUI.CreateCard(options)
     lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With-image, No-Avatar>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     options = {
         "title": "Card Title",
@@ -41,23 +41,23 @@ def OnStart():
         "image": "/Sys/Img/Sky.jpg",
         "width": 0.94
     }
-    card = ui.CreateCard(options)
+    card = MUI.CreateCard(options)
     lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample With Image, With Avatar>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     options = {
         "title": "Card Title",
@@ -67,22 +67,22 @@ def OnStart():
         "width": 0.94,
         "avatar": "/Sys/Img/Droid1.png"
     }
-    card = ui.CreateCard(options)
+    card = MUI.CreateCard(options)
     lay.AddChild(card)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Complete>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     scrl = app.CreateScroller(1, 1, "NoScrollBar")
-    lay2 = ui.CreateLayout("Linear", "VCenter")
+    lay2 = MUI.CreateLayout("Linear", "VCenter")
     lay2.SetPadding(0, 0.02, 0, 0.02)
     lay2.SetSize(1)
 
@@ -99,13 +99,13 @@ def OnStart():
     }
 
     options["name"] = "my-card1"
-    card1 = ui.CreateCard(options)
+    card1 = MUI.CreateCard(options)
     lay2.AddChild(card1)
     card1.SetOnButtonTouch(OnBtnTouch)
 
     options["name"] = "my-card2"
     options["buttonType"] = "raised"
-    card2 = ui.CreateCard(options)
+    card2 = MUI.CreateCard(options)
     card2.SetMargins(0, 0.02, 0, 0)
     lay2.AddChild(card2)
     card2.SetOnButtonTouch(OnBtnTouch)

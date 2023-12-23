@@ -1,4 +1,6 @@
 <sample Html App>
+from native import app
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
@@ -6,7 +8,7 @@
 </head>
 
 
-    from native import app
+   
 
     def OnStart():
         app.ShowPopup( "HTML Rocks!" );

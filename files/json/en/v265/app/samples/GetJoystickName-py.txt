@@ -1,4 +1,6 @@
 <sample Show Joystick name on id 0>
+from native import app
+
 def OnStart():
     name = app.GetJoystickName(0)
     app.Alert(name)

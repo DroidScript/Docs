@@ -1,5 +1,5 @@
 <sample SetScreenMode Demo>
-from native import app, ui
+from native import app
 
 def OnStart():
     lay = app.CreateLayout("Linear", "Vertical,VCenter,FillXY")

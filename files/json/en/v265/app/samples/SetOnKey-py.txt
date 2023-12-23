@@ -28,7 +28,7 @@ def OnKey(action, name, code, extra):
 <sample Surprise>
 from native import app
 
-var prev
+prev
 
 def OnStart():
     app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )

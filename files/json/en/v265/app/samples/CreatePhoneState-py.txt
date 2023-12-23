@@ -21,5 +21,4 @@ log = []
 def state_OnChange(type, data):
     log.append("<b>" + type + ":</b><br>\t" + str(data))
     txt.SetHtml("<br>".join(log))
-
 </sample>

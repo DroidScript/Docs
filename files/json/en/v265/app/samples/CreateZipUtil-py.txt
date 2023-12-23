@@ -1,4 +1,6 @@
 <sample List Contents>
+from native import app
+
 def OnStart():
     name = app.GetAppName()
     file = "/sdcard/" + name + ".zip"
@@ -11,6 +13,8 @@ def OnStart():
 </sample>
 
 <sample Compress>
+from native import app
+
 def OnStart():
     name = app.GetAppName()
     fldr = app.GetPath() + "/" + name

@@ -1,26 +1,26 @@
 <sample AddPicker>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
         	
-    ttime = ui.AddTextEdit(lay, 0.7, "outline", "Enter time", True)
+    ttime = MUI.AddTextEdit(lay, 0.7, "outline", "Enter time", True)
     ttime.SetOnTouch(ShowTimePicker)
 
-    tdate = ui.AddTextEdit(lay, 0.7, "outline", "Enter date", True)
+    tdate = MUI.AddTextEdit(lay, 0.7, "outline", "Enter date", True)
     tdate.SetOnTouch(ShowDatePicker)
 
-    tcolor = ui.AddTextEdit(lay, 0.7, "outline", "Enter color", True)
+    tcolor = MUI.AddTextEdit(lay, 0.7, "outline", "Enter color", True)
     tcolor.SetOnTouch(ShowColorPicker)
 
     app.AddLayout(lay)
 
-    tPkr = ui.AddPicker(ttime, "time")
-    dPkr = ui.AddPicker(tdate, "date")
-    cPkr = ui.AddPicker(tcolor, "color")
+    tPkr = MUI.AddPicker(ttime, "time")
+    dPkr = MUI.AddPicker(tdate, "date")
+    cPkr = MUI.AddPicker(tcolor, "color")
 
 def ShowTimePicker():
     tPkr.Show()

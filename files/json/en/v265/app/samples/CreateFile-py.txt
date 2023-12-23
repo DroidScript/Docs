@@ -1,6 +1,4 @@
-<code>
 <sample Example>
-
 from native import app
 
 def btn_OnTouch():
@@ -22,6 +20,4 @@ def btn_OnTouch():
     alert( file.ReadText( "Line" ) )
 
     file.Close()
-
 </sample>
-</code>

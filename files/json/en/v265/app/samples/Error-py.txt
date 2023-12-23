@@ -1,7 +1,7 @@
 <sample Show error and exit>
-<![CDATA[
+from native import app
+
 def OnStart():
     msg = "How dare you running that sample.\nI will close immediately!"
     app.Error(msg, 4, "demo.js", True)
-]]>
 </sample>

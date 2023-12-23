@@ -1,63 +1,63 @@
 <sample Light>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    btn = ui.CreateButtonRaisedO("BUTTON", 0.35)
+    btn = MUI.CreateButtonRaisedO("BUTTON", 0.35)
     lay.AddChild(btn)
 
-    btn = ui.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
+    btn = MUI.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
     lay.AddChild(btn)
 
-    btn = ui.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, ui.colors.blue.blue)
+    btn = MUI.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
     lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Dark>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = ui.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    btn = ui.CreateButtonRaisedO("BUTTON", 0.35)
+    btn = MUI.CreateButtonRaisedO("BUTTON", 0.35)
     lay.AddChild(btn)
 
-    btn = ui.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
+    btn = MUI.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
     lay.AddChild(btn)
 
-    btn = ui.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, ui.colors.blue.blue)
+    btn = MUI.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
     lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Add Method>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     
-    btn1 = ui.AddButtonRaisedO(lay, "BUTTON 1", 0.35)
-    btn2 = ui.AddButtonRaisedO(lay, "[fa-heart] BUTTON 2", 0.35)
-    btn3 = ui.AddButtonRaisedO(lay, "BUTTON 3", 0.35, 0.1, ui.colors.green.darken2)
+    btn1 = MUI.AddButtonRaisedO(lay, "BUTTON 1", 0.35)
+    btn2 = MUI.AddButtonRaisedO(lay, "[fa-heart] BUTTON 2", 0.35)
+    btn3 = MUI.AddButtonRaisedO(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
 
     app.AddLayout(lay)
 </sample>

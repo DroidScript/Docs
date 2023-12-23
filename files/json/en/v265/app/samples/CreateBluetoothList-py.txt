@@ -1,6 +1,4 @@
-<code>
 <sample Basic>
-
 from native import app
 
 def OnStart():
@@ -9,6 +7,4 @@ def OnStart():
 
 def OnBtList(name, address):
     app.Alert("Name: " + name + "\nAddress: " + address, "Result")
-
 </sample>
-</code>

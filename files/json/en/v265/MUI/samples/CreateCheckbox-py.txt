@@ -1,11 +1,11 @@
 <sample Light>
-from native import app, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     lst = "Apple,Mango,Orange,Banana"
     chk = MUI.CreateCheckbox(lst, 0.7)
@@ -15,13 +15,13 @@ def OnStart():
 </sample>
 
 <sample Dark>
-from native import app, ui
+from native import app, MUI
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     lst = "Apple,Mango,Orange,Banana"
     chk = MUI.CreateCheckbox(lst, 0.7)

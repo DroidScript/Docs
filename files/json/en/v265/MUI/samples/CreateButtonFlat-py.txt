@@ -1,66 +1,63 @@
 <sample Light>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
         
-        btn = gfx.MUI.CreateButtonFlat("BUTTON", 0.35)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
         lay.AddChild(btn)
 
-        btn = gfx.MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
         lay.AddChild(btn)
 
-        btn = gfx.MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, gfx.MUI.colors.blue.blue)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
         lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Dark>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
         
-        btn = gfx.MUI.CreateButtonFlat("BUTTON", 0.35)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
         lay.AddChild(btn)
 
-        btn = gfx.MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
         lay.AddChild(btn)
 
-        btn = gfx.MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, gfx.MUI.colors.blue.blue)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
         lay.AddChild(btn)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Add Method>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     
-        btn1 = gfx.MUI.AddButtonFlat(lay, "BUTTON 1", 0.35)
-        btn2 = gfx.MUI.AddButtonFlat(lay, "[fa-heart] BUTTON 2", 0.35)
-        btn3 = gfx.MUI.AddButtonFlat(lay, "BUTTON 3", 0.35, 0.1, gfx.MUI.colors.green.darken2)
+        btn1 = MUI.AddButtonFlat(lay, "BUTTON 1", 0.35)
+        btn2 = MUI.AddButtonFlat(lay, "[fa-heart] BUTTON 2", 0.35)
+        btn3 = MUI.AddButtonFlat(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
 
     app.AddLayout(lay)
 </sample>

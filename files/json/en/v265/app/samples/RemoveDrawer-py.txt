@@ -1,5 +1,3 @@
-The translated xml page with all xml tags from the initial page would be:
-
 <sample left>
 from native import app
 

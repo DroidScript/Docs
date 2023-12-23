@@ -8,8 +8,9 @@ def OnStart():
 </sample>
 
 <sample Random Value>
-import math
 from native import app
+
+import math
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")

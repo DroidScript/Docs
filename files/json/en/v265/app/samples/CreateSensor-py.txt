@@ -5,7 +5,6 @@ def OnStart():
     sns = app.CreateSensor()
     names = sns.GetNames()
     app.Alert(names.replace(",", ",\n"), "Sensor Names")
-
 </sample>
 
 <sample Accelerometer>
@@ -24,7 +23,6 @@ def OnStart():
 
 def sns_OnChange(x, y, z, time):
     txt.SetText("x=" + str(x) + "\n y=" + str(y) + "\n z=" + str(z))
-
 </sample>
 
 <sample Orientation>
@@ -46,7 +44,6 @@ def sns_OnChange(azimuth, pitch, roll, time):
     msg += "\n pitch = " + str(pitch)
     msg += "\n roll = " + str(roll)
     txt.SetText(msg)
-
 </sample>
 
 <sample Light>
@@ -65,5 +62,4 @@ def OnStart():
 
 def sns_OnChange(lux):
     txt.SetText("level = " + str(lux) + " lux")
-
 </sample>

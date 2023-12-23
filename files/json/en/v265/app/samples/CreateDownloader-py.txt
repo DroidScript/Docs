@@ -1,6 +1,4 @@
-<code>
 <sample Example>
-
 from native import app
 
 def OnStart():
@@ -13,6 +11,4 @@ def OnStart():
 
 def dload_OnComplete():
     app.ShowPopup("Download complete")
-
 </sample>
-</code>

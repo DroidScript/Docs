@@ -71,7 +71,7 @@ from native import app
 
 cfg.No_Dom, cfg.Portrait;
 
-var wh;
+wh;
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )

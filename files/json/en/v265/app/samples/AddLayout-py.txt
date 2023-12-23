@@ -1,5 +1,6 @@
 <sample Vertical>
 from native import app
+
 def OnStart():
     lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
 

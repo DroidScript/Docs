@@ -1,4 +1,6 @@
 <sample Billiard>
+from native import gfx
+
 cfg.Game;
 
 def OnLoad():
@@ -11,7 +13,7 @@ def OnLoad():
     ball2 = gfx.CreateSprite("/Sys/Img/Forward.png")
 
 def OnReady():
-    from native import app, gfx, ui
+   
     
     gfx.AddSprite(ball1, 0.2, 0.6, 0.16)
     ball1.SetPhysics(1, "Dynamic", 0.5, 0.8, 0.01)
@@ -27,10 +29,12 @@ def OnReady():
 </sample>
 
 <sample Collision>
+from native import gfx
+
 cfg.Game;
 
 def OnLoad():
-    from native import app, gfx, ui
+    from native import gfx
 
     gfx.AddPhysics(20)
     gfx.Enclose(-1, "left,top,right,bottom", 1, 0.9, 0.01)
@@ -48,7 +52,7 @@ def OnReady():
     gfx.Play()
 
 def OnCollide(a, b):
-    from native import app, gfx
+   
 
     if a.group == "bunnies":
         squeak.Play(false, 0, 0)

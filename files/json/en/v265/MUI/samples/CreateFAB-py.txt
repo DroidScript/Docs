@@ -1,5 +1,5 @@
 <sample>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
@@ -8,9 +8,9 @@ def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = ui.CreateLayout("Absolute", "FillXY,VCenter")
+    lay = MUI.CreateLayout("Absolute", "FillXY,VCenter")
 
-    fab = ui.CreateFAB("add")
+    fab = MUI.CreateFAB("add")
     fab.SetOnTouch(OnClick)
     lay.AddChild(fab)
 

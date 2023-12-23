@@ -1,44 +1,46 @@
 <sample Progress control implementation>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.childSpacing = "Even"
+from native import ui
 
-        # Indeterminate Linear
-        self.prog1 = ui.addProgress(self.main, 40, "linear", 0.7)
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered.
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.main.childSpacing = "Even"
 
-        # Determinate Linear
-        self.prog2 = ui.addProgress(self.main, None, "Linear,Secondary,indeterminate", 0.7)
+    # Indeterminate Linear
+    self.prog1 = ui.addProgress(self.main, 40, "linear", 0.7)
 
-        # Determinate Circular
-        self.prog3 = ui.addProgress(self.main, 50, "Circular")
+    # Determinate Linear
+    self.prog2 = ui.addProgress(self.main, None, "Linear,Secondary,indeterminate", 0.7)
 
-        # Indeterminate Circular, enlarge and secondary
-        self.prog4 = ui.addProgress(self.main, None, "Circular,Secondary,indeterminate")
-        self.prog4.circleSize = 100
+    # Determinate Circular
+    self.prog3 = ui.addProgress(self.main, 50, "Circular")
+
+    # Indeterminate Circular, enlarge and secondary
+    self.prog4 = ui.addProgress(self.main, None, "Circular,Secondary,indeterminate")
+    self.prog4.circleSize = 100
 </sample>
 
 <sample Setting progress value>
-class Main(App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.childSpacing = "Even"
+from native import ui
 
-        # Add an indeterminate linear progress control to the main layout
-        self.prog = ui.addProgress(self.main, 0, "Linear", 0.7)
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered.
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    self.main.childSpacing = "Even"
 
-        # Add a button control to the main layout
-        self.btn = ui.addButton(self.main, "Increment")
+    # Add an indeterminate linear progress control to the main layout
+    self.prog = ui.addProgress(self.main, 0, "Linear", 0.7)
 
-        # Add a callback handler when the button is touched
-        self.btn.setOnTouch(self.onTouch)
+    # Add a button control to the main layout
+    self.btn = ui.addButton(self.main, "Increment")
 
-    def onTouch(self):
-        # Increment the value of the progress control by 10
-        if self.prog.value < 100:
-            self.prog.value += 10
-        else:
-            ui.showPopup("Progress is complete!")
+    # Add a callback handler when the button is touched
+    self.btn.setOnTouch(self.onTouch)
+
+def onTouch(self):
+    # Increment the value of the progress control by 10
+    if self.prog.value < 100:
+        self.prog.value += 10
+    else:
+        ui.showPopup("Progress is complete!")
 </sample>

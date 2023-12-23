@@ -1,5 +1,5 @@
 <sample Load Saved Text>
-from native import app, ui
+from native import app
 
 file = "demofile"
 

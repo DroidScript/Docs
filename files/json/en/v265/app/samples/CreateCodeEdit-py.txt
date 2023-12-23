@@ -1,6 +1,4 @@
-<code>
 <sample dark scheme>
-
 from native import app, ui
 
 def OnStart():
@@ -13,6 +11,4 @@ def OnStart():
     lay.AddChild(cde)
 
     app.AddLayout(lay)
-
 </sample>
-</code>

@@ -1,5 +1,6 @@
 <sample>
 from native import app
+
 import time
 
 def OnStart():

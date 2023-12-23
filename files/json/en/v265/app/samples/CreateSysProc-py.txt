@@ -20,7 +20,6 @@ def sys_OnInput( msg ):
     
 def sys_OnError( msg ):
     txt.Log( msg )
-
 </sample>
 
 <sample Colored>

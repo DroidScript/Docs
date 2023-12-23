@@ -1,55 +1,52 @@
 <sample No Label>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = gfx.MUI.CreateTEOutlineIconRight(0.8, "Left", "person", "Type your name")
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left", "person", "Type your name")
         lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample Dark With Label>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = gfx.MUI.CreateTEOutlineIconRight(0.8, "Left,Password", "lock", "Type your password", True)
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left,Password", "lock", "Type your password", True)
         lay.AddChild(tef)
 
     app.AddLayout(lay)
 </sample>
 
 <sample SetOnEnter Callback>
-from native import app
-from native import gfx
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    color = gfx.MUI.colors.teal
+    color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
-    lay = gfx.MUI.CreateLayout("Linear", "VCenter,FillXY")
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-        tef = gfx.MUI.CreateTEOutlineIconRight(0.8, "Left,Number", "call", "Type your number", True)
+        tef = MUI.CreateTEOutlineIconRight(0.8, "Left,Number", "call", "Type your number", True)
         tef.SetOnEnter(OnEnter)
         lay.AddChild(tef)
 

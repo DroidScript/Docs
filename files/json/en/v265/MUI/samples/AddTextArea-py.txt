@@ -1,14 +1,14 @@
 <sample AddTextArea>
-from native import app, cfg, ui
+from native import app, MUI
 
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "VCenter,FillXY")
-        ted1 = ui.AddTextArea(lay, 0.8, "filled", "Enter message", True)
-        ted1 = ui.AddTextArea(lay, 0.8, "filled,active", "Enter message", True)
-        ted1 = ui.AddTextArea(lay, 0.8, "outlined", "Enter message", True)
-        ted1 = ui.AddTextArea(lay, 0.8, "outlined,active", "Enter message", True)
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled,active", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined,active", "Enter message", True)
     app.AddLayout(lay)
 </sample>

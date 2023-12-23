@@ -2,6 +2,10 @@
 cfg.Light
 cfg.MUI
 
+
+
+from native import MUI, app
+
 def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal, "Light")
@@ -31,6 +35,10 @@ def OnStart():
 cfg.Light
 cfg.MUI
 
+
+
+from native import MUI, app
+
 def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
@@ -59,6 +67,10 @@ def OnStart():
 <sample With Callback>
 cfg.Light
 cfg.MUI
+
+
+
+from native import MUI, app
 
 def OnStart():
     color = MUI.colors.teal

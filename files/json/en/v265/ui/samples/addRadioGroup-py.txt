@@ -1,78 +1,72 @@
 <sample Basic radiogroup>
-from native import app
 from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add a radiogroup control to the main layout
-        self.rdg = ui.addRadioGroup(self.main, items)
+    # Add a radiogroup control to the main layout
+    self.rdg = ui.addRadioGroup(self.main, items)
 
-        # Add a callback handler when the value changes
-        self.rdg.setOnChange( self.onChange )
+    # Add a callback handler when the value changes
+    self.rdg.setOnChange( self.onChange )
 
-    def onChange(self, text, index):
-        ui.showPopup("You choose " + text)
+def onChange(self, text, index):
+    ui.showPopup("You choose " + text)
 </sample>
 
 <sample Elevated secondary radiogroup>
-from native import app
 from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add an elevated radiogroup control to the main layout
-        self.rdg = ui.addRadioGroup(self.main, items, "Elevated,Secondary", 0.6)
+    # Add an elevated radiogroup control to the main layout
+    self.rdg = ui.addRadioGroup(self.main, items, "Elevated,Secondary", 0.6)
 
-        # Set the label text of the radiogroup
-        self.rdg.label = "Select one"
+    # Set the label text of the radiogroup
+    self.rdg.label = "Select one"
 
-        # Set the elevation depth
-        self.rdg.elevation = 4
+    # Set the elevation depth
+    self.rdg.elevation = 4
 
-        # Add a callback handler when the value changes
-        self.rdg.setOnChange( self.onChange )
+    # Add a callback handler when the value changes
+    self.rdg.setOnChange( self.onChange )
 
-    def onChange(self, text, index):
-        ui.showPopup("You choose " + text)
+def onChange(self, text, index):
+    ui.showPopup("You choose " + text)
 </sample>
 
 <sample Outlined and radios to the right>
-from native import app
 from native import ui
 
-class Main(app.App):
-    def onStart(self):
-        # Creates a fullscreen layout with objects vertically centered
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def onStart(self):
+    # Creates a fullscreen layout with objects vertically centered
+    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        # Initialize list items to show
-        items = ["Item 1", "Item 2", "Item 3"]
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
 
-        # Add an outlined radiogroup control to the main layout
-        # Passing `Right` will display the radios to the right
-        self.rdg = ui.addRadioGroup( self.main, items, "Outlined,Primary,Right", 0.6)
+    # Add an outlined radiogroup control to the main layout
+    # Passing `Right` will display the radios to the right
+    self.rdg = ui.addRadioGroup( self.main, items, "Outlined,Primary,Right", 0.6)
 
-        # Set the label text of the radiogroup
-        self.rdg.label = "Select one"
+    # Set the label text of the radiogroup
+    self.rdg.label = "Select one"
 
-        # Set the corner radius to 12
-        self.rdg.cornerRadius = 12
+    # Set the corner radius to 12
+    self.rdg.cornerRadius = 12
 
-        # Add a callback handler when the value changes
-        self.rdg.setOnChange( self.onChange )
+    # Add a callback handler when the value changes
+    self.rdg.setOnChange( self.onChange )
 
-    def onChange(self, text, index):
-        ui.showPopup("You choose " + text)
+def onChange(self, text, index):
+    ui.showPopup("You choose " + text)
 </sample>

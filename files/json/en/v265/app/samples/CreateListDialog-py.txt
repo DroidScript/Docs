@@ -8,7 +8,6 @@ def OnStart():
 
 def dlg_OnTouch( item ):
     app.ShowPopup( item )
-
 </sample>
 
 <sample Multi>
@@ -21,5 +20,4 @@ def OnStart():
 
 def dlg_OnTouch( item, isChecked ):
     app.ShowPopup( item + " isChecked = " + str(isChecked) )
-
 </sample>

@@ -1,6 +1,5 @@
 <sample Default Time>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -28,8 +27,7 @@ def OnSelect(time, hh, mm, pos):
 </sample>
 
 <sample Custom Time>
-from native import app, cfg
-from native import ui as MUI
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI

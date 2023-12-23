@@ -31,5 +31,4 @@ def Update(time):
     img.SetPaintColor("white")
     img.DrawSamples(lst, 50)
     img.Update()
-
 </sample>

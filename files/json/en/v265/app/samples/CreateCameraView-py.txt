@@ -1,6 +1,4 @@
-<code>
 <sample Show Camera Preview>
-
 from native import app
 
 def OnStart():
@@ -14,11 +12,9 @@ def OnStart():
 
 def cam_OnReady():
     cam.StartPreview()
-
 </sample>
 
 <sample Take pictures>
-
 from native import app
 
 def OnStart():
@@ -41,11 +37,9 @@ def cam_OnReady():
 def Snap():
     cam.TakePicture( "/sdcard/MyPic.jpg" )
     app.ShowPopup("Picture saved")
-
 </sample>
 
 <sample Record Video>
-
 from native import app
 
 def OnStart():
@@ -77,11 +71,9 @@ def Record( start ):
     else:
         cam.Stop()
         app.ShowPopup("Saved to " + recFolder + "/test.mp4")
-
 </sample>
 
 <sample Motion Detector>
-
 from native import app
 
 def OnStart():
@@ -108,6 +100,4 @@ def StartDetection():
     
     cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img )
     cam.StartPreview()
-
 </sample>
-</code>

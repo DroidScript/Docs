@@ -1,4 +1,6 @@
 <sample ForwardKeys>
+from native import app
+
 def OnStart():
     app.SetJoystickOptions("ForwardKeys")
 </sample>

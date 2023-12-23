@@ -1,4 +1,3 @@
-<code>
 <sample Notification>
 from native import app, ui
 
@@ -13,4 +12,3 @@ def cancel():
     notify.Cancel("testID")
     app.ShowPopup("Notification cancelled")
 </sample>
-</code>

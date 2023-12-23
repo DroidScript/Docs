@@ -38,44 +38,42 @@ items = {
 </sample>
 
 <sample Basic TreeView>
-from native import app
 from native import ui
 
-class Main(App):
-    def onStart(self):
-        self.main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
+def onStart(self):
+    self.main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
 
-        items = {
-            "Group 1": {
-                "Item 1": "",
-                "Item 2": "",
-                "Item 3": ""
-            },
-            "Group 2": {
-                "Item 1": "",
-                "Item 2": "",
-                "Item 3": ""
-            },
-            "Applications": {
-                "Editor": "",
-                "Productivity": "",
-                "Social Media": {
-                    "TikTok": "",
-                    "YouTube": "",
-                    "Meta": {
-                        "Facebook": "",
-                        "Instagram": "",
-                        "Whatsapp": "",
-                        "Messenger": ""
-                    }
+    items = {
+        "Group 1": {
+            "Item 1": "",
+            "Item 2": "",
+            "Item 3": ""
+        },
+        "Group 2": {
+            "Item 1": "",
+            "Item 2": "",
+            "Item 3": ""
+        },
+        "Applications": {
+            "Editor": "",
+            "Productivity": "",
+            "Social Media": {
+                "TikTok": "",
+                "YouTube": "",
+                "Meta": {
+                    "Facebook": "",
+                    "Instagram": "",
+                    "Whatsapp": "",
+                    "Messenger": ""
                 }
             }
         }
+    }
 
-        self.trv = ui.addTreeView(self.main, items, "Primary")
-        self.trv.setMargins(0, 5, 0, 0, "rem")
-        self.trv.setOnTouch(self.onTouch)
+    self.trv = ui.addTreeView(self.main, items, "Primary")
+    self.trv.setMargins(0, 5, 0, 0, "rem")
+    self.trv.setOnTouch(self.onTouch)
 
-    def onTouch(self, value, path):
-        ui.showPopup("Value: " + value + " Path: " + path)
+def onTouch(self, value, path):
+    ui.showPopup("Value: " + value + " Path: " + path)
 </sample>

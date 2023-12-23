@@ -35,7 +35,6 @@ def net_OnConnect(connected):
     web.LoadHtml(msg)
 
     net.Disconnect()
-
 </sample>
 
 <sample TCP AutoReceive>
@@ -82,7 +81,6 @@ def OnReceive(s):
         txt.SetText(msg)
         web.LoadHtml(msg)
         msg = ""
-
 </sample>
 
 <sample UDP Messaging>
@@ -117,5 +115,4 @@ def CheckForMsg():
 
         if parts[0] != id:
             app.ShowPopup(parts[1])
-
 </sample>

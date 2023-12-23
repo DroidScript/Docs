@@ -1,7 +1,5 @@
 <sample Basic>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -29,9 +27,7 @@ def OnTouch(title, index, icon, badge):
 </sample>
 
 <sample With Icon & Color>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -55,9 +51,7 @@ def OnStart():
 </sample>
 
 <sample With Icon, Color & Badge>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -81,9 +75,7 @@ def OnStart():
 </sample>
 
 <sample Badge Color>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Light
 cfg.MUI
@@ -107,9 +99,7 @@ def OnStart():
 </sample>
 
 <sample Dark With Divider>
-from native import app
-from native import gfx
-from native import ui
+from native import MUI, app
 
 cfg.Dark
 cfg.MUI
